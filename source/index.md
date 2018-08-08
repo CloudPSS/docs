@@ -1,4 +1,6 @@
 ﻿---
 title:
 ---
-<p>11</p>
+<script>
+    window.location.href='/guide/index.html';
+</script>

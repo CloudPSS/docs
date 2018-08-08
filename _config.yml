@@ -10,6 +10,7 @@ keywords:
 author: CloudPSS
 language: zh-Hans
 timezone: Asia/Shanghai
+contact: admin@cloudpss.net
 
 #Sitemap
 sitemap:
@@ -23,9 +24,10 @@ sitemap:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+base_url: http://www.cloudpss.net
 url: http://doc.cloudpss.net
 root: /
-permalink: :title.html
+permalink: post/:title.html
 permalink_defaults:
 
 # Directory

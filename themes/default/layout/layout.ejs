@@ -1,16 +1,22 @@
 ﻿<% var isIndex = page.path === 'index.html' %>
-
-  <!DOCTYPE html>
-  <html lang="zh-CN">
+<%
+  page.mapped_title = '';
+  if(page.type && !page.title && page.path.endsWith('index.html'))
+    page.mapped_title = config.sitemap[page.type];
+  else
+    page.mapped_title = (page.title || '').trim()
+%>
+<!DOCTYPE html>
+<html lang="zh-CN">
 
   <head>
-    <title><%- page.title ? page.title + ' — ' : '' %><%- config.title %></title>
+    <title><%- page.mapped_title ? page.mapped_title + ' — ' : '' %><%- config.title %></title>
     <meta charset="utf-8">
     <meta name="description" content="<%- config.description %>">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <meta property="og:type" content="article">
-    <meta property="og:title" content="<%- page.title ? page.title + ' — ' : '' %><%- config.title %>">
+    <meta property="og:title" content="<%- page.mapped_title ? page.mapped_title : config.title %>">
     <meta property="og:description" content="<%- config.description %>">
     <meta property="og:image" content="<%- config.url %><%- url_for('/images/logo.png') %>">
 

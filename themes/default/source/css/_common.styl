@@ -29,7 +29,10 @@ h1, h2, h3, h4, strong
   color: $dark
 
 hr
-  border-top: 1px solid $border
+  border-color: $border
+  color: rgba(0,0,0,0)
+  border-width: 1px 0
+  border-top: solid 
 
 code, pre
   font-family: $code-font
@@ -77,12 +80,30 @@ a.button
     border-color: #f6f6f6
 
 .highlight
-  overflow-x: auto
   background-color: $codebg
-  padding: .4em 0 0
+  padding: 0 .6em
   line-height: 1.1em
   border-radius: $radius
   position: relative
+  figcaption 
+    font-size: smaller
+    line-break:
+    position: absolute
+    left: 8px
+    right: 48px
+    top: 4px
+    font-weight: 350
+    span
+      position: absolute 
+      color: $light
+    a
+      color: lighten($green, 25%)
+      font-style: italic
+      right: 0
+      position: absolute 
+  table
+    overflow-x: auto
+    display: block
   table, tr, td
     width: 100%
     border-collapse: collapse
@@ -90,34 +111,52 @@ a.button
     margin: 0
   .gutter
     width: 1.5em
-  .code
-    $code-line-height = 1.5em
-    pre
-      padding: 1.2em 1.4em
-      line-height: $code-line-height
-      margin: 0
+  pre
+    padding: 1.2em 1em
+    margin: 1em 0 0 0 
     .line
       min-height: $code-line-height
-  &.html, &.js, &.bash, &.css
-    .code:before
-      position: absolute
-      top: 0
-      right: 0
-      color: #ccc
-      text-align: right
-      font-size: .75em
-      padding: 5px 10px 0
-      line-height: 15px
-      height: 15px
-      font-weight: 600
-  &.html .code:before
+  .code
+    $code-line-height = 1.5em
+  td.code:before
+    position: absolute
+    top: 0
+    right: 0
+    color: #ccc
+    text-align: right
+    font-size: .75em
+    padding: 5px 10px 0
+    line-height: 15px
+    height: 15px
+    font-weight: 600
+  &.html td.code:before
     content: "HTML"
-  &.js .code:before
+  &.js td.code:before
     content: "JS"
-  &.bash .code:before
+  &.bash td.code:before
     content: "Shell"
-  &.css .code:before
+  &.css td.code:before
     content: "CSS"
+  &.md td.code:before, &.markdown td.code:before
+    content: "MD"
+  &.plain td.code:before
+    content: "Plain"
+  &.csharp td.code:before
+    content: "C#"
+  &.c td.code:before
+    content: "C"
+  &.cpp td.code:before
+    content: "C++"
+  &.matlab td.code:before
+    content: "MatLab"
+  &.vb td.code:before
+    content: "VB"
+  &.yaml td.code:before
+    content: "Yaml"
+  &.python td.code:before
+    content: "Python"
+  &.tex td.code:before
+    content: "TeX"
 
 #main
   position: relative
@@ -196,19 +235,66 @@ sup.beta.beta
   text-transform: uppercase
   opacity: .6
 
+$defcolor = #AB82FF
+dl
+  margin: 2em 0
+  padding: 8px 12px 8px 20px
+  background: $codebg
+  border-left: 4px solid $defcolor
+  position: relative
+  code
+    background-color: #efefef
+  em
+    color: $medium
+  dt
+    font-size: larger
+    font-weight: 700
+  dd
+    margin-left: 12px
+    margin-top: 8px
+  p
+    margin-left: 0
+    margin-bottom: 0
+    padding-bottom: 0
+  &:before
+    content: "🔍︎"
+    background-color: $defcolor
+    border-bottom-right-radius: $radius
+    border-top-right-radius: $radius
+    position: absolute
+    top: 14px
+    left: -12px
+    color: #fff
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    text-align: center
+    line-height: 20px
+    font-weight: bold
+    font-family: $logo-font
+    font-size: 14px
+
+abbr
+  text-decoration: solid
+  &:after
+    content: "[?]"
+    vertical-align: super
+    font-size: xx-small
+
 @media print
   body
     color: rgb(0,0,0)
   .highlight
-    padding: 0
+    padding: 0 0.4em
+    color: rgb(0,0,0)
+    border-style: solid
+    border-width: 2px 2px 2px 2px
+    border-color: #e8e8e8
     page-break-inside: avoid
     .code
       pre
         color: rgb(0,0,0)
         background-color: rgb(255,255,255)
-        border-style: solid
-        border-width: 2px 2px 2px 2px
-        border-color: #e8e8e8
         page-break-inside: avoid
   h1,h2,h3,h4,h5
     color: rgb(0,0,0)
@@ -219,4 +305,14 @@ sup.beta.beta
   h2+p
     page-break-before: avoid
   a:link:after, a:visited:after { content:" [" attr(href) "] "; }
+  a.markdownIt-Anchor:link:after, a.markdownIt-Anchor:visited:after { content:""; }
+  dl
+    page-break-inside: avoid
+    background-color: rgb(255,255,255)
+    border: 2px solid #e8e8e8
+    border-left: 4px solid $defcolor
+    &:before
+      display: none
+    dt, dd
+      page-break-inside: avoid
   

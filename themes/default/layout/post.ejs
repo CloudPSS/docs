@@ -1,16 +1,14 @@
+﻿<!-- BEGIN post -->
 <div class="sidebar blog">
   <div class="sidebar-inner">
     <div class="list">
       <h2>
-        Recent Posts
-        <a href="<%- url_for("/atom.xml") %>" target="_blank" style="vertical-align: middle; margin-left: 5px;">
-          <img src="<%- url_for("/images/feed.png") %>" style="width: 15px; height: 15px;">
-        </a>
+        所有文章
       </h2>
       <ul style="padding: 0;">
-      <% site.posts.sort('date', -1).limit(10).each(function (post) { %>
+      <% site.posts.sort('date', -1).each(function (post) { %>
         <li>
-          <a href="/<%- post.path %>" class="sidebar-link<%- page.title === post.title ? ' current' : '' %>"><%- post.title %></a>
+          <a href="/<%- post.path %>" class="sidebar-link <%- is_current(post.path) ? 'current' : '' %>"><%- post.title %></a>
         </li>
       <% }) %>
       </ul>
@@ -19,6 +17,15 @@
 </div>
 <div class="content with-sidebar blog post">
   <h1><%- page.title %></h1>
-  <h4><%- page.date.format('MMM D[,] YYYY') %></h4>
+
+  <% if(page.path.endsWith('index.html')) { %>
+    <script>
+      window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>';
+    </script>
+  <% } %>
+
   <%- page.content %>
+
+  <%- partial('partials/footer', {min: true}) %>
 </div>
+<!-- END post -->
