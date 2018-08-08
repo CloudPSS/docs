@@ -1,0 +1,12 @@
+<div class="sidebar">
+  <div class="sidebar-inner">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+    <div class="list">
+      <% if (typeof config.sitemap[page.type] === 'string') { %>
+        <h2><%- config.sitemap[page.type] %></h2>
+      <% } %>
+    </div>
+  </div>
+</div>
