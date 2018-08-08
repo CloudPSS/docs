@@ -1,0 +1,191 @@
+
+@import "_settings"
+
+#header
+  box-shadow: 0 0 10px rgba(0,0,0,.25)
+  transition: background-color .3s ease-in-out
+  background-color: #fff
+  height: $header-inner-height
+  padding: $heading-padding-vertical 60px
+  position: relative
+  z-index: 100
+
+body.docs
+  #header
+    position: fixed
+    width: 100%
+    top: 0
+  #nav
+    position: fixed
+
+#nav
+  list-style-type: none
+  margin: 0
+  padding: 0
+  position: absolute
+  right: 30px
+  top: $heading-padding-vertical
+  height: $header-inner-height
+  line-height: $header-inner-height
+  .break
+    display: none
+  li
+    display: inline-block
+    position: relative
+    margin: 0 .6em
+
+  .nav-dropdown
+    .nav-link
+      &:hover, &.current
+        border-bottom: none
+      &.current
+        &::after
+          content: ""
+          width: 0
+          height: 0
+          border-left: 5px solid $green
+          border-top: 3px solid transparent
+          border-bottom: 3px solid transparent
+          position: absolute
+          top: 50%
+          margin-top: -4px
+          left: 8px
+#nav-toc
+  padding: 0
+
+.nav-link
+  padding-bottom: 3px
+  white-space: nowrap
+  &:hover, &.current
+    border-bottom: 3px solid $green
+  &.team, &.contribute
+    margin-left: 10px
+
+.new-label
+  position: absolute
+  top: 3px
+  left: 110%
+  background-color: $green
+  color: #fff
+  line-height: 16px
+  height: 16px
+  font-size: 9px
+  font-weight: bold
+  font-family: $code-font
+  padding: 1px 4px 0 6px
+  border-radius: 4px
+
+.search-query
+  height: 30px
+  line-height: 30px
+  box-sizing: border-box
+  padding: 0 15px 0 30px
+  border: 1px solid #e3e3e3
+  color: $dark
+  outline: none
+  border-radius: 15px
+  margin-right: 10px
+  transition: border-color .2s ease
+  background: #fff url(../images/search.png) 8px 5px no-repeat
+  background-size: 20px
+  &:focus
+    border-color: $green
+
+#logo
+  display: inline-block
+  font-size: 1.5em
+  height: $header-inner-height
+  color: $dark
+  font-family: $logo-font
+  font-weight: 500
+  span 
+    vertical-align: middle
+  img
+    vertical-align: top
+    margin-right: 6px
+    width: $header-inner-height
+    height: $header-inner-height
+
+
+.mobile-header-button
+  display: none
+  position: absolute
+  width: $mobile-header-inner-height
+  height: $mobile-header-inner-height
+  top: $mobile-heading-padding-vertical
+  z-index: 1000
+#mobile-menu-button
+  left: 12px
+  background: url(../images/menu.png) center center no-repeat
+  background-size: 24px
+#mobile-toc-button
+  right: 12px
+  background: url(../images/toc.png) center center no-repeat
+  background-size: 24px
+
+@media print
+  #header
+    display: none
+    
+@media screen and (min-width: 1590px)
+  #header
+    background-color: rgba(255,255,255,.75)
+
+@media screen and (max-width: 1300px)
+  .content.with-sidebar
+    margin-left: 290px
+  #header
+    padding: $heading-padding-vertical 12px
+  #nav
+    right: 0
+
+@media screen and (max-width: 1000px)
+  #logo span 
+    display: none
+
+@media screen and (max-width: 900px)
+  #nav
+    left: 48px
+    right: 8px
+    top: $mobile-heading-padding-vertical
+    height: $mobile-header-inner-height
+    line-height: $mobile-header-inner-height
+  #header
+    height: $mobile-header-inner-height
+    padding: $mobile-heading-padding-vertical 0px
+  .search-query
+    height: 20px
+    line-height: 20px
+    padding: 0 10px 0 24px
+    border-radius: 15px
+    margin-right: 10px
+    background: #fff url(../images/search.png) 4px 0px no-repeat
+    background-size: 20px
+    position: fixed
+    right: 48px
+    top: 10px
+  #logo
+    height: $mobile-header-inner-height
+    margin-left: 48px
+    img
+      margin-right: 4px
+      width: $mobile-header-inner-height
+      height: $mobile-header-inner-height
+  .mobile-header-button
+    display: block
+  .nav-link
+    padding-bottom: 1px
+    &:hover, &.current
+      border-bottom: 2px solid $green
+  #nav-toc
+    display: inline-block
+    width: min-content
+    padding: 10px
+    background: rgba(255,255,255,0.75)
+    position: fixed
+    top: $mobile-header-height + 4px
+    right: -100%
+    transition: right .3s ease-in-out
+    &.open
+      right: 8px
+      box-shadow: 0 0 10px rgba(0,0,0,.25)

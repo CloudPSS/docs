@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: CloudPss doc
+title: CloudPss
 subtitle:
 description:
 keywords:
@@ -83,7 +83,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: vue
+theme: default
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
