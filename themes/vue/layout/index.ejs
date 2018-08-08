@@ -1,0 +1,41 @@
+<div class="sidebar">
+  <div class="sidebar-inner-index">
+    <ul class="main-menu">
+      <%- partial('partials/main_menu', { context: 'sidebar' }) %>
+    </ul>
+  </div>
+</div>
+
+<%- page.content %>
+
+<div id="footer">
+  <p>
+    <a class="social-icon" href="https://github.com/vuejs/vue" target="_blank">
+      <%- partial('icons/github') %>
+    </a>
+    <a class="social-icon" href="https://twitter.com/vuejs" target="_blank">
+      <%- partial('icons/twitter') %>
+    </a>
+    <a class="social-icon" href="https://medium.com/the-vue-point" target="_blank">
+      <%- partial('icons/medium') %>
+    </a>
+  </p>
+  <p>遵循 <a href="https://opensource.org/licenses/MIT" target="_blank">MIT 开源协议</a><br>
+  Copyright &copy; 2014-<%- new Date().getFullYear() %> Evan You</p>
+</div>
+
+<script>
+(function () {
+  var topScrolled = false
+
+  window.addEventListener('scroll', function () {
+    if (window.pageYOffset > 165 && !topScrolled) {
+      topScrolled = true
+      document.getElementById('mobile-bar').classList.remove('top')
+    } else if (window.pageYOffset <= 165 && topScrolled) {
+      topScrolled = false
+      document.getElementById('mobile-bar').classList.add('top')
+    }
+  })
+})()
+</script>

@@ -1,0 +1,10 @@
+<li>
+  <form id="search-form">
+    <input type="text" id="search-query-<%- context %>" class="search-query st-default-search-input">
+  </form>
+</li>
+<%_ for (const key in config.sitemap) {_%>
+<li>
+  <a href="<%- url_for(key + '/index.html') %>" class="nav-link <%- page.path.match(key+'/') ? 'current' : '' %>"><%- config.sitemap[key] %></a>
+</li>
+<%_}_%>
