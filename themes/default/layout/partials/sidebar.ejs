@@ -1,10 +1,22 @@
-<div class="sidebar">
-  <div class="sidebar-inner">
-    <div class="list">
-      <% if (typeof config.sitemap[page.type] === 'string') { %>
-        <h2><%- config.sitemap[page.type] %></h2>
-      <% } %>
-      <%- partial('partials/toc', { type: type }) %>
+<!-- BEGIN sidebar -->
+<% const hasSidebar = !!page.type %>
+
+<% if (hasSidebar) { %>
+  <div class="sidebar">
+    <div class="sidebar-inner">
+      <div class="list">
+        <% if (typeof config.sitemap[page.type] === 'string') { %>
+          <h2>
+            <a class="sidebar-link <%- page.path.endsWith('index.html') ? 'current' : '' %>" href="<%- url_for(page.type +'/')%>">
+              <%= config.sitemap[page.type] %>
+            </a>
+          </h2>
+        <% } %>
+        <%- partial('partials/toc', { type: page.type }) %>
+      </div>
     </div>
   </div>
-</div>
+<% } else { %>
+  <div class="sidebar" style="display: none" ></div>
+<% } %>
+<!-- END sidebar -->
