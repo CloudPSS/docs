@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: CloudPss
+title: CloudPSS
 subtitle:
 description:
 keywords:
-author: Opportunity
+author: CloudPSS
 language: zh-Hans
 timezone: Asia/Shanghai
 
@@ -23,9 +23,9 @@ sitemap:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://doc.cloudpss.net
 root: /
-permalink: :lang/:title.html
+permalink: :title.html
 permalink_defaults:
 
 # Directory

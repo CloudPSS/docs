@@ -1,6 +1,7 @@
 <% if (page.type) { %>
   <%- partial('partials/sidebar', { type: page.type, index: page.index }) %>
 <% } %>
+
 <div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
   <% if (page.title.trim()) { %>
     <h1><%= page.title %></h1>
@@ -8,7 +9,5 @@
   
   <%- page.content %>
 
-  <div id="footer">
-    Copyright &copy; 2014-<%- new Date().getFullYear() %> CloudPss</p>
-  </div>
+  <%- partial('partials/footer', {min: !!page.type}) %>
 </div>
