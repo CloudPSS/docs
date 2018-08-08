@@ -12,7 +12,7 @@
     <meta property="og:type" content="article">
     <meta property="og:title" content="<%- page.title ? page.title + ' — ' : '' %><%- config.title %>">
     <meta property="og:description" content="<%- config.description %>">
-    <meta property="og:image" content="https://<%- config.url %>/<%- url_for('/images/logo.png') %>">
+    <meta property="og:image" content="<%- config.url %><%- url_for('/images/logo.png') %>">
 
     <link rel="icon" type="image/png" sizes="96x96" href="<%- url_for('/images/icons/favicon-96x96.png') %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for('/images/icons/favicon-32x32.png') %>">
