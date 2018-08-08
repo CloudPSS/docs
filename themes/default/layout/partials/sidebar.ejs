@@ -1,0 +1,10 @@
+<div class="sidebar">
+  <div class="sidebar-inner">
+    <div class="list">
+      <% if (typeof config.sitemap[page.type] === 'string') { %>
+        <h2><%- config.sitemap[page.type] %></h2>
+      <% } %>
+      <%- partial('partials/toc', { type: type }) %>
+    </div>
+  </div>
+</div>
