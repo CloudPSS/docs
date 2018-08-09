@@ -5,10 +5,10 @@
   <div class="sidebar">
     <div class="sidebar-inner">
       <div class="list">
-        <% if (typeof config.sitemap[page.type] === 'string') { %>
+        <% if (typeof site.data.sitemap[page.type] === 'string') { %>
           <h2>
             <a class="sidebar-link <%- page.path.endsWith('index.html') ? 'current' : '' %>" href="<%- url_for(page.type +'/')%>">
-              <%= config.sitemap[page.type] %>
+              <%= site.data.sitemap[page.type] %>
             </a>
           </h2>
         <% } %>

@@ -1,70 +1,53 @@
-﻿<% var isIndex = page.path === 'index.html' %>
-<%
+﻿<%
   page.mapped_title = '';
   if(page.type && !page.title && page.path.endsWith('index.html'))
-    page.mapped_title = config.sitemap[page.type];
+    page.mapped_title = site.data.sitemap[page.type];
   else
     page.mapped_title = (page.title || '').trim()
 %>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="<%- config.language %>">
 
   <head>
-    <title><%- page.mapped_title ? page.mapped_title + ' — ' : '' %><%- config.title %></title>
     <meta charset="utf-8">
     <meta name="description" content="<%- config.description %>">
+    <meta name="theme-color" content="#4285F4">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="<%- page.mapped_title ? page.mapped_title : config.title %>">
-    <meta property="og:description" content="<%- config.description %>">
-    <meta property="og:image" content="<%- config.url %><%- url_for('/images/logo.png') %>">
 
     <link rel="icon" type="image/png" sizes="96x96" href="<%- url_for('/images/icons/favicon-96x96.png') %>">
     <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for('/images/icons/favicon-32x32.png') %>">
     <link rel="icon" type="image/png" sizes="16x16" href="<%- url_for('/images/icons/favicon-16x16.png') %>">
     <link rel="icon" href="<%- url_for('/images/logo.png') %>" type="image/png">
+    
+    <%- open_graph({
+      title: page.mapped_title || config.title,
+      type: 'article'
+    }) %>
 
-    <meta name="theme-color" content="#4fc08d">
-
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <title><%- page.mapped_title ? page.mapped_title + ' - ' : '' %><%- config.title %></title>
 
     <!-- main page styles -->
-    <%- css(isIndex ? 'css/index' : 'css/page') %>
-    <link href="https://cdn.bootcss.com/KaTeX/0.9.0/katex.min.css" rel="stylesheet">
+    <%- css('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %>
+    <%- css('//cdn.bootcss.com/KaTeX/0.9.0/katex.min.css') %>
+    <%- css('css/page') %>
   
-    <script>
-        window.PAGE_TYPE = "<%- page.type %>"
-    </script>
+    <script>window.PAGE_TYPE = '<%- page.type %>'</script>
   </head>
 
-  <body class="<%- isIndex ? '' : 'docs' -%>">
+  <body class="docs">
     <%- partial('partials/header') %>
-    <% if (!isIndex) { %>
     <div id="main" class="fix-sidebar">
-      <% if (page.blog_index) { %>
-        <%- partial('partials/blog') %>
-      <% } else { %>
-        <%- body %>
-      <% } %>
-    </div>
-    <script src="<%- url_for('/js/smooth-scroll.min.js') %>"></script>
-    <% } else { %>
       <%- body %>
-    <% } %>
-
+    </div>
+  
     <!-- main custom script for sidebars, version selects etc. -->
-    <script src="<%- url_for('/js/css.escape.js') %>"></script>
-    <script src="<%- url_for('/js/common.js') %>"></script>
+    <%- js('/js/smooth-scroll.min.js') %>
+    <%- js('/js/css.escape.js') %>
+    <%- js('/js/common.js') %>
 
     <!-- fastclick -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function ()
-      {
-        FastClick.attach(document.body)
-      }, false)
-    </script>
+    <%- js('//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js') %>
+    <script>document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false)</script>
   </body>
 
 </html>

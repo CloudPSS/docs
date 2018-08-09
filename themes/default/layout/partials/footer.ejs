@@ -2,7 +2,8 @@
 <%
   var email = config.contact;
   if(page.author_email)
-    email = page.author_email
+    email = page.author_email;
+  var fullcopy = 'Copyright © 2015-' + new Date().getFullYear()+' by ' + config.title;
 %>
 
 <div class="footer <%- min ? 'min' : ''%>">
@@ -11,20 +12,21 @@
     <p>
       <% if(page.author) { %> 
         <a href="mailto:<%= email %>" title="联系作者">
-          <img class="gravatar" src="<%- gravatar(email) %>" />
+          <img class="gravatar" src="<%- gravatar(email,{d:'identicon'}) %>" />
           <span><%= page.author %></span>
         </a>
       <% } %> 
-      创建于 <time datetime="<%- page.date.format() %>" pubdate="pubdate"><%- date(page.date) %></time>
+      创建于 <time datetime="<%- date_xml(page.date) %>" title="<%- full_date(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time>
       <% if(date(page.date) !== date(page.updated)) { %> 
-        最后更新于 <time datetime="<%- page.updated.format() %>"><%- date(page.updated) %></time>
+        最后更新于 <time datetime="<%- date_xml(page.updated) %>" title="<%- full_date(page.updated) %>"><%- date(page.updated) %></time>
       <% } %>
     </p>
-    <p>© <%- new Date().getFullYear() %> CloudPSS</p>
+    <p title='<%= fullcopy %>
+<%= config.ICP %>'>© <%- new Date().getFullYear() %> <%- config.title %></p>
   <% } else { %>
-    <p>Copyright © 2015-<%- new Date().getFullYear() %> by CloudPSS</p>
+    <p><%= fullcopy %></p>
     <p>
-      <%- link_to('http://www.miitbeian.gov.cn', '京ICP备16015429号-1', {external: true}) %>
+      <%- link_to('http://www.miitbeian.gov.cn', config.ICP, {external: true}) %>
     </p>
     <p>
       <%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %>
