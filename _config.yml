@@ -11,16 +11,7 @@ author: CloudPSS
 language: zh-Hans
 timezone: Asia/Shanghai
 contact: admin@cloudpss.net
-
-#Sitemap
-sitemap:
-  guide: 使用指南
-  intro: 快速入门
-  simulation: 仿真操作
-  components: 元件说明
-  examples: 示例仿真库
-  features: 功能说明
-  about: 关于
+ICP: 京ICP备16015429号-1
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

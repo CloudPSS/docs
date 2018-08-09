@@ -1,4 +1,4 @@
-@import "_common"
+﻿@import "_common"
 @import "_animations"
 @import "_header"
 @import "_footer"
@@ -64,7 +64,7 @@
     position: relative
     > a:before
       content: "#"
-      color: $green
+      color: $theme
       position: absolute
       left: -0.7em
       margin-top: -0.05em
@@ -88,49 +88,10 @@
     // FIX: Some link click targets are covered without this
     position: inherit
   a
-    color: $green
+    color: $theme
     font-weight: 600
   hr.footnotes-sep
     margin: 48px -12px 0 -12px
-  blockquote
-    margin: 1em 0
-    padding: 2px 12px 8px 20px
-    background-color: $codebg
-    border-left: 4px solid $green
-    position: relative
-    code
-      background-color: #efefef
-    em
-      color: $medium
-    p
-      margin: 1em 0 0 0
-      padding-bottom: 0
-    &.tip
-      border-left-color: $red
-      &:before
-        content: "!"
-        background-color: $red
-    &.success
-      border-left-color: rgb(19,168,35)
-      &:before
-        content: "✓"
-        background-color: rgb(19,168,35)
-    &.pullquote
-      border-bottom-right-radius: $radius
-      border-top-right-radius: $radius
-      &:before
-        position: absolute
-        top: 14px
-        left: -12px
-        color: #fff
-        width: 20px
-        height: 20px
-        border-radius: 100%
-        text-align: center
-        line-height: 20px
-        font-weight: bold
-        font-family: $logo-font
-        font-size: 14px
     
   iframe
     margin: 1em 0

@@ -1,0 +1,120 @@
+﻿@import "_fonts"
+@import "_settings"
+@import "_syntax"
+
+code, pre
+  font-family: $code-font
+  font-size: $code-font-size
+  background-color: $codebg
+  -webkit-font-smoothing: initial
+  -moz-osx-font-smoothing: initial
+
+code
+  color: #e96900
+  padding: 3px 5px
+  margin: 0 2px
+  border-radius: 2px
+  white-space: nowrap
+
+figure.highlight
+  background-color: $codebg
+  padding: 0 .6em
+  line-height: 1.1em
+  border-radius: $radius
+  position: relative
+  figcaption 
+    no-user-select()
+    font-size: smaller
+    position: absolute
+    left: 8px
+    right: 48px
+    top: 4px
+    span
+      font-weight: 350
+      position: absolute 
+      color: $light
+    a
+      font-weight: 500
+      color: lighten($theme, 25%)
+      font-style: italic
+      right: 0
+      position: absolute 
+  table
+    overflow-x: auto
+    display: block
+  table, tr, td
+    width: 100%
+    border-collapse: collapse
+    padding: 0
+    margin: 0
+  .gutter
+    width: 1.5em
+    no-user-select()
+  pre
+    padding: 1.2em 1em
+    margin: 1em 0 0 0 
+    .line
+      min-height: 1.5em
+  &:after
+    no-user-select()
+    position: absolute
+    top: 0
+    right: 0
+    color: #ccc
+    text-align: right
+    font-size: .75em
+    padding: 5px 10px 0
+    line-height: 15px
+    height: 15px
+    font-weight: 600
+    content: "code"
+  &.html:after
+    content: "HTML"
+  &.js:after
+    content: "JS"
+  &.bash:after
+    content: "Shell"
+  &.css:after
+    content: "CSS"
+  &.md:after , &.markdown:after
+    content: "MD"
+  &.plain:after 
+    content: "Plain"
+  &.csharp:after
+    content: "C#"
+  &.c:after
+    content: "C"
+  &.cpp:after
+    content: "C++"
+  &.matlab:after
+    content: "MatLab"
+  &.vb:after
+    content: "VB"
+  &.yaml:after
+    content: "Yaml"
+  &.json:after
+    content: "JSON"
+  &.python:after
+    content: "Python"
+  &.tex:after
+    content: "TeX"
+
+@media print
+  figure.highlight
+    padding: 0 0.4em
+    color: rgb(0,0,0)
+    border-style: solid
+    border-width: 2px 2px 2px 2px
+    border-color: #e8e8e8
+    page-break-inside: avoid
+    .gutter
+      display: none
+    .code
+      pre
+        color: rgb(0,0,0)
+        background-color: rgb(255,255,255)
+        white-space: pre-wrap
+        page-break-inside: avoid
+        span.line:before
+          content: "  "
+  

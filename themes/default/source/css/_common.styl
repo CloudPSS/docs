@@ -1,6 +1,6 @@
-@import "_fonts"
+﻿@import "_fonts"
 @import "_settings"
-@import "_syntax"
+@import "_codeblock"
 
 body
   font-family: $body-font
@@ -34,20 +34,6 @@ hr
   border-width: 1px 0
   border-top: solid 
 
-code, pre
-  font-family: $code-font
-  font-size: $code-font-size
-  background-color: $codebg
-  -webkit-font-smoothing: initial
-  -moz-osx-font-smoothing: initial
-
-code
-  color: #e96900
-  padding: 3px 5px
-  margin: 0 2px
-  border-radius: 2px
-  white-space: nowrap
-
 em
   color: $light
 
@@ -59,10 +45,10 @@ a.button
   border-radius: 2em
   display: inline-block
   color: #fff
-  background-color: lighten($green, 8%)
+  background-color: lighten($theme, 8%)
   transition: all .15s ease
   box-sizing: border-box
-  border: 1px solid lighten($green, 8%)
+  border: 1px solid lighten($theme, 8%)
   &.has-icon
     position: relative
     text-indent: 1.4em;
@@ -73,90 +59,11 @@ a.button
       width: 2em
   &.white
     background-color: #fff
-    color: $green
+    color: $theme
   &.gray
     background-color: #f6f6f6
     color: $light
     border-color: #f6f6f6
-
-.highlight
-  background-color: $codebg
-  padding: 0 .6em
-  line-height: 1.1em
-  border-radius: $radius
-  position: relative
-  figcaption 
-    font-size: smaller
-    line-break:
-    position: absolute
-    left: 8px
-    right: 48px
-    top: 4px
-    font-weight: 350
-    span
-      position: absolute 
-      color: $light
-    a
-      color: lighten($green, 25%)
-      font-style: italic
-      right: 0
-      position: absolute 
-  table
-    overflow-x: auto
-    display: block
-  table, tr, td
-    width: 100%
-    border-collapse: collapse
-    padding: 0
-    margin: 0
-  .gutter
-    width: 1.5em
-  pre
-    padding: 1.2em 1em
-    margin: 1em 0 0 0 
-    .line
-      min-height: $code-line-height
-  .code
-    $code-line-height = 1.5em
-  td.code:before
-    position: absolute
-    top: 0
-    right: 0
-    color: #ccc
-    text-align: right
-    font-size: .75em
-    padding: 5px 10px 0
-    line-height: 15px
-    height: 15px
-    font-weight: 600
-  &.html td.code:before
-    content: "HTML"
-  &.js td.code:before
-    content: "JS"
-  &.bash td.code:before
-    content: "Shell"
-  &.css td.code:before
-    content: "CSS"
-  &.md td.code:before, &.markdown td.code:before
-    content: "MD"
-  &.plain td.code:before
-    content: "Plain"
-  &.csharp td.code:before
-    content: "C#"
-  &.c td.code:before
-    content: "C"
-  &.cpp td.code:before
-    content: "C++"
-  &.matlab td.code:before
-    content: "MatLab"
-  &.vb td.code:before
-    content: "VB"
-  &.yaml td.code:before
-    content: "Yaml"
-  &.python td.code:before
-    content: "Python"
-  &.tex td.code:before
-    content: "TeX"
 
 #main
   position: relative
@@ -216,7 +123,7 @@ a.button
       font-size: .9em
       display: block
       &:hover
-        color: $green
+        color: $theme
   .arrow
     display: inline-block
     vertical-align: middle
@@ -235,30 +142,20 @@ sup.beta.beta
   text-transform: uppercase
   opacity: .6
 
-$defcolor = #AB82FF
-dl
-  margin: 2em 0
-  padding: 8px 12px 8px 20px
-  background: $codebg
-  border-left: 4px solid $defcolor
+dl, blockquote
+  background-color: $quotebg
+  border: 0.1px solid $quotebd
+  border-left: 4px solid $theme
   position: relative
   code
     background-color: #efefef
   em
     color: $medium
-  dt
-    font-size: larger
-    font-weight: 700
-  dd
-    margin-left: 12px
-    margin-top: 8px
   p
-    margin-left: 0
-    margin-bottom: 0
+    margin: 1em 0 0 0
     padding-bottom: 0
   &:before
-    content: "🔍︎"
-    background-color: $defcolor
+    no-user-select()
     border-bottom-right-radius: $radius
     border-top-right-radius: $radius
     position: absolute
@@ -274,6 +171,36 @@ dl
     font-family: $logo-font
     font-size: 14px
 
+$defcolor = #AB82FF
+dl
+  margin: 2em 0
+  padding: 8px 12px 8px 20px
+  border-left-color: $defcolor
+  dt
+    font-size: larger
+    font-weight: 700
+  dd
+    margin-left: 12px
+    margin-top: 8px
+  &:before
+    content: "🔍︎"
+    background-color: $defcolor
+
+blockquote
+  margin: 1em 0
+  padding: 2px 12px 8px 20px
+  border-left-color: $theme
+  &.tip
+    border-left-color: $red
+    &:before
+      content: "!"
+      background-color: $red
+  &.success
+    border-left-color: rgb(19,168,35)
+    &:before
+      content: "✓"
+      background-color: rgb(19,168,35)
+
 abbr
   text-decoration: solid
   &:after
@@ -284,18 +211,10 @@ abbr
 @media print
   body
     color: rgb(0,0,0)
-  .highlight
-    padding: 0 0.4em
-    color: rgb(0,0,0)
-    border-style: solid
-    border-width: 2px 2px 2px 2px
-    border-color: #e8e8e8
-    page-break-inside: avoid
-    .code
-      pre
-        color: rgb(0,0,0)
-        background-color: rgb(255,255,255)
-        page-break-inside: avoid
+  mark
+    text-decoration-line: underline !important
+    text-decoration-color: yellow !important
+    text-decoration-style: wavy
   h1,h2,h3,h4,h5
     color: rgb(0,0,0)
     page-break-after: avoid

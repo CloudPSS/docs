@@ -1,7 +1,12 @@
 // font faces
 $body-font = "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
 $logo-font = "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif
-$code-font = "Roboto Mono", Monaco, courier, monospace
+$code-font = "Roboto Mono","Monaco", courier, monospace
+
+no-user-select()
+  -moz-user-select: none
+  -webkit-user-select: none
+  -ms-user-select: none
 
 // font sizes
 $body-font-size = 15px
@@ -11,9 +16,11 @@ $code-font-size = .8em
 $dark   = #2c3e50
 $medium = #34495e
 $light  = #7f8c8d
-$green  = #4285F4
+$theme  = #4285F4
 $border = #dddddd
 $codebg = #f8f8f8
+$quotebg = #fffdf4
+$quotebd = $border
 $red = #ff6666
 $info = #1C90F3
 

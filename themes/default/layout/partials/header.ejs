@@ -14,10 +14,10 @@
     </li>
     <li>
       <ul id="nav-toc">
-        <%_ for (const key in config.sitemap) {_%>
+        <%_ for (const key in site.data.sitemap) {_%>
           <li>
             <a href="<%- url_for(key + '/index.html') %>" class="nav-link <%- page.path.match(key+'/') ? 'current' : '' %>">
-              <%= config.sitemap[key] %>
+              <%= site.data.sitemap[key] %>
             </a>
           </li>
         <%_}_%>
