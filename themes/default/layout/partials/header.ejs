@@ -1,18 +1,18 @@
 <!-- BEGIN header -->
-<div id="header" class="<%- page.type ? '' : 'no-menu'%>">
+<header id="header" class="page-header <%- page.type ? '' : 'no-menu'%>">
   <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- page.type ? '' : 'display:none'%>"></a>
   <a class="toc-button mobile-header-button" id="mobile-toc-button" ></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>">
     <img src="<%- url_for("/images/logo.png") %>" alt="logo">
     <span><%= config.title %></span>
   </a>
-  <ul id="nav">
-    <li>
+  <nav id="nav">
+    <div>
       <form id="search-form" onsubmit="return false">
         <input type="text" id="search-query-nav" class="search-query st-default-search-input">
       </form>
-    </li>
-    <li>
+    </div>
+    <div>
       <ul id="nav-toc">
         <%_ for (const key in site.data.sitemap) {_%>
           <li>
@@ -22,7 +22,7 @@
           </li>
         <%_}_%>
       </ul>
-    </li>
-  </ul>
-</div>
+    </div>
+  </nav>
+</header>
 <!-- END header -->

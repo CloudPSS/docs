@@ -1,38 +1,35 @@
 
 @import "_settings"
 
-#header
+header.page-header
   box-shadow: 0 0 10px rgba(0,0,0,.25)
   transition: background-color .3s ease-in-out
   background-color: #fff
   height: $header-inner-height
   padding: $heading-padding-vertical 60px
-  position: relative
   z-index: 100
-
-body.docs
-  #header
-    position: fixed
-    width: 100%
-    top: 0
-  #nav
-    position: fixed
+  position: fixed
+  width: 100%
+  top: 0
 
 #nav
   list-style-type: none
   margin: 0
   padding: 0
-  position: absolute
+  position: fixed
   right: 30px
   top: $heading-padding-vertical
   height: $header-inner-height
-  line-height: $header-inner-height
+  line-height: 0
   .break
     display: none
-  li
+  div, li
     display: inline-block
     position: relative
     margin: 0 .6em
+  div
+    top: 50%
+    transform: translate(0, -50%)
 
   .nav-dropdown
     .nav-link
@@ -124,17 +121,17 @@ body.docs
   background-size: 24px
 
 @media print
-  #header
+  header.page-header
     display: none
     
 @media screen and (min-width: 1590px)
-  #header
+  header.page-header
     background-color: rgba(255,255,255,.75)
 
 @media screen and (max-width: 1300px)
   .content.with-sidebar
     margin-left: 290px
-  #header
+  header.page-header
     padding: $heading-padding-vertical 12px
   #nav
     right: 0
@@ -150,7 +147,10 @@ body.docs
     top: $mobile-heading-padding-vertical
     height: $mobile-header-inner-height
     line-height: $mobile-header-inner-height
-  #header
+    div
+      top: auto
+      transform: none
+  header.page-header
     height: $mobile-header-inner-height
     padding: $mobile-heading-padding-vertical 0px
   .search-query
@@ -182,7 +182,7 @@ body.docs
   #nav-toc
     display: inline-grid
     padding: 10px
-    background: rgba(255,255,255,0.75)
+    background: rgba(255,255,255,0.9)
     position: fixed
     top: $mobile-header-height + 4px
     right: -100%

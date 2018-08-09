@@ -1,6 +1,7 @@
 ﻿@import "_fonts"
 @import "_settings"
 @import "_codeblock"
+@import "_quoteblock"
 
 body
   font-family: $body-font
@@ -142,65 +143,6 @@ sup.beta.beta
   text-transform: uppercase
   opacity: .6
 
-dl, blockquote
-  background-color: $quotebg
-  border: 0.1px solid $quotebd
-  border-left: 4px solid $theme
-  position: relative
-  code
-    background-color: #efefef
-  em
-    color: $medium
-  p
-    margin: 1em 0 0 0
-    padding-bottom: 0
-  &:before
-    no-user-select()
-    border-bottom-right-radius: $radius
-    border-top-right-radius: $radius
-    position: absolute
-    top: 14px
-    left: -12px
-    color: #fff
-    width: 20px
-    height: 20px
-    border-radius: 100%
-    text-align: center
-    line-height: 20px
-    font-weight: bold
-    font-family: $logo-font
-    font-size: 14px
-
-$defcolor = #AB82FF
-dl
-  margin: 2em 0
-  padding: 8px 12px 8px 20px
-  border-left-color: $defcolor
-  dt
-    font-size: larger
-    font-weight: 700
-  dd
-    margin-left: 12px
-    margin-top: 8px
-  &:before
-    content: "🔍︎"
-    background-color: $defcolor
-
-blockquote
-  margin: 1em 0
-  padding: 2px 12px 8px 20px
-  border-left-color: $theme
-  &.tip
-    border-left-color: $red
-    &:before
-      content: "!"
-      background-color: $red
-  &.success
-    border-left-color: rgb(19,168,35)
-    &:before
-      content: "✓"
-      background-color: rgb(19,168,35)
-
 abbr
   text-decoration: solid
   &:after
@@ -208,9 +150,28 @@ abbr
     vertical-align: super
     font-size: xx-small
 
+.video-container
+  padding:0 0 56.25% 0
+  margin: 0 0 2em 0
+  width: 100%
+  height: 0
+  position: relative
+  iframe
+    width: 100%
+    height: 100%
+    position: absolute
+
 @media print
   body
     color: rgb(0,0,0)
+  .video-container
+    height: auto
+    page-break-inside: avoid
+    padding:0
+    &:after
+      content: "访问原网页以查看该视频！"
+    iframe
+      display: none
   mark
     text-decoration-line: underline !important
     text-decoration-color: yellow !important
@@ -223,15 +184,12 @@ abbr
     page-break-inside: avoid
   h2+p
     page-break-before: avoid
+  a.footnote-backref
+    display: none
   a:link:after, a:visited:after { content:" [" attr(href) "] "; }
-  a.markdownIt-Anchor:link:after, a.markdownIt-Anchor:visited:after { content:""; }
-  dl
-    page-break-inside: avoid
-    background-color: rgb(255,255,255)
-    border: 2px solid #e8e8e8
-    border-left: 4px solid $defcolor
-    &:before
-      display: none
-    dt, dd
-      page-break-inside: avoid
+  sup.footnote-ref > a, a.markdownIt-Anchor
+    &:link:after, &:visited:after
+       content:""
+  abbr:after
+      content: "[" attr(title) "]"
   

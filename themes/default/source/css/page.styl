@@ -42,12 +42,14 @@
     width: 280px
     margin-left: 20px
   h1
+    font-size: 2em
     margin: 0 0 1em
   h2, h3
     pointer-events: none
     a, button
       pointer-events: auto
       color: $dark
+  h2, h3, h4, h5, h6
     &:before
       content: ""
       display: block
@@ -58,20 +60,24 @@
     margin: $h2-margin-top 0 .8em
     padding-bottom: .7em
     border-bottom: 1px solid $border
+    & + h3
+      margin-top: 2em
   h3
     margin: $h3-margin-top 0 1.2em
     line-height: 1.2
     position: relative
-    > a:before
-      content: "#"
-      color: $theme
+  h2, h3
+    > a.markdownIt-Anchor
       position: absolute
-      left: -0.7em
-      margin-top: -0.05em
-      padding-right: 0.5em
-      font-size: 1.2em
-      line-height: 1
-      font-weight: bold
+      &:before
+        content: "#"
+        color: $theme
+        position: absolute
+        left: -0.7em
+        padding-right: 0.5em
+        font-size: 1.2em
+        line-height: 1
+        font-weight: bold
   figure
     margin: 1.2em 0
   p, ul, ol
@@ -117,7 +123,7 @@
 
 #main.fix-sidebar
   position: static
-  .sidebar
+  aside.sidebar
     position: fixed
 
 @media screen and (max-width: 1300px)
@@ -134,7 +140,7 @@
     padding-left: 0
     &.with-sidebar
       margin: auto
-    h2, h3
+    h2, h3, h4, h5, h6
       &:before
         content: ""
         display: block
@@ -154,11 +160,16 @@
 
 @media print
   .content
-    padding-left: 0px
-  blockquote
-    page-break-inside: avoid
-    background-color: rgb(255,255,255)
-    border: 2px solid #e8e8e8
-    border-left: 4px solid $red
-    &.pullquote:before
+    padding: 0px
+  h2, h3
+    > a.markdownIt-Anchor:before
       display: none
+  .gist
+    .gist-data
+      page-break-inside: avoid
+    .gist-meta 
+      a[style*='float']
+        display: none
+      a[href$='github.com'], a[href$='github.com/']
+        &:link:after, &:visited:after
+          content: ""

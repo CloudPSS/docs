@@ -2,21 +2,21 @@
 <% const hasSidebar = !!page.type %>
 
 <% if (hasSidebar) { %>
-  <div class="sidebar">
+  <aside class="sidebar">
     <div class="sidebar-inner">
-      <div class="list">
+      <nav class="list">
         <% if (typeof site.data.sitemap[page.type] === 'string') { %>
-          <h2>
+          <header><h2>
             <a class="sidebar-link <%- page.path.endsWith('index.html') ? 'current' : '' %>" href="<%- url_for(page.type +'/')%>">
               <%= site.data.sitemap[page.type] %>
             </a>
-          </h2>
+          </h2></header>
         <% } %>
         <%- partial('partials/toc', { type: page.type }) %>
-      </div>
+      </nav>
     </div>
-  </div>
+  </aside>
 <% } else { %>
-  <div class="sidebar" style="display: none" ></div>
+  <aside class="sidebar" style="display: none" ></aside>
 <% } %>
 <!-- END sidebar -->

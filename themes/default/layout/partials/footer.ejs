@@ -6,19 +6,20 @@
   var fullcopy = 'Copyright © 2015-' + new Date().getFullYear()+' by ' + config.title;
 %>
 
-<div class="footer <%- min ? 'min' : ''%>">
-  <hr>
+<footer class="page-footer <%- min ? 'min' : ''%>">
   <% if(min) { %>
     <p>
       <% if(page.author) { %> 
-        <a href="mailto:<%= email %>" title="联系作者">
+        <span class="section"><a href="mailto:<%= email %>" title="联系作者">
           <img class="gravatar" src="<%- gravatar(email,{d:'identicon'}) %>" />
           <span><%= page.author %></span>
-        </a>
+        </a></span>
+        <span class="section-sep"> </span>
       <% } %> 
-      创建于 <time datetime="<%- date_xml(page.date) %>" title="<%- full_date(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time>
+      <span class="section" title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
       <% if(date(page.date) !== date(page.updated)) { %> 
-        最后更新于 <time datetime="<%- date_xml(page.updated) %>" title="<%- full_date(page.updated) %>"><%- date(page.updated) %></time>
+        <span class="section-sep"> </span>
+        <span class="section" title="<%- full_date(page.updated) %>">最后更新于 <time datetime="<%- date_xml(page.updated) %>"><%- date(page.updated) %></time></span>
       <% } %>
     </p>
     <p title='<%= fullcopy %>
@@ -32,5 +33,5 @@
       <%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %>
     </p>
   <% } %>
-</div>
+</footer>
 <!-- END footer -->

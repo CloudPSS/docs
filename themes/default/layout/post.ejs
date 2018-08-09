@@ -2,7 +2,7 @@
 <% if(page.path.endsWith('index.html')) { %>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <% } else { %>
-  <div class="sidebar blog">
+  <aside class="sidebar blog">
     <div class="sidebar-inner">
       <div class="list">
         <h2>所有文章</h2>
@@ -15,13 +15,13 @@
         </ul>
       </div>
     </div>
-  </div>
-  <div class="content with-sidebar blog post">
-    <h1><%- page.title %></h1>
-    
+  </aside>
+  <article class="content with-sidebar blog post">
+    <section><h1><%= page.title %></h1></section>
+
     <%- page.content %>
 
     <%- partial('partials/footer', {min: true}) %>
-  </div>
+  </article>
 <% } %>
 <!-- END post -->
