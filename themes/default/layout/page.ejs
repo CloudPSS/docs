@@ -1,13 +1,21 @@
 <!-- BEGIN page -->
+<%
+  page.mapped_title = '';
+  if(page.type && !page.title && page.path.endsWith('index.html'))
+    page.mapped_title = site.data.sitemap[page.type];
+  else
+    page.mapped_title = (page.title || '').trim()
+%>
+
 <%- partial('partials/sidebar') %>
 
-<div class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
+<article class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
   <% if (page.mapped_title && page.type) { %>
-    <h1><%= page.mapped_title %></h1>
+    <section><h1><%= page.mapped_title %></h1></section>
   <% } %>
   
   <%- page.content %>
 
-  <%- partial('partials/footer', {min: !!page.type}) %>
-</div>
+  <%- partial('partials/footer', {min: !page.full_footer}) %>
+</article>
 <!-- END page -->

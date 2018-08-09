@@ -1,6 +1,6 @@
 @import "_settings"
 
-.sidebar
+aside.sidebar
   box-shadow: 0 0 10px rgba(0,0,0,.2)
   position: absolute
   z-index: 10
@@ -66,18 +66,18 @@
       margin: 0
 
 @media screen and (max-width: 900px)
-  .sidebar
+  aside.sidebar
     position: fixed
     z-index: 10
     background-color: #f9f9f9
-    height: 100%
     top: $mobile-header-height
     left: 0
+    bottom: 0
     transition: all .4s cubic-bezier(0.4, 0, 0, 1)
     -webkit-transform: translate(-280px, 0)
     transform: translate(-280px, 0)
     .sidebar-inner
-      padding: $content-padding-top + 10px 10px 10px 20px
+      padding: $content-padding-top + 10px 10px 40px 20px
       box-sizing: border-box
     .sidebar-inner-index
       padding: 10px 10px 10px 20px
@@ -88,5 +88,5 @@
       transform: translate(0, 0)
 
 @media print
-  .sidebar
+  aside.sidebar
     display: none

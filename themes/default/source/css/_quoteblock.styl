@@ -1,0 +1,90 @@
+﻿@import "_fonts"
+@import "_settings"
+
+dl, blockquote
+  border-left-width: 4px!important
+  background-color: $quotebg
+  border: 0.1px solid $quotebd
+  border-left: 4px solid $theme
+  position: relative
+  code
+    background-color: #efefef
+  em
+    color: $medium
+  p
+    margin: 1em 0 0 0
+    padding-bottom: 0
+  footer
+    text-align: right 
+    margin: 1.2em 0.2em 0 0
+    cite 
+      font-style: italic
+      &:before
+        content: " — "
+  &:before
+    no-user-select()
+    border-bottom-right-radius: $radius
+    border-top-right-radius: $radius
+    position: absolute
+    top: 14px
+    left: -12px
+    color: #fff
+    width: 20px
+    height: 20px
+    border-radius: 100%
+    text-align: center
+    line-height: 20px
+    font-weight: bold
+    font-family: $logo-font
+    font-size: 14px
+
+$defcolor = #AB82FF
+dl
+  margin: 2em 0
+  padding: 16px 12px 20px 20px
+  border-left-color: $defcolor !important
+  dt
+    font-size: larger
+    font-weight: 700
+  dd
+    margin-left: 12px
+    margin-top: 8px
+  &:before
+    content: "⁈"
+    background-color: $defcolor
+
+blockquote
+  margin: 1em 0
+  padding: 2px 12px 20px 20px
+  border-left-color: $theme !important
+  &.tip
+    border-left-color: #e5e237 !important
+    &:before
+      content: "!"
+      background-color: #e5e237
+  &.success
+    border-left-color: rgb(19,168,35) !important
+    &:before
+      content: "✓"
+      background-color: rgb(19,168,35)
+  &.fail
+    border-left-color: #d7193c !important
+    &:before
+      content: "✗"
+      background-color: #d7193c
+  &.question
+    border-left-color: #ed7745 !important
+    &:before
+      content: "?"
+      background-color: #ed7745
+
+@media print
+  dl, blockquote
+    page-break-inside: avoid
+    background-color: rgb(255,255,255)
+    border: 2px solid #e8e8e8
+    &:before
+      display: none
+    dt, dd
+      page-break-inside: avoid
+  
