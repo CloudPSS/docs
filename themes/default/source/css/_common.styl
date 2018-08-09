@@ -146,11 +146,13 @@ sup.beta.beta
 abbr
   text-decoration: solid
   &:after
+    no-user-select()
     content: "[?]"
     vertical-align: super
     font-size: xx-small
 
 .video-container
+  no-user-select()
   padding:0 0 56.25% 0
   margin: 0 0 2em 0
   width: 100%
@@ -160,6 +162,9 @@ abbr
     width: 100%
     height: 100%
     position: absolute
+    
+a.footnote-backref
+  no-user-select()
 
 @media print
   body

@@ -65,10 +65,9 @@
   h3
     margin: $h3-margin-top 0 1.2em
     line-height: 1.2
-    position: relative
   h2, h3
+    position: relative
     > a.markdownIt-Anchor
-      position: absolute
       &:before
         content: "#"
         color: $theme
@@ -126,6 +125,9 @@
   aside.sidebar
     position: fixed
 
+.gist .gist-meta
+  no-user-select()
+
 @media screen and (max-width: 1300px)
   .content.with-sidebar
     margin-left: 290px
@@ -165,6 +167,7 @@
     > a.markdownIt-Anchor:before
       display: none
   .gist
+    page-break-inside: avoid
     .gist-data
       page-break-inside: avoid
     .gist-meta 
