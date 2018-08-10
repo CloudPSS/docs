@@ -5,6 +5,7 @@ type: components
 classname: _Abs
 symbol: Abs
 author: 
+order: 10
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

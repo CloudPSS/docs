@@ -272,19 +272,7 @@
           var currentPageOffset = currentPageAnchor
             ? currentPageAnchor.offsetTop - 8
             : 0
-          var currentActiveOffset = currentActive.offsetTop + currentActive.parentNode.clientHeight
-          var sidebarHeight = sidebar.clientHeight
-          var currentActiveIsInView = (
-            currentActive.offsetTop >= sidebar.scrollTop &&
-            currentActiveOffset <= sidebar.scrollTop + sidebarHeight
-          )
-          var linkNotFurtherThanSidebarHeight = currentActiveOffset - currentPageOffset < sidebarHeight
-          var newScrollTop = currentActiveIsInView
-            ? sidebar.scrollTop
-            : linkNotFurtherThanSidebarHeight
-              ? currentPageOffset
-              : currentActiveOffset - sidebarHeight
-          sidebar.scrollTop = newScrollTop
+          sidebar.scrollTop = currentPageOffset - 48
         }
       }
     }
