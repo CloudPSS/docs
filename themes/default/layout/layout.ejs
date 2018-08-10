@@ -16,7 +16,7 @@
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-96x96.png') %>" sizes="96x96">
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-32x32.png') %>" sizes="32x32">
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-16x16.png') %>" sizes="16x16">
-    <link rel="icon" type="image/png" href="<%- url_for('/images/logo.png') %>">
+    <link rel="icon" type="image/x-icon" href="<%- url_for('/images/icons/favicon.ico') %>">
     
     <%- open_graph({
       title: page.mapped_title || config.title,
@@ -27,7 +27,6 @@
 
     <%- css('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %>
     <%- css('//cdn.bootcss.com/KaTeX/0.9.0/katex.min.css') %>
-    <%- css('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css') %>
     <%- css('css/page') %>
   
     <script>window.PAGE_TYPE = '<%- page.type %>'</script>
