@@ -4,19 +4,24 @@
 @import "_quoteblock"
 
 body
+  position: absolute
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  margin: 0
   font-family: $body-font
   font-size: $body-font-size
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: $medium
   background-color: white
-  margin: 0
   &.docs
     padding-top: $header-height
 
 @media screen and (max-width: 900px)
   body.docs
-    padding-top: 0
+    padding-top: $mobile-header-height
 
 a
   text-decoration: none
@@ -67,10 +72,19 @@ a.button
     border-color: #f6f6f6
 
 #main
-  position: relative
+  position: absolute
+  top: $header-height
+  left: 0
+  right: 0
+  bottom: 0
   z-index: 1
-  padding: 0 60px 30px
+  padding: 0 60px 30px 60px
   overflow-x: hidden
+
+@media screen and (max-width: 900px)
+  #main
+    top: $mobile-header-height
+    padding: 0 20px 20px 20px
 
 #nav
   .nav-link
@@ -167,7 +181,8 @@ a.footnote-backref
   no-user-select()
 
 @media print
-  body
+  body, #main
+    position: static
     color: rgb(0,0,0)
   .video-container
     height: auto

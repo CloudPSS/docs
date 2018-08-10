@@ -53,8 +53,8 @@
     &:before
       content: ""
       display: block
-      margin-top: -1 * $heading-link-padding-top
-      height: $heading-link-padding-top
+      margin-top: -24px
+      height: 24px
       visibility: hidden
   h2
     margin: $h2-margin-top 0 .8em
@@ -120,11 +120,6 @@
       code
         background-color: #efefef
 
-#main.fix-sidebar
-  position: static
-  aside.sidebar
-    position: fixed
-
 .gist .gist-meta
   no-user-select()
 
@@ -136,19 +131,10 @@
   body
     -webkit-text-size-adjust: none
     font-size: 14px
-  #main
-    padding: 2em 1.4em 0
   .content
     padding-left: 0
     &.with-sidebar
       margin: auto
-    h2, h3, h4, h5, h6
-      &:before
-        content: ""
-        display: block
-        margin-top: -1 * $mobile-heading-link-padding-top
-        height: $mobile-heading-link-padding-top
-        visibility: hidden
 
 @media screen and (max-width: 560px)
   #downloads

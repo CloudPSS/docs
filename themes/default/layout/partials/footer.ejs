@@ -8,21 +8,19 @@
 
 <footer class="page-footer <%- min ? 'min' : ''%>">
   <% if(min) { %>
-    <p>
+    <p class="contact">
       <% if(page.author) { %> 
         <span class="section"><a href="mailto:<%= email %>" title="联系作者">
           <img class="gravatar" src="<%- gravatar(email,{d:'identicon'}) %>" />
           <span><%= page.author %></span>
         </a></span>
-        <span class="section-sep"> </span>
       <% } %> 
       <span class="section" title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
       <% if(date(page.date) !== date(page.updated)) { %> 
-        <span class="section-sep"> </span>
         <span class="section" title="<%- full_date(page.updated) %>">最后更新于 <time datetime="<%- date_xml(page.updated) %>"><%- date(page.updated) %></time></span>
       <% } %>
     </p>
-    <p title='<%= fullcopy %>
+    <p class="copyright" title='<%= fullcopy %>
 <%= config.ICP %>'>© <%- new Date().getFullYear() %> <%- config.title %></p>
   <% } else { %>
     <p><%= fullcopy %></p>
