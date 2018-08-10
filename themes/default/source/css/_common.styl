@@ -2,6 +2,7 @@
 @import "_settings"
 @import "_codeblock"
 @import "_quoteblock"
+@import "_video"
 
 body
   position: absolute
@@ -164,18 +165,6 @@ abbr
     content: "[?]"
     vertical-align: super
     font-size: xx-small
-
-.video-container
-  no-user-select()
-  padding:0 0 56.25% 0
-  margin: 0 0 2em 0
-  width: 100%
-  height: 0
-  position: relative
-  iframe
-    width: 100%
-    height: 100%
-    position: absolute
     
 a.footnote-backref
   no-user-select()
@@ -184,15 +173,6 @@ a.footnote-backref
   body, #main
     position: static
     color: rgb(0,0,0)
-  .video-container
-    height: auto
-    position: static
-    page-break-inside: avoid
-    padding:0
-    &:after
-      content: "访问原网页以查看该视频！"
-    iframe
-      display: none
   mark
     text-decoration-line: underline !important
     text-decoration-color: yellow !important
