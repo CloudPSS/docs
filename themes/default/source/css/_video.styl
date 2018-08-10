@@ -1,0 +1,35 @@
+﻿@import "_fonts"
+@import "_settings"
+
+.video-container
+  no-user-select()
+  margin: 1em 0
+  width: 100%
+  position: relative
+  > .video-frame
+    margin: 0 
+    width: 100%
+    height: 100%
+    position: absolute
+  > .video-hint
+    font-weight: bolder
+    color: $theme
+    &:before, &:after
+      color: black
+    &:before
+      content: "（来自 "
+    &:after
+      content: " 的视频）"
+
+@media screen
+  .video-container
+    padding:0 0 56.25% 0
+    height: 0
+    > .video-hint
+      display: none
+
+@media print
+  .video-container
+    page-break-inside: avoid
+    > .video-frame
+      display: none

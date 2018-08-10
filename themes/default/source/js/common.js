@@ -1,9 +1,25 @@
 (function ()
 {
   initMobileMenu()
+  initVideos()
   if (PAGE_TYPE)
   {
     initSubHeaders()
+  }
+
+  function initVideos()
+  {
+    var containers = document.getElementsByClassName('video-container');
+    for (const container of containers)
+    {
+      var video = container.getElementsByTagName('iframe')[0];
+      if (!video) continue;
+      video.classList.add('video-frame');
+      var hint = document.createElement('p');
+      hint.innerText = video.src;
+      hint.classList.add('video-hint')
+      container.appendChild(hint);
+    }
   }
 
   /**
