@@ -18,28 +18,22 @@ code
 
 figure.highlight
   background-color: $codebg
-  padding: 0 .6em
-  line-height: 1.1em
+  padding: 0 
   border-radius: $radius
-  position: relative
   box-shadow: 0 0 4px 0px rgba(0,0,0,0.25);
   figcaption 
     no-user-select()
     font-size: smaller
-    position: absolute
-    left: 8px
-    right: 48px
-    top: 4px
+    padding: 4px 8px 0 8px 
     span
       font-weight: 350
-      position: absolute 
       color: $light
     a
+      position: absolute
+      right: 40px
       font-weight: 500
       color: lighten($theme, 25%)
       font-style: italic
-      right: 0
-      position: absolute 
   table
     overflow-x: auto
     display: block
@@ -49,65 +43,67 @@ figure.highlight
     padding: 0
     margin: 0
   .gutter
+    text-align: right
     width: 1.5em
     no-user-select()
   pre
-    padding: 1.2em 1em
-    margin: 1em 0 0 0 
+    padding: 0.8em 1em 1.2em 1em
+    margin: 0
     .line
-      min-height: 1.5em
-  &:after
-    no-user-select()
+      line-height: 1.5em
+  &:before
+    no-user-select()    
     position: absolute
-    top: 4px
-    right: 8px
+    right: 0px;
+    margin: 4px 8px;
     color: #ccc
     text-align: right
     font-size: .75em
-    line-height: 15px
-    height: 15px
     font-weight: 600
     content: "code"
-  &.html:after
+  &.html:before
     content: "HTML"
-  &.js:after
+  &.js:before
     content: "JS"
-  &.bash:after
+  &.bash:before
     content: "Shell"
-  &.css:after
+  &.css:before
     content: "CSS"
-  &.md:after , &.markdown:after
+  &.md:before , &.markdown:before
     content: "MD"
-  &.plain:after 
+  &.plain:before 
     content: "Plain"
-  &.csharp:after
+  &.csharp:before
     content: "C#"
-  &.c:after
+  &.c:before
     content: "C"
-  &.cpp:after
+  &.cpp:before
     content: "C++"
-  &.matlab:after
+  &.matlab:before
     content: "MatLab"
-  &.vb:after
+  &.vb:before
     content: "VB"
-  &.yaml:after
+  &.yaml:before
     content: "Yaml"
-  &.json:after
+  &.json:before
     content: "JSON"
-  &.python:after
+  &.python:before
     content: "Python"
-  &.tex:after
+  &.tex:before
     content: "TeX"
 
 @media print
   figure.highlight
-    padding: 0 0.4em
     color: rgb(0,0,0)
     border-style: solid
     border-width: 2px 2px 2px 2px
     border-color: #e8e8e8
     page-break-inside: avoid
     box-shadow: none
+    figcaption 
+      page-break-after: avoid
+    table
+      page-break-inside: avoid
     .gutter
       display: none
     .code

@@ -2,32 +2,27 @@
 @import "_settings"
 
 dl, blockquote
+  margin: 1em 0
   border-left-width: 4px!important
   background-color: $quotebg
-  border: 0.1px solid $quotebd
+  border: 0.02px solid $quotebd
   border-left: 4px solid $theme
-  position: relative
+  padding: 0 12px 0 20px
   code
     background-color: #efefef
   em
     color: $medium
-  p
-    margin: 1em 0 0 0
-    padding-bottom: 0
   footer
     text-align: right 
-    margin: 1.2em 0.2em 0 0
+    margin: 1em -4px 1em 0
     cite 
       font-style: italic
       &:before
         content: " — "
   &:before
     no-user-select()
-    border-bottom-right-radius: $radius
-    border-top-right-radius: $radius
     position: absolute
-    top: 14px
-    left: -12px
+    transform: translate(-32px, 8px)
     color: #fff
     width: 20px
     height: 20px
@@ -40,22 +35,18 @@ dl, blockquote
 
 $defcolor = #AB82FF
 dl
-  margin: 2em 0
-  padding: 16px 12px 20px 20px
   border-left-color: $defcolor !important
   dt
+    margin: 0.8em 0 0.5em
     font-size: larger
     font-weight: 700
   dd
-    margin-left: 12px
-    margin-top: 8px
+    margin: 1em 0 1em 1em
   &:before
     content: "⁈"
     background-color: $defcolor
 
 blockquote
-  margin: 1em 0
-  padding: 2px 12px 20px 20px
   border-left-color: $theme !important
   &.tip
     border-left-color: #e5e237 !important
@@ -82,7 +73,6 @@ blockquote
   dl, blockquote
     page-break-inside: avoid
     background-color: rgb(255,255,255)
-    border: 2px solid #e8e8e8
     &:before
       display: none
     dt, dd

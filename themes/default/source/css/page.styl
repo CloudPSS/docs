@@ -12,16 +12,6 @@
   max-width: 600px
   margin: 0 auto
   padding-left: 50px
-  &.api
-    > a:first-of-type > h2
-      margin-top: 0
-      padding-top: 0
-    ul
-      padding-left: 1.25em
-      line-height: 1.4em
-      ul, p:not(.tip)
-        padding-bottom: 0
-        margin: 1.2em 0
   a.button
     font-size: .9em
     color: #fff
@@ -46,6 +36,14 @@
     margin: 0 0 1em
   h2, h3
     pointer-events: none
+    > a.markdownIt-Anchor:before
+      content: "#"
+      color: $theme
+      position: absolute
+      padding: 0.2em
+      transform: translate(-1em, -0.3em)
+      font-size: 1.2em
+      font-weight: bold
     a, button
       pointer-events: auto
       color: $dark
@@ -65,28 +63,11 @@
   h3
     margin: $h3-margin-top 0 1.2em
     line-height: 1.2
-  h2, h3
-    position: relative
-    > a.markdownIt-Anchor
-      &:before
-        content: "#"
-        color: $theme
-        position: absolute
-        left: -0.7em
-        padding-right: 0.5em
-        font-size: 1.2em
-        line-height: 1
-        font-weight: bold
   figure
     margin: 1.2em 0
   p, ul, ol
+    margin: 1em 0
     line-height: 1.6em
-    // HACK: Create area underneath paragraphs
-    // and lists that will be on top of heading
-    // anchors, for easier text highlighting.
-    margin: 1.2em 0 -1.2em
-    padding-bottom: 1.2em
-    position: relative
     z-index: 1
   ul, ol
     padding-left: 1.5em

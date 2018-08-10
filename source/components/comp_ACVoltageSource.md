@@ -5,6 +5,7 @@ type: components
 classname: _ACVoltageSource
 symbol: ACVoltageSource
 author: 
+order: 9
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

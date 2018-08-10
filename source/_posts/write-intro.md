@@ -19,6 +19,7 @@ date: 2018-08-08 12:23:34 # 创建时间，置空使用文件创建时间
 updated: 2018-08-09 12:23:34 # 最后修改时间，置空使用文件最后修改时间
 
 type: components # 文章类型，应与文件夹名字相同，也可置空以隐藏左侧文章列表
+order: 10 #文章排序，序号小的在前，序号相同则使用标题排序
 
 # “元件说明”文章专用
 classname: _Abs 
@@ -67,7 +68,7 @@ $$ \sum_{i=1}^n a_i=0 $$
 {% raw %}
 由于渲染引擎和预处理引擎冲突，公式中不能出现连续的 `{` 或 `}`，请使用 `{ {` 替代 `{{`，`}` 同理。
 
-也可以使用[Raw](#raw)。
+也可以使用 [Raw](#raw)。
 {% endraw %}
 {% endpullquote %}
 
@@ -80,7 +81,9 @@ $$ \sum_{i=1}^n a_i=0 $$
 ```
 `````
 由于 `[语言]` 和 `[链接]` 中不会包含空格，另两项可以任意添加空格而不影响解析。
+
 可用的 `[语言]` 包括 `plain` `tex` `md` `yaml` `js` `html` `css` `c` `cpp` `csharp` `pyhton` `matlab`……
+
 如：
 `````md codeblock example
 ```js a simple js script /sample.js file: sample.js
@@ -115,14 +118,14 @@ console.log('hello world');
 ```tex deflist
 有效值
 : 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
-: $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \mathrm{d} t } } $$
+  $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \mathrm{d} t } } $$
 : 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
 ```
 效果：
 
 有效值
 : 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
-: $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \mathrm{d} t } } $$
+  $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \mathrm{d} t } } $$
 : 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
 
 {% pullquote tip %}
