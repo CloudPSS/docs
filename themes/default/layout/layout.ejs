@@ -10,23 +10,21 @@
 
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="<%- config.description %>">
     <meta name="theme-color" content="#4285F4">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <link rel="icon" type="image/png" sizes="96x96" href="<%- url_for('/images/icons/favicon-96x96.png') %>">
-    <link rel="icon" type="image/png" sizes="32x32" href="<%- url_for('/images/icons/favicon-32x32.png') %>">
-    <link rel="icon" type="image/png" sizes="16x16" href="<%- url_for('/images/icons/favicon-16x16.png') %>">
-    <link rel="icon" href="<%- url_for('/images/logo.png') %>" type="image/png">
+    <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-96x96.png') %>" sizes="96x96">
+    <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-32x32.png') %>" sizes="32x32">
+    <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-16x16.png') %>" sizes="16x16">
+    <link rel="icon" type="image/png" href="<%- url_for('/images/logo.png') %>">
     
     <%- open_graph({
       title: page.mapped_title || config.title,
       type: 'article'
     }) %>
 
-    <title><%- page.mapped_title ? page.mapped_title + ' - ' : '' %><%- config.title %></title>
+    <title><%= page.mapped_title ? page.mapped_title + ' - ' : '' %><%= config.title %></title>
 
-    <!-- main page styles -->
     <%- css('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %>
     <%- css('//cdn.bootcss.com/KaTeX/0.9.0/katex.min.css') %>
     <%- css('//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/vs.min.css') %>
@@ -37,16 +35,13 @@
 
   <body class="docs">
     <%- partial('partials/header') %>
-    <div id="main" class="fix-sidebar">
+    <div id="main">
       <%- body %>
     </div>
-  
-    <!-- main custom script for sidebars, version selects etc. -->
+    
     <%- js('/js/smooth-scroll.min.js') %>
     <%- js('/js/css.escape.js') %>
     <%- js('/js/common.js') %>
-
-    <!-- fastclick -->
     <%- js('//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js') %>
     <script>document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false)</script>
   </body>

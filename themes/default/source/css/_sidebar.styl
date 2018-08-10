@@ -2,7 +2,7 @@
 
 aside.sidebar
   box-shadow: 0 0 10px rgba(0,0,0,.2)
-  position: absolute
+  position: fixed
   z-index: 10
   top: $header-height
   left: 0
@@ -67,14 +67,9 @@ aside.sidebar
 
 @media screen and (max-width: 900px)
   aside.sidebar
-    position: fixed
-    z-index: 10
     background-color: #f9f9f9
     top: $mobile-header-height
-    left: 0
-    bottom: 0
     transition: all .4s cubic-bezier(0.4, 0, 0, 1)
-    -webkit-transform: translate(-280px, 0)
     transform: translate(-280px, 0)
     .sidebar-inner
       padding: $content-padding-top + 10px 10px 40px 20px
@@ -84,7 +79,6 @@ aside.sidebar
     .main-menu
       display: block
     &.open
-      -webkit-transform: translate(0, 0)
       transform: translate(0, 0)
 
 @media print

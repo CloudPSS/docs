@@ -168,13 +168,13 @@
     })
 
     // listen for scroll event to do positioning & highlights
-    window.addEventListener('scroll', updateSidebar)
+    main.addEventListener('scroll', updateSidebar)
     window.addEventListener('resize', updateSidebar)
     window.addEventListener('load', () => { updateSidebar(true) })
 
     function updateSidebar(shouldScrollIntoView)
     {
-      var doc = document.documentElement
+      var doc = document.getElementById('main');
       var top = doc && doc.scrollTop || document.body.scrollTop
       if (animating || !allHeaders) return
       var last
@@ -265,8 +265,8 @@
         : id
       if (currentActive !== previousActive)
       {
-        if (previousActive) previousActive.classList.remove('active')
-        currentActive.classList.add('active')
+        if (previousActive) previousActive.classList.remove('active');
+        currentActive.classList.add('active');
         if (shouldScrollIntoView)
         {
           var currentPageOffset = currentPageAnchor

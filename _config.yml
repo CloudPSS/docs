@@ -18,7 +18,7 @@ ICP: 京ICP备16015429号-1
 base_url: http://www.cloudpss.net
 url: http://doc.cloudpss.net
 root: /
-permalink: post/:title.html
+permalink: posts/:title.html
 permalink_defaults:
 
 # Directory
@@ -28,7 +28,6 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
 skip_render:
 
 # Writing
