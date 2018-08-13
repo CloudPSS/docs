@@ -189,6 +189,10 @@ fail
 {% pullquote question %}
 question
 {% endpullquote %}
+
+{% pullquote info %}
+info
+{% endpullquote %}
 ```
 效果：
 {% pullquote tip %}
@@ -205,6 +209,10 @@ fail
 
 {% pullquote question %}
 question
+{% endpullquote %}
+
+{% pullquote info %}
+info
 {% endpullquote %}
 
 ### Raw
