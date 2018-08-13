@@ -10,7 +10,7 @@
   function initVideos()
   {
     var containers = document.getElementsByClassName('video-container');
-    for (const container of containers)
+    for (const container of Array.from(containers))
     {
       var video = container.getElementsByTagName('iframe')[0];
       if (!video) continue;
@@ -167,10 +167,10 @@
         })
         .forEach(makeHeaderClickable)
 
-      smoothScroll.init({
-        speed: 400,
-        offset: 0
-      })
+      // smoothScroll.init({
+      //   speed: 400,
+      //   offset: 0
+      // })
     }
 
     var hoveredOverSidebar = false

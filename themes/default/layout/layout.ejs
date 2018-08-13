@@ -25,8 +25,8 @@
 
     <title><%= page.mapped_title ? page.mapped_title + ' - ' : '' %><%= config.title %></title>
 
-    <%- css('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css') %>
-    <%- css('//cdn.bootcss.com/KaTeX/0.9.0/katex.min.css') %>
+    <%- css('//use.fontawesome.com/releases/v5.2.0/css/all.css') %>
+    <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css') %>
     <%- css('css/page') %>
   
     <script>window.PAGE_TYPE = '<%- page.type %>'</script>
@@ -38,11 +38,9 @@
       <%- body %>
     </div>
     
-    <%- js('/js/smooth-scroll.min.js') %>
-    <%- js('/js/css.escape.js') %>
     <%- js('/js/common.js') %>
-    <%- js('//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js') %>
-    <script>document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false)</script>
+    <%- js('//cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js') %>
+    <script>document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false)</script>   
   </body>
 
 </html>
