@@ -4,13 +4,17 @@
   if(page.author_email)
     email = page.author_email;
   var fullcopy = 'Copyright © 2015-' + new Date().getFullYear()+' by ' + config.title;
+  function btoa(str)
+  {
+    return (new Buffer(str)).toString('base64');
+  }
 %>
 
 <footer class="page-footer <%- min ? 'min' : ''%>">
   <% if(min) { %>
     <p class="contact">
       <% if(page.author) { %> 
-        <span class="section"><a href="mailto:<%= email %>" title="联系作者">
+        <span class="section"><a id="footer-author-link" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
           <img class="gravatar" src="<%- gravatar(email,{d:'identicon'}) %>" />
           <span><%= page.author %></span>
         </a></span>
@@ -31,5 +35,6 @@
       <%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %>
     </p>
   <% } %>
+  <%- js('/js/footer') %>
 </footer>
 <!-- END footer -->

@@ -50,7 +50,7 @@ symbol: Abs
 
 ### 公式
 
-使用 $\KaTeX$ 引擎渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that KaTeX does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
+使用 $\KaTeX$ 引擎渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 ```tex equation
 行内公式：$\sin{x}$  
 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
@@ -108,7 +108,7 @@ console.log('hello world');
 >  <!-- 退出层级需要一行空行-->
 > Level1
 
-{% pullquote tip %}
+{% pullquote info %}
 同理，引用结束需要一行空行。
 {% endpullquote %}
 
@@ -127,7 +127,7 @@ console.log('hello world');
   $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
 : 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
 
-{% pullquote tip %}
+{% pullquote info %}
 定义的前后需要空行分隔。
 {% endpullquote %}
 
@@ -176,6 +176,13 @@ RMS 指有效值
 ```md pullquote
 {% pullquote tip %}
 tip
+{% pullquote question %}
+question
+{% endpullquote %}
+{% endpullquote %}
+
+{% pullquote info %}
+info
 {% endpullquote %}
 
 {% pullquote success %}
@@ -184,19 +191,18 @@ success
 
 {% pullquote fail %}
 fail
-{% endpullquote %}
-
-{% pullquote question %}
-question
-{% endpullquote %}
-
-{% pullquote info %}
-info
 {% endpullquote %}
 ```
 效果：
 {% pullquote tip %}
 tip
+{% pullquote question %}
+question
+{% endpullquote %}
+{% endpullquote %}
+
+{% pullquote info %}
+info
 {% endpullquote %}
 
 {% pullquote success %}
@@ -205,14 +211,6 @@ success
 
 {% pullquote fail %}
 fail
-{% endpullquote %}
-
-{% pullquote question %}
-question
-{% endpullquote %}
-
-{% pullquote info %}
-info
 {% endpullquote %}
 
 ### Raw
