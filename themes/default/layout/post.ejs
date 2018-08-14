@@ -21,7 +21,7 @@
 
     <%- page.content %>
 
-    <%- partial('partials/footer', {min: true}) %>
+    <%- partial('partials/footer', {min: !page.full_footer}) %>
   </article>
 <% } %>
 <!-- END post -->
