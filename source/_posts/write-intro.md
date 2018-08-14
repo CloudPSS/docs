@@ -221,14 +221,29 @@ content
 {% endraw %}
 ```
 
+### 媒体
+使用 [hexo-tag-owl](https://github.com/m80126colin/hexo-tag-owl) 插入媒体。
+
+```md hexo owl media
+{% owl youtube 4-5xmxI8fWA %}
+{% owl youku XMTQ2MjU2NTU2OA  %}
+{% owl vimeo 111114712 %}
+{% owl bilibili av27150168 %}
+{% owl giphy 9NLYiOUxnKAJLIycEv %}
+```
+效果：
+
+{% owl youtube 4-5xmxI8fWA %}
+{% owl youku XMTQ2MjU2NTU2OA  %}
+{% owl vimeo 111114712 %}
+{% owl bilibili av27150168 %}
+{% owl giphy 9NLYiOUxnKAJLIycEv %}
+
 ### 杂项
 详见 <https://hexo.io/zh-cn/docs/tag-plugins>。
 
 ```md hexo extensions
 {% gist 7fc91f7e717920d4ab7561cbd12586bf %}
-{% youtube 4-5xmxI8fWA %}
-{% youku XMTQ2MjU2NTU2OA  %}
-{% vimeo 111114712 %}
 
 {% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
 NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
@@ -238,9 +253,6 @@ NEW: DevDocs now comes with syntax highlighting. http://devdocs.io
 效果：
 
 {% gist 7fc91f7e717920d4ab7561cbd12586bf %}
-{% youtube 4-5xmxI8fWA %}
-{% youku XMTQ2MjU2NTU2OA  %}
-{% vimeo 111114712 %}
 
 {% blockquote @DevDocs https://twitter.com/devdocs/status/356095192085962752 %}
 NEW: DevDocs now comes with syntax highlighting. http://devdocs.io

@@ -1,3 +1,5 @@
+declare var PAGE_TYPE: string;
+
 (function ()
 {
   initMobileMenu()
@@ -9,12 +11,11 @@
 
   function initVideos()
   {
-    var containers = document.getElementsByClassName('video-container');
+    var containers = document.querySelectorAll('.video-container, .owl-video');
     for (const container of Array.from(containers))
     {
-      var video = container.getElementsByTagName('iframe')[0];
+      var video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
       if (!video) continue;
-      video.classList.add('video-frame');
       var hint = document.createElement('p');
       hint.innerText = video.src;
       hint.classList.add('video-hint')
@@ -41,18 +42,23 @@
 
     document.body.addEventListener('click', function (e)
     {
-      if (e.target !== menuButton && !sidebar.contains(e.target))
+      if (e.target !== menuButton && !sidebar.contains(e.target as Node))
       {
         sidebar.classList.remove('open')
       }
-      if (e.target !== tocButton && !toc.contains(e.target))
+      if (e.target !== tocButton && !toc.contains(e.target as Node))
       {
         toc.classList.remove('open')
       }
     })
 
+    class Point
+    {
+      x: number = 0;
+      y: number = 0;
+    }
     // Toggle sidebar on swipe
-    var start = {}, end = {}
+    var start = new Point(), end = new Point();
 
     document.body.addEventListener('touchstart', function (e)
     {
@@ -82,14 +88,13 @@
    */
   function initSubHeaders()
   {
-    var each = [].forEach
     var main = document.getElementById('main')
     var header = document.getElementById('header')
     var sidebar = document.querySelector('.sidebar')
     var content = document.querySelector('.content')
 
     // build sidebar
-    var currentPageAnchor = sidebar.querySelector('.sidebar-link.current')
+    var currentPageAnchor = sidebar.querySelector('.sidebar-link.current') as HTMLElement
     var contentClasses = document.querySelector('.content').classList
     var isAPIOrStyleGuide = (
       contentClasses.contains('api') ||
@@ -97,12 +102,13 @@
     )
     if (currentPageAnchor || isAPIOrStyleGuide)
     {
-      var allHeaders = []
-      var sectionContainer
+      var allHeaders = new Array<HTMLHeadingElement>()
+      var sectionContainer: HTMLElement
       if (isAPIOrStyleGuide)
       {
         sectionContainer = document.querySelector('.menu-root')
-      } else
+      }
+      else
       {
         sectionContainer = document.createElement('ul')
         sectionContainer.className = 'menu-sub'
@@ -111,7 +117,7 @@
       var headers = content.querySelectorAll('h2')
       if (headers.length)
       {
-        each.call(headers, function (h)
+        headers.forEach(function (h)
         {
           sectionContainer.appendChild(makeLink(h))
           var h3s = collectH3s(h)
@@ -122,10 +128,11 @@
             sectionContainer.appendChild(makeSubLinks(h3s, isAPIOrStyleGuide))
           }
         })
-      } else
+      }
+      else
       {
         headers = content.querySelectorAll('h3')
-        each.call(headers, function (h)
+        headers.forEach(function (h)
         {
           sectionContainer.appendChild(makeLink(h))
           allHeaders.push(h)
@@ -138,11 +145,11 @@
 
         // Not prevent hashchange for smooth-scroll
         // e.preventDefault()
-
-        if (e.target.classList.contains('section-link'))
+        const target = e.target as HTMLElement;
+        if (target.classList.contains('section-link'))
         {
           sidebar.classList.remove('open')
-          setActive(e.target)
+          setActive(target)
           animating = true
           setTimeout(function ()
           {
@@ -153,7 +160,7 @@
 
       // make links clickable
       allHeaders
-        .filter(function (el)
+        .filter(function (el: HTMLElement)
         {
           if (!el.querySelector('a'))
           {
@@ -184,11 +191,11 @@
     })
 
     // listen for scroll event to do positioning & highlights
-    main.addEventListener('scroll', updateSidebar)
-    window.addEventListener('resize', updateSidebar)
+    main.addEventListener('scroll', () => { updateSidebar(true) })
+    window.addEventListener('resize', () => { updateSidebar(true) })
     window.addEventListener('load', () => { updateSidebar(true) })
 
-    function updateSidebar(shouldScrollIntoView)
+    function updateSidebar(shouldScrollIntoView?: boolean)
     {
       var doc = document.getElementById('main');
       var top = doc && doc.scrollTop || document.body.scrollTop
@@ -210,19 +217,22 @@
         setActive(last.id, shouldScrollIntoView || !hoveredOverSidebar)
     }
 
-    function makeLink(h)
+    function makeLink(h: HTMLHeadingElement)
     {
       var link = document.createElement('li')
-      window.arst = h
-      var text = [].slice.call(h.childNodes).map(function (node)
+      //window.arst = h
+
+      var text = Array.from(h.childNodes).map(function (node)
       {
         if (node.nodeType === Node.TEXT_NODE)
         {
           return node.nodeValue
-        } else if (['CODE', 'SPAN'].indexOf(node.tagName) !== -1)
+        }
+        else if (['CODE', 'SPAN'].indexOf(node.nodeName) !== -1)
         {
           return node.textContent
-        } else
+        }
+        else
         {
           return ''
         }
@@ -234,7 +244,7 @@
       return link
     }
 
-    function htmlEscape(text)
+    function htmlEscape(text: string)
     {
       return text
         .replace(/&/g, '&amp;')
@@ -244,13 +254,13 @@
         .replace(/>/g, '&gt;')
     }
 
-    function collectH3s(h)
+    function collectH3s(h: HTMLHeadingElement)
     {
       var h3s = []
       var next = h.nextSibling
-      while (next && next.tagName !== 'H2')
+      while (next && next.nodeName !== 'H2')
       {
-        if (next.tagName === 'H3')
+        if (next.nodeName === 'H3')
         {
           h3s.push(next)
         }
@@ -259,7 +269,7 @@
       return h3s
     }
 
-    function makeSubLinks(h3s, small)
+    function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>, small: boolean)
     {
       var container = document.createElement('ul')
       if (small)
@@ -273,12 +283,12 @@
       return container
     }
 
-    function setActive(id, shouldScrollIntoView)
+    function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
     {
-      var previousActive = sidebar.querySelector('.section-link.active')
+      var previousActive = sidebar.querySelector('.section-link.active') as HTMLElement;
       var currentActive = typeof id === 'string'
-        ? sidebar.querySelector('.section-link[href="#' + id + '"]')
-        : id
+        ? sidebar.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
+        : id;
       if (currentActive !== previousActive)
       {
         if (previousActive) previousActive.classList.remove('active');
@@ -293,7 +303,7 @@
       }
     }
 
-    function makeHeaderClickable(header)
+    function makeHeaderClickable(header: HTMLElement)
     {
       var link = header.querySelector('a')
       link.setAttribute('data-scroll', '')
@@ -314,18 +324,15 @@
   }
 
   // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
-  function escapeRegExp(str)
+  function escapeRegExp(str: string)
   {
-    if (typeof str !== 'string') throw new TypeError('str must be a string!');
-
     // http://stackoverflow.com/a/6969486
     return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
   }
 
   // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.js
-  function slugize(str, options)
+  function slugize(str: string, options?: { separator?: string; transform?: ((input: string) => string); })
   {
-    if (typeof str !== 'string') throw new TypeError('str must be a string!')
     options = options || {}
 
     var rControl = /[\u0000-\u001f]/g
@@ -343,14 +350,9 @@
       // Remove prefixing and trailing separators
       .replace(new RegExp('^' + escapedSep + '+|' + escapedSep + '+$', 'g'), '')
 
-    switch (options.transform)
-    {
-      case 1:
-        return result.toLowerCase()
-      case 2:
-        return result.toUpperCase()
-      default:
-        return result
-    }
+    if (options.transform)
+      return options.transform(result);
+    else
+      return result;
   }
 })()
