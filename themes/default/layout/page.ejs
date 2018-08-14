@@ -9,7 +9,7 @@
 
 <%- partial('partials/sidebar') %>
 
-<article class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
+<article id="article" class="content <%- page.type ? page.type + ' with-sidebar' : '' %>">
   <% if (page.mapped_title && page.type) { %>
     <section><h1><%= page.mapped_title %></h1></section>
   <% } %>

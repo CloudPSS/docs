@@ -96,24 +96,13 @@ declare var PAGE_TYPE: string;
     // build sidebar
     var currentPageAnchor = sidebar.querySelector('.sidebar-link.current') as HTMLElement
     var contentClasses = document.querySelector('.content').classList
-    var isAPIOrStyleGuide = (
-      contentClasses.contains('api') ||
-      contentClasses.contains('style-guide')
-    )
-    if (currentPageAnchor || isAPIOrStyleGuide)
+    if (currentPageAnchor)
     {
       var allHeaders = new Array<HTMLHeadingElement>()
       var sectionContainer: HTMLElement
-      if (isAPIOrStyleGuide)
-      {
-        sectionContainer = document.querySelector('.menu-root')
-      }
-      else
-      {
-        sectionContainer = document.createElement('ul')
-        sectionContainer.className = 'menu-sub'
-        currentPageAnchor.parentNode.appendChild(sectionContainer)
-      }
+      sectionContainer = document.createElement('ul')
+      sectionContainer.className = 'menu-sub'
+      currentPageAnchor.parentNode.appendChild(sectionContainer)
       var headers = content.querySelectorAll('h2')
       if (headers.length)
       {
@@ -125,7 +114,7 @@ declare var PAGE_TYPE: string;
           allHeaders.push.apply(allHeaders, h3s)
           if (h3s.length)
           {
-            sectionContainer.appendChild(makeSubLinks(h3s, isAPIOrStyleGuide))
+            sectionContainer.appendChild(makeSubLinks(h3s))
           }
         })
       }
@@ -157,27 +146,6 @@ declare var PAGE_TYPE: string;
           }, 400)
         }
       }, true)
-
-      // make links clickable
-      allHeaders
-        .filter(function (el: HTMLElement)
-        {
-          if (!el.querySelector('a'))
-          {
-            return false
-          }
-          var demos = [].slice.call(document.querySelectorAll('demo'))
-          return !demos.some(function (demoEl)
-          {
-            return demoEl.contains(el)
-          })
-        })
-        .forEach(makeHeaderClickable)
-
-      // smoothScroll.init({
-      //   speed: 400,
-      //   offset: 0
-      // })
     }
 
     var hoveredOverSidebar = false
@@ -220,7 +188,6 @@ declare var PAGE_TYPE: string;
     function makeLink(h: HTMLHeadingElement)
     {
       var link = document.createElement('li')
-      //window.arst = h
 
       var text = Array.from(h.childNodes).map(function (node)
       {
@@ -269,13 +236,9 @@ declare var PAGE_TYPE: string;
       return h3s
     }
 
-    function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>, small: boolean)
+    function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>)
     {
       var container = document.createElement('ul')
-      if (small)
-      {
-        container.className = 'menu-sub'
-      }
       h3s.forEach(function (h)
       {
         container.appendChild(makeLink(h))
@@ -299,25 +262,6 @@ declare var PAGE_TYPE: string;
             ? currentPageAnchor.offsetTop - 8
             : 0
           sidebar.scrollTop = currentPageOffset - 48
-        }
-      }
-    }
-
-    function makeHeaderClickable(header: HTMLElement)
-    {
-      var link = header.querySelector('a')
-      link.setAttribute('data-scroll', '')
-
-      // transform DOM structure from
-      // `<h2><a></a>Header</a>` to <h2><a>Header</a></h2>`
-      // to make the header clickable
-      var nodes = Array.prototype.slice.call(header.childNodes)
-      for (var i = 0; i < nodes.length; i++)
-      {
-        var node = nodes[i]
-        if (node !== link)
-        {
-          link.appendChild(node)
         }
       }
     }

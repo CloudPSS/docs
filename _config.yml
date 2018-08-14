@@ -11,6 +11,7 @@ author: CloudPSS
 language: zh-Hans
 timezone: Asia/Shanghai
 contact: admin@cloudpss.net
+copyright_begin: 2015
 ICP: 京ICP备16015429号-1
 
 # URL
@@ -76,6 +77,10 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: default
+
+search:
+  path: search.json
+  field: page
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
