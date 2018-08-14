@@ -1,4 +1,4 @@
-﻿@import "_common"
+@import "_common"
 @import "_animations"
 @import "_header"
 @import "_footer"
@@ -34,27 +34,34 @@
   h1
     font-size: 2em
     margin: 0 0 1em
-  h2, h3
-    pointer-events: none
-    > a.markdownIt-Anchor:before
-      no-user-select()
-      content: "#"
-      color: $theme
-      position: absolute
-      padding: 0.2em
-      transform: translate(-1em, -0.3em)
-      font-size: 1.2em
-      font-weight: bold
-    a, button
-      pointer-events: auto
-      color: $dark
   h2, h3, h4, h5, h6
+    position: relative
     &:before
       content: ""
       display: block
       margin-top: -24px
       height: 24px
       visibility: hidden
+    > a.markdownIt-Anchor:before
+      no-user-select()
+      content: "#"
+      color: $theme
+      position: absolute
+      transform: translate(-1em, 0.2em)
+      padding-right: 1em
+      font-weight: bold
+      height:1.2em
+    a, button
+      color: $dark
+    a
+      position: absolute
+      left: 0
+      right: 0    
+      transform: translateY(-0.2em);
+      height: 1.6em
+      opacity: 0
+    a:hover
+      opacity: 1
   h2
     margin: $h2-margin-top 0 .8em
     padding-bottom: .7em

@@ -6,8 +6,9 @@
     "version": "3.7.1"
   },
   "dependencies": {
-    "hexo": "^3.2.0",
     "@iktakahiro/markdown-it-katex": "github:OpportunityLiu/markdown-it-katex#patch-1",
+    "hexo": "^3.2.0",
+    "hexo-generator-search": "^2.2.5",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-markdown-it-plus": "^1.0.3",
     "hexo-renderer-sass": "^0.3.2",

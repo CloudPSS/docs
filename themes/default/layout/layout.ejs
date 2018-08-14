@@ -1,6 +1,7 @@
-﻿<%
+<%
   page.mapped_title = '';
-  if(page.type && !page.title && page.path.endsWith('index.html'))
+  var is_index = page.path.endsWith('index.html');
+  if(page.type && !page.title && is_index)
     page.mapped_title = site.data.sitemap[page.type];
   else
     page.mapped_title = (page.title || '').trim()
@@ -26,7 +27,7 @@
     <title><%= page.mapped_title ? page.mapped_title + ' - ' : '' %><%= config.title %></title>
     <%- css('css/page') %>
   
-    <script>window.PAGE_TYPE = '<%- page.type %>'</script>
+    <script>window.PAGE_TYPE = '<%- page.type %>'; window.IS_INDEX = <%- is_index %>;</script>
   </head>
 
   <body class="docs">

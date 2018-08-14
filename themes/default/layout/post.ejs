@@ -1,4 +1,4 @@
-﻿<!-- BEGIN post -->
+<!-- BEGIN post -->
 <% if(page.path.endsWith('index.html')) { %>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <% } else { %>
@@ -16,7 +16,7 @@
       </div>
     </div>
   </aside>
-  <article class="content with-sidebar blog post">
+  <article id="article" class="content with-sidebar blog post">
     <section><h1><%= page.title %></h1></section>
 
     <%- page.content %>

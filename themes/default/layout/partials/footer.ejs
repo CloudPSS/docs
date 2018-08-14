@@ -1,9 +1,12 @@
-﻿<!-- BEGIN footer -->
+<!-- BEGIN footer -->
 <%
   var email = config.contact;
   if(page.author_email)
     email = page.author_email;
-  var fullcopy = 'Copyright © 2015-' + new Date().getFullYear()+' by ' + config.title;
+  var cb = typeof config.copyright_begin !== 'object'
+    ? (config.copyright_begin || '').toString()
+    : config.copyright_begin.getFullYear();
+  var fullcopy = `Copyright © ${cb}-${new Date().getFullYear()} by ${config.title || ''}`;
   function btoa(str)
   {
     return (new Buffer(str)).toString('base64');

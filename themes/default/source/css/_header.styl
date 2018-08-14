@@ -21,74 +21,65 @@ header.page-header
   right: 30px
   top: $heading-padding-vertical
   height: $header-inner-height
-  line-height: 0
-  .break
-    display: none
-  div, li
-    display: inline-block
-    position: relative
-    margin: 0 .6em
-  div
-    top: 50%
-    transform: translate(0, -50%)
-
-  .nav-dropdown
+  line-height: $header-inner-height
+  #nav-toc
+    padding: 0
+    margin: 0
+    > li
+      display: inline-block
+      position: relative
+      padding: 0 0.8em
     .nav-link
+      padding-bottom: 3px
+      white-space: nowrap
       &:hover, &.current
-        border-bottom: none
-      &.current
-        &::after
-          content: ""
-          width: 0
-          height: 0
-          border-left: 5px solid $theme
-          border-top: 3px solid transparent
-          border-bottom: 3px solid transparent
-          position: absolute
-          top: 50%
-          margin-top: -4px
-          left: 8px
-#nav-toc
-  padding: 0
+        border-bottom: 3px solid $theme
 
-.nav-link
-  padding-bottom: 3px
-  white-space: nowrap
-  &:hover, &.current
-    border-bottom: 3px solid $theme
-  &.team, &.contribute
-    margin-left: 10px
-
-.new-label
-  position: absolute
-  top: 3px
-  left: 110%
-  background-color: $theme
-  color: #fff
-  line-height: 16px
-  height: 16px
-  font-size: 9px
-  font-weight: bold
-  font-family: $code-font
-  padding: 1px 4px 0 6px
-  border-radius: 4px
-
-.search-query
-  font-size: 1em
-  height: 30px
-  line-height: 30px
-  box-sizing: border-box
-  padding: 0 15px 0 30px
-  border: 1px solid #e3e3e3
-  color: $dark
-  outline: none
-  border-radius: 15px
-  margin-right: 10px
-  transition: border-color .2s ease
-  background: #fff url(../images/search.png) 8px 5px no-repeat
-  background-size: 20px
-  &:focus
-    border-color: $theme
+  #search-form
+    position: absolute
+    transform: translateX(-100%);
+    padding: 0 10px;
+    > #search-query
+      font-size: 1em
+      height: 30px
+      line-height: 30px
+      box-sizing: border-box
+      padding: 0 15px 0 30px
+      border: 1px solid #e3e3e3
+      color: $dark
+      outline: none
+      border-radius: 15px
+      margin-right: 10px
+      transition: border-color .2s ease
+      background: #fff url(../images/search.png) 8px 5px no-repeat
+      background-size: 20px
+      &:focus
+        border-color: $theme
+    > #search-suggest
+      display: none
+      position: absolute
+      padding: 4px
+      right: 0;
+      left: 0;
+      margin: 0 20px;
+      border: 2px solid $border
+      background: white
+      > .no-result
+        &:before
+          content: '没有匹配的结果'
+          text-align: center
+          display: block
+          color: $light
+      > li
+        display: block
+        position: relative
+        &:hover
+          background: #eee
+        > a
+          padding: 0 8px 
+          display: block
+      &.open, &.focus
+        display: block
 
 #logo
   display: inline-block
@@ -125,10 +116,6 @@ header.page-header
 @media print
   header.page-header
     display: none
-    
-@media screen and (min-width: 1590px)
-  header.page-header
-    background-color: rgba(255,255,255,.75)
 
 @media screen and (max-width: 1300px)
   .content.with-sidebar
@@ -136,37 +123,19 @@ header.page-header
   header.page-header
     padding: $heading-padding-vertical 12px
   #nav
-    right: 0
+    right: 8px
+    #nav-toc
+      > li
+        padding: 0 0.4em
 
 @media screen and (max-width: 1000px)
   #logo span 
     display: none
 
 @media screen and (max-width: 900px)
-  #nav
-    left: 48px
-    right: 8px
-    top: $mobile-heading-padding-vertical
-    height: $mobile-header-inner-height
-    line-height: $mobile-header-inner-height
-    div
-      top: auto
-      transform: none
   header.page-header
     height: $mobile-header-inner-height
     padding: $mobile-heading-padding-vertical 0px
-  .search-query
-    font-size: 0.8em
-    height: 20px
-    line-height: 20px
-    padding: 0 10px 0 24px
-    border-radius: 15px
-    margin-right: 10px
-    background: #fff url(../images/search.png) 4px 0px no-repeat
-    background-size: 20px
-    position: fixed
-    right: 48px
-    top: 10px
   #logo
     height: $mobile-header-inner-height
     margin-left: 48px
@@ -178,18 +147,36 @@ header.page-header
     margin-left: 12px
   .mobile-header-button
     display: block
-  .nav-link
-    padding-bottom: 1px
-    &:hover, &.current
-      border-bottom: 2px solid $theme
-  #nav-toc
-    display: inline-grid
-    padding: 10px
-    background: rgba(255,255,255,0.9)
-    position: fixed
-    top: $mobile-header-height + 4px
-    right: -100%
-    transition: right .3s ease-in-out
-    &.open
-      right: 8px
-      box-shadow: 0 0 10px $shadow
+  #nav
+    top: $mobile-heading-padding-vertical
+    height: $mobile-header-inner-height
+    line-height: $mobile-header-inner-height
+    .nav-link
+      padding-bottom: 1px
+      &:hover, &.current
+        border-bottom: 2px solid $theme
+    #search-form
+      padding: 0 10px 0 24px
+      font-size: 0.8em
+      right: 20px
+      transform: none
+      top: 0
+      > #search-query
+        height: 20px
+        line-height: 20px
+        border-radius: 15px
+        background: #fff url(../images/search.png) 4px 0px no-repeat
+        background-size: 20px
+    #nav-toc
+      display: inline-grid
+      padding: 10px
+      background: rgba(255,255,255,0.9)
+      position: fixed
+      top: $mobile-header-height + 4px
+      right: -100%
+      transition: right .3s ease-in-out
+      > li
+        padding: 0.25em 0.2em
+      &.open
+        right: 8px
+        box-shadow: 0 0 10px $shadow

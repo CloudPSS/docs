@@ -9,7 +9,9 @@
   <nav id="nav">
     <div>
       <form id="search-form" onsubmit="return false">
-        <input type="text" id="search-query-nav" class="search-query st-default-search-input">
+        <input type="text" id="search-query" />
+        <ul id="search-suggest" ></ul>
+        <%- js('js/search') %>
       </form>
     </div>
     <div>
