@@ -9,7 +9,7 @@ updated: 2018-08-09 12:23:34 # 最后修改时间，置空使用文件最后修�
 文章头部包含了文章的元数据。
 
 示例如下：
-```yaml post header
+```yaml post header 
 ---
 title: 写作说明 # 文章标题
 author: 刘正元 # 作者名字，置空隐藏作者
