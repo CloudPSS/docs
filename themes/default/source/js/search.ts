@@ -21,6 +21,7 @@
 
     function initSearch(data: Array<SearchRecord>)
     {
+        data = data.filter(r=>{return !!r.title});
         const queryinput = document.getElementById('search-query') as HTMLInputElement;
         const suggest = document.getElementById('search-suggest') as HTMLUListElement;
         let currentTerms = null;

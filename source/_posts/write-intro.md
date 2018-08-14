@@ -14,17 +14,23 @@ updated: 2018-08-09 12:23:34 # 最后修改时间，置空使用文件最后修�
 title: 写作说明 # 文章标题
 author: 刘正元 # 作者名字，置空隐藏作者
 author_email: lzy@live.in # 作者联系邮箱，置空使用 CloudPSS 官方邮箱
+
 date: 2018-08-08 12:23:34 # 创建时间，置空使用文件创建时间
 updated: 2018-08-09 12:23:34 # 最后修改时间，置空使用文件最后修改时间
 
 type: components # 文章类型，应与文件夹名字相同，也可置空以隐藏左侧文章列表
 order: 10 #文章排序，序号小的在前，序号相同则使用标题排序
+full_footer: true #页脚模式，默认为 false
 
 # “元件说明”文章专用
 classname: _Abs 
 symbol: Abs 
 ---
 ```
+
+{% pullquote info %}
+`full_footer: true` 的页面可参考 [Full Footer](/posts/full-footer.html)。
+{% endpullquote %}
 
 之后可以直接开始正文，大标题将依据 `title` 生成，不需要重复书写。
 [^end]: 往下看:arrow_lower_right:
