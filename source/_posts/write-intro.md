@@ -50,18 +50,20 @@ symbol: Abs
 
 ### 公式
 
-使用 $\KaTeX$ 引擎渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
+使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 ```tex equation
 行内公式：$\sin{x}$  
 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
 $$ \sum_{i=1}^n a_i=0 $$
 ... :arrow_left: ==同理，行间公式结束后也需要换行==
+对于渲染错误的公式 $\error$，将鼠标悬浮其上以查看错误信息。
 ```
 效果：
 > 行内公式：$\sin{x}$  
 > 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
 > $$ \sum_{i=1}^n a_i=0 $$
 > ... :arrow_left: ==同理，行间公式结束后也需要换行==
+> 对于渲染错误的公式 $\error$，将鼠标悬浮其上以查看错误信息。
 
 {% pullquote tip %}
 {% raw %}
