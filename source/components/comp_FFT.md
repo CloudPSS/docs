@@ -19,19 +19,19 @@ author:
   三相SLD：与上述的三相相同，除了输出连接的是三元数列之外。
   +/-/0序SLD：与上述的+/-/0序相同，除了输出连接的是三元数列之外。
 - 序分量是基于这个简单的转换方程：
-$$\left( \begin{array}{l}
-{ {\rm{V} }_0}\\
-{ {\rm{V} }_ + }\\
-{ {\rm{V} }_ - }
-\end{array} \right){\rm{ = } }\frac{1}{3} \times \left( {\begin{array}{c}
-1&1&1\\
-1&{1\angle 120^\circ }&{1\angle  - 120^\circ }\\
-1&{1\angle  - 120^\circ }&{1\angle 120^\circ }
-\end{array} } \right) \times \left( \begin{array}{l}
-{ {\rm{V} }_{\rm{a} } }\\
-{ {\rm{V} }_{\rm{b} } }\\
-{ {\rm{V} }_{\rm{c} } }
-\end{array} \right)$$
+  $$\left( \begin{array}{l}
+  { {\rm{V} }_0}\\
+  { {\rm{V} }_ + }\\
+  { {\rm{V} }_ - }
+  \end{array} \right){\rm{ = } }\frac{1}{3} \times \left( {\begin{array}{c}
+  1&1&1\\
+  1&{1\angle 120^\circ }&{1\angle  - 120^\circ }\\
+  1&{1\angle  - 120^\circ }&{1\angle 120^\circ }
+  \end{array} } \right) \times \left( \begin{array}{l}
+  { {\rm{V} }_{\rm{a} } }\\
+  { {\rm{V} }_{\rm{b} } }\\
+  { {\rm{V} }_{\rm{c} } }
+  \end{array} \right)$$
 
 
 ## <span id="comp_params">输入参数</span>
