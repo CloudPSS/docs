@@ -70,8 +70,6 @@
         queryinput.addEventListener('focus', refreshCandidates);
 
         queryinput.addEventListener('focus', () => { suggest.classList.add('open') });
-        queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 200) });
-        suggest.addEventListener('focus', () => { suggest.classList.add('focus') });
-        queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('focus') }, 200) });
+        queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
     }
 })();

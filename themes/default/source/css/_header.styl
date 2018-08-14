@@ -64,6 +64,10 @@ header.page-header
       margin: 0 20px;
       border: 2px solid $border
       background: white
+      &.open, &:hover, &:focus
+        display: block  
+      &:focus-within
+        display: block  
       > .no-result
         &:before
           content: '没有匹配的结果'
@@ -78,8 +82,6 @@ header.page-header
         > a
           padding: 0 8px 
           display: block
-      &.open, &.focus
-        display: block
 
 #logo
   display: inline-block
