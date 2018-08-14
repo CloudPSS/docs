@@ -23,7 +23,7 @@ $$\left( \begin{array}{l}
 { {\rm{V} }_0}\\
 { {\rm{V} }_ + }\\
 { {\rm{V} }_ - }
-\end{array} \right){\rm{ = } }\frac{1}{3} \times \left( {\begin{array}{*{20}{c} }
+\end{array} \right){\rm{ = } }\frac{1}{3} \times \left( {\begin{array}{c}
 1&1&1\\
 1&{1\angle 120^\circ }&{1\angle  - 120^\circ }\\
 1&{1\angle  - 120^\circ }&{1\angle 120^\circ }
