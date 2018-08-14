@@ -6,15 +6,16 @@
     "version": "3.7.1"
   },
   "dependencies": {
-    "hexo": "@latest",
+    "hexo": "^3.2.0",
     "@iktakahiro/markdown-it-katex": "github:OpportunityLiu/markdown-it-katex#patch-1",
-    "hexo-renderer-ejs": "@latest",
-    "hexo-renderer-markdown-it-plus": "@latest",
-    "hexo-renderer-sass": "@latest",
-    "hexo-renderer-stylus": "@latest",
-    "hexo-renderer-ts": "@latest",
-    "hexo-server": "@latest",
-    "hexo-tag-owl": "@latest",
-    "katex": "@latest"
+    "hexo-renderer-ejs": "^0.3.0",
+    "hexo-renderer-markdown-it-plus": "^1.0.3",
+    "hexo-renderer-sass": "^0.3.2",
+    "hexo-renderer-stylus": "^0.3.3",
+    "hexo-renderer-ts": "^1.0.3",
+    "hexo-server": "^0.2.0",
+    "hexo-tag-owl": "^1.2.2",
+    "katex": "^0.10.0-beta",
+    "typescript": "^3.0.1"
   }
 }
