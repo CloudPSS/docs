@@ -1,4 +1,4 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
+import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js';
 //import Vue from 'vue';
 
 (function ()
@@ -7,7 +7,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
     {
         url: string;
         content: string;
-        title?: string;
+        title: string;
     }
 
     class FormattedSearchRecord implements SearchRecord
@@ -22,9 +22,9 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
         constructor(record: SearchRecord)
         {
             this.url = record.url;
-            this.content = record.content || '';
+            this.content = record.content;
             this.formattedContent = this.content.toLowerCase();
-            this.title = record.title || '';
+            this.title = record.title;
             this.formattedTitle = this.title.toLowerCase();
         }
     }
@@ -96,7 +96,12 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
         if (this.status == 200)
         {
             vueApp.succeed = true;
-            vueApp.records = (<SearchRecord[]>JSON.parse(this.response)).map(r =>
+            let records = (<SearchRecord[]>JSON.parse(this.response));
+            records.forEach(r => {
+                r.title = (r.title || '').trim();
+                r.content = (r.content || '').trim();
+            });
+            vueApp.records = records.filter(r => r.title).map(r =>
             {
                 return new FormattedSearchRecord(r);
             });
