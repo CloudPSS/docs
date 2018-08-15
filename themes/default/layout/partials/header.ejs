@@ -9,8 +9,8 @@
   <nav id="nav">
     <div>
       <form id="search-form" onsubmit="return false">
-        <input type="text" id="search-query" />
-        <ul id="search-suggest" >
+        <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term"/>
+        <ul id="search-suggest" :class="{open: suggestOpen}">
           <span class="no-result" v-if="succeed && matches.length === 0"></span>
           <span class="loading" v-if="!succeed && !failed"></span>
           <span class="failed" v-if="failed"></span>
@@ -18,7 +18,7 @@
             <a :href="record.url">{{record.title}}</a>
           </li>
         </ul>
-        <%- js('js/search') %>
+        <script type="module" src="<%- url_for('js/search.js') %>"></script>
       </form>
     </div>
     <div>

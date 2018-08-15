@@ -1,4 +1,5 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js';
+/// <reference path="./../../../../node_modules/vue/types/index.d.ts" />
+import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
 
 (function ()
 {
@@ -21,21 +22,41 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js';
         constructor(record: SearchRecord)
         {
             this.url = record.url;
-            this.content = record.content;
+            this.content = record.content || '';
             this.formattedContent = this.content.toLowerCase();
             this.title = record.title || '';
             this.formattedTitle = this.title.toLowerCase();
         }
     }
+    
+    const queryinput = document.getElementById('search-query') as HTMLInputElement; 
+    const suggest = document.getElementById('search-suggest') as HTMLUListElement; 
+    queryinput.addEventListener('focus', () => { suggest.classList.add('open') }); 
+    queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) }); 
 
     var vueApp = new Vue({
-        el: '#saerch-form',
+        el: '#search-form',
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),
             term: '',
             failed: false,
-            succeed: false
+            succeed: false,
+            suggestOpen: false
+        },
+        methods:
+        {
+            showSuggest()
+            {
+                this.suggestOpen = true;
+            }
+            hideSuggest()
+            {
+                setTimeout(() =>
+                {
+                    this.suggestOpen = false;
+                }, 100);
+            }
         },
         computed:
         {
