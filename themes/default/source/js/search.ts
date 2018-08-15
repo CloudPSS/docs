@@ -42,6 +42,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js'
             term: '',
             failed: false,
             succeed: false,
+            loadedPercent: 0,
             suggestOpen: false
         },
         methods:
@@ -56,6 +57,15 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js'
                 {
                     this.suggestOpen = false;
                 }, 100);
+            },
+            submit()
+            {
+                let match = this.matches[0];
+                if(!match)
+                    return;
+                if(!this.term.trim() || match.title !== this.term.trim())
+                    return;
+                window.location.pathname = match.url;
             }
         },
         computed:
@@ -91,6 +101,11 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js'
     })
     const req = new XMLHttpRequest();
     req.open('get', '/search.json');
+    req.onprogress = function (ev)
+    {
+        if (ev.lengthComputable)
+          vueApp.loadedPercent = event.loaded / event.total;
+    };
     req.onload = function (ev)
     {
         if (this.status == 200)
@@ -106,7 +121,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js'
                 return new FormattedSearchRecord(r);
             });
         }
-    }
+    };
     req.onloadend = function ()
     {
         if (!vueApp.succeed)

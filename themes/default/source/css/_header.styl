@@ -11,6 +11,7 @@ header.page-header
   position: fixed
   width: 100%
   top: 0
+  transition: padding, height $size-transition
 
 #nav
   list-style-type: none
@@ -21,23 +22,36 @@ header.page-header
   top: $heading-padding-vertical
   height: $header-inner-height
   line-height: $header-inner-height
+  transition: top, height, right, line-height $size-transition
   #nav-toc
     padding: 0
     margin: 0
     > li
+      transition: padding $size-transition
       display: inline-block
       position: relative
       padding: 0 0.8em
     .nav-link
       padding-bottom: 3px
       white-space: nowrap
+      border-bottom: 3px solid transparent
+      transition: border-color 0.1s ease
       &:hover, &.current
         border-bottom: 3px solid $theme
 
   #search-form
     position: absolute
-    transform: translateX(-100%);
+    transform: translateX(-100%)
     padding: 0 10px;
+    > #search-icon    
+      position: absolute
+      height: 20px
+      width: 20px
+      left: 0
+      top: 0
+      bottom: 0
+      margin: 10px 18px
+      transition: all $size-transition
     > #search-query
       font-size: 1em
       height: 30px
@@ -47,10 +61,8 @@ header.page-header
       border: 1px solid #e3e3e3
       color: $dark
       outline: none
-      border-radius: 15px
+      border-radius: 2em
       transition: border-color .2s ease
-      background: #fff url(../images/search.png) 8px 5px no-repeat
-      background-size: 20px
       &:focus
         border-color: $theme
     > #search-suggest
@@ -86,16 +98,23 @@ header.page-header
           display: block
 
 #logo
+  -ms-interpolation-mode: bicubic;
   display: inline-block
   font-size: 1.5em
   height: $header-inner-height
+  line-height: 0px
   color: $dark
   font-family: $logo-font
   font-weight: 500
-  span 
+  &:hover > span
+    opacity: 1 
+  > span 
+    display: inline
     vertical-align: middle
-  img
-    vertical-align: top
+    transition: opacity $size-transition
+  > img
+    display: inline
+    vertical-align: middle
     margin-right: 6px
     width: $header-inner-height
     height: $header-inner-height
@@ -122,8 +141,6 @@ header.page-header
     display: none
 
 @media screen and (max-width: 1300px)
-  .content.with-sidebar
-    margin-left: 290px
   header.page-header
     padding: $heading-padding-vertical 12px
   #nav
@@ -132,18 +149,17 @@ header.page-header
       > li
         padding: 0 0.4em
 
-@media screen and (max-width: 1000px)
-  #logo span 
-    display: none
-
-@media screen and (max-width: 900px)
+@media screen and (max-width: $mobile-width)
   header.page-header
     height: $mobile-header-inner-height
     padding: $mobile-heading-padding-vertical 0px
   #logo
+    font-size: 1.2em
     height: $mobile-header-inner-height
     margin-left: 48px
-    img
+    > span 
+      opacity: 1
+    > img
       margin-right: 4px
       width: $mobile-header-inner-height
       height: $mobile-header-inner-height
@@ -167,9 +183,8 @@ header.page-header
       > #search-query
         height: 20px
         line-height: 20px
-        border-radius: 15px
-        background: #fff url(../images/search.png) 4px 0px no-repeat
-        background-size: 20px
+      > #search-icon
+        margin: 2.5px 16px
     #nav-toc
       display: inline-grid
       padding: 10px
@@ -183,3 +198,7 @@ header.page-header
       &.open
         right: 8px
         box-shadow: 0 0 10px $shadow
+        
+@media screen and (max-width: 400px)
+  #logo > span 
+    opacity: 0

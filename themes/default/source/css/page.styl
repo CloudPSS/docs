@@ -3,7 +3,6 @@
 @import "_header"
 @import "_footer"
 @import "_sidebar"
-@import "_offline-menu"
 @import "_modal"
 
 .content
@@ -42,14 +41,14 @@
       margin-top: -24px
       height: 24px
       visibility: hidden
-    > *
+    > :link, > :visited
       position: relative // make it clickable
     > a.markdownIt-Anchor:before
       no-user-select()
       content: "#"
       color: $theme
       position: absolute
-      transform: translate(-1em, 0.2em)
+      transform: translate(-0.8em, 0.2em)
       padding-right: 1em
       font-weight: bold
       height:1.2em
@@ -60,7 +59,7 @@
       transform: translateY(-0.2em);
       height: 1.6em
       opacity: 0
-      transition: opacity 0.1s ease-out
+      transition: opacity 0.1s ease
     &:hover > a.markdownIt-Anchor
       opacity: 1
   h2
@@ -120,7 +119,7 @@
   .content.with-sidebar
     margin-left: 290px
 
-@media screen and (max-width: 900px)
+@media screen and (max-width: $mobile-width)
   body
     -webkit-text-size-adjust: none
     font-size: 14px
@@ -128,16 +127,6 @@
     padding-left: 0
     &.with-sidebar
       margin: auto
-
-@media screen and (max-width: 560px)
-  #downloads
-    text-align: center
-    margin-bottom: 25px
-    .info
-      margin-top: 5px
-      margin-left: 0
-  iframe
-    margin: 0 !important
 
 @media print
   .content
