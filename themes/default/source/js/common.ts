@@ -1,22 +1,22 @@
-declare var PAGE_TYPE: string;
+declare const PAGE_TYPE: string;
 
 (function ()
 {
   initMobileMenu()
   initVideos()
-  if (PAGE_TYPE)
+  if (PAGE_TYPE && !IS_INDEX)
   {
     initSubHeaders()
   }
 
   function initVideos()
   {
-    var containers = document.querySelectorAll('.video-container, .owl-video');
+    const containers = document.querySelectorAll('.video-container, .owl-video');
     for (const container of Array.from(containers))
     {
-      var video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
+      const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
       if (!video) continue;
-      var hint = document.createElement('p');
+      const hint = document.createElement('p');
       hint.innerText = video.src;
       hint.classList.add('video-hint')
       container.appendChild(hint);
@@ -28,10 +28,10 @@ declare var PAGE_TYPE: string;
    */
   function initMobileMenu()
   {
-    var sidebar = document.querySelector('.sidebar')
-    var menuButton = document.getElementById('mobile-menu-button')
-    var tocButton = document.getElementById('mobile-toc-button')
-    var toc = document.getElementById('nav-toc')
+    const sidebar = document.querySelector('.sidebar')
+    const menuButton = document.getElementById('mobile-menu-button')
+    const tocButton = document.getElementById('mobile-toc-button')
+    const toc = document.getElementById('nav-toc')
 
     tocButton.addEventListener('click', () => { toc.classList.toggle('open') })
 
@@ -58,7 +58,7 @@ declare var PAGE_TYPE: string;
       y: number = 0;
     }
     // Toggle sidebar on swipe
-    var start = new Point(), end = new Point();
+    const start = new Point(), end = new Point();
 
     document.body.addEventListener('touchstart', function (e)
     {
@@ -71,13 +71,26 @@ declare var PAGE_TYPE: string;
       end.y = e.changedTouches[0].clientY
       end.x = e.changedTouches[0].clientX
 
-      var xDiff = end.x - start.x
-      var yDiff = end.y - start.y
+      const xDiff = end.x - start.x
+      const yDiff = end.y - start.y
 
       if (Math.abs(xDiff) > Math.abs(yDiff))
       {
-        if (xDiff > 0 && start.x <= 80) sidebar.classList.add('open')
-        else sidebar.classList.remove('open')
+        if (xDiff > 0 && start.x <= 60)
+        {
+          sidebar.classList.add('open');
+          toc.classList.remove('open');
+        }
+        else if (xDiff < 0 && start.x >= document.body.clientWidth - 60)
+        {
+          sidebar.classList.remove('open')
+          toc.classList.add('open');
+        }
+        else
+        {
+          sidebar.classList.remove('open')
+          toc.classList.remove('open');
+        }
       }
     })
   }
@@ -88,28 +101,27 @@ declare var PAGE_TYPE: string;
    */
   function initSubHeaders()
   {
-    var main = document.getElementById('main')
-    var header = document.getElementById('header')
-    var sidebar = document.querySelector('.sidebar')
-    var content = document.querySelector('.content')
+    const main = document.getElementById('main')
+    const header = document.getElementById('header')
+    const sidebar = document.querySelector('.sidebar')
+    const content = document.querySelector('.content')
 
     // build sidebar
-    var currentPageAnchor = sidebar.querySelector('.sidebar-link.current') as HTMLElement
-    var contentClasses = document.querySelector('.content').classList
+    const currentPageAnchor = sidebar.querySelector('.sidebar-link.current') as HTMLElement;
+    const contentClasses = document.querySelector('.content').classList;
     if (currentPageAnchor)
     {
-      var allHeaders = new Array<HTMLHeadingElement>()
-      var sectionContainer: HTMLElement
-      sectionContainer = document.createElement('ul')
-      sectionContainer.className = 'menu-sub'
-      currentPageAnchor.parentNode.appendChild(sectionContainer)
-      var headers = content.querySelectorAll('h2')
+      var allHeaders = new Array<HTMLHeadingElement>();
+      const sectionContainer = document.createElement('ul');
+      sectionContainer.className = 'menu-sub';
+      currentPageAnchor.parentNode.appendChild(sectionContainer);
+      let headers = content.querySelectorAll('h2');
       if (headers.length)
       {
         headers.forEach(function (h)
         {
           sectionContainer.appendChild(makeLink(h))
-          var h3s = collectH3s(h)
+          const h3s = collectH3s(h)
           allHeaders.push(h)
           allHeaders.push.apply(allHeaders, h3s)
           if (h3s.length)
@@ -128,7 +140,7 @@ declare var PAGE_TYPE: string;
         })
       }
 
-      var animating = false
+      var animating = false;
       sectionContainer.addEventListener('click', function (e)
       {
 
@@ -142,20 +154,20 @@ declare var PAGE_TYPE: string;
           animating = true
           setTimeout(function ()
           {
-            animating = false
+            animating = false;
           }, 400)
         }
       }, true)
     }
 
-    var hoveredOverSidebar = false
+    let hoveredOverSidebar = false;
     sidebar.addEventListener('mouseover', function ()
     {
-      hoveredOverSidebar = true
+      hoveredOverSidebar = true;
     })
     sidebar.addEventListener('mouseleave', function ()
     {
-      hoveredOverSidebar = false
+      hoveredOverSidebar = false;
     })
 
     // listen for scroll event to do positioning & highlights
@@ -165,20 +177,22 @@ declare var PAGE_TYPE: string;
 
     function updateSidebar(shouldScrollIntoView?: boolean)
     {
-      var doc = document.getElementById('main');
-      var top = doc && doc.scrollTop || document.body.scrollTop
-      if (animating || !allHeaders) return
-      var last
-      for (var i = 0; i < allHeaders.length; i++)
+      const doc = document.getElementById('main');
+      const top = doc && doc.scrollTop || document.body.scrollTop
+      if (animating || !allHeaders) return;
+      let last: HTMLHeadingElement;
+      for (let i = 0; i < allHeaders.length; i++)
       {
-        var link = allHeaders[i]
+        const link = allHeaders[i]
         if (link.offsetTop > top)
         {
-          if (!last) last = link
-          break
-        } else
+          if (!last)
+            last = link;
+          break;
+        }
+        else
         {
-          last = link
+          last = link;
         }
       }
       if (last)
@@ -187,28 +201,25 @@ declare var PAGE_TYPE: string;
 
     function makeLink(h: HTMLHeadingElement)
     {
-      var link = document.createElement('li')
+      const link = document.createElement('li')
 
-      var text = Array.from(h.childNodes).map(function (node)
+      const text = Array.from(h.childNodes).map(function (node)
       {
         if (node.nodeType === Node.TEXT_NODE)
         {
-          return node.nodeValue
+          return node.nodeValue;
         }
         else if (['CODE', 'SPAN'].indexOf(node.nodeName) !== -1)
         {
-          return node.textContent
+          return node.textContent;
         }
         else
         {
           return ''
         }
-      }).join('').replace(/\(.*\)$/, '')
-      link.innerHTML =
-        '<a class="section-link" data-scroll href="#' + h.id + '">' +
-        htmlEscape(text) +
-        '</a>'
-      return link
+      }).join('').replace(/\(.*\)$/, '');
+      link.innerHTML = `<a class="section-link" data-scroll href="#${h.id}">${htmlEscape(text)}</a>`;
+      return link;
     }
 
     function htmlEscape(text: string)
@@ -223,27 +234,25 @@ declare var PAGE_TYPE: string;
 
     function collectH3s(h: HTMLHeadingElement)
     {
-      var h3s = []
-      var next = h.nextSibling
+      const h3s = new Array<HTMLHeadingElement>();
+      let next = h.nextSibling;
       while (next && next.nodeName !== 'H2')
       {
         if (next.nodeName === 'H3')
-        {
-          h3s.push(next)
-        }
-        next = next.nextSibling
+          h3s.push(next as HTMLHeadingElement);
+        next = next.nextSibling;
       }
-      return h3s
+      return h3s;
     }
 
     function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>)
     {
-      var container = document.createElement('ul')
+      const container = document.createElement('ul')
       h3s.forEach(function (h)
       {
-        container.appendChild(makeLink(h))
+        container.appendChild(makeLink(h));
       })
-      return container
+      return container;
     }
 
     function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
@@ -260,8 +269,8 @@ declare var PAGE_TYPE: string;
         {
           var currentPageOffset = currentPageAnchor
             ? currentPageAnchor.offsetTop - 8
-            : 0
-          sidebar.scrollTop = currentPageOffset - 48
+            : 0;
+          sidebar.scrollTop = currentPageOffset - 48;
         }
       }
     }
@@ -277,12 +286,12 @@ declare var PAGE_TYPE: string;
   // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.js
   function slugize(str: string, options?: { separator?: string; transform?: ((input: string) => string); })
   {
-    options = options || {}
+    const option = options || {}
 
-    var rControl = /[\u0000-\u001f]/g
-    var rSpecial = /[\s~`!@#\$%\^&\*\(\)\-_\+=\[\]\{\}\|\\;:"'<>,\.\?\/]+/g
-    var separator = options.separator || '-'
-    var escapedSep = escapeRegExp(separator)
+    const rControl = /[\u0000-\u001f]/g
+    const rSpecial = /[\s~`!@#\$%\^&\*\(\)\-_\+=\[\]\{\}\|\\;:"'<>,\.\?\/]+/g
+    const separator = option.separator || '-'
+    const escapedSep = escapeRegExp(separator)
 
     var result = str
       // Remove control characters

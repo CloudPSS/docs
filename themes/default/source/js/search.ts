@@ -8,27 +8,51 @@
         score?: number;
     }
 
+    interface FormattedSearchRecord extends SearchRecord
+    {
+        formattedTitle: string;
+        formattedContent: string;
+        title: string;
+    }
+
     const req = new XMLHttpRequest();
+    let succeed = false;
     req.open('get', '/search.json');
     req.onload = function (ev)
     {
         if (this.status == 200)
         {
+            succeed = true;
             initSearch(JSON.parse(this.response));
         }
     }
+    req.onloadend = function ()
+    {
+        if (!succeed)
+            suggest.innerHTML = '<span class="failed"></span>';
+    }
     req.send();
 
-    function initSearch(data: Array<SearchRecord>)
+    const queryinput = document.getElementById('search-query') as HTMLInputElement;
+    const suggest = document.getElementById('search-suggest') as HTMLUListElement;
+
+    queryinput.addEventListener('focus', () => { suggest.classList.add('open') });
+    queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
+
+    function initSearch(rawData: ReadonlyArray<SearchRecord>)
     {
-        data = data.filter(r=>{return !!r.title});
-        const queryinput = document.getElementById('search-query') as HTMLInputElement;
-        const suggest = document.getElementById('search-suggest') as HTMLUListElement;
+        let data = rawData.filter(r => { return !!r.title }).map(r =>
+        {
+            const d = r as FormattedSearchRecord;
+            d.formattedContent = r.content.toLowerCase();
+            d.formattedTitle = r.title.toLowerCase();
+            return d;
+        });
         let currentTerms = null;
         function refreshCandidates()
         {
-            const nextTerms = queryinput.value;
-            if (currentTerms && currentTerms.trim() === nextTerms.trim())
+            const nextTerms = queryinput.value.toLowerCase();
+            if (currentTerms && (currentTerms.trim() === nextTerms.trim()))
                 return;
             currentTerms = nextTerms;
 
@@ -45,9 +69,9 @@
                 })
                 return score;
             }
-            function getScore(record: SearchRecord)
+            function getScore(record: FormattedSearchRecord)
             {
-                return match(record.title) * 10 + match(record.content);
+                return match(record.formattedTitle) * 10 + match(record.formattedContent);
             }
             data.forEach(r => { r.score = getScore(r); });
             data.sort((a, b) => { return b.score - a.score; });
@@ -66,10 +90,9 @@
             if (!suggest.firstChild)
                 suggest.innerHTML = '<span class="no-result"></span>';
         }
+        refreshCandidates();
+
         queryinput.addEventListener('input', refreshCandidates);
         queryinput.addEventListener('focus', refreshCandidates);
-
-        queryinput.addEventListener('focus', () => { suggest.classList.add('open') });
-        queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
     }
 })();
