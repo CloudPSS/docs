@@ -93,12 +93,12 @@ $$ \sum_{i=1}^n a_i=0 $$
 
 如：
 `````md codeblock example
-```js a simple js script /sample.js file: sample.js
+```javascript a simple js script /sample.js file: sample.js
 console.log('hello world');
 ```
 `````
 效果：
-```js a simple js script /sample.js file: sample.js
+```javascript a simple js script /sample.js file: sample.js
 console.log('hello world');
 ```
 

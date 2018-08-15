@@ -1,4 +1,3 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js';
 //import Vue from 'vue';
 
 (function ()
@@ -104,13 +103,14 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.min.js'
     req.onprogress = function (ev)
     {
         if (ev.lengthComputable)
-          vueApp.loadedPercent = event.loaded / event.total;
+          vueApp.loadedPercent = event.loaded / event.total * 100;
     };
     req.onload = function (ev)
     {
         if (this.status == 200)
         {
             vueApp.succeed = true;
+            vueApp.loadedPercent = 100;
             let records = (<SearchRecord[]>JSON.parse(this.response));
             records.forEach(r => {
                 r.title = (r.title || '').trim();

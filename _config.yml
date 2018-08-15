@@ -13,6 +13,7 @@ timezone: Asia/Shanghai
 contact: admin@cloudpss.net
 copyright_begin: 2015
 ICP: 京ICP备16015429号-1
+debug_mode: true
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'

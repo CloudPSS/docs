@@ -1,4 +1,4 @@
-﻿@import "_fonts"
+@import "_fonts"
 @import "_settings"
 @import "_syntax"
 
@@ -64,8 +64,10 @@ figure.highlight
     content: "code"
   &.html:before
     content: "HTML"
-  &.js:before
+  &.js:before, &.javascript:before
     content: "JS"
+  &.ts:before, &.typescript:before
+    content: "TS"
   &.bash:before
     content: "Shell"
   &.css:before
@@ -76,6 +78,8 @@ figure.highlight
     content: "Plain"
   &.csharp:before
     content: "C#"
+  &.java:before
+    content: "Java"
   &.c:before
     content: "C"
   &.cpp:before
@@ -84,8 +88,10 @@ figure.highlight
     content: "MatLab"
   &.vb:before
     content: "VB"
-  &.yaml:before
+  &.yaml:before, &.yml:before
     content: "Yaml"
+  &.xml:before
+    content: "XML"
   &.json:before
     content: "JSON"
   &.python:before

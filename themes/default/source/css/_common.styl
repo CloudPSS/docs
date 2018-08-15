@@ -1,4 +1,4 @@
-﻿@import "_fonts"
+@import "_fonts"
 @import "_settings"
 @import "_codeblock"
 @import "_quoteblock"
@@ -23,7 +23,7 @@ body
   &.docs
     padding-top: $header-height
 
-@media screen and (max-width: 900px)
+@media screen and (max-width: $mobile-width)
   body.docs
     padding-top: $mobile-header-height
 
@@ -85,7 +85,7 @@ a.button
   padding: 0 60px 30px 60px
   overflow-x: hidden
 
-@media screen and (max-width: 900px)
+@media screen and (max-width: $mobile-width)
   #main
     top: $mobile-header-height
     padding: 0 20px 20px 20px
@@ -163,6 +163,7 @@ sup.beta.beta
 
 abbr
   text-decoration: solid
+  cursor: help
   &:after
     no-user-select()
     content: "[?]"
