@@ -4,7 +4,6 @@
 header.page-header
   no-user-select()
   box-shadow: 0 0 16px $shadow
-  transition: background-color .3s ease-in-out
   background-color: #fff
   height: $header-inner-height
   padding: $heading-padding-vertical 60px
@@ -49,7 +48,6 @@ header.page-header
       color: $dark
       outline: none
       border-radius: 15px
-      margin-right: 10px
       transition: border-color .2s ease
       background: #fff url(../images/search.png) 8px 5px no-repeat
       background-size: 20px
@@ -59,9 +57,9 @@ header.page-header
       display: none
       position: absolute
       padding: 4px
-      right: 0;
-      left: 0;
-      margin: 0 20px;
+      right: 0
+      left: 0
+      margin: 0 10px
       border: 2px solid $border
       background: white
       &.open, &:hover, &:focus
@@ -162,9 +160,8 @@ header.page-header
       &:hover, &.current
         border-bottom: 2px solid $theme
     #search-form
-      padding: 0 10px 0 24px
       font-size: 0.8em
-      right: 20px
+      right: 32px
       transform: none
       top: 0
       > #search-query
