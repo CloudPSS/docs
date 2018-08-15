@@ -11,7 +11,12 @@
       <form id="search-form" onsubmit="return false">
         <input type="text" id="search-query" />
         <ul id="search-suggest" >
-          <span class="loading"></span>
+          <span class="no-result" v-if="succeed && matches.length === 0"></span>
+          <span class="loading" v-if="!succeed && !failed"></span>
+          <span class="failed" v-if="failed"></span>
+          <li v-for="record in matches"> 
+            <a :href="record.url">{{record.title}}</a>
+          </li>
         </ul>
         <%- js('js/search') %>
       </form>

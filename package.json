@@ -16,7 +16,10 @@
     "hexo-renderer-ts": "^1.0.3",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "^1.2.2",
-    "katex": "^0.10.0-beta",
-    "typescript": "^3.0.1"
+    "katex": "^0.10.0-beta"
+  },
+  "devDependencies": {
+    "typescript": "^3.0.1",
+    "vue": "^2.5.17"
   }
 }
