@@ -26,8 +26,11 @@
 
     <title><%= page.mapped_title ? page.mapped_title + ' - ' : '' %><%= config.title %></title>
     <%- css('css/page') %>
+    <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css') %>  
+    <%- css('//use.fontawesome.com/releases/v5.2.0/css/all.css') %>
   
     <script>window.PAGE_TYPE = '<%- page.type %>'; window.IS_INDEX = <%- is_index %>;</script>
+    <%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js') %>
   </head>
 
   <body class="docs">
@@ -36,10 +39,7 @@
       <%- body %>
     </div>
     
-    <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css') %>  
-    <%- css('//use.fontawesome.com/releases/v5.2.0/css/all.css') %>
     <%- js('//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js') %>
-    <%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js') %>
     <script>document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false)</script> 
     <%- js('/js/common.js') %>
   </body>
