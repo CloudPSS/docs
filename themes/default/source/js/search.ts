@@ -1,4 +1,4 @@
-import Vue from 'vue';
+import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js';
 
 (function ()
 {

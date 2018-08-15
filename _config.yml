@@ -81,6 +81,13 @@ theme: default
 search:
   path: search.json
   field: page
+render:
+  ts: 
+    noResolve: true
+    module: none
+    target: es5
+    removeComments: true
+    isolatedModules: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
