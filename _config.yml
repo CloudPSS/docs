@@ -84,10 +84,8 @@ search:
 render:
   ts: 
     noResolve: true
-    module: none
-    target: es5
+    target: ES2015
     removeComments: true
-    isolatedModules: true
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
