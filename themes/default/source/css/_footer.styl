@@ -2,14 +2,17 @@
 @import "_settings"
 
 footer.page-footer.min
-  color: $light
   text-align: right 
+  color: $light
+  #footer-author-link
+    color: lighten($theme, 0.2)
   > .contact
     margin-left: -0.5em
     .section
       margin-left: 0.5em
 
 footer.page-footer
+  color: $dark 
   no-user-select()
   border-top: 0.2px $border solid
   margin: 48px -48px
@@ -21,6 +24,9 @@ footer.page-footer
     padding-bottom: 0 !important
   hr
     margin: 40px -40px 0 -40px
+  a
+    color: $dark
+    font-weight: unset
   .gravatar    
     box-shadow: 0 0 0.5px $shadow;
     height: 1.8em

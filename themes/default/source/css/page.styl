@@ -5,6 +5,12 @@
 @import "_sidebar"
 @import "_modal"
 
+#buorg.buorg
+  no-user-select()
+@media print
+  #buorg.buorg
+    display: none
+
 .content
   position: relative
   padding: 2.2em 0
@@ -63,12 +69,14 @@
     &:hover > a.markdownIt-Anchor
       opacity: 1
   h2
+    font-size: 1.5em
     margin: $h2-margin-top 0 .8em
     padding-bottom: .7em
     border-bottom: 1px solid $border
     & + h3
       margin-top: 2em
   h3
+    font-size: 1.2em
     margin: $h3-margin-top 0 1.2em
     line-height: 1.2
   figure

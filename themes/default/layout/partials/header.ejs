@@ -1,6 +1,6 @@
 <!-- BEGIN header -->
-<header id="header" class="page-header <%- page.type ? '' : 'no-menu'%>">
-  <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- page.type ? '' : 'display:none'%>"></a>
+<header id="header" class="page-header <%- menu ? '' : 'no-menu'%>">
+  <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- menu ? '' : 'display:none'%>"></a>
   <a class="toc-button mobile-header-button" id="mobile-toc-button" ></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>">
     <img src="<%- url_for("/images/logo.png") %>" alt="logo">
@@ -13,12 +13,12 @@
         <img id="search-icon" src="/images/search.png" />
         <ul id="search-suggest" :class="{open: suggestOpen}">
           <span :class="{'no-result': succeed && matches.length === 0, loading: !succeed && !failed, failed: failed}" ></span>
-          <li v-for="record in matches"> 
+          <li v-for="record in matches" :key="record.url"> 
             <a :href="record.url">{{record.title}}</a>
           </li>
         </ul>
-        <script type="module" src="<%- url_for('js/search.js') %>"></script>
       </form>
+      <%- js('js/search') %>
     </div>
     <div>
       <ul id="nav-toc">
