@@ -68,12 +68,16 @@ header.page-header
         display: block  
       &:focus-within
         display: block  
-      > .no-result
-        &:before
+      > span:before
+        text-align: center
+        display: block
+        color: $light
+      > .no-result:before
           content: '没有匹配的结果'
-          text-align: center
-          display: block
-          color: $light
+      > .loading:before
+          content: '正在加载索引'
+      > .failed:before
+          content: '加载索引失败，请刷新页面'
       > li
         display: block
         position: relative

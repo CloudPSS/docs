@@ -10,7 +10,9 @@
     <div>
       <form id="search-form" onsubmit="return false">
         <input type="text" id="search-query" />
-        <ul id="search-suggest" ></ul>
+        <ul id="search-suggest" >
+          <span class="loading"></span>
+        </ul>
         <%- js('js/search') %>
       </form>
     </div>

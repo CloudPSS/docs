@@ -42,6 +42,8 @@
       margin-top: -24px
       height: 24px
       visibility: hidden
+    > *
+      position: relative // make it clickable
     > a.markdownIt-Anchor:before
       no-user-select()
       content: "#"
@@ -51,16 +53,15 @@
       padding-right: 1em
       font-weight: bold
       height:1.2em
-    a, button
-      color: $dark
-    a
+    > a.markdownIt-Anchor
       position: absolute
       left: 0
       right: 0    
       transform: translateY(-0.2em);
       height: 1.6em
       opacity: 0
-    a:hover
+      transition: opacity 0.1s ease-out
+    &:hover > a.markdownIt-Anchor
       opacity: 1
   h2
     margin: $h2-margin-top 0 .8em
