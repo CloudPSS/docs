@@ -8,12 +8,11 @@
   </a>
   <nav id="nav">
     <div>
-      <form id="search-form" onsubmit="return false">
+      <form id="search-form" @submit.prevent="submit">
         <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term"/>
+        <img id="search-icon" src="/images/search.png" />
         <ul id="search-suggest" :class="{open: suggestOpen}">
-          <span class="no-result" v-if="succeed && matches.length === 0"></span>
-          <span class="loading" v-if="!succeed && !failed"></span>
-          <span class="failed" v-if="failed"></span>
+          <span :class="{'no-result': succeed && matches.length === 0, loading: !succeed && !failed, failed: failed}" ></span>
           <li v-for="record in matches"> 
             <a :href="record.url">{{record.title}}</a>
           </li>
@@ -23,13 +22,13 @@
     </div>
     <div>
       <ul id="nav-toc">
-        <%_ for (const key in site.data.sitemap) {_%>
+        <% for (const key in site.data.sitemap) { %>
           <li>
             <a href="<%- url_for(key + '/index.html') %>" class="nav-link <%- page.path.match(key+'/') ? 'current' : '' %>">
               <%= site.data.sitemap[key] %>
             </a>
           </li>
-        <%_}_%>
+        <% } %>
       </ul>
     </div>
   </nav>
