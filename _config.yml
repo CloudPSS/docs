@@ -82,10 +82,10 @@ search:
   path: search.json
   field: page
 render:
-  ts: 
-    noResolve: true
-    target: ES2015
+  ts:
+    target: es2015
     removeComments: true
+    newLine: "lf"
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

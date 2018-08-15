@@ -1,5 +1,5 @@
-/// <reference path="./../../../../node_modules/vue/types/index.d.ts" />
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
+//import Vue from 'vue';
 
 (function ()
 {
@@ -49,7 +49,7 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.esm.browser.js';
             showSuggest()
             {
                 this.suggestOpen = true;
-            }
+            },
             hideSuggest()
             {
                 setTimeout(() =>
