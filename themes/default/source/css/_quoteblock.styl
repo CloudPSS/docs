@@ -1,4 +1,4 @@
-﻿@import "_fonts"
+@import "_fonts"
 @import "_settings"
 
 dl, blockquote
@@ -15,8 +15,10 @@ dl, blockquote
     color: $medium
   footer
     text-align: right 
-    margin: 1em -4px 1em 4px
-    cite 
+    margin: 1em -2px 1em 4px
+    > strong
+      font-weight: 550
+    > cite 
       font-style: italic
       &:before
         content: " — "
