@@ -1,4 +1,5 @@
 import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js';
+//import Vue from 'vue';
 
 (function ()
 {
@@ -29,13 +30,28 @@ import Vue from 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js';
     }
 
     var vueApp = new Vue({
-        el: '#saerch-form',
+        el: '#search-form',
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),
             term: '',
             failed: false,
-            succeed: false
+            succeed: false,
+            suggestOpen: false
+        },
+        methods:
+        {
+            showSuggest()
+            {
+                this.suggestOpen = true;
+            },
+            hideSuggest()
+            {
+                setTimeout(() =>
+                {
+                    this.suggestOpen = false;
+                }, 100);
+            }
         },
         computed:
         {
