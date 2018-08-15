@@ -1,5 +1,4 @@
-import Vue from 'vue'
-import { TypeOfExpression } from 'typescript';
+import Vue from 'vue';
 
 (function ()
 {
@@ -8,14 +7,25 @@ import { TypeOfExpression } from 'typescript';
         url: string;
         content: string;
         title?: string;
-        score?: number;
     }
 
-    interface FormattedSearchRecord extends SearchRecord
+    class FormattedSearchRecord implements SearchRecord
     {
+        url: string;
+        content: string;
+        score = 0;
         formattedTitle: string;
         formattedContent: string;
         title: string;
+
+        constructor(record: SearchRecord)
+        {
+            this.url = record.url;
+            this.content = record.content;
+            this.formattedContent = this.content.toLowerCase();
+            this.title = record.title || '';
+            this.formattedTitle = this.title.toLowerCase();
+        }
     }
 
     var vueApp = new Vue({
@@ -65,7 +75,10 @@ import { TypeOfExpression } from 'typescript';
         if (this.status == 200)
         {
             vueApp.succeed = true;
-            initSearch(JSON.parse(this.response));
+            vueApp.records = (<SearchRecord[]>JSON.parse(this.response)).map(r =>
+            {
+                return new FormattedSearchRecord(r);
+            });
         }
     }
     req.onloadend = function ()
