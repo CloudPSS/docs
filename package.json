@@ -5,7 +5,11 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "start": "rm nohup.out && hexo cl && hexo g && nohup hexo s &",
+    "build": "hexo g",
+    "clean": "rm nohup.out && hexo cl",
+    "rebuild": "npm run clean && npm run build",
+    "prestart": "npm run rebuild",
+    "start": "nohup hexo s &",
     "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'`"
   },
   "dependencies": {

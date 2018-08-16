@@ -77,12 +77,12 @@ declare const IS_INDEX: boolean;
 
       if (Math.abs(xDiff) > Math.abs(yDiff))
       {
-        if (xDiff > 0 && start.x <= 60)
+        if (xDiff > 0 && start.x <= 20)
         {
           sidebar.classList.add('open');
           toc.classList.remove('open');
         }
-        else if (xDiff < 0 && start.x >= document.body.clientWidth - 60)
+        else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
         {
           sidebar.classList.remove('open')
           toc.classList.add('open');

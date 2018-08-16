@@ -143,7 +143,7 @@ a.button
       &:hover
         color: $theme
 
-abbr
+abbr[title]
   text-decoration: solid
   cursor: help
   &:after
@@ -151,6 +151,8 @@ abbr
     content: "[?]"
     vertical-align: super
     font-size: xx-small
+br
+  word-spacing: 0
     
 a.footnote-backref
   no-user-select()
@@ -177,6 +179,6 @@ a.footnote-backref
   sup.footnote-ref > a, a.markdownIt-Anchor
     &:link:after, &:visited:after
        content:""
-  abbr:after
+  abbr[title]:after
       content: "[" attr(title) "]"
   
