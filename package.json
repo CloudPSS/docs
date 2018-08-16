@@ -1,9 +1,12 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "CloudPss.doc",
   "private": true,
   "hexo": {
     "version": "3.7.1"
+  },
+  "scripts": {
+    "start": "rm nohup.out && hexo cl && hexo g && nohup hexo s &",
+    "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'`"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "github:OpportunityLiu/markdown-it-katex#patch-1",
@@ -16,13 +19,7 @@
     "hexo-renderer-ts": "^1.1.2",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "^1.2.2",
-    "katex": "^0.10.0-beta"
-  },
-  "scripts": {
-    "start": "hexo cl && hexo g && nohup hexo s &",
-    "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'`"
-  },
-  "devDependencies": {
+    "katex": "^0.10.0-beta",
     "typescript": "^3.0.1",
     "vue": "^2.5.17"
   }

@@ -84,9 +84,9 @@ search:
   field: page
 render:
   ts:
-    target: es3
+    target: es2015
     removeComments: true
-    newLine: "lf"
+    newLine: lf
     pretty: false
 
 # Deployment
