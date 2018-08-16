@@ -1,0 +1,8 @@
+﻿{
+    "compilerOptions": {
+        "target": "es3",
+        "removeComments": true,
+        "newLine": "LF",
+        "pretty": false
+    }
+}

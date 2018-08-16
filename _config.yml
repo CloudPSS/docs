@@ -83,12 +83,8 @@ search:
   path: search.json
   field: page
 render:
-  ts:
-    target: es3
-    removeComments: true
-    newLine: lf
-    pretty: false
-
+  ts: tsconfig.json
+  
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
