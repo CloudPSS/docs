@@ -81,7 +81,7 @@
                     let score = 0;
                     terms.forEach(term =>
                     {
-                        if (content.includes(term))
+                        if (content.indexOf(term) >= 0)
                             score += (term.length + 1) / content.length;
                     })
                     return score;
@@ -90,7 +90,7 @@
                 {
                     return match(record.formattedTitle) * 10 + match(record.formattedContent);
                 }
-                let records = Array.from<FormattedSearchRecord>(this.records);
+                let records = this.records.slice();
                 records.forEach(r => { r.score = getScore(r); });
                 records.sort((a, b) => { return b.score - a.score; });
                 records = records.splice(0, 10).filter(r => { return r.score > 0; });

@@ -28,7 +28,7 @@ header.page-header
     margin: 0
     > li
       transition: padding $size-transition
-      display: inline-block
+      display: inline
       position: relative
       padding: 0 0.8em
     .nav-link
@@ -191,7 +191,6 @@ header.page-header
       > #search-icon
         margin: 2.5px 16px
     #nav-toc
-      display: inline-grid
       padding: 10px
       background: rgba(255,255,255,0.9)
       position: fixed
@@ -201,6 +200,7 @@ header.page-header
       box-shadow: 0 0 10px $shadow
       transition: box-shadow,transform .3s ease-in-out
       > li
+        display: block
         padding: 0.25em 0.2em
       &.open
         transform: translateX(0)
