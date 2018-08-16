@@ -24,7 +24,7 @@ figure.highlight
   box-shadow: 0 0 4px $shadow
   > figcaption
     no-user-select()
-    font-size: smaller
+    font-size: .75em
     padding: 4px 8px 0 8px 
     > span
       font-weight: 200
@@ -45,18 +45,16 @@ figure.highlight
     margin: 0
   .gutter
     text-align: right
-    width: 1.5em
+    width: 0
     no-user-select()
   pre
-    padding: 0.8em 1em 1.2em 1em
-    margin: 0
+    margin: 0.8em 1em
     .line
       line-height: 1.5em
 .highlight > figcaption
   &:before
     color: #ccc
     float: right
-    font-size: .75em
     font-weight: 400
     content: "code"
   .html&:before
@@ -115,10 +113,9 @@ figure.highlight
       display: none
     .code
       pre
-        color: rgb(0,0,0)
-        background-color: rgb(255,255,255)
+        color: black
         white-space: pre-wrap
         page-break-inside: avoid
-        span.line:before
+        > span.line:before
           content: "  "
   
