@@ -20,7 +20,7 @@
     "hexo-renderer-markdown-it-plus": "^1.0.3",
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
-    "hexo-renderer-ts": "^1.1.2",
+    "hexo-renderer-ts": "^1.2.0",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "^1.2.2",
     "katex": "^0.10.0-beta",
