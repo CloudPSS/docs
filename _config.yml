@@ -84,9 +84,10 @@ search:
   field: page
 render:
   ts:
-    target: es2015
+    target: es3
     removeComments: true
     newLine: "lf"
+    pretty: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
