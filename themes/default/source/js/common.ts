@@ -3,14 +3,16 @@ declare const IS_INDEX: boolean;
 
 (function ()
 {
-  document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false);
-  mermaid.initialize({theme:'forest'});
+  document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
+  mermaid.initialize({ theme: 'forest' });
   document.querySelectorAll("canvas.chartjs").forEach((e) => 
   {
-    try{
+    try
+    {
       new Chart(e, JSON.parse(e.textContent))
-    }catch(t){
-      e.outerHTML=`<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
+    } catch (t)
+    {
+      e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
     }
   });
   initMobileMenu()
@@ -233,16 +235,6 @@ declare const IS_INDEX: boolean;
       return link;
     }
 
-    function htmlEscape(text: string)
-    {
-      return text
-        .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#39;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-    }
-
     function collectH3s(h: HTMLHeadingElement)
     {
       const h3s = new Array<HTMLHeadingElement>();
@@ -318,5 +310,15 @@ declare const IS_INDEX: boolean;
       return options.transform(result);
     else
       return result;
+  }
+
+  function htmlEscape(text: string)
+  {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
   }
 })()
