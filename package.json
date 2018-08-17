@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build": "hexo g",
-    "clean": "rm nohup.out && hexo cl",
+    "clean": "rm nohup.out -f && hexo cl",
     "rebuild": "npm run clean && npm run build",
     "prestart": "npm run rebuild",
     "start": "nohup hexo s &",
@@ -14,16 +14,18 @@
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "github:OpportunityLiu/markdown-it-katex#patch-1",
-    "hexo": "^3.2.0",
+    "hexo": "github:OpportunityLiu/hexo#patch-1",
     "hexo-generator-search": "^2.2.5",
     "hexo-renderer-ejs": "^0.3.0",
-    "hexo-renderer-markdown-it-plus": "^1.0.3",
+    "hexo-renderer-markdown-it-plus": "github:OpportunityLiu/hexo-renderer-markdown-it-plus#patch-1",
     "hexo-renderer-sass": "^0.3.2",
     "hexo-renderer-stylus": "^0.3.3",
     "hexo-renderer-ts": "^1.2.0",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "^1.2.2",
     "katex": "^0.10.0-beta",
+    "markdown-it-chart": "^0.2.0",
+    "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
     "typescript": "^3.0.1",
     "vue": "^2.5.17"
   }

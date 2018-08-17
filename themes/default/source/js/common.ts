@@ -3,6 +3,16 @@ declare const IS_INDEX: boolean;
 
 (function ()
 {
+  document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false);
+  mermaid.initialize({theme:'forest'});
+  document.querySelectorAll("canvas.chartjs").forEach((e) => 
+  {
+    try{
+      new Chart(e, JSON.parse(e.textContent))
+    }catch(t){
+      e.outerHTML=`<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
+    }
+  });
   initMobileMenu()
   initVideos()
   if (PAGE_TYPE && !IS_INDEX)
