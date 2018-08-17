@@ -11,6 +11,7 @@
 
   <head>
     <meta charset="utf-8">
+    <%- js('/js/browser-check') %>
     <meta name="theme-color" content="#4285F4">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -27,11 +28,10 @@
 
     <title><%= page.mapped_title ? page.mapped_title + ' - ' : '' %><%= config.title %></title>
     <%- css('css/page') %>
+    <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css') %>
     <% if(config.debug_mode) { %>
-      <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.css') %>
       <%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.js') %>
     <% } else { %>
-      <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-beta/dist/katex.min.css') %>
       <%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js') %>
     <% } %>
     <script>window.PAGE_TYPE = '<%- page.type %>'; window.IS_INDEX = <%- is_index %>;</script>
@@ -43,12 +43,10 @@
       <%- body %>
     </div>
     
+    <%- js('//cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js') %>
+    <%- js('//cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js') %>
     <%- js('//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js') %>
-    <script>
-      document.addEventListener('DOMContentLoaded', function (){ FastClick.attach(document.body) }, false);
-    </script> 
     <%- js('/js/common') %>
-    <%- js('/js/browser-check') %>
   </body>
 
 </html>

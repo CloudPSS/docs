@@ -47,6 +47,9 @@ highlight:
   line_number: true
   auto_detect: false
   tab_replace:
+  disable_for_lang:
+  - chart
+  - mermaid
   
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -84,6 +87,15 @@ search:
   field: page
 render:
   ts: tsconfig.json
+  
+markdown_it_plus:
+  plugins:
+  - plugin:
+      name: markdown-it-mermaid
+      enable: true
+  - plugin:
+      name: markdown-it-chart
+      enable: true
   
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
