@@ -42,7 +42,7 @@
     <div id="main">
       <%- body %>
     </div>
-    
+    <%- config.debug_mode ? partial('partials/edit') : '' %>
     <%- js('//cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js') %>
     <%- js('//cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js') %>
     <%- js('//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js') %>
