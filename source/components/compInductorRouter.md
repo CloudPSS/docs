@@ -3,6 +3,10 @@
 title: 电感
 date: 2018/8/1 14:40:44
 type: components
+categories: 
+- electric
+- basic
+- passive
 classname: InductorRouter
 symbol: Inductor
 author: 

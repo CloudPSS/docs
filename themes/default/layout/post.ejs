@@ -2,7 +2,7 @@
 <% if(page.path.endsWith('index.html')) { %>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <% } else { %>
-  <aside class="sidebar blog">
+  <aside class="sidebar blog" <%- page.sidebar === false ? 'style="display:none"': '' %> >
     <div class="sidebar-inner">
       <div class="list">
         <h2>所有文章</h2>
