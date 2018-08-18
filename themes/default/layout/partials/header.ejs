@@ -25,7 +25,7 @@
         <% for (const key in site.data.sitemap) { %>
           <li>
             <a href="<%- url_for(key + '/index.html') %>" class="nav-link <%- page.path.match(key+'/') ? 'current' : '' %>">
-              <%= site.data.sitemap[key] %>
+              <%= site.data.sitemap[key].name %>
             </a>
           </li>
         <% } %>

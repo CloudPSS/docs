@@ -3,6 +3,10 @@
 title: 电容
 date: 2018/8/1 14:40:44
 type: components
+categories: 
+- electric
+- basic
+- passive
 classname: CapacitorRouter
 symbol: Capacitor
 author: 

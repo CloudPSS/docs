@@ -2,7 +2,7 @@
   page.mapped_title = '';
   var is_index = page.path.endsWith('index.html');
   if(page.type && !page.title && is_index)
-    page.mapped_title = site.data.sitemap[page.type];
+    page.mapped_title = site.data.sitemap[page.type].name;
   else
     page.mapped_title = (page.title || '').trim()
 %>
@@ -38,7 +38,7 @@
   </head>
 
   <body class="docs">
-    <%- partial('partials/header', { menu: (!!page.type) || is_post() }) %>
+    <%- partial('partials/header', { menu: page.sidebar !== false }) %>
     <div id="main">
       <%- body %>
     </div>
