@@ -1,0 +1,60 @@
+guide: 
+  name: 使用指南
+
+intro: 
+  name: 快速入门
+
+simulation: 
+  name: 仿真操作
+
+components: 
+  name: 元件说明  
+  categories: 
+    electric:
+      name: 电气元件
+      children:
+        basic: 
+          name: 基本电气元件
+          children:
+            passive:
+              name: 无源元件
+            source:
+              name: 电源
+            switch:
+              name: 开关
+            other:
+              name: 其他
+        ac-grid: 
+          name: 交流输电网元件
+        renewable: 
+          name: 可再生能源
+    control:
+      name: 控制元件
+      children:
+        basic:
+          name: 基本控制模块
+        math:
+          name: 基本数学函数
+        linear-transfer:
+          name: 线性传递函数元件
+        signal:
+          name: 信号发生器
+        non-linear:
+          name: 非线性元件
+        discrete:
+          name: 离散元件
+        coordinate-transformation:
+          name: 坐标变换
+        high-level:
+          name: 高级电气控制模块
+        other:
+          name: 其他
+
+features: 
+  name: 功能说明
+
+examples: 
+  name: 示例仿真库
+
+about: 
+  name: 关于
