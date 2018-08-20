@@ -76,17 +76,14 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 由于 git 本身不保存文件的创建和编辑时间，如不显式指定这些值，网页部署以后显示的创建和编辑时间将会改变。
 {% endpullquote %}
 
-### 页脚模式 `full_footer`
+### 页面布局 `full_footer` `sidebar`
 
-指定是否显示完整页脚，默认为 `false`，当显示完整页脚时，作者和编辑信息将被隐藏。
+- `full_footer`：指定是否显示完整页脚，默认为 `false`，当显示完整页脚时，作者和编辑信息将被隐藏。
+- `sidebar`：指定是否显示页面左侧的侧边栏，默认为 `true`。
 
 {% pullquote info %}
-`full_footer: true` 的页面可参考[完整页脚样例](/posts/full-footer.html)。
+效果可参考[完整页脚 / 隐藏侧边栏样例](/posts/full-footer-no-sidebar.html)。
 {% endpullquote %}
-
-### 侧边栏 `sidebar`
-
-指定是否显示页面左侧的侧边栏，默认为 `true`。
 
 ## 分类信息
 

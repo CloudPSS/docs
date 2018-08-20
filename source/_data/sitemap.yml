@@ -24,10 +24,12 @@ components:
               name: 开关
             other:
               name: 其他
-        ac-grid: 
-          name: 交流输电网元件
+        ac-system: 
+          name: 三相交流系统设备
         renewable: 
           name: 可再生能源
+        power-converter:
+          name: 电力电子变换器
     control:
       name: 控制元件
       children:
@@ -42,11 +44,11 @@ components:
         non-linear:
           name: 非线性元件
         discrete:
-          name: 离散元件
+          name: 离散逻辑元件
         coordinate-transformation:
           name: 坐标变换
         high-level:
-          name: 高级电气控制模块
+          name: 高级控制模块
         other:
           name: 其他
 

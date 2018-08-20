@@ -48,13 +48,13 @@
       margin: 12px 0
       font-size: 0.75em
       color: $light
-      no-user-select()
       > span
         white-space: nowrap
       > span[role='separator']
         color: lighten($light, 0.2)
         &:before
           content: ' ➤ ' 
+          white-space: normal
     & + h2, & + h3, & + h4, & + h5, & + h6
       margin-top: 0
   h2, h3, h4, h5, h6

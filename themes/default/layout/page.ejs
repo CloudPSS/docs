@@ -1,12 +1,12 @@
 <!-- BEGIN page -->
-<%- partial('partials/sidebar', { hasSidebar: page.sidebar !== false}) _%>
+<%- partial('partials/sidebar', { hasSidebar: page.sidebar !== false}) -%>
 
 <article id="article" class="content <%- page.sidebar !== false ? 'with-sidebar' : '' %>">
-  <%_ if (title()) { _%>
+  <%_ if (title()) { -%>
     <section class="title"><h1><%= title() %></h1>
-      <%_ if (!is_index()) { _%>
+      <%_ if (!is_index()) { -%>
         <p class="categories">
-          <span class="type"><%= site.data.sitemap[page.type].name %></span>
+          <%_ -%><span class="type"><%= site.data.sitemap[page.type].name %></span><%_ -%>
           <%_
             const cate = [];
             if(page.categories)
@@ -18,15 +18,15 @@
                 cate_ref = cate_ref[key].children;
               }
             }
-            cate.forEach(name => { _%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
-          _%>
+            cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
+          -%>
         </p>
-      <%_ } _%>
+      <%_ } -%>
     </section>
-  <%_ } _%>
+  <%_ } -%>
 
-  <%- page.content _%>
+  <%- page.content -%>
 
-  <%- partial('partials/footer', {min: !page.full_footer}) _%>
+  <%- partial('partials/footer', {min: !page.full_footer}) -%>
 </article>
 <!-- END page -->
