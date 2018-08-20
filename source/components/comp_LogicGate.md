@@ -5,6 +5,9 @@ type: components
 classname: _LogicGate
 symbol: LogicGate
 author: 
+categories: 
+- control
+- discrete
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

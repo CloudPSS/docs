@@ -5,6 +5,9 @@ type: components
 classname: _ComplexPole
 symbol: ComplexPole
 author: 
+categories: 
+- control
+- linear-transfer
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

@@ -5,6 +5,9 @@ type: components
 classname: _PRCoordinate
 symbol: PRCoordinate
 author: 
+categories: 
+- control
+- coordinate-transformation
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

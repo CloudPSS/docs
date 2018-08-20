@@ -4,7 +4,10 @@ date: 2018/8/1 14:40:44
 type: components
 classname: _PiecewiseLinear
 symbol: PiecewiseLinear
-author: 
+author:
+categories: 
+- control
+- non-linear 
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

@@ -1,26 +1,30 @@
 <!-- BEGIN edit -->
 <div class="debugedit">
-    <style>
-        div.debugedit > a
-        {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            background: yellow;
-            border: 2px solid;
-            border-radius: 4px;
-            z-index: 100;
-            padding: 12px 24px;
-            margin: 24px;
-        }
-        @media print
-        {
-            div.debugedit
-            {
-                display: none;
-            }
-        }
-    </style>
-    <%- link_to(`http://166.111.61.117:4001/ide.html#editfile-source/${page.source}:1`, '编辑此文件', {external: true}) -%>
+  <style>
+    div.debugedit > a
+    {
+      color: black;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      background: yellow;
+      border: 2px solid;
+      border-radius: 4px;
+      z-index: 100;
+      padding: 12px 24px;
+      margin: 24px;
+    }
+    @media print
+    {
+      div.debugedit
+      {
+        display: none;
+      }
+    }
+  </style>
+  <a id="debugeditlink" data="<%= page.source %>" target="_blank">编辑此文件</a>
+  <script>
+    debugeditlink.href = `http://${window.location.hostname}:4001/ide.html#editfile-source/${debugeditlink.getAttribute('data')}`;
+  </script>
 </div>
 <!-- END edit -->

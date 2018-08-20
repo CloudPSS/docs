@@ -5,6 +5,9 @@ type: components
 classname: _Time
 symbol: Time
 author: 
+categories: 
+- control
+- basic
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

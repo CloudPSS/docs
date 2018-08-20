@@ -5,6 +5,9 @@ type: components
 classname: _Transformer_3p2w
 symbol: Transformer_3p2w
 author: 
+categories: 
+- electric
+- ac-system
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
@@ -93,27 +96,27 @@ author:
 
 
 ## <span id="comp_remarks">参数说明</span>
-### [A] 绕组等值阻抗
+### 绕组等值阻抗
 + 在已知漏阻抗的情况下，可直接填写该项。
 + 未知时，可由变压器短路实验或铭牌参数得出。
 
 设已知参数为短路损耗$P_k$(单位：KW)，短路电压百分比$V_k\%$。具体解算公式如下:
 
 变压器短路损耗近似等于铜耗，可得出等值电阻的有名值及标幺值分别为：
-$${R_T} = \frac{ { {P_k} } }{ {1000} }\frac{ {V_N^2} }{ {S_N^2} }{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {R_{T*} } = \frac{ { {P_k} } }{ {1000{S_N} } }$$
+$${R_T} = \frac{ { {P_k} } }{ {1000} }\frac{ {V_N^2} }{ {S_N^2} },{R_{T*} } = \frac{ { {P_k} } }{ {1000{S_N} } }$$
 短路电压约等于变压器电抗在额定电流下产生的压降，可得出等值电抗的有名值及标幺值分别为：
-$${X_T} = \frac{ { {V_k}\% } }{ {100} }\frac{ {V_N^2} }{ {S_N^{} } }{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {X_{T*} } = \frac{ { {V_k}\% } }{ {100} }$$
+$${X_T} = \frac{ { {V_k}\% } }{ {100} }\frac{ {V_N^2} }{ {S_N^{} } } , {X_{T*} } = \frac{ { {V_k}\% } }{ {100} }$$
 
-### [B] 励磁导纳
+### 励磁导纳
 + 在已知励磁导纳的情况下，可直接填写该项。
 + 未知时，可由变压器空载实验或铭牌参数得出。
 
 设已知参数为空载损耗$\Delta {P_0}$(单位：KW)以及励磁电流百分比$I_0\%$。具体解算公式如下:
 
 空载损耗近似等于铁耗，可得出励磁电导的有名值及标幺值分别为：
-$${G_T} = \frac{ {\Delta {P_0} } }{ {1000V_N^2} }{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {G_{T*} } = \frac{ {\Delta {P_0} } }{ {1000{S_N} } }$$
+$${G_T} = \frac{ {\Delta {P_0} } }{ {1000V_N^2} },{G_{T*} } = \frac{ {\Delta {P_0} } }{ {1000{S_N} } }$$
 空载电流包含有功分量和无功分量，有功分量很小，因此空载电流近似等于无功分量。可得出励磁电纳的有名值及标幺值分别为：
-$${B_T} = \frac{ { {I_0}\% } }{ {100} }{\kern 1pt} {\kern 1pt} \frac{ { {S_N} } }{ {V_N^2} }{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {B_{T*} } = \frac{ { {I_0}\% } }{ {100} }$$
+$${B_T} = \frac{ { {I_0}\% } }{ {100} }{\kern 1pt} {\kern 1pt} \frac{ { {S_N} } }{ {V_N^2} } ,{B_{T*} } = \frac{ { {I_0}\% } }{ {100} }$$
 
 ## <span id="comp_example">测试模型</span>
 [<test name>](<test link>)显示了三相双绕组变压器的典型应用。

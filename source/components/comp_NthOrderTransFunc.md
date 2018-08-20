@@ -5,6 +5,9 @@ type: components
 classname: _NthOrderTransFunc
 symbol: NthOrderTransFunc
 author: 
+categories: 
+- control
+- linear-transfer
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

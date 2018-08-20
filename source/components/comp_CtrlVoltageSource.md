@@ -6,6 +6,10 @@ type: components
 classname: _CtrlVoltageSource
 symbol: CtrlVoltageSource
 author: 
+categories: 
+- electric
+- basic
+- source
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
