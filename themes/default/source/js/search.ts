@@ -13,6 +13,28 @@ import Vue from '../../../../node_modules/vue/types/index';
         extend?: string;
     }
 
+    interface SiteMap
+    {
+        [key: string]: Type;
+    }
+
+    interface Type
+    {
+        name: string;
+        categories?: CategoryMap;
+    }
+
+    interface CategoryMap
+    {
+        [key: string]: Category | undefined;
+    }
+
+    interface Category
+    {
+        name: string;
+        children?: CategoryMap;
+    }
+
     class FormattedSearchRecord
     {
         url: string;
@@ -48,9 +70,9 @@ import Vue from '../../../../node_modules/vue/types/index';
             records: null as (null | Array<FormattedSearchRecord>),
             term: '',
             failed: false,
-            succeed: false,
             loadedPercent: 0,
-            suggestOpen: false
+            suggestOpen: false,
+            sitemap: null as (null | SiteMap)
         },
         methods:
         {
@@ -77,6 +99,10 @@ import Vue from '../../../../node_modules/vue/types/index';
         },
         computed:
         {
+            succeed: function ()
+            {
+                return !(this.sitemap && this.records && !this.failed);
+            },
             matches: function (): Array<FormattedSearchRecord>
             {
                 if (!this.records || this.records.length === 0)
@@ -109,10 +135,12 @@ import Vue from '../../../../node_modules/vue/types/index';
 
     try
     {
-        let data = await getFile('/search.json', p => vueApp.loadedPercent = p) as SearchRecord[];
+        let getSearch = getFile('/search.json', p => vueApp.loadedPercent = p);
+        let getSitemap = getFile('sitemap.json');
+        let data = await getSearch as SearchRecord[];
         vueApp.loadedPercent = 100;
-        vueApp.succeed = true;
         vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r));
+        vueApp.sitemap = await getSitemap as SiteMap;
     }
     catch
     {
