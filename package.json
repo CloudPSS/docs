@@ -25,6 +25,7 @@
     "katex": "^0.10.0-beta",
     "markdown-it-chart": "^0.2.0",
     "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
+    "pinyinjs": "^2.2.1",
     "typescript": "^3.0.1",
     "vue": "^2.5.17"
   }

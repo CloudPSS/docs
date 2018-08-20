@@ -1,8 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es3",
+        "target": "es2015",
         "removeComments": true,
         "newLine": "LF",
-        "pretty": true
+        "pretty": true,
+        "strict": true,
+        "alwaysStrict": true
     }
 }
