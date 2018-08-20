@@ -1,11 +1,9 @@
 <!-- BEGIN toc -->
 <header>
-  <h2><a class="sidebar-link <%- is_index() ? 'current' : '' %>" href="<%- url_for(page.type +'/')%>">
-    <%= site.data.sitemap[page.type].name %>
-  </a></h2>
+  <h2><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) _%></h2>
 </header>
 <ul class="menu-root">
-  <% 
+  <%_
     const categories = site.data.sitemap[page.type].categories || {};
     const pages = site.pages.toArray().filter(p => p.type === page.type && !is_index(p)).sort(function(a, b){
       var ao = a.order || Number.MAX_VALUE;
@@ -16,32 +14,26 @@
     });
     function page_link(p)
     {
-  %>
-    <li>
-      <a href="<%- url_for(p.path) %>" class="sidebar-link<%- page.path === p.path ? ' current' : '' %><%- p.is_new ? ' new' : '' %>"><%= title(p) %></a>
-    </li>
-  <%
+      _%><li><%- link_to(url_for(p.path), title(p), {class: `sidebar-link ${page.path === p.path ? ' current' : ''}`}) %></li><%_
     }
     function cate_link(key, cat, level, parent_pages)
     {
       const cate_pages = parent_pages.filter(p => p.categories[level] === key);
       if(cate_pages.length === 0)
         return;
-  %>
-    <ul class="menu-category">
-      <p class="menu-cate-name level-<%- level %>"><%= cat.name %></p>
-  <%
+        
+      _%><ul class="menu-category"><p class="menu-cate-name level-<%- level %>"><%= cat.name %></p><%_
+      
       cate_pages.filter(p => p.categories.length === level + 1).forEach(page_link);
       if(cat.children)
         for(const ckey in cat.children)
           cate_link(ckey, cat.children[ckey], level + 1, cate_pages);
-  %>
-    </ul>
-  <%
+          
+      _%></ul><%_
     }
     pages.filter(t => !t.categories || t.categories.length === 0).forEach(page_link);
     for(const key in categories)
       cate_link(key, categories[key], 0, pages.filter(t => t.categories && t.categories.length !== 0));
-  %>
+  _%>
 </ul>
 <!-- END toc -->

@@ -14,7 +14,10 @@
         <ul id="search-suggest" :class="{open: suggestOpen}">
           <span :class="{'no-result': succeed && matches.length === 0, loading: !succeed && !failed, failed: failed}" ></span>
           <li v-for="record in matches" :key="record.url"> 
-            <a :href="record.url">{{record.title}}</a>
+            <a :href="record.url">
+              <span>{{record.title}}</span>
+              <p class="categories">{{getCategories(record).join(' > ')}}</p>
+            </a>
           </li>
         </ul>
       </form>
@@ -22,13 +25,11 @@
     </div>
     <div>
       <ul id="nav-toc">
-        <% for (const key in site.data.sitemap) { %>
-          <li>
-            <a href="<%- url_for(key + '/index.html') %>" class="nav-link <%- page.path.match(key+'/') ? 'current' : '' %>">
-              <%= site.data.sitemap[key].name %>
-            </a>
-          </li>
-        <% } %>
+        <%_ 
+          for (const key in site.data.sitemap) { 
+            _%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.path.match(key+'/') ? 'current' : ''}`}) %></li><%_ 
+          } 
+        _%>
       </ul>
     </div>
   </nav>

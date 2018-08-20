@@ -1,14 +1,13 @@
 <!-- BEGIN page -->
-<%- partial('partials/sidebar', { hasSidebar: page.sidebar !== false}) %>
+<%- partial('partials/sidebar', { hasSidebar: page.sidebar !== false}) _%>
 
 <article id="article" class="content <%- page.sidebar !== false ? 'with-sidebar' : '' %>">
-  <% if (title()) { %>
-    <section class="title">
-      <h1><%= title() %></h1>
-      <% if (!is_index()) { %>
+  <%_ if (title()) { _%>
+    <section class="title"><h1><%= title() %></h1>
+      <%_ if (!is_index()) { _%>
         <p class="categories">
           <span class="type"><%= site.data.sitemap[page.type].name %></span>
-          <% 
+          <%_
             const cate = [];
             if(page.categories)
             {
@@ -19,15 +18,15 @@
                 cate_ref = cate_ref[key].children;
               }
             }
-            cate.forEach(name => { %><span role="separator"></span></span><span class="category"><%= name %></span><% });
-          %>
+            cate.forEach(name => { _%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
+          _%>
         </p>
-      <% } %>
+      <%_ } _%>
     </section>
-  <% } %>
-  
-  <%- page.content %>
+  <%_ } _%>
 
-  <%- partial('partials/footer', {min: !page.full_footer}) %>
+  <%- page.content _%>
+
+  <%- partial('partials/footer', {min: !page.full_footer}) _%>
 </article>
 <!-- END page -->

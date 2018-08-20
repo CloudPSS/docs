@@ -92,12 +92,20 @@ header.page-header
       > li
         display: block
         position: relative
-        &:hover
-          background: #eee
+        line-height: 1em
         > a
+          padding: 8px
           color: $medium
-          padding: 0 8px 
           display: block
+          &:hover, &:focus
+            background: #eee
+          > p
+            margin: 4px 0 0 0 
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+            font-size: 0.75em
+            color: $light
 
 #logo
   left: 100px
@@ -192,6 +200,12 @@ header.page-header
         line-height: 20px
       > #search-icon
         margin: 2.5px 16px
+      > #search-suggest
+        > li
+          > a 
+            padding: 4px
+            > p
+              font-size: 0.5em
     #nav-toc
       padding: 10px
       background: rgba(255,255,255,0.9)

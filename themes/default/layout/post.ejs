@@ -1,17 +1,17 @@
 <!-- BEGIN post -->
-<% if(is_index()) { %>
+<%_ if(is_index()) { _%>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
-<% } else { %>
+<%_ } else { _%>
   <aside class="sidebar blog" <%- page.sidebar === false ? 'style="display:none"': '' %> >
     <div class="sidebar-inner">
       <div class="list">
         <h2>所有文章</h2>
         <ul style="padding: 0;">
-          <% site.posts.sort('date', -1).each(function (post) { %>
+          <%_ site.posts.sort('date', -1).each(function (post) { _%>
             <li>
               <a href="/<%- post.path %>" class="sidebar-link <%- is_current(post.path) ? 'current' : '' %>"><%- post.title %></a>
             </li>
-          <% }) %>
+          <%_ }) _%>
         </ul>
       </div>
     </div>
@@ -19,9 +19,9 @@
   <article id="article" class="content with-sidebar blog post">
     <section><h1><%= page.title %></h1></section>
 
-    <%- page.content %>
+    <%- page.content _%>
 
-    <%- partial('partials/footer', {min: !page.full_footer}) %>
+    <%- partial('partials/footer', {min: !page.full_footer}) _%>
   </article>
-<% } %>
+<%_ } _%>
 <!-- END post -->
