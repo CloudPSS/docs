@@ -3,13 +3,6 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
       <nav class="list">
-        <% if (typeof site.data.sitemap[page.type] === 'object') { %>
-          <header><h2>
-            <a class="sidebar-link <%- page.path.endsWith('index.html') ? 'current' : '' %>" href="<%- url_for(page.type +'/')%>">
-              <%= site.data.sitemap[page.type].name %>
-            </a>
-          </h2></header>
-        <% } %>
         <%- partial('partials/toc', { type: page.type }) %>
       </nav>
     </div>

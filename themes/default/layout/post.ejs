@@ -1,5 +1,5 @@
 <!-- BEGIN post -->
-<% if(page.path.endsWith('index.html')) { %>
+<% if(is_index()) { %>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <% } else { %>
   <aside class="sidebar blog" <%- page.sidebar === false ? 'style="display:none"': '' %> >
