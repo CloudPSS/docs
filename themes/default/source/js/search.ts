@@ -1,37 +1,45 @@
-//import Vue from 'vue';
+import Vue from '../../../../node_modules/vue/types/index';
 
 (async function ()
 {
+
     interface SearchRecord
     {
-        url: string;
-        content: string;
-        title: string;
+        url?: string;
+        content?: string;
+        title?: string;
+        categories?: string[];
+
+        extend?: string;
     }
 
-    class FormattedSearchRecord implements SearchRecord
+    class FormattedSearchRecord
     {
         url: string;
         content: string;
+        categories: string[];
         score = 0;
         formattedTitle: string;
         formattedContent: string;
         title: string;
+        extend: string;
 
         constructor(record: SearchRecord)
         {
-            this.url = record.url;
-            this.content = record.content;
+            this.url = record.url || '';
+            this.content = (record.content || '').trim();
             this.formattedContent = this.content.toLowerCase();
-            this.title = record.title;
+            this.title = (record.title || '').trim();
             this.formattedTitle = this.title.toLowerCase();
+            this.categories = record.categories || [];
+            this.extend = record.extend || '';
         }
     }
-    
-    const queryinput = document.getElementById('search-query') as HTMLInputElement; 
-    const suggest = document.getElementById('search-suggest') as HTMLUListElement; 
-    queryinput.addEventListener('focus', () => { suggest.classList.add('open') }); 
-    queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) }); 
+
+    const queryinput = document.getElementById('search-query') as HTMLInputElement;
+    const suggest = document.getElementById('search-suggest') as HTMLUListElement;
+    queryinput.addEventListener('focus', () => { suggest.classList.add('open') });
+    queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
 
     var vueApp = new Vue({
         el: '#search-form',
@@ -60,9 +68,9 @@
             submit()
             {
                 let match = this.matches[0];
-                if(!match)
+                if (!match)
                     return;
-                if(!this.term.trim() || match.title !== this.term.trim())
+                if (!this.term.trim() || match.title !== this.term.trim())
                     return;
                 window.location.pathname = match.url;
             }
@@ -98,71 +106,52 @@
             }
         }
     })
-    
-    await getFile('/search.json')
-    const req = new XMLHttpRequest();
-    req.open('get', '/search.json');
-    req.onprogress = function (ev)
+
+    try
     {
-        if (ev.lengthComputable)
-          vueApp.loadedPercent = event.loaded / event.total * 100;
-    };
-    req.onload = function (ev)
-    {
-        if (this.status == 200)
-        {
-            vueApp.succeed = true;
-            vueApp.loadedPercent = 100;
-            let records = (<SearchRecord[]>JSON.parse(this.response));
-            records.forEach(r => {
-                r.title = (r.title || '').trim();
-                r.content = (r.content || '').trim();
-            });
-            vueApp.records = records.filter(r => r.title).map(r =>
-            {
-                return new FormattedSearchRecord(r);
-            });
-        }
-    };
-    req.onloadend = function ()
-    {
-        if (!vueApp.succeed)
-            vueApp.failed = true;
+        let data = await getFile('/search.json', p => vueApp.loadedPercent = p) as SearchRecord[];
+        vueApp.loadedPercent = 100;
+        vueApp.succeed = true;
+        vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r));
     }
-    req.send();
-    
-    function getFile(path: string, progress: (progressPercent: number) => void)
+    catch
     {
-        const p = new Promise();
-        const req = new XMLHttpRequest();
-        let succeed = false;
-        req.open('get', path);
-        req.onprogress = function (ev)
+        vueApp.failed = true;
+    }
+
+    function getFile(path: string, progress?: (progressPercent: number) => void)
+    {
+        return new Promise((resolve, reject) =>
         {
-            if (ev.lengthComputable && progress)
-                progress.call(p, event.loaded / event.total * 100);
-        };
-        req.onload = function (ev)
-        {
-            try
+            const req = new XMLHttpRequest();
+            let succeed = false;
+            req.open('get', path);
+            req.onprogress = function (ev)
             {
-                if (this.status == 200)
+                if (ev.lengthComputable && progress)
+                    progress.call(p, ev.loaded / ev.total * 100);
+            };
+            req.onload = function (ev)
+            {
+                try
                 {
-                    p.accept(JSON.parse(this.response));
-                    succeed = true;
+                    if (this.status == 200)
+                    {
+                        resolve(JSON.parse(this.response));
+                        succeed = true;
+                    }
                 }
-            }
-            catch(ex)
+                catch (ex)
+                {
+                    reject(ex);
+                }
+            };
+            req.onloadend = function (ev)
             {
-                p.reject(ex);
+                if (!succeed)
+                    reject(this.statusText);
             }
-        };
-        req.onloadend = function ()
-        {
-            if (!succeed)
-                p.reject();
-        }
-        req.send();
-        return p;
+            req.send();
+        });
     }
 })();
