@@ -5,6 +5,9 @@ type: components
 classname: _Power
 symbol: Power
 author: 
+categories: 
+- control
+- math
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

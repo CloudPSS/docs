@@ -5,6 +5,9 @@ type: components
 classname: _PVSource
 symbol: PVSource
 author: 
+categories: 
+- electric
+- renewable
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
@@ -77,8 +80,8 @@ author:
 
 
 ## <span id="comp_remarks">参数说明</span>
-### [A] 光伏单元参数
-根据光伏电源的建模参考文献[1,2]，其等效电路为：
+### 光伏单元参数
+根据光伏电源的建模参考文献^[Shengyi Liu and Roger A. Dougal, Dynamic Multiphysics Model for Solar Array, IEEE Transactions on Energy Conversion, Vol. 17(2), June 2002.]^[苏建徽, 余世杰, 赵为,等. 硅太阳电池工程用数学模型[J]. 太阳能学报, 2001, 22(4):409-412.]，其等效电路为：
   ![等效电路]()
 可得出如下方程式：
   $$\begin{array}{l}
@@ -94,10 +97,3 @@ I = {I_g} - {I_d} - {I_{sh} }\\
 
 ## <span id="comp_seealso">相关元件</span>
 [< MPPT>](<test link>)
-
-## <span id="comp_ref">参考文献</span>
-[1] Shengyi Liu and Roger A. Dougal, Dynamic Multiphysics Model for Solar Array, IEEE Transactions on Energy Conversion, Vol. 17(2), June 2002.
-
-[2] 苏建徽, 余世杰, 赵为,等. 硅太阳电池工程用数学模型[J]. 太阳能学报, 2001, 22(4):409-412.
-
-

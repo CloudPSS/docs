@@ -5,6 +5,9 @@ type: components
 classname: _LoopNode
 symbol: LoopNode
 author: 
+categories: 
+- control
+- other
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

@@ -5,6 +5,9 @@ type: components
 classname: _Exp
 symbol: Exp
 author: 
+categories: 
+- control
+- math
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

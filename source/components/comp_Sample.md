@@ -5,6 +5,9 @@ type: components
 classname: _Sample
 symbol: Sample
 author: 
+categories: 
+- control
+- non-linear
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

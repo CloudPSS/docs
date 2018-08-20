@@ -5,6 +5,9 @@ type: components
 classname: _ClarkTransform
 symbol: ClarkTransform
 author: 
+categories: 
+- control
+- coordinate-transformation
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

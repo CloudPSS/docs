@@ -6,6 +6,10 @@ type: components
 classname: _IGBT
 symbol: IGBT
 author: 
+categories: 
+- electric
+- basic
+- switch
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()

@@ -38,8 +38,8 @@ components:
         math:
           name: 基本数学函数
         linear-transfer:
-          name: 线性传递函数元件
-        signal:
+          name: 线性传递函数
+        signal-generator:
           name: 信号发生器
         non-linear:
           name: 非线性元件
@@ -47,7 +47,7 @@ components:
           name: 离散逻辑元件
         coordinate-transformation:
           name: 坐标变换
-        high-level:
+        advanced:
           name: 高级控制模块
         other:
           name: 其他

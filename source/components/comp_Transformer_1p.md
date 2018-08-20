@@ -5,6 +5,9 @@ type: components
 classname: _Transformer_1p
 symbol: Transformer_1p
 author: 
+categories: 
+- electric
+- ac-system
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
@@ -67,7 +70,7 @@ author:
 
 
 ## <span id="comp_remarks">参数说明</span>
-### [A] 绕组等值阻抗
+### 绕组等值阻抗
 + 在已知漏阻抗的情况下，可直接填写该项。
 + 未知时，可由变压器短路实验或铭牌参数得出。
 
@@ -78,7 +81,7 @@ $${R_T} = \frac{ { {P_k} } }{ {1000} }\frac{ {V_N^2} }{ {S_N^2} }{\kern 1pt} {\k
 短路电压约等于变压器电抗在额定电流下产生的压降，可得出等值电抗的有名值及标幺值分别为：
 $${X_T} = \frac{ { {V_k}\% } }{ {100} }\frac{ {V_N^2} }{ {S_N^{} } }{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} ,{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {X_{T*} } = \frac{ { {V_k}\% } }{ {100} }$$
 
-### [B] 励磁导纳
+### 励磁导纳
 + 在已知励磁导纳的情况下，可直接填写该项。
 + 未知时，可由变压器空载实验或铭牌参数得出。
 

@@ -6,6 +6,9 @@ type: components
 classname: _PulseGen
 symbol: PulseGen
 author: 
+categories: 
+- control
+- signal-generator
 ---
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
