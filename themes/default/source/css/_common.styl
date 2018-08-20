@@ -7,6 +7,14 @@
 .katex-error
   background: red
   color: white
+p.katex-block
+  page-break-before: avoid
+  page-break-inside: avoid
+  overflow-x: auto
+  overflow-y: hidden
+  position: relative
+  > .katex-display
+    margin: 0
 
 body
   position: absolute
@@ -30,7 +38,6 @@ body
 
 a
   text-decoration: none
-  color: $medium
 
 img
   border: none
@@ -51,31 +58,6 @@ em
 p
   word-spacing: 0.05em
 
-a.button
-  padding: 0.75em 2em
-  border-radius: 2em
-  display: inline-block
-  color: #fff
-  background-color: lighten($theme, 8%)
-  transition: all .15s ease
-  box-sizing: border-box
-  border: 1px solid lighten($theme, 8%)
-  &.has-icon
-    position: relative
-    text-indent: 1.4em;
-    > svg
-      position: absolute
-      left: 0.4em
-      top: 0.4em
-      width: 2em
-  &.white
-    background-color: #fff
-    color: $theme
-  &.gray
-    background-color: #f6f6f6
-    color: $light
-    border-color: #f6f6f6
-
 #main
   position: absolute
   top: $header-height
@@ -85,64 +67,6 @@ a.button
   z-index: 1
   padding: 0 60px 30px 60px
   overflow-x: hidden
-
-@media screen and (max-width: $mobile-width)
-  #main
-    top: $mobile-header-height
-    padding: 0 20px 20px 20px
-
-#nav
-  .nav-link
-    cursor: pointer
-  .nav-dropdown-container
-    .nav-link
-      &:hover:not(.current)
-        border-bottom: none
-    &:hover
-      .nav-dropdown
-        display: block
-    &.language, &.ecosystem
-      margin-left: 20px
-    .arrow
-      pointer-events: none
-  .nav-dropdown
-    display: none
-    box-sizing: border-box
-    max-height: "calc(100vh - %s)" % $header-height
-    overflow-y: auto
-    position: absolute
-    top: 100%
-    right: -15px
-    background-color: #fff
-    padding: 10px 0
-    border: 1px solid $border
-    border-bottom-color: #ccc
-    text-align: left
-    border-radius: 4px
-    white-space: nowrap
-    li
-      line-height: 1.8em
-      margin: 0
-      display: block
-      > ul
-        padding-left: 0
-      &:first-child
-        h4
-          margin-top: 0
-          padding-top: 0
-          border-top: 0
-    a, h4
-      padding: 0 24px 0 20px
-    h4
-      margin: .45em 0 0
-      padding-top: .45em
-      border-top: 1px solid #eee
-    a
-      color: lighten($dark, 10%)
-      font-size: .9em
-      display: block
-      &:hover
-        color: $theme
 
 abbr[title]
   text-decoration: solid
@@ -157,6 +81,11 @@ br
     
 a.footnote-backref
   no-user-select()
+
+@media screen and (max-width: $mobile-width)
+  #main
+    top: $mobile-header-height
+    padding: 0 20px 20px 20px
 
 @media print
   body, #main

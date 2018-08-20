@@ -1,6 +1,6 @@
 //import Vue from 'vue';
 
-(function ()
+(async function ()
 {
     interface SearchRecord
     {
@@ -98,6 +98,8 @@
             }
         }
     })
+    
+    await getFile('/search.json')
     const req = new XMLHttpRequest();
     req.open('get', '/search.json');
     req.onprogress = function (ev)
@@ -128,4 +130,39 @@
             vueApp.failed = true;
     }
     req.send();
+    
+    function getFile(path: string, progress: (progressPercent: number) => void)
+    {
+        const p = new Promise();
+        const req = new XMLHttpRequest();
+        let succeed = false;
+        req.open('get', path);
+        req.onprogress = function (ev)
+        {
+            if (ev.lengthComputable && progress)
+                progress.call(p, event.loaded / event.total * 100);
+        };
+        req.onload = function (ev)
+        {
+            try
+            {
+                if (this.status == 200)
+                {
+                    p.accept(JSON.parse(this.response));
+                    succeed = true;
+                }
+            }
+            catch(ex)
+            {
+                p.reject(ex);
+            }
+        };
+        req.onloadend = function ()
+        {
+            if (!succeed)
+                p.reject();
+        }
+        req.send();
+        return p;
+    }
 })();

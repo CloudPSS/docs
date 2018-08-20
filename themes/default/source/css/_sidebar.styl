@@ -18,45 +18,39 @@ aside.sidebar
     margin: $content-padding-top + 20px 0 20px
   h2
     margin-top: .2em
+  li, p
+    margin: 0.5em 0 0 0
   ul
     list-style-type: none
     margin: 0
     line-height: 1.5em
-    padding-left: 1em
-  li
-    margin-top: .5em
-  .version-select
-    vertical-align: middle
-    margin-left: 5px
-  .menu-root
+    padding-left: 0.5em
+    > p.menu-cate-name
+      color: $medium
+      margin-left: -0.5em
+      font-weight: 550
+  ul.menu-root
     padding-left: 0
-  .menu-sub
+  ul.menu-sub
     font-size: .85em
+  .sidebar-link, .section-link
+    border: 0px solid transparent
+    transition: all .2s ease
   .sidebar-link
-    color: $light
+    border-bottom-width: 2px
+    color: $medium
     &.current
       font-weight: 600
       color: $theme
-    &.new
-      &:after
-        content: "NEW"
-        display: inline-block
-        font-size: 10px
-        font-weight: 600
-        color: #fff
-        background-color: $theme
-        line-height: 14px
-        padding: 0 4px
-        border-radius: 3px
-        margin-left: 5px
-        vertical-align: middle
-        position: relative
-        top: -1px
-    &:hover
-      border-bottom: 2px solid $theme
+    &:hover, &:focus
+      border-color: $theme
   .section-link
+    border-left-width: 2px
+    color: $light
+    padding-left: .5em
     &.active
-      font-weight: bold
+      border-color: $theme
+    &:hover, &:focus
       color: $theme
   .main-menu
     margin-bottom: 20px

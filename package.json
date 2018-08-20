@@ -15,7 +15,6 @@
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "github:OpportunityLiu/markdown-it-katex#patch-1",
     "hexo": "github:OpportunityLiu/hexo#patch-1",
-    "hexo-generator-search": "^2.2.5",
     "hexo-renderer-ejs": "^0.3.0",
     "hexo-renderer-markdown-it-plus": "github:OpportunityLiu/hexo-renderer-markdown-it-plus#patch-1",
     "hexo-renderer-sass": "^0.3.2",

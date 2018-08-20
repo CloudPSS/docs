@@ -231,7 +231,7 @@ declare const IS_INDEX: boolean;
           return ''
         }
       }).join('').replace(/\(.*\)$/, '');
-      link.innerHTML = `<a class="section-link" data-scroll href="#${h.id}">${htmlEscape(text)}</a>`;
+      link.innerHTML = `<a class="section-link" href="#${h.id}">${htmlEscape(text)}</a>`;
       return link;
     }
 
