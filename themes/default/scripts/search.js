@@ -23,6 +23,10 @@ function searchGenerator(locals)
         {
             temp_page.url = hexo.config.root + page.path;
         }
+        if (page.type)
+        {
+            temp_page.type = page.type;
+        }
         if (page._content)
         {
             temp_page.content = page._content.trim();

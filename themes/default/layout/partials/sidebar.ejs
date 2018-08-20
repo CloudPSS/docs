@@ -1,13 +1,13 @@
 <!-- BEGIN sidebar -->
-<% if (hasSidebar) { %>
+<%_ if (hasSidebar) { _%>
   <aside class="sidebar">
     <div class="sidebar-inner">
       <nav class="list">
-        <%- partial('partials/toc', { type: page.type }) %>
+        <%- partial('partials/toc', { type: page.type }) _%>
       </nav>
     </div>
   </aside>
-<% } else { %>
+<%_ } else { _%>
   <aside class="sidebar" style="display: none" ></aside>
-<% } %>
+<%_ } _%>
 <!-- END sidebar -->

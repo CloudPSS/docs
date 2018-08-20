@@ -1,4 +1,4 @@
-import Vue from '../../../../node_modules/vue/types/index';
+//import Vue from '../../../../node_modules/vue/types/index';
 
 (async function ()
 {
@@ -8,6 +8,7 @@ import Vue from '../../../../node_modules/vue/types/index';
         url?: string;
         content?: string;
         title?: string;
+        type?: string;
         categories?: string[];
 
         extend?: string;
@@ -45,10 +46,12 @@ import Vue from '../../../../node_modules/vue/types/index';
         formattedContent: string;
         title: string;
         extend: string;
+        type?: string;
 
         constructor(record: SearchRecord)
         {
             this.url = record.url || '';
+            this.type = record.type || undefined;
             this.content = (record.content || '').trim();
             this.formattedContent = this.content.toLowerCase();
             this.title = (record.title || '').trim();
@@ -95,13 +98,29 @@ import Vue from '../../../../node_modules/vue/types/index';
                 if (!this.term.trim() || match.title !== this.term.trim())
                     return;
                 window.location.pathname = match.url;
+            },
+            getCategories(record: FormattedSearchRecord): string[]
+            {
+                if (!record.type || !this.sitemap)
+                    return [];
+                let cat = new Array<string>();
+                let typemap = this.sitemap[record.type];
+                cat.push(typemap.name);
+                let catemap = typemap.categories;
+                for (const catkey of record.categories)
+                {
+                    let cate = catemap![catkey];
+                    cat.push(cate!.name);
+                    catemap = cate!.children;
+                }
+                return cat;
             }
         },
         computed:
         {
             succeed: function ()
             {
-                return !(this.sitemap && this.records && !this.failed);
+                return !!(this.sitemap && this.records && !this.failed);
             },
             matches: function (): Array<FormattedSearchRecord>
             {
@@ -122,7 +141,7 @@ import Vue from '../../../../node_modules/vue/types/index';
                 }
                 function getScore(record: FormattedSearchRecord)
                 {
-                    return match(record.formattedTitle) * 10 + match(record.formattedContent);
+                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedContent);
                 }
                 let records = this.records.slice();
                 records.forEach(r => { r.score = getScore(r); });
@@ -136,7 +155,7 @@ import Vue from '../../../../node_modules/vue/types/index';
     try
     {
         let getSearch = getFile('/search.json', p => vueApp.loadedPercent = p);
-        let getSitemap = getFile('sitemap.json');
+        let getSitemap = getFile('/sitemap.json');
         let data = await getSearch as SearchRecord[];
         vueApp.loadedPercent = 100;
         vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r));
@@ -149,37 +168,44 @@ import Vue from '../../../../node_modules/vue/types/index';
 
     function getFile(path: string, progress?: (progressPercent: number) => void)
     {
-        return new Promise((resolve, reject) =>
+        return new Promise(function (resolve, reject)
         {
-            const req = new XMLHttpRequest();
-            let succeed = false;
-            req.open('get', path);
-            req.onprogress = function (ev)
+            try
             {
-                if (ev.lengthComputable && progress)
-                    progress.call(p, ev.loaded / ev.total * 100);
-            };
-            req.onload = function (ev)
-            {
-                try
+                const req = new XMLHttpRequest();
+                req.open('get', path);
+                req.onprogress = function (ev)
                 {
-                    if (this.status == 200)
+                    if (ev.lengthComputable && progress)
+                        progress.call(p, ev.loaded / ev.total * 100);
+                };
+                req.onload = function (ev)
+                {
+                    try
                     {
-                        resolve(JSON.parse(this.response));
-                        succeed = true;
+                        if (this.status == 200)
+                        {
+                            resolve(JSON.parse(this.response));
+                        }
                     }
-                }
-                catch (ex)
+                    catch (ex)
+                    {
+                        reject(ex);
+                    }
+                };
+                req.onerror = onerror;
+                req.onabort = onerror;
+                req.ontimeout = onerror;
+                function onerror()
                 {
-                    reject(ex);
-                }
-            };
-            req.onloadend = function (ev)
-            {
-                if (!succeed)
                     reject(this.statusText);
+                };
+                req.send();
             }
-            req.send();
+            catch (ex)
+            {
+                reject(ex);
+            }
         });
     }
 })();
