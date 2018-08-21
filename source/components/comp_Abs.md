@@ -20,7 +20,6 @@ categories:
 | 参数 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
 | <span id="comp_params_param_Name">Name</span> | 元件名称 | 文本 | 此处输入绝对值函数名称 |
-
 [Name]: #comp_params_param_Name "Name"
 
 ## <span id="comp_example">测试模型</span>

@@ -1,6 +1,6 @@
 <!-- BEGIN toc -->
 <header>
-  <h2><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h2>
+  <h1><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
 </header>
 <ul class="menu-root">
   <%_
@@ -14,7 +14,7 @@
     });
     function page_link(p)
     {
-      -%><li><%- link_to(url_for(p.path), title(p), {class: `sidebar-link ${page.path === p.path ? ' current' : ''}`}) %></li><%_
+      -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link ${page.path === p.path ? ' current' : ''}`}) %></li><%_
     }
     function cate_link(key, cat, level, parent_pages)
     {
@@ -22,7 +22,7 @@
       if(cate_pages.length === 0)
         return;
         
-      -%><ul class="menu-category"><p class="menu-cate-name level-<%- level %>"><%= cat.name %></p><%_
+      -%><ul class="menu-cat level-<%- level %>"><h<%- level + 2 %> class="menu-cat-name"><%= cat.name %></h<%- level + 2 %>><%_
       
       cate_pages.filter(p => p.categories.length === level + 1).forEach(page_link);
       if(cat.children)
