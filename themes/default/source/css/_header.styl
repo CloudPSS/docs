@@ -71,7 +71,8 @@ header.page-header
         position: absolute
         padding: 4px
         right: 0
-        max-width: 120%
+        min-width: 85%
+        max-width: 125%
         margin: 0 10px
         border: 2px solid $border
         background: white
@@ -136,20 +137,25 @@ header.page-header
   .mobile-header-button
     transition: transform $size-transition
     position: absolute
-    width: $mobile-header-inner-height
-    height: $mobile-header-inner-height
-    top: $mobile-heading-padding-vertical
+    width: $mobile-header-height
+    height: $mobile-header-height
+    top: 0
     z-index: 1000
+    background-position: center
+    background-size: 24px
+    background-repeat: no-repeat
+    &:hover, &:focus
+      background-color: #ddd 
+    &:active
+      background-color: #eee 
   #mobile-menu-button
     transform: translateX(-150%)
-    left: 12px
-    background: url(../images/menu.png) center center no-repeat
-    background-size: 24px
+    left: 0
+    background-image: url(../images/menu.png)
   #mobile-toc-button
     transform: translateX(150%)
-    right: 12px
-    background: url(../images/toc.png) center center no-repeat
-    background-size: 24px
+    right: 0
+    background-image: url(../images/toc.png) 
 
 @media print
   header.page-header
@@ -225,13 +231,15 @@ header.page-header
         
 @media screen and (max-width: (400px + $mobile-width) * 0.5) 
   header.page-header
-    #logo > span 
-      transition: opacity $size-transition
+    #logo 
+      > span 
+        transition: opacity $size-transition
     
 @media screen and (max-width: 400px)
   header.page-header
-    #logo > span 
-      opacity: 0
+    #logo 
+      > span 
+        opacity: 0
     #nav
       #search-form 
         > #search-suggest

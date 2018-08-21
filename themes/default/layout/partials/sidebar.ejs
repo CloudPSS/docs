@@ -1,12 +1,8 @@
 <!-- BEGIN sidebar -->
 <%_ if (hasSidebar) { -%>
-  <aside class="sidebar">
-    <div class="sidebar-inner">
-      <nav class="list">
-        <%- partial('partials/toc', { type: page.type }) -%>
-      </nav>
-    </div>
-  </aside>
+  <aside class="sidebar"><nav class="list">
+    <%- partial('partials/toc', { type: page.type }) -%>
+  </nav></aside>
 <%_ } else { -%>
   <aside class="sidebar" style="display: none" ></aside>
 <%_ } -%>

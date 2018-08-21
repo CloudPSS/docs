@@ -14,25 +14,40 @@ aside.sidebar
   overflow-y: auto
   margin-top: $header-height
   padding: 0 20px 0 40px
-  .sidebar-inner
+  nav.list
     margin: $content-padding-top + 20px 0 20px
-  h2
+  h1
+    font-size: 1.5em
     margin-top: .2em
-  li, p
-    margin: 0.5em 0 0 0
+  h2
+    font-size: 1.3em
+  h3
+    font-size: 1.1em
+  h4, h5, h6
+    font-size: 1em
+  li, .menu-cat-name
+    margin: 0
+    padding: 8px 0 0 0
   ul
     list-style-type: none
     margin: 0
+    padding: 0
     line-height: 1.5em
-    padding-left: 0.5em
-    > p.menu-cate-name
-      color: $medium
-      margin-left: -0.5em
-      font-weight: 550
-  ul.menu-root
-    padding-left: 0
-  ul.menu-sub
-    font-size: .85em
+    &.menu-root
+      padding-left: 0
+    &.menu-cat
+      padding-left: 8px
+      > .menu-cat-name
+        color: $medium
+        margin-left: -0.5em
+        font-weight: 550
+        margin-left: -8px
+    &.menu-sub
+      font-size: .85em
+      .section-link
+        padding-left: 6px
+      > ul .section-link
+        padding-left: 14px
   .sidebar-link, .section-link
     border: 0px solid transparent
     transition: all .2s ease
@@ -45,6 +60,7 @@ aside.sidebar
     &:hover, &:focus
       border-color: $theme
   .section-link
+    margin-left: 2px
     border-left-width: 2px
     color: $light
     padding-left: .5em
@@ -52,14 +68,6 @@ aside.sidebar
       border-color: $theme
     &:hover, &:focus
       color: $theme
-  .main-menu
-    margin-bottom: 20px
-    display: none
-    padding-left: 0
-  .nav-dropdown
-    h4
-      font-weight: normal
-      margin: 0
 
 @media screen and (max-width: $mobile-width)
   aside.sidebar
@@ -67,10 +75,6 @@ aside.sidebar
     transform: translate(-105%, 0)
     padding: 0 10px 0 20px
     margin-top: $mobile-header-height
-    .sidebar-inner-index
-      padding: 10px 10px 10px 20px
-    .main-menu
-      display: block
     &.open
       transform: translate(0, 0)
 
