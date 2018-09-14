@@ -1,0 +1,17 @@
+@import "_fonts"
+@import "_settings"
+
+.katex-error
+  background: red
+  color: white
+p.katex-block
+  page-break-before: avoid
+  page-break-inside: avoid
+  overflow-x: visible
+  position: relative
+  > .katex-display
+    margin: 0
+span.katex
+  &:before, &:after
+    content: ' '
+    no-user-select()

@@ -2,12 +2,33 @@
 @import "_settings"
 @import "_syntax"
 
-code, pre
+code, pre, kbd
   font-family: $code-font
   font-size: $code-font-size
   background-color: $codebg
   -webkit-font-smoothing: initial
   -moz-osx-font-smoothing: initial
+  
+kbd 
+  display: inline-block
+  border-radius: 3px
+  padding: 0px 4px
+  box-shadow: 0 0 2px 1px $shadow
+  margin: 0 2px
+  font-size: small
+  background: steelblue
+  color: #eee
+  font-variant: small-caps
+  font-weight: 600
+  letter-spacing: 1px
+  @media print
+    background: #fff
+    color: #222
+    box-shadow: none
+    border: 2px solid $border
+  &:hover
+    color: #fff
+    box-shadow: 0 0 2px 2px $shadow
 
 code
   color: #e96900
@@ -15,6 +36,9 @@ code
   margin: 0 2px
   border-radius: 2px
   white-space: nowrap
+  @media print
+    padding: 1px 2px
+    border: rgba(#e96900, 0.25) solid 1px
 
 figure.highlight
   position: relative
@@ -95,9 +119,6 @@ figure.highlight
     content: "TeX"
 
 @media print
-  code
-    padding: 1px 2px
-    border: rgba(#e96900, 0.25) solid 0.25px
   figure.highlight
     color: rgb(0,0,0)
     border-style: solid

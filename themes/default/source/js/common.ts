@@ -4,22 +4,33 @@ declare const IS_INDEX: boolean;
 (function ()
 {
   document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
-  mermaid.initialize({ theme: 'forest' });
-  document.querySelectorAll("canvas.chartjs").forEach((e) => 
-  {
-    try
-    {
-      new Chart(e, JSON.parse(e.textContent))
-    } catch (t)
-    {
-      e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
-    }
-  });
-  initMobileMenu()
-  initVideos()
+  initFlowAndChart();
+  initMobileMenu();
+  initVideos();
   if (PAGE_TYPE && !IS_INDEX)
   {
     initSubHeaders()
+  }
+  
+  function initFlowAndChart()
+  {
+    document.querySelectorAll("canvas.chartjs").forEach((e) => 
+    {
+      try
+      {
+        new Chart(e, JSON.parse(e.textContent))
+      } catch (t)
+      {
+        e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
+      }
+    });
+    document.querySelectorAll("div.mermaid").forEach((e) => 
+    {
+      e.setAttribute('data-mermaid', e.innerHTML);
+    });
+    
+    const config = { theme: 'forest' };
+    mermaid.initialize(config);
   }
 
   function initVideos()

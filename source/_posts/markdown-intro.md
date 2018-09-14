@@ -140,4 +140,5 @@ RMS 指有效值
 + 标记：`==mark==` ==mark==
 + 插入与删除：`++Inserted++` ++Inserted++；`~~Del~~` ~~Del~~
 + [Emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/) `:smile:` :smile:
++ 键盘按键 `[[Ctrl]]+[[Alt]]+[[Del]]` [[Ctrl]]+[[Alt]]+[[Del]]
 + 其他标准 MarkDown 语法不再赘述。

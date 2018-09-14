@@ -74,6 +74,9 @@ markdown_it_plus:
   - plugin:
       name: markdown-it-chart
       enable: true
+  - plugin:
+      name: markdown-it-kbd
+      enable: true
   
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

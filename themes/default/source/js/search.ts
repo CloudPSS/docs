@@ -39,6 +39,7 @@
     class FormattedSearchRecord
     {
         url: string;
+        formattedUrl: string;
         content: string;
         categories: string[];
         score = 0;
@@ -51,6 +52,7 @@
         constructor(record: SearchRecord)
         {
             this.url = record.url || '';
+            this.formattedUrl = this.url.toLowerCase();
             this.type = record.type || undefined;
             this.content = (record.content || '').trim();
             this.formattedContent = this.content.toLowerCase();
@@ -126,7 +128,7 @@
             {
                 if (!this.records || this.records.length === 0)
                     return new Array<FormattedSearchRecord>();
-                const terms = this.term.split(/\s+/g).filter(function (s) { return s !== '' });
+                const terms = this.term.toLowerCase().split(/\s+/g).filter(function (s) { return s !== '' });
                 function match(content: string): number
                 {
                     if (!content)
@@ -141,7 +143,9 @@
                 }
                 function getScore(record: FormattedSearchRecord)
                 {
-                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedContent);
+                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedUrl) * 5 
+                        + match(record.formattedContent)
+                        + record.categories.reduce((sum, cat) => sum + match(cat), 0);
                 }
                 let records = this.records.slice();
                 records.forEach(r => { r.score = getScore(r); });
@@ -154,8 +158,8 @@
 
     try
     {
-        let getSearch = getFile('/search.json', p => vueApp.loadedPercent = p);
-        let getSitemap = getFile('/sitemap.json');
+        let getSearch = getJson('/search.json');
+        let getSitemap = getJson('/sitemap.json');
         let data = await getSearch as SearchRecord[];
         vueApp.loadedPercent = 100;
         vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r));
@@ -166,46 +170,11 @@
         vueApp.failed = true;
     }
 
-    function getFile(path: string, progress?: (progressPercent: number) => void)
+    async function getJson(path: string): Promise<any>
     {
-        return new Promise(function (resolve, reject)
-        {
-            try
-            {
-                const req = new XMLHttpRequest();
-                req.open('get', path);
-                req.onprogress = function (ev)
-                {
-                    if (ev.lengthComputable && progress)
-                        progress.call(p, ev.loaded / ev.total * 100);
-                };
-                req.onload = function (ev)
-                {
-                    try
-                    {
-                        if (this.status == 200)
-                        {
-                            resolve(JSON.parse(this.response));
-                        }
-                    }
-                    catch (ex)
-                    {
-                        reject(ex);
-                    }
-                };
-                req.onerror = onerror;
-                req.onabort = onerror;
-                req.ontimeout = onerror;
-                function onerror()
-                {
-                    reject(this.statusText);
-                };
-                req.send();
-            }
-            catch (ex)
-            {
-                reject(ex);
-            }
-        });
+        const response = await fetch(path);
+        if(!response.ok)
+            throw new Error(response.statusText);
+        return await response.json();
     }
 })();
