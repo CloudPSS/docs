@@ -1,4 +1,4 @@
-﻿---
+---
 title:
 type: guide
 ---
