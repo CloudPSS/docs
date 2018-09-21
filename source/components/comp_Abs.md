@@ -12,8 +12,8 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对输入信号执行绝对值函数并输出。
-+ 输出量为输入量的绝对值。
+> **该元件实现绝对值运算。函数式为：**
+> $$y(t) = |u(t)|$$
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

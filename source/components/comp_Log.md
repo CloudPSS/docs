@@ -12,8 +12,8 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对输入信号执行对数函数并输出。
-+ 可通过Configuration/Logarithm Type选择对数函数的底数为10、自然常数e或自定义常数a。
+> **该元件实现对数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
+> $y(t) = \log u(t)$或$y(t) = \ln u(t)$或$y(t) = {\log _a}u(t)$，$u(t)>0$。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

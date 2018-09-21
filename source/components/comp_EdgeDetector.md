@@ -12,7 +12,12 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件用以检测输入信号是否出现变化，若当前的输入信号大于上个时间步长的输入信号，则输出Configuration/Positive定义的值；小于则输出Negative定义的值，相等则输出No Transition定义的值。。
+> **该元件实现对输入信号的跳变检测。**
+
+> 定义当前输入信号$u(t)$与上一时步输入信号$u(t - \Delta t)$的差值为$\Delta u$。
+> + 若$\Delta u>0.5$，元件输出Positive Value定义的值；
+> + 若$\Delta u<-0.5$，元件输出Negative Value定义的值；
+> + 若$0.5>\Delta u>-0.5$，元件输出No Transition定义的值。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

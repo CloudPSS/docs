@@ -12,39 +12,8 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-- 该元件提供Clark变换和逆Clark变换功能，可通过Configuration/Direction of Transformation选择变换方向。
-    - Clark变换abc→αβ：
-        $$\begin{bmatrix}
-        U_{\alpha }\\ 
-        U_{\beta }
-        \end{bmatrix}
-        =m*\begin{bmatrix}
-        1 &-\frac{1}{2}  &-\frac{1}{2} \\ 
-        0&\frac{\sqrt{3} }{2}  &-\frac{\sqrt{3} }{2} 
-        \end{bmatrix}
-        \begin{bmatrix}
-        U_{a}\\ 
-        U_{b}\\ 
-        U_{c}
-        \end{bmatrix}$$
-    - 若m=sqrt(2/3)，则变换前后，功率不变；若m=2/3，则变换前后，幅值不变。
-    - 逆Clark变换αβ→abc：
-        $$\begin{bmatrix}
-        U_{a}\\ 
-        U_{b}\\ 
-        U_{c}
-        \end{bmatrix}
-        =m^{'}
-        \begin{bmatrix}
-        1 &0 \\ 
-        -\frac{1}{2}&\frac{\sqrt3}{2} \\ 
-        -\frac{1}{2}& -\frac{\sqrt3}{2}
-        \end{bmatrix}
-        \begin{bmatrix}
-        U_{\alpha }\\ 
-        U_{\beta }
-        \end{bmatrix}$$
-    - 若m'=sqrt(2/3)，则变换前后，功率不变；若m'=1，则变换前后，幅值不变。
+> **该元件实现Clark变换和逆Clark变换计算。以变换前后幅值不变为原则，函数式为：**
+
 
 
 ## <span id="comp_params">输入参数</span>
@@ -52,7 +21,7 @@ categories:
 | 参数 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
 | <span id="comp_params_param_Name">Name</span> | 元件名称 | 文本 |填写元件的名称  |
-| <span id="comp_params_param_Direction">Direction of Transformation</span> | 变换方向 | 选择 |选择变换的方向（Clark变换或逆Clark变换）  |
+| <span id="comp_params_param_Direction">Direction of Transformation</span> | 变换方向 | 选择 |选择变换的方向为Clark变换或逆Clark变换  |
 
 [Name]: #comp_params_param_Name "Name"
 [Direction of Transformation]: #comp_params_param_Direction "Direction of Transformation"

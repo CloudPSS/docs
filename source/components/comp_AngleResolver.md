@@ -12,8 +12,9 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件实现输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。可通过Configuration/Input Is in，Output Is in进行选择。
-+ 配置Output Range可选择元件的输出范围为0到2π(360°)或-π(-180°)到π(180°)。
++ 该元件实现对输入信号的角度/弧度变换计算。
+++ 配置Configuration/Input Is in、Output Is in选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
+++ 配置Output Range选择输出范围为0到2π(360°)或-π(-180°)到π(180°)。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

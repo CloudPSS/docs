@@ -12,7 +12,7 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-- 该元件输出一个任意一维常数。
+> **该元件用以产生常数输出信号。**
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

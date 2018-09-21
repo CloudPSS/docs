@@ -12,8 +12,8 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对输入信号执行指数运算并输出。
-+ 通过Configuration/Base选择指数函数的底数为10、自然常数e或自定义常数a。
+> **该元件实现指数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
+> $y(t) = {10^{u(t)} }$或$y(t) = {e^{u(t)} }$或$y(t) = {a^{u(t)} }$，$u(t)>0$。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

@@ -12,9 +12,10 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对输入信号执行三角函数并输出，函数种类有Sin、Cos、Tan、ArcSin、ArcCos、ArcTan六种，可通过Configuration/Function Type进行配置。
-+ Tan函数在(n+0.5)π处无意义。
-+ ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
+> **该元件实现三角函数运算，函数种类可配置为Sin、Cos、Tan、ArcSin、ArcCos、ArcTan六种。**
+
+> + Tan函数在(n+0.5)π处无意义。
+> + ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

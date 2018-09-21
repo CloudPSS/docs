@@ -12,9 +12,7 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-- 该元件通过定义一个时间窗口，滑动求取输入信号在窗口内的最大/最小值。
-- 可通过Configuration/Fundamental Frequency定义时间窗口对应的频率。
-- 可通过Configuration/Function选择求取最大或最小值。
+> **该元件通过定义一个时间窗口，滑动求取输入信号在窗口内的最大/最小值。**
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>
