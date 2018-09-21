@@ -22,12 +22,12 @@
     "hexo-renderer-ts": "^1.2.0",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "github:m80126colin/hexo-tag-owl",
-    "katex": "^0.10.0-beta",
+    "katex": "^0.10.0-rc.1",
     "markdown-it-chart": "^0.2.0",
     "markdown-it-kbd": "^1.1.1",
     "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
     "pinyinjs": "^2.2.1",
-    "typescript": "^3.0.1",
+    "typescript": "^3.0.3",
     "vue": "^2.5.17"
   }
 }

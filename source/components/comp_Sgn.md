@@ -12,8 +12,12 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对输入信号进行符号函数运算并输出。
-+ 输入为正数时输出为+1，输入为负数时输出为-1，否则输出为0。
+> **该元件实现符号函数运算，函数关系式为：**
+ $$ y(t) = \left \{ \begin{array}{l}
+1
+0
+ - 1
+\end{array} \right $$
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

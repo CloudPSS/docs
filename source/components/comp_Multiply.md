@@ -12,7 +12,7 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件用以实现两个一维输入量的乘法运算。
+> **该元件实现两个一维输入信号的乘法运算。**
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

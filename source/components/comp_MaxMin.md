@@ -12,8 +12,7 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件对2-7个一维输入信号进行比较，并输出最大值或最小值。
-+ 通过Configuration/Function选择元件以最大值或最小值输出。
+> **该元件对2-7个一维输入信号进行比较，并输出输入信号中的最大值或最小值**。
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>

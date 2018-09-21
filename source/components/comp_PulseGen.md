@@ -13,17 +13,15 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件用以仿真指定频率的脉冲发生器。
-+ 脉冲发生器可用于确定线性控制系统的频率响应。
-+ 可以指定第一个脉冲的出现时间，以及脉冲发生的频率。
+> **该元件用以产生指定频率的脉冲信号，脉冲持续时间为一个仿真步长。**
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>
 | 参数 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| <span id="comp_params_param_F">Frequency</span> | Hz | 脉冲信号频率 | 实数 | 输入脉冲信号发生的频率，单位为Hz |
-| <span id="comp_params_param_Height">Height of Pulse</span> |  | 脉冲峰值 | 实数 | 输入脉冲波的峰值 |
-| <span id="comp_params_param_T0">Time of First Pulse</span> | s | 第一个脉冲的发生时间 | 实数 | 仿真开始后，在经过这个时间后，发生器开始才产生脉冲波。 |
+| <span id="comp_params_param_F">Frequency</span> | Hz | 脉冲信号频率 | 实数 | 输出脉冲信号的频率 |
+| <span id="comp_params_param_Height">Height of Pulse</span> |  | 脉冲峰值 | 实数 | 输出脉冲波的峰值 |
+| <span id="comp_params_param_T0">Time of First Pulse</span> | s | 第一个脉冲的发生时间 | 实数 | 第一个脉冲的发生时间 |
 
 [Frequency]: #comp_params_param_F "Frequency"
 [Height of Pulse]: #comp_params_param_Height "Height of Pulse"
