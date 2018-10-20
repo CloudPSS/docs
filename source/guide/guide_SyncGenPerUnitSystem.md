@@ -18,50 +18,58 @@ CloudPSS中的标幺值同步电机模型采用了$X_{ad}$基值系统[[1](#Kund
 文献[[1](#Kundur)](P196)中，dq坐标轴下的发电机原始电压方程和磁链方程可表达为如下形式：
 
 $$\begin{gathered}
-  {{\mathbf{v}}_{dq0s}} = {{\mathbf{r}}_s}{{\mathbf{i}}_{dq0s}} + {\omega _r}{\left[ {\begin{array}{*{20}{c}}
+  {{\mathbf{v}}_{dq0s}} = {{\mathbf{r}}_s}{{\mathbf{i}}_{dq0s}} + {\omega _r}{\left[ {\begin{array}{ccc}
   { - {\lambda _{qs}}}&{{\lambda _{ds}}}&0 
 \end{array}} \right]^T} + p{{\mathbf{\lambda }}_{dq0s}} \\ 
   {{\mathbf{v}}_{qdr}} = {{\mathbf{r}}_r}{{\mathbf{i}}_{qdr}} + p{{\mathbf{\lambda }}_{dqr}} \\ 
-  {{\mathbf{\lambda }}_{dq0s}} = {\left[ {\begin{array}{*{20}{c}}
+  {{\mathbf{\lambda }}_{dq0s}} = {\left[ {\begin{array}{ccc}
   {{\lambda _{ds}}}&{{\lambda _{qs}}}&{{\lambda _{0s}}} 
 \end{array}} \right]^T} \\ 
-  {{\mathbf{\lambda }}_{dqr}} = {\left[ {\begin{array}{*{20}{c}}
+  {{\mathbf{\lambda }}_{dqr}} = {\left[ {\begin{array}{ccc}
   {{\lambda _f}}&{{\lambda _D}}&{{\lambda _g}}&{{\lambda _Q}} 
 \end{array}} \right]^T} \\ 
   {{\mathbf{r}}_s} = diag\left( {{r_s},{r_s},{r_s}} \right) \\ 
   {{\mathbf{r}}_r} = diag\left( {{r_f},{r_D},{r_g},{r_Q}} \right) \\ 
 \end{gathered}$$
 
-$$\left[ {\begin{array}{*{20}{c}}
+$$
+\left[
+  {\begin{array}{cc}
   {{{\mathbf{\lambda }}_{dq0s}}} \\ 
   {{{\mathbf{\lambda }}_{dqr}}} 
-\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
-  {{\lambda _{ds}}} \\ 
-  \begin{gathered}
-  {\lambda _{qs}} \hfill \\
-  {\lambda _{0s}} \hfill \\ 
-\end{gathered}  \\ 
-  {{\lambda _f}} \\ 
-  {{\lambda _D}} \\ 
-  {{\lambda _g}} \\ 
-  {{\lambda _Q}} 
-\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
-  {{L_{ls}} + {L_{md}}}&0&0&{{M_{af}}}&{{M_{aD}}}&0&0 \\ 
-  0&{{L_{ls}} + {L_{mq}}}&0&0&0&{{M_{ag}}}&{{M_{aQ}}} \\ 
-  0&0&{{L_{ls}}}&0&0&0&0 \\ 
-  {\tfrac{3}{2}{M_{af}}}&0&0&{{L_{lf}} + {L_{mf}}}&{{M_{fD}}}&0&0 \\ 
-  {\tfrac{3}{2}{M_{aD}}}&0&0&{{M_{fD}}}&{{L_{lD}} + {L_{mD}}}&0&0 \\ 
-  0&{\tfrac{3}{2}{M_{ag}}}&0&0&0&{{L_{lg}} + {L_{mg}}}&{{M_{gQ}}} \\ 
-  0&{\tfrac{3}{2}{M_{aQ}}}&0&0&0&{{M_{gQ}}}&{{L_{lQ}} + {L_{mQ}}} 
-\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
-  {{i_{ds}}} \\ 
-  {{i_{qs}}} \\ 
-  {{i_{0s}}} \\ 
-  {{i_f}} \\ 
-  {{i_D}} \\ 
-  {{i_g}} \\ 
-  {{i_Q}} 
-\end{array}} \right]$$
+  \end{array}}
+\right] = \left[
+  {\begin{array}{c}
+    {\lambda _{ds}} \\ 
+    {\lambda _{qs}} \\
+    {\lambda _{0s}} \\ 
+    {{\lambda _f}} \\ 
+    {{\lambda _D}} \\ 
+    {{\lambda _g}} \\ 
+    {{\lambda _Q}} 
+  \end{array}}
+\right] = \left[
+  {\begin{array}{ccccccc}
+    {{L_{ls}} + {L_{md}}}&0&0&{{M_{af}}}&{{M_{aD}}}&0&0 \\ 
+    0&{{L_{ls}} + {L_{mq}}}&0&0&0&{{M_{ag}}}&{{M_{aQ}}} \\ 
+    0&0&{{L_{ls}}}&0&0&0&0 \\ 
+    {\tfrac{3}{2}{M_{af}}}&0&0&{{L_{lf}} + {L_{mf}}}&{{M_{fD}}}&0&0 \\ 
+    {\tfrac{3}{2}{M_{aD}}}&0&0&{{M_{fD}}}&{{L_{lD}} + {L_{mD}}}&0&0 \\ 
+    0&{\tfrac{3}{2}{M_{ag}}}&0&0&0&{{L_{lg}} + {L_{mg}}}&{{M_{gQ}}} \\ 
+    0&{\tfrac{3}{2}{M_{aQ}}}&0&0&0&{{M_{gQ}}}&{{L_{lQ}} + {L_{mQ}}} 
+  \end{array}}
+\right] \left[
+  {\begin{array}{c}
+    {{i_{ds}}} \\ 
+    {{i_{qs}}} \\ 
+    {{i_{0s}}} \\ 
+    {{i_f}} \\ 
+    {{i_D}} \\ 
+    {{i_g}} \\ 
+    {{i_Q}} 
+  \end{array}}
+\right]
+$$
 
 由文献[[2](#Krause)]可知，上述有名值模型中定转子以及转子绕组之间的互感参数与$L_{md}$和$L_{mq}$具备如下关系：
 
@@ -90,33 +98,34 @@ $$\begin{gathered}
 用上述变量替换原始电机方程中的转子变量，可得到“折算到定子侧”的有名值电压和磁链方程，即参与电磁暂态计算的电机有名值方程。
 
 $$\begin{gathered}
-  {{\mathbf{v}}_{dq0s}} = {{\mathbf{r}}_s}{i_{dq0s}} + {\omega _r}{\left[ {\begin{array}{*{20}{c}}
+  {{\mathbf{v}}_{dq0s}} = {{\mathbf{r}}_s}{i_{dq0s}} + {\omega _r}{\left[ {\begin{array}{ccc}
   { - {\lambda _{qs}}}&{{\lambda _{ds}}}&0 
 \end{array}} \right]^T} + p{{\mathbf{\lambda }}_{dq0s}} \\ 
   {{{\mathbf{v}}}_{qdr}'} = {{{\mathbf{r}}}_r'}{{i}_{qdr}'} + p{{{\mathbf{\lambda }}}_{dqr}'} \\ 
   {{\mathbf{r}}_s} = diag\left( {{r_s},{r_s},{r_s}} \right) \\ 
-  {{\mathbf{r}}_r} = diag\left( {{{r}_f'},{{r}_D'},{{r}_g'},{{r}_Q'}} \right) \\ 
+  {{\mathbf{r}}_r'} = diag\left( {{{r}_f'},{{r}_D'},{{r}_g'},{{r}_Q'}} \right) \\ 
 \end{gathered}$$
 
-$$\left[ {\begin{array}{*{20}{c}}
-  {{\lambda _{ds}}} \\ 
-  \begin{gathered}
-  {\lambda _{qs}} \hfill \\
-  {\lambda _{0s}} \hfill \\ 
-\end{gathered}  \\ 
-  {{{\lambda }_f'}} \\ 
-  {{{\lambda }_D'}} \\ 
-  {{{\lambda }_g'}} \\ 
-  {{{\lambda }_Q'}} 
-\end{array}} \right] = \left[ {\begin{array}{*{20}{c}}
-  {{L_{ls}} + {L_{md}}}&0&0&{{L_{md}}}&{{L_{md}}}&0&0 \\ 
-  0&{{L_{ls}} + {L_{mq}}}&0&0&0&{{L_{mq}}}&{{L_{mq}}} \\ 
-  0&0&{{L_{ls}}}&0&0&0&0 \\ 
-  {{L_{md}}}&0&0&{{{L}_{lf}'} + {L_{md}}}&{{L_{md}}}&0&0 \\ 
-  {{L_{md}}}&0&0&{{L_{md}}}&{{{L}_{lD}'} + {L_{md}}}&0&0 \\ 
-  0&{{L_{mq}}}&0&0&0&{{{L}_{lg}'} + {L_{mq}}}&{{L_{mq}}} \\ 
-  0&{{L_{mq}}}&0&0&0&{{L_{mq}}}&{{{L}_{lQ}'} + {L_{mq}}} 
-\end{array}} \right]\left[ {\begin{array}{*{20}{c}}
+$$\left[
+  {\begin{array}{c}
+    {{\lambda _{ds}}} \\
+    {\lambda _{qs}} \\
+    {\lambda _{0s}} \\
+    {{{\lambda }_f'}} \\ 
+    {{{\lambda }_D'}} \\ 
+    {{{\lambda }_g'}} \\ 
+    {{{\lambda }_Q'}} 
+  \end{array}}
+\right] = \left[
+  {\begin{array}{ccccccc}
+    {{L_{ls}} + {L_{md}}}&0&0&{{L_{md}}}&{{L_{md}}}&0&0 \\ 
+    0&{{L_{ls}} + {L_{mq}}}&0&0&0&{{L_{mq}}}&{{L_{mq}}} \\ 
+    0&0&{{L_{ls}}}&0&0&0&0 \\ 
+    {{L_{md}}}&0&0&{{{L}_{lf}'} + {L_{md}}}&{{L_{md}}}&0&0 \\ 
+    {{L_{md}}}&0&0&{{L_{md}}}&{{{L}_{lD}'} + {L_{md}}}&0&0 \\ 
+    0&{{L_{mq}}}&0&0&0&{{{L}_{lg}'} + {L_{mq}}}&{{L_{mq}}} \\ 
+    0&{{L_{mq}}}&0&0&0&{{L_{mq}}}&{{{L}_{lQ}'} + {L_{mq}}} 
+\end{array}} \right]\left[ {\begin{array}{ccccccc}
   {{i_{ds}}} \\ 
   {{i_{qs}}} \\ 
   {{i_{0s}}} \\ 
@@ -143,15 +152,15 @@ CloudPSS采用$X_{ad}$基值系统，其标幺值同步电机模型是在上述�
 在$X_{ad}$基值系统中，互感标幺值具备如下关系：
 
 $$\begin{gathered}
-  L_{md}^* = M_{af}^* = M_{aD}^* = M_{fD}^* = M_{ad}^* \hfill \\
-  L_{mq}^* = M_{ag}^* = M_{aQ}^* = M_{gQ}^* = M_{aq}^* \hfill \\ 
+  L_{md}^* = M_{af}^* = M_{aD}^* = M_{fD}^* = M_{ad}^* \\
+  L_{mq}^* = M_{ag}^* = M_{aQ}^* = M_{gQ}^* = M_{aq}^* \\ 
 \end{gathered}$$
 
 根据转子绕组互感基值定义可知转子各绕组的电流基值与定子电流基值的关系如下（文献[[2](#Krause)]，P82），
 
 $$\begin{gathered}
-  {i_{jB}} = \frac{{{L_{md}}}}{{{M_{aj}}}}{i_{sB}} = \left( {\frac{3}{2}} \right)\left( {\frac{{{N_a}}}{{{N_j}}}} \right){i_{sB}},j = f,D \hfill \\
-  {i_{jB}} = \frac{{{L_{mq}}}}{{{M_{aj}}}}{i_{sB}} = \left( {\frac{3}{2}} \right)\left( {\frac{{{N_a}}}{{{N_j}}}} \right){i_{sB}},j = g,Q \hfill \\ 
+  {i_{jB}} = \frac{{{L_{md}}}}{{{M_{aj}}}}{i_{sB}} = \left( {\frac{3}{2}} \right)\left( {\frac{{{N_a}}}{{{N_j}}}} \right){i_{sB}},j = f,D \\
+  {i_{jB}} = \frac{{{L_{mq}}}}{{{M_{aj}}}}{i_{sB}} = \left( {\frac{3}{2}} \right)\left( {\frac{{{N_a}}}{{{N_j}}}} \right){i_{sB}},j = g,Q \\ 
 \end{gathered} $$
 
 由上式可得折算到定子侧的转子电流基值，即：
@@ -166,11 +175,14 @@ $${\lambda _{jB}'} = \left( {\frac{{{N_a}}}{{{N_j}}}} \right){\lambda _{jB}} = \
 
 因此，所有绕组共享一套基值电流。由$X_{ad}$基值系统向CloudPSS电机有名值方程进行参数转化时，所有绕组共享一套基值系统，即：
 
-$${\omega _B} = 2\pi {f_B}$$
-$${v_{fB}} = {v_{DB}} = {v_{gB}} = {v_{QB}} = {v_{sB}} = \sqrt 2 {v_N}$$
-$${i_{fB}} = {i_{DB}} = {i_{gB}} = {i_{QB}} = {i_{sB}} = \frac{2}{3}\frac{{{S_b}}}{{{v_{sB}}}}$$
-$${\lambda _{fB}} = {\lambda _{DB}} = {\lambda _{gB}} = {\lambda _{QB}} = {\lambda _{sB}} = \frac{{{v_{sB}}}}{{{\omega _B}}}$$
-$${T_B} = \frac{p}{2}\frac{{{S_b}}}{{{\omega _B}}}$$
+$$\begin{gathered}
+  {\omega _B} = 2\pi {f_B} \\
+  {v_{fB}} = {v_{DB}} = {v_{gB}} = {v_{QB}} = {v_{sB}} = \sqrt 2 {v_N} \\
+  {i_{fB}} = {i_{DB}} = {i_{gB}} = {i_{QB}} = {i_{sB}} = \frac{2}{3}\frac{{{S_b}}}{{{v_{sB}}}} \\
+  {\lambda _{fB}} = {\lambda _{DB}} = {\lambda _{gB}} = {\lambda _{QB}} = {\lambda _{sB}} = \frac{{{v_{sB}}}}{{{\omega _B}}} \\
+  {T_B} = \frac{p}{2}\frac{{{S_b}}}{{{\omega _B}}}
+  \end{gathered}
+$$
 
 ## 相关元件
 [<同步发电机>](<test link>)

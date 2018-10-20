@@ -12,7 +12,10 @@ categories:
 ## <span id="comp_desc">基本描述</span>
 ![元件图标]()
 
-+ 该元件实现对输入信号加入超前滞后校正环节。
++ 该元件实现对输入信号的超前滞后校正。其传递函数如下。
+
+$$G\frac{{1 + s{T_{lead}}}}{{1 + s{T_{lag}}}}$$
+
 
 ## <span id="comp_params">输入参数</span>
 ### <span id="comp_params_group_Configuration">Configuration</span>
