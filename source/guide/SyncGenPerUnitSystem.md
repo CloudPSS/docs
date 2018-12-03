@@ -6,16 +6,12 @@ author: songyk
 
 # CloudPSS同步电机标幺值和有名值系统
 
-CloudPSS中的标幺值同步电机模型采用了$X_{ad}$基值系统[[1](#Kundur)]。参与电磁暂态计算时，标幺值应转换为有名值，此时，为保证实际电感矩阵可逆，CloudPSS采用了以归算到定子侧的转子电流为状态量的同步电机有名值模型[[2](#Krause)]。该模型具备$X_{ad}$基值系统下的标幺值电感矩阵对称的优点，便于后续计算分析。现对其标幺值与有名值之间变换关系做简要介绍。
-
-* [CloudPSS中有名值同步电机方程及参数归算](#title1)
-* [标幺值参数与CloudPSS有名值同步电机参数转换方法](#title2)
-* [参考文献](#Reference)
+CloudPSS中的标幺值同步电机模型采用了$X_{ad}$基值系统[^Kundur]。参与电磁暂态计算时，标幺值应转换为有名值，此时，为保证实际电感矩阵可逆，CloudPSS采用了以归算到定子侧的转子电流为状态量的同步电机有名值模型[^Krause]。该模型具备$X_{ad}$基值系统下的标幺值电感矩阵对称的优点，便于后续计算分析。现对其标幺值与有名值之间变换关系做简要介绍。
 
 
-## <span id="title1">1. CloudPSS中有名值同步电机方程及参数归算</span>
+## CloudPSS中有名值同步电机方程及参数归算
 
-文献[[1](#Kundur)](P196)中，dq坐标轴下的发电机原始电压方程和磁链方程可表达为如下形式：
+文献[^Kundur] (P196)中，dq坐标轴下的发电机原始电压方程和磁链方程可表达为如下形式：
 
 $$\begin{gathered}
   { {\mathbf{v} }_{dq0s} } = { {\mathbf{r} }_s}{ {\mathbf{i} }_{dq0s} } + {\omega _r}{\left[ {\begin{array}{ccc}
@@ -71,7 +67,7 @@ $$
 \right]
 $$
 
-由文献[[2](#Krause)]可知，上述有名值模型中定转子以及转子绕组之间的互感参数与$L_{md}$和$L_{mq}$具备如下关系：
+由文献[^Krause]可知，上述有名值模型中定转子以及转子绕组之间的互感参数与$L_{md}$和$L_{mq}$具备如下关系：
 
 $$\begin{gathered}
   {M_{af} } = \left( {\frac{ { {N_f} } }{ { {N_a} } } } \right)\left( {\frac{2}{3} } \right){L_{md} } \\ 
@@ -86,7 +82,7 @@ $$\begin{gathered}
   {M_{gQ} } = \left( {\frac{ { {N_Q} } }{ { {N_g} } } } \right){L_{mg} } = \left( {\frac{ { {N_g} } }{ { {N_Q} } } } \right){L_{mQ} } \\ 
 \end{gathered}$$
 
-可见，上述电感矩阵并不满足对称特性。为保证对称性，文献[[2](#Krause)]定义了一种<font color=#FF0000>折算到定子侧的转子变量</font>，即
+可见，上述电感矩阵并不满足对称特性。为保证对称性，文献[^Krause]定义了一种<font color=#FF0000>折算到定子侧的转子变量</font>，即
 
 $$\begin{gathered}
   { {i}_j'}{\text{ = } }\left( {\frac{ {\text{2} } }{ {\text{3} } } } \right)\left( {\frac{ { {N_j} } }{ { {N_a} } } } \right){i_j} \\ 
@@ -145,7 +141,7 @@ $$\begin{gathered}
 
 需特别注意的是，该有名值方程使用的并非实际的转子绕组参数，而是归算到定子侧的转子绕组有名值参数。在实际使用有名值同步电机方程时，用户需按照上述方法进行归算，<font color=#FF0000>填写转子绕组参数归算到定子侧的参数值</font>。
 
-## <span id="title1">2. $X_{ad}$标幺值参数与CloudPSS有名值同步电机参数转换方法</span>
+## $X_{ad}$标幺值参数与CloudPSS有名值同步电机参数转换方法
 
 CloudPSS采用$X_{ad}$基值系统，其标幺值同步电机模型是在上述模型基础上，内置了标幺值向有名值的归算流程。用户在选择标幺值输入模式时，系统会自动将输入参数归算到有名值。
 
@@ -156,7 +152,7 @@ $$\begin{gathered}
   L_{mq}^* = M_{ag}^* = M_{aQ}^* = M_{gQ}^* = M_{aq}^* \\ 
 \end{gathered}$$
 
-根据转子绕组互感基值定义可知转子各绕组的电流基值与定子电流基值的关系如下（文献[[2](#Krause)]，P82），
+根据转子绕组互感基值定义可知转子各绕组的电流基值与定子电流基值的关系如下（文献[^Krause]，P82），
 
 $$\begin{gathered}
   {i_{jB} } = \frac{ { {L_{md} } } }{ { {M_{aj} } } }{i_{sB} } = \left( {\frac{3}{2} } \right)\left( {\frac{ { {N_a} } }{ { {N_j} } } } \right){i_{sB} },j = f,D \\
@@ -187,9 +183,7 @@ $$
 ## 相关元件
 [<同步发电机>](<test link>)
 
-## <span id="Reference">参考文献</span>
 
+[^Kundur]: Kundur, Prabha, Neal J. Balu, and Mark G. Lauby. Power system stability and control. Vol. 7. New York: McGraw-hill, 1994.
 
-1 <span id="Kundur">Kundur, Prabha, Neal J. Balu, and Mark G. Lauby. Power system stability and control. Vol. 7. New York: McGraw-hill, 1994.</span>
-
-2 <span id="Krause">Krause, Paul, et al. Analysis of electric machinery and drive systems. Vol. 75. John Wiley & Sons, 2013.</span>
+[^Krause]: Krause, Paul, et al. Analysis of electric machinery and drive systems. Vol. 75. John Wiley & Sons, 2013.
