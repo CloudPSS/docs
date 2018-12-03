@@ -10,47 +10,6 @@ simulation:
 components: 
   name: 元件说明  
   categories: 
-    electric:
-      name: 电气元件
-      children:
-        basic: 
-          name: 基本电气元件
-          children:
-            passive:
-              name: 无源元件
-            source:
-              name: 电源
-            switch:
-              name: 开关
-            other:
-              name: 其他
-        ac-system: 
-          name: 三相交流系统设备
-        renewable: 
-          name: 可再生能源
-        power-converter:
-          name: 电力电子变换器
-    control:
-      name: 控制元件
-      children:
-        basic:
-          name: 基本控制模块
-        math:
-          name: 基本数学函数
-        linear-transfer:
-          name: 线性传递函数
-        signal-generator:
-          name: 信号发生器
-        non-linear:
-          name: 非线性元件
-        discrete:
-          name: 离散逻辑元件
-        coordinate-transformation:
-          name: 坐标变换
-        advanced:
-          name: 高级控制模块
-        other:
-          name: 其他
 
 features: 
   name: 功能说明
