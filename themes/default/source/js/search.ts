@@ -1,4 +1,4 @@
-//import Vue from '../../../../node_modules/vue/types/index';
+import Vue from '../../../../node_modules/vue/types/index';
 
 (async function ()
 {
@@ -9,7 +9,7 @@
         content?: string;
         title?: string;
         type?: string;
-        categories?: string[];
+        category?: number;
 
         extend?: string;
     }
@@ -27,13 +27,7 @@
 
     interface CategoryMap
     {
-        [key: string]: Category | undefined;
-    }
-
-    interface Category
-    {
-        name: string;
-        children?: CategoryMap;
+        [key: number]: string[] | undefined;
     }
 
     class FormattedSearchRecord
@@ -49,7 +43,7 @@
         extend: string;
         type?: string;
 
-        constructor(record: SearchRecord)
+        constructor(record: SearchRecord, sitemap: SiteMap)
         {
             this.url = record.url || '';
             this.formattedUrl = this.url.toLowerCase();
@@ -58,7 +52,13 @@
             this.formattedContent = this.content.toLowerCase();
             this.title = (record.title || '').trim();
             this.formattedTitle = this.title.toLowerCase();
-            this.categories = record.categories || [];
+            this.categories = [];
+            if (record.category && record.type)
+            {
+                let cat = sitemap[record.type].categories;
+                if (cat)
+                    this.categories = cat[record.category] || [];
+            }
             this.extend = record.extend || '';
         }
     }
@@ -100,22 +100,6 @@
                 if (!this.term.trim() || match.title !== this.term.trim())
                     return;
                 window.location.pathname = match.url;
-            },
-            getCategories(record: FormattedSearchRecord): string[]
-            {
-                if (!record.type || !this.sitemap)
-                    return [];
-                let cat = new Array<string>();
-                let typemap = this.sitemap[record.type];
-                cat.push(typemap.name);
-                let catemap = typemap.categories;
-                for (const catkey of record.categories)
-                {
-                    let cate = catemap![catkey];
-                    cat.push(cate!.name);
-                    catemap = cate!.children;
-                }
-                return cat;
             }
         },
         computed:
@@ -143,7 +127,7 @@
                 }
                 function getScore(record: FormattedSearchRecord)
                 {
-                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedUrl) * 5 
+                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedUrl) * 5
                         + match(record.formattedContent)
                         + record.categories.reduce((sum, cat) => sum + match(cat), 0);
                 }
@@ -173,7 +157,7 @@
     async function getJson(path: string): Promise<any>
     {
         const response = await fetch(path);
-        if(!response.ok)
+        if (!response.ok)
             throw new Error(response.statusText);
         return await response.json();
     }
