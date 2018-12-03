@@ -8,16 +8,7 @@
         <p class="categories">
           <%_ -%><span class="type"><%= site.data.sitemap[page.type].name %></span><%_ -%>
           <%_
-            const cate = [];
-            if(page.categories)
-            {
-              let cate_ref = site.data.sitemap[page.type].categories;
-              for(const key of page.categories)
-              {
-                cate.push(cate_ref[key].name);
-                cate_ref = cate_ref[key].children;
-              }
-            }
+            let cate = site.data.sitemap[page.type].categories[page.category] || [];
             cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
           -%>
         </p>
