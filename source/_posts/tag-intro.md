@@ -5,6 +5,16 @@ author_email: lzy@live.in
 date: 2018-08-18 14:23:34
 ---
 
+## 元件图标
+插入元件图标。
+如
+```md compsymbol
+{% compsymbol _cc %}
+```
+
+效果：
+{% compsymbol _cc %}
+
 ## 引用
 扩展了 MarkDown 的引用功能，以显示更丰富的样式。
 
