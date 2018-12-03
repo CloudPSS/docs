@@ -16,7 +16,7 @@
           <li v-for="record in matches" :key="record.url"> 
             <a :href="record.url">
               <span>{{record.title}}</span>
-              <p class="categories">{{getCategories(record).join(' > ')}}</p>
+              <p class="categories">{{record.type}}</p>
             </a>
           </li>
         </ul>
