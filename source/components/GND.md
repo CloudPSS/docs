@@ -1,0 +1,40 @@
+---
+title: 接地点
+author: 
+author_email:
+
+date: 2018/12/3 15:48:31
+updated: 2018/12/3 15:48:31
+
+type: components
+category: 3001
+order: 100
+
+classname: GND
+symbol: newGND
+---
+## 基本描述
+{% compsymbol newGND %}
+
+## 参数列表
+### Configuration
+| 参数名 | 备注 | 类型 | 描述 |
+| :--- | :--- | :--: | :--- |
+| Name | 元件名称 | 文本 |  |
+
+
+## 端口列表
+
+| 端口名 | 数据维数 | 描述 |
+| :--- | :--:  | :--- |
+| GND | 0×0 | |                   
+
+## 使用说明
+
+
+## 测试模型
+[<test name>](<test link>)显示了接地点的典型应用。
+
+## 相关元件
+
+
