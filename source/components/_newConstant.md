@@ -3,12 +3,12 @@ title: 常量输入
 author: 
 author_email:
 
-date: 2018/12/3 15:48:32
-updated: 2018/12/3 15:48:32
+date: 2018/12/3 15:57:46
+updated: 2018/12/3 15:57:46
 
 type: components
 category: -3001
-order: 0
+order: 100
 
 classname: _newConstant
 symbol: newConstant
