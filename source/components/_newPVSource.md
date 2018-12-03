@@ -3,12 +3,12 @@ title: 光伏电池单元
 author: 
 author_email:
 
-date: 2018/12/3 15:48:31
-updated: 2018/12/3 15:48:31
+date: 2018/12/3 15:57:46
+updated: 2018/12/3 15:57:46
 
 type: components
 category: 3006
-order: 0
+order: 100
 
 classname: _newPVSource
 symbol: newPVSource

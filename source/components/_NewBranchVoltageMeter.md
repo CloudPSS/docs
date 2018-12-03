@@ -3,12 +3,12 @@ title: 支路电压表
 author: 
 author_email:
 
-date: 2018/12/3 15:48:31
-updated: 2018/12/3 15:48:31
+date: 2018/12/3 15:57:45
+updated: 2018/12/3 15:57:45
 
 type: components
 category: 3000
-order: 0
+order: 100
 
 classname: _NewBranchVoltageMeter
 symbol: newBranchVoltageMeter
