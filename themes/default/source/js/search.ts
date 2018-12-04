@@ -145,9 +145,10 @@
         let getSearch = getJson('/search.json');
         let getSitemap = getJson('/sitemap.json');
         let data = await getSearch as SearchRecord[];
+        const sitemap = await getSitemap;
         vueApp.loadedPercent = 100;
-        vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r));
-        vueApp.sitemap = await getSitemap as SiteMap;
+        vueApp.sitemap = sitemap;
+        vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r, sitemap));
     }
     catch
     {

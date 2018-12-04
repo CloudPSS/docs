@@ -79,7 +79,7 @@ $$\begin{gathered}
   {M_{gQ} } = \left( {\frac{ { {N_Q} } }{ { {N_g} } } } \right){L_{mg} } = \left( {\frac{ { {N_g} } }{ { {N_Q} } } } \right){L_{mQ} } \\ 
 \end{gathered}$$
 
-可见，上述电感矩阵并不满足对称特性。为保证对称性，文献[^Krause]定义了一种<font color=#FF0000>折算到定子侧的转子变量</font>，即
+可见，上述电感矩阵并不满足对称特性。为保证对称性，文献[^Krause]定义了一种**折算到定子侧的转子变量**，即
 
 $$\begin{gathered}
   { {i}_j'}{\text{ = } }\left( {\frac{ {\text{2} } }{ {\text{3} } } } \right)\left( {\frac{ { {N_j} } }{ { {N_a} } } } \right){i_j} \\ 
@@ -136,7 +136,7 @@ $$\begin{gathered}
   j = f,D,g,Q \\ 
 \end{gathered}$$
 
-需特别注意的是，该有名值方程使用的并非实际的转子绕组参数，而是归算到定子侧的转子绕组有名值参数。在实际使用有名值同步电机方程时，用户需按照上述方法进行归算，<font color=#FF0000>填写转子绕组参数归算到定子侧的参数值</font>。
+需特别注意的是，该有名值方程使用的并非实际的转子绕组参数，而是归算到定子侧的转子绕组有名值参数。在实际使用有名值同步电机方程时，用户需按照上述方法进行归算，**填写转子绕组参数归算到定子侧的参数值**。
 
 ## $X_{ad}$标幺值参数与CloudPSS有名值同步电机参数转换方法
 
@@ -160,7 +160,7 @@ $$\begin{gathered}
 
 $${i_{jB}'} = \left( {\frac{2}{3} } \right)\left( {\frac{ { {N_j} } }{ { {N_a} } } } \right){i_{jB} } = \left( {\frac{2}{3} } \right)\left( {\frac{ { {N_j} } }{ { {N_a} } } } \right) \times \left( {\frac{3}{2} } \right)\left( {\frac{ { {N_a} } }{ { {N_j} } } } \right){i_{sB} } = {i_{sB} }$$
 
-进而可得<font color=#FF0000>折算到定子侧的转子电压、转子磁链基值</font>，即：
+进而可得**折算到定子侧的转子电压、转子磁链基值**，即：
 
 $${v_{jB}'} = \left( {\frac{ { {N_a} } }{ { {N_j} } } } \right){v_{jB} } = \left( {\frac{ { {N_a} } }{ { {N_j} } } } \right)\frac{ { {S_b} } }{ { {i_{jB} } } } = \left( {\frac{ { {N_a} } }{ { {N_j} } } } \right) \times \left( {\frac{2}{3} } \right)\left( {\frac{ { {N_j} } }{ { {N_a} } } } \right)\frac{ { {S_b} } }{ { {i_{sB} } } } = {v_{sB} }$$
 
@@ -178,7 +178,7 @@ $$\begin{gathered}
 $$
 
 ## 相关元件
-[<同步发电机>](<test link>)
+[同步发电机](/components/compSyncGeneratorRouter.html)
 
 
 [^Kundur]: Kundur, Prabha, Neal J. Balu, and Mark G. Lauby. Power system stability and control. Vol. 7. New York: McGraw-hill, 1994.
