@@ -8,7 +8,9 @@
         <p class="categories">
           <%_ -%><span class="type"><%= site.data.sitemap[page.type].name %></span><%_ -%>
           <%_
-            let cate = site.data.sitemap[page.type].categories[page.category] || [];
+            let cate = [];
+            if (page.category && site.data.sitemap[page.type] && site.data.sitemap[page.type].categories && site.data.sitemap[page.type].categories[page.category])
+              cate = site.data.sitemap[page.type].categories[page.category];
             cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
           -%>
         </p>
