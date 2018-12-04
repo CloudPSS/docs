@@ -3,18 +3,18 @@ title: 非门
 author: 
 author_email:
 
-date: 2018/12/3 17:35:06
-updated: 2018/12/3 17:35:06
+date: 2018/12/4 10:03:10
+updated: 2018/12/4 10:03:10
 
 type: components
 category: -3006
 order: 400
 
 classname: _newLogicGate
-symbol: newLogicGate4
+symbol: newLogicGate3
 ---
 ## 基本描述
-{% compsymbol newLogicGate4 %}
+{% compsymbol newLogicGate3 %}
 
 ## 参数列表
 ### Configuration
