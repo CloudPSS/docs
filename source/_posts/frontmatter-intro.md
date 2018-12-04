@@ -22,10 +22,7 @@ sidebar: true
 
 ## 分类信息
 type: components
-categories:
-- electric
-- basic
-- passive
+category: 3001
 order: 10
 
 ## “元件说明”文章专用
@@ -91,16 +88,17 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 
 应与文件夹名字相同。
 
-### 文章分类 `categories`
+### 文章分类 `category`
 
-从大类到小类依次填写，也可置空或省略此项。
+文章分类编号，也可置空或省略此项。
 
 {% pullquote tip %}
 文章的类型和分类应先在 `source/_data/sitemap.yml` 中定义。
 
 编辑 `sitemap.yml` 文件时需要注意：
-- 使用空格而非 tab 进行缩进；
-- 类型和分类的命名只允许使用**小写**字母（`a-z`）、数字（`0-9`）和连字符（`-`）；
+- 使用 [[Space]] 而非 [[Tab]] 进行缩进；
+- 类型的命名只允许使用**小写**字母（`a-z`）、数字（`0-9`）和连字符（`-`）；
+- 分类的编号需为整数；
 - 类型和分类的排序决定了其在页面目录的显示顺序。
 {% endpullquote %}
 

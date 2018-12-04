@@ -12,22 +12,24 @@ code, pre, kbd
 kbd 
   display: inline-block
   border-radius: 3px
-  padding: 0px 4px
+  padding: 4px
   box-shadow: 0 0 2px 1px $shadow
-  margin: 0 2px
+  margin: 0 4px
   font-size: small
-  background: steelblue
-  color: #eee
+  background: #eee
+  color: #222
   font-variant: small-caps
   font-weight: 600
-  letter-spacing: 1px
+  letter-spacing: 0.5px
+  line-height: 1em    
+  transform: translateY(-1px)
   @media print
     background: #fff
-    color: #222
+    color: #000
     box-shadow: none
     border: 2px solid $border
   &:hover
-    color: #fff
+    color: #000
     box-shadow: 0 0 2px 2px $shadow
 
 code
