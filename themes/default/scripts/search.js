@@ -31,9 +31,9 @@ function searchGenerator(locals)
         {
             temp_page.content = page._content.trim();
         }
-        if (page.categories && page.categories.length > 0)
+        if (!Number.isNaN((page.category)))
         {
-            temp_page.categories = Array.from(page.categories);
+            temp_page.category = Number(page.category);
         }
         res.push(temp_page);
     });

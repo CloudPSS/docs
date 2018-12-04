@@ -225,24 +225,31 @@ declare const IS_INDEX: boolean;
 
     function makeLink(h: HTMLHeadingElement)
     {
+      h = h.cloneNode(true);
+      
       const link = document.createElement('li')
-
-      const text = Array.from(h.childNodes).map(function (node)
+      
+      function mapper(node)
       {
         if (node.nodeType === Node.TEXT_NODE)
         {
-          return node.nodeValue;
+          return node;
         }
-        else if (['CODE', 'SPAN'].indexOf(node.nodeName) !== -1)
+        for (const cnode of node.childNodes)
+          node.replaceChild(mapper(cnode), cnode);
+        if (['A'].indexOf(node.nodeName) !== -1)
         {
-          return node.textContent;
+          const span = document.createElement('span');
+          span.setAttribute('role','a');
+          span.innerHTML = node.innerHTML;
+          return span;
         }
-        else
-        {
-          return ''
-        }
-      }).join('').replace(/\(.*\)$/, '');
-      link.innerHTML = `<a class="section-link" href="#${h.id}">${htmlEscape(text)}</a>`;
+        return node;
+      }
+
+      mapper(h);
+      //link.innerHTML = `<a class="section-link" href="#${h.id}">${htmlEscape(text)}</a>`;
+      link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
       return link;
     }
 
