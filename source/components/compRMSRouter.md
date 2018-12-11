@@ -16,12 +16,14 @@ symbol: newRMS
 ## 基本描述
 {% compsymbol newRMS %}
 
+> **该元件实现单相、三相有效值测量。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  |
-| Dimension |  | 单相/三相 | 选择 |  |
+| Name |  | 元件名称 | 文本 | 此处输入RMS量测的名称（可缺省） |
+| Dimension |  | 单相/三相 | 选择 | 选择测量为单相或三相 |
 | Meter Type |  | 量测类型 | 选择 |  |
 | Rated Value |  | 额定值 | 实数（常量） |  |
 | Smoothing Time Constant | s | 平滑时间常数 | 实数（常量） |  |

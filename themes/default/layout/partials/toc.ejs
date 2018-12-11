@@ -4,7 +4,7 @@
 </header>
 <ul class="menu-root">
   <%_
-    const categories = site.data.sitemap[page.type].categories || {};
+    const categories = site.data.sitemap[page.type].categories || [];
     
     const pages = site.pages.toArray().filter(p => p.type === page.type && !is_index(p)).sort(function(a, b){
       var ao = a.order || Number.MAX_VALUE;
@@ -14,53 +14,33 @@
       return title(a).localeCompare(title(b));
     });
     
-    const groupedPages = {};
-    const nonGroupedPages = [];
-    for(const page of pages)
-    {
-      const catNum = Number(page.category);
-      if(Number.isNaN(catNum))
-      {
-        nonGroupedPages.push(page);
-        continue;
-      }
-        
-      const catList = categories[catNum];
-      if(!Array.isArray(catList))
-      {
-        nonGroupedPages.push(page);
-        continue;
-      }
-      
-      let cat = groupedPages;
-      for(const catname of catList)
-      {
-        if(!cat[catname])
-          cat[catname] = {};
-        cat = cat[catname];
-      }
-      cat.$data = cat.$data || [];
-      cat.$data.push(page);
-    }
-    
     function page_link(p)
     {
       -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link ${page.path === p.path ? ' current' : ''}`}) %></li><%_
     }
-    function cate_link(key, cat, level)
+    
+    function cate_link(cat, level)
     {
-      -%><ul class="menu-cat level-<%- level %>"><h<%- level + 1 %> class="menu-cat-name"><%= key %></h<%- level + 1 %>><%_
+      const catname = Object.getOwnPropertyNames(cat)[0];
+      -%><ul class="menu-cat level-<%- level %>"><h<%- level + 1 %> class="menu-cat-name"><%= catname %></h<%- level + 1 %>><%_
       
-      (cat.$data || []).forEach(page_link);
-      for(const ckey in cat)
-        if(ckey !== '$data')
-          cate_link(ckey, cat[ckey], level + 1);
-          
+      let content = cat[catname];
+      if (!Array.isArray(content))
+        content = [ content ];
+        
+      for(const child of content)
+      {
+        if(typeof child === 'number')
+          pages.filter(p => Number(p.category) === child).forEach(page_link);
+        else
+          cate_link(child, level + 1);
+      }
       -%></ul><%_
     }
-    nonGroupedPages.forEach(page_link);
-    for(const key in groupedPages)
-      cate_link(key, groupedPages[key], 1);
+    
+    pages.filter(p => Number.isNaN(Number(p.category))).forEach(page_link);
+    for(const cat of categories)
+      cate_link(cat, 1);
   -%>
 </ul>
 <!-- END toc -->

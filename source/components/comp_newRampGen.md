@@ -16,21 +16,23 @@ symbol: newRampGen
 ## 基本描述
 {% compsymbol newRampGen %}
 
+> **该元件用以产生斜坡信号。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  |
-| Ramping Start Time | s | 斜坡沿开始时刻T1 | 实数（常量） |  |
-| Ramping End Time | s | 斜坡沿结束时刻T2(>T1) | 实数（常量） |  |
-| Peak Output |  | 饱和(峰值)输出 | 实数（常量） |  |
+| Name |  | 元件名称 | 文本 | 此处输入斜坡函数发生器的名称（可缺省） |
+| Ramping Start Time | s | 斜坡沿开始时刻T1 | 实数（常量） | 斜坡沿开始时刻T1  |
+| Ramping End Time | s | 斜坡沿结束时刻T2(>T1) | 实数（常量） | 斜坡沿结束时刻T2 |
+| Peak Output |  | 饱和(峰值)输出 | 实数（常量） | 斜坡信号的输出峰值 |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Output | 1×1 | |                   
+| Output | 1×1 |输出端口 |                   
 
 ## 使用说明
 

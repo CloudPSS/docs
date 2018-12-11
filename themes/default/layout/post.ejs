@@ -2,7 +2,7 @@
 <%_ if(is_index()) { -%>
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <%_ } else { -%>
-  <aside class="sidebar" <%- page.sidebar === false ? 'style="display:none"': '' %> >
+  <aside class="sidebar<%- page.sidebar === false ? ' no-sidebar' : ''%>" >
     <div class="sidebar-inner">
       <div class="list">
         <h2>所有文章</h2>

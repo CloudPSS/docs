@@ -1,12 +1,12 @@
 var $buoop = {
-    required:{e:-1,f:-1,o:-3,s:0,c:-3},
+    required:{e:-3,f:-3,o:-3,s:-1,c:-3},
     insecure:true,
     unsupported:true,
     reminder: 1e-200,
     reminderClosed: 1e-100,
     no_permanent_hide: true,
     style:"bottom",
-    api:2018.08
+    api:2018.12
 }; 
 function $buo_f(){ 
     var e = document.createElement("script"); 

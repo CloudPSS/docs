@@ -16,19 +16,21 @@ symbol: newConstant
 ## 基本描述
 {% compsymbol newConstant %}
 
+> **该元件用以产生常数输出信号。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  |
-| Real Constant Value |  | 常数 | 实数（常量） |  |
+| Name |  | 元件名称 | 文本 | 此处输入常量输入的名称（可缺省） |
+| Real Constant Value |  | 常数 | 实数（常量） | 输出常数的数值 |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Output | 1×1 | |                   
+| Output | 1×1 |输出端口 |                   
 
 ## 使用说明
 

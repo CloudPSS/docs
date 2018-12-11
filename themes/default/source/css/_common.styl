@@ -18,18 +18,25 @@ body
   -moz-osx-font-smoothing: grayscale
   color: $medium
   background-color: white
-  &.docs
-    padding-top: $header-height
+  padding-top: $header-height
 
 @media screen and (max-width: $mobile-width)
-  body.docs
+  body
     padding-top: $mobile-header-height
 
-a
-  text-decoration: none
-
-img
+img, svg
   border: none
+  
+mx-graph
+  display: block
+  text-align: center
+  overflow: auto
+  svg
+    display: inline !important
+    *
+      no-user-select()
+p mx-graph
+  display: inline-block
 
 h1, h2, h3, h4, strong
   font-weight: 600
@@ -58,18 +65,20 @@ p
   overflow-x: hidden
 
 abbr[title]
-  text-decoration: solid
   cursor: help
-  &:after
-    no-user-select()
-    content: "[?]"
-    vertical-align: super
-    font-size: xx-small
+  border-bottom: 1px dotted #777
+  @media print 
+    &:after
+      content: "(" attr(title) ")"
+      color: #777
+      
 br
   word-spacing: 0
-    
-a.footnote-backref
-  no-user-select()
+   
+a
+  text-decoration: none 
+  &.footnote-backref
+    no-user-select()
 
 @media screen and (max-width: $mobile-width)
   #main
@@ -81,9 +90,7 @@ a.footnote-backref
     position: static
     color: rgb(0,0,0)
   mark
-    text-decoration-line: underline !important
-    text-decoration-color: yellow !important
-    text-decoration-style: wavy
+    border: 2px solid yellow !important
   h1,h2,h3,h4,h5
     color: rgb(0,0,0)
     page-break-after: avoid
@@ -98,6 +105,4 @@ a.footnote-backref
   sup.footnote-ref > a, a.markdownIt-Anchor
     &:link:after, &:visited:after
        content:""
-  abbr[title]:after
-      content: "[" attr(title) "]"
   

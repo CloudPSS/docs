@@ -27,7 +27,7 @@
     "markdown-it-kbd": "^1.1.1",
     "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
     "pinyinjs": "^2.2.1",
-    "typescript": "^3.0.3",
+    "typescript": "^3.2.1",
     "vue": "^2.5.17"
   }
 }

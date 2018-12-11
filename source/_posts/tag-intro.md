@@ -10,11 +10,11 @@ date: 2018-08-18 14:23:34
 
 如
 ```md compsymbol
-{% compsymbol _cc %}
+{% compsymbol newSum %} <!-- symbol of components -->
 ```
 
 效果：
-{% compsymbol _cc %}
+{% compsymbol newSum %} <!-- symbol of components -->
 
 ## 引用
 扩展了 MarkDown 的引用功能，以显示更丰富的样式。

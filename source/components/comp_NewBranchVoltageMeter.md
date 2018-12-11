@@ -16,20 +16,22 @@ symbol: newBranchVoltageMeter
 ## 基本描述
 {% compsymbol newBranchVoltageMeter %}
 
+> **该元件用以测量支路电压，输出单位为kV。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| Param Description |  | 选择 |  |
-| Name for Voltage Signal \[kV\] | 电压量测名称 | 文本 |  |
+| Dimension | 相数 | 选择 | 选择电压测量为单相或三相 |
+| Name for Voltage Signal \[kV\] | 电压量测名称 | 文本 | 此处输入测量所得电压信号的标签，以#号开头，如#Va |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Pin + | 由参数控制 | |                   
-| Pin - | 由参数控制 | |                   
+| Pin + | 由参数控制 |电压表的正接线端 |                   
+| Pin - | 由参数控制 | 电压表的负接线端|                   
 
 ## 使用说明
 

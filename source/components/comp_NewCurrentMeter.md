@@ -16,20 +16,22 @@ symbol: newCurrentMeter
 ## 基本描述
 {% compsymbol newCurrentMeter %}
 
+> **该元件用以测量支路电流，输出单位为kA。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| Param Description |  | 选择 |  |
-| Name for Current Signal \[kA\] | 电流量测名称 | 文本 |  |
+| Dimension | 相数 | 选择 | 选择电流测量为单相或三相 |
+| Name for Current Signal \[kA\] | 电流量测名称 | 文本 |  此处输入测量所得电流信号的标签，以#号开头，如#Ia |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Pin + | 自动 | |                   
-| Pin - | 自动 | |                   
+| Pin + | 自动 |电流表的正接线端 |                   
+| Pin - | 自动 |电流表的负接线端 |                   
 
 ## 使用说明
 

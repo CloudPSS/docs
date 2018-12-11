@@ -7,6 +7,8 @@ declare const IS_INDEX: boolean;
   initFlowAndChart();
   initMobileMenu();
   initVideos();
+  initMxGraph();
+  
   if (PAGE_TYPE && !IS_INDEX)
   {
     initSubHeaders()
@@ -296,6 +298,79 @@ declare const IS_INDEX: boolean;
       }
     }
   }
+  
+  function initMxGraph()
+  {
+    window.mxLoadStylesheets = false;
+    window.mxLoadResources = false;
+    
+    async function loadMxGraph(container: HTMLElement, padding: number)
+		{
+		  padding = padding || 12;
+		  
+			// Disables the built-in context menu
+			mxEvent.disableContextMenu(container);
+			const editor = new Editor();
+			// Creates the graph inside the given container
+			const graph = new Graph(container, null, null, editor.graph.getStylesheet());
+			graph.resetViewOnRootChange = false;
+			graph.foldingEnabled = false;
+			graph.gridEnabled = false;
+			graph.autoScroll = false;
+			graph.setTooltips(false);
+			graph.setConnectable(false);
+			graph.setEnabled(false);
+			// Sets the base style for all vertices
+			const style = graph.getStylesheet().getDefaultVertexStyle();
+			style[mxConstants.STYLE_ROUNDED] = true;
+			style[mxConstants.STYLE_FILLCOLOR] = '#ffffff';
+			style[mxConstants.STYLE_STROKECOLOR] = '#000000';
+			style[mxConstants.STYLE_STROKEWIDTH] = '2';
+			style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+			style[mxConstants.STYLE_FONTSIZE] = '12';
+			style[mxConstants.STYLE_FONTSTYLE] = 1;
+			graph.getStylesheet().putDefaultVertexStyle(style);
+
+			const response = await fetch(`http://192.168.0.133/editor/getCompShapeBySym/?callback=load&sym=${container.getAttribute('symbol')}`);
+			
+			function load(data)
+			{
+			  const shape = mxUtils.parseXml(data.shape);
+  			const firstChild = shape.firstChild;
+  			mxStencilRegistry.parseStencilSet(firstChild);
+  			const parent = graph.getDefaultParent();
+    		const width = Number(firstChild.getAttribute('w'));
+    		const height = Number(firstChild.getAttribute('h'));
+    		
+  			graph.getModel().beginUpdate();
+  			try
+  			{
+  			  graph.insertVertex(parent, null, '', 0, 0, width, height, 'shape=' + firstChild.getAttribute('name').toLowerCase());
+  			}
+  			finally
+  			{
+  				graph.getModel().endUpdate();
+  			}
+  			
+  			const svg = container.getElementsByTagName("svg")[0];
+  			svg.viewBox.baseVal.width = width + padding * 2;
+  			svg.viewBox.baseVal.height = height + padding * 2;
+  			svg.viewBox.baseVal.x = -padding;
+  			svg.viewBox.baseVal.y = -padding;
+  			svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
+  			svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
+  			svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
+  			svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
+			}
+			
+		  eval(await response.text());
+		};
+		
+    document.addEventListener('DOMContentLoaded', function () { 
+		  for(const container of document.getElementsByTagName("mx-graph"))
+		    loadMxGraph(container);
+    }, false);
+  }
 
   // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
   function escapeRegExp(str: string)
@@ -340,3 +415,4 @@ declare const IS_INDEX: boolean;
       .replace(/>/g, '&gt;')
   }
 })()
+

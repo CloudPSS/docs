@@ -16,46 +16,48 @@ symbol: newCtrlVFACSource
 ## 基本描述
 {% compsymbol newCtrlVFACSource %}
 
+> **该元件用以建模幅值、频率可控的单相或三相交流电压源。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 |  |
-| Is This Source Grounded? |  | 电压源是否接地？ | 选择 |  |
-| No. of Phases |  | 电压源相数 | 选择 |  |
-| Function Type |  | 函数类型 | 选择 |  |
-| Initial Frequency | Hz | 初始频率 | 实数（常量） |  |
-| Initial Phase | Deg | 初始电压相位 | 实数（常量） |  |
-| Resistance | Ω | 内阻 | 实数（常量） |  |
-| Start-up Type |  | 启动方式 | 选择 |  |
-| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） |  |
-| Voltage Input Time Constant | s | 启动时间常数 | 实数（常量） |  |
+| Source Name |  | 元件名称 | 文本 | 此处输入受控电压源的名称（可缺省） |
+| Is This Source Grounded? |  | 电压源是否接地？ | 选择 | 选择“Yes”或“No”以使电压源负端接地或不接地 |
+| No. of Phases |  | 电压源相数 | 选择 | 选择电压源为单相或三相 |
+| Function Type |  | 函数类型 | 选择 | 选择电压源为正弦表达式或余弦表达式 |
+| Initial Frequency | Hz | 初始频率 | 实数（常量） | 电压源的初始频率 |
+| Initial Phase | Deg | 初始电压相位 | 实数（常量） | 电压源在t=0时刻的相位 |
+| Resistance | Ω | 内阻 | 实数（常量） | 电压源的内阻 |
+| Start-up Type |  | 启动方式 | 选择 | 选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
+| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
+| Voltage Input Time Constant | s | 启动时间常数 | 实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电压源端电压 | 文本 |  |
-| Source Current \[kA\] | 电压源输出电流 | 文本 |  |
+| Source Voltage \[kV\] | 电压源端电压 | 文本 |  此处输入电压源电压量测信号的标签，以#号开头，如#Va。仅当电压源相数为单相时有效 |
+| Source Current \[kA\] | 电压源输出电流 | 文本 | 此处输入电压源电流量测信号的标签，以#号开头，如#Ia。仅当电压源相数为单相时有效 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Source Voltage Vector \[kV\] | 电压源端电压 | 文本 |  |
-| 3 Phase Source Current Vector \[kA\] | 电压源输出电流 | 文本 |  |
-| RMS Source Voltage \[kV\] | 电压源电压均方根值 | 文本 |  |
-| RMS Source Current \[kA\] | 电压源电流均方根值 | 文本 |  |
-| Active Power \[MW\] | 有功功率 | 文本 |  |
-| Reactive Power \[MVar\] | 无功功率 | 文本 |  |
+| 3 Phase Source Voltage Vector \[kV\] | 电压源端电压 | 文本 | 此处输入电压源电压量测信号的标签（3×1维），以#号开头，如#Vabc。仅当电压源相数为三相时有效 |
+| 3 Phase Source Current Vector \[kA\] | 电压源输出电流 | 文本 | 此处输入电压源电流量测信号的标签（3×1维），以#号开头，如#Iabc。仅当电压源相数为三相时有效 |
+| RMS Source Voltage \[kV\] | 电压源电压均方根值 | 文本 | 此处输入电压源电压有效值量测信号的标签（1×1维），以#号开头，如#Vrms。仅当电压源相数为三相时有效 |
+| RMS Source Current \[kA\] | 电压源电流均方根值 | 文本 | 此处输入电压源电流有效值量测信号的标签（1×1维），以#号开头，如#Irms。仅当电压源相数为三相时有效 |
+| Active Power \[MW\] | 有功功率 | 文本 | 此处输入电压源有功功率量测信号的标签（1×1维），以#号开头，如#P。仅当电压源相数为三相时有效 |
+| Reactive Power \[MVar\] | 无功功率 | 文本 | 此处输入电压源无功功率量测信号的标签（1×1维），以#号开头，如#Q。仅当电压源相数为三相时有效 |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Pin - | 由参数控制 | |                   
-| Pin + | 由参数控制 | |                   
-| Voltage \[kV, L-G, Pk\] | 1×1 | |                   
-| Frequency \[Hz\] | 1×1 | |                   
+| Pin - | 由参数控制 |电压源的负端（参考方向），仅当电压源非接地时有效 |                   
+| Pin + | 由参数控制 |电压源的正端（参考方向）|                   
+| Voltage \[kV, L-G, Pk\] | 1×1 |电压幅值控制输入端 |                   
+| Frequency \[Hz\] | 1×1 | 电压频率控制输入端|                   
 
 ## 使用说明
 

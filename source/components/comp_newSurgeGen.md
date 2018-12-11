@@ -16,24 +16,26 @@ symbol: newSurgeGen
 ## 基本描述
 {% compsymbol newSurgeGen %}
 
+> **该元件用以产生浪涌信号。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  |
-| Start Time of Up Slope | s | 上升沿开始时刻T1 | 实数（常量） |  |
-| End Time of Up Slope | s | 上升沿结束时刻T2(>T1) | 实数（常量） |  |
-| Start Time of Down Slope | s | 下降沿开始时刻T3(>T2) | 实数（常量） |  |
-| End Time of Down Slope | s | 下降沿结束时刻T4(>T3) | 实数（常量） |  |
-| Peak Output |  | 峰值输出 | 实数（常量） |  |
+| Name |  | 元件名称 | 文本 | 此处输入浪涌发生器的名称（可缺省） |
+| Start Time of Up Slope | s | 上升沿开始时刻T1 | 实数（常量） | 上升沿开始时刻T1  |
+| End Time of Up Slope | s | 上升沿结束时刻T2(>T1) | 实数（常量） | 上升沿结束时刻T2 |
+| Start Time of Down Slope | s | 下降沿开始时刻T3(>T2) | 实数（常量） | 下降沿开始时刻T3 |
+| End Time of Down Slope | s | 下降沿结束时刻T4(>T3) | 实数（常量） | 下降沿结束时刻T4 |
+| Peak Output |  | 峰值输出 | 实数（常量） | 峰值输出 |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Output | 1×1 | |                   
-
+| Output | 1×1 |输出端口 |                   
+ 
 ## 使用说明
 
 
