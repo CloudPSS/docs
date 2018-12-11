@@ -1,5 +1,14 @@
 declare const PAGE_TYPE: string;
 declare const IS_INDEX: boolean;
+declare const FastClick: any;
+declare const Chart: any;
+declare const mermaid: any;
+declare const mxEvent: any;
+declare const Editor: any;
+declare const Graph: any;
+declare const mxConstants: any;
+declare const mxUtils: any;
+declare const mxStencilRegistry: any;
 
 (function ()
 {
@@ -8,20 +17,21 @@ declare const IS_INDEX: boolean;
   initMobileMenu();
   initVideos();
   initMxGraph();
-  
+
   if (PAGE_TYPE && !IS_INDEX)
   {
     initSubHeaders()
   }
-  
+
   function initFlowAndChart()
   {
     document.querySelectorAll("canvas.chartjs").forEach((e) => 
     {
       try
       {
-        new Chart(e, JSON.parse(e.textContent))
-      } catch (t)
+        new Chart(e, JSON.parse(e.textContent || ''))
+      }
+      catch (t)
       {
         e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
       }
@@ -30,7 +40,7 @@ declare const IS_INDEX: boolean;
     {
       e.setAttribute('data-mermaid', e.innerHTML);
     });
-    
+
     const config = { theme: 'forest' };
     mermaid.initialize(config);
   }
@@ -54,10 +64,10 @@ declare const IS_INDEX: boolean;
    */
   function initMobileMenu()
   {
-    const sidebar = document.querySelector('.sidebar')
-    const menuButton = document.getElementById('mobile-menu-button')
-    const tocButton = document.getElementById('mobile-toc-button')
-    const toc = document.getElementById('nav-toc')
+    const sidebar = <HTMLElement>document.querySelector('.sidebar');
+    const menuButton = <HTMLElement>document.getElementById('mobile-menu-button');
+    const tocButton = <HTMLElement>document.getElementById('mobile-toc-button');
+    const toc = <HTMLElement>document.getElementById('nav-toc');
 
     tocButton.addEventListener('click', () => { toc.classList.toggle('open') })
 
@@ -127,20 +137,21 @@ declare const IS_INDEX: boolean;
    */
   function initSubHeaders()
   {
-    const main = document.getElementById('main')
-    const header = document.getElementById('header')
-    const sidebar = document.querySelector('.sidebar')
-    const content = document.querySelector('.content')
+    let animating = false;
+    let hoveredOverSidebar = false;
+
+    const main = <HTMLElement>document.getElementById('main');
+    const sidebar = <HTMLElement>document.querySelector('.sidebar');
+    const content = <HTMLElement>document.querySelector('.content');
 
     // build sidebar
-    const currentPageAnchor = sidebar.querySelector('.sidebar-link.current') as HTMLElement;
-    const contentClasses = document.querySelector('.content').classList;
+    const currentPageAnchor = <HTMLElement>sidebar.querySelector('.sidebar-link.current');
+    const allHeaders = new Array<HTMLHeadingElement>();
     if (currentPageAnchor)
     {
-      var allHeaders = new Array<HTMLHeadingElement>();
       const sectionContainer = document.createElement('ul');
       sectionContainer.className = 'menu-sub';
-      currentPageAnchor.parentNode.appendChild(sectionContainer);
+      currentPageAnchor.parentNode!.appendChild(sectionContainer);
       let headers = content.querySelectorAll('h2');
       if (headers.length)
       {
@@ -166,7 +177,6 @@ declare const IS_INDEX: boolean;
         })
       }
 
-      var animating = false;
       sectionContainer.addEventListener('click', function (e)
       {
 
@@ -186,7 +196,6 @@ declare const IS_INDEX: boolean;
       }, true)
     }
 
-    let hoveredOverSidebar = false;
     sidebar.addEventListener('mouseover', function ()
     {
       hoveredOverSidebar = true;
@@ -206,7 +215,7 @@ declare const IS_INDEX: boolean;
       const doc = document.getElementById('main');
       const top = doc && doc.scrollTop || document.body.scrollTop
       if (animating || !allHeaders) return;
-      let last: HTMLHeadingElement;
+      let last: HTMLHeadingElement | null = null;
       for (let i = 0; i < allHeaders.length; i++)
       {
         const link = allHeaders[i]
@@ -227,11 +236,11 @@ declare const IS_INDEX: boolean;
 
     function makeLink(h: HTMLHeadingElement)
     {
-      h = h.cloneNode(true);
-      
+      h = <HTMLHeadingElement>h.cloneNode(true);
+
       const link = document.createElement('li')
-      
-      function mapper(node)
+
+      function mapper(node: Node)
       {
         if (node.nodeType === Node.TEXT_NODE)
         {
@@ -239,10 +248,10 @@ declare const IS_INDEX: boolean;
         }
         for (const cnode of node.childNodes)
           node.replaceChild(mapper(cnode), cnode);
-        if (['A'].indexOf(node.nodeName) !== -1)
+        if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
         {
           const span = document.createElement('span');
-          span.setAttribute('role','a');
+          span.setAttribute('role', 'a');
           span.innerHTML = node.innerHTML;
           return span;
         }
@@ -250,7 +259,6 @@ declare const IS_INDEX: boolean;
       }
 
       mapper(h);
-      //link.innerHTML = `<a class="section-link" href="#${h.id}">${htmlEscape(text)}</a>`;
       link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
       return link;
     }
@@ -298,78 +306,113 @@ declare const IS_INDEX: boolean;
       }
     }
   }
-  
+
   function initMxGraph()
   {
-    window.mxLoadStylesheets = false;
-    window.mxLoadResources = false;
-    
-    async function loadMxGraph(container: HTMLElement, padding: number)
-		{
-		  padding = padding || 12;
-		  
-			// Disables the built-in context menu
-			mxEvent.disableContextMenu(container);
-			const editor = new Editor();
-			// Creates the graph inside the given container
-			const graph = new Graph(container, null, null, editor.graph.getStylesheet());
-			graph.resetViewOnRootChange = false;
-			graph.foldingEnabled = false;
-			graph.gridEnabled = false;
-			graph.autoScroll = false;
-			graph.setTooltips(false);
-			graph.setConnectable(false);
-			graph.setEnabled(false);
-			// Sets the base style for all vertices
-			const style = graph.getStylesheet().getDefaultVertexStyle();
-			style[mxConstants.STYLE_ROUNDED] = true;
-			style[mxConstants.STYLE_FILLCOLOR] = '#ffffff';
-			style[mxConstants.STYLE_STROKECOLOR] = '#000000';
-			style[mxConstants.STYLE_STROKEWIDTH] = '2';
-			style[mxConstants.STYLE_FONTCOLOR] = '#000000';
-			style[mxConstants.STYLE_FONTSIZE] = '12';
-			style[mxConstants.STYLE_FONTSTYLE] = 1;
-			graph.getStylesheet().putDefaultVertexStyle(style);
+    (<any>window).mxLoadStylesheets = false;
+    (<any>window).mxLoadResources = false;
 
-			const response = await fetch(`http://192.168.0.133/editor/getCompShapeBySym/?callback=load&sym=${container.getAttribute('symbol')}`);
-			
-			function load(data)
-			{
-			  const shape = mxUtils.parseXml(data.shape);
-  			const firstChild = shape.firstChild;
-  			mxStencilRegistry.parseStencilSet(firstChild);
-  			const parent = graph.getDefaultParent();
-    		const width = Number(firstChild.getAttribute('w'));
-    		const height = Number(firstChild.getAttribute('h'));
-    		
-  			graph.getModel().beginUpdate();
-  			try
-  			{
-  			  graph.insertVertex(parent, null, '', 0, 0, width, height, 'shape=' + firstChild.getAttribute('name').toLowerCase());
-  			}
-  			finally
-  			{
-  				graph.getModel().endUpdate();
-  			}
-  			
-  			const svg = container.getElementsByTagName("svg")[0];
-  			svg.viewBox.baseVal.width = width + padding * 2;
-  			svg.viewBox.baseVal.height = height + padding * 2;
-  			svg.viewBox.baseVal.x = -padding;
-  			svg.viewBox.baseVal.y = -padding;
-  			svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
-  			svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
-  			svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
-  			svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
-			}
-			
-		  eval(await response.text());
-		};
-		
-    document.addEventListener('DOMContentLoaded', function () { 
-		  for(const container of document.getElementsByTagName("mx-graph"))
-		    loadMxGraph(container);
+    async function loadMxGraph(container: Element, padding?: number)
+    {
+      padding = padding || 12;
+
+      // Disables the built-in context menu
+      mxEvent.disableContextMenu(container);
+      const editor = new Editor();
+      // Creates the graph inside the given container
+      const graph = new Graph(container, null, null, editor.graph.getStylesheet());
+      graph.resetViewOnRootChange = false;
+      graph.foldingEnabled = false;
+      graph.gridEnabled = false;
+      graph.autoScroll = false;
+      graph.setTooltips(false);
+      graph.setConnectable(false);
+      graph.setEnabled(false);
+      // Sets the base style for all vertices
+      const style = graph.getStylesheet().getDefaultVertexStyle();
+      style[mxConstants.STYLE_ROUNDED] = true;
+      style[mxConstants.STYLE_FILLCOLOR] = '#ffffff';
+      style[mxConstants.STYLE_STROKECOLOR] = '#000000';
+      style[mxConstants.STYLE_STROKEWIDTH] = '2';
+      style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+      style[mxConstants.STYLE_FONTSIZE] = '12';
+      style[mxConstants.STYLE_FONTSTYLE] = 1;
+      graph.getStylesheet().putDefaultVertexStyle(style);
+
+      const shape = (await fetchShape(<string>container.getAttribute('symbol'))).shape;
+
+      const firstChild = <Element>shape.firstChild;
+      mxStencilRegistry.parseStencilSet(firstChild);
+      const parent = graph.getDefaultParent();
+      const width = Number(firstChild.getAttribute('w'));
+      const height = Number(firstChild.getAttribute('h'));
+
+      graph.getModel().beginUpdate();
+      try
+      {
+        graph.insertVertex(parent, null, '', 0, 0, width, height, 'shape=' + (firstChild.getAttribute('name') || '').toLowerCase());
+      }
+      finally
+      {
+        graph.getModel().endUpdate();
+      }
+      const svg = container.getElementsByTagName("svg")[0];
+      svg.viewBox.baseVal.width = width + padding * 2;
+      svg.viewBox.baseVal.height = height + padding * 2;
+      svg.viewBox.baseVal.x = -padding;
+      svg.viewBox.baseVal.y = -padding;
+      svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
+      svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
+      svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
+      svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
+    };
+
+    document.addEventListener('DOMContentLoaded', function ()
+    {
+      for (const container of document.getElementsByTagName("mx-graph"))
+        loadMxGraph(container);
     }, false);
+  }
+
+  function fetchJsonP<T>(url: string | URL): Promise<T>
+  {
+    const urlData = (typeof url === 'string') ? new URL(url) : url;
+    urlData.searchParams.set('callback', 'resolve');
+    return new Promise(async function (resolve, reject)
+    {
+      const response = await fetch(urlData.href);
+      eval(await response.text());
+    })
+  }
+
+  interface ShapeData
+  {
+    classname: string;
+    shape: Document;
+  }
+
+  async function fetchShape(symbol: string): Promise<ShapeData>
+  {
+    interface ShapeResponse
+    {
+      classname: string;
+      shape: string;
+    }
+    const data = await fetchJsonP<ShapeResponse>(`http://192.168.0.133/editor/getCompShapeBySym/?sym=${symbol}`);
+    return {
+      classname: data.classname,
+      shape: mxUtils.parseXml(data.shape)
+    };
+  }
+
+  interface CompModel
+  {
+
+  }
+
+  function fetchCompModel(classname: string): Promise<CompModel>
+  {
+    return fetchJsonP(`http://192.168.0.133/editor/getCompModelByClassname/?classname=${classname}`);
   }
 
   // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
@@ -399,7 +442,7 @@ declare const IS_INDEX: boolean;
       // Remove prefixing and trailing separators
       .replace(new RegExp('^' + escapedSep + '+|' + escapedSep + '+$', 'g'), '')
 
-    if (options.transform)
+    if (options && options.transform)
       return options.transform(result);
     else
       return result;
