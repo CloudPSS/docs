@@ -12,7 +12,7 @@
         <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term"/>
         <img id="search-icon" src="/images/search.png" />
         <ul id="search-suggest" :class="{open: suggestOpen}">
-          <span :class="{'no-result': succeed && matches.length === 0, loading: !succeed && !failed, failed: failed}" ></span>
+          <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
           <li v-for="record in matches" :key="record.url"> 
             <a :href="record.url">
               <span>{{record.title}}</span>

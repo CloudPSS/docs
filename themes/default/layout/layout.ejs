@@ -31,16 +31,20 @@
     <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;</script>
   </head>
 
-  <body class="docs">
+  <body>
     <%- partial('partials/header', { menu: page.sidebar !== false }) -%>
-    <div id="main">
-      <%- body -%>
-    </div>
+    <div id="main"><%- body -%></div>
     <%- config.debug_mode ? partial('partials/edit') : '' -%>
     <%- js('//cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js') -%>
     <%- js('//cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js') -%>
     <%- js('//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js') -%>
     <%- js('/js/common') -%>
+    <%- js('//cdn.jsdelivr.net/npm/mxgraph@3.7.1/javascript/mxClient.min.js') -%>
+    <%- js('/js/mxGraph/Editor') -%>
+    <%- js('/js/mxGraph/Graph') -%>
+    <%- js('/js/mxGraph/Stencil') -%>
+    <%- js('/js/mxGraph/Stencils') -%>
+    <%- js('/js/mxGraph/Load') -%>
   </body>
 
 </html>

@@ -16,24 +16,26 @@ symbol: newFFT
 ## 基本描述
 {% compsymbol newFFT %}
 
+> **该元件用以实现FFT分析。**
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  |
-| Type |  | 输出类型 | 选择 |  |
-| Number of Harmonics |  | 谐波数量 | 选择 |  |
-| Base Frequency | Hz | 频率基值 | 实数（常量） |  |
-| Magnitude Output |  | 幅值输出 | 选择 |  |
-| Phase Output Unit |  | 相位输出单位 | 选择 |  |
-| Phase Output Reference |  | 相位输出参照 | 选择 |  |
-| Anti-aliasing Filter? |  | 是否使用抗混叠滤波器？ | 选择 |  |
-| Frequency Tracking？ |  | 是否跟踪频率？ | 选择 |  |
+| Name |  | 元件名称 | 文本 | 此处输入FFT的名称（可缺省） |
+| Type |  | 输出类型 | 选择 | 选择输出信号的类型 |
+| Number of Harmonics |  | 谐波数量 | 选择 | 选择谐波的数量 |
+| Base Frequency | Hz | 频率基值 | 实数（常量） |填写频率基值  |
+| Magnitude Output |  | 幅值输出 | 选择 | 选择幅值输出的类为有效值或峰值 |
+| Phase Output Unit |  | 相位输出单位 | 选择 | 选择输出相位的单为rad或deg |
+| Phase Output Reference |  | 相位输出参照 | 选择 | 选择相位输出的参照波形为正弦波或余弦波) |
+| Anti-aliasing Filter? |  | 是否使用抗混叠滤波器？ | 选择 | 选择是否使用抗混叠滤波器 |
+| Frequency Tracking？ |  | 是否跟踪频率？ | 选择 | 选择是否跟踪频率 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| Frequency Output \[Hz\] | 频率输出 | 文本 |  |
+| Frequency Output \[Hz\] | 频率输出 | 文本 | 此处输入频率量测信号的标签，以#号开头，如#f |
 
 
 ## 端口列表

@@ -20,7 +20,7 @@ $$ \sum_{i=1}^n a_i=0 $$
 > 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
 > $$ \sum_{i=1}^n a_i=0 $$
 > ... :arrow_left: ==同理，行间公式结束后也需要换行==
-> 对于渲染错误的公式 $\error$，将鼠标悬浮其上以查看错误信息。
+> 对于渲染错误的公式 $\error$，将鼠标悬浮其上以查看错误信息。 
 
 {% pullquote tip %}
 {% raw %}
@@ -29,6 +29,14 @@ $$ \sum_{i=1}^n a_i=0 $$
 也可以使用 [Raw](tag-intro.html#raw)。
 {% endraw %}
 {% endpullquote %}
+
+## 图片
+
+图片存储的文件结构如图 
+![](markdown-intro/asset-folder.jpg)
+
+即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](markdown-intro/intro1.png "Title")`。
+![alt text](markdown-intro/intro1.png "Title")
 
 ## 代码
 

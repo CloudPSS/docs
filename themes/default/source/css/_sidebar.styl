@@ -14,6 +14,8 @@ aside.sidebar
   overflow-y: auto
   margin-top: $header-height
   padding: 0 20px 0 40px
+  &.no-sidebar
+    display: none
   nav.list
     margin: $content-padding-top + 20px 0 20px
   h1
@@ -42,6 +44,8 @@ aside.sidebar
         margin-left: -0.5em
         font-weight: 550
         margin-left: -8px
+        &:only-child
+          display: none
     &.menu-sub
       font-size: .85em
       .section-link
