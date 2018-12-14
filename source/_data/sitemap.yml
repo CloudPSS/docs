@@ -1,5 +1,5 @@
 guide: 
-  name: 使用指南
+  name: 快速入门
 
 components: 
   name: 元件帮助  
@@ -29,6 +29,7 @@ components:
 
 features: 
   name: 功能帮助
+
 
 examples: 
   name: 案例介绍

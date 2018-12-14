@@ -1,12 +1,13 @@
 <!-- BEGIN toc -->
 <header>
-  <h1><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
+  <%_ if (page.type){ _%>
+    <h1><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
+  <%_ } _%>
 </header>
 <ul class="menu-root">
   <%_
-    const categories = site.data.sitemap[page.type].categories || [];
     
-    const pages = site.pages.toArray().filter(p => p.type === page.type && !is_index(p)).sort(function(a, b){
+    const pages = site.pages.toArray().filter(p => page.type ? (p.type === page.type && !is_index(p)) : p === page).sort(function(a, b){
       var ao = a.order || Number.MAX_VALUE;
       var bo = b.order || Number.MAX_VALUE;
       if(ao !== bo)
@@ -28,7 +29,7 @@
       if (!Array.isArray(content))
         content = [ content ];
         
-      for(const child of content)
+      for(const child of content) 
       {
         if(typeof child === 'number')
           pages.filter(p => Number(p.category) === child).forEach(page_link);
@@ -39,6 +40,8 @@
     }
     
     pages.filter(p => Number.isNaN(Number(p.category))).forEach(page_link);
+    
+    const categories = page.type ? (site.data.sitemap[page.type].categories || []) : [];
     for(const cat of categories)
       cate_link(cat, 1);
   -%>

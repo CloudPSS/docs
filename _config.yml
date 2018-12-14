@@ -69,6 +69,11 @@ render:
 markdown_it_plus:
   plugins:
   - plugin:
+      name: markdown-it-imsize
+      enable: true
+      options:
+        autofill: true
+  - plugin:
       name: markdown-it-mermaid
       enable: true
   - plugin:
@@ -77,6 +82,11 @@ markdown_it_plus:
   - plugin:
       name: markdown-it-kbd
       enable: true
+  - plugin:
+      name: markdown-it-toc-and-anchor
+      enable: true
+      options:
+        anchorLinkSpace: false
   
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html

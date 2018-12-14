@@ -1,4 +1,4 @@
-﻿
+
 function mxStencils(shapes) {
     this.desc = shapes;
     this.parseDescription();
@@ -20,13 +20,10 @@ mxStencils.defaultLocalized = false;
 mxStencils.prototype.desc = null;
 
 mxStencils.prototype.testCondition = function (instance, condition,dcond) {
+    if (!instance)
+        return (dcond || 'true') == 'true';
     if ((condition || 'true') == 'true')
         return true;
-    if (instance === null || instance === undefined)
-        if ((dcond || 'true') == 'true')
-            return true;
-        else
-            return false;
     try {
         var func = new Function('with(this){return ' + condition + '}');
         return func.call(instance.paramProxy);

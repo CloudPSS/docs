@@ -6,11 +6,10 @@ code, pre, kbd
   font-family: $code-font
   font-size: $code-font-size
   background-color: $codebg
-  -webkit-font-smoothing: initial
-  -moz-osx-font-smoothing: initial
   
 kbd 
   display: inline-block
+  white-space: nowrap
   border-radius: 3px
   padding: 4px
   box-shadow: 0 0 2px 1px $shadow
@@ -38,8 +37,8 @@ code
   padding: 0 4px
   margin: 0 2px
   border-radius: 2px
-  white-space: nowrap
-  transform: translateY(-0.1em)
+  line-height: calc(1em + 8px)
+  white-space: nowrap !important
   @media print
     border: rgba(#e96900, 0.25) solid 1px
 
@@ -47,7 +46,7 @@ figure.highlight
   position: relative
   background-color: $codebg
   padding: 0 
-  border-radius: $radius
+  border-radius: 4px
   box-shadow: 0 0 4px $shadow
   > figcaption
     no-user-select()
@@ -67,6 +66,7 @@ figure.highlight
     display: block
   > table, tr, td
     width: 100%
+    border: none
     border-collapse: collapse
     padding: 0
     margin: 0
@@ -74,10 +74,30 @@ figure.highlight
     text-align: right
     width: 0
     no-user-select()
+    hide-for-print()
   pre
     margin: 0.8em 1em
     .line
       line-height: 1.5em
+  @media print
+    color: rgb(0,0,0)
+    border-style: solid
+    border-width: 2px 2px 2px 2px
+    border-color: #e8e8e8
+    page-break-inside: avoid
+    box-shadow: none
+    > figcaption 
+      page-break-after: avoid
+    > table
+      page-break-inside: avoid
+    .code
+      pre
+        color: black
+        white-space: pre-wrap
+        page-break-inside: avoid
+        > span.line:before
+          content: "  "
+  
 .highlight > figcaption
   &:before
     color: #ccc
@@ -120,26 +140,3 @@ figure.highlight
     content: "Python"
   .tex&:before
     content: "TeX"
-
-@media print
-  figure.highlight
-    color: rgb(0,0,0)
-    border-style: solid
-    border-width: 2px 2px 2px 2px
-    border-color: #e8e8e8
-    page-break-inside: avoid
-    box-shadow: none
-    > figcaption 
-      page-break-after: avoid
-    > table
-      page-break-inside: avoid
-    .gutter
-      display: none
-    .code
-      pre
-        color: black
-        white-space: pre-wrap
-        page-break-inside: avoid
-        > span.line:before
-          content: "  "
-  

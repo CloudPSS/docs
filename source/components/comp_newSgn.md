@@ -17,11 +17,13 @@ symbol: newSgn
 {% compsymbol newSgn %}
 
 > **该元件实现符号函数运算，函数关系式为：**
- $$ y(t) = \left \{ \begin{array}{l}
-1
-0
- - 1
-\end{array} \right $$
+$$y(x) = \left\{ \begin{gathered}
+  1,x > 0  \\
+  0,x = 0  \\
+   - 1,x < 0 \\ 
+\end{gathered}  \right.$$
+
+
 
 ## 参数列表
 ### Configuration

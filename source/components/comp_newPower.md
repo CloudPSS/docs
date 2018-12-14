@@ -5,11 +5,11 @@ author_email:
 
 date: 2018/12/4 10:03:10
 updated: 2018/12/4 10:03:10
-
+ 
 type: components
 category: -3002
 order: 800
-
+ 
 classname: _newPower
 symbol: newPower
 ---
@@ -17,7 +17,7 @@ symbol: newPower
 {% compsymbol newPower %}
 
 > **该元件实现幂函数运算。函数式为：**
-> $$y(t) = u{(t)^Y}$$
+> $$y(t) = x{(t)^Y}$$
 
 ## 参数列表
 ### Configuration

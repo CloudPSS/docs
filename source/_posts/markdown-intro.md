@@ -4,7 +4,6 @@ author: 刘正元
 author_email: lzy@live.in 
 date: 2018-08-18 12:23:34
 ---
-
 ## 公式
 
 使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
@@ -32,11 +31,25 @@ $$ \sum_{i=1}^n a_i=0 $$
 
 ## 图片
 
-图片存储的文件结构如图 
+图片存储的文件结构如图
 ![](markdown-intro/asset-folder.jpg)
 
 即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](markdown-intro/intro1.png "Title")`。
-![alt text](markdown-intro/intro1.png "Title")
+![alt text](markdown-intro/intro1.png "Title" =x100)  
+
+{% pullquote info %}
+可以使用以下语法指定图片的尺寸：
++ 指定最大宽度
+
+  `![alt text](markdown-intro/intro1.png "Title" =200x)`
++ 指定最大高度
+
+  `![alt text](markdown-intro/intro1.png "Title" =x100)`
+  
+{% pullquote tip %}
+  不建议同时指定宽度和高度，可能导致图片变形。
+{% endpullquote %}
+{% endpullquote %}
 
 ## 代码
 
@@ -126,7 +139,7 @@ RMS 指有效值
 如：
 ```md footnote
 定义一个脚注：
-[^test-platform]: 测试平台为 NVIDIA® Tesla® V100
+[^test-platform]: 测试平台为 NVIDIA(R) Tesla(R) V100
 
 在文中使用脚注：
 测试[^test-platform]结果如下：……
@@ -135,7 +148,7 @@ RMS 指有效值
 ```
 效果：
 > 定义一个脚注：
-> [^test-platform]: 测试平台为 NVIDIA® Tesla® V100
+> [^test-platform]: 测试平台为 NVIDIA(R) Tesla(R) V100
 > 
 > 在文中使用脚注：
 > 测试[^test-platform]结果如下：……
@@ -143,10 +156,10 @@ RMS 指有效值
 > 如果只使用一次的话，也可以使用内联语法。^[内联脚注更方便吗？]
 
 ## 杂项
-+ 下标：`H~2~0` H~2~0
-+ 上标：`x^2^` x^2^
-+ 标记：`==mark==` ==mark==
-+ 插入与删除：`++Inserted++` ++Inserted++；`~~Del~~` ~~Del~~
-+ [Emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/) `:smile:` :smile:
-+ 键盘按键 `[[Ctrl]]+[[Alt]]+[[Del]]` [[Ctrl]]+[[Alt]]+[[Del]]
++ **下标**：`H~2~0` H~2~0
++ **上标**：`x^2^` x^2^
++ **标记**：`==mark==` ==mark==
++ **插入与删除**：`++Inserted++` ++Inserted++；`~~Del~~` ~~Del~~
++ **[Emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/)**：`:smile:` :smile: `8-)` 8-) `(R)` (R) `(TM)` (TM)
++ **键盘按键**：`[[Ctrl]]+[[Alt]]+[[Del]]` [[Ctrl]]+[[Alt]]+[[Del]]
 + 其他标准 MarkDown 语法不再赘述。

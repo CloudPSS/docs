@@ -4,13 +4,41 @@
 <article id="article" class="content <%- page.sidebar !== false ? 'with-sidebar' : '' %>">
   <%_ if (title()) { -%>
     <section class="title"><h1><%= title() %></h1>
-      <%_ if (!is_index()) { -%>
+      <%_ if (!is_index() && page.type) { -%>
         <p class="categories">
-          <%_ -%><span class="type"><%= site.data.sitemap[page.type].name %></span><%_ -%>
+          <span class="type"><%= site.data.sitemap[page.type].name %></span>
           <%_
             let cate = [];
-            if (page.category && site.data.sitemap[page.type] && site.data.sitemap[page.type].categories && site.data.sitemap[page.type].categories[page.category])
-              cate = site.data.sitemap[page.type].categories[page.category];
+            const pagecate = Number(page.category);
+            if (!Number.isNaN(pagecate) && site.data.sitemap[page.type] && site.data.sitemap[page.type].categories)
+            {
+              const cates = site.data.sitemap[page.type].categories;
+    
+              function cate_link(cate, list)
+              {
+
+                if (!Array.isArray(cate))
+                  cate = [ cate ];
+                  
+                for(const child of cate)
+                {
+                  if (typeof child === 'number')
+                  {
+                    if (child === pagecate) 
+                      return list;
+                  }
+                  else
+                  {                
+                    const catname = Object.getOwnPropertyNames(child)[0];
+                    let content = child[catname];
+                    const r = cate_link(content, [...list, catname]);
+                    if(r) return r;
+                  }
+                }
+                return null;
+              }
+              cate = cate_link(cates, []) || []; 
+            }
             cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
           -%>
         </p>

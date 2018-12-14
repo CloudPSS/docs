@@ -3,21 +3,19 @@
   <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
 <%_ } else { -%>
   <aside class="sidebar<%- page.sidebar === false ? ' no-sidebar' : ''%>" >
-    <div class="sidebar-inner">
-      <div class="list">
-        <h2>所有文章</h2>
-        <ul style="padding: 0;">
-          <%_ site.posts.sort('date', -1).each(function (post) { -%>
-            <li>
-              <a href="/<%- post.path %>" class="sidebar-link <%- is_current(post.path) ? 'current' : '' %>"><%- post.title %></a>
-            </li>
-          <%_ }) -%>
-        </ul>
-      </div>
-    </div>
+    <nav>
+      <h2>所有文章</h2>
+      <ul style="padding: 0;">
+        <%_ site.posts.sort('date', -1).each(function (post) { -%>
+          <li>
+            <a href="/<%- post.path %>" class="sidebar-link <%- is_current(post.path) ? 'current' : '' %>"><%- post.title %></a>
+          </li>
+        <%_ }) -%>
+      </ul>
+    </nav>
   </aside>
   <article id="article" class="content <%- page.sidebar !== false ? 'with-sidebar': '' %> post">
-    <section><h1><%= page.title %></h1></section>
+    <section class="title"><h1><%= page.title %></h1></section>
 
     <%- page.content -%>
 

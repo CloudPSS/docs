@@ -124,7 +124,7 @@ symbol: SyncGen
 
 ## 使用说明
 
-同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](/guide/SyncGenPerUnitSystem.html)。
+同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](/other/SyncGenPerUnitSystem.html)。
 
 
 ## 测试模型

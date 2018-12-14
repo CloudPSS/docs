@@ -1,26 +1,25 @@
 @import "_settings"
 
 aside.sidebar
+  &.no-sidebar
+    display: none
+  no-user-select()
+  hide-for-print()
   transition: all $size-transition
   box-shadow: 0 0 8px $shadow
   position: fixed
-  z-index: 10
+  z-index: 9000
   top: 0
-  left: 0
   bottom: 0
-  width: 260px
+  width: $sidebar-width 
   background: white
   overflow-x: hidden
   overflow-y: auto
   margin-top: $header-height
-  padding: 0 20px 0 40px
-  &.no-sidebar
-    display: none
-  nav.list
-    margin: $content-padding-top + 20px 0 20px
+  nav
+    margin: 48px 20px 40px 40px
   h1
     font-size: 1.5em
-    margin-top: .2em
   h2
     font-size: 1.3em
   h3
@@ -48,8 +47,20 @@ aside.sidebar
           display: none
     &.menu-sub
       font-size: .85em
+      li
+        color: $light
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
       .section-link
+        color: $light
         padding-left: 6px
+        margin-left: 2px
+        border-left-width: 2px
+        &:hover, &:focus
+          color: $theme
+        &.active
+          border-color: $theme
       > ul .section-link
         padding-left: 14px
   .sidebar-link, .section-link
@@ -63,25 +74,12 @@ aside.sidebar
       color: $theme
     &:hover, &:focus
       border-color: $theme
-  .section-link
-    margin-left: 2px
-    border-left-width: 2px
-    color: $light
-    padding-left: .5em
-    &.active
-      border-color: $theme
-    &:hover, &:focus
-      color: $theme
 
-@media screen and (max-width: $mobile-width)
-  aside.sidebar
+  @media screen and (max-width: $mobile-width)
     background: #f9f9f9
-    transform: translate(-105%, 0)
-    padding: 0 10px 0 20px
+    transform: translateX(-105%)
     margin-top: $mobile-header-height
+    nav
+      margin: 24px 10px 20px 20px
     &.open
       transform: translate(0, 0)
-
-@media print
-  aside.sidebar
-    display: none

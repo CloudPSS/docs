@@ -1,6 +1,6 @@
 (function ()
 {
-    const link = document.getElementById('footer-author-link') as HTMLLinkElement;
+    const link = document.querySelector("footer.page-footer .author[data]") as HTMLLinkElement;
     if (link)
     {
         const data = link.getAttribute('data');
