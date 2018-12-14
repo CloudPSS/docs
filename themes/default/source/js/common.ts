@@ -12,31 +12,31 @@ declare const mxStencilRegistry: any;
 
 (function ()
 {
-  const DOMContentLoaded: Promise<void> = (function()
+  const DOMContentLoaded: () => Promise<void> = (function ()
   {
     let isReady = false;
-    let waiting = new Array<() => void>;
-    document.addEventListener('DOMContentLoaded', function()
+    let waiting = new Array<() => void>();
+    document.addEventListener('DOMContentLoaded', function ()
     {
       isReady = true;
-      for(const cb of waiting)
+      for (const cb of waiting)
         cb();
-      waiting = null;
+      waiting = [];
     }, false);
-  
+
     function DOMContentLoaded(): Promise<void>
     {
-      if(isReady)
+      if (isReady)
         return Promise.resolve();
-      return new Promise(function(resolve)
+      return new Promise(function (resolve)
       {
         waiting.push(resolve);
       });
     }
-    
+
     return DOMContentLoaded;
   })();
-  
+
   document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
   initMobileMenu();
   initSubHeaders();
@@ -84,20 +84,20 @@ declare const mxStencilRegistry: any;
 
   function initImages()
   {
-    const containers = document.querySelectorAll('#main img');
+    const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#main img');
     for (const container of Array.from(containers))
     {
-      if(!container.title)
+      if (!container.title)
         container.title = container.alt;
       container.style.maxHeight = formatValue(container.getAttribute('height'));
       container.removeAttribute('height');
     }
-    
-    function formatValue(v: string)
+
+    function formatValue(v?: null | string)
     {
-      if(!v || v.endsWith('%'))
+      if (!v || v.endsWith('%'))
         return '';
-      if(v.endsWith('px'))
+      if (v.endsWith('px'))
         return v;
       return v + 'px';
     }
@@ -181,9 +181,9 @@ declare const mxStencilRegistry: any;
    */
   function initSubHeaders()
   {
-    if(IS_INDEX)
+    if (IS_INDEX)
       return;
-    
+
     let animating = false;
     let hoveredOverSidebar = false;
 
@@ -365,7 +365,7 @@ declare const mxStencilRegistry: any;
       padding = padding || 12;
       const getshape = fetchShape(<string>container.getAttribute('symbol'));
       await DOMContentLoaded();
-      
+
       // Disables the built-in context menu
       mxEvent.disableContextMenu(container);
       const editor = new Editor();
@@ -415,7 +415,7 @@ declare const mxStencilRegistry: any;
       svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
       svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
     };
-    
+
     for (const container of Array.from(document.getElementsByTagName("mx-graph")))
       loadMxGraph(container);
   }

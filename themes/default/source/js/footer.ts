@@ -3,7 +3,7 @@
     const link = document.querySelector("footer.page-footer .author[data]") as HTMLLinkElement;
     if (link)
     {
-        const data = link.getAttribute('data');
+        const data = link.getAttribute('data') || '';
         link.removeAttribute('data');
         let herfSet = false;
         function setHref()
