@@ -64,17 +64,21 @@ figure.highlight
   > table
     overflow-x: auto
     display: block
-  > table, tr, td
-    width: 100%
-    border: none
-    border-collapse: collapse
     padding: 0
     margin: 0
-  .gutter
-    text-align: right
-    width: 0
-    no-user-select()
-    hide-for-print()
+    tr > td
+      padding: 0
+      margin: 0
+      line-height: 1em
+      border: none
+      width: 100%
+      border: none
+      border-collapse: collapse
+      &.gutter
+        text-align: right
+        width: 0
+        no-user-select()
+        hide-for-print()
   pre
     margin: 0.8em 1em
     .line
@@ -88,15 +92,15 @@ figure.highlight
     box-shadow: none
     > figcaption 
       page-break-after: avoid
-    > table
-      page-break-inside: avoid
     .code
       pre
         color: black
         white-space: pre-wrap
         page-break-inside: avoid
-        > span.line:before
-          content: "  "
+        .line
+          display: inline-block
+          margin-left: 2ch
+          text-indent: -2ch
   
 .highlight > figcaption
   &:before

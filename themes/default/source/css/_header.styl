@@ -114,7 +114,33 @@ header.page-header
               margin: 4px 0 0 0 
               font-size: 0.8em
               color: $light
-  
+              
+  .mobile-header-button
+    display: block
+    transition: transform $size-transition
+    position: absolute
+    width: $mobile-header-height
+    height: $mobile-header-height
+    top: 0
+    z-index: 1000
+    background-position: center
+    background-size: 24px
+    background-repeat: no-repeat
+    &:hover, &:focus
+      background-color: #ddd 
+    &:active
+      background-color: #eee 
+    &#mobile-menu-button
+      transform: translateX(-150%)
+      left: 0
+      background-image: url(../images/menu.png)
+    &#mobile-toc-button
+      transform: translateX(150%)
+      right: 0
+      background-image: url(../images/toc.png) 
+    @media screen and (max-width: $mobile-width)
+      transform: translateX(0) !important
+
   #logo
     left: 100px
     position: absolute
@@ -134,35 +160,26 @@ header.page-header
       vertical-align: middle
       margin-left: 48px
       transition: margin,opacity $size-transition
-  
-  .mobile-header-button
-    display: none
-    transition: transform $size-transition
-    position: absolute
-    width: $mobile-header-height
-    height: $mobile-header-height
-    top: 0
-    z-index: 1000
-    background-position: center
-    background-size: 24px
-    background-repeat: no-repeat
-    &:hover, &:focus
-      background-color: #ddd 
-    &:active
-      background-color: #eee 
-  #mobile-menu-button
-    transform: translateX(-150%)
-    left: 0
-    background-image: url(../images/menu.png)
-  #mobile-toc-button
-    transform: translateX(150%)
-    right: 0
-    background-image: url(../images/toc.png) 
+    @media screen and (max-width: 1300px)
+      left: 16px
+    @media screen and (max-width: $mobile-width)
+      left: 48px
+      font-size: 18px
+      line-height: 18px
+      height: $mobile-header-inner-height
+      &:after
+        margin-left: 32px
+    @media screen and (max-width: 400px)
+      &:after
+        opacity: 0
+      &:hover, &:focus
+        &:after
+          opacity: 1
+          
+          
 
 @media screen and (max-width: 1300px)
   header.page-header
-    #logo
-      left: 16px
     #nav
       right: 8px
       #nav-toc
@@ -173,18 +190,6 @@ header.page-header
   header.page-header
     height: $mobile-header-inner-height
     padding: $mobile-heading-padding-vertical 0px
-    #logo
-      left: 48px
-      font-size: 1.2em
-      line-height: 1.1em
-      height: $mobile-header-inner-height
-      &:after
-        margin-left: 32px
-    &.no-menu #logo
-      left: 12px
-    .mobile-header-button
-      display: block
-      transform: none !important
     #nav
       top: $mobile-heading-padding-vertical
       height: $mobile-header-inner-height
@@ -224,12 +229,3 @@ header.page-header
           padding: 0.25em 0.2em
         &.open
           transform: translateX(0)
-    
-@media screen and (max-width: 400px)
-  header.page-header
-    #logo
-      &:after
-        opacity: 0
-      &:hover, &:focus
-        &:after
-          opacity: 1
