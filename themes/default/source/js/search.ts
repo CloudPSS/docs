@@ -95,11 +95,10 @@
             submit()
             {
                 let match = this.matches[0];
-                if (!match)
+                if (!match || !this.term.trim())
                     return;
-                if (!this.term.trim() || match.title !== this.term.trim())
-                    return;
-                window.location.pathname = match.url;
+                if (match.title === this.term.trim() || this.matches.length === 1)
+                    window.location.pathname = match.url;
             }
         },
         computed:

@@ -308,6 +308,8 @@ declare const mxStencilRegistry: any;
 
       mapper(h);
       link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
+      h.querySelectorAll('.katex-mathml').forEach(n => n.remove());
+      link.title = h.textContent;
       return link;
     }
 

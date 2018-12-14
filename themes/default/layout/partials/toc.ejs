@@ -17,7 +17,14 @@
     
     function page_link(p)
     {
-      -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link ${page.path === p.path ? ' current' : ''}`}) %></li><%_
+      if(page.path !== p.path)
+      {
+        -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link`}) %></li><%_
+      }
+      else
+      {
+        -%><li class="menu-item"><%- link_to('#article', title(p), {class: `sidebar-link current`}) %></li><%_
+      }
     }
     
     function cate_link(cat, level)

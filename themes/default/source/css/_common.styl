@@ -10,6 +10,9 @@ body
   color: $medium
   background-color: white
   -webkit-text-size-adjust: none
+  @media (max-width: $mobile-width)
+    #main
+      font-size: @font-size * 0.9
     
 h1, h2, h3, h4
   font-weight: 600
@@ -44,7 +47,7 @@ a
   &.footnote-backref
     no-user-select()
 
-table:not(.highlight *)
+table:not(.highlight)
   border-spacing: 0
   border-collapse: collapse
   margin: 1.2em auto
@@ -63,7 +66,7 @@ table:not(.highlight *)
   th, tr:nth-child(2n)
     background-color: #f8f8f8
     code
-      background-color: #efefef
+      background-color: darken($codebg, 5)
 
 @media print
   body, #main
