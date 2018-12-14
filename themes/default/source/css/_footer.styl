@@ -1,39 +1,40 @@
 
 @import "_settings"
 
-footer.page-footer.min
-  text-align: right 
-  color: $light
-  #footer-author-link
-    color: lighten($theme, 0.2)
-  > .contact
-    margin-left: -0.5em
-    .section
-      margin-left: 0.5em
-
 footer.page-footer
-  color: $dark 
+  color: $light
   no-user-select()
   border-top: 0.2px $border solid
   margin: 48px -48px
   padding: 0 48px
   text-align: center 
-  .section
+  &.min
+    text-align: right 
+    .author
+      color: lighten($theme, 0.2)
+      &:before   
+        content: ""
+        box-shadow: 0 0 0.5px $shadow
+        display: inline-block
+        height: 1.8em
+        width: 1.8em
+        border-radius: 100em
+        background-size: contain
+        vertical-align: middle
+    > .contact
+      margin-left: -0.5em
+      > span
+        margin-left: 0.5em
+  span
     white-space: nowrap
   p
     padding-bottom: 0 !important
   hr
     margin: 40px -40px 0 -40px
   a
-    color: $dark
+    color: @color
     font-weight: unset
-  .gravatar    
-    box-shadow: 0 0 0.5px $shadow;
-    height: 1.8em
-    vertical-align: bottom
-    border-radius: 1em
 
     
-@media print
-  footer.page-footer
+  @media print
     page-break-inside: avoid

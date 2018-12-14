@@ -1,5 +1,7 @@
 <!-- BEGIN sidebar -->
-<aside class="sidebar<%- page.sidebar === false ? ' no-sidebar' : '' %>"><nav class="list">
-  <%- partial('partials/toc', { type: page.type }) -%>
-</nav></aside>
+<aside class="sidebar<%- page.sidebar === false ? ' no-sidebar' : '' %>">
+  <nav>
+    <%- partial('partials/toc', { type: page.type }) -%>
+  </nav>
+</aside>
 <!-- END sidebar -->

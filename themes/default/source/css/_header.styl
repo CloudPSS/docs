@@ -2,15 +2,17 @@
 @import "_settings"
 
 header.page-header
+  hide-for-print()
   no-user-select()
   box-shadow: 0 0 16px $shadow
   background-color: #fff
   height: $header-inner-height
   padding: $heading-padding-vertical 0
-  z-index: 100
+  z-index: 10000
   position: fixed
-  width: 100%
   top: 0
+  left: 0
+  right: 0
   transition: padding, height $size-transition
   
   #nav
@@ -46,13 +48,14 @@ header.page-header
       padding: 0 10px;
       > #search-icon    
         position: absolute
-        height: 20px
-        width: 20px
         left: 0
+        right: 0
         top: 0
         bottom: 0
         margin: 10px 18px
         transition: all $size-transition
+        background: url(../images/search.png) no-repeat
+        background-size: contain
       > #search-query
         font-size: 1em
         height: 30px
@@ -70,16 +73,15 @@ header.page-header
         display: none
         position: absolute
         padding: 4px
+        left: 0
         right: 0
-        min-width: 85%
-        max-width: 125%
         margin: 0 10px
         border: 2px solid $border
         background: white
         &.open, &:hover, &:focus
-          display: block  
+          display: block
         &:focus-within
-          display: block  
+          display: block
         > span:before
           text-align: center
           display: block
@@ -102,11 +104,14 @@ header.page-header
             display: block
             &:hover, &:focus
               background: #eee
-            > p
-              margin: 4px 0 0 0 
+            > span
+              display: block
+              line-height: 1.2em
               white-space: nowrap
               text-overflow: ellipsis
               overflow: hidden
+            > span[role='category']
+              margin: 4px 0 0 0 
               font-size: 0.8em
               color: $light
   
@@ -121,22 +126,17 @@ header.page-header
     font-family: $logo-font
     font-weight: 500
     transition: all $size-transition
-    > span 
+    background: url(../images/logo.png) no-repeat
+    background-size: contain
+    &:after
+      content: attr(title)
       display: inline
       vertical-align: middle
       margin-left: 48px
-      transition: margin $size-transition
-    &:hover > span
-      opacity: 1 
-    > img
-      position: absolute
-      vertical-align: middle
-      width: $header-inner-height
-      height: $header-inner-height
-      transition: all $size-transition
-  
+      transition: margin,opacity $size-transition
   
   .mobile-header-button
+    display: none
     transition: transform $size-transition
     position: absolute
     width: $mobile-header-height
@@ -159,10 +159,6 @@ header.page-header
     right: 0
     background-image: url(../images/toc.png) 
 
-@media print
-  header.page-header
-    display: none
-
 @media screen and (max-width: 1300px)
   header.page-header
     #logo
@@ -182,15 +178,13 @@ header.page-header
       font-size: 1.2em
       line-height: 1.1em
       height: $mobile-header-inner-height
-      > span 
+      &:after
         margin-left: 32px
-      > img
-        width: $mobile-header-inner-height
-        height: $mobile-header-inner-height
-    .no-menu #logo
+    &.no-menu #logo
       left: 12px
     .mobile-header-button
-       transform: none !important
+      display: block
+      transform: none !important
     #nav
       top: $mobile-heading-padding-vertical
       height: $mobile-header-inner-height
@@ -211,11 +205,11 @@ header.page-header
           margin: 2.5px 16px
         > #search-suggest
           > li
+            line-height: 1.4em
             > a 
               font-size: 1.2em
               padding: 4px
-              > p
-                font-size: 0.9em
+              
       #nav-toc
         padding: 10px
         background: rgba(255,255,255,0.9)
@@ -230,20 +224,12 @@ header.page-header
           padding: 0.25em 0.2em
         &.open
           transform: translateX(0)
-        
-@media screen and (max-width: (400px + $mobile-width) * 0.5) 
-  header.page-header
-    #logo 
-      > span 
-        transition: opacity $size-transition
     
 @media screen and (max-width: 400px)
   header.page-header
-    #logo 
-      > span 
+    #logo
+      &:after
         opacity: 0
-    #nav
-      #search-form 
-        > #search-suggest
-          left: 0
-   
+      &:hover, &:focus
+        &:after
+          opacity: 1

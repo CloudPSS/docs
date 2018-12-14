@@ -14,7 +14,27 @@ div.mermaid[data-processed]
   position: relative
   margin: 1em 0
   page-break-inside: avoid
+  & > svg
+    display: block
+    margin: auto
   
 canvas.chartjs
   margin: 1em 0
   page-break-inside: avoid
+  
+img, svg
+  border: none
+  
+svg *
+  no-user-select()
+  
+mx-graph
+  &:empty
+    height: 150px
+  display: block
+  text-align: center
+  overflow: auto
+  svg
+    display: inline !important
+p mx-graph
+  display: inline-block

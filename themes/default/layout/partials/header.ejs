@@ -3,20 +3,18 @@
   <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- menu ? '' : 'display:none'%>"></a>
   <a class="toc-button mobile-header-button" id="mobile-toc-button" ></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>">
-    <img src="<%- url_for("/images/logo.png") %>" alt="logo">
-    <span><%= config.title %></span>
   </a>
   <nav id="nav">
     <div>
-      <form id="search-form" @submit.prevent="submit">
+      <form id="search-form" title="搜索" @submit.prevent="submit">
         <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term"/>
-        <img id="search-icon" src="/images/search.png" />
+        <label id="search-icon" for="search-query"></label>
         <ul id="search-suggest" :class="{open: suggestOpen}">
           <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
-          <li v-for="record in matches" :key="record.url"> 
+          <li v-for="record in matches" :key="record.url" :title="record.title"> 
             <a :href="record.url">
-              <span>{{record.title}}</span>
-              <p class="categories">{{sitemap[record.type].name}}</p>
+              <span role="title">{{record.title}}</span>
+              <span role="category" v-if="record.type">{{sitemap[record.type].name}}</span>
             </a>
           </li>
         </ul>

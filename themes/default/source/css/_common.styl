@@ -1,4 +1,3 @@
-@import "_fonts"
 @import "_settings"
 @import "_codeblock"
 @import "_quoteblock"
@@ -6,41 +5,18 @@
 @import "_katex"
 
 body
-  position: absolute
-  left: 0
-  right: 0
-  top: 0
-  bottom: 0
-  margin: 0
   font-family: $body-font
   font-size: $body-font-size
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
   color: $medium
   background-color: white
-  padding-top: $header-height
-
-@media screen and (max-width: $mobile-width)
-  body
-    padding-top: $mobile-header-height
-
-img, svg
-  border: none
-  
-mx-graph
-  display: block
-  text-align: center
-  overflow: auto
-  svg
-    display: inline !important
-    *
-      no-user-select()
-p mx-graph
-  display: inline-block
-
-h1, h2, h3, h4, strong
+  -webkit-text-size-adjust: none
+    
+h1, h2, h3, h4
   font-weight: 600
   color: $dark
+
+figure
+  margin: 1.2em 0
 
 hr
   border-color: $border
@@ -48,24 +24,12 @@ hr
   border-width: 1px 0
   border-top: solid 
 
-em
-  color: $light
-
-p
+p, dd
   word-spacing: 0.05em
 
-#main
-  position: absolute
-  top: $header-height
-  left: 0
-  right: 0
-  bottom: 0
-  z-index: 1
-  padding: 0 60px 30px 60px
-  overflow-x: hidden
-
 abbr[title]
-  cursor: help
+  cursor: help   
+  text-decoration: none;
   border-bottom: 1px dotted #777
   @media print 
     &:after
@@ -80,14 +44,29 @@ a
   &.footnote-backref
     no-user-select()
 
-@media screen and (max-width: $mobile-width)
-  #main
-    top: $mobile-header-height
-    padding: 0 20px 20px 20px
+table:not(.highlight *)
+  border-spacing: 0
+  border-collapse: collapse
+  margin: 1.2em auto
+  padding: 0
+  text-align: left
+  thead th
+    position: sticky
+    z-index: 100
+    top: -.2em
+    font-weight: bold
+    min-width: 32px
+  td, th
+    line-height: 1.5em
+    padding: .4em .8em
+    border: 1px solid $border
+  th, tr:nth-child(2n)
+    background-color: #f8f8f8
+    code
+      background-color: #efefef
 
 @media print
   body, #main
-    position: static
     color: rgb(0,0,0)
   mark
     border: 2px solid yellow !important
@@ -105,4 +84,3 @@ a
   sup.footnote-ref > a, a.markdownIt-Anchor
     &:link:after, &:visited:after
        content:""
-  

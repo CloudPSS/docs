@@ -14,6 +14,7 @@ classname: _newExp
 symbol: newExp
 ---
 ## 基本描述
+{% compsymbol newExp %}
 
 > **该元件实现指数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
 > $y(t) = {10^{u(t)} }$或$y(t) = {e^{u(t)} }$或$y(t) = {a^{u(t)} }$，$u(t)>0$。

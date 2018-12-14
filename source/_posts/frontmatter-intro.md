@@ -48,6 +48,7 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 ##### 标题5
 ###### 标题6
 ```
+
 ## 标题2
 ### 标题3
 #### 标题4 
@@ -58,8 +59,13 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 
 用于页面底部的作者联系信息，登录 <http://cn.gravatar.com> 上传头像，头像与 `author_email` 关联。
 
-- `author`：作者名字，置空隐藏作者；
-- `author_email`：作者联系邮箱，置空使用 CloudPSS 官方邮箱。
+- `author`
+
+  作者名字，置空隐藏作者；
+  
+- `author_email`
+
+  作者联系邮箱，置空使用 CloudPSS 官方邮箱。
   {% pullquote info %}
   官方邮箱通过 `_config.yml` 文件中的 `contact` 字段指定。
   {% endpullquote %}
@@ -75,8 +81,12 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 
 ### 页面布局 `full_footer` `sidebar`
 
-- `full_footer`：指定是否显示完整页脚，默认为 `false`，当显示完整页脚时，作者和编辑信息将被隐藏。
-- `sidebar`：指定是否显示页面左侧的侧边栏，默认为 `true`。
+- `full_footer`
+
+  指定是否显示完整页脚，默认为 `false`，当显示完整页脚时，作者和编辑信息将被隐藏。
+- `sidebar`
+
+  指定是否显示页面左侧的侧边栏，默认为 `true`。
 
 {% pullquote info %}
 效果可参考[完整页脚 / 隐藏侧边栏样例](/posts/full-footer-no-sidebar.html)。

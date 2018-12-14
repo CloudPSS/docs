@@ -1,6 +1,5 @@
 ---
 title: CloudPSS同步电机标幺值和有名值系统
-type: guide
 author: songyk
 ---
 

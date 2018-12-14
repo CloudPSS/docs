@@ -12,16 +12,38 @@ declare const mxStencilRegistry: any;
 
 (function ()
 {
-  document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
-  initFlowAndChart();
-  initMobileMenu();
-  initVideos();
-  initMxGraph();
-
-  if (PAGE_TYPE && !IS_INDEX)
+  const DOMContentLoaded: Promise<void> = (function()
   {
-    initSubHeaders()
-  }
+    let isReady = false;
+    let waiting = new Array<() => void>;
+    document.addEventListener('DOMContentLoaded', function()
+    {
+      isReady = true;
+      for(const cb of waiting)
+        cb();
+      waiting = null;
+    }, false);
+  
+    function DOMContentLoaded(): Promise<void>
+    {
+      if(isReady)
+        return Promise.resolve();
+      return new Promise(function(resolve)
+      {
+        waiting.push(resolve);
+      });
+    }
+    
+    return DOMContentLoaded;
+  })();
+  
+  document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
+  initMobileMenu();
+  initSubHeaders();
+  initVideos();
+  initImages();
+  initFlowAndChart();
+  initMxGraph();
 
   function initFlowAndChart()
   {
@@ -45,9 +67,10 @@ declare const mxStencilRegistry: any;
     mermaid.initialize(config);
   }
 
-  function initVideos()
+  async function initVideos()
   {
-    const containers = document.querySelectorAll('.video-container, .owl-video');
+    await DOMContentLoaded();
+    const containers = document.querySelectorAll('#main .video-container, .owl-video');
     for (const container of Array.from(containers))
     {
       const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
@@ -56,6 +79,27 @@ declare const mxStencilRegistry: any;
       hint.innerText = video.src;
       hint.classList.add('video-hint')
       container.appendChild(hint);
+    }
+  }
+
+  function initImages()
+  {
+    const containers = document.querySelectorAll('#main img');
+    for (const container of Array.from(containers))
+    {
+      if(!container.title)
+        container.title = container.alt;
+      container.style.maxHeight = formatValue(container.getAttribute('height'));
+      container.removeAttribute('height');
+    }
+    
+    function formatValue(v: string)
+    {
+      if(!v || v.endsWith('%'))
+        return '';
+      if(v.endsWith('px'))
+        return v;
+      return v + 'px';
     }
   }
 
@@ -137,6 +181,9 @@ declare const mxStencilRegistry: any;
    */
   function initSubHeaders()
   {
+    if(IS_INDEX)
+      return;
+    
     let animating = false;
     let hoveredOverSidebar = false;
 
@@ -208,6 +255,7 @@ declare const mxStencilRegistry: any;
     // listen for scroll event to do positioning & highlights
     main.addEventListener('scroll', () => { updateSidebar(true) })
     window.addEventListener('resize', () => { updateSidebar(true) })
+    window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) })
     window.addEventListener('load', () => { updateSidebar(true) })
 
     function updateSidebar(shouldScrollIntoView?: boolean)
@@ -315,7 +363,9 @@ declare const mxStencilRegistry: any;
     async function loadMxGraph(container: Element, padding?: number)
     {
       padding = padding || 12;
-
+      const getshape = fetchShape(<string>container.getAttribute('symbol'));
+      await DOMContentLoaded();
+      
       // Disables the built-in context menu
       mxEvent.disableContextMenu(container);
       const editor = new Editor();
@@ -339,8 +389,7 @@ declare const mxStencilRegistry: any;
       style[mxConstants.STYLE_FONTSTYLE] = 1;
       graph.getStylesheet().putDefaultVertexStyle(style);
 
-      const shape = (await fetchShape(<string>container.getAttribute('symbol'))).shape;
-
+      const shape = (await getshape).shape;
       const firstChild = <Element>shape.firstChild;
       mxStencilRegistry.parseStencilSet(firstChild);
       const parent = graph.getDefaultParent();
@@ -366,12 +415,9 @@ declare const mxStencilRegistry: any;
       svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
       svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
     };
-
-    document.addEventListener('DOMContentLoaded', function ()
-    {
-      for (const container of document.getElementsByTagName("mx-graph"))
-        loadMxGraph(container);
-    }, false);
+    
+    for (const container of Array.from(document.getElementsByTagName("mx-graph")))
+      loadMxGraph(container);
   }
 
   function fetchJsonP<T>(url: string | URL): Promise<T>

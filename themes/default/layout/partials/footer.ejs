@@ -17,16 +17,16 @@
   <%_ if(min) { -%>
     <p class="contact">
       <%_ if(page.author) { -%>
-        <span class="section">
-          <a id="footer-author-link" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
-            <img class="gravatar" src="<%- gravatar(email,{d:'identicon'}) %>" />
-            <span><%= page.author %></span>
+        <span>
+          <a class="author" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
+            <style>footer.page-footer a.author::before{background-image: url(<%- gravatar(email,{d:'identicon', s: '256'}) %>)}</style>
+            <%= page.author %>
           </a>
         </span>
       <%_ } -%>
-      <span class="section" title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
+      <span title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
       <%_ if(date(page.date) !== date(page.updated)) { -%>
-        <span class="section" title="<%- full_date(page.updated) %>">最后更新于 <time datetime="<%- date_xml(page.updated) %>"><%- date(page.updated) %></time></span>
+        <span title="<%- full_date(page.updated) %>">最后更新于 <time datetime="<%- date_xml(page.updated) %>"><%- date(page.updated) %></time></span>
       <%_ } -%>
     </p>
     <p class="copyright" title='<%= fullcopy %>
@@ -34,7 +34,7 @@
   <%_ } else { -%>
     <p><%= fullcopy %></p>
     <p><%- link_to('http://www.miitbeian.gov.cn', config.ICP, {external: true}) %></p>
-    <p><%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %></p>
+    <p><%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %></p> 
   <%_ } -%>
   <%- js('/js/footer') -%>
 </footer>
