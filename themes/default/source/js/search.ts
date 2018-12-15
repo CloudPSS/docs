@@ -98,7 +98,7 @@
                 if (!match || !this.term.trim())
                     return;
                 if (match.title === this.term.trim() || this.matches.length === 1)
-                    window.location.pathname = match.url;
+                    window.location.assign(match.url);
             }
         },
         computed:

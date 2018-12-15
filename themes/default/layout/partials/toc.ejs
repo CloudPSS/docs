@@ -1,8 +1,8 @@
 <!-- BEGIN toc -->
 <header>
-  <%_ if (page.type){ _%>
-    <h1><%- link_to(url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
-  <%_ } _%>
+  <%_ if (page.type){ -%>
+    <h1><%- link_to(is_index() ? '#article' : url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
+  <%_ } -%>
 </header>
 <ul class="menu-root">
   <%_

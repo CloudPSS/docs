@@ -44,6 +44,26 @@ declare const mxStencilRegistry: any;
   initImages();
   initFlowAndChart();
   initMxGraph();
+  initFootnotes();
+  
+  function initFootnotes()
+  {
+    document.querySelectorAll('sup.footnote-ref > a').forEach(a =>
+    {
+      a.innerText = a.innerText.replace(/:\d+/, '');
+    });
+    window.addEventListener('hashchange', function (ev) 
+    {
+      if(!location.hash.startsWith('#fn'))
+        return;
+      const hash = location.hash;
+      setTimeout(function ()
+      {
+        if(location.hash === hash)
+          location.hash = '';
+      }, 3000);
+    })
+  }
 
   function initFlowAndChart()
   {
