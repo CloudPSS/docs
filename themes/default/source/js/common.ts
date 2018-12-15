@@ -24,7 +24,7 @@ declare const mxStencilRegistry: any;
       waiting = [];
     }, false);
 
-    function DOMContentLoaded(): Promise<void>
+    return function DOMContentLoaded(): Promise<void>
     {
       if (isReady)
         return Promise.resolve();
@@ -33,8 +33,6 @@ declare const mxStencilRegistry: any;
         waiting.push(resolve);
       });
     }
-
-    return DOMContentLoaded;
   })();
 
   document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
@@ -45,21 +43,21 @@ declare const mxStencilRegistry: any;
   initFlowAndChart();
   initMxGraph();
   initFootnotes();
-  
+
   function initFootnotes()
   {
-    document.querySelectorAll('sup.footnote-ref > a').forEach(a =>
+    (document.querySelectorAll('sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
     {
       a.innerText = a.innerText.replace(/:\d+/, '');
     });
     window.addEventListener('hashchange', function (ev) 
     {
-      if(!location.hash.startsWith('#fn'))
+      if (!location.hash.startsWith('#fn'))
         return;
       const hash = location.hash;
       setTimeout(function ()
       {
-        if(location.hash === hash)
+        if (location.hash === hash)
           location.hash = '';
       }, 3000);
     })
@@ -329,7 +327,7 @@ declare const mxStencilRegistry: any;
       mapper(h);
       link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
       h.querySelectorAll('.katex-mathml').forEach(n => n.remove());
-      link.title = h.textContent;
+      link.title = h.textContent || '';
       return link;
     }
 
