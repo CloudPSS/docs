@@ -1,4 +1,4 @@
-//import Vue from '../../../../node_modules/vue/types/index';
+import * as Vue from 'vue';
 
 (async function ()
 {

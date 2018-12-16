@@ -68,15 +68,15 @@ figure.highlight
     margin: 0
     tr > td
       padding: 0
-      margin: 0
-      line-height: 1em
+      min-width: 0
+      line-height: 1.2em
       border: none
-      width: 100%
-      border: none
-      border-collapse: collapse
       &.gutter
+        background-color: $codebg
+        border-radius: 8px
         text-align: right
-        width: 0
+        position: sticky;
+        left: 0;
         no-user-select()
         hide-for-print()
   pre
