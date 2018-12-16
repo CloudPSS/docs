@@ -1,12 +1,16 @@
-import * as mx from 'mxgraph';
-import "mxGraph/Load";
-
+﻿import * as mx from 'mxgraph';
 import Util from './util';
+
+function initMxGraph()
+{
+    (<any>window).mxLoadStylesheets = false;
+    (<any>window).mxLoadResources = false;
 
     async function loadMxGraph(container: Element, padding?: number)
     {
         padding = padding || 12;
         const getshape = Util.fetchShape(<string>container.getAttribute('symbol'));
+        await Util.DOMContentLoaded();
 
         // Disables the built-in context menu
         mx.mxEvent.disableContextMenu(container);
@@ -60,3 +64,4 @@ import Util from './util';
 
     for (const container of Array.from(document.getElementsByTagName("mx-graph")))
         loadMxGraph(container);
+}
