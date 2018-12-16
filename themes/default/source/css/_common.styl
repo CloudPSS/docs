@@ -69,6 +69,13 @@ table:not(.highlight)
     code
       background-color: darken($codebg, 5)
 
+.print-only
+  @media screen
+    display: none
+.screen-only
+  @media print
+    display: none
+
 @media print
   body, #main
     color: rgb(0,0,0)
