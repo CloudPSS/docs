@@ -1,28 +1,21 @@
 (function ()
 {
-    const link = document.querySelector("footer.page-footer .author[data]") as HTMLSpanElement;
+    const link = document.querySelector("footer.page-footer .author[data]") as HTMLLinkElement;
     if (link)
     {
-        const data = (link.getAttribute('data') || '').trim();
+        const data = link.getAttribute('data') || '';
         link.removeAttribute('data');
-        if(!data)
-            return;
-        const mail = atob(atob(atob(data)));
-        const mailspan = document.createElement('span');
-        mailspan.innerText = `(${mail})`;
-        mailspan.classList.add('print-only');
-        link.addEventListener('click', () =>
+        let herfSet = false;
+        function setHref()
         {
-            const win = window.open('mailto:' + mail, 'emailWindow');
-            setTimeout(() => { if (win && win.open && !win.closed) win.close(); }, 0);
-        });
-        window.addEventListener('beforeprint', () =>
-        {
-            link.appendChild(mailspan);
-        });
-        window.addEventListener('afterprint', () =>
-        {
-            link.removeChild(mailspan);
-        });
+            if (herfSet)
+                return;
+            herfSet = true;
+            link.href = 'mailto:' + atob(atob(atob(data)));
+        }
+        link.addEventListener('focus', setHref);
+        link.addEventListener('pointerover', setHref);
+        window.addEventListener('beforeprint', setHref);
+        window.addEventListener('touchstart', setHref);
     }
 })();

@@ -105,7 +105,7 @@ declare const mxStencilRegistry: any;
     const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#main img');
     for (const container of Array.from(containers))
     {
-      if (!container.title && container.alt)
+      if (!container.title)
         container.title = container.alt;
       container.style.maxHeight = formatValue(container.getAttribute('height'));
       container.removeAttribute('height');
