@@ -14,7 +14,7 @@
         link.addEventListener('click', () =>
         {
             const win = window.open('mailto:' + mail, 'emailWindow');
-            setTimeout(() => { if (win && win.open && !win.closed) win.close(); }, 0);
+            setTimeout(() => { if (win && win.open && !win.closed) win.close(); }, 100);
         });
         window.addEventListener('beforeprint', () =>
         {
