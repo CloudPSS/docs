@@ -1,31 +1,13 @@
-﻿namespace Util
+namespace Util
 {
-    export const DOMContentLoaded: () => Promise<void> = (function ()
+    function makeURL(url: string | URL)
     {
-        let isReady = false;
-        let waiting = new Array<() => void>();
-        document.addEventListener('DOMContentLoaded', function ()
-        {
-            isReady = true;
-            for (const cb of waiting)
-                cb();
-            waiting = [];
-        }, false);
-
-        return function DOMContentLoaded(): Promise<void>
-        {
-            if (isReady)
-                return Promise.resolve();
-            return new Promise(function (resolve)
-            {
-                waiting.push(resolve);
-            });
-        }
-    })();
+        return (typeof url === 'string') ? new URL(url, location.origin) : url;
+    }
 
     export async function fetchJson<T>(url: string | URL): Promise<T>
     {
-        const urlData = (typeof url === 'string') ? new URL(url) : url;
+        const urlData = makeURL(url);
         const response = await fetch(urlData.href);
         if (!response.ok)
             throw new Error(response.statusText);
@@ -34,7 +16,7 @@
 
     export function fetchJsonP<T>(url: string | URL): Promise<T>
     {
-        const urlData = (typeof url === 'string') ? new URL(url) : url;
+        const urlData = makeURL(url);
         urlData.searchParams.set('callback', 'resolve');
         return new Promise(async function (resolve, reject)
         {
