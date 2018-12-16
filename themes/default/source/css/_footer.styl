@@ -11,12 +11,15 @@ footer.page-footer
   &.min
     text-align: right 
     .author
-      cursor: pointer
       color: lighten($theme, 0.2)
-      > img
-        box-shadow: 0 0 2px $shadow
+      &:before   
+        content: ""
+        box-shadow: 0 0 0.5px $shadow
+        display: inline-block
         height: 1.8em
-        border-radius: 100%
+        width: 1.8em
+        border-radius: 100em
+        background-size: contain
         vertical-align: middle
     > .contact
       margin-left: -0.5em
