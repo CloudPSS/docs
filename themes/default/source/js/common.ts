@@ -1,96 +1,98 @@
-import { FastClick } from "fastclick";
-import Chart from "Chartjs";
 
-FastClick.attach(document.body);
-initMobileMenu();
-initSubHeaders();
-initVideos();
-initImages();
-initFlowAndChart();
-initFootnotes();
-
-function initFootnotes()
+(function ()
 {
+
+  document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
+  initMobileMenu();
+  initSubHeaders();
+  initVideos();
+  initImages();
+  initFlowAndChart();
+  initMxGraph();
+  initFootnotes();
+
+  function initFootnotes()
+  {
     (document.querySelectorAll('sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
     {
-        a.innerText = a.innerText.replace(/:\d+/, '');
+      a.innerText = a.innerText.replace(/:\d+/, '');
     });
     window.addEventListener('hashchange', function (ev) 
     {
-        if (!location.hash.startsWith('#fn'))
-            return;
-        const hash = location.hash;
-        setTimeout(function ()
-        {
-            if (location.hash === hash)
-                location.hash = '';
-        }, 3000);
+      if (!location.hash.startsWith('#fn'))
+        return;
+      const hash = location.hash;
+      setTimeout(function ()
+      {
+        if (location.hash === hash)
+          location.hash = '';
+      }, 3000);
     })
-}
+  }
 
-function initFlowAndChart()
-{
+  function initFlowAndChart()
+  {
     document.querySelectorAll("canvas.chartjs").forEach((e) => 
     {
-        try
-        {
-            new Chart(e, JSON.parse(e.textContent || ''))
-        }
-        catch (t)
-        {
-            e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
-        }
+      try
+      {
+        new Chart(e, JSON.parse(e.textContent || ''))
+      }
+      catch (t)
+      {
+        e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
+      }
     });
     document.querySelectorAll("div.mermaid").forEach((e) => 
     {
-        e.setAttribute('data-mermaid', e.innerHTML);
+      e.setAttribute('data-mermaid', e.innerHTML);
     });
 
     const config = { theme: 'forest' };
     mermaid.initialize(config);
-}
+  }
 
-async function initVideos()
-{
+  async function initVideos()
+  {
     await DOMContentLoaded();
     const containers = document.querySelectorAll('#main .video-container, .owl-video');
     for (const container of Array.from(containers))
     {
-        const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
-        if (!video) continue;
-        const hint = document.createElement('p');
-        hint.innerText = video.src;
-        hint.classList.add('video-hint')
-        container.appendChild(hint);
+      const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
+      if (!video) continue;
+      const hint = document.createElement('p');
+      hint.innerText = video.src;
+      hint.classList.add('video-hint')
+      container.appendChild(hint);
     }
-}
+  }
 
-function initImages()
-{
+  function initImages()
+  {
     const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#main img');
     for (const container of Array.from(containers))
     {
-        if (!container.title && container.alt)
-            container.title = container.alt;
-        container.style.maxHeight = formatValue(container.getAttribute('height'));
-        container.removeAttribute('height');
+      if (!container.title && container.alt)
+        container.title = container.alt;
+      container.style.maxHeight = formatValue(container.getAttribute('height'));
+      container.removeAttribute('height');
     }
 
     function formatValue(v?: null | string)
     {
-        if (!v || v.endsWith('%'))
-            return '';
-        if (v.endsWith('px'))
-            return v;
-        return v + 'px';
+      if (!v || v.endsWith('%'))
+        return '';
+      if (v.endsWith('px'))
+        return v;
+      return v + 'px';
     }
-}
+  }
 
-/**
- * Mobile burger menu button and gesture for toggling sidebar
- */
-function initMobileMenu()
-{
+  /**
+   * Mobile burger menu button and gesture for toggling sidebar
+   */
+  function initMobileMenu()
+  {
     const sidebar = <HTMLElement>document.querySelector('.sidebar');
     const menuButton = <HTMLElement>document.getElementById('mobile-menu-button');
     const tocButton = <HTMLElement>document.getElementById('mobile-toc-button');
@@ -100,72 +102,72 @@ function initMobileMenu()
 
     menuButton.addEventListener('click', function ()
     {
-        sidebar.classList.toggle('open')
+      sidebar.classList.toggle('open')
     })
 
     document.body.addEventListener('click', function (e)
     {
-        if (e.target !== menuButton && !sidebar.contains(e.target as Node))
-        {
-            sidebar.classList.remove('open')
-        }
-        if (e.target !== tocButton && !toc.contains(e.target as Node))
-        {
-            toc.classList.remove('open')
-        }
+      if (e.target !== menuButton && !sidebar.contains(e.target as Node))
+      {
+        sidebar.classList.remove('open')
+      }
+      if (e.target !== tocButton && !toc.contains(e.target as Node))
+      {
+        toc.classList.remove('open')
+      }
     })
 
     class Point
     {
-        x: number = 0;
-        y: number = 0;
+      x: number = 0;
+      y: number = 0;
     }
     // Toggle sidebar on swipe
     const start = new Point(), end = new Point();
 
     document.body.addEventListener('touchstart', function (e)
     {
-        start.x = e.changedTouches[0].clientX
-        start.y = e.changedTouches[0].clientY
+      start.x = e.changedTouches[0].clientX
+      start.y = e.changedTouches[0].clientY
     })
 
     document.body.addEventListener('touchend', function (e)
     {
-        end.y = e.changedTouches[0].clientY
-        end.x = e.changedTouches[0].clientX
+      end.y = e.changedTouches[0].clientY
+      end.x = e.changedTouches[0].clientX
 
-        const xDiff = end.x - start.x
-        const yDiff = end.y - start.y
+      const xDiff = end.x - start.x
+      const yDiff = end.y - start.y
 
-        if (Math.abs(xDiff) > Math.abs(yDiff))
+      if (Math.abs(xDiff) > Math.abs(yDiff))
+      {
+        if (xDiff > 0 && start.x <= 20)
         {
-            if (xDiff > 0 && start.x <= 20)
-            {
-                sidebar.classList.add('open');
-                toc.classList.remove('open');
-            }
-            else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
-            {
-                sidebar.classList.remove('open')
-                toc.classList.add('open');
-            }
-            else
-            {
-                sidebar.classList.remove('open')
-                toc.classList.remove('open');
-            }
+          sidebar.classList.add('open');
+          toc.classList.remove('open');
         }
+        else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
+        {
+          sidebar.classList.remove('open')
+          toc.classList.add('open');
+        }
+        else
+        {
+          sidebar.classList.remove('open')
+          toc.classList.remove('open');
+        }
+      }
     })
-}
+  }
 
 
-/**
- * Sub headers in sidebar
- */
-function initSubHeaders()
-{
+  /**
+   * Sub headers in sidebar
+   */
+  function initSubHeaders()
+  {
     if (IS_INDEX)
-        return;
+      return;
 
     let animating = false;
     let hoveredOverSidebar = false;
@@ -179,60 +181,60 @@ function initSubHeaders()
     const allHeaders = new Array<HTMLHeadingElement>();
     if (currentPageAnchor)
     {
-        const sectionContainer = document.createElement('ul');
-        sectionContainer.className = 'menu-sub';
-        currentPageAnchor.parentNode!.appendChild(sectionContainer);
-        let headers = content.querySelectorAll('h2');
-        if (headers.length)
+      const sectionContainer = document.createElement('ul');
+      sectionContainer.className = 'menu-sub';
+      currentPageAnchor.parentNode!.appendChild(sectionContainer);
+      let headers = content.querySelectorAll('h2');
+      if (headers.length)
+      {
+        headers.forEach(function (h)
         {
-            headers.forEach(function (h)
-            {
-                sectionContainer.appendChild(makeLink(h))
-                const h3s = collectH3s(h)
-                allHeaders.push(h)
-                allHeaders.push.apply(allHeaders, h3s)
-                if (h3s.length)
-                {
-                    sectionContainer.appendChild(makeSubLinks(h3s))
-                }
-            })
-        }
-        else
+          sectionContainer.appendChild(makeLink(h))
+          const h3s = collectH3s(h)
+          allHeaders.push(h)
+          allHeaders.push.apply(allHeaders, h3s)
+          if (h3s.length)
+          {
+            sectionContainer.appendChild(makeSubLinks(h3s))
+          }
+        })
+      }
+      else
+      {
+        headers = content.querySelectorAll('h3')
+        headers.forEach(function (h)
         {
-            headers = content.querySelectorAll('h3')
-            headers.forEach(function (h)
-            {
-                sectionContainer.appendChild(makeLink(h))
-                allHeaders.push(h)
-            })
-        }
+          sectionContainer.appendChild(makeLink(h))
+          allHeaders.push(h)
+        })
+      }
 
-        sectionContainer.addEventListener('click', function (e)
-        {
+      sectionContainer.addEventListener('click', function (e)
+      {
 
-            // Not prevent hashchange for smooth-scroll
-            // e.preventDefault()
-            const target = e.target as HTMLElement;
-            if (target.classList.contains('section-link'))
-            {
-                sidebar.classList.remove('open')
-                setActive(target)
-                animating = true
-                setTimeout(function ()
-                {
-                    animating = false;
-                }, 400)
-            }
-        }, true)
+        // Not prevent hashchange for smooth-scroll
+        // e.preventDefault()
+        const target = e.target as HTMLElement;
+        if (target.classList.contains('section-link'))
+        {
+          sidebar.classList.remove('open')
+          setActive(target)
+          animating = true
+          setTimeout(function ()
+          {
+            animating = false;
+          }, 400)
+        }
+      }, true)
     }
 
     sidebar.addEventListener('mouseover', function ()
     {
-        hoveredOverSidebar = true;
+      hoveredOverSidebar = true;
     })
     sidebar.addEventListener('mouseleave', function ()
     {
-        hoveredOverSidebar = false;
+      hoveredOverSidebar = false;
     })
 
     // listen for scroll event to do positioning & highlights
@@ -243,100 +245,101 @@ function initSubHeaders()
 
     function updateSidebar(shouldScrollIntoView?: boolean)
     {
-        const doc = document.getElementById('main');
-        const top = doc && doc.scrollTop || document.body.scrollTop
-        if (animating || !allHeaders) return;
-        let last: HTMLHeadingElement | null = null;
-        for (let i = 0; i < allHeaders.length; i++)
+      const doc = document.getElementById('main');
+      const top = doc && doc.scrollTop || document.body.scrollTop
+      if (animating || !allHeaders) return;
+      let last: HTMLHeadingElement | null = null;
+      for (let i = 0; i < allHeaders.length; i++)
+      {
+        const link = allHeaders[i]
+        if (link.offsetTop > top)
         {
-            const link = allHeaders[i]
-            if (link.offsetTop > top)
-            {
-                if (!last)
-                    last = link;
-                break;
-            }
-            else
-            {
-                last = link;
-            }
+          if (!last)
+            last = link;
+          break;
         }
-        if (last)
-            setActive(last.id, shouldScrollIntoView || !hoveredOverSidebar)
+        else
+        {
+          last = link;
+        }
+      }
+      if (last)
+        setActive(last.id, shouldScrollIntoView || !hoveredOverSidebar)
     }
 
     function makeLink(h: HTMLHeadingElement)
     {
-        h = <HTMLHeadingElement>h.cloneNode(true);
+      h = <HTMLHeadingElement>h.cloneNode(true);
 
-        const link = document.createElement('li')
+      const link = document.createElement('li')
 
-        function mapper(node: Node)
+      function mapper(node: Node)
+      {
+        if (node.nodeType === Node.TEXT_NODE)
         {
-            if (node.nodeType === Node.TEXT_NODE)
-            {
-                return node;
-            }
-            for (const cnode of node.childNodes)
-                node.replaceChild(mapper(cnode), cnode);
-            if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
-            {
-                const span = document.createElement('span');
-                span.setAttribute('role', 'a');
-                span.innerHTML = node.innerHTML;
-                return span;
-            }
-            return node;
+          return node;
         }
+        for (const cnode of node.childNodes)
+          node.replaceChild(mapper(cnode), cnode);
+        if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
+        {
+          const span = document.createElement('span');
+          span.setAttribute('role', 'a');
+          span.innerHTML = node.innerHTML;
+          return span;
+        }
+        return node;
+      }
 
-        mapper(h);
-        link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
-        h.querySelectorAll('.katex-mathml').forEach(n => n.remove());
-        link.title = h.textContent || '';
-        return link;
+      mapper(h);
+      link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
+      h.querySelectorAll('.katex-mathml').forEach(n => n.remove());
+      link.title = h.textContent || '';
+      return link;
     }
 
     function collectH3s(h: HTMLHeadingElement)
     {
-        const h3s = new Array<HTMLHeadingElement>();
-        let next = h.nextSibling;
-        while (next && next.nodeName !== 'H2')
-        {
-            if (next.nodeName === 'H3')
-                h3s.push(next as HTMLHeadingElement);
-            next = next.nextSibling;
-        }
-        return h3s;
+      const h3s = new Array<HTMLHeadingElement>();
+      let next = h.nextSibling;
+      while (next && next.nodeName !== 'H2')
+      {
+        if (next.nodeName === 'H3')
+          h3s.push(next as HTMLHeadingElement);
+        next = next.nextSibling;
+      }
+      return h3s;
     }
 
     function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>)
     {
-        const container = document.createElement('ul')
-        h3s.forEach(function (h)
-        {
-            container.appendChild(makeLink(h));
-        })
-        return container;
+      const container = document.createElement('ul')
+      h3s.forEach(function (h)
+      {
+        container.appendChild(makeLink(h));
+      })
+      return container;
     }
 
     function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
     {
-        var previousActive = sidebar.querySelector('.section-link.active') as HTMLElement;
-        var currentActive = typeof id === 'string'
-            ? sidebar.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
-            : id;
-        if (currentActive !== previousActive)
+      var previousActive = sidebar.querySelector('.section-link.active') as HTMLElement;
+      var currentActive = typeof id === 'string'
+        ? sidebar.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
+        : id;
+      if (currentActive !== previousActive)
+      {
+        if (previousActive) previousActive.classList.remove('active');
+        currentActive.classList.add('active');
+        if (shouldScrollIntoView)
         {
-            if (previousActive) previousActive.classList.remove('active');
-            currentActive.classList.add('active');
-            if (shouldScrollIntoView)
-            {
-                var currentPageOffset = currentPageAnchor
-                    ? currentPageAnchor.offsetTop - 8
-                    : 0;
-                sidebar.scrollTop = currentPageOffset - 48;
-            }
+          var currentPageOffset = currentPageAnchor
+            ? currentPageAnchor.offsetTop - 8
+            : 0;
+          sidebar.scrollTop = currentPageOffset - 48;
         }
+      }
     }
-}
+  }
+})()
 
