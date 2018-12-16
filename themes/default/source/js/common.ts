@@ -1,6 +1,39 @@
+declare const PAGE_TYPE: string;
+declare const IS_INDEX: boolean;
+declare const FastClick: any;
+declare const Chart: any;
+declare const mermaid: any;
+declare const mxEvent: any;
+declare const Editor: any;
+declare const Graph: any;
+declare const mxConstants: any;
+declare const mxUtils: any;
+declare const mxStencilRegistry: any;
 
 (function ()
 {
+  const DOMContentLoaded: () => Promise<void> = (function ()
+  {
+    let isReady = false;
+    let waiting = new Array<() => void>();
+    document.addEventListener('DOMContentLoaded', function ()
+    {
+      isReady = true;
+      for (const cb of waiting)
+        cb();
+      waiting = [];
+    }, false);
+
+    return function DOMContentLoaded(): Promise<void>
+    {
+      if (isReady)
+        return Promise.resolve();
+      return new Promise(function (resolve)
+      {
+        waiting.push(resolve);
+      });
+    }
+  })();
 
   document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
   initMobileMenu();
@@ -340,6 +373,155 @@
         }
       }
     }
+  }
+
+  function initMxGraph()
+  {
+    (<any>window).mxLoadStylesheets = false;
+    (<any>window).mxLoadResources = false;
+
+    async function loadMxGraph(container: Element, padding?: number)
+    {
+      padding = padding || 12;
+      const getshape = fetchShape(<string>container.getAttribute('symbol'));
+      await DOMContentLoaded();
+
+      // Disables the built-in context menu
+      mxEvent.disableContextMenu(container);
+      const editor = new Editor();
+      // Creates the graph inside the given container
+      const graph = new Graph(container, null, null, editor.graph.getStylesheet());
+      graph.resetViewOnRootChange = false;
+      graph.foldingEnabled = false;
+      graph.gridEnabled = false;
+      graph.autoScroll = false;
+      graph.setTooltips(false);
+      graph.setConnectable(false);
+      graph.setEnabled(false);
+      // Sets the base style for all vertices
+      const style = graph.getStylesheet().getDefaultVertexStyle();
+      style[mxConstants.STYLE_ROUNDED] = true;
+      style[mxConstants.STYLE_FILLCOLOR] = '#ffffff';
+      style[mxConstants.STYLE_STROKECOLOR] = '#000000';
+      style[mxConstants.STYLE_STROKEWIDTH] = '2';
+      style[mxConstants.STYLE_FONTCOLOR] = '#000000';
+      style[mxConstants.STYLE_FONTSIZE] = '12';
+      style[mxConstants.STYLE_FONTSTYLE] = 1;
+      graph.getStylesheet().putDefaultVertexStyle(style);
+
+      const shape = (await getshape).shape;
+      const firstChild = <Element>shape.firstChild;
+      mxStencilRegistry.parseStencilSet(firstChild);
+      const parent = graph.getDefaultParent();
+      const width = Number(firstChild.getAttribute('w'));
+      const height = Number(firstChild.getAttribute('h'));
+
+      graph.getModel().beginUpdate();
+      try
+      {
+        graph.insertVertex(parent, null, '', 0, 0, width, height, 'shape=' + (firstChild.getAttribute('name') || '').toLowerCase());
+      }
+      finally
+      {
+        graph.getModel().endUpdate();
+      }
+      const svg = container.getElementsByTagName("svg")[0];
+      svg.viewBox.baseVal.width = width + padding * 2;
+      svg.viewBox.baseVal.height = height + padding * 2;
+      svg.viewBox.baseVal.x = -padding;
+      svg.viewBox.baseVal.y = -padding;
+      svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
+      svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
+      svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
+      svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
+    };
+
+    for (const container of Array.from(document.getElementsByTagName("mx-graph")))
+      loadMxGraph(container);
+  }
+
+  function fetchJsonP<T>(url: string | URL): Promise<T>
+  {
+    const urlData = (typeof url === 'string') ? new URL(url) : url;
+    urlData.searchParams.set('callback', 'resolve');
+    return new Promise(async function (resolve, reject)
+    {
+      const response = await fetch(urlData.href);
+      eval(await response.text());
+    })
+  }
+
+  interface ShapeData
+  {
+    classname: string;
+    shape: Document;
+  }
+
+  async function fetchShape(symbol: string): Promise<ShapeData>
+  {
+    interface ShapeResponse
+    {
+      classname: string;
+      shape: string;
+    }
+    const data = await fetchJsonP<ShapeResponse>(`http://192.168.0.133/editor/getCompShapeBySym/?sym=${symbol}`);
+    return {
+      classname: data.classname,
+      shape: mxUtils.parseXml(data.shape)
+    };
+  }
+
+  interface CompModel
+  {
+
+  }
+
+  function fetchCompModel(classname: string): Promise<CompModel>
+  {
+    return fetchJsonP(`http://192.168.0.133/editor/getCompModelByClassname/?classname=${classname}`);
+  }
+
+  // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
+  function escapeRegExp(str: string)
+  {
+    // http://stackoverflow.com/a/6969486
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
+  }
+
+  // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.js
+  function slugize(str: string, options?: { separator?: string; transform?: ((input: string) => string); })
+  {
+    const option = options || {}
+
+    const rControl = /[\u0000-\u001f]/g
+    const rSpecial = /[\s~`!@#\$%\^&\*\(\)\-_\+=\[\]\{\}\|\\;:"'<>,\.\?\/]+/g
+    const separator = option.separator || '-'
+    const escapedSep = escapeRegExp(separator)
+
+    var result = str
+      // Remove control characters
+      .replace(rControl, '')
+      // Replace special characters
+      .replace(rSpecial, separator)
+      // Remove continuous separators
+      .replace(new RegExp(escapedSep + '{2,}', 'g'), separator)
+      // Remove prefixing and trailing separators
+      .replace(new RegExp('^' + escapedSep + '+|' + escapedSep + '+$', 'g'), '')
+
+    if (options && options.transform)
+      return options.transform(result);
+    else
+      return result;
+  }
+
+  function htmlEscape(text: string)
+  {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
   }
 })()
 

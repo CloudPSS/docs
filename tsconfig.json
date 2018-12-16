@@ -1,8 +1,7 @@
 {
     "compilerOptions": {
         "target": "es2015",
-        "module": "amd",
-        "esModuleInterop": true,
+        "module": "AMD",
         "moduleResolution": "node",
         "removeComments": true,
         "newLine": "LF",
