@@ -1,12 +1,14 @@
 
 @import "_settings"
 
+$page-footer-inset = 40px
+
 footer.page-footer
   color: $light
   no-user-select()
   border-top: 0.2px $border solid
-  margin: 48px -48px
-  padding: 0 48px
+  margin: $page-footer-inset $page-footer-inset * -1
+  padding: 0 $page-footer-inset
   text-align: center 
   &.min
     text-align: right 
@@ -24,10 +26,6 @@ footer.page-footer
         margin-left: 0.5em
   span
     white-space: nowrap
-  p
-    padding-bottom: 0 !important
-  hr
-    margin: 40px -40px 0 -40px
   a
     color: @color
     font-weight: unset

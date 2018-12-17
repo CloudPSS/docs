@@ -216,12 +216,14 @@ header.page-header
               padding: 4px
               
       #nav-toc
-        padding: 10px
+        padding: $mobile-header-height + 16px 20px 12px
         background: rgba(255,255,255,0.9)
         position: fixed
-        transform: translateX(150%)
-        top: $mobile-header-height + 8px
-        right: 8px
+        transform: translateX(calc(100% + 10px))
+        top: 0
+        right: 0
+        bottom: 0
+        min-width: 200px
         box-shadow: 0 0 10px $shadow
         transition: box-shadow,transform .3s ease-in-out
         > li
