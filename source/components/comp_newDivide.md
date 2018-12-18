@@ -41,4 +41,4 @@ symbol: newDivide
 
 ## 相关元件
 
-
+[乘法器](/components/comp_newMultiply.html)

@@ -44,4 +44,4 @@ symbol: newSquareGen
 
 ## 相关元件
 
-
+[脉冲发生器](/components/comp_newPulseGen.html)

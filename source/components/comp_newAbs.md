@@ -41,4 +41,4 @@ symbol: newAbs
 
 ## 相关元件
 
-
+[符号函数](/components/comp_newSgn.html)

@@ -426,10 +426,7 @@ declare const mxStencilRegistry: any;
                 graph.getModel().endUpdate();
             }
             const svg = container.getElementsByTagName("svg")[0];
-            svg.viewBox.baseVal.width = width + padding * 2;
-            svg.viewBox.baseVal.height = height + padding * 2;
-            svg.viewBox.baseVal.x = -padding;
-            svg.viewBox.baseVal.y = -padding;
+            svg.setAttribute('viewBox', [-padding, -padding, width + padding * 2, height + padding * 2].join(','));
             svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
             svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
             svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';

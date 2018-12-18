@@ -61,4 +61,4 @@ symbol: newThyristor
 
 ## 相关元件
 
-
+[晶闸管](/components/comp_newThyristor.html)、[IGBT](/components/comp_newIGBT.html)

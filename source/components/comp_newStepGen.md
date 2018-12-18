@@ -42,4 +42,4 @@ symbol: newStepGen
 
 ## 相关元件
 
-
+[斜坡函数发生器](/components/comp_newRampGen.html)

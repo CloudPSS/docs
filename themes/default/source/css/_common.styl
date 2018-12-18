@@ -54,11 +54,12 @@ table:not(.highlight)
   padding: 0
   text-align: left
   thead th
-    position: sticky
     z-index: 100
     top: -.2em
     font-weight: bold
     background: $border
+    @media screen
+      position: sticky
   td, th
     min-width: 80px
     line-height: 1.5em

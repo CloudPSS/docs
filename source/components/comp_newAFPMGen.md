@@ -16,7 +16,7 @@ symbol: newAFPMGen
 ## 基本描述
 {% compsymbol newAFPMGen %}
 
-> **该元件用以输出幅值、频率、相位可调的正弦波发生器。**
+> **该元件用以输出幅值、频率、相位可调的正弦波输出信号。**
 
 ## 参数列表
 ### Configuration
@@ -43,4 +43,4 @@ symbol: newAFPMGen
 
 ## 相关元件
 
-
+[正弦波发生器](/components/comp_newSinGen.html)

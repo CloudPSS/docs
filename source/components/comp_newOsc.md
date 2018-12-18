@@ -36,3 +36,5 @@ symbol: OSC
 [<test name>](<test link>)显示了示波器分组的典型应用。
 
 ## 相关元件
+
+[输出通道](/components/comp_newChannel.html)

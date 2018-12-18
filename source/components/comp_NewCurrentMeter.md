@@ -41,4 +41,4 @@ symbol: newCurrentMeter
 
 ## 相关元件
 
-
+[电压表](/components/comp_NewVoltageMeter.html)、[支路电压表](/components/comp_NewBranchVoltageMeter.html)

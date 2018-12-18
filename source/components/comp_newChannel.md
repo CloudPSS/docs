@@ -42,3 +42,5 @@ symbol: newChannel
 [<test name>](<test link>)显示了输出通道的典型应用。
 
 ## 相关元件
+
+[示波器分组](/components/comp_newOsc.html)

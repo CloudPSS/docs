@@ -66,4 +66,4 @@ symbol: newCtrlVPACSource
 
 ## 相关元件
 
-
+[受控电压源(VF)](/components/comp_newCtrlAcVoltageSource.html)、[受控电压源](/components/comp_newCtrlVoltageSource.html)

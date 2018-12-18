@@ -60,4 +60,4 @@ symbol: newPLO
 
 ## 相关元件
 
-
+[锁相环](/components/comp_newPLL.html)

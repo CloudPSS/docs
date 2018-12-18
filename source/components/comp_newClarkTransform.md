@@ -49,4 +49,4 @@ symbol: newClarkTransform
 
 ## 相关元件
 
-
+[Park变换器](/components/comp_newParkTransform.html)、[dq-αβ坐标转换器](/components/comp_newXYtoDQ.html)

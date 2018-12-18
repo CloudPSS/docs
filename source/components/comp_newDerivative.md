@@ -43,4 +43,4 @@ symbol: newDerivative
 
 ## 相关元件
 
-
+[积分器](/components/comp_newIntegrator.html)

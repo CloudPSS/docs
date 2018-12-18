@@ -58,4 +58,4 @@ symbol: newIntegrator
 
 ## 相关元件
 
-
+[微分器](/components/comp_newDerivative.html)、[PI控制器](/components/comp_newPICtrl.html)

@@ -16,6 +16,8 @@ symbol: newZero
 ## 基本描述
 {% compsymbol newZero %}
 
+> 该元件用以建模零点环节。
+
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
@@ -54,4 +56,4 @@ symbol: newZero
 
 ## 相关元件
 
-
+[微分极点](/components/comp_newDiffPole.html)
