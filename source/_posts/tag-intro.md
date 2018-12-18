@@ -4,10 +4,19 @@ author: 刘正元
 author_email: lzy@live.in 
 date: 2018-08-18 14:23:34
 ---
+## 算例链接
+
+插入算例链接。
+如
+```md compsymbol
+见{% simu link 1 算例 %}。
+```
+
+效果：
+见{% simu link 1 算例 %}。
 
 ## 元件图标
 插入元件图标。
-
 如
 ```md compsymbol
 {% compsymbol newSum %} <!-- symbol of components -->

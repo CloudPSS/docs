@@ -48,4 +48,4 @@ symbol: newResistor
 
 ## 相关元件
 
-
+[电容](/components/compnewCapacitorRouter.html)、[电感](/components/compnewInductorRouter.html)

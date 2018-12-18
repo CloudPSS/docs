@@ -63,4 +63,4 @@ symbol: newACVoltageSource_1p
 
 ## 相关元件
 
-
+[三相交流电压源](/components/comp_newACVoltageSource_3p.html)

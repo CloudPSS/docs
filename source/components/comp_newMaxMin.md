@@ -54,4 +54,4 @@ symbol: newMaxMin
 
 ## 相关元件
 
-
+[周期最大最小值](/components/comp_newMaxMinOneCycle.html)

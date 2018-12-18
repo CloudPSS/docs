@@ -63,4 +63,4 @@ symbol: newComplexPole
 
 ## 相关元件
 
-
+[零点](/components/comp_newZero.html)、[高阶传递函数](/components/comp_newNthOrderTransFunc.html)、[超前滞后校正](/components/comp_newLeadLag.html)

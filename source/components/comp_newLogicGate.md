@@ -1,5 +1,5 @@
 ---
-title: 非门
+title: 逻辑门
 author: 
 author_email:
 
@@ -16,7 +16,7 @@ symbol: newLogicGate3
 ## 基本描述
 {% compsymbol newLogicGate3 %}
 
-> **该元件实现基本逻辑运算。**
+> **该元件实现四类基本逻辑运算：与、或、非、异或。**
 
 ## 参数列表
 ### Configuration

@@ -48,4 +48,4 @@ symbol: newSinGen
 
 ## 相关元件
 
-
+[可调正弦波发生器](/components/comp_newAFPMGen.html)

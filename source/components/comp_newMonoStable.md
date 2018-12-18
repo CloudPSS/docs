@@ -41,4 +41,4 @@ symbol: newMonoStable
 
 ## 相关元件
 
-
+[延迟触发器](/components/comp_newBinaryDelay.html)

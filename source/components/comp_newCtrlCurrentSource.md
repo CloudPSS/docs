@@ -48,4 +48,4 @@ symbol: newCtrlCurrentSource
 
 ## 相关元件
 
-
+[受控电压源](/components/comp_newCtrlVoltageSource.html)

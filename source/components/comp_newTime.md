@@ -39,4 +39,4 @@ symbol: newTime
 
 ## 相关元件
 
-
+[常量输入](/components/comp_newConstant.html)、[仿真步长输入](/components/comp_newDeltaT.html)

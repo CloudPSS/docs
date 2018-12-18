@@ -17,11 +17,11 @@ symbol: newSgn
 {% compsymbol newSgn %}
 
 > **该元件实现符号函数运算，函数关系式为：**
-$$y(x) = \left\{ \begin{gathered}
-  1,x > 0  \\
-  0,x = 0  \\
-   - 1,x < 0 \\ 
-\end{gathered}  \right.$$
+> $$y(x) = \left\{ \begin{gathered}
+>  1,x > 0  \\
+>  0,x = 0  \\
+>   - 1,x < 0 \\ 
+> \end{gathered}  \right.$$
 
 
 
@@ -47,4 +47,4 @@ $$y(x) = \left\{ \begin{gathered}
 
 ## 相关元件
 
-
+[绝对值函数](/components/comp_newAbs.html)

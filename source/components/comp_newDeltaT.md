@@ -39,4 +39,4 @@ symbol: newDeltaT
 
 ## 相关元件
 
-
+[常量输入](/components/comp_newConstant.html)、[时间输入](/components/comp_newTime.html)

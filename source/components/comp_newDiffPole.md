@@ -57,4 +57,4 @@ symbol: newDiffPole
 
 ## 相关元件
 
-
+[一阶惯性环节](/components/comp_newRealPole.html)、[超前滞后校正](/components/comp_newLeadLag.html)、[二阶传递函数](/components/comp_newComplexPole.html)

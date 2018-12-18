@@ -43,4 +43,4 @@ symbol: newSample
 
 ## 相关元件
 
-
+[采样保持](/components/comp_newSampleHold.html)

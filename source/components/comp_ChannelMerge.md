@@ -39,3 +39,5 @@ symbol: ChannelMerge
 [<test name>](<test link>)显示了多路信号合并的典型应用。
 
 ## 相关元件
+
+[多路信号分离](/components/comp_ChannelDeMerge.html)

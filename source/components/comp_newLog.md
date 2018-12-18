@@ -43,4 +43,4 @@ symbol: newLog
 
 ## 相关元件
 
-
+[指数函数](/components/comp_newExp.html)

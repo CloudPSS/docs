@@ -41,4 +41,4 @@ symbol: newMultiply
 
 ## 相关元件
 
-
+[增益](/components/comp_newGain.html)

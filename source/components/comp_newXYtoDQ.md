@@ -49,4 +49,4 @@ symbol: newXYtoDQ
 
 ## 相关元件
 
-
+[Park变换器](/components/comp_newParkTransform.html)、[Clark变换器](/components/comp_newClarkTransform.html)

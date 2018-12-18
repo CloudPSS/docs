@@ -50,4 +50,4 @@ symbol: newFaultResistance_1p
 
 ## 相关元件
 
-
+[三相故障电阻](/components/comp_newFaultResistor_3p.html)、[电阻](/components/compnewResistorRouter.html)

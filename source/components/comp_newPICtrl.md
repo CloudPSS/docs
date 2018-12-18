@@ -59,4 +59,4 @@ symbol: newPICtrl
 
 ## 相关元件
 
-
+[积分器](/components/comp_newIntegrator.html)、[增益](/components/comp_newGain.html)
