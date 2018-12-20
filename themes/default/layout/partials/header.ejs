@@ -7,7 +7,7 @@
   <nav id="nav">
     <div>
       <form id="search-form" title="搜索" @submit.prevent="submit">
-        <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term"/>
+        <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" :class="{open: suggestOpen}"/>
         <label id="search-icon" for="search-query"></label>
         <ul id="search-suggest" :class="{open: suggestOpen}">
           <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>

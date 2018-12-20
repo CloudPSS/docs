@@ -5,13 +5,15 @@ $page-footer-inset = 40px
 
 footer.page-footer
   color: $light
-  no-user-select()
+  user-select: none
   border-top: 0.2px $border solid
   margin: $page-footer-inset $page-footer-inset * -1
   padding: 0 $page-footer-inset
-  text-align: center 
+  *
+    text-align: center 
   &.min
-    text-align: right 
+    *
+      text-align: right 
     .author
       cursor: pointer
       color: lighten($theme, 0.2)

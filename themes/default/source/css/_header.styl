@@ -3,7 +3,7 @@
 
 header.page-header
   hide-for-print()
-  no-user-select()
+  user-select: none
   box-shadow: 0 0 16px $shadow
   background-color: #fff
   height: $header-inner-height
@@ -59,6 +59,7 @@ header.page-header
       > #search-query
         font-size: 1em
         height: 30px
+        width: 120px
         line-height: 30px
         box-sizing: border-box
         padding: 0 15px 0 30px
@@ -66,8 +67,9 @@ header.page-header
         color: $dark
         outline: none
         border-radius: 2em
-        transition: border-color .2s ease
-        &:focus
+        transition: border-color,width .2s ease
+        &.open
+          width: 240px
           border-color: $theme
       > #search-suggest
         display: none
@@ -146,8 +148,9 @@ header.page-header
     position: absolute
     display: inline-block
     font-size: 1.5em
-    line-height: 1.4em
     height: $header-inner-height
+    line-height: @height
+    vertical-align: middle
     color: $dark
     font-family: $logo-font
     font-weight: 500
@@ -157,7 +160,6 @@ header.page-header
     &:after
       content: attr(title)
       display: inline
-      vertical-align: middle
       margin-left: 48px
       transition: margin,opacity $size-transition
     @media screen and (max-width: 1300px)
@@ -165,17 +167,10 @@ header.page-header
     @media screen and (max-width: $mobile-width)
       left: 48px
       font-size: 18px
-      line-height: 18px
       height: $mobile-header-inner-height
+      line-height: @height
       &:after
         margin-left: 32px
-    @media screen and (max-width: 400px)
-      &:after
-        opacity: 0
-      &:hover, &:focus
-        &:after
-          opacity: 1
-          
           
 
 @media screen and (max-width: 1300px)
@@ -206,6 +201,9 @@ header.page-header
         > #search-query
           height: 20px
           line-height: 20px
+          width: 100px
+          &.open
+            width: 160px
         > #search-icon
           margin: 2.5px 16px
         > #search-suggest

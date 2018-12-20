@@ -80,6 +80,10 @@
     margin: 1em 0
     line-height: 1.6em
     z-index: 1
+  li > ol
+    list-style: lower-latin
+    li > ol
+      list-style: lower-roman
   li > ul, li > ol
     margin: 0.5em 0
   li
@@ -110,7 +114,7 @@
     margin: 1em 0
         
 .gist .gist-meta
-  no-user-select()
+  user-select: none
 
 @media print
   .gist
