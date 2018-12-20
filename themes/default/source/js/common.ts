@@ -464,7 +464,7 @@ declare const mxStencilRegistry: any;
         const data = await fetchJsonP<ShapeResponse>(`http://192.168.0.133/editor/getCompShapeBySym/?sym=${symbol}`);
         return {
             classname: data.classname,
-            shape: mxUtils.parseXml(data.shape)
+            shape: new DOMParser().parseFromString(data.shape, 'text/xml')
         };
     }
 

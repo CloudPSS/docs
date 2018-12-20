@@ -18,28 +18,36 @@
       type: 'article'
     }) -%>
 
+    <%_ 
+      const cdn = new URL('https://unpkg.com');
+      function jscdn(path, canMinify = true)
+      {
+        const min = (!config.debug_mode && canMinify) ? '.min' : '';
+        const url = new URL(`${path}${min}`, cdn);
+        return js(url.href);
+      }
+      function csscdn(path, canMinify = true)
+      {
+        const min = (!config.debug_mode && canMinify) ? '.min' : '';
+        const url = new URL(`${path}${min}`, cdn);
+        return css(url.href);
+      }
+    -%>
     <title><%= title() ? title() + ' - ' : '' %><%= config.title %></title>
     <%- css('css/page') -%>
-    <%- css('//cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css') -%>
-    <%_ 
-      if(config.debug_mode) { 
-        -%><%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.js') %><%_
-      } else { 
-        -%><%- js('//cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js') %><%_
-      } 
-    -%>
+    <%- csscdn('katex@0.10.0-rc.1/dist/katex') -%>
+    <%- jscdn('vue@^2/dist/vue') %>
     <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;</script>
   </head>
 
   <body>
     <%- partial('partials/header', { menu: page.sidebar !== false }) -%>
     <div id="main"><%- body -%></div>
-    <%- config.debug_mode ? partial('partials/edit') : '' -%>
-    <%- js('//cdn.jsdelivr.net/npm/chart.js@2/dist/Chart.min.js') -%>
-    <%- js('//cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js') -%>
-    <%- js('//cdn.jsdelivr.net/npm/fastclick@1/lib/fastclick.min.js') -%>
+    <%- jscdn('chart.js@^2/dist/Chart') -%>
+    <%- jscdn('mermaid@^8/dist/mermaid') -%>
+    <%- jscdn('fastclick@^1/lib/fastclick', false) -%>
     <%- js('/js/common') -%>
-    <%- js('//cdn.jsdelivr.net/npm/mxgraph@3.7.1/javascript/mxClient.min.js') -%>
+    <%- jscdn('mxgraph@3.7.1/javascript/mxClient') -%>
     <%- js('/js/mxGraph/Editor') -%>
     <%- js('/js/mxGraph/Graph') -%>
     <%- js('/js/mxGraph/Stencil') -%>

@@ -7,7 +7,7 @@ date: 2018/12/4 10:03:10
 updated: 2018/12/4 10:03:10
 
 type: components
-category: 3000
+category: 1000
 order: 0
 
 classname: OSC

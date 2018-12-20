@@ -19,7 +19,7 @@ symbol: newCurrentMeter
 > **该元件用以测量支路电流，输出单位为kA。**
 
 ## 参数列表
-### Configuration
+### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
 | Dimension | 相数 | 选择 | 选择电流测量为单相或三相 |
