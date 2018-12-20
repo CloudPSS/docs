@@ -7,7 +7,8 @@ date: 2018-08-18 14:23:34
 ## 算例链接
 
 插入算例链接。
-如
+
+语法为 `{%raw%}{% simu link [算例 id] [显示文本] %}{%endraw%}`，如： 
 ```md compsymbol
 见{% simu link 1 算例 %}。
 ```
@@ -17,13 +18,14 @@ date: 2018-08-18 14:23:34
 
 ## 元件图标
 插入元件图标。
-如
+
+语法为 `{%raw%}{% compsymbol [元件symbol] [=size] [title] %}{%endraw%}`，其中 `size` 语法同 [MD 图片](markdown-intro.html#图片)，`title` 为鼠标悬停时的提示文本，如： 
 ```md compsymbol
-{% compsymbol newSum %} <!-- symbol of components -->
+{% compsymbol newSum =x100 加法器%}
 ```
 
 效果：
-{% compsymbol newSum %} <!-- symbol of components -->
+{% compsymbol newSum =x100 加法器%}
 
 ## 引用
 扩展了 MarkDown 的引用功能，以显示更丰富的样式。

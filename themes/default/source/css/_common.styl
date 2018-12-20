@@ -3,6 +3,7 @@
 @import "_quoteblock"
 @import "_video"
 @import "_katex"
+@import "_table"
 
 body
   font-family: $body-font
@@ -13,6 +14,31 @@ body
   @media (max-width: $mobile-width)
     #main
       font-size: @font-size * 0.9
+      
+  counter-reset: article h2 h3 h4 h5 h6 imgbox
+      
+article
+  counter-increment: article
+  counter-reset: h2 h3 h4 h5 h6 imgbox table
+  h2
+    counter-reset: h3 h4 h5 h6 imgbox table
+  h3
+    counter-reset: h4 h5 h6
+  h4
+    counter-reset: h5 h6
+  h5
+    counter-reset: h6
+  h6
+    counter-reset: ;
+  for i in 2..6
+    h{i}
+      counter-increment: s("h%s", i)
+
+  imgbox
+    display: block
+    caption
+      display: block
+      caption-style(imgbox, "图 ")
     
 h1, h2, h3, h4
   font-weight: 600
@@ -47,29 +73,6 @@ a
   &.footnote-backref
     user-select: none
 
-table:not(.highlight)
-  border-spacing: 0
-  border-collapse: collapse
-  margin: 1.2em auto
-  padding: 0
-  text-align: left
-  thead th
-    z-index: 100
-    top: -.2em
-    font-weight: bold
-    background: $border
-    @media screen
-      position: sticky
-  td, th
-    min-width: 80px
-    line-height: 1.5em
-    padding: .4em .8em
-    border: 1px solid $border
-  th, tr:nth-child(2n)
-    background-color: #f8f8f8
-    code
-      background-color: darken($codebg, 5)
-
 .print-only
   @media screen
     display: none
@@ -86,7 +89,7 @@ table:not(.highlight)
     color: rgb(0,0,0)
     page-break-after: avoid
     page-break-before: avoid
-  img
+  img, imgbox
     page-break-inside: avoid
   h2+p
     page-break-before: avoid
