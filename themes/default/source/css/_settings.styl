@@ -32,3 +32,13 @@ $fixed-sidebar-width = 1280px
 $mobile-width = 980px
 
 $sidebar-width = 320px
+
+caption-style($counter, $prefix = "", $sep = "." , $suffix = " ")
+  counter-increment: $counter 
+  margin: 0.5em auto
+  color: darken($theme, 30)
+  text-align: center
+  font-size: 0.8em;
+  font-weight: bold
+  &::before
+    content: $prefix counter(h2) $sep counter($counter) $suffix

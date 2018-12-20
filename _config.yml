@@ -77,6 +77,12 @@ markdown_it_plus:
       name: markdown-it-mermaid
       enable: true
   - plugin:
+      name: markdown-it-multimd-table
+      enable: true
+  - plugin:
+      name: markdown-it-center-text
+      enable: true
+  - plugin:
       name: markdown-it-chart
       enable: true
   - plugin:

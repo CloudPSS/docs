@@ -34,8 +34,14 @@ $$ \sum_{i=1}^n a_i=0 $$
 图片存储的文件结构如图
 ![](markdown-intro/asset-folder.jpg)
 
-即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](markdown-intro/intro1.png "Title")`。
-![alt text](markdown-intro/intro1.png "Title" =x100)  
+即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](path "title" =size)` 语法。
+
+图片显示规则如下：
++ 当 `alt text` 为空，图片将嵌入文本，此时 `title` 为鼠标悬停时的提示文本；
++ 当 `alt text` 非空，图片将居中显示，此时 `alt text` 为鼠标悬停时的提示文本，`title` 为图片题注。
++ `size` 用于指定图片尺寸，具体使用方法见下文。
+
+如 `![alt text](markdown-intro/intro1.png "Title" =x100)` 得到 ![alt text](markdown-intro/intro1.png "Title" =x100)
 
 {% pullquote info %}
 可以使用以下语法指定图片的尺寸：
@@ -47,9 +53,53 @@ $$ \sum_{i=1}^n a_i=0 $$
   `![alt text](markdown-intro/intro1.png "Title" =x100)`
   
 {% pullquote tip %}
-  不建议同时指定宽度和高度，可能导致图片变形。
+不建议同时指定宽度和高度，可能导致图片变形。
 {% endpullquote %}
 {% endpullquote %}
+
+## 表格
+支持高级表格功能。
+
+如：
+
+```md table
+[Prototype table]
+|              | Grouping                    ||
+| First Header | Second Header | Third Header |
+| ------------ | :-----------: | -----------: |
+| Content      | *Long Cell*                 ||
+| Content      | **Cell**      | Cell         |
+| Content      | **Cell**      | Cell         |
+
+| New section  | More          | Data         |
+```
+
+效果：
+
+[Prototype table]
+|              | Grouping                    ||
+| First Header | Second Header | Third Header |
+| ------------ | :-----------: | -----------: |
+| Content      | *Long Cell*                 ||
+| Content      | **Cell**      | Cell         |
+| Content      | **Cell**      | Cell         |
+
+| New section  | More          | Data         |
+
+{% pullquote info %}
+省略开头的 `[Prototype table]` 将隐藏表名并不对表格进行编号。
+{% endpullquote %}
+## 文本居中
+
+```md center
+->centered
+text<-
+```
+
+效果
+
+> ->centered
+text<-
 
 ## 代码
 

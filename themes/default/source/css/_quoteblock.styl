@@ -1,87 +1,88 @@
 @import "_fonts"
 @import "_settings"
 
-dl, blockquote
-  position: relative
-  margin: 1em 0
-  background-color: $quotebg
-  border: 0.02px solid $quotebd
-  border-left: 4px solid $theme
-  padding: 0 12px 0 20px
-  code
-    background-color: #efefef
-  em
-    color: $medium
-  footer
-    text-align: right 
-    margin: 1em -2px 1em 4px
-    > strong
-      font-weight: 550
-    > cite 
-      font-style: italic
-      &:before
-        content: " — "
-  &:before
-    user-select: none
-    position: absolute
-    transform: translate(-32px, 8px)
-    color: #fff
-    width: 20px
-    height: 20px
-    border-radius: 100%
-    text-align: center
-    line-height: 20px
-    font-weight: bold
-    font-family: $logo-font
-    font-size: 14px
-
-$defcolor = #AB82FF
-dl
-  border-left-color: $defcolor !important
-  dt
-    margin: 0.8em 0 0.5em
-    font-size: larger
-    font-weight: 700
-  dd
-    margin-left: 1em !important
-  &:before
-    content: "⁈"
-    background-color: $defcolor
-
-blockquote
-  border-left-color: $theme !important
-  &.tip
-    border-left-color: #e5e237 !important
-    &:before
-      content: "!"
-      background-color: #e5e237
-  &.success
-    border-left-color: rgb(19,168,35) !important
-    &:before
-      content: "✓"
-      background-color: rgb(19,168,35)
-  &.fail
-    border-left-color: #d7193c !important
-    &:before
-      content: "✗"
-      background-color: #d7193c
-  &.question
-    border-left-color: #ed7745 !important
-    &:before
-      content: "?"
-      background-color: #ed7745
-  &.info
-    border-left-color: $info !important
-    &:before
-      content: "i"
-      background-color: $info
-
-@media print
+article
   dl, blockquote
-    page-break-inside: avoid
-    background-color: rgb(255,255,255)
+    position: relative
+    margin: 1em 0
+    background-color: $quotebg
+    border: 0.02px solid $quotebd
+    border-left: 4px solid $theme
+    padding: 0 12px 0 20px
+    code
+      background-color: #efefef
+    em
+      color: $medium
+    footer
+      text-align: right 
+      margin: 1em -2px 1em 4px
+      > strong
+        font-weight: 550
+      > cite 
+        font-style: italic
+        &:before
+          content: " — "
     &:before
-      display: none
-    dt, dd
+      user-select: none
+      position: absolute
+      transform: translate(-32px, 8px)
+      color: #fff
+      width: 20px
+      height: 20px
+      border-radius: 100%
+      text-align: center
+      line-height: 20px
+      font-weight: bold
+      font-family: $logo-font
+      font-size: 14px
+  
+  $defcolor = #AB82FF
+  dl
+    border-left-color: $defcolor !important
+    dt
+      margin: 0.8em 0 0.5em
+      font-size: larger
+      font-weight: 700
+    dd
+      margin-left: 1em !important
+    &:before
+      content: "⁈"
+      background-color: $defcolor
+  
+  blockquote
+    border-left-color: $theme !important
+    &.tip
+      border-left-color: #e5e237 !important
+      &:before
+        content: "!"
+        background-color: #e5e237
+    &.success
+      border-left-color: rgb(19,168,35) !important
+      &:before
+        content: "✓"
+        background-color: rgb(19,168,35)
+    &.fail
+      border-left-color: #d7193c !important
+      &:before
+        content: "✗"
+        background-color: #d7193c
+    &.question
+      border-left-color: #ed7745 !important
+      &:before
+        content: "?"
+        background-color: #ed7745
+    &.info
+      border-left-color: $info !important
+      &:before
+        content: "i"
+        background-color: $info
+  
+  @media print
+    dl, blockquote
       page-break-inside: avoid
+      background-color: rgb(255,255,255)
+      &:before
+        display: none
+      dt, dd
+        page-break-inside: avoid
   

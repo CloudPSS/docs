@@ -102,11 +102,25 @@ declare const mxStencilRegistry: any;
 
     function initImages()
     {
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#main img');
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article img');
         for (const container of Array.from(containers))
         {
-            if (!container.title && container.alt)
+            const title = container.title || '';
+            const alt = container.alt || '';
+            if (alt && !title)
                 container.title = container.alt;
+            if (alt && title)
+            {
+                const box = document.createElement('imgbox');
+                const cap = document.createElement('caption');
+                cap.innerText = title;
+                container.title = alt;
+                box.appendChild(container.cloneNode());
+                box.appendChild(cap);
+                if(container.nextSibling && container.nextSibling.tagName == "BR")
+                    container.nextSibling.remove();
+                container.replaceWith(box);
+            }
             container.style.maxHeight = formatValue(container.getAttribute('height'));
             container.removeAttribute('height');
         }
@@ -386,8 +400,6 @@ declare const mxStencilRegistry: any;
             const getshape = fetchShape(<string>container.getAttribute('symbol'));
             await DOMContentLoaded();
 
-            // Disables the built-in context menu
-            mxEvent.disableContextMenu(container);
             const editor = new Editor();
             // Creates the graph inside the given container
             const graph = new Graph(container, null, null, editor.graph.getStylesheet());
@@ -427,10 +439,12 @@ declare const mxStencilRegistry: any;
             }
             const svg = container.getElementsByTagName("svg")[0];
             svg.setAttribute('viewBox', [-padding, -padding, width + padding * 2, height + padding * 2].join(','));
-            svg.style.minWidth = svg.viewBox.baseVal.width + 'px';
-            svg.style.minHeight = svg.viewBox.baseVal.height + 'px';
-            svg.style.maxWidth = svg.viewBox.baseVal.width * 2 + 'px';
-            svg.style.maxHeight = svg.viewBox.baseVal.height * 2 + 'px';
+            svg.style.minWidth = svg.viewBox.baseVal.width / 2 + 'px';
+            svg.style.minHeight = svg.viewBox.baseVal.height / 2 + 'px';
+            svg.style.maxWidth = container.style.maxWidth || svg.viewBox.baseVal.width * 2 + 'px';
+            svg.style.maxHeight = container.style.maxHeight || svg.viewBox.baseVal.height * 2 + 'px';
+            container.style.maxWidth = '';
+            container.style.maxHeight = '';
         };
 
         for (const container of Array.from(document.getElementsByTagName("mx-graph")))
