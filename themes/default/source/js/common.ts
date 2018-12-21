@@ -119,7 +119,7 @@ declare const mxStencilRegistry: any;
                 box.setAttribute('id', title)
                 box.appendChild(container.cloneNode());
                 box.appendChild(cap);
-                if(container.nextSibling && container.nextSibling.tagName == "BR")
+                if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
                     container.nextSibling.remove();
                 container.replaceWith(box);
             }
@@ -151,75 +151,79 @@ declare const mxStencilRegistry: any;
      */
     function initMobileMenu()
     {
-        const sidebar = <HTMLElement>document.querySelector('.sidebar');
-        const menuButton = <HTMLElement>document.getElementById('mobile-menu-button');
-        const tocButton = <HTMLElement>document.getElementById('mobile-toc-button');
-        const toc = <HTMLElement>document.getElementById('nav-toc');
-        
+        const sidebar = document.querySelector('.sidebar');
+        const menuButton = document.getElementById('mobile-menu-button');
+        const tocButton = document.getElementById('mobile-toc-button');
+        const toc = document.getElementById('nav-toc');
+
         if (toc)
         {
             if (tocButton)
                 tocButton.addEventListener('click', () => { toc.classList.toggle('open') });
         }
 
-        menuButton.addEventListener('click', function ()
+        if (sidebar)
         {
-            sidebar.classList.toggle('open')
-        })
-
-        document.body.addEventListener('click', function (e)
-        {
-            if (e.target !== menuButton && !sidebar.contains(e.target as Node))
-            {
-                sidebar.classList.remove('open')
-            }
-            if (e.target !== tocButton && !toc.contains(e.target as Node))
-            {
-                toc.classList.remove('open')
-            }
-        })
-
-        class Point
-        {
-            x: number = 0;
-            y: number = 0;
+            if (menuButton)
+                menuButton.addEventListener('click', () => sidebar.classList.toggle('open'));
         }
-        // Toggle sidebar on swipe
-        const start = new Point(), end = new Point();
 
-        document.body.addEventListener('touchstart', function (e)
+        if (sidebar || toc)
         {
-            start.x = e.changedTouches[0].clientX
-            start.y = e.changedTouches[0].clientY
-        })
-
-        document.body.addEventListener('touchend', function (e)
-        {
-            end.y = e.changedTouches[0].clientY
-            end.x = e.changedTouches[0].clientX
-
-            const xDiff = end.x - start.x
-            const yDiff = end.y - start.y
-
-            if (Math.abs(xDiff) > Math.abs(yDiff))
+            document.body.addEventListener('click', function (e)
             {
-                if (xDiff > 0 && start.x <= 20)
-                {
-                    sidebar.classList.add('open');
-                    toc.classList.remove('open');
-                }
-                else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
+                if (e.target !== menuButton && sidebar && !sidebar.contains(e.target as Node))
                 {
                     sidebar.classList.remove('open')
-                    toc.classList.add('open');
                 }
-                else
+                if (e.target !== tocButton && toc && !toc.contains(e.target as Node))
                 {
-                    sidebar.classList.remove('open')
-                    toc.classList.remove('open');
+                    toc.classList.remove('open')
                 }
+            });
+
+            class Point
+            {
+                x: number = 0;
+                y: number = 0;
             }
-        })
+            // Toggle sidebar on swipe
+            const start = new Point(), end = new Point();
+
+            document.body.addEventListener('touchstart', function (e)
+            {
+                start.x = e.changedTouches[0].clientX
+                start.y = e.changedTouches[0].clientY
+            })
+
+            document.body.addEventListener('touchend', function (e)
+            {
+                end.y = e.changedTouches[0].clientY
+                end.x = e.changedTouches[0].clientX
+
+                const xDiff = end.x - start.x
+                const yDiff = end.y - start.y
+
+                if (Math.abs(xDiff) > Math.abs(yDiff))
+                {
+                    if (xDiff > 0 && start.x <= 20)
+                    {
+                        if (sidebar) sidebar.classList.add('open');
+                        if (toc) toc.classList.remove('open');
+                    }
+                    else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
+                    {
+                        if (sidebar) sidebar.classList.remove('open')
+                        if (toc) toc.classList.add('open');
+                    }
+                    else
+                    {
+                        if (sidebar) sidebar.classList.remove('open')
+                        if (toc) toc.classList.remove('open');
+                    }
+                }
+            });
+        }
     }
 
 
@@ -409,7 +413,7 @@ declare const mxStencilRegistry: any;
         (<any>window).mxLoadStylesheets = false;
         (<any>window).mxLoadResources = false;
 
-        async function loadMxGraph(container: Element, padding?: number)
+        async function loadMxGraph(container: HTMLElement, padding?: number)
         {
             padding = padding || 0;
             const getshape = fetchShape(<string>container.getAttribute('symbol'));
@@ -463,7 +467,7 @@ declare const mxStencilRegistry: any;
         };
 
         for (const container of Array.from(document.getElementsByTagName("mx-graph")))
-            loadMxGraph(container);
+            loadMxGraph(container as HTMLElement);
     }
 
     function fetchJsonP<T>(url: string | URL): Promise<T>
