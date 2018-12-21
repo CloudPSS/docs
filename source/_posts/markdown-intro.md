@@ -43,6 +43,8 @@ $$ \sum_{i=1}^n a_i=0 $$
 
 如 `![alt text](markdown-intro/intro1.png "Title" =x100)` 得到 ![alt text](markdown-intro/intro1.png "Title" =x100)
 
+可以使用题注进行交叉引用，如 `[link](#Title)` [link](#Title)。
+
 {% pullquote info %}
 可以使用以下语法指定图片的尺寸：
 + 指定最大宽度
@@ -72,6 +74,8 @@ $$ \sum_{i=1}^n a_i=0 $$
 | Content      | **Cell**      | Cell         |
 
 | New section  | More          | Data         |
+
+如[上表](#Prototype-table)所示……
 ```
 
 效果：
@@ -85,6 +89,8 @@ $$ \sum_{i=1}^n a_i=0 $$
 | Content      | **Cell**      | Cell         |
 
 | New section  | More          | Data         |
+
+如[上表](#Prototype-table)所示……
 
 {% pullquote info %}
 省略开头的 `[Prototype table]` 将隐藏表名并不对表格进行编号。
