@@ -15,107 +15,96 @@ header.page-header
   right: 0
   transition: padding, height $size-transition
   
-  #nav
-    list-style-type: none
-    margin: 0
-    padding: 0
-    position: fixed
-    right: 30px
-    top: $heading-padding-vertical
-    height: $header-inner-height
-    line-height: $header-inner-height
-    transition: top, height, right, line-height $size-transition
-    #nav-toc
-      padding: 0
-      margin: 0
-      > li
-        transition: padding $size-transition
-        display: inline
-        position: relative
-        padding: 0 0.8em
-      .nav-link
-        color: $medium
-        padding-bottom: 3px
-        white-space: nowrap
-        border-bottom: 3px solid transparent
-        transition: border-color 0.1s ease
-        &:hover, &.current
-          border-bottom: 3px solid $theme
-  
-    #search-form
-      position: absolute
-      transform: translateX(-100%)
-      padding: 0 10px;
-      > #search-icon    
-        position: absolute
-        left: 0
-        right: 0
-        top: 0
-        bottom: 0
-        margin: 10px 18px
-        transition: all $size-transition
-        background: url(../images/search.png) no-repeat
-        background-size: contain
+  @media screen and (max-width: $mobile-width)
+    height: $mobile-header-inner-height
+    padding: $mobile-heading-padding-vertical 0px
+            
+  #search-form
+    position: absolute
+    z-index: 1000
+    transform: translateX(calc(-100% - 12px))
+    margin: auto
+    transition: width .2s ease
+    top: 0
+    bottom: 0
+    height: 32px
+    width: 120px
+    &.open
+      width: 240px
       > #search-query
-        font-size: 1em
-        height: 30px
-        width: 120px
-        line-height: 30px
-        box-sizing: border-box
-        padding: 0 15px 0 30px
-        border: 1px solid #e3e3e3
-        color: $dark
-        outline: none
-        border-radius: 2em
-        transition: border-color,width .2s ease
-        &.open
-          width: 240px
-          border-color: $theme
+        border-color: $theme
       > #search-suggest
-        display: none
-        position: absolute
-        padding: 4px
-        left: 0
-        right: 0
-        margin: 0 10px
-        border: 2px solid $border
-        background: white
-        &.open, &:hover, &:focus
+        display: block
+    @media screen and (max-width: $mobile-width)
+      height: $mobile-header-inner-height
+      font-size: 0.8em
+      right: 40px
+      transform: none
+      width: 100px
+      &.open
+        width: 200px
+    > #search-query
+      display: block
+      box-sizing: border-box
+      transition: border-color .2s ease
+      font-size: 1em
+      height: 100%
+      width: 100%
+      padding: 0 15px 0 30px
+      border: 1px solid #e3e3e3
+      color: $dark
+      outline: none
+      border-radius: 2em
+      background: white url(../images/search.png) no-repeat 8px center / 20px
+      @media screen and (max-width: $mobile-width)
+        background-position-x: 4px
+    > #search-suggest
+      display: none
+      position: absolute
+      padding: 4px
+      left: 0
+      right: 0
+      margin: 4px 0
+      border: 2px solid $border
+      background: white
+      > span:before
+        text-align: center
+        display: block
+        color: $light
+      > .no-result:before
+          content: '没有匹配的结果'
+      > .prompt:before
+          content: '输入内容以搜索'
+      > .loading:before
+          content: '正在加载索引'
+      > .failed:before
+          content: '加载索引失败，请刷新页面'
+      > li
+        display: block
+        position: relative
+        line-height: 1em
+        > a
+          padding: 8px
+          color: $medium
           display: block
-        &:focus-within
-          display: block
-        > span:before
-          text-align: center
-          display: block
-          color: $light
-        > .no-result:before
-            content: '没有匹配的结果'
-        > .prompt:before
-            content: '输入内容以搜索'
-        > .loading:before
-            content: '正在加载索引'
-        > .failed:before
-            content: '加载索引失败，请刷新页面'
-        > li
-          display: block
-          position: relative
-          line-height: 1em
-          > a
-            padding: 8px
-            color: $medium
+          &:hover, &:focus
+            background: #eee
+          > span
             display: block
-            &:hover, &:focus
-              background: #eee
-            > span
-              display: block
-              line-height: 1.2em
-              white-space: nowrap
-              text-overflow: ellipsis
-              overflow: hidden
-            > span[role='category']
-              margin: 4px 0 0 0 
-              font-size: 0.8em
-              color: $light
+            line-height: 1.2em
+            white-space: nowrap
+            text-overflow: ellipsis
+            overflow: hidden
+          > span[role='category']
+            margin: 4px 0 0 0 
+            font-size: 0.8em
+            color: $light
+      @media screen and (max-width: $mobile-width)
+        > li
+          line-height: 1.4em
+          > a 
+            font-size: 1.2em
+            padding: 4px
               
   .mobile-header-button
     display: block
@@ -173,19 +162,40 @@ header.page-header
         margin-left: 32px
           
 
-@media screen and (max-width: 1300px)
-  header.page-header
-    #nav
+  
+  #nav
+    list-style-type: none
+    margin: 0
+    padding: 0
+    position: fixed
+    right: 30px
+    top: $heading-padding-vertical
+    height: $header-inner-height
+    line-height: $header-inner-height
+    transition: top, height, right, line-height $size-transition
+    #nav-toc
+      padding: 0
+      margin: 0
+      > li
+        transition: padding $size-transition
+        display: inline
+        position: relative
+        padding: 0 0.8em
+      .nav-link
+        color: $medium
+        padding-bottom: 3px
+        white-space: nowrap
+        border-bottom: 3px solid transparent
+        transition: border-color 0.1s ease
+        &:hover, &.current
+          border-bottom: 3px solid $theme
+    @media screen and (max-width: 1300px)
       right: 8px
       #nav-toc
         > li
           padding: 0 0.4em
 
-@media screen and (max-width: $mobile-width)
-  header.page-header
-    height: $mobile-header-inner-height
-    padding: $mobile-heading-padding-vertical 0px
-    #nav
+    @media screen and (max-width: $mobile-width)
       top: $mobile-heading-padding-vertical
       height: $mobile-header-inner-height
       line-height: $mobile-header-inner-height
@@ -193,25 +203,6 @@ header.page-header
         padding-bottom: 1px
         &:hover, &.current
           border-bottom: 2px solid $theme
-      #search-form
-        font-size: 0.8em
-        right: 32px
-        transform: none
-        top: 0
-        > #search-query
-          height: 20px
-          line-height: 20px
-          width: 100px
-          &.open
-            width: 160px
-        > #search-icon
-          margin: 2.5px 16px
-        > #search-suggest
-          > li
-            line-height: 1.4em
-            > a 
-              font-size: 1.2em
-              padding: 4px
               
       #nav-toc
         padding: $mobile-header-height + 16px 20px 12px

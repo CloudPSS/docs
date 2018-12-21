@@ -2,46 +2,55 @@
 
 (async function ()
 {
-    interface DownloadResource
+    class Data
     {
-        name: string,
-        desc?: string,
-        upload: Date,
-        link: string,
+        constructor(
+            public name: string,
+            public link: string,
+            public desc?: string,
+            public action = '打开',
+            public img?: string,
+        )
+        {
+            this.desc = desc || name;
+            this.openNew = /^(\/\/|[a-z][a-z0-9]*:)/ig.test(link);
+            if(!img)
+                this.img = `/index/${name}.png`;
+        }
+
+        public openNew: boolean;
     }
 
     var vueApp = new Vue({
-        el: '#vueapp',
+        el: '#vueindex',
         data:
         {
             downloads: [
-                {
-                    name: 'CloudPSS国家能源互联网大会发布PPT',
-                    upload: new Date('2018-6-27 16:59:14+8'),
-                    link: 'https://pan.baidu.com/s/1qY9JhKC'
-                },
-                {
-                    name: '热网潮流分析使用说明书',
-                    upload: new Date('2018-6-27 16:59:14+8'),
-                    link: 'https://pan.baidu.com/s/1qXIvP3u'
-                },
-                {
-                    name: 'CloudPSS用户手册',
-                    upload: new Date('2018-6-27 16:59:14+8'),
-                    link: 'https://pan.baidu.com/s/1jImoRQm'
-                },
-                {
-                    name: 'IEEE39节点系统使用说明书',
-                    upload: new Date('2018-6-27 16:59:14+8'),
-                    link: 'https://pan.baidu.com/s/1gf90U5d'
-                },
-                {
-                    name: 'IEEE14节点深度学习判敛数据集',
-                    desc: '内含5m个基于IEEE14节点系统生成的潮流初始断面，收敛占比41%，以及训练好的模型参数的.h5文件',
-                    upload: new Date('2018-6-27 16:59:14+8'),
-                    link: 'https://pan.baidu.com/s/1tmU4c1DjQiY8w4UAXnNSsg'
-                },
-            ] as DownloadResource[]
+                new Data(
+                    '快速入门',
+                    '/guide/',
+                    '快速入门',
+                ),
+                new Data(
+                    '元件帮助',
+                    '/components/',
+                    '元件帮助',
+                ),
+                new Data(
+                    '功能帮助',
+                    '/features/',
+                    '功能帮助',
+                ),
+                new Data(
+                    '案例介绍',
+                    '/examples/',
+                    '案例介绍',
+                ),
+                new Data(
+                    '旧平台文档',
+                    '//http://www.cloudpss.net/downloadnew/',
+                    '旧平台文档',
+                )]
         },
         methods:
         {

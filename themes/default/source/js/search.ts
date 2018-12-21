@@ -76,20 +76,20 @@
             term: '',
             failed: false,
             loadedPercent: 0,
-            suggestOpen: false,
+            suggestOpen: 0,
             sitemap: null as (null | SiteMap)
         },
         methods:
         {
             showSuggest()
             {
-                this.suggestOpen = true;
+                this.suggestOpen++;
             },
             hideSuggest()
             {
                 setTimeout(() =>
                 {
-                    this.suggestOpen = false;
+                    this.suggestOpen--;
                 }, 100);
             },
             submit()
@@ -97,8 +97,7 @@
                 let match = this.matches[0];
                 if (!match || !this.term.trim())
                     return;
-                if (match.title === this.term.trim() || this.matches.length === 1)
-                    window.location.assign(match.url);
+                window.location.assign(match.url);
             }
         },
         computed:

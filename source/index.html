@@ -1,25 +1,27 @@
 ---
 layout: index
+full_footer: true
+sidebar: false
 ---
+
 {% raw %}
 
-<div id="vueindex">
-    <script src="index/app.js"></script>
-    <div class="container download" style="margin-top:50px;min-height:700px;">
-        <div class="card-panel" v-for="item in downloads">
-            <div class="row">
-                <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                    <h6>{{item.name}}</h6>
-                    <time datetime="{{item.upload}}" class="grey-text lighten-1">{{item.upload.toLocalString()}}</span>
-                        <p class="desc" title="{{item.desc}}">{{item.desc}}</p>
-                        <a target="_blank" rel="noopener" href="{{item.link}}" class="waves-effect waves-light btn blue lighen-1">立即下载</a>
+<link href="index/app.css" rel="stylesheet">
+<div id="vueindex"> 
+    <div class="parallax" ></div>
+    <section class="download">
+        <div class="container center">
+            <div class="card-panel" v-for="item in downloads" :title="item.desc">
+                <img :src="item.img">
+                <div> 
+                    <h3>{{item.name}}</h3>
+                    <p class="desc">{{item.desc}}</p>
                 </div>
-                <div class="col s12 m5" style="text-align:right;">
-                    <img src="./CloudPSS_files/do1.png" style="height:100%">
-                </div>
+                <a :target="item.openNew ? '_blank' : '_self'" rel="noopener" :href="item.link" class="button">{{item.action}}</a>
             </div>
         </div>
-    </div>
+    </section>
 </div>
+<script src="index/app.js"></script>
 
 {% endraw %}

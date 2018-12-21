@@ -2,7 +2,6 @@
 
 <article style="margin: 8px">
   <%- page.content -%>
-
-  <%- partial('partials/footer', {min: false}) -%>
+  <%- partial('partials/footer', {min: !page.full_footer}) -%>
 </article>
 <!-- END index -->

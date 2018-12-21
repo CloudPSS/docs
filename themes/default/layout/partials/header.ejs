@@ -2,34 +2,28 @@
 <header id="header" class="page-header <%- menu ? '' : 'no-menu'%>">
   <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- menu ? '' : 'display:none'%>"></a>
   <a class="toc-button mobile-header-button" id="mobile-toc-button" ></a>
-  <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>">
-  </a>
+  <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"></a>
   <nav id="nav">
-    <div>
-      <form id="search-form" title="搜索" @submit.prevent="submit">
-        <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" :class="{open: suggestOpen}"/>
-        <label id="search-icon" for="search-query"></label>
-        <ul id="search-suggest" :class="{open: suggestOpen}">
-          <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
-          <li v-for="record in matches" :key="record.url" :title="record.title"> 
-            <a :href="record.url">
-              <span role="title">{{record.title}}</span>
-              <span role="category" v-if="record.type">{{sitemap[record.type].name}}</span>
-            </a>
-          </li>
-        </ul>
-      </form>
-      <%- js('js/search') %>
-    </div>
-    <div>
-      <ul id="nav-toc">
-        <%_ 
-          for (const key in site.data.sitemap) { 
-            -%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.path.match(key+'/') ? 'current' : ''}`}) %></li><%_ 
-          } 
-        -%>
+    <form id="search-form" title="搜索" @submit.prevent="submit" :class="{open: suggestOpen}">
+      <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
+      <ul id="search-suggest">
+        <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
+        <li v-for="record in matches" :key="record.url" :title="record.title"> 
+          <a :href="record.url" @focus="showSuggest" @blur="hideSuggest">
+            <span role="title">{{record.title}}</span>
+            <span role="category" v-if="record.type">{{sitemap[record.type].name}}</span>
+          </a>
+        </li>
       </ul>
-    </div>
+    </form>
+    <%- js('js/search') %>
+    <ul id="nav-toc">
+      <%_ 
+        for (const key in site.data.sitemap) { 
+          -%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.path.match(key+'/') ? 'current' : ''}`}) %></li><%_ 
+        } 
+      -%>
+    </ul>
   </nav>
 </header>
 <!-- END header -->
