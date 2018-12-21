@@ -1,83 +1,53 @@
-//import Vue from '../../../../node_modules/vue/types/index';
+import Vue from '../../node_modules/vue/types/index';
 
 (async function ()
 {
     interface DownloadResource
     {
         name: string,
-        desc: string?,
+        desc?: string,
         upload: Date,
         link: string,
     }
-    
+
     var vueApp = new Vue({
         el: '#vueapp',
         data:
         {
-            records: null as (null | Array<FormattedSearchRecord>),
-            term: '',
-            failed: false,
-            loadedPercent: 0,
-            suggestOpen: false,
-            sitemap: null as (null | SiteMap)
+            downloads: [
+                {
+                    name: 'CloudPSS国家能源互联网大会发布PPT',
+                    upload: new Date('2018-6-27 16:59:14+8'),
+                    link: 'https://pan.baidu.com/s/1qY9JhKC'
+                },
+                {
+                    name: '热网潮流分析使用说明书',
+                    upload: new Date('2018-6-27 16:59:14+8'),
+                    link: 'https://pan.baidu.com/s/1qXIvP3u'
+                },
+                {
+                    name: 'CloudPSS用户手册',
+                    upload: new Date('2018-6-27 16:59:14+8'),
+                    link: 'https://pan.baidu.com/s/1jImoRQm'
+                },
+                {
+                    name: 'IEEE39节点系统使用说明书',
+                    upload: new Date('2018-6-27 16:59:14+8'),
+                    link: 'https://pan.baidu.com/s/1gf90U5d'
+                },
+                {
+                    name: 'IEEE14节点深度学习判敛数据集',
+                    desc: '内含5m个基于IEEE14节点系统生成的潮流初始断面，收敛占比41%，以及训练好的模型参数的.h5文件',
+                    upload: new Date('2018-6-27 16:59:14+8'),
+                    link: 'https://pan.baidu.com/s/1tmU4c1DjQiY8w4UAXnNSsg'
+                },
+            ] as DownloadResource[]
         },
         methods:
         {
-            showSuggest()
-            {
-                this.suggestOpen = true;
-            },
-            hideSuggest()
-            {
-                setTimeout(() =>
-                {
-                    this.suggestOpen = false;
-                }, 100);
-            },
-            submit()
-            {
-                let match = this.matches[0];
-                if (!match || !this.term.trim())
-                    return;
-                if (match.title === this.term.trim() || this.matches.length === 1)
-                    window.location.assign(match.url);
-            }
         },
         computed:
         {
-            succeed: function ()
-            {
-                return !!(this.sitemap && this.records && !this.failed);
-            },
-            matches: function (): Array<FormattedSearchRecord>
-            {
-                if (!this.records || this.records.length === 0)
-                    return new Array<FormattedSearchRecord>();
-                const terms = this.term.toLowerCase().split(/\s+/g).filter(function (s) { return s !== '' });
-                function match(content: string): number
-                {
-                    if (!content)
-                        return 0;
-                    let score = 0;
-                    terms.forEach(term =>
-                    {
-                        if (content.indexOf(term) >= 0)
-                            score += (term.length + 1) / content.length;
-                    })
-                    return score;
-                }
-                function getScore(record: FormattedSearchRecord)
-                {
-                    return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedUrl) * 5
-                        + match(record.formattedContent)
-                        + record.categories.reduce((sum, cat) => sum + match(cat), 0);
-                }
-                let records = this.records.slice();
-                records.forEach(r => { r.score = getScore(r); });
-                records.sort((a, b) => { return b.score - a.score; });
-                records = records.splice(0, 10).filter(r => { return r.score > 0; });
-                return records;
-            }
         }
     })
 })();
