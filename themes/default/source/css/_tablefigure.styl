@@ -45,7 +45,7 @@ article
       padding-bottom: 0.6em
       caption-style(figure, '图 ')
 
-  table:not(.highlight)
+  > table:not(.highlight)
     border-spacing: 0
     border-collapse: collapse
     margin: 1.2em auto
@@ -57,6 +57,8 @@ article
       caption-style(table, '表 ')
     code
       background-color: darken($codebg, 5)
+    > tbody > tr:hover
+      background-color: lighten($theme, 35)
     td, th
       min-width: 80px
       line-height: 1.5em
@@ -76,10 +78,8 @@ article
       > thead > tr > th
         border-color: darken($border, 10)
         background-color: $border
-      > thead > tr:nth-last-child(2n) > th
-        background-color: lighten($border, 5)
-      > tbody > tr:nth-child(2n) > td
-        background-color: lighten($border, 5)
+      > thead > tr:nth-last-child(2n) > th, > tbody > tr:nth-child(2n) > td
+        background-color: alpha($border, 0.5)
 
   img, svg
     border: none
