@@ -1,9 +1,10 @@
 ---
 layout: index
 ---
+{% raw %}
 
 <div id="vueindex">
-    <script src="index/app.ts"></script>
+    <script src="index/app.js"></script>
     <div class="container download" style="margin-top:50px;min-height:700px;">
         <div class="card-panel" v-for="item in downloads">
             <div class="row">
@@ -20,3 +21,5 @@ layout: index
         </div>
     </div>
 </div>
+
+{% endraw %}
