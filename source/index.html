@@ -3,85 +3,20 @@ layout: index
 ---
 
 <div id="vueindex">
-<div class="container download" style="margin-top:50px;min-height:700px;">
-    <div class="row">
-            <div class="col s12 m6">
-                <div class="card-panel">
-                        <div class="row">
-                                <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                                    <h6>CloudPSS国家能源互联网大会发布PPT</h6>
-                                    <span class="grey-text lighten-1">2018-6-27 16:59:14</span>
-                                    <p class="desc" title="CloudPSS国家能源互联网大会发布PPT简要说明">CloudPSS国家能源互联网大会发布PPT</p>
-                                    <a target="_blank" href="https://pan.baidu.com/s/1qY9JhKC" class="waves-effect waves-light btn blue lighen-1"><i class="material-icons right">keyboard_arrow_right</i>立即下载</a>
-                                </div>
-                                <div class="col s12 m5" style="text-align:right;">
-                                    <img src="./CloudPSS_files/do1.png" style="height:100%">
-                                </div>
-                        </div>
+    <script src="index/app.ts"></script>
+    <div class="container download" style="margin-top:50px;min-height:700px;">
+        <div class="card-panel" v-for="item in downloads">
+            <div class="row">
+                <div class="col s12 m7" style="padding:30px 0px 30px 50px">
+                    <h6>{{item.name}}</h6>
+                    <time datetime="{{item.upload}}" class="grey-text lighten-1">{{item.upload.toLocalString()}}</span>
+                        <p class="desc" title="{{item.desc}}">{{item.desc}}</p>
+                        <a target="_blank" rel="noopener" href="{{item.link}}" class="waves-effect waves-light btn blue lighen-1">立即下载</a>
+                </div>
+                <div class="col s12 m5" style="text-align:right;">
+                    <img src="./CloudPSS_files/do1.png" style="height:100%">
                 </div>
             </div>
-            <div class="col s12 m6">
-                    <div class="card-panel">
-                            <div class="row">
-                                    <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                                        <h6>热网潮流分析使用说明书</h6>
-                                        <span class="grey-text lighten-1">2018-6-27 16:59:14</span>
-                                        <p class="desc" title="热网潮流分析使用说明书">热网潮流分析使用说明书</p>
-                                        <a target="_blank" href="https://pan.baidu.com/s/1qXIvP3u" class="waves-effect waves-light btn blue lighen-1"><i class="material-icons right">keyboard_arrow_right</i>立即下载</a>
-                                    </div>
-                                    <div class="col s12 m5" style="text-align:right;">
-                                        <img src="./CloudPSS_files/do2.png" style="height:100%">
-                                    </div>
-                            </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                        <div class="card-panel">
-                                <div class="row">
-                                        <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                                            <h6>CloudPSS用户手册</h6>
-                                            <span class="grey-text lighten-1">2018-6-27 16:59:14</span>
-                                            <p class="desc" title="CloudPSS用户手册">CloudPSS用户手册</p>
-                                            <a target="_blank" href="https://pan.baidu.com/s/1jImoRQm" class="waves-effect waves-light btn blue lighen-1"><i class="material-icons right">keyboard_arrow_right</i>立即下载</a>
-                                        </div>
-                                        <div class="col s12 m5" style="text-align:right;">
-                                            <img src="./CloudPSS_files/do3.png" style="height:100%">
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card-panel">
-                                <div class="row">
-                                        <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                                            <h6>IEEE39节点系统使用说明书</h6>
-                                            <span class="grey-text lighten-1">2018-6-27 16:59:14</span>
-                                            <p class="desc" title="IEEE39节点系统使用说明书">IEEE39节点系统使用说明书</p>
-                                            <a target="_blank" href="https://pan.baidu.com/s/1gf90U5d" class="waves-effect waves-light btn blue lighen-1"><i class="material-icons right">keyboard_arrow_right</i>立即下载</a>
-                                        </div>
-                                        <div class="col s12 m5" style="text-align:right;">
-                                            <img src="./CloudPSS_files/do4.png" style="height:100%">
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-                    <div class="col s12 m6">
-                        <div class="card-panel">
-                                <div class="row">
-                                        <div class="col s12 m7" style="padding:30px 0px 30px 50px">
-                                            <h6>IEEE14节点深度学习判敛数据集</h6>
-                                            <span class="grey-text lighten-1">2018-7-27 16:09:14</span>
-                                            <p class="desc" title="内含5m个基于IEEE14节点系统生成的潮流初始断面，收敛占比41%，以及训练好的模型参数的.h5文件">内含5m个基于IEEE14节点系统生成的潮流初始断面，收敛占比41%，以及训练好的模型参数的.h5文件</p>
-                                            <a target="_blank" href="https://pan.baidu.com/s/1tmU4c1DjQiY8w4UAXnNSsg" class="waves-effect waves-light btn blue lighen-1"><i class="material-icons right">keyboard_arrow_right</i>立即下载</a>
-                                        </div>
-                                        <div class="col s12 m5" style="text-align:right;">
-                                            <img src="./CloudPSS_files/do5.png" style="height:100%">
-                                        </div>
-                                </div>
-                        </div>
-                    </div>
-
+        </div>
     </div>
-
-</div>
 </div>
