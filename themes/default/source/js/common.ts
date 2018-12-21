@@ -155,8 +155,12 @@ declare const mxStencilRegistry: any;
         const menuButton = <HTMLElement>document.getElementById('mobile-menu-button');
         const tocButton = <HTMLElement>document.getElementById('mobile-toc-button');
         const toc = <HTMLElement>document.getElementById('nav-toc');
-
-        tocButton.addEventListener('click', () => { toc.classList.toggle('open') })
+        
+        if (toc)
+        {
+            if (tocButton)
+                tocButton.addEventListener('click', () => { toc.classList.toggle('open') });
+        }
 
         menuButton.addEventListener('click', function ()
         {
