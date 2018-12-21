@@ -40,7 +40,7 @@
       margin: 12px 0
       font-size: 0.75em
       color: $light
-      no-user-select()
+      user-select: none
       > span
         white-space: nowrap
       > span[role='separator']
@@ -57,8 +57,8 @@
     margin: 1em 0 0
     > a.markdownIt-Anchor
       &:before
-        no-user-select()
         hide-for-print()
+        user-select: none
         transition: opacity 0.1s ease
         opacity: 0
         content: "#"
@@ -98,6 +98,8 @@
     position: inherit
   a
     color: $theme
+    &[href^="#"]
+      color: darken(@color, 30)
     &:hover
       color: darken(@color, 20)
     &:active

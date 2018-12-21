@@ -3,6 +3,7 @@ title: 区域集中供热系统运行仿真算例
 type: examples
 author: xiangyue
 order: 1000
+author_email: xiangyue@tsinghua-eiri.org
 ---
 
 ## 基本描述

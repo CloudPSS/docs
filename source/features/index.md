@@ -11,3 +11,4 @@ type: features
 * [子图功能（测试）](/features/SubGraph.html)
 * [模块功能（测试）](/features/Module.html)
 * [三相交流系统的快速初始化](/features/Initialization.html)
+* [区域集中供热系统运行仿真使用说明](/features/HeatingSystemGuide.html)

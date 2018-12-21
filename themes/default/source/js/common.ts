@@ -40,6 +40,7 @@ declare const mxStencilRegistry: any;
     initSubHeaders();
     initVideos();
     initImages();
+    initTables();
     initFlowAndChart();
     initMxGraph();
     initFootnotes();
@@ -111,10 +112,11 @@ declare const mxStencilRegistry: any;
                 container.title = container.alt;
             if (alt && title)
             {
-                const box = document.createElement('imgbox');
-                const cap = document.createElement('caption');
+                const box = document.createElement('figure');
+                const cap = document.createElement('figcaption');
                 cap.innerText = title;
                 container.title = alt;
+                box.setAttribute('id', title)
                 box.appendChild(container.cloneNode());
                 box.appendChild(cap);
                 if(container.nextSibling && container.nextSibling.tagName == "BR")
@@ -132,6 +134,15 @@ declare const mxStencilRegistry: any;
             if (v.endsWith('px'))
                 return v;
             return v + 'px';
+        }
+    }
+
+    function initTables()
+    {
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article table caption[id]');
+        for (const container of Array.from(containers))
+        {
+            container.id = container.innerText.replace(/\s/g, '-');
         }
     }
 
@@ -396,7 +407,7 @@ declare const mxStencilRegistry: any;
 
         async function loadMxGraph(container: Element, padding?: number)
         {
-            padding = padding || 12;
+            padding = padding || 0;
             const getshape = fetchShape(<string>container.getAttribute('symbol'));
             await DOMContentLoaded();
 
@@ -439,8 +450,8 @@ declare const mxStencilRegistry: any;
             }
             const svg = container.getElementsByTagName("svg")[0];
             svg.setAttribute('viewBox', [-padding, -padding, width + padding * 2, height + padding * 2].join(','));
-            svg.style.minWidth = svg.viewBox.baseVal.width / 2 + 'px';
-            svg.style.minHeight = svg.viewBox.baseVal.height / 2 + 'px';
+            svg.style.minWidth = svg.viewBox.baseVal.width / 4 + 'px';
+            svg.style.minHeight = svg.viewBox.baseVal.height / 4 + 'px';
             svg.style.maxWidth = container.style.maxWidth || svg.viewBox.baseVal.width * 2 + 'px';
             svg.style.maxHeight = container.style.maxHeight || svg.viewBox.baseVal.height * 2 + 'px';
             container.style.maxWidth = '';

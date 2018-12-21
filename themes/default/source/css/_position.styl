@@ -1,37 +1,41 @@
 @import "_settings"
 
 body
-    margin: 0
-    padding: 0
-#main
-  margin-top: $header-height
-  position: fixed
-  overflow: auto
-  top: 0
-  bottom: 0
-  left: 0
-  right: 0
-.content
-  transition: all $size-transition 
-  padding: 80px
-  margin: 0 auto
-  max-width: $fixed-sidebar-width - @padding * 2 - $sidebar-width
-  &.with-sidebar
-    padding-left: $sidebar-width + @padding
-
-@media screen and (max-width: $mobile-width)
-  body > #main
-    margin-top: $mobile-header-height
-    > .content
-      padding: 40px
-      &.with-sidebar
-        margin: auto
+  margin: 0
+  padding: 0
+  > #main
+    @media screen
+      margin-top: $header-height
+      @media (max-width: $mobile-width)
+        margin-top: $mobile-header-height
+      position: fixed
+      overflow: auto
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      $padding = 80px
+      $mobile-padding = 40px
+      > .content
+        transition: all $size-transition 
+        margin: 0 auto
+        max-width: $fixed-sidebar-width - @padding * 2 - $sidebar-width
+        min-width: $page-min-width
+        padding: $padding
+        @media (max-width: $mobile-width)
+          padding: $mobile-padding
+        @media (max-width: 720px)
+          padding: $mobile-padding 20px 
+        @media (max-width: 480px)
+          padding: $mobile-padding 8px 
+      > .content.with-sidebar
+        @media (min-width: $mobile-width)
+          padding-left: $sidebar-width + $padding
 
 @media print
   body > #main
-    position: relative
-    overflow: unset
-    margin-top: 0
+    margin: 0
+    padding: 0
     > .content
       margin: 0
       padding: 0
