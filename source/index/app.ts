@@ -55,7 +55,7 @@
                     'CloudPSS建模及仿真平台提供的全部功能的详细说明文档。',
                     new Action('更多', '/features/'),
                     [
-                        new Action('参数及引脚体系', '/features/ParameterSystem.html'), 
+                        new Action('参数及引脚体系', '/features/ParameterSystem.html'),
                         new Action('断面保存及导入', '/features/Snapshot.html'),
                         new Action('高级数据可视化', '/features/Dashboard.html'),
                         new Action('供热系统建模仿真', '/features/HeatingSystemGuide.html'),
