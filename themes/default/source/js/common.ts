@@ -1,14 +1,3 @@
-declare const PAGE_TYPE: string;
-declare const IS_INDEX: boolean;
-declare const FastClick: any;
-declare const Chart: any;
-declare const mermaid: any;
-declare const mxEvent: any;
-declare const Editor: any;
-declare const Graph: any;
-declare const mxConstants: any;
-declare const mxUtils: any;
-declare const mxStencilRegistry: any
 
 (function ()
 {
@@ -131,7 +120,7 @@ declare const mxStencilRegistry: any
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article table caption[id]');
         for (const container of Array.from(containers))
         {
-            container.parentElement.id = container.innerText.replace(/\s/g, '-');
+            container.parentElement!.id = container.innerText.replace(/\s/g, '-');
             container.id = '';
         }
     }
@@ -335,7 +324,7 @@ declare const mxStencilRegistry: any
                 {
                     return node;
                 }
-                for (const cnode of node.childNodes)
+                for (const cnode of Array.from(node.childNodes))
                     node.replaceChild(mapper(cnode), cnode);
                 if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
                 {
@@ -455,9 +444,9 @@ declare const mxStencilRegistry: any
         };
 
         const tasks = Array.from(document.getElementsByTagName("mx-graph")).map(c => loadMxGraph(c as HTMLElement));
-        
+
         // no `finally` for polyfills
-        if(tasks.length !== 0)
+        if (tasks.length !== 0)
             Promise.all(tasks)
                 .then(() => mxEvent.release(document))
                 .catch(() => mxEvent.release(document));
