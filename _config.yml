@@ -17,8 +17,9 @@ debug_mode: false
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-base_url: http://47.95.255.178
-url: http://docs.cloudpss.net
+base_url: https://www.cloudpss.net
+url: https://docs.cloudpss.net
+cdn_url: https://unpkg.com
 root: /
 permalink: posts/:title.html
 permalink_defaults:

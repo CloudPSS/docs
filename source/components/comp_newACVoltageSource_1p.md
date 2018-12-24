@@ -16,7 +16,7 @@ symbol: newACVoltageSource_1p
 ## 基本描述
 {% compsymbol newACVoltageSource_1p %}
 
-> + **该元件用以建模单相交流电压源。**
+> **该元件用以建模单相交流电压源。**
 
 ## 参数列表
 ### Configuration

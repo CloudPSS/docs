@@ -16,7 +16,7 @@ symbol: newACVoltageSource_3p
 ## 基本描述
 {% compsymbol newACVoltageSource_3p %}
 
-> + **该元件用以建模三相交流电压源（单线图）。**
+> **该元件用以建模三相交流电压源（单线图）。**
 
 ## 参数列表
 ### Configuration
