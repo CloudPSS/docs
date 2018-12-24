@@ -10,3 +10,11 @@ i.rotating-clockwise
     transform: rotate(0)
   to
     transform: rotate(360deg)
+
+@keyframes outline-blink
+  from
+    outline-color: alpha($theme, 0)
+  50%
+    outline-color: $theme
+  to
+    outline-color: alpha($theme, 0)

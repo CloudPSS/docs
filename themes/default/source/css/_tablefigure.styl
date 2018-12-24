@@ -24,11 +24,6 @@ article
   for i in 2..6
     h{i}
       counter-increment: s("h%s", i)
-      
-  figure:not(.highlight), table
-    @media print
-      page-break-inside: avoid
-    
     
   figure:not(.highlight) > figcaption, table > caption
     margin: 0.5em auto
@@ -49,11 +44,10 @@ article
     border-spacing: 0
     border-collapse: collapse
     margin: 1.2em auto
-    padding: 0
     text-align: left
+    &[id]
+      margin-top: 0.5em
     > caption
-      margin-top: -1.2em
-      padding-top: 0.6em
       caption-style(table, '表 ')
     code
       background-color: darken($codebg, 5)
@@ -89,11 +83,21 @@ article
     display: block
     text-align: center
     overflow-x: auto
+    overflow-y: hidden
     padding: 12px
+    touch-action: auto !important
     > svg
       margin: auto
       overflow: visible
       
   p mx-graph
     display: inline-block
+    
+  @media print
+    figure:not(.highlight)
+      page-break-inside: avoid
+      
+    table > thead
+      page-break-inside: avoid
+      page-break-after: avoid
         

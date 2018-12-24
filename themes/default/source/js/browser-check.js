@@ -1,9 +1,10 @@
 var $buoop = {
-    required:{e:-3,f:-3,o:-3,s:-1,c:-3},
+    required:{e:-3,f:-10,o:-5,s:-2,c:-10},
     insecure:true,
     unsupported:true,
-    reminder: 1e-200,
-    reminderClosed: 1e-100,
+    reminder: 1,
+    reminderClosed: 24,
+    noclose:false,
     no_permanent_hide: true,
     style:"bottom",
     api:2018.12

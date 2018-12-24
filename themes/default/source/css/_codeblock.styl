@@ -41,22 +41,27 @@ code
   @media print
     border: rgba(#e96900, 0.25) solid 1px
 
-article figure.highlight
+figure.highlight
   position: relative
   background-color: $codebg
   padding: 0 
   margin: 1.2em 0
   border-radius: 4px
   box-shadow: 0 0 4px $shadow
-  > figcaption
+  &:before
+    color: #ccc
+    float: right
+    font-weight: 400
+  &:before, > figcaption
+    display: block
     user-select: none
     font-size: .75em
     padding: 4px 8px 0 8px 
+  > figcaption
     > span
       font-weight: 200
       color: $light
     > a
-      margin: 0 12px
       float: right
       font-weight: 300
       color: lighten($theme, 25%)
@@ -102,45 +107,43 @@ article figure.highlight
           margin-left: 2ch
           text-indent: -2ch
   
-article figure.highlight > figcaption
+
+figure.highlight
   &:before
-    color: #ccc
-    float: right
-    font-weight: 400
     content: "code"
-  .html&:before
+  &.html:before
     content: "HTML"
-  .js&:before, .javascript&:before
+  &.js:before, &.javascript:before
     content: "JS"
-  .ts&:before, .typescript&:before
+  &.ts:before, &.typescript:before
     content: "TS"
-  .bash&:before
+  &.bash:before
     content: "Shell"
-  .css&:before
+  &.css:before
     content: "CSS"
-  .md&:before , .markdown&:before
+  &.md:before , &.markdown:before
     content: "MD"
-  .plain&:before 
+  &.plain:before 
     content: "Plain"
-  .csharp&:before
+  &.csharp:before
     content: "C#"
-  .java&:before
+  &.java:before
     content: "Java"
-  .c&:before
+  &.c:before
     content: "C"
-  .cpp&:before
+  &.cpp:before
     content: "C++"
-  .matlab&:before
+  &.matlab:before
     content: "MatLab"
-  .vb&:before
+  &.vb:before
     content: "VB"
-  .yaml&:before, .yml&:before
+  &.yaml:before, .yml:before
     content: "Yaml"
-  .xml&:before
+  &.xml:before
     content: "XML"
-  .json&:before
+  &.json:before
     content: "JSON"
-  .python&:before
+  &.python:before
     content: "Python"
-  .tex&:before
+  &.tex:before
     content: "TeX"

@@ -1,6 +1,11 @@
 $shadow = alpha(black, 0.3)
 
+body
+  background: #f6f6f6 
+  
 #vueindex
+  > section
+    position: relative
   .container
     margin: auto
     overflow-x: auto
@@ -11,9 +16,8 @@ $shadow = alpha(black, 0.3)
     display: block
     position: relative
     vertical-align: middle
-    margin: 12px
-    height: 200px
-    background: #fdfdfd
+    margin: 12px 
+    background-color: #f6f6f6
     box-shadow: 0px 4px 10px 2px $shadow
     transition: all 0.5s ease
     &:hover, &:focus
@@ -23,12 +27,12 @@ $shadow = alpha(black, 0.3)
     color: #888
     font-size: 0.75em
   .parallax 
-    height: 500px
+    height: 400px
     background-attachment: fixed
     background-position: center
     background-repeat: no-repeat
     background-size: cover
-    margin: -72px -8px
+    margin: -8px -8px 0 
     background-image: url(./bg.jpg)
   .button
     display: inline-block
@@ -44,26 +48,58 @@ $shadow = alpha(black, 0.3)
   .center
     margin-left: auto
     margin-right: auto
-  .download
+  #title
+    font-size: 24px
+    font-weight: 400
+    margin: 0
+    position: absolute
+    top: -250px
+    color: white
+  .intro
+    max-width: 800px
+    margin: 2em auto 0
+    padding: 0.5em
+    font-size: 1.2em
+  .links
+    li
+      p
+        margin 0.5em 0
     .container
-      max-width: 720px
+      max-width: 960px
     .card-panel
+      min-height: 200px
+      transition: height, 0.5s ease
       margin: 24px 12px
-      > div    
-        z-index: 10
-        padding: 1em
+      $content-padding = 2em 
+      $img-width = 360px
+      > div
+        z-index: 1
+        padding: $content-padding s("calc(%s + %s)", $content-padding, $img-width) 3.5em+$content-padding $content-padding 
         h3
-          margin: 0
+          font-size: 2em
+          margin: 0 
           padding: 0
-      > img
-        margin-left: 1em
+      > span[role=img]
+        background: no-repeat center / cover
+        position: absolute
+        right: 0
+        width: $img-width
         height: 100%
-        float: right
+      @media (max-width: 720px)
+        $img-height = 250px
+        > span[role=img]
+          left: 0
+          right: 0
+          width: auto 
+          height: $img-height
+        > div
+          padding: s("calc(%s + %s)", $content-padding, $img-height) $content-padding 3.5em+$content-padding $content-padding
       .desc
         margin: 0.5em 0
       .button
+        line-height: 1.5em
         position: absolute
         min-width: 80px
-        bottom: 1em
-        left: 1em
+        bottom: $content-padding
+        left: $content-padding
         

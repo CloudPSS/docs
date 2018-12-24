@@ -1,6 +1,7 @@
 ---
-title: 高级数据可视化（测试）
+title: 高级数据可视化
 type: features
+category: 1000
 order: 400
 author: songyk
 author_email: songyankan@cloudpss.net

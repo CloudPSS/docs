@@ -22,10 +22,11 @@ header.page-header
   #search-form
     position: absolute
     z-index: 1000
-    transform: translateX(calc(-100% - 12px))
     margin: auto
     transition: width .2s ease
     top: 0
+    left: -12px
+    transform: translateX(-100%)
     bottom: 0
     height: 32px
     width: 120px
@@ -38,6 +39,7 @@ header.page-header
     @media screen and (max-width: $mobile-width)
       height: $mobile-header-inner-height
       font-size: 0.8em
+      left: auto
       right: 40px
       transform: none
       width: 100px
@@ -208,9 +210,11 @@ header.page-header
         padding: $mobile-header-height + 16px 20px 12px
         background: rgba(255,255,255,0.9)
         position: fixed
-        transform: translateX(calc(100% + 10px))
+        transform: translateX(100%)
         top: 0
-        right: 0
+        right: -10px
+        &.open
+          transform: translateX(@right)
         bottom: 0
         min-width: 200px
         box-shadow: 0 0 10px $shadow
@@ -218,5 +222,3 @@ header.page-header
         > li
           display: block
           padding: 0.25em 0.2em
-        &.open
-          transform: translateX(0)

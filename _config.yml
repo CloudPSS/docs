@@ -10,14 +10,14 @@ keywords:
 author: CloudPSS
 language: zh-Hans
 timezone: Asia/Shanghai
-contact: admin@cloudpss.net
+contact: songyankan@cloudpss.net
 copyright_begin: 2015
 ICP: 京ICP备16015429号-1
-debug_mode: true
+debug_mode: false
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-base_url: http://www.cloudpss.net
+base_url: http://47.95.255.178
 url: http://docs.cloudpss.net
 root: /
 permalink: posts/:title.html
@@ -97,4 +97,7 @@ markdown_it_plus:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: rsync
+  host: 192.168.0.145
+  user: root
+  root: /root/cloudpssdoc
