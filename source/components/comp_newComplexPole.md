@@ -16,8 +16,8 @@ symbol: newComplexPole
 ## 基本描述
 {% compsymbol newComplexPole %}
 
-> **该元件用以建模二阶传递函数，可配置为以下9种二阶滤波器**
->   + 1-Low Pass
+> **该元件用以建模二阶传递函数，可配置为以下9种二阶滤波器（当前版本仅只支持前两种）**
+>  + 1-Low Pass
 >  + 2-Mid Pass  
 >  + 3-High Pass  
 >  + 4-High Reject  

@@ -9,8 +9,8 @@ author_email: songyankan@cloudpss.net
 
 鼠标右键单击仿真图层的空白处，选择查看元件表可弹出元件表对话框，对话框左侧为该仿真工程中所有元件的分类(如电容类)及具体元件组成(如newCapacitor 1、newCapacitor 2)的列表，右侧为所有该类元件的参数列表。参数列表可修改，且将直接影响对应元件参数设置对话框内的值。利用元件表可实现对所有元件的全参数统一批量修改及查看的功能。
 
-![元件列表](ComponentTable/Y1.png)
-![元件列表](ComponentTable/Y2.png)
+![元件列表](ComponentTable/Y1.png "查看元件表选项")
+![元件列表](ComponentTable/Y2.png "元件表页面")
 
 **注意**
 + 元件参数设置面板中的“选择类”参数在参数表中对应为键值(Key Value)，例如：Yes对应为1，No对应为0。

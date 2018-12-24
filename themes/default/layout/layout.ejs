@@ -17,36 +17,26 @@
       title: title() || config.title,
       type: 'article'
     }) -%>
-
-    <%_ 
-      const cdn = new URL('https://unpkg.com');
-      function jscdn(path, canMinify = true)
-      {
-        const min = (!config.debug_mode && canMinify) ? '.min' : '';
-        const url = new URL(`${path}${min}`, cdn);
-        return js(url.href);
-      }
-      function csscdn(path, canMinify = true)
-      {
-        const min = (!config.debug_mode && canMinify) ? '.min' : '';
-        const url = new URL(`${path}${min}`, cdn);
-        return css(url.href);
-      }
-    -%>
     <title><%= title() ? title() + ' - ' : '' %><%= config.title %></title>
+    
     <%- css('css/page') -%>
     <%- csscdn('katex@0.10.0-rc.1/dist/katex') -%>
     <%- jscdn('js-polyfills/polyfill') %>
     <%- jscdn('vue@^2/dist/vue') %>
+    <%- csscdn('photoswipe/dist/photoswipe', false) %>
+    <%- csscdn('photoswipe/dist/default-skin/default-skin', false) %>
     <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;window.BASE='<%- config.base_url %>';</script>
   </head>
 
   <body>
     <%- partial('partials/header', { menu: page.sidebar !== false }) -%>
     <div id="main"><%- body -%></div>
+    <%- partial('partials/pswp') -%>
     <%- jscdn('chart.js@^2/dist/Chart') -%>
     <%- jscdn('mermaid@^8/dist/mermaid') -%>
     <%- jscdn('fastclick@^1/lib/fastclick', false) -%>
+    <%- jscdn('photoswipe/dist/photoswipe') %>
+    <%- jscdn('photoswipe/dist/photoswipe-ui-default') %>
     <%- js('/js/common') -%>
     <%- jscdn('mxgraph@3.7.1/javascript/mxClient') -%>
     <%- js('/js/mxGraph/Editor') -%>

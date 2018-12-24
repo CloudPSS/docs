@@ -1,5 +1,5 @@
 ---
-title: 双端LLC型高压直流输电测试系统
+title: 双端LCC型高压直流输电测试系统
 type: examples
 author: songyk
 author_email: songyankan@cloudpss.net

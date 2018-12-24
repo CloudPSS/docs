@@ -81,7 +81,8 @@
 
     function initImages()
     {
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article img');
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article img[alt]');
+        const photos = new Array<HTMLImageElement>();
         for (const container of Array.from(containers))
         {
             const title = container.title || '';
@@ -94,15 +95,52 @@
                 const cap = document.createElement('figcaption');
                 cap.innerText = title;
                 container.title = alt;
+                const img = container.cloneNode();
                 box.setAttribute('id', title)
-                box.appendChild(container.cloneNode());
+                box.appendChild(img);
                 box.appendChild(cap);
                 if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
                     container.nextSibling.remove();
                 container.replaceWith(box);
+                photos.push({ thumb: img, title: title });
+                img.addEventListener('click', openPhotoSwipe);
+            }
+            else
+            {
+                photos.push({ thumb: container, title: htmlEscape(title || ' ') });
+                container.addEventListener('click', openPhotoSwipe);
             }
             container.style.maxHeight = formatValue(container.getAttribute('height'));
             container.removeAttribute('height');
+        }
+        
+        function openPhotoSwipe(e: MouseEvent)
+        {
+            var pswpElement = document.querySelectorAll('.pswp')[0];
+            
+            var options = {
+                index: photos.findIndex(p => p.thumb === e.target),
+                bgOpacity: 0.9,
+                history: false,
+                closeOnScroll: false,
+                getThumbBoundsFn: function(index) {
+                    var thumbnail = photos[index].thumb;
+                    var rect = thumbnail.getBoundingClientRect(); 
+                    return {x: rect.left, y: rect.top, w: rect.width};
+                },
+                shareEl: false,
+            };
+            
+            // Initializes and opens PhotoSwipe
+            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, photos, options);
+            gallery.listen('gettingData', (index, item) => {
+                const thumb = item.thumb;
+                item.msrc = thumb.src;
+                item.src = thumb.src;
+                item.w = thumb.naturalWidth || 800;
+                item.h = thumb.naturalHeight || 600;
+            });
+            gallery.init();
         }
 
         function formatValue(v?: null | string)
@@ -455,12 +493,10 @@
     function fetchJsonP<T>(url: string | URL): Promise<T>
     {
         const urlData = (typeof url === 'string') ? new URL(url) : url;
-        urlData.searchParams.set('callback', 'resolve');
-        return new Promise(async function (resolve, reject)
-        {
-            const response = await fetch(urlData.href);
-            eval(await response.text());
-        })
+        urlData.searchParams.set('callback', 'cb');
+        return fetch(urlData.href)
+            .then(response => response.text())
+            .then(text => new Promise(cb => eval(text)));
     }
 
     interface ShapeData
@@ -535,5 +571,4 @@
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;')
     }
-})()
-
+})();
