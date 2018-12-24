@@ -81,8 +81,14 @@
 
     function initImages()
     {
+        interface MyPhoto extends Photo
+        {
+            thumb: HTMLImageElement,
+            title: string,
+
+        }
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article img[alt]');
-        const photos = new Array<HTMLImageElement>();
+        const photos = new Array<MyPhoto>();
         for (const container of Array.from(containers))
         {
             const title = container.title || '';
@@ -95,45 +101,45 @@
                 const cap = document.createElement('figcaption');
                 cap.innerText = title;
                 container.title = alt;
-                const img = container.cloneNode();
+                const img = container.cloneNode() as HTMLImageElement;
                 box.setAttribute('id', title)
                 box.appendChild(img);
                 box.appendChild(cap);
                 if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
                     container.nextSibling.remove();
                 container.replaceWith(box);
-                photos.push({ thumb: img, title: title });
+                photos.push({ thumb: img, title: htmlEscape(title) });
                 img.addEventListener('click', openPhotoSwipe);
             }
             else
             {
-                photos.push({ thumb: container, title: htmlEscape(title || ' ') });
+                photos.push({ thumb: container, title: htmlEscape(title || alt) });
                 container.addEventListener('click', openPhotoSwipe);
             }
             container.style.maxHeight = formatValue(container.getAttribute('height'));
             container.removeAttribute('height');
         }
-        
+
         function openPhotoSwipe(e: MouseEvent)
         {
-            var pswpElement = document.querySelectorAll('.pswp')[0];
-            
-            var options = {
+            var pswpElement = document.querySelector('.pswp') as HTMLDivElement;
+
+            // Initializes and opens PhotoSwipe
+            var gallery = new PhotoSwipe<MyPhoto>(pswpElement, PhotoSwipeUI_Default, photos, {
                 index: photos.findIndex(p => p.thumb === e.target),
                 bgOpacity: 0.9,
                 history: false,
                 closeOnScroll: false,
-                getThumbBoundsFn: function(index) {
+                getThumbBoundsFn: (index) =>
+                {
                     var thumbnail = photos[index].thumb;
-                    var rect = thumbnail.getBoundingClientRect(); 
-                    return {x: rect.left, y: rect.top, w: rect.width};
+                    var rect = thumbnail.getBoundingClientRect();
+                    return { x: rect.left, y: rect.top, w: rect.width };
                 },
                 shareEl: false,
-            };
-            
-            // Initializes and opens PhotoSwipe
-            var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, photos, options);
-            gallery.listen('gettingData', (index, item) => {
+            });
+            gallery.listen('gettingData', (index, item) =>
+            {
                 const thumb = item.thumb;
                 item.msrc = thumb.src;
                 item.src = thumb.src;
