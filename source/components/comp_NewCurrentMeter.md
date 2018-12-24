@@ -35,6 +35,8 @@ symbol: newCurrentMeter
 
 ## 使用说明
 
+注意事项
+: 多个电流表元件不能并联。
 
 ## 测试模型
 [<test name>](<test link>)显示了电流表的典型应用。

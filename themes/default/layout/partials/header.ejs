@@ -20,7 +20,7 @@
     <ul id="nav-toc">
       <%_ 
         for (const key in site.data.sitemap) { 
-          -%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.path.match(key+'/') ? 'current' : ''}`}) %></li><%_ 
+          -%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.type === key ? 'current' : ''}`}) %></li><%_ 
         } 
       -%>
     </ul>

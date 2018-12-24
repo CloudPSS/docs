@@ -1,6 +1,7 @@
 ---
-title: 区域集中供热系统运行仿真使用说明
+title: 区域集中供热系统建模及仿真
 type: features
+category: 2000
 order: 1000
 author: xiangyue
 author_email: xiangyue@tsinghua-eiri.org

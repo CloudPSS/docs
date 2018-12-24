@@ -14,6 +14,9 @@ classname: _newLogicGate
 symbol: newLogicGate3
 ---
 ## 基本描述
+{% compsymbol newLogicGate %}
+{% compsymbol newLogicGate1 %}
+{% compsymbol newLogicGate2 %}  
 {% compsymbol newLogicGate3 %}
 
 > **该元件实现四类基本逻辑运算：与、或、非、异或。**
@@ -51,7 +54,7 @@ symbol: newLogicGate3
 > + 非门：如果输入信号为1，则输出信号为0；如果输入信号为0，则输出信号为1。
 
 ## 测试模型
-[<test name>](<test link>)显示了非门的典型应用。
+[<test name>](<test link>)显示了逻辑门的典型应用。
 
 ## 相关元件
 

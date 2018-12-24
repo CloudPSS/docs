@@ -1,6 +1,7 @@
 ---
 title: 量测和输出系统
 type: features
+category: 1000
 order: 200
 author: songyk
 author_email: songyankan@cloudpss.net
@@ -21,7 +22,7 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 
 ## 信号整理
 
-某些元件的量测信号为多维信号，例如`三相交流电压源->Monitoring->3 Phase Source Votage Vector`所对应的信号即为3维信号。用户若需要其中某一维的信号，如A相，则可利用`控制-基础->多路信号分离`进行信号拆分，详见：多路信号分离元件说明。同理，若要将多路信号合并为多维信号，则可利用`控制-基础->多路信号合并`进行信号合并，详见：多路信号合并元件说明。
+某些元件的量测信号为多维信号，例如`三相交流电压源->Monitoring->3 Phase Source Votage Vector`所对应的信号即为3维信号。用户若需要其中某一维的信号，如A相，则可利用`控制-基础->多路信号分离`进行信号拆分，详见：[多路信号分离元件说明](/components/comp_ChannelDeMerge.html)。同理，若要将多路信号合并为多维信号进行绘图，则可利用`控制-基础->多路信号合并`进行信号合并，详见：[多路信号合并元件说明](/components/comp_ChannelMerge.html)。
 
 ## 信号输出
 

@@ -54,10 +54,14 @@ symbol: newDCVoltageSource
 
 ## 使用说明
 
+注意事项
+: 若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
 
 ## 测试模型
 [<test name>](<test link>)显示了直流电压源的典型应用。
 
 ## 相关元件
+
+
 
 [直流电流源](/components/comp_newDCCurrentSource.html)

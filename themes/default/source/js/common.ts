@@ -8,7 +8,7 @@ declare const Editor: any;
 declare const Graph: any;
 declare const mxConstants: any;
 declare const mxUtils: any;
-declare const mxStencilRegistry: any;
+declare const mxStencilRegistry: any
 
 (function ()
 {
@@ -47,26 +47,15 @@ declare const mxStencilRegistry: any;
 
     function initFootnotes()
     {
-        (document.querySelectorAll('sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
+        Array.from(document.querySelectorAll('sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
         {
             a.innerText = a.innerText.replace(/:\d+/, '');
         });
-        window.addEventListener('hashchange', function (ev) 
-        {
-            if (!location.hash.startsWith('#fn'))
-                return;
-            const hash = location.hash;
-            setTimeout(function ()
-            {
-                if (location.hash === hash)
-                    location.hash = '';
-            }, 3000);
-        })
     }
 
     function initFlowAndChart()
     {
-        document.querySelectorAll("canvas.chartjs").forEach((e) => 
+        Array.from(document.querySelectorAll("canvas.chartjs")).forEach((e) => 
         {
             try
             {
@@ -77,7 +66,7 @@ declare const mxStencilRegistry: any;
                 e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
             }
         });
-        document.querySelectorAll("div.mermaid").forEach((e) => 
+        Array.from(document.querySelectorAll("div.mermaid")).forEach((e) => 
         {
             e.setAttribute('data-mermaid', e.innerHTML);
         });
@@ -142,7 +131,8 @@ declare const mxStencilRegistry: any;
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article table caption[id]');
         for (const container of Array.from(containers))
         {
-            container.id = container.innerText.replace(/\s/g, '-');
+            container.parentElement.id = container.innerText.replace(/\s/g, '-');
+            container.id = '';
         }
     }
 
@@ -250,7 +240,7 @@ declare const mxStencilRegistry: any;
             const sectionContainer = document.createElement('ul');
             sectionContainer.className = 'menu-sub';
             currentPageAnchor.parentNode!.appendChild(sectionContainer);
-            let headers = content.querySelectorAll('h2');
+            let headers = Array.from(content.querySelectorAll('h2'));
             if (headers.length)
             {
                 headers.forEach(function (h)
@@ -267,7 +257,7 @@ declare const mxStencilRegistry: any;
             }
             else
             {
-                headers = content.querySelectorAll('h3')
+                headers = Array.from(content.querySelectorAll('h3'));
                 headers.forEach(function (h)
                 {
                     sectionContainer.appendChild(makeLink(h))
@@ -359,7 +349,7 @@ declare const mxStencilRegistry: any;
 
             mapper(h);
             link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
-            h.querySelectorAll('.katex-mathml').forEach(n => n.remove());
+            Array.from(h.querySelectorAll('.katex-mathml')).forEach(n => n.remove());
             link.title = h.textContent || '';
             return link;
         }
@@ -419,9 +409,7 @@ declare const mxStencilRegistry: any;
             const getshape = fetchShape(<string>container.getAttribute('symbol'));
             await DOMContentLoaded();
 
-            const editor = new Editor();
-            // Creates the graph inside the given container
-            const graph = new Graph(container, null, null, editor.graph.getStylesheet());
+            const graph = new Graph(container, null, null, null);
             graph.resetViewOnRootChange = false;
             graph.foldingEnabled = false;
             graph.gridEnabled = false;
@@ -466,8 +454,13 @@ declare const mxStencilRegistry: any;
             container.style.maxHeight = '';
         };
 
-        for (const container of Array.from(document.getElementsByTagName("mx-graph")))
-            loadMxGraph(container as HTMLElement);
+        const tasks = Array.from(document.getElementsByTagName("mx-graph")).map(c => loadMxGraph(c as HTMLElement));
+        
+        // no `finally` for polyfills
+        if(tasks.length !== 0)
+            Promise.all(tasks)
+                .then(() => mxEvent.release(document))
+                .catch(() => mxEvent.release(document));
     }
 
     function fetchJsonP<T>(url: string | URL): Promise<T>
@@ -494,7 +487,7 @@ declare const mxStencilRegistry: any;
             classname: string;
             shape: string;
         }
-        const data = await fetchJsonP<ShapeResponse>(`http://192.168.0.133/editor/getCompShapeBySym/?sym=${symbol}`);
+        const data = await fetchJsonP<ShapeResponse>(`${BASE}/editor/getCompShapeBySym/?sym=${symbol}`);
         return {
             classname: data.classname,
             shape: new DOMParser().parseFromString(data.shape, 'text/xml')
@@ -508,7 +501,7 @@ declare const mxStencilRegistry: any;
 
     function fetchCompModel(classname: string): Promise<CompModel>
     {
-        return fetchJsonP(`http://192.168.0.133/editor/getCompModelByClassname/?classname=${classname}`);
+        return fetchJsonP(`${BASE}/editor/getCompModelByClassname/?classname=${classname}`);
     }
 
     // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js

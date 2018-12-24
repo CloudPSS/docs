@@ -1,6 +1,7 @@
 ---
 title: 元件表
 type: features
+category: 1000
 order: 250
 author: songyk
 author_email: songyankan@cloudpss.net

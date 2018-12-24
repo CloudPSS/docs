@@ -1,6 +1,7 @@
 ---
-title: 模块功能（测试）
+title: 模块功能
 type: features
+category: 1000
 author: songyk
 author_email: songyankan@cloudpss.net
 order: 600

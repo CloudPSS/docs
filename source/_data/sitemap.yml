@@ -1,3 +1,6 @@
+'':
+  name: 首页
+
 guide: 
   name: 快速入门
 
@@ -30,10 +33,16 @@ components:
 
 features: 
   name: 功能帮助
+  categories: 
+  - 电磁暂态仿真工作台: 1000
+  - 供热系统仿真工作台: 2000
 
 
 examples: 
   name: 案例介绍
+  categories: 
+  - 电磁暂态仿真案例: 1000
+  - 供热系统仿真案例: 2000
 
 about: 
   name: 关于

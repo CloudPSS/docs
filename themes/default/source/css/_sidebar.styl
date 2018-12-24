@@ -77,9 +77,10 @@ aside.sidebar
 
   @media screen and (max-width: $mobile-width)
     background: #f9f9f9
-    transform: translateX(calc(-100% - 10px))
+    transform: translateX(-100%)
     margin-top: $mobile-header-height
+    left: -10px
     nav
       margin: 24px 10px 20px 20px
     &.open
-      transform: translate(0, 0)
+      transform: translateX(-@left)
