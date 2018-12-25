@@ -122,12 +122,15 @@
 
         function openPhotoSwipe(e: MouseEvent)
         {
-            var pswpElement = document.querySelector('.pswp') as HTMLDivElement;
+            let pswpElement = document.querySelector('.pswp') as HTMLDivElement;
+            let current = photos.find(p => p.thumb === e.target);
+            if (!current)
+                return;
+            let currItem = current;
 
             // Initializes and opens PhotoSwipe
-            var gallery = new PhotoSwipe<MyPhoto>(pswpElement, PhotoSwipeUI_Default, photos, {
-                index: photos.findIndex(p => p.thumb === e.target),
-                bgOpacity: 0.9,
+            let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
+                index: photos.indexOf(currItem),
                 history: false,
                 closeOnScroll: false,
                 loop: false,
@@ -147,7 +150,18 @@
                 item.w = thumb.naturalWidth || 800;
                 item.h = thumb.naturalHeight || 600;
             });
+            gallery.listen('beforeChange', () =>
+            {
+                gallery.currItem.thumb.style.visibility = 'collapse';
+                currItem.thumb.style.visibility = '';
+                currItem = gallery.currItem;
+            })
+            gallery.listen('destroy', () =>
+            {
+                currItem.thumb.style.visibility = '';
+            })
             gallery.init();
+            currItem.thumb.style.visibility = 'collapse';
         }
 
         function formatValue(v?: null | string)

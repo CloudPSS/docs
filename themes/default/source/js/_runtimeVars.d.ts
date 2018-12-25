@@ -13,10 +13,23 @@ declare const mxConstants: any;
 declare const mxUtils: any;
 declare const mxStencilRegistry: any;
 
-interface PhotoSwipeUI<T extends Photo, TOptions>
+interface EventList 
 {
+    [K: string]: ((...args: any[]) => void);
 }
-interface DefaultUIOptions<T extends Photo>
+
+interface PhotoSwipeUIInfo
+{
+    eventList: EventList;
+    options: object;
+}
+
+interface PhotoSwipeUI<T extends Photo, TInfo extends PhotoSwipeUIInfo>
+{
+    readonly info: TInfo;
+}
+
+interface PhotoSwipeDefaultUIOptions<T extends Photo>
 {
     // Size of top & bottom bars in pixels,
     // "bottom" parameter can be 'auto' (will calculate height of caption)
@@ -93,7 +106,20 @@ interface DefaultUIOptions<T extends Photo>
     parseShareButtonOut?: (shareButtonData: ({ id: string, label: string, url: string, download?: boolean }), shareButtonOut: string) => string;
 }
 
-declare class PhotoSwipeUI_Default<T extends Photo> implements PhotoSwipeUI<T, DefaultUIOptions<T>>{
+interface PhotoSwipeDefaultUIEventList<T extends Photo> extends EventList
+{
+    shareLinkClick: (e: MouseEvent, item: { id: string, label: string, url: string, download?: boolean }) => void;
+}
+
+interface PhotoSwipeUI_DefaultInfo<T extends Photo>
+{
+    eventList: PhotoSwipeDefaultUIEventList<T>;
+    options: PhotoSwipeDefaultUIOptions<T>;
+}
+
+declare class PhotoSwipeUI_Default<T extends Photo> implements PhotoSwipeUI<T, PhotoSwipeUI_DefaultInfo<T>>
+{
+    readonly info: PhotoSwipeUI_DefaultInfo<T>;
 }
 
 interface PhotoSwipeOption<T extends Photo>
@@ -135,39 +161,83 @@ interface Photo
     h?: number;
 }
 
+type UIInfoType<T> = T extends PhotoSwipeUI<infer TPhoto, infer TUIInfo> ? TUIInfo : never;
+type UIPhotoType<T> = T extends PhotoSwipeUI<infer TPhoto, infer TUIInfo> ? TPhoto : never;
+type a = UIInfoType<PhotoSwipeUI_Default<Photo>>;
 interface PhotoSwipeConstructor
 {
 
-    new <T extends Photo>(pswpElement: HTMLElement, ui: { new(): PhotoSwipeUI_Default<T> }, items: T[], options: PhotoSwipeOption<T> | DefaultUIOptions<T>)
-        : PhotoSwipe<T, PhotoSwipeUI_Default<T>>;
-    new <T extends Photo, TUIOptions>(pswpElement: HTMLElement, ui: { new(): PhotoSwipeUI<T, TUIOptions> }, items: T[], options: PhotoSwipeOption<T> | TUIOptions)
-        : PhotoSwipe<T, PhotoSwipeUI<T, TUIOptions>>;
+    new <T extends Photo, TUI extends PhotoSwipeUI<T, TUIInfo>, TUIInfo extends PhotoSwipeUIInfo>(pswpElement: HTMLElement, ui: { new(): TUI }, items: T[], options: PhotoSwipeOption<T> | UIInfoType<TUI>["options"])
+        : PhotoSwipe<T, TUI>;
 }
 
 declare const PhotoSwipe: PhotoSwipeConstructor;
 
 interface PhotoSwipeEventList<T extends Photo>
 {
-    gettingData: (index: number, item: T) => void;
     beforeChange: () => void;
     afterChange: () => void;
+    imageLoadComplete: (index: number, item: T) => void;
     resize: () => void;
-}
-interface PhotoSwipeEventArgs<T extends Photo>
-{
-    gettingData: [number, T];
-    beforeChange: [];
-    afterChange: [];
-    resize: [];
+    gettingData: (index: number, item: T) => void;
+    mouseUsed: () => void;
+    initialZoomIn: () => void;
+    initialZoomInEnd: () => void;
+    initialZoomOut: () => void;
+    initialZoomOutEnd: () => void;
+    parseVerticalMargin: (item: T & { vGap: { top: number, bottom: number } }) => void;
+    close: () => void;
+    unbindEvents: () => void;
+    destroy: () => void;
+    updateScrollOffset: (offset: { x: number, y: number }) => void;
+    preventDragEvent: (e: DragEvent, isDown: boolean, preventObj: { prevent: boolean }) => void;
 }
 
 interface PhotoSwipe<T extends Photo, TUI>
 {
-    listen<K extends keyof PhotoSwipeEventList<T>>(event: K, handler: PhotoSwipeEventList<T>[K]): void;
-    shout<K extends keyof PhotoSwipeEventArgs<T>>(event: K, ...args: PhotoSwipeEventArgs<T>[K]): void;
+    listen<K extends keyof (PhotoSwipeEventList<T> & UIInfoType<TUI>['eventList'])>(event: K, handler: (PhotoSwipeEventList<T> & UIInfoType<TUI>['eventList'])[K]): void;
+    shout<K extends keyof (PhotoSwipeEventList<T> & UIInfoType<TUI>['eventList'])>(event: K, ...args: Parameters<(PhotoSwipeEventList<T> & UIInfoType<TUI>['eventList'])[K]>): void;
 
     init(): void;
+    close(): void;
+    destroy(): void;
 
+    goTo(index: number): void;
+    next(): void;
+    prev(): void;
+    /** 
+     * Update gallery size
+     * @param  {boolean} `force` If you set it to `true`, 
+     * size of the gallery will be updated 
+     * even if viewport size hasn't changed.
+     */
+    updateSize(force: boolean): void;
+    /**   
+     * Zoom current slide to (optionally with animation)
+     * @param  {number}   `destZoomLevel` Destination scale number. 1 - original.
+     *                                   pswp.currItem.fitRatio - image will fit into viewport.
+     * @param  {object}   `centerPoint`   Object of x and y coordinates, relative to viewport.
+     * @param  {int}      `speed`         Animation duration. Can be 0.
+     * @param  {function} `easingFn`      Easing function (optional). Set to false to use default easing.
+     * @param  {function} `updateFn`      Function will be called on each update frame. (optional)
+     * 
+     * Example below will 2x zoom to center of slide:
+     * pswp.zoomTo(2, {x:pswp.viewportSize.x/2,y:pswp.viewportSize.y/2}, 2000, false, function(now) {
+     *   });   
+     */
+    zoomTo(destZoomLevel: number, centerPoint: { x: number, y: number }, speed: number, easingFn?: (time: number) => number, updateFn?: () => void): void;
+    /**  
+     * Apply zoom and pan to the current slide
+     * 
+     * @param   {number} `zoomLevel`
+     * @param   {int}    `panX`
+     * @param   {int}    `panY`
+     * 
+     * For example: `pswp.applyZoomPan(1, 0, 0)`
+     * will zoom current image to the original size
+     * and will place it on top left corner
+     */
+    applyZoomPan(zoomLevel: number, panX: number, panY: number): void;
     readonly items: T[];
 
     readonly currItem: T;
