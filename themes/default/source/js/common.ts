@@ -33,12 +33,6 @@
     initFlowAndChart();
     initMxGraph();
     initFootnotes();
-    initHash();
-    
- function initHash()
-    {
-
-    }
 
     function initFootnotes()
     {
@@ -136,11 +130,12 @@
                 bgOpacity: 0.9,
                 history: false,
                 closeOnScroll: false,
+                loop: false,
                 getThumbBoundsFn: (index) =>
                 {
                     var thumbnail = photos[index].thumb;
                     var rect = thumbnail.getBoundingClientRect();
-                    return { x: rect.left + document.scrollingElement.scrollLeft, y: rect.top + document.scrollingElement.scrollTop, w: rect.width };
+                    return { x: rect.left, y: rect.top + document.documentElement.scrollTop, w: rect.width };
                 },
                 shareEl: false,
             });
