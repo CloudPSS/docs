@@ -63,9 +63,11 @@ article
       @media screen
         position: sticky
         z-index: 100
-        top: -.2em
         font-weight: bold
         border-color: darken($border, 10)
+        top: $header-height
+        @media (max-width: $mobile-width)
+          top: $mobile-header-height
     @media screen
       > thead > tr > th
         border-color: darken($border, 10)
@@ -95,7 +97,12 @@ article
     figure:not(.highlight)
       page-break-inside: avoid
       
-    table > thead
-      page-break-inside: avoid
-      page-break-after: avoid
+    table 
+      > caption
+        page-break-inside: avoid
+        page-break-after: avoid
+      > thead
+        page-break-inside: avoid
+        page-break-before: avoid
+        page-break-after: avoid
         

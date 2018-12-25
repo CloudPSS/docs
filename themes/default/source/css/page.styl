@@ -109,11 +109,14 @@ article
       color: $theme
   hr.footnotes-sep
     margin: 48px -4px 0
-  :target:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)
-    outline: $theme solid 2px
-    animation: outline-blink 0.8s 5 forwards
   iframe
     margin: 1em 0
+  @media screen
+    :target
+      animation: targetfocus 0.00001s
+    :target:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6)
+      outline: $theme solid 2px
+      animation: targetfocus 0.00001s, outline-blink 0.8s 5 forwards
         
 .gist .gist-meta
   user-select: none
