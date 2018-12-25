@@ -4,15 +4,15 @@
 @import "_video"
 @import "_katex"
 @import "_tablefigure"
-
-body
+  
+html
   font-family: $body-font
+  line-height: 1.15
   font-size: $body-font-size
   color: $medium
   background-color: white
-  -webkit-text-size-adjust: none
   @media (max-width: $mobile-width)
-    #main
+    main
       font-size: @font-size * 0.9
     
 h1, h2, h3, h4
@@ -24,6 +24,9 @@ hr
   color: rgba(0,0,0,0)
   border-width: 1px 0
   border-top: solid 
+
+b, strong
+  font-weight: bolder
 
 p, dd
   word-spacing: 0.05em
@@ -53,18 +56,20 @@ a
     display: none
 
 @media print
-  body, #main
-    color: rgb(0,0,0)
+  main
+    color: #000
   mark
     border: 2px solid yellow !important
-  h1,h2,h3,h4,h5
-    color: rgb(0,0,0)
+  h1, h2, h3, h4, h5
+    color: #000
     page-break-after: avoid
   h2 + p
     page-break-before: avoid
-  a.footnote-backref
+    
+  a.footnote-backref, a.markdownIt-Anchor
     display: none
-  a:link:after, a:visited:after { content:" [" attr(href) "] "; }
-  sup.footnote-ref > a, a.markdownIt-Anchor
+  a:link:after, a:visited:after 
+    content:" [" attr(href) "] "
+  sup.footnote-ref > a
     &:link:after, &:visited:after
-       content:""
+      content:""

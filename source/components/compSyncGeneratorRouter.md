@@ -72,10 +72,10 @@ symbol: SyncGen
 ### Initial Condition
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Startup Type |  |  | 选择 | 选择发电机初始化类型，分为from Zero-state（平启动），from Steady-state（稳态启动），VT Ramping（端电压爬升启动），Ef Ramping（励磁电压爬升启动）和Source to Machine（电压源转电机）五种方式 |
-| Ramping Time | s | 爬坡时间 | 实数（常量） | 选择VT Ramping和Ef Ramping模式时需要指定 |
-| Initial Voltage Magnitude | p.u. | 初始相电压标幺值 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式时需指定 |
-| Initial Voltage Phase | Deg | 初始相电压相位 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式时需指定 |
+| Startup Type |  |  | 选择 | 选择发电机初始化类型，分为from Zero-state（平启动），from Steady-state（稳态启动）和Source to Machine（电压源转电机）三种方式 |
+| Ramping Time | s | 爬坡时间 | 实数（常量） | Source to Machine启动方式下，需指定电压爬升时间 |
+| Initial Voltage Magnitude | p.u. | 初始相电压标幺值 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
+| Initial Voltage Phase | Deg | 初始相电压相位 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
 | Initial Active Power | MW | 初始有功功率 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式时需指定 |
 | Initial Reactive Power | MVar | 初始无功功率 | 实数（常量） | 来自潮流计算结果，选择from Steady-state模式时需指定 |
 | Source to Machine Transition Signal |  | 电压源-电机切换信号 | 文本 | 电压源向电机切换的触发信号名称，填写以@符号开头的字符串名，如@S2M。选择Source to Machine模式时需指定 |
@@ -125,6 +125,27 @@ symbol: SyncGen
 ## 使用说明
 
 同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](/other/SyncGenPerUnitSystem.html)。
+
+### 同步发电机的启动方法
+
+CloudPSS提供了3种同步发电机的启动方法，通过修改参数表的`Initial Condition`栏内参数可以选择不同的启动方式。具体如下： 
+ 
+1.	**平启动**
+设定`Initial Condition`->`Startup Type`为`from Zero-state`，即可实现平启动，相当于不采用任何特殊启动方法。
+
+需要说明的是，`平启动`模式下，同步发电机量测标识中`稳态开路电势Ef0量测信号`、`稳态机械转矩Tm0量测信号`无意义。
+
+2.	**稳态启动**
+设定`Initial Condition`->`Startup Type`为`from Steady-state`，即稳态启动。此时电机需要设置`Initial Voltage Magnitude`（初始相电压标幺值）, `Initial Voltage Phase`（初始相电压相位），`Initial Active Power`（初始有功功率），`Initial Reactive Power`（初始无功功率）四个参数。此类启动方式适用于整个系统从潮流断面直接启动，详见[潮流断面启动](/features/Initialization.html)功能。
+
+3.	**电压源转电机**
+设定`Initial Condition`栏中`Startup Type`为`Source to Machine`，即电压源转电机启动类型。此时需要指定`Ramping Time`（电压爬升时间），`Initial Voltage Magnitude`（初始相电压标幺值），`Initial Voltage Phase`（初始相电压相位），以及`Source to Machine Transition Signal`(电压源-电机切换信号)动态参数，动态参数的使用详见[参数及引脚体系](/features/ParameterSystem.html)。如：可填入`@S2M`。`@S2M`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@S2M`为0时，电机为一个理想电压源，其幅值和相位线性爬升至`Initial Voltage Magnitude`，`Initial Voltage Phase`两参数给定的端电压值。当`@S2M`信号阶跃到1时，电压源切换为电机。
+
+需要说明的是，`电压源转电机`模式下，同步发电机量测标识中`稳态开路电势Ef0量测信号`、`稳态机械转矩Tm0量测信号`、`转子角量测信号`以及`Q轴与端电压相量夹角`信号在`@S2M`信号为1前，均无意义。
+
+### 同步发电机转子转速解锁信号
+
+默认情况下，无论选择转速控制模式还是转矩控制模式，同步发电机的转子均处在额定转速下的锁转速模式。需要用户提供`Rotor Unlocking Signal`动态参数来进行解锁。如：可填入`@L2N`。`@L2N`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@L2N`为0时，转速恒定为额定转速。当`@L2N`信号阶跃到1时，转速放开。在转速控制模式下，转速与输入的受控信号相同；在转矩控制下，转速由转速方程控制。
 
 
 ## 测试模型

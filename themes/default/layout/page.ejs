@@ -1,7 +1,5 @@
 <!-- BEGIN page -->
-<%- partial('partials/sidebar') -%>
-
-<article id="article" class="content <%- page.sidebar !== false ? 'with-sidebar' : '' %>">
+<article>
   <%_ if (title()) { -%>
     <section class="title"><h1><%= title() %></h1>
       <%_ if (!is_index() && page.type) { -%>
@@ -47,7 +45,5 @@
   <%_ } -%>
 
   <%- page.content -%>
-
-  <%- partial('partials/footer', {min: !page.full_footer}) -%>
 </article>
 <!-- END page -->

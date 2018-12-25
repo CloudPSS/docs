@@ -1,4 +1,4 @@
-﻿
+
 declare const PAGE_TYPE: string;
 declare const IS_INDEX: boolean;
 declare const BASE: string;

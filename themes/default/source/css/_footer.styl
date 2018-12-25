@@ -3,17 +3,18 @@
 
 $page-footer-inset = 8px
 
-footer.page-footer
+body > footer
   color: $light
   user-select: none
   border-top: 0.2px $border solid
-  margin: $page-footer-inset $page-footer-inset * -1
-  padding: 0 $page-footer-inset
-  *
-    text-align: center 
+  margin: 8px 0
+  padding: 0 40px
+  @media (max-width: $mobile-width)
+    padding: 0 8px
+  
+  text-align: center 
   &.min
-    *
-      text-align: right 
+    text-align: right 
     .author
       cursor: pointer
       color: lighten($theme, 0.2)

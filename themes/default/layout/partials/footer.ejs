@@ -1,5 +1,6 @@
 <!-- BEGIN footer -->
 <%_
+  const min = !page.full_footer;
   var email = config.contact;
   if (page.author_email)
     email = page.author_email;
@@ -13,7 +14,7 @@
   }
 -%>
 
-<footer class="page-footer <%- min ? 'min' : ''%>">
+<footer class="<%- min ? 'min' : ''%>">
   <%_ if(min) { -%>
     <p class="contact">
       <%_ if(page.author) { -%>

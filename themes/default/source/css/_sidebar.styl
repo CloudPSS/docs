@@ -1,8 +1,10 @@
 @import "_settings"
 
-aside.sidebar
+body > aside
   &.no-sidebar
     display: none
+  &.hide
+    transform: translateX(- $sidebar-width - 10px)
   user-select: none
   hide-for-print()
   transition: all $size-transition
@@ -13,11 +15,15 @@ aside.sidebar
   bottom: 0
   width: $sidebar-width 
   background: white
-  overflow-x: hidden
-  overflow-y: auto
-  margin-top: $header-height
+  
   nav
-    margin: 48px 20px 40px 40px
+    padding: 48px 20px 40px 40px
+    overflow: hidden auto
+    position: absolute
+    top: $header-height
+    bottom: 0
+    right: 0
+    left: 0
   h1
     font-size: 1.5em
   h2
@@ -77,10 +83,9 @@ aside.sidebar
 
   @media screen and (max-width: $mobile-width)
     background: #f9f9f9
-    transform: translateX(-100%)
-    margin-top: $mobile-header-height
-    left: -10px
-    nav
-      margin: 24px 10px 20px 20px
+    transform: translateX(- $sidebar-width - 10px)
     &.open
-      transform: translateX(-@left)
+      transform: translateX(0)
+    nav
+      top: $mobile-header-height
+      padding: 24px 10px 20px 20px

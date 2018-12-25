@@ -1,11 +1,14 @@
 <!-- BEGIN header -->
-<header id="header" class="page-header <%- menu ? '' : 'no-menu'%>">
-  <a class="menu-button mobile-header-button" id="mobile-menu-button" style="<%- menu ? '' : 'display:none'%>"></a>
-  <a class="toc-button mobile-header-button" id="mobile-toc-button" ></a>
+<%_
+  const sidebar = page.sidebar !== false;
+-%>
+<header class="<%- !sidebar ? 'no-sidebar' : ''%>">
+  <a class="button" id="sidebar"></a>
+  <a class="button" id="toc" ></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"></a>
-  <nav id="nav">
+  <nav>
     <form id="search-form" title="搜索" @submit.prevent="submit" :class="{open: suggestOpen}">
-      <input type="text" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
+      <input type="search" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
       <ul id="search-suggest">
         <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
         <li v-for="record in matches" :key="record.url" :title="record.title"> 
