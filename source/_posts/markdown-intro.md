@@ -32,7 +32,7 @@ $$ \sum_{i=1}^n a_i=0 $$
 ## 图片
 
 图片存储的文件结构如图
-![](markdown-intro/asset-folder.jpg)
+[![](markdown-intro/asset-folder.jpg)](#Title)
 
 即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](path "title" =size)` 语法。
 

@@ -69,7 +69,7 @@
     queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
 
     var vueApp = new Vue({
-        el: '#search-form',
+        el: 'body > header #search-form',
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),

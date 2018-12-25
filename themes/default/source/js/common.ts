@@ -81,13 +81,7 @@
 
     function initImages()
     {
-        interface MyPhoto extends Photo
-        {
-            thumb: HTMLImageElement,
-            title: string,
-
-        }
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article img[alt]');
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('body > main img');
         const photos = new Array<MyPhoto>();
         for (const container of Array.from(containers))
         {
@@ -108,60 +102,94 @@
                 if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
                     container.nextSibling.remove();
                 container.replaceWith(box);
-                photos.push({ thumb: img, title: htmlEscape(title) });
-                img.addEventListener('click', openPhotoSwipe);
+                registerPhotoSwipe({ thumb: img, title: htmlEscape(title) });
             }
             else
             {
-                photos.push({ thumb: container, title: htmlEscape(title || alt) });
-                container.addEventListener('click', openPhotoSwipe);
+                registerPhotoSwipe({ thumb: container, title: htmlEscape(title || alt) });
             }
             container.style.maxHeight = formatValue(container.getAttribute('height'));
             container.removeAttribute('height');
         }
-
-        function openPhotoSwipe(e: MouseEvent)
+        
+        interface MyPhoto extends Photo
         {
-            let pswpElement = document.querySelector('.pswp') as HTMLDivElement;
-            let current = photos.find(p => p.thumb === e.target);
-            if (!current)
-                return;
-            let currItem = current;
-
-            // Initializes and opens PhotoSwipe
-            let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
-                index: photos.indexOf(currItem),
-                history: false,
-                closeOnScroll: false,
-                loop: false,
-                getThumbBoundsFn: (index) =>
+            thumb: HTMLImageElement;
+            title: string;
+        }
+        function registerPhotoSwipe(img: MyPhoto)
+        {
+            let el = img.thumb;
+            while (el)
+            {
+                if(el.tagName === "A")
+                    return;
+                el = el.parentElement;
+            }
+            
+            photos.push(img);
+            img.thumb.addEventListener('click', openPhotoSwipe);
+            function openPhotoSwipe(e: MouseEvent)
+            {
+                let pswpElement = document.querySelector('.pswp') as HTMLDivElement;
+                let current = photos.find(p => p.thumb === e.target);
+                if (!current)
+                    return;
+                let currItem = current;
+            
+                const headerElement = document.querySelector('body > header');
+                const sidebarElement = document.querySelector('body > aside');
+    
+                // Initializes and opens PhotoSwipe
+                let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
+                    index: photos.indexOf(currItem),
+                    history: false,
+                    closeOnScroll: false,
+                    loop: false,
+                    getThumbBoundsFn: (index) =>
+                    {
+                        var thumbnail = photos[index].thumb;
+                        var rect = thumbnail.getBoundingClientRect();
+                        return { x: rect.left, y: rect.top + (document.documentElement.scrollTop || document.body.scrollTop), w: rect.width };
+                    },
+                    shareEl: false,
+                });
+                gallery.listen('gettingData', (index, item) =>
                 {
-                    var thumbnail = photos[index].thumb;
-                    var rect = thumbnail.getBoundingClientRect();
-                    return { x: rect.left, y: rect.top + document.documentElement.scrollTop, w: rect.width };
-                },
-                shareEl: false,
-            });
-            gallery.listen('gettingData', (index, item) =>
-            {
-                const thumb = item.thumb;
-                item.msrc = thumb.src;
-                item.src = thumb.src;
-                item.w = thumb.naturalWidth || 800;
-                item.h = thumb.naturalHeight || 600;
-            });
-            gallery.listen('beforeChange', () =>
-            {
-                gallery.currItem.thumb.style.visibility = 'collapse';
-                currItem.thumb.style.visibility = '';
-                currItem = gallery.currItem;
-            })
-            gallery.listen('destroy', () =>
-            {
-                currItem.thumb.style.visibility = '';
-            })
-            gallery.init();
-            currItem.thumb.style.visibility = 'collapse';
+                    const thumb = item.thumb;
+                    item.msrc = thumb.src;
+                    item.src = thumb.src;
+                    item.w = thumb.naturalWidth || 800;
+                    item.h = thumb.naturalHeight || 600;
+                });
+                gallery.listen('beforeChange', () =>
+                {
+                    currItem.thumb.style.visibility = '';
+                    gallery.currItem.thumb.style.visibility = 'collapse';
+                    currItem = gallery.currItem;
+                });
+                gallery.listen('destroy', () =>
+                {
+                    currItem.thumb.style.visibility = '';
+                })
+                gallery.init();
+                if(headerElement)
+                {
+                    headerElement.classList.add('hide');
+                    gallery.listen('close', () =>
+                    {
+                        headerElement.classList.remove('hide');
+                    });
+                }
+                if(sidebarElement)
+                {
+                    sidebarElement.classList.add('hide');
+                    gallery.listen('close', () =>
+                    {
+                        sidebarElement.classList.remove('hide');
+                    });
+                }
+            }
         }
 
         function formatValue(v?: null | string)
@@ -176,7 +204,7 @@
 
     function initTables()
     {
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('#article table caption[id]');
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('table caption[id]');
         for (const container of Array.from(containers))
         {
             container.parentElement!.id = container.innerText.replace(/\s/g, '-');
@@ -189,10 +217,10 @@
      */
     function initMobileMenu()
     {
-        const sidebar = document.querySelector('.sidebar');
-        const menuButton = document.getElementById('mobile-menu-button');
-        const tocButton = document.getElementById('mobile-toc-button');
-        const toc = document.getElementById('nav-toc');
+        const sidebar = document.querySelector('body > aside');
+        const toc = document.querySelector('body > header #nav-toc');
+        const sidebarButton = document.querySelector('body > header #sidebar');
+        const tocButton = document.querySelector('body > header #toc');
 
         if (toc)
         {
@@ -202,15 +230,15 @@
 
         if (sidebar)
         {
-            if (menuButton)
-                menuButton.addEventListener('click', () => sidebar.classList.toggle('open'));
+            if (sidebarButton)
+                sidebarButton.addEventListener('click', () => sidebar.classList.toggle('open'));
         }
 
         if (sidebar || toc)
         {
             document.body.addEventListener('click', function (e)
             {
-                if (e.target !== menuButton && sidebar && !sidebar.contains(e.target as Node))
+                if (e.target !== sidebarButton && sidebar && !sidebar.contains(e.target as Node))
                 {
                     sidebar.classList.remove('open')
                 }
@@ -276,12 +304,13 @@
         let animating = false;
         let hoveredOverSidebar = false;
 
-        const main = <HTMLElement>document.getElementById('main');
-        const sidebar = <HTMLElement>document.querySelector('.sidebar');
-        const content = <HTMLElement>document.querySelector('.content');
+        const main = <HTMLElement>document.querySelector('body > main');
+        const sidebar = <HTMLElement>document.querySelector('body > aside');
+        const nav = <HTMLElement>sidebar.querySelector('nav');
+        const content = <HTMLElement>document.querySelector('body > main > article');
 
         // build sidebar
-        const currentPageAnchor = <HTMLElement>sidebar.querySelector('.sidebar-link.current');
+        const currentPageAnchor = <HTMLElement>nav.querySelector('.sidebar-link.current');
         const allHeaders = new Array<HTMLHeadingElement>();
         if (currentPageAnchor)
         {
@@ -342,15 +371,15 @@
         })
 
         // listen for scroll event to do positioning & highlights
-        main.addEventListener('scroll', () => { updateSidebar(true) })
-        window.addEventListener('resize', () => { updateSidebar(true) })
-        window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) })
-        window.addEventListener('load', () => { updateSidebar(true) })
-
+        document.addEventListener('scroll', () => { updateSidebar(true) });
+        window.addEventListener('resize', () => { updateSidebar(true) });
+        window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) });
+        window.addEventListener('load', () => { updateSidebar(true) });
+        
         function updateSidebar(shouldScrollIntoView?: boolean)
         {
             const doc = document.getElementById('main');
-            const top = doc && doc.scrollTop || document.body.scrollTop
+            const top = doc && doc.scrollTop || document.documentElement.scrollTop || document.body.scrollTop; 
             if (animating || !allHeaders) return;
             let last: HTMLHeadingElement | null = null;
             for (let i = 0; i < allHeaders.length; i++)
@@ -427,9 +456,9 @@
 
         function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
         {
-            var previousActive = sidebar.querySelector('.section-link.active') as HTMLElement;
+            var previousActive = nav.querySelector('.section-link.active') as HTMLElement;
             var currentActive = typeof id === 'string'
-                ? sidebar.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
+                ? nav.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
                 : id;
             if (currentActive !== previousActive)
             {
@@ -440,7 +469,7 @@
                     var currentPageOffset = currentPageAnchor
                         ? currentPageAnchor.offsetTop - 8
                         : 0;
-                    sidebar.scrollTop = currentPageOffset - 48;
+                    nav.scrollTop = currentPageOffset - 48;
                 }
             }
         }

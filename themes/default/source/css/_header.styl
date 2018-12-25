@@ -1,23 +1,26 @@
 
 @import "_settings"
 
-header.page-header
+body > header
   hide-for-print()
   user-select: none
   box-shadow: 0 0 16px $shadow
   background-color: #fff
-  height: $header-inner-height
-  padding: $heading-padding-vertical 0
+  width: 100%
   z-index: 10000
   position: fixed
   top: 0
-  left: 0
-  right: 0
-  transition: padding, height $size-transition
+  transition: all $size-transition
+  height: $header-inner-height
+  padding: $heading-padding-vertical 0
+  &.hide
+    top: -($header-inner-height + $heading-padding-vertical * 2 + 16px)
   
   @media screen and (max-width: $mobile-width)
     height: $mobile-header-inner-height
     padding: $mobile-heading-padding-vertical 0px
+    &.hide
+      top: -($mobile-header-inner-height + $mobile-heading-padding-vertical * 2 + 16px)
             
   #search-form
     position: absolute
@@ -108,7 +111,7 @@ header.page-header
             font-size: 1.2em
             padding: 4px
               
-  .mobile-header-button
+  .button
     display: block
     transition: transform $size-transition
     position: absolute
@@ -123,16 +126,19 @@ header.page-header
       background-color: #ddd 
     &:active
       background-color: #eee 
-    &#mobile-menu-button
+    &#sidebar
       transform: translateX(-150%)
       left: 0
-      background-image: url(../images/menu.png)
-    &#mobile-toc-button
+      background-image: url(../images/sidebar.png)
+    &#toc
       transform: translateX(150%)
       right: 0
       background-image: url(../images/toc.png) 
     @media screen and (max-width: $mobile-width)
       transform: translateX(0) !important
+      
+  &.no-sidebar .button#sidebar
+    display: none
 
   #logo
     left: 100px
@@ -152,7 +158,7 @@ header.page-header
       content: attr(title)
       display: inline
       margin-left: 48px
-      transition: margin,opacity $size-transition
+      transition: margin $size-transition, opacity $size-transition
     @media screen and (max-width: 1300px)
       left: 16px
     @media screen and (max-width: $mobile-width)
@@ -165,23 +171,19 @@ header.page-header
           
 
   
-  #nav
-    list-style-type: none
-    margin: 0
-    padding: 0
-    position: fixed
+  nav
+    position: absolute
     right: 30px
-    top: $heading-padding-vertical
     height: $header-inner-height
-    line-height: $header-inner-height
-    transition: top, height, right, line-height $size-transition
+    line-height: @height
+    transition: all $size-transition
     #nav-toc
       padding: 0
       margin: 0
       > li
+        list-style-type: none
         transition: padding $size-transition
         display: inline
-        position: relative
         padding: 0 0.8em
       .nav-link
         color: $medium
@@ -198,9 +200,8 @@ header.page-header
           padding: 0 0.4em
 
     @media screen and (max-width: $mobile-width)
-      top: $mobile-heading-padding-vertical
       height: $mobile-header-inner-height
-      line-height: $mobile-header-inner-height
+      line-height: @height
       .nav-link
         padding-bottom: 1px
         &:hover, &.current
@@ -218,7 +219,7 @@ header.page-header
         bottom: 0
         min-width: 200px
         box-shadow: 0 0 10px $shadow
-        transition: box-shadow,transform .3s ease-in-out
+        transition: all $size-transition
         > li
           display: block
           padding: 0.25em 0.2em

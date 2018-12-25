@@ -1,6 +1,6 @@
 (function ()
 {
-    const link = document.querySelector("footer.page-footer .author[data]") as HTMLSpanElement;
+    const link = document.querySelector("body > footer .author[data]") as HTMLSpanElement;
     if (link)
     {
         const data = (link.getAttribute('data') || '').trim();

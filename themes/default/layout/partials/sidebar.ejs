@@ -1,7 +1,25 @@
 <!-- BEGIN sidebar -->
-<aside class="sidebar<%- page.sidebar === false ? ' no-sidebar' : '' %>">
+<aside class="<%- page.sidebar === false ? 'no-sidebar' : '' %>">
   <nav>
-    <%- partial('partials/toc', { type: page.type }) -%>
+    <%_ if(is_post(page)) { -%>
+      <header><h1>所有文章</h1></header>
+      <ul style="menu-root">
+        <%_ 
+          site.posts.filter(p => !is_index(p)).sort('date', -1).each(function (p) {
+            if(page.path !== p.path)
+            {
+              -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link`}) %></li><%_
+            }
+            else
+            {
+              -%><li class="menu-item"><%- link_to('#article', title(p), {class: `sidebar-link current`}) %></li><%_
+            }
+          }) 
+        -%>
+      </ul>
+    <%_ } else { -%>
+      <%- partial('partials/toc') -%>
+    <%_ } -%>
   </nav>
 </aside>
 <!-- END sidebar -->

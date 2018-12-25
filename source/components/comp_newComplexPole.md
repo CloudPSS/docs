@@ -19,13 +19,13 @@ symbol: newComplexPole
 > **该元件用以建模二阶传递函数，可配置为以下9种二阶滤波器（当前版本仅只支持前两种）**
 >  + 1-Low Pass
 >  + 2-Mid Pass  
->  + 3-High Pass  
->  + 4-High Reject  
->  + 5-Mid Reject  
->  + 6-Low Reject  
->  + 7-High Reject  
->  + 8-Mid Reject  
->  + 9-Low Reject
+>  + ~~3-High Pass~~  
+>  + ~~4-High Reject~~  
+>  + ~~5-Mid Reject~~  
+>  + ~~6-Low Reject~~  
+>  + ~~7-High Reject~~  
+>  + ~~8-Mid Reject~~  
+>  + ~~9-Low Reject~~
 
 ## 参数列表
 ### Configuration
