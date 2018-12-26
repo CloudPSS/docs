@@ -92,7 +92,7 @@
             thumb: HTMLImageElement;
             title: string;
         }
-        
+
         function registerPhotoSwipe(img: MyPhoto)
         {
             let el: HTMLElement | null = img.thumb;
@@ -112,9 +112,9 @@
                 const current = photos.find(p => p.thumb === e.target);
                 if (!current)
                     return;
-                const currItem = current;
+                let currItem = current;
                 photoSwipeOpened = true;
-                
+
                 // Initializes and opens PhotoSwipe
                 const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
                     index: photos.indexOf(currItem),
@@ -167,7 +167,7 @@
                 }
             }
         }
-        
+
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main img');
         for (const container of Array.from(containers))
         {
@@ -358,7 +358,7 @@
                 setActive(target);
             }
         }, true);
-            
+
 
         sidebar.addEventListener('mouseover', function ()
         {
@@ -368,10 +368,10 @@
         {
             hoveredOverSidebar = false;
         });
-        
+
         function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
         {
-            var previousActive = sectionContainer.querySelector('a.active') as HTMLAElement;
+            var previousActive = sectionContainer.querySelector('a.active') as HTMLAnchorElement;
             var currentActive = typeof id === 'string'
                 ? sectionContainer.querySelector('[href="#' + id + '"]') as HTMLElement
                 : id;
@@ -390,11 +390,11 @@
         }
 
         // listen for scroll event to do positioning & highlights
-        document.addEventListener('scroll', , () => { updateSidebar(true) });
-        window.addEventListener('resize', , () => { updateSidebar(true) });
+        document.addEventListener('scroll', () => { updateSidebar(true) });
+        window.addEventListener('resize', () => { updateSidebar(true) });
         window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) });
         window.addEventListener('load', () => { updateSidebar(true) });
-        
+
         function updateSidebar(shouldScrollIntoView?: boolean)
         {
             if (!allHeaders) return;

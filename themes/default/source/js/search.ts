@@ -62,11 +62,9 @@
             this.extend = record.extend || '';
         }
     }
-    
-    const form = document.querySelector('body > header form#search') as HTMLFormElement;
 
-    var vueApp = new Vue({
-        el: form,
+    const vueApp = new Vue({
+        el: 'body > header form#search',
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),
