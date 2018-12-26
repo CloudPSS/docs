@@ -23,7 +23,7 @@
         ) { }
     }
 
-    var vueApp = new Vue({
+    const vueApp = new Vue({
         el: '#vueindex',
         data:
         {
