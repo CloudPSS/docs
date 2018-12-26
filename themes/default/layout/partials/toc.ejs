@@ -4,7 +4,7 @@
     <h1><%- link_to(is_index() ? '#article' : url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
   <%_ } -%>
 </header>
-<ul class="menu-root">
+<section>
   <%_
     
     const pages = site.pages.toArray().filter(p => page.type ? (p.type === page.type && !is_index(p)) : p === page).sort(function(a, b){
@@ -19,18 +19,18 @@
     {
       if(page.path !== p.path)
       {
-        -%><li class="menu-item"><%- link_to(url_for(p.path), title(p), {class: `sidebar-link`}) %></li><%_
+        -%><li><%- link_to(url_for(p.path), title(p)) %></li><%_
       }
       else
       {
-        -%><li class="menu-item"><%- link_to('#article', title(p), {class: `sidebar-link current`}) %></li><%_
+        -%><li><%- link_to('#', title(p), {class: `current`}) %></li><%_
       }
     }
     
     function cate_link(cat, level)
     {
       const catname = Object.getOwnPropertyNames(cat)[0];
-      -%><ul class="menu-cat level-<%- level %>"><h<%- level + 1 %> class="menu-cat-name"><%= catname %></h<%- level + 1 %>><%_
+      -%><ul><h<%- level %>><%= catname %></h<%- level %>><%_
       
       let content = cat[catname];
       if (!Array.isArray(content))
@@ -52,5 +52,5 @@
     for(const cat of categories)
       cate_link(cat, 1);
   -%>
-</ul>
+</section>
 <!-- END toc -->
