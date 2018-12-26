@@ -9,17 +9,21 @@
   main
     $padding = 80px
     $mobile-padding = 40px
-    transition: padding $size-transition, margin $size-transition 
-    max-width: $mobile-width - $padding * 2
+    transition: all $size-transition 
+    margin: $header-height 0 0
     padding: $padding 
-    margin: $header-height auto 0
+    article
+      margin: auto
+      max-width: $mobile-width - $padding * 2
     @media (max-width: $mobile-width)
       margin-top: $mobile-header-height
       padding: $mobile-padding
     @media (max-width: 720px)
       padding: $mobile-padding 20px 
     @media (max-width: 480px)
-      padding: $mobile-padding 8px 
-    &.with-sidebar
-      @media (min-width: $mobile-width)
-        padding-left: $sidebar-width + $padding
+      padding: $mobile-padding 8px
+      
+  main.with-sidebar
+    margin-left: $sidebar-width
+    @media (max-width: $mobile-width)
+      margin-left: 0

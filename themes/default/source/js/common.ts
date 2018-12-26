@@ -223,14 +223,14 @@
     function initMobileMenu()
     {
         const sidebar = document.querySelector('body > aside');
-        const toc = document.querySelector('body > header #nav-toc');
+        const nav = document.querySelector('body > header > nav');
         const sidebarButton = document.querySelector('body > header #sidebar');
-        const tocButton = document.querySelector('body > header #toc');
+        const navButton = document.querySelector('body > header #nav');
 
-        if (toc)
+        if (nav)
         {
-            if (tocButton)
-                tocButton.addEventListener('click', () => { toc.classList.toggle('open') });
+            if (navButton)
+                navButton.addEventListener('click', () => { nav.classList.toggle('open') });
         }
 
         if (sidebar)
@@ -239,7 +239,7 @@
                 sidebarButton.addEventListener('click', () => sidebar.classList.toggle('open'));
         }
 
-        if (sidebar || toc)
+        if (sidebar || nav)
         {
             document.body.addEventListener('click', function (e)
             {
@@ -247,9 +247,9 @@
                 {
                     sidebar.classList.remove('open')
                 }
-                if (e.target !== tocButton && toc && !toc.contains(e.target as Node))
+                if (e.target !== navButton && nav && !nav.contains(e.target as Node))
                 {
-                    toc.classList.remove('open')
+                    nav.classList.remove('open')
                 }
             });
 
@@ -284,17 +284,17 @@
                     if (xDiff > 0 && start.x <= 20)
                     {
                         if (sidebar) sidebar.classList.add('open');
-                        if (toc) toc.classList.remove('open');
+                        if (nav) nav.classList.remove('open');
                     }
                     else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
                     {
                         if (sidebar) sidebar.classList.remove('open');
-                        if (toc) toc.classList.add('open');
+                        if (nav) nav.classList.add('open');
                     }
                     else
                     {
                         if (sidebar) sidebar.classList.remove('open');
-                        if (toc) toc.classList.remove('open');
+                        if (nav) nav.classList.remove('open');
                     }
                 }
             });
@@ -382,8 +382,8 @@
                 if (shouldScrollIntoView)
                 {
                     var currentPageOffset = currentPageAnchor
-                        ? currentPageAnchor.offsetTop - 8
-                        : 0;
+                        ? currentPageAnchor.offsetTop
+                        : currentActive.offsetTop;
                     nav.scrollTop = currentPageOffset - 48;
                 }
             }

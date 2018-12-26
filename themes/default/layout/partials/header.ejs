@@ -4,12 +4,13 @@
 -%>
 <header class="<%- !sidebar ? 'no-sidebar' : ''%>">
   <a class="button" id="sidebar"></a>
-  <a class="button" id="toc" ></a>
+  <a class="button" id="nav"></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"></a>
   <nav>
-    <form id="search-form" title="搜索" @submit.prevent="submit" :class="{open: suggestOpen}">
-      <input type="search" id="search-query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
-      <ul id="search-suggest">
+    <form id="search" title="搜索" @submit.prevent="submit" :class="{open: suggestOpen}">
+      <input type="search" id="query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
+      <label for="query"></label>
+      <ul id="suggest">
         <span :class="{'no-result': succeed && matches.length === 0 && term.trim() !== '', prompt: succeed && term.trim() === '', loading: !succeed && !failed, failed: failed}" ></span>
         <li v-for="record in matches" :key="record.url" :title="record.title"> 
           <a :href="record.url" @focus="showSuggest" @blur="hideSuggest">
@@ -20,7 +21,7 @@
       </ul>
     </form>
     <%- js('js/search') %>
-    <ul id="nav-toc">
+    <ul>
       <%_ 
         for (const key in site.data.sitemap) { 
           -%><li><%- link_to(url_for(key + '/index.html'), site.data.sitemap[key].name, {class: `nav-link ${page.type === key ? 'current' : ''}`}) %></li><%_ 

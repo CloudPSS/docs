@@ -11,106 +11,17 @@ body > header
   position: fixed
   top: 0
   transition: all $size-transition
-  height: $header-inner-height
+  height: $header-height
   padding: $heading-padding-vertical 0
   &.hide
-    top: -($header-inner-height + $heading-padding-vertical * 2 + 16px)
+    top: -($header-height + 16px)
   
-  @media screen and (max-width: $mobile-width)
-    height: $mobile-header-inner-height
+  @media (max-width: $mobile-width)
+    height: $mobile-header-height
     padding: $mobile-heading-padding-vertical 0px
     &.hide
-      top: -($mobile-header-inner-height + $mobile-heading-padding-vertical * 2 + 16px)
-            
-  #search-form
-    position: absolute
-    z-index: 1000
-    margin: auto
-    transition: width .2s ease
-    top: 0
-    left: -12px
-    transform: translateX(-100%)
-    bottom: 0
-    height: 32px
-    width: 120px
-    &.open
-      width: 240px
-      > #search-query
-        border-color: $theme
-      > #search-suggest
-        display: block
-    @media screen and (max-width: $mobile-width)
-      height: $mobile-header-inner-height
-      font-size: 0.8em
-      left: auto
-      right: 40px
-      transform: none
-      width: 100px
-      &.open
-        width: 200px
-    > #search-query
-      display: block
-      box-sizing: border-box
-      transition: border-color .2s ease
-      font-size: 1em
-      height: 100%
-      width: 100%
-      padding: 0 15px 0 30px
-      border: 1px solid #e3e3e3
-      color: $dark
-      outline: none
-      border-radius: 2em
-      background: white url(../images/search.png) no-repeat 8px center / 20px
-      @media screen and (max-width: $mobile-width)
-        background-position-x: 4px
-    > #search-suggest
-      display: none
-      position: absolute
-      padding: 4px
-      left: 0
-      right: 0
-      margin: 4px 0
-      border: 2px solid $border
-      background: white
-      > span:before
-        text-align: center
-        display: block
-        color: $light
-      > .no-result:before
-          content: '没有匹配的结果'
-      > .prompt:before
-          content: '输入内容以搜索'
-      > .loading:before
-          content: '正在加载索引'
-      > .failed:before
-          content: '加载索引失败，请刷新页面'
-      > li
-        display: block
-        position: relative
-        line-height: 1em
-        > a
-          padding: 8px
-          color: $medium
-          display: block
-          &:hover, &:focus
-            background: #eee
-          > span
-            display: block
-            line-height: 1.2em
-            white-space: nowrap
-            text-overflow: ellipsis
-            overflow: hidden
-          > span[role='category']
-            margin: 4px 0 0 0 
-            font-size: 0.8em
-            color: $light
-      @media screen and (max-width: $mobile-width)
-        > li
-          line-height: 1.4em
-          > a 
-            font-size: 1.2em
-            padding: 4px
-              
+      top: -($mobile-header-height * 2 + 16px)
+
   .button
     display: block
     transition: transform $size-transition
@@ -130,7 +41,7 @@ body > header
       transform: translateX(-150%)
       left: 0
       background-image: url(../images/sidebar.png)
-    &#toc
+    &#nav
       transform: translateX(150%)
       right: 0
       background-image: url(../images/toc.png) 
@@ -143,7 +54,6 @@ body > header
   #logo
     left: 100px
     position: absolute
-    display: inline-block
     font-size: 1.5em
     height: $header-inner-height
     line-height: @height
@@ -159,32 +69,144 @@ body > header
       display: inline
       margin-left: 48px
       transition: margin $size-transition, opacity $size-transition
-    @media screen and (max-width: 1300px)
+    @media (max-width: 1300px)
       left: 16px
-    @media screen and (max-width: $mobile-width)
+    @media (max-width: $mobile-width)
       left: 48px
       font-size: 18px
       height: $mobile-header-inner-height
       line-height: @height
       &:after
         margin-left: 32px
-          
 
-  
   nav
     position: absolute
     right: 30px
     height: $header-inner-height
     line-height: @height
-    transition: all $size-transition
-    #nav-toc
+    transition: right $size-transition, padding $size-transition
+    @media (max-width: 1300px)
+      right: 8px
+
+    @media (max-width: $mobile-width)
+      position: fixed
+      height: 100%
+      width: $sidebar-width
+      top: 0
+      right: -@width - 10px
+      padding: $mobile-header-height + 16px 32px 16px
+      background: $sidebg
+      &.open
+        right: 0
+      box-shadow: 0 0 10px $shadow
+      transition: all $size-transition
+    > *
+      display: inline-block
+      @media (max-width: $mobile-width)
+        display: block
+
+    > form#search
+      position: relative
+      margin: auto 12px
+      transition: width .2s ease
+      height: 32px
+      width: 160px
+      &.open
+        @media not all and (max-width: $mobile-width)
+          width: 240px
+        > #query
+          border-color: $theme
+        > #suggest
+          opacity: 1
+          visibility: visible
+      @media (max-width: $mobile-width)
+        position: relative
+        transform: none
+        width: auto
+        left: 0
+        right: 0
+        margin: 0 0 12px
+      > #query
+        display: block
+        transition: border-color .2s ease
+        font-size: 1em
+        height: 100%
+        width: 100%
+        padding: 0 15px 0 30px
+        border: 1px solid #e3e3e3
+        color: $dark
+        outline: none
+        border-radius: 2em
+        background: white
+      > label
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        background: url(../images/search.png) no-repeat 8px center/20px
+        position: absolute
+        pointer-events: none
+      > #suggest
+        visibility: hidden
+        opacity: 0
+        transition: all .1s ease
+        position: absolute
+        padding: 4px
+        left: 0
+        right: 0
+        margin: 4px 0
+        border: 2px solid $border
+        background: white
+        > span:before
+          text-align: center
+          display: block
+          color: $light
+        > .no-result:before
+            content: '没有匹配的结果'
+        > .prompt:before
+            content: '输入内容以搜索'
+        > .loading:before
+            content: '正在加载索引'
+        > .failed:before
+            content: '加载索引失败，请刷新页面'
+        > li
+          display: block
+          position: relative
+          line-height: 1em
+          > a
+            padding: 8px
+            color: $medium
+            display: block
+            &:hover, &:focus
+              background: #eee
+            > span
+              display: block
+              line-height: 1.2em
+              white-space: nowrap
+              text-overflow: ellipsis
+              overflow: hidden
+            > span[role='category']
+              margin: 4px 0 0 0 
+              font-size: 0.8em
+              color: $light
+          @media (max-width: $mobile-width)
+            font-size: 0.95em
+            > a
+              padding: 4px
+
+    > ul
+      list-style-type: none
       padding: 0
       margin: 0
       > li
-        list-style-type: none
         transition: padding $size-transition
         display: inline
         padding: 0 0.8em
+        @media (max-width: 1300px)
+          padding: 0 0.4em
+        @media (max-width: $mobile-width)
+          display: block
+          padding: 0
       .nav-link
         color: $medium
         padding-bottom: 3px
@@ -193,33 +215,3 @@ body > header
         transition: border-color 0.1s ease
         &:hover, &.current
           border-bottom: 3px solid $theme
-    @media screen and (max-width: 1300px)
-      right: 8px
-      #nav-toc
-        > li
-          padding: 0 0.4em
-
-    @media screen and (max-width: $mobile-width)
-      height: $mobile-header-inner-height
-      line-height: @height
-      .nav-link
-        padding-bottom: 1px
-        &:hover, &.current
-          border-bottom: 2px solid $theme
-              
-      #nav-toc
-        padding: $mobile-header-height + 16px 20px 12px
-        background: rgba(255,255,255,0.9)
-        position: fixed
-        transform: translateX(100%)
-        top: 0
-        right: -10px
-        &.open
-          transform: translateX(@right)
-        bottom: 0
-        min-width: 200px
-        box-shadow: 0 0 10px $shadow
-        transition: all $size-transition
-        > li
-          display: block
-          padding: 0.25em 0.2em

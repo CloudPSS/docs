@@ -3,8 +3,6 @@
 body > aside
   &.no-sidebar
     display: none
-  &.hide
-    transform: translateX(- $sidebar-width - 10px)
   user-select: none
   hide-for-print()
   transition: all $size-transition
@@ -12,19 +10,29 @@ body > aside
   position: fixed
   z-index: 9000
   top: 0
-  bottom: 0
+  left: 0
+  height: 100%
   width: $sidebar-width 
   background: white
+  padding-top: $header-height
+  &.hide
+    transform: translateX(- $sidebar-width - 10px)
+  @media (max-width: $mobile-width)
+    background: $sidebg
+    padding-top: $mobile-header-height
+    left: - $sidebar-width - 10px
+    &.open
+      left: 0
   
   > nav
-    padding: 48px 20px 40px 40px
+    transition: all $size-transition
+    padding: 48px 24px
+    position: relative
     overflow: hidden auto
-    position: absolute
-    top: $header-height
-    bottom: 0
-    right: 0
-    left: 0
+    height: 100%
     line-height: 2em
+    @media (max-width: $mobile-width)
+      padding: 24px
     a
       border: 0px solid transparent
       transition: all .2s ease
@@ -77,12 +85,3 @@ body > aside
           padding: 0
           a
             padding-left: 14px
-
-  @media screen and (max-width: $mobile-width)
-    background: #f9f9f9
-    transform: translateX(- $sidebar-width - 10px)
-    &.open
-      transform: translateX(0)
-    > nav
-      top: $mobile-header-height
-      padding: 24px 10px 20px 20px
