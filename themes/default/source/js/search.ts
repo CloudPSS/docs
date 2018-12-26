@@ -62,14 +62,11 @@
             this.extend = record.extend || '';
         }
     }
-
-    const queryinput = document.getElementById('search-query') as HTMLInputElement;
-    const suggest = document.getElementById('search-suggest') as HTMLUListElement;
-    queryinput.addEventListener('focus', () => { suggest.classList.add('open') });
-    queryinput.addEventListener('blur', () => { setTimeout(() => { suggest.classList.remove('open') }, 50) });
+    
+    const form = document.querySelector('body > header form#search') as HTMLFormElement;
 
     var vueApp = new Vue({
-        el: 'body > header #search-form',
+        el: form,
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),
