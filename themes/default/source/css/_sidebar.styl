@@ -16,7 +16,7 @@ body > aside
   width: $sidebar-width 
   background: white
   
-  nav
+  > nav
     padding: 48px 20px 40px 40px
     overflow: hidden auto
     position: absolute
@@ -24,68 +24,65 @@ body > aside
     bottom: 0
     right: 0
     left: 0
-  h1
-    font-size: 1.5em
-  h2
-    font-size: 1.3em
-  h3
-    font-size: 1.1em
-  h4, h5, h6
-    font-size: 1em
-  li, .menu-cat-name
-    margin: 0
-    padding: 8px 0 0 0
-  ul
-    list-style-type: none
-    margin: 0
-    padding: 0
-    line-height: 1.5em
-    &.menu-root
-      padding-left: 0
-    &.menu-cat
-      padding-left: 8px
-      > .menu-cat-name
+    line-height: 2em
+    a
+      border: 0px solid transparent
+      transition: all .2s ease
+      color: $medium
+      border-width: 0 0 2px
+      &.current
+        font-weight: 600
+        color: $theme
+      &:hover, &:focus
+        border-color: $theme
+    > header h1
+      margin: 1em 0
+      font-size: 1.5em
+    > section
+      h1
+        font-size: 1.3em
+      h2
+        font-size: 1.1em
+      h3, h4, h5, h6
+        font-size: 1em
+      h1, h2, h3, h4, h5, h6
+        margin: 0 0 0 -8px
         color: $medium
-        margin-left: -0.5em
         font-weight: 550
-        margin-left: -8px
         &:only-child
           display: none
-    &.menu-sub
-      font-size: .85em
       li
-        color: $light
+        margin: 0
+        list-style-type: none
         white-space: nowrap
         overflow: hidden
         text-overflow: ellipsis
-      .section-link
-        color: $light
-        padding-left: 6px
-        margin-left: 2px
-        border-left-width: 2px
-        &:hover, &:focus
-          color: $theme
-        &.active
-          border-color: $theme
-      > ul .section-link
-        padding-left: 14px
-  .sidebar-link, .section-link
-    border: 0px solid transparent
-    transition: all .2s ease
-  .sidebar-link
-    border-bottom-width: 2px
-    color: $medium
-    &.current
-      font-weight: 600
-      color: $theme
-    &:hover, &:focus
-      border-color: $theme
+      ul
+        margin: 0
+        padding: 0 0 0 8px
+      ul.section-links
+        padding: 0
+        font-size: 0.85em
+        line-height: 2em
+        a
+          color: $light
+          padding-left: 6px
+          border-width: 0 0 0 2px
+          &:hover, &:focus
+            color: $theme
+            border-color: transparent
+          &.active
+            border-color: $theme
+        > ul
+          padding: 0
+          a
+            padding-left: 14px
 
   @media screen and (max-width: $mobile-width)
     background: #f9f9f9
     transform: translateX(- $sidebar-width - 10px)
     &.open
       transform: translateX(0)
-    nav
+    > nav
       top: $mobile-header-height
       padding: 24px 10px 20px 20px

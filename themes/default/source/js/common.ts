@@ -24,6 +24,7 @@
         }
     })();
 
+    let photoSwipeOpened = false;
     document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
     initMobileMenu();
     initSubHeaders();
@@ -36,7 +37,7 @@
 
     function initFootnotes()
     {
-        Array.from(document.querySelectorAll('sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
+        Array.from(document.querySelectorAll('main sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
         {
             a.innerText = a.innerText.replace(/:\d+/, '');
         });
@@ -44,7 +45,7 @@
 
     function initFlowAndChart()
     {
-        Array.from(document.querySelectorAll("canvas.chartjs")).forEach((e) => 
+        Array.from(document.querySelectorAll("main canvas.chartjs")).forEach((e) => 
         {
             try
             {
@@ -55,7 +56,7 @@
                 e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
             }
         });
-        Array.from(document.querySelectorAll("div.mermaid")).forEach((e) => 
+        Array.from(document.querySelectorAll("main div.mermaid")).forEach((e) => 
         {
             e.setAttribute('data-mermaid', e.innerHTML);
         });
@@ -67,7 +68,7 @@
     async function initVideos()
     {
         await DOMContentLoaded();
-        const containers = document.querySelectorAll('#main .video-container, .owl-video');
+        const containers = document.querySelectorAll('main .video-container, .owl-video');
         for (const container of Array.from(containers))
         {
             const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
@@ -81,67 +82,41 @@
 
     function initImages()
     {
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('body > main img');
         const photos = new Array<MyPhoto>();
-        for (const container of Array.from(containers))
-        {
-            const title = container.title || '';
-            const alt = container.alt || '';
-            if (alt && !title)
-                container.title = container.alt;
-            if (alt && title)
-            {
-                const box = document.createElement('figure');
-                const cap = document.createElement('figcaption');
-                cap.innerText = title;
-                container.title = alt;
-                const img = container.cloneNode() as HTMLImageElement;
-                box.setAttribute('id', title)
-                box.appendChild(img);
-                box.appendChild(cap);
-                if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
-                    container.nextSibling.remove();
-                container.replaceWith(box);
-                registerPhotoSwipe({ thumb: img, title: htmlEscape(title) });
-            }
-            else
-            {
-                registerPhotoSwipe({ thumb: container, title: htmlEscape(title || alt) });
-            }
-            container.style.maxHeight = formatValue(container.getAttribute('height'));
-            container.removeAttribute('height');
-        }
-        
+        const pswpElement = document.querySelector('.pswp') as HTMLDivElement;
+        const headerElement = document.querySelector('body > header');
+        const sidebarElement = document.querySelector('body > aside');
+
         interface MyPhoto extends Photo
         {
             thumb: HTMLImageElement;
             title: string;
         }
+        
         function registerPhotoSwipe(img: MyPhoto)
         {
-            let el = img.thumb;
+            let el: HTMLElement | null = img.thumb;
             while (el)
             {
-                if(el.tagName === "A")
+                if (el.tagName === "A")
                     return;
                 el = el.parentElement;
             }
-            
+
             photos.push(img);
             img.thumb.addEventListener('click', openPhotoSwipe);
             function openPhotoSwipe(e: MouseEvent)
             {
-                let pswpElement = document.querySelector('.pswp') as HTMLDivElement;
-                let current = photos.find(p => p.thumb === e.target);
+                if (photoSwipeOpened)
+                    return;
+                const current = photos.find(p => p.thumb === e.target);
                 if (!current)
                     return;
-                let currItem = current;
-            
-                const headerElement = document.querySelector('body > header');
-                const sidebarElement = document.querySelector('body > aside');
-    
+                const currItem = current;
+                photoSwipeOpened = true;
+                
                 // Initializes and opens PhotoSwipe
-                let gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
+                const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
                     index: photos.indexOf(currItem),
                     history: false,
                     closeOnScroll: false,
@@ -171,9 +146,10 @@
                 gallery.listen('destroy', () =>
                 {
                     currItem.thumb.style.visibility = '';
+                    photoSwipeOpened = false;
                 })
                 gallery.init();
-                if(headerElement)
+                if (headerElement)
                 {
                     headerElement.classList.add('hide');
                     gallery.listen('close', () =>
@@ -181,7 +157,7 @@
                         headerElement.classList.remove('hide');
                     });
                 }
-                if(sidebarElement)
+                if (sidebarElement)
                 {
                     sidebarElement.classList.add('hide');
                     gallery.listen('close', () =>
@@ -191,7 +167,36 @@
                 }
             }
         }
-
+        
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main img');
+        for (const container of Array.from(containers))
+        {
+            const title = container.title || '';
+            const alt = container.alt || '';
+            if (alt && !title)
+                container.title = container.alt;
+            if (alt && title)
+            {
+                const box = document.createElement('figure');
+                const cap = document.createElement('figcaption');
+                cap.innerText = title;
+                container.title = alt;
+                const img = container.cloneNode() as HTMLImageElement;
+                box.setAttribute('id', title)
+                box.appendChild(img);
+                box.appendChild(cap);
+                if (container.nextSibling instanceof HTMLElement && container.nextSibling.tagName == "BR")
+                    container.nextSibling.remove();
+                container.replaceWith(box);
+                registerPhotoSwipe({ thumb: img, title: htmlEscape(title) });
+            }
+            else
+            {
+                registerPhotoSwipe({ thumb: container, title: htmlEscape(title || alt) });
+            }
+            container.style.maxHeight = formatValue(container.getAttribute('height'));
+            container.removeAttribute('height');
+        }
         function formatValue(v?: null | string)
         {
             if (!v || v.endsWith('%'))
@@ -204,7 +209,7 @@
 
     function initTables()
     {
-        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('table caption[id]');
+        const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main table caption[id]');
         for (const container of Array.from(containers))
         {
             container.parentElement!.id = container.innerText.replace(/\s/g, '-');
@@ -258,17 +263,21 @@
 
             document.body.addEventListener('touchstart', function (e)
             {
-                start.x = e.changedTouches[0].clientX
-                start.y = e.changedTouches[0].clientY
+                if (photoSwipeOpened)
+                    return;
+                start.x = e.changedTouches[0].clientX;
+                start.y = e.changedTouches[0].clientY;
             })
 
             document.body.addEventListener('touchend', function (e)
             {
-                end.y = e.changedTouches[0].clientY
-                end.x = e.changedTouches[0].clientX
+                if (photoSwipeOpened)
+                    return;
+                end.y = e.changedTouches[0].clientY;
+                end.x = e.changedTouches[0].clientX;
 
-                const xDiff = end.x - start.x
-                const yDiff = end.y - start.y
+                const xDiff = end.x - start.x;
+                const yDiff = end.y - start.y;
 
                 if (Math.abs(xDiff) > Math.abs(yDiff))
                 {
@@ -279,12 +288,12 @@
                     }
                     else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
                     {
-                        if (sidebar) sidebar.classList.remove('open')
+                        if (sidebar) sidebar.classList.remove('open');
                         if (toc) toc.classList.add('open');
                     }
                     else
                     {
-                        if (sidebar) sidebar.classList.remove('open')
+                        if (sidebar) sidebar.classList.remove('open');
                         if (toc) toc.classList.remove('open');
                     }
                 }
@@ -301,86 +310,95 @@
         if (IS_INDEX)
             return;
 
-        let animating = false;
-        let hoveredOverSidebar = false;
-
-        const main = <HTMLElement>document.querySelector('body > main');
         const sidebar = <HTMLElement>document.querySelector('body > aside');
         const nav = <HTMLElement>sidebar.querySelector('nav');
         const content = <HTMLElement>document.querySelector('body > main > article');
 
         // build sidebar
-        const currentPageAnchor = <HTMLElement>nav.querySelector('.sidebar-link.current');
+        const currentPageAnchor = <HTMLElement>nav.querySelector('a.current');
         const allHeaders = new Array<HTMLHeadingElement>();
-        if (currentPageAnchor)
+        if (!currentPageAnchor)
+            return;
+
+        let hoveredOverSidebar = false;
+        const sectionContainer = document.createElement('ul');
+        sectionContainer.className = 'section-links';
+        currentPageAnchor.parentNode!.appendChild(sectionContainer);
+        let headers = Array.from(content.querySelectorAll('h2'));
+        if (headers.length)
         {
-            const sectionContainer = document.createElement('ul');
-            sectionContainer.className = 'menu-sub';
-            currentPageAnchor.parentNode!.appendChild(sectionContainer);
-            let headers = Array.from(content.querySelectorAll('h2'));
-            if (headers.length)
+            headers.forEach(function (h)
             {
-                headers.forEach(function (h)
+                sectionContainer.appendChild(makeLink(h))
+                const h3s = collectH3s(h)
+                allHeaders.push(h)
+                allHeaders.push.apply(allHeaders, h3s)
+                if (h3s.length)
                 {
-                    sectionContainer.appendChild(makeLink(h))
-                    const h3s = collectH3s(h)
-                    allHeaders.push(h)
-                    allHeaders.push.apply(allHeaders, h3s)
-                    if (h3s.length)
-                    {
-                        sectionContainer.appendChild(makeSubLinks(h3s))
-                    }
-                })
-            }
-            else
-            {
-                headers = Array.from(content.querySelectorAll('h3'));
-                headers.forEach(function (h)
-                {
-                    sectionContainer.appendChild(makeLink(h))
-                    allHeaders.push(h)
-                })
-            }
-
-            sectionContainer.addEventListener('click', function (e)
-            {
-
-                // Not prevent hashchange for smooth-scroll
-                // e.preventDefault()
-                const target = e.target as HTMLElement;
-                if (target.classList.contains('section-link'))
-                {
-                    sidebar.classList.remove('open')
-                    setActive(target)
-                    animating = true
-                    setTimeout(function ()
-                    {
-                        animating = false;
-                    }, 400)
+                    sectionContainer.appendChild(makeSubLinks(h3s))
                 }
-            }, true)
+            })
         }
+        else
+        {
+            headers = Array.from(content.querySelectorAll('h3'));
+            headers.forEach(function (h)
+            {
+                sectionContainer.appendChild(makeLink(h))
+                allHeaders.push(h)
+            })
+        }
+
+        sidebar.addEventListener('click', function (e)
+        {
+            const target = e.target as HTMLElement;
+            if (target.tagName === 'A')
+            {
+                sidebar.classList.remove('open');
+                setActive(target);
+            }
+        }, true);
+            
 
         sidebar.addEventListener('mouseover', function ()
         {
             hoveredOverSidebar = true;
-        })
+        });
         sidebar.addEventListener('mouseleave', function ()
         {
             hoveredOverSidebar = false;
-        })
+        });
+        
+        function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
+        {
+            var previousActive = sectionContainer.querySelector('a.active') as HTMLAElement;
+            var currentActive = typeof id === 'string'
+                ? sectionContainer.querySelector('[href="#' + id + '"]') as HTMLElement
+                : id;
+            if (currentActive !== previousActive)
+            {
+                if (previousActive) previousActive.classList.remove('active');
+                currentActive.classList.add('active');
+                if (shouldScrollIntoView)
+                {
+                    var currentPageOffset = currentPageAnchor
+                        ? currentPageAnchor.offsetTop - 8
+                        : 0;
+                    nav.scrollTop = currentPageOffset - 48;
+                }
+            }
+        }
 
         // listen for scroll event to do positioning & highlights
-        document.addEventListener('scroll', () => { updateSidebar(true) });
-        window.addEventListener('resize', () => { updateSidebar(true) });
+        document.addEventListener('scroll', , () => { updateSidebar(true) });
+        window.addEventListener('resize', , () => { updateSidebar(true) });
         window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) });
         window.addEventListener('load', () => { updateSidebar(true) });
         
         function updateSidebar(shouldScrollIntoView?: boolean)
         {
-            const doc = document.getElementById('main');
-            const top = doc && doc.scrollTop || document.documentElement.scrollTop || document.body.scrollTop; 
-            if (animating || !allHeaders) return;
+            if (!allHeaders) return;
+            const top = (document.documentElement.scrollTop || document.body.scrollTop) + 120;
             let last: HTMLHeadingElement | null = null;
             for (let i = 0; i < allHeaders.length; i++)
             {
@@ -425,7 +443,7 @@
             }
 
             mapper(h);
-            link.innerHTML = `<a class="section-link" href="#${h.id}">${h.innerHTML}</a>`;
+            link.innerHTML = `<a href="#${h.id}">${h.innerHTML}</a>`;
             Array.from(h.querySelectorAll('.katex-mathml')).forEach(n => n.remove());
             link.title = h.textContent || '';
             return link;
@@ -452,26 +470,6 @@
                 container.appendChild(makeLink(h));
             })
             return container;
-        }
-
-        function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
-        {
-            var previousActive = nav.querySelector('.section-link.active') as HTMLElement;
-            var currentActive = typeof id === 'string'
-                ? nav.querySelector('.section-link[href="#' + id + '"]') as HTMLElement
-                : id;
-            if (currentActive !== previousActive)
-            {
-                if (previousActive) previousActive.classList.remove('active');
-                currentActive.classList.add('active');
-                if (shouldScrollIntoView)
-                {
-                    var currentPageOffset = currentPageAnchor
-                        ? currentPageAnchor.offsetTop - 8
-                        : 0;
-                    nav.scrollTop = currentPageOffset - 48;
-                }
-            }
         }
     }
 
@@ -546,7 +544,7 @@
         urlData.searchParams.set('callback', 'cb');
         return fetch(urlData.href)
             .then(response => response.text())
-            .then(text => new Promise(cb => eval(text)));
+            .then<T>(text => new Promise(cb => eval(text)));
     }
 
     interface ShapeData

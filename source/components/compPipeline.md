@@ -14,7 +14,8 @@ classname: Pipeline
 symbol: Heat0
 ---
 ## 基本描述
-{% compsymbol Heat0 %}
+
+![管道元件](comp_HeatingSystem/pipeline.png)
 
 > **管道元件是供热系统中输送热媒的主要设备，实现了系统中其它元件间的相互连接。**
 
