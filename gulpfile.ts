@@ -20,7 +20,7 @@ export function hexoGenerate()
 export function minifyJs()
 {
     return gulp.src('./public/**/*.js')
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest('./public'));
@@ -30,7 +30,7 @@ export function minifyJs()
 export function minifyCss()
 {
     return gulp.src('./public/**/*.css')
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(cleancss())
         .pipe(sourcemaps.write(''))
         .pipe(gulp.dest('./public'));

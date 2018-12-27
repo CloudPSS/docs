@@ -18,10 +18,10 @@
   <%_ if(min) { -%>
     <p class="contact">
       <%_ if(page.author) { -%>
-        <span class="author" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
+        <a class="author" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
           <img src="<%- gravatar(page.author_email ? email : page.author, {d:'identicon', s: '256'}) %>">
           <%= page.author %>
-        </span>
+        </a>
       <%_ } -%>
       <span title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
       <%_ if(date(page.date) !== date(page.updated)) { -%>

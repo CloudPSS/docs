@@ -1,6 +1,19 @@
 <!-- BEGIN post -->
 <%_ if(is_index()) { -%>
-  <script>window.location.href = '<%- url_for(site.posts.sort("date", -1).first().path) %>'</script>
+  <article>
+    <section class="title"><h1><%= page.title %></h1></section>
+    <p>网站生成于 <%= full_date(new Date()) -%></p>
+    <ul>
+    <%_ 
+      const posts = site.posts.sort("date", -1).toArray();
+      posts.splice(-1);
+      posts.forEach(p => {
+        -%><li><%- link_to(p.path, p.title) -%></li><%_
+      });
+    -%>
+    </ul>
+    <%- page.content -%>
+  </article>
 <%_ } else { -%>
   <article>
     <section class="title"><h1><%= page.title %></h1></section>
