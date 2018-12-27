@@ -22,7 +22,7 @@ export function minifyJs()
     return gulp.src('./public/**/*.js')
         .pipe(sourcemaps.init())
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(''))
         .pipe(gulp.dest('./public'));
 }
 
@@ -32,7 +32,7 @@ export function minifyCss()
     return gulp.src('./public/**/*.css')
         .pipe(sourcemaps.init())
         .pipe(cleancss())
-        .pipe(sourcemaps.write())
+        .pipe(sourcemaps.write(''))
         .pipe(gulp.dest('./public'));
 }
 
@@ -41,10 +41,9 @@ export function minifyHtml()
 {
     return gulp.src('./public/**/*.html')
         .pipe(htmlmin({
-            ignoreCustomFragments: [/<div class="mermaid">.+?<\/div>/],
-            collapseBooleanAttributes: true,
             collapseWhitespace: true,
             conservativeCollapse: true,
+            collapseBooleanAttributes: true,
             removeComments: true,
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true,
