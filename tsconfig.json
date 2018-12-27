@@ -1,21 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es3",
-        "lib": [
-            "dom",
-            "es2015"
-        ],
-        "module": "none",
-        "types": [],
+        "target": "es2018",
+        "module": "commonjs",
         "removeComments": true,
         "newLine": "LF",
         "pretty": true,
-        "strict": true,
         "alwaysStrict": true
-    },
-    "typeAcquisition": {
-        "include": [
-            "themes/default/source/js/_runtimeVars.d.ts"
-        ]
     }
 }

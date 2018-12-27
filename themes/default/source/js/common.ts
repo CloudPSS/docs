@@ -1,4 +1,3 @@
-
 (function ()
 {
     const DOMContentLoaded: () => Promise<void> = (function ()
@@ -87,10 +86,11 @@
         const headerElement = document.querySelector('body > header');
         const sidebarElement = document.querySelector('body > aside');
 
-        interface MyPhoto extends Photo
+        interface MyPhoto extends Partial<PhotoSwipe.Item>
         {
             thumb: HTMLImageElement;
             title: string;
+            msrc?: string;
         }
 
         function registerPhotoSwipe(img: MyPhoto)
@@ -114,9 +114,8 @@
                     return;
                 let currItem = current;
                 photoSwipeOpened = true;
-
                 // Initializes and opens PhotoSwipe
-                const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, photos, {
+                const gallery = new PhotoSwipe<PhotoSwipeUI_Default.Options>(pswpElement, PhotoSwipeUI_Default, photos as PhotoSwipe.Item[], {
                     index: photos.indexOf(currItem),
                     history: false,
                     closeOnScroll: false,
@@ -129,7 +128,7 @@
                     },
                     shareEl: false,
                 });
-                gallery.listen('gettingData', (index, item) =>
+                gallery.listen('gettingData', (index, item: MyPhoto) =>
                 {
                     const thumb = item.thumb;
                     item.msrc = thumb.src;
@@ -140,8 +139,9 @@
                 gallery.listen('beforeChange', () =>
                 {
                     currItem.thumb.style.visibility = '';
-                    gallery.currItem.thumb.style.visibility = 'collapse';
-                    currItem = gallery.currItem;
+                    const nextItem = gallery.currItem as MyPhoto;
+                    nextItem.thumb.style.visibility = 'collapse';
+                    currItem = nextItem;
                 });
                 gallery.listen('destroy', () =>
                 {

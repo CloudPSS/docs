@@ -65,7 +65,7 @@ time_format: HH:mm:ss
 theme: default
 
 render:
-  ts: tsconfig.json
+  ts: theme/default/tsconfig.json
   
 markdown_it_plus:
   plugins:
