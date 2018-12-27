@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "target": "es3",
+        "lib": [
+            "dom",
+            "es2015"
+        ],
+        "module": "none",
+        "types": [
+            "PhotoSwipe"
+        ],
+        "removeComments": true,
+        "newLine": "LF",
+        "pretty": true,
+        "strict": true,
+        "alwaysStrict": true
+    },
+    "typeAcquisition": {
+        "include": [
+            "source/js/_runtimeVars.d.ts"
+        ]
+    }
+}
