@@ -11,28 +11,36 @@ body > aside
   z-index: 9000
   top: 0
   left: 0
-  height: 100%
+  bottom: 0
   width: $sidebar-width 
   background: white
-  padding-top: $header-height
   &.hide
     transform: translateX(- $sidebar-width - 10px)
   @media (max-width: $mobile-width)
     background: $sidebg
-    padding-top: $mobile-header-height
     left: - $sidebar-width - 10px
     &.open
       left: 0
   
   > nav
     transition: all $size-transition
-    padding: 48px 24px
-    position: relative
-    overflow: hidden auto
-    height: 100%
+    position: absolute
+    overflow-x: hidden
+    overflow-y: auto
     line-height: 2em
+    left: 0
+    right: 0
+    bottom: 0
+    top: $header-height
+    > *
+      margin: 24px
+    > header > h1
+        padding-top: 48px
+        font-size: 1.5em
     @media (max-width: $mobile-width)
-      padding: 24px
+      top: $mobile-header-height
+      > header > h1
+        padding-top: 24px
     a
       border: 0px solid transparent
       transition: all .2s ease
@@ -43,9 +51,6 @@ body > aside
         color: $theme
       &:hover, &:focus
         border-color: $theme
-    > header h1
-      margin: 1em 0
-      font-size: 1.5em
     > section
       h1
         font-size: 1.3em

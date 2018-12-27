@@ -9,7 +9,8 @@
         "types": [
             "PhotoSwipe"
         ],
-        "removeComments": true,
+        "inlineSourceMap": true,
+        "inlineSources": true,
         "newLine": "LF",
         "pretty": true,
         "strict": true,
