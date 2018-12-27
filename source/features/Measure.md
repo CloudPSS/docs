@@ -40,6 +40,9 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 : 只有**保存后**的算例工程才可进行数据下载。
 
 下载的数据为经过压缩存储的数据格式。可通过以下Matab代码进行解析。解析后每个通道的数据存储在结构体`Ch_X`中（`X`为序号，`Ch_X.Name`为通道名称，`Ch_X.Data`为通道数据。）
+
+注意
+: 若解析代码报错，请重新下载最新的代码进行尝试。
  
 ```matlab CloudPSS Result Import /features/Measure/CloudPSSDataImport.m CloudPSSDataImport.m
 
@@ -55,7 +58,7 @@ data = fscanf(fid,'%f');
 fclose(fid);
 
 
-textcell = regexp(config,' ','split');
+textcell = regexp(config,'<[|]>','split');
 
 starttime = textcell{1};
 tempcell = regexp(starttime, '=', 'split');

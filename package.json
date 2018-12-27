@@ -10,10 +10,15 @@
     "prestart": "hexo g --force",
     "start": "nohup hexo s &",
     "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'` > /dev/null 2> /dev/null || :",
-    "deploy": "npm run clean && hexo d"
+    "deploy": "gulp"
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^3.0.4",
+    "gulp": "^4.0.0",
+    "gulp-htmlclean": "^2.7.22",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.1",
     "hexo": "github:OpportunityLiu/hexo#patch-1",
     "hexo-autoprefixer": "^1.0.0",
     "hexo-deployer-rsync": "^0.1.3",
@@ -32,6 +37,8 @@
     "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
     "markdown-it-multimd-table": "^3.1.3",
     "pinyinjs": "^2.2.1",
-    "vue": "^2.5.17"
+    "ts-node": "^7.0.1",
+    "vue": "^2.5.17",
+    "workbox-build": "^3.6.3"
   }
 }

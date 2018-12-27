@@ -10,7 +10,7 @@ data = fscanf(fid,'%f');
 fclose(fid);
 
 
-textcell = regexp(config,' ','split');
+textcell = regexp(config,'<[|]>','split');
 
 starttime = textcell{1};
 tempcell = regexp(starttime, '=', 'split');
@@ -50,7 +50,7 @@ for ptr = 1: ChannelNo
 end
 
 
-disp('µ¼ÈëÍê³É!');
+disp('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!');
 
 for ptr = 1: ChannelNo
     fprintf('Ch_%d -> %s\n',ptr,ChannelName{ptr});
