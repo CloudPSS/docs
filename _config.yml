@@ -102,3 +102,4 @@ deploy:
   host: 192.168.0.145
   user: root
   root: /root/cloudpssdoc
+

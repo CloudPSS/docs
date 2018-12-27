@@ -435,7 +435,7 @@
                 if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
                 {
                     const span = document.createElement('span');
-                    span.setAttribute('role', 'a');
+                    span.setAttribute('role', 'link');
                     span.innerHTML = node.innerHTML;
                     return span;
                 }

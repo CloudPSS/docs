@@ -4,9 +4,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <%- js('/js/browser-check') %>
+    <%- js('/js/browser-check') -%>
+    <%_ if(config.debug_mode === false) { -%>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('<%- url_for('/sw.js') %>').then(function() {
+          console.log('ServiceWorker has been registered!');
+        }).catch(console.error);
+      }
+    </script>
+    <%_ } -%>
     <meta name="theme-color" content="#4285F4">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="manifest" href="<%- url_for('/manifest.json') %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-96x96.png') %>" sizes="96x96">
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-32x32.png') %>" sizes="32x32">
@@ -21,10 +31,10 @@
 
     <%- css('css/page') -%> 
     <%- csscdn('katex@0.10.0-rc.1/dist/katex') -%>
-    <%- jscdn('js-polyfills/polyfill') %>
-    <%- jscdn('vue@^2/dist/vue') %> 
-    <%- csscdn('photoswipe@^4/dist/photoswipe', false) %>
-    <%- csscdn('photoswipe@^4/dist/default-skin/default-skin', false) %>
+    <%- jscdn('js-polyfills/polyfill') -%>
+    <%- jscdn('vue@^2/dist/vue') -%> 
+    <%- csscdn('photoswipe@^4/dist/photoswipe', false) -%>
+    <%- csscdn('photoswipe@^4/dist/default-skin/default-skin', false) -%>
     <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;window.BASE='<%- config.base_url %>';</script>
   </head>
 
@@ -37,8 +47,8 @@
     <%- jscdn('chart.js@^2/dist/Chart') -%>
     <%- jscdn('mermaid@^8/dist/mermaid') -%>
     <%- jscdn('fastclick@^1/lib/fastclick', false) -%>
-    <%- jscdn('photoswipe@^4/dist/photoswipe') %>
-    <%- jscdn('photoswipe@^4/dist/photoswipe-ui-default') %>
+    <%- jscdn('photoswipe@^4/dist/photoswipe') -%>
+    <%- jscdn('photoswipe@^4/dist/photoswipe-ui-default') -%>
     <%- js('/js/common') -%>
     <%- jscdn('mxgraph@3.7.1/javascript/mxClient') -%>
     <%- js('/js/mxGraph/Editor') -%>

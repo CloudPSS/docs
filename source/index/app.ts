@@ -66,8 +66,8 @@
                     'CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户熟悉CloudPSS各类功能，快速理解相关算例的使用，并在相关算例的基础上进行修改。',
                     new Action('更多', '/examples/'),
                     [
-                        new Action('IEEE标准测试系统', '/examples/MMC.html'),
-                        new Action('LCC-HVDC测试系统', '/examples/MMC.html'),
+                        new Action('IEEE标准测试系统', '/examples/IEEE39.html'),
+                        new Action('LCC-HVDC测试系统', '/examples/LCC.html'),
                         new Action('MMC-HVDC测试系统', '/examples/MMC.html'),
                         new Action('区域集中供热系统', '/examples/HeatingSystem.html'),
                     ],
