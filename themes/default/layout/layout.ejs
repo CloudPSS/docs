@@ -30,7 +30,7 @@
     <title><%= title() ? title() + ' - ' : '' %><%= config.title %></title>
 
     <%- css('css/page') -%>
-    <%- csscdn('katex@0.10.0-rc.1/dist/katex') -%>
+    <%- csscdn('katex@^0.10/dist/katex') -%>
     <%- jscdn('js-polyfills/polyfill') -%>
     <%- jscdn('vue@^2/dist/vue') -%> 
     <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;window.BASE='<%- config.base_url %>';</script>

@@ -29,7 +29,7 @@
     "hexo-renderer-ts": "^1.2.5",
     "hexo-server": "^0.2.0",
     "hexo-tag-owl": "github:m80126colin/hexo-tag-owl",
-    "katex": "^0.10.0-rc.1",
+    "katex": "^0.10.0",
     "markdown-it-center-text": "^1.0.4",
     "markdown-it-chart": "^0.2.0",
     "markdown-it-imsize": "^2.0.1",
