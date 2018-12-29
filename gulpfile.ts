@@ -22,7 +22,7 @@ export function minifyJs()
     return gulp.src('./public/**/*.js')
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(uglify())
-        .pipe(sourcemaps.write(''))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./public'));
 }
 
@@ -32,7 +32,7 @@ export function minifyCss()
     return gulp.src('./public/**/*.css')
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(cleancss())
-        .pipe(sourcemaps.write(''))
+        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest('./public'));
 }
 
