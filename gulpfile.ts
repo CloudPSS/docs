@@ -1,5 +1,4 @@
 import * as gulp from 'gulp';
-import * as sourcemaps from 'gulp-sourcemaps';
 import * as cleancss from 'gulp-clean-css';
 import * as uglify from 'gulp-uglify';
 import * as htmlmin from 'gulp-htmlmin';
@@ -19,21 +18,17 @@ export function hexoGenerate()
 // 压缩 public/js 目录 js
 export function minifyJs()
 {
-    return gulp.src('./public/**/*.js')
-        .pipe(sourcemaps.init({loadMaps: true}))
+    return gulp.src('./public/**/*.js', { sourcemaps: true })
         .pipe(uglify())
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 css
 export function minifyCss()
 {
-    return gulp.src('./public/**/*.css')
-        .pipe(sourcemaps.init({loadMaps: true}))
+    return gulp.src('./public/**/*.css', { sourcemaps: true })
         .pipe(cleancss())
-        .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest('./public'));
+        .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 html
@@ -75,11 +70,6 @@ export function generateSw()
         skipWaiting: true,
         clientsClaim: true
     });
-}
-
-export function generatePdf()
-{
-    
 }
 
 export function hexoDeploy()
