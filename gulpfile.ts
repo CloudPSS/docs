@@ -77,6 +77,11 @@ export function generateSw()
     });
 }
 
+export function generatePdf()
+{
+    
+}
+
 export function hexoDeploy()
 {
     const h = new hexo(process.cwd(), {});

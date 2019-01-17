@@ -1,6 +1,6 @@
 (function ()
 {
-    const link = document.querySelector("body > footer .author[data]") as HTMLAnchorElement;
+    const link = document.querySelector("body > footer a[data]") as HTMLAnchorElement;
     if (!link)
         return;
         
