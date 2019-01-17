@@ -20,11 +20,13 @@ CloudPSS是一款基于网页的在线仿真软件，用户注册账号即可免
 
 {% pullquote question %}
 **忘记密码怎么办，如何找回？**
+
 如果不小心忘记密码可以通过注册邮箱验证的方式，按照步骤重新设置新的密码。
 {% endpullquote %}
 
 {% pullquote question %}
 **接收不到验证码怎么办？**
+
 如果使用QQ邮箱、126等网易邮箱进行注册，若无法接收到验证码，请用注册邮箱向<noreply@cloudpss.net>邮箱发送一封任意内容邮件，之后再尝试发送验证码。
 {% endpullquote %}
 
