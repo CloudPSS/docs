@@ -33,8 +33,7 @@ CloudPSS的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 同步电机的`Initial Condition`页面中，
 1. `Startup Type`需选择`from Steady-state`一项
 2. 需将潮流计算结果中发电机节点的`节点电压幅值（p.u.）`、`节点电压相位（Deg）`、`注入有功（MW）`、`注入无功（MVar）`分别填入依次填入`Initial Voltage Magnitude [p.u.]`，`Initial Voltage Phase [Deg]`，`Initial Active Power [MW]`，`Initial Reactive Power [MVar]`四栏中。
-
-![同步电机启动参数](Initialization/sync.png "同步发电机启动参数页")
+   ![同步电机启动参数](Initialization/sync.png "同步发电机启动参数页") 
 
 {% pullquote tip %}
 同步发电机的相电压基值与所连母线的线电压基值匹配正确，否则填入的`节点电压幅值（p.u.）`应换算到同步电机的基值电压下。

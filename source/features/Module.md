@@ -14,32 +14,25 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
 模块由`子图`直接创建，因此需先建立子图。现以封装一个三相不对称电压源模块为例进行介绍。
 
 1. 搭建三相不对称电压源电路如下（注意修改电压源的相数）。
-
-   ![三相不对称电压源电路](Module/origincircuit.png "待封装的电路：三相不对称电压源电路")
+  ![三相不对称电压源电路](Module/origincircuit.png "待封装的电路：三相不对称电压源电路")
 
 2. 选中需要封装为子图/模块的部分，点击鼠标右键，选择`创建子图`。
-
-   ![创建子图](Module/createsubgraph.png "右键选中，创建子图")
+  ![创建子图](Module/createsubgraph.png "右键选中，创建子图")
 
 3. 在弹出的对话框中，点击`确定`进入子图自定义界面。
-
-   ![确认自定义](Module/subgraphconfig1.png "确认，进入自定义子图信息窗口")
+  ![确认自定义](Module/subgraphconfig1.png "确认，进入自定义子图信息窗口")
 
 4. 在`子图自定义`界面中，设置引脚位置、引脚名（描述）如下。
-
    ![自定义子图信息窗口](Module/subgraphconfig2.png "自定义子图信息窗口")
 
 5. 点击`新建`，即可创建子图。子图图标如下。
-
-   ![子图图标](Module/subgraphicon.png "子图图标")
+  ![子图图标](Module/subgraphicon.png "子图图标")
 
 6. 右键选中子图，点击`保存成模块`，弹出`模块配置`界面。
-
-   ![保存成模块](Module/saveasmodule.png "保存成模块")
+  ![保存成模块](Module/saveasmodule.png "保存成模块")
 
 7. 点击`选择模块图标`，上传模块图标（显示在左侧模型库中的图标），设定模块名称、模块符号、是否公开、描述以及模块参数等信息。
-
-   ![模块配置](Module/moduleconfig.png "模块配置")
+  ![模块配置](Module/moduleconfig.png "模块配置")
 
     {% pullquote tip %}
     - 建议选择**正方形**图片作为模块图标。
@@ -48,8 +41,7 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
     {% endpullquote %}
 
 8. 点击`保存`，弹出保存成功提示，说明模块已保存成功。刷新工作台后，模块会显示在左侧`模型库`->`模块`标签下。 
-
-    ![模块保存成功](Module/savemodulesuccess.png "模块保存成功")
+   ![模块保存成功](Module/savemodulesuccess.png "模块保存成功")
     ![模块列表](Module/ModuleList.png "模块保存成功后出现在列表中")
 
     {% pullquote tip %}
