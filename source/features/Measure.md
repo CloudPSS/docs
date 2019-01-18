@@ -22,7 +22,7 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 
 ## 信号整理
 
-某些元件的量测信号为多维信号，例如`三相交流电压源->Monitoring->3 Phase Source Votage Vector`所对应的信号即为3维信号。用户若需要其中某一维的信号，如A相，则可利用`控制-基础->多路信号分离`进行信号拆分，详见：[多路信号分离元件说明](/components/comp_ChannelDeMerge.html)。同理，若要将多路信号合并为多维信号进行绘图，则可利用`控制-基础->多路信号合并`进行信号合并，详见：[多路信号合并元件说明](/components/comp_ChannelMerge.html)。
+某些元件的量测信号为多维信号，例如`三相交流电压源->Monitoring->3 Phase Source Votage Vector`所对应的信号即为3维信号。用户若需要其中某一维的信号，如A相，则可利用`控制-基础->多路信号分离`进行信号拆分，详见[多路信号分离元件说明](/components/comp_ChannelDeMerge.html)。同理，若要将多路信号合并为多维信号进行绘图，则可利用`控制-基础->多路信号合并`进行信号合并，详见[多路信号合并元件说明](/components/comp_ChannelMerge.html)。
 
 ## 信号输出
 
@@ -36,15 +36,15 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 ![波形展示](Measure/datadownload.png "波形展示界面")
 ![数据下载](Measure/datadownloaddialog.png "数据下载界面")
 
-注意
-: 只有**保存后**的算例工程才可进行数据下载。
+{% pullquote tip %}
+只有**保存后**的算例工程才可进行数据下载。
+{% endpullquote %}
 
-下载的数据为经过压缩存储的数据格式。可通过以下Matab代码进行解析。解析后每个通道的数据存储在结构体`Ch_X`中（`X`为序号，`Ch_X.Name`为通道名称，`Ch_X.Data`为通道数据。）
+下载的数据为经过压缩存储的数据格式。可通过以下MatLab代码进行解析。解析后每个通道的数据存储在结构体`Ch_X`中（`X`为序号，`Ch_X.Name`为通道名称，`Ch_X.Data`为通道数据。）
 
-
-
-注意
-: 若解析代码报错，请重新下载最新的代码进行尝试。
+{% pullquote tip %}
+若解析代码报错，请重新下载最新的代码进行尝试。
+{% endpullquote %}
 
 {% gist 6f73ca9aac7d70e3acf324284a5abf52 %}
 
