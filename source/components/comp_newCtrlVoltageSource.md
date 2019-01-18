@@ -43,8 +43,9 @@ symbol: newCtrlVoltageSource
 
 ## 使用说明
 
-注意事项
-: 若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+{% pullquote tip %}
+若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+{% endpullquote %}
 
 ## 测试模型
 [<test name>](<test link>)显示了受控电压源的典型应用。
