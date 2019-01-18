@@ -4,6 +4,9 @@ import * as uglify from 'gulp-uglify';
 import * as htmlmin from 'gulp-htmlmin';
 import * as workboxBuild from 'workbox-build';
 import * as hexo from 'hexo';
+import * as puppeteer from "puppeteer";
+import * as path from 'path';
+import * as fs from 'fs';
 
 export function hexoGenerate()
 {
@@ -72,6 +75,27 @@ export function generateSw()
     });
 }
 
+export async function generatePdf()
+{
+    if (!fs.existsSync("./public/pdf"))
+        await fs.promises.mkdir("./public/pdf");
+
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    for (const url of (require("./public/search.json") as Array<{ url: string }>).map(d => d.url))
+    {
+        const p = `./public/pdf${url.replace(/\.html?$/, ".pdf")}`;
+        console.log(p);
+        const uri = new URL(url, "https://docs.cloudpss.net");
+        try { await page.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
+        const dir = path.dirname(p);
+        if (!fs.existsSync(dir))
+            await fs.promises.mkdir(dir);
+        await page.pdf({ path: p, format: "A4", margin: { left: 32, right: 32, top: 40, bottom: 40 } });
+
+    }
+    await browser.close();
+}
 export function hexoDeploy()
 {
     const h = new hexo(process.cwd(), {});
