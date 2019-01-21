@@ -36,10 +36,6 @@ symbol: newLineCluster
 
 ## 使用说明
 
-
-## 测试模型
-[<test name>](<test link>)显示了分线/集线器的典型应用。
-
 ## 相关元件
 
 

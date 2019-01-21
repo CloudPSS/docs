@@ -43,8 +43,6 @@ symbol: newSinGen
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了正弦发生器的典型应用。
 
 ## 相关元件
 

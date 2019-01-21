@@ -36,8 +36,6 @@ symbol: newAbs
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了绝对值函数的典型应用。
 
 ## 相关元件
 

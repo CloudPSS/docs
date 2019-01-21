@@ -35,8 +35,6 @@ symbol: newVoltageMeter
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了电压表的典型应用。
 
 ## 相关元件
 

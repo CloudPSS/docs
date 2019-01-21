@@ -52,8 +52,6 @@ symbol: newLoopNode
 
 ![带环系统](newLoopNode/breakloop.png)
 
-## 测试模型
-[<test name>](<test link>)显示了代数环解环点的典型应用。
 
 ## 相关元件
 

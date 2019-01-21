@@ -78,8 +78,6 @@ symbol: newACVoltageSource_3p
 若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
 {% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了三相交流电压源的典型应用。
 
 ## 相关元件
 

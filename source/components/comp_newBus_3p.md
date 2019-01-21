@@ -45,8 +45,6 @@ symbol: newBus_3p
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了三相交流母线的典型应用。
 
 ## 相关元件
 

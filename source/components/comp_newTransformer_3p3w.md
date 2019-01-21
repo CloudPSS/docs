@@ -94,8 +94,6 @@ symbol: newTransformer_3p3w
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了三相三绕组变压器的典型应用。
 
 ## 相关元件
 

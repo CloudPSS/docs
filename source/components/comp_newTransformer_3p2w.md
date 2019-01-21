@@ -78,8 +78,6 @@ symbol: newTransformer_3p2w
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了三相双绕组变压器的典型应用。
 
 ## 相关元件
 

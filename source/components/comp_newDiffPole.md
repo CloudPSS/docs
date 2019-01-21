@@ -52,8 +52,6 @@ symbol: newDiffPole
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了微分极点的典型应用。
 
 ## 相关元件
 

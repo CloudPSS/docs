@@ -40,8 +40,6 @@ symbol: newLimiter
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了限幅器的典型应用。
 
 ## 相关元件
 
