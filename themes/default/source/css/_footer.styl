@@ -4,6 +4,7 @@
 $page-footer-inset = 8px
 
 body > footer
+  hide-for-print()
   color: $light
   user-select: none
   border-top: 0.2px $border solid
@@ -31,6 +32,3 @@ body > footer
   a
     color: @color
     font-weight: unset
-    
-  @media print
-    page-break-inside: avoid

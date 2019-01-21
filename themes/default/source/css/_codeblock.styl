@@ -6,7 +6,9 @@ code, pre, kbd, samp
   font-family: $code-font
   font-size: $code-font-size
   background-color: $codebg
-  
+  @media print
+    background-color: white
+
 kbd 
   display: inline-block
   white-space: nowrap
@@ -44,6 +46,8 @@ code
 figure.highlight
   position: relative
   background-color: $codebg
+  @media print
+    background-color: white
   padding: 0 
   margin: 1.2em 0
   border-radius: 4px
