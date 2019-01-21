@@ -47,7 +47,7 @@ symbol: newLogicGate3
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 配置Gate Type可实现：
 + 与门：当且仅当所有输入信号为1，输出信号为1。
 + 或门：若任一输入信号为1，则输出信号为1。

@@ -38,7 +38,7 @@ symbol: newSelector
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 配置“Select A When”、“Threshold”确定选择器判据，如：Ctrl ≥ Threshold，Ctrl < Threshold。
 + 当输入控制信号满足判据条件时，元件输出信号选择为信号A。
 + 当输入控制信号不满足判据条件时，元件输出信号选择为信号B。
