@@ -36,8 +36,6 @@ symbol: newRound
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了取整的典型应用。
 
 ## 相关元件
 

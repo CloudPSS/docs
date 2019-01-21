@@ -36,11 +36,11 @@ symbol: newTrigonometric
 
 ## 使用说明
 
-> + Tan函数在(n+0.5)π处无意义。
-> + ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
+{% pullquote tip %}
++ Tan函数在(n+0.5)π处无意义。
++ ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
+{% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了三角函数的典型应用。
 
 ## 相关元件
 

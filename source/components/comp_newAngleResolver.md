@@ -37,11 +37,10 @@ symbol: newAngleResolver
 
 ## 使用说明
 
-> + 配置Configuration/Input Is in、Output Is in选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
-> + 配置Output Range选择输出范围为0到2π(360°)或-π(-180°)到π(180°)。
-
-## 测试模型
-[<test name>](<test link>)显示了角度转换器的典型应用。
+{% pullquote tip %}
++ 配置Configuration/Input Is in、Output Is in选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
++ 配置Output Range选择输出范围为0到2π(360°)或-π(-180°)到π(180°)。
+{% endpullquote %}
 
 ## 相关元件
 

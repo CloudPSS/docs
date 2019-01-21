@@ -46,8 +46,6 @@ symbol: newCtrlCurrentSource
 CloudPSS中的电流源为`理想电流源`模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
 {% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了受控电流源的典型应用。
 
 ## 相关元件
 

@@ -34,8 +34,6 @@ symbol: ChannelDeMerge
 输入输出维数需要匹配，如在上例中原始M\*N维信号至少为4\*3维。
 {% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了多路信号分离的典型应用。
 
 ## 相关元件
 

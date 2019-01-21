@@ -34,8 +34,6 @@ symbol: newDeltaT
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了仿真步长输入的典型应用。
 
 ## 相关元件
 

@@ -44,8 +44,6 @@ symbol: newClarkTransform
 ## 使用说明
 
 
-## 测试模型
-[<test name>](<test link>)显示了Clark变换器的典型应用。
 
 ## 相关元件
 

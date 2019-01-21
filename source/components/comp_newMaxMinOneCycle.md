@@ -35,10 +35,6 @@ symbol: newMaxMinOneCycle
 
 ## 使用说明
 
-
-## 测试模型
-[<test name>](<test link>)显示了周期最大/小值的典型应用。
-
 ## 相关元件
 
 [最大/最小值](/components/comp_newMaxMin.html)

@@ -89,8 +89,6 @@ symbol: TLine_3p
   {Y_m} &= Y\frac{ {\tanh \left( {\gamma l/2} \right)} }{ {\gamma l/2} } 
 \end{aligned}$$
 
-## 测试模型
-[<test name>](<test link>)显示了三相传输线的典型应用。
  
 ## 相关元件
 

@@ -34,8 +34,6 @@ symbol: ChannelMerge
 输入输出维数需要匹配，如在上例中理论构成的新多维信号不得小于参数设置的输出引脚维数。
 {% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了多路信号合并的典型应用。
 
 ## 相关元件
 

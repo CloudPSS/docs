@@ -35,11 +35,11 @@ symbol: newSampleHold
 
 ## 使用说明
 
-> + 当hold端由0变为1时，保持输出该时刻对应的输入信号数值直到hold端为0。
-> + 当hold端为0时，输出等于输入。
+{% pullquote tip %}
++ 当hold端由0变为1时，保持输出该时刻对应的输入信号数值直到hold端为0。
++ 当hold端为0时，输出等于输入。
+{% endpullquote %}
 
-## 测试模型
-[<test name>](<test link>)显示了采样保持的典型应用。
 
 ## 相关元件
 
