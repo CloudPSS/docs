@@ -30,7 +30,7 @@ symbol: ChannelMerge
 
 ![信号图3](comp_Mux/M3.png)
 
-{% pullquote tip %}
+{% pullquote info %}
 输入输出维数需要匹配，如在上例中理论构成的新多维信号不得小于参数设置的输出引脚维数。
 {% endpullquote %}
 

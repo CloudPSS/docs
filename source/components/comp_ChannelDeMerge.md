@@ -30,7 +30,7 @@ symbol: ChannelDeMerge
 
 ![信号图1](comp_DeMux/M2.png)
 
-{% pullquote tip %}
+{% pullquote info %}
 输入输出维数需要匹配，如在上例中原始M\*N维信号至少为4\*3维。
 {% endpullquote %}
 

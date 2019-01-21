@@ -36,7 +36,7 @@ symbol: newTrigonometric
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 + Tan函数在(n+0.5)π处无意义。
 + ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
 {% endpullquote %}

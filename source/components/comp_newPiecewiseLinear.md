@@ -40,7 +40,7 @@ symbol: newPiecewiseLinear
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 需要设定的参数为：两个固定的坐标点($x_1$,$y_1$)、($x_2$,$y_2$)，以及坐标点左右两侧的斜率$K_l$、$K_r$。函数式为：
 $$\begin{array}{l}
 y(t) = {K_l}u(t) + {y_1} - {K_l}{x_1},u(t) \le {x_1}\\

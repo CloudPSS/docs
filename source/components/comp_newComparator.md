@@ -39,7 +39,7 @@ symbol: newComparator
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 配置Expression确定比较器的判据，如：A>=B，A< B。
 + 判据为真，则上输出引脚输出设定真值，下输出引脚输出设定假值。
 + 判据为假，则上输出引脚输出设定假值，下输出引脚输出设定真值。

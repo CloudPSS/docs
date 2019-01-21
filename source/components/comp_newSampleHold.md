@@ -35,7 +35,7 @@ symbol: newSampleHold
 
 ## 使用说明
 
-{% pullquote tip %}
+{% pullquote info %}
 + 当hold端由0变为1时，保持输出该时刻对应的输入信号数值直到hold端为0。
 + 当hold端为0时，输出等于输入。
 {% endpullquote %}
