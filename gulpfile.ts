@@ -8,6 +8,8 @@ import * as puppeteer from "puppeteer";
 import * as path from 'path';
 import * as fs from 'fs';
 
+/// <reference path="types.d.ts"/>
+
 export function hexoGenerate()
 {
     const h = new hexo(process.cwd(), {});
@@ -81,19 +83,64 @@ export async function generatePdf()
         await fs.promises.mkdir("./public/pdf");
 
     const browser = await puppeteer.launch();
-    const page = await browser.newPage();
-    for (const url of (require("./public/search.json") as Array<{ url: string }>).map(d => d.url))
+
+    let pageMap = require("./public/search.json") as SearchRecord[];
+    pageMap = pageMap.filter(p => p.url.match(/\.html?$/))
+        .sort((a, b) => 
+        {
+            var ao = a.order || Number.MAX_VALUE;
+            var bo = b.order || Number.MAX_VALUE;
+            if (ao !== bo)
+                return ao - bo;
+            return a.title.localeCompare(b.title);
+        });
+
+    const siteMap = require("./public/sitemap.json") as SiteMap;
+
+    async function saveCate(typeKey: string, cat: Category, path: string)
     {
-        const p = `./public/pdf${url.replace(/\.html?$/, ".pdf")}`;
+        const catname = Object.getOwnPropertyNames(cat)[0];
+        path = path + catname + "/";
+
+        let content = cat[catname];
+        if (!Array.isArray(content))
+            content = [content];
+
+        for (const child of content) 
+        {
+            if (typeof child === 'number')
+                await pageMap.filter(p => p.category === child && p.type === typeKey).map(p => savePage(p, path + p.order + (p.title || "index")));
+            else
+                await saveCate(typeKey, child, path);
+        }
+    }
+
+    for (const typeKey in siteMap)
+    {
+        const path = typeKey + "/";
+        const type = siteMap[typeKey];
+        pageMap.filter(p => p.type == typeKey && !p.category).map(p => savePage(p, path + p.order + (p.title || "index")));
+        if (type.categories)
+        {
+            await type.categories.map(cat => saveCate(typeKey, cat, path));
+        }
+    }
+
+    async function savePage(page: SearchRecord, fileName: string)
+    {
+        const p = `./public/pdf/${fileName}.pdf`;
         console.log(p);
-        const uri = new URL(url, "https://docs.cloudpss.net");
-        try { await page.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
+        const uri = new URL(page.url, "https://docs.cloudpss.net");
+        const webpage = await browser.newPage();
+        try { await webpage.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
+        await webpage.$$eval("h2#相关元件, h2#相关元件 + *", e => e.forEach(el => el.remove()));
         const dir = path.dirname(p);
         if (!fs.existsSync(dir))
             await fs.promises.mkdir(dir);
-        await page.pdf({ path: p, format: "A4", margin: { left: 32, right: 32, top: 40, bottom: 40 } });
-
+        await webpage.pdf({ path: p, format: "A4", margin: { left: 32, right: 32, top: 40, bottom: 40 } });
+        await webpage.close();
     }
+
     await browser.close();
 }
 export function hexoDeploy()

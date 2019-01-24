@@ -1,36 +1,9 @@
 //import Vue from '../../../../node_modules/vue/types/index';
 
+/// <reference path="../../../../types.d.ts"/>
 
 (async function ()
 {
-
-    interface SearchRecord
-    {
-        url?: string;
-        content?: string;
-        title?: string;
-        type?: string;
-        category?: number;
-
-        extend?: string;
-    }
-
-    interface SiteMap
-    {
-        [key: string]: Type;
-    }
-
-    interface Type
-    {
-        name: string;
-        categories?: CategoryMap;
-    }
-
-    interface CategoryMap
-    {
-        [key: number]: string[] | undefined;
-    }
-
     class FormattedSearchRecord
     {
         url: string;
