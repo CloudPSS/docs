@@ -31,6 +31,10 @@ function searchGenerator(locals)
         {
             temp_page.content = page._content.trim();
         }
+        if (!Number.isNaN((page.order)))
+        {
+            temp_page.order = Number(page.order);
+        }
         if (!Number.isNaN((page.category)))
         {
             temp_page.category = Number(page.category);
