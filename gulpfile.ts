@@ -1,3 +1,6 @@
+
+/// <reference path="types.d.ts"/>
+
 import * as gulp from 'gulp';
 import * as cleancss from 'gulp-clean-css';
 import * as uglify from 'gulp-uglify';
@@ -7,8 +10,8 @@ import * as hexo from 'hexo';
 import * as puppeteer from "puppeteer";
 import * as path from 'path';
 import * as fs from 'fs';
+import * as  sanitize from "sanitize-filename";
 
-/// <reference path="types.d.ts"/>
 
 export function hexoGenerate()
 {
@@ -79,10 +82,12 @@ export function generateSw()
 
 export async function generatePdf()
 {
-    if (!fs.existsSync("./public/pdf"))
-        await fs.promises.mkdir("./public/pdf");
+    const pathRoot = "./public/pdf/";
+    if (!fs.existsSync(pathRoot))
+        await fs.promises.mkdir(pathRoot);
 
     const browser = await puppeteer.launch();
+    const webpage = await browser.newPage();
 
     let pageMap = require("./public/search.json") as SearchRecord[];
     pageMap = pageMap.filter(p => p.url.match(/\.html?$/))
@@ -101,44 +106,64 @@ export async function generatePdf()
     {
         const catname = Object.getOwnPropertyNames(cat)[0];
         path = path + catname + "/";
+        if (!fs.existsSync(path))
+            await fs.promises.mkdir(path);
 
         let content = cat[catname];
         if (!Array.isArray(content))
             content = [content];
 
+        let catOrder = 0;
         for (const child of content) 
         {
             if (typeof child === 'number')
-                await pageMap.filter(p => p.category === child && p.type === typeKey).map(p => savePage(p, path + p.order + (p.title || "index")));
+                for (const p of pageMap.filter(p => p.category === child && p.type === typeKey))
+                    await savePage(p, path);
             else
-                await saveCate(typeKey, child, path);
+            {
+                await saveCate(typeKey, child, path + catOrder);
+                catOrder++;
+            }
         }
     }
 
+    for (const p of pageMap.filter(p => !p.type))
+        await savePage(p, pathRoot);
+
+    let typeOrder = 0;
     for (const typeKey in siteMap)
     {
-        const path = typeKey + "/";
+        const path = pathRoot + typeOrder + typeKey + "/";
+        typeOrder++;
+
+        if (!fs.existsSync(path))
+            await fs.promises.mkdir(path);
         const type = siteMap[typeKey];
-        pageMap.filter(p => p.type == typeKey && !p.category).map(p => savePage(p, path + p.order + (p.title || "index")));
+
+        for (const p of pageMap.filter(p => p.type == typeKey && !p.category))
+            await savePage(p, path);
+
         if (type.categories)
         {
-            await type.categories.map(cat => saveCate(typeKey, cat, path));
+            let catOrder = 0;
+            for (const cat of type.categories)
+            {
+                await saveCate(typeKey, cat, path + catOrder);
+                catOrder++;
+            }
         }
     }
 
-    async function savePage(page: SearchRecord, fileName: string)
+    async function savePage(page: SearchRecord, dir: string)
     {
-        const p = `./public/pdf/${fileName}.pdf`;
+        const p = `${dir}${(page.order || 0)}${(sanitize(page.title) || "index")}.pdf`;
         console.log(p);
         const uri = new URL(page.url, "https://docs.cloudpss.net");
-        const webpage = await browser.newPage();
         try { await webpage.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
         await webpage.$$eval("h2#相关元件, h2#相关元件 + *", e => e.forEach(el => el.remove()));
-        const dir = path.dirname(p);
         if (!fs.existsSync(dir))
             await fs.promises.mkdir(dir);
         await webpage.pdf({ path: p, format: "A4", margin: { left: 32, right: 32, top: 40, bottom: 40 } });
-        await webpage.close();
     }
 
     await browser.close();
