@@ -50,12 +50,10 @@ for ptr = 1: ChannelNo
 end
 
 
-disp('�������!');
+disp('导入完成!');
 
 for ptr = 1: ChannelNo
     fprintf('Ch_%d -> %s\n',ptr,ChannelName{ptr});
 end
 
 clear Channel ChannelNo ChannelPointNum ChannelSpTime ChNo config data dataloc deltaT endtime fid filename fname loc pname ptr starttime temp tempcell tempNum Tend textcell timeline Tstart ans
-
-
