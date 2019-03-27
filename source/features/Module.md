@@ -23,7 +23,7 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
   ![确认自定义](Module/subgraphconfig1.png "确认，进入自定义子图信息窗口")
 
 4. 在`子图自定义`界面中，设置引脚位置、引脚名（描述）如下。
-   ![自定义子图信息窗口](Module/subgraphconfig2.png "自定义子图信息窗口")
+   ![自定义子图信息窗口](Module/subgraphconfig2.png "自定义子图信息窗口" =x350)
 
 5. 点击`新建`，即可创建子图。子图图标如下。
   ![子图图标](Module/subgraphicon.png "子图图标")
@@ -32,7 +32,7 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
   ![保存成模块](Module/saveasmodule.png "保存成模块")
 
 7. 点击`选择模块图标`，上传模块图标（显示在左侧模型库中的图标），设定模块名称、模块符号、是否公开、描述以及模块参数等信息。
-  ![模块配置](Module/moduleconfig.png "模块配置")
+  ![模块配置](Module/moduleconfig.png "模块配置" =x400)
 
     {% pullquote tip %}
     - 建议选择**正方形**图片作为模块图标。
@@ -52,7 +52,7 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
 
 算例中拖入所创建的模块，双击模块图标，即可查看模块内部拓扑细节。
 
-![查看模块](Module/moduleinner.png "双击查看模块内部细节")
+![查看模块](Module/moduleinner.png "双击查看模块内部细节" =x400)
 
 与原始子图对比，可见两者结构完全一致。
 
@@ -73,9 +73,9 @@ CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进
 
 用户可在`个人主页`->`云空间`->`我的模块`处删除已有的模块。
 
-![我的模块](Module/moduleindex.png "我的模块文件夹")
+![我的模块](Module/moduleindex.png "我的模块文件夹" =x400)
 
-![删除模块](Module/moduledelete.png "删除模块")
+![删除模块](Module/moduledelete.png "删除模块" =x400)
 
 {% pullquote tip %}
 模块删除后，将影响所有使用该模块的算例！请谨慎操作。

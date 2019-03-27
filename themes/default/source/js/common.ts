@@ -171,6 +171,9 @@
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main img');
         for (const container of Array.from(containers))
         {
+            container.style.maxHeight = formatValue(container.getAttribute('height'));
+            container.removeAttribute('height');
+            
             const title = container.title || '';
             const alt = container.alt || '';
             if (alt && !title)
@@ -194,8 +197,6 @@
             {
                 registerPhotoSwipe({ thumb: container, title: htmlEscape(title || alt) });
             }
-            container.style.maxHeight = formatValue(container.getAttribute('height'));
-            container.removeAttribute('height');
         }
         function formatValue(v?: null | string)
         {
