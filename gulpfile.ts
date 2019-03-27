@@ -87,6 +87,7 @@ export async function generatePdf()
         await fs.promises.mkdir(pathRoot);
 
     const browser = await puppeteer.launch({
+        args:["--no-sandbox"]
     });
     const webpage = await browser.newPage();
 
