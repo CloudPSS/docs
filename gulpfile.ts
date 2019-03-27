@@ -137,8 +137,6 @@ export async function generatePdf()
         const path = pathRoot + typeOrder + typeKey + "/";
         typeOrder++;
 
-        if (!fs.existsSync(path))
-            await fs.promises.mkdir(path);
         const type = siteMap[typeKey];
 
         for (const p of pageMap.filter(p => p.type == typeKey && !p.category))
@@ -160,7 +158,7 @@ export async function generatePdf()
         const p = `${dir}${(page.order || 0)}${(sanitize(page.title) || "index")}.pdf`;
         console.log(p);
         const uri = new URL(page.url, "https://docs.cloudpss.net");
-        try { await webpage.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
+        try { await webpage.goto(uri.href, { waitUntil: "networkidle0", timeout: 30000 }); } catch{ }
         await webpage.$$eval("h2#相关元件, h2#相关元件 + *", e => e.forEach(el => el.remove()));
         await webpage.$$eval("h2#使用说明, h2#使用说明 + *", e => { if (e.length === 1) { e.forEach(el => el.remove()) } });
         await webpage.$$eval("mx-graph > svg", (e: SVGElement[]) => e.forEach(el => el.style.maxHeight = '200px'));
