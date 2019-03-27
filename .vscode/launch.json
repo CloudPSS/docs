@@ -4,17 +4,21 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug Gulp",
-            "program": "${workspaceRoot}/node_modules/gulp/bin/gulp.js",
-            "stopOnEntry": true,
+            "name": "Gulp generatePdf",
+            "program": "${workspaceFolder}/node_modules/gulp/bin/gulp.js",
             "args": [
                 "generatePdf"
-            ],
-            "cwd": "${workspaceRoot}/",
-            "outFiles": [],
-            "sourceMaps": true,
-            "runtimeExecutable": null,
-            "env": {}
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "hexo",
+            "program": "${workspaceFolder}/node_modules/hexo/node_modules/hexo-cli/bin/hexo",
+            "stopOnEntry": true,
+            "args": [
+                "generate"
+            ]
         }
     ]
 }
