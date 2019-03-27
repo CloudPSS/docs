@@ -86,7 +86,8 @@ export async function generatePdf()
     if (!fs.existsSync(pathRoot))
         await fs.promises.mkdir(pathRoot);
 
-    const browser = await puppeteer.launch();
+    const browser = await puppeteer.launch({
+    });
     const webpage = await browser.newPage();
 
     let pageMap = require("./public/search.json") as SearchRecord[];
@@ -161,9 +162,12 @@ export async function generatePdf()
         const uri = new URL(page.url, "https://docs.cloudpss.net");
         try { await webpage.goto(uri.href, { waitUntil: "networkidle0", timeout: 5000 }); } catch{ }
         await webpage.$$eval("h2#相关元件, h2#相关元件 + *", e => e.forEach(el => el.remove()));
+        await webpage.$$eval("h2#使用说明, h2#使用说明 + *", e => { if (e.length === 1) { e.forEach(el => el.remove()) } });
+        await webpage.$$eval("mx-graph > svg", (e: SVGElement[]) => e.forEach(el => el.style.maxHeight = '200px'));
+        await webpage.$$eval('th[style="text-align:center"]', (e: HTMLTableHeaderCellElement[]) => e.forEach(el => { if (el.innerText === "类型") el.style.minWidth = "104px"}));
         if (!fs.existsSync(dir))
             await fs.promises.mkdir(dir);
-        await webpage.pdf({ path: p, format: "A4", margin: { left: 32, right: 32, top: 40, bottom: 40 } });
+        await webpage.pdf({ path: p, format: "A4", margin: { left: '10mm', right: '10mm', top: '10mm', bottom: '10mm' } });
     }
 
     await browser.close();
