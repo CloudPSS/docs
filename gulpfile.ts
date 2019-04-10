@@ -10,10 +10,10 @@ import * as hexo from 'hexo';
 import * as puppeteer from "puppeteer";
 import * as path from 'path';
 import * as fs from 'fs';
-import * as  sanitize from "sanitize-filename";
+import * as sanitize from "sanitize-filename";
 
 
-export function hexoGenerate()
+export function hexoGenerate() : Promise<void>
 {
     const h = new hexo(process.cwd(), {});
     return (h.init() as Promise<void>)
@@ -35,7 +35,7 @@ export function minifyJs()
 export function minifyCss()
 {
     return gulp.src('./public/**/*.css', { sourcemaps: true })
-        .pipe(cleancss())
+        .pipe<NodeJS.ReadWriteStream>(cleancss())
         .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
@@ -171,7 +171,7 @@ export async function generatePdf()
 
     await browser.close();
 }
-export function hexoDeploy()
+export function hexoDeploy() : Promise<void>
 {
     const h = new hexo(process.cwd(), {});
     return h.init()
