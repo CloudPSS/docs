@@ -17,14 +17,14 @@ function createHexo(depoly = true)
     const config = deploy ? "_config_deploy.yml" : "_config.yml";
     return new hexo(process.cwd(), { config });
 }
-export function hexoGenerate(): Promise<void>
+export async function hexoGenerate(): Promise<void>
 {
     const h = createHexo();
-    return (h.init() as Promise<void>)
-        .then(() => h.load())
-        .then(() => h.call('clean'))
-        .then(() => h.call('generate', { force: true }))
-        .finally(() => h.exit());
+    await h.init();
+    await h.load();
+    await h.call('clean');
+    await h.call('generate', { force: true });
+    await h.exit();
 }
 
 // 压缩 public/js 目录 js
@@ -175,13 +175,12 @@ export async function generatePdf()
 
     await browser.close();
 }
-export function hexoDeploy(): Promise<void>
+export async function hexoDeploy(): Promise<void>
 {
     const h = createHexo();
-    return h.init()
-        .then(() => h.load())
-        .then(() => h.call('deploy', {}))
-        .finally(() => h.exit());
+    await h.init();
+    await h.call('deploy', {});
+    await h.exit();
 }
 
 export const generate = gulp.series(hexoGenerate, gulp.parallel(minifyCss, minifyJs, minifyHtml), generateSw);
