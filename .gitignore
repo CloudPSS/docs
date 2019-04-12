@@ -5,6 +5,6 @@ package-lock.json
 *.log
 node_modules/
 public/
+public_debug/
 .deploy*/
-.c9/
 nohup.out
