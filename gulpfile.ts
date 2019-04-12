@@ -12,10 +12,14 @@ import * as path from 'path';
 import * as fs from 'fs';
 import * as sanitize from "sanitize-filename";
 
-
-export function hexoGenerate() : Promise<void>
+function createHexo(depoly = true)
 {
-    const h = new hexo(process.cwd(), {});
+    const config = deploy ? "_config_deploy.yml" : "_config.yml";
+    return new hexo(process.cwd(), { config });
+}
+export function hexoGenerate(): Promise<void>
+{
+    const h = createHexo();
     return (h.init() as Promise<void>)
         .then(() => h.load())
         .then(() => h.call('clean'))
@@ -87,7 +91,7 @@ export async function generatePdf()
         await fs.promises.mkdir(pathRoot);
 
     const browser = await puppeteer.launch({
-        args:["--no-sandbox"]
+        args: ["--no-sandbox"]
     });
     const webpage = await browser.newPage();
 
@@ -163,7 +167,7 @@ export async function generatePdf()
         await webpage.$$eval("h2#相关元件, h2#相关元件 + *", e => e.forEach(el => el.remove()));
         await webpage.$$eval("h2#使用说明, h2#使用说明 + *", e => { if (e.length === 1) { e.forEach(el => el.remove()) } });
         await webpage.$$eval("mx-graph > svg", (e: SVGElement[]) => e.forEach(el => el.style.maxHeight = '200px'));
-        await webpage.$$eval('th[style="text-align:center"]', (e: HTMLTableHeaderCellElement[]) => e.forEach(el => { if (el.innerText === "类型") el.style.minWidth = "104px"}));
+        await webpage.$$eval('th[style="text-align:center"]', (e: HTMLTableHeaderCellElement[]) => e.forEach(el => { if (el.innerText === "类型") el.style.minWidth = "104px" }));
         if (!fs.existsSync(dir))
             await fs.promises.mkdir(dir);
         await webpage.pdf({ path: p, format: "A4", margin: { left: '10mm', right: '10mm', top: '10mm', bottom: '10mm' } });
@@ -171,9 +175,9 @@ export async function generatePdf()
 
     await browser.close();
 }
-export function hexoDeploy() : Promise<void>
+export function hexoDeploy(): Promise<void>
 {
-    const h = new hexo(process.cwd(), {});
+    const h = createHexo();
     return h.init()
         .then(() => h.load())
         .then(() => h.call('deploy', {}))
