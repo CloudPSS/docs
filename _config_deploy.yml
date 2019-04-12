@@ -13,12 +13,12 @@ timezone: Asia/Shanghai
 contact: songyankan@cloudpss.net
 copyright_begin: 2015
 ICP: 京ICP备16015429号-1
-debug_mode: true
+debug_mode: false
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 base_url: https://www.cloudpss.net
-url: https://192.168.0.135:4000
+url: https://docs.cloudpss.net
 cdn_url: https://unpkg.com
 root: /
 permalink: posts/:title.html
@@ -26,7 +26,7 @@ permalink_defaults:
 
 # Directory
 source_dir: source
-public_dir: public_debug
+public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
@@ -98,3 +98,8 @@ markdown_it_plus:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
+  type: rsync
+  host: 192.168.0.145
+  user: root
+  root: /root/cloudpssdoc
+
