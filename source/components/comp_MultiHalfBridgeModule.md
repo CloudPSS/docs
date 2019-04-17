@@ -35,25 +35,25 @@ symbol: HBM
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
-| Capacitor Voltage Vector \[kV\] | 电容电压向量 | 文本 | 此处输半桥子模块电容电压信号量测信号的标签，以#号开头，如#Vc |
-| Capacitor Current Vector \[kA\] | 电容充电电流向量 | 文本 | 此处输半桥子模块电容电流信号量测信号的标签，以#号开头，如#Ic |
-| IGBT A Voltage Vector \[kV\] | IGBT(A)电压向量 | 文本 | 此处输半桥子模块中IBGT(A)的电压信号量测信号的标签，以#号开头，如#Va |
-| IGBT A Current Vector \[kA\] | IGBT(A)电流向量 | 文本 | 此处输半桥子模块中IBGT(A)的电流信号量测信号的标签，以#号开头，如#Ia |
-| Diode A Voltage Vector \[kV\] | 二极管(A)电压向量 | 文本 | 此处输半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Vda |
-| Diode A Current Vector \[kA\] | 二极管(A)电流向量 | 文本 | 此处输半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Ida |
-| IGBT B Voltage Vector \[kV\] | IGBT(B)电压向量 | 文本 | 此处输半桥子模块中IBGT(B)的电压信号量测信号的标签，以#号开头，如#Vb |
-| IGBT B Current Vector \[kA\] | IGBT(B)电流向量 | 文本 | 此处输半桥子模块中IBGT(B)的电流信号量测信号的标签，以#号开头，如#Ib |
-| Diode B Voltage Vector \[kV\] | 二极管(B)电压向量 | 文本 | 此处输半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Vdb |
-| Diode B Current Vector \[kA\] | 二极管(B)电流向量 | 文本 | 此处输半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Idb |
+| Capacitor Voltage Vector \[kV\] | 电容电压向量 | 文本 | 此处输入半桥子模块电容电压信号量测信号的标签，以#号开头，如#Vc |
+| Capacitor Current Vector \[kA\] | 电容充电电流向量 | 文本 | 此处输入半桥子模块电容电流信号量测信号的标签，以#号开头，如#Ic |
+| IGBT A Voltage Vector \[kV\] | IGBT(A)电压向量 | 文本 | 此处输入半桥子模块中IBGT(A)的电压信号量测信号的标签，以#号开头，如#Va |
+| IGBT A Current Vector \[kA\] | IGBT(A)电流向量 | 文本 | 此处输入半桥子模块中IBGT(A)的电流信号量测信号的标签，以#号开头，如#Ia |
+| Diode A Voltage Vector \[kV\] | 二极管(A)电压向量 | 文本 | 此处输入半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Vda |
+| Diode A Current Vector \[kA\] | 二极管(A)电流向量 | 文本 | 此处输入半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Ida |
+| IGBT B Voltage Vector \[kV\] | IGBT(B)电压向量 | 文本 | 此处输入半桥子模块中IBGT(B)的电压信号量测信号的标签，以#号开头，如#Vb |
+| IGBT B Current Vector \[kA\] | IGBT(B)电流向量 | 文本 | 此处输入半桥子模块中IBGT(B)的电流信号量测信号的标签，以#号开头，如#Ib |
+| Diode B Voltage Vector \[kV\] | 二极管(B)电压向量 | 文本 | 此处输入半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Vdb |
+| Diode B Current Vector \[kA\] | 二极管(B)电流向量 | 文本 | 此处输入半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Idb |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Pin + | 1×1 |子模块的接线正端，也即IGBT(a)的s发射极 |                   
-| Pin - | 1×1 |子模块的接线负端，也即IGBT(b)的s发射极 |                   
-| Gate | 由参数控制 |开关信号输入端，其维数为模块数的2倍 |                   
+| Pin + | 1×1 |子模块的接线正端，也即IGBT(a)的s发射极 |
+| Pin - | 1×1 |子模块的接线负端，也即IGBT(b)的s发射极 |
+| Gate | 由参数控制 |开关信号输入端，其维数为模块数的2倍 |
 
 ## 使用说明
 

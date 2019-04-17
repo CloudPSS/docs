@@ -13,6 +13,7 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 * [光伏并网发电系统](/examples/PVsystem.html)
 * [储能并网发电系统](/examples/BESS.html)
 * [IEEE39节点系统](/examples/IEEE39.html) 
+* [直流微电网系统](/examples/DCMicroGrid.html) 
 
 ### 供热系统仿真案例
 * [区域集中供热系统](/examples/HeatingSystem.html)
