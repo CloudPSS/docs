@@ -17,7 +17,7 @@ symbol: HalfBridgeModule
 ## 基本描述
 {% compsymbol HalfBridgeModule %}
 
-> **该元件用于建模半桥模块，也即双向DC/DC模块。通过对S1或S2的开关信号置零，可将其配置为BOOST或BUCK电路。该模块采用了快速开关搜索算法。**
+> **该元件为半桥电路模块(双向DC/DC)的快速化仿真模型，其与详细电磁暂态模型的精度相当。通过对S1或S2的开关信号置零，可将其配置为BOOST或BUCK电路。**
 
 ## 参数列表
 ### Configuration

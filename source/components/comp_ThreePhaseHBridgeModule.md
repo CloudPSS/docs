@@ -17,7 +17,7 @@ symbol: ThreePhaseHBridgeModule
 ## 基本描述
 {% compsymbol ThreePhaseHBridgeModule %}
 
-> **该元件用于建模三相H桥模块，采用了快速开关搜索算法。**
+> **该元件为三相H桥电路模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建整流/逆变器拓扑，适用于大规模微电网仿真。**
 
 ## 参数列表
 ### Configuration
