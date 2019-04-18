@@ -103,7 +103,8 @@ symbol: SyncGen
 | Initial Mechanical Torque \[p.u.\] | 稳态机械转矩Tm0量测信号 | 文本 | 此处输入稳态机械转矩Tm0量测信号量测信号的标签，以#号开头，如#Tm0 |
 | Rotor Speed \[p.u.\] | 转速量测信号 | 文本 | 此处输入转速量测信号量测信号的标签，以#号开头，如#w |
 | Rotor Angle \[Rad\] | 转子角量测信号 | 文本 | 此处输入转子角量测信号量测信号的标签，以#号开头，如#Theta |
-| Load Angle \[Rad\] | Q轴与端电压相量夹角 | 文本 | 此处输入Q轴与端电压相量夹角量测信号的标签，以#号开头，如#LA |
+| Load Angle (Q-axis leads Va) \[Rad\] | Q轴与端电压相量夹角 | 文本 | 此处输入Q轴与端电压相量夹角量测信号的标签，以#号开头，如#LA |
+| Load Angle (Q-axis leads ωₛ*t) \[Rad\] | Q轴与同步旋转坐标系夹角 | 文本 | 此处输入Q轴与同步旋转坐标系夹角量测信号的标签，以#号开头，如#LA1 |
 | Terminal RMS Voltage \[p.u.\] | 定子端电压有效值量测信号 | 文本 | 此处输入定子端电压有效值量测信号量测信号的标签，以#号开头，如#Vrms |
 | Terminal RMS Current \[p.u.\] | 定子端电流有效值量测信号 | 文本 | 此处输入定子端电流有效值量测信号量测信号的标签，以#号开头，如#Irms |
 | Terminal Active Power \[MW\] | 定子端输出有功功率信号 | 文本 | 此处输入定子端输出有功功率信号量测信号的标签，以#号开头，如#Pmsr |

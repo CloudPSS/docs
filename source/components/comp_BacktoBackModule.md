@@ -17,7 +17,7 @@ symbol: BacktoBackModule
 ## 基本描述
 {% compsymbol BacktoBackModule %}
 
-> **该元件用于建模背靠背H桥模块，采用了快速开关搜索算法。**
+> **该元件为背靠背H桥电路模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建AC/AC变流器拓扑等**
 
 ## 参数列表
 ### Configuration
