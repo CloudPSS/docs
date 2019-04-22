@@ -1,5 +1,5 @@
 ---
-title: 电容(初值)
+title: 电容
 author: 
 author_email:
 
@@ -11,10 +11,10 @@ category: 3001
 order: 401
 
 classname: newCapacitorRouterWithInitValue
-symbol: newCapacitorWithInitValue
+symbol: newCapacitorRouterWithInitValue
 ---
 ## 基本描述
-{% compsymbol newCapacitorWithInitValue %}
+{% compsymbol newCapacitorRouterWithInitValue %}
 
 > **该元件用以建模带初始电压的单相或三相电容（单线图）。**
 

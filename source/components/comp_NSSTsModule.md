@@ -71,7 +71,7 @@ symbol: NSSTsModule
 多模块SST的电路图及开关编号如图所示：
 ![电路图](comp_NSSTsModule/SST.png)
 
-下图示出了SST脉冲发生器的单元测试算例，算例详见[Test_NSSTs]()。
+下图示出了SST脉冲发生器的单元测试算例，算例详见[Test_NSSTs](https://www.cloudpss.net/editor/?id=1187)。
 ![单元测试图](comp_VSCModule/SSTN.png)
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。该信号的维数为12N*1。如果不使用SST脉冲发生器，则需要利用**ChannelMerge**元件将所有的开关信号进行合并。合并方式如`端口列表`中GS的输入信号要求进行。
 
