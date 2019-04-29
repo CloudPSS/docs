@@ -28,7 +28,7 @@ symbol: newFaultResistance_3p
 | Fault End Time | s | 故障结束时刻 | 实数（变量） | 故障结束的时刻 |
 | Fault Resistance | Ω | 故障期间电阻 | 实数（变量） | 故障期间的电阻值 |
 | Fault Type |  | 故障类型 | 选择 | 选择故障的类型（A相、B相、C相、AB相、BC相、AC相、ABC相） |
-
+| Fault Clear Type | | 故障清除时刻 | 选择 | 选择故障清除时刻为过零时刻或任意时刻 |
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |

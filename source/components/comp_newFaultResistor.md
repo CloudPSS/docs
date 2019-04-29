@@ -27,6 +27,7 @@ symbol: newFaultResistance_1p
 | Fault Start Time | s | 故障开始时刻 | 实数（变量） | 故障开始的时刻 |
 | Fault End Time | s | 故障结束时刻 | 实数（变量） | 故障结束的时刻 |
 | Fault Resistance | Ω | 故障期间电阻 | 实数（变量） | 故障期间的电阻值 |
+| Fault Clear Type |  | 故障清除时刻 | 选择 | 选择故障清除时刻为过零时刻或任意时刻 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
