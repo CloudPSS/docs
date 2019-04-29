@@ -32,7 +32,7 @@ export function minifyJs()
 {
     return gulp.src('./public/**/*.js', { sourcemaps: true })
         .pipe(uglify())
-        .pipe(gulp.dest('./public', { sourcemaps: '.' }));
+        .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 css
@@ -40,7 +40,7 @@ export function minifyCss()
 {
     return gulp.src('./public/**/*.css', { sourcemaps: true })
         .pipe<NodeJS.ReadWriteStream>(cleancss())
-        .pipe(gulp.dest('./public', { sourcemaps: '.' }));
+        .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 html
