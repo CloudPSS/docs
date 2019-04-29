@@ -16,7 +16,7 @@ symbol: newPLL
 ## 基本描述
 {% compsymbol newPLL %}
 
-> **该元件是一个三相π控制的锁相环，可以产生一个在0°到360°变化的，与输入电压Va同步或锁相的斜升信号theta。**
+> **该元件是一个三相π控制的锁相环，可以产生一个在0到2π变化的，与输入电压Va同步或锁相的斜升信号theta。**
 
 ## 参数列表
 ### Configuration
@@ -27,7 +27,7 @@ symbol: newPLL
 | Integral Gain |  | 积分增益 | 实数（常量） | 锁相环的积分增益 |
 | Base Voltage | kV | 电压基值 | 实数（常量） | 锁相环的电压基准值 |
 | Base Frequency | Hz | 频率基值 | 实数（常量） | 锁相环的频率基准值 |
-| Offset Angle to PLL | Deg | PLL输出波形相移 | 实数（常量） | 输出斜升相角信号的相位偏移 |
+| Offset Angle to PLL | Rad | PLL输出波形相移 | 实数（常量） | 输出斜升相角信号的相位偏移，填入值范围为[-2π,2π] |
 | Initialization Time | s | 启动时间，即PLL输出屏蔽时间 | 实数（常量） | 锁相环的启动时间 |
 | Upper Tracking Limit | p.u. | 被跟踪频率上限 | 实数（常量） | 锁相环频率跟踪的上限 |
 | Lower Tracking Limit | p.u. | 被跟踪频率下限 | 实数（常量） | 锁相环频率跟踪的下限 |
