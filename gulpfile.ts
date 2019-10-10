@@ -1,16 +1,16 @@
 
 /// <reference path="types.d.ts"/>
 
-import * as gulp from 'gulp';
-import * as cleancss from 'gulp-clean-css';
-import * as uglify from 'gulp-uglify';
-import * as htmlmin from 'gulp-htmlmin';
-import * as workboxBuild from 'workbox-build';
-import * as hexo from 'hexo';
-import * as puppeteer from "puppeteer";
-import * as path from 'path';
-import * as fs from 'fs';
-import * as sanitize from "sanitize-filename";
+import gulp from 'gulp';
+import cleancss from 'gulp-clean-css';
+import uglify from 'gulp-uglify';
+import htmlmin from 'gulp-htmlmin';
+import workboxBuild from 'workbox-build';
+import hexo from 'hexo';
+import puppeteer from "puppeteer";
+import path from 'path';
+import fs from 'fs';
+import sanitize from "sanitize-filename";
 
 function createHexo(depoly = true)
 {
