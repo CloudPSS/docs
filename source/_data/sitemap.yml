@@ -35,14 +35,16 @@ features:
   name: 功能帮助
   categories: 
   - 电磁暂态仿真工作台: 1000
+  - 移频暂态仿真工作台: 1500
   - 供热系统仿真工作台: 2000
-
+  
 
 examples: 
   name: 案例介绍
   categories: 
   - 电磁暂态仿真案例: 1000
+  - 移频暂态仿真案例: 1500
   - 供热系统仿真案例: 2000
 
-about: 
+about:
   name: 关于
