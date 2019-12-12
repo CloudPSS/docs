@@ -18,14 +18,14 @@
   <%_ if(min) { -%>
     <p class="contact">
       <%_ if(page.author) { -%>
-        <a rel="author" data="<%- btoa(btoa(btoa(email))) %>" title="联系作者">
+        <a rel="author" data="<%- btoa(btoa(btoa(email))) %>" title="<%- __('contact-author') %>">
           <img src="<%- gravatar(page.author_email ? email : page.author, {d:'identicon', s: '256'}) %>">
           <%= page.author %>
         </a>
       <%_ } -%>
-      <span title="<%- full_date(page.date) %>">创建于 <time datetime="<%- date_xml(page.date) %>" pubdate="pubdate"><%- date(page.date) %></time></span>
+      <span title="<%- full_date(page.date) %>"><%- __('created-at', `<time datetime="${date_xml(page.date)}" pubdate="pubdate">${date(page.date)}</time>`) %></span>
       <%_ if(date(page.date) !== date(page.updated)) { -%>
-        <span title="<%- full_date(page.updated) %>">最后更新于 <time datetime="<%- date_xml(page.updated) %>"><%- date(page.updated) %></time></span>
+        <span title="<%- full_date(page.updated) %>"><%- __('updated-at', `<time datetime="${date_xml(page.updated)}">${date(page.updated)}</time>`) %></span>
       <%_ } -%>
     </p>
     <p class="copyright" title='<%= fullcopy %>
@@ -33,7 +33,7 @@
   <%_ } else { -%>
     <p><%= fullcopy %></p>
     <p><%- link_to('http://www.miitbeian.gov.cn', config.ICP, {external: true}) %></p>
-    <p><%- link_to('http://www.eiri.tsinghua.edu.cn', '清华大学能源互联网创新研究院', {external: true}) %></p> 
+    <p><%- link_to('http://www.eiri.tsinghua.edu.cn', __('eiri'), {external: true}) %></p> 
   <%_ } -%>
   <%- js('/js/footer') -%>
 </footer>

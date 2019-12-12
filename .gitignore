@@ -1,9 +1,7 @@
-.DS_Store
-Thumbs.db
-db.json
+/db.json
+/_multiconfig.yml
 *.log
 node_modules/
-public/
-public_debug/
-.deploy*/
+/public/
+/public_debug/
 nohup.out

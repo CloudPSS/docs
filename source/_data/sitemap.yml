@@ -1,50 +1,149 @@
 '':
-  name: 首页
+  name:
+    zh: 首页
+    en: Home
 
 guide: 
-  name: 快速入门
+  name:
+    zh: 快速入门
+    en: Quick start
 
 components: 
-  name: 元件帮助  
+  name:
+    zh: 元件帮助
+    en: Components
   categories: 
-  - 电气:
-    - 基本无源元件: 3001
-    - 基本电源元件: 3002
-    - 电力电子开关: 3003
-    - 三相交流元件: 3004
-    - 电力电子模块: 3005
-    - 可再生能源: 3006
-    - 高级: 3100
-  - 量测: [ 3000, -3000 ]
-  - 输出: 1000
-  - 控制:
-    - 基础: -3001
-    - 基本数学函数: -3002
-    - 线性传递函数: -3003
-    - 非线性函数: -3004
-    - 模拟信号: -3005
-    - 数字信号: -3006
-    - 坐标变换: -3007
-    - 信号发生器: -3008
-    - 直流系统: -3009
-    - 交流系统: -3010
-  - 热网:
-    - 基本元件: 10000
+  - name:
+      zh: 电气
+      en: Electric
+    categories:
+    - name:
+        zh: 基本无源元件
+        en: Basic passive components
+      order: 3001
+    - name:
+        zh: 基本电源元件
+        en: Basic power components
+      order: 3002
+    - name:
+        zh: 电力电子开关
+        en: Power electronic switch
+      order: 3003
+    - name:
+        zh: 三相交流元件
+        en: Three-phase AC components
+      order: 3004
+    - name:
+        zh: 电力电子模块
+        en: Power electronics module
+      order: 3005
+    - name:
+        zh: 可再生能源
+        en: Renewable energy
+      order: 3006
+    - name:
+        zh: 高级
+        en: Advanced
+      order: 3100
+  - name:
+      zh: 量测
+      en: Measure
+    order: [ 3000, -3000 ]
+  - name:
+      zh: 输出
+      en: Output
+    order: 1000
+  - name:
+      zh: 控制
+      en: Control
+    categories:
+    - name:
+        zh: 基础
+        en: Basic
+      order: -3001
+    - name:
+        zh: 基本数学函数
+        en: Basic mathematical functions
+      order: -3002
+    - name:
+        zh: 线性传递函数
+        en: Linear transfer function
+      order: -3003
+    - name:
+        zh: 非线性函数
+        en: Non-linear function
+      order: -3004
+    - name:
+        zh: 模拟信号
+        en: Analog signal
+      order: -3005
+    - name:
+        zh: 数字信号
+        en: Digital signal
+      order: -3006
+    - name:
+        zh: 坐标变换
+        en: Coordinate transformation
+      order: -3007
+    - name:
+        zh: 信号发生器
+        en: Signal generator
+      order: -3008
+    - name:
+        zh: 直流系统
+        en: DC system
+      order: -3009
+    - name:
+        zh: 交流系统
+        en: AC system
+      order: -3010
+  - name:
+      zh: 热网
+      en: Heat
+    categories:
+    - name:
+        zh: 基本元件
+        en: Basic
+      order: 10000
 
 features: 
-  name: 功能帮助
+  name:
+    zh: 功能帮助
+    en: Features
   categories: 
-  - 电磁暂态仿真工作台: 1000
-  - 移频暂态仿真工作台: 1500
-  - 供热系统仿真工作台: 2000
+  - name:
+      zh: 电磁暂态仿真工作台
+      en: Electromagnetic transient simulation workbench
+    order: 1000
+  - name:
+      zh: 移频暂态仿真工作台
+      en: Frequency-shift transient simulation workbench
+    order: 1500
+  - name:
+      zh: 供热系统仿真工作台
+      en: Heating system simulation workbench
+    order: 2000
   
 
 examples: 
-  name: 案例介绍
+  name: 
+    zh: 案例介绍
+    en: Examples
   categories: 
-  - 电磁暂态仿真案例: 1000
-  - 移频暂态仿真案例: 1500
-  - 供热系统仿真案例: 2000
+  - name:
+      zh: 电磁暂态仿真案例
+      en: Electromagnetic transient simulation case
+    order: 1000
+  - name:
+      zh: 移频暂态仿真案例
+      en: Frequency-shift transient simulation case
+    order: 1500
+  - name:
+      zh: 供热系统仿真案例
+      en: Heating system simulation case
+    order: 2000
 
 about:
-  name: 关于
+  name: 
+    zh: 关于
+    en: About

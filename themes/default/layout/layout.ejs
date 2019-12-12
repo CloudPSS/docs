@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<html lang="<%- config.language %>">
+<html lang="<%- page.lang %>">
 
   <head>
     <meta charset="utf-8">
+    <%_ 
+      if(config.debug_mode === true) { 
+        const tostr = (v, skip) => JSON.stringify(v, (k, v) => k.startsWith('_') || (skip && skip.includes(k)) ? undefined : v);
+    -%>
+      <script>
+        const hexo = {
+          config: <%- tostr(config) %>,
+          theme: <%- tostr(theme) %>,
+          path: <%- tostr(path) %>,
+          url: <%- tostr(url) %>,
+          env: <%- tostr(env) %>,
+          page: <%- tostr(page, ['more', 'site', 'content', 'raw', 'prev', 'next']) %>,
+          data: <%- tostr(site.data) %>,
+        }
+      </script>
+    <%_ } -%>
     <%- js('/js/browser-check') -%>
     <%_ if(config.debug_mode === false) { -%>
     <script>
@@ -34,7 +50,7 @@
     <%- csscdn('katex@^0.10/dist/katex') -%>
     <%- jscdn('js-polyfills/polyfill') -%>
     <%- jscdn('vue@^2/dist/vue') -%> 
-    <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;window.BASE='<%- config.base_url %>';</script>
+    <script>window.PAGE_TYPE='<%- page.type %>';window.IS_INDEX=<%- is_index() %>;window.BASE='<%- config.base_url %>'; localStorage.lang='<%- page.lang %>';</script>
   </head>
 
   <body>

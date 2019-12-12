@@ -5,7 +5,7 @@
     "version": "3.7.1"
   },
   "scripts": {
-    "build": "hexo g",
+    "build": "gulp generate",
     "clean": "rm nohup.out -f && hexo cl",
     "prestart": "hexo g --force",
     "start": "nohup hexo s &",
@@ -37,9 +37,9 @@
     "markdown-it-mermaid": "github:OpportunityLiu/markdown-it-mermaid#patch-1",
     "markdown-it-multimd-table": "^3.2.3",
     "pinyinjs": "^2.2.1",
-    "puppeteer": "^1.20.0",
+    "puppeteer": "^2.0.0",
     "sanitize-filename": "^1.6.3",
-    "ts-node": "^8.4.1",
+    "ts-node": "^8.5.4",
     "vue": "^2.6.10",
     "workbox-build": "^4.3.1"
   },
@@ -50,6 +50,6 @@
     "@types/gulp-uglify": "^3.0.6",
     "@types/hexo": "^3.8.2",
     "@types/photoswipe": "^4.0.28",
-    "@types/puppeteer": "^1.20.1"
+    "@types/puppeteer": "^2.0.0"
   }
 }

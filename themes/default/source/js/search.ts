@@ -1,6 +1,5 @@
-//import Vue from '../../../../node_modules/vue/types/index';
-
 /// <reference path="../../../../types.d.ts"/>
+//import Vue from '../../../../node_modules/vue/types/index';
 
 (async function ()
 {
@@ -9,7 +8,6 @@
         url: string;
         formattedUrl: string;
         content: string;
-        categories: string[];
         score = 0;
         formattedTitle: string;
         formattedContent: string;
@@ -26,13 +24,6 @@
             this.formattedContent = this.content.toLowerCase();
             this.title = (record.title || '').trim();
             this.formattedTitle = this.title.toLowerCase();
-            this.categories = [];
-            if (record.category && record.type)
-            {
-                let cat = sitemap[record.type].categories;
-                if (cat)
-                    this.categories = cat[record.category] || [];
-            }
             this.extend = record.extend || '';
         }
     }
@@ -42,6 +33,7 @@
         data:
         {
             records: null as (null | Array<FormattedSearchRecord>),
+            lang: document.documentElement.lang,
             term: '',
             failed: false,
             loadedPercent: 0,
@@ -96,7 +88,6 @@
                 {
                     return match(record.formattedTitle) * 10 + match(record.extend) * 5 + match(record.formattedUrl) * 5
                         + match(record.formattedContent)
-                        + record.categories.reduce((sum, cat) => sum + match(cat), 0);
                 }
                 let records = this.records.slice();
                 records.forEach(r => { r.score = getScore(r); });
@@ -115,11 +106,12 @@
         const sitemap = await getSitemap;
         vueApp.loadedPercent = 100;
         vueApp.sitemap = sitemap;
-        vueApp.records = data.filter(r => r.title).map(r => new FormattedSearchRecord(r, sitemap));
+        vueApp.records = data.filter(r => r.title && r.lang == vueApp.lang).map(r => new FormattedSearchRecord(r, sitemap));
     }
-    catch
+    catch(ex)
     {
         vueApp.failed = true;
+        console.error(ex)
     }
 
     async function getJson(path: string): Promise<any>

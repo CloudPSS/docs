@@ -1,23 +1,18 @@
-(function ()
-{
-    const DOMContentLoaded: () => Promise<void> = (function ()
-    {
+(function () {
+    const DOMContentLoaded: () => Promise<void> = (function () {
         let isReady = false;
         let waiting = new Array<() => void>();
-        document.addEventListener('DOMContentLoaded', function ()
-        {
+        document.addEventListener('DOMContentLoaded', function () {
             isReady = true;
             for (const cb of waiting)
                 cb();
             waiting = [];
         }, false);
 
-        return function DOMContentLoaded(): Promise<void>
-        {
+        return function DOMContentLoaded(): Promise<void> {
             if (isReady)
                 return Promise.resolve();
-            return new Promise(function (resolve)
-            {
+            return new Promise(function (resolve) {
                 waiting.push(resolve);
             });
         }
@@ -34,29 +29,22 @@
     initMxGraph();
     initFootnotes();
 
-    function initFootnotes()
-    {
-        Array.from(document.querySelectorAll('main sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a =>
-        {
+    function initFootnotes() {
+        Array.from(document.querySelectorAll('main sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a => {
             a.innerText = a.innerText.replace(/:\d+/, '');
         });
     }
 
-    function initFlowAndChart()
-    {
-        Array.from(document.querySelectorAll("main canvas.chartjs")).forEach((e) => 
-        {
-            try
-            {
+    function initFlowAndChart() {
+        Array.from(document.querySelectorAll("main canvas.chartjs")).forEach((e) => {
+            try {
                 new Chart(e, JSON.parse(e.textContent || ''))
             }
-            catch (t)
-            {
+            catch (t) {
                 e.outerHTML = `<p class="chart-error" title="${htmlEscape(t.toString())}">${e.textContent}</p>`;
             }
         });
-        Array.from(document.querySelectorAll("main div.mermaid")).forEach((e) => 
-        {
+        Array.from(document.querySelectorAll("main div.mermaid")).forEach((e) => {
             e.setAttribute('data-mermaid', e.innerHTML);
         });
 
@@ -64,12 +52,10 @@
         mermaid.initialize(config);
     }
 
-    async function initVideos()
-    {
+    async function initVideos() {
         await DOMContentLoaded();
         const containers = document.querySelectorAll('main .video-container, .owl-video');
-        for (const container of Array.from(containers))
-        {
+        for (const container of Array.from(containers)) {
             const video = container.querySelector('iframe, embed') as HTMLIFrameElement | HTMLEmbedElement;
             if (!video) continue;
             const hint = document.createElement('p');
@@ -79,25 +65,21 @@
         }
     }
 
-    function initImages()
-    {
+    function initImages() {
         const photos = new Array<MyPhoto>();
         const pswpElement = document.querySelector('.pswp') as HTMLDivElement;
         const headerElement = document.querySelector('body > header');
         const sidebarElement = document.querySelector('body > aside');
 
-        interface MyPhoto extends Partial<PhotoSwipe.Item>
-        {
+        interface MyPhoto extends Partial<PhotoSwipe.Item> {
             thumb: HTMLImageElement;
             title: string;
             msrc?: string;
         }
 
-        function registerPhotoSwipe(img: MyPhoto)
-        {
+        function registerPhotoSwipe(img: MyPhoto) {
             let el: HTMLElement | null = img.thumb;
-            while (el)
-            {
+            while (el) {
                 if (el.tagName === "A")
                     return;
                 el = el.parentElement;
@@ -105,8 +87,7 @@
 
             photos.push(img);
             img.thumb.addEventListener('click', openPhotoSwipe);
-            function openPhotoSwipe(e: MouseEvent)
-            {
+            function openPhotoSwipe(e: MouseEvent) {
                 if (photoSwipeOpened)
                     return;
                 const current = photos.find(p => p.thumb === e.target);
@@ -120,48 +101,40 @@
                     history: false,
                     closeOnScroll: false,
                     loop: false,
-                    getThumbBoundsFn: (index) =>
-                    {
+                    getThumbBoundsFn: (index) => {
                         var thumbnail = photos[index].thumb;
                         var rect = thumbnail.getBoundingClientRect();
                         return { x: rect.left, y: rect.top + (document.documentElement.scrollTop || document.body.scrollTop), w: rect.width };
                     },
                     shareEl: false,
                 });
-                gallery.listen('gettingData', (index, item: MyPhoto) =>
-                {
+                gallery.listen('gettingData', (index, item: MyPhoto) => {
                     const thumb = item.thumb;
                     item.msrc = thumb.src;
                     item.src = thumb.src;
                     item.w = thumb.naturalWidth || 800;
                     item.h = thumb.naturalHeight || 600;
                 });
-                gallery.listen('beforeChange', () =>
-                {
+                gallery.listen('beforeChange', () => {
                     currItem.thumb.style.visibility = '';
                     const nextItem = gallery.currItem as MyPhoto;
                     nextItem.thumb.style.visibility = 'collapse';
                     currItem = nextItem;
                 });
-                gallery.listen('destroy', () =>
-                {
+                gallery.listen('destroy', () => {
                     currItem.thumb.style.visibility = '';
                     photoSwipeOpened = false;
                 })
                 gallery.init();
-                if (headerElement)
-                {
+                if (headerElement) {
                     headerElement.classList.add('hide');
-                    gallery.listen('close', () =>
-                    {
+                    gallery.listen('close', () => {
                         headerElement.classList.remove('hide');
                     });
                 }
-                if (sidebarElement)
-                {
+                if (sidebarElement) {
                     sidebarElement.classList.add('hide');
-                    gallery.listen('close', () =>
-                    {
+                    gallery.listen('close', () => {
                         sidebarElement.classList.remove('hide');
                     });
                 }
@@ -169,17 +142,15 @@
         }
 
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main img');
-        for (const container of Array.from(containers))
-        {
+        for (const container of Array.from(containers)) {
             container.style.maxHeight = formatValue(container.getAttribute('height'));
             container.removeAttribute('height');
-            
+
             const title = container.title || '';
             const alt = container.alt || '';
             if (alt && !title)
                 container.title = container.alt;
-            if (alt && title)
-            {
+            if (alt && title) {
                 const box = document.createElement('figure');
                 const cap = document.createElement('figcaption');
                 cap.innerText = title;
@@ -193,13 +164,11 @@
                 container.replaceWith(box);
                 registerPhotoSwipe({ thumb: img, title: htmlEscape(title) });
             }
-            else
-            {
+            else {
                 registerPhotoSwipe({ thumb: container, title: htmlEscape(title || alt) });
             }
         }
-        function formatValue(v?: null | string)
-        {
+        function formatValue(v?: null | string) {
             if (!v || v.endsWith('%'))
                 return '';
             if (v.endsWith('px'))
@@ -208,11 +177,9 @@
         }
     }
 
-    function initTables()
-    {
+    function initTables() {
         const containers = <NodeListOf<HTMLImageElement>>document.querySelectorAll('main table caption[id]');
-        for (const container of Array.from(containers))
-        {
+        for (const container of Array.from(containers)) {
             container.parentElement!.id = container.innerText.replace(/\s/g, '-');
             container.id = '';
         }
@@ -221,57 +188,47 @@
     /**
      * Mobile burger menu button and gesture for toggling sidebar
      */
-    function initMobileMenu()
-    {
+    function initMobileMenu() {
         const sidebar = document.querySelector('body > aside');
         const nav = document.querySelector('body > header > nav');
         const sidebarButton = document.querySelector('body > header #sidebar');
         const navButton = document.querySelector('body > header #nav');
 
-        if (nav)
-        {
+        if (nav) {
             if (navButton)
                 navButton.addEventListener('click', () => { nav.classList.toggle('open') });
         }
 
-        if (sidebar)
-        {
+        if (sidebar) {
             if (sidebarButton)
                 sidebarButton.addEventListener('click', () => sidebar.classList.toggle('open'));
         }
 
-        if (sidebar || nav)
-        {
-            document.body.addEventListener('click', function (e)
-            {
-                if (e.target !== sidebarButton && sidebar && !sidebar.contains(e.target as Node))
-                {
+        if (sidebar || nav) {
+            document.body.addEventListener('click', function (e) {
+                if (e.target !== sidebarButton && sidebar && !sidebar.contains(e.target as Node)) {
                     sidebar.classList.remove('open')
                 }
-                if (e.target !== navButton && nav && !nav.contains(e.target as Node))
-                {
+                if (e.target !== navButton && nav && !nav.contains(e.target as Node)) {
                     nav.classList.remove('open')
                 }
             });
 
-            class Point
-            {
+            class Point {
                 x: number = 0;
                 y: number = 0;
             }
             // Toggle sidebar on swipe
             const start = new Point(), end = new Point();
 
-            document.body.addEventListener('touchstart', function (e)
-            {
+            document.body.addEventListener('touchstart', function (e) {
                 if (photoSwipeOpened)
                     return;
                 start.x = e.changedTouches[0].clientX;
                 start.y = e.changedTouches[0].clientY;
             })
 
-            document.body.addEventListener('touchend', function (e)
-            {
+            document.body.addEventListener('touchend', function (e) {
                 if (photoSwipeOpened)
                     return;
                 end.y = e.changedTouches[0].clientY;
@@ -280,20 +237,16 @@
                 const xDiff = end.x - start.x;
                 const yDiff = end.y - start.y;
 
-                if (Math.abs(xDiff) > Math.abs(yDiff))
-                {
-                    if (xDiff > 0 && start.x <= 20)
-                    {
+                if (Math.abs(xDiff) > Math.abs(yDiff)) {
+                    if (xDiff > 0 && start.x <= 20) {
                         if (sidebar) sidebar.classList.add('open');
                         if (nav) nav.classList.remove('open');
                     }
-                    else if (xDiff < 0 && start.x >= document.body.clientWidth - 20)
-                    {
+                    else if (xDiff < 0 && start.x >= document.body.clientWidth - 20) {
                         if (sidebar) sidebar.classList.remove('open');
                         if (nav) nav.classList.add('open');
                     }
-                    else
-                    {
+                    else {
                         if (sidebar) sidebar.classList.remove('open');
                         if (nav) nav.classList.remove('open');
                     }
@@ -306,8 +259,7 @@
     /**
      * Sub headers in sidebar
      */
-    function initSubHeaders()
-    {
+    function initSubHeaders() {
         if (IS_INDEX)
             return;
 
@@ -326,62 +278,50 @@
         sectionContainer.className = 'section-links';
         currentPageAnchor.parentNode!.appendChild(sectionContainer);
         let headers = Array.from(content.querySelectorAll('h2'));
-        if (headers.length)
-        {
-            headers.forEach(function (h)
-            {
+        if (headers.length) {
+            headers.forEach(function (h) {
                 sectionContainer.appendChild(makeLink(h))
                 const h3s = collectH3s(h)
                 allHeaders.push(h)
                 allHeaders.push.apply(allHeaders, h3s)
-                if (h3s.length)
-                {
+                if (h3s.length) {
                     sectionContainer.appendChild(makeSubLinks(h3s))
                 }
             })
         }
-        else
-        {
+        else {
             headers = Array.from(content.querySelectorAll('h3'));
-            headers.forEach(function (h)
-            {
+            headers.forEach(function (h) {
                 sectionContainer.appendChild(makeLink(h))
                 allHeaders.push(h)
             })
         }
 
-        sidebar.addEventListener('click', function (e)
-        {
+        sidebar.addEventListener('click', function (e) {
             const target = e.target as HTMLElement;
-            if (target.tagName === 'A')
-            {
+            if (target.tagName === 'A') {
                 sidebar.classList.remove('open');
                 setActive(target);
             }
         }, true);
 
 
-        sidebar.addEventListener('mouseover', function ()
-        {
+        sidebar.addEventListener('mouseover', function () {
             hoveredOverSidebar = true;
         });
-        sidebar.addEventListener('mouseleave', function ()
-        {
+        sidebar.addEventListener('mouseleave', function () {
             hoveredOverSidebar = false;
         });
 
-        function setActive(id: string | HTMLElement, shouldScrollIntoView = false)
-        {
+        function setActive(id: string | HTMLElement, shouldScrollIntoView = false) {
             var previousActive = sectionContainer.querySelector('a.active') as HTMLAnchorElement;
             var currentActive = typeof id === 'string'
                 ? sectionContainer.querySelector('[href="#' + id + '"]') as HTMLElement
                 : id;
-            if (currentActive !== previousActive)
-            {
+            if (currentActive !== previousActive) {
                 if (previousActive) previousActive.classList.remove('active');
                 currentActive.classList.add('active');
-                if (shouldScrollIntoView)
-                {
+                if (shouldScrollIntoView) {
                     var currentPageOffset = currentPageAnchor
                         ? currentPageAnchor.offsetTop
                         : currentActive.offsetTop;
@@ -396,22 +336,18 @@
         window.addEventListener('DOMContentLoaded', () => { updateSidebar(true) });
         window.addEventListener('load', () => { updateSidebar(true) });
 
-        function updateSidebar(shouldScrollIntoView?: boolean)
-        {
+        function updateSidebar(shouldScrollIntoView?: boolean) {
             if (!allHeaders) return;
             const top = (document.documentElement.scrollTop || document.body.scrollTop) + 120;
             let last: HTMLHeadingElement | null = null;
-            for (let i = 0; i < allHeaders.length; i++)
-            {
+            for (let i = 0; i < allHeaders.length; i++) {
                 const link = allHeaders[i]
-                if (link.offsetTop > top)
-                {
+                if (link.offsetTop > top) {
                     if (!last)
                         last = link;
                     break;
                 }
-                else
-                {
+                else {
                     last = link;
                 }
             }
@@ -419,22 +355,18 @@
                 setActive(last.id, shouldScrollIntoView || !hoveredOverSidebar)
         }
 
-        function makeLink(h: HTMLHeadingElement)
-        {
+        function makeLink(h: HTMLHeadingElement) {
             h = <HTMLHeadingElement>h.cloneNode(true);
 
             const link = document.createElement('li')
 
-            function mapper(node: Node)
-            {
-                if (node.nodeType === Node.TEXT_NODE)
-                {
+            function mapper(node: Node) {
+                if (node.nodeType === Node.TEXT_NODE) {
                     return node;
                 }
                 for (const cnode of Array.from(node.childNodes))
                     node.replaceChild(mapper(cnode), cnode);
-                if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1)
-                {
+                if (node instanceof HTMLElement && ['A'].indexOf(node.nodeName) !== -1) {
                     const span = document.createElement('span');
                     span.setAttribute('role', 'link');
                     span.innerHTML = node.innerHTML;
@@ -450,12 +382,10 @@
             return link;
         }
 
-        function collectH3s(h: HTMLHeadingElement)
-        {
+        function collectH3s(h: HTMLHeadingElement) {
             const h3s = new Array<HTMLHeadingElement>();
             let next = h.nextSibling;
-            while (next && next.nodeName !== 'H2')
-            {
+            while (next && next.nodeName !== 'H2') {
                 if (next.nodeName === 'H3')
                     h3s.push(next as HTMLHeadingElement);
                 next = next.nextSibling;
@@ -463,24 +393,20 @@
             return h3s;
         }
 
-        function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>)
-        {
+        function makeSubLinks(h3s: ReadonlyArray<HTMLHeadingElement>) {
             const container = document.createElement('ul')
-            h3s.forEach(function (h)
-            {
+            h3s.forEach(function (h) {
                 container.appendChild(makeLink(h));
             })
             return container;
         }
     }
 
-    function initMxGraph()
-    {
+    function initMxGraph() {
         (<any>window).mxLoadStylesheets = false;
         (<any>window).mxLoadResources = false;
 
-        async function loadMxGraph(container: HTMLElement, padding?: number)
-        {
+        async function loadMxGraph(container: HTMLElement, padding?: number) {
             padding = padding || 0;
             const getshape = fetchShape(<string>container.getAttribute('symbol'));
             await DOMContentLoaded();
@@ -512,12 +438,10 @@
             const height = Number(firstChild.getAttribute('h'));
 
             graph.getModel().beginUpdate();
-            try
-            {
+            try {
                 graph.insertVertex(parent, null, '', 0, 0, width, height, 'shape=' + (firstChild.getAttribute('name') || '').toLowerCase());
             }
-            finally
-            {
+            finally {
                 graph.getModel().endUpdate();
             }
             const svg = container.getElementsByTagName("svg")[0];
@@ -539,8 +463,7 @@
                 .catch(() => mxEvent.release(document));
     }
 
-    function fetchJsonP<T>(url: string | URL): Promise<T>
-    {
+    function fetchJsonP<T>(url: string | URL): Promise<T> {
         const urlData = (typeof url === 'string') ? new URL(url) : url;
         urlData.searchParams.set('callback', 'cb');
         return fetch(urlData.href)
@@ -548,16 +471,13 @@
             .then<T>(text => new Promise(cb => eval(text)));
     }
 
-    interface ShapeData
-    {
+    interface ShapeData {
         classname: string;
         shape: Document;
     }
 
-    async function fetchShape(symbol: string): Promise<ShapeData>
-    {
-        interface ShapeResponse
-        {
+    async function fetchShape(symbol: string): Promise<ShapeData> {
+        interface ShapeResponse {
             classname: string;
             shape: string;
         }
@@ -568,26 +488,22 @@
         };
     }
 
-    interface CompModel
-    {
+    interface CompModel {
 
     }
 
-    function fetchCompModel(classname: string): Promise<CompModel>
-    {
+    function fetchCompModel(classname: string): Promise<CompModel> {
         return fetchJsonP(`${BASE}/editor/getCompModelByClassname/?classname=${classname}`);
     }
 
     // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/escape_regexp.js
-    function escapeRegExp(str: string)
-    {
+    function escapeRegExp(str: string) {
         // http://stackoverflow.com/a/6969486
         return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
     }
 
     // Stolen from: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.js
-    function slugize(str: string, options?: { separator?: string; transform?: ((input: string) => string); })
-    {
+    function slugize(str: string, options?: { separator?: string; transform?: ((input: string) => string); }) {
         const option = options || {}
 
         const rControl = /[\u0000-\u001f]/g
@@ -611,8 +527,7 @@
             return result;
     }
 
-    function htmlEscape(text: string)
-    {
+    function htmlEscape(text: string) {
         return text
             .replace(/&/g, '&amp;')
             .replace(/"/g, '&quot;')

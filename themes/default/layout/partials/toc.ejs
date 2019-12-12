@@ -1,19 +1,22 @@
 <!-- BEGIN toc -->
 <header>
   <%_ if (page.type){ -%>
-    <h1><%- link_to(is_index() ? '#article' : url_for(page.type +'/'), site.data.sitemap[page.type].name, {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
+    <h1><%- link_to(is_index() ? '#article' : url_for(`${page.lang}/${page.type}/`), site.data.sitemap[page.type].name[page.lang], {class: `sidebar-link ${is_index() ? ' current' : ''}`}) -%></h1>
   <%_ } -%>
 </header>
 <section>
   <%_
     
-    const pages = site.pages.toArray().filter(p => page.type ? (p.type === page.type && !is_index(p)) : p === page).sort(function(a, b){
-      var ao = a.order || Number.MAX_VALUE;
-      var bo = b.order || Number.MAX_VALUE;
-      if(ao !== bo)
-        return ao - bo;
-      return title(a).localeCompare(title(b));
-    });
+    const pages = site.pages.toArray()
+      .filter(p => page.lang === p.lang)
+      .filter(p => page.type ? (p.type === page.type && !is_index(p)) : p === page)
+      .sort(function(a, b){
+        var ao = a.order || Number.MAX_VALUE;
+        var bo = b.order || Number.MAX_VALUE;
+        if(ao !== bo)
+          return ao - bo;
+        return title(a).localeCompare(title(b));
+      });
     
     function page_link(p)
     {
@@ -29,19 +32,13 @@
     
     function cate_link(cat, level)
     {
-      const catname = Object.getOwnPropertyNames(cat)[0];
+      const catname = cat.name[page.lang];
       -%><ul><h<%- level %>><%= catname %></h<%- level %>><%_
       
-      let content = cat[catname];
-      if (!Array.isArray(content))
-        content = [ content ];
-        
-      for(const child of content) 
-      {
-        if(typeof child === 'number')
-          pages.filter(p => Number(p.category) === child).forEach(page_link);
-        else
-          cate_link(child, level + 1);
+      if (cat.categories){
+        cat.categories.forEach(c => cate_link(c, level + 1));
+      } else if(cat.order){
+        [ cat.order ].flat().forEach(o => pages.filter(p => Number(p.category) === o).forEach(page_link));
       }
       -%></ul><%_
     }
