@@ -14,12 +14,12 @@ CloudPSS 提供了移频电磁暂态仿真平台。
 
 对解析信号的频谱向左平移一个工频，形成`解析包络（Analytical Envelope）`。可见，解析包络中的最大频率小于原始实信号，解析包络变化相对较缓慢。
 
-![解析信号与解析包络原理图](SFA/fig3.png "解析信号与解析包络原理图")
+![解析信号与解析包络原理图](SFEMT/fig3.png "解析信号与解析包络原理图")
 
-![解析信号与原信号gif原理图](SFA/fig4.gif "解析信号的实部虚部演示") 
+![解析信号与原信号gif原理图](SFEMT/fig4.gif "解析信号的实部虚部演示") 
 
 {% pullquote tip %}
-$\color{#E9B224}黄实线$代表原始信号，$\color{orange}橙实线$代表原始信号的Hilbert变换，$\color{blue}蓝实线$代表解析信号，$\color{blue}蓝虚线$代表解析包络。
+<span style="font-weight: bold;color: #E9B224;">黄实线</span>代表原始信号，<span style="font-weight: bold;color: #D95A23;">橙实线</span>代表原始信号的Hilbert变换，<span style="font-weight: bold;color: #006ABD;">蓝实线</span>代表解析信号，<span style="font-weight: bold;color: #006ABD;">蓝虚线</span>代表解析包络。
 {% endpullquote %}
 
 ## 一个简单的移频电磁暂态模型——以电阻-电感支路为例
@@ -63,8 +63,8 @@ $$L{ {dI} \over {dt} } + j{\omega _s}LI + RI = U$$
 
 在CloudPSS中，可以在右侧的`控制面板-算法设置`中更改移频的频率，如下图所示。
 
-![移频频率的设定](SFA/FreqSFA.png "移频频率的设定")
+![移频频率的设定](SFEMT/FreqSFEMT.png "移频频率的设定")
 
 ## 案例
 
-详见[IEEE39节点系统](/examples/IEEE39.html)案例及模板，此处不再详述。
+详见[IEEE39节点系统](/examples/IEEE39SFEMT.html)案例及模板，此处不再详述。

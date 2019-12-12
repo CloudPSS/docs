@@ -20,20 +20,20 @@ author_email: tanzhd@foxmail.com
 
 所有电机的功角波形如图所示：
 
-![电机功角](IEEE39SFA/RASFA.png "电机功角")
+![电机功角](IEEE39SFEMT/RASFEMT.png "电机功角")
 
 所有电机的转速波形如图所示：
 
-![电机转速](IEEE39SFA/wrSFA.png "电机转速")
+![电机转速](IEEE39SFEMT/wrSFEMT.png "电机转速")
 
 所有电机的端电压标幺值仿真结果如图所示：
 
-![电机的端电压标幺值](IEEE39SFA/VTSFA.png "电机的端电压标幺值")
+![电机的端电压标幺值](IEEE39SFEMT/VTSFEMT.png "电机的端电压标幺值")
 
 所有电机的端电流标幺值仿真结果如图所示：
 
-![机端瞬时功率](IEEE39SFA/ITSFA.png "机端瞬时功率")
+![机端瞬时功率](IEEE39SFEMT/ITSFEMT.png "机端瞬时功率")
 
 以37号节点为例，在故障前后处机端A相电压波形的仿真结果为（图中同时展示了解析包络信号的实部、虚部、模和原信号）：
 
-![机端电压波形](IEEE39SFA/Ib37SFA.png "机端电压波形")
+![机端电压波形](IEEE39SFEMT/Ib37SFEMT.png "机端电压波形")
