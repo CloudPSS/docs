@@ -13,8 +13,11 @@ import fs from 'fs';
 import sanitize from "sanitize-filename";
 
 function createHexo(depoly = true) {
-    const config = deploy ? "_config_deploy.yml" : "_config.yml";
-    return new hexo(process.cwd(), { config });
+    const config = ["_config.yml"]
+    if (deploy) {
+        config.push("_config_deploy.yml")
+    }
+    return new hexo(process.cwd(), { config: config.join(",") })
 }
 export async function hexoGenerate(): Promise<void> {
     const h = createHexo();

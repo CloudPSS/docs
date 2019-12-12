@@ -9,6 +9,7 @@ function searchGenerator(locals)
     const pages = locals.pages;
 
     var res = new Array()
+
     pages.each(function (page)
     {
         var temp_page = new Object()
@@ -19,26 +20,18 @@ function searchGenerator(locals)
             pinyin(temp_page.title, { style: pinyin.STYLE_NORMAL }).join('')
         ].join(' ');
 
-        if (page.path)
-        {
+        if (page.path) {
+            temp_page.lang = page.path.split('/')[0];
             temp_page.url = hexo.config.root + page.path;
         }
         if (page.type)
-        {
             temp_page.type = page.type;
-        }
         if (page._content)
-        {
             temp_page.content = page._content.trim();
-        }
         if (!Number.isNaN((page.order)))
-        {
             temp_page.order = Number(page.order);
-        }
         if (!Number.isNaN((page.category)))
-        {
             temp_page.category = Number(page.category);
-        }
         res.push(temp_page);
     });
 

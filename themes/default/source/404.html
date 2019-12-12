@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <script>
+        const currentLang = localStorage.lang || 'zh'
+        const segs = location.pathname.split('/')
+        const pageLang = segs[1]
+        if(pageLang === currentLang){
+            location = `/${currentLang}/`
+        } else{
+            location = `/${currentLang}${location.pathname}`
+        }
+    </script>
+</body>
+
+</html>

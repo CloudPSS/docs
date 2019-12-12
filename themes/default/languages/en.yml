@@ -1,0 +1,20 @@
+name: English
+select-lang: Languages
+contact-author: Contact the author
+created-at: Created at %s
+updated-at: Last updated at %s
+eiri: Sichuan Energy Internet Research Institute, Tsinghua University
+
+pswp:
+  close: Close
+  share: Share
+  fs: Fullscreen
+  zoom: Zoom
+  prev: Previous
+  next: Next
+search:
+  title: Search
+  failed: Index loading failed, please refresh the page
+  prompt: Enter to search
+  no-result: No matching results
+  loading: Loading index

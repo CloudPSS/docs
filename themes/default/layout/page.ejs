@@ -4,40 +4,29 @@
     <section class="title"><h1><%= title() %></h1>
       <%_ if (!is_index() && page.type) { -%>
         <p class="categories">
-          <span class="type"><%= site.data.sitemap[page.type].name %></span>
+          <span class="type"><%= site.data.sitemap[page.type].name[page.lang] %></span>
           <%_
             let cate = [];
             const pagecate = Number(page.category);
-            if (!Number.isNaN(pagecate) && site.data.sitemap[page.type] && site.data.sitemap[page.type].categories)
-            {
+            if (!Number.isNaN(pagecate) && site.data.sitemap[page.type] && site.data.sitemap[page.type].categories) {
               const cates = site.data.sitemap[page.type].categories;
-    
-              function cate_link(cate, list)
-              {
 
-                if (!Array.isArray(cate))
-                  cate = [ cate ];
-                  
-                for(const child of cate)
-                {
-                  if (typeof child === 'number')
-                  {
-                    if (child === pagecate) 
-                      return list;
-                  }
-                  else
-                  {                
-                    const catname = Object.getOwnPropertyNames(child)[0];
-                    let content = child[catname];
-                    const r = cate_link(content, [...list, catname]);
+              function cate_link(cates, list) {
+                for(const child of cates) {
+                  const catname = child.name[page.lang];
+                  if (child.order) {
+                    if ([child.order].flat().includes(pagecate)) 
+                      return [...list, catname];
+                  } else if (child.categories) {
+                    const r = cate_link(child.categories, [...list, catname]);
                     if(r) return r;
                   }
                 }
                 return null;
               }
-              cate = cate_link(cates, []) || []; 
+              cate = cate_link(cates || [], []) || []; 
             }
-            cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ });
+            cate.forEach(name => { -%><span role="separator"></span></span><span class="category"><%= name %></span><%_ }); 
           -%>
         </p>
       <%_ } -%>

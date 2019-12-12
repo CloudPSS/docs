@@ -157,18 +157,10 @@ body > header
         margin: 4px 0
         border: 2px solid $border
         background: white
-        > span:before
+        > span
           text-align: center
           display: block
           color: $light
-        > .no-result:before
-            content: '没有匹配的结果'
-        > .prompt:before
-            content: '输入内容以搜索'
-        > .loading:before
-            content: '正在加载索引'
-        > .failed:before
-            content: '加载索引失败，请刷新页面'
         > li
           display: block
           position: relative
@@ -215,3 +207,25 @@ body > header
         transition: border-color 0.1s ease
         &:hover, &.current
           border-bottom: 3px solid $theme
+      #lang-select
+        position: relative
+        background: url(../images/lang.png) no-repeat center/24px
+        width: 40px
+        height: 40px
+        display: inline-block
+        vertical-align: middle
+        &:hover, &:focus
+          background-color: #ddd 
+        &:active
+          background-color: #eee 
+        @media screen and (max-width: $mobile-width)
+          position: absolute
+          top: 0
+          left: 0
+        > select
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          bottom: 0
+          opacity: 0

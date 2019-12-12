@@ -8,7 +8,9 @@ subtitle:
 description:
 keywords:
 author: CloudPSS
-language: zh-Hans
+language: 
+  - zh
+  - en
 timezone: Asia/Shanghai
 contact: songyankan@cloudpss.net
 copyright_begin: 2015
@@ -31,6 +33,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
+i18n_dir: :lang
 skip_render:
 
 # Writing
@@ -94,7 +97,3 @@ markdown_it_plus:
       enable: true
       options:
         anchorLinkSpace: false
-  
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
