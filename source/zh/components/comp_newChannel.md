@@ -44,4 +44,4 @@ symbol: newChannel
 
 ## 相关元件
 
-[示波器分组](/components/comp_newOsc.html)
+[示波器分组](comp_newOsc.html)

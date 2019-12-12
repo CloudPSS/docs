@@ -70,8 +70,8 @@ symbol: HBridgeWithTransformerModule
 该电路为工频逆变拓扑。开关S1\~S4的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的4路PWM信号，经过**ChannelMerge**元件合成为一个4\*1维的输出信号，送至H桥模块的GS端。变压器按照系统理论功率及电压等级进行配置。由于变压器漏感的滤波作用，交流负载电流为准正弦波，直流电压为100Hz脉动直流。
 
 ## 相关元件
-[背靠背H桥模块](/components/comp_BacktoBackModule.html)
-[H桥模块](/components/comp_HBridgeModule.html)
-[三相H桥模块](/components/comp_ThreePhaseHBridgeModule.html)
-[H桥电感模块](/components/comp_HBridgeWithInductanceModule.html)
-[半桥模块](/components/comp_HalfBridgeModule.html)
+[背靠背H桥模块](comp_BacktoBackModule.html)
+[H桥模块](comp_HBridgeModule.html)
+[三相H桥模块](comp_ThreePhaseHBridgeModule.html)
+[H桥电感模块](comp_HBridgeWithInductanceModule.html)
+[半桥模块](comp_HalfBridgeModule.html)

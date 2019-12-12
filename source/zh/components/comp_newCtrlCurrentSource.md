@@ -49,4 +49,4 @@ CloudPSS中的电流源为`理想电流源`模型，其内阻为无穷大。但�
 
 ## 相关元件
 
-[受控电压源](/components/comp_newCtrlVoltageSource.html)
+[受控电压源](comp_newCtrlVoltageSource.html)

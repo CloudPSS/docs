@@ -76,4 +76,4 @@ symbol: NSSTsModule
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。该信号的维数为12N*1。如果不使用SST脉冲发生器，则需要利用**ChannelMerge**元件将所有的开关信号进行合并。合并方式如`端口列表`中GS的输入信号要求进行。
 
 ## 相关元件
-[SST脉冲发生器](/components/comp_FirePulseGenSST.html)
+[SST脉冲发生器](comp_FirePulseGenSST.html)

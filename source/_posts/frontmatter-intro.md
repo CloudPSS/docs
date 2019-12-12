@@ -89,7 +89,7 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
   指定是否显示页面左侧的侧边栏，默认为 `true`。
 
 {% pullquote info %}
-效果可参考[完整页脚 / 隐藏侧边栏样例](/posts/full-footer-no-sidebar.html)。
+效果可参考[完整页脚 / 隐藏侧边栏样例](full-footer-no-sidebar.html)。
 {% endpullquote %}
 
 ## 分类信息

@@ -63,4 +63,4 @@ symbol: newDCVoltageSource
 
 
 
-[直流电流源](/components/comp_newDCCurrentSource.html)
+[直流电流源](comp_newDCCurrentSource.html)

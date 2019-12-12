@@ -71,4 +71,4 @@ symbol: newNthOrderTransFunc
 
 ## 相关元件
 
-[二阶传递函数](/components/comp_newComplexPole.html)、[超前滞后校正](/components/comp_newLeadLag.html)、[一阶惯性环节](/components/comp_newRealPole.html)
+[二阶传递函数](comp_newComplexPole.html)、[超前滞后校正](comp_newLeadLag.html)、[一阶惯性环节](comp_newRealPole.html)

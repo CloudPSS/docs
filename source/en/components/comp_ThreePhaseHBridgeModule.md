@@ -55,8 +55,8 @@ symbol: ThreePhaseHBridgeModule
 该电路为基本的三相电压源逆变拓扑。开关S1\~S6的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的6路PWM信号，经过**ChannelMerge**元件合成为一个6\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为带高频纹波的直流。
 
 ## 相关元件
-[背靠背H桥模块](/components/comp_BacktoBackModule.html)
-[H桥模块](/components/comp_HBridgeModule.html)
-[H桥电感模块](/components/comp_HBridgeWithInductanceModule.html)
-[H桥变压器模块](/components/comp_HBridgeWithTransformerModule.html)
-[半桥模块](/components/comp_HalfBridgeModule.html)
+[背靠背H桥模块](comp_BacktoBackModule.html)
+[H桥模块](comp_HBridgeModule.html)
+[H桥电感模块](comp_HBridgeWithInductanceModule.html)
+[H桥变压器模块](comp_HBridgeWithTransformerModule.html)
+[半桥模块](comp_HalfBridgeModule.html)

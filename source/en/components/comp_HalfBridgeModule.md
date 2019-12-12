@@ -56,8 +56,8 @@ symbol: HalfBridgeModule
 
 
 ## 相关元件
-[背靠背H桥模块](/components/comp_BacktoBackModule.html)
-[H桥模块](/components/comp_HBridgeModule.html)
-[三相H桥模块](/components/comp_ThreePhaseHBridgeModule.html)
-[H桥电感模块](/components/comp_HBridgeWithInductanceModule.html)
-[H桥变压器模块](/components/comp_HBridgeWithTransformerModule.html)
+[背靠背H桥模块](comp_BacktoBackModule.html)
+[H桥模块](comp_HBridgeModule.html)
+[三相H桥模块](comp_ThreePhaseHBridgeModule.html)
+[H桥电感模块](comp_HBridgeWithInductanceModule.html)
+[H桥变压器模块](comp_HBridgeWithTransformerModule.html)

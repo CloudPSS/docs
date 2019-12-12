@@ -37,4 +37,4 @@ symbol: ChannelDeMerge
 
 ## 相关元件
 
-[多路信号合并](/components/comp_ChannelMerge.html)
+[多路信号合并](comp_ChannelMerge.html)

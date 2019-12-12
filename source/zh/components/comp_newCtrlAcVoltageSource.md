@@ -68,4 +68,4 @@ symbol: newCtrlVFACSource
 
 ## 相关元件
 
-[受控电压源(VP)](/components/comp_newCtrlVPAcVoltageSource.html)、[受控电压源](/components/comp_newCtrlVoltageSource.html)
+[受控电压源(VP)](comp_newCtrlVPAcVoltageSource.html)、[受控电压源](comp_newCtrlVoltageSource.html)

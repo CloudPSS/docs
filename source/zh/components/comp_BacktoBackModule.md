@@ -57,8 +57,8 @@ symbol: BacktoBackModule
 开关S1\~S4及开关S5\~S8的脉冲信号分别由两组正弦脉宽调制逻辑实现，开关频率为5KHz。两组脉宽调制器产生的8路PWM信号，经过**ChannelMerge**元件合成为一个8\*1维的输出信号，送至背靠背H桥模块的GS端。前级S1\~S4进行整流，直流电容电压为100Hz脉动直流，电感电流为准正弦波形。后级S5\~S8进行逆变，电阻负载侧为准正弦波形。
 
 ## 相关元件
-[H桥模块](/components/comp_HBridgeModule.html)
-[三相H桥模块](/components/comp_ThreePhaseHBridgeModule.html)
-[H桥电感模块](/components/comp_HBridgeWithInductanceModule.html)
-[H桥变压器模块](/components/comp_HBridgeWithTransformerModule.html)
-[半桥模块](/components/comp_HalfBridgeModule.html)
+[H桥模块](comp_HBridgeModule.html)
+[三相H桥模块](comp_ThreePhaseHBridgeModule.html)
+[H桥电感模块](comp_HBridgeWithInductanceModule.html)
+[H桥变压器模块](comp_HBridgeWithTransformerModule.html)
+[半桥模块](comp_HalfBridgeModule.html)

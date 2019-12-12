@@ -50,4 +50,4 @@ symbol: FirePulseGenSST
 ![单元测试图](comp_VSCModule/SSTN.png)
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。
 ## 相关元件
-[多模块SST](/components/comp_NSSTsModule.html)
+[多模块SST](comp_NSSTsModule.html)

@@ -40,4 +40,4 @@ symbol: newPulseGen
 
 ## 相关元件
 
-[单脉冲发生器](/components/comp_newSinglePulse.html)、[方波发生器](/components/comp_newSquareGen.html)
+[单脉冲发生器](comp_newSinglePulse.html)、[方波发生器](comp_newSquareGen.html)

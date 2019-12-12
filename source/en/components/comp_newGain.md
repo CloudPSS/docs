@@ -40,4 +40,4 @@ symbol: newGain
 
 ## 相关元件
 
-[乘法器](/components/comp_newMultiply.html)
+[乘法器](comp_newMultiply.html)

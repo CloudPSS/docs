@@ -67,4 +67,4 @@ $$L{ {dI} \over {dt} } + j{\omega _s}LI + RI = U$$
 
 ## 案例
 
-详见[IEEE39节点系统](/examples/IEEE39SFEMT.html)案例及模板，此处不再详述。
+详见[IEEE39节点系统](../examples/IEEE39SFEMT.html)案例及模板，此处不再详述。

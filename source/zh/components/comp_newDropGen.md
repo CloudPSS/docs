@@ -41,4 +41,4 @@ symbol: newDropGen
 
 ## 相关元件
 
-[浪涌发生器](/components/comp_newSurgeGen.html)
+[浪涌发生器](comp_newSurgeGen.html)

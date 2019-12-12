@@ -50,4 +50,4 @@ symbol: newCtrlVoltageSource
 
 ## 相关元件
 
-[受控电压源(VP)](/components/comp_newCtrlVPAcVoltageSource.html)、[受控电压源(VF)](/components/comp_newCtrlAcVoltageSource.html)、[受控电流源](/components/comp_newCtrlCurrentSource.html)
+[受控电压源(VP)](comp_newCtrlVPAcVoltageSource.html)、[受控电压源(VF)](comp_newCtrlAcVoltageSource.html)、[受控电流源](comp_newCtrlCurrentSource.html)

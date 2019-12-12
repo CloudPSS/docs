@@ -37,4 +37,4 @@ symbol: newNonlinear
 
 ## 相关元件
 
-[分段线性函数](/components/comp_newPiecewiseLinear.html)
+[分段线性函数](comp_newPiecewiseLinear.html)

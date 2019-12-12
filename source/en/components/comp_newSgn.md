@@ -45,4 +45,4 @@ symbol: newSgn
 
 ## 相关元件
 
-[绝对值函数](/components/comp_newAbs.html)
+[绝对值函数](comp_newAbs.html)
