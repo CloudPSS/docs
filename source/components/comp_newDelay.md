@@ -25,7 +25,7 @@ symbol: newDelay
 | Name |  | 元件名称 | 文本 | 此处输入延时环节的名称（可缺省） |
 | Delay Time | s | 延迟时间 | 实数（常量） | 输出信号相比于输入信号的延迟时间 |
 | Max Sample Points |  | 最大采样点数 | 整数（常量） | 延迟时间内的最大采样点数 |
-
+| Initial Output Value | | 初始值 | 实数（常量） | 延迟模块的初始输出值 |
 
 ## 端口列表
 

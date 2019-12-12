@@ -12,13 +12,11 @@ import path from 'path';
 import fs from 'fs';
 import sanitize from "sanitize-filename";
 
-function createHexo(depoly = true)
-{
+function createHexo(depoly = true) {
     const config = deploy ? "_config_deploy.yml" : "_config.yml";
     return new hexo(process.cwd(), { config });
 }
-export async function hexoGenerate(): Promise<void>
-{
+export async function hexoGenerate(): Promise<void> {
     const h = createHexo();
     await h.init();
     await h.load();
@@ -28,24 +26,21 @@ export async function hexoGenerate(): Promise<void>
 }
 
 // 压缩 public/js 目录 js
-export function minifyJs()
-{
+export function minifyJs() {
     return gulp.src('./public/**/*.js', { sourcemaps: true })
         .pipe(uglify())
         .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 css
-export function minifyCss()
-{
+export function minifyCss() {
     return gulp.src('./public/**/*.css', { sourcemaps: true })
         .pipe<NodeJS.ReadWriteStream>(cleancss())
         .pipe(gulp.dest('./public', { sourcemaps: './maps' }));
 }
 
 // 压缩 public 目录 html
-export function minifyHtml()
-{
+export function minifyHtml() {
     return gulp.src('./public/**/*.html')
         .pipe(htmlmin({
             collapseWhitespace: true,
@@ -61,31 +56,40 @@ export function minifyHtml()
         .pipe(gulp.dest('./public'))
 }
 
-export function generateSw()
-{
+export function generateSw() {
     return workboxBuild.generateSW({
+
         swDest: './public/sw.js',
         importWorkboxFrom: 'local',
         globPatterns: ['**/*.*'],
+        globIgnores: ['maps/**/*'],
         globDirectory: './public',
+        maximumFileSizeToCacheInBytes: 1 * 1024 * 1024,
         runtimeCaching:
-            [{
-                urlPattern: /https:\/\/(.+\.|)cloudpss.net\//i,
-                handler: 'staleWhileRevalidate',
-                options: { cacheName: 'cloudpss' }
-            },
-            {
-                urlPattern: /http[s]?:\/\/.+/i,
-                handler: 'staleWhileRevalidate',
-                options: { cacheName: 'external resources' }
-            }],
+            [
+                {
+                    urlPattern: /https:\/\/docs\.cloudpss\.net\//i,
+                    handler: 'staleWhileRevalidate',
+                    options: { cacheName: 'cloudpss-doc' }
+                },
+                {
+                    urlPattern: /https:\/\/(.+\.|)cloudpss\.net\//i,
+                    handler: 'staleWhileRevalidate',
+                    options: { cacheName: 'cloudpss' }
+                },
+                {
+                    urlPattern: /https?:\/\/.+/i,
+                    handler: 'staleWhileRevalidate',
+                    options: { cacheName: 'external resources' }
+                }
+            ],
         skipWaiting: true,
-        clientsClaim: true
+        clientsClaim: true,
+        cleanupOutdatedCaches: true,
     });
 }
 
-export async function generatePdf()
-{
+export async function generatePdf() {
     const pathRoot = "./public/pdf/";
     if (!fs.existsSync(pathRoot))
         await fs.promises.mkdir(pathRoot);
@@ -97,8 +101,7 @@ export async function generatePdf()
 
     let pageMap = require("./public/search.json") as SearchRecord[];
     pageMap = pageMap.filter(p => p.url.match(/\.html?$/))
-        .sort((a, b) => 
-        {
+        .sort((a, b) => {
             var ao = a.order || Number.MAX_VALUE;
             var bo = b.order || Number.MAX_VALUE;
             if (ao !== bo)
@@ -108,8 +111,7 @@ export async function generatePdf()
 
     const siteMap = require("./public/sitemap.json") as SiteMap;
 
-    async function saveCate(typeKey: string, cat: Category, path: string)
-    {
+    async function saveCate(typeKey: string, cat: Category, path: string) {
         const catname = Object.getOwnPropertyNames(cat)[0];
         path = path + catname + "/";
         if (!fs.existsSync(path))
@@ -120,13 +122,11 @@ export async function generatePdf()
             content = [content];
 
         let catOrder = 0;
-        for (const child of content) 
-        {
+        for (const child of content) {
             if (typeof child === 'number')
                 for (const p of pageMap.filter(p => p.category === child && p.type === typeKey))
                     await savePage(p, path);
-            else
-            {
+            else {
                 await saveCate(typeKey, child, path + catOrder);
                 catOrder++;
             }
@@ -137,8 +137,7 @@ export async function generatePdf()
         await savePage(p, pathRoot);
 
     let typeOrder = 0;
-    for (const typeKey in siteMap)
-    {
+    for (const typeKey in siteMap) {
         const path = pathRoot + typeOrder + typeKey + "/";
         typeOrder++;
 
@@ -147,19 +146,16 @@ export async function generatePdf()
         for (const p of pageMap.filter(p => p.type == typeKey && !p.category))
             await savePage(p, path);
 
-        if (type.categories)
-        {
+        if (type.categories) {
             let catOrder = 0;
-            for (const cat of type.categories)
-            {
+            for (const cat of type.categories) {
                 await saveCate(typeKey, cat, path + catOrder);
                 catOrder++;
             }
         }
     }
 
-    async function savePage(page: SearchRecord, dir: string)
-    {
+    async function savePage(page: SearchRecord, dir: string) {
         const p = `${dir}${(page.order || 0)}${(sanitize(page.title) || "index")}.pdf`;
         console.log(p);
         const uri = new URL(page.url, "https://docs.cloudpss.net");
@@ -175,8 +171,7 @@ export async function generatePdf()
 
     await browser.close();
 }
-export async function hexoDeploy(): Promise<void>
-{
+export async function hexoDeploy(): Promise<void> {
     const h = createHexo();
     await h.init();
     await h.call('deploy', {});

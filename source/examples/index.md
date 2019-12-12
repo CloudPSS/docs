@@ -15,5 +15,8 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 * [IEEE39节点系统](/examples/IEEE39.html) 
 * [直流微电网系统](/examples/DCMicroGrid.html) 
 
+### 移频暂态仿真案例
+* [IEEE39节点系统](/examples/IEEE39SFEMT.html)
+
 ### 供热系统仿真案例
 * [区域集中供热系统](/examples/HeatingSystem.html)
