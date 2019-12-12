@@ -79,4 +79,4 @@ U_{\beta }
 
 ## 相关元件
 
-[Park变换器](/components/comp_newParkTransform.html)、[dq-αβ坐标转换器](/components/comp_newXYtoDQ.html)
+[Park变换器](comp_newParkTransform.html)、[dq-αβ坐标转换器](comp_newXYtoDQ.html)

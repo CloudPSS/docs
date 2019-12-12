@@ -103,4 +103,4 @@ U_{q }
 
 ## 相关元件
 
-[Park变换器](/components/comp_newParkTransform.html)、[Clark变换器](/components/comp_newClarkTransform.html)
+[Park变换器](comp_newParkTransform.html)、[Clark变换器](comp_newClarkTransform.html)

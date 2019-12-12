@@ -53,4 +53,4 @@ symbol: newPLL
 
 ## 相关元件
 
-[锁相振荡器](/components/comp_newPLO.html)
+[锁相振荡器](comp_newPLO.html)

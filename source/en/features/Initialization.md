@@ -53,7 +53,7 @@ CloudPSS的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 
 
 {% pullquote tip %}
-上述潮流断面的配置可利用[元件表](/features/ComponentTable.html)功能快速导入。
+上述潮流断面的配置可利用[元件表](ComponentTable.html)功能快速导入。
 {% endpullquote %}
 
 ### 预启动参数配置

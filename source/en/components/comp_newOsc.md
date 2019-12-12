@@ -36,4 +36,4 @@ symbol: oscg
 
 ## 相关元件
 
-[输出通道](/components/comp_newChannel.html)
+[输出通道](comp_newChannel.html)

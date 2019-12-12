@@ -40,5 +40,5 @@ symbol: newRampGen
 
 ## 相关元件
 
-[阶跃发生器](/components/comp_newStepGen.html)
+[阶跃发生器](comp_newStepGen.html)
 

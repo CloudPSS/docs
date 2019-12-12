@@ -9,7 +9,7 @@ author_email: songyankan@cloudpss.net
 
 CloudPSS的Dashboard功能提供了仿真数据可视化功能，借助图形化手段，用户可更加清晰有效的查看或传递仿真结果信息。对任意含有`输出通道`的仿真文件，都可使用Dashboard功能对仿真数据进行动态显示。
 
-本章以[双端MMC型高压直流输电测试系统](/examples/MMC.html)为例，介绍Dashboard的使用方法。
+本章以[双端MMC型高压直流输电测试系统](../examples/MMC.html)为例，介绍Dashboard的使用方法。
 
 ## 打开Dashboard
 
