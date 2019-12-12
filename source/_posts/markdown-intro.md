@@ -29,6 +29,19 @@ $$ \sum_{i=1}^n a_i=0 $$
 {% endraw %}
 {% endpullquote %}
 
+## 链接
+
+{% pullquote tip %}
+对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径。如：
+
+
+{% endpullquote %}
+```md
+<!-- in /zh/component/comp_newClarkTransform.md-->
+[CloudPSS同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.html)
+[Park变换器](comp_newParkTransform.html)
+```
+
 ## 图片
 
 图片存储的文件结构如图
