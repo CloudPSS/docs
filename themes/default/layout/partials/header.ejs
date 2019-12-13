@@ -3,9 +3,8 @@
   const sidebar = page.sidebar !== false;
 -%>
 <header class="<%- !sidebar ? 'no-sidebar' : ''%>">
-  <a class="button" id="sidebar"></a>
-  <a class="button" id="nav"></a>
   <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"></a>
+  <a class="button" id="sidebar"></a>
   <nav>
     <form id="search" title="<%- __('search.title') %>" @submit.prevent="submit" :class="{open: suggestOpen}">
       <input type="search" id="query" @focus="showSuggest" @blur="hideSuggest" v-model="term" />
@@ -44,5 +43,6 @@
       </li>
     </ul>
   </nav>
+  <a class="button" id="nav"></a>
 </header>
 <!-- END header -->
