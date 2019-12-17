@@ -11,7 +11,7 @@
     "start": "nohup hexo s &",
     "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'` > /dev/null 2> /dev/null || :",
     "deploy": "gulp",
-    "postinstall": "cd ./node_modules/markdown-it-mermaid && npm install && npm run build && cd ../.."
+    "postinstall": "cd ./node_modules/markdown-it-mermaid && yarn && yarn build && cd ../.."
   },
   "dependencies": {
     "@iktakahiro/markdown-it-katex": "^3.1.0",
@@ -39,6 +39,7 @@
     "puppeteer": "^2.0.0",
     "sanitize-filename": "^1.6.3",
     "ts-node": "^8.5.4",
+    "typescript": "^3.7.3",
     "vue": "^2.6.10",
     "workbox-build": "^4.3.1"
   },
