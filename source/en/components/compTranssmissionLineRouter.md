@@ -71,8 +71,8 @@ symbol: TLine_3p
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Sending (i) Pin | 3×1 | 送端连接端口 |                   
-| Receiving (j) Pin | 3×1 | 受端连接端口 |                   
+| Sending (i) Pin | 3×1 | 送端连接端口 |
+| Receiving (j) Pin | 3×1 | 受端连接端口 |
 
 ## 使用说明
 

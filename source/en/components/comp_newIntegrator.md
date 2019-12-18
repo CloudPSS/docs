@@ -45,10 +45,10 @@ symbol: newIntegrator
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |                   
-| Output | 1×1 | 输出端口|                   
-| Reset Trigger | 1×1 |重置触发输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效|                   
-| Reset Value | 1×1 |重置后元件输出值的输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效 |                   
+| Input | 1×1 |输入端口 |
+| Output | 1×1 | 输出端口|
+| Reset Trigger | 1×1 |重置触发输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效|
+| Reset Value | 1×1 |重置后元件输出值的输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效 |
 
 ## 使用说明
 

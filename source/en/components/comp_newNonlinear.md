@@ -28,8 +28,8 @@ symbol: newNonlinear
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Input | 1×1 | |                   
-| Output | 1×1 | |                   
+| Input | 1×1 | |
+| Output | 1×1 | |
 
 ## 使用说明
 
