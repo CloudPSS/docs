@@ -40,7 +40,7 @@
     "sanitize-filename": "^1.6.3",
     "ts-node": "^8.5.4",
     "typescript": "^3.7.3",
-    "vue": "^2.6.10",
+    "vue": "^2.6.11",
     "workbox-build": "^4.3.1"
   },
   "devDependencies": {
