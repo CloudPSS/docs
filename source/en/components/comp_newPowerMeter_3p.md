@@ -31,10 +31,10 @@ symbol: newPowerMeter_3p
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| 3 Phase Voltage \[kV\] | 3×1 |此处输入测量所得三相电压的名称，以#号开头，如#Vabc |                   
-| 3 Phase Current \[kA\] | 3×1 |此处输入测量所得三相电流的名称，以#号开头，如#Iabc |                   
-| Active Power \[MW\] | 1×1 |此处输入测量所得有功功率的名称，以#号开头，如#P |                   
-| Reactive Power \[MVar\] | 1×1 |此处输入测量所得无功功率的名称，以#号开头，如#Q |                   
+| 3 Phase Voltage \[kV\] | 3×1 |此处输入测量所得三相电压的名称，以#号开头，如#Vabc |
+| 3 Phase Current \[kA\] | 3×1 |此处输入测量所得三相电流的名称，以#号开头，如#Iabc |
+| Active Power \[MW\] | 1×1 |此处输入测量所得有功功率的名称，以#号开头，如#P |
+| Reactive Power \[MVar\] | 1×1 |此处输入测量所得无功功率的名称，以#号开头，如#Q |
 
 ## 使用说明
 

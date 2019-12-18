@@ -34,14 +34,14 @@ symbol: newSurgeGen
 | End Time of Up Slope | s | 上升沿结束时刻T2(>T1) | 实数（常量） | 上升沿结束时刻$T_2$ |
 | Start Time of Down Slope | s | 下降沿开始时刻T3(>T2) | 实数（常量） | 下降沿开始时刻$T_3$ |
 | End Time of Down Slope | s | 下降沿结束时刻T4(>T3) | 实数（常量） | 下降沿结束时刻$T_4$ |
-| Peak Output |  | 峰值输出 | 实数（常量） | 峰值输出$P_k$ | 
+| Peak Output |  | 峰值输出 | 实数（常量） | 峰值输出$P_k$ |
 
  
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |                   
+| Output | 1×1 |输出端口 |
  
 ## 使用说明
 

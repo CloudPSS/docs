@@ -31,8 +31,8 @@ symbol: newTrigonometric
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |                   
-| Output | 1×1 |输出端口 |                   
+| Input | 1×1 |输入端口 |
+| Output | 1×1 |输出端口 |
 
 ## 使用说明
 
