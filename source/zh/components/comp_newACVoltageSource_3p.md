@@ -44,15 +44,15 @@ symbol: newACVoltageSource_3p
 ### Power Flow Data
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Bus Type |  | 节点类型 | 选择 | 该功能暂未开放 |
-| Injected Active Power | MW | 节点注入有功功率 | 实数（常量） | 该功能暂未开放 |
-| Injected Reactive Power | MVar | 节点注入无功功率 | 实数（常量） | 该功能暂未开放 |
-| Bus Voltage Magnitude | p.u. | 母线电压幅值 | 实数（常量） | 该功能暂未开放 |
-| Bus Voltage Angle | Deg | 母线电压相位 | 实数（常量） | 该功能暂未开放 |
-| Lower Voltage Limit | p.u. | 母线电压下限 | 实数（常量） | 该功能暂未开放 |
-| Upper Voltage Limit | p.u. | 母线电压上限 | 实数（常量） | 该功能暂未开放 |
-| Lower Reactive Power Limit | MVar | 无功功率下限 | 实数（常量） | 该功能暂未开放 |
-| Upper Reactive Power Limit | MVar | 无功功率上限 | 实数（常量） | 该功能暂未开放 |
+| Bus Type |  | 节点类型 | 选择 | 用于潮流计算功能，指定电源所在母线的节点类型 |
+| Injected Active Power | MW | 节点注入有功功率 | 实数（常量） | 用于潮流计算功能，对 PV、PQ 节点有效 |
+| Injected Reactive Power | MVar | 节点注入无功功率 | 实数（常量） | 用于潮流计算功能，对 PQ 节点有效 |
+| Bus Voltage Magnitude | p.u. | 母线电压幅值 | 实数（常量） | 用于潮流计算功能，对 PV、平衡节点有效 |
+| Bus Voltage Angle | Deg | 母线电压相位 | 实数（常量） | 用于潮流计算功能，对平衡节点有效 |
+| Lower Voltage Limit | p.u. | 母线电压下限 | 实数（常量） | 用于潮流计算功能，对 PQ 节点有效 |
+| Upper Voltage Limit | p.u. | 母线电压上限 | 实数（常量） | 用于潮流计算功能，对 PQ 节点有效 |
+| Lower Reactive Power Limit | MVar | 无功功率下限 | 实数（常量） | 用于潮流计算功能，对 PV、平衡节点有效 |
+| Upper Reactive Power Limit | MVar | 无功功率上限 | 实数（常量） | 用于潮流计算功能，对 PV、平衡节点有效 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
