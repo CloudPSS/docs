@@ -1,5 +1,5 @@
 ---
-title: 电流表
+title: Current Meter
 author: 
 author_email:
 
@@ -13,33 +13,33 @@ order: 300
 classname: _NewCurrentMeter
 symbol: newCurrentMeter
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCurrentMeter %}
 
-> **该元件用以测量支路电流，输出单位为kA。**
+> **This component is used to measure the branch current, and the output unit is kA.**
 
-## 参数列表
+## Parameter
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Dimension | 相数 | 选择 | 选择电流测量为单相或三相 |
-| Name for Current Signal \[kA\] | 电流量测名称 | 文本 |  此处输入测量所得电流信号的标签，以#号开头，如#Ia |
+| Dimension | Dimension | Select | Select single-phase or three-phase current-meter |
+| Name for Current Signal \[kA\] | Name for current signal | Text |  Enter the measurement signal label of the current signal, starting with #, such as #Ia |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 自动 |电流表的正接线端 |
-| Pin - | 自动 |电流表的负接线端 |
+| Pin + | Auto | Positive terminal of current meter |
+| Pin - | Auto | Negative terminal of current meter |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote tip %}
-多个电流表元件不能并联。
+Multiple current meter components cannot be connected in parallel.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
-[电压表](comp_NewVoltageMeter.html)、[支路电压表](comp_NewBranchVoltageMeter.html)
+[Voltage Meter](comp_NewVoltageMeter.html)、[Branch Voltage Meter](comp_NewBranchVoltageMeter.html)

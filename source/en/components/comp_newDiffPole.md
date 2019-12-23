@@ -1,5 +1,5 @@
 ---
-title: 微分极点
+title: Differential Pole
 author: 
 author_email:
 
@@ -13,46 +13,46 @@ order: 700
 classname: _newDiffPole
 symbol: newDiffPole
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDiffPole %}
 
-> **该元件实现对输入信号加入微分极点环节。**
+> **This component simulates the differential pole function.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 |  此处输入微分极点环节的名称（可缺省） |
-| Gain |  | 增益 | 实数（常量） | 微分极点环节的增益 |
-| Time Constant | s | 时间常数 | 实数（常量） | 微分极点环节的时间常数 |
-| Initialization Type |  | 初始化方法 | 选择 | 选择微分环节的初始化方法为“稳态”的“任意值” |
-| Initial Value |  | 初始值 | 实数（常量） | 微分环节的初始值 |
-| Limit Output? |  | 是否限制输出 | 选择 | 选择是否限制该环节的输出，可配置为“Fixed Limits”或“Dynamic Limits” |
+| Name |  | Name of component | Text |  Enter the name of this component |
+| Gain |  | Gain | Real number (Const) | Gain of the differential pole |
+| Time Constant | s | Time constant | Real number (Const) | Time constant of the differential pole |
+| Initialization Type |  | Initialization type | Select | Select the initialization type as "steady state" or "any value" |
+| Initial Value |  | Initial value | Real number (Const) | Initial value of the differential pole |
+| Limit Output? |  | Limit output? | Select | Select to limit the output of integrator or not. It could be configured as "Fixed Limits" or "Dynamic Limits" |
 
 ### Fixed Limits
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Maximum Limit |  | 输出上限 | 实数（常量） | 元件输出上限，仅当“限制输出”配置为“Fixed Limits”时有效 |
-| Minimum Limit |  | 输出下限 | 实数（常量） | 元件输出下限，仅当“限制输出”配置为“Fixed Limits”时有效 |
+| Maximum Limit |  | Maximum limit | Real number (Const) | Limits the maximum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
+| Minimum Limit |  | Minimum limit | Real number (Const) | Limits the minimum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
 
 ### Dynamic Limits
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Maximum Limit | 输出上限（以@开头的信号名） | 文本 | 元件输出上限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
-| Minimum Limit | 输出下限（以@开头的信号名） | 文本 | 元件输出下限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
+| Maximum Limit | Maximum limit (Starting with @) | Text |  Limits the maximum output to this signal，only valid when "Limit Output" is configured as "Dynamic Limits" |
+| Minimum Limit | Maximum limit (Starting with @) | Text | Limits the minimum output to this signal，only valid when "Limit Output" is configured as "Dynamic Limits" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 | 输出端口|
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[一阶惯性环节](comp_newRealPole.html)、[超前滞后校正](comp_newLeadLag.html)、[二阶传递函数](comp_newComplexPole.html)
+[一阶惯性环节](comp_newRealPole.html)、[超前滞后校正](comp_newLeadLag.html)、[Second Order Complex Pole](comp_newComplexPole.html)

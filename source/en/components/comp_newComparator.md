@@ -1,5 +1,5 @@
 ---
-title: 比较器
+title: Comparator
 author: 
 author_email:
 
@@ -13,39 +13,39 @@ order: 100
 classname: _newComparator
 symbol: newComparator
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newComparator %}
 
-> **该元件对两个输入信号比较，并输出矩形波。**
+> **This component compares two input signals and outputs a rectangular wave.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入比较器的名称（可缺省） |
-| Expression |  | 比较表达式 | 选择 | 选择比较器的比较逻辑 |
-| If True Output Value |  | 为真时的输出值 | 实数（常量） | 当比较逻辑为真时的输出值 |
-| If False Output Value |  | 为假时的输出值 | 实数（常量） | 当比较逻辑为假时的输出值 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Expression |  | Expression | Select | Select the comparison logic |
+| If True Output Value |  | The output value if expression is true | Real number（Const） | The output value if expression is true |
+| If False Output Value |  | The output value if expression is false | Real number（Const） | The output value if expression is false |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| A | 1×1 |输入端口A |
-| B | 1×1 |输入端口B |
-| Output 1 | 1×1 |输出端口1 |
-| Output 2 | 1×1 |输出端口2，输出逻辑为输出端口1相反 |
+| A | 1×1 | Input pin A |
+| B | 1×1 | Input pin B |
+| Output 1 | 1×1 | Output pin 1 |
+| Output 2 | 1×1 | Output pin 2 |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-配置Expression确定比较器的判据，如：A>=B，A< B。
-+ 判据为真，则上输出引脚输出设定真值，下输出引脚输出设定假值。
-+ 判据为假，则上输出引脚输出设定假值，下输出引脚输出设定真值。
+The expression an be configured as A >= B or A < B.
++  If the expression is true, the output pin1 outputs the true value, and the output pin2 outputs the false value.
++ If the expression is false, the output pin1 outputs the false value, and the output pin2 outputs the true value.
 {% endpullquote %}
 
-## 相关元件
+## See Also
 
-[滞环比较器](comp_newHysteresis.html)
+[Hysteresis Comparator](comp_newHysteresis.html)
 

@@ -1,5 +1,5 @@
 ---
-title: 延迟触发器
+title: Binary Delay
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 500
 classname: _newBinaryDelay
 symbol: newBinaryDelay
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newBinaryDelay %}
 
-> **该元件用以实现对输入开关信号的延时开通、关断。**
+> **This component is used to implement an on delay and off delay of the input switch signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入延迟触发器的名称（可缺省） |
-| Turn ON Delay Time | s | 开通延时 | 实数（常量） | 开通延迟时间，在该时间内元件输出为0 |
-| Turn OFF Delay Time | s | 关断延时 | 实数（常量） | 关断延迟时间，在该时间内元件输出为1 |
-| Initial State |  | 初始电平 | 选择 | 选择元件的初始电平为高或低 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Turn ON Delay Time | s | Turn ON delay time | Real number（Const） | Turn ON delay time |
+| Turn OFF Delay Time | s | Turn OFF delay time | Real number（Const） | Turn OFF delay time |
+| Initial State |  | Initial state | Select | Select the initial state is high or low |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 | 输出端口|
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[单稳态触发器](comp_newMonoStable.html)
+[Monostable Multivibrator](comp_newMonoStable.html)

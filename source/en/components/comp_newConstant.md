@@ -1,5 +1,5 @@
 ---
-title: 常量输入
+title: Constant
 author: 
 author_email:
 
@@ -13,29 +13,29 @@ order: 100
 classname: _newConstant
 symbol: newConstant
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newConstant %}
 
-> **该元件用以产生常数输出信号。**
+> **This component is used to generate a constant output signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入常量输入的名称（可缺省） |
-| Real Constant Value |  | 常数 | 实数（常量） | 输出常数的数值 |
+| Name |  | Name of component | Text | Enter the name of the constant component. (Default) |
+| Real Constant Value |  | Constant | Real number（Const） | The value of the constant |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 [时间输入](comp_newTime.html)、[仿真步长输入](comp_newDeltaT.html)

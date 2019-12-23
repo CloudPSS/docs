@@ -1,5 +1,5 @@
 ---
-title: 滞环比较器
+title: Hysteresis Comparator
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 200
 classname: _newHysteresis
 symbol: newHysteresis
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newHysteresis %}
 
-> **该元件实现对输入信号的滞环比较并输出矩形波。**
+> **This component implements a hysteresis comparison of the input signal and outputs a rectangular wave.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入滞环比较器的名称（可缺省） |
-| Logic 1 Input Level |  | 当输入大于设定值时，输出为1 | 实数（常量） | 滞环带的上限，需保证上限大于下限 |
-| Logic 0 Input Level |  | 当输入小于设定值时，输出为0 | 实数（常量） | 滞环带的下限，需保证上限大于下限 |
-| Invert Output? |  | 输出是否取反？ | 选择 | 选择输出是否取反 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Logic 1 Input Level |  | When input signal is larger than setting value, the output is 1 | Real number (Const) | The upper limit of hysteresisshould be larger than lower limit |
+| Logic 0 Input Level |  | When input signal is smaller than setting value, the output is 0 | Real number (Const) | The upper limit of hysteresis should be larger than lower limit |
+| Invert Output? |  | Invert Output？ | Select | Select the output value is inverted or not |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[比较器](comp_newComparator.html)
+[Comparator](comp_newComparator.html)

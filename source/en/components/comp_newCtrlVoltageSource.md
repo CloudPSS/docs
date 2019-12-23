@@ -1,5 +1,5 @@
 ---
-title: 受控电压源
+title: Controlled Voltage Source
 author: 
 author_email:
 
@@ -13,41 +13,41 @@ order: 500
 classname: _newCtrlVoltageSource
 symbol: newCtrlVoltageSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCtrlVoltageSource %}
 
-> **该元件用以建模受控电压源。**
+> **This component is used to model a controlled voltage source.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 电压源名称 | 文本 | 此处输入受控电压源的名称（可缺省） |
-| Is This Source Grounded? |  | 电压源一端是否接地？ | 选择 | 选择“Yes”或“No”以使电压源负端接地或不接地 |
-| Resistance | Ω | 电压源内阻值 | 实数（常量） | 电压源内阻 |
+| Source Name |  | Name of component | Text | Enter the name of controlled voltage source. (Default) |
+| Is This Source Grounded? |  | Is this source grounded? | Select | Select "Yes" or "No" to ground or unground the Negative terminal of controlled voltage source |
+| Resistance | Ω | Resistance | Real number (Const)  | Resistance of controlled voltage source |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电压源端电压 | 文本 | 此处输入电压源电压量测信号的标签，以#号开头，如#Va |
-| Source Current \[kA\] | 电压源的电流 | 文本 | 此处输入电压源电流量测信号的标签，以#号开头，如#Ia |
+| Source Voltage \[kV\] | Source voltage | Text | Enter the measurement signal label of the voltage of voltage source, starting with #, such as #Va |
+| Source Current \[kA\] | Source current | Text | Enter the measurement signal label of the current of voltage source, starting with #, such as #Ia |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 自动 |电压源的负端（参考方向），仅当电压源非接地时有效 |
-| Pin + | 自动 |电压源的正端（参考方向）|
-| Ctrl | 自动 |受控输入端，该端口输入为1时，对应输出电压为1V|
+| Pin - | Auto | Negative terminal, only valid when the power source is not grounded |
+| Pin + | Auto | Positive terminal |
+| Ctrl | Auto | Controlled input, when the port input is 1, the corresponding output voltage is 1V |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+If the internal resistance of the voltage source is zero, CloudPSS will set it to the `ideal voltage source` automatically. However, multiple ideal voltage sources cannot be connected in parallel or in a loop (in violation of Kirchhoff's loop voltage law).
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
-[受控电压源(VP)](comp_newCtrlVPAcVoltageSource.html)、[受控电压源(VF)](comp_newCtrlAcVoltageSource.html)、[受控电流源](comp_newCtrlCurrentSource.html)
+[Controlled AC Voltage Source (VP)](comp_newCtrlVPAcVoltageSource.html)、[Controlled AC Voltage Source (VF)](comp_newCtrlAcVoltageSource.html)、[Controlled Current Source](comp_newCtrlCurrentSource.html)

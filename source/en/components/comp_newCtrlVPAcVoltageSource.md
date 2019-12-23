@@ -1,5 +1,5 @@
 ---
-title: 受控交流电压源(VP)
+title: Controlled AC Voltage Source (VP)
 author: 
 author_email:
 
@@ -13,24 +13,24 @@ order: 700
 classname: _newCtrlVPAcVoltageSource
 symbol: newCtrlVPACSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCtrlVPACSource %}
 
-> **该元件用以建模幅值、相位可控的单相或三相交流电压源。**
+> **This component is used to model a single-phase or three-phase AC voltage source with controllable amplitude and phase.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name参数名 | Unit单位 | Remark备注 | Type类型 | Description描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 | 此处输入受控电压源的名称（可缺省） |
-| Is This Source Grounded? |  | 电压源是否接地？ | 选择 | 选择“Yes”或“No”以使电压源负端接地或不接地 |
-| No. of Phases |  | 电压源相数 | 选择 | 选择电压源为单相或三相 |
-| Function Type |  | 函数类型 | 选择 |  选择电压源为正弦表达式或余弦表达式 |
-| Frequency | Hz | 频率 | 实数（常量） | 电压源的频率 |
-| Resistance | Ω | 内阻 | 实数（常量） | 电压源的内阻 |
-| Start-up Type |  | 启动方式 | 选择 | 选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
-| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
-| Voltage Input Time Constant | s | 启动时间常数 | 实数（常量） |输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效  |
+| Source Name |  | Name of component元件名称 | Text文本 | Enter the name of controlled voltage source (Default) |
+| Is This Source Grounded? |  | Is this source grounded? | Select选择 | Select "Yes" or "No" to ground or unground the Negative terminal of voltage source选择“Yes”或“No”以使电压源负端接地或不接地 |
+| No. of Phases |  | Number of phases电压源相数 | Select选择 | Select single-phase or three-phase source选择电压源为单相或三相 |
+| Function Type |  | Function type函数类型 | Select选择 |  Select the signal type as "Sin" or "Cos"选择电压源为正弦表达式或余弦表达式 |
+| Frequency | Hz | Frequency频率 | Real number (Const)实数（常量） | Frequency of the controlled voltage source电压源的频率 |
+| Resistance | Ω | Resistance内阻 | Real number (Const)实数（常量） | Resistance of the controlled voltage source电压源的内阻 |
+| Start-up Type |  | Start-up type启动方式 | Select选择 | Select the start-up type of controlled voltage source as "Linear Ramp" or "Real Pole Ramp"选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
+| Voltage Ramp Up Time | s | Startup time启动时间 | Real number (Const)实数（常量） | Enter the voltage ramping time, only valid when "Start-up Type" is "Linear Ramp"输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
+| Voltage Input Time Constant | s | Startup time constant启动时间常数 | Real number (Const)实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效  |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |

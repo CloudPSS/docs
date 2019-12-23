@@ -13,36 +13,36 @@ order: 200
 classname: _FirePulseGenNLM2Ref
 symbol: NLM2Ref
 ---
-## 基本描述
+## Basic Description
 {% compsymbol NLM2Ref %}
 
-> **该元件用于实现MMC应用中的最近电平调制及电容电压平衡算法。**
+> **This component realizes the nearest level modulation and capacitance voltage balancing algorithms in MMC applications.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入NLM2Ref的名称 |
-| No. of Sub-modules | 子模块数 | 整数（常量） | 子模块数量 |
+| Name | Name of component | Text | Enter the name of this component |
+| No. of Sub-modules | Number of sub-modules | Integer（Const） | Number of sub-modules |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Vcp | 自动 |上桥臂电容电压输入端口 |
-| Vcn | 自动 |下桥臂电容电压输入端口 |
-| Vpref | 自动 |上桥臂参考调制电压输入端口 |
-| Vnref | 自动 |下桥臂参考调制电压输入端口 |
-| Ip | 自动 |上桥臂电感电流输入端口 |
-| In | 自动 |下桥臂电感电流输入端口 |
-| Gp | 自动 |上桥臂开关信号输出端口 |
-| Gn | 自动 |下桥臂开关信号输出端口 |
+| Vcp | Auto | Input pin of upper bridge capacitor voltage |
+| Vcn | Auto | Input pin of lower bridge capacitor voltage |
+| Vpref | Auto | Input pin of upper bridge reference voltage |
+| Vnref | Auto | Input pin of lower bridge reference voltage |
+| Ip | Auto | Input pin of upper bridge inductor voltage |
+| In | Auto | Input pin of lower bridge inductor voltage |
+| Gp | Auto | Output pin of upper bridge switcher signal |
+| Gn | Auto | Output pin of lower bridge switcher signal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[半桥子模块](comp_MultiHalfBridgeModule.html)
+[Half-Bridge Submodule](comp_MultiHalfBridgeModule.html)

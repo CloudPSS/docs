@@ -1,5 +1,5 @@
 ---
-title: 接地点
+title: Ground
 author: 
 author_email:
 
@@ -13,28 +13,28 @@ order: 100
 classname: GND
 symbol: newGND
 ---
-## 基本描述
+## Basic description
 {% compsymbol newGND %}
 
-> **该元件代表电网的接地点。**
+> **This component represents the ground point of circuit.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入接地点的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of the ground point (default) |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| GND | 自动 |接地端 |
+| GND | Auto | Ground |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

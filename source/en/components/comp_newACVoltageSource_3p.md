@@ -1,5 +1,5 @@
 ---
-title: 三相交流电压源
+title: Three-phase AC Voltage Source
 author: 
 author_email:
 
@@ -13,31 +13,31 @@ order: 600
 classname: _newACVoltageSource_3p
 symbol: newACVoltageSource_3p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newACVoltageSource_3p %}
 
-> **该元件用以建模三相交流电压源（单线图）。**
+> **This component is used to model a three-phase AC voltage source.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 | 此处输入三相交流电压源的名称（可缺省） |
-| Is Star Point Grounded? |  | 电压源中性点是否接地？ | 选择 | 选择“Yes”或“No”以使电压源负端接地或不接地 |
-| Rated Voltage (L-L, RMS) | kV | 线电压有效值 | 实数（常量） | 电压源额定线电压有效值 |
-| Function Type |  | 函数类型 | 选择 | 选择电压源为正弦表达式或余弦表达式 |
-| Initial Phase | Deg | 初始相位 | 实数（常量） | 电压源在t=0时的相位 |
-| Frequency | Hz | 频率 | 实数（常量） |  电压源额定频率 |
-| Resistance | Ω | 内阻 | 实数（常量） | 电压源额定内阻 |
-| Start-up Type |  | 启动方式 | 选择 | 选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
-| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
-| Voltage Input Time Constant | s | 启动时间常数 | 实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效 |
+| Source Name |  | Name of component | Text | Enter the name of three-phase ac voltage source (Default) |
+| Is Star Point Grounded? |  | Is star point grounded? | Select | Select “Yes” or “No” to ground or unground the Negative terminal of three-phase ac voltage source |
+| Rated Voltage (L-L, RMS) | kV | Rated line-to line RMS voltage | Real number (Const) | Rated line-to-line RMS voltage |
+| Function Type |  | Function type | Select | Select the signal type as “Sin” or “Cos” |
+| Initial Phase | Deg | Initial phase | Real number (Const) | Initial phase of three-phase ac voltage source when t=0 |
+| Frequency | Hz | Frequency | Real number (Const) |  Rated frequency |
+| Resistance | Ω | Resistance | Real number (Const) | Rated resistance |
+| Start-up Type |  | Start-up type | Select | Select startup type as “Linear Ramp” or “Real Pole Ramp” |
+| Voltage Ramp Up Time | s | Voltage ramp up time | Real number (Const) | Voltage ramp up time, only valid when Start-up type is “Linear Ramp” |
+| Voltage Input Time Constant | s | Voltage input time constant | Real number (Const) | Voltage input time const, only valid when Start-up type is “Linear Ramp” |
 
 ### Fault Setting
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Is This a Fault Source ? |  | 是否为故障电压源 | 选择 | 选择“Yes”或“No”以选择是否为故障电压源 |
-| Fault Start Time | s | 故障开始时间 | 实数（常量） | 故障开始的时间，仅当“是否为故障电压源”项选择"Yes"时有效 |
+| Is This a Fault Source ? |  | Is this a fault source? | Select | Select “Yes” or “No” to set the source as a fault source or non-fault source |
+| Fault Start Time | s | Fault start time | Real number (Const) | 故障开始的时间，仅当“是否为故障电压源”项选择"Yes"时有效 |
 | Fault End Time | s | 故障结束时间 | 实数（常量） | 故结束的时间，仅当“是否为故障电压源”项选择"Yes"时有效 |
 | Drop Ratio | p.u. | 故障电压降 | 实数（常量） | 故障时间电压的标幺值，仅当“是否为故障电压源”项选择"Yes"时有效 |
 

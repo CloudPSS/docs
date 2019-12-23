@@ -13,48 +13,48 @@ order: 200
 classname: _GOV2
 symbol: GOV2
 ---
-## 基本描述
+## Basic Description
 {% compsymbol GOV2 %}
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
 
 ### Common
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| (Rp) Permanent Droop | pu |  | 实数（常量） |  |
-| (Gmax) Maximum Gate Position | pu |  | 实数（常量） |  |
-| (Gmin) Minimum Gate Position | pu |  | 实数（常量） |  |
-| (MXGTOR) Max. Gate Opening Rate | pu/s |  | 实数（常量） |  |
-| (MXGTCR) Max. Gate closing Rate | pu/s |  | 实数（常量） |  |
+| (Rp) Permanent Droop | pu |  | Real number（Const） |  |
+| (Gmax) Maximum Gate Position | pu |  | Real number（Const） |  |
+| (Gmin) Minimum Gate Position | pu |  | Real number（Const） |  |
+| (MXGTOR) Max. Gate Opening Rate | pu/s |  | Real number（Const） |  |
+| (MXGTCR) Max. Gate closing Rate | pu/s |  | Real number（Const） |  |
 
 ### Gov2:  Electro-Hydraulic (Pid) Governor
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Proportional Gain ( Kp)  | pu |  | 实数（常量） |  |
-| Integral Gain ( Ki ) | pu |  | 实数（常量） |  |
-| Derivative Gain ( Kd ) | pu |  | 实数（常量） |  |
-| Pilot Servomotor Time Constant (TA) | s |  | 实数（常量） |  |
-| Gate Servo Time Constant (TC) | s |  | 实数（常量） |  |
-| Gate Servomotor Time Constant (TD) | s |  | 实数（常量） |  |
+| Proportional Gain ( Kp)  | pu |  | Real number（Const） |  |
+| Integral Gain ( Ki ) | pu |  | Real number（Const） |  |
+| Derivative Gain ( Kd ) | pu |  | Real number（Const） |  |
+| Pilot Servomotor Time Constant (TA) | s |  | Real number（Const） |  |
+| Gate Servo Time Constant (TC) | s |  | Real number（Const） |  |
+| Gate Servomotor Time Constant (TD) | s |  | Real number（Const） |  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

@@ -1,5 +1,5 @@
 ---
-title: 支路电压表
+title: Branch Voltage Meter
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 100
 classname: _NewBranchVoltageMeter
 symbol: newBranchVoltageMeter
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newBranchVoltageMeter %}
 
-> **该元件用以测量支路电压，输出单位为kV。**
+> **This component is used to measure the branch voltage and the output unit is kV.**
 
-## 参数列表
+## Parameter
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Dimension | 相数 | 选择 | 选择电压测量为单相或三相 |
-| Name for Voltage Signal \[kV\] | 电压量测名称 | 文本 | 此处输入测量所得电压信号的标签，以#号开头，如#Va |
+| Dimension | Dimension | Select | Select single-phase or three-phase voltmeter |
+| Name for Voltage Signal \[kV\] | Name for voltage signal | Text | Enter the measurement signal label of the voltage signal, starting with #, such as #Va |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 由参数控制 |电压表的正接线端 |
-| Pin - | 由参数控制 | 电压表的负接线端|
+| Pin + | Control by the dimension parameter | Positive terminal of voltmeter |
+| Pin - | Control by the dimension parameter | Negative terminal of voltmeter |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[电压表](comp_NewVoltageMeter.html)、[电流表](comp_NewCurrentMeter.html)
+[Voltage Meter](comp_NewVoltageMeter.html)、[Current Meter](comp_NewCurrentMeter.html)

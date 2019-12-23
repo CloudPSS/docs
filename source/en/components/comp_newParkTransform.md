@@ -1,5 +1,5 @@
 ---
-title: Park变换器
+title: Park Transformer
 author: 
 author_email:
 
@@ -13,37 +13,37 @@ order: 100
 classname: _newParkTransform
 symbol: newParkTransform
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newParkTransform %}
 
-> **该元件实现Park变换和逆Park变换计算。**
+> **This component performs Park transformation and inverse Park transformation.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名                      | 备注       | 类型  | 描述                                 |
+| Parameter name | Remark | Type | Description |
 | :-------------------------- | :--------- | :---: | :----------------------------------- |
-| Name                        | 元件名称   | 文本  | 此处输入Park变换器的名称（可缺省）   |
-| Direction of Transformation | 变换方向   | 选择  | 选择变换的方向为Park变换或Park变换   |
-| Rotating Frame Alignment    | 旋转轴对齐 | 选择  | 选择坐标变换的d轴与A相对齐或滞后90度 |
+| Name | Name of component | Text  | Enter the name of this component |
+| Direction of Transformation | Direction of transformation | Select | Select Park transformation or inverse Park transformation  |
+| Rotating Frame Alignment | Rotating frame alignment | Select  | Select the d-axis of coordinate transformer is aligned with phase A or delay 90 degrees |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述                      |
+| Pin name | Dimension | Description |
 | :----- | :------: | :------------------------ |
 | Theta  |   1×1    |                           |
-| d      |   1×1    | 逆Park变换时d轴的输入端口 |
-| q      |   1×1    | 逆Park变换时q轴的输入端口 |
-| A      |   1×1    | 逆Park变换时a相的输出端口 |
-| B      |   1×1    | 逆Park变换时b相的输出端口 |
-| C      |   1×1    | 逆Park变换时c相的输出端口 |
-| A      |   1×1    | Park变换时a相的输入端口   |
-| B      |   1×1    | Park变换时b相的输入端口   |
-| C      |   1×1    | Park变换时c相的输入端口   |
-| d      |   1×1    | Park变换时d轴相的输出端口 |
-| q      |   自动   | Park变换时q轴的输出端口   |
+| d      |   1×1    | Input pin of d-axis during Inverse Park transformation |
+| q      |   1×1    | Input pin of q-axis during Inverse Park transformation |
+| A      |   1×1    | Output pin of phase A during Inverse Park transformation |
+| B      |   1×1    | Output pin of phase B during Inverse Park transformation |
+| C      |   1×1    | Output pin of phase C during Inverse Park transformation |
+| A      |   1×1    | Input pin of phase A during Park transformation |
+| B      |   1×1    | Input pin of phase B during Park transformation |
+| C      |   1×1    | Input pin of phase C during Park transformation |
+| d      |   1×1    | Output pin of d-axis during Park transformation |
+| q      |   1×1    | Output pin of q-axis during Park transformation |
 
-## 使用说明
+## Using Instructions
 
 ![坐标位置](comp_newParkTransform/park.png "坐标位置")
 当选择**d轴与a相对齐**时，Park变换及逆Park变换的计算公式为：
@@ -118,6 +118,6 @@ U_{q}\\
 U_{0}
 \end{bmatrix}$$
 
-## 相关元件
+## See Aslo
 
-[Clark变换器](comp_newClarkTransform.html)、[dq-αβ坐标转换器](comp_newXYtoDQ.html)
+[Clark Transformer](comp_newClarkTransform.html)、[dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)

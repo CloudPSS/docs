@@ -7,7 +7,7 @@
   "scripts": {
     "build": "gulp generate",
     "clean": "rm nohup.out -f && hexo cl",
-    "prestart": "npm clean",
+    "prestart": "npm run clean",
     "start": "nohup hexo s &",
     "stop": "kill `ps -ef | grep hexo | grep -v grep | awk '{print $2}'` > /dev/null 2> /dev/null || :",
     "deploy": "gulp",

@@ -1,5 +1,5 @@
 ---
-title: 电感
+title: Inductor
 author: 
 author_email:
 
@@ -16,34 +16,34 @@ symbol: newInductor
 ## 基本描述
 {% compsymbol newInductor %}
 
-> **该元件用以建模单相或三相电感（单线图）。**
+> **This component is used to model single or three phase inductor.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入电感的名称（可缺省） |
-| Dimension |  | 单相电感或是三相电感？ | 选择 | 选择电感为单相或三相 |
-| Inductance | H | （每相）电感值 | 实数（常量） | 电感值 |
+| Name |  | Name of component | Text | Enter the name of inductor (Default) |
+| Dimension |  | Single-phase or three-phase inductor？ | Select | Select single-phase or three-phase inductor |
+| Inductance | H | Inductance （Each Phase） | Real number（Const） | Inductance |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Branch Current \[kA\] | 电感电流 | 文本 | 此处输入电感电流量测信号的标签（维数自动），以#号开头，如#Il |
-| Branch Voltage \[kV\] | 电感电压 | 文本 | 此处输入电感电压量测信号的标签（维数自动），以#号开头，如#Vl |
+| Branch Current \[kA\] | Current of inductor | Text | Enter the label of the current in inductor (Auto Dimension), starting with #, such as #Il |
+| Branch Voltage \[kV\] | Voltage of inductor | Text | Enter the label of the Voltage on inductor (Auto Dimension), starting with #, such as #Vl |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 自动 |电感正端（参考方向）|
-| Pin - | 自动 |电感负端（参考方向）|
+| Pin + | Auto | Positive terminal |
+| Pin - | Auto | Negative terminal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[电阻](compnewResistorRouter.html)、[电容](compnewCapacitorRouter.html)
+[Resistor](compnewResistorRouter.html)、[Capacitor](compnewCapacitorRouter.html)
