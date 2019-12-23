@@ -1,5 +1,5 @@
 ---
-title: 半桥子模块
+title: Half-Bridge Submodule
 author: 
 author_email:
 
@@ -13,53 +13,53 @@ order: 100
 classname: _MultiHalfBridgeModule
 symbol: HBM
 ---
-## 基本描述
+## Basic Description
 {% compsymbol HBM %}
 
-> **该元件用于建模MMC（模块化多电平变流器）中的半桥子模块。**
+> **This component is used to model a half bridge submodule in an MMC (Modular Multilevel Converter).**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入半桥子模块的名称 |
-| No. of Sub-Modules |  | 子模块数量 | 整数（常量） | 子模块数量 |
-| Capacitance Per Sub-Module | F | 子模块电容 | 实数（常量） | 子模块电容容值 |
-| Initial Capacitor Voltage | kV | 初始电容电压 | 实数（常量） | 初始电容电压 |
-| Capacitor Leakage Resistance | Ω | 电容泄露电阻 | 实数（常量） | 电容泄露电阻 |
-| IGBT ON Resistance | Ω | IGBT导通电阻 | 实数（常量） | IGBT导通电阻 |
-| IGBT OFF Resistance | Ω | IGBT关断电阻 | 实数（常量） | IGBT关断电阻 |
-| Diode ON Resistance | Ω | 二极管导通电阻 | 实数（常量） | 二极管导通电 |
-| Diode OFF Resistance | Ω | 二极管关断电阻 | 实数（常量） | 二极管关断电阻 |
+| Name |  | Name of component | Text | Enter the name of the half bridge MMC (Default) |
+| No. of Sub-Modules |  | Number of sub-modules | Integer （Const） | Number of sub-modules |
+| Capacitance Per Sub-Module | F | Capacitance of sub-module | Real number（Const） | Capacitance of sub-module |
+| Initial Capacitor Voltage | kV | Initial capacitor voltage | Real number（Const） | Initial capacitor voltage |
+| Capacitor Leakage Resistance | Ω | Capacitor leakage resistance | Real number（Const） | Capacitor leakage resistance |
+| IGBT ON Resistance | Ω | IGBT on resistance | Real number（Const） | IGBT on resistance |
+| IGBT OFF Resistance | Ω | IGBT off resistance | Real number（Const） | IGBT off resistance |
+| Diode ON Resistance | Ω | Diode on Resistance | Real number（Const） | Diode on Resistance |
+| Diode OFF Resistance | Ω | Diode off Resistance | Real number（Const） | Diode off Resistance |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Capacitor Voltage Vector \[kV\] | 电容电压向量 | 文本 | 此处输入半桥子模块电容电压信号量测信号的标签，以#号开头，如#Vc |
-| Capacitor Current Vector \[kA\] | 电容充电电流向量 | 文本 | 此处输入半桥子模块电容电流信号量测信号的标签，以#号开头，如#Ic |
-| IGBT A Voltage Vector \[kV\] | IGBT(A)电压向量 | 文本 | 此处输入半桥子模块中IBGT(A)的电压信号量测信号的标签，以#号开头，如#Va |
-| IGBT A Current Vector \[kA\] | IGBT(A)电流向量 | 文本 | 此处输入半桥子模块中IBGT(A)的电流信号量测信号的标签，以#号开头，如#Ia |
-| Diode A Voltage Vector \[kV\] | 二极管(A)电压向量 | 文本 | 此处输入半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Vda |
-| Diode A Current Vector \[kA\] | 二极管(A)电流向量 | 文本 | 此处输入半桥子模块中二极管(A)的电压信号量测信号的标签，以#号开头，如#Ida |
-| IGBT B Voltage Vector \[kV\] | IGBT(B)电压向量 | 文本 | 此处输入半桥子模块中IBGT(B)的电压信号量测信号的标签，以#号开头，如#Vb |
-| IGBT B Current Vector \[kA\] | IGBT(B)电流向量 | 文本 | 此处输入半桥子模块中IBGT(B)的电流信号量测信号的标签，以#号开头，如#Ib |
-| Diode B Voltage Vector \[kV\] | 二极管(B)电压向量 | 文本 | 此处输入半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Vdb |
-| Diode B Current Vector \[kA\] | 二极管(B)电流向量 | 文本 | 此处输入半桥子模块中二极管(B)的电压信号量测信号的标签，以#号开头，如#Idb |
+| Capacitor Voltage Vector \[kV\] | Capacitor voltage | Text | Enter the measurement signal label of the capacitor voltage of Half-bridge submodule, starting with #, such as #Vc |
+| Capacitor Current Vector \[kA\] | Capacitor current | Text | Enter the measurement signal label of the capacitor current of Half-bridge submodule, starting with #, such as #Ic |
+| IGBT A Voltage Vector \[kV\] | IGBT (A) voltage | Text | Enter the measurement signal label of the IGBT (A) voltage of Half-bridge submodule, starting with #, such as #Va |
+| IGBT A Current Vector \[kA\] | IGBT (A) current | Text | Enter the measurement signal label of the IGBT (A) current of Half-bridge submodule, starting with #, such as #Ia |
+| Diode A Voltage Vector \[kV\] | Diode (A) voltage | Text | Enter the measurement signal label of the Diode (A) voltage of Half-bridge submodule, starting with #, such as #Vda |
+| Diode A Current Vector \[kA\] | Diode (A) current | Text | Enter the measurement signal label of the Diode (A) current of Half-bridge submodule, starting with #, such as #Ida |
+| IGBT B Voltage Vector \[kV\] | IGBT (B) voltage | Text | Enter the measurement signal label of the IGBT (B) votlage of Half-bridge submodule, starting with #, such as #Vb |
+| IGBT B Current Vector \[kA\] | IGBT (B) current | Text | Enter the measurement signal label of the IGBT (B) current of Half-bridge submodule, starting with #, such as #Ib |
+| Diode B Voltage Vector \[kV\] | Diode (B) voltage | Text | Enter the measurement signal label of the Diode (B) voltage of Half-bridge submodule, starting with #, such as #Vdb |
+| Diode B Current Vector \[kA\] | Diode (B) current | Text | Enter the measurement signal label of the Diode (B) current of Half-bridge submodule, starting with #, such as #Idb |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 1×1 |子模块的接线正端，也即IGBT(a)的s发射极 |
-| Pin - | 1×1 |子模块的接线负端，也即IGBT(b)的s发射极 |
-| Gate | 由参数控制 |开关信号输入端，其维数为模块数的2倍 |
+| Pin + | 1×1 | Positive terminal of submodule, which is also the emit pin of IGBT (A) |
+| Pin - | 1×1 | Negative terminal of submodule, which is also the emit pin of IGBT (B) |
+| Gate | Control by signal | Switch signal input terminal. Its dimension is twice the number of modules |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Aslo
 
 [NLM2Ref](comp_FirePulseGenNLM2Ref.html)
 

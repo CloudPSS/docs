@@ -1,5 +1,5 @@
 ---
-title: 三相交流母线
+title: Three-phase AC Bus
 author: 
 author_email:
 
@@ -13,39 +13,39 @@ order: 500
 classname: _newBus_3p
 symbol: newBus_3p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newBus_3p %}
 
-> **该元件用以建模三相交流母线。三相交流母线仅作为理想的连接点，无实际物理意义。**
+> **This component is used to model a three-phase AC bus. The three-phase AC bus is only an ideal connection point and has no practical physical meaning.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 母线名称 | 文本 | 此处输入三相交流母线的名称（可缺省） |
-| Voltage Magnitude (L-L, RMS) | p.u. | 母线线电压幅值 | 实数（常量） | 母线线电压的幅值，用于交流系统快速启动，可缺省 |
-| Voltage Angle | Deg | 母线电压相位 | 实数（常量） | 母线电压相位（A相相电压），用于交流系统快速启动，可缺省 |
-| Base Voltage (L-L, RMS) | kV | 母线电压基值 | 实数（常量） | 母线的电压基准值，用于交流系统快速启动，可缺省 |
-| Rated Frequency | Hz | 额定频率 | 实数（常量） | 母线的额定频率，用于交流系统快速启动，可缺省 |
-| Ramping Time | s | 斜坡启动时间(仅初始化用) | 实数（常量） | 母线电压以斜坡函数方式爬升的时间，用于交流系统快速启动，可缺省 |
+| Name |  | Name of AC bus | Text | Enter the name of three-phase AC bus. (Default) |
+| Voltage Magnitude (L-L, RMS) | p.u. | Voltage magnitude (L-L, RMS) | Real number (Const) | Voltage magnitude of AC bus for AC system quick start. (could be default) |
+| Voltage Angle | Deg | Voltage angle of AC bus | Real number (Const) | Voltage angle of AC bus for AC system quick start. (could be default) |
+| Base Voltage (L-L, RMS) | kV | Base voltage of AC bus | Real number (Const) | Base voltage of AC bus for AC system quick start. (could be default) |
+| Rated Frequency | Hz | Rated frequency | Real number (Const) | Rate frequency of AC bus for AC system quick start. (could be default) |
+| Ramping Time | s | Ramping time (for initialization) | Real number (Const) | Voltage ramping time of AC bus for AC system quick start. (colud be default) |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Voltage Vector \[kV\] | 三相相电压 | 文本 | 此处输母线三相相电压量测信号的标（3×1维），以#号开头，如#Vabc |
-| RMS Voltage \[kV\] | 电压均方根值 | 文本 | 此处输母线电压均方根值量测信号的标签（1×1维），以#号开头，如#Vrms |
+| 3 Phase Voltage Vector \[kV\] | 3 phase voltage | Text | Enter the measurement signal label of the 3-phase voltage of AC bus (3x1), starting with #, such as #Vabc |
+| RMS Voltage \[kV\] | Rms voltage | Text | Enter the measurement signal label of rms voltage of AC bus (3x1), starting with #, such as #Vrms |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 3×1 |母线接线端口，可以作为多个三相元件的连接点 |
+| Pin + | 3×1 | AC bus pins, which can be used as a connection point for multiple three-phase components |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

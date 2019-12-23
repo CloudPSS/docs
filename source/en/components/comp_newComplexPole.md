@@ -1,5 +1,5 @@
 ---
-title: 二阶传递函数
+title: Second Order Complex Pole
 author: 
 author_email:
 
@@ -13,10 +13,10 @@ order: 900
 classname: _newComplexPole
 symbol: newComplexPole
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newComplexPole %}
 
-> **该元件用以建模二阶传递函数，可配置为以下9种二阶滤波器（当前版本仅只支持前两种）**
+> **This component simulates the second-order transfer function and can be configured as the following nine second-order filters (the current version only supports the first two).**
 >  + 1-Low Pass
 >  + 2-Mid Pass  
 >  + ~~3-High Pass~~  
@@ -27,38 +27,38 @@ symbol: newComplexPole
 >  + ~~8-Mid Reject~~  
 >  + ~~9-Low Reject~~
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入二阶传递函数的名称（可缺省） |
-| Gain |  | 增益 | 实数（变量） | 二阶传递函数的增益 |
-| Damping Ratio |  | 阻尼比 | 实数（变量） | 二阶传递函数的阻尼比 |
-| Characteristic Frequency | Hz | 特征频率 | 实数（常量） | 二阶传递函数的特征频率 |
-| Function code |  | 函数类型 | 选择 | 选择二阶传递函数类型 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Gain |  | Gain | Real number（Variable） | Gain of second order complex pole |
+| Damping Ratio |  | Damping ratio | Real number（Variable） | Damping ratio of second order complex pole|
+| Characteristic Frequency | Hz | Characteristic frequency | Real number（Const） | Characteristic frequency of second order complex pole |
+| Function code |  | Function type | Select | Select function type |
 
 ### Limit
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Limit Output? |  | 是否限制输出 | 选择 | 选择是否限制二阶传递函数的输出 |
-| Limit Output Speed? |  | 是否限制输出速度 | 选择 | 选择是否限制二阶传递函数的输出速度 |
-| Output Up Limit |  | 输出上限 | 实数（变量） | 二阶传递函数的输出上限，仅当“是否限制输出”项为“Yes”时有效 |
-| Output Down Limit |  | 输出下限 | 实数（变量） | 二阶传递函数的输出下限，仅当“是否限制输出”项为“Yes”时有效 |
-| Output Speed Up Limit |  | 输出速度上限 | 实数（变量） | 二阶传递函数的输出速度上限，仅当“是否限制输出速度”项为“Yes”时有效 |
-| Output Speed Down Limit |  | 输出速度下限 | 实数（变量） | 二阶传递函数的输出速度下限，仅当“是否限制输出速度”项为“Yes”时有效 |
+| Limit Output? |  | Limit output? | Select | Select whether limit the output of transfer function or not. |
+| Limit Output Speed? |  | Limit output speed? | Select | Select whether limit the output speed of transfer function or not |
+| Output Up Limit |  | Output up limit | Real number（Variable） | Output maximum limit of transfer function，only valid when "Limit Output" is "Yes" |
+| Output Down Limit |  | Output down limit | Real number（Variable） | Output minimum limit of transfer function，only valid when "Limit Output" is "Yes" |
+| Output Speed Up Limit |  | Output speed up limit | Real number（Variable） | Output speed maximum limit of transfer function，only valid when "Limit Output Speed" is "Yes" |
+| Output Speed Down Limit |  | Output speed down limit | Real number（Variable） | Output speed minimum limit of transfer function，only valid when "Limit Output Speed" is "Yes" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 | 输入端口|
-| Output | 1×1 | 输出端口|
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[零点](comp_newZero.html)、[高阶传递函数](comp_newNthOrderTransFunc.html)、[超前滞后校正](comp_newLeadLag.html)
+[Zero-point](comp_newZero.html)、[高阶传递函数](comp_newNthOrderTransFunc.html)、[超前滞后校正](comp_newLeadLag.html)

@@ -1,5 +1,5 @@
 ---
-title: 多路信号合并
+title: Channel Merge
 author: 
 author_email:
 
@@ -13,28 +13,28 @@ order: 0
 classname: _ChannelMerge
 symbol: ChannelMerge
 ---
-## 基本描述
+## Basic Description
 {% compsymbol ChannelMerge %}
 
-> **该元件实现将多路输入信号进行合并输出，输出信号为多维信号。**
+> **The component realizes combined output of multiple input signals, and the output signal is a multi-dimensional signal.**
 
-## 使用说明
+## Using Instructions
 
-### ChannelMerge多路信号合并工作原理  
+### Principle of Channel Merge  
 
-假设仿真过程中需要生成一个M*N维(M行N列)的信号，如图所示。可利用ChannelMerge元件对多个信号进行合并。
+Assume that a signal of M*N dimension (M rows and N columns) is required during the simulation, as shown in the figure. This signal can be merged using the Channel Merge component.
 
 ![信号图](comp_Mux/M1.png)
 
-假设仿真过程中产生了两个信号，一个为3\*1维信号，另一个维2\*2维信号，现需要将其合并为5\*5维的信号。此时先拖拽ChannelMerge元件至工作空间，单击该元件进行设定，点击添加引脚，填写输入引脚的维数和起始坐标以及引脚名称，接着填写输出引脚的维数及名称。参数框设置如下图所示，点击应用即可。此时输出为5*5维信号，信号分布如下图所示，其中灰色信号为0信号。
+Assume that two signals are generated during the simulation, one is a 3\*1-dimensional signal, and another one is a 2\*2-dimensional signal. Now it needs to be combined into a 5\*5-dimensional signal. Drag the Channel Merge component to the workspace, click the component to change the settings, click “Add Pin”, fill in the dimension and start coordinates of each input pin, then fill in the dimension and name of the output pin. As the parameter box shown below, the output would be a 5*5-dimensional signal. The signal distribution is as shown in the figure below, wherein the gray signal is null signal.
 
 ![信号图3](comp_Mux/M3.png)
 
 {% pullquote info %}
-输入输出维数需要匹配，如在上例中理论构成的新多维信号不得小于参数设置的输出引脚维数。
+The input and output dimensions need to be matched. For example, the new multi-dimensional signal theoretically constructed in the above example must not be smaller than the output pin dimension set by the parameter.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
-[多路信号分离](comp_ChannelDeMerge.html)
+[Channel Merge](comp_ChannelDeMerge.html)

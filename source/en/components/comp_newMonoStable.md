@@ -1,5 +1,5 @@
 ---
-title: 单稳态触发器
+title: Monostable Multivibrator
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 600
 classname: _newMonoStable
 symbol: newMonoStable
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newMonoStable %}
 
-> **该元件用以实现对上升沿输入以高电平持续输出固定时间后，以低电平输出。**
+> **This component simulates a monostable multivibrator.  If a positive edge of the input signal is detected, then outputs high and remains high for a set time (Pulse Duration).**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入单稳态触发器的名称（可缺省） |
-| Pulse Duration | s | 脉冲持续时间 | 实数（常量） | 输出高电平的持续时间 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Pulse Duration | s | Pulse duration | Real number（Const） | Time period of high level output |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[延迟触发器](comp_newBinaryDelay.html)
+[Binary Delay](comp_newBinaryDelay.html)

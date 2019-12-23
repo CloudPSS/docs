@@ -1,5 +1,5 @@
 ---
-title: 受控交流电压源(VF)
+title: Controlled AC Voltage Source (VF)
 author: 
 author_email:
 
@@ -13,59 +13,59 @@ order: 600
 classname: _newCtrlAcVoltageSource
 symbol: newCtrlVFACSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCtrlVFACSource %}
 
-> **该元件用以建模幅值、频率可控的单相或三相交流电压源。**
+> **This component is used to model a single-phase or three-phase AC voltage source with controllable amplitude and frequency.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 | 此处输入受控电压源的名称（可缺省） |
-| Is This Source Grounded? |  | 电压源是否接地？ | 选择 | 选择“Yes”或“No”以使电压源负端接地或不接地 |
-| No. of Phases |  | 电压源相数 | 选择 | 选择电压源为单相或三相 |
-| Function Type |  | 函数类型 | 选择 | 选择电压源为正弦表达式或余弦表达式 |
-| Initial Frequency | Hz | 初始频率 | 实数（常量） | 电压源的初始频率 |
-| Initial Phase | Deg | 初始电压相位 | 实数（常量） | 电压源在t=0时刻的相位 |
-| Resistance | Ω | 内阻 | 实数（常量） | 电压源的内阻 |
-| Start-up Type |  | 启动方式 | 选择 | 选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
-| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
-| Voltage Input Time Constant | s | 启动时间常数 | 实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效 |
+| Source Name |  | Name of component | Text | Enter the name of controlled voltage source. (Default) |
+| Is This Source Grounded? |  | Is this source grounded? | Select | Select "Yes" or "No" to ground or unground the Negative terminal of voltage source |
+| No. of Phases |  | Number of phases | Select | Select single-phase or three-phase source |
+| Function Type |  | Function type | Select | Select the signal type as “Sin” or “Cos” |
+| Initial Frequency | Hz | Initial frequency | Real number (Const) | Initial frequency of the voltage source |
+| Initial Phase | Deg | Initial phase | Real number (Const) | The phase of the voltage source when t=0s |
+| Resistance | Ω | Resistance | Real number (Const) | Resistance of the voltage source |
+| Start-up Type |  | Start-up type | Select | Select start-up type of voltage source as "Linear Ramp" or "Real Pole Ramp" |
+| Voltage Ramp Up Time | s | Startup time | Real number (Const) | Enter the voltage ramping time, only valid when "Startup Type" is "Linear Ramp" |
+| Voltage Input Time Constant | s | Startup constant | Real number (Const) | Enter the startup constant, only valid when Startup Type is "Real Pole Ramp" |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电压源端电压 | 文本 |  此处输入电压源电压量测信号的标签，以#号开头，如#Va。仅当电压源相数为单相时有效 |
-| Source Current \[kA\] | 电压源输出电流 | 文本 | 此处输入电压源电流量测信号的标签，以#号开头，如#Ia。仅当电压源相数为单相时有效 |
+| Source Voltage \[kV\] | Source voltage | Text |  Enter the measurement signal label of the voltage of controlled ac voltage source, starting with #, such as #Va. This is valid when voltage source is a single-phase source |
+| Source Current \[kA\] | Source current | Text | Enter the measurement signal label of the current of controlled ac voltage source, starting with #, such as #Ia. This is valid when voltage source is a single-phase source |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Source Voltage Vector \[kV\] | 电压源端电压 | 文本 | 此处输入电压源电压量测信号的标签（3×1维），以#号开头，如#Vabc。仅当电压源相数为三相时有效 |
-| 3 Phase Source Current Vector \[kA\] | 电压源输出电流 | 文本 | 此处输入电压源电流量测信号的标签（3×1维），以#号开头，如#Iabc。仅当电压源相数为三相时有效 |
-| RMS Source Voltage \[kV\] | 电压源电压均方根值 | 文本 | 此处输入电压源电压有效值量测信号的标签（1×1维），以#号开头，如#Vrms。仅当电压源相数为三相时有效 |
-| RMS Source Current \[kA\] | 电压源电流均方根值 | 文本 | 此处输入电压源电流有效值量测信号的标签（1×1维），以#号开头，如#Irms。仅当电压源相数为三相时有效 |
-| Active Power \[MW\] | 有功功率 | 文本 | 此处输入电压源有功功率量测信号的标签（1×1维），以#号开头，如#P。仅当电压源相数为三相时有效 |
-| Reactive Power \[MVar\] | 无功功率 | 文本 | 此处输入电压源无功功率量测信号的标签（1×1维），以#号开头，如#Q。仅当电压源相数为三相时有效 |
+| 3 Phase Source Voltage Vector \[kV\] | Source voltage | Text | Enter the measurement signal label of the voltage of controlled ac voltage source (3×1 dimension), starting with #, such as #Vabc. Only valid when the voltage source phase is three-phase |
+| 3 Phase Source Current Vector \[kA\] | Source current | Text | Enter the measurement signal label of the current of controlled ac voltage source (3×1 dimension), starting with #, such as #Iabc. Only valid when the voltage source phase is three-phase  |
+| RMS Source Voltage \[kV\] | RMS source voltage | Text | Enter the measurement signal label of the RMS voltage value of controlled ac voltage source (1×1 dimension), starting with #, such as #Vrms. Only valid when the voltage source phase is three-phase  |
+| RMS Source Current \[kA\] | RMS source current | Text | Enter the measurement signal label of the RMS current value of controlled ac voltage source (1×1 dimension), starting with #, such as #Irms. Only valid when the voltage source phase is three-phase  |
+| Active Power \[MW\] | Active power | Text | Enter the measurement signal label of the active power of controlled ac voltage source (1×1 dimension), starting with #, such as #Pa. Only valid when the voltage source phase is three-phase |
+| Reactive Power \[MVar\] | Reactive power | Text | Enter the measurement signal label of the reactive power of controlled ac voltage source (1×1 dimension), starting with #, such as #Qr. Only valid when the voltage source phase is three-phase  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 由参数控制 |电压源的负端（参考方向），仅当电压源非接地时有效 |
-| Pin + | 由参数控制 |电压源的正端（参考方向）|
-| Voltage \[kV, L-G, Pk\] | 1×1 |电压幅值控制输入端 |
-| Frequency \[Hz\] | 1×1 | 电压频率控制输入端|
+| Pin - | Controlled by parameters | Negative terminal, only valid when the power source is not grounded |
+| Pin + | Controlled by parameters | Positive terminal|
+| Voltage \[kV, L-G, Pk\] | 1×1 | Input of voltage amplitude |
+| Frequency \[Hz\] | 1×1 | Input of voltage frequency |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+If the internal resistance of the voltage source is zero, CloudPSS will set it to the `ideal voltage source` automatically. However, multiple ideal voltage sources cannot be connected in parallel or in a loop (in violation of Kirchhoff's loop voltage law).
 {% endpullquote %}
 
 
-## 相关元件
+## See Aslo
 
-[受控电压源(VP)](comp_newCtrlVPAcVoltageSource.html)、[受控电压源](comp_newCtrlVoltageSource.html)
+[Controlled AC Voltage Source (VP)](comp_newCtrlVPAcVoltageSource.html)、[Controlled Voltage Source](comp_newCtrlVoltageSource.html)

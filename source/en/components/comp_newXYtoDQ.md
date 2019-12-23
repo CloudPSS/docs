@@ -1,5 +1,5 @@
 ---
-title: dq-αβ坐标转换器
+title: dq-αβ Coordinates Transformer
 author: 
 author_email:
 
@@ -13,35 +13,35 @@ order: 300
 classname: _newXYtoDQ
 symbol: newXYtoDQ
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newXYtoDQ %}
 
-> **该元件实现dq坐标轴到αβ坐标轴的互相转换功能。**
+> **This component performs transformation from αβ to dq, or dq to αβ.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名                      | 备注       | 类型  | 描述                                  |
+| Parameter | Remark | Type | Description |
 | :-------------------------- | :--------- | :---: | :------------------------------------ |
-| Name                        | 元件名称   | 文本  | 此处输dq-αβ坐标转换器的名称（可缺省） |
-| Direction of Transformation | 变换方向   | 选择  | 选择变换的方向为dq-αβ或αβ-dq          |
-| Rotating Frame Alignment    | 旋转轴对齐 | 选择  | 选择坐标变换的d轴与A相对齐或滞后90度  |
+| Name | Name of component | Text  | Enter the name of this component |
+| Direction of Transformation | Direction of transformation | Select | Select dq-αβ transformation or αβ-dq transformation |
+| Rotating Frame Alignment | Rotating frame alignment | Select | Select the d-axis is aligned with phase A or delay 90 degrees |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述                     |
+| Pin name | Dimension | Description |
 | :----- | :------: | :----------------------- |
-| Theta  |   1×1    | 输入相角端口             |
-| α      |   1×1    | αβ-dq变换时α轴的输入端口 |
-| β      |   1×1    | αβ-dq变换时β轴的输入端口 |
-| d      |   1×1    | αβ-dq变换时d轴的输出端口 |
-| q      |   1×1    | αβ-dq变换时q轴的输出端口 |
-| d      |   1×1    | dq-αβ变换时d轴的输入端口 |
-| q      |   1×1    | dq-αβ变换时q轴的输入端口 |
-| α      |   1×1    | dq-αβ变换时α轴的输出端口 |
-| β      |   1×1    | dq-αβ变换时β轴的输出端口 |
+| Theta  |   1×1    | Input pin of angle |
+| α      |   1×1    | Input pin of α-axis during αβ-dq transformation |
+| β      |   1×1    | Input pin of β-axis during αβ-dq transformation |
+| d      |   1×1    | Output pin of d-axis during αβ-dq transformation |
+| q      |   1×1    | Output pin of q-axis during αβ-dq transformation |
+| d      |   1×1    | Input pin of d-axis during dq-αβ transformation |
+| q      |   1×1    | Input pin of q-axis during dq-αβ transformation |
+| α      |   1×1    | Output pin of α-axis during dq-αβ transformation |
+| β      |   1×1    | Output pin of β-axis during dq-αβ transformation |
 
-## 使用说明
+## Using Instructions
 
 ![坐标位置](comp_newXYtoDQ/t1.png "坐标位置")
 当选择**d轴与a相对齐**时，其相对位置为图所示。计算公式为：
@@ -101,6 +101,6 @@ U_{d }\\
 U_{q }
 \end{bmatrix}$$
 
-## 相关元件
+## See Also
 
-[Park变换器](comp_newParkTransform.html)、[Clark变换器](comp_newClarkTransform.html)
+[Park Transformer](comp_newParkTransform.html)、[Clark Transformer](comp_newClarkTransform.html)

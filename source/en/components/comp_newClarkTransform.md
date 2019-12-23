@@ -1,5 +1,5 @@
 ---
-title: Clark变换器
+title: Clark Transformer
 author: 
 author_email:
 
@@ -13,35 +13,35 @@ order: 200
 classname: _newClarkTransform
 symbol: newClarkTransform
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newClarkTransform %}
 
-> **该元件实现Clark变换和逆Clark变换计算。**
+> **This component performs Clark transformation and inverse Clark transformation.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名                      | 备注     | 类型  | 描述                                   |
+| Parameter name | Remark | Type  | Description |
 | :-------------------------- | :------- | :---: | :------------------------------------- |
-| Name                        | 元件名称 | 文本  | 此处输入Clark变换器的名称（可缺省）    |
-| Direction of Transformation | 变换方向 | 选择  | 选择变换的方向为Clark变换或逆Clark变换 |
+| Name | Name of component | Text  | Enter the name of this component |
+| Direction of Transformation | Direction of transformation | Select  | Select Clark transformation or inverse Clark transformation |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述                       |
+| Pin name | Dimension | Description                       |
 | :----- | :------: | :------------------------- |
-| α      |   1×1    | 逆Clark变换时α轴的输入端口 |
-| β      |   1×1    | 逆Clark变换时β轴的输入端口 |
-| A      |   1×1    | 逆Clark变换时A相的输出端口 |
-| B      |   1×1    | 逆Clark变换时B相的输出端口 |
-| C      |   1×1    | 逆Clark变换时C相的输出端口 |
-| A      |   1×1    | Clark变换时A相的输入端口   |
-| B      |   1×1    | Clark变换时B相的输入端口   |
-| C      |   1×1    | Clark变换时C相的输入端口   |
-| α      |   1×1    | Clark变换时α轴的输出端口   |
-| β      |   1×1    | Clark变换时β轴的输出端口   |
+| α      |   1×1    | Input pin of α-axis during inverse Clark transformation |
+| β      |   1×1    | Input pin of β-axis during inverse Clark transformation |
+| A      |   1×1    | Output pin of phase A during inverse Clark transformation |
+| B      |   1×1    | Output pin of phase B during inverse Clark transformation |
+| C      |   1×1    | Output pin of phase C during inverse Clark transformation |
+| A      |   1×1    | Input pin of phase A during Clark transformation |
+| B      |   1×1    | Input pin of phase B during Clark transformation |
+| C      |   1×1    | Input pin of phase C during Clark transformation |
+| α      |   1×1    | Output pin of α-axis during Clark transformation |
+| β      |   1×1    | Output pin of β-axis during Clark transformation |
 
-## 使用说明
+## Using Instructions
 
 ![坐标位置](comp_newClarkTransform/Clark.png "坐标位置")
 αβ轴为静止坐标轴，其相对位置为图所示。Park变换及逆Park变换的计算公式为：
@@ -77,6 +77,6 @@ U_{\alpha }\\
 U_{\beta }
 \end{bmatrix}$$
 
-## 相关元件
+## See Also
 
-[Park变换器](comp_newParkTransform.html)、[dq-αβ坐标转换器](comp_newXYtoDQ.html)
+[Park Transformer](comp_newParkTransform.html)、[dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)

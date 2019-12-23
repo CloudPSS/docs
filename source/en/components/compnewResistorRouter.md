@@ -1,5 +1,5 @@
 ---
-title: 电阻
+title: Resistor
 author: 
 author_email:
 
@@ -13,37 +13,37 @@ order: 200
 classname: newResistorRouter
 symbol: newResistor
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newResistor %}
 
-> **该元件用以建模单相或三相电阻（单线图模式）。**
+> **This component is used to model single-phase or 3-phase resistor.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入电阻的名称（可缺省） |
-| Dimension |  | 单相电阻或是三相电阻？ | 选择 | 选择电阻为单相或三相 |
-| Resistance | Ω | （每相）电阻值 | 实数（常量） | 电阻值 |
+| Name |  | Name of component | Text | Enter the name of resistor (Default) |
+| Dimension |  | Single-phase or three-phase resistor？ | Select | Select single-phase or three-phase resistor |
+| Resistance | Ω | Resistance（Each Phase） | Real number（Const） | Resistance |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Branch Current \[kA\] | 电阻电流 | 文本 | 此处输入电阻电流量测信号的标签（维数自动），以#号开头，如#Ir |
-| Branch Voltage \[kV\] | 电阻电压 | 文本 | 此处输入电阻电压量测信号的标签（维数自动），以#号开头，如#Vr |
+| Branch Current \[kA\] | Current of resistor | Text | Enter the label of the current of resistor (Auto Dimension), starting with #, such as #Ir |
+| Branch Voltage \[kV\] | Voltage of resistor | Text | Enter the label of the voltage of resistor (Auto Dimension), starting with #, such as #Vr |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 自动 |电阻正端（参考方向）|
-| Pin - | 自动 |电阻负端（参考方向）|
+| Pin + | Auto | Positive terminal |
+| Pin - | Auto | Negative terminal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[电容](compnewCapacitorRouter.html)、[电感](compnewInductorRouter.html)
+[Capacitor](compnewCapacitorRouter.html)、[Inductor](compnewInductorRouter.html)

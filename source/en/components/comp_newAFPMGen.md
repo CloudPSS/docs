@@ -1,5 +1,5 @@
 ---
-title: 可调正弦波发生器
+title: Adjustable FPM Sine Generator
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 400
 classname: _newAFPMGen
 symbol: newAFPMGen
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newAFPMGen %}
 
-> **该元件用以输出幅值、频率、相位可调的正弦波输出信号。**
+> **The component is used to generate a sine wave output signal. Its  amplitude, frequency and phase are defined by input signals.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入可调正弦波发生器的名称（可缺省） |
-| Function Type | 函数类型 | 选择 | 选择正弦表达式为“Sine”或“Cosine” |
+| Name | Name of component | Text | Enter the name of this component |
+| Function Type | Function type | Select | Select sine function as “Sine” or “Cosine” |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Mag | 1×1 |幅值输入端口 |
-| Freq | 1×1 |频率输入端口 |
-| Phase | 1×1 |相位输入端口 |
-| Output | 1×1 |输出端口 |
+| Mag | 1×1 | Magnitude input pin |
+| Freq | 1×1 | Frequency input pin |
+| Phase | 1×1 | Phase input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[正弦波发生器](comp_newSinGen.html)
+[Sine Generator](comp_newSinGen.html)

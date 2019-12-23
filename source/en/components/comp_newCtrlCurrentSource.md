@@ -1,5 +1,5 @@
 ---
-title: 受控电流源
+title: Controlled Current Source
 author: 
 author_email:
 
@@ -13,40 +13,40 @@ order: 400
 classname: _newCtrlCurrentSource
 symbol: newCtrlCurrentSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCtrlCurrentSource %}
 
-> **该元件用以建模受控电流源。**
+> **This component is used to model a controlled current source.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Name | 元件名称 | 文本 | 此处输入受控电流源的名称（可缺省） |
-| Is This Source Grounded? | 电源一端是否接地？ | 选择 | 选择“Yes”或“No”以使电流源负端接地或不接地 |
+| Source Name | Name of component | Text | Enter the name of controlled current source. (Default) |
+| Is This Source Grounded? | Is this source grounded? | Select | Select "Yes" or "No" to ground or unground the Negative terminal of current source |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电流源端电压 | 文本 | 此处输入电流源电压量测信号的标签，以#号开头，如#Va |
-| Source Current \[kA\] | 电流源输出电流 | 文本 | 此处输入电流源电流量测信号的标签，以#号开头，如#Ia |
+| Source Voltage \[kV\] | Source voltage | Text | Enter the measurement signal label of the voltage of controlled current source, starting with #, such as #Va |
+| Source Current \[kA\] | Source Current | Text | Enter the measurement signal label of the current of controlled current source, starting with #, such as #Ia |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 1×1 |电流源的负端（参考方向），仅当电源非接地时有效 |
-| Pin + | 1×1 |电流源的正端（参考方向）|
-| Ctrl | 1×1 |受控输入端，该端口输入为1时，对应输出电流为1A |
+| Pin - | 1×1 | Negative terminal, only valid when the power source is not grounded |
+| Pin + | 1×1 | Positive terminal |
+| Ctrl | 1×1 | Controlled input, when the port input is 1, the corresponding output current is 1A |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-CloudPSS中的电流源为`理想电流源`模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
+The current source in CloudPSS is an `ideal current source`  model with an internal resistance of infinity. However, ideal current sources cannot be connected in series or in star form (in violation of the Kirchhoff node current law).
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
-[受控电压源](comp_newCtrlVoltageSource.html)
+[Controlled Voltage Source](comp_newCtrlVoltageSource.html)
