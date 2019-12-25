@@ -13,7 +13,7 @@
             else if (sls.indexOf(pl) < 0)
                 location = `/${cl}${location.pathname}`
             else
-                location = `/zh${location.pathname.split('/').slice(1).join('/')}?notTranslated=${cl}`
+                location = `/zh/${location.pathname.split('/').slice(2).join('/')}?notTranslated=${pl}`
         })()
     </script>
 </head>

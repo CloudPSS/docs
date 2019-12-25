@@ -19,7 +19,10 @@
     })();
 
     let photoSwipeOpened = false;
-    document.addEventListener('DOMContentLoaded', function () { FastClick.attach(document.body) }, false);
+    document.addEventListener('DOMContentLoaded', function () {
+        FastClick.attach(document.body);
+        customSelect('select');
+    }, false);
     initMobileMenu();
     initSubHeaders();
     initVideos();
@@ -467,7 +470,7 @@
 
     function initNotTranslatedHint() {
         const hint = document.getElementById('not-translated-hint');
-        const lang = location.search.match(/notTranslated=([^&]+)/i)?.[1];
+        const lang = location.search.match(/notTranslated=([^&]+)/i) ?.[1];
         if (hint && lang)
             hint.dataset.lang = lang;
     }
