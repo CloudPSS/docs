@@ -1,5 +1,5 @@
 ---
-title: 傅里叶变换
+title: FFT
 author: 
 author_email:
 
@@ -13,96 +13,75 @@ order: 700
 classname: _newFFT
 symbol: newFFT
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newFFT %}
 
-> **该元件用以实现FFT分析。**
+> **This component is used to implement FFT (Fast Fourier Transformation) analysis.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入FFT的名称（可缺省） |
-| Type |  | 输出类型 | 选择 | 选择输出信号的类型为1 Phase、2 Phase、3 Phase或3 Phase SLD |
-| Number of Harmonics |  | 谐波数量 | 选择 | 选择谐波的数量 |
-| Base Frequency | Hz | 频率基值 | 实数（常量） |填写频率基值  |
-| Magnitude Output |  | 幅值输出 | 选择 | 选择幅值输出的类为有效值或峰值 |
-| Phase Output Unit |  | 相位输出单位 | 选择 | 选择输出相位的单为rad或deg |
-| Phase Output Reference |  | 相位输出参照 | 选择 | 选择相位输出的参照波形为正弦波或余弦波) |
-| Anti-aliasing Filter? |  | 是否使用抗混叠滤波器？ | 选择 | 选择是否使用抗混叠滤波器 |
-| Frequency Tracking？ |  | 是否跟踪频率？ | 选择 | 选择是否跟踪频率 |
+| Name |  | Name of component | Text | Enter the name of the component |
+| Type |  | Output type | Select | Select output type as "1 Phase"、 "2 Phase"、 "3 Phase" or "3 Phase SLD" |
+| Number of Harmonics |  | Harmonic number | Select | Select harmonic number |
+| Base Frequency | Hz | Base frequency | Real number (Const) | Base frequency |
+| Magnitude Output |  | Magnitude output | Select | Select magnitude output as "RMS" or "Peak" |
+| Phase Output Unit |  | Phase output unit | Select | Select phase output unit as "Rad" or "Deg" |
+| Phase Output Reference |  | Phase output reference | Select | Select phase output as "Sin" or "Cos" |
+| Anti-aliasing Filter? |  | Anti-aliasing filter? | Select | Select "Yes" or "No" to enable or disable the anti-aliasing filter |
+| Frequency Tracking？ |  | Frequency tracking? | Select | Select to track the frequency or not |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Frequency Output \[Hz\] | 频率输出 | 文本 | 此处输入频率量测信号的标签，以#号开头，如#f |
+| Frequency Output \[Hz\] | Frequency output | Text | Enter the measurement signal label of frequency output, starting with #, such as #f |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| X | 1×1 |信号输入端口，仅当输出类型为1 Phase时有效 |
-| Mag | 由参数控制 |幅值或有效值输出端口，仅当输出类型为1 Phase时有效 |
-| Ph | 由参数控制 |相位输出端口，仅当输出类型为1 Phase时有效 |
-| DC | 1×1 |直流分量输出端口，仅当输出类型为1 Phase时有效 |
-| X1 | 1×1 |A相输入端口，仅当输出类型为2 Phase时有效 |
-| X2 | 1×1 |B相输入端口，仅当输出类型为2 Phase时有效 |
-| Mag1 | 由参数控制 |A相幅值或有效值输出端口，仅当输出类型为2 Phase时有效 |
-| Mag2 | 由参数控制 |B相幅值或有效值输出端口，仅当输出类型为2 Phase时有效 |
-| Ph1 | 由参数控制 |A相相位输出端口，仅当输出类型为2 Phase时有效 |
-| Ph2 | 由参数控制 |B相相位输出端口，仅当输出类型为2 Phase时有效 |
-| DC1 | 1×1 |A相直流分量输出端口，仅当输出类型为2 Phase时有效 |
-| DC2 | 1×1 |B相直流分量输出端口，仅当输出类型为2 Phase时有效 |
-| X1 | 1×1 |A相输入端口，仅当输出类型为3 Phase时有效 |
-| X2 | 1×1 |B相输入端口，仅当输出类型为3 Phase时有效 |
-| X3 | 1×1 |C相输入端口，仅当输出类型为3 Phase时有效 |
-| Mag1 | 由参数控制 |A相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Mag2 | 由参数控制 |B相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Mag3 | 由参数控制 |C相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Ph1 | 由参数控制 |A相相位输出端口，仅当输出类型为3 Phase时有效 |
-| Ph2 | 由参数控制 |B相相位输出端口，仅当输出类型为3 Phase时有效 |
-| Ph3 | 由参数控制 |C相相位输出端口，仅当输出类型为3 Phase时有效 |
-| DC1 | 1×1 |A相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| DC2 | 1×1 |B相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| DC3 | 1×1 |C相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| XA | 1×1 | |
-| XB | 1×1 | |
-| XC | 1×1 | |
-| Mag+ | 由参数控制 | |
-| Mag- | 由参数控制 | |
-| Mag0 | 由参数控制 | |
-| Ph+ | 由参数控制 | |
-| Ph- | 由参数控制 | |
-| Ph0 | 由参数控制 | |
-| DCA | 1×1 | |
-| DCB | 1×1 | |
-| DCC | 1×1 | |
-| X | 3×1 |ABC三相输入端口，仅当输出类型为3 Phase SLD时有效 |
-| Mag1 | 由参数控制 |A相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Mag2 | 由参数控制 |B相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Mag3 | 由参数控制 |C相幅值或有效值输出端口，仅当输出类型为3 Phase时有效 |
-| Ph1 | 由参数控制 |A相相位输出端口，仅当输出类型为3 Phase时有效 |
-| Ph2 | 由参数控制 |B相相位输出端口，仅当输出类型为3 Phase时有效 |
-| Ph3 | 由参数控制 |C相相位输出端口，仅当输出类型为3 Phase时有效 |
-| DC1 | 1×1 |A相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| DC2 | 1×1 |B相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| DC3 | 1×1 |C相直流分量输出端口，仅当输出类型为3 Phase时有效 |
-| X | 3×1 | |
-| Mag+ | 由参数控制 | |
-| Mag- | 由参数控制 | |
-| Mag0 | 由参数控制 | |
-| Ph+ | 由参数控制 | |
-| Ph- | 由参数控制 | |
-| Ph0 | 由参数控制 | |
-| DCA | 1×1 | |
-| DCB | 1×1 | |
-| DCC | 1×1 | |
+| X | 1×1 | Signal input pin, only valid when Output Type is 1 Phase |
+| Mag | Controlled by parameter | Output pin of magnitude or RMS value, only valid when Output Type is 1 Phase |
+| Ph | Controlled by parameter | Output pin of phase, only valid when Output Type is 1 Phase |
+| DC | 1×1 | Output pin of DC component, only valid when Output Type is 1 Phase |
+| X1 | 1×1 | Input pin of Phase A, only valid when Output Type is 2 Phase |
+| X2 | 1×1 | Input pin of Phase B, only valid when Output Type is 2 Phase |
+| Mag1 | Controlled by parameter | Output pin of Phase A Magnitude or RMS value, only valid when Output Type is 2 Phase |
+| Mag2 | Controlled by parameter | Output pin of Phase B Magnitude or RMS value, only valid when Output Type is 2 Phase |
+| Ph1 | Controlled by parameter | Output pin of Phase A phase, only valid when Output Type is 2 Phase |
+| Ph2 | Controlled by parameter | Output pin of Phase B phase, only valid when Output Type is 2 Phase |
+| DC1 | 1×1 | Output pin of Phase A DC component, only valid when Output Type is 2 Phase |
+| DC2 | 1×1 | Output pin of Phase B DC component, only valid when Output Type is 2 Phase |
+| X1 | 1×1 | Input pin of Phase A, only valid when Output Type is 3 Phase |
+| X2 | 1×1 | Input pin of Phase B, only valid when Output Type is 3 Phase |
+| X3 | 1×1 | Input pin of Phase C, only valid when Output Type is 3 Phase |
+| Mag1 | Controlled by parameter |Output pin of Phase A Magnitude or RMS value, only valid when Output Type is 3 Phase |
+| Mag2 | Controlled by parameter |Output pin of Phase B Magnitude or RMS value, only valid when Output Type is 3 Phase |
+| Mag3 | Controlled by parameter |Output pin of Phase C Magnitude or RMS value, only valid when Output Type is 3 Phase |
+| Ph1 | Controlled by parameter |Output pin of Phase A phase, only valid when Output Type is 3 Phase |
+| Ph2 | Controlled by parameter |Output pin of Phase B phase, only valid when Output Type is 3 Phase |
+| Ph3 | Controlled by parameter |Output pin of Phase C phase, only valid when Output Type is 3 Phase |
+| DC1 | 1×1 |Output pin of Phase A DC component, only valid when Output Type is 3 Phase |
+| DC2 | 1×1 |Output pin of Phase B DC component, only valid when Output Type is 3 Phase |
+| DC3 | 1×1 |Output pin of Phase C DC component, only valid when Output Type is 3 Phase |
+| X | 3×1 |Input pin of 3 phase ABC，only valid when Output Type is 3 Phase SLD |
+| Mag1 | Controlled by parameter |Output pin of Phase A Magnitude or RMS value, only valid when Output Type is 3 Phase SLD |
+| Mag2 | Controlled by parameter |Output pin of Phase B Magnitude or RMS value, only valid when Output Type is 3 Phase SLD |
+| Mag3 | Controlled by parameter |Output pin of Phase C Magnitude or RMS value, only valid when Output Type is 3 Phase SLD |
+| Ph1 | Controlled by parameter |Output pin of Phase A phase, only valid when Output Type is 3 Phase SLD |
+| Ph2 | Controlled by parameter |Output pin of Phase B phase, only valid when Output Type is 3 Phase SLD |
+| Ph3 | Controlled by parameter |Output pin of Phase C phase, only valid when Output Type is 3 Phase SLD |
+| DC1 | 1×1 |Output pin of Phase A DC component, only valid when Output Type is 3 Phase SLD |
+| DC2 | 1×1 |Output pin of Phase B DC component, only valid when Output Type is 3 Phase SLD |
+| DC3 | 1×1 |Output pin of Phase C DC component, only valid when Output Type is 3 Phase SLD |
 
-## 使用说明
+
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

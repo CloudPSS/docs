@@ -1,5 +1,5 @@
 ---
-title: 模块功能
+title: Module Function
 type: features
 category: 1000
 author: songyk
@@ -7,82 +7,82 @@ author_email: songyankan@cloudpss.net
 order: 600
 ---
 
-CloudPSS在子图功能的基础上提供了模块封装功能，可将子图进一步封装成常用模块，在其他算例中使用。
+CloudPSS provides module function on the basis of subgraph function. It can further encapsulate the subgraph into common modules, which can be used in other simulation examples.
 
-## 创建模块
+## Create Module
 
-模块由`子图`直接创建，因此需先建立子图。现以封装一个三相不对称电压源模块为例进行介绍。
+The module is directly created by the `Subgraph`, so the subgraph needs to be created first. This section introduces a three-phase asymmetric voltage source module as an example.
 
-1. 搭建三相不对称电压源电路如下（注意修改电压源的相数）。
-  ![三相不对称电压源电路](Module/origincircuit.png "待封装的电路：三相不对称电压源电路")
+1. Build the three-phase asymmetric voltage source circuit as follows (pay attention to modify the phase number of the voltage source). 
+  ![三相不对称电压源电路](Module/origincircuit.png "Circuit to be packaged: three phase asymmetrical voltage source circuit")
 
-2. 选中需要封装为子图/模块的部分，点击鼠标右键，选择`创建子图`。
-  ![创建子图](Module/createsubgraph.png "右键选中，创建子图")
+2. Select the part to be encapsulated as subgraph/module, right-click and select `Create Subgraph`.
+  ![创建子图](Module/createsubgraph.png "Right click to select and create a subgraph")
 
-3. 在弹出的对话框中，点击`确定`进入子图自定义界面。
-  ![确认自定义](Module/subgraphconfig1.png "确认，进入自定义子图信息窗口")
+3. In the pop-up dialog box, click `OK` to enter the subgraph customization interface.
+  ![确认自定义](Module/subgraphconfig1.png "Confirm to enter the information window of self defined subgraph")
 
-4. 在`子图自定义`界面中，设置引脚位置、引脚名（描述）如下。
-   ![自定义子图信息窗口](Module/subgraphconfig2.png "自定义子图信息窗口" =x350)
+4. In the interface of `Subgraph Customization`, set the pin position and pin name (description) as follows.
+   ![自定义子图信息窗口](Module/subgraphconfig2.png "Information window of self defined subgraph" =x350)
 
-5. 点击`新建`，即可创建子图。子图图标如下。
-  ![子图图标](Module/subgraphicon.png "子图图标")
+5. Click `New` to create a subgraph. Its icon is as follows.
+  ![子图图标](Module/subgraphicon.png "Subgraph icon")
 
-6. 右键选中子图，点击`保存成模块`，弹出`模块配置`界面。
-  ![保存成模块](Module/saveasmodule.png "保存成模块")
+6. Right click to select the subgraph and click `Save as Module` to open the `Module Configuration` interface.
+  ![保存成模块](Module/saveasmodule.png "Saving as module")
 
-7. 点击`选择模块图标`，上传模块图标（显示在左侧模型库中的图标），设定模块名称、模块符号、是否公开、描述以及模块参数等信息。
-  ![模块配置](Module/moduleconfig.png "模块配置" =x400)
-
-    {% pullquote tip %}
-    - 建议选择**正方形**图片作为模块图标。
-    - 勾选`是否公开`后，该模块对全部用户可见（进入模块创建者的`个人主页`，在`我的模块`下可找到）。
-    - 右侧`参数`为模块中所用到的全部`全局参数`。
-    {% endpullquote %}
-
-8. 点击`保存`，弹出保存成功提示，说明模块已保存成功。刷新工作台后，模块会显示在左侧`模型库`->`模块`标签下。 
-   ![模块保存成功](Module/savemodulesuccess.png "模块保存成功")
-    ![模块列表](Module/ModuleList.png "模块保存成功后出现在列表中")
+7. Click `Select the module icon`, upload the module icon (the icon displayed in the model library on the left), set the module name, module symbol, whether to publish, description, module parameters and other information.
+  ![模块配置](Module/moduleconfig.png "Module configuration" =x400)
 
     {% pullquote tip %}
-    模块名称是模块的唯一标识符，不可重复。若保存不成功，请更改模块名称重试。
+    - It is recommended to select a **square** image as the module icon.
+    - After ticking `Whether to publish or not`, the module is visible to all users (enter the `Personal Homepage` of the module creator, this module can be found in `My Module`).
+    - The `parameters` on the right are all `global parameters` used in the module.
     {% endpullquote %}
 
-## 模块查看
+8. Click `Save` and a message will pop up indicating that the module has been saved successfully. After refreshing the workbench, the module will be displayed in the left `Module Library`->`Module`. 
+   ![模块保存成功](Module/savemodulesuccess.png "Module saved successfully")
+    ![模块列表](Module/ModuleList.png "Module appears in the list after saving successfully")
 
-算例中拖入所创建的模块，双击模块图标，即可查看模块内部拓扑细节。
+    {% pullquote tip %}
+    The module name is the unique identifier of the module and cannot be duplicate. If the save is not successful, please change the module name and try again.
+    {% endpullquote %}
 
-![查看模块](Module/moduleinner.png "双击查看模块内部细节" =x400)
+## View Module
 
-与原始子图对比，可见两者结构完全一致。
+Drag the created module into workspace and double-click the module icon to view the internal topology details of the module.
 
-![查看子图](Module/subgraph.png "子图内部细节")
+![查看模块](Module/moduleinner.png "Double click to view the internal details of the module" =x400)
 
-## 模块测试
+Compared with the original subgraph, it can be seen that the two structures are identical.
 
-构建含有原始电路和封装为模块后的对比算例，测试模块封装结果的正确性。
+![查看子图](Module/subgraph.png "Internal details of subgraph")
 
-![模块测试电路](Module/compare.png "模块测试电路拓扑")
+## Test Module
 
-![模块与子图仿真结果对比](Module/compareresult.png "模块与子图仿真结果对比")
+The correctness of the result is tested by building a comparison example of the original circuit and the module.
 
-可见，模块封装后与原电路（子图）仿真结果一致。
+![模块测试电路](Module/compare.png "Module test circuit topology")
+
+![模块与子图仿真结果对比](Module/compareresult.png "Comparison of simulation results between modules and subgraphs")
+
+It can be seen that the simulation results of the module are consistent with those of the original circuit.
 
 
-## 模块删除
+## Delete Module
 
-用户可在`个人主页`->`云空间`->`我的模块`处删除已有的模块。
+Users can delete the existing modules at `Personal Homepage`-> `Cloud Space`->`My Module`.
 
-![我的模块](Module/moduleindex.png "我的模块文件夹" =x400)
+![我的模块](Module/moduleindex.png "My module folder" =x400)
 
-![删除模块](Module/moduledelete.png "删除模块" =x400)
+![删除模块](Module/moduledelete.png "Delete a module" =x400)
 
 {% pullquote tip %}
-模块删除后，将影响所有使用该模块的算例！请谨慎操作。
+After the module is deleted, all simulation cases using the module will be affected! Please operate carefully.
 {% endpullquote %}
 
-## 模块修改
+## Modify Module
 
-用户可在`个人主页`->`云空间`->`我的模块`处打开已经封装好的模块，查看其内部细节并修改。
+Users can open the encapsulated module at the `Personal Homepage`-> `Cloud Space`->`My Module`, view its internal details and modify them.
 
-CloudPSS不支持模块修改后保存并覆盖已有模块功能。因此对模块修改后，只能建立新的模块。若希望修改后覆盖已有模块，则再保存前应先将原模块删除，保存新模块时填写与此前模块完全一致的信息。
+CloudPSS does not support module coverage. After the module is modified, only new modules can be created. If you want to overwrite the existing module after modification, delete the original module before saving, and fill in the information completely consistent with the previous module when saving the new module.

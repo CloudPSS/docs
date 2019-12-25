@@ -1,5 +1,5 @@
 ---
-title: 区域集中供热系统
+title: Regional central heating system
 type: examples
 author: xiangyue
 category: 2000
@@ -7,49 +7,49 @@ order: 1000
 author_email: xiangyue@tsinghua-eiri.org
 ---
 
-## 描述
+## Description
 
-本仿真模块的预置算例共计12个，均处于冬季供热条件下。用户在进入算例后可根据自身需要进一步更改仿真参数、网络拓扑、设备参数以及气象条件等，从而实现对特定场景（如夏季供冷）下的供热系统运行仿真。仿真算例形式的示意图如下。
+There are 12 preset examples of this simulation module, all of which are under winter heating conditions. Based on the example case, the user can further modify the simulation parameters, network topology, equipment parameters, and meteorological conditions according to their own needs, so as to realize the simulation of the heating system operation under specific scenarios (such as summer cooling). A schematic diagram of the simulation study form is as follows.
 
 ![区域集中供热系统运行仿真算例形式示意图](HeatingSystem/HeatingSystem1.png)
 
-## 应用场景
+## Application Scenario
 
-根据不同的边界条件设置情况及组合方式，区域集中供热系统运行仿真的应用场景各不相同，其中比较典型的两种应用场景为供热计划制定和室内温度预测，所预置的12个热网算例也基于这两种应用场景。在设置边界条件时，需注意边界条件的总数应该使系统能够封闭求解。
+According to different boundary conditions setting and combination mode, the application scenarios of regional central heating system operation simulation are different. The two typical application scenarios are heating plan formulation and indoor temperature prediction. The preset 12 heating networks example cases are also based on these two application scenarios. When setting the boundary conditions, it should be noted that the total number of boundary conditions should enable the system to solve the solution.
 
-### 应用1：供热计划制定
+### Scenario1：Heating plan formulation
 
-供热计划制定的应用场景是指获得在特定气象条件下，为维持各负荷节点（建筑物）室内温度不变时热源在未来一段时间内的供热量变化情况，此时在使用该仿真模块时需要对各负荷的室内温度进行控制，而热源的供热量参数则无须控制，再根据实际需要设定其它的控制条件。
+The application scenario of the heating plan formulation refers to obtaining the heat supply change of the heat source in the future for a certain period of time in order to maintain the constant temperature of each load node (building) in a certain meteorological condition. At this time, the simulation module is used. It is necessary to control the indoor temperature of each load, and the heat supply parameter of the heat source does not need to be controlled, and then other control conditions are set according to actual needs.
 
-![负荷节点室内温度需要进行控制](HeatingSystem/HeatingSystem3.png "负荷节点室内温度需要进行控制")
+![负荷节点室内温度需要进行控制](HeatingSystem/HeatingSystem3.png "Indoor temperature of load node is controlled")
 
-![热源节点供热量不进行控制](HeatingSystem/HeatingSystem4.png "热源节点供热量不进行控制")
+![热源节点供热量不进行控制](HeatingSystem/HeatingSystem4.png "Heat supply of heat source is not controlled")
 
-### 应用2：室内温度预测
+### Scenario2：Indoor temperature prediction
 
-室内温度预测的应用场景是指在已知供热计划的情况下，根据实际气象条件，预测未来一段时间内各负荷室内温度的变化情况，此时在使用该仿真模块时需要对热源的供热量进行控制，而无须控制负荷的室内温度，再根据实际需要设定其它的控制条件。
+The application scenario of indoor temperature prediction refers to predicting the change of indoor temperature of each load in the future period according to the actual meteorological conditions in the case of known heating plan. At this time, when using the simulation module, it is necessary to control the heat supply of the heat source without controlling the indoor temperature of the load, and then setting other control conditions according to actual needs.
 
-![负荷节点室内温度不进行控制](HeatingSystem/HeatingSystem5.png "负荷节点室内温度不进行控制")
+![负荷节点室内温度不进行控制](HeatingSystem/HeatingSystem5.png "Indoor temperature of load node is not controlled")
 
-![热源节点供热量需要进行控制](HeatingSystem/HeatingSystem6.png "热源节点供热量需要进行控制")
+![热源节点供热量需要进行控制](HeatingSystem/HeatingSystem6.png "Heat supply of heat source is controlled")
 
-## 仿真
+## Simulation
 
-进入区域集中供热系统运行仿真模块的算例模板后，根据需要选择相应的节点数目、仿真时长和供热场景，点击完成即可进入相应的仿真算例，或直接打开对应的算例链接。进入算例后点击仿真参数>开始，选择神威节点，即可得到仿真结果。计算结束后选中各元件在系统监控面板中查看所预测的供热量、室内温度、供热温度、压力、流量等参数的变化情况。
+In the regional central heating system example case, select the corresponding number of nodes, simulation time and heating scenario according to the needs. Click `Finish` to enter the corresponding example case, or directly open the corresponding example case link. Then click `Simulation Parameters`->`Start` and select the computation node to get the simulation results. After the calculation is completed, select each component to check the predicted heating, indoor temperature, heating temperature, pressure, flow and other parameters in the system monitoring panel.
 
-### 仿真1：供热计划制定
+### Test1：Heating plan formulation
 
-以1热源3负荷系统未来5天供热计划制定的仿真算例为例，其中热源节点的供热量变化情况如下图。可以看出在刚开始时室内初始温度大于室内控制温度，此时供热量较小，在室内温度降低至控制温度后，供热量开始增加，而后随着气象条件变化基本在900kw~1200kw之间不停波动。在大约17h附近供热量出现大幅振动，这主要由于室外风速的急剧变化造成的。
+Take the system with one heat source and three loads an example, and formulate a heat supply plan for the next five days. The heat supply of the heat source is shown in the following figure. It can be seen that at the beginning, the initial temperature of the room is greater than the indoor control temperature. At this time, the heat supply is small. After the indoor temperature is lowered to the control temperature, the heat supply starts to increase, and then as the meteorological conditions change, it basically fluctuates between 900kw and 1200kw. The large fluctuations in heat supply at around 17h , mainly due to the sharp change in the outdoor wind speed.
 
 ![热源节点供热量变化图](HeatingSystem/HeatingSystem7.png)
 
-另外值得一提的是，查看负荷节点3的室内温度变化情况发现尽管室内温度为控制条件，但其室内温度仍然出现了波动，这主要是由于热源的供水温度和供水流量为定值，而负荷节点3离热源较远，导致供水温度在某些时刻较低，此时无论如何都无法满足负荷节点的供热需求，因此室内温度出现了下降。
+It can be found from the variation of the indoor temperature of the load node 3 that although the indoor temperature is a control condition, the indoor temperature still fluctuates, which is mainly because the water supply temperature and the water supply flow rate of the heat source are constant values, and the load node 3 is far away from the heat source, so that the water supply temperature is lower at some moments, and at this time, the heating demand of the load node cannot be satisfied anyway, so indoors The temperature has dropped.
 
 ![负荷节点3室内温度变化图](HeatingSystem/HeatingSystem8.png)
 
-### 仿真2：室内温度预测
+### Test2：Indoor temperature prediction
 
-以1热源3负荷系统未来3天室内温度预测的仿真算例为例，其中负荷节点2的室内温度变化情况如下图。可以看出在当前的供热计划下，负荷节点2的室内温度基本维持在27度到30度之间，对于该负荷来说当前的供热计划是满足要求的。
+Taking a case of indoor temperature prediction for the next 3 days in 1 heat source and 3 loads system as an example, the indoor temperature change of the load node 2 is as shown in the following figure. It can be seen that under the current heating plan, the indoor temperature of the load node 2 is maintained substantially between 27 and 30 degrees, for which the current heating plan is satisfactory. 
 
 ![负荷节点2室内温度变化图](HeatingSystem/HeatingSystem2.png)
 

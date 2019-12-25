@@ -1,5 +1,5 @@
 ---
-title: 储能并网发电系统
+title: Energy storage grid-connected generation system
 type: examples
 author: songyk
 author_email: songyankan@cloudpss.net
@@ -7,63 +7,64 @@ category: 1000
 order: 400
 ---
 
-## 描述
-随着电力电子变换技术、电动汽车技术的发展，配电网、微电网中充电桩、储能系统的比例逐步提升。对分布式储能逆变系统的详细建模和仿真具有重要意义。
+## Description
+With the development of power electronic technology and electric vehicle technology, the proportion of charging piles and energy storage systems in distribution networks and microgrids has gradually increased. It is of great significance for detailed modeling and simulation of distributed energy storage inverter systems.
 
-CloudPSS提供了储能并网发电系统的详细模型和平均模型，并提供了两种模型的对比。用户可根据需要，自行选择相应的模型，并在此基础上进行修改和研究。
+CloudPSS provides the detailed model and the average model of the energy storage grid-connected generation system and provides a comparison of the two models. Users can select the corresponding model according to their needs, and modify and research on the basis.
 
-## 模型介绍
+## Model Introduction
 
-分布式储能逆变系统由储能电池（铅蓄电池）的戴维南等值模型、电压源变换器（详细/平均模型）、网侧滤波电容器、变流器控制系统和离并网切换控制构成。
+The distributed energy storage inverter system consists of the Thevenin equivalent model of the energy storage battery (lead-acid battery), the voltage source converter (detail/average model), the grid side filter capacitor, the converter control system and the off-grid switching control.
 
-其中，电压源变换器的详细模型由6个分立的IGBT及其反并联二极管组成，如下图。
+Among them, the detailed model of the voltage source converter is composed of six discrete IGBTs and their anti-parallel diodes, as shown below.
 ![详细模型](BESS/BESS.png)
 
-变换器的平均模型由交流侧3个受控电压源和直流侧一个受控电流源组成，如下图。
+The average model of the converter consists of three controlled voltage sources on the AC side and one controlled current source on the DC side, as shown below.
 ![平均模型](BESS/BESS_avm.png)
 
-变流器的控制系统分为并网控制和离网控制两种。
-* 并网控制采用定有功功率-无功功率控制（PQ控制）。
-* 离网控制采用定交流电压-频率控制（VF控制）。
-算例内置并网转离网切换控制，在切换点处，变流器的电压外环控制整体被切换。
+There are two types of control systems for the converter: grid-connected control and off-grid control.
+* The grid-connected control uses constant active power-reactive power control (PQ control).
+* Off-grid control uses constant AC voltage-frequency control (VF control).
 
-详细模型的控制系统由电网电压定向、电压环-电流环双闭环控制、参考信号生成、SPWM控制四部分构成。
+The two control modes in the example, grid-connected control and off-grid control, can be flexibly switched to each other. At the switching point, the voltage outer loop control of the converter is switched overall.
+
+The control system of detailed model consists of four parts: grid voltage orientation, voltage-loop & current-loop double closed loop control, reference signal generation, and SPWM control.
 
 ![详细模型控制系统](BESS/BESS_ctrl.png)
 
-平均模型的控制系统省略了SPWM控制，但增加了变流器平均模型控制（其主要作用是保证交流侧和直流侧的功率平衡）。
+The average model's control system omits the SPWM control, but adds the averager model control of the converter (the main function is to ensure the power balance between the AC side and the DC side).
 
 ![平均模型控制系统](BESS/BESS_avm_ctrl.png)
 
-## 仿真
+## Simulation
 
-根据所选择的模型设定仿真步长，对储能并网发电系统进行电磁暂态仿真。其中，详细模型由于含有离散开关事件，建议在`格式面板`->`电磁暂态`>`求解器设置`处勾选`开关/离散事件处理增强`选项，采用较小的仿真步长进行仿真。若PWM载波频率为$f_c$，则建议仿真步长应小于$1/({20f_c})$。选用平均模型时，由于不存在开关事件，故可选择`常规（默认）`选项，设置较高的仿真步长（建议50μs，通常不超过100μs）。 
+The simulation step size is set according to the selected model, and the electromagnetic transient simulation of the energy storage grid-connected generation system is performed. Among them, the detailed model has discrete switching events. It is recommended to check the `Switch/Discrete Event Processing Enhancement` option in the `Format Panel`->`Electromagnetic Transient`->`Solver Settings`  and simulate with a smaller simulation step. If the PWM carrier frequency is $f_c$, it is recommended that the simulation step size be less than $1/({20f_c})$. When using the average model, since there is no switching event, the `Normal (default)` option can be selected to set a higher simulation step size (50 μs is recommended, usually no more than 100 μs).
 
-### 仿真1：充放电切换过程
+### Test1：Charge and discharge state switching
 
-将详细模型和平均模型建立在统一算例工程中，进行如下设定。
-* 保持详细模型和平均模型的给定条件相同，设置算例的起止时间及积分步长（5μs）等基本信息；
-* 设定`格式面板`->`全局参数`中的`充电转放电控制时间 [s]`为1；
-* 设定并网逆变器的PQ控制功率（1s前`P=0.04 MW`,`Q=-0.01 MVar`，1s后，`P=-0.01 MW`,`Q=0.02 MVar`）。
+The detailed model and the average model are built in the unified example project, and the following settings are made.
+* Keep the given conditions of the detailed model and the average model the same, and set basic information such as the start and end time of the study and the integration step (5μs);
+* Set `Charge to Discharge Change Time [s]` in `Format Panel`->`Global Parameters` to 1;
+* Set the PQ control power of the grid-connected inverter (before 1s, `P=0.04 MW`, `Q=-0.01 MVar`, after 1s, `P=-0.01 MW`, `Q=0.02 MVar`.)
 ![并网控制设定值](BESS/BESS_PQctrl.png)
 
-点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，即可得到仿真结果。绘制直流电压、有功/无功功率、交流电流、荷电状态（State of Charge, SOC）的对比图。
+Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result. Draw a comparison figure of DC voltage, active/reactive power, AC current, and State of Charge (SOC).
 
 ![直流电压](BESS/BESS_udc_sim1.png)
 ![有功功率](BESS/BESS_p_sim1.png)
 ![交流电流](BESS/BESS_iac_sim1.png)
 ![SOC](BESS/BESS_soc_sim1.png)
 
-可见，充放电功率切换暂态过程，平均模型与详细模型结果一致。
+It can be seen that in the charging and discharging state switching transient process, the average model is consistent with the detailed model results.
 
-### 仿真2：并网转离网过程
+### Test2：Grid-connected control switches to off-grid control
 
-将详细模型和平均模型建立在统一算例工程中，进行如下设定。
-* 设定离网前为放电模式，功率设置为`P=-0.01 MW`,`Q=0.02 MVar`；
-* 设定`格式面板`->`全局参数`中的`并网转离网控制时间 [s]`为5；
-* 设定离网逆变器的控制电压（`Vd_ref=0.311`,`Vq_ref=0`）。
+The detailed model and the average model are built in the unified example project, and the following settings are made.
+* Set the discharge mode before off-grid, the power setting is`P=-0.01 MW`, `Q=0.02 MVar`;
+* Set `Grid-connected to off-grid Change Time [s]` in `Format Panel`->`Global Parameters` to 5;
+* Set the reference voltage of the off-grid inverter (`Vd_ref=0.311`, `Vq_ref=0`).
 ![离网控制设定值](BESS/BESS_VFctrl.png)
-点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，即可得到仿真结果。绘制直流电压、有功/无功功率、交流电流、荷电状态（State of Charge, SOC）、交流电压的对比图。
+Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result. Draw a comparison figure of DC voltage, active/reactive power, AC current, State of Charge (SOC), and AC voltage.
 
 ![直流电压](BESS/BESS_udc_sim2.png)
 ![有功功率](BESS/BESS_p_sim2.png)
@@ -72,6 +73,6 @@ CloudPSS提供了储能并网发电系统的详细模型和平均模型，并提
 ![SOC](BESS/BESS_soc_sim2.png)
 ![交流电压](BESS/BESS_uac_sim2.png)
 
-可见，并网转离网切换过程详细模型和平均模型结果一致，切换过程平滑。
+It can be seen that the detailed model of the process of the grid-connected control switching to the off-grid control is consistent with the average model results, and the switching process is smooth.
 
-在实际应用时，若需研究控制算法、系统级动态，为提升仿真效率，可采用平均模型。
+In practical applications, if you need to study control algorithms and system-level dynamics, to improve simulation efficiency, an average model can be used.

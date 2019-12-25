@@ -14,6 +14,9 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 * [储能并网发电系统](BESS.html)
 * [IEEE39节点系统](IEEE39.html) 
 * [直流微电网系统](DCMicroGrid.html) 
+* [飞轮储能系统](FESS.html) 
+* [异步电机矢量控制](DTC.html) 
+* [双馈电机控制](DFIG.html) 
 
 ### 移频暂态仿真案例
 * [IEEE39节点系统](IEEE39SFEMT.html)

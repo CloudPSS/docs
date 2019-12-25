@@ -97,6 +97,18 @@ components:
         zh: 交流系统
         en: AC system
       order: -3010
+    - name:
+        zh: 励磁器
+        en: Exciters
+      order: -4000
+    - name:
+        zh: 调速器
+        en: Governors & Turbines
+      order: -4001
+    - name:
+        zh: 电力系统稳定器(PSS)
+        en: Power system stabilizers(PSS)
+      order: -4002
   - name:
       zh: 热网
       en: Heat

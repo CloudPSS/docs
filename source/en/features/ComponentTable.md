@@ -1,5 +1,5 @@
 ---
-title: 元件表
+title: Component Table
 type: features
 category: 1000
 order: 250
@@ -7,13 +7,13 @@ author: songyk
 author_email: songyankan@cloudpss.net
 ---
 
-鼠标右键单击仿真图层的空白处，选择查看元件表可弹出元件表对话框，对话框左侧为该仿真工程中所有元件的分类(如电容类)及具体元件组成(如newCapacitor 1、newCapacitor 2)的列表，右侧为所有该类元件的参数列表。参数列表可修改，且将直接影响对应元件参数设置对话框内的值。利用元件表可实现对所有元件的全参数统一批量修改及查看的功能。
+Right click on the blank area of the main workspace and select 'view the component table', and then pop up the `Component Table Dialog Box`. The left side of the dialog box is the classification of all components in the simulation project and the specific components. The right side is the Parameter for all used components. The Parameter can be modified and will directly affect the values in the corresponding component parameter settings dialog. The component table can realize the function of unified batch modification and viewing of all parameters of all components.
 
-![元件列表](ComponentTable/Y1.png "查看元件表选项")
-![元件列表](ComponentTable/Y2.png "元件表页面")
+![元件列表](ComponentTable/Y1.png "View component table options")
+![元件列表](ComponentTable/Y2.png "Component table dialog box")
 
 {% pullquote tip %}
-+ 元件参数设置面板中的“选择类”参数在参数表中对应为键值(Key Value)，例如：Yes对应为1，No对应为0。
-+ 直接填写参数列表时，需注意表内值的格式与元件参数设置面板的要求一致，例如上图中的Branch Current [kA]内需填写以#号开头的信号名称。
-+ 元件表支持复制、粘贴、自动填充功能。用户可将元件表内参数导入进Excel等表格工具继续处理，再粘贴回CloudPSS平台。
++ "Select" type parameter is represent as Key Value in the component table. (Yes represents 1 and No represents 0).
++ When filling in component table, the format of the value in the table is consistent with the requirements of the parameter configuration panel. For example, the Branch Current [kA] in the above figure needs to fill in the signal name starting with mark #.
++ The component table supports copy, paste, and auto fill functions. 
 {% endpullquote %}

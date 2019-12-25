@@ -19,7 +19,7 @@ type: ''
     <section class="links">
         <div class="container center">
             <div class="card-panel" v-for="item in links">
-                <span role=img :style="{'background-image': `url(${item.img})`}"></span>
+                <span role=img :style="{'background-image': `url(${encodeURI(item.img)})`}"></span>
                 <div>
                     <h3>{{item.name}}</h3>
                     <p class="desc">{{item.desc}}</p>

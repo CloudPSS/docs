@@ -1,5 +1,5 @@
 ---
-title: 直流电流源
+title: DC Current Source
 author: 
 author_email:
 
@@ -13,53 +13,53 @@ order: 100
 classname: _newDCCurrentSource
 symbol: newDCCurrentSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDCCurrentSource %}
 
-> **该元件用以建模直流电流源。**
+> **This component is used to model the DC current source.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 | 此处输入直流电流源的名称（可缺省） |
-| Is This Source Grounded? |  | 电流源一端是否接地？ | 选择 | 选择“Yes”或“No”以使电流源负端接地或不接地 |
-| Rated Current Magnitude | kA | 输出电流幅值 | 实数（常量） | 输出电流的幅值 |
-| Start-up Type |  | 启动方式 | 选择 | 选择电流源启动发式为“Linear Ramp”或“Real Pole Ramp” |
-| Current Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
-| Current Time Constant | s | 启动时间常数 | 实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效 |
+| Source Name |  | Name of component | Text | Enter the name of DC current source. (Default) |
+| Is This Source Grounded? |  | Is this source grounded? | Select | Select "Yes" or "No" to ground or unground the Negative terminal of current source |
+| Rated Current Magnitude | kA | Rated current magnitude | Real number (Const) | Rated current magnitude |
+| Start-up Type |  | Start-up type | Select | Select the start-up type of current source as "Linear Ramp" or "Real Pole Ramp" |
+| Current Ramp Up Time | s | Startup time | Real number (Const) | Enter the ramp start time, only when the "Start-up Type" item is "Linear Ramp" |
+| Current Time Constant | s | Startup time constant | Real number (Const) | Enter the pole time constant, which only takes effect when the "Start-up Type" item is "Real Pole Ramp" |
 
 ### Fault Setting
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Is This a Fault Source ? |  | 是否为故障电源 | 选择 | 选择“Yes”或“No”以选择是否为故障电源|
-| Fault Start Time | s | 故障开始时间 | 实数（常量） | 故障开始的时间，仅当“是否为故障电源”项选择"Yes"时有效 |
-| Fault End Time | s | 故障结束时间 | 实数（常量） | 故障结束的时间，仅当“是否为故障电源”项选择"Yes"时有效 |
-| Drop Ratio | p.u. | 故障电流降 | 实数（常量） | 故障期间电流的标幺值，仅当“是否为故障电源”项选择"Yes"时有效|
+| Is This a Fault Source ? |  | Is this a fault source? | Select | Select "Yes" or "No" to set the source as a fault source or non-fault source |
+| Fault Start Time | s | Fault start time | Real number (Const) | Fault start time is valid only when "Yes" is selected for the "is This a Fault Source" item |
+| Fault End Time | s | Fault end time | Real number (Const) | Fault end time is valid only when "Yes" is selected for the "is This a Fault Source" item |
+| Drop Ratio | p.u. | Drop ratio | Real number (Const) | The drop Rratio is valid only when the "is This a Fault Source power" item select "Yes"|
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电流源端电压 | 文本 | 此处输入电流源电压量测信号的标签，以#号开头，如#Va |
-| Source Current \[kA\] | 电流源输出电流 | 文本 | 此处输入电流源输出电流量测信号的标签，以#号开头，如#Ia |
+| Source Voltage \[kV\] | Source voltage | Text | Enter the measurement signal label of the voltage of current source, starting with #, such as #Va |
+| Source Current \[kA\] | Source current | Text | Enter the measurement signal label of the current of current source, starting with #, such as #Ia |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 1×1 | 电流源的负端（参考方向），仅当电源非接地时有效 |
-| Pin + | 1×1 | 电流源的正端（参考方向）|
+| Pin - | 1×1 | Negative terminal, only valid when the power source is not grounded |
+| Pin + | 1×1 | Positive terminal|
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-CloudPSS中的电流源为`理想电流源`模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
+The current source in CloudPSS is an `ideal current source` model with an internal resistance of infinity. However, ideal current sources cannot be connected in series or in star form (in violation of the Kirchhoff node current law).
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 
 
-[直流电压源](comp_newDCVoltageSource.html)
+[DC Voltage Source](comp_newDCVoltageSource.html)

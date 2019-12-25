@@ -1,38 +1,35 @@
 ---
-title: IEEE39节点系统
+title: IEEE 39-bus system
 type: examples
 author: zhangr
 category: 1000
 order: 600
 ---
 
-## 描述
-IEEE 39节点标准系统，是美国新英格兰地区的一个电力网络。该系统包括10台发电机，39个母线，12台变压器。所有电机均采用了励磁、调速以及电力系统稳定器PSS进行调控。
-作为测试，在实例算例中，于bus-16母线处添加了时长0.1s的三项接地短路故障，用户可根据需要自行修改、删除或添加。
+## Description
+The IEEE 39-bus standard system is a power network in the New England area of the United States. The system consists of 10 generators, 39 busbars and 12 transformers.
 
-系统可以选择两种启动方式：S2M启动方式与稳态潮流断面启动方式。详见[潮流断面启动](../features/Initialization.html)
+In CloudPSS, a complete 39-bus system electromagnetic transient simulation example with power flow interface startup is provided. The power flow interface can be directly used to startup the system. All models do not go through the startup transition process and directly enter the steady state. This example can be used for traditional transient stability analysis, excitation, speed controller design, system frequency modulation and other characteristic analysis.
 
-该算例可用于传统暂态稳定分析，励磁、调速控制器设计，系统调频等特性分析等。
+## Model Introduction
 
-## 模型介绍
+### Model Topology
 
-### 模型拓扑
+The topology diagram of the IEEE 39-bus system is as follows, where bus 39 is a slack bus. Except for the slack bus, the buses (30-38) connected to each motor have a voltage level of 20kV, and the bus is 25kV, and all other buses voltages are 500kV.
 
-IEEE39节点算例拓扑图如下，其中39号节点为松弛节点。除松弛节点外，各电机相连的母线（30-38）电压等级均为20kV，另外12号节点为25kV，剩下所有母线电压均为500kV.
+![拓扑图](IEEE39/I1.png "IEEE 39-bus system topology")
 
-![拓扑图](IEEE39/I1.png "IEEE39节点算例拓扑图")
+In the Cloudpss, the example case is built using a single-line diagram with the following topology.
 
-CloudPSS上该算例采用单线图构建，其拓扑如下。
+![仿真图](IEEE39/IEEE39All.png "IEEE 39-bus system in the CloudPSS")
 
-![仿真图](IEEE39/IEEE39All.png "IEEE39节点算例仿真图")
+### Model Parameter
 
-### 模型参数
+All motor parameters, transmission line parameters, transformer parameters are from reference^[Luc Gérin-Lajoie. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. EMTP-RV 39-bus system, Version 1.5 - Mars 04, 2015]。
 
-所有电机参数、传输线参数、变压器参数来源于文献^[Luc Gérin-Lajoie. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. EMTP-RV 39-bus system, Version 1.5 - Mars 04, 2015]。
+#### Generator parameter
 
-#### 发电机参数
-
-发电机原始标幺值参数如下:
+The original per-unit values of the generator parameters are as follows:
 
 | UnitNo. | RatedPower | H | Ra | x'd | x'q | xd | xq | T'do | T'qo | xl |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -47,7 +44,7 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 9  | 1000  | 3.450  | 0.000  | 0.570  | 0.587  | 2.106  | 2.050  | 4.790  | 1.960  | 0.298  |
 | 10 | 1000  | 4.200  | 0.000  | 0.310  | 0.080  | 1.000  | 0.690  | 10.200  | 0.000  | 0.125  |
 
-经过折算后（折算方法见2.2.1），实际使用的发电机参数如下：
+After the conversion (see 2.2.1 for the conversion method), the actual generator parameters are as follows:
 
 | Bus No. | Rs | Xls | Xd | Xq | Rfd | Rkd | Rkq | Xlfd | Xlkd | Xlkq |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -62,11 +59,11 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 38 | 0.0002 | 0.298 | 2.106 | 2.05 | 0.00118  | 0.08605  | 0.08481  | 0.32017  | 0.34453  | 0.16644 |
 | 30 | 0.0002 | 0.125 | 1 | 0.69 | 0.00029  | 0.09301  | 0.03207  | 0.23460  | 0.38542  | 0.16051  |
 
-#### 线路参数
+#### Transmission line parameter
 
-传输线原始参数如下表。其中，标幺值参数为线路全长参数（潮流计算使用的参数），有名值参数为单位长度参数（根据标幺值参数和基准容量、电压、线路长度折算）。在CloudPSS提供的39节点标准算例中，线路参数采用标幺值的方式录入。
+The original parameters of the transmission line are as follows. Among them, the per-unit value parameter is the line full-length parameter (the parameter used in the power flow calculation), and the named value parameter is the unit length parameter (according to the per-unit value parameter and the base capacity, voltage, and line length). In the 39-bus standard system provided by CloudPSS, line parameters are entered using per-unit values.
 
-以下标么值的线路参数基值选取：电压基值为500kV，功率基值为100MW。
+The per-unit value of the line parameters of the following base values is selected: the voltage base value is 500 kV, and the power base value is 100 MW.
 
 | | | R1(pu)  | X1(pu)  | B1(pu)  | km  | R1(ohm/km)  | X1(ohm/km)  | B1(uS/km)  | R0(ohm/km)  | X0(ohm/km)  | B0(uS/km) |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -91,9 +88,9 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 14  | 15  | 0.0018  | 0.0217  | 0.366  | 145.4  | 0.031  | 0.373  | 1.007  | 0.309  | 1.119  | 0.604  |
 | 15  | 16  | 0.0009  | 0.0094  | 0.171  | 63.0  | 0.036  | 0.373  | 1.086  | 0.357  | 1.119  | 0.651  |
 
-#### 变压器参数
+#### Transformer parameter
 
-|   |    | 额定功率（MVA） | 原边电压等级（kV） | 副边电压等级（kV） | R | X |
+|   |    | Rated power (MVA) | Primary voltage（kV） | Secondary voltage（kV） | R | X |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 11  | 12  | 100 | 500 | 25 | 0.0016 | 0.0435 |
 | 13  | 12  | 100 | 500 | 25 | 0.0016 | 0.0435 |
@@ -108,9 +105,9 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 29  | 38  | 100 | 500 | 20 | 0.0008 | 0.0156 |
 | 19  | 20  | 100 | 500 | 500 | 0.0007 | 0.0138 |
 
-#### 负荷参数
+#### Load parameter
 
-| 节点编号 | 有功功率P（MW） | 无功功率Q（MVar）|
+| Bus No. | P (MW) | Q (MVar)|
 | :--- | :--- | :--- |
 | 1 | 97.6 | 44.2|
 | 3 | 322 | 2.4|
@@ -132,23 +129,24 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 29 | 283.5 | 26.9|
 | 31 | 9.2 | 4.6|
 | 39 | 1104 | 250|
-#### 励磁调节器参数
 
-本算例中采用IEEE标准的EXST1(PTI)型励磁调节器。具体信息见参考文献^[IEEE Std 421.5™-2005. IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, IEEE, 2005]。在CloudPSS中构建的元件图标以及原理图如下：
+#### Excitation regulator parameter
 
-![励磁元件图](IEEE39/EXST1_PTI.png "励磁调节器元件图标" =x180)
-![励磁原理图](IEEE39/EXST1_PTI_Inner.png "励磁调节器原理图")
+In this example case, the IEEE standard EXST1(PTI) type excitation regulator is used. See the reference^[IEEE Std 421.5™-2005. IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, IEEE, 2005] for specific information. The module simulation diagram built in CloudPSS is as follows:
+
+![励磁元件图](IEEE39/EXST1_PTI.png "The excitation regulator module diagram" =x180)
+![励磁原理图](IEEE39/EXST1_PTI_Inner.png "The excitation regulator module schematic diagram")
  
-各个引脚中，Vref、Vs、VT、IT、Ef0、S2M为输入引脚，其中：
-+ Ef0引脚应与电机内部量测量#Ef0相连，为Ef的初值。
-+ Ef输出连接电机的Ef端口。
-+ If输入端口连接电机的If输出端口。
-+ Vs连接到PSS的输出，没有PSS时可以输入常数0。
-+ Vref（参考电压）可以连接到同模块输出的参考电压初始值Vref0，也可以直接设为1。
-+ VT，IT为电机端电压和电流的标幺值。
-+ S2M为`Source to Machine信号`。当电机采用Source to Machine启动时，输入模块的S2M信号应与输入电机的S2M信号保持一致。
+Among the various pins, Vref, Vs, VT, IT, Ef0, and S2M are input pins, among which:
++ The Ef0 pin should be connected to the motor internal measurement #Ef0, which is the initial value of Ef.
++ The Ef output pin is connected to the Ef port of the motor.
++ The If input pin is connected to the If output port of the motor.
++ Vs is connected to the output port of the PSS, and a constant 0 can be entered without PSS.
++ Vref (reference voltage) is obtained by sampling and holding the reference voltage initial value Vref0, and may be directly set to 1.
++ VT, IT is the per-unit value of the voltage and current of the motor.
++ S2M is the `Source to Machine Singal`. 
 
-其中参数设置如下：
+The parameters are set as follows:
 ||||||||
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **RC** | **Xc** | **TR** | **TC** | **TB** | **KF** | **TF** |
@@ -156,31 +154,31 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | **KA** | **TA** | **VRMAX** | **VRMIN** | **KC** | **VIMAX** | **VIMIN** |
 | 200 | 0.015 | 5 | -5 | 0 | 0.1 | -0.1 |
 
-参数说明如下：
-+ TA, TB, TC：Voltage regulator time constants [s]电压校准器时间常数
-+ VRMAX, VRMIN：Maximum and minimum regulator output limits [p.u.]电压校准器输出范围 
-+ TF：Excitation control system stabilizer time constant [s] 励磁控制系统稳定器时间常数
-+ KF：Excitation control system stabilizer gain [p.u.]励磁控制系统稳定器放大倍数
+The parameters introductions are as follows:
++ TA, TB, TC：Voltage regulator time constants [s]
++ VRMAX, VRMIN：Maximum and minimum regulator output limits [p.u.]
++ TF：Excitation control system stabilizer time constant [s] 
++ KF：Excitation control system stabilizer gain [p.u.]
 
-#### 调速器和原动机参数
+#### Speed regulator and Prime mover parameter
 
-本算例中采用IEEE标准的STEAM_GOV_1型调速器和STEAM_TUR_1型原动机。在CloudPSS中构建的调速器STEAM_GOV_1元件图标以及原理图如下：
+In this example case, the IEEE standard STEAM_GOV_1 type speed regulator and STEAM_TUR_1 type prime mover are used. The STEAM_GOV_1 type speed regulator module simulation diagram built in CloudPSS is as follows:
 
-![调速器元件图](IEEE39/STEAM_GOV_1.png "调速器元件图" =x180)
-![调速器原理图](IEEE39/GOV.png "调速器原理图")
+![调速器元件图](IEEE39/STEAM_GOV_1.png "The speed regulator module diagram" =x180)
+![调速器原理图](IEEE39/GOV.png "The speed regulator module schematic diagram")
 
-其中参数设置如下：
+The parameters are set as follows:
 |||||||||
 | :----: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
 | **DB** | **Kg** | **TSR** | **TSM** | **P_up** | **P_donw** | **Cmax** | **Cmin** |
 | 0 | 20 | 0 | 0.075 | 0.6786 | -1 | 0.9 | 0 |
 
-在CloudPSS中构建的原动机STEAM_TUR_1元件图标以及原理图如下：
+The STEAM_TUR_1 type prime mover module simulation diagram built in CloudPSS is as follows:
 
-![调速器元件图](IEEE39/STEAM_TUR_1.png "调速器元件图" =x180)
-![调速器原理图](IEEE39/TUR1.png "调速器原理图")
+![调速器元件图](IEEE39/STEAM_TUR_1.png "The prime mover module diagram" =x180)
+![调速器原理图](IEEE39/TUR1.png "The prime mover module schematic diagram")
 
-其中参数设置如下：
+The parameters are set as follows:
 |||||||
 | :----: | :----: | :----: | :----: | :----: | :----: |
 | **K1** | **K2** | **K3** | **K4** | **K5** | **K6** |
@@ -189,60 +187,41 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | 0 | 0 | 0.3 | 10 | 0.6 | 0 |
 
 
-#### 潮流电机参数
+## Simulation
 
-以下为用于潮流计算的电机参数设置，这些参数在发电机元件的Power Flow Data栏。
+In the CloudPSS, the startup of the electrical system in the electromagnetic transient simulation can be roughly divided into two types: starting from zero and starting directly from the power flow snapshot.
 
-|  | Bus Type | Injected Active Power [MW] | Bus Voltage Magnitude [p.u.] |
-| :--- | :--- | :--- | :--- |
-| Gen30 | PV | 250 | 1.047 |
-| Gen31 | PV | 660 | 0.982 |
-| Gen32 | PV | 650 | 0.983 |
-| Gen33 | PV | 632 | 0.997 |
-| Gen34 | PV | 508 | 1.012 |
-| Gen35 | PV | 650 | 1.049 |
-| Gen36 | PV | 560 | 1.063 |
-| Gen37 | PV | 540 | 1.027 |
-| Gen38 | PV | 830 | 1.026 |
-| Gen39 | Vδ | - | 1.03 |
+Starting from zero is the process from the state where the voltage and current are equal to 0 to the steady state. For synchronous motors, this type of start-up includes flat start, terminal voltage ramp start, excitation voltage ramp start, and voltage source to meachine. In these modes, the simulation does not require a pre-start process, and the simulation can be started directly from t=0.
 
-此外，松弛节点Gen39的潮流角度δ=0，即Bus Voltage Angle [Deg]为0
+Starting directly from the power flow snapshot method utilizes the flow flow data to start directly from steady state. There are several requirements for this type of startup:
 
++ The ports of all device components **must** be connected directly to the bus (or connected to the bus via a splitter).
++ The starting parameters of the motor and bus need to be consistent with the power flow results, otherwise the simulation cannot achieve stability or even error.
++ The pre-start function needs to be enabled, and it can be checked in the `Electromagnetic Transient->Start Parameter->Whether to start the pre-start process`. For a 60 Hz system, the voltage ramp time is 0.05 s; for a 50 Hz system, the ramp time is 0.06 s. The maximum startup time is the maximum time for pre-start, generally taking a number greater than 0.5s.
 
-## 仿真
+As a demonstration, here we choose to start from zero (that is, S2M startup), click `Simulation Control->Start` and select the computation node to get the transient results.
 
-CloudPSS的电磁暂态仿真中电气系统的启动可以大体分为两种：从零启动以及从潮流断面直接启动。
+The following shows the results of the simulation results. Note that between 2s and 2.1s, a three-phase ground fault occurred at the bus 16.
 
-从零启动就是系统各处从电压、电流等于0的状态启动到稳态的过程。对于同步电机，这种启动方式包括了平启动、端电压爬升启动、励磁电压爬升启动、电压源转电机这几种方式。这些方式下仿真不需要预启动流程，可以直接从t=0时开始仿真。
+The power angle waveforms of all motors are shown in the figure:
 
-从潮流断面的启动方式则利用了潮流断面数据直接从稳态启动。这种启动方式有几个要求：
-+ 全部设备元件的端口**必须**与母线直接相连（或通过分线器与母线相连）。
-+ 电机、母线的启动参数需要与潮流结果一致，否则仿真无法达到稳定甚至出现错误。
-+ 需要启用预启动功能，可在`电磁暂态->启动参数->是否开启预启动流程`中勾选开启。对于60Hz系统，电压爬升时间为0.05s；对于50Hz系统，爬升时间则为0.06s。最大启动时间则为预启动的最大时间，一般取一个大于0.5s的数。
+![电机功角](IEEE39/RA.png "Power angle of all motors")
 
-作为演示，这里选择从零启动（即S2M启动）方式，点击`仿真控制->开始`后选择计算节点，即可得到暂态结果。
+The speed waveforms of all motors are shown in the figure:
 
-下面展示某次仿真的运行结果，注意在2s-2.1s间，16号母线处发生了三相接地短路故障。
+![电机转速](IEEE39/wr.png "Speed waveforms of all motors")
 
-所有电机的功角波形如图所示：
+The voltage per-unit value of all motors are shown in the figure:
 
-![电机功角](IEEE39/RA.png "电机功角")
+![电机的端电压标幺值](IEEE39/VT.png "Voltage per-unit value of all motors")
 
-所有电机的转速波形如图所示：
+The instantaneous power waveform of all motors are shown in the figure:
 
-![电机转速](IEEE39/wr.png "电机转速")
+![机端瞬时功率](IEEE39/IT.png "Instantaneous power of all motors")
 
-所有电机的端电压标幺值仿真结果如图所示：
+Taking bus 37 as an example, the simulation results of the voltage waveform before and after the fault are:
 
-![电机的端电压标幺值](IEEE39/VT.png "电机的端电压标幺值")
-
-所有电机的端电流标幺值仿真结果如图所示：
-
-![机端瞬时功率](IEEE39/IT.png "机端瞬时功率")
-
-以37号节点为例，在故障前后处机端电压波形的仿真结果为：
-
-![机端电压波形](IEEE39/Ib37.png "机端电压波形")
+![机端电压波形](IEEE39/Ib37.png "Voltage waveform of bus 37")
 
 
 

@@ -1,96 +1,90 @@
 ---
-title: 简单案例
+title: Test Cases
 type: guide
 author: zhangr
 order: 500
 ---
 
-本章对两个简单的案例进行仿真示例，以帮助用户更好理解CloudPSS的使用规则及方法。
+This chapter takes two test cases as examples to help users better understand the rules and methods of using CloudPSS.
 
-## 简单RLC电路仿真
+## Simulation Test Case of RLC Circuit
 
-### RLC串联电路原理
+### RLC Series Circuit Principle
 
-RLC电路是由电阻、电感、电容组成的二阶电路结构，如图所示。电路中的电压或电流是一个二阶微分方程的解，其系数是受其电路结构决定。当电路元件都视为线性元件时，一个RLC元件可以被视作一个谐波振荡器。
+The RLC circuit is a second-order circuit consisting of resistor, inductor, and capacitor, as shown in the figure. The values of voltage and current in the circuit are the solutions of the second order differential equation whose coefficients are determined by the circuit structure. 
 
-![拓扑图](User4/51.png "RLC串联电路")
+![拓扑图](User4/51.png "RLC series circuit")
 
-电路工作时，三个元件均与电压源以串联方式连接，根据基尔霍夫电压定律(KVL)可得电路的回路电压方程为：
+In this circuit, all three components are connected in series with the voltage source. According to Kirchhoff's Voltage Law (KVL), the circuit voltage equation of the circuit is:
 $$ Ri(t) + L\frac{ {di} }{ {dt} } + \frac{1}{C}\int\limits_{ - \infty }^{\tau  = t} {i(t)d\tau  = v(t)} $$
 
-当电源电压为常数时，对上式求导，整理可得如下的二阶微分方程：
+When the power supply voltage is constant, the derivative of the above formula can obtain the following second-order differential equation:
 $$\frac{ { {d^2}i(t)} }{ {d{t^2} } } + \frac{R}{L}\frac{ {di(t)} }{ {dt} } + \frac{1}{ {LC} }i(t) = 0$$
 
-令$\alpha  = \frac{R}{L}$，${\omega _0} = \frac{1}{ {\sqrt {LC} } }$，其中$\alpha$为衰减量，$\omega _0$为共振角频率。定义阻尼系数为：
+Let $\alpha  = \frac{R}{L}$，${\omega _0} = \frac{1}{ {\sqrt {LC} } }$, where $\alpha$ is the decrement and $\omega _0$ is the resonance angle frequency. The damping coefficient is defined as:
 
 $$ \zeta  = \frac{\alpha }{ { {\omega _0} } } = \frac{R}{2} \sqrt {\frac{C}{L} } $$ 
 
-由电路理论可知，电路元件参数不同会导致阻尼系数不同，从而引起电路中电压、电流等电气量在零状态响应时会产生不同的变化形式。对回路电压方程进行求解，可得该微分方程的通解为两个指数函数的线性叠加：
+According to the circuit theory, different parameters of circuit components means different damping coefficients, which will lead to different changes in the zero state response of voltage, current and other electrical quantities in the circuit. By solving the circuit voltage equation, the general solution of the differential equation can be obtained as the linear superposition of two exponential functions:
 
 $$i(t) = {A_1}{e^{ - {s_1}t} } + {A_2}{e^{ - {s_2}t} }$$
 
-系数$A_1$，$A_2$由具体问题的边界条件给出。
+Coefficients$A_1$, $A_2$ are given by boundary condition.
 
-以下分别对$\zeta$变化造成的三种不同变化情况进行介绍。
+The following are three situations of different $\zeta$.
 
-+ 过阻尼响应($\zeta >1$)
++ Overdamped ($\zeta >1$)
 
-  过阻尼响应为：
+  Overdamped response of is:
   $$i(t) = {A_1}{e^{ - {\omega _0}(\zeta  + \sqrt { {\zeta ^2} - 1} )t} } + {A_2}{e^{ - {\omega _0}(\zeta  - \sqrt { {\zeta ^2} - 1} )t} }$$
 
-  过阻尼响应是一个瞬时电流无振荡的衰减。
++ Underdamped ($\zeta <1$)
 
-+ 欠阻尼响应($\zeta <1$)
-
-  欠阻尼响应为：
+  Underdamped response is:
   $$i(t) = {B_1}{e^{ - \alpha t}}\cos ({\omega _d}t) + {B_2}{e^{ - \alpha t}}\sin ({\omega _d}t)$$
 
-  欠阻尼响应是一个按频率为 ${\omega _d} = {\omega _0} \sqrt {1 - {\zeta ^2} }$ 衰减的振荡，它是电路在无外部源驱动时的自然振动频率。$B_1$以及$B_2$为任意常数，由边界条件决定。
++ Critical damping ($\zeta =1$)
 
-+ 临界阻尼响应($\zeta =1$)
-
-  临界阻尼响应为：
+  Critical damping response is:
   $$ i(t) = {D_1}t{e^{ - \alpha t} } + {D_2}t{e^{ - \alpha t} }$$
 
-  其响应与过阻尼响应类似。
+### Simulation Analyzation
 
-### 仿真分析
+The RLC series circuit simulation model built in CloudPSS is shown below.
 
-由CloudPSS实现的RLC串联电路仿真模型如图所示。
+![仿真图](User4/A1.png "RLC series circuit simulation model")
 
-![仿真图](User4/A1.png "RLC串联电路仿真图")
+Drag the DC Voltage Source, Capacitor, Inductor, Resistor, Current Meter, Output Channel and Oscilloscope Group component to the main workspace. Set the all the DC voltage source parameter to 0.1kV, voltage rise time to 0.001s, inductance parameter to 0.1H, capacitance parameter to 100000uF. Set the resistance parameters to 0.5Ω, 2Ω and 10Ω, and the ammeter output signals to #I1, #I2, #I3, respectively. The input pins of the output channels are set to #I1, #I2, #I3, respectively.  The simulation results are shown in the figure.
 
-拖拽直流电压源、电容、电感、电阻、电流表、输出通道以及示波器分组元件至工作空间，设置电路中直流电压源参数为0.1kV，电压上升时间为0.001s，电感参数为0.1H，电容参数为100000uF，电阻参数分别为0.5Ω、2Ω、10Ω，电流表输出信号分别设置为#I1、#I2、#I3，输出通道的输入引脚分别设置为#I1、#I2、#I3，示波器分组选择为该三路输出通道。仿真结果如图所示。
+![仿真结果](User4/A2.png "Simulation results of the RLC series circuit")
 
-![仿真结果](User4/A2.png "RLC串联电路的仿真结果")
+## Three-phase Bridge Rectifier Circuit
 
-## 三相桥式全控整流电路
+### Principle of the Three-phase Rectifier Circuit
 
-### 整流电路原理
+The three-phase H-bridge rectifier circuit is the most widely used rectifier circuit in industry. It consists of a set of common cathode and a set of common anode three-phase half wave controlled rectifier circuit in series, as shown in the figure. In this figure, thyristors VS1, VS2, VS3 are common cathode groups, and thyristors VS4, VS5, and VS6 are common anode groups.
 
-三相桥式全控整流电路是工业中应用最为广泛的一种整流电路，其实质是一组共阴极与一组共阳极的三相半波可控整流电路的串联，如图所示。图中,晶闸管VS1、VS2、VS3、为共阴极组，晶闸管VS4、VS5、VS6为共阳极组。
+![电路拓扑](User4/A3.png "Three-phase H-bridge rectifier circuit")
 
-![电路拓扑](User4/A3.png "三相桥式整流电路")
+In one cycle, the electrical angle at which the thyristor is not conducting under the action of the forward anode voltage is called the control angle or the phase shift angle, which is represented by α. In the three-phase controlled rectifier circuit, the starting point of the control angle is not at the zero crossing point of the alternating voltage, but at the natural commutation point (also known as the natural commutation point), that is, the intersection of the three phase voltages. When double-narrow pulse triggering is used, the trigger circuit applies trigger pulses to the two thyristors simultaneously every 60°, and the trigger sequence of each cycle is 1/5-1/6-2/6-2/4-3/4-3/5.
 
-在交流电源的一个周期内，晶闸管在正向阳极电压作用下不导通的电角度称为控制角或移相角，用α表示。在三相可控整流电路中，控制角的起点，不是在交流电压过零点处，而是在自然换流点(又称自然换相点)，即三相相电压的交点。采用双窄脉冲触发时，触发电路每隔60°依次同时给两个晶闸管施加触发脉冲，每周期的触发顺序为1/5-1/6-2/6-2/4-3/4-3/5。
+The figure shows the theoretical switch and output waveforms when α equals to 0°, 60° and 90°, respectively.
 
-下图示出了α角分别为0°、60°以及90°时的理论开关及输出波形。
+![α角为0°](User4/A4.png "The theoretical switch and output waveforms when α equals to 0°")
+![α角为60°](User4/A41.png "The theoretical switch and output waveforms when α equals to 60°")
+![α角为90°](User4/A42.png "The theoretical switch and output waveforms when α equals to 90°")
 
-![α角为0°](User4/A4.png "α角为0°时的理论开关及输出波形")
-![α角为60°](User4/A41.png "α角为60°时的理论开关及输出波形")
-![α角为90°](User4/A42.png "α角为90°时的理论开关及输出波形")
+### Simulation Analyzation
 
-### 仿真分析
+The figure shows the test three-phase rectifier bridge circuit established in CloudPSS.
 
-由CloudPSS搭建的带纯电阻负载的三相整流桥如下图所示。
+![仿真图](User4/A5.png "Simulation diagram of three-phase H-bridge rectifier circuit")
 
-![仿真图](User4/A5.png "三相桥式整流电路仿真图")
+Drag the 3-phase AC Voltage Sources, Splitters, Thyristors, Resistors, Voltage Meters, Square Generators, Adder, Delay, Output Channels, and Oscilloscope Group into the main workspace. Set the three-phase voltage source line voltage to 0.1kV, frequency to 50Hz, voltage rise time to 0s. Thyristors parameters remain as default values. Square wave generators are set to square waves with 60° degree interval, 0.01 duty cycle, 50Hz frequency. Adder is used to generate a double-narrow pulse.  The delay time of the Delay component is set to the global variable \$T, which should be filled in the global variable window. The maximum number of sampling points is set to 500. The voltmeter is used to measure the load voltage, marked #Vr. The input pin of the output channel is set to #Vr. The Oscilloscope is used to display the waveform of output channels. Set the global parameters \$T to 0s, 0.00333s, and 0.005s respectively. The simulation results of different \$T (α) are shown in the figure below.
 
-拖拽三相交流电压源、分线器、晶闸管、电阻、电压表、方波发生器、加法器、延时环节、输出通道以及示波器分组至工作空间。设置三相电压源线电压0.1kV、频率50Hz、电压上升时间0s；晶闸管参数保持为默认值；方波发生器分别设置为间隔60°、占空比0.01、频率50Hz的方波；加法器用于形成双窄脉冲波形；延时环节的延时时间设置为全局变量\$T，并在全局变量窗口填写响应的参数、最大采样点数设置为500；电压表用于测量负载电压，名称标号为#Vr；输出通道的输入引脚设置为#Vr，示波器分组用于显示该输出通道的波形。分别设置全局参数\$T为0s、0.00333s和0.005s，三次的仿真结果如下图所示。
-
-![仿真结果1](User4/A6.png "α角为0°时的仿真结果")
-![仿真结果2](User4/A7.png "α角为60°时的仿真结果")
-![仿真结果3](User4/A8.png "α角为90°时的仿真结果")
+![仿真结果1](User4/A6.png "Simulation results when α is 0°")
+![仿真结果2](User4/A7.png "Simulation results when α is 60°")
+![仿真结果3](User4/A8.png "Simulation results when α is 90°")
 
 
 

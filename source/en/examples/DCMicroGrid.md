@@ -1,32 +1,32 @@
 ---
-title: 直流微电网系统
+title: DC Microgrid system
 type: examples
 author: zhangr
 category: 1000
 order: 600
 ---
 
-## 描述
-直流微电网可更高效可靠地接纳风、光等分布式可再生能源发电系统、储能单元、电动汽车及其他直流用电负荷。本算例提供了包含交流电网、固态变压器、光伏逆变器、储能变流器以及三相交流负载的直流微电网仿真，用以模拟智能楼宇供电系统。
+## Description
+The DC Microgrid has been a promising solution for interfacing the solar/wind renewable energy source based distributed generation systems, energy storage systems, eletric vehicles and other DC loads, with less energy conversion efficiency, economy and reliability.This example case provides a simulation of a DC microgrid including an AC grid, solid-state transformer, photovoltaic inverter, energy storage converter, and three-phase AC load to simulate a smart building power system.
 
-本算例中的开关模块(固态变压器、三相H桥变流器、半桥变流器)采用快速开关搜索建模方法。该方法与传统基于插值迭代的开关算法相比，在保留高精确度的同时，极大提高了仿真效率，因而特别适用于微电网、模块化多电平变流器、固态变压器等含有大量电压源变流器的仿真分析。
+The switching modules (solid-state transformer, three-phase H-bridge converter, and half-bridge converter) in this example case use a fast switch search modeling method. Compared with the traditional switching algorithm based on interpolation iteration, this method greatly improves the simulation efficiency while retaining high accuracy. It is especially suitable for source converter to simulation analyze in the microgrids, modular multilevel converters, solid-state transformers, etc. 
 
-## 模型介绍
-该直流微网模型包含了一个10模块固态变压器(共120个IGBT/二极管组)、一个储能系统(铅蓄电池加半桥变流器)、两个光伏系统(光伏电池加半桥变流器)以及一个带阻感负载的三相逆变器，每一变流系统各自对应一个控制系统。固态变压器采用直流母线电压外环、并网电流内环以及电容电压比值闭环控制。储能系统采用输出端口功率外环加输出电流内环控制。光伏系统采用光伏输入电压环节跟踪MPPT产生的参考信号，其中MPPT采用了定步长扰动观测法。三相逆变器则采用离网VF控制。
-![拓扑图](DCgrid/DCgrid.png "直流微网的仿真电路图")
+## Model Introduction
+The DC microgrid example case includes a 10-module solid-state transformer (120 IGBTs/diodes in total), an energy storage system (lead battery with half-bridge converter), and two photovoltaic systems (photovoltaic cells with half-bridge converter) ) And a three-phase inverter with a resistive load, each converter system corresponds to their own control system. The solid-state transformer adopts the DC bus voltage outer loop, the grid-connected current inner loop, and the capacitor voltage ratio closed-loop control. The energy storage system adopts power outer loop and output current inner loop control. The photovoltaic system uses the voltage control and the MPPT control, also, the MPPT control adopts the fixed-step perturbation observation method. The three-phase inverter uses off-grid VF control.
+![拓扑图](DCgrid/DCgrid.png "The topology diagram of DC microgrid")
 
-## 仿真
-点击工作空间右侧的“全局参数”栏，设定两组光伏系统MPPT开始的时间\$StartMPPT1\_time，\$StartMPPT2\_time；储能系统功率参考变化的时间\$PrefChange\_time以及三相负载变化时间\$LoadChange\_time。值得注意的是，负载变化是通过故障电阻在某一时刻切换阻值来实现。
+## Simulation
+Click the `Global Parameters` column on the right side of the workspace to set the MPPT start time of the two sets of photovoltaic systems \$StartMPPT1\_time, \$StartMPPT2\_time; the time for the reference change of the energy storage system \$PrefChange\_time and three Load change time \$LoadChange\_time. It is worth noting that the load change is achieved by the fault resistor.
 
-点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，可得到仿真结果如下图所示。
-![仿真结果图](DCgrid/T.png "直流母线电压")
-可以发现，负载(PV，蓄电池，三相负载)变化时，直流母线基本维持恒定。
-![仿真结果图](DCgrid/T2.png "入网电流")
-入网电流具有较好的正弦度，负载变化时，入网电流跟随变化，响应速度快。
-![仿真结果图](DCgrid/T3.png "蓄电池功率")
-蓄电池功率按照给定参考变化，响应速度快。
-![仿真结果图](DCgrid/T4.png "光伏电池1输入电压")
-![仿真结果图](DCgrid/T6.png "光伏电池2输入电压")
-MPPT通过扰动输入电压，使光伏电池输出功率在最大功率点振动。
-![仿真结果图](DCgrid/T7.png "三相负载电流")
-负载电阻变化导致负载电流随之变化，可以看出电流环的响应速度快，电流正弦度高。
+Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result.
+![仿真结果图](DCgrid/T.png "The voltage of the DC bus")
+It can be found that when the load (PV, battery, three-phase load) changes, the DC bus is kept basically constant.
+![仿真结果图](DCgrid/T2.png "The current of AC side")
+The current of AC side has a good sine waveform. When the load changes, the current follows the change and the response speed is fast.
+![仿真结果图](DCgrid/T3.png "The power of the battery")
+The battery power changes according to a given reference, and the response speed is fast.
+![仿真结果图](DCgrid/T4.png "The voltage of PV1")
+![仿真结果图](DCgrid/T6.png "The voltage of PV2")
+MPPT stabilizes the output power of photovoltaic cells at the maximum power point by disturbing the input voltage.
+![仿真结果图](DCgrid/T7.png "The current of the three-phase load")
+The change of load resistance causes the load current to change accordingly. It can be seen that the response speed of the current loop is fast and has a good sine waveform.
