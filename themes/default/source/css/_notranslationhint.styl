@@ -1,0 +1,31 @@
+@import "_settings"
+
+#not-translated-hint
+  user-select: none
+  &:not([data-lang])
+    display: none
+  hide-for-print()
+  background: #dcd3ff
+  position: absolute
+  padding: 24px $padding
+  left: 0
+  right: 0
+  &:before
+    position: relative
+    top: -1.2px
+    content: '!'
+    background: #888
+    color: white
+    width: 20px
+    height: 20px
+    display: inline-block
+    text-align: center
+    border-radius: 10px
+    margin-right: 12px
+    
+@media (max-width: $mobile-width)
+  #not-translated-hint
+    padding: 12px 6px
+    text-align: center
+    &:before
+      margin-right: 6px
