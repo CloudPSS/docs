@@ -12,3 +12,4 @@ declare const Graph: any;
 declare const mxConstants: any;
 declare const mxUtils: any;
 declare const mxStencilRegistry: any;
+declare const customSelect: (v: string | NodeList) => void;

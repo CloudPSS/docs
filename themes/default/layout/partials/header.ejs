@@ -3,7 +3,7 @@
   const sidebar = page.sidebar !== false;
 -%>
 <header class="<%- !sidebar ? 'no-sidebar' : ''%>">
-  <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"></a>
+  <a id="logo" href="<%- config.base_url %>" title="<%- config.title %>"><img src="/images/logo.png"></a>
   <a class="button" id="sidebar"></a>
   <nav>
     <form id="search" title="<%- __('search.title') %>" @submit.prevent="submit" :class="{open: suggestOpen}">

@@ -62,13 +62,6 @@ body > header
     font-family: $logo-font
     font-weight: 300
     transition: all $size-transition
-    background: url(../images/logo.png) no-repeat
-    background-size: contain
-    &:after
-      content: attr(title)
-      display: inline
-      margin-left: 48px
-      transition: margin $size-transition, opacity $size-transition
     @media (max-width: 1300px)
       left: 16px
     @media (max-width: $mobile-width)
@@ -78,6 +71,8 @@ body > header
       line-height: @height
       &:after
         margin-left: 32px
+    img
+      height: 100%
 
   nav
     position: absolute
@@ -213,20 +208,40 @@ body > header
         background: url(../images/lang.png) no-repeat center/24px
         width: 40px
         height: 40px
+        padding: 0
         display: inline-block
         vertical-align: middle
         &:hover, &:focus
           background-color: #ddd 
         &:active
           background-color: #eee 
+        select
+          display: none
+        .custom-select-container
+          width: 100%
+          height: 100%
+          .custom-select-panel
+            overflow-y: hidden
+            width: 120px
+            right: 0
+            box-shadow: 0 0 5px $shadow
+          .custom-select-opener
+            opacity: 0
+            width: 100%
+            height: 100%
+            overflow: hidden
+          .custom-select-option
+            padding: 1em
+            line-height: 20px
+            &.is-selected
+              &::before
+                display: none
+              &::after
+                content: '✔'
+                float: right
         @media screen and (max-width: $mobile-width)
           position: absolute
           top: 0
           left: 0
-        > select
-          position: absolute
-          top: 0
-          left: 0
-          width: 100%
-          bottom: 0
-          opacity: 0
+          .custom-select-container .custom-select-panel
+            left: 4px
