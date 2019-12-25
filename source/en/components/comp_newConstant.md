@@ -38,4 +38,4 @@ symbol: newConstant
 
 ## See Also
 
-[时间输入](comp_newTime.html)、[仿真步长输入](comp_newDeltaT.html)
+[Time](comp_newTime.html)、[DeltaT仿真步长输入](comp_newDeltaT.html)

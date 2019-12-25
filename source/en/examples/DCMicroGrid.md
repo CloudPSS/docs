@@ -1,5 +1,5 @@
 ---
-title: DC Microgrid system
+title: DC microgrid system
 type: examples
 author: zhangr
 category: 1000
@@ -7,7 +7,7 @@ order: 600
 ---
 
 ## Description
-The DC Microgrid has been a promising solution for interfacing the solar/wind renewable energy source based distributed generation systems, energy storage systems, eletric vehicles and other DC loads, with less energy conversion efficiency, economy and reliability.This example case provides a simulation of a DC microgrid including an AC grid, solid-state transformer, photovoltaic inverter, energy storage converter, and three-phase AC load to simulate a smart building power system.
+The DC microgrid has been a promising solution for interfacing the solar/wind renewable energy source based distributed generation systems, energy storage systems, eletric vehicles and other DC loads, with less energy conversion efficiency, economy and reliability.This example case provides a simulation of a DC microgrid including an AC grid, solid-state transformer, photovoltaic inverter, energy storage converter, and three-phase AC load to simulate a smart building power system.
 
 The switching modules (solid-state transformer, three-phase H-bridge converter, and half-bridge converter) in this example case use a fast switch search modeling method. Compared with the traditional switching algorithm based on interpolation iteration, this method greatly improves the simulation efficiency while retaining high accuracy. It is especially suitable for source converter to simulation analyze in the microgrids, modular multilevel converters, solid-state transformers, etc. 
 
