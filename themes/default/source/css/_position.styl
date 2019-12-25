@@ -7,21 +7,23 @@
     min-width: $page-min-width
   
   main
-    $padding = 80px
-    $mobile-padding = 40px
     transition: all $size-transition 
     margin: $header-height 0 0
-    padding: $padding 
+    padding: 0 $padding 
+    position: relative
     article
+      padding: $padding 0
       margin: auto
       max-width: $mobile-width - $padding * 2
     @media (max-width: $mobile-width)
       margin-top: $mobile-header-height
-      padding: $mobile-padding
+      padding: 0 $mobile-padding
+      article
+        padding: $mobile-padding 0
     @media (max-width: 720px)
-      padding: $mobile-padding 20px 
+      padding: 0 20px 
     @media (max-width: 480px)
-      padding: $mobile-padding 8px
+      padding: 0 8px
       
   main.with-sidebar
     margin-left: $sidebar-width

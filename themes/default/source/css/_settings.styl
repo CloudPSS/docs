@@ -3,6 +3,11 @@
 hide-for-print()
   @media print
     display: none
+    
+caption-style($counter, $prefix = "", $sep = "." , $suffix = " ")
+  counter-increment: $counter 
+  &::before
+    content: $prefix counter(h2) $sep counter($counter) $suffix
 
 // colors
 $dark   = #2c3e50
@@ -18,6 +23,10 @@ $red = #ff6666
 $info = #1C90F3
 
 $sidebg = alpha(#f9f9f9, 0.95)
+
+// main settings
+$padding = 80px
+$mobile-padding = 40px
 
 // header settings
 $header-inner-height = 40px
