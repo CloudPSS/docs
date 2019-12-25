@@ -1,5 +1,5 @@
 ---
-title: 增益
+title: Gain
 author: 
 author_email:
 

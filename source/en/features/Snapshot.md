@@ -19,11 +19,11 @@ As shown in the figure below, set the `simulation end time` as 2S, and the `snap
 ![断面保存](Snapshot/savesnapshot.png "Snapshot saving page")
 
 {% pullquote success %}
-[info] snapshot saved at 1.5 s.
+[info] Snapshot saved at 1.5 s.
 {% endpullquote %}
 
 {% pullquote tip %}
-Snapshot saving can only be available for **The saved project**.
+Snapshot saving can only be available for **the saved project**.
 {% endpullquote %}
 
 ## Snapshot Importing
@@ -38,7 +38,7 @@ Set the `simulation start time` to be the same as the `snapshot importing time`,
 
 
 {% pullquote success %}
-[info] snapshot loaded at 1.50001 s.
+[info] Snapshot loaded at 1.50001 s.
 {% endpullquote %}
 
 ![断面载入结果](Snapshot/result.png "The result of the snapshot importing")

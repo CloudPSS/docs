@@ -42,7 +42,7 @@ In Components List, multiple simulation components are provided and are classifi
 | Control-Digital Signal | Selector, Logic Gates, Flip-flop, Binary delay, Monostable MultiVibrator, Edge Detector |
 | Control-Coordinate Transformation | Clark Transformation, Polar Rectangular Coordinate converter, Stationary/Rotational transformation, Park Transformation |
 | Control-Singal Generator | Impulse Generator, Triangular Generator, Pulse Generator, Sine Generator, Adjustable FPM Sine Generator, Step Generator, Single Pulse Generator, Surge Gennerator, Ramp Generator, Drop Generator, Random Number Generator |
-| Control-HVDC Control | Phase-locked Oscillator, SST Fire Pulse Generator |
+| Control-HVDC Control | Phase-locked Oscillator, Nearest Level Modulation (NLM), SST Fire Pulse Generator |
 | Control-AC system Control| ST5B、Hydro Governor、 Hydro Turbine |
 
 To find a component, please fill in its name in the search field above the list and press [[Enter]] to search for the component. The below picture shows the searching result of `Resistor`. User can also search component in the Component List based on its classification. For example, to find `Sine Generator`, user could find it in the `Control-Singal Generator` class.

@@ -13,10 +13,7 @@ The model and usage instructions of the CloudPSS template example and the homepa
 * [Photovoltaic grid-connected generation system](PVsystem.html)
 * [Energy storage grid-connected generation system](BESS.html)
 * [IEEE 39-bus system](IEEE39.html) 
-* [DC Microgrid system](DCMicroGrid.html) 
-
-### 移频暂态仿真案例
-* [IEEE39节点系统](IEEE39SFEMT.html)
+* [DC microgrid system](DCMicroGrid.html) 
 
 ### Heating System Simulation Example Case
 * [Regional central heating system](HeatingSystem.html)

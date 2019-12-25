@@ -1,5 +1,5 @@
 ---
-title: 触发器
+title: Flip Flop
 author: 
 author_email:
 
@@ -13,47 +13,47 @@ order: 700
 classname: _newFlipFlop
 symbol: newFlipFlop
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newFlipFlop %}
 
-> **该元件用以实现JK、RS、D、T类触发器。**
+> **This component represents one of four flip-flop configurations: JK, SR, D and T.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Flip-Flop Type: | 触发器种类 | 选择 | 选择触发器的种类为JK、RS、D、T类 |
-| Initial State of Output Q | Q初始状态 | 选择 | 选择触发器的初始状态为“Low”或“High” |
-| Active Clock Trigger Edge | 触发沿选择 | 选择 | 选择触发器的触发沿为“Positive”或“Positive” |
+| Flip-Flop Type: | Flip-Flop type | Select | Select flip flop type as JK、RS、D or T |
+| Initial State of Output Q | Initial state of output | Select | Select the initial state of Q to "Low" or "High" |
+| Active Clock Trigger Edge | Select trigger edge | Select | Select trigger edge to "Positive" or "Negative" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| J | 1×1 |输入J端，仅当触发器种类为JK时有效 |
-| K | 1×1 |输入K端，仅当触发器种类为JK时有效 |
-| C | 1×1 |输入C端，仅当触发器种类为JK时有效 |
-| Q | 1×1 |输出Q端，仅当触发器种类为JK时有效 |
-| Q̅ | 1×1 | 输出Q非端，仅当触发器种类为JK时有效|
-| S | 1×1 |输入S端，仅当触发器种类为RS时有效 |
-| R | 1×1 |输入R端，仅当触发器种类为RS时有效 |
-| C | 1×1 |输入C端，仅当触发器种类为RS时有效 |
-| Q | 1×1 |输入Q端，仅当触发器种类为RS时有效 |
-| Q̅ | 1×1 |输入Q非端，仅当触发器种类为RS时有效 |
-| D | 1×1 |输入D端，仅当触发器种类为D时有效 |
-| C | 1×1 |输入C端，仅当触发器种类为D时有效 |
-| Q | 1×1 |输入Q端，仅当触发器种类为D时有效 |
-| Q̅ | 1×1 |输入Q非端，仅当触发器种类为D时有效 |
-| T | 1×1 |输入T端，仅当触发器种类为T时有效 |
-| C | 1×1 |输入C端，仅当触发器种类为T时有效 |
-| Q | 1×1 |输入Q端，仅当触发器种类为T时有效 |
-| Q̅ | 1×1 |输入Q非端，仅当触发器种类为T时有效 |
+| J | 1×1 | Input pin of J signal, only valid when flip-flop type is JK |
+| K | 1×1 | Input pin of K signal, only valid when flip-flop type is JK |
+| C | 1×1 | Input pin of C signal, only valid when flip-flop type is JK |
+| Q | 1×1 | Output pin of Q signal, only valid when flip-flop type is JK |
+| Q̅ | 1×1 | Output pin of not-Q signal, only valid when flip-flop type is JK |
+| S | 1×1 | Input pin of S signal, only valid when flip-flop type is RS |
+| R | 1×1 | Input pin of R signal, only valid when flip-flop type is RS |
+| C | 1×1 | Input pin of C signal, only valid when flip-flop type is RS |
+| Q | 1×1 | Input pin of Q signal, only valid when flip-flop type is RS |
+| Q̅ | 1×1 | Input pin of not-Q signal, only valid when flip-flop type is RS |
+| D | 1×1 | Input pin of D signal, only valid when flip-floptrigger type is D |
+| C | 1×1 | Input pin of C signal, only valid when flip-flop type is D |
+| Q | 1×1 | Input pin of Q signal, only valid when flip-flop type is D |
+| Q̅ | 1×1 | Input pin of not-Q signal, only valid when flip-flop type is D |
+| T | 1×1 | Input pin of T signal, only valid when flip-flop type is T |
+| C | 1×1 | Input pin of C signal, only valid when flip-flop type is T |
+| Q | 1×1 | Input pin of Q signal, only valid when flip-flop type is T |
+| Q̅ | 1×1 | Input pin of not-Q signal, only valid when flip-flop type is T |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 
