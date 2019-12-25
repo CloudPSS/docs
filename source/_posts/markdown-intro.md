@@ -1,6 +1,6 @@
 ---
 title: MarkDown 语法介绍 
-author: 刘正元
+author: lzy
 author_email: lzy@live.in 
 date: 2018-08-18 12:23:34
 ---

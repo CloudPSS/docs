@@ -1,6 +1,6 @@
 ---
 title: Hexo 标签语法介绍 
-author: 刘正元
+author: lzy
 author_email: lzy@live.in 
 date: 2018-08-18 14:23:34
 ---
