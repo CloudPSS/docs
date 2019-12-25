@@ -1,6 +1,6 @@
 ---
 title: Front-matter 介绍 
-author: 刘正元 
+author: lzy 
 author_email: lzy@live.in 
 date: 2018-08-08 12:23:34 
 ---
@@ -11,7 +11,7 @@ Front-matter 是文件最上方以 `---` 分隔的区域，用于指定文件的
 ---
 ## 基本数据
 title: 写作说明 
-author: 刘正元 
+author: lzy 
 author_email: lzy@live.in
 
 date: 2018-08-08 12:23:34 
