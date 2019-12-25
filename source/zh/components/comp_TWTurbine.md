@@ -37,8 +37,6 @@ symbol: TW
 ## 使用说明
 BPA的TW原动机控制框图如下所示。
 ![等效图](comp_Governors/TW.png)
-## 测试模型
-[]()显示了TW的典型应用。
 
 ## 相关元件
 

@@ -7,7 +7,7 @@ date: 2019/12/24 10:26:16
 updated: 2019/12/24 10:26:16
 
 type: components
-category: -4001
+category: -5001
 order: 300
 
 classname: _STEAM_GOV_1
@@ -46,8 +46,6 @@ symbol: STEAM_GOV_1
 IEEE的STEAM_GOV1调速器控制框图如下所示。
 ![等效图](comp_Governors/STEAM_GOV1.png)
 
-## 测试模型
-[]()显示了STEAM_GOV_1的典型应用。
 
 ## 相关元件
 

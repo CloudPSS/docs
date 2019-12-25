@@ -1,5 +1,5 @@
 ---
-title: 异步电机矢量控制
+title: 异步电机矢量控制系统
 type: examples
 author: zr
 author_email: 

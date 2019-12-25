@@ -1,5 +1,5 @@
 ---
-title: 积分器
+title: Integrator
 author: 
 author_email:
 
@@ -13,47 +13,47 @@ order: 200
 classname: _newIntegrator
 symbol: newIntegrator
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newIntegrator %}
 
-> **该元件用以实现积分器。**
+> **This component models a resettable integrator.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入积分器的名称（可缺省） |
-| Time Constant | s | 时间常数 | 实数（常量） | 积分器的时间常数 |
-| Initial Output Value |  | 初始输出值 | 实数（常量） | 积分器的初始输出值 |
-| Limit Output? |  | 是否限制输出 | 选择 | 选择是否限制该环节的输出，可配置为“Fixed Limits”或“Dynamic Limits” |
-| Resettable? |  | 积分器是否可重置？ | 选择 | 选择积分器是否可重置 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Time Constant | s | Time constant | Real number (Const) | Time constant of the integrator |
+| Initial Output Value |  | Initial output value | Real number (Const) | Initial output value of integrator |
+| Limit Output? |  | Limit output? | Select | Select to limit the output of integrator or not. Could be configured as "Fixed Limits" or "Dynamic Limits" |
+| Resettable? |  | Resettable? | Select | Select whether the integrator can be reset or not |
 
 ### Fixed Limits
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Maximum Limit |  | 输出上限 | 实数（常量） | 元件输出上限，仅当“限制输出”配置为“Fixed Limits”时有效 |
-| Minimum Limit |  | 输出下限 | 实数（常量） | 元件输出下限，仅当“限制输出”配置为“Fixed Limits”时有效 |
+| Maximum Limit |  | Maximum limit | Real number (Const) | Maximum limit for the integrator, only valid when "Limit Output" is selected to "Fixed limits" |
+| Minimum Limit |  | Minimum limit | Real number (Const) | Minimum limit for the integrator, only valid when "Limit Output" is selected to "Fixed limits" |
 
 ### Dynamic Limits
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Maximum Limit | 输出上限（以@开头的信号名） | 文本 | 元件输出上限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
-| Minimum Limit | 输出下限（以@开头的信号名） | 文本 | 元件输出下限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
+| Maximum Limit | Maximum limit (Starting with @) | Text | Maximum limit for the integrator, only valid when "Limit Output" is selected to "Dynamic limits" |
+| Minimum Limit | Minimum limit (Starting with @) | Text | Minimum limit for the integrator, only valid when "Limit Output" is selected to "Dynamic limits" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 | 输出端口|
-| Reset Trigger | 1×1 |重置触发输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效|
-| Reset Value | 1×1 |重置后元件输出值的输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin|
+| Reset Trigger | 1×1 | Reset trigger input pin, and triggered when the input is high level. Only valid when "resettable" item is "yes" |
+| Reset Value | 1×1 | The value of the output after reset. Only valid when "resettable" item is "yes" |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[微分器](comp_newDerivative.html)、[PI控制器](comp_newPICtrl.html)
+[Derivative](comp_newDerivative.html)、[PI Controller](comp_newPICtrl.html)

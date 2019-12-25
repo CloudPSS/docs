@@ -34,6 +34,10 @@ components:
         en: Three-phase AC components
       order: 3004
     - name:
+        zh: 旋转电机元件
+        en: Electric rotating machinery
+      order: 3009
+    - name:
         zh: 电力电子模块
         en: Power electronics module
       order: 3005
@@ -98,17 +102,29 @@ components:
         en: AC system
       order: -3010
     - name:
-        zh: 励磁器
-        en: Exciters
+        zh: BPA-励磁器
+        en: BPA - Exciters
       order: -4000
     - name:
-        zh: 调速器
-        en: Governors & Turbines
+        zh: BPA-原动机及调速器
+        en: BPA - Governors & Turbines
       order: -4001
     - name:
-        zh: 电力系统稳定器(PSS)
-        en: Power system stabilizers(PSS)
+        zh: BPA-电力系统稳定器(PSS)
+        en: BPA - Power system stabilizers(PSS)
       order: -4002
+    - name:
+        zh: IEEE Std.-励磁器
+        en: IEEE Std. Exciters
+      order: -5000
+    - name:
+        zh: IEEE Std.-原动机及调速器
+        en: IEEE Std. Governors & Turbines
+      order: -5001
+    - name:
+        zh: IEEE Std.-电力系统稳定器
+        en: IEEE Std. Power system stabilizers(PSS)
+      order: -5002
   - name:
       zh: 热网
       en: Heat

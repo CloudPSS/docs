@@ -13,31 +13,31 @@ order: 100
 classname: _newGain
 symbol: newGain
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newGain %}
 
-> **该元件实现对输入信号的比例放大。函数式为：**
+> **This component multiply input signal by the factor specified. Its math function is:**
 > $$y(t) = Ku(t)$$
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入增益环节的名称（可缺省） |
-| Gain Constant |  | 增益常数 | 实数（常量） | 增益常数K，即放大或缩小的倍数 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Gain Constant |  | Gain constant | Real number (Const) | Gain constant K |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 | 输入端口|
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[乘法器](comp_newMultiply.html)
+[Multiplier](comp_newMultiply.html)

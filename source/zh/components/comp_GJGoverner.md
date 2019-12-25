@@ -63,8 +63,6 @@ symbol: GJ
 ## 使用说明
 BPA的GJ调速器控制框图如下所示。
 ![等效图](comp_Governors/GJ.png)
-## 测试模型
-[]()显示了GJ的典型应用。
 
 ## 相关元件
 

@@ -35,6 +35,7 @@ symbol: newExpLoad
 | Voltage Index for Q |  | 无功功率-电压指数 | 实数（常量） | 无功功率-电压指数$NQ$ |
 | Freq Index for P |  | 有功功率-频率系数 | 实数（常量） |  有功功率-频率系数$K_{PF}$ |
 | Freq Index for Q |  | 无功功率-频率系数 | 实数（常量） | 无功功率-频率系数$K_{QF}$ |
+| Initial Voltage |  | 初始电压幅值，由潮流计算决定 | 实数（常量） | 初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |

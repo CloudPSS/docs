@@ -71,8 +71,6 @@ symbol: FQ
 ## 使用说明
 BPA的FQ励磁器控制框图如下所示。
 ![等效图](comp_Exciters/FQ&FR.png)
-## 测试模型
-[]()显示了FQ的典型应用。
 
 ## 相关元件
 

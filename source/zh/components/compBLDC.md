@@ -7,7 +7,7 @@ date: 2019/12/23
 updated: 2019/12/23
 
 type: components
-category: 3004
+category: 3009
 order: 2001
 
 classname: BLDC

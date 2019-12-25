@@ -1,5 +1,5 @@
 ---
-title: IEEE39节点系统
+title: IEEE标准系统
 type: examples
 author: zhangr
 category: 1000
@@ -191,7 +191,7 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 
 #### 潮流电机参数
 
-以下为用于潮流计算的电机参数设置，这些参数在发电机元件的Power Flow Data栏。
+以下为用于潮流计算的电机参数设置，这些参数在发电机元件的 Power Flow Data 栏。
 
 |  | Bus Type | Injected Active Power [MW] | Bus Voltage Magnitude [p.u.] |
 | :--- | :--- | :--- | :--- |

@@ -7,7 +7,7 @@ date: 2019/12/24 10:26:16
 updated: 2019/12/24 10:26:16
 
 type: components
-category: -4002
+category: -5002
 order: 300
 
 classname: _PSS1A
@@ -46,8 +46,6 @@ symbol: PSS1A
 ## 使用说明
 IEEE的PSS1A励磁器控制框图如下所示。
 ![等效图](comp_PSSs/PSS1A.png)
-## 测试模型
-[]()显示了PSS1A的典型应用。
 
 ## 相关元件
 

@@ -1,5 +1,5 @@
 ---
-title: 周期最大/小值
+title: Maximum/Minimum in One Cycle
 author: 
 author_email:
 
@@ -13,28 +13,30 @@ order: 1200
 classname: _newMaxMinOneCycle
 symbol: newMaxMinOneCycle
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newMaxMinOneCycle %}
-> **该元件通过定义一个时间窗口，滑动求取输入信号在窗口内的最大/最小值。** 
+> **This Component caculates the maximum or minimum value of the input signal in a defined slide time window.** 
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name | | 元件名称 | 文本 | 此处输入周期最大/最小值的名称（可缺省） |
-| Base Frequency | Hz | 频率 | 实数（常量） | 周期时间窗口对应的频率 |
-| Function |  | 选择最大或最小功能 | 选择 | 选择功能为为周期最大值或周期最小值 |
+| Name | | Name of component | Text | Enter the name of this component |
+| Base Frequency | Hz | Frequency | Real number (Const) | The frequency of the slide time window |
+| Function |  | Function type | Select | Select "Maximum" or "Minimum" function |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin|
 
-## 使用说明
+## Using Instructions
 
-## 相关元件
 
-[最大/最小值](comp_newMaxMin.html)
+
+## See Also
+
+[Maximum/Minimum Fuction](comp_newMaxMin.html)

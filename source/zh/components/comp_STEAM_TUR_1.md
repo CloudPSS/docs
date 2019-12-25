@@ -7,7 +7,7 @@ date: 2019/12/24 10:26:16
 updated: 2019/12/24 10:26:16
 
 type: components
-category: -4001
+category: -5001
 order: 301
 
 classname: _STEAM_TUR_1
@@ -61,8 +61,6 @@ symbol: STEAM_TUR_1
 ## 使用说明
 IEEE的STEAM_TUR1原动机控制框图如下所示。
 ![等效图](comp_Governors/STEAM_TUR1.png)
-## 测试模型
-[]()显示了STEAM_TUR_1的典型应用。
 
 ## 相关元件
 

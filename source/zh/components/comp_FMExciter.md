@@ -71,8 +71,6 @@ symbol: FM
 ## 使用说明
 BPA的FM励磁器控制框图如下所示。
 ![等效图](comp_Exciters/FM&FN.png)
-## 测试模型
-[]()显示了FM的典型应用。
 
 ## 相关元件
 
