@@ -4,11 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <script>
+        const sls = Object.keys((await(await fetch("/sitemap.json")).json())[""].name)
         const cl = localStorage.lang || 'zh'
-        if (location.pathname.split('/')[1] === cl)
+        const pl = location.pathname.split('/')[1];
+        if (pl === cl)
             location = `/${cl}/`
-        else
+        else if (sls.indexOf(pl) < 0)
             location = `/${cl}${location.pathname}`
+        else
+            location = `/zh${location.pathname}`
     </script>
 </head>
 
