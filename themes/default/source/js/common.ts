@@ -28,6 +28,7 @@
     initFlowAndChart();
     initMxGraph();
     initFootnotes();
+    initNotTranslatedHint();
 
     function initFootnotes() {
         Array.from(document.querySelectorAll('main sup.footnote-ref > a') as NodeListOf<HTMLAnchorElement>).forEach(a => {
@@ -154,6 +155,7 @@
                 const box = document.createElement('figure');
                 const cap = document.createElement('figcaption');
                 cap.innerText = title;
+                cap.classList.add('title')
                 container.title = alt;
                 const img = container.cloneNode() as HTMLImageElement;
                 box.setAttribute('id', title)
@@ -461,6 +463,13 @@
             Promise.all(tasks)
                 .then(() => mxEvent.release(document))
                 .catch(() => mxEvent.release(document));
+    }
+
+    function initNotTranslatedHint() {
+        const hint = document.getElementById('not-translated-hint');
+        const lang = location.search.match(/notTranslated=([^&]+)/i)?.[1];
+        if (hint && lang)
+            hint.dataset.lang = lang;
     }
 
     function fetchJsonP<T>(url: string | URL): Promise<T> {

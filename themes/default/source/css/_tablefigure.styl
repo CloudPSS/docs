@@ -1,10 +1,5 @@
 @import "_settings"
 
-caption-style($counter, $prefix = "", $sep = "." , $suffix = " ")
-  counter-increment: $counter 
-  &::before
-    content: $prefix counter(h2) $sep counter($counter) $suffix
-
 body
   counter-reset: article h2 h3 h4 h5 h6 figure
     
@@ -25,28 +20,24 @@ article
     h{i}
       counter-increment: s("h%s", i)
     
-  figure:not(.highlight) > figcaption, table > caption
+  figure > figcaption, table > caption
     margin: 0.5em auto
     color: darken($theme, 30)
     text-align: center
     font-size: 0.8em;
     font-weight: bold
 
-  figure:not(.highlight)
+  figure
     display: block
     margin: 1em auto 0.5em
-    > figcaption
-      caption-style(figure, '图 ')
 
-  > table:not(.highlight)
+  table
     border-spacing: 0
     border-collapse: collapse
     margin: 1.2em auto
     text-align: left
     &[id]
       margin-top: 0.5em
-    > caption
-      caption-style(table, '表 ')
     code
       background-color: darken($codebg, 5)
     > tbody > tr:hover
