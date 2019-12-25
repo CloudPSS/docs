@@ -1,5 +1,5 @@
 ---
-title: 限幅器
+title: Hard Limiter
 author: 
 author_email:
 
@@ -13,34 +13,34 @@ order: 100
 classname: _newLimiter
 symbol: newLimiter
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newLimiter %}
 
-> **该元件用以实现对输入信号的限幅输出功能。**
+> **This component is used to limit the amplitude of the input signal, If the signal exceeds either limit, the output value remains at that limit.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入限幅器的名称（可缺省） |
-| Limit Type |  | 限幅种类 | 选择 | 选择限幅器的种类，可配置为“Fixed Limits”或“Dynamic Limits” |
-| Upper Limit |  | 限幅器上限 | 实数（常量） | 元件输出上限，仅当“限幅器种类”配置为“Fixed Limits”时有效 |
-| Lower Limit |  | 限幅器下限 | 实数（常量） | 元件输出下限，仅当“限幅器种类”配置为“Fixed Limits”时有效 |
-| Upper Limit Signal |  | 限幅器上限（以@开头的信号名） | 文本 | 元件输出上限，仅当“限幅器种类”配置为“Dynamic Limits”时有效 |
-| Lower Limit Signal |  | 限幅器下限（以@开头的信号名） | 文本 | 元件输出下限，仅当“限幅器种类”配置为“Dynamic Limits”时有效 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Limit Type |  | Limit type | Select | Select limit type as "Fixed Limits" or "Dynamic Limits" |
+| Upper Limit |  | Upper limit | Real number (Const) | Upper limit for the hard limiter, only valid when "Limit Type" is selected to "Fixed Limits" |
+| Lower Limit |  | Lower limit | Real number (Const) |Lower limit for the hard limiter, only valid when "Limit Type" is selected to "Fixed Limits" |
+| Upper Limit Signal |  | Upper limit signal (Starting with @) | Text | Upper limit for the hard limiter, only valid when "Limit Type" is selected to "Dynamic Limits" |
+| Lower Limit Signal |  | Lower limit signal (Starting with @) | Text | Lower limit for the hard limiter, only valid when "Limit Type" is selected to "Dynamic Limits" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin|
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

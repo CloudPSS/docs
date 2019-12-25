@@ -48,9 +48,13 @@ br
   word-spacing: 0
    
 a
-  text-decoration: none 
   &.footnote-backref
     user-select: none
+  text-decoration: none
+  @media print
+    text-decoration: underline
+  // &:link:after, &:visited:after 
+  //   content:" [" attr(href) "] "
 
 .print-only
   @media screen
@@ -66,6 +70,7 @@ a
     color: #000
   mark
     border: 2px solid yellow !important
+    background: none
   h1, h2, h3, h4, h5
     color: #000
     page-break-after: avoid
@@ -74,8 +79,7 @@ a
     
   a.footnote-backref, a.markdownIt-Anchor
     display: none
-  // a:link:after, a:visited:after 
-  //   content:" [" attr(href) "] "
   sup.footnote-ref > a
+    text-decoration: none
     &:link:after, &:visited:after
       content:""

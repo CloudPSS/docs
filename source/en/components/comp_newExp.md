@@ -41,4 +41,4 @@ symbol: newExp
 
 ## See Also
 
-[Logarithmi Function](comp_newLog.html)
+[Logarithm Function](comp_newLog.html)

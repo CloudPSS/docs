@@ -1,5 +1,5 @@
 ---
-title: 双端MMC型高压直流输电测试系统
+title: 模块化多电平变流器及其控制系统
 type: examples
 author: zhangr
 category: 1000

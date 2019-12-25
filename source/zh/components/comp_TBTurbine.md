@@ -43,8 +43,6 @@ symbol: TB
 ## 使用说明
 BPA的TB原动机控制框图如下所示。
 ![等效图](comp_Governors/TB.png)
-## 测试模型
-[]()显示了TB的典型应用。
 
 ## 相关元件
 

@@ -1,5 +1,5 @@
 ---
-title: IEEE39节点系统
+title: IEEE标准系统
 type: examples
 author: tanzhd
 category: 1500

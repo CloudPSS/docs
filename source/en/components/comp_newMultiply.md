@@ -1,5 +1,5 @@
 ---
-title: 乘法器
+title: Multiplier
 author: 
 author_email:
 
@@ -13,12 +13,12 @@ order: 200
 classname: _newMultiply
 symbol: newMultiply
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newMultiply %}
 
-> **该元件实现两个一维输入信号的乘法运算。**
+> **This component is used to multiply two one-dimensional input signals.**
 
-## 参数列表
+## Parameter
 ### Configuration
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |

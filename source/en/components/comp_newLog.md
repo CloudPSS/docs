@@ -1,5 +1,5 @@
 ---
-title: 对数函数
+title: Logarithm Function
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 1000
 classname: _newLog
 symbol: newLog
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newLog %}
 
-> **该元件实现对数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
+> **This component output the logatithm of the input signal, either base of 10, a natural constant e, or a custom constant a may be used. The function is：**
 > $y(t) = \log u(t)$或$y(t) = \ln u(t)$或$y(t) = {\log _a}u(t)$，$u(t)>0$。
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入对数函数的名称（可缺省） |
-| Logarithm Type |  | 底数选择 | 选择 | 选择该对数函数的底数为10、自然常数e或自定义常数a |
-| Value of Base a |  | 底数a的值 | 实数（常量） | 输入底数a的值，仅当底数选择为a时有效 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Logarithm Type |  | Select base value | Select | Select base of "Common", "Natural", or "Base a", and the base value is 10, natural constant e, and  constant e or custom constant a respectively |
+| Value of Base a |  | Value of base a | Real number (Const) | The value of base a, only valid when the "Logarithm Type" is "Base a" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin|
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[指数函数](comp_newExp.html)
+[Exponential Function](comp_newExp.html)

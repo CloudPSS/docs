@@ -1,5 +1,5 @@
 ---
-title: 最大/最小值
+title: Maximum/Minimum Fuction
 author: 
 author_email:
 
@@ -13,43 +13,43 @@ order: 1100
 classname: _newMaxMin
 symbol: newMaxMin
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newMaxMin %}
 
-> **该元件对2-7个一维输入信号进行比较，并输出输入信号中的最大值或最小值**。
+> **This component output the maximum or minimum of several input signals, and up to seven inputs may enter the block.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入最大/最小值的名称（可缺省） |
-| Function | 函数类型 | 选择 | 选择该函数为最大值或最小值 |
-| Input A Enabled? | A端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input B Enabled? | B端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input C Enabled? | C端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input D Enabled? | D端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input E Enabled? | E端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input F Enabled? | F端口是否可用？ | 选择 | 选择该输入端是否作用 |
-| Input G Enabled? | G端口是否可用？ | 选择 | 选择该输入端是否作用 |
+| Name | Name of component | Text | Enter the name of this component |
+| Function | Function type | Select | Select "Maximum" or "Minimum" function |
+| Input A Enabled? | Input A enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input B Enabled? | Input B enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input C Enabled? | Input C enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input D Enabled? | Input D enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input E Enabled? | Input E enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input F Enabled? | Input F enabled? | Select | Select to "Enable" or "Disable" this input pin |
+| Input G Enabled? | Input G enabled? | Select | Select to "Enable" or "Disable" this input pin |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin nam | Dimension | Description |
 | :--- | :--:  | :--- |
-| A | 1×1 |输入端口A，仅在该端口使能时有效 |
-| B | 1×1 |输入端口B，仅在该端口使能时有效 |
-| C | 1×1 |输入端口C，仅在该端口使能时有效 |
-| D | 1×1 |输入端口D，仅在该端口使能时有效 |
-| E | 1×1 |输入端口E，仅在该端口使能时有效 |
-| F | 1×1 |输入端口F，仅在该端口使能时有效 |
-| G | 1×1 |输入端口G，仅在该端口使能时有效 |
-| Output | 1×1 |输出端口 |
+| A | 1×1 | Input A，only valid when this pin is enabled |
+| B | 1×1 | Input B，only valid when this pin is enabled |
+| C | 1×1 | Input C，only valid when this pin is enabled |
+| D | 1×1 | Input D，only valid when this pin is enabled |
+| E | 1×1 | Input E，only valid when this pin is enabled |
+| F | 1×1 | Input F，only valid when this pin is enabled |
+| G | 1×1 | Input G，only valid when this pin is enabled |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[周期最大最小值](comp_newMaxMinOneCycle.html)
+[Maximum/Minimum in One Cycle](comp_newMaxMinOneCycle.html)

@@ -71,8 +71,6 @@ symbol: FV
 ## 使用说明
 BPA的FV励磁器控制框图如下所示。
 ![等效图](comp_Exciters/FV.png)
-## 测试模型
-[]()显示了FV的典型应用。
 
 ## 相关元件
 

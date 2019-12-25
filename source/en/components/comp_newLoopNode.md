@@ -1,5 +1,5 @@
 ---
-title: 代数环解环点
+title: Loop Break Node
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 500
 classname: _newLoopNode
 symbol: newLoopNode
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newLoopNode %}
 
-> **该元件用以实现代数环解环功能。**
+> **This component is used to implement the algebraic loop break function.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入代数环解环点的名称（可缺省） |
-| Initial Value |  | 初始值 | 实数（常量） | 该元件的初始输出值 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Initial Value |  | Initial value | Real number (Const) | Initial output value of the component |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
+| Input | 1×1 | Input pin |
 
-## 使用说明
+## Using Instructions
 
-该元件用以在出现控制环（代数环）的仿真算例中，通过加入一步延时的方法解开环，以使仿真能继续进行。 
+This component is used to solve the loop in the simulation example where the Control loop (algebraic loop) appears by adding a one-step delay method, so that the simulation can continue.
 
-通常，当搭建好一个含有反馈环的系统后（如图），点击开始仿真，`系统信息`会报多个`警告`。
+Usually, if a system with a feedback loop (as shown in the figure) is set up, when clicking `Start Simulation`, the `system information` will report multiple `warnings`.
 
 ![带环系统](newLoopNode/loop.png)
 
@@ -46,13 +46,13 @@ symbol: newLoopNode
 3. **[warning]** Node 1 in component newGain-2 will be chosen as loop node with initial value 0.
 {% endpullquote %}
 
-此时，CloudPSS通过内置的延时解环算法，在`newGain-1`元件和`newGain-2`元件处各加入了一个延时，此时系统的反馈环被打开，从而可以正常仿真。
+At this time, CloudPSS adds a delay to each of the `newGain-1` component and the `newGain-2` component through the built-in loop-solving algorithm. And the feedback loop of the system is broken, so that the simulation performs normally.
 
-但自动的解环算法往往不是最优的。因此，建议用户采用本元件进行解环。例如，对上图所示的控制环，可在输出位置加入一步延时，即可解开反馈环。还可为解环后反馈路径设定一个初值，以降低解环带来的误差。
+However, the automatic loop-solving algorithm is often not optimal. Therefore, users are advised to use this component to break the loop. For example, for the control loop shown above, the feedback loop could be solved by adding a one-step delay to the output position. It is also possible to set an initial value for the feedback path after the loop is solved to reduce the error caused by the loop-solving algorithm.
 
 ![带环系统](newLoopNode/breakloop.png)
 
 
-## 相关元件
+## See Also
 
 
