@@ -1,5 +1,5 @@
 ---
-title: 光伏并网发电系统
+title: Photovoltaic grid-connected generation system
 type: examples
 author: songyk
 author_email: songyankan@cloudpss.net
@@ -7,47 +7,47 @@ category: 1000
 order: 300
 ---
 
-## 描述
-随着电力电子变换技术的进步，太阳能光伏逆变并网发电比例逐步提升。对集中式、分布式光伏发电系统的详细建模和仿真对于研究光伏并网带来的影响具有重要意义。
+## Description
+With the advancement of power electronic conversion technology, the proportion of Photovoltaic grid-connected generation system has gradually increased. Detailed modeling and simulation of centralized and distributed photovoltaic generation systems is of great significance for studying the impact of photovoltaic grid-connected.
 
-CloudPSS提供了光伏并网发电系统的详细模型和平均模型，并提供了两种模型的对比。用户可根据需要，自行选择相应的模型，并在此基础上进行修改和研究。
+CloudPSS provides a detailed model and average model of a PV grid-connected generation system and provides a comparison of the two models. Users can select the corresponding model according to their needs, and modify and research on the basis.
 
-## 模型介绍
+## Model Introduction
 
-光伏并网发电系统由光伏电池组的工程参数模型（参数更易获取）、电压源变换器（详细/平均模型）、变流器控制系统和最大功率点跟踪（MPPT）算法构成。
+The photovoltaic grid-connected generation system consists of an engineering parameter model of the photovoltaic cell stack (parameters are more easily available), a voltage source converter (detailed/average model), a converter control system, and a maximum power point tracking (MPPT) algorithm.
 
-其中，电压源变换器的详细模型由6个分立的IGBT及其反并联二极管组成，如下图。
+Among them, the detailed model of the voltage source converter is composed of six discrete IGBTs and their anti-parallel diodes, as shown below.
 ![详细模型](PVsystem/PVsystem.png)
 
-变换器的平均模型由交流侧3个受控电压源和直流侧一个受控电流源组成，如下图。
+The average model of the converter consists of three controlled voltage sources on the AC side and one controlled current source on the DC side, as shown below.
 ![平均模型](PVsystem/PVsystem_avm.png)
 
-变流器的控制系统采用定直流电压-无功功率控制（VQ控制）。其中，直流电压给定值由MPPT控制模块指定。详细模型的控制系统由电网电压定向、电压环-电流环双闭环控制、参考信号生成、SPWM控制四部分构成。MPPT采用扰动算法。
+The converter's control system uses constant DC voltage-reactive power control (VQ control). Among them, the DC voltage reference value is specified by the MPPT control module. The control system of detailed model consists of four parts: grid voltage orientation, voltage-loop & current-loop double closed loop control, reference signal generation, and SPWM control. MPPT uses a perturbation algorithm.
 
 ![详细模型控制系统](PVsystem/PVsystem_ctrl.png)
 
-平均模型的控制系统省略了SPWM控制，但增加了变流器平均模型控制（其主要作用是保证交流侧和直流侧的功率平衡）。
+The average model's control system omits the SPWM control, but adds the averager model control of the converter (the main function is to ensure the power balance between the AC side and the DC side).
 
 ![平均模型控制系统](PVsystem/PVsystem_avm_ctrl.png)
 
-## 仿真
+## Simulation
 
-根据所选择的模型设定仿真步长，对光伏并网发电系统进行电磁暂态仿真。其中，详细模型由于含有离散开关事件，建议在`格式面板`->`电磁暂态`>`求解器设置`处勾选`开关/离散事件处理增强`选项，采用较小的仿真步长进行仿真。若PWM载波频率为$f_c$，则建议仿真步长应小于$1/({20f_c})$。选用平均模型时，由于不存在开关事件，故可选择`常规（默认）`选项，设置较高的仿真步长（建议50μs，通常不超过100μs）。 
+The simulation step size is set according to the selected model, and the electromagnetic transient simulation of the photovoltaic grid-connected generation system is performed. Among them, the detailed model has discrete switching events. It is recommended to check the `Switch/Discrete Event Processing Enhancement` option in the `Format Panel`->`Electromagnetic Transient`->`Solver Settings`  and simulate with a smaller simulation step. If the PWM carrier frequency is $f_c$, it is recommended that the simulation step size be less than $1/({20f_c})$. When using the average model, since there is no switching event, the `Normal (default)` option can be selected to set a higher simulation step size (50 μs is recommended, usually no more than 100 μs).
 
-### 仿真1：稳态光照、温度突变
+### Test1：Illumination, and temperature change
 
-将详细模型和平均模型建立在统一算例工程中，保持详细模型和平均模型的光照、温度等外界条件恒定，禁用MPPT控制（算例中MPPT控制由一个0.2s从0到1的阶跃信号控制，更改阶跃信号的Final Value为0即可禁用MPPT控制），设置算例的起止时间及积分步长（5μs）等基本信息。点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，即可得到仿真结果。绘制直流电压、有功/无功功率的对比图。
+The detailed model and the average model are built in the unified example project, and the external conditions such as illumination and temperature of the detailed model and the average model are kept constant, and MPPT control is disabled. (In the example, the use of MPPT algorithm is controlled by a step signal from 0 to 1 at 0.2s. Change the Final Value of the step signal to 0 to disable the MPPT algorithm), and set basic information such as the start and end time of the example case and the integration step (5μs). Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result. Draw a comparison figure of DC voltage and active/reactive power.
 
 ![直流电压](PVsystem/PVsystem_udc.png)
-1s时光照和温度发生了变化，可见，直流电压和有功功率均有小幅调整。
+The illumination and temperature have changed at 1s. It can be seen that the DC voltage and active power are slightly adjusted.
 ![直流电压放大图](PVsystem/PVsystem_udc_zoom.png)
 ![有功功率](PVsystem/PVsystem_p.png)
 
-### 仿真2：光照、温度变化下MPPT控制
+### Test2：MPPT control under illumination and temperature change
 
-设定光照、温度分别按照1Hz和0.8Hz的频率随机波动，启动MPPT控制，对比详细模型和平均模型的仿真结果。
+The illumination and temperature are randomly fluctuated according to the frequency of 1 Hz and 0.8 Hz respectively, and the MPPT algorithm is started to compare the simulation results of the detailed model and the average model.
 ![光照变化](PVsystem/PVsystem_Radiation.png)
 ![直流电压](PVsystem/PVsystem_udc_sim2.png)
 ![直流电流](PVsystem/PVsystem_p_sim2.png)
 
-可见，详细模型和平均模型结果一致。在实际应用时，若需研究控制算法、系统级动态，为提升仿真效率，可采用平均模型。
+It can be seen that the detailed model and the average model result are consistent. In practical applications, if you need to study control algorithms and system-level dynamics, to improve simulation efficiency, an average model can be used.

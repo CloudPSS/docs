@@ -1,5 +1,5 @@
 ---
-title: 直流电压源
+title: DC Voltage Source
 author: 
 author_email:
 
@@ -13,54 +13,54 @@ order: 200
 classname: _newDCVoltageSource
 symbol: newDCVoltageSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDCVoltageSource %}
 
-> **该元件用以建模直流电压源。**
+> **This component is used to model the DC voltage source.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Source Name |  | 元件名称 | 文本 | 此处输入直流电压源的名称（可缺省） |
-| Is This Source Grounded? |  | 电压源一端是否接地？ | 选择 | 选择“Yes”或“No”以使电压源一端接地或不接地 |
-| Rated Voltage Magnitude | kV | 输出电压幅值 | 实数（常量） | 电压源输出电压幅值 |
-| Resistance | Ω | 内阻 | 实数（常量） | 电压源额定内阻 |
-| Start-up Type |  | 启动方式 | 选择 | 选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
-| Voltage Ramp Up Time | s | 启动时间 | 实数（常量） | 输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
-| Voltage Time Constant | s | 启动时间常数 | 实数（常量） | 输入极点时间常数，仅当“启动方式”项为“RealPoleRamp”时生效 |
+| Source Name |  | Name of component | Text | Enter the name of DC voltage source (Default) |
+| Is This Source Grounded? |  | Is this source grounded? | Select选择 | Select "Yes" or "No" to ground or unground the voltage source Negative terminal |
+| Rated Voltage Magnitude | kV | Rated voltage magnitude | Real number (Const) | Output voltage magnitude of DC voltage source |
+| Resistance | Ω | Resistance | Real number (Const) | Rated resistance of DC voltage source |
+| Start-up Type |  | Start-up type | Select | Select start-up type of DC voltage source as "Linear Ramp" or "Real Pole Ramp" |
+| Voltage Ramp Up Time | s | Startup time | Real number (Const) | Enter the startup time, only when the "Start-up Type" item is "Linear Ramp" |
+| Voltage Time Constant | s | Startup time constant | Real number (Const)实 | Enter the startup constant, only when the "Start-up Type" item is "Real Pole Ramp" |
 
 ### Fault Setting
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Is This a Fault Source ? |  | 是否为故障电压源 | 选择 | 选择“Yes”或“No”以选择是否为故障电压源|
-| Fault Start Time | s | 故障开始时间 | 实数（常量） | 故障开始的时间，仅当“是否为故障电压源”项选择"Yes"时有效 |
-| Fault End Time | s | 故障结束时间 | 实数（常量） | 故障结束的时间，仅当“是否为故障电压源”项选择"Yes"时有效 |
-| Drop Ratio | p.u. | 故障电压降 | 实数（常量） | 故障时间电压的标幺值，仅当“是否为故障电压源”项选择"Yes"时有效|
+| Is This a Fault Source ? |  | Is this a fault source? | Select | Select "Yes" or "No" to set the source as a fault source or non-fault source |
+| Fault Start Time | s | Fault start time | Real number (Const) | Fault start time is valid only when "Yes" is selected for the "is this a fault source" item |
+| Fault End Time | s | Fault end time | Real number (Const) | Fault end time is valid only when "Yes" is selected for the "is this a fault source" item |
+| Drop Ratio | p.u. | Drop ratio | Real number (Const) | Drop Ratio is valid only when "Yes" is selected for the "is this a fault source" item |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 电压源端电压 | 文本 | 此处输入电压源电压量测信号的标签，以#号开头，如#Va |
-| Source Current \[kA\] | 电压源输出电流 | 文本 | 此处输入电压源输出电流量测信号的标签，以#号开头，如#Ia |
+| Source Voltage \[kV\] | Source voltage | Text | Enter the measurement signal label of the voltage of DC Voltage Source, starting with #, such as #Va |
+| Source Current \[kA\] | Source current | Text | Enter the measurement signal label of the current of DC Voltage Source, starting with #, such as #Ia |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 1×1 |电压源的负端（参考方向），仅当电压源非接地时有效 |
-| Pin + | 1×1 |电压源的正端（参考方向）|
+| Pin - | 1×1 | Negative terminal, only valid when the power source is not grounded |
+| Pin + | 1×1 | Positive terminal |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-若电压源的内阻为0，CLoudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+If the internal resistance of the voltage source is zero, CloudPSS will set it to the `ideal voltage source` automatically. However, multiple ideal voltage sources cannot be connected in parallel or in a loop (in violation of Kirchhoff's loop voltage law).
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 
 
-[直流电流源](comp_newDCCurrentSource.html)
+[DC Current Source](comp_newDCCurrentSource.html)

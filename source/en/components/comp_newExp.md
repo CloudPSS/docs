@@ -1,5 +1,5 @@
 ---
-title: 指数函数
+title: Exponential Function
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 900
 classname: _newExp
 symbol: newExp
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newExp %}
 
-> **该元件实现指数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
+> **The component implements an exponential operation with a configurable base of 10, a natural constant e, or a custom constant a. The function is：**
 > $y(t) = {10^{u(t)} }$或$y(t) = {e^{u(t)} }$或$y(t) = {a^{u(t)} }$，$u(t)>0$。
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入指数函数的名称（可缺省） |
-| Exponent Base |  | 底数选择 | 选择 | 选择该指数函数的底数为10、自然常数e或自定义常数a |
-| Value of Base a |  | 底数a的值 | 实数（常量） | 输入底数a的值，仅当底数选择为a时有效 |
+| Name |  | Name of component | Text | Enter the name of the exponential function component (Default)  |
+| Exponent Base |  | Select base value | Select | Select the base of this exponential function as "Base 10", "Base e" or "Base a" |
+| Value of Base a |  | Value of base a | Real number (Const) | The value of base a, only valid when the "Exponent Base" is "Base a"custom constant is selected |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[对数函数](comp_newLog.html)
+[Logarithmi Function](comp_newLog.html)

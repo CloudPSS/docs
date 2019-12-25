@@ -1,5 +1,5 @@
 ---
-title: 区域集中供热系统建模及仿真
+title: Modeling and Simulation of Regional Central Heating System
 type: features
 category: 2000
 order: 1000
@@ -7,248 +7,248 @@ author: xiangyue
 author_email: xiangyue@tsinghua-eiri.org
 ---
 
-## 模块功能
+## Module Function
 
-区域集中供热系统运行仿真模块于2018年12月25号正式上线，该模块在2017年12月6日发布的热网潮流分析模块的基础上进行了更新和扩展，主要面向区域集中供热系统，分析其运行特性，为系统的运行调节和优化提供帮助。在该模块中，用户可根据实际需要，对网络拓扑、气象条件、设备配置等参数进行设置，系统将计算出供热系统中所有有效对象的稳态运行工况参数，并且通过图表等形式展示相应结果。
+The regional central heating system operation simulation module was officially launched on December 25, 2018. The module was updated and expanded on the basis of the hot network power flow analysis module released on December 6, 2017, mainly for regional central heating system. Analyze its operating characteristics to help the system's operation adjustment and optimization. In this module, the user can set parameters such as network topology, meteorological conditions, equipment configuration, etc. according to actual needs. The system will calculate the steady-state operating conditions parameters of all valid objects in the heating system, and display the corresponding results in the form of charts and the like
 
-目前，本模块主要支持以下功能和应用场景：
-1. 建筑物热负荷预测
-2. 室内温度变化预测
-3. 热源供热计划制定
+Currently, this module supports the following functions and application scenarios:
+1. Building heat load prediction
+2. Indoor temperature change prediction
+3. Heat source heating plan formulation
 
-上述功能旨在为用户提供集中供热系统运行方案优化、节能降耗等方面的帮助。未来本模块将陆续加入更多的功能满足用户的多样化需求。
+The above functions are intended to provide users with assistance in optimizing the operation scheme of the central heating system, saving energy and reducing consumption. In the future, this module will gradually add more functions to meet the diverse needs of users.
 
-## 元件介绍
+## Component Introduction
 
-本模块的元件主要位于页面左侧的元件面板“基本元件”模块内，包括建筑物（负荷）、热源、连接点、中继泵4种元件，另外还有管道元件，需通过其它元件相连而得，现依次对其进行介绍。
+The components of this module are mainly located in the "Basic Components" module of the component panel on the left side of the page, including four components: building (load), heat source, connection point, and relay pump, and also pipeline components, which are connected by other components. It is now introduced in turn.
 
-### 建筑物（负荷）
+### Building (Load)
 
-建筑物（负荷）元件代表集中供热系统中的热用户，诸如居民建筑、学校、医院等都可以用该元件进行表示。建筑物（负荷）元件的图标如下所示：
+Building (load) component represents hot users in the regional central heating system a central heating system, such as residential buildings, schools, hospitals, etc., which can be represented by this component. The icon for the building (load) component is as follows:
 
-{%compsymbol Heat5 =x100 建筑物（负荷）元件图标 %}
+{%compsymbol Heat5 =x100 Building (Load) icon %}
 
-建筑物（负荷）元件共有1个引脚可与其它元件相连，引脚位于图标上方竖线的顶端，该引脚只允许其它元件连入而不允许连出。
+The building (load) component has a total of 1 pin that can be connected to other components. The pin is located at the top of the vertical line above the icon. The pin only allows other components to connect in and not connect out.
 
-### 热源
+### Heat Source
 
-热源元件代表集中供热系统中提供热量的设备，诸如热电厂、供暖锅炉、热泵等。热源元件的图标如下所示：
+The heat source element represents a device that provides heat in the regional central heating system, such as thermal power plant, heating boiler, heat pump, and the like. The icon for the heat source component is as follows:
 
-{%compsymbol heat1 =x100  热源元件图标%} 
+{%compsymbol heat1 =x100  Heat Source icon%} 
 
-热源元件共有1个引脚可与其它元件相连，引脚位于图标上方竖线的顶端，该引脚只允许连出而不允许其它元件连入。
+The heat source component has a total of 1 pin that can be connected to other components. The pin is located at the top of the vertical line above the icon. The pin is only allowed to connect out and no other components are allowed to connect in.
 
-### 连接点
+### Connection Point
 
-连接点元件代表集中供热系统中实现多股热介质汇聚和分流的设备，诸如管汇、三通等。连接点元件的图标如下所示：
+The connection point component represents a device that achieves multiple heat medium convergence and shunting in the regional central heating system, such as manifolds, tee-junction, and the like. The icon for the connection point component is as follows:
 
-{%compsymbol Heat3 =x100 连接点元件图标%}
+{%compsymbol Heat3 =x100 Connection Point icon%}
 
-连接点元件共有1个引脚可与其它元件互连，引脚位于黑色圆圈的中心位置，需要注意的是该引脚与其它元件连接时应至少保证有一个连入和一个连出。
+The connection point component has a total of 1 pin that can be interconnected with other components. The pin is located at the center of the black circle. It should be noted that the pin should be connected to other components to ensure at least one connect in and one connect out.
 
-### 中继泵
+### Relay Pump
 
-中继泵元件代表集中供热系统中给热介质的输送提供动力的设备，实际中泵的种类较多，如离心泵、螺杆泵、滑片泵等。中继泵元件的图标如下所示：
+The relay pump component represents a device that supplies power to the heat medium in the regional central heating system. In practice, there are many types of pumps, such as centrifugal pumps, screw pumps, and sliding-vane pumps. The icon for the relay pump component is as follows:
 
-{%compsymbol Heat4 =x100 中继泵元件图标%} 
+{%compsymbol Heat4 =x100 Relay Pump icon%} 
 
-中继泵元件共有2个引脚可与其它元件相连，分别为入口引脚和出口引脚，且各自都只能与最多一个元件相连。其中入口引脚位于元件图标左侧凸起处，该引脚只允许其它元件连入而不能连向其它元件；出口引脚位于元件图标顶端凸起处，该引脚只允许连向其它元件而不能由其它元件连入。
+The relay pump component has two pins that can be connected to other components, namely the input pin and the output pin, and each can only be connected to at most one component. The input pin is located on the left side of the component icon. The pin can only be connected in and cannot be connected out. The output pin is located at the top of the component icon. The pin can only be connected out and cannot be connected in.
 
-### 管道
+### Pipeline
 
-管道元件用于热介质的输送。本模块中管道元件并不位于元件面板内，而是需要通过连接其它元件获得，如下图将一个热源和一个建筑物（负荷）的引脚相连便得到相应的管道元件（图中pipeLine_7），需要注意的图中连接的管道实际上同时代表了供水管道和回水管道：
+The pipeline element is used for the transport of the heat medium. The pipeline component in this module is not located in the component panel, but need to be obtained by connecting other components. As shown in the figure below, a heat source is connected to a building (load) to obtain the corresponding pipeline component (pipeLine_7 in the figure). The pipeline connected in the diagram of the figure actually represents the water supply and return pipes at the same time:
 
 ![管道元件图标](HeatingSystem/PipeIcon.png =x150)
 
-元件的连接方法可参考[快速入门](../guide/index.html)。
+Refer to the [Quick Start](../guide/index.html) for how to connect components.
 
-## 参数输入
+## Parameter Input
 
-### 算例模板
+### Example Template
 
-在新建区域集中供热系统运行仿真的工程之后，会出现算例模板的输入面板，如下图所示：
+In the new project, select the regional central heating system, and the input panel of the example template will appear, as shown in the following figure:
 
 ![算例模板输入面板](HeatingSystem/CaseTemplate.png =x400)
 
-算例模板的选项主要包括工程名、工程描述、节点数目、供热时长和供热场景。这里主要介绍节点数目、供热时长和供热场景。
+The options for the example template mainly include the project name, project description, number of nodes, heating duration, and heating scenario. Here we mainly introduce the number of nodes, heating duration and heating scenario.
 
-+ 节点数目
++ Number of nodes
 
-  节点数目包含两个选项，分别是1热源3负荷和1热源5负荷，代表算例的初始热源和建筑物（负荷）的数量情况，用户也可以根据自己需要在这两个算例的基础上新建（或删除）元件。
+  The number of nodes contains two options, namely 1 heat source 3 loads system and 1 heat source 5 loads system, representing the number of the initial heat sources and buildings (loads) in the example template. The Users can also add (or delete) components based on these two studies based on their needs.
 
-+ 供热时长
++ Heating duration
  
-  供热时长包含三个选项，分别是3天、5天和7天，代表了集中供热系统需要进行仿真模拟的运行时长，用户也可以根据自己需要在这两个算例的基础上增加或减少仿真时长。
+  The heating duration contains of three options, namely 3 days, 5 days and 7 days, which represent the running time of the simulation of the regional central heating system. Users can also increase or reduce the simulation time based on these two examples according to their needs.
 
-+ 供热场景
++ Heating scenario
 
-  供热场景包含两个选项，分别是室内温度预测和供热计划制定，其各自含义可以参见区域集中供热系统运行仿真的[算例文档](../examples/HeatingSystem.html)。在进入算例后，用户也可以根据自己需要调整应用场景。
+  The heating scenario contains two options, namely indoor temperature prediction and heating plan formulation. The meaning of each can be found in the example document of [the regional central heating system example case](../examples/HeatingSystem.html). In the example case, the users can also adjust the application scenario according to their needs.
 
-### 全局参数
+### Global Parameter
 
-在进入区域集中供热系统运行仿真模块的工作页面后，全局参数位于页面右侧仿真参数面板内，主要分为基本设置、热媒物性、气象参数和仿真控制四个模块儿，如下图：
+In the work page of the regional central heating system, the global parameters are located in the simulation parameter panel on the right side of the page, which are mainly divided into four parts: basic settings, thermal media properties, meteorological parameters and simulation control, as shown below:
 
 ![仿真参数面板](HeatingSystem/SimulationPara.png)
 
-下面分别对四个模块的参数进行介绍：
+The following describes the parameters of the four parts:
 
-+ 基本设置
++ Basic settings
 
-  基本设置中包含供热总时长和仿真时间步长两个选项，其中供热总时长即为算例模板中的“供热时长”，仿真时间步长代表每两次全局稳态仿真的时间间隔。通过供热时长和仿真时间步长的大小可以计算出总共的稳态仿真次数，通常建议仿真次数不超过一万次，否则会因为输入的大量数据而导致网页响应过慢。
+  The basic settings include two options: total heating duration and simulation time step. The total heating duration is the "heating duration" in the example template. The simulation time step represents the interval between each two global steady-state simulations. The total number of steady-state simulations can be calculated by the heating duration and the simulation time step size. It is usually recommended that the number of simulations does not exceed 10,000 times. Otherwise, the webpage response will be too slow due to the large amount of data input.
 
-+ 热媒物性
++ Thermal media properties
 
-  热媒物性表示供热系统中热流体（或热介质）的物理性质，主要包括热容量（即比热容）、密度和运动粘度。
+  The thermal media properties indicate the physical properties of the hot fluid (or heat medium) in the regional central heating system, which mainly includes thermal capacity (i.e., specific heat capacity), density, and kinematic viscosity.
   
-+ 气象参数
++ Meteorological parameters
 
-  气象参数包括风速、室外温度和太阳辐射强度三个参数，用户可以点击“添加曲线”按钮进行数据输入或修改。以风速为例，其它参数与之类似，在点击“添加曲线”按钮后会出现如下图所示的表格：
+  The meteorological parameters include three parameters: wind speed, outdoor temperature and solar radiation intensity. Users can click the "Add Curve" to input or modify the data. Taking the wind speed as an example, other parameters are similar. After clicking the "Add Curve", the table shown below will appear:
   
   ![表格数据录入界面](HeatingSystem/Table.png =x400)
   
-  表格中第一列数据代表仿真时间的序列，第二列代表风速的数值，第i行即代表第i个时间步时当前室外风速的数值。该表格的行数取决于供热时长和仿真时间步长的大小，不能自行进行增删。另外，用户还可以通过点击“请选择文件夹”上传包含对应行数和列数的EXCEL文件自动录入数据。
+  The first column of data in the table represents the simulation time, the second column represents the value of wind speed, and the row i represents the value of the current outdoor wind speed at the corresponding time step. The number of rows in the table depends on the heating duration and the simulation time step size, and which cannot be added or deleted. In addition, users can also automatically import data by clicking "Please select folder" to upload an EXCEL file containing the corresponding number of rows and columns.
   
-  切换表格上方的选项卡至“曲线”，可以查看当前数据对应的散点图，如下图。用户还可以通过拖拽其中的散点动态地更改数据，但我们不建议在数据量较大时这样做。
+  Switch the option above the table to "Curve" to view the curve corresponding to the current data, as shown below. Users can also dynamically change data by dragging the scatters, but we don't recommend doing this when the amount of data is large.
   
   ![通过曲线选项卡查看数据的散点图](HeatingSystem/Curve.png =x400)
   
-+ 仿真控制
++ Simulation control
 
-  通过点击仿真控制面板中的“开始”按钮可以启动仿真计算。
+  The simulation can be started by clicking the "Start" in the simulation control panel.
 
-### 建筑物负荷参数
+### Building (Load) Parameter
 
-当选中建筑物（负荷）元件后，在页面右侧会出现建筑物（负荷）的参数面板，包括参数配置和格式面板，对于格式面板的使用可以参考[快速入门](../guide/index.html)，参数配置面板的形式如下图：
+When the building (load) component is selected, the parameter panel of the building (load) component will appear on the right side of the page, including the parameter configuration and format panel. For the use of the format panel, refer to the [Quick Start快速入门](../guide/index.html). The parameter configuration has the following form:
 
 ![建筑物（负荷）的参数输入面板](HeatingSystem/HeatLoadPara.png)
 
-建筑物（负荷）的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatLoad_Building.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+The input parameters of the building (load) mainly include three parts: hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatLoad_Building.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
-### 热源参数
+### Heat Source Parameter
 
-当选中热源元件后，在页面右侧会出现热源的参数面板，如下图：
+When the heat source component is selected, the parameter panel of the heat source appears on the right side of the page, as shown below:
 
 ![热源的参数输入面板](HeatingSystem/HeatSourcePara.png)
 
-热源的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatSource.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+The input parameters of the heat source mainly include three parts:  hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatSource.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
-### 连接点参数
+### Connection Point Parameter
 
-当选中连接点元件后，在页面右侧会出现连接点的参数面板，如下图：
+When the connection point component is selected, the parameter panel of the connection point appears on the right side of the page, as shown below: 
 
 ![连接点的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-当前版本的连接点暂不需要输入任何参数。
+The current version of the connection point does not need to enter any parameters.
 
-### 中继泵参数
+### Relay Pump Parameter
 
-当选中中继泵元件后，在页面右侧会出现中继泵的参数输入面板，如下图：
+When the relay pump component is selected, the parameter panel of the relay pump will appear on the right side of the page, as shown below:
 
 ![中继泵的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-中继泵的输入参数主要包含设备安装和参数设置两个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPump.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+The input parameters of the relay pump mainly include two parts: device installation and parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPump.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
-### 管道参数
+### Pipeline Parameter
 
-当选中管道元件后，在页面右侧会出现管道的参数输入面板，如下图：
+When the pipe component is selected, the parameter panel of the pipe will appear on the right side of the page, as shown below:
 
 ![管道的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-管道的输入参数主要包括供水管道参数设置、回水管道参数设置、管道剖面参数设置三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPipeline.html)。
+The input parameters of the pipeline mainly include three parts: water supply pipeline parameter setting, return water pipeline parameter setting, and pipeline profile parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPipeline.html) of the component.
 
-## 进行仿真
+## Simulation
 
-### 开始仿真
+### Start Simulation
 
-当正确设置完所有元件参数后，即可开始仿真。点击工作空间中任意空白处，在页面右侧会显示仿真参数面板，点击仿真控制模块中的“开始”按钮即可开始仿真。
+When all components parameters have been properly set, the simulation can begin. Click on any blank space in the workspace, the simulation parameter panel will be displayed on the right side of the page, and the simulation can be started by clicking the "Start" in the simulation control part.
 
-### 仿真信息
+### Simulation Information
 
-如果想监测仿真是否正常运行，可在页面左下侧的系统信息栏进行查看.本模块正常运行状态下的仿真信息结果如下：
+If you want to monitor whether the simulation is running normally, you can view it in the system information bar on the lower left side of the page. The simulation information under normal operation of this module is as follows:
 
 {% pullquote success %}
 run ends
 run start
 {% endpullquote %}
 
-目前本仿真模块目前共有四种异常报警信息，下面分别对其进行介绍。
+At present, there are four kinds of abnormal alarm information in this example case, which are introduced separately below.
 
-+ 无连接管道报警信息
++ No pipeline alarm information
 
-  当网络拓扑中没有管道时，开始仿真将会在系统信息面板出现无连接管道报警信息，如下：
+  When there is no pipeline in the network topology, the no pipeline alarm message will appear in the system information panel after the simulation starts, as follows: 
   
   {% pullquote fail %}
   There is no pipeline in network!
   {% endpullquote %}
   
-+ 拓扑多连通报警信息
++ Topology multi-connected alarm information
 
-  当网络拓扑图为多连通时将出现报警信息，所谓多连通是指网络拓扑中有个多个连通子结构，如下图存在两个连通子结构。
+  When the network topology is multi-connected, an alarm message will appear. The so-called multi-connection means that there are multiple connected sub-structures in the network topology. As shown in the following figure, there are two connected sub-structures.
   
   ![多连通示意图](HeatingSystem/MultiConnectedGraph.png =x400)
   
-  报警信息如下：
+  The alarm information is as follows:
   
   {% pullquote fail %}
   The original topological graph are multi-connected!
   {% endpullquote %}
   
-+ 方程不封闭报警信息
++ Unsolved system equations alarm information
 
-  当热源和建筑物（负荷）的控制条件设置不当时，将导致控制条件数量不等于所需条件数量，而使求解方程不能封闭。报警信息如下：
+  When the control conditions of the heat source and the building (load) are not set properly, the number of control conditions will not be equal to the required number of conditions, and the solution equation cannot be solved. The alarm information is as follows:
   
   {% pullquote fail %}
   The equation system can not be solved:  8 control conditions required, while 9 control conditions specified!
   {% endpullquote %}
   
-  对于任意热网拓扑来说，其需要的控制条件等于2倍热源的数目加上建筑物（负荷）的数量再加1。
+  For any thermal network topology, the number of required control conditions is equal to twice the number of heat sources plus the number of buildings (loads) plus one.
   
-+ 求解报错信息
++ Solve system equations wrong alarm information
 
-  求解报错信息如下：
+  The alarm information is as follows:
   
   {% pullquote fail %}
   The matrix is ill-conditioned or singular, might be caused by three reasons: 1. Incorrect connection pattern, see help for components. 2. No solution or more than one solutions existed for current control conditions. 3. Huge differences in magnitude for current control conditions.
   {% endpullquote %}
   
-  造成求解报错的原因可能有三个：
-  1. 不正确的连接方式，比如未保证连接点元件至少有一个输出引脚连线
-  2. 在当前的边界条件设置情况下不存在解或者存在多解
-  3. 各参数数量级上差异较大
+  There are three possible reasons for solving system equations wrong:
+  1. Incorrect connection method, such as not guaranteeing that at least one output pin is connected to the connection point component
+  2. There is no solution or multiple solutions in the current boundary condition setting
+  3. The difference in the order of magnitude of each parameter is large
   
 
-## 结果展示
+## Results
 
-当仿真计算结束后，可以通过点击查看各元件的仿真结果。
+When the simulation calculation is finished, you can click the components to view the simulation results of each component.
 
-### 建筑物（负荷）和热源
+### Building (Load) and Heat Source
 
-这里以建筑物（负荷）为例，点击建筑物（负荷）元件，可以在页面左下侧的系统监控面板中看到如下图所示的仿真结果：
+Take the building (load) as an example, click on the building (load) component, users can see the simulation results shown in the following figure in the system monitoring panel on the lower left side of the page:
 
 ![建筑物（负荷）仿真结果](HeatingSystem/HeatLoadResult.png)
 
-对于建筑物（负荷）或者热源，主要包括4组数据，分别是温度、热负荷（或供热量）、压力及流量。
+For buildings (loads) or heat sources, there are mainly four sets of data, namely temperature, heat load (or heat supply), pressure and flow.
 
-通过切换图形上方的选项卡可以切换数据组，通过点击下方的图例，可以选择隐藏或显示对应数据，如下图就只显示了建筑物室内温度的仿真结果：
+By switching the tabs above the graph, you can switch between the data sets. By clicking on the legend below, you can choose to hide or display the corresponding data. The following figure only shows the simulation results of the building's indoor temperature:
 
 ![选择性显示结果](HeatingSystem/IndoorTempResult.png)
 
-### 连接点
+### Connection Point
 
-当前版本的连接点无数据可以显示。
+The current version of the connection point has no data to display.
 
-### 中继泵
+### Relay Pump
 
-点击中继泵元件，可以在页面左下侧的系统监控面板中看到如下图所示的仿真结果：
+Click on the relay pump component to see the simulation results as shown below in the system monitoring panel on the lower left side of the page:
 
 ![中继泵仿真结果](HeatingSystem/PumpResult.png)
 
-对于中继泵，主要包括3组数据，分别是压力、温度及流量。
+For the relay pump, it mainly includes three sets of data, namely pressure, temperature and flow.
 
-### 管道
+### Pipeline
 
-点击管道元件，可以在页面左下侧的系统监控面板中看到如下图所示的仿真结果：
+Click on the pipeline component to see the simulation results as shown in the following figure in the system monitor panel on the lower left side of the page: 
 
 ![管道仿真结果](HeatingSystem/PipeResult.png)
 
-管道的仿真结果主要包含5组数据，分别是温度、流量、流速、压力和热损。
+For the pipeline, there are mainly five sets of data, namely temperature, flow, flow rate, pressure and heat loss.

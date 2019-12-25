@@ -1,5 +1,5 @@
 ---
-title: 静态负载
+title: Fixed Load
 author: 
 author_email:
 
@@ -13,48 +13,48 @@ order: 200
 classname: _newExpLoad_3p
 symbol: newExpLoad
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newExpLoad %}
 
-> **该元件用以建模指数型三相静态负载（单线图），其基本表达式如下。**
+> **This component models the load characteristics as a function of voltage magnitude and frequency, where the load real and reactive power our considered separately using the well known expressions:**
 > $$\begin{gathered}
   P = {P_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NP} }\left( {1 + {K_{PF}}\Delta f} \right) \\
   Q = {Q_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NQ} }\left( {1 + {K_{QF}}\Delta f} \right) \\ 
 \end{gathered}$$
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入静态负载的名称（可缺省） |
-| Rated Voltage (L-L, RMS) | kV | 线电压有效值 | 实数（常量） | 标称负载线电压有效值$V_N$ |
-| Rated Frequency | Hz | 额定频率 | 实数（常量） | 额定频率$f_N$ |
-| Rated Active Power (3 Phase) | MW | 额定有功功率 | 实数（常量） | 额定有功功率$P_N$ |
-| Rated Reactive Power (3 Phase) | MVar | 额定无功功率，感性负荷为正 | 实数（常量） | 额定无功功率$Q_N$ |
-| Voltage Index for P |  | 有功功率-电压指数 | 实数（常量） | 有功功率-电压指数$NP$ |
-| Voltage Index for Q |  | 无功功率-电压指数 | 实数（常量） | 无功功率-电压指数$NQ$ |
-| Freq Index for P |  | 有功功率-频率系数 | 实数（常量） |  有功功率-频率系数$K_{PF}$ |
-| Freq Index for Q |  | 无功功率-频率系数 | 实数（常量） | 无功功率-频率系数$K_{QF}$ |
+| Name |  | Name of component | Text | Enter the name of fixed load (Default) |
+| Rated Voltage (L-L, RMS) | kV | Rated voltage (L-L, RMS) | Real number (Const) | Rated voltage (L-L, RMS), $V_N$ |
+| Rated Frequency | Hz | Rated frequency | Real number (Const) | Rated frequency, $f_N$ |
+| Rated Active Power (3 Phase) | MW | Rated active power | Real number (Const) | Rated active power, $P_N$ |
+| Rated Reactive Power (3 Phase) | MVar | Rated reactive power into load, where inductive load is entered as + in value  | Real number (Const) | Rated reactive power, $Q_N$ |
+| Voltage Index for P |  | Voltage index for P | Real number (Const) | Voltage index for P, $NP$ |
+| Voltage Index for Q |  | Voltage index for Q | Real number (Const)实数（常量） | Voltage index for Q, $NQ$ |
+| Freq Index for P |  | Freq index for P | Real number (Const) | Freq index for P, $K_{PF}$ |
+| Freq Index for Q |  | Freq index for Q | Real number (Const) | Freq index for Q, $K_{QF}$ |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Current Vector \[kA\] | 三相电流 | 文本 | 此处输入静态负载电流量测信号的标签（3×1维），以#号开头，如#Iabc |
-| RMS Current \[kA\] | 电流均方根值 | 文本 | 此处输入静态负载电流有效值量测信号的标签（1×1维），以#号开头，如#Irms |
-| Active Power \[MW\] | 有功功率 | 文本 | 此处输入静态负载有功功率量测信号的标签（1×1维），以#号开头，如#P |
-| Reactive Power \[MVar\] | 无功功率 | 文本 | 此处输入静态负载无功功率量测信号的标签（1×1维），以#号开头，如#Q |
+| 3 Phase Current Vector \[kA\] | 3-phase current | Text | Enter the measurement signal label of the 3-phase current of fixed load（3×1）, starting with #, such as #labc |
+| RMS Current \[kA\] | RMS current | Text | Enter the measurement signal label of the 3-phase current rms value of fixed load（1×1）, starting with #, such as #lrms |
+| Active Power \[MW\] | Active power | Text | Enter the measurement signal label of the active power, starting with #, such as #P |
+| Reactive Power \[MVar\] | Reactive power | Text | Enter the measurement signal label of the reactive power, starting with #, such as #Q |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 3×1 |静态负载接线端 |
+| Pin + | 3×1 | Pin of fixed load |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

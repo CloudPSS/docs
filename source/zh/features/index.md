@@ -15,6 +15,7 @@ CloudPSS建模及仿真平台提供的全部功能的详细说明文档。（持
 * [高级数据可视化](Dashboard.html)
 * [子图功能](SubGraph.html)
 * [模块功能](Module.html)
+* [潮流计算](Powerflow.html)
 * [潮流断面启动](Initialization.html)
 
 ### 移频电磁暂态仿真工作台

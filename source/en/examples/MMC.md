@@ -1,43 +1,43 @@
 ---
-title: 双端MMC型高压直流输电测试系统
+title: Two-terminal MMC-HVDC test system
 type: examples
 author: zhangr
 category: 1000
 order: 200
 ---
 
-## 描述
-模块化多电平换流器（MMC）是一种新型的电压变换电路，它通过将多个子模块级联，叠加输出高电压。具有输出谐波少、模块化程度高等特点，因而在电力系统中具有广泛的应用前景。 
+## Description
+The Modular Multilevel Converter (MMC) is a new type of voltage source converter that superimposes output high voltage by cascading multiple submodules. With low output harmonics and high modularity, it has broad application prospects in power systems. 
 
-本算例由国际大电网组织MMC工作组提供的双端MMC直流输电测试系统简化而来，默认为77电平640kV双端MMC-HVDC系统。用户可根据需要修改电平数（10-101）及系统电压、功率参数。为保证仿真速度，本模型中的半桥子模块(SM)采用戴维南等值的快速仿真模型，与详细电磁暂态仿真模型具有相同的精度，但计算效率大幅度提高。
+This example is simplified by the two-terminal MMC-HVDC test system provided by the International Large Grid Organization MMC Working Group. The default is the 77-level 640kV two-terminal MMC-HVDC system. Users can modify the level (10-101) and system voltage and power parameters as needed. In order to ensure the simulation speed, the half-bridge sub-module (SM) in this model adopts the fast simulation model of the Thevenin equivalent, which has the same accuracy as the detailed electromagnetic transient simulation model, but the calculation efficiency is greatly improved.
 
-## 模型介绍
+## Model Introduction
 
-MMC-HVDC系统分为整流侧（送端）与逆变侧（受端）两部分，两侧的电路拓扑及控制基本一致，仅存在微小差异。每侧的控制系统包括：标幺值换算、电流电压测量、电流电压坐标变换、瞬时功率计算、功率控制(整流侧为直流电压-无功功率控制，逆变侧为有功-无功功率控制)、环流抑制以及调制和排序算法多个模块。用户可在`全局参数`中更改拓扑和运行参数，实现不同的仿真组合及分析验证，拓扑图如下所示。
+The MMC-HVDC system is divided into two parts: the rectifier side (send terminal) and the inverter side (receiver terminal). The circuit topology and control on both sides are basically the same, with only minor differences. The control system on each side includes: standard value conversion, current and voltage measurement, current and voltage coordinate conversion, instantaneous power calculation, power control (DC voltage-reactive power control on the rectifier side, active-reactive power control on the inverter side), circulating current suppression, and modulation and ordering algorithms. The user can change the topology and operating parameters in the `Global Parameters` to achieve different simulation combinations and analysis and verification. The topology diagram is shown below.
 
-![拓扑图](MMC/M.png "MMC的仿真电路图")
+![拓扑图](MMC/M.png "The topology diagram of MMC")
 
 
-## 仿真
+## Simulation
 
-根据电平数和最大开关频率选择合适的仿真步长（电平数在101以下，采用最近电平调制时，建议采用10μs或20μs），对MMC-HVDC系统进行电磁暂态仿真。若希望得到更精确的开关过程波形，建议在`格式面板`->`电磁暂态`>`求解器设置`处勾选`开关/离散事件处理增强`选项，采用更小的仿真步长进行仿真。
+Select the appropriate simulation step size according to the number of levels and the maximum switching frequency (the number of levels is below 101, and it is recommended to use 10μs or 20μs when using the nearest level modulation) to perform electromagnetic transient simulation on the MMC-HVDC system. If you want a more accurate switching process waveform, it is recommended to tick the `Switch/Discrete Event Processing Enhancement` option in the `Format Panel`->`Electromagnetic Transient`->`Solver Settings` to simulate with a smaller simulation step.
 
-### 仿真1：逆变侧功率控制暂态响应
+### Test1：Inverter side power control transient response
 
-点击工作空间右侧的“全局参数”栏，设定逆变侧的有功给定\$Pinv\_ref及无功给定\$Qinv\_ref。仿真默认为\$Pinv\_ref=-0.9，\$Qinv\_ref=0。在逆变侧控制中，有/无功的参考值由两个阶跃发生器给出，其初始输出值为\$Pinv\_ref和\$Qinv\_ref，0.8s后有功参考变为-0.5，1.4s后无功参考变为0.3。点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，即可得到仿真结果。可以发现，逆变侧的有/无功功率、整流侧无功以及直流电压在参考变化时可快速调整至设定值。
+Click the `Global Parameters` column on the right side of the workspace to set the active power reference \$Pinv\_ref on the inverter side and the reactive power reference \$Qinv\_ref. The simulation defaults to \$Pinv\_ref=-0.9, \$Qinv\_ref=0. In the inverter side control, the reference value of the active/reactive power is given by two step generators. The initial output values are \$Pinv\_ref and \$Qinv\_ref. After 0.8s, the active power reference becomes -0.5. After 1.4s, the reactive power reference becomes 0.3. Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result. It can be found that the active/reactive power on the inverter side, the rectifier side reactive power, and the DC voltage can be quickly adjusted to the set value when the reference changes.
 
-![仿真图](MMC/M1.png "送受端功率仿真结果")
-![仿真图](MMC/M2.png "直流电压仿真结果")
+![仿真图](MMC/M1.png "The power of send and receiver terminal")
+![仿真图](MMC/M2.png "The simulation result of dc voltage")
 
-### 仿真2：环流抑制对比
+### Test2：Circulation suppression comparison
 
-环流抑制是MMC控制的关键环节之一，点击工作空间右侧的`全局参数`栏，设定整流侧环流抑制使能$CN_rec为0，即禁用整流侧的环流抑制。点击电磁暂态>仿真控制>开始，选择神威节点，即可得到仿真结果。可以发现，逆变侧环流峰峰值远小于整流侧，环流抑制效果明显。
+Circulation suppression is one of the key aspects of MMC control. Click the global parameter bar on the right side of the workspace to set the rectifier side circulation suppression enable $CN_rec to 0, which disables the rectifier side circulation suppression. Click on the electromagnetic transient > simulation control > start, select the corresponding calculation node, you can get the simulation results. It can be found that the peak-to-peak value of the circulating current of the inverter side is much smaller than that of the rectifier side, and the circulation suppression effect is obvious.
 
-![仿真图](MMC/M3.png "环流抑制对比仿真结果")
+![仿真图](MMC/M3.png "Circulation suppression comparison simulation results")
 
-### 仿真3：不同电平数/模块数仿真
+### Test3：Different level/module number simulation
 
-点击工作空间右侧的`全局参数`栏，分别改变模块数$N的值为76和100，对应的输出电平数为77和101。重新运行，可以发现模块电容电压的值分别为8.42kV(640/76)、6.4kV(640/100)，且电容电压均衡效果明显。
+Click on the `Global Parameters` bar on the right side of the workspace to change the value of the module number $N to 76 and 100 respectively, and the corresponding output level is 77 and 101. Rerun, you can find that the module capacitor voltage values are 8.42kV (640/76), 6.4kV (640/100), and the capacitor voltage equalization effect is obvious.
 
-![仿真图](MMC/M4.png "模块数为76时的电容电压仿真结果")
-![仿真图](MMC/M5.png "模块数为100时的电容电压仿真结果")
+![仿真图](MMC/M4.png "Capacitor voltage when the number of modules is 76")
+![仿真图](MMC/M5.png "Capacitor voltage when the number of modules is 100")

@@ -1,5 +1,5 @@
 ---
-title: 仿真步长输入
+title: Simulation Time Step
 author: 
 author_email:
 
@@ -13,28 +13,28 @@ order: 300
 classname: _newDeltaT
 symbol: newDeltaT
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDeltaT %}
 
-> **该元件用以输出仿真步长的常数**
+> **This component is used to assign the value of the chosen simulation time step to output pin.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入仿真步长输入的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of the simulation time step component (Default) |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| DeltaT | 1×1 |输出端口 |
+| DeltaT | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[常量输入](comp_newConstant.html)、[时间输入](comp_newTime.html)
+[Constant](comp_newConstant.html)、[Time](comp_newTime.html)

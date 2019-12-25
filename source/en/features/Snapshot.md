@@ -1,5 +1,5 @@
 ---
-title: 断面保存及导入
+title: Save and Import the Snapshot
 type: features
 category: 1000
 order: 300
@@ -8,43 +8,43 @@ author_email: songyankan@cloudpss.net
 ---
  
  
-CloudPSS提供了电磁暂态仿真过程中的断面保存和断面导入功能。可在`格式面板`->`电磁暂态`->`断面参数`处设置。
+CloudPSS provides the function of snapshot saving and importing in the process of electromagnetic transient simulation. It can be set in `Format panel`->`Electromagnetic Transient`->`Snapshot Parameter`.
 
-## 断面存储
+## Snapshot Saving
 
-仿真前，勾选`是否存储断面`并填写`断面存储时间`和`断面名称`后，即可在下次电磁暂态仿真到达`断面存储时间`时保存该次仿真在该时刻的全部数据。
+Before simulation, select `whether to save the snapshot` and fill in the `snapshot saving time` and `snapshot name`, then all data of the simulation at that time can be saved when the electromagnetic transient simulation reaches the `snapshot saving time`.
 
-如下图，设置仿真`结束时间`为2s，设置`断面存储时间`为1.5s，点击`开始`。仿真开始后，在`系统信息`处看到如下信息，说明断面存储成功。
+As shown in the figure below, set the `simulation end time` as 2S, and the `snapshot saving time` as 1.5s. Click `start`. After the simulation, the following information can be seen in the `system information`, indicating that the snapshot saving is successful.
 
-![断面保存](Snapshot/savesnapshot.png "断面保存设置")
+![断面保存](Snapshot/savesnapshot.png "Snapshot saving page")
 
 {% pullquote success %}
 [info] snapshot saved at 1.5 s.
 {% endpullquote %}
 
 {% pullquote tip %}
-只有**保存后**的算例工程才可进行断面存储操作。
+Snapshot saving can only be available for **The saved project**.
 {% endpullquote %}
 
-## 断面导入/载入
+## Snapshot Importing
 
-仿真前，勾选`是否载入断面`，并选择所导入的`断面名称`后，系统会将该断面的存储时间自动填入`断面载入时间`时。设置`仿真开始时间`与`断面载入时间`相同，即可直接从`断面载入时间`开始仿真。
+Before simulation, select `whether to import the snapshot` and select the imported `snapshot name`. Set the `simulation start time` to be the same as the `snapshot importing time`, the system will start simulation from the section importing time.
 
-如下图，设置仿真`结束时间`为2s，选择断面`稳态`，`断面载入时间`自动填充为1.5s。
+As shown in the figure below, set the `simulation end time` to 2s, select the `Stable snapshot`, and the `snapshot importing time` will be automatically filled to 1.5s.
 
-![断面载入](Snapshot/loadsnapshot.png "断面载入设置")
+![断面载入](Snapshot/loadsnapshot.png "Snapshot importing page")
 
-设置仿真`开始时间`与`断面载入时间`相同，为1.5s，点击`开始`。仿真开始后，在`系统信息`处看到如下信息，说明断面载入成功。
+Set the `simulation start time` to be the same as the `snapshot importing time`, which is 1.5s. Click `start` and then the following information can be seen in the `system information` window, indicating that the snapshot is loaded successfully.
 
 
 {% pullquote success %}
 [info] snapshot loaded at 1.50001 s.
 {% endpullquote %}
 
-![断面载入结果](Snapshot/result.png "断面载入波形")
+![断面载入结果](Snapshot/result.png "The result of the snapshot importing")
 
-波形窗口中，曲线直接从断面载入时刻开始仿真。
+In the display window of simulation results, the simulaton start directly from the importing time of the snapshot.
 
 {% pullquote tip %}
-若仿真`开始时间`与`断面载入时间`不一致，则可能会引发错误的断面导入。
+If the `simulation start time` is not consistent with the `snapshot importing time`, an incorrect section import may be caused.
 {% endpullquote %}

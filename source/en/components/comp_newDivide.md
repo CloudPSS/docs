@@ -1,5 +1,5 @@
 ---
-title: 除法器
+title: Divider
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 300
 classname: _newDivide
 symbol: newDivide
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDivide %}
 
-> **该元件实现两个一维输入信号的除法运算。**
+> **This component implements division of two one-dimensional input signals.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入除法器的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of the divider (Default) |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| N | 1×1 |输入端口N |
-| D | 1×1 |输入端口D |
-| Output | 1×1 |输出端口 |
+| N | 1×1 | Input pin N |
+| D | 1×1 | Input pin D |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[乘法器](comp_newMultiply.html)
+[Multiplier](comp_newMultiply.html)

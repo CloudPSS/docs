@@ -1,5 +1,5 @@
 ---
-title: 陷落发生器
+title: Drop Generator
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 1000
 classname: _newDropGen
 symbol: newDropGen
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDropGen %}
 
-> **该元件用以产生陷落信号。**
+> **This component is used to generate drop signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入陷落发生器的名称（可缺省） |
-| Drop Time | s | 陷落时刻T1 | 实数（常量） | 陷落发生的时刻 |
-| Recover Time | s | 恢复时刻T2(>T1) | 实数（常量） | 陷落恢复的时刻 |
-| Initial Value |  | 初始值 | 实数（常量） | 信号的初始输出值 |
-| Drop Value |  | 陷落值 | 实数（常量） | 信号在陷落时段的输出值 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Drop Time | s | Drop time T1 | Real number (Const) | Drop time |
+| Recover Time | s | Recover time T2(>T1) | Real number (Const) | Recover time |
+| Initial Value |  | Initial value | Real number (Const) | Initial value |
+| Drop Value |  | Drop value | Real number (Const) | Output value during the drop duration |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 | 输出端口|
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[浪涌发生器](comp_newSurgeGen.html)
+[Surge Generator](comp_newSurgeGen.html)

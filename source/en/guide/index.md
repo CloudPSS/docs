@@ -3,7 +3,7 @@ title:
 type: guide
 ---
 
-* [账号管理](User1.html)
-* [工作台介绍](User2.html)
-* [建模仿真操作](User3.html)
-* [简单案例](User4.html)
+* [Account Management](User1.html)
+* [Platform Introduction](User2.html)
+* [Operation of Simulation](User3.html)
+* [Test Cases](User4.html)

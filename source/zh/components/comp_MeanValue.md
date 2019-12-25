@@ -23,7 +23,7 @@ symbol: MeanValue
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
 | Name | 元件名称 | 文本 | 此处输入平均值函数的名称（可缺省） |
-| Time Interval of the Running Window | 滑动窗口时间间隔 | 实数（常量） | 滑动窗口时间间隔|
+| Time Interval of the Moving Window | 滑动窗口时间间隔 | 实数（常量） | 滑动窗口时间间隔|
 | Initial Output Value | 初始值 | 实数（常量） | 函数在第一个时间窗口的初始输出值 |
 
 ## 端口列表

@@ -1,5 +1,5 @@
 ---
-title: 微分器
+title: Derivative
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 300
 classname: _newDerivative
 symbol: newDerivative
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newDerivative %}
 
-> **该元件实现对输入一维信号的微分计算。**
+> **This component simulates a differentiator.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入微分器的名称（可缺省） |
-| Time Constant | s | 时间常数 | 实数（常量） | 微分环节的时间常数 |
-| Initialization Type |  | 初始化方法 | 选择 | 选择微分环节的初始化方法为“稳态”的“任意值” |
-| Initial Value |  | 初始值 | 实数（常量） | 微分环节的初始值 |
+| Name |  | Name of Component | Tex | Enter the name of this component |
+| Time Constant | s | Time constant | Real number (Const) | Time const of the differentiator |
+| Initialization Type |  | Initialization type | Select | Select the initialization type as "steady state" or "any value" |
+| Initial Value |  | Initial value | Real number (Const) | Initial value of the differentiator |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[积分器](comp_newIntegrator.html)
+[Integrator](comp_newIntegrator.html)

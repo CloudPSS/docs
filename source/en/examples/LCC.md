@@ -1,5 +1,5 @@
 ---
-title: 双端LCC型高压直流输电测试系统
+title: Two-terminal LCC-HVDC test system
 type: examples
 author: songyk
 author_email: songyankan@cloudpss.net
@@ -7,39 +7,39 @@ category: 1000
 order: 100
 ---
 
-## 描述
-基于电网换相换流器的高压直流(Line commutated converter high voltage direct current, LCC-HVDC)输电系统具有输送功率大、技术成熟等优点，近年来在电力系统中发挥越来越大的作用。
+## Description
+The line commutated converter high voltage direct current (LCC-HVDC) transmission system based on the power converter has the advantages of large transmission power and mature technology, and has played an increasingly important role in the power system in recent years.
 
-CloudPSS提供了国际大电网组织提供的LCC-HVDC标准测试系统。在标准测试系统上，CloudPSS进一步提供了单极12脉动、单极双12脉动、双极12脉动、双极双12脉动四种LCC-HVDC仿真模型，用户可根据需要进行选取。现以单极单12脉动为例进行仿真模型的介绍。单极双12脉动、双极12脉动与双极双12脉动的电气与控制系统类似，此处介绍从略。
+CloudPSS provides the LCC-HVDC standard test system provided by the international large power grid organization. On the standard test system, CloudPSS further provides four LCC-HVDC simulation models for monopolar 12-pulse, monopolar dual 12-pulse, bipolar 12-pulse, and bipolar dual 12-pulse. Users can select them according to their needs. The simulation model is introduced with the monopolar 12-pulse as an example. The monopolar dual 12-pulse, bipolar 12-pulse and bipolar dual 12-pulse electrical and control systems are similar, and the descriptions of them are omitted.
 
-## 模型介绍
+## Model Introduction
 
-单极12脉动LCC-HVDC模型如图所示，其中每个6脉波桥换流器与对应的换流变压器进行连接，进一步与交流侧母线连接。交流母线上，并联有交流滤波器组与电容器组，电容器组主要用于交流侧的无功补偿；滤波器组用于滤除交流测的谐波，同时也具有一定的无功补偿的作用。整流侧与逆变侧通过直流线路相连接。
+The monopolar 12-pulse LCC-HVDC model is shown in the figure, in which each 6-pulse bridge converter is connected to a corresponding converter transformer and further connected to the AC side bus. On the AC bus, there are AC filter bank and capacitor bank in parallel. The capacitor bank is mainly used for reactive power compensation on the AC side; the filter bank is used to filter the harmonics of the AC measurement, and also has a certain reactive power compensation effect. The rectifier side and the inverter side are connected by a DC transmission line.
 
 ![电气系统](LCC/LCC_monopole12p.png)
 
-在直流系统的控制系统模型中，整流侧采用定电流控制，逆变侧一般情况下采用定熄弧角控制，并配有低压限流保护环节，如下图所示。
+In the control system model of the DC system, the rectifier side adopts constant current control, and the inverter side generally adopts the constant arc extinction angle control and is equipped with a low voltage current limiting protection, as shown in the following figure.
 
 ![控制系统](LCC/LCC_monopole12p_ctrl.png)
 
-## 仿真
+## Simulation
 
-设定合适的仿真步长（10μs或20μs），对LCC-HVDC系统进行电磁暂态仿真。
+Set the appropriate simulation step size (10μs or 20μs) for electromagnetic transient simulation of the LCC-HVDC system.
 
-### 仿真1：稳态运行测试
+### Test1：Steady-state operation test
 
-设置算例的起止时间及积分步长等基本信息。点击`格式面板`->`电磁暂态`>`仿真控制`>`开始`，选择相应的计算节点，即可得到仿真结果。算例中已输出整流侧与逆变侧的直流电压、直流电流和触发角波形，用户可根据实际需求自行设置输出波形。通过仿真结果我们可以看到直流系统快速进入稳态运行状态。
+Set basic information such as start time, end time and integration step size of the example case. Click `Format Panel`->`Electromagnetic Transient`>`Simulation Control`>`Start` and select the corresponding calculation node to get the simulation result. In the example, the DC voltage, DC current and trigger angle waveforms of the rectifier side and the inverter side have been output, and the user can set the output waveform according to ones’ needs. Through the simulation results, we can see that the DC system quickly enters the steady-state operation state.
 
 ![稳态计算结果-直流电压](LCC/steadystate_udc.png)
 ![稳态计算结果-直流电流](LCC/steadystate_idc.png)
 ![稳态计算结果-触发角（弧度）](LCC/steadystate_alpha.png)
 
-### 仿真2：换相失败故障测试
+### Test2：Commutation failure test
 
-换相失败故障是LCC-HVDC中最为常见的故障类型。在逆变侧交流母线上设置三相短路故障。算例模板中的故障时间受全局变量控制，通过设置`全局参数`选项中的`$FaultStart`与`$FaultEnd`可以设置故障起止时间。该交流故障可以引起直流系统发生换相失败故障。
+Commutation failure is the most common type of failure in LCC-HVDC. A three-phase short-circuit fault is set on the inverter side AC bus. The fault time in the example case is controlled by the global variable. The fault start and end time can be set by setting $FaultStart and $FaultEnd in the global parameter option. This AC fault can cause a commutation failure failure in the DC system.
 
 ![暂态计算结果-直流电压](LCC/fault_udc.png)
 ![暂态计算结果-直流电流](LCC/fault_idc.png)
 
-通过量测逆变侧六脉动换流桥元件的晶闸管电流，还可绘制详细的桥内部6个晶闸管的电流。 
+By measuring the thyristor current of the inverter side six-pulse converter bridge component, it is also possible to draw a detailed current of the six thyristors inside the bridge.
 ![暂态计算结果-晶闸管电流](LCC/fault_it.png)

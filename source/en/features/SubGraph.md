@@ -1,5 +1,5 @@
 ---
-title: 子图功能
+title: Subgraph Function
 type: features
 category: 1000
 order: 500
@@ -7,46 +7,46 @@ author: songyk
 author_email: songyankan@cloudpss.net
 ---
 
-子图功能用于整合多个元件形成新的图层，图层间相同标号的节点互相连接。利用子图功能可实现仿真图功能划分、电气-控制划分等，在大型仿真系统中具有使仿真图简洁、清晰、美观的优点。本节对子图功能进行详细讲解。
+The subgraph function is used to integrate multiple components to form a new layer, and the nodes with the same label between layers are connected with each other. The function of sub diagram can realize the function division of simulation diagram, electrical-control division, etc. in large simulation system, it has the advantages of making the simulation diagram concise, clear and beautiful. In this section, the function of the sub diagram is explained in detail.
 
-## 创建子图
+## Create Subgraph
 
-在工作窗口中选择多个元件，单击鼠标右键选择新图标图层，在弹出的对话框中对子图进行命名，设定为Sub，如图所示。点击确定弹出`是否自定义端口名称`对话框，点击确定，对子图的端口进行自定义。
+Select multiple components in the main workspace, right-click to select `Create New Subgraph`, and name the subgraph as 'Sub' in the pop-up dialog box, as shown in the figure below. Click `OK` and then pop up `Whether to Customize Port Name`. Click `OK` to customize the port of  the subgraph.
 
-![创建子图](SubGraph/Z1.png "创建子图选项")
+![创建子图](SubGraph/Z1.png "Creating subgraph options")
 
-子图端口的自定义界面如图所示。
+The customized interface of the subgraph port is shown in the figure.
 
-![定义界面](SubGraph/Z2.png "子图端口定义页面" =x400)
+![定义界面](SubGraph/Z2.png "Subgraph port definition page" =x400)
 
-子图端口分为两类，边界端口与非边界端口。边界端口为所选择元件与外部电路接口的端口，若该端口已经命名，则在上图界面中的修改前选项中显示该名称，如A2，否则由系统指定端口名，如Sub.p01。非边界端口为所选元件中不与外部电路连接的且引脚被标号的端口，如图中直流电压源与电阻的连接点A1。在上图的界面中，可以选择是否显示端口。`修改后`一栏可以编辑，用户可根据需要更改端口的名称，也即连接在图层间的标号。`描述`一栏可修改封装子图图标的引脚显示名称，`位置`一栏中可修改端口的方向。
+The subgraph ports are divided into two types, boundary ports and non boundary ports. The boundary port is the port of the interface between the selected component and the external circuit. If the port has been named, the name will be displayed in the option before modification in the interface above, such as A2. Otherwise, the system will specify the port name, such as sub.p01. The non boundary port is the port of the selected component which is not connected with the external circuit and whose pin is labeled, as shown in the figure, the connection point A1 of DC voltage source and resistance. In the interface above, you can choose whether to display ports or not. The column `Modified` can be edited. You can change the name of the port as required, that is, the label connected between layers. In the `Description` column, you can change the pin display name of the package sub diagram icon, and in the `Position` column, you can change the direction of the port.
 
-在本例中，修改端口名称为：A2修改为A2，描述为R+，Sub.p01修改为A0，描述为Vs-。显示非边界端口，并修改Sub.A1为A1，描述为Vs+。点击新建，即可完成子图的建立。如图所示。
+In this example, change the port name to A2 and its description to R+, change sub.p01 to A0 and its description to Vs-. Display the non-boundary port, and change sub.a1 to A1 and its description to Vs+. Click `New` button to complete the creation of the subgraph. As shown in the figure.
 
-![定义界面1](SubGraph/Z3.png "修改端口名称与描述" =x400)
+![定义界面1](SubGraph/Z3.png "Modify port name and description" =x400)
 
 {% pullquote tip %}
-子图中不能继续创建新的子图，即不允许子图嵌套。
+New subgraphs cannot be created in subgraphs, that is, they are not allowed to be nested.
 {% endpullquote %}
 
-## 打开子图
+## Open Subgraph
 
-创建完毕后工作空间中将出现该子图的封装图标，双击该图标可打开子图。子图所处的页面为Sub，即新图标图层的名称。点击页面名称旁边的关闭按钮可关闭该子图。
+After creation of subgraph, the footprint icon of the sub graph will appear in the workspace. Double click the icon to open the subgraph. The page name of the subgraph is 'Sub', which is the name of the new icon layer. Click the close button next to the page name to close the subgraph.
 
-![子图](SubGraph/Z4.png "子图封装后的主仿真页面的仿真图")
-![打开子图](SubGraph/Z5.png "子图内部的仿真图")
+![子图](SubGraph/Z4.png "Icon after encapsulation of subgraph")
+![打开子图](SubGraph/Z5.png "Circuit inside the subgraph")
 
-## 删除子图
+## Delete Subgraph
 
-在主图层中，选中需要删除的子图。可在子图上点击右键，在下拉菜单中选择`删除`或直接按下键盘[[Delete]]键，在弹出的对话框中选择删除的类型——`仅删除图标不删除子图`以及`删除图标且删除子图`。当选择前者时，子图并不会被删除，可通过工作空间左侧`应用树`重新打开该图层。
+In the main layer, select the subgraph you want to delete. Right-click the subgraph, select `Delete` from the drop-down menu or directly press the keyboard [[Delete]] key, and select the type of deletion in the pop-up dialog box: `Only delete icon does not delete the subgraph` and `Delete icon and delete the subgraph`. When selecting the former, the subgraph will not be deleted. You can reopen the layer through the `Application Tree` on the left side of the workspace. 
 
-![打开删除子图](SubGraph/Z6.png "从应用树打开子图")
+![打开删除子图](SubGraph/Z6.png "Opening a subgraph from the application tree")
 
-如选择`删除图标且删除子图`，则会将图标与元件所在图层一并删除。
+If the `Delete icon and delete the subgraph` is selected, both the icon and the subgraph layer will be deleted.
 
-## 更新子图
+## Update Subgraph
 
-如果用户对子图进行了修改，如添加了新的元件，需在子图图层空白中鼠标右键选择更新子图。系统会自动识别子图中的边界端口与非边界端口，再次弹出子图端口的自定义界面供用户进行修改、添加。点击新建后，即可完成主图层中的图标更新。
+If users make any changes to the subgraph, such as adding new components, users need to right-click in the blank of the subgraph layer and select `Update subgraph`. The system will automatically identify the boundary ports and non-boundary ports in the subgraph, and pop up the user-defined interface of the subgraph ports again for users to modify. Click `New` to update the icon in the main layer.
 
 
 

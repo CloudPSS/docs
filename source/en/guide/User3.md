@@ -1,126 +1,117 @@
 ---
-title: 建模仿真操作
+title: Operation of Simulation
 type: guide
 author: zhangr
 order: 400
 ---
 
-## 工程
+## Project
 
-### 新建工程
+### New Project
 
-点击`菜单->文件->新建工程`后，会弹出一个名为`新建算例`的新工作窗口，按Esc键退出向导功能。在保存工程时，可以修改工程名。
+After clicking `Menu->File->New Project`, a window named `New Simulation` will pop up. Press [[ESC]] to exit guide wizard. The project name could be modified when the project is saving.
 
-### 打开工程
+### Open Project
 
-点击`菜单->文件->打开工程`后，将出现打开仿真对话框。用户可分别从`我的仿真`以及`仿真广场`两个地方打开所需的工程文件。
+After clicking `Menu->File->Open Project`, an open simulation dialog box will show. User could select to open project files from `My Simulation` or `Simulation Case Plaza`.
 
-`我的仿真`中存储的是用户保存过的工程文件，其界面如下图所示，包含文件夹、文件列表以及缩略图，选择任意文件夹下的仿真文件，点击`打开`或`在新窗口打开`即可打开工程文件。
+The `My Simulation` stored project files saved by users. The interface shows below includes Folder, File List and Thumbnail. Select simulation file in any folder and click `Open` or `Open in new window` to open project.
 
-![打开工程界面](User3/J1.png "打开我的仿真对应的界面")
+![打开工程界面](User3/J1.png "The interface of opening My Simulation")
 
-`仿真广场`中是其他用户对外部公开的工程文件，可供其他用户使用。其界面如下图所示，包含文件列表和缩略图，选择任意仿真文件，点击`打开`或`在新窗口打开`即可打开工程文件。
+The `Simulation Case Plaza` contains the public project files published by other users. The interface includes File list and Thumbnail. Select simulation file in arbitrary folder and click `Open` or `Open in new window` to open project.
 
-![打开工程界面1](User3/J2.png "打开仿真广场对应的界面")
+![打开工程界面1](User3/J2.png "The interface of opening Simulation Case Plaza")
 
-### 保存工程
+### Save Project
 
-点击`菜单->文件->保存工程`或`工具栏->快速保存`后，将弹出保存工程对话框，如下图所示。填入仿真的名称、仿真的编号以及仿真描述，选择存入的文件夹，点击保存按钮即可实现对工程的保存。另存为工程的操作与此类似，此处不再赘述。
+After clicking `Menu->File->Save Project` or `Toolbar->Fast Save`, the Save Project dialog box will pop up, as shown below. Fill in the name of the simulation, the simulation number and the simulation description, select the saved folder and click the Save button to save the project. The operation of saving as a project is similar to this and will not be described here.
 
-![保存工程界面](User3/J3.png "保存工程的界面 ")
+![保存工程界面](User3/J3.png "The interface of saving projects ")
 
-## 仿真搭建方法
+## Construction of Simulation
 
-本节以一个简单的仿真算例为例(正弦受控电压源带阻性负载)，讲解算例的搭建及仿真过程。
+This section takes a simple simulation case as an example (sinusoidal controlled voltage source with resistive load) to explain the construction process of a simulation.
 
-### 放置元件
+### Place component
 
-首先新建一个空白工程，点击元件列表内的元件，拖拽至工作空间即可完成对相应元件的放置。可利用快捷键、点击`菜单->编辑`或点击`工具栏->撤销/重做`进行元件的复制、粘贴、撤销、删除等操作。可利用鼠标长按元件进行拖动或选中元件后用键盘方向键对元件位置进行改变。点击元件上方的圆形箭头或利用[[Ctrl]]+[[R]]对元件进行旋转。元件放置结束后的工作空间如图所示。
+First, create a blank project, click on a component in the component list and drag it to the workspace. Users can also use hot keys to copy, paste, undo or delete the component by clicking `Menu->Edit` or `Toolbar->Undo`. Long-press the component to drag or select the component and then use the keyboard arrow keys to change the component position. Click the circular arrow above the component or use [[Ctrl]]+[[R]] to rotate the component. The Main Workspace after placing components is shown as the figure.
 
-![放置元件界面](User3/J4.png "放置元件界面")
-
-{% pullquote tip %}
-不同工程窗口之间不允许进行元件的复制以及粘贴操作。
-{% endpullquote %}
-
-### 连接元件
-
-将鼠标光标移至元件引脚处，若该引脚出现绿色圆形阴影，说明该引脚可用。此时单击该引脚，并移动光标可形成以绿色虚线形式存在的连接路径。在连线过程中，单击鼠标左键可以在该处设置连线拐点，点击鼠标右键可退出连线。当路径移动到可以连接的另一引脚时，该引脚处同样产生绿色圆形阴影，单击该引脚，即可实现两个元件的连接。元件连接示例如图所示。
-
-![连接元件界面](User3/J5.png "使用连线连接元件")
-
-若出现元件较多、连线不便的情况，可以通过“设置引脚”的方式对两个及以上的引脚进行连接。单击需要连接的元件，在工作空间的右侧会出现`参数配置`面板，在需要连接的引脚处标上相同的字符，即可实现连接，如下图所示。
-
-![连接元件界面1](User3/J6.png "使用设置引脚连接元件")
+![放置元件界面](User3/J4.png "Interface of placing components")
 
 {% pullquote tip %}
-+ 电气引脚与信号引脚不能互相连接。
-+ 信号输入引脚不能并联，信号输出引脚不能并联。也即信号输出引脚需连接至另一信号输入引脚。
-+ 引脚连接需满足维数要求。例如“三相交流电压源”的正端为三维电气引脚，不能直接与单相`电阻`的一维引脚连接，此时可加入`分线器`进行电气引脚拆分。同理，多维的信号引脚加入`多路信号合并`或`多路信号分离`元件进行拆分/聚合。
+It is unavailable to Copy or Paste components to another project window.
 {% endpullquote %}
 
-### 设置参数
+### Connect Component
 
-在完成对元件的连接后，需对各个元件的参数进行设置。点击任一元件(以受控电压源为例)，工作空间右侧将出现如图所示的`参数配置`面板，编辑完成后，系统自动保存相关参数。
+Move the mouse cursor at the component pin. If a green circular shadow shows, then this pin is available. Click on the pin and move the cursor, a green dotted line will appear to mark the movement path. During the connection process, uses can click the left mouse button to set the inflection point or click the right mouse button to exit the connection. If the mouse moves to another pin that can be connected, then an same green circular shadow will shows, click on this pin to connect these two components. An example of component connections is shown in figure. 
 
-![设置参数界面](User3/J7.png "设置参数界面")
+![连接元件界面](User3/J5.png "Connecting elements with wires")
 
-`参数配置`面板右侧为`格式面板`，用于设置元件的图标特性，如样式、文本以及排列，如下图所示。
+If there are many components and the connection is inconvenient, users can connect two or more pins by “pin mark”. When clicking on the component, the `Parameter Configuration` panel will appear on the right side of the main workspace. The connection can be realized by marking the same character on the pins of different components, as shown in the figure.
 
-![设置参数界面1](User3/J8.png "格式面板界面")
+![连接元件界面1](User3/J6.png "Connecting elements using pin mark")
 
-### 添加测量元件
+{% pullquote tip %}
++ Electrical pins and signal pins cannot be connected to each other.
++ The signal input pin cannot be connected in parallel, and the signal output pin cannot be connected in parallel. That is, the signal output pin needs to be connected to another signal input pin.
++ The pin connection should satisfy the dimension requirement. For example, the `3-phase AC Voltage Source` has 3-dimension electrical pin and cannot be connected to single-phase `Resistor` which has 1-dimension pin. 
+{% endpullquote %}
 
-搭建完电路之后，需添加量测元件对电气量进行测量或输出，常用的量测元件有`电压表`、`支路电压表`以及`电流表`。以电压表为例，拖拽元件列表里的电压表至工作空间，并连接至电路。点击该元件出现参数配置面板，填写该电压表测得电压信号的名称，以#号开头。
+### Set Parameter
 
-![添加量测界面](User3/J9.png "添加电压表至工作空间")
-![添加量测界面](User3/J10.png "配置电压表信号名称")
+After finishing the connection of components, the parameters of each component need to be set. When users click on any component, the `Parameter Configuration` panel will appear on the right side of the workspace. After editing, the system will automatically save the parameters.
 
-此外，电气元件本身支持部分内部量输出，也即不需要外加量测元件，也可以输出测量信号。点击`元件->参数配置->参数->Monitoring`填写以#号开头的量测信号输出名称即可，操作方法如图所示。
+![设置参数界面](User3/J7.png "Interface of setting parameter")
 
-![添加量测界面1](User3/J11.png "使用元件内部量输出")
+The `Format Panel`, as shown in the figure, is on the right side of the `Parameter Configuration` panel, which is used to set the display properties of the component, such as style, text, and arrangement.
 
-更多关于信号名称的信息，详见：[参数系统使用方法](../features/ParameterSystem.html)。
+![设置参数界面1](User3/J8.png "Interface of format panel")
 
-### 波形输出
+### Add Measure Components
 
-量测元件只对电气量进行采集，如需显示还需加入`输出元件`。 CloudPSS的输出波形显示需同时用到`示波器分组`以及`波形通道`两个元件。`波形通道`类比与实际物理示波器的探头，`示波器分组`类比于任意通道数的实际物理示波器。
+After the construction of main circuit, the measurement components needs to be added to measure the electrical quantity. The commonly used measurement components are `Voltage Meter`, `Branch Voltage Meter` and `Current Meter`. Taking a `Voltage Meter` as an example, drag it from the component list to the main workspace and connect to the circuit. Click on the component to display the `Parameter Configuration` panel, fill in the name of the measures voltage signal. Note that the name of the measured signals should start with the mark #.
 
-拖拽`波形通道`元件至工作空间，单击设置参数，如下图所示。通道名称设定为：负载电压，采样频率设定为1000Hz，采样频率越高，输出显示波形越精确，但数据量大，影响显示速度。输入信号维数设定为1，因为采集得到的负载电压为1维。输入引脚填写为以#号开头的电压表测量输出信号名称#Vr。同理再添加一个“波形通道”，用以显示受控电压源Monitoring输出信号#V1，如下图所示。
+![添加量测界面](User3/J9.png "Adding a voltage meter to the main workspace")
+![添加量测界面](User3/J10.png "configuring the measured signal name of the voltage meter")
 
-![配置输出通道](User3/J12.png "配置输出通道Vr")
-![配置输出通道](User3/J13.png "配置输出通道V1")
+In addition, electrical components can output their inner measured signals without any additional measurement components. Click `Component->Parameter Configuration->Parameter->Monitoring` and fill in the output signal name starting with mark #, as shown in the figure.
 
-拖拽`示波器分组`元件至工作空间，单击设置参数，如下图所示。该元件自动识别输出通道名称，勾选需要显示的波形通道，若波形通道未命名，将采用默认命名。填写该元件的名称为分组1。
+![添加量测界面1](User3/J11.png "Using component internal monitoring")
 
-![配置示波器分组](User3/J14.png "配置示波器分组")
+For more information on signal names, please see [How to use the parameter system](../features/ParameterSystem.html).
 
-至此工作空间的仿真内容全部搭建完毕，总的仿真图如下图所示。
+### Waveform Output
 
-![总仿真图](User3/J15.png "总仿真图")
+In order to display the measured signals, the `Output Components` (both the `Oscilloscope Group` and `Output Channel`) need to be added into the main workspace. `Output Channel` works as the actual physical oscilloscope's probe and the `Oscilloscope Group` works as an actual physical multichannel oscilloscope.
 
-### 仿真控制
+Drag the `Output Channel` component to the workspace and fill in the Channel Name with ‘Load Voltage’. The sampling frequency is set to 1000Hz. Note that the higher the sampling frequency, the more accurate the output waveform and lower display speed the data. The input signal dimension is set to 1 since the acquired load voltage is 1 dimension. The input pin is named #Vr, where #Vr is the measured output signal of the voltmeter. In addition, add another `Output Channel` named #V1 to display the Monitoring output signal of the controlled voltage source.
 
-点击工作空间空白处，对右侧的`电磁暂态`面板进行操作，填写仿真时间及步长，如下图所示。点击`仿真控制->开始`将弹出计算节点选择，选择神威节点，然后弹出仿真结果窗口。
+![配置输出通道](User3/J12.png "Configuring output channel of Vr")
+![配置输出通道](User3/J13.png "Configuring output channel of V1")
 
-![仿真控制界面](User3/J16.png "仿真控制界面")
+Drag the `Oscilloscope Group` component to the workspace and click `Set Parameters` on the upper right corner of the main workspace, as shown below. Fill in the name of the component as Group 1. The `Oscilloscope Group` component can automatically identify the name of all the `Output Channel` and users can select which waveform channels to be displayed.
 
-仿真结果如下图所示。
+![配置示波器分组](User3/J14.png "Configuring the oscilloscope group component")
 
-![仿真结果](User3/J17.png "仿真结果")
+An overall simulation diagram is shown below.
 
-滑动坐标轴灰色滑块两端可调节显示坐标范围，坐标轴底端显示了接入的波形通道名称，右上角为波形控制，可实现：区域缩放(放大某一区域的波形)，区域缩放还原(退回上一次区域缩放前)，还原(回到原始显示波形)，保存为图片(浏览器自动下载仿真结果图片)。点击左上角结束，点击`分享内容`可形成分享文档，如图所示。
+![总仿真图](User3/J15.png "The overall simulation diagram")
 
-![文档分享](User3/J18.png "文档分享")
+### Simulation Control
 
-点击文档右上角的关闭按钮，点击仿真结果左上角的关闭按钮，结束本次仿真。
+Click on the blank space of the main workspace, fill in the simulation time and step size in the `Eelectromagnetic Transient` panel on the right side, as shown in the figure. Click `Simulation Control->Start` and pop up the computational node selection window, then select the `ShenWei Node` and the simulation results window pops up.
 
+![仿真控制界面](User3/J16.png "Interface of simulation control")
 
+The simulation result is shown below.
 
+![仿真结果](User3/J17.png "Simulation results window")
 
+By sliding the gray slider at bottom or right most, the coordinate display range could be adjusted. The bottom of the coordinate axis shows the name of output channels. The upper right corner shows the waveform control, which can realize area zoom in (magnify the waveform of a certain area), area zoom out (return to the previous area zoom), restore (return to the original display waveform) and save as a picture (the browser automatically downloads the simulation result picture). Click on the top left corner and click `Share Content` to create a shared document, as shown in the figure.
 
+![文档分享](User3/J18.png "Document sharing window")
 
-
-
-
+Click the close button in the upper right corner of the document and click the close button in the upper left corner of the simulation result to end the simulation.
 

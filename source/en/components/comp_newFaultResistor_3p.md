@@ -1,5 +1,5 @@
 ---
-title: 三相故障电阻
+title: Three-phase Fault Resistor
 author: 
 author_email:
 
@@ -13,40 +13,40 @@ order: 600
 classname: _newFaultResistor_3p
 symbol: newFaultResistance_3p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newFaultResistance_3p %}
 
-> **该元件用以建模三相故障电阻（单线图）。**
+> **This component is used to model three-phase fault resistor.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入故障电阻的名称（可缺省） |
-| Initial Resistance | Ω | 初始电阻 | 实数（常量） | 电阻的初始值 |
-| Fault Start Time | s | 故障开始时刻 | 实数（变量） | 故障开始的时刻 |
-| Fault End Time | s | 故障结束时刻 | 实数（变量） | 故障结束的时刻 |
-| Fault Resistance | Ω | 故障期间电阻 | 实数（变量） | 故障期间的电阻值 |
-| Fault Type |  | 故障类型 | 选择 | 选择故障的类型（A相、B相、C相、AB相、BC相、AC相、ABC相） |
-| Fault Clear Type | | 故障清除时刻 | 选择 | 选择故障清除时刻为过零时刻或任意时刻 |
+| Name |  | Name of component | Text | Enter the name of three-pahse fault resistor (Default) |
+| Initial Resistance | Ω | Initial resistance | Real number (Const) | Initial resistance |
+| Fault Start Time | s | Fault start time | Real number (Variable) | Fault start time |
+| Fault End Time | s | Fault end time | Real number (Variable) | Fault end time |
+| Fault Resistance | Ω | Fault resistance | Real number (Variable) | The resistance during the fault |
+| Fault Type |  | Fault type | Select | Select fault types (A、B、C、AB、BC、AC or ABC) |
+| Fault Clear Type | | Fault clear type | Select | Select fault types as "at Zero-Crossing Time" or "at Any Time" |
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Branch Current \[kA\] | 三相电阻故障电流 | 文本 |  此处输入电阻端电压量测信号的标签（3×1维），以#号开头，如#Vabc |
-| 3 Phase Branch Voltage \[kV\] | 三相电阻故障电压 | 文本 | 此处输入电阻电流量测信号的标签（3×1维），以#号开头，如#Iabc |
+| 3 Phase Branch Current \[kA\] | Current of 3-phase fault resistor | Text | Enter the label of the current of 3-phase fault resistor (3×1 dimension), starting with #, such as #Iabc |
+| 3 Phase Branch Voltage \[kV\] | Voltage of 3-phase fault resistor | Text | Enter the label of the voltage of 3-phase fault resistor (3×1 dimension), starting with #, such as #Vabc |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 3×1 |电阻正端（参考方向）|
-| Pin - | 3×1 |电阻负端（参考方向）|
+| Pin + | 3×1 | Positive terminal |
+| Pin - | 3×1 | Negative terminal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[单相故障电阻](comp_newFaultResistor.html)、[电阻](compnewResistorRouter.html)
+[Single-phase Fault Resistor](comp_newFaultResistor.html)、[Resistor](compnewResistorRouter.html)

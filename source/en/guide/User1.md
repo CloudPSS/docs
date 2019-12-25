@@ -1,85 +1,86 @@
 ---
-title: 账号管理
+title: Account Management
 type: guide
 author: zhangr
 order: 200
 ---
 
-## 账号登录与注册
+## Account registration and login
 
-CloudPSS是一款基于网页的在线仿真软件，用户注册账号即可免费试用。打开浏览器(为保证最好显示效果，建议使用Chrome浏览器)，在浏览器地址栏输入[www.cloudpss.net](https://www.cloudpss.net)，进入CloudPSS的网页主页。点击主页右上角的`登录`按钮，进入登录页面，如图所示。如用户已经建有账号，在登录页面的相应位置填写用户邮箱及登录密码，点击`登录`即可实现用户的登录。
+CloudPSS is a free online simulation tool for every registered user. Enter [www.cloudpss.net](https://www.cloudpss.net)，in the address bar to visit our homepage (To ensure the best display, we recommend using google Chrome browser).
 
-![用户登录界面](User1/Z1.png "用户登录界面")
+Click `Log in` button on the upper right corner and go to the login page as the picture shown below. If the user has registered an account, please enter the registered email and password in the corresponding location and then click `Log in` button to log in.
 
-若用户没有账号，点击`还没有账号？赶快注册一个吧`进入注册页面，如图所示。用户按照提示填写相应信息，点击`发送注册码`按钮对注册所用邮箱进行验证。此时，打开注册邮箱获取注册码，并将其填入注册页面相应位置，点击`注册`，即可完成对新用户的注册。注册成功后，页面将自动跳转至登录界面。
+![Login interface](User1/Z1.png "Login Interface")
 
-![用户注册界面](User1/Z2.png "用户注册界面")
+If the user is new to our web, please click `Create New Account` button and go to the registration page. Following the instructions, user should fill in corresponding information and click `Send Registration Code` to verify the email used for registration. Please copy the registration code from the mailbox to registration page and click `Sign up` button to create the new account. After successful registration, the page will automatically jump to the login interface.
+
+![Registration interface](User1/Z2.png "Registration interface")
 
 
-### 注册常见问题
+### Registration FAQs
 
 {% pullquote question %}
-**忘记密码怎么办，如何找回？**
+**What should I do if I forget my password?**
 
-如果不小心忘记密码可以通过注册邮箱验证的方式，按照步骤重新设置新的密码。
+If you accidentally forget your password, you can reset your new password by verify your registered email.
 {% endpullquote %}
 
 {% pullquote question %}
-**接收不到验证码怎么办？**
+**What if I don't receive the verification code?**
 
-如果使用QQ邮箱、126等网易邮箱进行注册，若无法接收到验证码，请用注册邮箱向<noreply@cloudpss.net>邮箱发送一封任意内容邮件，之后再尝试发送验证码。
+If you register by QQ or Netease email and cannot receive the verification code, please send a mail with arbitrary content to <noreply@cloudpss.net> by the registered email and then try the verification process again.
 {% endpullquote %}
 
 
-## 个人中心
+## Personal Center
 
-登录成功后，页面将跳转至`个人中心`，如图所示。该界面包含功能链接、动态、最近仿真、仿真信息、社交信息、新闻动态以及热门算例。
+Once the login success, the page will jump to `Personal Center`. This includes function links, activity, recent simulation, simulation information, social contact, news and popular case.
 
-![个人中心界面](User1/Z3.png "个人中心界面")
+![Interface of Personal Center](User1/Z3.png "Interface of Personal Center")
 
-### 功能链接
+### Function Links
 
-提供了相关功能的链接入口，具体为：
-+ 主页：个人中心的主页面。
-+ 工作台：电磁暂态仿真的工作界面。
-+ 热网潮流设计：热网潮流仿真的工作界面。
-+ 云空间：用户相关仿真、文档、模块等的存储空间。
-+ 应用：用于仿真分析计算的实用化工具。
-+ 设置：用于编辑用户信息等。
-+ 帮助：用户帮助文档系统。
+Function links provide quick access to multiple functions such as: 
++ Homepage: The homepage of Personal Center.
++ Workspace: The interface of electromagnetic transient simulation (EMT simulation).
++ Workspace (heat): The interface of heat flow simulation.
++ Cloud storage space：Online storage of user simulation work, document and module.
++ Configuration：Edit user information.
++ Help：Help documents.
 
-### 仿真信息
+### Simulation Information
 
-点击`仿真信息->仿真/模块`或`功能链接->云空间`都可进入用户储存空间，如图所示。该页面包含：
-+ 我的仿真：用于存储用户的仿真工程文件。
-+ 仿真广场：用于显示他人发布的仿真工程文件。
-+ 我的模块：用于存储用户搭建的仿真模块。
-+ 发布：用于存储用户发布的文档、仿真工程文件。
-+ 收藏：用于存储用户收藏的文档、仿真工程文件。
+Click `Simulation Information->Simulation/Modules`, `Modules->Cloud Storage Space`Modules or  to enter user storage space. This page includes:
++ My simulation：To save the simulation files of users.
++ Simulation case plaza：To show the simulation projects of other users.
++ My module：To save the simulation modules constructed by users.
++ Publication：To display the published documents and projects of users.
++ Favorite：To mark the documents and projects of interest to users.
 
-![云空间界面1](User1/Z4.png "云空间界面1")
+![Interface 1 of the cloud storage space](User1/Z4.png "Interface 1 of the cloud storage space")
 
-点击`我的仿真->选择文件夹`可显示用户编辑的文件夹信息，文件夹划分有利于整理仿真文件。点击任一仿真文件名，可弹出文件操作窗口，可对仿真文件进行打开，编辑(所属文件夹，文件名称等)以及删除，如图所示。
+User could click `directory configuration` to create or edit folder and click `select folder` to show the simulation files belong to this folder. Using folder is helpful to sort files. Click any simulation file name to pop up the control button, which allows users to open, edit or delete this file.
 
-![云空间界面2](User1/Z5.png "云空间界面2")
+![Interface 2 of the cloud storage space](User1/Z5.png "Interface 2 of the cloud storage space")
 
-### 动态
+### Activity
  
-显示了用户最近的分享等内容。 
+Shows what users have recently shared. 
 
-### 最近
+### Recent Simulation
 	
-显示了用户最近操作过的仿真文件信息。  
+Shows the simulation file recently operated by users.  
 	
-### 社交信息
+### Social Contact
 	
-显示用户关注或被关注的其他用户。
+Shows other users who are following or being followed by users.
 	
-### 新闻动态
+### News
 	
-显示有CloudPSS管理员发布的新闻信息。
+Shows the news announced by CloudPSS administrator.
 	
-### 热门
+### Popular Case
 	
-显示仿真广场中的热门仿真文件。
+Shows the popular simulation cases in the simulation case plaza.
 
