@@ -62,6 +62,8 @@ figure.highlight
     font-size: .75em
     padding: 4px 8px 0 8px 
   > figcaption
+    margin: 0
+    text-align: left
     > span
       font-weight: 200
       color: $light
@@ -75,13 +77,15 @@ figure.highlight
     display: block
     padding: 0
     margin: 0
-    tr > td
+    td
       padding: 0
       min-width: 0
       line-height: 1.2em
       border: none
+      background: $codebg
+      @media print
+        background: white
       &.gutter
-        background-color: $codebg
         border-radius: 8px
         text-align: right
         user-select: none

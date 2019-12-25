@@ -47,6 +47,7 @@
     <title><%= title() ? title() + ' - ' : '' %><%= config.title %></title>
 
     <%- css('css/page') -%>
+    <%- css('css/' + page.lang) -%>
     <%- csscdn('katex@^0.11/dist/katex') -%>
     <%- jscdn('js-polyfills/polyfill') -%>
     <%- jscdn('vue@^2/dist/vue') -%> 
@@ -56,7 +57,12 @@
   <body>
     <%- partial('partials/header') -%>
     <%- partial('partials/sidebar') -%>
-    <main class="<%- page.sidebar !== false ? 'with-sidebar' : '' %>"><%- body -%></main>
+    <main class="<%- page.sidebar !== false ? 'with-sidebar' : '' %>">
+      <div id="not-translated-hint">
+        This topic has not been translated yet.
+      </div>
+      <%- body -%>
+    </main>
     <%- partial('partials/footer') -%>
     
     <%- csscdn('photoswipe@^4/dist/photoswipe', false) -%>
