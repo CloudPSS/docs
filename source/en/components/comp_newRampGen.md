@@ -1,5 +1,5 @@
 ---
-title: 斜坡函数发生器
+title: Ramp Generator
 author: 
 author_email:
 
@@ -13,32 +13,32 @@ order: 800
 classname: _newRampGen
 symbol: newRampGen
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newRampGen %}
 
-> **该元件用以产生斜坡信号。**
+> **This component is used to generate ramp signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入斜坡函数发生器的名称（可缺省） |
-| Ramping Start Time | s | 斜坡沿开始时刻T1 | 实数（常量） | 斜坡沿开始时刻T1  |
-| Ramping End Time | s | 斜坡沿结束时刻T2(>T1) | 实数（常量） | 斜坡沿结束时刻T2 |
-| Peak Output |  | 饱和(峰值)输出 | 实数（常量） | 斜坡信号的输出峰值 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Ramping Start Time | s | Ramping start time T1 | Real number (Const) | Ramping start time T1  |
+| Ramping End Time | s | Ramping end time T2(>T1) | Real number (Const) | Ramping end time T2(>T1) |
+| Peak Output |  | Peak output | Real number (Const) | Peak output of ramp signal |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[阶跃发生器](comp_newStepGen.html)
+[Step Generator](comp_newStepGen.html)
 

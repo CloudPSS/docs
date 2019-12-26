@@ -1,5 +1,5 @@
 ---
-title: 光伏电池单元
+title: Photovoltaic Source
 author: 
 author_email:
 
@@ -13,53 +13,53 @@ order: 100
 classname: _newPVSource
 symbol: newPVSource
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPVSource %}
 
-> **该元件用以建模N*M的光伏阵列，其假定构成光伏阵列的所有光伏单元特性都相同**
+> **This component can be used to model a photovoltaic (PV) source. The photovoltaic source is assumed to consist of several strings of PV modules connected in parallel, where each string can consist of a number of PV modules connected in series. All PV modules in the array are assumed identical.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 名称 | 文本 | 此处输入光伏电池单元的名称（可缺省） |
-| No. of Cells Connected in Series |  | 阵列串联模块数 | 整数（常量） | 光伏阵列串联模块数M |
-| No. of Cells Series in Parallel |  | 阵列并联模块数 | 整数（常量） | 光伏阵列并联模块数N |
-| Rated Irradiation | W/m^2 | 额定辐照度 | 实数（常量） | 光伏阵列的参考辐照度 |
-| Rated Temperature | °C | 额定温度 | 实数（常量） | 光伏阵列的参考温度 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| No. of Cells Connected in Series |  | Number of cells connected in series | Integer (Const) | Number of PV modules connected in series in the PV array, M |
+| No. of Cells Series in Parallel |  | Number of cells series in parallel | Integer (Const) | Number of PV modules connected in parallel in the PV array, N |
+| Rated Irradiation | W/m^2 | Rated irradiation | Real number (Const) | Rated irradiation of PV array |
+| Rated Temperature | °C | Rated temperature | Real number (Const) | Rated temperature of PV array |
 
 ### Equivalent Circuit Parameters
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Rated Open-Circuit Voltage | V | 额定开路电压 | 实数（常量） | 光伏单元的额定开路电压 |
-| Rated Short-Circuit Current | A | 额定短路电流 | 实数（常量） | 光伏单元的额定短路电流 |
-| Voltage at Maximum Power Point | V | 最大功率点 | 实数（常量） |光伏单元的最大功率点  |
-| Current at Maximum Power Point | A | 串联电阻 | 实数（常量） | 等效串联内阻 |
-| Compensation Parameter α | 1/℃ | 补偿系数α | 实数（常量） |  补偿系数α |
-| Compensation Parameter β |  | 补偿系数β | 实数（常量） | 补偿系数β |
-| Compensation Parameter γ | 1/℃ | 补偿系数γ | 实数（常量） |  补偿系数γ |
+| Rated Open-Circuit Voltage | V | Rated open-circuit voltage | Real number (Const) | Rated open-circuit voltage of the PV array |
+| Rated Short-Circuit Current | A | Rated short-circuit current | Real number (Const) | Rated short-circuit current of the PV array |
+| Voltage at Maximum Power Point | V | Voltage at maximum power point | Real number (Const) | Voltage at maximum power point of the PV array  |
+| Current at Maximum Power Point | A | Current at maximum power point | Real number (Const) | Current at maximum power point of the PV array |
+| Compensation Parameter α | 1/℃ | Compensation parameter α | Real number (Const) |  Compensation parameter α |
+| Compensation Parameter β |  | Compensation parameter β | Real number (Const) | Compensation parameter β |
+| Compensation Parameter γ | 1/℃ | Compensation parameter γ | Real number (Const) |  Compensation parameter γ |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| PV Array Output Power \[MW\] | 模组输出功率 | 文本 | 此处输入光伏阵列输出功率量测信号的标签，以#号开头，如#Ppv |
-| PV Array Branch Voltage \[kV\] | 光伏阵列输出电压 | 文本 | 此处输入光伏阵列输出电压量测信号的标签，以#号开头，如#Vpv |
-| PV Array Branch Current \[kV\] | 光伏阵列输出电流 | 文本 | 此处输入光伏阵列输出电流量测信号的标签，以#号开头，如#Ipv |
+| PV Array Output Power \[MW\] | PV array output power | Text | Enter the measurement signal label of the output power of PV array, starting with #, such as #Ppv |
+| PV Array Branch Voltage \[kV\] | PV array voltage | Text | Enter the measurement signal label of the branch voltage of PV array, starting with #, such as #Vpv |
+| PV Array Branch Current \[kV\] | PV array current | Text | Enter the measurement signal label of the branch current of PV array, starting with #, such as #Ipv |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 1×1 |光伏阵列正端（参考方向）|
-| Pin + | 1×1 | 光伏阵列负端（参考方向）|
-| T | 1×1 |温度输入端口 |
-| G | 1×1 |光照强度输入端口 |
+| Pin - | 1×1 | Positive terminal of PV array |
+| Pin + | 1×1 | Negative terminal of PV array |
+| T | 1×1 | Input pin of temperature |
+| G | 1×1 | Input pin of irradiation |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

@@ -1,5 +1,5 @@
 ---
-title: 非线性函数
+title: Nonlinear Function
 author: 
 author_email:
 
@@ -13,28 +13,28 @@ order: 500
 classname: _newNonlinear
 symbol: newNonlinear
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newNonlinear %}
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 |  |
-| Data Table | 数据表 | 文件 |  |
+| Name | Name of component | Text | Enter the name of this component |
+| Data Table | Data table | File |  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 | |
-| Output | 1×1 | |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[分段线性函数](comp_newPiecewiseLinear.html)
+[Piecewise Linear Function](comp_newPiecewiseLinear.html)

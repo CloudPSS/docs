@@ -1,5 +1,5 @@
 ---
-title: 锁相振荡器
+title: Phase Locked Oscillator
 author: 
 author_email:
 
@@ -13,49 +13,50 @@ order: 100
 classname: _newPLO
 symbol: newPLO
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPLO %}
 
-**该元件是一个三相π控制的锁相环，可以产生6个与输入电压Va同步且依次相差60度的斜升信号theta。**
+**This component is a three-phase phase-locked loop using π Control, The output signal θ1 is a ramp synchronized to the input signal Va, other output signals (θ2~θ6) are then phase shifted by simply adding a constant angle (60°) to the ramp respectively.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处锁相振荡器的名称（可缺省） |
-| Proportional Gain |  | 比例增益 | 实数（常量） | 锁相振荡器的比例增益 |
-| Integral Gain |  | 积分增益 | 实数（常量） | 锁相振荡器的积分增益 |
-| Base Voltage | kV | 电压基值 | 实数（常量） | 锁相振荡器的电压基准值 |
-| Base Frequency | Hz | 频率基值 | 实数（常量） | 锁相振荡器的频率基准值 |
-| Offset Angle to PLO | Deg | PLO输出波形相移 | 实数（常量） | 输出斜升相角信号的相位偏移 |
-| Initialization Time | s | 启动时间，即PLO输出屏蔽时间 | 实数（常量） | 锁相振荡器的启动时间 |
-| Upper Tracking Limit | p.u. | 被跟踪频率上限(标幺值) | 实数（常量） | 锁相振荡器的频率跟踪的上限  |
-| Lower Tracking Limit | p.u. | 被跟踪频率下限(标幺值) | 实数（常量） | 锁相振荡器的频率跟踪的下限 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Proportional Gain |  | Proportional gain | Real number (Const) | Proportional gain of PLO |
+| Integral Gain |  | Integral gain | Real number (Const) | Integral gain of PLO |
+| Base Voltage | kV | Base voltage | Real number (Const) | Base voltage of PLO |
+| Base Frequency | Hz | Base frequency | Real number (Const) | Base frequency of PLO |
+| Offset Angle to PLO | Rad | Phase shift of PLO output signal | Real number (Const) | Phase shift of PLO output signal, the value is between [-2π,2π] |
+| Initialization Time | s | Initialization time, which output of PLO is unavailable | Real number (Const) | Initialization time, which output of PLO is unavailable |
+| Upper Tracking Limit | p.u. | Upper tracking limit of frequency | Real number (Const) | Upper tracking limit of frequency |
+| Lower Tracking Limit | p.u. | Lower tracking limit of frequency | Real number (Const) | Lower tracking limit of frequency |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Tracked Frequency \[Hz\] | 被跟踪频率信号 | 文本 | 此处输锁相振荡器跟踪频率量测信号的标签，以#号开头，如#fa |
+| Tracked Frequency \[Hz\] | Tracked frequency | Text | Enter the measurement signal label of tracked frequency, starting with #, such as #fa |
 
 
-## 端口列表
 
-| 端口名 | 数据维数 | 描述 |
+## Pin List
+
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Va | 1×1 | A相输入端口|
-| Vb | 1×1 |B相输入端口 |
-| Vc | 1×1 |C相输入端口 |
-| Theta 1 | 1×1 | 相位1输出端口|
-| Theta 2 | 1×1 | 相位2输出端口|
-| Theta 3 | 1×1 | 相位3输出端口|
-| Theta 4 | 1×1 | 相位4输出端口|
-| Theta 5 | 1×1 | 相位5输出端口|
-| Theta 6 | 1×1 | 相位6输出端口|
+| Va | 1×1 | Phase A Input pin |
+| Vb | 1×1 | Phase B Input pin |
+| Vc | 1×1 | Phase C Input pin |
+| Theta 1 | 1×1 | Theta 1 Output pin |
+| Theta 2 | 1×1 | Theta 2 Output pin |
+| Theta 3 | 1×1 | Theta 3 Output pin |
+| Theta 4 | 1×1 | Theta 4 Output pin |
+| Theta 5 | 1×1 | Theta 5 Output pin |
+| Theta 6 | 1×1 | Theta 6 Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[锁相环](comp_newPLL.html)
+[Phase Locked Loop](comp_newPLL.html)

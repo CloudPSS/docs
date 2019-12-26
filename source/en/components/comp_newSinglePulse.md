@@ -1,5 +1,5 @@
 ---
-title: 单脉冲发生器
+title: Single-impulse Generator
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 500
 classname: _newSinglePulse
 symbol: newSinglePulse
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newSinglePulse %}
 
-> **该元件用以产单一脉冲信号，脉冲持续时间为一个仿真步长。**
+> **The component is used to generate a single impulse signal with a duration of one simulation time step.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入单脉冲发生器的名称（可缺省） |
-| Height of Pulse |  | 脉冲峰值 | 实数（常量） | 脉冲信号的最大值 |
-| Start Time of Pulse | s | 脉冲起始时间 | 实数（常量） | 脉冲信号产生的时间 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Height of Pulse |  | Height of impulse | Real number (Const) | Impulse magnitude |
+| Start Time of Pulse | s | Start time of impulse | Real number (Const) | Time at which the impulse will occur |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[脉冲发生器](comp_newPulseGen.html)
+[Impulse Generator](comp_newPulseGen.html)

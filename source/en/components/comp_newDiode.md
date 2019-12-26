@@ -23,7 +23,7 @@ symbol: newDiode
 | Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
 | Name |  | Name of component | Text | Enter the name of diode (Default) |
-| Enable Snubber Circuit? |  | Enable snubber circuit? | Select | Select "Yes" or "No" to enable or disable the snubber circuit of parallel diode |
+| Enable Snubber Circuit? |  | Enable snubber circuit? | Select | Select "Yes" or "No" to enable or disable the snubber circuit paralleled with diode |
 | ON Resistance | Ω | ON resistance | Real number (Const)  | Resistance of diode when in the on state |
 | OFF Resistance | Ω | OFF resistance | Real number (Const) | Resistance of diode when in the off state |
 | Forward Voltage Drop | kV | Forward voltage drop | Real number (Const)实数（常量） | Forward voltage drop of diode. The voltage drop when the diode is on |

@@ -50,6 +50,7 @@
     "@types/gulp-uglify": "^3.0.6",
     "@types/hexo": "^3.8.2",
     "@types/photoswipe": "^4.0.29",
-    "@types/puppeteer": "^2.0.0"
+    "@types/puppeteer": "^2.0.0",
+    "del": "^5.1.0"
   }
 }

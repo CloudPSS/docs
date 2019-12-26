@@ -1,5 +1,5 @@
 ---
-title: 幂函数
+title: Power Function
 author: 
 author_email:
 
@@ -13,31 +13,31 @@ order: 800
 classname: _newPower
 symbol: newPower
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPower %}
 
-> **该元件实现幂函数运算。函数式为：**
+> **This component performs mathematical exponentiation: The base x being the input signal and the exponent y a user-defined input parameter. The output signal is x to the exponent y.**
 > $$y(t) = x{(t)^Y}$$
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入幂函数的名称（可缺省） |
-| Power Y |  | 指数 | 实数（常量） | 幂函数的指数Y |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Power Y |  | Exponent | Real number (Const) | Exponent Y of power function |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

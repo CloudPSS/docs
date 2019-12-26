@@ -11,6 +11,7 @@ import puppeteer from "puppeteer";
 import path from 'path';
 import fs from 'fs';
 import sanitize from "sanitize-filename";
+import del from 'del';
 
 function createHexo(depoly = true) {
     const config = ["_config.yml"]
@@ -26,6 +27,10 @@ export async function hexoGenerate(): Promise<void> {
     await h.call('clean');
     await h.call('generate', { force: true });
     await h.exit();
+}
+
+export async function cleanPosts():Promise<void>{
+    await del('./public/posts/**');
 }
 
 // 压缩 public/js 目录 js
@@ -181,7 +186,7 @@ export async function hexoDeploy(): Promise<void> {
     await h.exit();
 }
 
-export const generate = gulp.series(hexoGenerate, gulp.parallel(minifyCss, minifyJs, minifyHtml), generateSw);
+export const generate = gulp.series(hexoGenerate, cleanPosts, gulp.parallel(minifyCss, minifyJs, minifyHtml), generateSw);
 
 export const deploy = gulp.series(generate, hexoDeploy);
 

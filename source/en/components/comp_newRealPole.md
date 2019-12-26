@@ -1,5 +1,5 @@
 ---
-title: 一阶惯性环节
+title: Real Pole
 author: 
 author_email:
 
@@ -13,46 +13,46 @@ order: 600
 classname: _newRealPole
 symbol: newRealPole
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newRealPole %}
 
-> **该元件用以实现一阶惯性环节。**
+> **This component simulates a lag or 'real pole' function, where the output can be reset to the user specified value at any instant.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入一阶惯性环节的名称（可缺省） |
-| Gain |  | 增益 | 实数（常量） | 一阶惯性环节的增益 |
-| Time Constant | s | 时间常数 | 实数（常量） |一阶惯性环节的超前时间常数|
-| Initialization Type |  | 初始化方法 | 选择 | 选择该环节的初始化方法为“稳态”的“任意值” |
-| Initial Value |  | 初始值 | 实数（常量） | 一阶惯性环节的初始值 |
-| Limit Output? |  | 是否限制输出 | 选择 | 选择是否限制该环节的输出，可配置为“Fixed Limits”或“Dynamic Limits” |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Gain |  | Gain | Real number (Const) | Gain of the real pole component |
+| Time Constant | s | Time constant | Real number (Const) | Time constant of the real pole component|
+| Initialization Type |  | Initialization type | Select | Select the initialization type as "Steady-State" or "Any Value" |
+| Initial Value |  | Initial value | Real number (Const) | Initial value the real pole component |
+| Limit Output? |  | Limit output? | Select | Select to limit the output or not. Could be configured as "Fixed Limits" or "Dynamic Limits" |
 
 ### Fixed Limits
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Maximum Limit |  | 输出上限 | 实数（常量） | 元件输出上限，仅当“限制输出”配置为“Fixed Limits”时有效 |
-| Minimum Limit |  | 输出下限 | 实数（常量） | 元件输出下限，仅当“限制输出”配置为“Fixed Limits”时有效 |
+| Maximum Limit |  | Maximum limit | Real number (Const) | Maximum limit for the real pole component, only valid when "Limit Output" is selected to "Fixed limits" |
+| Minimum Limit |  | Minimum limit | Real number (Const) | Minimum limit for the real pole component, only valid when "Limit Output" is selected to "Fixed limits" |
 
 ### Dynamic Limits
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Maximum Limit | 输出上限（以@开头的信号名） | 文本 | 元件输出上限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
-| Minimum Limit | 输出下限（以@开头的信号名） | 文本 | 元件输出下限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
+| Maximum Limit | Maximum limit (Starting with @) | Text | Maximum limit for the real pole component, only valid when "Limit Output" is selected to "Dynamic limits" |
+| Minimum Limit | Minimum limit (Starting with @) | Text | Minimum limit for the real pole component, only valid when "Limit Output" is selected to "Dynamic limits" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[二阶传递函数](comp_newComplexPole.html)、[超前滞后校正](comp_newLeadLag.html)、[高阶传递函数](comp_newNthOrderTransFunc.html)
+[Second Order Complex Pole](comp_newComplexPole.html)、[Lead Lag Pole](comp_newLeadLag.html)、[Nth Order Transfer Function](comp_newNthOrderTransFunc.html)

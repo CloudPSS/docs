@@ -1,5 +1,5 @@
 ---
-title: 极-直坐标转换器
+title: Polar/Rectangular Coordinate Converter
 author: 
 author_email:
 
@@ -13,37 +13,37 @@ order: 400
 classname: _newPRCoordinate
 symbol: newPRCoordinate
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPRCoordinate %}
 
-> **该元件用以实现极坐标转与直角坐标的互相转换功能。**
+> **This component converts a Cartesian (Rectangular) coordinates to Polar format and vice versa.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输极-直坐标变换器的名称（可缺省） |
-| Direction of Transformation | 变换方向 | 选择 | 选择变换的方向为极-直变换或直-极变换 |
-| Angle Specified in | 角度单位类型 | 选择 | 选择转换的角度单位 |
+| Name | Name of component | Text | Enter the name of this component |
+| Direction of Transformation | Direction of transformation | Select | Select "Polar to Rectangular" or "Rectangular to Polar" |
+| Angle Specified in | Angle unit type | Select | Select the unit of angle, "Rad" or "Deg" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| M | 1×1 |输入端口M，仅在“变换方向”为极-直变换时有效 |
-| P | 1×1 |输入端口P，仅在“变换方向”为极-直变换时有效 |
-| X | 1×1 |输入端口X，仅在“变换方向”为极-直变换时有效 |
-| Y | 1×1 |输入端口Y，仅在“变换方向”为极-直变换时有效 |
-| X | 1×1 |输入端口X，仅在“变换方向”为直-极变换时有效 |
-| Y | 1×1 |输入端口Y，仅在“变换方向”为直-极变换时有效 |
-| M | 1×1 |输出端口M，仅在“变换方向”为直-极变换时有效 |
-| P | 1×1 |输出端口P，仅在“变换方向”为直-极变换时有效 |
+| M | 1×1 | Input pin M，only valid when "Direction of Transformation" is "Polar to Rectangular" |
+| P | 1×1 | Input pin P，only valid when "Direction of Transformation" is "Polar to Rectangular" |
+| X | 1×1 | Output pin X，only valid when "Direction of Transformation" is "Polar to Rectangular" |
+| Y | 1×1 | Output pin Y，only valid when "Direction of Transformation" is "Polar to Rectangular" |
+| X | 1×1 | Input pin X，only valid when "Direction of Transformation" is "Rectangular to Polar" |
+| Y | 1×1 | Input pin Y，only valid when "Direction of Transformation" is "Rectangular to Polar" |
+| M | 1×1 | Output pin M，only valid when "Direction of Transformation" is "Rectangular to Polar" |
+| P | 1×1 | Output pin P，only valid when "Direction of Transformation" is "Rectangular to Polar" |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

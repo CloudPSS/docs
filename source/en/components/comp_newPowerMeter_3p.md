@@ -1,5 +1,5 @@
 ---
-title: 三相功率量测
+title: Three-phase Power Meter
 author: 
 author_email:
 
@@ -13,34 +13,34 @@ order: 500
 classname: _newPowerMeter_3p
 symbol: newPowerMeter_3p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPowerMeter_3p %}
 
-> **该元件用以测量三相功率数据。**
+> **This component measures 3-phase active and reactive power.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入三相功率测量的名称（可缺省） |
-| Fundamental Frequency | Hz | 基准频率 | 实数（常量） | 功率测量的基准频率 |
-| Smoothing Time Constant | s | 平滑时间常数 | 实数（常量） | 功率测量的平滑时间常数 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Fundamental Frequency | Hz | Fundamental frequency | Real number (Const)  | Fundamental frequency of power measurement |
+| Smoothing Time Constant | s | Smoothing time constant | Real number (Const) | Smoothing time constant of power measurementconstant |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| 3 Phase Voltage \[kV\] | 3×1 |此处输入测量所得三相电压的名称，以#号开头，如#Vabc |
-| 3 Phase Current \[kA\] | 3×1 |此处输入测量所得三相电流的名称，以#号开头，如#Iabc |
-| Active Power \[MW\] | 1×1 |此处输入测量所得有功功率的名称，以#号开头，如#P |
-| Reactive Power \[MVar\] | 1×1 |此处输入测量所得无功功率的名称，以#号开头，如#Q |
+| 3 Phase Voltage \[kV\] | 3×1 | Enter the measurement signal label of the 3-phase voltage, starting with #, such as #Vabc |
+| 3 Phase Current \[kA\] | 3×1 | Enter the measurement signal label of the 3-phase current, starting with #, such as #Iabc |
+| Active Power \[MW\] | 1×1 | Enter the measurement signal label of the active power, starting with #, such as #P |
+| Reactive Power \[MVar\] | 1×1 | Enter the measurement signal label of the reactive power, starting with #, such as #Q |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[支路电压表](comp_NewBranchVoltageMeter.html)、[电压表](comp_NewVoltageMeter.html)、[电流表](comp_NewCurrentMeter.html)
+[Branch Voltage Meter](comp_NewBranchVoltageMeter.html)、[Voltage Meter](comp_NewVoltageMeter.html)、[Current Meter](comp_NewCurrentMeter.html)
 

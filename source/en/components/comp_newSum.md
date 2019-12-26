@@ -1,5 +1,5 @@
 ---
-title: 加法器/减法器
+title: Adder/Subtractor
 author: 
 author_email:
 
@@ -13,42 +13,42 @@ order: 100
 classname: _newSum
 symbol: newSum
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newSum %}
 
-> **该元件实现1-7个一维输入信号的加减组合运算，每个输入端口可以选择为加、减、禁用三种状态之一。**
+> **The component models the addition and subtraction operation of 1-7 one-dimensional input signals, and each input port can be selected as one of three states of addition, subtraction and disable.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入加法器/减法器的名称（可缺省） |
-| Input A | 输入端A | 选择 | 选择输入端A为加、减或禁用 |
-| Input B | 输入端B | 选择 | 选择输入端B为加、减或禁用 |
-| Input C | 输入端C | 选择 | 选择输入端C为加、减或禁用 |
-| Input D | 输入端D | 选择 | 选择输入端D为加、减或禁用 |
-| Input E | 输入端E | 选择 | 选择输入端E为加、减或禁用 |
-| Input F | 输入端F | 选择 | 选择输入端F为加、减或禁用 |
-| Input G | 输入端G | 选择 | 选择输入端G为加、减或禁用 |
+| Name | Name of component | Text | Enter the name of this component |
+| Input A | Input A | Select | Select "Input A" as "Add", "Subtract" or "Disable" |
+| Input B | Input B | Select | Select "Input B" as "Add", "Subtract" or "Disable" |
+| Input C | Input C | Select | Select "Input C" as "Add", "Subtract" or "Disable" |
+| Input D | Input D | Select | Select "Input D" as "Add", "Subtract" or "Disable" |
+| Input E | Input E | Select | Select "Input E" as "Add", "Subtract" or "Disable" |
+| Input F | Input F | Select | Select "Input F" as "Add", "Subtract" or "Disable" |
+| Input G | Input G | Select | Select "Input G" as "Add", "Subtract" or "Disable" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| A | 1×1 |输入端口A，仅在该端口使能时有效 |
-| B | 1×1 |输入端口B，仅在该端口使能时有效 |
-| C | 1×1 |输入端口C，仅在该端口使能时有效 |
-| D | 1×1 |输入端口D，仅在该端口使能时有效 |
-| E | 1×1 |输入端口E，仅在该端口使能时有效 |
-| F | 1×1 |输入端口F，仅在该端口使能时有效 |
-| G | 1×1 |输入端口G，仅在该端口使能时有效 |
-| Output | 1×1 |输出端口 |
+| A | 1×1 | Input A，only valid when this pin is enabled |
+| B | 1×1 | Input B，only valid when this pin is enabled |
+| C | 1×1 | Input C，only valid when this pin is enabled |
+| D | 1×1 | Input D，only valid when this pin is enabled |
+| E | 1×1 | Input E，only valid when this pin is enabled |
+| F | 1×1 | Input F，only valid when this pin is enabled |
+| G | 1×1 | Input G，only valid when this pin is enabled |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

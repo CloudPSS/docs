@@ -1,5 +1,5 @@
 ---
-title: 锁相环
+title: Phase Locked Loop
 author: 
 author_email:
 
@@ -13,44 +13,44 @@ order: 600
 classname: _newPLL
 symbol: newPLL
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPLL %}
 
-> **该元件是一个三相π控制的锁相环，可以产生一个在0到2π变化的，与输入电压Va同步或锁相的斜升信号theta。**
+> **The component is a three-phase π-controlled phase locked loop that produces theta, a ramp-up signal that is synchronized or phase-locked with the input voltage Va, varying from 0° to 360°.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入锁相环的名称（可缺省） |
-| Proportional Gain |  | 比例增益 | 实数（常量） | 锁相环的比例增益 |
-| Integral Gain |  | 积分增益 | 实数（常量） | 锁相环的积分增益 |
-| Base Voltage | kV | 电压基值 | 实数（常量） | 锁相环的电压基准值 |
-| Base Frequency | Hz | 频率基值 | 实数（常量） | 锁相环的频率基准值 |
-| Offset Angle to PLL | Rad | PLL输出波形相移 | 实数（常量） | 输出斜升相角信号的相位偏移，填入值范围为[-2π,2π] |
-| Initialization Time | s | 启动时间，即PLL输出屏蔽时间 | 实数（常量） | 锁相环的启动时间 |
-| Upper Tracking Limit | p.u. | 被跟踪频率上限 | 实数（常量） | 锁相环频率跟踪的上限 |
-| Lower Tracking Limit | p.u. | 被跟踪频率下限 | 实数（常量） | 锁相环频率跟踪的下限 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Proportional Gain |  | Proportional gain | Real number (Const) | Proportional gain of PLL |
+| Integral Gain |  | Integral gain | Real number (Const) | Integral gain of PLL |
+| Base Voltage | kV | Base voltage | Real number (Const) | Base voltage of PLL |
+| Base Frequency | Hz | Base frequency | Real number (Const) | Base frequency of PLL |
+| Offset Angle to PLL | Rad | Phase shift of PLL output signal | Real number (Const) | Phase shift of PLL output signal, the value is between [-2π,2π] |
+| Initialization Time | s | Initialization time, which output of PLL is unavailable | Real number (Const) | Initialization time, which output of PLL is unavailable |
+| Upper Tracking Limit | p.u. | Upper tracking limit of frequency | Real number (Const) | Upper tracking limit of frequency |
+| Lower Tracking Limit | p.u. | Lower tracking limit of frequency | Real number (Const) | Lower tracking limit of frequency |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Tracked Frequency \[Hz\] | 被跟踪频率信号 | 文本 | 此处输入锁相环跟踪频率量测信号的标签，以#号开头，如#fa |
+| Tracked Frequency \[Hz\] | Tracked frequency | Text | Enter the measurement signal label of tracked frequency, starting with #, such as #fa |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Va | 1×1 | A相输入端口|
-| Vb | 1×1 |B相输入端口 |
-| Vc | 1×1 |C相输入端口 |
-| Theta | 1×1 |相角输出端口 |
+| Va | 1×1 | Input pin of phase A |
+| Vb | 1×1 | Input pin of phase B |
+| Vc | 1×1 | Input pin of phase C |
+| Theta | 1×1 | Output pin of phase angle |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[锁相振荡器](comp_newPLO.html)
+[Phase Locked Oscillator](comp_newPLO.html)

@@ -1,5 +1,5 @@
 ---
-title: 符号函数
+title: Sign Function
 author: 
 author_email:
 
@@ -13,10 +13,10 @@ order: 500
 classname: _newSgn
 symbol: newSgn
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newSgn %}
 
-> **该元件实现符号函数运算，函数关系式为：**
+> **This component performs a 'sign' function on the input signal.**
 > $$y(x) = \left\{ \begin{gathered}
 >  1,x > 0  \\
 >  0,x = 0  \\
@@ -25,24 +25,24 @@ symbol: newSgn
 
 
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入符号函数的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of this component |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input Pin |
+| Output | 1×1 | Output Pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[绝对值函数](comp_newAbs.html)
+[Absolute Value](comp_newAbs.html)
