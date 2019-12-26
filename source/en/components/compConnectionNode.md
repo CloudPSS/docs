@@ -1,5 +1,5 @@
 ---
-title: 连接点
+title: Connection Point
 author: 
 author_email:
 
@@ -13,26 +13,26 @@ order: 3000
 classname: ConnectionNode
 symbol: Heat3
 ---
-## 基本描述
+## Basic Description
 {% compsymbol Heat3 %}
 
-> **该元件实现多根管道的汇集和分流。**
+> **This component realizes the merging and demerging of multiple pipes.**
 
-## 参数列表
+## Parameter
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input&Output | 1×1 | 同时代表连接点元件的入口连接点和出口连接点 |
+| Input&Output | 1×1 | Represent the input and output connection points of the component at the same time |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote tip %}
-目前版本中连接点元件需要作为至少一根管道的起点和一根管道的终点，否则极易引发错误。
+In the current version, the connection point component needs to be the starting point of one pipe and the end point of other pipe at least, otherwise it is easy to cause an error.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 

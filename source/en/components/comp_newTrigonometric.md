@@ -1,5 +1,5 @@
 ---
-title: 三角函数
+title: Trigonometric Functions
 author: 
 author_email:
 
@@ -13,35 +13,35 @@ order: 700
 classname: _newTrigonometric
 symbol: newTrigonometric
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newTrigonometric %}
 
-> **该元件实现三角函数运算，函数种类可配置为Sin、Cos、Tan、ArcSin、ArcCos、ArcTan六种。**
+> **This component implements trigonometric functions. The function types can be configured as six types: Sin, Cos, Tan, ArcSin, ArcCos, and ArcTan.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入三角函数的名称（可缺省） |
-| Function Type | 函数类型 | 选择 | 选择六种函数类型之一 |
-| Angle Type | 角度表示类型 | 选择 | 选择以弧度制还是角度制表示 |
+| Name | Name of component | Text | Enter the name of this component |
+| Function Type | Function type | Select | Select one from the six function types, "Sin", "Cos", "Tan", "ArcSin", "ArcCos", or "ArcTan" |
+| Angle Type | Angle type | Select | Select angle unit as "Rad" or "Deg" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-+ Tan函数在(n+0.5)π处无意义。
-+ ArcSin和ArcCos函数的输入值需在-1.0到1.0之间。
++ Tan function is meaning less when angle equals to (n+0.5)π.
++ The input of ArcSin and ArcCos function should be in the range [-1.0, 1.0].
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 

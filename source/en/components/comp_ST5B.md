@@ -13,53 +13,53 @@ order: 100
 classname: _ST5B
 symbol: ST5B
 ---
-## 基本描述
+## Basic Description
 {% compsymbol ST5B %}
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| \[Rc\] Load Compensating Resistance | pu |  | 实数（常量） |  |
-| \[Xc\] Load Compensating Reactance | pu |  | 实数（常量） |  |
-| \[Tr\] Transducer Time Constant | s |  | 实数（常量） |  |
+| \[Rc\] Load Compensating Resistance | pu |  | Real number (Const) |  |
+| \[Xc\] Load Compensating Reactance | pu |  | Real number (Const) |  |
+| \[Tr\] Transducer Time Constant | s |  | Real number (Const) |  |
 
 ### St5B Forward Lead-Lag Parameters
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| \[TC1\] 1st Lead Time Constant | s |  | 实数（常量） |  |
-| \[TB1\] 1st Lag Time Constant | s |  | 实数（常量） |  |
-| \[TC2\] 2nd Lead Time Constant | s |  | 实数（常量） |  |
-| \[TB2\] 2nd Lag Time Constant | s |  | 实数（常量） |  |
-| \[KR\] Regulator Gain | pu |  | 实数（常量） |  |
-| \[T1\] Regulator Time Constant | s |  | 实数（常量） |  |
+| \[TC1\] 1st Lead Time Constant | s |  | Real number (Const) |  |
+| \[TB1\] 1st Lag Time Constant | s |  | Real number (Const) |  |
+| \[TC2\] 2nd Lead Time Constant | s |  | Real number (Const) |  |
+| \[TB2\] 2nd Lag Time Constant | s |  | Real number (Const) |  |
+| \[KR\] Regulator Gain | pu |  | Real number (Const) |  |
+| \[T1\] Regulator Time Constant | s |  | Real number (Const) |  |
 
 ### St5B Field Circuit Constants
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| \[VRMAX\] Maximum Field Voltage | pu |  | 实数（常量） |  |
-| \[VRMIN\] Minimum Field Voltage | pu |  | 实数（常量） |  |
-| \[KC\] Field Current Commutating Impednace | pu |  | 实数（常量） |  |
+| \[VRMAX\] Maximum Field Voltage | pu |  | Real number (Const)实数（常量） |  |
+| \[VRMIN\] Minimum Field Voltage | pu |  | Real number (Const)实数（常量） |  |
+| \[KC\] Field Current Commutating Impednace | pu |  | Real number (Const)实数（常量） |  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

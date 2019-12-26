@@ -1,5 +1,5 @@
 ---
-title: 取整
+title: Round Function
 author: 
 author_email:
 
@@ -13,30 +13,30 @@ order: 600
 classname: _RoundComponent
 symbol: newRound
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newRound %}
 
-> **该元件实现对输入信号进行取整。**
+> **This component is used primarily to a data signal of a particular type to integer type. The method can be "Floor","Round", or "Ceil"**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入取整元件的名称（可缺省） |
-| Param Description | 取整方法 | 选择 |选择取整方法为“Floor”、“Round”或“Ceil”  |
+| Name | Name of component | Text | Enter the name of this component |
+| Param Description | Method | Select | Select the method as "Floor", "Round" or "Ceil" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 | 输出端口|
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

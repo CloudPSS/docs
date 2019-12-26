@@ -1,5 +1,5 @@
 ---
-title: 单相变压器
+title: Single-phase Transformer
 author: 
 author_email:
 
@@ -13,60 +13,60 @@ order: 700
 classname: _newTransformer_1p
 symbol: newTransformer_1p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newTransformer_1p %}
 
-> **该元件用以建模单相两绕组变压器。**
+> **This component is used to model a single-phase two-winding transformer.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入单相变压器的名称（可缺省） |
-| Rated Power | MVA | 额定容量 | 实数（常量） | 变压器每侧绕组的额定容量$S_N$（所填变压器参数的功率基值） |
-| Winding #1 Rated Voltage (RMS) | kV | 绕组#1额定电压有效值 | 实数（常量） | 绕组1额定电压有效值$V_{1N}$（所填变压器参数的电压基值） |
-| Winding #2 Rated Voltage (RMS) | kV | 绕组#2额定电压有效值 | 实数（常量） | 绕组2额定电压有效值$V_{2N}$（所填变压器参数的电压基值） |
-| Base Operation Frequency | Hz | 额定频率 | 实数（常量） | 变压器的额定频率$f_n$ |
-| Leakage Reactance | p.u. | 等值漏电抗 | 实数（常量） | 变压器的等值漏电抗$X_T$，可由变压器短路实验或变压器铭牌得出 |
-| Leakage Resistance | p.u. | 等值漏电阻 | 实数（常量） | 变压器的等值漏电阻$R_T$可由变压器短路实验或变压器铭牌得出 |
-| Magnetization Conductance | p.u. | 励磁电导 | 实数（常量） | 变压器器励磁电导$G_M$，可由变压器空载实验或变压器铭牌得出 |
-| Magnetizing Current | % | 空载励磁电流 | 实数（常量） | 变压器器空载励磁电流$I_M$，可由变压器空载实验或变压器铭牌得出 |
-| Tap Changer |  | 变压器分接头选择 | 选择 | 选择变压器分接头位置（无/绕组1/绕组2) |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Rated Power | MVA | Rated power | Real number (Const) | The apparent power rating of the transformer, $S_N$ |
+| Winding #1 Rated Voltage (RMS) | kV | Winding #1 rated RMS voltage | Real number (Const) | The RMS voltage rating of the winding #1, $V_{1N}$ |
+| Winding #2 Rated Voltage (RMS) | kV | Winding #2 rated RMS voltage | Real number (Const) | The RMS voltage rating of the winding #2, $V_{2N}$ |
+| Base Operation Frequency | Hz | Rated frequency | Real number (Const) | Rated frequency of transformer, $f_n$ |
+| Leakage Reactance | p.u. | Leakage reactance | Real number (Const) | The total leakage reactance of transformer, $X_T$. This can be calculated based on short-circuit test results or the nameplate of transformer |
+| Leakage Resistance | p.u. | Leakage resistance | Real number (Const) | The total leakage resistance of transformer, $R_T$. This can be calculated based on short-circuit test results or the nameplate of transformer |
+| Magnetization Conductance | p.u. | Magnetization conductance | Real number (Const) | Magnetization conductance of transformer, $G_M$, which can be derived from transformer no-load test or the nameplate of transformer |
+| Magnetizing Current | % | Magnetizing current | Real number (Const) | The magnetizing current of transformer, $I_M$, which can be derived from transformer no-load test or the nameplate of transformer |
+| Tap Changer |  | Select tap changer | Select | Select tap changer position as "None", "Winding #1", or "Winding #2" |
 
 ### Saturation
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Saturation Enabled |  | 考虑饱和特性? | 选择 | 选择“是”或“否”以开启或关闭铁芯饱和特性的建模 |
-| Place Saturation on |  | 励磁绕组位置 | 选择 | 选择励磁绕组添加的位置，考虑饱和特性时，饱和电流由该位置注入 |
-| Air Core Reactance | p.u. | 空心电抗 | 实数（常量） | 变压器空心电抗，通常大约是等值漏电抗的两倍 |
-| Rush Decay Time Constant | s | 涌流衰减时间 | 实数（常量） | 变压器励磁涌流的衰减时间常数 |
-| Knee Voltage | p.u. | 拐点电压 | 实数（常量） | 对应于饱和曲线拐点处的电压 |
-| Time to Release Flux Clipping | s | 启动时间 | 实数（常量） | 为防止启动不稳定，需要在一段时间内不计算或限制计算磁链值，该时间即为启动时间 |
+| Saturation Enabled |  | Saturation enabled? | Select | Select "Yes" or "No" to enable or disable  the core saturation routine in modeling |
+| Place Saturation on |  | The position of saturation | Select | Select the winding number will place the saturation current injection directly on that winding |
+| Air Core Reactance | p.u. | Air core reactance | Real number (Const) | The air core reactance is usually approximately twice the leakage reactance |
+| Rush Decay Time Constant | s | rush decay time constant | Real number (Const) | The decay time constant for the transformer magnetizing rush current |
+| Knee Voltage | p.u. | Knee voltage | Real number (Const) | The knee point voltage corresponding to the the knee point of the saturation curve |
+| Time to Release Flux Clipping | s | Startup time | Real number (Const) | Time interval from start-up in which the model will 'clip' the calculated flux linkage values. This is simply a modeling 'trick' to prevent instability at start-up |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Winding #1 Current \[kA\] | 绕组1电流 | 文本 | 此处输入变压器绕组1电流量测信号的标签，以#号开头，如#IL1 |
-| Winding #2 Current \[kA\] | 绕组2电流 | 文本 | 此处输入变压器绕组2电流量测信号的标签，以#号开头，如#IL2 |
-| Magnetizing Current \[kA\] | 励磁电流 | 文本 | 此处输入变压器励磁电流量测信号的标签，以#号开头，如#IM |
-| Flux Linkage \[KWb-N\] | 磁链 | 文本 | 此处输入变压器磁链量测信号的标签，以#号开头，如#FLUX |
+| Winding #1 Current \[kA\] | Winding #1 current | Text | Enter the label of the current of the transformer winding #1, starting with #, such as#IL1 |
+| Winding #2 Current \[kA\] | Winding #2 current | Text | Enter the label of the current of the transformer winding #2 here, starting with #, such as#IL2 |
+| Magnetizing Current \[kA\] | Magnetizing current | Text | Enter the label of the magnetizing current, starting with #, such as #IM |
+| Flux Linkage \[KWb-N\] | Flux linkage | Text | Enter the label of the Flux Linkage, starting with #, such as #FLUX |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin #1+ | 1×1 |变压器绕组1的正端（参考方向）|
-| Pin #1- | 1×1 |变压器绕组1的负端（参考方向）|
-| Pin #2+ | 1×1 |变压器绕组2的正端（参考方向）|
-| Pin #2- | 1×1 |变压器绕组2的负端（参考方向）|
-| Tap1 | 1×1 |变压器绕组1的分接头，输入变比控制信号 |
-| Tap2 | 1×1 |变压器绕组2的分接头，输入变比控制信号 |
+| Pin #1+ | 1×1 | Positive terminal of Winding #1 |
+| Pin #1- | 1×1 | Negative terminal of Winding #1 |
+| Pin #2+ | 1×1 | Positive terminal of Winding #2 |
+| Pin #2- | 1×1 | Negative terminal of Winding #2 |
+| Tap1 | 1×1 | Tap of transformer winding #1, and input ratio control signal |
+| Tap2 | 1×1 | Tap of transformer winding #2, and input ratio control signal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[三相双绕组变压器](comp_newTransformer_3p2w.html)、[三相三绕组变压器](comp_newTransformer_3p3w.html)
+[Three-phase Two-winding Transformer](comp_newTransformer_3p2w.html)、[Three-phase Three-winding Transformer](comp_newTransformer_3p3w.html)
