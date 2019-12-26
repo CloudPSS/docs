@@ -1,5 +1,5 @@
 ---
-title: 铅酸蓄电池
+title: Lead-Acid Battery
 author: 
 author_email:
 
@@ -13,46 +13,46 @@ order: 200
 classname: _newStorageBattery
 symbol: newStorageBattery
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newStorageBattery %}
 
-> **该元件用以建模铅酸蓄电池。**
+> **This component is used to model the lead-acid battery.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入铅酸蓄电池的名称（可缺省） |
-| Battery Capacity | Ah | 蓄电池容量 | 实数（常量） | 蓄电池容量 |
-| Voltage at Fully Charged Point | V | 完全充电电压 | 实数（常量） | 完全充电电压 |
-| Voltage at End of Exponential Zone | V | 指数区域末端电压 | 实数（常量） | 指数区域末端电压 |
-| Discharged Capacity at End of Exponential Zone | Ah | 指数区域末端已放电的容量 | 实数（常量） | 指数区域末端已放电的容量 |
-| Voltage at End of Nominal Zone | V | 标称区域末端电压（标称电压） | 实数（常量） | 标称区域末端电压 |
-| Discharged Capacity at End of Nominal Zone | Ah | 标称区域末端已放电的容量 | 实数（常量） | 标称区域末端已放电的容量 |
-| Nominal Discharging Current | A | 标称放电电流 | 实数（常量） | 标称放电电流 |
-| Inner Resistance | Ω | 蓄电池内阻 | 实数（常量） | 蓄电池内组 |
-| Initial State of Charge (SOC) |  | 初始荷电状态 | 实数（常量） | 初始荷电状态 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Battery Capacity | Ah | Battery capacity | Real number (Const) | Capacity of the battery |
+| Voltage at Fully Charged Point | V | Voltage at fully charged point | Real number (Const) | Voltage at fully charged point |
+| Voltage at End of Exponential Zone | V | Voltage at end of exponential zone | Real number (Const) | Voltage at end of exponential zone |
+| Discharged Capacity at End of Exponential Zone | Ah | Discharged capacity at end of exponential zone | Real number (Const) | Discharged capacity at end of exponential zone |
+| Voltage at End of Nominal Zone | V | Voltage at end of nominal zone (Nominal voltage) | Real number (Const) | Voltage at end of nominal zone |
+| Discharged Capacity at End of Nominal Zone | Ah | Discharged capacity at end of nominal zone | Real number (Const) | Discharged capacity at end of nominal zone |
+| Nominal Discharging Current | A | Nominal discharging current | Real number (Const) | Nominal discharging current |
+| Inner Resistance | Ω | Inner resistance | Real number (Const) | Inner resistance of the battery |
+| Initial State of Charge (SOC) |  | Initial state of charge (SOC) | Real number (Const) | Initial State of Charge (SOC) |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source Voltage \[kV\] | 蓄电池输出电压 | 文本 | 此处输入蓄电池输出电压量测信号的标签，以#号开头，如#Vb |
-| Source Current \[kA\] | 蓄电池输出电流 | 文本 | 此处输入蓄电池输出电流量测信号的标签，以#号开头，如#Ib |
-| Output Power \[MW\] | 蓄电池输出功率 | 文本 | 此处输入蓄电池输出功率量测信号的标签，以#号开头，如#Pb |
-| State of Charge, SOC \[p.u.\] | 荷电状态 | 文本 | 此处输入蓄电池 荷电状态量测信号的标签，以#号开头，如#Sb |
+| Source Voltage \[kV\] | Voltage of battery | Text | Enter the measurement signal label of the output voltage of lead-acid battery, starting with #, such as #Vb |
+| Source Current \[kA\] | Current of battery | Text | Enter the measurement signal label of the output current of lead-acid battery, starting with #, such as #Ib |
+| Output Power \[MW\] | Power of battery | Text | Enter the measurement signal label of the output power of lead-acid battery, starting with #, such as #Pb |
+| State of Charge, SOC \[p.u.\] | SOC | Text | Enter the measurement signal label of the SOC of lead-acid battery, starting with #, such as #Sb |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin - | 1×1 |蓄电池负端（参考方向）|
-| Pin + | 1×1 |蓄电池负端（参考方向）|
+| Pin - | 1×1 | Negative terminal |
+| Pin + | 1×1 | Positive terminal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

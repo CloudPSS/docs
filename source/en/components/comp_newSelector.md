@@ -1,5 +1,5 @@
 ---
-title: 选择器
+title: Selector
 author: 
 author_email:
 
@@ -13,38 +13,38 @@ order: 800
 classname: _newSelector
 symbol: newSelector
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newSelector %}
 
-> **该元件根据控制端信号，选择输出信号为某一输入信号(非控制信号)。**
+> **This component selects input A or B to output depend on the value of the Ctrl signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入选择器的名称（可缺省） |
-| Select A When |  | 选择A的判据 | 选择 | 选择器的选择判据 |
-| Threshold |  | 阈值 | 实数（常量） | 判据的阈值 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Select A When |  | Select criterion | Select | Select the criterion as "Ctrl ≥ Threshold" or "Ctrl < Threshold" |
+| Threshold |  | Threshold | Real number (Const) | Threshold value |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| A | 1×1 |输入端口A |
-| B | 1×1 |输入端口B |
-| Ctrl | 1×1 |控制输入端 |
-| Output | 1×1 |输出端 |
+| A | 1×1 | Input pin A |
+| B | 1×1 | Input pin B |
+| Ctrl | 1×1 | Control input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-配置“Select A When”、“Threshold”确定选择器判据，如：Ctrl ≥ Threshold，Ctrl < Threshold。
-+ 当输入控制信号满足判据条件时，元件输出信号选择为信号A。
-+ 当输入控制信号不满足判据条件时，元件输出信号选择为信号B。
+Configure "Select A When" and "Threshold" to determine selector criteria, such as: "Ctrl ≥ Threshold", "Ctrl < Threshold".
++ If "Ctrl" satisfies the criterion, then output A.
++ If "Ctrl" doesn't satisfie the criterion, then output B.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 

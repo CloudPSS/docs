@@ -1,5 +1,5 @@
 ---
-title: 采样保持
+title: Sample and Hold
 author: 
 author_email:
 
@@ -13,34 +13,34 @@ order: 500
 classname: _newSampleHold
 symbol: newSampleHold
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newSampleHold %}
 
-> **该元件根据hold端特性对输入信号进行保持输出。**
+> **This component samples the input signal and output a value based on the value of the hold terminal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入采样保持元件的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of this component |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Hold | 1×1 |保持信号输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Hold | 1×1 | Input pin of hold signal |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-+ 当hold端由0变为1时，保持输出该时刻对应的输入信号数值直到hold端为0。
-+ 当hold端为0时，输出等于输入。
++ When hold signal changes from 0 to 1，the output holds the input sample value until the hold signal turns to 0.
++ When hold signal is 0, the output value equals input value.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
-[采样](comp_newSample.html)
+[Sampler](comp_newSample.html)

@@ -52,39 +52,36 @@ body > header
     display: none
 
   #logo
-    left: 100px
     position: absolute
-    font-size: 1.5em
-    height: $header-inner-height
-    line-height: @height
-    vertical-align: middle
-    color: $dark
-    font-family: $logo-font
-    font-weight: 300
     transition: all $size-transition
+    display: flex
+    align-items: center
+    left: 100px
+    height: $header-inner-height
+    img
+      height: 75%
+      transition: all $size-transition
     @media (max-width: 1300px)
       left: 16px
     @media (max-width: $mobile-width)
       left: 48px
-      font-size: 18px
       height: $mobile-header-inner-height
-      line-height: @height
-      &:after
-        margin-left: 32px
-    img
-      height: 100%
+      img
+        height: 100%
 
   nav
     position: absolute
     right: 30px
+    line-height: 40px
+    display: flex
     height: $header-inner-height
-    line-height: @height
     transition: right $size-transition, padding $size-transition
     @media (max-width: 1300px)
       right: 8px
 
     @media (max-width: $mobile-width)
       position: fixed
+      flex-direction: column
       height: 100%
       width: $sidebar-width
       top: 0
@@ -96,10 +93,6 @@ body > header
         right: 0
       box-shadow: 0 0 10px $shadow
       transition: all $size-transition
-    > *
-      display: inline-block
-      @media (max-width: $mobile-width)
-        display: block
 
     > form#search
       position: relative
@@ -183,18 +176,21 @@ body > header
               padding: 4px
 
     > ul
+      display: flex
+      align-items: center
+      @media (max-width: $mobile-width)
+        display: block
       list-style-type: none
       padding: 0
       margin: 0
       > li
-        transition: padding $size-transition
-        display: inline
-        padding: 0 0.8em
+        transition: margin $size-transition
+        display: block
+        margin: 0 0.8em
         @media (max-width: 1300px)
-          padding: 0 0.4em
+          margin: 0 0.4em
         @media (max-width: $mobile-width)
-          display: block
-          padding: 0
+          margin: 0
       .nav-link
         color: $medium
         padding-bottom: 3px
@@ -208,9 +204,6 @@ body > header
         background: url(../images/lang.png) no-repeat center/24px
         width: 40px
         height: 40px
-        padding: 0
-        display: inline-block
-        vertical-align: middle
         &:hover, &:focus
           background-color: #ddd 
         &:active

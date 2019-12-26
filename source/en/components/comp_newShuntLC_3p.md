@@ -1,5 +1,5 @@
 ---
-title: 并联电容/电抗器
+title: Shunt Capacitor/Reactor
 author: 
 author_email:
 
@@ -13,39 +13,39 @@ order: 100
 classname: _newShuntLC_3p
 symbol: newShuntLC
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newShuntLC %}
 
-> **该元件用以建模三相并联电容/电抗器（单线图）。**
+> **This component is used to model a three-phase shunt capacitor/reactor.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入并联电容/电抗器的名称（可缺省） |
-| Rated Frequency | Hz | 额定频率 | 实数（常量） | 并联电容/电抗器的额定频率 |
-| Rated Voltage (L-L, RMS) | kV | 额定线电压有效值 | 实数（常量） | 并联电容/电抗器的额定线电压有效值 |
-| Input Capacity | MVar | 投入容量（电容为负，电抗为正） | 实数（常量） | 并联电容/电抗器的投入容量（电容为负，电抗为正） |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Rated Frequency | Hz | Rated frequency | Real number (Const) | Rated Frequency of the shunt capacitor/reactor |
+| Rated Voltage (L-L, RMS) | kV | Rated voltage (L-L, RMS) | Real number (Const) | Rated voltage (L-L, RMS) of the shunt capacitor/reactor |
+| Input Capacity | MVar | Input capacity (Set negative value for capacitor and positive value for reactor) | Real number (Const) | Input capacity of the shunt capacitor/reactor (Set negative value for capacitor and positive value for reactor) |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Current Vector \[kA\] | 三相电流 | 文本 |此处输入并联电容/电抗器三相电流量测信号的标签（3×1维），以#号开头，如#Iabc  |
-| RMS Current \[kA\] | 电流均方根值 | 文本 |此处输入并联电容/电抗器电流有效值量测信号的标签（1×1维），以#号开头，如#Irms  |
-| Active Power \[MW\] | 有功功率 | 文本 | 此处输入并联电容/电抗器有功功率量测信号的标签（1×1维），以#号开头，如#P |
-| Reactive Power \[MVar\] | 无功功率 | 文本 | 此处输入并联电容/电抗器无功功率量测信号的标签（1×1维），以#号开头，如#Q |
+| 3 Phase Current Vector \[kA\] | 3-phase current | Text | Enter the measurement signal label of the 3-phase current of shunt capacitor/reactor（3×1）, starting with #, such as #labc |
+| RMS Current \[kA\] | RMS current | Text | Enter the measurement signal label of the 3-phase current rms value of shunt capacitor/reactor（1×1）, starting with #, such as #Irms |
+| Active Power \[MW\] | Active power | Text | Enter the measurement signal label of the active power, starting with #, such as #P |
+| Reactive Power \[MVar\] | Reactive power | Text | Enter the measurement signal label of the reactive power, starting with #, such as #Q |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 3×1 |并联电容/电抗器的接线端口 |
+| Pin + | 3×1 | Pin of the shunt capacitor/reactor |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

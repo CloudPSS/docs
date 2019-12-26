@@ -3,19 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <script>
-        (async () => {
-            const sls = Object.keys((await (await fetch("/sitemap.json")).json())[""].name)
-            const cl = localStorage.lang || 'zh'
-            const pl = location.pathname.split('/')[1];
-            if (pl === cl)
-                location = `/${cl}/`
-            else if (sls.indexOf(pl) < 0)
-                location = `/${cl}${location.pathname}`
-            else
-                location = `/zh/${location.pathname.split('/').slice(2).join('/')}?notTranslated=${pl}`
-        })()
-    </script>
+    <title>NOT FOUND</title>
+    <script src="/js/404.js"></script>
 </head>
 
 </html>

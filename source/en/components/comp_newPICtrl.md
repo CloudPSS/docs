@@ -1,5 +1,5 @@
 ---
-title: PI控制器
+title: PI Controller
 author: 
 author_email:
 
@@ -13,48 +13,48 @@ order: 400
 classname: _newPICtrl
 symbol: newPICtrl
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newPICtrl %}
 
-> **元件实现对输入信号的比例积分环节。**
+> **This component performs a proportional integral. And the output is the sum of proportional and integral gains of the input signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入PI控制器的名称（可缺省） |
-| Proportional Gain |  | 比例增益 | 实数（常量） | PI控制器的比例系数 |
-| Integral Time Constant | s | 积分时间常数 | 实数（常量） | PI控制器的积分时间常数 |
-| Limit Output? |  | 是否限制输出 | 选择 | 选择是否限制该环节的输出，可配置为“Fixed Limits”或“Dynamic Limits”  |
-| Initial Output of Integrator |  | 积分器初始输出值 | 实数（常量） | 积分器的初始输出值 |
-| Resettable? |  | 积分其是否可重置？ | 选择 | 选择积分器是否可重置 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Proportional Gain |  | Proportional gain | Real number (Const) | Proportional gain of the PI Controller |
+| Integral Time Constant | s | Integral time constant | Real number (Const)） | Integral time constant of the PI Controller |
+| Limit Output? |  | Limit output? | Select | Select to limit the output of PI controller or not. Could be configured as "Fixed Limits" or "Dynamic Limits" |
+| Initial Output of Integrator |  | Initial value of integrator | Real number (Const) | Initial value of integrator |
+| Resettable? |  | Resettable? | Select | Select whether the integrator can be reset or not |
 
 ### Fixed Limits
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Maximum Limit |  | 输出上限 | 实数（常量） | 元件输出上限，仅当“限制输出”配置为“Fixed Limits”时有效 |
-| Minimum Limit |  | 输出下限 | 实数（常量） | 元件输出下限，仅当“限制输出”配置为“Fixed Limits”时有效 |
+| Maximum Limit |  | Maximum limit | Real number (Const) | Maximum limit for the PI controller, only valid when "Limit Output" is selected to "Fixed limits" |
+| Minimum Limit |  | Minimum limit | Real number (Const) | Minimum limit for the PI controller, only valid when "Limit Output" is selected to "Fixed limits" |
 
 ### Dynamic Limits
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Maximum Limit | 输出上限（以@开头的信号名） | 文本 | 元件输出上限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
-| Minimum Limit | 输出下限（以@开头的信号名） | 文本 | 元件输出下限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
+| Maximum Limit | Maximum limit (Starting with @) | Text | Maximum limit for the PI controller, only valid when "Limit Output" is selected to "Dynamic limits" |
+| Minimum Limit | Minimum limit (Starting with @) | Text | Minimum limit for the PI controller, only valid when "Limit Output" is selected to "Dynamic limits" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 | 输出端口|
-| Reset Trigger | 1×1 |重置触发输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效|
-| Reset Value | 1×1 |重置后元件输出值的输入端口，高电平触发，仅当“Resettable” 项为“Yes”时该端口有效 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin|
+| Reset Trigger | 1×1 | Reset trigger input pin, and triggered when the input is high level. Only valid when "resettable" item is "yes" |
+| Reset Value | 1×1 | The value of the output after reset. Only valid when "resettable" item is "yes" |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[积分器](comp_newIntegrator.html)、[增益](comp_newGain.html)
+[Integrator](comp_newIntegrator.html)、[Gain](comp_newGain.html)

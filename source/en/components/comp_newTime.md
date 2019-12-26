@@ -1,5 +1,5 @@
 ---
-title: 时间输入
+title: Time
 author: 
 author_email:
 
@@ -13,10 +13,12 @@ order: 200
 classname: _newTime
 symbol: newTime
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newTime %}
 
-> **该元件用以产生时间信号。**
+> **This component is used primarily to assign the value of the chosen simulation time to a data signal Wire, or a component input. The output of this component is adjusted only by changing the simulation time for the project.
+
+该元件用以产生时间信号。**
 
 ## 参数列表
 ### Configuration

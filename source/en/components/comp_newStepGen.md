@@ -1,5 +1,5 @@
 ---
-title: 阶跃发生器
+title: Step Generator
 author: 
 author_email:
 
@@ -13,31 +13,31 @@ order: 700
 classname: _newStepGen
 symbol: newStepGen
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newStepGen %}
 
-> **该元件用以产生阶跃信号。**
+> **This component is used to generate a step signal.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入阶跃发生器的名称（可缺省） |
-| Initial Value |  | 初始值 | 实数（常量） | 信号输出的初始值 |
-| Final Value |  | 终值 | 实数（常量） | 阶跃发生后，信号的输出值 |
-| Step Time | s | 阶跃时间 | 实数（常量） | 阶跃发生的时间 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Initial Value |  | Initial value | Real number (Const) | Initial value before step occur |
+| Final Value |  | Final value | Real number (Const) | Final value after step occure |
+| Step Time | s | Step time | Real number (Const) | The time when the step occurs |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[斜坡函数发生器](comp_newRampGen.html)
+[Ramp Generator](comp_newRampGen.html)

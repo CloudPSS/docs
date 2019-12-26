@@ -33,7 +33,7 @@
         } 
       -%>
       <li id="lang-select" title="<%- __('select-lang') %>">
-        <select data-canonical="<%- page.path.substring(page.path.indexOf('/') + 1) %>" onchange="location.href = `<%-config.root%>${this.value}/${this.dataset.canonical}`">
+        <select data-canonical="<%- page.path.substring(page.path.indexOf('/') + 1) %>" onchange="localStorage.lang = `${this.value}`; location.href = `<%-config.root%>${this.value}/${this.dataset.canonical}`">
         <%_ 
           for (const key in site.data.i18n) { 
             -%><option value="<%-key%>" <%- key === page.lang ? 'selected' : ''%>><%- site.data.i18n[key] %></option><%_ 

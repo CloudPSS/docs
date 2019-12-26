@@ -20,23 +20,23 @@ symbol: newMultiply
 
 ## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入乘法器的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of this component |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input 1 | 1×1 |输入端口1 |
-| Input 2 | 1×1 |输入端口2 |
-| Output | 1×1 |输出端口 |
+| Input 1 | 1×1 | Input pin 1 |
+| Input 2 | 1×1 | Input pin 2 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[增益](comp_newGain.html)
+[Gain](comp_newGain.html)
