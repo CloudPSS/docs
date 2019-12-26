@@ -13,47 +13,47 @@ order: 300
 classname: _TUR1
 symbol: TUR1
 ---
-## 基本描述
+## Basic Description
 {% compsymbol TUR1 %}
 
-## 参数列表
+## Parameter
 ### Rated Conditions
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Head at rated conditions | pu |  | 实数（常量） |  |
-| Output Toque at rated conditions | pu |  | 实数（常量） |  |
-| \[ZR\] Gate position at rated conditions | pu |  | 实数（常量） |  |
-| \[qNL\] Rated No-load Flow | pu |  | 实数（常量） |  |
+| Head at rated conditions | pu |  | Real number (Const) |  |
+| Output Toque at rated conditions | pu |  | Real number (Const) |  |
+| \[ZR\] Gate position at rated conditions | pu |  | Real number (Const) |  |
+| \[qNL\] Rated No-load Flow | pu |  | Real number (Const) |  |
 
 ### Initial Conditions
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Initial Operating Head | pu |  | 实数（常量） |  |
+| Initial Operating Head | pu |  | Real number (Const) |  |
 
 ### Tur1:  Non-Elastic Water Column and No Surge Tank
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| (TW)Water Starting Time | s |  | 实数（常量） |  |
-| (fp) Penstock Head Loss Coefficient | pu |  | 实数（常量） |  |
-| (D) Turbine Damping Constant | pu |  | 实数（常量） |  |
+| (TW)Water Starting Time | s |  | Real number (Const) |  |
+| (fp) Penstock Head Loss Coefficient | pu |  | Real number (Const) |  |
+| (D) Turbine Damping Constant | pu |  | Real number (Const) |  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
+|  | Auto | |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

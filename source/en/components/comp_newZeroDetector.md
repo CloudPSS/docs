@@ -1,5 +1,5 @@
 ---
-title: 过零检测器
+title: Zero Detector
 author: 
 author_email:
 
@@ -13,29 +13,29 @@ order: 300
 classname: _newZeroDetector
 symbol: newZeroDetector
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newZeroDetector %}
 
-> **该元件实现对输入信号的过零检测，当检测到由负过零时输出幅值为1的脉冲信号，当检测到由正过零时输出幅值为-1的脉冲信号**
+> **This component detects when the input crosses zero, and differentiates between positive and negative crossings. A zero crossing on the input with a positive 1st derivative will produce a single time step output of 1. A zero crossing on the input with a negative 1st derivative will produce a single-time-step output of -1.  At all other times the output is 0.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入过零检测器的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of this component |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 |输入端口 |
-| Output | 1×1 |输出端口 |
+| Input | 1×1 | Input pin |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

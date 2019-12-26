@@ -85,6 +85,9 @@ symbol: WoundIM
 | Measured Rotor Current \[p.u.\] | 1×1 | 转矩信号输入引脚，转矩控制模式 |
 
 
+## 端口列表
+该元件暂只支持`转子端口`为电气端口，即`Model Type`为`Rotor Terminal (Control)`。电气端口的绕线式异步电机将在下个更新放出。
+
 ## 相关元件
 
 

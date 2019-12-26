@@ -1,5 +1,5 @@
 ---
-title: 控制悬空端
+title: Non Connection
 author: 
 author_email:
 
@@ -13,28 +13,28 @@ order: 400
 classname: ElectricalLable
 symbol: NC
 ---
-## 基本描述
+## Basic Description
 {% compsymbol NC %}
 
-> **该元件用于控制元件输出端悬空连接。**
+> **This component is used to connect with the pin of control component which has no connection.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Name | 元件名称 | 文本 | 此处输入控制悬空端的名称（可缺省） |
+| Name | Name of component | Text | Enter the name of this component缺 |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| NC | 0×0 | 接线端口，任意维数 |
+| NC | 0×0 | Pin, arbitrary dimension |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

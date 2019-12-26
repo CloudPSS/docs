@@ -1,5 +1,8 @@
 (async () => {
     const sls = Object.keys((await (await fetch("/sitemap.json")).json())[""].name)
+    if(sls.indexOf('zh') < 0){
+        sls.splice(0, sls.length, 'zh')
+    }
     let newLocation = '/zh/'
     let cl = localStorage.lang || 'zh'
     if (sls.indexOf(cl) < 0)
@@ -24,6 +27,6 @@
         else
             newLocation = `/${cl}/`
     }
-    document.body.innerHTML = `Redirecting to <a href="${newLocation}">${newLocation}</a>`
+    console.info(`Redirecting to ${newLocation}`)
     location.replace(newLocation)
 })()
