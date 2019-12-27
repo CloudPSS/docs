@@ -5,7 +5,7 @@ author: songyk
 author_email: songyankan@cloudpss.net
 ---
 
-To quickly understand the relevant functions of CloudPSS, users can read the following help documents.
+To quickly understand the relevant functions of CloudPSS, users can read the following documents.
 
 ### Electromagnetic Transient Modeling and Simulation Workbench
 * [Parameters and Pins System](ParameterSystem.html)
@@ -18,4 +18,4 @@ To quickly understand the relevant functions of CloudPSS, users can read the fol
 * [Startup of Power Flow Snapshot](Initialization.html)
 
 ### Heating System Simulation Workbench
-* [Modeling and Simulation of Regional Central Heating System](HeatingSystemGuide.html)
+* [Modeling and Simulation of Regional Central Heat Supply System](HeatingSystemGuide.html)

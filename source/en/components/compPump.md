@@ -1,5 +1,5 @@
 ---
-title: 中继泵
+title: Relay Pump
 author: 
 author_email:
 
@@ -13,37 +13,37 @@ order: 4000
 classname: Pump
 symbol: Heat4
 ---
-## 基本描述
+## Basic Description
 {% compsymbol Heat4 %}
 
-> **该元件指为供热系统提供循环动力的设备。**
+> **This component refers to a device that provides circulating power to a heating system.**
 
-## 参数列表
-### 设备安装
-| 参数名 | 备注 | 类型 | 描述 |
+## Parameter
+### Device installation
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 安装位置 | Installation Position | 选择 | 选择该中继泵安装在供热管道亦或者回水管道 |
+| Installation Position | Installation position | Select | Select the relay pump to be installed in the heating supply pipe or the water return pipe |
 
-### 参数设置
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+### Parameter setting
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 扬程 | m | Head | 表格 | 输入该中继泵在不同时刻提供的扬程大小 |
+| Head | m | Head | Table | Enter the head that the relay pump provides at different times |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 | 泵入口，该端点只能作为管道的出口 |
-| Output | 1×1 | 泵出口，该端点只能作为管道的入口 |
+| Input | 1×1 | Pump input, this pin can only be used as the outlet of the pipeline |
+| Output | 1×1 | Pump output, this pin can only be used as an inlet for the pipeline |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote tip %}
-目前版本中中继泵元件需要作为至少一根管道的起点和一根管道的终点，否则极易引发错误。
+In the current version, the relay pump component needs to be the starting point of one pipe and the end point of other pipe at least, otherwise it is easy to cause an error.
 {% endpullquote %}
 
 
-## 相关元件
+## See Also
 
 

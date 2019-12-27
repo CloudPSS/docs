@@ -17,46 +17,46 @@ symbol: Heat0
 
 ![管道元件](comp_HeatingSystem/pipeline.png)
 
-> **管道元件是供热系统中输送热媒的主要设备，实现了系统中其它元件间的相互连接。**
+> **This component is the main equipment for heat transfer in the heating system, which realizes the interconnection between other components in the system.**
 
-## 参数列表
-### 供水管道参数设置
-| 参数名 | 单位 |备注 | 类型 | 描述 |
+## Parameter
+### Supply pipeline
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 管道内径 | mm | Pipe Inter Diameter | 实数（常量） | 供水管道的内径大小 |
-| 管道壁厚 | mm | Pipe Thickness | 实数（常量） | 供水管道的壁厚大小 |
-| 管壁粗糙度 | mm | Pipe Roughness | 实数（常量） | 供水管道的管壁绝对粗糙度大小 |
-| 管道周围温度 | ℃ | Environment Temperature| 实数（常量） | 供水管道周围的环境温度大小 |
-| 管道总传热系数 | W/(m²·℃) | Total Heat Transfer Coefficient| 实数（常量） | 供水管道与环境间总传热系数的大小 |
+| Pipe Inter Diameter | mm | Pipe inter diameter | Real number (Const) | Pipe inter diameter of the pipeline |
+| Pipe Thickness | mm | Pipe thickness | Real number (Const) | Pipe thickness of the pipeline |
+| Pipe Roughness | mm | Pipe roughness | Real number (Const) | Pipe roughnessof the pipeline |
+| Environment Temperature | ℃ | Environment temperature | Real number (Const) | Environment temperature around the pipeline |
+| Total Heat Transfer Coefficient | W/(m²·℃) | Total heat transfer coefficient | Real number (Const) | Total heat transfer coefficient between the pipeline and the environment |
 
-### 回水管道参数设置
-| 参数名 | 单位 |备注 | 类型 | 描述 |
+### Return pipeline
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 从供水管道镜像 |  | Copy Supply Pipeline | 按钮 | 将供水管道的设备参数复制给回水管道 |
-| 管道内径 | mm | Pipe Inter Diameter | 实数（常量） | 回水管道的内径大小 |
-| 管道壁厚 | mm | Pipe Thickness | 实数（常量） | 回水管道的壁厚大小 |
-| 管壁粗糙度 | mm | Pipe Roughness | 实数（常量） | 回水管道的管壁绝对粗糙度大小 |
-| 管道周围温度 | ℃ | Environment Temperature| 实数（常量） | 回水管道周围的环境温度大小 |
-| 管道总传热系数 | W/(m²·℃) | Total Heat Transfer Coefficient| 实数（常量） | 回水管道与环境间总传热系数的大小 |
+| Copy Supply Pipeline |  | Copy supply pipeline | Button | Copy the parameters of supply pipeline to the return pipeline |
+| Pipe Inter Diameter | mm | Pipe inter diameter | Real number (Const) | Pipe inter diameter of the pipeline |
+| Pipe Thickness | mm | Pipe thickness | Real number (Const) | Pipe thickness of the pipeline |
+| Pipe Roughness | mm | Pipe roughness | Real number (Const) | Pipe roughnessof the pipeline |
+| Environment Temperature | ℃ | Environment temperature | Real number (Const) | Environment temperature around the pipeline |
+| Total Heat Transfer Coefficient | W/(m²·℃) | Total heat transfer coefficient | Real number (Const) | Total heat transfer coefficient between the pipeline and the environment |
 
-### 管道剖面参数设置
-| 参数名 | 单位 |备注 | 类型 | 描述 |
+### Pipeline profile
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 管道剖面设置 | m,m | Pipe Profile | 表格 | 设置管道的长度及高程数据 |
+| Pipe Profile | m,m | Pipe profile | Table | Set the length and elevation data of the pipeline |
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 1×1 | 管道入口 |
-| Output | 1×1 | 管道出口 |
+| Input | 1×1 | Input of pipeline |
+| Output | 1×1 | Output of pipeline |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote info %}
-目前默认供水管道和回水管道用相同的连线进行表示，即拥有同样的连接关系。
+Currently, the default water supply pipeline and the water return pipeline are represented by the same connection, that is, have the same connection relationship.
 {% endpullquote %}
 
-## 相关元件
+## See Also
 
 
