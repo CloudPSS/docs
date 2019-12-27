@@ -56,4 +56,4 @@ symbol: newIntegrator
 
 ## See Also
 
-[Derivative](comp_newDerivative.html)、[PI Controller](comp_newPICtrl.html)
+[Derivative](comp_newDerivative.html), [PI Controller](comp_newPICtrl.html)

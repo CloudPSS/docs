@@ -1,5 +1,5 @@
 ---
-title: Trigonometric Functions
+title: Trigonometric Function
 author: 
 author_email:
 

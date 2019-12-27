@@ -3,29 +3,31 @@ title:
 type: components
 ---
 
-CloudPSS提供了丰富的元件库，其分类及具体元件组成如下表所示：
+CloudPSS provides a rich library of components, the classification and specific components are shown in the following table:
 
-| 分类 | 元件 |
+| Classification | Components |
 | :--- | :---  |
-| 输出 | 示波器分组、支路电流测量、波形通道|
-| 量测 | 支路电压表、电压表、电流表、RMS量测、三相功率量测、锁相环、傅里叶变换|
-| 电气-基本无源元件 | 接地点、电阻、电感、电容、单相故障电阻、三相故障电阻、单相变压器|
-| 电气-基本电源元件 | 直流电流源、直流电压源、单相交流电压源、受控电流源、受控电压源、受控交流电压源（VF）、受控交流电压源（VP） |
-| 电气-电力电子开关 | 二极管、晶闸管、IGBT |
-| 电气-三相交流元件 | 并联电容/电抗器、静态负载、分线/集线器、三相传输线、三相交流母线、三相交流电压源、三相双绕组变压器、三相三绕组变压器、同步发电机 |
-| 电气-电力电子模块 | 半桥子模块、六脉动晶闸管桥、半桥模块、H桥模块、H桥电感模块、H桥变压器模块、背靠背H桥模块、三相H桥模块、多模块SST |
-| 电气-可再生能源 | 光伏电池电池单元、铅酸蓄电池 |
-| 电气-高级 |  |
-| 控制-基础 | .M脚本、常量输入、时间、仿真步长、控制悬空端、手动解环点、多路信号分离、多路信号合并 |
-| 控制-基本数学函数 | 加/减法器、乘法器、除法器、最大/最小值、周期最大/最小值、绝对值、符号函数、三角函数、指数函数、对数函数、幂函数、取整函数 |
-| 控制-线性传递函数 | 增益、一阶惯性环节、零点、积分器、微分器、PI调节器、超前滞后环节、微分极点、共轭极点传递函数、高阶线性传递函数 |
-| 控制-非线性函数 | 延迟环节、限幅环节、三段分段线性函数、角度标准化、非线性函数 |
-| 控制-模拟信号 | 采样、采样保持、比较器、滞环比较器、过零检测、快速傅里叶变换、锁相环 |
-| 控制-数字信号 | 选择器、逻辑门、触发器、延迟触发器、单稳态触发器、边沿检测器 |
-| 控制-坐标变换 | Clarke变换、极/直角坐标变换、静止/旋转变换、Park变换 |
-| 控制-信号发生器 | 脉冲发生器、三角波发生器、方波发生器、正弦波发生器、可调正弦波发生器、阶跃发生器、单脉冲发生器、浪涌波形发生器、斜坡发生器、陷落发生器、随机数发生器 |
-| 控制-直流系统 | 锁相振荡器、最近电平调制、SST脉冲发生器 |
-| 热网-基本元件 | 管道、热源、建筑物（负荷）、连接点、中继泵 |
+| Measurements | Oscilloscope Group, Output channel |
+| Electrical-Basic Passive Components | Ground, Resistor, Inductor, Capacitor, Single-phase Fault Resistor, Three-phase Fault Resistor |
+| Electrical-Basic Source Components | DC Current Source, DC Voltage Source, Single-phase AC Voltage Source, Controlled Current Source, Controlled Voltage Source, Controlled AC Voltage Source (VF), Controlled AC Voltage Source (VP) |
+| Electrical-Power Electronic Switches | Diode, Thyristor, IGBT |
+| Electrical-Three-phase Components | Shunt Capacitor/Reactor, Fixed Load, Line Cluster, 3-phase Transmission Line, 3-phase AC Bus, 3-phase AC Voltage Source, 3-phase 2-winding Transformer, 3-phase 3-winding Transformer, Synchronous Generator |
+| Electrical-Fast Power Electronic Modules | Half Bridge Sub-module, Six-pulse Thyristor Bridge, Half Bridge module, H-bridge Module, H-bridge Inductance Module, H-bridge Transformer Module, Dual H-bridge Module, 3-Phase H-bridge Module, Multiple Module SST |
+| Electrical-Renewable Energy Components | Photovoltaic Source, Lead-acid Battery |
+| Electrical-Distribution System Switches | |
+| Electrical-Advanced Components | Userdefined, SubCase |
+| Measure Components | Branch Voltage Meter, Voltage Meter, Current Meter, Single-phase RMS Meter, 3-phase Power Meter, Phase Locked Loop, FFT |
+| Control-Basic Components | Channel Merge, Channel DeMerge, Constant, M script, Time, Simulation Time Step, Non Connection (NC), Loop Break Node |
+| Control-Basic Math Functions | Adder/Subtractor, Multiplier, Divider, Maximum/Minimum Function, Maximum/Minimum in One Cycle, Absolute Value, Sign Function, Trigonometric Function, Exponential Function, Logic Gate, Power Function, Round Function |
+| Control-Linear Transfer Functions | Gain, Real Pole, Zero-point, Integrator, Derivative, PI Controller, Lead Lag Pole, Differential Pole, 2-order Complex Pole |
+| Control-Nonlinear Functions | Delay, Hard Limiter, Piecewise Linear Function, Angle Resolver |
+| Control-Analog Signal | Comparator, Hysteresis Comparator, Zero Detector, Sampler, Sample and Hold |
+| Control-Digital Signal | Selector, Logic Gates, Flip Flop, Binary delay, Monostable MultiVibrator, Edge Detector |
+| Control-Coordinate Transformation | Clark Transformation, Polar Rectangular Coordinate converter, Stationary/Rotational Transformation, Park Transformation |
+| Control-Singal Generator | Impulse Generator, Triangular Generator, Pulse Generator, Sine Generator, Adjustable FPM Sine Generator, Step Generator, Single Pulse Generator, Surge Gennerator, Ramp Generator, Drop Generator, Random Number Generator |
+| Control-HVDC Control | Phase-locked Oscillator, Nearest Level Modulation (NLM), SST Fire Pulse Generator |
+| Control-AC system Control| ST5B、Hydro Governor、 Hydro Turbine |
+| Heat-Basic Components | Pipeline, Heat Source, Bulding (Load), Connection Point, Relay Pump |
 
 
 

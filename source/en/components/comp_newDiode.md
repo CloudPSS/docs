@@ -54,4 +54,4 @@ symbol: newDiode
 
 ## See Also
 
-[Thyristor](comp_newThyristor.html)、[IGBT](comp_newIGBT.html)
+[Thyristor](comp_newThyristor.html), [IGBT](comp_newIGBT.html)

@@ -49,4 +49,4 @@ symbol: newFaultResistance_1p
 
 ## See Also
 
-[Three-phase Fault Resistor](comp_newFaultResistor_3p.html)、[Resistor](compnewResistorRouter.html)
+[Three-phase Fault Resistor](comp_newFaultResistor_3p.html), [Resistor](compnewResistorRouter.html)

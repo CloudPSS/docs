@@ -25,7 +25,7 @@ symbol: newAngleResolver
 | Name | Name of component | Text | Enter the name of this component |
 | Input in | Input type | Select | Enter the name of this component |
 | Output in | Output type | Select | Select the format of output signal to deg or rad |
-| Output Range | Output range | Select | Select output angle range to 0~2π or -π~π |
+| Output Range | Output range | Select | Select output angle range of 0~2π or -π~π |
 
 
 ## Pin List
@@ -38,8 +38,8 @@ symbol: newAngleResolver
 ## Using Instructions
 
 {% pullquote info %}
-+ 配置Configuration/Input Is in、Output Is in选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
-+ 配置Output Range选择输出范围为0到2π(360°)或-π(-180°)到π(180°)。
++ The `Configuration`->`Input in` / `Output in` can be selected as "Radians", or "Degrees".
++ The `Configuration`->`Output Range` can be selected as "0~2π(360°)", or "-π(-180°)~π(180°)".
 {% endpullquote %}
 
 ## See Also

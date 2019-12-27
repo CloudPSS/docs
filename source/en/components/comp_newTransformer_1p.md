@@ -69,4 +69,4 @@ symbol: newTransformer_1p
 
 ## See Also
 
-[Three-phase Two-winding Transformer](comp_newTransformer_3p2w.html)、[Three-phase Three-winding Transformer](comp_newTransformer_3p3w.html)
+[Three-phase Two-winding Transformer](comp_newTransformer_3p2w.html), [Three-phase Three-winding Transformer](comp_newTransformer_3p3w.html)

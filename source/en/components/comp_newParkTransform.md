@@ -24,7 +24,7 @@ symbol: newParkTransform
 | :-------------------------- | :--------- | :---: | :----------------------------------- |
 | Name | Name of component | Text  | Enter the name of this component |
 | Direction of Transformation | Direction of transformation | Select | Select Park transformation or inverse Park transformation  |
-| Rotating Frame Alignment | Rotating frame alignment | Select  | Select the d-axis of coordinate transformer is aligned with phase A or delay 90 degrees |
+| Rotating Frame Alignment | Rotating frame alignment | Select  | Select the d-axis of coordinate transformer is "Aligned with phase A" or "Delay 90 degrees" |
 
 
 ## Pin List
@@ -46,8 +46,8 @@ symbol: newParkTransform
 ## Using Instructions
 
 ![坐标位置](comp_newParkTransform/park.png "坐标位置")
-当选择**d轴与a相对齐**时，Park变换及逆Park变换的计算公式为：
-+ **Park变换**
+When the **Rotating Frame Alignment** is **Aligned with phase A**, the calculation formulas for the Park transformation and the inverse Park transformation are: 
++ **Park Transformation**
 $$\begin{bmatrix}
 U_{d }\\ 
 U_{q}\\
@@ -63,7 +63,7 @@ U_{a}\\
 U_{b}\\ 
 U_{c}
 \end{bmatrix}$$
-+ **逆Park变换**
++ **inverse Park Transformation**
 $$\begin{bmatrix}
 U_{a }\\ 
 U_{b}\\
@@ -80,12 +80,12 @@ U_{q}\\
 U_{0}
 \end{bmatrix}$$
 {% pullquote tip %}
-**注意**：传统Park变换中，d轴超前q轴。dq轴位置如上图**红线**所示。PSCAD中采用了q轴超前d轴，如上图**蓝线**所示。因此相同输入下，本元件得出的q轴分量与PSCAD的结果正负相反。
+**Note**: In the traditional Park transformation, the d-axis leads the q-axis. The position of the dq axis is shown in the above figure **Red Line**. PSCAD uses the q-axis leading d-axis, as shown in the above figure **Blue line**. Therefore, under the same input, the q-axis component obtained by this component is opposite to the result of PSCAD.
 {% endpullquote %}
 
 ![坐标位置](comp_newParkTransform/park1.png "坐标位置")
-当选择**d轴滞后a相90°**时，dq轴位置如上图**绿线**所示。Park变换及逆Park变换的计算公式为：
-+ **Park变换**
+When the **Rotating Frame Alignment** is **90° behind phase A**, the calculation formulas for the Park transformation and the inverse Park transformation are: 
++ **Park Transformation**
 $$\begin{bmatrix}
 U_{d }\\ 
 U_{q}\\
@@ -101,7 +101,7 @@ U_{a}\\
 U_{b}\\ 
 U_{c}
 \end{bmatrix}$$
-+ **逆Park变换**
++ **inverse Park Transformation**
 $$\begin{bmatrix}
 U_{a }\\ 
 U_{b}\\
@@ -120,4 +120,4 @@ U_{0}
 
 ## See Aslo
 
-[Clark Transformer](comp_newClarkTransform.html)、[dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)
+[Clark Transformer](comp_newClarkTransform.html), [dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)

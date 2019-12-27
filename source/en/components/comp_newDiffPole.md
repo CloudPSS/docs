@@ -55,4 +55,4 @@ symbol: newDiffPole
 
 ## See Also
 
-[一阶惯性环节](comp_newRealPole.html)、[超前滞后校正](comp_newLeadLag.html)、[Second Order Complex Pole](comp_newComplexPole.html)
+[Real Pole](comp_newRealPole.html), [Lead Lag Pole](comp_newLeadLag.html), [Second Order Complex Pole](comp_newComplexPole.html)

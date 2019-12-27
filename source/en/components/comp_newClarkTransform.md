@@ -44,8 +44,8 @@ symbol: newClarkTransform
 ## Using Instructions
 
 ![坐标位置](comp_newClarkTransform/Clark.png "坐标位置")
-αβ轴为静止坐标轴，其相对位置为图所示。Park变换及逆Park变换的计算公式为：
- + **Clark变换**
+The αβ axis is a stationary coordinate axis, and its relative position is shown in the figure. The calculation formulas for the Clark transformation and the inverse Clark transformation are:
+ + **Clark Transformation**
 $$\begin{bmatrix}
 U_{\alpha }\\ 
 U_{\beta }
@@ -60,7 +60,7 @@ U_{b}\\
 U_{c}
 \end{bmatrix}$$
 
-+ **逆Clark变换**
++ **inverse Clark Transformation**
 $$\begin{bmatrix}
 U_{a}\\ 
 U_{b}\\ 
@@ -79,4 +79,4 @@ U_{\beta }
 
 ## See Also
 
-[Park Transformer](comp_newParkTransform.html)、[dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)
+[Park Transformer](comp_newParkTransform.html), [dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)

@@ -61,4 +61,4 @@ symbol: newComplexPole
 
 ## See Also
 
-[Zero-point](comp_newZero.html)、[Nth Order Transfer Function](comp_newNthOrderTransFunc.html)、[Lead Lag Pole](comp_newLeadLag.html)
+[Zero-point](comp_newZero.html), [Nth Order Transfer Function](comp_newNthOrderTransFunc.html), [Lead Lag Pole](comp_newLeadLag.html)
