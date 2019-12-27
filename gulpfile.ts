@@ -8,7 +8,6 @@ import htmlmin from 'gulp-htmlmin';
 import workboxBuild from 'workbox-build';
 import hexo from 'hexo';
 import puppeteer from "puppeteer";
-import path from 'path';
 import fs from 'fs';
 import sanitize from "sanitize-filename";
 import del from 'del';
@@ -30,7 +29,7 @@ export async function hexoGenerate(): Promise<void> {
 }
 
 export async function cleanPosts():Promise<void>{
-    await del('./public/posts/**');
+    await del('./public/posts');
 }
 
 // 压缩 public/js 目录 js
@@ -61,13 +60,14 @@ export function minifyHtml() {
             minifyCSS: true,
             minifyURLs: true,
         }))
-        .pipe(gulp.dest('./public'))
+        .pipe(gulp.dest('./public'));
 }
 
 export function generateSw() {
+    const swDest = './public/sw.js'
     return workboxBuild.generateSW({
-
-        swDest: './public/sw.js',
+        swDest: swDest,
+        importScripts: [],
         importWorkboxFrom: 'local',
         globPatterns: ['**/*.*'],
         globIgnores: ['maps/**/*'],
