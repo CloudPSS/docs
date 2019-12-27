@@ -1,5 +1,5 @@
 ---
-title: 管道
+title: Pipeline
 author: 
 author_email:
 
@@ -13,7 +13,7 @@ order: 0001
 classname: Pipeline
 symbol: Heat0
 ---
-## 基本描述
+## Basic Description
 
 ![管道元件](comp_HeatingSystem/pipeline.png)
 

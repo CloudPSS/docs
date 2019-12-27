@@ -23,16 +23,16 @@ symbol: newZero
 | Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
 | Name |  | Name of component | Text | Enter the name of this component |
-| Time Constant | s | Time constant | Real number（Const） | Time constant of the zero-point |
+| Time Constant | s | Time constant | Real number (Const) | Time constant of the zero-point |
 | Initialization Type |  | Initialization type | Select | Select the initialization type as "steady state" or "any value" |
-| Initial Value |  | Initial value | Real number（Const） | Initial value of the zero-point |
+| Initial Value |  | Initial value | Real number (Const) | Initial value of the zero-point |
 | Limit Output? |  | Limit output? | Select | Select to limit the output of integrator or not. Could be configured as "Fixed Limits" or "Dynamic Limits" |
 
 ### Fixed Limits
 | Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Maximum Limit |  | Maximum limit | Real number（Const） | Limits the maximum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
-| Minimum Limit |  | Minimum limit | Real number（Const） | Limits the minimum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
+| Maximum Limit |  | Maximum limit | Real number (Const) | Limits the maximum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
+| Minimum Limit |  | Minimum limit | Real number (Const) | Limits the minimum output to this signal，only valid when "Limit Output" is configured as "Fixed Limits" |
 
 ### Dynamic Limits
 | Parameter name | Remark | Type | Description |
