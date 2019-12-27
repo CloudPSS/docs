@@ -1,5 +1,5 @@
 ---
-title: 随机数生成器
+title: Random Number Generator
 author: 
 author_email:
 
@@ -13,44 +13,44 @@ order: 1100
 classname: RandomGeneratorRouter
 symbol: newRandom
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newRandom %}
 
-> **该元件用于产生随机数据，可选择4种随机数产生方式。**
-> + Uniform Int Distribution:统一整数分布
-> + Uniform Real Distribution:统一实数分布
-> + Weibull Distribution:威布尔分布
-> + Normal Distribution:正常分布
-> + Binomial Distribution:二项式分布
+> **This component is used to generate a random output signal by following methods:**
+> + Uniform Int Distribution
+> + Uniform Real Distribution
+> + Weibull Distribution
+> + Normal Distribution
+> + Binomial Distribution
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Generating Frequency | Hz | 随机数生成频率 | 实数（常量） | 随机数生成频率 |
-| Random Function Type |  | 随机数函数种类 | 选择 | 选择随机数函数种类为“统一整数分布”，“统一实数分布”，“威布尔分布”，“正常分布”以及“二项式分布” |
+| Generating Frequency | Hz | Generating frequency | Real number (Const) |  Frequency of generating random number |
+| Random Function Type |  | Random function type | Select | Select function type of random number as "Uniform Int Distribution",  "Uniform Real Distribution", "Weibull Distribution", "Normal Distribution" and "Binomial Distribution" |
 
 ### Function Parameters
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Lower Bound of Range |  |  | 实数（常量） | 随机数的下限，仅当函数种类为“为统一整数分布”、“统一实数分布”和“威布尔分布”时有效 |
-| Upper Bound of Range |  |  | 实数（常量） | 随机数的上限，仅当函数种类为“为统一整数分布”、“统一实数分布”和“威布尔分布”时有效 |
-| Mean / Expected value |  |  | 实数（常量） | 平均值/期望值，仅当仅当函数种类为“正常分布” 时有效|
-| Standard Deviation |  |  | 实数（常量） | 标准差，仅当仅当函数种类为“正常分布” 时有效 |
-| Times of Bernoulli Experiment |  | 伯努利试验次数 | 实数（常量） | 伯努利试验次数，仅当函数种类为“二项式分布”时有效 |
-| Probability of Success |  |  | 实数（常量） | 成功概率，仅当函数种类为“二项式分布”时有效 |
+| Lower Bound of Range |  |  | Real number (Const) | Lower limit of random number, only valid when function type is "Uniform Int Distribution", "Uniform Real Distribution" or "Weibull Distribution" |
+| Upper Bound of Range |  |  | Real number (Const) | Upper limit of random number, only valid when function type is "Uniform Int Distribution", "Uniform Real Distribution" or "Weibull Distribution" |
+| Mean/Expected value |  |  | Real number (Const) | Mean/expected value, only valid when function type is "Normal Distribution" |
+| Standard Deviation |  |  | Real number (Const) | Standard deviation, only valid when function type is "Normal Distribution" |
+| Times of Bernoulli Experiment |  |   | Real number (Const) | Times of Bernoulli experiment, only valid when function type is "Binomial Distribution" |
+| Probability of Success |  |  | Real number (Const) | Probability of success, only valid when function type is "Binomial Distribution" |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Output | 1×1 |输出端口 |
+| Output | 1×1 | Output pin |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 

@@ -1,5 +1,5 @@
 ---
-title: Modeling and Simulation of Regional Central Heating System
+title: Modeling and Simulation of Regional Central Heat Supply System
 type: features
 category: 2000
 order: 1000

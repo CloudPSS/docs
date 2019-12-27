@@ -5,9 +5,9 @@ author: songyk
 author_email: songyankan@cloudpss.net
 ---
 
-The model and usage instructions of the CloudPSS template example and the homepage example case help users to familiarize themselves with the various functions of CloudPSS, quickly understand the use of relevant examples, and modify them based on relevant examples. 
+To quickly understand the provided cases in the project wizard, users can read the following documents.
 
-### Electromagnetic Transient Simulation Example Case
+### Electromagnetic Transient Simulation Example
 * [Two-terminal LCC-HVDC test system](LCC.html)
 * [Two-terminal MMC-HVDC test system](MMC.html)
 * [Photovoltaic grid-connected generation system](PVsystem.html)
@@ -15,5 +15,5 @@ The model and usage instructions of the CloudPSS template example and the homepa
 * [IEEE 39-bus system](IEEE39.html) 
 * [DC microgrid system](DCMicroGrid.html) 
 
-### Heating System Simulation Example Case
-* [Regional central heating system](HeatingSystem.html)
+### Heating System Simulation Example
+* [Regional central heat supply system](HeatingSystem.html)

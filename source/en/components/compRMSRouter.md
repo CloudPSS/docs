@@ -1,5 +1,5 @@
 ---
-title: RMS量测
+title: RMS Meter
 author: 
 author_email:
 
@@ -13,36 +13,36 @@ order: 400
 classname: RMSRouter
 symbol: newRMS
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newRMS %}
 
-> **该元件实现单相、三相有效值测量。**
+> **This component calculates the RMS value of the input variables, which can measure the single-phase or three-phase RMS value.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入RMS量测的名称（可缺省） |
-| Dimension |  | 单相/三相 | 选择 | 选择测量为单相或三相 |
-| Meter Type |  | 量测类型 | 选择 |  |
-| Rated Value |  | 额定值 | 实数（常量） |  |
-| Smoothing Time Constant | s | 平滑时间常数 | 实数（常量） |  |
-| Fundamental Frequency | Hz | 基准频率 | 实数（常量） |  |
-| No. of Samples / Cycle |  | 每周期采样数 | 整数（常量） |  |
-| Initial Value |  | 初始电压 | 实数（常量） |  |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Dimension |  | Single-phase/ Three-phase | Select | Select "Single-phase" or “Three-phase” RMS measurement |
+| Meter Type |  | Meter type | Select | Select "Analog" or "Digital" RMS measurement |
+| Rated Value |  | Rated value | Real number (Const) |  |
+| Smoothing Time Constant | s | Smoothing time constant | Real number (Const) |  |
+| Fundamental Frequency | Hz | Fundamental frequency | Real number (Const) |  |
+| No. of Samples / Cycle |  | Sampling number per cycle | Integer (Const) |  |
+| Initial Value |  | Initial value | Real number (Const) |  |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input | 由参数控制 | |
+| Input | Control by the dimension parameter | |
 | Output | 1×1 | |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
 
