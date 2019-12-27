@@ -37,4 +37,4 @@ symbol: newDeltaT
 
 ## See Also
 
-[Constant](comp_newConstant.html)、[Time](comp_newTime.html)
+[Constant](comp_newConstant.html), [Time](comp_newTime.html)

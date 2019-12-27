@@ -31,126 +31,126 @@ symbol: SyncGen
 | Parameter Format |  | Parameter format | Select | Select "Equivalent Circuit Data" or "Experimental Data" |
 
 ### Equivalent Circuit Data
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Stator Resistance | p.u. | 定子电阻 | Real number (Const) | 无 |
-| Stator Leakage Reactance | p.u. | 定子漏电抗 | Real number (Const) | 无 |
-| Q-Axis Synch. Reactance | p.u. | q轴同步电抗 | Real number (Const) | 无 |
-| D-Axis Synch. Reactance | p.u. | d轴同步电抗 | Real number (Const) | 无 |
-| Field Resistance | p.u. | d轴励磁绕组电阻 | Real number (Const) | 无 |
-| Field Leakage Reactance | p.u. | d轴励磁绕组漏电抗 | Real number (Const) | 无 |
-| D-Axis Damper Resistance | p.u. | d轴阻尼D绕组电阻 | Real number (Const) | 无 |
-| D-Axis Damper Leakage Reactance | p.u. | d轴阻尼D绕组漏电抗 | Real number (Const) | 无 |
-| Q-Axis Damper No. 1 Resistance | p.u. | q轴阻尼绕组1电阻（g绕组） | Real number (Const) | 无 |
-| Q-Axis Damper No. 1 Leakage Reactance | p.u. | q轴阻尼绕组1漏电抗（g绕组） | Real number (Const) | 无 |
-| Q-Axis Damper No. 2 Resistance | p.u. | q轴阻尼绕组2电阻（Q绕组） | Real number (Const) | 无 |
-| Q-Axis Damper No. 2 Leakage Reactance | p.u. | q轴阻尼绕组2漏电抗（Q绕组） | Real number (Const) | 无 |
+| Stator Resistance | p.u. | Stator resistance | Real number (Const) | None |
+| Stator Leakage Reactance | p.u. | Stator leakage reactance | Real number (Const) | None |
+| Q-Axis Synch. Reactance | p.u. | Q-Axis synchronous reactance | Real number (Const) | None |
+| D-Axis Synch. Reactance | p.u. | D-Axis synchronous reactance | Real number (Const) | None |
+| Field Resistance | p.u. | D-Axis field resistance | Real number (Const) | None |
+| Field Leakage Reactance | p.u. | D-Axis field leakage reactance | Real number (Const) | None |
+| D-Axis Damper Resistance | p.u. | D-Axis damper resistance | Real number (Const) | None |
+| D-Axis Damper Leakage Reactance | p.u. | D-Axis damper leakage reactance | Real number (Const) | None |
+| Q-Axis Damper No. 1 Resistance | p.u. | Q-Axis damper No.1 resistance (g) | Real number (Const) | None |
+| Q-Axis Damper No. 1 Leakage Reactance | p.u. | Q-Axis damper No.1 leakage reactance (g) | Real number (Const) | None |
+| Q-Axis Damper No. 2 Resistance | p.u. | Q-Axis damper No.2 resistance (Q) | Real number (Const) | None |
+| Q-Axis Damper No. 2 Leakage Reactance | p.u. | Q-Axis damper No.2 leakage reactance (Q) | Real number (Const) | None |
 
 ### Experimental Data
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Stator Resistance | p.u. | 定子电阻 | Real number (Const) | 无 |
-| Stator Leakage Reactance | p.u. | 定子漏电抗 | Real number (Const) | 无 |
-| D-Axis Synch. Reactance | p.u. | d轴同步电抗 | Real number (Const) | 无 |
-| D-Axis Transient Reactance | p.u. | d轴暂态电抗 | Real number (Const) | 无 |
-| D-Axis Sub-Transient Reactance | p.u. | d轴次暂态电抗 | Real number (Const) | 无 |
-| Q-Axis Sync. Reactance | p.u. | q轴同步电抗 | Real number (Const) | 无 |
-| Q-Axis Transient Reactance | p.u. | q轴暂态电抗 | Real number (Const) | 无 |
-| Q-Axis Sub-Transient Reactance | p.u. | q轴次暂态电抗 | Real number (Const) | 无 |
-| D-Axis Transient Time (Open Circuit) | s | d轴励磁f绕组、定子开路时间常数 | Real number (Const) | 无 |
-| D-Axis Sub-Transient Time (Open Circuit) | s | d轴阻尼D绕组、定子开路时间常数 | Real number (Const) | 无 |
-| Q-Axis Transient Time (Open Circuit) | s | q轴阻尼g绕组、定子开路时间常数 | Real number (Const) | 无 |
-| Q-Axis Sub-Transient Time (Open Circuit) | s | q轴阻尼Q绕组、定子开路时间常数 | Real number (Const) | 无 |
+| Stator Resistance | p.u. | Stator resistance | Real number (Const) | None |
+| Stator Leakage Reactance | p.u. | Stator leakage reactance | Real number (Const) | None |
+| D-Axis Synch. Reactance | p.u. | D-Axis synchronous reactance | Real number (Const) | None |
+| D-Axis Transient Reactance | p.u. | D-Axis transient reactance | Real number (Const) | None |
+| D-Axis Sub-Transient Reactance | p.u. | D-Axis sub-transient reactance | Real number (Const) | None |
+| Q-Axis Sync. Reactance | p.u. | Q-Axis synchronous reactance | Real number (Const) | None |
+| Q-Axis Transient Reactance | p.u. | Q-Axis transient reactance | Real number (Const) | None |
+| Q-Axis Sub-Transient Reactance | p.u. | Q-Axis sub-transient reactance | Real number (Const) | None |
+| D-Axis Transient Time (Open Circuit) | s | D-Axis transient time (open circuit) | Real number (Const) | None |
+| D-Axis Sub-Transient Time (Open Circuit) | s | D-Axis sub-transient time (open circuit) | Real number (Const) | None |
+| Q-Axis Transient Time (Open Circuit) | s | Q-Axis transient time (open circuit) | Real number (Const) | None |
+| Q-Axis Sub-Transient Time (Open Circuit) | s | Q-Axis sub-transient time (open circuit) | Real number (Const) | None |
 
 ### Rotor Equation
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Control Type |  | 选择控制类型 | 选择 | 选择Speed Control（转速控制）或Torque Control（转矩控制）模式 |
-| Inertia Constant | s | 发电机转子惯性时间常数 | Real number (Const) | 此处应填写惯性时间常数$T_J=2H$，其中H为惯性常数（北美和欧洲参数形式） |
-| Damping Constant | s | 机械阻尼时间常数 | Real number (Const) |  |
+| Control Type |  | Select different control type | Select | Select "Speed Control" or "Torque Control" |
+| Inertia Constant | s | Inertia time constant of the rator | Real number (Const) | Enter the inertia time constant of the synchronous rator, $T_J=2H$, where H is the inertia constant |
+| Damping Constant | s | Damping constant | Real number (Const) |  |
 
 ### Initial Condition
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Startup Type |  |  | 选择 | 选择发电机初始化类型，分为from Zero-state（平启动），from Steady-state（稳态启动）和Source to Machine（电压源转电机）三种方式 |
-| Ramping Time | s | 爬坡时间 | Real number (Const) | Source to Machine启动方式下，需指定电压爬升时间 |
-| Initial Voltage Magnitude | p.u. | 初始相电压标幺值 | Real number (Const) | 来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
-| Initial Voltage Phase | Deg | 初始相电压相位 | Real number (Const) | 来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
-| Initial Active Power | MW | 初始有功功率 | Real number (Const) | 来自潮流计算结果，选择from Steady-state模式时需指定 |
-| Initial Reactive Power | MVar | 初始无功功率 | Real number (Const) | 来自潮流计算结果，选择from Steady-state模式时需指定 |
-| Source to Machine Transition Signal |  | 电压源-电机切换信号 | Text | 电压源向电机切换的触发信号名称，填写以@符号开头的字符串名，如@S2M。选择Source to Machine模式时需指定 |
-| Rotor Unlocking Signal |  | 转子方程解锁信号 | Text | 控制转子运动方程解锁的信号名，填写以@符号开头的字符串名，如@L2N。若此处为空，则电机转子始终处于转速锁定状态 |
+| Startup Type |  |  | Select | Select the startup type as "From Zero-state", "From Steady-state" or "Source to Machine" |
+| Ramping Time | s | Ramp time | Real number (Const) | When the startup type is "Source to Machine" the ramp time is needed to be set |
+| Initial Voltage Magnitude | p.u. | Initial voltage magnitude | Real number (Const) | The initial voltage magnitude is from the results of the power flow, only valid when the startup type is "From Steady-State" or "Source to Machine" |
+| Initial Voltage Phase | Deg | Initial voltage phase | Real number (Const) | The initial voltage phase is from the results of the power flow, only valid when the startup type is "from Steady-state" or "Source to Machine" |
+| Initial Active Power | MW | Initial active power | Real number (Const) | The initial active power is from the results of the power flow, only valid when the startup type is "from Steady-state" or "Source to Machine" |
+| Initial Reactive Power | MVar | Initial reactive power | Real number (Const) | The initial reactive power is from the results of the power flow, only valid when the startup type is "from Steady-state" or "Source to Machine" |
+| Source to Machine Transition Signal |  | Source to Machine transition signal | Text | Enter the label of the Source to Machine transition signal, starting with @, such as @S2M, only valid when the startup type is "Source to Machine" |
+| Rotor Unlocking Signal |  | Rotor unlocking signal | Text | Enter the label of the Rotor unlocking signal, starting with @, such as @L2N. If it is empty, the rator speed is locked |
 
 ### Power Flow Data
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Bus Type |  | 节点类型 | 选择 | 用于潮流计算功能，指定电源所在母线的节点类型 |
-| Injected Active Power | MW | 节点注入有功功率 | Real number (Const) | 用于潮流计算功能，对 PV、PQ 节点有效 |
-| Injected Reactive Power | MVar | 节点注入无功功率 | Real number (Const) | 用于潮流计算功能，对 PQ 节点有效 |
-| Bus Voltage Magnitude | p.u. | 母线电压幅值 | Real number (Const) | 用于潮流计算功能，对 PV、平衡节点有效 |
-| Bus Voltage Angle | Deg | 母线电压相位 | Real number (Const) | 用于潮流计算功能，对平衡节点有效 |
-| Lower Voltage Limit | p.u. | 母线电压下限 | Real number (Const) | 用于潮流计算功能，对 PQ 节点有效 |
-| Upper Voltage Limit | p.u. | 母线电压上限 | Real number (Const) | 用于潮流计算功能，对 PQ 节点有效 |
-| Lower Reactive Power Limit | MVar | 无功功率下限 | Real number (Const) | 用于潮流计算功能，对 PV、平衡节点有效 |
-| Upper Reactive Power Limit | MVar | 无功功率上限 | Real number (Const) | 用于潮流计算功能，对 PV、平衡节点有效 |
+| Bus Type |  | Bus type | Select | For power flow calculation function, specify the node type of the bus where the component is located. And select as "PQ Bus", "PV Bus", or "Slack Bus" |
+| Injected Active Power | MW | Injected active power | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PQ Bus" or "PV Bus" |
+| Injected Reactive Power | MVar | Injected reactive power | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PQ Bus" |
+| Bus Voltage Magnitude | p.u. | Bus voltage magnitude | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PQ Bus" or "Slack Bus" |
+| Bus Voltage Angle | Deg | Bus voltage angle | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PSlack Bus" |
+| Lower Voltage Limit | p.u. | Lower voltage limit | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PQ Bus" |
+| Upper Voltage Limit | p.u. | Upper voltage limit | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PQ Bus" |
+| Lower Reactive Power Limit | MVar | Lower reactive power limit | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PV Bus" or "Slack Bus" |
+| Upper Reactive Power Limit | MVar | Upper reactive power limit | Real number (Const) | For power flow calculation function, only valid when the "Bus Type" is "PV Bus" or "Slack Bus" |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Source to Machine Signal | 电压源-电机切换信号 | Text | 此处输入电压源-电机切换信号量测信号的标签，以#号开头，如#S2M |
-| Rotor Unlocking Signal | 转子方程解锁信号 | Text | 此处输入转子方程解锁信号量测信号的标签，以#号开头，如#L2N |
-| Initial Open-Circuit Voltage (Ef) \[p.u.\] | 稳态开路电势Ef0量测信号 | Text | 此处输入稳态开路电势Ef0量测信号量测信号的标签，以#号开头，如#Ef0 |
-| Initial Mechanical Torque \[p.u.\] | 稳态机械转矩Tm0量测信号 | Text | 此处输入稳态机械转矩Tm0量测信号量测信号的标签，以#号开头，如#Tm0 |
-| Rotor Speed \[p.u.\] | 转速量测信号 | Text | 此处输入转速量测信号量测信号的标签，以#号开头，如#w |
-| Rotor Angle \[Rad\] | 转子角量测信号 | Text | 此处输入转子角量测信号量测信号的标签，以#号开头，如#Theta |
-| Load Angle (Q-axis leads Va) \[Rad\] | Q轴与端电压相量夹角 | Text | 此处输入Q轴与端电压相量夹角量测信号的标签，以#号开头，如#LA |
-| Load Angle (Q-axis leads ωₛ*t) \[Rad\] | Q轴与同步旋转坐标系夹角 | Text | 此处输入Q轴与同步旋转坐标系夹角量测信号的标签，以#号开头，如#LA1 |
-| Terminal RMS Voltage \[p.u.\] | 定子端电压有效值量测信号 | Text | 此处输入定子端电压有效值量测信号量测信号的标签，以#号开头，如#Vrms |
-| Terminal RMS Current \[p.u.\] | 定子端电流有效值量测信号 | Text | 此处输入定子端电流有效值量测信号量测信号的标签，以#号开头，如#Irms |
-| Terminal Active Power \[MW\] | 定子端输出有功功率信号 | Text | 此处输入定子端输出有功功率信号量测信号的标签，以#号开头，如#Pmsr |
-| Terminal Reactive Power \[MVar\] | 定子端输出无功功率信号 | Text | 此处输入定子端输出无功功率信号量测信号的标签，以#号开头，如#Qmsr |
-| Terminal 3 Phase Current Vector \[kA\] | 定子端三相电流 | Text | 此处输入定子端三相电流量测信号的标签，以#号开头，如#Iabc |
+| Source to Machine Signal | Source to Machine signal | Text | Enter the label of the source to machine signal, starting with #, such as #S2M |
+| Rotor Unlocking Signal | Rotor unlocking signal | Text | Enter the label of the rator unlocking signal, starting with #, such as #L2N |
+| Initial Open-Circuit Voltage (Ef) \[p.u.\] | Initial open-circuit voltage Ef0 | Text | Enter the label of the initial open-circuit voltage, starting with #, such as #Ef0 |
+| Initial Mechanical Torque \[p.u.\] | Initial mechanical torque Tm0 | Text | Enter the label of the initial mechanical torque, starting with #, such as #Tm0 |
+| Rotor Speed \[p.u.\] | Rotor speed | Text | Enter the label of the rotor speed, starting with #, such as #w |
+| Rotor Angle \[Rad\] | Rotor angle | Text | Enter the label of the rotor angle, starting with #, such as #Theta |
+| Load Angle (Q-axis leads Va) \[Rad\] | Angle of Q-axis leading Va | Text | Enter the label of the load angle, starting with #, such as #LA |
+| Load Angle (Q-axis leads ωₛ*t) \[Rad\] | Angle of Q-axis leading  ωₛ *t | Text | Enter the label of the load angle, starting with #, such as #LA1 |
+| Terminal RMS Voltage \[p.u.\] | Terminal RMS voltage of stator | Text | Enter the label of the terminal RMS voltage, starting with #, such as #Vrms |
+| Terminal RMS Current \[p.u.\] | Terminal RMS current of stator | Text | Enter the label of the terminal RMS current, starting with #, such as #Irms |
+| Terminal Active Power \[MW\] | Terminal active power of stator | Text | Enter the label of the terminal active power, starting with #, such as #Pmsr |
+| Terminal Reactive Power \[MVar\] | Terminal reactive power of stator | Text | Enter the label of the terminal reactive power, starting with #, such as #Qmsr |
+| Terminal 3 Phase Current Vector \[kA\] | Terminal 3-phase current of stator | Text | Enter the label of the terminal 3 phase current vector, starting with #, such as #Iabc |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Stator Port | 3×1 | 定子端引脚（单线图） |
-| w | 1×1 | 转速信号输入引脚，转速控制模式 |
-| Tm | 1×1 | 机械转矩信号输入引脚，转矩控制模式 |
-| Te | 1×1 | 电磁转矩信号输出引脚 |
-| Ef | 1×1 | 励磁电动势输入引脚 |
-| If | 1×1 | 励磁电流输出引脚 |
+| Stator Port | 3×1 | Terminal of the stator |
+| w | 1×1 | Input pin of the speed signal, when it is "Speed Control" |
+| Tm | 1×1 | Input pin of the mechanical torque, when it is "Torque Control" |
+| Te | 1×1 | Output pin of the electromagnetic torque |
+| Ef | 1×1 | Input pin of the flux voltage |
+| If | 1×1 | Output pin of the flux current |
 
-## 使用说明
+## Using Instructions
 
-同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.html)。
+The conversion between the per-unit value and the named value of the synchronous motor is referenced from the [CloudPSSsynchronous motor per-unit value and the named value system](../other/SyncGenPerUnitSystem.html)。
 
-### 同步发电机的启动方法
+### The startup types of the synchronous generator
 
-CloudPSS提供了3种同步发电机的启动方法，通过修改参数表的`Initial Condition`栏内参数可以选择不同的启动方式。具体如下： 
+CloudPSS provides three different startup types of the synchronous generator. You can select different startup types by modifying the parameters in the `Initial Condition` column of the parameter table. 
  
-1.	平启动
+1.	From Zero-state
 
-    设定`Initial Condition`->`Startup Type`为`from Zero-state`，即可实现平启动，相当于不采用任何特殊启动方法。
+    Set `Initial Condition`->`Startup Type` as `from Zero-state`, to achieve a flat start, which is equivalent to not using any special startup method.
 
-    需要说明的是，`平启动`模式下，同步发电机量测标识中`稳态开路电势Ef0量测信号`、`稳态机械转矩Tm0量测信号`无意义。
+    It should be noted that, in the `From Zero-state` startup type, the `initial open-circuit voltage, Ef0`, and the `initial mechanical torque, Tm0`, measurement signal in the synchronous generator measurement mark are meaningless.
 
-2.	稳态启动
+2.	From Steady-state
 
-    设定`Initial Condition`->`Startup Type`为`from Steady-state`，即稳态启动。此时电机需要设置`Initial Voltage Magnitude`（初始相电压标幺值）, `Initial Voltage Phase`（初始相电压相位），`Initial Active Power`（初始有功功率），`Initial Reactive Power`（初始无功功率）四个参数。此类启动方式适用于整个系统从潮流断面直接启动，详见[潮流断面启动](../features/Initialization.html)功能。
+    Set `Initial Condition`->`Startup Type` as `from Steady-state`, which is a steady state startup. At this point, the motor needs to set four parameters `Initial Voltage Magnitude`,  `Initial Voltage Phase`, `Initial Active Power`, `Initial Reactive Power`. This type of startup is suitable for the entire system to be started directly from the power flow snapshot. See the section [Startup of Power Flow Snapshot](../features/Initialization.html) for details.
 
-3.	电压源转电机
+3.	Source to Machine
 
-    设定`Initial Condition`栏中`Startup Type`为`Source to Machine`，即电压源转电机启动类型。此时需要指定`Ramping Time`（电压爬升时间），`Initial Voltage Magnitude`（初始相电压标幺值），`Initial Voltage Phase`（初始相电压相位），以及`Source to Machine Transition Signal`(电压源-电机切换信号)动态参数，动态参数的使用详见[参数及引脚体系](../features/ParameterSystem.html)。如：可填入`@S2M`。`@S2M`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@S2M`为0时，电机为一个理想电压源，其幅值和相位线性爬升至`Initial Voltage Magnitude`，`Initial Voltage Phase`两参数给定的端电压值。当`@S2M`信号阶跃到1时，电压源切换为电机。
+    Set `Initial Condition`->`Startup Type` as `Source to Machine`, which is the voltage source to motor start type. In this case, you need to specify the dynamic parameters of `Ramping Time`, `Initial Voltage Magnitude`, `Initial Voltage Phase`, and `Source to Machine Transition Signal`, For the use of dynamic parameters,  see[Parameters and Pins System](../features/ParameterSystem.html) in detail. Such as: it can be filled in`@S2M`. The `@S2M` signal is generated by a step signal generator and is a signal that transitions from 0 to 1. When the `@S2M` is 0, the motor is an ideal voltage source, and its amplitude and phase linearly climb to the terminal voltage value given by `Initial Voltage Magnitude`, and `Initial Voltage Phase`. When the @S2M signal steps to 1, the voltage source switches to the motor.
 
-    需要说明的是，`电压源转电机`模式下，同步发电机量测标识中`稳态开路电势Ef0量测信号`、`稳态机械转矩Tm0量测信号`、`转子角量测信号`以及`Q轴与端电压相量夹角`信号在`@S2M`信号为1前，均无意义。
+    It should be noted that, in the `Source to Machine` startup type, the `initial open-circuit voltage, Ef0`, and the `initial mechanical torque, Tm0`, `Rotor Angle` and `Load Angle (Q-axis leads Va)` measurement signal in the synchronous generator measurement mark are meaningless, until the @S2M signal is 1.
 
-### 同步发电机转子转速解锁信号
+### "Rotor Unlocking Signal" of the synchronous generator
 
-默认情况下，无论选择转速控制模式还是转矩控制模式，同步发电机的转子均处在额定转速下的锁转速模式。需要用户提供`Rotor Unlocking Signal`动态参数来进行解锁。如：可填入`@L2N`。`@L2N`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@L2N`为0时，转速恒定为额定转速。当`@L2N`信号阶跃到1时，转速放开。在转速控制模式下，转速与输入的受控信号相同；在转矩控制下，转速由转速方程控制。
+By default, the rotor of the synchronous generator is in the "lock speed mode" at rated speed, regardless of whether the "speed control mode" or "the torque control mode" is selected. The user is required to provide `Rotor Unlocking Signal` dynamic parameters to unlock. Such as: can be filled in `@L2N`. The `@L2N` signal is generated by a step signal generator and is a signal that transitions from 0 to 1. When `@L2N` is 0, the speed is constant at the rated speed. When the `@L2N` signal steps to 1, the speed is released. In the "speed control" mode, the speed is the same as the controlled signal; under "torque control", the speed is controlled by the speed equation.
 
-## 相关元件
+## See Also
 
 

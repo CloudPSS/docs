@@ -53,4 +53,4 @@ y(t) = {K_r}u(t) + {y_2} - {K_r}{x_2},u(t) > {x_2}
 
 ## See Also
 
-[Nonlinear Function非线性函数](comp_newNonlinear.html)
+[Nonlinear Function](comp_newNonlinear.html)

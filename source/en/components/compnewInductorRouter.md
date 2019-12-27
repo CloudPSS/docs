@@ -13,7 +13,7 @@ order: 300
 classname: newInductorRouter
 symbol: newInductor
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newInductor %}
 
 > **This component is used to model single or three phase inductor.**
@@ -46,4 +46,4 @@ symbol: newInductor
 
 ## See Also
 
-[Resistor](compnewResistorRouter.html)、[Capacitor](compnewCapacitorRouter.html)
+[Resistor](compnewResistorRouter.html), [Capacitor](compnewCapacitorRouter.html)

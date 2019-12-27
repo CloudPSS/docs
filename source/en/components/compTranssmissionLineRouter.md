@@ -1,5 +1,5 @@
 ---
-title: 三相传输线
+title: Three-phase Transmission Line
 author: 
 author_email:
 
@@ -13,83 +13,83 @@ order: 400
 classname: TranssmissionLineRouter
 symbol: TLine_3p
 ---
-## 基本描述
+## Basic Description
 {% compsymbol TLine_3p %}
 
-> **该元件采用π型集总参数模型和Begeron分布参数模型建模三相传输线。**
+> **The component uses a π-type lumped parameter model and a Begeron distributed parameter model to model a three-phase transmission line.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入三相传输线的名称（可缺省） |
-| Steady-state Frequency | Hz | 额定频率 | 实数（常量） | 输入额定频率 |
-| Length of Line | km | 线路长度 | 实数（常量） | 输入线路长度$l$ |
-| Parameter Format |  | 参数输入方式 | 选择 | 选择参数输入方式，标幺值和有名值两种 |
-| 0 Seq. Data |  | 零序参数输入方法 | 选择 | 选择是否输入零序参数，若选择否，则零序参数与正序参数相同 |
-| Has the Data Been Corrected for Long Line Effects? |  | 填入的线路参数是否已进行过长导线修正? | 选择 | 选择Yes或No，表示所填参数是否进行过长导线修正 |
-| Model Type |  | 传输线模型种类 | 选择 | 选择传输线模型种类：Bergeron Line Model（贝格隆分布参数模型）或Lumped π-Model（π型集总参数模型）|
+| Name |  | Name of component | Text | Enter the name of this component |
+| Steady-state Frequency | Hz | Rated frequency | Real number (Const) | Rated frequency |
+| Length of Line | km | Length of line | Real number (Const) | Length of line $l$ |
+| Parameter Format |  | Parameter format | Select | Select parameter format as "R,X,B(p.u.)" or "R,Xl,Xc(Ω)" |
+| 0 Seq. Data |  | 0 Seq. data | Select | Select whether to input the 0-sequence parameter. If not, the 0-sequence parameter is the same as the positive sequence parameter |
+| Has the Data Been Corrected for Long Line Effects? |  | Has the data been corrected for long line effects? | Select | Select "Yes" or "No", indicating whether the data has been corrected for long line effects |
+| Model Type |  | Model type | Select | Select Model Type as "Bergeron Line Model" or "Lumped π-Model" |
 
 ### R, X, B (p.u.)
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Rated Voltage (L-L, RMS) | kV | 额定电压 | 实数（常量） | 输入额定电压（电压基值） |
-| Rated Power Capacity | MVA | 额定容量 | 实数（常量） | 输入额定容量（容量基值） |
-| +/- Seq. Resistance | p.u./km | 单位长度正序电阻 | 实数（常量） | 输入单位长度正序电阻标幺值$R_1$ |
-| +/- Seq. Inductive Reactance | p.u./km | 单位长度正序电抗 | 实数（常量） | 输入单位长度正序电抗标幺值$X_1$ |
-| +/- Seq. Capacitive Susceptance | p.u./km | 单位长度正序电纳 | 实数（常量） | 输入单位长度正序电纳标幺值$B_1$ |
-| 0 Seq. Resistance | p.u./km | 单位长度零序电阻 | 实数（常量） | 输入单位长度零序电阻标幺值$R_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
-| 0 Seq. Inductive Reactance | p.u./km | 单位长度零序电抗 | 实数（常量） | 输入单位长度零序电抗标幺值$X_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
-| 0 Seq. Capacitive Susceptance | p.u./km | 单位长度零序电纳 | 实数（常量） | 输入单位长度零序电纳标幺值$B_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| Rated Voltage (L-L, RMS) | kV | Rated voltage | Real number (Const) | Rated voltage (Base value) |
+| Rated Power Capacity | MVA | Rated power capacity | Real number (Const) | Rated power capacity (Base value) |
+| +/- Seq. Resistance | p.u./km | +/- Seq. resistance per km | Real number (Const) | Positive sequence resistance per unit length in per-unit system, $R_1$ |
+| +/- Seq. Inductive Reactance | p.u./km | +/- Seq. inductive reactance per km | Real number (Const) | Positive sequence inductive reactance per unit length in per-unit system, $X_1$ |
+| +/- Seq. Capacitive Susceptance | p.u./km | +/- Seq. capacitive susceptance per km | Real number (Const) | Positive sequence capacitive susceptance per unit length in per-unit system, $B_1$ |
+| 0 Seq. Resistance | p.u./km | 0 Seq. resistance per km | Real number (Const) | 0-sequence resistance per unit length in per-unit system, $R_0$, only valid when "Enter 0 Seq. Data" is selected |
+| 0 Seq. Inductive Reactance | p.u./km | 0 Seq. inductive reactance per km | Real number (Const) | 0-sequence inductive reactance per unit length in per-unit system, $X_0$, only valid when "Enter 0 Seq. Data" is selected |
+| 0 Seq. Capacitive Susceptance | p.u./km | 0 Seq. capacitive susceptance per km | Real number (Const) | 0-sequence capacitive susceptance per unit length in per-unit system, $B_0$, only valid when "Enter 0 Seq. Data" is selected |
 
 ### R, Xl, Xc (Ω)
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| +/- Seq. Resistance | Ω/km | 单位长度正序电阻 | 实数（常量） | 输入单位长度正序电阻有名值$R_1$ |
-| +/- Seq. Inductive Reactance | Ω/km | 单位长度正序感抗 | 实数（常量） | 输入单位长度正序串联电抗有名值$X_{l1}$ |
-| +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 实数（常量） | 输入单位长度正序并联容抗有名值$X_{c1}$ |
-| 0 Seq. Resistance | Ω/km | 单位长度零序电阻 | 实数（常量） | 输入单位长度零序电阻有名值$R_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
-| 0 Seq. Inductive Reactance | Ω/km | 单位长度零序感抗 | 实数（常量） | 输入单位长度零序串联电抗有名值$X_{l0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
-| 0 Seq. Capacitive Reactance | MΩ*km | 单位长度零序容抗 | 实数（常量） | 输入单位长度零序并联容抗有名值$X_{c0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| +/- Seq. Resistance | Ω/km | +/- Seq.  resistance per km | Real number (Const) | Positive sequence resistance per unit length in named value system, $R_1$ |
+| +/- Seq. Inductive Reactance | Ω/km | +/- Seq. inductive Reactance per km | Real number (Const) | Positive sequence inductive per unit length in named value system, $X_{l1}$ |
+| +/- Seq. Capacitive Reactance | MΩ*km | +/- Seq. capacitive reactanceper km | Real number (Const) | Positive sequence capacitive reactance per unit length in named value system, $X_{c1}$ |
+| 0 Seq. Resistance | Ω/km | 0 Seq. resistance per km | Real number (Const) | 0-sequence resistance per unit length in named value system, $R_0$, only valid when "Enter 0 Seq. Data" is selected |
+| 0 Seq. Inductive Reactance | Ω/km | 0 Seq. inductive reactance per km | Real number (Const) | 0-sequence inductive reactance per unit length in named value system, $X_{l0}$, only valid when "Enter 0 Seq. Data" is selected |
+| 0 Seq. Capacitive Reactance | MΩ*km | 0 Seq. capacitive reactance per km | Real number (Const) | 0-sequence capacitive reactance per unit length in named value system, $X_{c0}$, only valid when "Enter 0 Seq. Data" is selected |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| 3 Phase Current Vector (Sending Terminal) \[kA\] | 送端电流向量 | 文本 | 此处输入传输线送端电流量测信号的标签（3×1维），以#号开头，如#Isabc |
-| 3 Phase Current Vector (Receiving Terminal) \[kA\] | 受端电流向量 | 文本 | 此处输入传输线受端电流量测信号的标签（3×1维），以#号开头，如#Irabc |
-| RMS Current (Sending Terminal) \[kA\] | 送端电流均方根值 | 文本 | 此处输入传输线送端电流有效值量测信号的标签（1×1维），以#号开头，如#Isrms |
-| RMS Current (Receiving Terminal) \[kA\] | 受端电流均方根值 | 文本 | 此处输入传输线受端电流有效值量测信号的标签（1×1维），以#号开头，如#Irrms |
-| Active Power (Sending Terminal) \[MW\] | 送端有功功率 | 文本 | 此处输入传输线送端有功功率量测信号的标签（1×1维），以#号开头，如#Ps |
-| Reactive Power (Sending Terminal) \[MVar\] | 送端无功功率 | 文本 | 此处输入传输线送端无功功率量测信号的标签（1×1维），以#号开头，如#Qs |
-| Active Power (Receiving Terminal) \[MW\] | 受端有功功率 | 文本 | 此处输入传输线受端有功功率量测信号的标签（1×1维），以#号开头，如#Pr |
-| Reactive Power (Receiving Terminal) \[MVar\] | 受端无功功率 | 文本 | 此处输入传输线受端无功功率量测信号的标签（1×1维），以#号开头，如#Qr |
-| Active Power Losses \[MW\] | 有功功率线路损耗 | 文本 | 此处输入传输线有功功率损耗量测信号的标签（1×1维），以#号开头，如#Ploss |
-| Reactive Power Losses \[MVar\] | 无功功率线路损耗 | 文本 | 此处输入传输线无功功率损耗量测信号的标签（1×1维），以#号开头，如#Qloss |
+| 3 Phase Current Vector (Sending Terminal) \[kA\] | 3-phase current vector (Sending Terminal) | Text | Enter the measurement signal label of the current at sending terminal (3x1), starting with #, such as #Isabc |
+| 3 Phase Current Vector (Receiving Terminal) \[kA\] | 3-phase current vector (Receiving Terminal) | Text | Enter the measurement signal label of the current at receiving terminal (3x1), starting with #, such as #Irabc |
+| RMS Current (Sending Terminal) \[kA\] | RMS current (Sending Terminal) | Text | Enter the measurement signal label of the current at sending terminal (1x1), starting with #, such as #Isrms |
+| RMS Current (Receiving Terminal) \[kA\] | RMS current (Receiving Terminal) | Text | Enter the measurement signal label of the current at receiving terminal (1x1), starting with #, such as #Irrms |
+| Active Power (Sending Terminal) \[MW\] | Active power (Sending Terminal) | Text | Enter the measurement signal label of the active power at sending terminal (1x1), starting with #, such as #Ps |
+| Reactive Power (Sending Terminal) \[MVar\] | Reactive power (Sending Terminal) | Text | Enter the measurement signal label of the reactive power at sending terminal (1x1), starting with #, such as #Qs |
+| Active Power (Receiving Terminal) \[MW\] | Active power (Receiving Terminal) | Text | Enter the measurement signal label of the active power at receiving terminal (1x1), starting with #, such as #Pr |
+| Reactive Power (Receiving Terminal) \[MVar\] | Reactive power (Receiving Terminal) | Text | Enter the measurement signal label of the reactive power at receiving terminal (1x1), starting with #, such as #Qr |
+| Active Power Losses \[MW\] | Active power losses | Text | Enter the measurement signal label of the active power loss (1x1), starting with #, such as #Ploss |
+| Reactive Power Losses \[MVar\] | Reactive power losses | Text | Enter the measurement signal label of the reactive power loss (1x1), starting with #, such as #Qloss |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Sending (i) Pin | 3×1 | 送端连接端口 |
-| Receiving (j) Pin | 3×1 | 受端连接端口 |
+| Sending (i) Pin | 3×1 | Pins of sending terminal |
+| Receiving (j) Pin | 3×1 | Pins of receiving terminal |
 
-## 使用说明
+## Using Instructions
 
-1. 建议在具备线路长度信息的情况下优先选用Bergeron分布参数模型。该模型支持分网并行计算，可极大地提升仿真计算效率。
-2. 选择Bergeron模型报如下错误时，说明线路长度不足，应切换为**Lumped π-Model/π型集总参数模型**。
+1. It is recommended to use the Bergeron distribution parameter model with known line length information. The model supports parallel computing in the subnet, which can greatly improve the efficiency of simulation.
+2. When the Bergeron model reports the following error, it indicates that the line length is insufficient, and should be switched to the **Lumped π-Model**. 
    {% pullquote fail %}
    1. **TLine-XXX Error:** +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
    2. **TLine-XXX Error:** 0 Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
    {% endpullquote %}
-3. 不具备线路长度信息时，可填写线路长度为**1km**，线路参数输入时填写**集总参数**，“Has the Data Been Corrected for Long Line Effects?”一项选择**Yes**。
-4. 请确认所填入的参数是否已经经过了长导线修正。若选择**No**，同时选择了**Lumped π-Model/π型集总参数模型**，则CloudPSS会对采用如下方式对集总参数进行修正。
+3.If the line length information is unknown, user should select the **Lumped π-Model** and the line length as **1km** when entering the line parameters, and select **Yes** for “Has the Data Been Corrected for Long Line Effects?”
+4. Please confirm whether the parameters filled in have been corrected by long line effects. If select "No", and the **Lumped π-Model** is selected, CloudPSS will correct the lumped parameters as follows equation:
    >   $$\begin{aligned}
   {Z_m} &= Z\frac{ {\sinh \left( {\gamma l} \right)} }{ {\gamma l} } \\
   {Y_m} &= Y\frac{ {\tanh \left( {\gamma l/2} \right)} }{ {\gamma l/2} } 
 \end{aligned}$$
 
  
-## 相关元件
+## See Also
 
 

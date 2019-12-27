@@ -57,4 +57,4 @@ symbol: newPICtrl
 
 ## See Also
 
-[Integrator](comp_newIntegrator.html)、[Gain](comp_newGain.html)
+[Integrator](comp_newIntegrator.html), [Gain](comp_newGain.html)

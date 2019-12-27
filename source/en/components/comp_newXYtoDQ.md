@@ -44,8 +44,8 @@ symbol: newXYtoDQ
 ## Using Instructions
 
 ![坐标位置](comp_newXYtoDQ/t1.png "坐标位置")
-当选择**d轴与a相对齐**时，其相对位置为图所示。计算公式为：
-+ **αβ到dq变换**
+When the **Rotating Frame Alignment** is **Aligned with phase A**, the calculation formulas for the Park transformation and the inverse Park transformation are: 
++ **αβ to dq transformation**
 $$\begin{bmatrix}
 U_{d }\\ 
 U_{q }
@@ -58,7 +58,7 @@ cos\theta  &sin\theta\\
 U_{\alpha}\\ 
 U_{\beta} 
 \end{bmatrix}$$
-+ **dq到αβ变换**
++ **dq to αβ transformation**
 $$\begin{bmatrix}
 U_{\alpha}\\ 
 U_{\beta} 
@@ -73,8 +73,8 @@ U_{q }
 \end{bmatrix}$$
 
 ![坐标位置](comp_newXYtoDQ/t2.png "坐标位置")
-当选择**d轴滞后a相90°**时，其相对位置为图所示。计算公式为：
-+ **αβ到dq变换**
+When the **Rotating Frame Alignment** is **90° behind phase A**, the calculation formulas for the Park transformation and the inverse Park transformation are:
++ **αβ to dq transformation**
 $$\begin{bmatrix}
 U_{d }\\ 
 U_{q }
@@ -87,7 +87,7 @@ cos\theta &sin\theta
 U_{\alpha}\\ 
 U_{\beta} 
 \end{bmatrix}$$
-+ **dq到αβ变换**
++ **dq to αβ transformation**
 $$\begin{bmatrix}
 U_{\alpha}\\ 
 U_{\beta} 
@@ -103,4 +103,4 @@ U_{q }
 
 ## See Also
 
-[Park Transformer](comp_newParkTransform.html)、[Clark Transformer](comp_newClarkTransform.html)
+[Park Transformer](comp_newParkTransform.html), [Clark Transformer](comp_newClarkTransform.html)
