@@ -1,5 +1,5 @@
 ---
-title: 热源
+title: Heat Source
 author: 
 author_email:
 
@@ -13,43 +13,43 @@ order: 1000
 classname: HeatSource
 symbol: heat1
 ---
-## 基本描述
+## Basic Description
 {% compsymbol heat1 %}
 
-> **该元件指为供热系统提供热量（或冷量）的设备设施。**
+> **This component refers to the equipment that supplies heat (or cold) to the heating system.**
 
-## 参数列表
-### 水力控制条件
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+## Parameter
+### Hydraulic control condition
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 是否控制流量？ |  | Specify Mass Flowrate? | 选择 | 通过热源进行循环的热媒流量，此处选择是否将热媒流量设定为已知值 |
-| 流量 | kg/s | Mass Flowrate | 表格 | 输入不同时间点热媒流量的设定值 |
-| 是否控制回水压力？ |  | Specify Return Pressure? | 选择 | 热源进口处的热媒压力，此处选择是否将回水压力设定为已知值 |
-| 回水压力 | MPa | Return Pressure | 表格 | 输入不同时间点回水压力的设定值 |
-| 是否控制站内增压？ |  | Specify Pressure Increment? | 选择 | 热源内部的压力增量，此处选择是否将站内增压设定为已知值 |
-| 站内增压 | MPa | Pressure Increment | 表格 | 输入不同时间点站内增压的设定值 |
+| Specify Mass Flowrate? |  | Specify mass flowrate? | Select | Heat medium flow circulating through the heat source, here choose whether to set the heat flow to a specified value |
+| Mass flowrate | kg/s | Mass Flowrate | Table | Enter the specified value of the heat medium flow at different time points |
+| Specify Return Pressure? |  | Specify return pressure? | Select | Heat medium pressure at the heat source inlet, here choose whether to set the return water pressure to a specified value |
+| Return Pressure | MPa | Return pressure | Table | Enter the specified value of the return water pressure at different time points |
+| Specify Pressure Increment? |  | Specify pressure increment? | Select | The pressure increasement inside the heat source, here choose whether to set the return water pressure to a specified value |
+| Pressure Increment | MPa | Pressure increment | Table | Enter the specified value of the station boost at different time points |
 
-### 热力控制条件
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+### Thermal control condition
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| 是否控制供热量？ |  | Specify Heat Supply? | 选择 | 热源向外输出的热量，此处选择是否将供热量设定为已知值 |
-| 供热量 | kW | Heat Supply | 表格 | 输入不同时间点供热量的设定值 |
-| 是否控制供热温度？ |  | Specify Supply Temperature? | 选择 | 热源出口处的热媒温度，此处选择是否将供热温度设定为已知值 |
-| 供热温度 | ℃ | Supply Temperature | 表格 | 输入不同时间点供热温度的设定值 |
+| Specify Heat Supply? |  | Specify heat supply? | Select | Heat output from the heat source, here select whether to set the heat supply to a specified value |
+| Heat supply | kW | Heat Supply | Table | Enter the specified value of heat supply at different time points |
+| Specify Supply Temperature? |  | Specify supply temperature? | Select | The temperature of the heat medium at the outlet of the heat source. Here, choose whether to set the heating temperature to a specified value |
+| Supply Temperature | ℃ | Supply temperature | Table | Enter the specified value of the heating temperature at different time points |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Input&Output | 1×1 | 同时代表热源元件的入口连接点和出口连接点 |
+| Input&Output | 1×1 | Represent the input and output connection points of the component at the same time |
 
-## 使用说明
+## Using Instructions
 
 {% pullquote tip %}
-目前版本中热源与其它元件相连时热源应作为起点，否则极易引发错误。
+In the current version, the heat source should be used as a starting point when the heat source is connected to other components, otherwise it is easy to cause errors.
 {% endpullquote %}
 
-## 相关元件
+## See Also
 
 

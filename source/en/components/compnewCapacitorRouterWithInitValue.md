@@ -1,5 +1,5 @@
 ---
-title: 电容
+title: Capacitor
 author: 
 author_email:
 
@@ -13,38 +13,38 @@ order: 401
 classname: newCapacitorRouterWithInitValue
 symbol: newCapacitorRouterWithInitValue
 ---
-## 基本描述
+## Basic Description
 {% compsymbol newCapacitorRouterWithInitValue %}
 
-> **该元件用以建模带初始电压的单相或三相电容（单线图）。**
+> **This component is used to model single/three-phase capacitor with the initial voltage.**
 
-## 参数列表
+## Parameter
 ### Configuration
-| 参数名 | 单位 | 备注 | 类型 | 描述 |
+| Parameter name | Unit | Remark | Type | Description |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入电容的名称（可缺省） |
-| Dimension |  | 单相电容或是三相电容？ | 选择 | 选择电容为单相或三相 |
-| Capacitance | μF | 电容值 | 实数（常量） | 电容值 |
-| Initial Capacitor Voltage | kV | 电容初始电压 | 实数（常量）|电容初始电压 |
+| Name |  | Name of component | Text | Enter the name of this component |
+| Dimension |  | Single/three-phase capacitor? | Select | Select "Single Phase" or "Three Phase" capacitor |
+| Capacitance | μF | Capacitance | Real number (Const) | Capacitance |
+| Initial Capacitor Voltage | kV | Initial voltage | Real number (Const) | Initial voltage of capacitor  |
 
 ### Monitoring
-| 参数名 | 备注 | 类型 | 描述 |
+| Parameter name | Remark | Type | Description |
 | :--- | :--- | :--: | :--- |
-| Branch Current \[kA\] | 电容电流 | 文本 | 此处输入电容电流量测信号的标签（维数自动），以#号开头，如#Ic |
-| Branch Voltage \[kV\] | 电容电压 | 文本 | 此处输入电容电压量测信号的标签（维数自动），以#号开头，如#Vc |
+| Branch Current \[kA\] | Current of capacitor | Text | Enter the label of the current of capacitor (Auto Dimension), starting with #, such as #Ic |
+| Branch Voltage \[kV\] | Voltage of capacitor | Text | Enter the label of the voltage of capacitor (Auto Dimension), starting with #, such as #Vc |
 
 
-## 端口列表
+## Pin List
 
-| 端口名 | 数据维数 | 描述 |
+| Pin name | Dimension | Description |
 | :--- | :--:  | :--- |
-| Pin + | 自动 |电容正端（参考方向）|
-| Pin - | 自动 |电容负端（参考方向）|
+| Pin + | Auto | Positive terminal |
+| Pin - | Auto | Positive terminal |
 
-## 使用说明
+## Using Instructions
 
 
 
-## 相关元件
+## See Also
 
-[电感](compnewInductorRouter.html)、[电阻](compnewResistorRouter.html)
+[Inductor](compnewInductorRouter.html)、[Resistor](compnewResistorRouter.html)
