@@ -15,7 +15,7 @@ components:
   categories: 
   - name:
       zh: 电气
-      en: Electric
+      en: Electrical
     categories:
     - name:
         zh: 基本无源元件
@@ -23,15 +23,15 @@ components:
       order: 3001
     - name:
         zh: 基本电源元件
-        en: Basic power components
+        en: Basic source components
       order: 3002
     - name:
         zh: 电力电子开关
-        en: Power electronic switch
+        en: Power electronic switches
       order: 3003
     - name:
         zh: 三相交流元件
-        en: Three-phase AC components
+        en: Three-phase components
       order: 3004
     - name:
         zh: 旋转电机元件
@@ -39,11 +39,11 @@ components:
       order: 3009
     - name:
         zh: 电力电子模块
-        en: Power electronics module
+        en: Power electronics modules
       order: 3005
     - name:
         zh: 可再生能源
-        en: Renewable energy
+        en: Renewable energy components
       order: 3006
     - name:
         zh: 高级
@@ -63,19 +63,19 @@ components:
     categories:
     - name:
         zh: 基础
-        en: Basic
+        en: Basic components
       order: -3001
     - name:
         zh: 基本数学函数
-        en: Basic mathematical functions
+        en: Basic math functions
       order: -3002
     - name:
         zh: 线性传递函数
-        en: Linear transfer function
+        en: Linear transfer functions
       order: -3003
     - name:
         zh: 非线性函数
-        en: Non-linear function
+        en: Nonlinear functions
       order: -3004
     - name:
         zh: 模拟信号
@@ -95,11 +95,11 @@ components:
       order: -3008
     - name:
         zh: 直流系统
-        en: DC system
+        en: HVDC control
       order: -3009
     - name:
         zh: 交流系统
-        en: AC system
+        en: AC system control
       order: -3010
     - name:
         zh: BPA-励磁器
@@ -131,7 +131,7 @@ components:
     categories:
     - name:
         zh: 基本元件
-        en: Basic
+        en: Basic components
       order: 10000
 
 features: 

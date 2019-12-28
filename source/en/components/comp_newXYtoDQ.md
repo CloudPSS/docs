@@ -1,5 +1,5 @@
 ---
-title: dq-αβ Coordinates Transformer
+title: dq-αβ Coordinates Transformation
 author: 
 author_email:
 
@@ -103,4 +103,4 @@ U_{q }
 
 ## See Also
 
-[Park Transformer](comp_newParkTransform.html), [Clark Transformer](comp_newClarkTransform.html)
+[Park Transformation](comp_newParkTransform.html), [Clark Transformation](comp_newClarkTransform.html)

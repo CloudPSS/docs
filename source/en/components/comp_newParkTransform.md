@@ -1,5 +1,5 @@
 ---
-title: Park Transformer
+title: Park Transformation
 author: 
 author_email:
 
@@ -120,4 +120,4 @@ U_{0}
 
 ## See Aslo
 
-[Clark Transformer](comp_newClarkTransform.html), [dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)
+[Clark Transformation](comp_newClarkTransform.html), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.html)
