@@ -1,5 +1,5 @@
 ---
-title: Half-Bridge Submodule
+title: Half Bridge Submodule
 author: 
 author_email:
 

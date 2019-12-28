@@ -1,5 +1,5 @@
 ---
-title: Clark Transformer
+title: Clark Transformation
 author: 
 author_email:
 
@@ -79,4 +79,4 @@ U_{\beta }
 
 ## See Also
 
-[Park Transformer](comp_newParkTransform.html), [dq-αβ Coordinates Transformer](comp_newXYtoDQ.html)
+[Park Transformation](comp_newParkTransform.html), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.html)

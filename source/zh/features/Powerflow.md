@@ -15,7 +15,7 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 目前，潮流计算功能支持的设备元件包含[静态负载](../components/comp_newExpLoad_3p.html)、[三相交流电压源](../components/comp_newACVoltageSource_3p.html)、[同步发电机](../components/compSyncGeneratorRouter.html)、[并联电容/电抗器](../components/comp_newShuntLC_3p.html)、[三相传输线](../components/compTranssmissionLineRouter.html)、三相[电阻](../components/compnewResistorRouter.html)、三相[电感](../components/compnewInductorRouter.html)、三相[电容](../components/compnewCapacitorRouterWithInitValue.html)、[三相双绕组变压器](../components/comp_newTransformer_3p2w.html)和[三相三绕组变压器](../components/comp_newTransformer_3p3w.html)，更多元件支持将在后续版本中逐步加入。
 
-潮流计算功能是围绕着[三相交流母线](../components/comp_newBus_3p.html)进行的。因此，上述设备元件中，单电气端口的元件（静态负载、三相交流电压源、同步发电机、并联电容/电抗器）只有当其电器端口与母线**直接**相连时，才会被计入；对于多电器端口的元件，则其每一个电气端口都必须与母线**直接**相连。特别地，[电流表](../components/comp_NewCurrentMeter.html)也不能够串入电路中，如需测量线路的电流，请使用相应元件的 Monitoring 参数。
+潮流计算功能是围绕着[三相交流母线](../components/comp_newBus_3p.html)进行的。因此，上述设备元件中，单电气端口的元件（静态负载、三相交流电压源、同步发电机、并联电容/电抗器）只有当其电器端口与母线**直接**相连时，才会被计入；对于多电器端口的元件，则其每一个电气端口都必须与母线**直接**相连。特别地，[电流表](../components/comp_NewCurrentMeter.html)可以串入电路中，在潮流计算过程中将被忽略。
 
 每条母线至多连接一个电源（三相交流电压源或同步发电机），其节点的类型和相关参数在电源的 Power Flow Data 页面指定。未连接电源的母线将作为 PQ 节点参与计算。同一个算例中可以包含多个独立的网络，每个网络都必须包含且仅包含一个平衡节点。
 
@@ -55,6 +55,23 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 详见 [IEEE 标准系统](../examples/IEEE39PF.html)案例及模板，此处不再详述。
 
+
+## 常见问题
+
+{% pullquote fail %}
+No bus was found. To start a PF calculation, all electric components must be connected to buses.
+{% endpullquote %}
+在潮流计算中，所有元件必须连接在[三相交流母线](../components/comp_newBus_3p.html)上。
+
+{% pullquote fail %}
+Bus `name` is isolated.
+{% endpullquote %}
+说明该母线没有与平衡节点直接或间接相连。
+
+{% pullquote fail %}
+Bus `names` belongs to multiple areas.
+{% endpullquote %}
+说明该母线与多个平衡节点直接或间接相连。
 
 ---
 后续版本中，CloudPSS 将提供更多潮流计算的元件支持，敬请关注！

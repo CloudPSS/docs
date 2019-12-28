@@ -24,26 +24,26 @@ In Components List, multiple simulation components are provided and are classifi
 
 | Classification | Components |
 | :--- | :---  |
-| Measurements | Oscilloscope, Output channel |
-| Electrical-Basic Passive Components | Ground, Resistor, Inductor, Capacitor, Single-phase Fault Resistor, Three-phase Fault Resistor |
+| Measurements | Oscilloscope Group, Output channel |
+| Electrical-Basic Passive Components | Ground, Resistor, Inductor, Capacitor, Single-phase Fault Resistor, Three-phase Fault Resistor, Single-phase Transformer |
 | Electrical-Basic Source Components | DC Current Source, DC Voltage Source, Single-phase AC Voltage Source, Controlled Current Source, Controlled Voltage Source, Controlled AC Voltage Source (VF), Controlled AC Voltage Source (VP) |
 | Electrical-Power Electronic Switches | Diode, Thyristor, IGBT |
-| Electrical-Three-phase Components | Shunt Capacitor/Reactor, Fixed Load, Line Cluster, 3-phase Transmission Line, 3-phase AC Bus, 3-phase AC Voltage Source, 3-phase 2-winding Transformer, 3-phase 3-winding Transformer, Synchronous Generator |
-| Electrical-Fast Power Electronic Modules | Half Bridge Sub-module, Six-pulse Thyristor Bridge, Half Bridge module, H-bridge Module, H-bridge Inductance Module, H-bridge Transformer Module, Dual H-bridge Module, 3-Phase H-bridge Module, Multiple Module SST |
-| Electrical-Renewable Energy Components | Photovoltaic Battery Unit, Lead-acid Battery |
-| Electrical-Distribution System Switches | |
-| Electrical-Advanced Components | Userdefined, SubCase |
-| Measure Components | Branch Voltage Meter, Voltmeter, Current Meter, Single-phase RMS Meter, 3-phase Power Meter, Phase-locked loop, FFT |
-| Control-Basic Components | Channel Merge, Channel DeMerge, Constant, M script, Time, Simulation Time Step, Not Connection (NC), Loop Break |
-| Control-Basic Math Functions | Adder/Subtractor, Multiplier, Divider, Maximum/Minimum Function, Period Maximum/Minimum Function, Absolute Value, Sign Function, Trigonometric Functions, Exponential Function, Logic Gate, Power Function, Rounding Function |
-| Control-Linear Transfer Functions | Gain, Real Pole, Zero-point, Integrator, Derivative, PI Controller, Lead-lag Pole, Differential Pole, 2-order Complex Pole |
-| Control-Nonlinear Functions | Delay, Hard limiter, Generic Transfer Function, Angle Resolver |
+| Electrical-Three-phase Components | Shunt Capacitor/Reactor, Fixed Load, Line Cluster, Three-phase Transmission Line, Three-phase AC Bus, Three-phase AC Voltage Source, Three-phase Two-winding Transformer, Three-phase Three-winding Transformer, Synchronous Generator |
+| Electrical-Fast Power Electronic Modules | Half Bridge Submodule, Six-pulse Thyristor Bridge |
+| Electrical-Renewable Energy Components | Photovoltaic Source, Lead-acid Battery |
+| Measure Components | Branch Voltage Meter, Voltage Meter, Current Meter, RMS Meter, Three-phase Power Meter, Phase Locked Loop, FFT |
+| Control-Basic Components | M script, Constant, Time, Simulation Time Step, Non Connection (NC), Loop Break Node, Channel Merge, Channel DeMerge |
+| Control-Basic Math Functions | Adder/Subtractor, Multiplier, Divider, Absolute Value, Sign Function, Round Function, Trigonometric Function, Power Function, Exponential Function, Logarithm Function, Maximum/Minimum Function, Maximum/Minimum in One Cycle |
+| Control-Linear Transfer Functions | Gain, Integrator, Derivative, PI Controller, Zero-point, Real Pole, Differential Pole, Lead Lag Pole, Second Order Complex Pole, Nth Transfer Function |
+| Control-Nonlinear Functions | Hard Limiter, Delay, Angle Resolver, Piecewise Linear Function, Nonlinear Function |
 | Control-Analog Signal | Comparator, Hysteresis Comparator, Zero Detector, Sampler, Sample and Hold |
-| Control-Digital Signal | Selector, Logic Gates, Flip-flop, Binary delay, Monostable MultiVibrator, Edge Detector |
-| Control-Coordinate Transformation | Clark Transformation, Polar Rectangular Coordinate converter, Stationary/Rotational transformation, Park Transformation |
-| Control-Singal Generator | Impulse Generator, Triangular Generator, Pulse Generator, Sine Generator, Adjustable FPM Sine Generator, Step Generator, Single Pulse Generator, Surge Gennerator, Ramp Generator, Drop Generator, Random Number Generator |
-| Control-HVDC Control | Phase-locked Oscillator, Nearest Level Modulation (NLM), SST Fire Pulse Generator |
+| Control-Digital Signal | Logic Gate, Binary Delay, Monostable MultiVibrator, Flip Flop, Selector, Edge Detector |
+| Control-Coordinate Transformation | Park Transformation, Clark Transformation, dq-αβ Coordinates Transformation, Polar/Rectangular Coordinate Converter |
+| Control-Singal Generator | Triangular Generator, Squar Generator, Sine Generator, Adjustable FPM Sine Generator, Single-impulse Generator, Impulse Generator, Step Generator, Ramp Generator, Surge Gennerator, Drop Generator, Random Number Generator |
+| Control-HVDC Control | Phase Locked Oscillator, Nearest Level Modulation (NLM), SST Fire Pulse Generator |
 | Control-AC system Control| ST5B、Hydro Governor、 Hydro Turbine |
+| Heat-Basic Components | Pipeline, Heat Source, Bulding (Load), Connection Point, Relay Pump |
+
 
 To find a component, please fill in its name in the search field above the list and press [[Enter]] to search for the component. The below picture shows the searching result of `Resistor`. User can also search component in the Component List based on its classification. For example, to find `Sine Generator`, user could find it in the `Control-Singal Generator` class.
 

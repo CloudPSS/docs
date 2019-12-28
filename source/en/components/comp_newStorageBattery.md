@@ -1,5 +1,5 @@
 ---
-title: Lead-Acid Battery
+title: Lead-acid Battery
 author: 
 author_email:
 
