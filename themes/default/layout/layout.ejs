@@ -17,14 +17,18 @@
           page: <%- tostr(page, ['more', 'site', 'content', 'raw', 'prev', 'next']) %>,
           data: <%- tostr(site.data) %>,
         }
+        console.dir(hexo);
       </script>
     <%_ } -%>
     <%- js('/js/browser-check') -%>
     <%_ if(config.debug_mode === false) { -%>
     <script>
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('<%- url_for('/sw.js') %>').then(function() {
-          console.log('ServiceWorker has been registered! File generated at <%= full_date(Date.now()) %>');
+        navigator.serviceWorker.register('<%- url_for("/sw.js") %>').then((registration) => {
+          console.log('ServiceWorker has been registered! File generated at <%= full_date(Date.now()) %>', registration);
+          registration.addEventListener('updatefound', () => {
+            console.log('A new service worker is being installed.', registration);
+          });
         }).catch(console.error);
       }
     </script>
@@ -36,7 +40,7 @@
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-96x96.png') %>" sizes="96x96">
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-32x32.png') %>" sizes="32x32">
     <link rel="icon" type="image/png" href="<%- url_for('/images/icons/favicon-16x16.png') %>" sizes="16x16">
-    <link rel="icon" type="image/x-icon" href="<%- url_for('/images/icons/favicon.ico') %>">
+    <link rel="icon" type="image/x-icon" href="<%- url_for('/favicon.ico') %>">
     <link rel="apple-touch-icon" href="<%- url_for('/images/icons/app-icon.png') %>">
     <link rel="apple-touch-startup-image" href="<%- url_for('/images/icons/splash.png') %>">
     
