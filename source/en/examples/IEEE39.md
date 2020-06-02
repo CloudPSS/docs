@@ -87,6 +87,20 @@ The per-unit value of the line parameters of the following base values is select
 | 13  | 14  | 0.0009  | 0.0101  | 0.1723  | 67.7  | 0.033  | 0.373  | 1.018  | 0.332  | 1.119  | 0.611  |
 | 14  | 15  | 0.0018  | 0.0217  | 0.366  | 145.4  | 0.031  | 0.373  | 1.007  | 0.309  | 1.119  | 0.604  |
 | 15  | 16  | 0.0009  | 0.0094  | 0.171  | 63.0  | 0.036  | 0.373  | 1.086  | 0.357  | 1.119  | 0.651  |
+| 16  | 17  | 0.0007  | 0.0089  | 0.1342  | 59.7  | 0.029   | 0.373  | 0.9	  | 0.293  | 1.119  | 0.54  |
+| 16  | 19  | 0.0016  | 0.0195  | 0.304   | 130.7  | 0.031  | 0.373  | 0.93	  | 0.306  | 1.119  | 0.558 |
+| 16  | 21  | 0.0008  | 0.0135  | 0.2548  | 90.5  | 0.022  | 0.373  | 1.126	  | 0.221  | 1.119  | 0.676 |
+| 16  | 24  | 0.0003  | 0.0059  | 0.068	  | 39.5  | 0.019  | 0.373  | 0.688	  | 0.19  | 1.119  | 0.413  |
+| 17  | 18  | 0.0007  | 0.0082  | 0.1319  | 55    | 0.032  | 0.373  | 0.96	  | 0.318  | 1.119  | 0.576 |
+| 17  | 27  | 0.0013  | 0.0173  | 0.3216  | 116	   | 0.028  | 0.373  | 1.109  | 0.28  | 1.119  | 0.666  |
+| 21  | 22  | 0.0008  | 0.014   | 0.2565  | 93.8  | 0.021  | 0.373  | 1.093	  | 0.213  | 1.119  | 0.656 |
+| 22  | 23  | 0.0006  | 0.0096  | 0.1846  | 64.3  | 0.023  | 0.373  | 1.148	  | 0.233  | 1.119  | 0.689 |
+| 23  | 24  | 0.0022  | 0.035   | 0.361	  | 234.6  | 0.023  | 0.373  | 0.616  | 0.234  | 1.119  | 0.369 |
+| 25  | 26  | 0.0032  | 0.0323  | 0.513	  | 216.5  | 0.037  | 0.373  | 0.948  | 0.37  | 1.119  | 0.569  |
+| 26  | 27  | 0.0014  | 0.0147  | 0.2396  | 98.5  | 0.036  | 0.373  | 0.973	  | 0.355  | 1.119  | 0.584 |
+| 26  | 28  | 0.0043  | 0.0474  | 0.7802  | 317.7  | 0.034  | 0.373  | 0.982  | 0.338  | 1.119  | 0.589 |
+| 26  | 29  | 0.0057  | 0.0625  | 1.029	  | 418.9  | 0.034  | 0.373  | 0.983  | 0.34  | 1.119  | 0.59   |
+| 28  | 29  | 0.0014  | 0.0151  | 0.249   | 101.2  | 0.035  | 0.373  | 0.984  | 0.346  | 1.119  | 0.59  |
 
 #### Transformer parameter
 
@@ -205,23 +219,23 @@ The following shows the results of the simulation results. Note that between 2s 
 
 The power angle waveforms of all motors are shown in the figure:
 
-![电机功角](IEEE39/RA.png "Power angle of all motors")
+![电机功角](IEEE39/3-1.png "Power angle of all motors")
 
 The speed waveforms of all motors are shown in the figure:
 
-![电机转速](IEEE39/wr.png "Speed waveforms of all motors")
+![电机转速](IEEE39/3-2.png "Speed waveforms of all motors")
 
 The voltage per-unit value of all motors are shown in the figure:
 
-![电机的端电压标幺值](IEEE39/VT.png "Voltage per-unit value of all motors")
+![电机的端电压标幺值](IEEE39/3-3.png "Voltage per-unit value of all motors")
 
 The instantaneous power waveform of all motors are shown in the figure:
 
-![机端瞬时功率](IEEE39/IT.png "Instantaneous power of all motors")
+![机端瞬时功率](IEEE39/3-4.png "Instantaneous power of all motors")
 
 Taking bus 37 as an example, the simulation results of the voltage waveform before and after the fault are:
 
-![机端电压波形](IEEE39/Ib37.png "Voltage waveform of bus 37")
+![机端电压波形](IEEE39/3-5.png "Voltage waveform of bus 37")
 
 
 

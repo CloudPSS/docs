@@ -27,7 +27,9 @@
         navigator.serviceWorker.register('<%- url_for("/sw.js") %>').then((registration) => {
           console.log('ServiceWorker has been registered! File generated at <%= full_date(Date.now()) %>', registration);
           registration.addEventListener('updatefound', () => {
-            console.log('A new service worker is being installed.', registration);
+            var installingWorker = registration.installing;
+            installingWorker.addEventListener('statechange', ev => console.log('Service worker state changed:', installingWorker));
+            console.log('A new service worker is being installed:', installingWorker);
           });
         }).catch(console.error);
       }

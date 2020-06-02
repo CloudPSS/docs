@@ -26,3 +26,6 @@ CloudPSS 建模及仿真平台提供的全部功能的详细说明文档。（�
 
 ### 供热系统仿真工作台
 * [区域集中供热系统建模及仿真](HeatingSystemGuide.html)
+
+### 综合能源系统仿真工作台
+* [综合能源系统建模及仿真](EnergyIntegratedSysGuide.html)

@@ -133,6 +133,38 @@ components:
         zh: 基本元件
         en: Basic components
       order: 10000
+  - name:
+      zh: 综合能源系统
+      en: Energy-Integrated System
+    categories:
+    - name:
+        zh: 简介
+        en: Introduction
+      order: 10500
+    - name:
+        zh: 电源元件
+        en: Generator
+      order: 11000
+    - name:
+        zh: 冷热源元件
+        en: Cooling/Heating
+      order: 11100
+    - name:
+        zh: 储能元件
+        en: Charger
+      order: 11200
+    - name:
+        zh: 输配电系统传输元件
+        en: Grid Distribution
+      order: 11300
+    - name:
+        zh: 供热系统传输元件
+        en: Heat Distribution
+      order: 11400
+    - name:
+        zh: 负荷元件
+        en: Load
+      order: 12000
 
 features: 
   name:
@@ -155,6 +187,10 @@ features:
       zh: 供热系统仿真工作台
       en: Heating system simulation workbench
     order: 2000
+  - name:
+      zh: 综合能源系统仿真工作台
+      en: Energy-Integrated system simulation workbench
+    order: 2300
   
 
 examples: 
@@ -178,6 +214,10 @@ examples:
       zh: 供热系统仿真案例
       en: Heating system simulation case
     order: 2000
+  - name:
+      zh: 综合能源系统仿真案例
+      en: Energy-Integrated system simulation case
+    order: 2300
 
 about:
   name: 

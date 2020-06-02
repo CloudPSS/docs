@@ -20,22 +20,22 @@ As shown in the figure above, `parameters` and `pins` definition are contained i
 
 ```mermaid
 graph TD
-A[元件] --> B[元件参数]
-A[元件] --> C[引脚]
-B -->|仿真中不可变| D[常量参数]
-B -->|仿真中可变| E[动态参数]
-B -->|内部量量测| F[量测标识]
-C --> G[电气引脚]
-C --> H[控制引脚]
-C --> I[热力引脚]
-H --> J[输入引脚]
-H --> K[输出引脚] 
+A[element] --> B[component parameter]
+A[element] --> C[pin]
+B -->|variable| D[constant parameter]
+B -->|immutable| E[dynamic parameter]
+B -->|internal measurement| F[measurement mark]
+C --> G[electrical pin]
+C --> H[control pin]
+C --> I[thermal pin]
+H --> J[input pin]
+H --> K[output pin] 
 ```
 
 ```mermaid 
 graph TD
-L[模块/算例] --> N[引脚]
-L --> M[全局参数] 
+L[module/project] --> N[pin]
+L --> M[global parameter] 
 ``` 
 
 ## Constant Parameter
