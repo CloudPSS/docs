@@ -5,7 +5,7 @@ author: zhangr
 order: 300
 ---
 
-Click `Workspace` in the function links to open the workspace of CloudPSS, which includes Menu, Toolbar, Components List, Main-workspace, System information, System monitoring, EMT simulation and Global parameters. The location and detail introduction of each part is shown below. 
+Click `EMT simulation` in the function links to open the workspace of CloudPSS, which includes Menu, Toolbar, Components List, Main-workspace, System information, System monitoring, EMT simulation and Global parameters. The location and detail introduction of each part is shown below. 
 
 ![Interface of workspace](User2/G1.png "Interface of workspace")
 
@@ -45,7 +45,7 @@ In Components List, multiple simulation components are provided and are classifi
 | Heat-Basic Components | Pipeline, Heat Source, Bulding (Load), Connection Point, Relay Pump |
 
 
-To find a component, please fill in its name in the search field above the list and press [[Enter]] to search for the component. The below picture shows the searching result of `Resistor`. User can also search component in the Component List based on its classification. For example, to find `Sine Generator`, user could find it in the `Control-Singal Generator` class.
+To find a component, please fill in its name in the search field above the list and press [[Enter]] to search for the component. The below picture shows the searching result of `Resistor`. User can also search component in the Component List based on its classification. For example, to find `Sine Generator`, user could find it in the `Control-Wave Generator` class.
 
 ![元件查找界面](User2/G2.png "Using search filed to find components")
 ![元件查找界面](User2/G3.png "finding components by category")

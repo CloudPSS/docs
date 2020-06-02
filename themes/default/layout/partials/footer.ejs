@@ -19,7 +19,7 @@
     <p class="contact">
       <%_ if(page.author) { -%>
         <a rel="author" data="<%- btoa(btoa(btoa(email))) %>" title="<%- __('contact-author') %>">
-          <img src="<%- gravatar(page.author_email ? email : page.author, {d:'identicon', s: '256'}) %>">
+          <img src="<%- gravatar(page.author_email ? email : page.author, {d:'identicon', s: '64'}) %>">
           <%= page.author %>
         </a>
       <%_ } -%>
