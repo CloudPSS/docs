@@ -1,8 +1,8 @@
 ---
 title: 量测和输出系统
 type: features
-category: 1000
-order: 200
+category: 990
+order: 70
 author: songyk
 author_email: songyankan@cloudpss.net
 ---

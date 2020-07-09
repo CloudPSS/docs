@@ -126,13 +126,17 @@ components:
         en: IEEE Std. Power system stabilizers(PSS)
       order: -5002
   - name:
-      zh: 热网
-      en: Heat
+      zh: 系统
+      en: System
     categories:
     - name:
-        zh: 基本元件
-        en: Basic components
-      order: 10000
+        zh: 基础
+        en: Basic
+      order: 30000
+  - name:
+      zh: 工具
+      en: Tools
+    order: 30001
   - name:
       zh: 综合能源系统
       en: Energy-Integrated System
@@ -172,6 +176,10 @@ features:
     en: Features
   categories: 
   - name:
+      zh: 仿真工作台基础功能
+      en: Basic Function
+    order: 990
+  - name:
       zh: 电磁暂态仿真工作台
       en: Electromagnetic transient simulation workbench
     order: 1000
@@ -183,10 +191,6 @@ features:
       zh: 潮流计算
       en: Power flow
     order: 1800
-  - name:
-      zh: 供热系统仿真工作台
-      en: Heating system simulation workbench
-    order: 2000
   - name:
       zh: 综合能源系统仿真工作台
       en: Energy-Integrated system simulation workbench
@@ -210,10 +214,6 @@ examples:
       zh: 潮流计算仿真案例
       en: Power flow simulation case
     order: 1800
-  - name:
-      zh: 供热系统仿真案例
-      en: Heating system simulation case
-    order: 2000
   - name:
       zh: 综合能源系统仿真案例
       en: Energy-Integrated system simulation case
