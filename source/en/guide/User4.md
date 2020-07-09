@@ -41,7 +41,7 @@ The following are three situations of different $\zeta$.
 + Underdamped ($\zeta <1$)
 
   Underdamped response is:
-  $$i(t) = {B_1}{e^{ - \alpha t}}\cos ({\omega _d}t) + {B_2}{e^{ - \alpha t}}\sin ({\omega _d}t)$$
+  $$i(t) = {B_1}{e^{ - \alpha t} }\cos ({\omega _d}t) + {B_2}{e^{ - \alpha t} }\sin ({\omega _d}t)$$
 
 + Critical damping ($\zeta =1$)
 

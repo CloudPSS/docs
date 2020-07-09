@@ -52,7 +52,7 @@ U_{\beta }
 \end{bmatrix}
 =\frac{2}{3}*\begin{bmatrix}
 1 &-\frac{1}{2}  &-\frac{1}{2} \\ 
- 0&\frac{\sqrt{3}}{2}  &-\frac{\sqrt{3}}{2} 
+ 0&\frac{\sqrt{3} }{2}  &-\frac{\sqrt{3} }{2} 
 \end{bmatrix}
 \begin{bmatrix}
 U_{a}\\ 

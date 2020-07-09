@@ -1,6 +1,6 @@
 ---
 title: 子图功能
-type: features
+type: features1
 category: 1000
 order: 500
 author: songyk

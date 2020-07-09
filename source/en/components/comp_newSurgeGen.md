@@ -18,7 +18,7 @@ symbol: newSurgeGen
 
 > **This component is used to generate a surge wave.** 
 > $$f\left( t \right) = \left\{ \begin{aligned}
-> & {0, t < {T_1}} \\
+> & {0, t < {T_1} } \\
 > & { \frac{ { {P_k} } } { { {T_2} - {T_1} } }\left( {t - {T_1} } \right), {T_1} \leqslant t < {T_2} } \\
 > & { {P_k}, {T_2} \leqslant t < {T_3} } \\
 > & { \frac{ { {P_k} } } { { {T_4} - {T_3} } }\left( { {T_4} - t} \right), {T_3} \leqslant t < {T_4} } \\

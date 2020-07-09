@@ -43,7 +43,7 @@ $$i(t) = {A_1}{e^{ - {s_1}t} } + {A_2}{e^{ - {s_2}t} }$$
 + 欠阻尼响应($\zeta <1$)
 
   欠阻尼响应为：
-  $$i(t) = {B_1}{e^{ - \alpha t}}\cos ({\omega _d}t) + {B_2}{e^{ - \alpha t}}\sin ({\omega _d}t)$$
+  $$i(t) = {B_1}{e^{ - \alpha t} }\cos ({\omega _d}t) + {B_2}{e^{ - \alpha t} }\sin ({\omega _d}t)$$
 
   欠阻尼响应是一个按频率为 ${\omega _d} = {\omega _0} \sqrt {1 - {\zeta ^2} }$ 衰减的振荡，它是电路在无外部源驱动时的自然振动频率。$B_1$以及$B_2$为任意常数，由边界条件决定。
 

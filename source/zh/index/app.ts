@@ -47,7 +47,7 @@
                         new Action('电气元件', 'components/compGND.html'),
                         new Action('量测元件', 'components/comp_NewBranchVoltageMeter.html'),
                         new Action('控制元件', 'components/comp_newConstant.html'),
-                        new Action('热网元件', 'components/compPipeline.html'),
+                        new Action('综合能源元件', 'components/comp-IES-Generator-PhotovoltaicSys.html'),
                     ],
                 ),
                 new Data(
@@ -58,7 +58,7 @@
                         new Action('参数及引脚体系', 'features/ParameterSystem.html'),
                         new Action('断面保存及导入', 'features/Snapshot.html'),
                         new Action('高级数据可视化', 'features/Dashboard.html'),
-                        new Action('供热系统建模仿真', 'features/HeatingSystemGuide.html'),
+                        new Action('综合能源系统建模仿真', 'features/IntegratedEnergySysGuide.html'),
                     ],
                 ),
                 new Data(
@@ -69,7 +69,7 @@
                         new Action('IEEE标准测试系统', 'examples/IEEE39.html'),
                         new Action('LCC-HVDC测试系统', 'examples/LCC.html'),
                         new Action('MMC-HVDC测试系统', 'examples/MMC.html'),
-                        new Action('区域集中供热系统', 'examples/HeatingSystem.html'),
+                        new Action('综合能源系统案例', 'examples/IntegratedEnergySystem.html'),
                     ],
                 ),
                 new Data(

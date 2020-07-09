@@ -24,5 +24,5 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 ### 潮流计算仿真案例
 * [IEEE 标准系统](IEEE39PF.html)
 
-### 供热系统仿真案例
-* [区域集中供热系统](HeatingSystem.html)
+### 综合能源系统案例
+* [综合能源系统案例](IntegratedEnergySystem.html)

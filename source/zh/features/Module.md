@@ -1,6 +1,6 @@
 ---
 title: 模块功能
-type: features
+type: features1
 category: 1000
 author: songyk
 author_email: songyankan@cloudpss.net
