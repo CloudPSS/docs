@@ -17,5 +17,5 @@
     "types": []
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["**/*.spec.ts", "**/*.worker.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.worker.ts", "src/environments/**.ts"]
 }

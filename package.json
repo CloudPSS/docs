@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "lint": "ng lint",
     "xi18n": "ng xi18n",
     "format": "prettier --write ."

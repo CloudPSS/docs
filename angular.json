@@ -14,7 +14,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "cmn-Hans",
+        "sourceLocale": "zh-Hans",
         "locales": {
           "en": "src/locale/messages.en.xlf"
         }
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/docs",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -32,8 +32,7 @@
             "aot": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": ["src/styles.scss"],
-            "scripts": [],
-            "i18nFile": "src/locale/messages.xlf"
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -51,6 +50,8 @@
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
+              "localize": true,
+              "i18nMissingTranslation": "warning",
               "budgets": [
                 {
                   "type": "initial",
@@ -80,6 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
+            "outputPath": "src/locale",
             "browserTarget": "docs:build"
           }
         },
