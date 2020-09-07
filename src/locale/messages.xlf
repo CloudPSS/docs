@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="zh-Hans" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="b58595a0bf51e67bb2f1c0dc21d900223e5e69d1" datatype="html">
+        <source>欢迎 <x id="ICU" equiv-text="{minutes, plural, =0 {...} =1 {...} other {...}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">308</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="d21b287b4d1e079c11ad2c547d104798fb3d111e" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {just now} =1 {one minute ago} other {<x id="INTERPOLATION" equiv-text="{{ minutes }}"/> minutes ago} }</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">308</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
