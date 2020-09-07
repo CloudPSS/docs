@@ -1,0 +1,77 @@
+root: true
+plugins:
+  - '@typescript-eslint'
+  - prettier
+  - jsdoc
+overrides:
+  - files: ['*.ts']
+    parser: '@typescript-eslint/parser'
+    parserOptions:
+      project: tsconfig.json
+    extends:
+      - eslint:recommended
+      - plugin:@typescript-eslint/recommended
+      - plugin:@typescript-eslint/recommended-requiring-type-checking
+      - plugin:@angular-eslint/recommended
+      - prettier
+      - prettier/@typescript-eslint
+      - plugin:prettier/recommended
+      - plugin:jsdoc/recommended
+    rules:
+      'prettier/prettier': [1]
+      '@typescript-eslint/array-type': [1, { default: array-simple }]
+      '@typescript-eslint/explicit-function-return-type':
+        - 2
+        - allowExpressions: true
+      '@typescript-eslint/no-extraneous-class':
+        - 1
+        - allowWithDecorator: true
+          allowStaticOnly: true
+      '@typescript-eslint/no-parameter-properties':
+        - 1
+        - allows: [protected readonly, private readonly, public readonly, readonly]
+      '@typescript-eslint/no-throw-literal': [2]
+      'no-unused-vars': [0]
+      '@typescript-eslint/no-unused-vars':
+        - 1
+        - varsIgnorePattern: ^_
+          argsIgnorePattern: ^_
+      '@typescript-eslint/prefer-for-of': [1]
+      '@typescript-eslint/prefer-function-type': [1]
+      '@typescript-eslint/prefer-nullish-coalescing': [1]
+      '@typescript-eslint/prefer-optional-chain': [1]
+      '@typescript-eslint/ban-types':
+        - 1
+        - types:
+            object: false
+      no-void: [1, { allowAsStatement: true }]
+      eqeqeq: [1, smart]
+      'jsdoc/require-jsdoc':
+        - 1
+        - require:
+            ClassDeclaration: true
+            FunctionDeclaration: true
+          contexts:
+            - TSMethodSignature
+            - TSInterfaceDeclaration
+            - TSTypeAliasDeclaration
+            - MethodDefinition[ kind=/(method|get)/ ]:has(FunctionExpression)
+            - { context: ClassProperty, inlineCommentBlock: true }
+            - { context: TSInterfaceBody > TSPropertySignature, inlineCommentBlock: true }
+      'jsdoc/no-types': 1
+      'jsdoc/require-description':
+        - 1
+        - contexts: [any]
+      'jsdoc/require-param': 0
+      'jsdoc/require-param-type': 0
+      'jsdoc/require-returns': 0
+      'jsdoc/require-returns-check': 0
+      'jsdoc/require-returns-type': 0
+  - files: ['*.component.html']
+    extends:
+      - plugin:@angular-eslint/template/recommended
+      - prettier
+      - plugin:prettier/recommended
+  - files: ['*.component.ts']
+    extends:
+      - plugin:@angular-eslint/template/process-inline-templates

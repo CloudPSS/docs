@@ -1,0 +1,13 @@
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+
+/*.config.js
+.*.{js,ts}
+
+# packages
+/node_modules/
+/.pnp.js
+/.pnp/
