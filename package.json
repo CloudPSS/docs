@@ -5,7 +5,7 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "lint": "ng lint",
-    "format": "prettier --write ."
+    "format": "prettier --ignore-path .gitignore --write ."
   },
   "private": true,
   "dependencies": {
