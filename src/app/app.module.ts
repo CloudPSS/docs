@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /**
  * 主模块
@@ -25,6 +26,7 @@ import { WebpackTranslateLoader } from './webpack-translate-loader';
             },
             defaultLanguage: 'zh-Hans',
         }),
+        BrowserAnimationsModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

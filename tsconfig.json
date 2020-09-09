@@ -16,6 +16,11 @@
     "lib": ["es2018", "dom"],
     "types": []
   },
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictInjectionParameters": true,
+    "strictTemplates": true
+  },
   "include": ["src/**/*.ts"],
   "exclude": ["**/*.spec.ts", "**/*.worker.ts", "src/environments/**.ts"]
 }
