@@ -2,11 +2,9 @@
   "name": "docs",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
     "lint": "ng lint",
-    "xi18n": "ng xi18n",
     "format": "prettier --write ."
   },
   "private": true,
@@ -16,16 +14,18 @@
     "@angular/compiler": "~10.0.14",
     "@angular/core": "~10.0.14",
     "@angular/forms": "~10.0.14",
-    "@angular/localize": "10.0.14",
     "@angular/platform-browser": "~10.0.14",
     "@angular/platform-browser-dynamic": "~10.0.14",
     "@angular/router": "~10.0.14",
+    "@angular/service-worker": "~10.0.14",
+    "@ngx-translate/core": "^13.0.0",
     "classlist.js": "^1.1.20150312",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "^10.0.0",
     "@angular-devkit/build-angular": "~0.1000.8",
     "@angular-eslint/builder": "0.3.0-beta.1",
     "@angular-eslint/eslint-plugin": "0.3.0-beta.1",
@@ -36,6 +36,7 @@
     "@angular/compiler-cli": "~10.0.14",
     "@commitlint/cli": "^9.1.2",
     "@types/node": "^12.11.1",
+    "@types/webpack": "^4.41.22",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "eslint": "^7.8.1",
@@ -46,6 +47,7 @@
     "lint-staged": "^10.3.0",
     "prettier": "^2.1.1",
     "ts-node": "~8.3.0",
-    "typescript": "~3.9.5"
+    "typescript": "~3.9.5",
+    "yaml-loader": "^0.6.0"
   }
 }
