@@ -5,7 +5,8 @@
     "start": "ng serve",
     "build": "ng build --prod",
     "lint": "ng lint",
-    "format": "prettier --ignore-path .gitignore --write ."
+    "format": "prettier --ignore-path .gitignore --write .",
+    "analyze": "webpack-bundle-analyzer --mode=static --default-sizes=gzip --report=dist/report.html dist/stats.json"
   },
   "private": true,
   "dependencies": {
@@ -50,6 +51,7 @@
     "prettier": "^2.1.1",
     "ts-node": "~9.0.0",
     "typescript": "~3.9.5",
+    "webpack-bundle-analyzer": "^3.8.0",
     "yaml-loader": "^0.6.0"
   }
 }
