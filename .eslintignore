@@ -11,3 +11,5 @@
 /node_modules/
 /.pnp.js
 /.pnp/
+
+/src/index.html
