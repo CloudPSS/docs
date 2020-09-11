@@ -67,11 +67,8 @@ overrides:
       'jsdoc/require-returns': 0
       'jsdoc/require-returns-check': 0
       'jsdoc/require-returns-type': 0
-  - files: ['*.component.html']
+  - files: ['*.html']
     extends:
       - plugin:@angular-eslint/template/recommended
-      - prettier
-      - plugin:prettier/recommended
-  - files: ['*.component.ts']
-    extends:
-      - plugin:@angular-eslint/template/process-inline-templates
+      # - prettier
+      # - plugin:prettier/recommended
