@@ -6252,11 +6252,6 @@ normalize-url@^3.0.0:
   resolved "https://registry.npm.taobao.org/normalize-url/download/normalize-url-3.3.0.tgz?cache=0&sync_timestamp=1596373083028&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnormalize-url%2Fdownload%2Fnormalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha1-suHE3E98bVd0PfczpPWXjRhlBVk=
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.npm.taobao.org/normalize.css/download/normalize.css-8.0.1.tgz?cache=0&sync_timestamp=1588361527323&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fnormalize.css%2Fdownload%2Fnormalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha1-m5iiCHOLnMJjTKrLxC0THJdIe/M=
-
 npm-bundled@^1.0.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/npm-bundled/download/npm-bundled-1.1.1.tgz#1edd570865a94cdb1bc8220775e29466c9fb234b"
@@ -7873,6 +7868,11 @@ safe-regex@^1.1.0:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/safer-buffer/download/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
+
+sanitize.css@^12.0.1:
+  version "12.0.0"
+  resolved "https://registry.npm.taobao.org/sanitize.css/download/sanitize.css-12.0.0.tgz#5fa4ece10330b8358c594d5f0250c054ff20776c"
+  integrity sha1-X6Ts4QMwuDWMWU1fAlDAVP8gd2w=
 
 sass-loader@10.0.1:
   version "10.0.1"
