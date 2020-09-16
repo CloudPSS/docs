@@ -13,3 +13,6 @@
 /.pnp/
 
 /src/index.html
+/src/environments/
+
+/tools

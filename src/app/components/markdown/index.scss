@@ -1,0 +1,14 @@
+.root{
+  display: flex;
+  article {
+    flex: 1 1;
+  }
+  nav {
+    flex: 0 0 auto;
+  }
+}
+
+article ::ng-deep {
+  p {
+  }
+}
