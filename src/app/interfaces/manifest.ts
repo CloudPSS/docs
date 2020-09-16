@@ -5,32 +5,38 @@ export interface RootManifest {
     /**
      * 文档支持的语言
      */
-    lang: string[];
+    sitemap: Record<string, LangManifest>;
+    /** 文件列表 */
+    documents: Document[];
 }
 
 /**
  * 表示一个导航栏条目
  */
-export type NavItem =
-    | {
-          type: 'menu';
-          title: string;
-          subMenu: NavItem[];
-      }
-    | {
-          type: 'topic';
-          title: string;
-          content: Document[];
-      };
+export type NavItem = {
+    title: string;
+    menu?: NavItem[];
+    content?: Array<Document['path']>;
+};
+
+/**
+ * 文档的 FrontMatter
+ */
+export interface FrontMatter {
+    /**
+     * 文档标题
+     */
+    title?: string;
+}
 
 /**
  * 表示一个文档
  */
-export interface Document {
+export interface Document extends FrontMatter {
     /**
-     * 文档名称
+     * 文档标题
      */
-    name: string;
+    title: string;
     /**
      * 文档相对路径
      */

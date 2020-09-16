@@ -19,17 +19,17 @@ export interface VersionInfo extends VersionSpec {
     /**
      * 文档 manifest
      */
-    manifest: Omit<RootManifest, 'lang'> & {
-        lang: Record<string, LangManifest>;
-    };
+    manifest: RootManifest;
 }
 
 /** 文件内容 */
 export interface File<T> {
     /** 文件版本 */
     version: VersionSpec;
+    /** 文件路径 */
+    path: string;
     /** 下载文件的 URL */
-    url: string;
+    url: URL;
     /** 文件内容 */
     data: T;
 }

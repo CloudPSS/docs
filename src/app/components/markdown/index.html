@@ -1,0 +1,4 @@
+<div class="root">
+  <article #doc (click)="onClick($event)" markdown [innerHTML]="rendered"></article>
+  <nav class="toc"><li *ngFor="let item of headers" class="toc-item toc-level-{{item.level}}"><a [href]="item.link" (click)="onNavClick($event)">{{ item.title }}</a></li></nav>
+</div>

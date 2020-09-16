@@ -1,20 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { ServiceWorkerModule, SwUpdate } from '@angular/service-worker';
+import { ServiceWorkerModule } from '@angular/service-worker';
 import { HttpClientModule } from '@angular/common/http';
-import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './components/app';
 import { environment } from '../environments/environment';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MarkdownComponent } from './components/markdown';
+import { DocumentComponent } from './pages/document';
+import { AppComponent } from './root';
+import { AppInitializerService } from './app-initializer';
+import { ErrorComponent } from './pages/error';
+import { NavbarComponent } from './components/navbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
 /**
  * 主模块
  */
 @NgModule({
-    declarations: [AppComponent],
+    declarations: [AppComponent, MarkdownComponent, NavbarComponent, DocumentComponent, ErrorComponent],
     imports: [
         HttpClientModule,
         BrowserModule,
@@ -26,25 +34,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
                 provide: TranslateLoader,
                 useClass: WebpackTranslateLoader,
             },
-            defaultLanguage: 'zh-Hans',
+            defaultLanguage: 'zh-hans',
         }),
         BrowserAnimationsModule,
+
+        MatToolbarModule,
+        MatMenuModule,
+        MatButtonModule,
     ],
-    providers: [],
+    providers: [
+        {
+            provide: APP_INITIALIZER,
+            useClass: AppInitializerService,
+            multi: true,
+        },
+    ],
     bootstrap: [AppComponent],
 })
-export class AppModule {
-    constructor(readonly translate: TranslateService, readonly updates: SwUpdate) {
-        translate.addLangs(Object.keys(WebpackTranslateLoader.langs));
-        console.log(translate);
-        if (updates.isEnabled) {
-            updates.available.subscribe((event) => {
-                console.log(`Updating from ${event.current.hash} to ${event.available.hash}.`);
-                updates.activateUpdate().finally(() => location.reload());
-            });
-            updates.activated.subscribe((event) => {
-                console.log(`Updated from ${event.previous?.hash ?? 'unknown'} to ${event.current.hash}.`);
-            });
-        }
-    }
-}
+export class AppModule {}
