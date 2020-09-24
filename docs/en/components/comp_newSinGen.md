@@ -47,4 +47,4 @@ symbol: newSinGen
 
 ## See Also
 
-[Adjustable FPM Sine Generator](comp_newAFPMGen.html)
+[Adjustable FPM Sine Generator](comp_newAFPMGen.md)

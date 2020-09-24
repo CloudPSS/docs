@@ -51,4 +51,4 @@ The expression an be configured as A >= B or A < B.
 
 ## See Also
 
-[Hysteresis Comparator](comp_newHysteresis.html)
+[Hysteresis Comparator](comp_newHysteresis.md)

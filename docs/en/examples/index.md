@@ -9,13 +9,13 @@ To quickly understand the provided cases in the project wizard, users can read t
 
 ### Electromagnetic Transient Simulation Example
 
-- [Two-terminal LCC-HVDC test system](LCC.html)
-- [Two-terminal MMC-HVDC test system](MMC.html)
-- [Photovoltaic grid-connected generation system](PVsystem.html)
-- [Energy storage grid-connected generation system](BESS.html)
-- [IEEE 39-bus system](IEEE39.html)
-- [DC microgrid system](DCMicroGrid.html)
+- [Two-terminal LCC-HVDC test system](LCC.md)
+- [Two-terminal MMC-HVDC test system](MMC.md)
+- [Photovoltaic grid-connected generation system](PVsystem.md)
+- [Energy storage grid-connected generation system](BESS.md)
+- [IEEE 39-bus system](IEEE39.md)
+- [DC microgrid system](DCMicroGrid.md)
 
 ### Heating System Simulation Example
 
-- [Regional central heat supply system](HeatingSystem.html)
+- [Regional central heat supply system](HeatingSystem.md)

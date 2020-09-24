@@ -59,4 +59,4 @@ symbol: newLeadLag
 
 ## See Also
 
-[Real Pole](comp_newRealPole.html), [Second Order Complex Pole](comp_newComplexPole.html), [Differential Pole](comp_newDiffPole.html)
+[Real Pole](comp_newRealPole.md), [Second Order Complex Pole](comp_newComplexPole.md), [Differential Pole](comp_newDiffPole.md)

@@ -58,4 +58,4 @@ symbol: newRealPole
 
 ## See Also
 
-[Second Order Complex Pole](comp_newComplexPole.html), [Lead Lag Pole](comp_newLeadLag.html), [Nth Order Transfer Function](comp_newNthOrderTransFunc.html)
+[Second Order Complex Pole](comp_newComplexPole.md), [Lead Lag Pole](comp_newLeadLag.md), [Nth Order Transfer Function](comp_newNthOrderTransFunc.md)

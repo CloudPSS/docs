@@ -179,7 +179,7 @@ $$\begin{gathered}
 $$
 
 ## 相关元件
-[同步发电机](../components/compSyncGeneratorRouter.html)
+[同步发电机](../components/compSyncGeneratorRouter.md)
 
 
 [^Kundur]: Kundur, Prabha, Neal J. Balu, and Mark G. Lauby. Power system stability and control. Vol. 7. New York: McGraw-hill, 1994.

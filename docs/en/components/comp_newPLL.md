@@ -55,4 +55,4 @@ symbol: newPLL
 
 ## See Also
 
-[Phase Locked Oscillator](comp_newPLO.html)
+[Phase Locked Oscillator](comp_newPLO.md)

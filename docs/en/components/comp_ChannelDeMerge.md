@@ -38,4 +38,4 @@ The input and output dimensions need to be matched. For the previous example, th
 
 ## See Also
 
-[Channel Merge](comp_ChannelMerge.html)
+[Channel Merge](comp_ChannelMerge.md)

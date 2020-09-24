@@ -58,4 +58,4 @@ symbol: newDiffPole
 
 ## See Also
 
-[Real Pole](comp_newRealPole.html), [Lead Lag Pole](comp_newLeadLag.html), [Second Order Complex Pole](comp_newComplexPole.html)
+[Real Pole](comp_newRealPole.md), [Lead Lag Pole](comp_newLeadLag.md), [Second Order Complex Pole](comp_newComplexPole.md)

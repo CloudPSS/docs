@@ -38,4 +38,4 @@ symbol: newTime
 
 ## See Also
 
-[Constant](comp_newConstant.html), [Simulation Time Step](comp_newDeltaT.html)
+[Constant](comp_newConstant.md), [Simulation Time Step](comp_newDeltaT.md)

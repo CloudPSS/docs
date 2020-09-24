@@ -9,15 +9,15 @@ To quickly understand the relevant functions of CloudPSS, users can read the fol
 
 ### Electromagnetic Transient Modeling and Simulation Workbench
 
-- [Parameters and Pins System](ParameterSystem.html)
-- [Measurement and Output System](Measure.html)
-- [Component Table](ComponentTable.html)
-- [Save and Import the Snapshot](Snapshot.html)
-- [Advanced Data Visualization](Dashboard.html)
-- [Subgraph Function](SubGraph.html)
-- [Module Function](Module.html)
-- [Startup of Power Flow Snapshot](Initialization.html)
+- [Parameters and Pins System](ParameterSystem.md)
+- [Measurement and Output System](Measure.md)
+- [Component Table](ComponentTable.md)
+- [Save and Import the Snapshot](Snapshot.md)
+- [Advanced Data Visualization](Dashboard.md)
+- [Subgraph Function](SubGraph.md)
+- [Module Function](Module.md)
+- [Startup of Power Flow Snapshot](Initialization.md)
 
 ### Heating System Simulation Workbench
 
-- [Modeling and Simulation of Regional Central Heat Supply System](HeatingSystemGuide.html)
+- [Modeling and Simulation of Regional Central Heat Supply System](HeatingSystemGuide.md)

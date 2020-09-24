@@ -61,4 +61,4 @@ symbol: newThyristor
 
 ## See Also
 
-[Diode](comp_newDiode.html), [IGBT](comp_newIGBT.html)
+[Diode](comp_newDiode.md), [IGBT](comp_newIGBT.md)

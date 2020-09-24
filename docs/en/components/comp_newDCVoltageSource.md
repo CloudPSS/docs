@@ -65,4 +65,4 @@ If the internal resistance of the voltage source is zero, CloudPSS will set it t
 
 ## See Also
 
-[DC Current Source](comp_newDCCurrentSource.html)
+[DC Current Source](comp_newDCCurrentSource.md)

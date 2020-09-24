@@ -59,4 +59,4 @@ symbol: newBreaker_1p
 
 ## 相关元件
 
-[三相断路器](comp_newBreaker_3p.html)
+[三相断路器](comp_newBreaker_3p.md)

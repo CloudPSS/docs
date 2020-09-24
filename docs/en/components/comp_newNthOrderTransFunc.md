@@ -74,4 +74,4 @@ symbol: newNthOrderTransFunc
 
 ## See Also
 
-[Second Order Complex Pole](comp_newComplexPole.html)、[Lead Lag Pole](comp_newLeadLag.html)、[一阶惯性环节](comp_newRealPole.html)
+[Second Order Complex Pole](comp_newComplexPole.md)、[Lead Lag Pole](comp_newLeadLag.md)、[一阶惯性环节](comp_newRealPole.md)

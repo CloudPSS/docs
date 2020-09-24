@@ -86,4 +86,4 @@ symbol: newACVoltageSource_3p
 
 ## 相关元件
 
-[单相交流电压源](comp_newACVoltageSource_1p.html)
+[单相交流电压源](comp_newACVoltageSource_1p.md)

@@ -42,4 +42,4 @@ symbol: newHysteresis
 
 ## See Also
 
-[Comparator](comp_newComparator.html)
+[Comparator](comp_newComparator.md)

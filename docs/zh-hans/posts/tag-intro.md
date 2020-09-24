@@ -22,7 +22,7 @@ date: 2018-08-18 14:23:34
 
 插入元件图标。
 
-语法为 `{%raw%}{% compsymbol [元件symbol] [=size] [title] %}{%endraw%}`，其中 `size` 语法同 [MD 图片](markdown-intro.html#图片)，`title` 为鼠标悬停时的提示文本，如：
+语法为 `{%raw%}{% compsymbol [元件symbol] [=size] [title] %}{%endraw%}`，其中 `size` 语法同 [MD 图片](markdown-intro.md#图片)，`title` 为鼠标悬停时的提示文本，如：
 
 ```md compsymbol
 {% compsymbol newSum =x100 加法器%}

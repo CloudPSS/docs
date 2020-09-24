@@ -40,4 +40,4 @@ symbol: newMultiply
 
 ## See Also
 
-[Gain](comp_newGain.html)
+[Gain](comp_newGain.md)

@@ -81,7 +81,7 @@ In addition, electrical components can output their inner measured signals witho
 
 ![添加量测界面1](User3/J11.png 'Using component internal monitoring')
 
-For more information on signal names, please see [How to use the parameter system](../features/ParameterSystem.html).
+For more information on signal names, please see [How to use the parameter system](../features/ParameterSystem.md).
 
 ### Waveform Output
 

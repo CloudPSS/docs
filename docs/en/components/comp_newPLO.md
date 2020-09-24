@@ -60,4 +60,4 @@ symbol: newPLO
 
 ## See Also
 
-[Phase Locked Loop](comp_newPLL.html)
+[Phase Locked Loop](comp_newPLL.md)

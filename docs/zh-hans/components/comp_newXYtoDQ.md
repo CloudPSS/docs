@@ -112,4 +112,4 @@ U*{q }
 
 ## 相关元件
 
-[Park 变换器](comp_newParkTransform.html)、[Clark 变换器](comp_newClarkTransform.html)
+[Park 变换器](comp_newParkTransform.md)、[Clark 变换器](comp_newClarkTransform.md)

@@ -53,7 +53,7 @@ If the system also contains three-phase AC voltage source, the voltage source ne
 ![三相电压源启动参数](Initialization/source.png 'Three-phase voltage source start parameter page')
 
 {% pullquote tip %}
-The configuration of the above cross-section can be quickly imported by using the [Component Table](ComponentTable.html) function.
+The configuration of the above cross-section can be quickly imported by using the [Component Table](ComponentTable.md) function.
 {% endpullquote %}
 
 ### Pre-start parameter configuration
@@ -63,4 +63,4 @@ The configuration of the above cross-section can be quickly imported by using th
 
 ### Test Case
 
-See [IEEE39 node system case](../examples/IEEE39.html) and template for details, which will not be detailed here.
+See [IEEE39 node system case](../examples/IEEE39.md) and template for details, which will not be detailed here.

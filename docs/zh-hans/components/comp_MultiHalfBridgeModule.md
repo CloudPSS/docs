@@ -63,4 +63,4 @@ symbol: HBM
 
 ## 相关元件
 
-[NLM2Ref](comp_FirePulseGenNLM2Ref.html)
+[NLM2Ref](comp_FirePulseGenNLM2Ref.md)

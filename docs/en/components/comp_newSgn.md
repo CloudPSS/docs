@@ -46,4 +46,4 @@ symbol: newSgn
 
 ## See Also
 
-[Absolute Value](comp_newAbs.html)
+[Absolute Value](comp_newAbs.md)

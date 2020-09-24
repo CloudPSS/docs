@@ -52,4 +52,4 @@ The current source in CloudPSS is an `ideal current source` model with an intern
 
 ## See Also
 
-[Controlled Voltage Source](comp_newCtrlVoltageSource.html)
+[Controlled Voltage Source](comp_newCtrlVoltageSource.md)

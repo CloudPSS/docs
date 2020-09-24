@@ -41,4 +41,4 @@ symbol: newStepGen
 
 ## See Also
 
-[Ramp Generator](comp_newRampGen.html)
+[Ramp Generator](comp_newRampGen.md)

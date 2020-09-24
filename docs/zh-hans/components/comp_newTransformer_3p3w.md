@@ -100,4 +100,4 @@ symbol: newTransformer_3p3w
 
 ## 相关元件
 
-[单相变压器](comp_newTransformer_1p.html)、[三相双绕组变压器](comp_newTransformer_3p2w.html)
+[单相变压器](comp_newTransformer_1p.md)、[三相双绕组变压器](comp_newTransformer_3p2w.md)

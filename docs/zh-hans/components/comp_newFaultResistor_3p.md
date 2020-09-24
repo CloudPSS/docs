@@ -52,4 +52,4 @@ symbol: newFaultResistance_3p
 
 ## 相关元件
 
-[单相故障电阻](comp_newFaultResistor.html)、[电阻](compnewResistorRouter.html)
+[单相故障电阻](comp_newFaultResistor.md)、[电阻](compnewResistorRouter.md)
