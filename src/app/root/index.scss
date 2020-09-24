@@ -1,0 +1,9 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  ::ng-deep router-outlet + *:not(nav) {
+    flex: auto;
+    overflow-y: auto;
+  }
+}

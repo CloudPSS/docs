@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap } from 'rxjs/operators';
+import { NavigateEvent } from '@/components/markdown';
 
 /**
  * 错误页面组件
@@ -27,8 +28,8 @@ export class ErrorComponent implements OnInit {
     /**
      *
      */
-    onNavigate(target?: string): void {
-        if (target) void this.router.navigateByUrl(target);
+    onNavigate(target?: NavigateEvent): void {
+        if (target) void this.router.navigateByUrl(target.path);
         else void this.router.navigate(['error', 404], { replaceUrl: true });
     }
 }
