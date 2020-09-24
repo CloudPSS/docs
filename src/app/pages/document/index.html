@@ -1,1 +1,4 @@
-<app-markdown [path]="url | async" (navigate)="onNavigate($event)"></app-markdown>
+<app-nav-list [category]="(category | async) || ''"></app-nav-list>
+<main>
+  <app-markdown [path]="url | async" (navigate)="onNavigate($event)"></app-markdown>
+</main>

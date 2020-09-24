@@ -9,15 +9,17 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": ["es2018", "dom"],
-    "types": [],
+    "lib": ["ES2020", "dom"],
     "paths": {
-      "@/*": ["src/app/*"]
-    }
+      "@/*": ["src/app/*"],
+      "~/*": ["*"]
+    },
+    "allowJs": true
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

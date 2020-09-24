@@ -9,8 +9,28 @@ const routes: Routes = [
         component: ErrorComponent,
     },
     {
-        path: '**',
-        component: DocumentComponent,
+        path: ':lang',
+        children: [
+            {
+                path: '',
+                pathMatch: 'full',
+                component: DocumentComponent,
+            },
+            {
+                path: ':category',
+                children: [
+                    {
+                        matcher: (segments) => {
+                            return {
+                                consumed: segments,
+                                posParams: Object.fromEntries(Object.entries(segments)),
+                            };
+                        },
+                        component: DocumentComponent,
+                    },
+                ],
+            },
+        ],
     },
 ];
 

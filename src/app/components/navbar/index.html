@@ -1,6 +1,4 @@
 <mat-toolbar>
   CloudPSS
-    <button mat-button *ngFor="let item of (nav | async)!">
-      {{item.title}}
-    </button>
+  <button mat-button *ngFor="let item of (nav | async)!" (click)="navigate(item)">{{item.title}}</button>
 </mat-toolbar>
