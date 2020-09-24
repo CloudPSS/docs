@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { File } from '../source/interfaces';
-import * as MarkdownIt from 'markdown-it';
 import { SourceService } from '../source';
-import { UrlSegment } from '@angular/router';
+import type MarkdownIt from 'markdown-it';
+import markdownIt from '~/markdown-it.config';
 
 /**
  * 渲染设置
@@ -27,19 +27,18 @@ export class RenderService {
     };
 
     constructor(readonly source: SourceService) {
-        this.md = MarkdownIt({
-            html: true,
-            typographer: true,
-        });
+        this.md = markdownIt();
         const normalizeLink = this.md.normalizeLink.bind(this.md);
         this.md.normalizeLink = (url: string): string => {
             if (!this.file) return normalizeLink(url);
             if (url.includes(':')) return normalizeLink(url);
-            if (/\.md$/i.test(url)) {
-                const path = this.options.replaceDocExt ? url.replace(/(\/index)?\.md$/i, '') : url;
-                return normalizeLink(source.normalizePath(path, this.file.path));
+            if (url.startsWith('#') || /\.md(#[^#]*)?$/i.test(url)) {
+                const path = source.normalizePath(url, this.file.path);
+                return normalizeLink(
+                    this.options.replaceDocExt ? path.replace(/(\/index)?\.md(#[^#]*)?$/i, '$2') : path,
+                );
             }
-            return new URL(normalizeLink(url), this.file.url).href;
+            return normalizeLink(new URL(url, this.file.url).href);
         };
         this.md.validateLink = () => true;
     }
@@ -58,6 +57,9 @@ export class RenderService {
             this.options = { ...RenderService.defaultOptions, ...options };
             this.file = file;
             return this.md.render(file.data);
+        } catch (ex) {
+            console.warn(file, options, ex);
+            throw ex;
         } finally {
             this.file = undefined;
         }

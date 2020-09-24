@@ -12,18 +12,18 @@ async function main() {
         html: true,
         typographer: true,
     }).use(require('markdown-it-front-matter'), (f) => (fm = f));
-    /** @type {import('../src/app/interfaces/manifest').RootManifest} */
+    /** @type {import('../src/app/interfaces/manifest').Manifest} */
     const base = yaml.load(await fs.readFile('./manifest.yml', 'utf-8'));
     const matches = await promisify(glob)('**/*.md');
-    base.documents = await Promise.all(
+    base.documents = {};
+    await Promise.all(
         matches.map(async (v) => {
             const file = await fs.readFile(v, 'utf-8');
             fm = undefined;
             md.render(file);
-            console.log(fm)
             const front = fm ? yaml.safeLoad(fm) : undefined;
             const frontObj = typeof front == 'object' ? front : undefined;
-            return { title: path.basename(v, '.md'), ...frontObj, path: `/${v}` };
+            base.documents[`/${v}`] = { title: path.basename(v, '.md'), ...frontObj };
         }),
     );
     fs.writeFile('./manifest.json', JSON.stringify(base), 'utf-8');

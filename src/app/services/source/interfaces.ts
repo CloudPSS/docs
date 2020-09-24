@@ -1,4 +1,4 @@
-import { RootManifest, LangManifest } from '@/interfaces/manifest';
+import { Manifest } from '@/interfaces/manifest';
 
 /**
  * 版本信息
@@ -19,7 +19,7 @@ export interface VersionInfo extends VersionSpec {
     /**
      * 文档 manifest
      */
-    manifest: RootManifest;
+    manifest: Manifest;
 }
 
 /** 文件内容 */

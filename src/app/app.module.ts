@@ -1,34 +1,47 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { AppRoutingModule } from './app-routing.module';
-import { environment } from '../environments/environment';
-import { WebpackTranslateLoader } from './webpack-translate-loader';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MarkdownComponent } from './components/markdown';
-import { DocumentComponent } from './pages/document';
-import { AppComponent } from './root';
-import { AppInitializerService } from './app-initializer';
-import { ErrorComponent } from './pages/error';
-import { NavbarComponent } from './components/navbar';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatMenuModule } from '@angular/material/menu';
+
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTreeModule } from '@angular/material/tree';
+import { NavListComponent } from './components/nav-list';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+
+import { AppComponent } from './root';
+import { environment } from '../environments/environment';
+import { AppRoutingModule } from './app-routing.module';
+import { AppInitializerService } from './app-initializer';
+import { WebpackTranslateLoader } from './webpack-translate-loader';
+import { DocumentComponent } from './pages/document';
+import { ErrorComponent } from './pages/error';
+import { MarkdownComponent } from './components/markdown';
+import { NavbarComponent } from './components/navbar';
 
 /**
  * 主模块
  */
 @NgModule({
-    declarations: [AppComponent, MarkdownComponent, NavbarComponent, DocumentComponent, ErrorComponent],
+    declarations: [
+        AppComponent,
+        MarkdownComponent,
+        NavbarComponent,
+        NavListComponent,
+        DocumentComponent,
+        ErrorComponent,
+    ],
     imports: [
-        HttpClientModule,
         BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         AppRoutingModule,
         ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+        HttpClientModule,
         TranslateModule.forRoot({
             loader: {
                 provide: TranslateLoader,
@@ -36,11 +49,12 @@ import { MatButtonModule } from '@angular/material/button';
             },
             defaultLanguage: 'zh-hans',
         }),
-        BrowserAnimationsModule,
 
-        MatToolbarModule,
-        MatMenuModule,
         MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatTreeModule,
     ],
     providers: [
         {

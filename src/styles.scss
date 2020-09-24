@@ -1,6 +1,5 @@
 @import '~sanitize.css';
 @import '~sanitize.css/forms';
-@import '~sanitize.css/assets';
 @import '~sanitize.css/typography';
 
 // Custom Theming for Angular Material
@@ -38,3 +37,5 @@ $docs-theme: mat-light-theme(
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($docs-theme);
+
+@import './markdown'

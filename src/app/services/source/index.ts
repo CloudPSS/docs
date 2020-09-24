@@ -4,7 +4,7 @@ import { Observable, of, from, BehaviorSubject } from 'rxjs';
 import { first, map, catchError, concatMap, tap, share } from 'rxjs/operators';
 import { safeLoadAll } from 'js-yaml';
 import { VersionSpec, VersionInfo, File } from './interfaces';
-import { RootManifest, Document } from '@/interfaces/manifest';
+import { Manifest, FrontMatter, DocumentItem } from '@/interfaces/manifest';
 import { docUrls } from 'src/environments/environment';
 
 /**
@@ -22,12 +22,8 @@ export class SourceService {
         ref: '',
         status: 'development',
         manifest: {
-            sitemap: {
-                'zh-Hans': {
-                    nav: [],
-                },
-            },
-            documents: [],
+            sitemap: {},
+            documents: {},
         },
     });
 
@@ -71,28 +67,92 @@ export class SourceService {
     }
 
     /**
+     * 构建 manifest
+     */
+    private buildManifest(manifest: Manifest): Manifest {
+        const put = (
+            segments: readonly string[],
+            obj: DocumentItem,
+            item: FrontMatter,
+            path: {
+                raw: string;
+                parsed: string;
+            },
+        ): void => {
+            const [current, ...rest] = segments;
+            let child = obj.children.find((o) => o.name === current);
+            if (!child) {
+                child = new DocumentItem(current);
+                obj.children.push(child);
+            }
+            if (rest.length === 0) {
+                Object.assign(child, item);
+                child.path = path;
+                return;
+            } else {
+                put(rest, child, item, path);
+            }
+        };
+
+        const reorder = (item: DocumentItem): void => {
+            if (!item.children) return;
+            item.children.forEach(reorder);
+            item.children.sort((a, b) => Number(a.order) - Number(b.order));
+        };
+
+        const root = new DocumentItem('');
+        for (const path in manifest.documents) {
+            const doc = manifest.documents[path];
+            const pathSegments = path.split('/');
+            if (!pathSegments[0]) pathSegments.shift();
+            const name = pathSegments.pop();
+            if (!name) continue;
+            if (name !== 'index.md') pathSegments.push(name.slice(0, name.length - '.md'.length));
+            put(pathSegments, root, doc, {
+                raw: path,
+                parsed: '/' + pathSegments.join('/'),
+            });
+        }
+        reorder(root);
+        manifest = {
+            ...manifest,
+            sitemap: (root.children ?? []).reduce((m, s) => {
+                m[s.name] = s;
+                return m;
+            }, {} as Manifest['sitemap']),
+        };
+        console.log(manifest);
+        return manifest;
+    }
+
+    /**
      * 规格化路径
      */
-    normalizePath(path: string, base?: string): string {
+    normalizePath(p: string, base?: string): string {
         if (!base) {
-            if (!path.startsWith('/')) return `/${path}`;
-            return path;
+            if (p.startsWith('/')) return p;
+            return '/' + p;
         }
-        return new URL(path, `app-path:${this.normalizePath(base)}`).pathname;
+        if (base) {
+            base = this.normalizePath(base);
+        }
+        return new URL(p, 'app-path:' + base).href.slice('app-path:'.length);
     }
 
     /** 查找文档 */
-    findDocument(path: string, base?: string): Document | undefined {
+    findDocument(path: string, base?: string): string | undefined {
         path = this.normalizePath(path, base);
         path = path.replace(/(\.md|\.html?|\/)$/, '');
-        return this.current.value.manifest.documents.find(
-            (d) => d.path === path || d.path === path + '.md' || d.path === path + '/index.md',
+        return Object.keys(this.current.value.manifest.documents).find(
+            (p) => p === path || p === path + '.md' || p === path + '/index.md',
         );
     }
 
     /** 获取版本详情 */
     version(spec: VersionSpec): Observable<VersionInfo> {
-        return this.file<RootManifest>('manifest.json', 'json', spec).pipe(map((f) => ({ ...spec, manifest: f.data })));
+        return this.file<Manifest>('manifest.json', 'json', spec).pipe(
+            map((f) => ({ ...spec, manifest: this.buildManifest(f.data) })),
+        );
     }
 
     file<T>(path: string, responseType: 'json', spec?: VersionSpec): Observable<File<T>>;

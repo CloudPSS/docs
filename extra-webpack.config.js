@@ -8,5 +8,9 @@ module.exports = function (config) {
         type: 'json', // Required by Webpack v4
         use: 'yaml-loader',
     });
+    config.node = {
+        fs: 'empty',
+        path: true,
+    };
     return config;
 };
