@@ -63,4 +63,4 @@ symbol: HBM
 
 ## See Aslo
 
-[NLM2Ref](comp_FirePulseGenNLM2Ref.html)
+[NLM2Ref](comp_FirePulseGenNLM2Ref.md)

@@ -9,11 +9,11 @@ order: 100
 
 ## 描述
 
-IEEE 标准系统的介绍见[电磁暂态仿真案例](IEEE39.html)。
+IEEE 标准系统的介绍见[电磁暂态仿真案例](IEEE39.md)。
 
 ## 模型参数
 
-除了[电磁暂态仿真案例](IEEE39.html)中描述的参数外，需要为电机参数进行以下配置，这些参数在发电机元件的 Power Flow Data 栏。
+除了[电磁暂态仿真案例](IEEE39.md)中描述的参数外，需要为电机参数进行以下配置，这些参数在发电机元件的 Power Flow Data 栏。
 
 |       | Bus Type | Injected Active Power [MW] | Bus Voltage Magnitude [p.u.] | Bus Voltage Angle [Deg] |
 | :---- | :------: | -------------------------: | ---------------------------: | ----------------------: |

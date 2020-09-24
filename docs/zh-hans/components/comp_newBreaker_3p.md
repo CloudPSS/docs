@@ -66,4 +66,4 @@ symbol: newBreaker_3p
 
 ## 相关元件
 
-[单相断路器](comp_newBreaker_1p.html)
+[单相断路器](comp_newBreaker_1p.md)

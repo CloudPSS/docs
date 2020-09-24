@@ -46,4 +46,4 @@ symbol: newSampleHold
 
 ## 相关元件
 
-[采样](comp_newSample.html)
+[采样](comp_newSample.md)

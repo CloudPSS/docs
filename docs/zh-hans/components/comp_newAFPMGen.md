@@ -42,4 +42,4 @@ symbol: newAFPMGen
 
 ## 相关元件
 
-[正弦波发生器](comp_newSinGen.html)
+[正弦波发生器](comp_newSinGen.md)

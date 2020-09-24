@@ -100,4 +100,4 @@ symbol: newTransformer_3p3w
 
 ## See Also
 
-[Single-phase Transformer](comp_newTransformer_1p.html), [hree-phase Two-winding Transformer](comp_newTransformer_3p2w.html)
+[Single-phase Transformer](comp_newTransformer_1p.md), [hree-phase Two-winding Transformer](comp_newTransformer_3p2w.md)

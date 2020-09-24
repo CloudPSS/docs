@@ -52,4 +52,4 @@ symbol: newSurgeGen
 
 ## 相关元件
 
-[陷落发生器](comp_newDropGen.html)
+[陷落发生器](comp_newDropGen.md)

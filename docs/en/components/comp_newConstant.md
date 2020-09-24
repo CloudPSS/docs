@@ -39,4 +39,4 @@ symbol: newConstant
 
 ## See Also
 
-[Time](comp_newTime.html), [Simulation Time Step](comp_newDeltaT.html)
+[Time](comp_newTime.md), [Simulation Time Step](comp_newDeltaT.md)

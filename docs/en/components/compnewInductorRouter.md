@@ -48,4 +48,4 @@ symbol: newInductor
 
 ## See Also
 
-[Resistor](compnewResistorRouter.html), [Capacitor](compnewCapacitorRouter.html)
+[Resistor](compnewResistorRouter.md), [Capacitor](compnewCapacitorRouter.md)

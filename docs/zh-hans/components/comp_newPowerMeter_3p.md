@@ -43,4 +43,4 @@ symbol: newPowerMeter_3p
 
 ## 相关元件
 
-[支路电压表](comp_NewBranchVoltageMeter.html)、[电压表](comp_NewVoltageMeter.html)、[电流表](comp_NewCurrentMeter.html)
+[支路电压表](comp_NewBranchVoltageMeter.md)、[电压表](comp_NewVoltageMeter.md)、[电流表](comp_NewCurrentMeter.md)

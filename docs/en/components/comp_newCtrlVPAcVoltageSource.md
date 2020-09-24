@@ -71,4 +71,4 @@ If the internal resistance of the voltage source is zero, CloudPSS will set it t
 
 ## See Also
 
-[Controlled AC Voltage Source (VF)](comp_newCtrlAcVoltageSource.html), [Controlled Voltage Source](comp_newCtrlVoltageSource.html)
+[Controlled AC Voltage Source (VF)](comp_newCtrlAcVoltageSource.md), [Controlled Voltage Source](comp_newCtrlVoltageSource.md)

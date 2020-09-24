@@ -48,4 +48,4 @@ The input port of the "output channel" can be the signal name, the pin number an
 
 ## See Also
 
-[Oscilloscope Group](comp_newOsc.html)
+[Oscilloscope Group](comp_newOsc.md)

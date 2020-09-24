@@ -112,4 +112,4 @@ U*{q }
 
 ## See Also
 
-[Park Transformation](comp_newParkTransform.html), [Clark Transformation](comp_newClarkTransform.html)
+[Park Transformation](comp_newParkTransform.md), [Clark Transformation](comp_newClarkTransform.md)

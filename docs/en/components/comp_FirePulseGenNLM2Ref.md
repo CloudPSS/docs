@@ -46,4 +46,4 @@ symbol: NLM2Ref
 
 ## See Also
 
-[Half-Bridge Submodule](comp_MultiHalfBridgeModule.html)
+[Half-Bridge Submodule](comp_MultiHalfBridgeModule.md)

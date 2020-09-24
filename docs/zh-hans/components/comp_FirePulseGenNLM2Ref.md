@@ -46,4 +46,4 @@ symbol: NLM2Ref
 
 ## 相关元件
 
-[半桥子模块](comp_MultiHalfBridgeModule.html)
+[半桥子模块](comp_MultiHalfBridgeModule.md)

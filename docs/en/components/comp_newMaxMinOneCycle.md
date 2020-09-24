@@ -41,4 +41,4 @@ symbol: newMaxMinOneCycle
 
 ## See Also
 
-[Maximum/Minimum Fuction](comp_newMaxMin.html)
+[Maximum/Minimum Fuction](comp_newMaxMin.md)

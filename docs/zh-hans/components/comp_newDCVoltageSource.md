@@ -65,4 +65,4 @@ symbol: newDCVoltageSource
 
 ## 相关元件
 
-[直流电流源](comp_newDCCurrentSource.html)
+[直流电流源](comp_newDCCurrentSource.md)

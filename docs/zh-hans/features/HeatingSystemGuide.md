@@ -61,7 +61,7 @@ author_email: xiangyue@tsinghua-eiri.org
 
 ![管道元件图标](HeatingSystem/PipeIcon.png =x150)
 
-元件的连接方法可参考[快速入门](../guide/index.html)。
+元件的连接方法可参考[快速入门](../guide/index.md)。
 
 ## 参数输入
 
@@ -83,7 +83,7 @@ author_email: xiangyue@tsinghua-eiri.org
 
 - 供热场景
 
-  供热场景包含两个选项，分别是室内温度预测和供热计划制定，其各自含义可以参见区域集中供热系统运行仿真的[算例文档](../examples/HeatingSystem.html)。在进入算例后，用户也可以根据自己需要调整应用场景。
+  供热场景包含两个选项，分别是室内温度预测和供热计划制定，其各自含义可以参见区域集中供热系统运行仿真的[算例文档](../examples/HeatingSystem.md)。在进入算例后，用户也可以根据自己需要调整应用场景。
 
 ### 全局参数
 
@@ -119,11 +119,11 @@ author_email: xiangyue@tsinghua-eiri.org
 
 ### 建筑物负荷参数
 
-当选中建筑物（负荷）元件后，在页面右侧会出现建筑物（负荷）的参数面板，包括参数配置和格式面板，对于格式面板的使用可以参考[快速入门](../guide/index.html)，参数配置面板的形式如下图：
+当选中建筑物（负荷）元件后，在页面右侧会出现建筑物（负荷）的参数面板，包括参数配置和格式面板，对于格式面板的使用可以参考[快速入门](../guide/index.md)，参数配置面板的形式如下图：
 
 ![建筑物（负荷）的参数输入面板](HeatingSystem/HeatLoadPara.png)
 
-建筑物（负荷）的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatLoad_Building.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+建筑物（负荷）的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatLoad_Building.md)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
 
 ### 热源参数
 
@@ -131,7 +131,7 @@ author_email: xiangyue@tsinghua-eiri.org
 
 ![热源的参数输入面板](HeatingSystem/HeatSourcePara.png)
 
-热源的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatSource.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+热源的输入参数主要包括水力控制条件、热力控制条件和建筑物属性三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compHeatSource.md)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
 
 ### 连接点参数
 
@@ -147,7 +147,7 @@ author_email: xiangyue@tsinghua-eiri.org
 
 ![中继泵的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-中继泵的输入参数主要包含设备安装和参数设置两个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPump.html)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
+中继泵的输入参数主要包含设备安装和参数设置两个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPump.md)。其中部分参数需要添加曲线，其表格形式与使用方法与全局参数中的风速等参数的表格相同。
 
 ### 管道参数
 
@@ -155,7 +155,7 @@ author_email: xiangyue@tsinghua-eiri.org
 
 ![管道的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-管道的输入参数主要包括供水管道参数设置、回水管道参数设置、管道剖面参数设置三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPipeline.html)。
+管道的输入参数主要包括供水管道参数设置、回水管道参数设置、管道剖面参数设置三个模块，各项参数的具体含义可以参见该元件的[说明文档](../components/compPipeline.md)。
 
 ## 进行仿真
 

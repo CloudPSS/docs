@@ -58,4 +58,4 @@ symbol: newRealPole
 
 ## 相关元件
 
-[二阶传递函数](comp_newComplexPole.html)、[超前滞后校正](comp_newLeadLag.html)、[高阶传递函数](comp_newNthOrderTransFunc.html)
+[二阶传递函数](comp_newComplexPole.md)、[超前滞后校正](comp_newLeadLag.md)、[高阶传递函数](comp_newNthOrderTransFunc.md)

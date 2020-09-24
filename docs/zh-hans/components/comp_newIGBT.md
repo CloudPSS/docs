@@ -57,4 +57,4 @@ symbol: newIGBT
 
 ## 相关元件
 
-[二极管](comp_newDiode.html)、[晶闸管](comp_newThyristor.html)
+[二极管](comp_newDiode.md)、[晶闸管](comp_newThyristor.md)

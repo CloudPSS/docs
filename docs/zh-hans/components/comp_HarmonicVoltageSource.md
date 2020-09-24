@@ -56,4 +56,4 @@ symbol: HarmonicVoltageSource
 
 ## 相关元件
 
-[谐波电流源](comp_HarmonicCurrentSource.html)
+[谐波电流源](comp_HarmonicCurrentSource.md)

@@ -9,7 +9,7 @@ author_email: songyankan@cloudpss.net
 
 The dashboard function of CloudPSS provides the visualization function of simulation data. With the help of graphical display, users can view the simulation result information more clearly and effectively. For any simulation file with `Output Channel` component, the dashboard function can be used to dynamically display the simulation data.
 
-This chapter takes the [Two Ports MMC HVDC Test System](../examples/MMC.html) as an example to introduce the use of dashboard.
+This chapter takes the [Two Ports MMC HVDC Test System](../examples/MMC.md) as an example to introduce the use of dashboard.
 
 ## Opening Dashboard
 

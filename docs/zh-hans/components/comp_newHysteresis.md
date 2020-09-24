@@ -42,4 +42,4 @@ symbol: newHysteresis
 
 ## 相关元件
 
-[比较器](comp_newComparator.html)
+[比较器](comp_newComparator.md)

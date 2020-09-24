@@ -42,4 +42,4 @@ symbol: newBinaryDelay
 
 ## See Also
 
-[Monostable Multivibrator](comp_newMonoStable.html)
+[Monostable Multivibrator](comp_newMonoStable.md)

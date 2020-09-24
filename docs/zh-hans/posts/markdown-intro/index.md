@@ -4,34 +4,32 @@ author: lzy
 author_email: lzy@live.in
 date: 2018-08-18 12:23:34
 ---
+:::warning 你好
+dd sd
+:::
 
+:::summary 在吗
+x
+:::
 ## 公式
 
 使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 
-```tex equation
+```md equation
 行内公式：$\sin{x}$
 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
-$$ \sum_{i=1}^n a_i=0 $$
+$$ \sum_{i=1}^n a_i = 0 $$
 ... :arrow_left: ==同理，行间公式结束后也需要换行==
-对于渲染错误的公式 $\error$，将鼠标悬浮其上以查看错误信息。
+对于渲染错误的公式 $\error$，可以查看错误信息。
 ```
 
 效果：
 
 > 行内公式：$\sin{x}$  
-> 行间公式：:arrow*left: ==注意行间公式需要**独行书写**==
-> \$\$ \sum*{i=1}^n a_i=0 \$$
+> 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
+> $$ \sum_{{i=1}}^n a_i = 0 $$
 > ... :arrow_left: ==同理，行间公式结束后也需要换行==
-> 对于渲染错误的公式 $\error\$，将鼠标悬浮其上以查看错误信息。
-
-{% pullquote tip %}
-{% raw %}
-由于渲染引擎和预处理引擎冲突，公式中不能出现连续的 `{` 或 `}`，请使用 `{ {` 替代 `{{`，`}` 同理。
-
-也可以使用 [Raw](tag-intro.html#raw)。
-{% endraw %}
-{% endpullquote %}
+> 对于渲染错误的公式 $\error$，可以查看错误信息。
 
 ## 链接
 
@@ -43,14 +41,14 @@ $$ \sum_{i=1}^n a_i=0 $$
 ```md
 <!-- in /zh/component/comp_newClarkTransform.md-->
 
-[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.html)
-[Park 变换器](comp_newParkTransform.html)
+[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
+[Park 变换器](comp_newParkTransform.md)
 ```
 
 ## 图片
 
 图片存储的文件结构如图
-[![](markdown-intro/asset-folder.jpg)](#Title)
+[![](asset-folder.jpg)](#Title)
 
 即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](path "title" =size)` 语法。
 
@@ -60,7 +58,7 @@ $$ \sum_{i=1}^n a_i=0 $$
 - 当 `alt text` 非空，图片将居中显示，此时 `alt text` 为鼠标悬停时的提示文本，`title` 为图片题注。
 - `size` 用于指定图片尺寸，具体使用方法见下文。
 
-如 `![alt text](markdown-intro/intro1.png "Title" =x100)` 得到 ![alt text](markdown-intro/intro1.png "Title" =x100)
+如 `![alt text](intro1.png "Title" =x100)` 得到 ![alt text](intro1.png "Title" =x100)
 
 可以使用题注进行交叉引用，如 `[link](#Title)` [link](#Title)。
 
@@ -69,11 +67,11 @@ $$ \sum_{i=1}^n a_i=0 $$
 
 - 指定最大宽度
 
-  `![alt text](markdown-intro/intro1.png "Title" =200x)`
+  `![alt text](intro1.png "Title" =200x)`
 
 - 指定最大高度
 
-  `![alt text](markdown-intro/intro1.png "Title" =x100)`
+  `![alt text](intro1.png "Title" =x100)`
 
 {% pullquote tip %}
 不建议同时指定宽度和高度，可能导致图片变形。
@@ -194,7 +192,7 @@ console.log('hello world');
 有效值
 : 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
   $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
-: 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
+: 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2}}$ ，约 $0.707$ 倍。
 
 另一个定义
 ~ 也可以使用波浪线。
@@ -225,14 +223,15 @@ $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \o
 如：
 
 ```md abbr
-定义一个缩写： \*[RMS]: 有效值
+定义一个缩写：
+*[RMS]: 有效值
 在文中使用缩写：
 RMS 指有效值
 ```
 
 效果：
-
-> 定义一个缩写： \*[RMS]: 有效值
+> 定义一个缩写：
+> *[RMS]: 有效值 
 > 在文中使用缩写：
 > RMS 指有效值
 

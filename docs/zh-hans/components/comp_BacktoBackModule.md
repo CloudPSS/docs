@@ -63,8 +63,8 @@ symbol: BacktoBackModule
 
 ## 相关元件
 
-[H 桥模块](comp_HBridgeModule.html)
-[三相 H 桥模块](comp_ThreePhaseHBridgeModule.html)
-[H 桥电感模块](comp_HBridgeWithInductanceModule.html)
-[H 桥变压器模块](comp_HBridgeWithTransformerModule.html)
-[半桥模块](comp_HalfBridgeModule.html)
+[H 桥模块](comp_HBridgeModule.md)
+[三相 H 桥模块](comp_ThreePhaseHBridgeModule.md)
+[H 桥电感模块](comp_HBridgeWithInductanceModule.md)
+[H 桥变压器模块](comp_HBridgeWithTransformerModule.md)
+[半桥模块](comp_HalfBridgeModule.md)

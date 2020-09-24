@@ -61,7 +61,7 @@ The pipeline element is used for the transport of the heat medium. The pipeline 
 
 ![管道元件图标](HeatingSystem/PipeIcon.png =x150)
 
-Refer to the [Quick Start](../guide/index.html) for how to connect components.
+Refer to the [Quick Start](../guide/index.md) for how to connect components.
 
 ## Parameter Input
 
@@ -83,7 +83,7 @@ The options for the example template mainly include the project name, project de
 
 - Heating scenario
 
-  The heating scenario contains two options, namely indoor temperature prediction and heating plan formulation. The meaning of each can be found in the example document of [the regional central heating system example case](../examples/HeatingSystem.html). In the example case, the users can also adjust the application scenario according to their needs.
+  The heating scenario contains two options, namely indoor temperature prediction and heating plan formulation. The meaning of each can be found in the example document of [the regional central heating system example case](../examples/HeatingSystem.md). In the example case, the users can also adjust the application scenario according to their needs.
 
 ### Global Parameter
 
@@ -119,11 +119,11 @@ The following describes the parameters of the four parts:
 
 ### Building (Load) Parameter
 
-When the building (load) component is selected, the parameter panel of the building (load) component will appear on the right side of the page, including the parameter configuration and format panel. For the use of the format panel, refer to the [Quick Start 快速入门](../guide/index.html). The parameter configuration has the following form:
+When the building (load) component is selected, the parameter panel of the building (load) component will appear on the right side of the page, including the parameter configuration and format panel. For the use of the format panel, refer to the [Quick Start 快速入门](../guide/index.md). The parameter configuration has the following form:
 
 ![建筑物（负荷）的参数输入面板](HeatingSystem/HeatLoadPara.png)
 
-The input parameters of the building (load) mainly include three parts: hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatLoad_Building.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
+The input parameters of the building (load) mainly include three parts: hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatLoad_Building.md) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
 ### Heat Source Parameter
 
@@ -131,7 +131,7 @@ When the heat source component is selected, the parameter panel of the heat sour
 
 ![热源的参数输入面板](HeatingSystem/HeatSourcePara.png)
 
-The input parameters of the heat source mainly include three parts: hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatSource.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
+The input parameters of the heat source mainly include three parts: hydraulic control conditions, thermal control conditions and building attributes. The specific meaning of each part can be found in the [documentation](../components/compHeatSource.md) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
 ### Connection Point Parameter
 
@@ -147,7 +147,7 @@ When the relay pump component is selected, the parameter panel of the relay pump
 
 ![中继泵的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-The input parameters of the relay pump mainly include two parts: device installation and parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPump.html) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
+The input parameters of the relay pump mainly include two parts: device installation and parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPump.md) of the component. Some of the parameters need to add a curve, and the table form is the same as the table of the parameters such as the wind speed in the global parameters.
 
 ### Pipeline Parameter
 
@@ -155,7 +155,7 @@ When the pipe component is selected, the parameter panel of the pipe will appear
 
 ![管道的参数输入面板](HeatingSystem/ConnectionNodePara.png)
 
-The input parameters of the pipeline mainly include three parts: water supply pipeline parameter setting, return water pipeline parameter setting, and pipeline profile parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPipeline.html) of the component.
+The input parameters of the pipeline mainly include three parts: water supply pipeline parameter setting, return water pipeline parameter setting, and pipeline profile parameter setting. The specific meaning of each parameter can be found in the [documentation](../components/compPipeline.md) of the component.
 
 ## Simulation
 

@@ -57,5 +57,5 @@ y(t) = {K_r}u(t) + {y_2} - {K_r}{x_2},u(t) > {x_2}
 
 ## 相关元件
 
-[非线性函数](comp_newNonlinear.html)
+[非线性函数](comp_newNonlinear.md)
 $$

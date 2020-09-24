@@ -42,4 +42,4 @@ symbol: newAFPMGen
 
 ## See Also
 
-[Sine Generator](comp_newSinGen.html)
+[Sine Generator](comp_newSinGen.md)

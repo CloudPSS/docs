@@ -68,4 +68,4 @@ If the internal resistance of the voltage source is zero, CloudPSS will set it t
 
 ## See Also
 
-[Three-phase AC Voltage Source](comp_newACVoltageSource_3p.html)
+[Three-phase AC Voltage Source](comp_newACVoltageSource_3p.md)

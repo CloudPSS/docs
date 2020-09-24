@@ -7,20 +7,20 @@ author: lzy
 author_email: lzy@live.in
 ---
 
-CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计算，并将计算结果写入元件[启动参数](./Initialization.html)，实现稳态启动。
+CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计算，并将计算结果写入元件[启动参数](./Initialization.md)，实现稳态启动。
 
 ## 准备工作
 
 要使用 CloudPSS 提供的潮流计算功能，首先需要搭建满足要求的算例。
 
-目前，潮流计算功能支持的设备元件包含[静态负载](../components/comp_newExpLoad_3p.html)、[三相交流电压源](../components/comp_newACVoltageSource_3p.html)、[同步发电机](../components/compSyncGeneratorRouter.html)、[并联电容/电抗器](../components/comp_newShuntLC_3p.html)、[三相传输线](../components/compTranssmissionLineRouter.html)、三相[电阻](../components/compnewResistorRouter.html)、三相[电感](../components/compnewInductorRouter.html)、三相[电容](../components/compnewCapacitorRouterWithInitValue.html)、[三相双绕组变压器](../components/comp_newTransformer_3p2w.html)和[三相三绕组变压器](../components/comp_newTransformer_3p3w.html)，更多元件支持将在后续版本中逐步加入。
+目前，潮流计算功能支持的设备元件包含[静态负载](../components/comp_newExpLoad_3p.md)、[三相交流电压源](../components/comp_newACVoltageSource_3p.md)、[同步发电机](../components/compSyncGeneratorRouter.md)、[并联电容/电抗器](../components/comp_newShuntLC_3p.md)、[三相传输线](../components/compTranssmissionLineRouter.md)、三相[电阻](../components/compnewResistorRouter.md)、三相[电感](../components/compnewInductorRouter.md)、三相[电容](../components/compnewCapacitorRouterWithInitValue.md)、[三相双绕组变压器](../components/comp_newTransformer_3p2w.md)和[三相三绕组变压器](../components/comp_newTransformer_3p3w.md)，更多元件支持将在后续版本中逐步加入。
 
-潮流计算功能是围绕着[三相交流母线](../components/comp_newBus_3p.html)进行的。因此，上述设备元件中，单电气端口的元件（静态负载、三相交流电压源、同步发电机、并联电容/电抗器）只有当其电器端口与母线**直接**相连时，才会被计入；对于多电器端口的元件，则其每一个电气端口都必须与母线**直接**相连。特别地，[电流表](../components/comp_NewCurrentMeter.html)可以串入电路中，在潮流计算过程中将被忽略。
+潮流计算功能是围绕着[三相交流母线](../components/comp_newBus_3p.md)进行的。因此，上述设备元件中，单电气端口的元件（静态负载、三相交流电压源、同步发电机、并联电容/电抗器）只有当其电器端口与母线**直接**相连时，才会被计入；对于多电器端口的元件，则其每一个电气端口都必须与母线**直接**相连。特别地，[电流表](../components/comp_NewCurrentMeter.md)可以串入电路中，在潮流计算过程中将被忽略。
 
 每条母线至多连接一个电源（三相交流电压源或同步发电机），其节点的类型和相关参数在电源的 Power Flow Data 页面指定。未连接电源的母线将作为 PQ 节点参与计算。同一个算例中可以包含多个独立的网络，每个网络都必须包含且仅包含一个平衡节点。
 
 {% pullquote info %}
-潮流计算中暂不考虑[静态负载](../components/comp_newExpLoad_3p.html)的功率特性。
+潮流计算中暂不考虑[静态负载](../components/comp_newExpLoad_3p.md)的功率特性。
 {% endpullquote %}
 
 ## 参数设定
@@ -56,14 +56,14 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 ## 案例
 
-详见 [IEEE 标准系统](../examples/IEEE39PF.html)案例及模板，此处不再详述。
+详见 [IEEE 标准系统](../examples/IEEE39PF.md)案例及模板，此处不再详述。
 
 ## 常见问题
 
 {% pullquote fail %}
 No bus was found. To start a PF calculation, all electric components must be connected to buses.
 {% endpullquote %}
-在潮流计算中，所有元件必须连接在[三相交流母线](../components/comp_newBus_3p.html)上。
+在潮流计算中，所有元件必须连接在[三相交流母线](../components/comp_newBus_3p.md)上。
 
 {% pullquote fail %}
 Bus `name` is isolated.

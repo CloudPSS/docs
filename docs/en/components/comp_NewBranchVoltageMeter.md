@@ -40,4 +40,4 @@ symbol: newBranchVoltageMeter
 
 ## See Also
 
-[Voltage Meter](comp_NewVoltageMeter.html), [Current Meter](comp_NewCurrentMeter.html)
+[Voltage Meter](comp_NewVoltageMeter.md), [Current Meter](comp_NewCurrentMeter.md)

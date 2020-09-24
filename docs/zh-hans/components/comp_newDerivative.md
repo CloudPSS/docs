@@ -42,4 +42,4 @@ symbol: newDerivative
 
 ## 相关元件
 
-[积分器](comp_newIntegrator.html)
+[积分器](comp_newIntegrator.md)

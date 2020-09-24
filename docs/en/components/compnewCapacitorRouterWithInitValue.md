@@ -49,4 +49,4 @@ symbol: newCapacitorRouterWithInitValue
 
 ## See Also
 
-[Inductor](compnewInductorRouter.html), [Resistor](compnewResistorRouter.html)
+[Inductor](compnewInductorRouter.md), [Resistor](compnewResistorRouter.md)

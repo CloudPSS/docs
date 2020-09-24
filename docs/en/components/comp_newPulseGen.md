@@ -41,4 +41,4 @@ symbol: newPulseGen
 
 ## See Also
 
-[Single-impulse Generator](comp_newSinglePulse.html), [Square Generator](comp_newSquareGen.html)
+[Single-impulse Generator](comp_newSinglePulse.md), [Square Generator](comp_newSquareGen.md)

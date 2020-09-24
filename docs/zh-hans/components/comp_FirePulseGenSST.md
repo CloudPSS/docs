@@ -57,4 +57,4 @@ symbol: FirePulseGenSST
 
 ## 相关元件
 
-[多模块 SST](comp_NSSTsModule.html)
+[多模块 SST](comp_NSSTsModule.md)

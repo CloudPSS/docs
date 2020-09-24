@@ -53,4 +53,4 @@ symbol: newMaxMin
 
 ## See Also
 
-[Maximum/Minimum in One Cycle](comp_newMaxMinOneCycle.html)
+[Maximum/Minimum in One Cycle](comp_newMaxMinOneCycle.md)

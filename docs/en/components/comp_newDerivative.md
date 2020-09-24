@@ -42,4 +42,4 @@ symbol: newDerivative
 
 ## See Also
 
-[Integrator](comp_newIntegrator.html)
+[Integrator](comp_newIntegrator.md)
