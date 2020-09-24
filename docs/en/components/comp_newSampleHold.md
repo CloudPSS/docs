@@ -46,4 +46,4 @@ symbol: newSampleHold
 
 ## See Also
 
-[Sampler](comp_newSample.html)
+[Sampler](comp_newSample.md)

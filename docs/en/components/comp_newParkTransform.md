@@ -129,4 +129,4 @@ U*{0}
 
 ## See Aslo
 
-[Clark Transformation](comp_newClarkTransform.html), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.html)
+[Clark Transformation](comp_newClarkTransform.md), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.md)

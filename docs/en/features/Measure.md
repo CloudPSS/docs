@@ -23,7 +23,7 @@ For example, to measure the current of a resistance, drag the ammeter and connec
 
 ## Signal Management
 
-The measurement signals of some components are multidimensional, for example, the signal of `Three-phase AC Voltage Source->Monitoring->3-phase Source Votage Vector` is 3D signal. If users need only a one-dimensional signal from the three dimension, such as phase A, `Control-Basic Components->Chanel Demerge Component` can be used to split the signal. See the description of [Chanel Demerge Component](../components/comp_ChannelDeMerge.html) for details. Similarly, if users need to combine multi one-dimensional signals into multi-dimensional signals, `Control-Basic Components->Chanel Merge Component` can be used. See the description of [Chanel Merge Component](../components/comp_ChannelMerge.html) for details.
+The measurement signals of some components are multidimensional, for example, the signal of `Three-phase AC Voltage Source->Monitoring->3-phase Source Votage Vector` is 3D signal. If users need only a one-dimensional signal from the three dimension, such as phase A, `Control-Basic Components->Chanel Demerge Component` can be used to split the signal. See the description of [Chanel Demerge Component](../components/comp_ChannelDeMerge.md) for details. Similarly, if users need to combine multi one-dimensional signals into multi-dimensional signals, `Control-Basic Components->Chanel Merge Component` can be used. See the description of [Chanel Merge Component](../components/comp_ChannelMerge.md) for details.
 
 ## Signal Output
 

@@ -1,6 +1,6 @@
 ---
-title:
-type: components
+title: 元件帮助
+order: 200
 ---
 
 CloudPSS 提供了丰富的元件库，其分类及具体元件组成如下表所示：

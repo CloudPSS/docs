@@ -39,4 +39,4 @@ In order to display the output of a certain simulation signal, both the "output 
 
 ## See Also
 
-[Output Channel](comp_newChannel.html)
+[Output Channel](comp_newChannel.md)

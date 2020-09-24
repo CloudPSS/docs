@@ -51,4 +51,4 @@ symbol: newComparator
 
 ## 相关元件
 
-[滞环比较器](comp_newHysteresis.html)
+[滞环比较器](comp_newHysteresis.md)

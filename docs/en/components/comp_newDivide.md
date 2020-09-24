@@ -40,4 +40,4 @@ symbol: newDivide
 
 ## See Also
 
-[Multiplier](comp_newMultiply.html)
+[Multiplier](comp_newMultiply.md)

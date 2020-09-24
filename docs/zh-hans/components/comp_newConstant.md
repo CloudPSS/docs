@@ -39,4 +39,4 @@ symbol: newConstant
 
 ## 相关元件
 
-[时间输入](comp_newTime.html)、[仿真步长输入](comp_newDeltaT.html)
+[时间输入](comp_newTime.md)、[仿真步长输入](comp_newDeltaT.md)

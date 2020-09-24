@@ -53,7 +53,7 @@ CloudPSS 的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 ![三相电压源启动参数](Initialization/source.png '三相电压源启动参数页')
 
 {% pullquote tip %}
-上述潮流断面的配置可利用[元件表](ComponentTable.html)功能快速导入。
+上述潮流断面的配置可利用[元件表](ComponentTable.md)功能快速导入。
 {% endpullquote %}
 
 ### 预启动参数配置
@@ -63,6 +63,6 @@ CloudPSS 的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 
 ### 案例
 
-详见[IEEE39 节点系统](../examples/IEEE39.html)案例及模板，此处不再详述。
+详见[IEEE39 节点系统](../examples/IEEE39.md)案例及模板，此处不再详述。
 
 后续版本中，CloudPSS 将提供潮流断面快速导入及更多的潮流断面启动方法，敬请关注！

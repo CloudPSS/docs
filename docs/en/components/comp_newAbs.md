@@ -39,4 +39,4 @@ symbol: newAbs
 
 ## See Also
 
-[Sign Function](comp_newSgn.html)
+[Sign Function](comp_newSgn.md)

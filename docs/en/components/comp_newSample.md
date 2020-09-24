@@ -42,4 +42,4 @@ symbol: newSample
 
 ## See Also
 
-[Sample and Hold](comp_newSampleHold.html)
+[Sample and Hold](comp_newSampleHold.md)

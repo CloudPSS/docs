@@ -38,4 +38,4 @@ The input and output dimensions need to be matched. For example, the new multi-d
 
 ## See Also
 
-[Channel Merge](comp_ChannelDeMerge.html)
+[Channel Merge](comp_ChannelDeMerge.md)

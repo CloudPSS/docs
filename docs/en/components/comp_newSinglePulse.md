@@ -40,4 +40,4 @@ symbol: newSinglePulse
 
 ## See Also
 
-[Impulse Generator](comp_newPulseGen.html)
+[Impulse Generator](comp_newPulseGen.md)

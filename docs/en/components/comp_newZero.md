@@ -57,4 +57,4 @@ symbol: newZero
 
 ## See Also
 
-[Differential Pole](comp_newDiffPole.html)
+[Differential Pole](comp_newDiffPole.md)

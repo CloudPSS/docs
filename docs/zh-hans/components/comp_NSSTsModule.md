@@ -83,4 +83,4 @@ symbol: NSSTsModule
 
 ## 相关元件
 
-[SST 脉冲发生器](comp_FirePulseGenSST.html)
+[SST 脉冲发生器](comp_FirePulseGenSST.md)

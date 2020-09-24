@@ -38,4 +38,4 @@ symbol: ChannelMerge
 
 ## 相关元件
 
-[多路信号分离](comp_ChannelDeMerge.html)
+[多路信号分离](comp_ChannelDeMerge.md)

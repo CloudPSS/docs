@@ -85,4 +85,4 @@ U\_{\beta }
 
 ## See Also
 
-[Park Transformation](comp_newParkTransform.html), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.html)
+[Park Transformation](comp_newParkTransform.md), [dq-αβ Coordinates Transformation](comp_newXYtoDQ.md)

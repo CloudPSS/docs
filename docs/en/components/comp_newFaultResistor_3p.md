@@ -52,4 +52,4 @@ symbol: newFaultResistance_3p
 
 ## See Also
 
-[Single-phase Fault Resistor](comp_newFaultResistor.html), [Resistor](compnewResistorRouter.html)
+[Single-phase Fault Resistor](comp_newFaultResistor.md), [Resistor](compnewResistorRouter.md)

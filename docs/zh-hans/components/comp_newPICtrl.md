@@ -60,4 +60,4 @@ symbol: newPICtrl
 
 ## 相关元件
 
-[积分器](comp_newIntegrator.html)、[增益](comp_newGain.html)
+[积分器](comp_newIntegrator.md)、[增益](comp_newGain.md)

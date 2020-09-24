@@ -96,4 +96,4 @@ Control the start and stop of simulation. A simulation progress bar will be show
 
 ## Global Parameter
 
-Global parameter is used to edit constant value variables that apply to the entire simulation, making the modification of the component’s parameter easier. For example, there are 20 identical resistors in the simulation, the resistance can be defined as a global variable. Modifying the value of the variable in the `Global Variable` window can modify the resistance of all 20 resistors at the same time. For details on how to use global parameters, see [How to Use System Parameters](../features/ParameterSystem.html).
+Global parameter is used to edit constant value variables that apply to the entire simulation, making the modification of the component’s parameter easier. For example, there are 20 identical resistors in the simulation, the resistance can be defined as a global variable. Modifying the value of the variable in the `Global Variable` window can modify the resistance of all 20 resistors at the same time. For details on how to use global parameters, see [How to Use System Parameters](../features/ParameterSystem.md).

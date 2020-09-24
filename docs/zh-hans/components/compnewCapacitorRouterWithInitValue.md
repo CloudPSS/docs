@@ -49,4 +49,4 @@ symbol: newCapacitorRouterWithInitValue
 
 ## 相关元件
 
-[电感](compnewInductorRouter.html)、[电阻](compnewResistorRouter.html)
+[电感](compnewInductorRouter.md)、[电阻](compnewResistorRouter.md)

@@ -57,5 +57,5 @@ y(t) = {K_r}u(t) + {y_2} - {K_r}{x_2},u(t) > {x_2}
 
 ## See Also
 
-[Nonlinear Function](comp_newNonlinear.html)
+[Nonlinear Function](comp_newNonlinear.md)
 $$

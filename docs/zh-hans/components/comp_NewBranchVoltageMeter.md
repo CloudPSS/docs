@@ -40,4 +40,4 @@ symbol: newBranchVoltageMeter
 
 ## 相关元件
 
-[电压表](comp_NewVoltageMeter.html)、[电流表](comp_NewCurrentMeter.html)
+[电压表](comp_NewVoltageMeter.md)、[电流表](comp_NewCurrentMeter.md)

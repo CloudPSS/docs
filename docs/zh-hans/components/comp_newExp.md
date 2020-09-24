@@ -41,4 +41,4 @@ symbol: newExp
 
 ## 相关元件
 
-[对数函数](comp_newLog.html)
+[对数函数](comp_newLog.md)

@@ -129,4 +129,4 @@ U*{0}
 
 ## 相关元件
 
-[Clark 变换器](comp_newClarkTransform.html)、[dq-αβ 坐标转换器](comp_newXYtoDQ.html)
+[Clark 变换器](comp_newClarkTransform.md)、[dq-αβ 坐标转换器](comp_newXYtoDQ.md)

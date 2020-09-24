@@ -57,4 +57,4 @@ symbol: newZero
 
 ## 相关元件
 
-[微分极点](comp_newDiffPole.html)
+[微分极点](comp_newDiffPole.md)

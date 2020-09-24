@@ -42,4 +42,4 @@ symbol: newDropGen
 
 ## See Also
 
-[Surge Generator](comp_newSurgeGen.html)
+[Surge Generator](comp_newSurgeGen.md)

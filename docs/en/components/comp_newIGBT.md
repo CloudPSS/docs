@@ -57,4 +57,4 @@ symbol: newIGBT
 
 ## See Also
 
-[Diode](comp_newDiode.html), [Thyristor](comp_newThyristor.html)
+[Diode](comp_newDiode.md), [Thyristor](comp_newThyristor.md)

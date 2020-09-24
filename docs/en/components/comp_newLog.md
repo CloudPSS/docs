@@ -41,4 +41,4 @@ symbol: newLog
 
 ## See Also
 
-[Exponential Function](comp_newExp.html)
+[Exponential Function](comp_newExp.md)

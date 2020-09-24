@@ -65,8 +65,8 @@ symbol: HBridgeWithInductanceModule
 
 ## 相关元件
 
-[背靠背 H 桥模块](comp_BacktoBackModule.html)
-[H 桥模块](comp_HBridgeModule.html)
-[三相 H 桥模块](comp_ThreePhaseHBridgeModule.html)
-[H 桥变压器模块](comp_HBridgeWithTransformerModule.html)
-[半桥模块](comp_HalfBridgeModule.html)
+[背靠背 H 桥模块](comp_BacktoBackModule.md)
+[H 桥模块](comp_HBridgeModule.md)
+[三相 H 桥模块](comp_ThreePhaseHBridgeModule.md)
+[H 桥变压器模块](comp_HBridgeWithTransformerModule.md)
+[半桥模块](comp_HalfBridgeModule.md)

@@ -40,4 +40,4 @@ symbol: newMonoStable
 
 ## See Also
 
-[Binary Delay](comp_newBinaryDelay.html)
+[Binary Delay](comp_newBinaryDelay.md)

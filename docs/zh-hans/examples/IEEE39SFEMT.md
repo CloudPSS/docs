@@ -9,7 +9,7 @@ author_email: tanzhd@foxmail.com
 
 ## 描述
 
-在 CloudPSS 移频电磁暂态平台中的 IEEE39 节点算例与电磁暂态平台中基本一致，详见[IEEE 标准系统](IEEE39.html)。
+在 CloudPSS 移频电磁暂态平台中的 IEEE39 节点算例与电磁暂态平台中基本一致，详见[IEEE 标准系统](IEEE39.md)。
 
 这里仅展示某次仿真的结果。
 

@@ -81,7 +81,7 @@ order: 400
 
 ![添加量测界面1](User3/J11.png '使用元件内部量输出')
 
-更多关于信号名称的信息，详见：[参数系统使用方法](../features/ParameterSystem.html)。
+更多关于信号名称的信息，详见：[参数系统使用方法](../features/ParameterSystem.md)。
 
 ### 波形输出
 
