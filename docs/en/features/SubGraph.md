@@ -11,9 +11,9 @@ The subgraph function is used to integrate multiple components to form a new lay
 
 ## Create Subgraph
 
-Select multiple components in the main workspace, right-click to select `Create New Subgraph`, and name the subgraph as 'Sub' in the pop-up dialog box, as shown in the figure below. Click `OK` and then pop up `Whether to Customize Port Name`. Click `OK` to customize the port of the subgraph.
+Select multiple components in the main workspace, right-click to select `Create New Subgraph`, and name the subgraph as 'Sub' in the pop-up dialog box, as shown in the figure below. Click `OK` and then pop up `Whether to Customize Port Name`. Click `OK` to customize the port of  the subgraph.
 
-![创建子图](SubGraph/Z1.png 'Creating subgraph options')
+![创建子图](SubGraph/Z1.png "Creating subgraph options")
 
 The customized interface of the subgraph port is shown in the figure.
 
@@ -33,17 +33,20 @@ New subgraphs cannot be created in subgraphs, that is, they are not allowed to b
 
 After creation of subgraph, the footprint icon of the sub graph will appear in the workspace. Double click the icon to open the subgraph. The page name of the subgraph is 'Sub', which is the name of the new icon layer. Click the close button next to the page name to close the subgraph.
 
-![子图](SubGraph/Z4.png 'Icon after encapsulation of subgraph')
-![打开子图](SubGraph/Z5.png 'Circuit inside the subgraph')
+![子图](SubGraph/Z4.png "Icon after encapsulation of subgraph")
+![打开子图](SubGraph/Z5.png "Circuit inside the subgraph")
 
 ## Delete Subgraph
 
-In the main layer, select the subgraph you want to delete. Right-click the subgraph, select `Delete` from the drop-down menu or directly press the keyboard [[Delete]] key, and select the type of deletion in the pop-up dialog box: `Only delete icon does not delete the subgraph` and `Delete icon and delete the subgraph`. When selecting the former, the subgraph will not be deleted. You can reopen the layer through the `Application Tree` on the left side of the workspace.
+In the main layer, select the subgraph you want to delete. Right-click the subgraph, select `Delete` from the drop-down menu or directly press the keyboard [[Delete]] key, and select the type of deletion in the pop-up dialog box: `Only delete icon does not delete the subgraph` and `Delete icon and delete the subgraph`. When selecting the former, the subgraph will not be deleted. You can reopen the layer through the `Application Tree` on the left side of the workspace. 
 
-![打开删除子图](SubGraph/Z6.png 'Opening a subgraph from the application tree')
+![打开删除子图](SubGraph/Z6.png "Opening a subgraph from the application tree")
 
 If the `Delete icon and delete the subgraph` is selected, both the icon and the subgraph layer will be deleted.
 
 ## Update Subgraph
 
 If users make any changes to the subgraph, such as adding new components, users need to right-click in the blank of the subgraph layer and select `Update subgraph`. The system will automatically identify the boundary ports and non-boundary ports in the subgraph, and pop up the user-defined interface of the subgraph ports again for users to modify. Click `New` to update the icon in the main layer.
+
+
+

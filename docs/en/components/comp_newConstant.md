@@ -1,6 +1,6 @@
 ---
 title: Constant
-author:
+author: 
 author_email:
 
 date: 2018/12/4 10:03:10
@@ -13,29 +13,28 @@ order: 100
 classname: _newConstant
 symbol: newConstant
 ---
-
 ## Basic Description
-
 {% compsymbol newConstant %}
 
 > **This component is used to generate a constant output signal.**
 
 ## Parameter
-
 ### Configuration
+| Parameter name | Unit | Remark | Type | Description |
+| :--- | :--- | :--- | :--: | :--- |
+| Name |  | Name of component | Text | Enter the name of the constant component. (Default) |
+| Real Constant Value |  | Constant | Real number（Const） | The value of the constant |
 
-| Parameter name      | Unit | Remark            |         Type         | Description                                         |
-| :------------------ | :--- | :---------------- | :------------------: | :-------------------------------------------------- |
-| Name                |      | Name of component |         Text         | Enter the name of the constant component. (Default) |
-| Real Constant Value |      | Constant          | Real number（Const） | The value of the constant                           |
 
 ## Pin List
 
 | Pin name | Dimension | Description |
-| :------- | :-------: | :---------- |
-| Output   |    1×1    | Output pin  |
+| :--- | :--:  | :--- |
+| Output | 1×1 | Output pin |
 
 ## Using Instructions
+
+
 
 ## See Also
 

@@ -1,6 +1,6 @@
 ---
 title: Oscilloscope Group
-author:
+author: 
 author_email:
 
 date: 2018/12/4 10:03:10
@@ -13,23 +13,20 @@ order: 0
 classname: _newOsc
 symbol: oscg
 ---
-
 ## Basic Description
-
 {% compsymbol oscg %}
 
 > **This component implements a grouped display of the signals collected by the "Output Channel", analogous to the actual physical oscilloscope.**
 
 ## Parameter
-
 ### Configuration
-
-| Parameter name    | Remark          | Type   | Description                                                                      |
-| :---------------- | :-------------- | :----- | :------------------------------------------------------------------------------- |
-| Group Name        | Group name      | Text   | Enter the name of the oscilloscope group. (Default)                              |
+| Parameter name | Remark | Type | Description |
+| :--- | :--- | :--- | :--- |
+| Group Name | Group name | Text | Enter the name of the oscilloscope group. (Default) |
 | Selected Channels | Select channels | Select | Select the name of the “Output Channel” displayed within this oscilloscope group |
 
 ## Pin List
+
 
 ## Using Instructions
 
