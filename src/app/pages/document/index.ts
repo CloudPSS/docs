@@ -1,8 +1,12 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Observable, combineLatest, interval } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, tap, pluck } from 'rxjs/operators';
+import { map, tap, pluck, delay, mergeMap } from 'rxjs/operators';
 import { NavigateEvent } from '@/components/markdown';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { LayoutService } from '@/services/layout';
+import { MatSidenav } from '@angular/material/sidenav';
+import { NavListComponent } from '@/components/nav-list';
 
 /**
  * 文档页面组件
@@ -11,8 +15,11 @@ import { NavigateEvent } from '@/components/markdown';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class DocumentComponent {
-    constructor(readonly route: ActivatedRoute, readonly router: Router) {}
+export class DocumentComponent implements AfterViewInit {
+    constructor(readonly route: ActivatedRoute, readonly router: Router, readonly layout: LayoutService) {}
+    /** */
+    @ViewChild('sidenav') readonly sidenav!: MatSidenav;
+
     /** url */
     readonly url = this.route.params.pipe(
         map((s) => {
@@ -35,6 +42,21 @@ export class DocumentComponent {
 
     /** */
     readonly category = this.route.params.pipe<string>(pluck('category'));
+    /** @inheritdoc */
+    ngAfterViewInit(): void {
+        this.layout.sidenavMode
+            .pipe(
+                delay(100),
+                mergeMap(async (d) => {
+                    if (d === 'side') {
+                        await this.sidenav.open();
+                    } else {
+                        await this.sidenav.close();
+                    }
+                }),
+            )
+            .subscribe();
+    }
 
     /**
      *

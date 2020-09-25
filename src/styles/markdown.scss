@@ -1,0 +1,112 @@
+@use "sass:color";
+@import './config.scss';
+
+@keyframes outline-blink {
+  $c: map-get($docs-primary, default);
+  $tc: color.change($c, $alpha: 0);
+  from {
+    outline-color: $tc;
+  }
+  50% {
+    outline-color: $c;
+  }
+  to {
+    outline-color: $tc;
+  }
+}
+
+@mixin caption-style($counter, $prefix: '', $sep: '.', $suffix: ' ') {
+  counter-increment: $counter;
+  &::before {
+    content: $prefix counter(h2) $sep counter($counter) $suffix;
+  }
+}
+
+$shadow: rgba(0, 0, 0, 0.5);
+
+// font sizes
+$body-font-size: 15px;
+$code-font-size: 0.8em;
+
+[markdown] {
+  .text-align-center {
+    text-align: center;
+  }
+  p,
+  dd {
+    word-spacing: 0.05em;
+  }
+  br {
+    word-spacing: 0;
+  }
+  a {
+    text-decoration: none;
+    &.footnote-backref {
+      user-select: none;
+    }
+    @media print {
+      text-decoration: underline;
+    }
+  }
+  mark {
+    @media print {
+      border: 2px solid yellow !important;
+      background: none;
+    }
+  }
+  abbr[title] {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: 1px dotted #777;
+    @media print {
+      &:after {
+        content: '(' attr(title) ')';
+        color: #777;
+      }
+    }
+  }
+
+  .katex-error {
+    color: red;
+  }
+  p.katex-block {
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    position: relative;
+    > .katex-display {
+      margin: 0;
+      > .katex {
+        overflow-x: visible;
+        overflow-y: hidden;
+      }
+    }
+  }
+  span.katex {
+    &:before,
+    &:after {
+      content: ' ';
+      user-select: none;
+    }
+  }
+}
+
+[markdown] {
+  &:lang(en) {
+    figure > figcaption.title {
+      @include caption-style(figure, 'Fig. ');
+    }
+
+    table > caption {
+      @include caption-style(table, 'Tab. ');
+    }
+  }
+  &:lang(zh-hans) {
+    figure > figcaption.title {
+      @include caption-style(figure, '图 ');
+    }
+
+    table > caption {
+      @include caption-style(table, '表 ');
+    }
+  }
+}

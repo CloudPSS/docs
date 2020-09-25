@@ -15,12 +15,12 @@ x
 
 使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 
-```md equation
+```tex equation
 行内公式：$\sin{x}$
 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
 $$ \sum_{i=1}^n a_i = 0 $$
 ... :arrow_left: ==同理，行间公式结束后也需要换行==
-对于渲染错误的公式 $\error$，可以查看错误信息。
+对于渲染错误的公式 $\error$，可以鼠标悬浮其上查看错误信息。
 ```
 
 效果：
@@ -29,7 +29,7 @@ $$ \sum_{i=1}^n a_i = 0 $$
 > 行间公式：:arrow_left: ==注意行间公式需要**独行书写**==
 > $$ \sum_{{i=1}}^n a_i = 0 $$
 > ... :arrow_left: ==同理，行间公式结束后也需要换行==
-> 对于渲染错误的公式 $\error$，可以查看错误信息。
+> 对于渲染错误的公式 $\error$，可以鼠标悬浮其上查看错误信息。
 
 ## 链接
 
@@ -85,32 +85,32 @@ $$ \sum_{i=1}^n a_i = 0 $$
 如：
 
 ```md table
-[Prototype table]
-| | Grouping ||
+[高级表格]
+|              | Grouping                    ||
 | First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
-| Content | _Long Cell_ ||
-| Content | **Cell** | Cell |
-| Content | **Cell** | Cell |
+| Content      | _Long Cell_                 ||
+| ^^           | **Cell**      | Cell         |
+| Content      | **Cell**      | ^^           |
 
-| New section | More | Data |
+| New section  | More          | Data         |
 
-如[上表](#Prototype-table)所示……
+如[上表](#高级表格)所示……
 ```
 
 效果：
 
-[Prototype table]
-| | Grouping ||
+[高级表格]
+|              | Grouping                    ||
 | First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
-| Content | _Long Cell_ ||
-| Content | **Cell** | Cell |
-| Content | **Cell** | Cell |
+| Content      | _Long Cell_                 ||
+| ^^           | **Cell**      | Cell         |
+| Content      | **Cell**      | ^^           |
 
-| New section | More | Data |
+| New section  | More          | Data         |
 
-如[上表](#Prototype-table)所示……
+如[上表](#高级表格)所示……
 
 {% pullquote info %}
 省略开头的 `[Prototype table]` 将隐藏表名并不对表格进行编号。
@@ -205,7 +205,7 @@ console.log('hello world');
 
 有效值
 : 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
-$$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
+  $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
 : 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
 
 另一个定义

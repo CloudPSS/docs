@@ -36,7 +36,7 @@ module.exports = function (
         },
         { extends: 'code' },
     );
-    const md = markdownIt(options);
+    let md = markdownIt(options);
 
     /** @type {Array<[string, {
      *      validate?(params:string): boolean;
@@ -87,14 +87,47 @@ module.exports = function (
         [require('markdown-it-emoji')],
         [require('markdown-it-sub')],
         [require('markdown-it-sup')],
+        [
+            (md) => {
+                md.use(require('markdown-it-footnote'));
+                md.renderer.rules.footnote_ref = function render_footnote_ref(tokens, idx, options, env, slf) {
+                    const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+                    const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+                    let refid = id;
+
+                    if (tokens[idx].meta.subId > 0) {
+                        refid += ':' + tokens[idx].meta.subId;
+                    }
+                    const href = md.normalizeLink(`#fn${id}`);
+                    return `<sup class="footnote-ref"><a href="${href}" id="fnref${refid}">${caption}</a></sup>`;
+                };
+                md.renderer.rules.footnote_anchor = function render_footnote_anchor(tokens, idx, options, env, slf) {
+                    var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+
+                    if (tokens[idx].meta.subId > 0) {
+                        id += ':' + tokens[idx].meta.subId;
+                    }
+
+                    const href = md.normalizeLink(`#fnref${id}`);
+                    /* ↩ with escape code to prevent display as Apple Emoji on iOS */
+                    return ` <a href="${href}" class="footnote-backref">\u21a9\uFE0E</a>`;
+                };
+            },
+        ],
+        [require('@iktakahiro/markdown-it-katex')],
         [require('markdown-it-deflist')],
         [require('markdown-it-abbr')],
-        [require('markdown-it-footnote')],
         [require('markdown-it-ins')],
         [require('markdown-it-mark')],
-        [require('@iktakahiro/markdown-it-katex')],
         [require('markdown-it-imsize'), { autofill: false }],
-        [require('markdown-it-multimd-table')],
+        [
+            require('markdown-it-multimd-table'),
+            {
+                multiline: true,
+                rowspan: true,
+                headerless: true,
+            },
+        ],
         [require('markdown-it-center-text')],
         [require('markdown-it-kbd')],
         [
@@ -108,10 +141,27 @@ module.exports = function (
         [require('markdown-it-front-matter'), options.frontMatter],
         ...containers.map((v) => [require('markdown-it-container'), ...v]),
     ];
-    return plugins.reduce((i, [plugin, ...options]) => {
+    md = plugins.reduce((i, [plugin, ...options]) => {
         if (typeof plugin != 'function' && typeof plugin.default == 'function') {
             plugin = plugin.default;
         }
         return i.use(plugin, ...options);
     }, md);
+
+    const render = md.render.bind(md);
+    md.render = (src, env) => {
+        const r = render(src, env);
+        if (!document) {
+            return r;
+        }
+        const t = document.createElement('template');
+        t.innerHTML = r;
+        t.content.querySelectorAll('table > caption').forEach((e) => {
+            e.id = e.innerText;
+        });
+        console.log(t)
+        return t.innerHTML;
+    };
+
+    return md;
 };
