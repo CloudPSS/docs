@@ -15,13 +15,13 @@ CloudPSS 移频电磁暂态仿真平台提供了针对复包络信号的量测�
 
 对于电气量(电压、电流、功率等)的量测的基本使用方法参见[量测和输出系统](Measure.md)案例及模板，此处仅介绍其在移频电磁暂态仿真平台中的扩展。
 
-1. 首先，在测量元件，或电气元件的 Monitoring 页面内，填入待量测信号的引脚名，这里与[量测和输出系统](Measure.md)中要求一致。如下图所示。
+1. 首先，在测量元件，或电气元件的Monitoring页面内，填入待量测信号的引脚名，这里与[量测和输出系统](Measure.md)中要求一致。如下图所示。
 
-![量测页面](SFEMTpin/Monitoring.png '待量测信号')
+![量测页面](SFEMTpin/Monitoring.png "待量测信号") 
 
 2. 然后，在其它需要用到该信号的实部/虚部/模/原信号的地方，使用带有后缀的信号名。扩展引脚名为原信号后接“`:R`”、“`:I`”、“`:E`”、“`:A`”符号。如下图所示。
 
-![量测扩展使用](SFEMTpin/UseSFEMTpin.png '扩展引脚名的使用')
+![量测扩展使用](SFEMTpin/UseSFEMTpin.png "扩展引脚名的使用") 
 
 如果直接调用原信号，那么调用的将是解析包络的原信号（即电磁暂态的时域实数信号）。
 
@@ -30,8 +30,9 @@ CloudPSS 移频电磁暂态仿真平台提供了针对复包络信号的量测�
 [扩展引脚含义]
 | 扩展引脚类型 | 含义 | 数学表达式 |
 | :------------: | :-----------: | :-----------: |
-| **x:R** | x 的实部 | ${\mathop{\rm Re}\nolimits} \left( x \right)$ |
-| **x:I** | x 的虚部 | ${\mathop{\rm Im}\nolimits} \left( x \right)$ |
-| **x:E** | x 的包络 | $\sqrt{ {\mathop{\rm Re}\nolimits} { {\left( x \right)}^2} + {\mathop{\rm Im}\nolimits} { {\left( x \right)}^2} }$ |
-| **x:A** | x 的原信号 | ${\mathop{\rm Re}\nolimits} \left( {x \cdot {e^{j{\omega _s}t} } } \right)$ |
+| **x:R** | x的实部 | ${\mathop{\rm Re}\nolimits} \left( x \right)$ |
+| **x:I** | x的虚部 | ${\mathop{\rm Im}\nolimits} \left( x \right)$ |
+| **x:E** | x的包络 | $\sqrt{ {\mathop{\rm Re}\nolimits} { {\left( x \right)}^2} + {\mathop{\rm Im}\nolimits} { {\left( x \right)}^2} }$ |
+| **x:A** | x的原信号 | ${\mathop{\rm Re}\nolimits} \left( {x \cdot {e^{j{\omega _s}t} } } \right)$ |
 | **x** | 同**x:A** | ${\mathop{\rm Re}\nolimits} \left( {x \cdot {e^{j{\omega _s}t} } } \right)$ |
+

@@ -8,7 +8,6 @@ order: 300
 ---
 
 ## Description
-
 With the advancement of power electronic conversion technology, the proportion of Photovoltaic grid-connected generation system has gradually increased. Detailed modeling and simulation of centralized and distributed photovoltaic generation systems is of great significance for studying the impact of photovoltaic grid-connected.
 
 CloudPSS provides a detailed model and average model of a PV grid-connected generation system and provides a comparison of the two models. Users can select the corresponding model according to their needs, and modify and research on the basis.
@@ -33,7 +32,7 @@ The average model's control system omits the SPWM control, but adds the averager
 
 ## Simulation
 
-The simulation step size is set according to the selected model, and the electromagnetic transient simulation of the photovoltaic grid-connected generation system is performed. Among them, the detailed model has discrete switching events. It is recommended to check the `Switch/Discrete Event Processing Enhancement` option in the `Format Panel`->`Electromagnetic Transient`->`Solver Settings` and simulate with a smaller simulation step. If the PWM carrier frequency is $f_c$, it is recommended that the simulation step size be less than $1/({20f_c})$. When using the average model, since there is no switching event, the `Normal (default)` option can be selected to set a higher simulation step size (50 μs is recommended, usually no more than 100 μs).
+The simulation step size is set according to the selected model, and the electromagnetic transient simulation of the photovoltaic grid-connected generation system is performed. Among them, the detailed model has discrete switching events. It is recommended to check the `Switch/Discrete Event Processing Enhancement` option in the `Format Panel`->`Electromagnetic Transient`->`Solver Settings`  and simulate with a smaller simulation step. If the PWM carrier frequency is $f_c$, it is recommended that the simulation step size be less than $1/({20f_c})$. When using the average model, since there is no switching event, the `Normal (default)` option can be selected to set a higher simulation step size (50 μs is recommended, usually no more than 100 μs).
 
 ### Test1：Illumination, and temperature change
 

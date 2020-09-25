@@ -8,7 +8,6 @@ order: 100
 ---
 
 ## Description
-
 The line commutated converter high voltage direct current (LCC-HVDC) transmission system based on the power converter has the advantages of large transmission power and mature technology, and has played an increasingly important role in the power system in recent years.
 
 CloudPSS provides the LCC-HVDC standard test system provided by the international large power grid organization. On the standard test system, CloudPSS further provides four LCC-HVDC simulation models for monopolar 12-pulse, monopolar dual 12-pulse, bipolar 12-pulse, and bipolar dual 12-pulse. Users can select them according to their needs. The simulation model is introduced with the monopolar 12-pulse as an example. The monopolar dual 12-pulse, bipolar 12-pulse and bipolar dual 12-pulse electrical and control systems are similar, and the descriptions of them are omitted.

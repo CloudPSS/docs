@@ -12,14 +12,13 @@ CloudPSS provides various measurement/output components for users.
 ## Electrical Quantity Measurement
 
 There are two methods for electrical quantity (voltage, current, power, etc.) measurement.
-
-- Use measurement components (such as Voltage Meters, Current Meters, Power Meters, etc.) to obtain the measurement signal name (starting with mark #);
-- Fill in the output measurement signal name (starting with mark #) in the `Component parameter settings->Monitoring`.
++ Use measurement components (such as Voltage Meters, Current Meters, Power Meters, etc.) to obtain the measurement signal name (starting with mark #);
++ Fill in the output measurement signal name (starting with mark #) in the `Component parameter settings->Monitoring`.
 
 For example, to measure the current of a resistance, drag the ammeter and connect it in series, and fill in the corresponding label name in `Parameter settings->Monitoring->Branch Current [kA]`, as shown in the figure below. The measured signal can be further connected to the control, electrical or output elements.
 
-![电流测量](Measure/L1.png 'Current measurement using current meter')
-![电流测量](Measure/L2.png 'Current measurement using signal name')
+![电流测量](Measure/L1.png "Current measurement using current meter")
+![电流测量](Measure/L2.png "Current measurement using signal name")
 
 ## Signal Management
 
@@ -33,14 +32,14 @@ In order to display the output signal, both the `Output Channel` and the `Oscill
 
 After the simulation is finished, users can click the `Data Download` button, and then select the corresponding data channels to download.
 
-![波形展示](Measure/datadownload.png 'Waveform display interface')
-![数据下载](Measure/datadownloaddialog.png 'Data download interface')
+![波形展示](Measure/datadownload.png "Waveform display interface")
+![数据下载](Measure/datadownloaddialog.png "Data download interface")
 
 {% pullquote tip %}
 Data download can only be available for **The saved project**.
 {% endpullquote %}
 
-The downloaded data is a compressed data format and can be parsed by the following MatLab code. After parsing, the data of each channel is stored in the structure `Ch_X` (`X` is the serial number, `Ch_X.Name` is the channel name, and `Ch_X.Data` is the channel data).
+The downloaded data is a compressed data format and can be parsed by the following MatLab code. After parsing, the data of each channel is stored in the structure `Ch_X` (`X` is the serial number, `Ch_X.Name` is the channel name, and `Ch_X.Data` is the channel data). 
 
 {% pullquote tip %}
 If the parsing code reports an error, please re-download the latest code and try again.
@@ -93,7 +92,7 @@ for ptr = 1: ChannelNo
     timeline = timeline.';
     eval(sprintf('%s.Data(:,1)= timeline;',ChNo));
     eval(sprintf('%s.Data(:,2)= data(dataloc:(dataloc-1)+ChannelPointNum(ptr));',ChNo));
-
+    
     %%
     dataloc = dataloc + ChannelPointNum(ptr);
 end
@@ -107,3 +106,16 @@ end
 
 clear Channel ChannelNo ChannelPointNum ChannelSpTime ChNo config data dataloc deltaT endtime fid filename fname loc pname ptr starttime temp tempcell tempNum Tend textcell timeline Tstart ans
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
