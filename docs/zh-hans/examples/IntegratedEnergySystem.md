@@ -4,7 +4,7 @@ type: examples
 author: Jack
 category: 2300
 order: 1
-author_email:
+author_email: 
 ---
 
 ## 模型描述
@@ -13,9 +13,10 @@ author_email:
 
 该园区电源设备有：燃气轮机、外部电源、光伏组件；储能设备包含蓄电池和蓄冰空调；主要负荷包括电负荷、冷水负荷、热水负荷和热气负荷，其冷热源设备包括：电压缩制冷机、吸收式制冷机、余热锅炉、燃气锅炉、尾气排放装置；输变电系统设备包括母线、传输线和变压器。
 
-_模型拓扑结构图如下：_
+*模型拓扑结构图如下：*
 
 ![拓扑结构图](IntegratedEnergySys/IESCase-Topology.png)
+
 
 ## 模型参数及边界条件
 
@@ -24,23 +25,23 @@ _模型拓扑结构图如下：_
 3. 输入园区的典型日电、热、冷负荷参数
 4. 输入园区综合能源系统的运行策略
 
-_典型日光照水平：_
+*典型日光照水平：*
 
 ![典型日光照水平](IntegratedEnergySys/IESCaseRadiation.png =2000x)
 
-_电负荷：_
+*电负荷：*
 
 ![电负荷](IntegratedEnergySys/IESCasePowerLoad.png =2000x)
 
-_热负荷：_
+*热负荷：*
 
 ![热负荷](IntegratedEnergySys/IESCaseHeatLoad.png =2000x)
 
-_冷负荷：_
+*冷负荷：*
 
 ![冷负荷](IntegratedEnergySys/IESCaseColdLoad.png =2000x)
 
-_运行策略：_
+*运行策略：*
 
 ![运行策略](IntegratedEnergySys/IESCaserRuningStrategy.png =2000x)
 
@@ -52,17 +53,18 @@ _运行策略：_
 
 ## 仿真结果分析验证
 
-_供冷仿真结果示例：_
+*供冷仿真结果示例：*
 
 ![供冷仿真结果](IntegratedEnergySys/IESCaseColdResult.png)
 
-_外部电网供电购电仿真结果示例：_
+*外部电网供电购电仿真结果示例：*
 
 ![外部电网供电购电仿真结果](IntegratedEnergySys/IESCaseExternalPowerResult.png)
 
-_供热负荷仿真结果示例：_
+*供热负荷仿真结果示例：*
 
 ![供热仿真结果](IntegratedEnergySys/IESCaseHeatLoadResult.png)
+
 
 ## 相关视频
 
