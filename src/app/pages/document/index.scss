@@ -1,7 +1,19 @@
-:host {
-  display: flex;
+mat-sidenav-container {
+  height: 100%;
 }
 
-nav, main {
-  overflow-y: auto;
+mat-sidenav {
+  width: 320px;
+}
+
+main {
+  overflow: auto;
+  height: 100%;
+  width: 100%;
+}
+
+#sidenav-button {
+  position: absolute;
+  top: 0;
+  left: 0;
 }

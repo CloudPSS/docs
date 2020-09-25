@@ -32,7 +32,6 @@ export class NavbarComponent {
      *
      */
     async navigate(item: DocumentItem): Promise<void> {
-        console.log(item);
         if (item.path) {
             await this.router.navigateByUrl(item.path.parsed);
         }

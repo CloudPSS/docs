@@ -90,7 +90,9 @@ export class NavListComponent {
     /**
      *
      */
-    navigate(item: DocumentItem): void {
-        if (item.path) void this.router.navigateByUrl(item.path.parsed);
+    async navigate(item: DocumentItem): Promise<void> {
+        if (item.path) {
+            await this.router.navigateByUrl(item.path.parsed);
+        }
     }
 }
