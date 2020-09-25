@@ -8,9 +8,10 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
-import { NavListComponent } from './components/nav-list';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 
 import { AppComponent } from './root';
@@ -22,6 +23,7 @@ import { DocumentComponent } from './pages/document';
 import { ErrorComponent } from './pages/error';
 import { MarkdownComponent } from './components/markdown';
 import { NavbarComponent } from './components/navbar';
+import { NavListComponent } from './components/nav-list';
 
 /**
  * 主模块
@@ -53,6 +55,8 @@ import { NavbarComponent } from './components/navbar';
         MatButtonModule,
         MatIconModule,
         MatMenuModule,
+        MatListModule,
+        MatSidenavModule,
         MatToolbarModule,
         MatTreeModule,
     ],
