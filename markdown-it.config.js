@@ -1,5 +1,10 @@
 const markdownIt = require('markdown-it');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
+/** @type {import('mermaid').Mermaid} */
+const mermaid = require('mermaid');
+const { fromEvent } = require('rxjs');
+const { debounceTime } = require('rxjs/operators');
+const chartJs = require('chart.js');
 
 /**
  *
@@ -10,7 +15,9 @@ module.exports = function (
         html: true,
         typographer: true,
         highlight: (string, lang) => {
-            return `<pre><code is="md-highlight" language="${escapeHtml(lang)}">${escapeHtml(string)}</code></pre>`;
+            return `<pre ${escapeHtml(lang)}><code is="md-highlight" language="${escapeHtml(lang)}">${escapeHtml(
+                string,
+            )}</code></pre>`;
         },
         frontMatter: () => {},
     },
@@ -21,8 +28,66 @@ module.exports = function (
             constructor() {
                 super();
             }
+            /** @type {Record<string, (this:HTMLElement)=>void>} */
+            static custom = {
+                mermaid: function () {
+                    const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
+                    this.style.display = 'block';
+                    const code = this.innerText;
+                    const render = () => {
+                        console.log('render', id);
+                        this.innerHTML = `<div id="${id}"></div>`;
+                        mermaid.render(
+                            id,
+                            code,
+                            (svg, func) => {
+                                this.innerHTML = svg;
+                                func?.(this);
+                            },
+                            this,
+                        );
+                    };
+                    const rerender = fromEvent(window, 'resize').pipe(debounceTime(100)).subscribe(render);
+                    this.disconnectedCallback = function () {
+                        rerender.unsubscribe();
+                    };
+                    render();
+                },
+                chart: function () {
+                    const code = this.innerText;
+                    this.innerText = '';
+                    try {
+                        /** @type {import('chart.js').ChartConfiguration} */
+                        const opt = JSON.parse(code);
+                        opt.options = { ...opt.options, responsive: false };
+                        this.style.display = 'block';
+                        const canvas = document.createElement('canvas');
+                        this.appendChild(canvas);
+                        canvas.style.maxWidth = '800px';
+                        const chart = new chartJs(canvas, opt);
+                        const render = () => {
+                            canvas.style.width = '100%';
+                            canvas.style.height = '';
+                            chart.resize();
+                            canvas.style.width = '100%';
+                            canvas.style.height = '';
+                        };
+                        render();
+                        const rerender = fromEvent(window, 'resize').pipe(debounceTime(100)).subscribe(render);
+                        this.disconnectedCallback = function () {
+                            rerender.unsubscribe();
+                        };
+                    } catch (ex) {
+                        this.innerText = String(ex);
+                    }
+                },
+            };
             connectedCallback() {
                 const lang = this.getAttribute('language');
+                if (lang in this.constructor.custom) {
+                    this.constructor.custom[lang].call(this);
+                    return;
+                }
                 const highlighter = Prism.languages[lang];
                 const code = this.innerText;
                 if (highlighter) {
@@ -139,6 +204,13 @@ module.exports = function (
             },
         ],
         [require('markdown-it-front-matter'), options.frontMatter],
+        [
+            require('markdown-it-block-embed'),
+            {
+                outputPlayerSize: false,
+            },
+        ],
+        [require('markdown-it-implicit-figures'), { figcaption: true }],
         ...containers.map((v) => [require('markdown-it-container'), ...v]),
     ];
     md = plugins.reduce((i, [plugin, ...options]) => {
@@ -157,9 +229,11 @@ module.exports = function (
         const t = document.createElement('template');
         t.innerHTML = r;
         t.content.querySelectorAll('table > caption').forEach((e) => {
-            e.id = e.innerText;
+            e.parentElement.id = e.innerText;
         });
-        console.log(t)
+        t.content.querySelectorAll('figure > figcaption').forEach((e) => {
+            e.parentElement.id = e.innerText;
+        });
         return t.innerHTML;
     };
 

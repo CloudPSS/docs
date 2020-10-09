@@ -1,27 +1,23 @@
-import { Component, Input, OnChanges, ElementRef, ViewChild, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SourceService } from '@/services/source';
-import { RenderService } from '@/services/render';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { map, tap } from 'rxjs/operators';
-import { File } from '@/services/source/interfaces';
-import { TranslateService } from '@ngx-translate/core';
-import { combineLatest, Subject, BehaviorSubject } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { combineLatest, BehaviorSubject } from 'rxjs';
 import { I18nService } from '@/services/i18n';
 import { DocumentItem } from '@/interfaces/manifest';
-import { Router } from '@angular/router';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
+import { NavBaseComponent } from '../nav-base';
 
 /**
- *
+ * 树节点
  */
 interface TreeItem {
     /**
-     *
+     * 层级
      */
     level: number;
     /**
-     *
+     * 文档
      */
     document: DocumentItem;
 }
@@ -34,16 +30,18 @@ interface TreeItem {
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class NavListComponent {
-    constructor(readonly source: SourceService, readonly i18n: I18nService, readonly router: Router) {
+export class NavListComponent extends NavBaseComponent {
+    constructor(readonly source: SourceService, readonly i18n: I18nService) {
+        super();
         this.nav.subscribe((i) => {
             this.dataSource.data = i ? [i] : [];
             this.treeControl.expandAll();
         });
     }
-    /** */
+
+    /** 当前分类 */
     private _category = new BehaviorSubject<string>('');
-    /** */
+    /** 当前分类 */
     @Input() get category(): string {
         return this._category.value;
     }
@@ -51,25 +49,23 @@ export class NavListComponent {
         this._category.next(value);
     }
 
-    /** */
+    /** 导航文档列表 */
     readonly nav = combineLatest([this.i18n.lang, this.source.current, this._category]).pipe(
-        tap((x) => console.log(x)),
         map(([lang, info, category]) => {
             if (!category) return null;
             const root = info.manifest.sitemap[lang].children;
             if (!root) return null;
             return root.find((v) => v.name === category);
         }),
-        tap((x) => console.log(x)),
     );
 
-    /** */
+    /** 导航树 */
     readonly treeControl = new FlatTreeControl<TreeItem>(
         (node) => node.level,
         (node) => node.document.hasChild(),
     );
 
-    /** */
+    /** 数据源 */
     readonly dataSource = new MatTreeFlatDataSource(
         this.treeControl,
         new MatTreeFlattener<DocumentItem, TreeItem>(
@@ -85,14 +81,5 @@ export class NavListComponent {
      */
     hasChild(_: number, node: TreeItem): boolean {
         return node.document.hasChild();
-    }
-
-    /**
-     *
-     */
-    async navigate(item: DocumentItem): Promise<void> {
-        if (item.path) {
-            await this.router.navigateByUrl(item.path.parsed);
-        }
     }
 }

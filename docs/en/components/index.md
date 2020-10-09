@@ -1,6 +1,6 @@
 ---
-title:  
-type: components
+title: Components
+order: 200
 ---
 
 CloudPSS provides a rich library of components, the classification and specific components are shown in the following table:

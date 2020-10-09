@@ -1,22 +1,20 @@
-import { Component, Input, OnChanges, ElementRef, ViewChild, Output, EventEmitter } from '@angular/core';
+import {
+    Component,
+    Input,
+    OnChanges,
+    ElementRef,
+    ViewChild,
+    Output,
+    EventEmitter,
+    SecurityContext,
+    AfterViewInit,
+} from '@angular/core';
 import { SourceService } from '@/services/source';
 import { RenderService } from '@/services/render';
-import { map, tap } from 'rxjs/operators';
 import { File } from '@/services/source/interfaces';
-
-/**
- * 导航事件
- */
-export interface NavigateEvent {
-    /**
-     * 目标路径
-     */
-    path: string;
-    /**
-     * 目标 hash
-     */
-    hash: string;
-}
+import { DomSanitizer } from '@angular/platform-browser';
+import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
+import { BehaviorSubject } from 'rxjs';
 
 /**
  * 显示md文档
@@ -26,60 +24,64 @@ export interface NavigateEvent {
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class MarkdownComponent implements OnChanges {
-    constructor(readonly source: SourceService, readonly render: RenderService) {}
+export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEventSource {
+    constructor(readonly source: SourceService, readonly render: RenderService, readonly sanitizer: DomSanitizer) {}
 
-    /** 文档路径 */
-    @Input() path?: string | null;
-    /** 原始文件 */
-    file?: File<string>;
+    /** MD 文件 */
+    @Input() file?: File<string> | null;
 
-    /** */
+    /** MD 渲染结果 */
+    rendered = new BehaviorSubject<string>('');
+
+    /** MD 文档节点 */
     @ViewChild('doc') doc!: ElementRef<HTMLElement>;
 
-    /** 导航 */
+    /** @inheritdoc */
     @Output() navigate = new EventEmitter<NavigateEvent>();
 
-    /** */
+    /** 标题 */
     headers: Array<{
         title: string;
         level: number;
         link: string;
     }> = [];
 
-    /**
-     * 更新文档
-     */
-    updateDoc(rendered: string): void {
-        const doc = this.doc.nativeElement;
-        doc.innerHTML = rendered;
-        this.headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')).map((h) => {
-            const url = new URL(location.href);
-            url.hash = h.id;
-            return {
-                title: h.innerText,
-                level: Number.parseInt(h.tagName.slice(1)),
-                link: url.href,
-            };
+    /** @inheritdoc */
+    ngAfterViewInit(): void {
+        this.rendered.subscribe((rendered) => {
+            const doc = this.doc.nativeElement;
+            doc.innerHTML = '';
+            setTimeout(() => {
+                doc.innerHTML = rendered;
+                this.headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')).map((h) => {
+                    const url = new URL(location.href);
+                    url.hash = h.id;
+                    return {
+                        title: h.innerText,
+                        level: Number.parseInt(h.tagName.slice(1)),
+                        link: url.href,
+                    };
+                });
+                setTimeout(() => this.scrollTo(decodeURIComponent(location.hash.slice(1))), 200);
+            }, 0);
         });
-        setTimeout(() => this.scrollTo(decodeURIComponent(location.hash.slice(1))), 200);
     }
 
     /**
-     *
+     * 滚动到指定元素或页首
      */
-    scrollTo(id: string): boolean {
-        if (!id) return false;
+    scrollTo(id?: string): boolean {
+        if (!id) {
+            this.doc.nativeElement.scrollIntoView();
+            return true;
+        }
         const target = document.getElementById(id);
         console.log(id, target);
         if (!target) return false;
-        target.id = '';
-        location.hash = id;
-        target.id = id;
-        target.scrollIntoView({
-            block: 'start',
-            behavior: 'smooth',
-        });
+        location.hash = '';
+        setTimeout(() => {
+            location.hash = id;
+        }, 0);
         return true;
     }
 
@@ -87,32 +89,20 @@ export class MarkdownComponent implements OnChanges {
      * @inheritdoc
      */
     ngOnChanges(): void {
-        if (!this.path) {
-            this.doc.nativeElement.innerHTML = '';
-            this.file = undefined;
+        if (!this.file) {
+            this.rendered.next('');
             return;
         }
-        const doc = this.source.findDocument(this.path);
-        if (!doc) {
-            if (this.doc) this.doc.nativeElement.innerHTML = '';
-            this.file = undefined;
-            this.navigate.emit();
-            return;
+        try {
+            const html = this.render.render(this.file);
+            this.rendered.next(html);
+        } catch (ex) {
+            this.rendered.next(this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '');
         }
-        this.source
-            .file(doc, 'text')
-            .pipe(
-                tap((f) => (this.file = f)),
-                map((s) => this.render.render(s)),
-            )
-            .subscribe(
-                (v) => this.updateDoc(v),
-                (err) => this.updateDoc(String(err)),
-            );
     }
 
     /**
-     *
+     * 点击文档元素
      */
     onClick(event: HTMLElementEventMap['click']): void {
         const file = this.file;
@@ -123,9 +113,9 @@ export class MarkdownComponent implements OnChanges {
             const href = new URL(target.href, file.url);
             if (href.origin === location.origin) {
                 if (location.pathname !== href.pathname) {
-                    this.navigate.emit({ path: href.pathname, hash: href.hash });
+                    this.navigate.emit(new NavigateEvent(href.pathname, href.hash));
                 } else {
-                    location.hash = href.hash;
+                    this.scrollTo(decodeURIComponent(href.hash.slice(1)));
                 }
             } else {
                 window.open(href.href, '_blank', 'noopener');
@@ -134,11 +124,11 @@ export class MarkdownComponent implements OnChanges {
     }
 
     /**
-     *
+     * 点击TOC列表元素
      */
     onNavClick(event: HTMLElementEventMap['click']): void {
         event.preventDefault();
-        const hash = decodeURIComponent(new URL((event.target as HTMLAnchorElement).href).hash);
-        this.scrollTo(hash.slice(1));
+        const id = decodeURIComponent(new URL((event.target as HTMLAnchorElement).href).hash.slice(1));
+        this.scrollTo(id);
     }
 }
