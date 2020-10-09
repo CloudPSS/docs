@@ -9,28 +9,17 @@ const routes: Routes = [
         component: ErrorComponent,
     },
     {
-        path: ':lang',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                component: DocumentComponent,
-            },
-            {
-                path: ':category',
-                children: [
-                    {
-                        matcher: (segments) => {
-                            return {
-                                consumed: segments,
-                                posParams: Object.fromEntries(Object.entries(segments)),
-                            };
-                        },
-                        component: DocumentComponent,
-                    },
-                ],
-            },
-        ],
+        matcher: (segments) => {
+            const [language, category, ...rest] = segments;
+            const posParams = { ...Object.fromEntries(Object.entries(rest)) };
+            if (language) posParams.language = language;
+            if (category) posParams.category = category;
+            return {
+                consumed: segments,
+                posParams,
+            };
+        },
+        component: DocumentComponent,
     },
 ];
 

@@ -1,6 +1,6 @@
 <mat-nav-list>
   <mat-list-item
-    [routerLink]="node.document.path?.parsed"
+    (click)="onNavigate(node.document)"
     [disabled]="node.document.path == null"
     *ngFor="let node of treeControl.dataNodes"
   >

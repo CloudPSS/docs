@@ -1,10 +1,10 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenav [mode]="(layout.sidenavMode | async) || 'side'" [autoFocus]="false">
-    <app-nav-list [category]="(category | async) || ''"></app-nav-list>
+    <app-nav-list [category]="(category | async) || ''" (navigate)="onNavigate($event)"></app-nav-list>
   </mat-sidenav>
-  <main>
-    <app-markdown [path]="url | async" (navigate)="onNavigate($event)"></app-markdown>
-  </main>
+  <mat-sidenav-content role="main">
+    <app-markdown [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>
+  </mat-sidenav-content>
 </mat-sidenav-container>
 
 <button id="sidenav-button" (click)="sidenav.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>

@@ -1,12 +1,12 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { Observable, combineLatest, interval } from 'rxjs';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { of } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, delay, mergeMap } from 'rxjs/operators';
-import { NavigateEvent } from '@/components/markdown';
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { LayoutService } from '@/services/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { NavListComponent } from '@/components/nav-list';
+import { Title } from '@angular/platform-browser';
+import { SourceService } from '@/services/source';
+import { NavigateEvent } from '@/interfaces/navigate';
 
 /**
  * 文档页面组件
@@ -16,14 +16,20 @@ import { NavListComponent } from '@/components/nav-list';
     styleUrls: ['./index.scss'],
 })
 export class DocumentComponent implements AfterViewInit {
-    constructor(readonly route: ActivatedRoute, readonly router: Router, readonly layout: LayoutService) {}
-    /** */
+    constructor(
+        readonly route: ActivatedRoute,
+        readonly router: Router,
+        readonly source: SourceService,
+        readonly layout: LayoutService,
+        readonly title: Title,
+    ) {}
+    /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
 
     /** url */
     readonly url = this.route.params.pipe(
         map((s) => {
-            const lang = s.lang as string;
+            const lang = s.language as string;
             const category = s.category as string;
             const path: string[] = [];
             for (const key in s) {
@@ -37,10 +43,25 @@ export class DocumentComponent implements AfterViewInit {
             path.unshift('');
             return path.join('/');
         }),
+        tap(() => {
+            if (this.sidenav && this.sidenav.mode !== 'side') {
+                void this.sidenav.close();
+            }
+        }),
         tap((s) => console.log(s)),
     );
 
-    /** */
+    /** 当前文档 */
+    readonly document = this.url.pipe(
+        mergeMap((u) => {
+            const [doc, fm] = this.source.findDocument(u) ?? [];
+            if (!doc) return of(null);
+            this.title.setTitle(fm?.title ?? '');
+            return this.source.file(doc, 'text');
+        }),
+    );
+
+    /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
     /** @inheritdoc */
     ngAfterViewInit(): void {
@@ -48,6 +69,7 @@ export class DocumentComponent implements AfterViewInit {
             .pipe(
                 delay(100),
                 mergeMap(async (d) => {
+                    console.log('x');
                     if (d === 'side') {
                         await this.sidenav.open();
                     } else {
@@ -59,13 +81,13 @@ export class DocumentComponent implements AfterViewInit {
     }
 
     /**
-     *
+     * 导航页面
      */
-    onNavigate(target?: NavigateEvent): void {
+    async onNavigate(target?: NavigateEvent): Promise<void> {
         if (target) {
-            void this.router.navigateByUrl(target.path + target.hash);
+            await this.router.navigateByUrl(target.path + target.hash);
         } else {
-            void this.router.navigate(['error', 404], { replaceUrl: true });
+            await this.router.navigate(['error', 404], { replaceUrl: true });
         }
     }
 }

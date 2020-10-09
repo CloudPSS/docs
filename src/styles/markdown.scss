@@ -1,6 +1,22 @@
 @use "sass:color";
 @import './config.scss';
 
+$dark: #2c3e50;
+$medium: #34495e;
+$light: #7f8c8d;
+$theme: #4285f4;
+$border: #dddddd;
+$codebg: #f8f8f8;
+$shadow: rgba(0, 0, 0, 0.5);
+$quotebg: rgba(#fffdf4, 0.5);
+$quotebd: $border;
+$red: #ff6666;
+$info: #1c90f3;
+
+// font sizes
+$body-font-size: 15px;
+$code-font-size: 0.9em;
+
 @keyframes outline-blink {
   $c: map-get($docs-primary, default);
   $tc: color.change($c, $alpha: 0);
@@ -14,21 +30,17 @@
     outline-color: $tc;
   }
 }
-
-@mixin caption-style($counter, $prefix: '', $sep: '.', $suffix: ' ') {
-  counter-increment: $counter;
-  &::before {
-    content: $prefix counter(h2) $sep counter($counter) $suffix;
-  }
+[markdown] :target {
+  outline: solid 2px;
+  animation: outline-blink 0.8s 5 forwards;
 }
 
-$shadow: rgba(0, 0, 0, 0.5);
-
-// font sizes
-$body-font-size: 15px;
-$code-font-size: 0.8em;
-
 [markdown] {
+  min-width: 0;
+  * {
+    scroll-behavior: smooth;
+    scroll-margin: 20px;
+  }
   .text-align-center {
     text-align: center;
   }
@@ -36,11 +48,27 @@ $code-font-size: 0.8em;
   dd {
     word-spacing: 0.05em;
   }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 600;
+    color: map-get($docs-primary, 900);
+  }
   br {
     word-spacing: 0;
   }
   a {
     text-decoration: none;
+    color: map-get($docs-primary, 500);
+    &:hover {
+      color: map-get($docs-primary, 700);
+    }
+    &:active {
+      color: map-get($docs-primary, 600);
+    }
     &.footnote-backref {
       user-select: none;
     }
@@ -87,26 +115,144 @@ $code-font-size: 0.8em;
       content: ' ';
       user-select: none;
     }
-  }
-}
-
-[markdown] {
-  &:lang(en) {
-    figure > figcaption.title {
-      @include caption-style(figure, 'Fig. ');
-    }
-
-    table > caption {
-      @include caption-style(table, 'Tab. ');
+    .katex-html,
+    semantics > :not(annotation) {
+      user-select: none;
     }
   }
-  &:lang(zh-hans) {
-    figure > figcaption.title {
-      @include caption-style(figure, '图 ');
-    }
 
-    table > caption {
-      @include caption-style(table, '表 ');
+  code:not([is]),
+  kbd,
+  samp {
+    font-size: $code-font-size;
+    background-color: #f8f8f8;
+    @media print {
+      background-color: white !important;
+    }
+  }
+
+  kbd {
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 3px;
+    padding: 2px 6px;
+    box-shadow: 0 0 2px 1px $shadow;
+    margin: 0 2px;
+    font-size: small;
+    background: #eee;
+    color: #222;
+    font-variant: small-caps;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1em;
+    @media print {
+      background: #fff;
+      color: #000;
+      box-shadow: none;
+      border: 2px solid $border;
+    }
+    &:hover {
+      color: #000;
+      box-shadow: 0 0 2px 2px $shadow;
+    }
+  }
+
+  code:not([is]) {
+    display: inline-block;
+    color: map-get($docs-accent, text);
+    padding: 0 2px;
+    margin: 0 2px;
+    border: 1px solid #eee;
+    border-radius: 2px;
+    vertical-align: text-bottom;
+    @media print {
+      border: rgba(map-get($docs-accent, A700), 0.25) solid 1px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  figure {
+    img {
+      display: block;
+      margin: auto;
+    }
+    figcaption {
+      text-align: center;
+    }
+  }
+
+  pre:not([mermaid]):not([chart]) {
+    background-color: $codebg;
+    padding: 1em 0.5em;
+    margin: 1.2em 0;
+    border-radius: 4px;
+    box-shadow: 0 0 4px $shadow;
+    @media print {
+      background-color: white;
+    }
+  }
+  code[is='md-highlight'] {
+    font-size: $body-font-size;
+    &[language='mermaid'],
+    &[language='chart'] {
+      display: block;
+      overflow-x: auto;
+      position: relative;
+      margin: 1em 0;
+      page-break-inside: avoid;
+      > * {
+        display: block;
+        margin: auto;
+      }
+
+      svg * {
+        user-select: none;
+      }
+    }
+  }
+
+  dl,
+  blockquote {
+    position: relative;
+    margin: 1em 0;
+    background-color: $quotebg;
+    border: 0.02px solid $quotebd;
+    border-left: 4px solid $theme;
+    padding: 0 12px 0 20px;
+    code {
+      background-color: #efefef;
+    }
+    em {
+      color: $medium;
+    }
+    footer {
+      text-align: right;
+      margin: 1em -2px 1em 4px;
+      > strong {
+        font-weight: 550;
+      }
+      > cite {
+        font-style: italic;
+        &:before {
+          content: ' — ';
+        }
+      }
+    }
+    &:before {
+      user-select: none;
+      position: absolute;
+      transform: translate(-32px, 8px);
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      text-align: center;
+      line-height: 20px;
+      font-weight: bold;
+      font-size: 14px;
     }
   }
 }

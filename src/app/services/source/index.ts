@@ -86,6 +86,7 @@ export class SourceService {
                 obj.children.push(child);
             }
             if (rest.length === 0) {
+                item.title = item.title ?? child.title;
                 Object.assign(child, item);
                 child.path = path;
                 return;
@@ -97,7 +98,17 @@ export class SourceService {
         const reorder = (item: DocumentItem): void => {
             if (!item.children) return;
             item.children.forEach(reorder);
-            item.children.sort((a, b) => Number(a.order) - Number(b.order));
+            item.children.sort((a, b) => {
+                const o = (x: DocumentItem): number => {
+                    const o = Number(x.order ?? Number.MAX_SAFE_INTEGER);
+                    if (Number.isNaN(o)) return Number.MAX_SAFE_INTEGER;
+                    return o;
+                };
+                const ao = o(a);
+                const bo = o(b);
+                if (ao - bo === 0) return a.title.localeCompare(b.title);
+                return ao - bo;
+            });
         };
 
         const root = new DocumentItem('');
@@ -113,6 +124,7 @@ export class SourceService {
                 parsed: '/' + pathSegments.join('/'),
             });
         }
+        console.log(root);
         reorder(root);
         manifest = {
             ...manifest,
@@ -140,12 +152,14 @@ export class SourceService {
     }
 
     /** 查找文档 */
-    findDocument(path: string, base?: string): string | undefined {
+    findDocument(path: string, base?: string): [string, FrontMatter] | undefined {
         path = this.normalizePath(path, base);
         path = path.replace(/(\.md|\.html?|\/)$/, '');
-        return Object.keys(this.current.value.manifest.documents).find(
+        const k = Object.keys(this.current.value.manifest.documents).find(
             (p) => p === path || p === path + '.md' || p === path + '/index.md',
         );
+        if (!k) return undefined;
+        return [k, this.current.value.manifest.documents[k]];
     }
 
     /** 获取版本详情 */

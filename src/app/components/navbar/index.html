@@ -1,4 +1,4 @@
-<mat-toolbar>
-  CloudPSS
-  <button mat-button *ngFor="let item of (nav | async)!" (click)="navigate(item)">{{item.title}}</button>
+<mat-toolbar [color]="'primary'">
+  <button id="home" mat-button [routerLink]="i18n.lang | async">CloudPSS</button>
+  <button mat-button *ngFor="let item of (nav | async)!" (click)="onNavigate(item)">{{item.title}}</button>
 </mat-toolbar>

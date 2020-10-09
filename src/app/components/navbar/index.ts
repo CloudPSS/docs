@@ -1,14 +1,9 @@
-import { Component, Input, OnChanges, ElementRef, ViewChild, Output, EventEmitter, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SourceService } from '@/services/source';
-import { RenderService } from '@/services/render';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { map, tap } from 'rxjs/operators';
-import { File } from '@/services/source/interfaces';
-import { TranslateService } from '@ngx-translate/core';
+import { map } from 'rxjs/operators';
 import { combineLatest } from 'rxjs';
 import { I18nService } from '@/services/i18n';
-import { DocumentItem } from '@/interfaces/manifest';
-import { Router } from '@angular/router';
+import { NavBaseComponent } from '../nav-base';
 
 /**
  * 显示md文档
@@ -18,22 +13,13 @@ import { Router } from '@angular/router';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class NavbarComponent {
-    constructor(readonly source: SourceService, readonly i18n: I18nService, readonly router: Router) {}
-
-    /** */
-    readonly nav = combineLatest([this.i18n.lang, this.source.current]).pipe(
-        tap((x) => console.log(x)),
-        map(([lang, info]) => info.manifest.sitemap[lang].children),
-        tap((x) => console.log(x)),
-    );
-
-    /**
-     *
-     */
-    async navigate(item: DocumentItem): Promise<void> {
-        if (item.path) {
-            await this.router.navigateByUrl(item.path.parsed);
-        }
+export class NavbarComponent extends NavBaseComponent {
+    constructor(readonly source: SourceService, readonly i18n: I18nService) {
+        super();
     }
+
+    /** 导航栏列表 */
+    readonly nav = combineLatest([this.i18n.lang, this.source.current]).pipe(
+        map(([lang, info]) => info.manifest.sitemap[lang].children.filter((c) => c.order != null)),
+    );
 }

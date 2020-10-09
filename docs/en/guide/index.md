@@ -1,6 +1,6 @@
 ---
-title: 
-type: guide
+title: Quick start
+order: 100
 ---
 
 * [Account Management](User1.md)

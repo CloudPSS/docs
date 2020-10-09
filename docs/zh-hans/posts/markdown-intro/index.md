@@ -55,12 +55,14 @@ $$ \sum_{i=1}^n a_i = 0 $$
 图片显示规则如下：
 
 - 当 `alt text` 为空，图片将嵌入文本，此时 `title` 为鼠标悬停时的提示文本；
-- 当 `alt text` 非空，图片将居中显示，此时 `alt text` 为鼠标悬停时的提示文本，`title` 为图片题注。
+- 当 `alt text` 非空，图片将居中显示，此时 `title` 为鼠标悬停时的提示文本，`alt text` 为图片题注。
 - `size` 用于指定图片尺寸，具体使用方法见下文。
 
-如 `![alt text](intro1.png "Title" =x100)` 得到 ![alt text](intro1.png "Title" =x100)
+如 `![alt-text](intro1.png "Title" =x100)` 得到 
 
-可以使用题注进行交叉引用，如 `[link](#Title)` [link](#Title)。
+![alt-text](intro1.png "Title" =x100)
+
+可以使用题注进行交叉引用，如 `[link](#alt-text)` [link](#alt-text)。
 
 {% pullquote info %}
 可以使用以下语法指定图片的尺寸：
