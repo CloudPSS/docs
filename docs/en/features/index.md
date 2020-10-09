@@ -1,6 +1,6 @@
 ---
-title: 
-type: features
+title: Features
+order: 300
 author: songyk
 author_email: songyankan@cloudpss.net
 ---

@@ -4,16 +4,25 @@ mat-sidenav-container {
 
 mat-sidenav {
   width: 320px;
+  @media print {
+    display: none;
+  }
 }
 
-main {
-  overflow: auto;
-  height: 100%;
-  width: 100%;
+mat-sidenav-content {
+  @media screen {
+    scroll-behavior: smooth;
+  }
+  @media print {
+    margin: 0 !important;
+    overflow: visible;
+  }
 }
 
 #sidenav-button {
   position: absolute;
   top: 0;
   left: 0;
+  width: 64px;
+  height: 64px;
 }

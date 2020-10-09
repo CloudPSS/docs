@@ -1,6 +1,6 @@
 ---
-title: 
-type: about
+title: About
+order: 999
 full_footer: true
 sidebar: false
 ---

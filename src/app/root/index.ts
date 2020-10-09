@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 /**
  * App 组件
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class AppComponent {}
+export class AppComponent {
+    constructor(readonly router: Router) {}
+}

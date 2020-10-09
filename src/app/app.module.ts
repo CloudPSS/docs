@@ -24,6 +24,7 @@ import { ErrorComponent } from './pages/error';
 import { MarkdownComponent } from './components/markdown';
 import { NavbarComponent } from './components/navbar';
 import { NavListComponent } from './components/nav-list';
+import { NavBaseComponent } from './components/nav-base';
 
 /**
  * 主模块
@@ -32,6 +33,7 @@ import { NavListComponent } from './components/nav-list';
     declarations: [
         AppComponent,
         MarkdownComponent,
+        NavBaseComponent,
         NavbarComponent,
         NavListComponent,
         DocumentComponent,
