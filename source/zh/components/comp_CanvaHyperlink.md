@@ -14,7 +14,7 @@ classname: _CanvaHyperlink
 symbol: CanvaHyperlink
 ---
 ## 基本描述
-{% compsymbol CanvaHyperlink %}
+-> ![](comp_CanvaHyperlink/chaolianjie.svg) <-
 
 > **该元件用于快速定位到所链接的图纸，便于查看该图纸中元件的连接等信息。**
 

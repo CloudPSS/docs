@@ -1,5 +1,5 @@
 ---
-title: 综合能源系统案例
+title: 综合能源系统展示案例
 type: examples
 author: Jack
 category: 2300
