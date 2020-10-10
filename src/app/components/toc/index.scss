@@ -1,0 +1,90 @@
+@import '../../../styles/config.scss';
+
+$config: mat-get-color-config($docs-theme);
+$foreground: map-get($config, foreground);
+$background: map-get($config, background);
+$primary: map-get($config, primary);
+
+$color: mat-color($background, background);
+
+:host {
+  display: block;
+}
+li.toc-item {
+  list-style: none;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin: 0.5em 0;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  pointer-events: visible;
+  a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: map-get($foreground, secondary-text);
+
+    &:hover {
+      color: map-get($primary, 700) !important;
+    }
+    &:active {
+      color: map-get($primary, A700) !important;
+    }
+  }
+  &.current {
+    font-weight: bolder;
+    a {
+      color: map-get($primary, text);
+    }
+  }
+  &::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2em;
+    background: linear-gradient(90deg, rgba($color, 0) 0, $color 80%);
+  }
+}
+nav {
+  position: relative;
+  height: 100%;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  pointer-events: none;
+}
+
+.mask {
+  position: relative;
+  height: 100%;
+  &::after,
+  &::before {
+    content: '';
+    opacity: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 4em;
+    z-index: 100;
+    pointer-events: none;
+    transition: opacity 0.5s;
+  }
+  &::before {
+    top: 0;
+    background: linear-gradient(0deg, rgba($color, 0) 0, $color 80%);
+  }
+  &::after {
+    bottom: 0;
+    background: linear-gradient(180deg, rgba($color, 0) 0, $color 80%);
+  }
+  &.before::before {
+    opacity: 1;
+  }
+  &.after::after {
+    opacity: 1;
+  }
+}

@@ -25,6 +25,7 @@ import { MarkdownComponent } from './components/markdown';
 import { NavbarComponent } from './components/navbar';
 import { NavListComponent } from './components/nav-list';
 import { NavBaseComponent } from './components/nav-base';
+import { TocComponent } from './components/toc';
 
 /**
  * 主模块
@@ -38,6 +39,7 @@ import { NavBaseComponent } from './components/nav-base';
         NavListComponent,
         DocumentComponent,
         ErrorComponent,
+        TocComponent,
     ],
     imports: [
         BrowserModule,
