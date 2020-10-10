@@ -1,12 +1,13 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
-import { of } from 'rxjs';
+import { Component, ViewChild, AfterViewInit, HostListener, ElementRef } from '@angular/core';
+import { of, merge, Subject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, tap, pluck, delay, mergeMap } from 'rxjs/operators';
+import { map, tap, pluck, delay, mergeMap, catchError, throttleTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Title } from '@angular/platform-browser';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
+import { MarkdownComponent } from '@/components/markdown';
 
 /**
  * 文档页面组件
@@ -22,10 +23,34 @@ export class DocumentComponent implements AfterViewInit {
         readonly source: SourceService,
         readonly layout: LayoutService,
         readonly title: Title,
-    ) {}
+    ) {
+        let scrollMarginTop = -1;
+        this.updateTocSource.pipe(throttleTime(50)).subscribe(() => {
+            const headers = this.md.headers;
+            const host = this.scroll.nativeElement;
+            if (headers.length === 0 || !host) {
+                this.currentId = undefined;
+                return;
+            }
+            if (scrollMarginTop < 0) {
+                scrollMarginTop = Number.parseFloat(
+                    ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
+                );
+                if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
+                scrollMarginTop += 1;
+            }
+            const top = host.scrollTop + scrollMarginTop;
+            let i = headers.findIndex((h) => h.element.offsetTop > top);
+            if (i < 0) i = headers.length;
+            this.currentId = headers[i - 1]?.id;
+        });
+    }
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
-
+    /** scroll */
+    @ViewChild('scroll') readonly scroll!: ElementRef<HTMLDivElement>;
+    /** toc */
+    @ViewChild('md') readonly md!: MarkdownComponent;
     /** url */
     readonly url = this.route.params.pipe(
         map((s) => {
@@ -48,18 +73,31 @@ export class DocumentComponent implements AfterViewInit {
                 void this.sidenav.close();
             }
         }),
-        tap((s) => console.log(s)),
     );
 
+    /** 当前文件信息 */
+    readonly info = this.url.pipe(map((u) => this.source.findDocument(u)));
+    /** 当前文件 frontMatter */
+    readonly frontMatter = this.info.pipe(map((u) => u?.[1]));
+    /** 触发更新TOC */
+    readonly updateTocSource = new Subject<void>();
+
     /** 当前文档 */
-    readonly document = this.url.pipe(
+    readonly document = this.info.pipe(
         mergeMap((u) => {
-            const [doc, fm] = this.source.findDocument(u) ?? [];
-            if (!doc) return of(null);
+            if (!u) return of(null);
+            const [doc, fm] = u;
             this.title.setTitle(fm?.title ?? '');
-            return this.source.file(doc, 'text');
+            return merge(of(null), this.source.file(doc, 'text'));
+        }),
+        catchError(async () => {
+            await this.router.navigate(['error', 404], { replaceUrl: true });
+            return null;
         }),
     );
+
+    /** 当前标题 */
+    currentId?: string;
 
     /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
@@ -89,5 +127,13 @@ export class DocumentComponent implements AfterViewInit {
         } else {
             await this.router.navigate(['error', 404], { replaceUrl: true });
         }
+    }
+
+    /**
+     * 更新 TOC
+     */
+    @HostListener('window:resize')
+    updateToc(): void {
+        this.updateTocSource.next();
     }
 }

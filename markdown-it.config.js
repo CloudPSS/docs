@@ -125,7 +125,7 @@ module.exports = function (
                 },
             },
         ],
-        ...['warning', 'info'].map((name) => [
+        ...['tip', 'question', 'error', 'warning', 'info', 'success', 'fail'].map((name) => [
             name,
             {
                 render(tokens, idx) {
@@ -200,6 +200,8 @@ module.exports = function (
             {
                 slugify: (s) => String(s).trim().toLowerCase().replace(/\s+/g, '-'),
                 permalink: true,
+                permalinkSpace: false,
+                permalinkSymbol: '',
                 permalinkHref: (slug) => md.normalizeLink(`#${slug}`),
             },
         ],
@@ -211,6 +213,62 @@ module.exports = function (
             },
         ],
         [require('markdown-it-implicit-figures'), { figcaption: true }],
+        [
+            require('markdown-it-block-embed'),
+            {
+                outputPlayerSize: false,
+                services: {
+                    bilibili: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                        /** @param {string} reference */
+                        extractVideoID(reference) {
+                            let match = reference.match(
+                                /https?:\/\/(?:www\.|player\.)?bilibili.com\/(?:player.html\?aid=|player.html\?bvid=|video\/)([a-z0-9]+)/i,
+                            );
+                            const id = match && typeof match[1] === 'string' ? match[1] : reference;
+                            if (id.match(/^\d+$/)) return `av${id}`;
+                            return id;
+                        }
+                        /** @param {string} videoID */
+                        getVideoUrl(videoID) {
+                            const id = videoID.match(/^(av|bv|)(.*)$/i);
+                            let idArg;
+                            if (id[1] != null && id[1].toLowerCase() === 'bv') {
+                                idArg = 'bvid=' + id[0];
+                            }
+                            if (id[1] != null && id[1].toLowerCase() === 'av') {
+                                idArg = 'aid=' + id[2];
+                            }
+                            if (id[1] == '') {
+                                idArg = 'aid=' + id[2];
+                            }
+                            return `//player.bilibili.com/player.html?${idArg}&as_wide=1&high_quality=1&danmaku=0`;
+                        }
+                    },
+                    youku: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                        /** @param {string} reference */
+                        extractVideoID(reference) {
+                            let match = reference.match(/id_([a-z0-9+])/i);
+                            return match && typeof match[1] === 'string' ? match[1] : reference;
+                        }
+                        /** @param {string} videoID */
+                        getVideoUrl(videoID) {
+                            return `//player.youku.com/embed/${videoID}`;
+                        }
+                    },
+                    tencent: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                        /** @param {string} reference */
+                        extractVideoID(reference) {
+                            let match = reference.match(/x\/page\/([a-z0-9+])/i);
+                            return match && typeof match[1] === 'string' ? match[1] : reference;
+                        }
+                        /** @param {string} videoID */
+                        getVideoUrl(videoID) {
+                            return `//v.qq.com/txp/iframe/player.html?vid=${videoID}&auto=0`;
+                        }
+                    },
+                },
+            },
+        ],
         ...containers.map((v) => [require('markdown-it-container'), ...v]),
     ];
     md = plugins.reduce((i, [plugin, ...options]) => {
@@ -233,6 +291,12 @@ module.exports = function (
         });
         t.content.querySelectorAll('figure > figcaption').forEach((e) => {
             e.parentElement.id = e.innerText;
+        });
+        t.content.querySelectorAll('.block-embed > iframe').forEach((e) => {
+            const hint = document.createElement('p');
+            hint.classList.add('block-embed-hint');
+            hint.innerText = e.src;
+            e.parentElement.appendChild(hint);
         });
         return t.innerHTML;
     };

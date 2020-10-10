@@ -1,5 +1,8 @@
 mat-sidenav-container {
   height: 100%;
+  @media print {
+    background-color: white;
+  }
 }
 
 mat-sidenav {
@@ -10,12 +13,47 @@ mat-sidenav {
 }
 
 mat-sidenav-content {
-  @media screen {
-    scroll-behavior: smooth;
-  }
   @media print {
     margin: 0 !important;
     overflow: visible;
+  }
+  $toc-width: 240px;
+  app-toc {
+    position: absolute;
+    user-select: none;
+    width: $toc-width;
+    padding: 16px;
+    right: -$toc-width;
+    top: 0;
+    bottom: 0;
+    display: none;
+  }
+  #scroll {
+    position: relative;
+    padding: 0 24px;
+    @media screen {
+      height: 100%;
+      scroll-behavior: smooth;
+      overflow: auto;
+    }
+  }
+  #scroll-container {
+    padding: 24px 0;
+    margin: auto;
+    @media screen {
+      max-width: 800px;
+    }
+  }
+  &.toc {
+    @media screen and (min-width: 960px) {
+      #scroll {
+        padding-right: $toc-width;
+      }
+      app-toc {
+        display: block;
+        right: 0;
+      }
+    }
   }
 }
 

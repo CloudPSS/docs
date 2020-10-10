@@ -61,4 +61,8 @@ export interface FrontMatter {
     title: string;
     /** 节点排序 */
     order?: number | undefined;
+    /** 是否显示 toc */
+    toc?: boolean;
+    /** 是否显示 nav */
+    nav?: boolean;
 }

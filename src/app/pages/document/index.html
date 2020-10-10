@@ -2,8 +2,18 @@
   <mat-sidenav #sidenav [mode]="(layout.sidenavMode | async) || 'side'" [autoFocus]="false">
     <app-nav-list [category]="(category | async) || ''" (navigate)="onNavigate($event)"></app-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content role="main">
-    <app-markdown [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>
+  <mat-sidenav-content
+    role="main"
+    [class.toc]="(frontMatter | async)?.toc != false"
+    [class.nav]="(frontMatter | async)?.nav != false"
+  >
+    <div #scroll id="scroll" on-scroll="updateToc()">
+      <div id="scroll-container">
+        <h1 id="title">{{(frontMatter | async)?.title}}</h1>
+        <app-markdown #md [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>
+      </div>
+    </div>
+    <app-toc #toc [document]="md" [currentId]="currentId"></app-toc>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

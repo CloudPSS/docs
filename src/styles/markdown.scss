@@ -4,12 +4,10 @@
 $dark: #2c3e50;
 $medium: #34495e;
 $light: #7f8c8d;
-$theme: #4285f4;
+$theme: map-get($docs-primary, default);
 $border: #dddddd;
 $codebg: #f8f8f8;
 $shadow: rgba(0, 0, 0, 0.5);
-$quotebg: rgba(#fffdf4, 0.5);
-$quotebd: $border;
 $red: #ff6666;
 $info: #1c90f3;
 
@@ -56,6 +54,29 @@ $code-font-size: 0.9em;
   h6 {
     font-weight: 600;
     color: map-get($docs-primary, 900);
+    position: relative;
+    @media screen {
+      a.header-anchor {
+        position: absolute;
+        left: 0;
+        padding: 0 0.25em;
+        transform: translateX(-100%);
+        color: map-get($docs-primary, 900);
+        opacity: 0;
+        transition: all 0.2s;
+        &::before {
+          content: '¶';
+        }
+      }
+      &:hover a.header-anchor {
+        opacity: 1;
+      }
+    }
+  }
+  h1,
+  h2,
+  h3 {
+    page-break-after: avoid;
   }
   br {
     word-spacing: 0;
@@ -75,6 +96,12 @@ $code-font-size: 0.9em;
     @media print {
       text-decoration: underline;
     }
+  }
+  p,
+  dt,
+  dd,
+  summary {
+    margin: 0.8em 0;
   }
   mark {
     @media print {
@@ -175,13 +202,33 @@ $code-font-size: 0.9em;
   }
 
   figure {
+    margin: 1em auto 0.75em;
+    min-width: 240px;
+    display: table;
+    page-break-inside: avoid;
     img {
       display: block;
       margin: auto;
     }
-    figcaption {
-      text-align: center;
+    > figcaption {
+      display: table-caption;
+      caption-side: bottom;
     }
+  }
+
+  figcaption,
+  caption {
+    text-align: center;
+    margin: 0.3em auto;
+    font-weight: bolder;
+    font-size: 14px;
+    color: map-get($docs-primary, 900);
+  }
+  caption {
+    page-break-after: avoid;
+  }
+  figcaption {
+    page-break-before: avoid;
   }
 
   pre:not([mermaid]):not([chart]) {
@@ -214,38 +261,79 @@ $code-font-size: 0.9em;
     }
   }
 
-  dl,
-  blockquote {
-    position: relative;
-    margin: 1em 0;
-    background-color: $quotebg;
-    border: 0.02px solid $quotebd;
-    border-left: 4px solid $theme;
-    padding: 0 12px 0 20px;
-    code {
-      background-color: #efefef;
-    }
-    em {
-      color: $medium;
-    }
-    footer {
-      text-align: right;
-      margin: 1em -2px 1em 4px;
-      > strong {
-        font-weight: 550;
+  // embed videos
+  .block-embed {
+    display: flex;
+    width: 100%;
+    max-width: 720px;
+    user-select: none;
+    margin: 1em auto;
+    page-break-inside: avoid;
+    @media screen {
+      &::before {
+        display: block;
+        padding-bottom: 60%;
+        content: '';
       }
-      > cite {
-        font-style: italic;
-        &:before {
-          content: ' — ';
+    }
+    > * {
+      flex: auto;
+    }
+    .block-embed-hint {
+      display: none;
+    }
+
+    @media print {
+      > * {
+        display: none;
+      }
+      .block-embed-hint {
+        display: block;
+        text-decoration: $theme underline;
+      }
+    }
+  }
+
+  // block quotes and def lists
+  @mixin quote-color($palette, $char: false) {
+    $quotebg: rgba(map-get($palette, A100), 0.05);
+    $quotebd: rgba(map-get($palette, A200), 0.2);
+    $qoutefg: map-get($palette, 400);
+    background-color: $quotebg;
+    @media print {
+      background: white !important;
+    }
+    border: 0.02px solid $quotebd;
+    border-left: 4px solid $qoutefg;
+    @if $char {
+      @media screen {
+        &::before {
+          content: $char;
+          background-color: $qoutefg;
+          @if (lightness($qoutefg) > 60) {
+            color: #000;
+          } @else {
+            color: #fff;
+          }
+          color: #fff;
         }
       }
     }
-    &:before {
+  }
+
+  dl,
+  blockquote,
+  [is='md-container'],
+  details {
+    position: relative;
+    margin: 1em 0;
+    padding: 0 12px 0 20px;
+    page-break-inside: avoid;
+    @include quote-color($docs-primary);
+    &::before {
       user-select: none;
       position: absolute;
       transform: translate(-32px, 8px);
-      color: #fff;
       width: 20px;
       height: 20px;
       border-radius: 100%;
@@ -253,6 +341,104 @@ $code-font-size: 0.9em;
       line-height: 20px;
       font-weight: bold;
       font-size: 14px;
+    }
+  }
+  [is='md-container'] {
+    &[class='tip'] {
+      @include quote-color($docs-primary, '!');
+    }
+    &[class='info'] {
+      @include quote-color($mat-blue, 'i');
+    }
+    &[class='warning'] {
+      @include quote-color($mat-orange, '!');
+    }
+    &[class='error'] {
+      @include quote-color($mat-red, '☓');
+    }
+    &[class='success'] {
+      @include quote-color($mat-light-green, '✓');
+    }
+    &[class='fail'] {
+      @include quote-color($mat-red, '✗');
+    }
+    &[class='question'] {
+      @include quote-color($mat-amber, '?');
+    }
+  }
+  dl {
+    @include quote-color($mat-teal);
+  }
+
+  [is='md-container'] > summary {
+    display: block;
+  }
+
+  dt,
+  summary {
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+
+  dd {
+    margin-left: 1em;
+  }
+
+  // footnotes
+  a[id^='fnref'] {
+    text-decoration: none !important;
+  }
+  .footnote-backref {
+    @media print {
+      display: none;
+    }
+  }
+
+  // table
+  table {
+    min-width: 240px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 1.2em auto;
+    text-align: left;
+    &[id] {
+      margin-top: 0.9em;
+    }
+    th {
+      min-width: 60px;
+    }
+    td,
+    th {
+      line-height: 1.5em;
+      padding: 0.4em 0.8em;
+      border: 1px solid $border;
+    }
+    > tbody:not(:first-child) > tr:first-of-type > td {
+      border-top-width: 2px;
+    }
+    > thead > tr:last-of-type > th {
+      border-bottom-width: 2px;
+      @media screen {
+        position: sticky;
+        z-index: 100;
+        font-weight: bold;
+        top: 0;
+      }
+    }
+    @media screen {
+      > thead > tr > th {
+        background-color: color.mix($border, white, 40%);
+      }
+      > tbody > tr > th {
+        background-color: color.mix($border, white, 10%);
+      }
+      > thead > tr:nth-last-child(2n) > th,
+      > tbody > tr:nth-child(2n) > td {
+        background-color: color.mix($border, white, 30%);
+      }
+    }
+    tr:hover > td {
+      background-color: rgba(map-get($docs-primary, A100), 0.1) !important;
     }
   }
 }

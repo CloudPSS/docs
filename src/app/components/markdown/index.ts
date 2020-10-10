@@ -15,6 +15,7 @@ import { File } from '@/services/source/interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
 import { BehaviorSubject } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 
 /**
  * 显示md文档
@@ -31,7 +32,28 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     @Input() file?: File<string> | null;
 
     /** MD 渲染结果 */
-    rendered = new BehaviorSubject<string>('');
+    readonly rendered = new BehaviorSubject<string>('');
+    /** 解析结果 */
+    readonly parsed = this.rendered.pipe(
+        map((d) => {
+            if (!d) return null;
+            const p = new DOMParser().parseFromString(d, 'text/html');
+            return p.body;
+        }),
+        tap((p) => {
+            if (!p) this.headers = [];
+            else {
+                this.headers = Array.from(p.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')).map((h) => {
+                    return {
+                        id: h.id,
+                        title: h.innerText,
+                        level: Number.parseInt(h.tagName.slice(1)),
+                        element: h,
+                    };
+                });
+            }
+        }),
+    );
 
     /** MD 文档节点 */
     @ViewChild('doc') doc!: ElementRef<HTMLElement>;
@@ -41,28 +63,23 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
 
     /** 标题 */
     headers: Array<{
+        id: string;
         title: string;
         level: number;
-        link: string;
+        element: HTMLHeadingElement;
     }> = [];
 
     /** @inheritdoc */
     ngAfterViewInit(): void {
-        this.rendered.subscribe((rendered) => {
+        this.parsed.subscribe((parsed) => {
             const doc = this.doc.nativeElement;
+            const hash = decodeURIComponent(location.hash.slice(1));
             doc.innerHTML = '';
             setTimeout(() => {
-                doc.innerHTML = rendered;
-                this.headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')).map((h) => {
-                    const url = new URL(location.href);
-                    url.hash = h.id;
-                    return {
-                        title: h.innerText,
-                        level: Number.parseInt(h.tagName.slice(1)),
-                        link: url.href,
-                    };
-                });
-                setTimeout(() => this.scrollTo(decodeURIComponent(location.hash.slice(1))), 200);
+                doc.append(...Array.from(parsed?.children ?? []));
+                if (hash) {
+                    setTimeout(() => this.scrollTo(hash), 200);
+                }
             }, 0);
         });
     }
@@ -76,7 +93,6 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             return true;
         }
         const target = document.getElementById(id);
-        console.log(id, target);
         if (!target) return false;
         location.hash = '';
         setTimeout(() => {
@@ -108,7 +124,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
         const file = this.file;
         if (!file) return;
         const target = event.target as HTMLElement;
-        if (target instanceof HTMLAnchorElement) {
+        if (target instanceof HTMLAnchorElement && target.href) {
             event.preventDefault();
             const href = new URL(target.href, file.url);
             if (href.origin === location.origin) {
@@ -121,14 +137,5 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
                 window.open(href.href, '_blank', 'noopener');
             }
         }
-    }
-
-    /**
-     * 点击TOC列表元素
-     */
-    onNavClick(event: HTMLElementEventMap['click']): void {
-        event.preventDefault();
-        const id = decodeURIComponent(new URL((event.target as HTMLAnchorElement).href).hash.slice(1));
-        this.scrollTo(id);
     }
 }
