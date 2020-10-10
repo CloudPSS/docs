@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, HostListener, ElementRef } from '@angular/core';
-import { of, merge, Subject } from 'rxjs';
+import { of, merge, Subject, combineLatest } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, delay, mergeMap, catchError, throttleTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
@@ -23,28 +23,7 @@ export class DocumentComponent implements AfterViewInit {
         readonly source: SourceService,
         readonly layout: LayoutService,
         readonly title: Title,
-    ) {
-        let scrollMarginTop = -1;
-        this.updateTocSource.pipe(throttleTime(50)).subscribe(() => {
-            const headers = this.md.headers;
-            const host = this.scroll.nativeElement;
-            if (headers.length === 0 || !host) {
-                this.currentId = undefined;
-                return;
-            }
-            if (scrollMarginTop < 0) {
-                scrollMarginTop = Number.parseFloat(
-                    ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
-                );
-                if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
-                scrollMarginTop += 1;
-            }
-            const top = host.scrollTop + scrollMarginTop;
-            let i = headers.findIndex((h) => h.element.offsetTop > top);
-            if (i < 0) i = headers.length;
-            this.currentId = headers[i - 1]?.id;
-        });
-    }
+    ) {}
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
     /** scroll */
@@ -85,7 +64,10 @@ export class DocumentComponent implements AfterViewInit {
     /** 当前文档 */
     readonly document = this.info.pipe(
         mergeMap((u) => {
-            if (!u) return of(null);
+            if (!u) {
+                void this.onNavigate();
+                return of(null);
+            }
             const [doc, fm] = u;
             this.title.setTitle(fm?.title ?? '');
             return merge(of(null), this.source.file(doc, 'text'));
@@ -101,13 +83,33 @@ export class DocumentComponent implements AfterViewInit {
 
     /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
+
     /** @inheritdoc */
     ngAfterViewInit(): void {
+        let scrollMarginTop = -1;
+        combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {
+            const host = this.scroll.nativeElement;
+            if (headers.length === 0 || !host) {
+                this.currentId = undefined;
+                return;
+            }
+            if (scrollMarginTop < 0) {
+                scrollMarginTop = Number.parseFloat(
+                    ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
+                );
+                if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
+                scrollMarginTop += 1;
+            }
+            const top = host.scrollTop + scrollMarginTop;
+            let i = headers.findIndex((h) => h.element.offsetTop > top);
+            if (i < 0) i = headers.length;
+            this.currentId = headers[i - 1]?.id;
+        });
+        this.updateToc();
         this.layout.sidenavMode
             .pipe(
                 delay(100),
                 mergeMap(async (d) => {
-                    console.log('x');
                     if (d === 'side') {
                         await this.sidenav.open();
                     } else {

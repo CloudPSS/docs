@@ -1,7 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { SourceService } from '@/services/source';
-import { map } from 'rxjs/operators';
-import { combineLatest, BehaviorSubject } from 'rxjs';
+import { map, debounceTime } from 'rxjs/operators';
+import { combineLatest, BehaviorSubject, merge, of, Subject } from 'rxjs';
 import { I18nService } from '@/services/i18n';
 import { DocumentItem } from '@/interfaces/manifest';
 import { FlatTreeControl } from '@angular/cdk/tree';
@@ -30,7 +30,7 @@ interface TreeItem {
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class NavListComponent extends NavBaseComponent {
+export class NavListComponent extends NavBaseComponent implements AfterViewInit {
     constructor(readonly source: SourceService, readonly i18n: I18nService) {
         super();
         this.nav.subscribe((i) => {
@@ -47,6 +47,15 @@ export class NavListComponent extends NavBaseComponent {
     }
     set category(value: string) {
         this._category.next(value);
+    }
+    /** 当前文档 */
+    private _currentRawPath = new BehaviorSubject<string | undefined>(undefined);
+    /** 当前文档 */
+    @Input() get currentRawPath(): string | undefined {
+        return this._currentRawPath.value;
+    }
+    set currentRawPath(value: string | undefined) {
+        this._currentRawPath.next(value);
     }
 
     /** 导航文档列表 */
@@ -75,6 +84,30 @@ export class NavListComponent extends NavBaseComponent {
             (node) => node.children,
         ),
     );
+
+    /** 子集元素 */
+    @ViewChildren('item', { read: ElementRef }) items!: QueryList<ElementRef<HTMLElement>>;
+
+    /** 聚焦选中元素 */
+    private _focus = new Subject<boolean>();
+    /** 聚焦选中元素 */
+    focus(): void {
+        this._focus.next(true);
+    }
+
+    /** @inheritdoc */
+    ngAfterViewInit(): void {
+        combineLatest(this._currentRawPath, merge(of(null), this.items.changes), this._focus.pipe(debounceTime(50)))
+            .pipe(debounceTime(50))
+            .subscribe(([currentRawPath, _, focus]) => {
+                const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+                current?.nativeElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                if (focus) {
+                    current?.nativeElement.focus({ preventScroll: true });
+                }
+            });
+        this._focus.next(false);
+    }
 
     /**
      * 节点是否有子级

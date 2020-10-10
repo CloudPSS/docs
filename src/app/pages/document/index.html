@@ -1,6 +1,11 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [mode]="(layout.sidenavMode | async) || 'side'" [autoFocus]="false">
-    <app-nav-list [category]="(category | async) || ''" (navigate)="onNavigate($event)"></app-nav-list>
+  <mat-sidenav #sidenav [mode]="(layout.sidenavMode | async) || 'side'" (openedStart)="navList.focus()">
+    <app-nav-list
+      #navList
+      [category]="(category | async) || ''"
+      [currentRawPath]="((info | async)|| [])[0]"
+      (navigate)="onNavigate($event)"
+    ></app-nav-list>
   </mat-sidenav>
   <mat-sidenav-content
     role="main"

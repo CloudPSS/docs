@@ -3,91 +3,46 @@ const { escapeHtml } = require('markdown-it/lib/common/utils');
 /** @type {import('mermaid').Mermaid} */
 const mermaid = require('mermaid');
 const { fromEvent } = require('rxjs');
-const { debounceTime } = require('rxjs/operators');
+const { map, debounceTime, distinctUntilChanged } = require('rxjs/operators');
 const chartJs = require('chart.js');
 
-/**
- *
- * @param {markdownIt.Options} options
- */
-module.exports = function (
-    options = {
-        html: true,
-        typographer: true,
-        highlight: (string, lang) => {
-            return `<pre ${escapeHtml(lang)}><code is="md-highlight" language="${escapeHtml(lang)}">${escapeHtml(
-                string,
-            )}</code></pre>`;
-        },
-        frontMatter: () => {},
-    },
-) {
+function loadCustomElements() {
     customElements.define(
         'md-highlight',
         class extends HTMLElement {
-            constructor() {
-                super();
+            static loading;
+            static async loadPrism(version = '^1') {
+                if ('Prism' in window) return;
+                if (this.loading) return this.loading;
+                this.loading = (async () => {
+                    const link = document.createElement('link');
+                    link.href = `https://unpkg.com/prismjs@${version}/themes/prism.css`;
+                    link.rel = 'stylesheet';
+                    const script = document.createElement('script');
+                    script.src = `https://unpkg.com/prismjs@${version}/components/prism-core.min.js`;
+                    const plugins = document.createElement('script');
+                    plugins.src = `https://unpkg.com/prismjs@${version}/plugins/autoloader/prism-autoloader.min.js`;
+                    const l1 = new Promise((resolve, reject) => {
+                        script.addEventListener('load', resolve);
+                        script.addEventListener('error', reject);
+                    });
+                    document.documentElement.append(link, script);
+                    await l1;
+                    const l2 = new Promise((resolve, reject) => {
+                        plugins.addEventListener('load', resolve);
+                        plugins.addEventListener('error', reject);
+                    });
+                    document.documentElement.append(plugins);
+                    await l2;
+                    await new Promise((resolve) => setTimeout(resolve, 1));
+                    script.remove();
+                    plugins.remove();
+                })();
+                return this.loading;
             }
-            /** @type {Record<string, (this:HTMLElement)=>void>} */
-            static custom = {
-                mermaid: function () {
-                    const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
-                    this.style.display = 'block';
-                    const code = this.innerText;
-                    const render = () => {
-                        console.log('render', id);
-                        this.innerHTML = `<div id="${id}"></div>`;
-                        mermaid.render(
-                            id,
-                            code,
-                            (svg, func) => {
-                                this.innerHTML = svg;
-                                func?.(this);
-                            },
-                            this,
-                        );
-                    };
-                    const rerender = fromEvent(window, 'resize').pipe(debounceTime(100)).subscribe(render);
-                    this.disconnectedCallback = function () {
-                        rerender.unsubscribe();
-                    };
-                    render();
-                },
-                chart: function () {
-                    const code = this.innerText;
-                    this.innerText = '';
-                    try {
-                        /** @type {import('chart.js').ChartConfiguration} */
-                        const opt = JSON.parse(code);
-                        opt.options = { ...opt.options, responsive: false };
-                        this.style.display = 'block';
-                        const canvas = document.createElement('canvas');
-                        this.appendChild(canvas);
-                        canvas.style.maxWidth = '800px';
-                        const chart = new chartJs(canvas, opt);
-                        const render = () => {
-                            canvas.style.width = '100%';
-                            canvas.style.height = '';
-                            chart.resize();
-                            canvas.style.width = '100%';
-                            canvas.style.height = '';
-                        };
-                        render();
-                        const rerender = fromEvent(window, 'resize').pipe(debounceTime(100)).subscribe(render);
-                        this.disconnectedCallback = function () {
-                            rerender.unsubscribe();
-                        };
-                    } catch (ex) {
-                        this.innerText = String(ex);
-                    }
-                },
-            };
-            connectedCallback() {
+            async connectedCallback() {
                 const lang = this.getAttribute('language');
-                if (lang in this.constructor.custom) {
-                    this.constructor.custom[lang].call(this);
-                    return;
-                }
+                await this.constructor.loadPrism();
                 const highlighter = Prism.languages[lang];
                 const code = this.innerText;
                 if (highlighter) {
@@ -101,6 +56,104 @@ module.exports = function (
         },
         { extends: 'code' },
     );
+
+    /** @param {HTMLElement} el */
+    function resizing(el) {
+        return fromEvent(window, 'resize').pipe(
+            debounceTime(100),
+            map(() => `${el.scrollWidth},${el.scrollHeight}`),
+            distinctUntilChanged(),
+        );
+    }
+
+    customElements.define(
+        'pre-md-mermaid',
+        class extends HTMLElement {
+            connectedCallback() {
+                const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
+                const code = this.textContent;
+                console.log(code);
+                const render = () => {
+                    console.log('render', id);
+                    this.innerHTML = `<div id="${id}"></div>`;
+                    mermaid.render(
+                        id,
+                        code,
+                        (svg, func) => {
+                            this.innerHTML = svg;
+                            func?.(this);
+                        },
+                        this,
+                    );
+                };
+                const rerender = resizing(this).subscribe(render);
+                this.disconnectedCallback = function () {
+                    rerender.unsubscribe();
+                };
+                render();
+            }
+        },
+    );
+    customElements.define(
+        'pre-md-chart',
+        class extends HTMLElement {
+            connectedCallback() {
+                const code = this.textContent;
+                const root = this.attachShadow({ mode: 'closed' });
+                try {
+                    /** @type {import('chart.js').ChartConfiguration} */
+                    const opt = JSON.parse(code);
+                    opt.options = { ...opt.options, responsive: false };
+                    this.style.display = 'block';
+                    const canvas = document.createElement('canvas');
+                    root.appendChild(canvas);
+                    canvas.style.maxWidth = '800px';
+                    const chart = new chartJs(canvas, opt);
+                    const render = () => {
+                        canvas.style.width = '100%';
+                        canvas.style.height = '';
+                        chart.resize();
+                        canvas.style.width = '100%';
+                        canvas.style.height = '';
+                    };
+                    render();
+                    const rerender = resizing(this).subscribe(render);
+                    this.disconnectedCallback = function () {
+                        rerender.unsubscribe();
+                    };
+                } catch (ex) {
+                    root.innerText = String(ex);
+                }
+            }
+        },
+    );
+    return (string, lang) => {
+        const code = escapeHtml(string);
+        switch (lang) {
+            case 'mermaid':
+            case 'chart':
+                return `<pre-md-${lang}>${code}</pre-md-${lang}>`;
+            default:
+                const l = escapeHtml(lang);
+                return `<pre><code is="md-highlight" language="${l}">${code}</code></pre>`;
+        }
+    };
+}
+
+/**
+ *
+ * @param {markdownIt.Options} options
+ */
+module.exports = function (
+    options = {
+        html: true,
+        typographer: true,
+        frontMatter: () => {},
+    },
+) {
+    if (options.highlight == null && customElements) {
+        options.highlight = loadCustomElements();
+    }
     let md = markdownIt(options);
 
     /** @type {Array<[string, {
