@@ -25,9 +25,9 @@ In this example, change the port name to A2 and its description to R+, change su
 
 ![定义界面1](SubGraph/Z3.png "Modify port name and description" =x400)
 
-{% pullquote tip %}
+::: tip
 New subgraphs cannot be created in subgraphs, that is, they are not allowed to be nested.
-{% endpullquote %}
+:::
 
 ## Open Subgraph
 

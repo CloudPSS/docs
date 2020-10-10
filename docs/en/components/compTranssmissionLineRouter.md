@@ -78,10 +78,10 @@ symbol: TLine_3p
 
 1. It is recommended to use the Bergeron distribution parameter model with known line length information. The model supports parallel computing in the subnet, which can greatly improve the efficiency of simulation.
 2. When the Bergeron model reports the following error, it indicates that the line length is insufficient, and should be switched to the **Lumped π-Model**. 
-   {% pullquote fail %}
+   ::: fail
    1. **TLine-XXX Error:** +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
    2. **TLine-XXX Error:** 0 Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
-   {% endpullquote %}
+   :::
 3.If the line length information is unknown, user should select the **Lumped π-Model** and the line length as **1km** when entering the line parameters, and select **Yes** for “Has the Data Been Corrected for Long Line Effects?”
 4. Please confirm whether the parameters filled in have been corrected by long line effects. If select "No", and the **Lumped π-Model** is selected, CloudPSS will correct the lumped parameters as follows equation:
    >   $$\begin{aligned}

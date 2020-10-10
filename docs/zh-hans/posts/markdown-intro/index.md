@@ -4,13 +4,7 @@ author: lzy
 author_email: lzy@live.in
 date: 2018-08-18 12:23:34
 ---
-:::warning 你好
-dd sd
-:::
 
-:::summary 在吗
-x
-:::
 ## 公式
 
 使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
@@ -33,10 +27,10 @@ $$ \sum_{i=1}^n a_i = 0 $$
 
 ## 链接
 
-{% pullquote tip %}
+::: tip
 对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径。如：
 
-{% endpullquote %}
+:::
 
 ```md
 <!-- in /zh/component/comp_newClarkTransform.md-->
@@ -45,17 +39,93 @@ $$ \sum_{i=1}^n a_i = 0 $$
 [Park 变换器](comp_newParkTransform.md)
 ```
 
+## 容器
+
+显示一个特定样式的容器。
+
+如：
+
+```md pullquote
+:::tip
+tip
+:::
+
+:::question
+question
+:::
+
+:::success
+success
+:::
+
+:::fail 自定义
+fail
+:::
+
+:::warning
+warning
+:::
+
+:::error
+error
+:::
+
+::::info
+info
+
+:::summary 标题
+内容
+:::
+::::
+```
+
+效果：
+
+:::tip
+tip
+:::
+
+:::question
+question
+:::
+
+:::success
+success
+:::
+
+:::fail 自定义
+fail
+:::
+
+:::warning
+warning
+:::
+
+:::error
+error
+:::
+
+::::info
+info
+
+:::summary 标题
+内容
+:::
+::::
+
 ## 图片
 
 图片存储的文件结构如图
-[![](asset-folder.jpg)](#Title)
+
+![](asset-folder.jpg)
 
 即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](path "title" =size)` 语法。
 
 图片显示规则如下：
 
-- 当 `alt text` 为空，图片将嵌入文本，此时 `title` 为鼠标悬停时的提示文本；
-- 当 `alt text` 非空，图片将居中显示，此时 `title` 为鼠标悬停时的提示文本，`alt text` 为图片题注。
+- 当图片上下为空行时，图片将居中显示；
+- `title` 为鼠标悬停时的提示文本；
+- `alt text` 为图片题注；
 - `size` 用于指定图片尺寸，具体使用方法见下文。
 
 如 `![alt-text](intro1.png "Title" =x100)` 得到 
@@ -64,7 +134,7 @@ $$ \sum_{i=1}^n a_i = 0 $$
 
 可以使用题注进行交叉引用，如 `[link](#alt-text)` [link](#alt-text)。
 
-{% pullquote info %}
+:::: info
 可以使用以下语法指定图片的尺寸：
 
 - 指定最大宽度
@@ -75,10 +145,39 @@ $$ \sum_{i=1}^n a_i = 0 $$
 
   `![alt text](intro1.png "Title" =x100)`
 
-{% pullquote tip %}
+::: tip
 不建议同时指定宽度和高度，可能导致图片变形。
-{% endpullquote %}
-{% endpullquote %}
+:::
+::::
+
+## 媒体
+
+使用 `@[provider](id_or_url)` 语法插入媒体。
+
+```md media
+@[youtube](_QobdWOa02o)
+
+@[youku](XMTQ2MjU2NTU2OA)
+
+@[vimeo](111114712)
+
+@[bilibili](av27150168)
+
+@[tencent](w3156zebhpv)
+```
+
+效果：
+
+@[youtube](_QobdWOa02o)
+
+@[youku](XMTQ2MjU2NTU2OA)
+
+@[vimeo](111114712)
+
+@[bilibili](av27150168)
+
+@[tencent](w3156zebhpv)
+
 
 ## 表格
 
@@ -114,9 +213,9 @@ $$ \sum_{i=1}^n a_i = 0 $$
 
 如[上表](#高级表格)所示……
 
-{% pullquote info %}
-省略开头的 `[Prototype table]` 将隐藏表名并不对表格进行编号。
-{% endpullquote %}
+::: tip
+省略开头的 `[高级表格]` 将隐藏表名。
+:::
 
 ## 文本居中
 
@@ -135,26 +234,24 @@ text<-
 语法如下：
 
 ````markdown codeblock
-```[语言] [标题] [链接] [链接文字]
+```[语言] [标题]
 
 ```
 ````
-
-由于 `[语言]` 和 `[链接]` 中不会包含空格，另两项可以任意添加空格而不影响解析。
 
 可用的 `[语言]` 包括 `plain` `tex` `md` `yaml` `js` `html` `css` `c` `cpp` `csharp` `pyhton` `matlab`……
 
 如：
 
 ````md codeblock example
-```javascript a simple js script /sample.js file: sample.js
+```javascript a simple js script
 console.log('hello world');
 ```
 ````
 
 效果：
 
-```javascript a simple js script /sample.js file: sample.js
+```javascript a simple js script
 console.log('hello world');
 ```
 
@@ -182,9 +279,9 @@ console.log('hello world');
 >
 > Level1
 
-{% pullquote info %}
+::: info
 同理，引用结束需要一行空行。
-{% endpullquote %}
+:::
 
 ## 定义
 
@@ -216,9 +313,9 @@ console.log('hello world');
 ~ 另起一段。
 ...
 
-{% pullquote info %}
+::: info
 定义的前后需要空行分隔。
-{% endpullquote %}
+:::
 
 ## 缩写
 

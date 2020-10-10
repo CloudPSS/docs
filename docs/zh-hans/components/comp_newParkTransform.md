@@ -79,9 +79,9 @@ U_{d}\\
 U_{q}\\ 
 U_{0}
 \end{bmatrix}$$
-{% pullquote tip %}
+::: tip
 **注意**：传统Park变换中，d轴超前q轴。dq轴位置如上图**红线**所示。PSCAD中采用了q轴超前d轴，如上图**蓝线**所示。因此相同输入下，本元件得出的q轴分量与PSCAD的结果正负相反。
-{% endpullquote %}
+:::
 
 ![坐标位置](comp_newParkTransform/park1.png "坐标位置")
 当选择**d轴滞后a相90°**时，dq轴位置如上图**绿线**所示。Park变换及逆Park变换的计算公式为：

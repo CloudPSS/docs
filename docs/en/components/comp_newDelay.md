@@ -36,11 +36,11 @@ symbol: newDelay
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 **Max Sample Points**
 
 If the delay time is much larger than the simulation time step, the size of the queue may become very large. To prevent this, the input values are sampled N times in the delay time.
-{% endpullquote %}
+:::
 
 
 ## See Also

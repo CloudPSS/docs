@@ -18,13 +18,13 @@ CloudPSS提供了电磁暂态仿真过程中的断面保存和断面导入功能
 
 ![断面保存](Snapshot/savesnapshot.png "断面保存设置")
 
-{% pullquote success %}
+::: success
 [info] snapshot saved at 1.5 s.
-{% endpullquote %}
+:::
 
-{% pullquote tip %}
+::: tip
 只有**保存后**的算例工程才可进行断面存储操作。
-{% endpullquote %}
+:::
 
 ## 断面导入/载入
 
@@ -37,14 +37,14 @@ CloudPSS提供了电磁暂态仿真过程中的断面保存和断面导入功能
 设置仿真`开始时间`与`断面载入时间`相同，为1.5s，点击`开始`。仿真开始后，在`系统信息`处看到如下信息，说明断面载入成功。
 
 
-{% pullquote success %}
+::: success
 [info] snapshot loaded at 1.50001 s.
-{% endpullquote %}
+:::
 
 ![断面载入结果](Snapshot/result.png "断面载入波形")
 
 波形窗口中，曲线直接从断面载入时刻开始仿真。
 
-{% pullquote tip %}
+::: tip
 若仿真`开始时间`与`断面载入时间`不一致，则可能会引发错误的断面导入。
-{% endpullquote %}
+:::

@@ -81,18 +81,18 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 - `author_email`
 
   作者联系邮箱，置空使用 CloudPSS 官方邮箱。
-  {% pullquote info %}
+  ::: info
   官方邮箱通过 `_config.yml` 文件中的 `contact` 字段指定。
-  {% endpullquote %}
+  :::
 
 ### 创作时间信息 `date` `updated`
 
 页面的创建和编辑时间信息，未指定时将使用创建和编辑时间。
 
-{% pullquote tip %}
+::: tip
 强烈建议显式指定这些数据。
 由于 git 本身不保存文件的创建和编辑时间，如不显式指定这些值，网页部署以后显示的创建和编辑时间将会改变。
-{% endpullquote %}
+:::
 
 ### 页面布局 `full_footer` `sidebar`
 
@@ -104,9 +104,9 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 
   指定是否显示页面左侧的侧边栏，默认为 `true`。
 
-{% pullquote info %}
+::: info
 效果可参考[完整页脚 / 隐藏侧边栏样例](full-footer-no-sidebar.md)。
-{% endpullquote %}
+:::
 
 ## 分类信息
 
@@ -118,7 +118,7 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 
 文章分类编号，也可置空或省略此项。
 
-{% pullquote tip %}
+::: tip
 文章的类型和分类应先在 `source/_data/sitemap.yml` 中定义。
 
 编辑 `sitemap.yml` 文件时需要注意：
@@ -127,7 +127,7 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 - **类型**的命名只允许使用==小写==字母（`a-z`）、数字（`0-9`）和连字符（`-`）；
 - **分类**的编号需为整数；
 - 类型和分类的排序决定了其在页面目录的显示顺序。
-  {% endpullquote %}
+  :::
 
 ### 文章排序 `order`
 

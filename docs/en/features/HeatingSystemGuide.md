@@ -166,10 +166,10 @@ When all components parameters have been properly set, the simulation can begin.
 
 If you want to monitor whether the simulation is running normally, you can view it in the system information bar on the lower left side of the page. The simulation information under normal operation of this module is as follows:
 
-{% pullquote success %}
+::: success
 run ends
 run start
-{% endpullquote %}
+:::
 
 At present, there are four kinds of abnormal alarm information in this example case, which are introduced separately below.
 
@@ -177,9 +177,9 @@ At present, there are four kinds of abnormal alarm information in this example c
 
   When there is no pipeline in the network topology, the no pipeline alarm message will appear in the system information panel after the simulation starts, as follows: 
   
-  {% pullquote fail %}
+  ::: fail
   There is no pipeline in network!
-  {% endpullquote %}
+  :::
   
 + Topology multi-connected alarm information
 
@@ -189,17 +189,17 @@ At present, there are four kinds of abnormal alarm information in this example c
   
   The alarm information is as follows:
   
-  {% pullquote fail %}
+  ::: fail
   The original topological graph are multi-connected!
-  {% endpullquote %}
+  :::
   
 + Unsolved system equations alarm information
 
   When the control conditions of the heat source and the building (load) are not set properly, the number of control conditions will not be equal to the required number of conditions, and the solution equation cannot be solved. The alarm information is as follows:
   
-  {% pullquote fail %}
+  ::: fail
   The equation system can not be solved:  8 control conditions required, while 9 control conditions specified!
-  {% endpullquote %}
+  :::
   
   For any thermal network topology, the number of required control conditions is equal to twice the number of heat sources plus the number of buildings (loads) plus one.
   
@@ -207,9 +207,9 @@ At present, there are four kinds of abnormal alarm information in this example c
 
   The alarm information is as follows:
   
-  {% pullquote fail %}
+  ::: fail
   The matrix is ill-conditioned or singular, might be caused by three reasons: 1. Incorrect connection pattern, see help for components. 2. No solution or more than one solutions existed for current control conditions. 3. Huge differences in magnitude for current control conditions.
-  {% endpullquote %}
+  :::
   
   There are three possible reasons for solving system equations wrong:
   1. Incorrect connection method, such as not guaranteeing that at least one output pin is connected to the connection point component

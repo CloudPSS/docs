@@ -35,9 +35,9 @@ symbol: newCurrentMeter
 
 ## 使用说明
 
-{% pullquote tip %}
+::: tip
 多个电流表元件不能并联。
-{% endpullquote %}
+:::
 
 
 ## 相关元件

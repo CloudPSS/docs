@@ -53,9 +53,9 @@ symbol: Heat0
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 Currently, the default water supply pipeline and the water return pipeline are represented by the same connection, that is, have the same connection relationship.
-{% endpullquote %}
+:::
 
 ## See Also
 

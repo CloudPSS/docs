@@ -61,9 +61,9 @@ symbol: newCtrlVFACSource
 
 ## 使用说明
 
-{% pullquote info %}
+::: info
 若电压源的内阻为0，CloudPSS会自动选择为`理想电压源`模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
-{% endpullquote %}
+:::
 
 
 ## 相关元件

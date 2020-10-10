@@ -36,10 +36,10 @@ symbol: newTrigonometric
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 + Tan function is meaning less when angle equals to (n+0.5)π.
 + The input of ArcSin and ArcCos function should be in the range [-1.0, 1.0].
-{% endpullquote %}
+:::
 
 
 ## See Also

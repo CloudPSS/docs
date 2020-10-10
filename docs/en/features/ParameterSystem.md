@@ -87,8 +87,8 @@ Measurement parameters are prefixed with marker "#" and can be used in the `Moni
 
 ![量测标识](ParameterSystem/MsrTag.png)
 
-{% pullquote info %}
+::: info
 **Note:**
 
 The `electrical pins` can be connected to `control-input pins`. In this case, the value passed to the control system is the **node voltage (Unit: V)** of the `electrical pins`. However, CloudPSS does not recommend such usage. The better operation is to measure the node voltage with a measurement component and use the measured signal to pass to the control system.
-{% endpullquote %}
+:::

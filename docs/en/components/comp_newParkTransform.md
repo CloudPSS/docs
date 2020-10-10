@@ -79,9 +79,9 @@ U_{d}\\
 U_{q}\\ 
 U_{0}
 \end{bmatrix}$$
-{% pullquote tip %}
+::: tip
 **Note**: In the traditional Park transformation, the d-axis leads the q-axis. The position of the dq axis is shown in the above figure **Red Line**. PSCAD uses the q-axis leading d-axis, as shown in the above figure **Blue line**. Therefore, under the same input, the q-axis component obtained by this component is opposite to the result of PSCAD.
-{% endpullquote %}
+:::
 
 ![坐标位置](comp_newParkTransform/park1.png "坐标位置")
 When the **Rotating Frame Alignment** is **90° behind phase A**, the calculation formulas for the Park transformation and the inverse Park transformation are: 

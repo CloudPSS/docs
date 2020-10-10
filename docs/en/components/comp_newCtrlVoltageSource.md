@@ -43,9 +43,9 @@ symbol: newCtrlVoltageSource
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 If the internal resistance of the voltage source is zero, CloudPSS will set it to the `ideal voltage source` automatically. However, multiple ideal voltage sources cannot be connected in parallel or in a loop (in violation of Kirchhoff's loop voltage law).
-{% endpullquote %}
+:::
 
 
 ## See Also

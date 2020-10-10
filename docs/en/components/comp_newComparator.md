@@ -39,11 +39,11 @@ symbol: newComparator
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 The expression an be configured as A >= B or A < B.
 +  If the expression is true, the output pin1 outputs the true value, and the output pin2 outputs the false value.
 + If the expression is false, the output pin1 outputs the false value, and the output pin2 outputs the true value.
-{% endpullquote %}
+:::
 
 ## See Also
 

@@ -12,8 +12,8 @@ Right click on the blank area of the main workspace and select 'view the compone
 ![元件列表](ComponentTable/Y1.png "View component table options")
 ![元件列表](ComponentTable/Y2.png "Component table dialog box")
 
-{% pullquote tip %}
+::: tip
 + "Select" type parameter is represent as Key Value in the component table. (Yes represents 1 and No represents 0).
 + When filling in component table, the format of the value in the table is consistent with the requirements of the parameter configuration panel. For example, the Branch Current [kA] in the above figure needs to fill in the signal name starting with mark #.
 + The component table supports copy, paste, and auto fill functions. 
-{% endpullquote %}
+:::

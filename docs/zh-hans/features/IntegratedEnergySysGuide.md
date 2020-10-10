@@ -117,4 +117,4 @@ author_email:
 
 ## 相关视频
 
-{% owl youku XNDY1MzIzNjE1Ng %}
+@[youku](XNDY1MzIzNjE1Ng)

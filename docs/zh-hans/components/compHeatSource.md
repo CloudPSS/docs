@@ -46,9 +46,9 @@ symbol: heat1
 
 ## 使用说明
 
-{% pullquote tip %}
+::: tip
 目前版本中热源与其它元件相连时热源应作为起点，否则极易引发错误。
-{% endpullquote %}
+:::
 
 ## 相关元件
 

@@ -47,13 +47,13 @@ symbol: newLogicGate3
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 The gate type can be configured as：
 + AND gate: The output signal is 1 when all the input signals are 1.
 + OR gate: If any input signal is 1, then output signal is 1.
 + XOR gate: If the two input signals are not the same, then output signal is 1; if the two input signals are the same, then output signal is 0.
 + NOT gate: If the input signal is 1, then output signal is 0; if the input signal is 0, then output signal is 1.
-{% endpullquote %}
+:::
 
 ## See Also
 

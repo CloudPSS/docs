@@ -2,7 +2,8 @@
 title: 完整页脚 / 隐藏侧边栏样例
 date: 2000-01-01 00:00:00
 full_footer: true
-sidebar: false
+nav: false
+toc: false
 author: lzy
 author_email: lzy@live.in
 ---

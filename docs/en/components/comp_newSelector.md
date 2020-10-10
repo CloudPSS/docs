@@ -38,11 +38,11 @@ symbol: newSelector
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 Configure "Select A When" and "Threshold" to determine selector criteria, such as: "Ctrl ≥ Threshold", "Ctrl < Threshold".
 + If "Ctrl" satisfies the criterion, then output A.
 + If "Ctrl" doesn't satisfie the criterion, then output B.
-{% endpullquote %}
+:::
 
 
 ## See Also
