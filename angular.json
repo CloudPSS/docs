@@ -24,7 +24,12 @@
             "tsConfig": "tsconfig.json",
             "statsJson": true,
             "aot": true,
-            "assets": ["src/favicon.ico", "src/assets", "src/manifest.webmanifest"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              "src/manifest.webmanifest",
+              { "glob": "**/*", "input": "node_modules/ngx-monaco-editor/assets/monaco", "output": "./assets/monaco/" }
+            ],
             "styles": ["src/styles/index.scss"],
             "scripts": [],
             "customWebpackConfig": {

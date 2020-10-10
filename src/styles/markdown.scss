@@ -231,7 +231,7 @@ $code-font-size: 0.9em;
     page-break-before: avoid;
   }
 
-  pre:not([mermaid]):not([chart]) {
+  pre {
     background-color: $codebg;
     padding: 1em 0.5em;
     margin: 1.2em 0;
@@ -243,21 +243,22 @@ $code-font-size: 0.9em;
   }
   code[is='md-highlight'] {
     font-size: $body-font-size;
-    &[language='mermaid'],
-    &[language='chart'] {
-      display: block;
-      overflow-x: auto;
-      position: relative;
-      margin: 1em 0;
-      page-break-inside: avoid;
-      > * {
-        display: block;
-        margin: auto;
-      }
+  }
 
-      svg * {
-        user-select: none;
-      }
+  pre-md-mermaid,
+  pre-md-chart {
+    display: block;
+    overflow-x: auto;
+    position: relative;
+    margin: 1em 0;
+    page-break-inside: avoid;
+    > * {
+      display: block;
+      margin: auto;
+    }
+
+    svg * {
+      user-select: none;
     }
   }
 

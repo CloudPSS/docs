@@ -2,8 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DocumentComponent } from './pages/document';
 import { ErrorComponent } from './pages/error';
+import { EditorComponent } from './pages/editor';
 
 const routes: Routes = [
+    {
+        path: 'edit',
+        component: EditorComponent,
+    },
     {
         path: 'error/:code',
         component: ErrorComponent,

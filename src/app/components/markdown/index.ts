@@ -15,7 +15,7 @@ import { File } from '@/services/source/interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
 import { BehaviorSubject } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 
 /**
  * 显示md文档
@@ -40,19 +40,6 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             const p = new DOMParser().parseFromString(d, 'text/html');
             return p.body;
         }),
-        tap((p) => {
-            if (!p) this.headers = [];
-            else {
-                this.headers = Array.from(p.querySelectorAll<HTMLHeadingElement>('h1, h2, h3')).map((h) => {
-                    return {
-                        id: h.id,
-                        title: h.innerText,
-                        level: Number.parseInt(h.tagName.slice(1)),
-                        element: h,
-                    };
-                });
-            }
-        }),
     );
 
     /** MD 文档节点 */
@@ -62,21 +49,40 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     @Output() navigate = new EventEmitter<NavigateEvent>();
 
     /** 标题 */
-    headers: Array<{
-        id: string;
-        title: string;
-        level: number;
-        element: HTMLHeadingElement;
-    }> = [];
+    readonly headers = new BehaviorSubject<
+        Array<{
+            id: string;
+            title: string;
+            level: number;
+            element: HTMLHeadingElement;
+        }>
+    >([]);
 
     /** @inheritdoc */
     ngAfterViewInit(): void {
+        let id = 0;
         this.parsed.subscribe((parsed) => {
             const doc = this.doc.nativeElement;
+            this.headers.next([]);
             const hash = decodeURIComponent(location.hash.slice(1));
             doc.innerHTML = '';
+            id++;
+            const cid = id;
+            if (!parsed) return;
             setTimeout(() => {
-                doc.append(...Array.from(parsed?.children ?? []));
+                if (id !== cid) return;
+                doc.append(...Array.from(parsed.children ?? []));
+                const headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1, h2, h3'));
+                this.headers.next(
+                    headers.map((h) => {
+                        return {
+                            id: h.id,
+                            title: h.innerText,
+                            level: Number.parseInt(h.tagName.slice(1)),
+                            element: h,
+                        };
+                    }),
+                );
                 if (hash) {
                     setTimeout(() => this.scrollTo(hash), 200);
                 }

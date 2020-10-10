@@ -13,6 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTreeModule } from '@angular/material/tree';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 import { AppComponent } from './root';
 import { environment } from '../environments/environment';
@@ -26,6 +27,7 @@ import { NavbarComponent } from './components/navbar';
 import { NavListComponent } from './components/nav-list';
 import { NavBaseComponent } from './components/nav-base';
 import { TocComponent } from './components/toc';
+import { EditorComponent } from './pages/editor';
 
 /**
  * 主模块
@@ -38,6 +40,7 @@ import { TocComponent } from './components/toc';
         NavbarComponent,
         NavListComponent,
         DocumentComponent,
+        EditorComponent,
         ErrorComponent,
         TocComponent,
     ],
@@ -54,6 +57,14 @@ import { TocComponent } from './components/toc';
                 useClass: WebpackTranslateLoader,
             },
             defaultLanguage: 'zh-hans',
+        }),
+
+        MonacoEditorModule.forRoot({
+            defaultOptions: {
+                automaticLayout: true,
+                wordWrap: 'on',
+                wrappingIndent: 'indent',
+            },
         }),
 
         MatButtonModule,

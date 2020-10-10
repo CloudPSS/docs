@@ -1,8 +1,12 @@
 <mat-nav-list>
   <mat-list-item
-    (click)="onNavigate(node.document)"
-    [disabled]="node.document.path == null"
     *ngFor="let node of treeControl.dataNodes"
+    #item
+    (click)="onNavigate(node.document)"
+    [class.current]="(node.document.path?.raw || '--no-path--') === currentRawPath"
+    [attr.data-raw-path]="node.document.path?.raw"
+    [disabled]="node.document.path == null"
+    tabindex="0"
   >
     <span [style.marginLeft.px]="treeControl.getLevel(node) * 16">{{ node.document.title }}</span>
   </mat-list-item>

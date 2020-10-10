@@ -1,0 +1,30 @@
+#root {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.column {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  &.preview {
+    overflow: auto;
+    right: 0;
+  }
+}
+
+#preview-host {
+  margin: 24px;
+  margin-bottom: 50%;
+}
+
+#editor {
+  width: 100%;
+  height: 100%;
+}
+
+#editor ::ng-deep .editor-container {
+  height: 100%;
+}

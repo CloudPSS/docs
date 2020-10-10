@@ -1,12 +1,12 @@
 <div class="mask" [class]="scrollInfo">
   <nav #nav class="toc" (scroll)="updateScroll()">
     <li
-      *ngFor="let item of document?.headers"
+      *ngFor="let item of document?.headers | async"
       #item
       [attr.data-id]="item.id"
       class="toc-item toc-level-{{item.level}}"
-      [style.paddingLeft.px]="item.level * 8"
       [class.current]="item.id === currentId"
+      [style.paddingLeft.px]="item.level * 8"
       [title]="item.title"
     >
       <a [href]="url(item.id)" (click)="onNavClick($event)">{{ item.title }}</a>
