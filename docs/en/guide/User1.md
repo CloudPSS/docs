@@ -20,17 +20,17 @@ If the user is new to our web, please click `Create New Account` button and go t
 
 ### Registration FAQs
 
-{% pullquote question %}
+::: question
 **What should I do if I forget my password?**
 
 If you accidentally forget your password, you can reset your new password by verify your registered email.
-{% endpullquote %}
+:::
 
-{% pullquote question %}
+::: question
 **What if I don't receive the verification code?**
 
 If you register by QQ or Netease email and cannot receive the verification code, please send a mail with arbitrary content to <noreply@cloudpss.net> by the registered email and then try the verification process again.
-{% endpullquote %}
+:::
 
 
 ## Personal Center

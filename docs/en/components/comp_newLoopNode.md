@@ -40,11 +40,11 @@ Usually, if a system with a feedback loop (as shown in the figure) is set up, wh
 
 ![带环系统](newLoopNode/loop.png)
 
-{% pullquote tip %}
+::: tip
 1. **[warning]** There are loop nodes in system!You can use Component 'LoopNode' to specify the loop nodes and the initial value, or the program will choose random loop nodes.
 2. **[warning]** Node 1 in component newGain-1 will be chosen as loop node with initial value 0.
 3. **[warning]** Node 1 in component newGain-2 will be chosen as loop node with initial value 0.
-{% endpullquote %}
+:::
 
 At this time, CloudPSS adds a delay to each of the `newGain-1` component and the `newGain-2` component through the built-in loop-solving algorithm. And the feedback loop of the system is broken, so that the simulation performs normally.
 

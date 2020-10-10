@@ -166,10 +166,10 @@ author_email: xiangyue@tsinghua-eiri.org
 
 如果想监测仿真是否正常运行，可在页面左下侧的系统信息栏进行查看.本模块正常运行状态下的仿真信息结果如下：
 
-{% pullquote success %}
+::: success
 run ends
 run start
-{% endpullquote %}
+:::
 
 目前本仿真模块目前共有四种异常报警信息，下面分别对其进行介绍。
 
@@ -177,9 +177,9 @@ run start
 
   当网络拓扑中没有管道时，开始仿真将会在系统信息面板出现无连接管道报警信息，如下：
   
-  {% pullquote fail %}
+  ::: fail
   There is no pipeline in network!
-  {% endpullquote %}
+  :::
   
 + 拓扑多连通报警信息
 
@@ -189,17 +189,17 @@ run start
   
   报警信息如下：
   
-  {% pullquote fail %}
+  ::: fail
   The original topological graph are multi-connected!
-  {% endpullquote %}
+  :::
   
 + 方程不封闭报警信息
 
   当热源和建筑物（负荷）的控制条件设置不当时，将导致控制条件数量不等于所需条件数量，而使求解方程不能封闭。报警信息如下：
   
-  {% pullquote fail %}
+  ::: fail
   The equation system can not be solved:  8 control conditions required, while 9 control conditions specified!
-  {% endpullquote %}
+  :::
   
   对于任意热网拓扑来说，其需要的控制条件等于2倍热源的数目加上建筑物（负荷）的数量再加1。
   
@@ -207,9 +207,9 @@ run start
 
   求解报错信息如下：
   
-  {% pullquote fail %}
+  ::: fail
   The matrix is ill-conditioned or singular, might be caused by three reasons: 1. Incorrect connection pattern, see help for components. 2. No solution or more than one solutions existed for current control conditions. 3. Huge differences in magnitude for current control conditions.
-  {% endpullquote %}
+  :::
   
   造成求解报错的原因可能有三个：
   1. 不正确的连接方式，比如未保证连接点元件至少有一个输出引脚连线

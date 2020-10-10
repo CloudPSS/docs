@@ -69,8 +69,8 @@ symbol: Heat5
 
 ## 使用说明
 
-{% pullquote tip %}
+::: tip
 目前版本中建筑物（负荷）与其它元件相连时建筑物（负荷）应作为终点，否则极易引发错误。
-{% endpullquote %}
+:::
 
 

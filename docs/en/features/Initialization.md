@@ -35,9 +35,9 @@ In the `Initial Condition` page of synchronous motor,
 2. The `node voltage amplitude (p.u.)`, `node voltage phase (Deg)`, `injected active power (MW)` and `injected reactive power (Mvar)` of the generator nodes in the power flow calculation results are filled in the columns of `Initial Voltage Magnitude [p.u.]`, `Initial Voltage Phase [Deg]`, `Initial Active Power [MW]`, and `Initial Reactive Power [MVar]` respectively.
    ![同步电机启动参数](Initialization/sync.png "Start parameters page of synchronous generator") 
 
-{% pullquote tip %}
+::: tip
 The phase voltage base value of the synchronous generator and the line voltage base value of the connected bus shall match correctly, otherwise the input `node voltage amplitude (p.u.)` shall be converted to the base value voltage of the synchronous motor.
-{% endpullquote %}
+:::
 
 ### Start parameter configuration of bus
 
@@ -52,9 +52,9 @@ If the system also contains three-phase AC voltage source, the voltage source ne
 ![三相电压源启动参数](Initialization/source.png "Three-phase voltage source start parameter page")
 
 
-{% pullquote tip %}
+::: tip
 The configuration of the above cross-section can be quickly imported by using the [Component Table](ComponentTable.md) function.
-{% endpullquote %}
+:::
 
 ### Pre-start parameter configuration
 

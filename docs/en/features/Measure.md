@@ -35,15 +35,15 @@ After the simulation is finished, users can click the `Data Download` button, an
 ![波形展示](Measure/datadownload.png "Waveform display interface")
 ![数据下载](Measure/datadownloaddialog.png "Data download interface")
 
-{% pullquote tip %}
+::: tip
 Data download can only be available for **The saved project**.
-{% endpullquote %}
+:::
 
 The downloaded data is a compressed data format and can be parsed by the following MatLab code. After parsing, the data of each channel is stored in the structure `Ch_X` (`X` is the serial number, `Ch_X.Name` is the channel name, and `Ch_X.Data` is the channel data). 
 
-{% pullquote tip %}
+::: tip
 If the parsing code reports an error, please re-download the latest code and try again.
-{% endpullquote %}
+:::
 
 ```matlab Import the data to MatLab /features/Measure/CloudPSSDataImport.m CloudPSSDataImport.m
 clear;

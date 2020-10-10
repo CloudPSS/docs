@@ -35,10 +35,10 @@ symbol: newSampleHold
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 + When hold signal changes from 0 to 1，the output holds the input sample value until the hold signal turns to 0.
 + When hold signal is 0, the output value equals input value.
-{% endpullquote %}
+:::
 
 
 ## See Also

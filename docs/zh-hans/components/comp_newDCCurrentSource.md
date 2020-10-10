@@ -53,9 +53,9 @@ symbol: newDCCurrentSource
 
 ## 使用说明
 
-{% pullquote info %}
+::: info
 CloudPSS中的电流源为`理想电流源`模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
-{% endpullquote %}
+:::
 
 
 ## 相关元件

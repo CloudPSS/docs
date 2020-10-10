@@ -30,9 +30,9 @@ For example, the user needs to obtain a 2\*2-dimensional signal starting with co
 
 ![信号图1](comp_DeMux/M2.png)
 
-{% pullquote info %}
+::: info
 The input and output dimensions need to be matched. For the previous example, the original M\*N-dimensional signal is at least 4\*3 dimensions.
-{% endpullquote %}
+:::
 
 
 ## See Also

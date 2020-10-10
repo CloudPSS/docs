@@ -39,9 +39,9 @@ First, create a blank project, click on a component in the component list and dr
 
 ![放置元件界面](User3/J4.png "Interface of placing components")
 
-{% pullquote tip %}
+::: tip
 It is unavailable to Copy or Paste components to another project window.
-{% endpullquote %}
+:::
 
 ### Connect Component
 
@@ -53,11 +53,11 @@ If there are many components and the connection is inconvenient, users can conne
 
 ![连接元件界面1](User3/J6.png "Connecting elements using pin mark")
 
-{% pullquote tip %}
+::: tip
 + Electrical pins and signal pins cannot be connected to each other.
 + The signal input pin cannot be connected in parallel, and the signal output pin cannot be connected in parallel. That is, the signal output pin needs to be connected to another signal input pin.
 + The pin connection should satisfy the dimension requirement. For example, the `3-phase AC Voltage Source` has 3-dimension electrical pin and cannot be connected to single-phase `Resistor` which has 1-dimension pin. 
-{% endpullquote %}
+:::
 
 ### Set Parameter
 

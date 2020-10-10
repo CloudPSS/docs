@@ -28,9 +28,9 @@ symbol: Heat3
 
 ## Using Instructions
 
-{% pullquote tip %}
+::: tip
 In the current version, the connection point component needs to be the starting point of one pipe and the end point of other pipe at least, otherwise it is easy to cause an error.
-{% endpullquote %}
+:::
 
 
 ## See Also

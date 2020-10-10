@@ -53,9 +53,9 @@ symbol: Heat0
 
 ## 使用说明
 
-{% pullquote info %}
+::: info
 目前默认供水管道和回水管道用相同的连线进行表示，即拥有同样的连接关系。
-{% endpullquote %}
+:::
 
 ## 相关元件
 

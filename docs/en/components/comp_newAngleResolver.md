@@ -37,10 +37,10 @@ symbol: newAngleResolver
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 + The `Configuration`->`Input in` / `Output in` can be selected as "Radians", or "Degrees".
 + The `Configuration`->`Output Range` can be selected as "0~2π(360°)", or "-π(-180°)~π(180°)".
-{% endpullquote %}
+:::
 
 ## See Also
 

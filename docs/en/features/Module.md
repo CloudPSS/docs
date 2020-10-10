@@ -34,19 +34,19 @@ The module is directly created by the `Subgraph`, so the subgraph needs to be cr
 7. Click `Select the module icon`, upload the module icon (the icon displayed in the model library on the left), set the module name, module symbol, whether to publish, description, module parameters and other information.
   ![模块配置](Module/moduleconfig.png "Module configuration" =x400)
 
-    {% pullquote tip %}
+    ::: tip
     - It is recommended to select a **square** image as the module icon.
     - After ticking `Whether to publish or not`, the module is visible to all users (enter the `Personal Homepage` of the module creator, this module can be found in `My Module`).
     - The `parameters` on the right are all `global parameters` used in the module.
-    {% endpullquote %}
+    :::
 
 8. Click `Save` and a message will pop up indicating that the module has been saved successfully. After refreshing the workbench, the module will be displayed in the left `Module Library`->`Module`. 
    ![模块保存成功](Module/savemodulesuccess.png "Module saved successfully")
     ![模块列表](Module/ModuleList.png "Module appears in the list after saving successfully")
 
-    {% pullquote tip %}
+    ::: tip
     The module name is the unique identifier of the module and cannot be duplicate. If the save is not successful, please change the module name and try again.
-    {% endpullquote %}
+    :::
 
 ## View Module
 
@@ -77,9 +77,9 @@ Users can delete the existing modules at `Personal Homepage`-> `Cloud Space`->`M
 
 ![删除模块](Module/moduledelete.png "Delete a module" =x400)
 
-{% pullquote tip %}
+::: tip
 After the module is deleted, all simulation cases using the module will be affected! Please operate carefully.
-{% endpullquote %}
+:::
 
 ## Modify Module
 

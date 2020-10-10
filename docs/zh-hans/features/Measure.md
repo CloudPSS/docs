@@ -54,15 +54,15 @@ CloudPSS提供了四种示波器窗口类型，用户可选择每个示波器的
 ![波形展示](Measure/datadownload.png "波形展示界面")
 ![数据下载](Measure/datadownloaddialog.png "数据下载界面")
 
-{% pullquote tip %}
+::: tip
 只有**保存后**的算例工程才可进行数据下载。
-{% endpullquote %}
+:::
 
 下载的数据为经过压缩存储的数据格式。可通过以下MatLab代码进行解析。解析后每个通道的数据存储在结构体`Ch_X`中（`X`为序号，`Ch_X.Name`为通道名称，`Ch_X.Data`为通道数据。）
 
-{% pullquote tip %}
+::: tip
 若解析代码报错，请重新下载最新的代码进行尝试。
-{% endpullquote %}
+:::
 
 ```matlab 将数据导入 MatLab /features/Measure/CloudPSSDataImport.m CloudPSSDataImport.m
 clear;

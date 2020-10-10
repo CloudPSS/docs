@@ -30,9 +30,9 @@ Assume that two signals are generated during the simulation, one is a 3\*1-dimen
 
 ![信号图3](comp_Mux/M3.png)
 
-{% pullquote info %}
+::: info
 The input and output dimensions need to be matched. For example, the new multi-dimensional signal theoretically constructed in the above example must not be smaller than the output pin dimension set by the parameter.
-{% endpullquote %}
+:::
 
 
 ## See Also

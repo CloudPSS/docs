@@ -18,13 +18,13 @@ As shown in the figure below, set the `simulation end time` as 2S, and the `snap
 
 ![断面保存](Snapshot/savesnapshot.png "Snapshot saving page")
 
-{% pullquote success %}
+::: success
 [info] Snapshot saved at 1.5 s.
-{% endpullquote %}
+:::
 
-{% pullquote tip %}
+::: tip
 Snapshot saving can only be available for **the saved project**.
-{% endpullquote %}
+:::
 
 ## Snapshot Importing
 
@@ -37,14 +37,14 @@ As shown in the figure below, set the `simulation end time` to 2s, select the `S
 Set the `simulation start time` to be the same as the `snapshot importing time`, which is 1.5s. Click `start` and then the following information can be seen in the `system information` window, indicating that the snapshot is loaded successfully.
 
 
-{% pullquote success %}
+::: success
 [info] Snapshot loaded at 1.50001 s.
-{% endpullquote %}
+:::
 
 ![断面载入结果](Snapshot/result.png "The result of the snapshot importing")
 
 In the display window of simulation results, the simulaton start directly from the importing time of the snapshot.
 
-{% pullquote tip %}
+::: tip
 If the `simulation start time` is not consistent with the `snapshot importing time`, an incorrect section import may be caused.
-{% endpullquote %}
+:::

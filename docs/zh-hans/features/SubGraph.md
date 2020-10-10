@@ -25,9 +25,9 @@ author_email: songyankan@cloudpss.net
 
 ![定义界面1](SubGraph/Z3.png "修改端口名称与描述" =x400)
 
-{% pullquote tip %}
+::: tip
 子图中不能继续创建新的子图，即不允许子图嵌套。
-{% endpullquote %}
+:::
 
 ## 打开子图
 
