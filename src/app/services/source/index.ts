@@ -62,8 +62,8 @@ export class SourceService {
     /**
      * 获取文件地址
      */
-    private fileUrl(ref: string, path: string): URL[] {
-        return docUrls(ref).map((base) => new URL(`.${this.normalizePath(path)}`, base));
+    fileUrl(path: string, spec: VersionSpec = this.current.value): URL[] {
+        return docUrls(spec.ref).map((base) => new URL(`.${this.normalizePath(path)}`, base));
     }
 
     /**
@@ -182,7 +182,7 @@ export class SourceService {
         spec: VersionSpec = this.current.value,
     ): Observable<File<unknown>> {
         path = this.normalizePath(path);
-        const urls = this.fileUrl(spec.ref, path);
+        const urls = this.fileUrl(path, spec);
         return from(urls).pipe(
             concatMap((url) => {
                 return this.http

@@ -65,7 +65,6 @@ export class TocComponent {
             before: nav.scrollTop > 1,
             after: nav.scrollTop < nav.scrollHeight - nav.clientHeight - 1,
         };
-        console.log(this.scrollInfo);
     }
 
     /**

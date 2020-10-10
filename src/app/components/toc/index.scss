@@ -7,6 +7,8 @@ $primary: map-get($config, primary);
 
 $color: mat-color($background, background);
 
+$marker-width: 2px;
+
 :host {
   display: block;
 }
@@ -15,15 +17,32 @@ li.toc-item {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5em;
-  margin: 0.5em 0;
-  overflow: hidden;
-  white-space: nowrap;
+  padding: 0.5em 0;
   position: relative;
   pointer-events: visible;
+  margin-left: $marker-width;
+  &::before {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    $width: 2px;
+    width: $marker-width;
+    left: -$marker-width;
+    transition: background-color 0.2s ease-in-out;
+    background: map-get($foreground, dividers);
+  }
+  &.current::before {
+    background: map-get($primary, text);
+  }
   a {
     display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
     width: 100%;
     text-decoration: none;
+    vertical-align: middle;
     color: map-get($foreground, secondary-text);
 
     &:hover {
@@ -31,12 +50,6 @@ li.toc-item {
     }
     &:active {
       color: map-get($primary, A700) !important;
-    }
-  }
-  &.current {
-    font-weight: bolder;
-    a {
-      color: map-get($primary, text);
     }
   }
   &::after {
