@@ -18,9 +18,9 @@ CloudPSS 提供了移频电磁暂态仿真平台。
 
 ![解析信号与原信号gif原理图](SFEMT/fig4.gif "解析信号的实部虚部演示") 
 
-{% pullquote tip %}
+::: tip
 <span style="font-weight: bold;color: #E9B224;">黄实线</span>代表原始信号，<span style="font-weight: bold;color: #D95A23;">橙实线</span>代表原始信号的Hilbert变换，<span style="font-weight: bold;color: #006ABD;">蓝实线</span>代表解析信号，<span style="font-weight: bold;color: #006ABD;">蓝虚线</span>代表解析包络。
-{% endpullquote %}
+:::
 
 ## 一个简单的移频电磁暂态模型——以电阻-电感支路为例
 对于系统实域下的任何微分方程，均可以用化为解析信号的形式。以电感、电阻串联支路为例：

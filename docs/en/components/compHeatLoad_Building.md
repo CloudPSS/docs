@@ -69,8 +69,8 @@ symbol: Heat5
 
 ## Using Instructions
 
-{% pullquote tip %}
+::: tip
 In the current version, the building (load) should be the end point when the building (load) is connected to other components, otherwise it is easy to cause errors.
-{% endpullquote %}
+:::
 
 

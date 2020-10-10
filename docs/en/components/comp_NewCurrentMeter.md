@@ -35,9 +35,9 @@ symbol: newCurrentMeter
 
 ## Using Instructions
 
-{% pullquote tip %}
+::: tip
 Multiple current meter components cannot be connected in parallel.
-{% endpullquote %}
+:::
 
 
 ## See Also

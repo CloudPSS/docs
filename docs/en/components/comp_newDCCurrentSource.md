@@ -53,9 +53,9 @@ symbol: newDCCurrentSource
 
 ## Using Instructions
 
-{% pullquote info %}
+::: info
 The current source in CloudPSS is an `ideal current source` model with an internal resistance of infinity. However, ideal current sources cannot be connected in series or in star form (in violation of the Kirchhoff node current law).
-{% endpullquote %}
+:::
 
 
 ## See Also

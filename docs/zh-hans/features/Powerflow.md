@@ -19,9 +19,9 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 每条母线至多连接一个电源（三相交流电压源或同步发电机），其节点的类型和相关参数在电源的 Power Flow Data 页面指定。未连接电源的母线将作为 PQ 节点参与计算。同一个算例中可以包含多个独立的网络，每个网络都必须包含且仅包含一个平衡节点。
 
-{% pullquote info %}
+::: info
 潮流计算中暂不考虑[静态负载](../components/comp_newExpLoad_3p.md)的功率特性。
-{% endpullquote %}
+:::
 
 ## 参数设定
 
@@ -48,9 +48,9 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 计算完成后，结果窗口将以表格的形式给出各母线电压及潮流和各线路的潮流，可以点击“数据下载”，将结果保存为 Excel 表格。
 
-{% pullquote tip %}
+::: tip
 只有**保存后**的算例工程才可进行数据下载。
-{% endpullquote %}
+:::
 
 对于**收敛的**计算结果，可以点击“写入潮流断面”，将潮流计算的结果作为元件启动参数填入各元件。当潮流计算不收敛，此按钮会自动隐藏。
 
@@ -62,19 +62,19 @@ CloudPSS 提供了潮流计算功能，可以依据网络参数进行潮流计�
 
 ## 常见问题
 
-{% pullquote fail %}
+::: fail
 No bus was found. To start a PF calculation, all electric components must be connected to buses.
-{% endpullquote %}
+:::
 在潮流计算中，所有元件必须连接在[三相交流母线](../components/comp_newBus_3p.md)上。
 
-{% pullquote fail %}
+::: fail
 Bus `name` is isolated.
-{% endpullquote %}
+:::
 说明该母线没有与平衡节点直接或间接相连。
 
-{% pullquote fail %}
+::: fail
 Bus `names` belongs to multiple areas.
-{% endpullquote %}
+:::
 说明该母线与多个平衡节点直接或间接相连。
 
 ---

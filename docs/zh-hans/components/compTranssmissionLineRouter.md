@@ -78,10 +78,10 @@ symbol: TLine_3p
 
 1. 建议在具备线路长度信息的情况下优先选用Bergeron分布参数模型。该模型支持分网并行计算，可极大地提升仿真计算效率。
 2. 选择Bergeron模型报如下错误时，说明线路长度不足，应切换为**Lumped π-Model/π型集总参数模型**。
-   {% pullquote fail %}
+   ::: fail
    1. **TLine-XXX Error:** +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
    2. **TLine-XXX Error:** 0 Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead. 
-   {% endpullquote %}
+   :::
 3. 不具备线路长度信息时，可填写线路长度为**1km**，线路参数输入时填写**集总参数**，“Has the Data Been Corrected for Long Line Effects?”一项选择**Yes**。
 4. 请确认所填入的参数是否已经经过了长导线修正。若选择**No**，同时选择了**Lumped π-Model/π型集总参数模型**，则CloudPSS会对采用如下方式对集总参数进行修正。
    >   $$\begin{aligned}

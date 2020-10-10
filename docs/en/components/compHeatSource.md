@@ -46,9 +46,9 @@ symbol: heat1
 
 ## Using Instructions
 
-{% pullquote tip %}
+::: tip
 In the current version, the heat source should be used as a starting point when the heat source is connected to other components, otherwise it is easy to cause errors.
-{% endpullquote %}
+:::
 
 ## See Also
 

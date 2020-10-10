@@ -12,8 +12,8 @@ author_email: songyankan@cloudpss.net
 ![元件列表](ComponentTable/Y1.png "查看元件表选项")
 ![元件列表](ComponentTable/Y2.png "元件表页面")
 
-{% pullquote tip %}
+::: tip
 + 元件参数设置面板中的“选择类”参数在参数表中对应为键值(Key Value)，例如：Yes对应为1，No对应为0。
 + 直接填写参数列表时，需注意表内值的格式与元件参数设置面板的要求一致，例如上图中的Branch Current [kA]内需填写以#号开头的信号名称。
 + 元件表支持复制、粘贴、自动填充功能。用户可将元件表内参数导入进Excel等表格工具继续处理，再粘贴回CloudPSS平台。
-{% endpullquote %}
+:::

@@ -75,9 +75,9 @@ date: 2018-07-18 14:23:34
 1. 三侧非标准变比$T_{ki}^*$ （单位：p.u.）
    $${T_{ki}^*} = \frac{ { {V_{i,act} } } }{ { {V_{i,B} } } }$$
 
-{% pullquote tip %}
+::: tip
 在考虑分接头影响时，CloudPSS 中计算有名值和标幺值计算与《PSASP7.3 版图模一体化平台用户手册》中所提供的计算方式略有区别。CloudPSS 中，分接头仅影响漏阻和漏抗，不影响励磁导纳。如有疑问请联系 <songyankan@cloudpss.net>
-{% endpullquote %}
+:::
 
 
 ## CloudPSS 三绕组变压器参数

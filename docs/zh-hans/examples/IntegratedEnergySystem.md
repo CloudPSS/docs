@@ -70,4 +70,4 @@ author_email:
 
 [相关视频](IntegratedEnergySys/IESCaseOperation.mp4)
 
-{% owl youku XNDY1MzIzNjE1Ng %}
+@[youku](XNDY1MzIzNjE1Ng)

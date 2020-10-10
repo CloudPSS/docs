@@ -40,14 +40,14 @@ symbol: newPiecewiseLinear
 
 ## 使用说明
 
-{% pullquote info %}
+::: info
 需要设定的参数为：两个固定的坐标点($x_1$,$y_1$)、($x_2$,$y_2$)，以及坐标点左右两侧的斜率$K_l$、$K_r$。函数式为：
 $$\begin{array}{l}
 y(t) = {K_l}u(t) + {y_1} - {K_l}{x_1},u(t) \le {x_1}\\
 y(t) = \frac{ { {y_2} - {y_1} } }{ { {x_2} - {x_1} } }u(t) + \frac{ { {y_1}{x_2} - {y_2}{x_1} } }{ { {x_2} - {x_1} } },{x_1} < u(t) \le {x_2}\\
 y(t) = {K_r}u(t) + {y_2} - {K_r}{x_2},u(t) > {x_2}
 \end{array}$$
-{% endpullquote %}
+:::
 
 
 
