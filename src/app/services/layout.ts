@@ -5,7 +5,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatDrawerMode } from '@angular/material/sidenav';
 
 /**
- * 提供文档内容
+ * 响应式设计服务
  */
 @Injectable({
     providedIn: 'root',
@@ -25,7 +25,7 @@ export class LayoutService {
         }),
     );
 
-    /** */
+    /** 侧边栏模式 */
     readonly sidenavMode = this.displayMode.pipe<MatDrawerMode>(
         map((s) => (s === 'small' ? 'over' : s === 'medium' ? 'push' : 'side')),
     );

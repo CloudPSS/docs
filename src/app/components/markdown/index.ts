@@ -94,7 +94,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     /**
      * 滚动到指定元素或页首
      */
-    private scrollTo(id: string | null): boolean {
+    scrollTo(id: string | null): boolean {
         this.doc.nativeElement.querySelectorAll('.target').forEach((el) => el.classList.remove('target'));
         if (!id) {
             if (this.doc.nativeElement.offsetParent) {
@@ -139,11 +139,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             const href = new URL(target.href, file.url);
             if (href.origin === location.origin) {
                 const hash = decodeURIComponent(href.hash.slice(1));
-                if (location.pathname !== href.pathname) {
-                    this.navigate.emit(new NavigateEvent(href.pathname, hash));
-                } else {
-                    void this.router.navigate([], { fragment: hash });
-                }
+                this.navigate.emit(new NavigateEvent(href.pathname, hash));
             } else {
                 window.open(href.href, '_blank', 'noopener');
             }

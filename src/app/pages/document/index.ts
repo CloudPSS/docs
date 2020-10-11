@@ -4,10 +4,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, delay, mergeMap, catchError, throttleTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
 import { MatSidenav } from '@angular/material/sidenav';
-import { Title } from '@angular/platform-browser';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
+import { TitleService } from '@/services/title';
 
 /**
  * 文档页面组件
@@ -22,7 +22,7 @@ export class DocumentComponent implements AfterViewInit {
         readonly router: Router,
         readonly source: SourceService,
         readonly layout: LayoutService,
-        readonly title: Title,
+        readonly title: TitleService,
     ) {}
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
@@ -69,7 +69,7 @@ export class DocumentComponent implements AfterViewInit {
                 return of(null);
             }
             const [doc, fm] = u;
-            this.title.setTitle(fm?.title ?? '');
+            this.title.title = fm?.title ?? '';
             return merge(of(null), this.source.file(doc, 'text'));
         }),
         catchError(async () => {
@@ -125,7 +125,7 @@ export class DocumentComponent implements AfterViewInit {
      */
     async onNavigate(target?: NavigateEvent): Promise<void> {
         if (target) {
-            await this.router.navigateByUrl(target.path + target.hash);
+            await this.router.navigate([target.path], { fragment: target.fragment });
         } else {
             await this.router.navigate(['error', 404], { replaceUrl: true });
         }
