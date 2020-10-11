@@ -28,9 +28,12 @@ $code-font-size: 0.9em;
     outline-color: $tc;
   }
 }
-[markdown] :target {
-  outline: solid 2px;
-  animation: outline-blink 0.8s 5 forwards;
+[markdown] {
+  .target,
+  :target {
+    outline: solid 2px;
+    animation: outline-blink 0.8s 5 forwards;
+  }
 }
 
 [markdown] {

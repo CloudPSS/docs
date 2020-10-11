@@ -15,12 +15,23 @@ export class NavBaseComponent implements NavigateEventSource {
     /**
      * 触发导航事件
      */
-    onNavigate(item?: DocumentItem): void {
+    onNavigate(item?: DocumentItem, event?: MouseEvent): void {
         if (!item) return;
+        event?.preventDefault();
         if (item.path) {
             this.navigate.next(new NavigateEvent(item.path.parsed));
         } else {
             this.onNavigate(item.children[0]);
+        }
+    }
+
+    /** 文档 URL */
+    url(item?: DocumentItem): string {
+        if (!item) return '';
+        if (item.path) {
+            return item.path.parsed;
+        } else {
+            return this.url(item.children[0]);
         }
     }
 }

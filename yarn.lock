@@ -6514,6 +6514,11 @@ markdown-it-multimd-table@^4.0.3:
   dependencies:
     markdown-it "^11.0.0"
 
+markdown-it-source-map@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/markdown-it-source-map/download/markdown-it-source-map-0.1.1.tgz#8d8c3eab35ed1eb5399ec71814a4b435e275556f"
+  integrity sha1-jYw+qzXtHrU5nscYFKS0NeJ1VW8=
+
 markdown-it-sub@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/markdown-it-sub/download/markdown-it-sub-1.0.0.tgz#375fd6026eae7ddcb012497f6411195ea1e3afe8"
