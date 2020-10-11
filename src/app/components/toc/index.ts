@@ -17,7 +17,7 @@ export class TocComponent {
     /** nav */
     @ViewChild('nav') nav?: ElementRef<HTMLElement>;
     /** li items */
-    @ViewChildren('item') items?: QueryList<ElementRef<HTMLLIElement>>;
+    @ViewChildren('itemElement') items?: QueryList<ElementRef<HTMLLIElement>>;
 
     /** MD 文件 */
     @Input() get document(): MarkdownComponent | undefined {
@@ -26,6 +26,9 @@ export class TocComponent {
     set document(value: MarkdownComponent | undefined) {
         this._document = value;
     }
+
+    /** 大纲级别 */
+    @Input() level = 3;
 
     /** 监听文档更改 */
     observer?: Subscription;
@@ -65,23 +68,5 @@ export class TocComponent {
             before: nav.scrollTop > 1,
             after: nav.scrollTop < nav.scrollHeight - nav.clientHeight - 1,
         };
-    }
-
-    /**
-     * 获取链接URL
-     */
-    url(id: string): string {
-        const url = new URL(location.href);
-        url.hash = id;
-        return url.href;
-    }
-
-    /**
-     * 点击TOC列表元素
-     */
-    onNavClick(event: HTMLElementEventMap['click']): void {
-        event.preventDefault();
-        const id = decodeURIComponent(new URL((event.target as HTMLAnchorElement).href).hash.slice(1));
-        this.document?.scrollTo(id);
     }
 }
