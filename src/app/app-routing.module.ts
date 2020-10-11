@@ -32,7 +32,12 @@ const routes: Routes = [
  * 路由
  */
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
+    imports: [
+        RouterModule.forRoot(routes, {
+            onSameUrlNavigation: 'reload',
+            scrollPositionRestoration: 'enabled',
+        }),
+    ],
     exports: [RouterModule],
 })
 export class AppRoutingModule {}

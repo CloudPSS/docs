@@ -1,15 +1,17 @@
 <div class="mask" [class]="scrollInfo">
   <nav #nav class="toc" (scroll)="updateScroll()">
-    <li
-      *ngFor="let item of document?.headers | async"
-      #item
-      [attr.data-id]="item.id"
-      class="toc-item toc-level-{{item.level}}"
-      [class.current]="item.id === currentId"
-      [style.paddingLeft.px]="item.level * 8"
-      [title]="item.title"
-    >
-      <a [href]="url(item.id)" (click)="onNavClick($event)">{{ item.title }}</a>
-    </li>
+    <ng-container *ngFor="let item of document?.headers | async">
+      <li
+        *ngIf="item.level <= level"
+        #itemElement
+        [attr.data-id]="item.id"
+        class="toc-item toc-level-{{item.level}}"
+        [class.current]="item.id === currentId"
+        [style.paddingLeft.px]="item.level * 8"
+        [title]="item.title"
+      >
+        <a [routerLink]="" [fragment]="item.id">{{ item.title }}</a>
+      </li>
+    </ng-container>
   </nav>
 </div>

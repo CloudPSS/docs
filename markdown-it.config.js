@@ -323,6 +323,7 @@ module.exports = function (
             },
         ],
         ...containers.map((v) => [require('markdown-it-container'), ...v]),
+        [require('markdown-it-source-map')],
     ];
     md = plugins.reduce((i, [plugin, ...options]) => {
         if (typeof plugin != 'function' && typeof plugin.default == 'function') {
