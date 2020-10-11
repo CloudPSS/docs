@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs';
-import { Router, ActivatedRoute, UrlSegment, RouterEvent } from '@angular/router';
-import { map, tap, filter } from 'rxjs/operators';
+import { Router, RouterEvent } from '@angular/router';
+import { map, filter } from 'rxjs/operators';
 
 /**
- * 提供文档内容
+ * 国际化相关
  */
 @Injectable({
     providedIn: 'root',

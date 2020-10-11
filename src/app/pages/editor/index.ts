@@ -1,4 +1,4 @@
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
 import { of, merge, combineLatest, BehaviorSubject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, mergeMap, catchError, debounceTime } from 'rxjs/operators';
@@ -6,6 +6,7 @@ import { LayoutService } from '@/services/layout';
 import { Title } from '@angular/platform-browser';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
+import { MarkdownComponent } from '@/components/markdown';
 
 /**
  * 编辑页面组件
@@ -22,6 +23,12 @@ export class EditorComponent implements AfterViewInit {
         readonly layout: LayoutService,
         readonly title: Title,
     ) {}
+
+    /** 编辑组件 */
+    editor!: monaco.editor.IStandaloneCodeEditor;
+
+    /** 预览组件 */
+    @ViewChild('preview') preview!: MarkdownComponent;
 
     /** url */
     readonly url = this.route.queryParams.pipe(
@@ -83,20 +90,38 @@ export class EditorComponent implements AfterViewInit {
      * 加载编辑器插件
      */
     async initMonaco(editor: monaco.editor.IStandaloneCodeEditor): Promise<void> {
-        console.log('xx', editor);
         const { MonacoMarkdownExtension } = await import('monaco-markdown');
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         new MonacoMarkdownExtension().activate(editor as any);
+        this.editor = editor;
+        this.editor.onDidScrollChange((e) => this.editorScroll(e));
+    }
+
+    /**
+     * 编辑器滚动
+     */
+    editorScroll(e: monaco.IScrollEvent): void {
+        if (!e.scrollTopChanged && !e.scrollHeightChanged) return;
+        const visible = this.editor.getVisibleRanges();
+        if (visible.length < 1) return;
+        const editorLine = Math.floor(visible[0].startLineNumber * 1.1 + visible[0].endLineNumber * -0.1);
+        const ele = Array.from(this.preview.doc.nativeElement.querySelectorAll<HTMLElement>('[data-source-line]')).find(
+            (el) => {
+                const line = Number.parseInt(el.dataset.sourceLine ?? '');
+                return line > editorLine;
+            },
+        );
+        ele?.scrollIntoView();
     }
 
     /**
      * 导航页面
      */
-    async onNavigate(target?: NavigateEvent): Promise<void> {
+    onNavigate(target?: NavigateEvent): void {
         if (target) {
-            await this.router.navigateByUrl(target.path + target.hash);
-        } else {
-            await this.router.navigate(['error', 404], { replaceUrl: true });
+            if (target.path === this.route.snapshot.queryParams.path) {
+                this.preview.scrollTo(target.fragment);
+            }
         }
     }
 }

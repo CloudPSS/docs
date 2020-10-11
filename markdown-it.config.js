@@ -5,6 +5,14 @@ const mermaid = require('mermaid');
 const { fromEvent } = require('rxjs');
 const { map, debounceTime, distinctUntilChanged } = require('rxjs/operators');
 const chartJs = require('chart.js');
+const VideoServiceBase = require('markdown-it-block-embed/lib/services/VideoServiceBase');
+
+function loadPlugin(plugin) {
+    if (typeof plugin != 'function' && typeof plugin.default == 'function') {
+        plugin = plugin.default;
+    }
+    return plugin;
+}
 
 function loadCustomElements() {
     customElements.define(
@@ -166,12 +174,17 @@ module.exports = function (
             'summary',
             {
                 render(tokens, idx) {
-                    var m = tokens[idx].info.trim().match(/^\S+\s+(.*)$/);
+                    const token = tokens[idx];
+                    const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
 
-                    if (tokens[idx].nesting === 1) {
-                        if (summary) return `<details><summary>${escapeHtml(m[1])}</summary>\n`;
-                        else return '<details>\n';
+                    if (token.nesting === 1) {
+                        const detailsOpen = `<details data-source-line="${token.map[0] + 1}">\n`;
+                        if (summary) {
+                            return `${detailsOpen}<summary>${escapeHtml(m[1])}</summary>\n`;
+                        } else {
+                            return detailsOpen;
+                        }
                     } else {
                         return '</details>\n';
                     }
@@ -181,17 +194,22 @@ module.exports = function (
         ...['tip', 'question', 'error', 'warning', 'info', 'success', 'fail'].map((name) => [
             name,
             {
+                /**
+                 * @param {import('markdown-it/lib/token')[]} tokens
+                 */
                 render(tokens, idx) {
-                    var m = tokens[idx].info.trim().match(/^\S+\s+(.*)$/);
+                    const token = tokens[idx];
+                    const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
 
-                    if (tokens[idx].nesting === 1) {
+                    if (token.nesting === 1) {
+                        const divOpen = `<div is="md-container" class="${escapeHtml(name)}" data-source-line="${
+                            token.map[0] + 1
+                        }">\n`;
                         if (summary) {
-                            return `<div is="md-container" class="${escapeHtml(name)}"><summary>${escapeHtml(
-                                m[1],
-                            )}</summary>\n`;
+                            return `${divOpen}<summary>${escapeHtml(m[1])}</summary>\n`;
                         } else {
-                            return `<div is="md-container" class="${escapeHtml(name)}">\n`;
+                            return divOpen;
                         }
                     } else {
                         return '</div>\n';
@@ -259,19 +277,20 @@ module.exports = function (
             },
         ],
         [require('markdown-it-front-matter'), options.frontMatter],
-        [
-            require('markdown-it-block-embed'),
-            {
-                outputPlayerSize: false,
-            },
-        ],
         [require('markdown-it-implicit-figures'), { figcaption: true }],
         [
-            require('markdown-it-block-embed'),
+            (md, opt) => {
+                md.use(loadPlugin(require('markdown-it-block-embed')), opt);
+                const original = md.renderer.rules['video'];
+                md.renderer.rules['video'] = (tokens, idx, opt, env, slf) => {
+                    const ret = original(tokens, idx, opt, env, slf);
+                    return `<div  data-source-line="${tokens[idx].map[0] + 1}"` + ret.slice('<div'.length);
+                };
+            },
             {
                 outputPlayerSize: false,
                 services: {
-                    bilibili: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                    bilibili: class extends VideoServiceBase {
                         /** @param {string} reference */
                         extractVideoID(reference) {
                             let match = reference.match(
@@ -297,7 +316,7 @@ module.exports = function (
                             return `//player.bilibili.com/player.html?${idArg}&as_wide=1&high_quality=1&danmaku=0`;
                         }
                     },
-                    youku: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                    youku: class extends VideoServiceBase {
                         /** @param {string} reference */
                         extractVideoID(reference) {
                             let match = reference.match(/id_([a-z0-9+])/i);
@@ -308,7 +327,7 @@ module.exports = function (
                             return `//player.youku.com/embed/${videoID}`;
                         }
                     },
-                    tencent: class extends require('markdown-it-block-embed/lib/services/VideoServiceBase') {
+                    tencent: class extends VideoServiceBase {
                         /** @param {string} reference */
                         extractVideoID(reference) {
                             let match = reference.match(/x\/page\/([a-z0-9+])/i);
@@ -326,10 +345,7 @@ module.exports = function (
         [require('markdown-it-source-map')],
     ];
     md = plugins.reduce((i, [plugin, ...options]) => {
-        if (typeof plugin != 'function' && typeof plugin.default == 'function') {
-            plugin = plugin.default;
-        }
-        return i.use(plugin, ...options);
+        return i.use(loadPlugin(plugin), ...options);
     }, md);
 
     const render = md.render.bind(md);

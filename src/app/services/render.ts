@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { File } from '../source/interfaces';
-import { SourceService } from '../source';
+import { File } from './source/interfaces';
+import { SourceService } from './source';
 import type MarkdownIt from 'markdown-it';
 import markdownIt from '~/markdown-it.config';
 

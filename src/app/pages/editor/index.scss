@@ -9,6 +9,7 @@
   position: absolute;
   width: 50%;
   height: 100%;
+  scroll-behavior: smooth;
   &.preview {
     overflow: auto;
     right: 0;
