@@ -2,6 +2,7 @@
   <div class="column editor">
     <ngx-monaco-editor
       id="editor"
+      #editor
       (onInit)="initMonaco($event)"
       [options]="{language: 'markdown'}"
       [ngModel]="content | async"
@@ -11,7 +12,12 @@
   </div>
   <div class="column preview">
     <div id="preview-host">
-      <app-markdown id="preview" #md [file]="currentDocument | async"></app-markdown>
+      <app-markdown
+        id="preview"
+        #preview
+        [file]="currentDocument | async"
+        (navigate)="onNavigate($event)"
+      ></app-markdown>
     </div>
   </div>
 </div>
