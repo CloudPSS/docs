@@ -1,11 +1,6 @@
 ---
-layout: index
-full_footer: true
-sidebar: false
-type: ''
+title: Home
 ---
-
-{% raw %}
 
 <link href="index/app.css" rel="stylesheet">
 <div id="vueindex">
@@ -37,5 +32,3 @@ type: ''
     </section>
 </div>
 <script src="index/app.js"></script>
-
-{% endraw %}

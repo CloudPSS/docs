@@ -10,7 +10,7 @@ import { NavigateEventSource, NavigateEvent } from '@/interfaces/navigate';
 })
 export class NavBaseComponent implements NavigateEventSource {
     /** @inheritdoc */
-    @Output() navigate = new EventEmitter<NavigateEvent>();
+    @Output() readonly navigate = new EventEmitter<NavigateEvent>();
 
     /**
      * 触发导航事件
