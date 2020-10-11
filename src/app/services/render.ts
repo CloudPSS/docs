@@ -52,11 +52,16 @@ export class RenderService {
     /**
      * 渲染
      */
-    render(file: File<string>, options?: Options): string {
+    render(file: File<string>, options?: Options): HTMLTemplateElement {
         try {
             this.options = { ...RenderService.defaultOptions, ...options };
             this.file = file;
-            return this.md.render(file.data);
+            return ((this.md as unknown) as {
+                /**
+                 * 渲染为 HTMLTemplateElement
+                 */
+                renderFragment(value: string): HTMLTemplateElement;
+            }).renderFragment(file.data);
         } catch (ex) {
             console.warn(file, options, ex);
             throw ex;

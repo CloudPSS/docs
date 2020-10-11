@@ -39,5 +39,5 @@ export interface NavigateEventSource {
     /**
      * 导航事件
      */
-    navigate: EventEmitter<NavigateEvent>;
+    readonly navigate: EventEmitter<NavigateEvent>;
 }

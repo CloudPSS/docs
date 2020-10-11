@@ -15,7 +15,7 @@ import { File } from '@/services/source/interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
 import { BehaviorSubject } from 'rxjs';
-import { map, filter } from 'rxjs/operators';
+import { filter } from 'rxjs/operators';
 import { Router, Scroll } from '@angular/router';
 
 /**
@@ -38,21 +38,13 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     @Input() file?: File<string> | null;
 
     /** MD 渲染结果 */
-    readonly rendered = new BehaviorSubject<string>('');
-    /** 解析结果 */
-    readonly parsed = this.rendered.pipe(
-        map((d) => {
-            if (!d) return null;
-            const p = new DOMParser().parseFromString(d, 'text/html');
-            return p.body;
-        }),
-    );
+    private readonly rendered = new BehaviorSubject<HTMLTemplateElement>(document.createElement('template'));
 
     /** MD 文档节点 */
-    @ViewChild('doc') doc!: ElementRef<HTMLElement>;
+    @ViewChild('doc') readonly doc!: ElementRef<HTMLElement>;
 
     /** @inheritdoc */
-    @Output() navigate = new EventEmitter<NavigateEvent>();
+    @Output() readonly navigate = new EventEmitter<NavigateEvent>();
 
     /** 标题 */
     readonly headers = new BehaviorSubject<
@@ -69,11 +61,12 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
         this.router.events.pipe(filter((x): x is Scroll => x instanceof Scroll)).subscribe((scroll) => {
             this.scrollTo(scroll.anchor);
         });
-        this.parsed.subscribe((parsed) => {
+        this.rendered.subscribe((parsed) => {
             const doc = this.doc.nativeElement;
             const hash = decodeURIComponent(location.hash.slice(1));
             doc.innerHTML = '';
-            doc.append(...Array.from(parsed?.children ?? []));
+            // 将清空 parsed 的内容
+            doc.appendChild(parsed.content);
             const headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1,h2,h3,h4,h5,h6'));
             this.headers.next(
                 headers.map((h) => {
@@ -116,14 +109,16 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
      */
     ngOnChanges(): void {
         if (!this.file) {
-            this.rendered.next('');
+            this.rendered.next(document.createElement('template'));
             return;
         }
         try {
             const html = this.render.render(this.file);
             this.rendered.next(html);
         } catch (ex) {
-            this.rendered.next(this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '');
+            const el = document.createElement('template');
+            el.innerHTML = this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '';
+            this.rendered.next(el);
         }
     }
 

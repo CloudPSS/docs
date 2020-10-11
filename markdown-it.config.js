@@ -52,7 +52,7 @@ function loadCustomElements() {
                 const lang = this.getAttribute('language');
                 await this.constructor.loadPrism();
                 const highlighter = Prism.languages[lang];
-                const code = this.innerText;
+                const code = this.textContent;
                 if (highlighter) {
                     this.innerHTML = Prism.highlight(code, Prism.languages[lang], lang);
                 } else {
@@ -80,9 +80,7 @@ function loadCustomElements() {
             connectedCallback() {
                 const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
                 const code = this.textContent;
-                console.log(code);
                 const render = () => {
-                    console.log('render', id);
                     this.innerHTML = `<div id="${id}"></div>`;
                     mermaid.render(
                         id,
@@ -349,7 +347,7 @@ module.exports = function (
     }, md);
 
     const render = md.render.bind(md);
-    md.render = (src, env) => {
+    md.renderFragment = (src, env) => {
         const r = render(src, env);
         if (!document) {
             return r;
@@ -368,7 +366,10 @@ module.exports = function (
             hint.innerText = e.src;
             e.parentElement.appendChild(hint);
         });
-        return t.innerHTML;
+        return t;
+    };
+    md.render = (src, env) => {
+        return md.renderFragment(src, env).innerHTML;
     };
 
     return md;
