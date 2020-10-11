@@ -100,15 +100,15 @@ export class EditorComponent implements AfterViewInit {
     /**
      * 编辑器滚动
      */
-    editorScroll(e: monaco.IScrollEvent): void {
+    private editorScroll(e: monaco.IScrollEvent): void {
         if (!e.scrollTopChanged && !e.scrollHeightChanged) return;
         const visible = this.editor.getVisibleRanges();
         if (visible.length < 1) return;
-        const editorLine = Math.floor(visible[0].startLineNumber * 1.1 + visible[0].endLineNumber * -0.1);
+        const editorLine = visible[0].startLineNumber;
         const ele = Array.from(this.preview.doc.nativeElement.querySelectorAll<HTMLElement>('[data-source-line]')).find(
             (el) => {
                 const line = Number.parseInt(el.dataset.sourceLine ?? '');
-                return line > editorLine;
+                return line >= editorLine;
             },
         );
         ele?.scrollIntoView();
