@@ -5,7 +5,8 @@
     "start:ng": "ng serve",
     "start:docs": "http-server -p4201 --cors -c-1 .",
     "start": "concurrently yarn:start:* --raw",
-    "build": "ng build --prod",
+    "build": "ng build --prod && cp ./dist/index.html ./dist/404.html",
+    "serve": "http-server -p4200 ./dist/",
     "lint": "ng lint",
     "format": "prettier --write .",
     "analyze": "webpack-bundle-analyzer --mode=static --default-sizes=gzip --report=dist/report.html dist/stats.json"
