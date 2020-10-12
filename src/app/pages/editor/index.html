@@ -4,7 +4,7 @@
       id="editor"
       #editor
       (onInit)="initMonaco($event)"
-      [options]="{language: 'markdown'}"
+      [options]="{language: lang, automaticLayout: true, wordWrap: 'on', wrappingIndent: 'indent' }"
       [ngModel]="content | async"
       (ngModelChange)="content.next($event)"
     >
