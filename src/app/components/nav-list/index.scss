@@ -17,7 +17,8 @@ a.mat-list-item {
   &.current {
     color: map-get($primary, text);
     background: map-get($background, hover);
-    &:hover {
+    &:hover,
+    &:focus {
       background: map-get($primary, 50);
     }
   }
