@@ -26,6 +26,8 @@ export class EditorComponent implements AfterViewInit {
         readonly title: Title,
     ) {}
 
+    /** 预览组件 */
+    lang = 'markdown';
     /** 编辑组件 */
     editor!: monaco.editor.IStandaloneCodeEditor;
 
@@ -91,10 +93,13 @@ export class EditorComponent implements AfterViewInit {
     /**
      * 加载编辑器插件
      */
-    async initMonaco(editor: monaco.editor.IStandaloneCodeEditor): Promise<void> {
-        const { MonacoMarkdownExtension } = await import(/* webpackMode: eager */ 'monaco-markdown');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        new MonacoMarkdownExtension().activate(editor as any);
+    initMonaco(editor: monaco.editor.IStandaloneCodeEditor): void {
+        /* @ts-ignore */
+        window.require(['MonacoMarkdown'], ({ MonacoMarkdownExtension }) => {
+            // eslint-disable-next-line
+            new MonacoMarkdownExtension().activate(editor);
+            this.lang = 'markdown-math';
+        });
         this.editor = editor;
         this.editor.onDidScrollChange((e) => this.editorScroll(e));
         this.editor.addAction({

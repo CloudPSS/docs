@@ -1,10 +1,7 @@
 const markdownIt = require('markdown-it');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
-/** @type {import('mermaid').Mermaid} */
-const mermaid = require('mermaid');
 const { fromEvent } = require('rxjs');
 const { map, debounceTime, distinctUntilChanged } = require('rxjs/operators');
-const chartJs = require('chart.js');
 const VideoServiceBase = require('markdown-it-block-embed/lib/services/VideoServiceBase');
 
 function loadPlugin(plugin) {
@@ -77,9 +74,12 @@ function loadCustomElements() {
     customElements.define(
         'pre-md-mermaid',
         class extends HTMLElement {
-            connectedCallback() {
-                const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
+            async connectedCallback() {
                 const code = this.textContent;
+                this.innerHTML = '';
+                /** @type {import('mermaid').Mermaid} */
+                const mermaid = await import('mermaid');
+                const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
                 const render = () => {
                     this.innerHTML = `<div id="${id}"></div>`;
                     mermaid.render(
@@ -103,7 +103,7 @@ function loadCustomElements() {
     customElements.define(
         'pre-md-chart',
         class extends HTMLElement {
-            connectedCallback() {
+            async connectedCallback() {
                 const code = this.textContent;
                 const root = this.attachShadow({ mode: 'closed' });
                 try {
@@ -114,7 +114,8 @@ function loadCustomElements() {
                     const canvas = document.createElement('canvas');
                     root.appendChild(canvas);
                     canvas.style.maxWidth = '800px';
-                    const chart = new chartJs(canvas, opt);
+                    const chartJs = await import('chart.js');
+                    const chart = new chartJs.default(canvas, opt);
                     const render = () => {
                         canvas.style.width = '100%';
                         canvas.style.height = '';
