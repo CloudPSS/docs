@@ -7,6 +7,8 @@ import { Title } from '@angular/platform-browser';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
+import { saveAs } from 'file-saver';
+import * as path from 'path';
 
 /**
  * 编辑页面组件
@@ -37,7 +39,7 @@ export class EditorComponent implements AfterViewInit {
             if (!p) return undefined;
             const path = this.source.normalizePath(p);
             if (path !== p) {
-                void this.router.navigate([], { relativeTo: this.route, queryParams: { path }, replaceUrl: true });
+                void this.router.navigate([], { queryParams: { path }, replaceUrl: true });
             }
             return path;
         }),
@@ -95,6 +97,22 @@ export class EditorComponent implements AfterViewInit {
         new MonacoMarkdownExtension().activate(editor as any);
         this.editor = editor;
         this.editor.onDidScrollChange((e) => this.editorScroll(e));
+        this.editor.addAction({
+            id: 'save',
+            label: 'Save',
+            keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
+            contextMenuGroupId: 'file',
+            contextMenuOrder: 3,
+            run: (ed) => {
+                const data = ed.getValue();
+                const file = new Blob([data], { type: 'text/markdown;charset=utf-8' });
+                let name = path.basename(this.route.snapshot.queryParams.path ?? 'Untitled');
+                if (!/\.md$/i.test(name)) {
+                    name += '.md';
+                }
+                saveAs(file, name);
+            },
+        });
     }
 
     /**

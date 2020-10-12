@@ -171,7 +171,7 @@ module.exports = function (
         [
             'summary',
             {
-                render(tokens, idx) {
+                render(tokens, idx, opt, env, slf) {
                     const token = tokens[idx];
                     const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
@@ -179,7 +179,10 @@ module.exports = function (
                     if (token.nesting === 1) {
                         const detailsOpen = `<details data-source-line="${token.map[0] + 1}">\n`;
                         if (summary) {
-                            return `${detailsOpen}<summary>${escapeHtml(m[1])}</summary>\n`;
+                            return `${detailsOpen}<summary>${md.renderInline(summary, {
+                                ...env,
+                                footnotes: null,
+                            })}</summary>\n`;
                         } else {
                             return detailsOpen;
                         }
@@ -195,7 +198,7 @@ module.exports = function (
                 /**
                  * @param {import('markdown-it/lib/token')[]} tokens
                  */
-                render(tokens, idx) {
+                render(tokens, idx, opt, env, slf) {
                     const token = tokens[idx];
                     const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
@@ -205,7 +208,10 @@ module.exports = function (
                             token.map[0] + 1
                         }">\n`;
                         if (summary) {
-                            return `${divOpen}<summary>${escapeHtml(m[1])}</summary>\n`;
+                            return `${divOpen}<summary>${md.renderInline(summary, {
+                                ...env,
+                                footnotes: null,
+                            })}</summary>\n`;
                         } else {
                             return divOpen;
                         }
@@ -365,6 +371,9 @@ module.exports = function (
             hint.classList.add('block-embed-hint');
             hint.innerText = e.src;
             e.parentElement.appendChild(hint);
+        });
+        t.content.querySelectorAll('pre > code').forEach((e) => {
+            e.setAttribute('is', 'md-highlight');
         });
         return t;
     };
