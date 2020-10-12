@@ -92,7 +92,7 @@ export class EditorComponent implements AfterViewInit {
      * 加载编辑器插件
      */
     async initMonaco(editor: monaco.editor.IStandaloneCodeEditor): Promise<void> {
-        const { MonacoMarkdownExtension } = await import('monaco-markdown');
+        const { MonacoMarkdownExtension } = await import(/* webpackMode: eager */ 'monaco-markdown');
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         new MonacoMarkdownExtension().activate(editor as any);
         this.editor = editor;
