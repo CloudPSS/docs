@@ -1,8 +1,5 @@
 ---
 title: MarkDown 语法介绍
-author: lzy
-author_email: lzy@live.in
-date: 2018-08-18 12:23:34
 ---
 
 ## 公式
@@ -58,7 +55,7 @@ question
 success
 :::
 
-:::fail 自定义
+:::fail 自定义[内容](#)
 fail
 :::
 
@@ -76,7 +73,6 @@ info
 :::summary 标题
 内容
 :::
-::::
 ```
 
 效果：
@@ -93,7 +89,7 @@ question
 success
 :::
 
-:::fail 自定义
+:::fail 自定义[内容](#)
 fail
 :::
 

@@ -43,14 +43,22 @@ export class TocComponent {
     set currentId(value: string | undefined) {
         this._currentId = value;
         const nav = this.nav?.nativeElement;
-        if (nav && this.items) {
-            const item = this.items.find((i) => i.nativeElement?.dataset?.id === value);
-            if (item) {
-                nav.scrollTo({
-                    top: item.nativeElement.offsetTop - nav.clientHeight / 4,
-                    behavior: 'smooth',
-                });
-            }
+        if (!(nav && this.items)) {
+            return;
+        }
+        if (!value) {
+            nav.scrollTo({
+                top: 0,
+                behavior: 'smooth',
+            });
+            return;
+        }
+        const item = this.items.find((i) => i.nativeElement?.dataset?.id === value);
+        if (item) {
+            nav.scrollTo({
+                top: item.nativeElement.offsetTop - nav.clientHeight / 4,
+                behavior: 'smooth',
+            });
         }
     }
 
