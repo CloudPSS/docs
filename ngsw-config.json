@@ -6,7 +6,15 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js"]
+        "files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js", "!/*-es5*.js"]
+      }
+    },
+    {
+      "name": "app-lazy",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": ["/*-es5*.js"]
       }
     },
     {
@@ -23,7 +31,17 @@
       "name": "docs",
       "urls": ["**/*.md"],
       "cacheConfig": {
-        "maxAge": "7d",
+        "maxAge": "100d",
+        "maxSize": 1000,
+        "timeout": "1s",
+        "strategy": "freshness"
+      }
+    },
+    {
+      "name": "docs-assets",
+      "urls": ["**/*"],
+      "cacheConfig": {
+        "maxAge": "365d",
         "maxSize": 1000,
         "timeout": "1s",
         "strategy": "freshness"
