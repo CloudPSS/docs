@@ -45,7 +45,8 @@ li.toc-item {
     vertical-align: middle;
     color: map-get($foreground, secondary-text);
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: map-get($primary, 700) !important;
     }
     &:active {
