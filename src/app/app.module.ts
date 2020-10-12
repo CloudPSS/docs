@@ -60,10 +60,16 @@ import { EditorComponent } from './pages/editor';
         }),
 
         MonacoEditorModule.forRoot({
-            defaultOptions: {
-                automaticLayout: true,
-                wordWrap: 'on',
-                wrappingIndent: 'indent',
+            baseUrl: './assets/amd',
+            onMonacoLoad: () => {
+                // eslint-disable-next-line
+                const require = window.require as any;
+                // eslint-disable-next-line
+                require.config({
+                    paths: {
+                        MonacoMarkdown: './assets/amd/monaco-markdown/monaco-markdown.min.js',
+                    },
+                });
             },
         }),
 
