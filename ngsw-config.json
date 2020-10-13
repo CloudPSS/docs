@@ -39,7 +39,7 @@
     },
     {
       "name": "docs-assets",
-      "urls": ["**/*"],
+      "urls": ["**/*.*"],
       "cacheConfig": {
         "maxAge": "365d",
         "maxSize": 1000,

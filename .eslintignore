@@ -8,11 +8,12 @@
 .*.{js,ts}
 
 # packages
-/node_modules/
+**/node_modules/
 /.pnp.js
 /.pnp/
 
 /src/index.html
 /src/environments/
 
-/tools
+/tools/
+/docs/
