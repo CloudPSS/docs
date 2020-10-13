@@ -159,14 +159,16 @@ $code-font-size: 0.9em;
       }
     }
   }
+  .katex-block,
+  .katex-display,
+  .katex,
+  .katex-error {
+    user-select: all;
+  }
   span.katex {
     &:before,
     &:after {
       content: ' ';
-      user-select: none;
-    }
-    .katex-html,
-    semantics > :not(annotation) {
       user-select: none;
     }
   }
