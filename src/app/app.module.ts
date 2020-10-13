@@ -62,10 +62,9 @@ import { EditorComponent } from './pages/editor';
         MonacoEditorModule.forRoot({
             baseUrl: './assets/amd',
             onMonacoLoad: () => {
-                // eslint-disable-next-line
-                const require = window.require as any;
-                // eslint-disable-next-line
-                require.config({
+                ((window.require as unknown) as {
+                    config: (c: unknown) => void;
+                }).config({
                     paths: {
                         MonacoMarkdown: './assets/amd/monaco-markdown/monaco-markdown.min.js',
                     },
