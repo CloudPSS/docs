@@ -1,7 +1,7 @@
 const markdownIt = require('markdown-it');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
-const { fromEvent } = require('rxjs');
-const { map, debounceTime, distinctUntilChanged } = require('rxjs/operators');
+const { fromEvent, merge } = require('rxjs');
+const { map, debounceTime, distinctUntilChanged, tap, share } = require('rxjs/operators');
 const VideoServiceBase = require('markdown-it-block-embed/lib/services/VideoServiceBase');
 
 function loadPlugin(plugin) {
@@ -11,11 +11,14 @@ function loadPlugin(plugin) {
     return plugin;
 }
 
-function loadCustomElements() {
+/**
+ *
+ * @param {import('@/services/global').GlobalService} global
+ */
+function loadCustomElements(global) {
     customElements.define(
         'md-highlight',
         class extends HTMLElement {
-            static loading;
             static async loadPrism(version = '^1') {
                 if ('Prism' in window) return;
                 if (this.loading) return this.loading;
@@ -74,12 +77,27 @@ function loadCustomElements() {
     customElements.define(
         'pre-md-mermaid',
         class extends HTMLElement {
+            static async initMermaid() {
+                /** @type {import('mermaid').Mermaid} */
+                const mermaid = await import('mermaid');
+                if (!this.watchTheme) {
+                    this.watchTheme = global.theme.pipe(
+                        tap((theme) => {
+                            mermaid.initialize({
+                                theme: global.isDark(theme) ? 'dark' : 'default',
+                            });
+                        }),
+                        share(),
+                    );
+                }
+                return mermaid;
+            }
             async connectedCallback() {
                 const code = this.textContent;
                 this.innerHTML = '';
-                /** @type {import('mermaid').Mermaid} */
-                const mermaid = await import('mermaid');
                 const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
+                /** @type {import('mermaid').Mermaid} */
+                const mermaid = await this.constructor.initMermaid();
                 const render = () => {
                     this.innerHTML = `<div id="${id}"></div>`;
                     mermaid.render(
@@ -92,11 +110,12 @@ function loadCustomElements() {
                         this,
                     );
                 };
-                const rerender = resizing(this).subscribe(render);
-                this.disconnectedCallback = function () {
-                    rerender.unsubscribe();
-                };
+                this.rerender = merge(resizing(this), this.constructor.watchTheme).subscribe(render);
                 render();
+            }
+            rerender;
+            disconnectedCallback() {
+                this.rerender?.unsubscribe();
             }
         },
     );
@@ -124,13 +143,14 @@ function loadCustomElements() {
                         canvas.style.height = '';
                     };
                     render();
-                    const rerender = resizing(this).subscribe(render);
-                    this.disconnectedCallback = function () {
-                        rerender.unsubscribe();
-                    };
+                    this.rerender = resizing(this).subscribe(render);
                 } catch (ex) {
                     root.innerText = String(ex);
                 }
+            }
+            rerender;
+            disconnectedCallback() {
+                this.rerender?.unsubscribe();
             }
         },
     );
@@ -148,10 +168,11 @@ function loadCustomElements() {
 }
 
 /**
- *
+ * @param {import('@/services/global').GlobalService} global
  * @param {markdownIt.Options} options
  */
 module.exports = function (
+    global,
     options = {
         html: true,
         typographer: true,
@@ -159,7 +180,7 @@ module.exports = function (
     },
 ) {
     if (options.highlight == null && customElements) {
-        options.highlight = loadCustomElements();
+        options.highlight = loadCustomElements(global);
     }
     let md = markdownIt(options);
 

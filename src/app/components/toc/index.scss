@@ -1,12 +1,3 @@
-@import '../../../styles/config.scss';
-
-$config: mat-get-color-config($docs-theme);
-$foreground: map-get($config, foreground);
-$background: map-get($config, background);
-$primary: map-get($config, primary);
-
-$color: mat-color($background, background);
-
 $marker-width: 2px;
 
 :host {
@@ -31,10 +22,10 @@ li.toc-item {
     width: $marker-width;
     left: -$marker-width;
     transition: background-color 0.2s ease-in-out;
-    background: map-get($foreground, dividers);
+    background: var(--theme-foreground-dividers);
   }
   &.current::before {
-    background: map-get($primary, text);
+    background: var(--theme-primary-text);
   }
   a {
     display: inline-block;
@@ -43,14 +34,14 @@ li.toc-item {
     width: 100%;
     text-decoration: none;
     vertical-align: middle;
-    color: map-get($foreground, secondary-text);
+    color: var(--theme-foreground-secondary-text);
 
     &:hover,
     &:focus {
-      color: map-get($primary, 700) !important;
+      color: var(--theme-primary-700) !important;
     }
     &:active {
-      color: map-get($primary, A700) !important;
+      color: var(--theme-primary-A700) !important;
     }
   }
   &::after {
@@ -61,7 +52,7 @@ li.toc-item {
     top: 0;
     bottom: 0;
     width: 2em;
-    background: linear-gradient(90deg, rgba($color, 0) 0, $color 80%);
+    background: linear-gradient(90deg, transparent 0, var(--theme-background-background) 80%);
   }
 }
 nav {
@@ -89,11 +80,11 @@ nav {
   }
   &::before {
     top: 0;
-    background: linear-gradient(0deg, rgba($color, 0) 0, $color 80%);
+    background: linear-gradient(0deg, transparent 0, var(--theme-background-background) 80%);
   }
   &::after {
     bottom: 0;
-    background: linear-gradient(180deg, rgba($color, 0) 0, $color 80%);
+    background: linear-gradient(180deg, transparent 0, var(--theme-background-background) 80%);
   }
   &.before::before {
     opacity: 1;

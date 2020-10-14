@@ -4,6 +4,9 @@ plugins:
   - prettier
   - jsdoc
 overrides:
+  - files: ['*.js']
+    parserOptions:
+      ecmaVersion: 2017
   - files: ['*.ts']
     parser: '@typescript-eslint/parser'
     parserOptions:
