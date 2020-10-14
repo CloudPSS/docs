@@ -82,7 +82,9 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "browserTarget": "docs:build"
+            "browserTarget": "docs:build",
+            "host": "0.0.0.0",
+            "port": 4000
           },
           "configurations": {
             "production": {
