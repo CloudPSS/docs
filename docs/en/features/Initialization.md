@@ -33,7 +33,7 @@ The following are the parameters to be configured.
 In the `Initial Condition` page of synchronous motor,
 1. For `Startup Type`, select `from Steady-state`.
 2. The `node voltage amplitude (p.u.)`, `node voltage phase (Deg)`, `injected active power (MW)` and `injected reactive power (Mvar)` of the generator nodes in the power flow calculation results are filled in the columns of `Initial Voltage Magnitude [p.u.]`, `Initial Voltage Phase [Deg]`, `Initial Active Power [MW]`, and `Initial Reactive Power [MVar]` respectively.
-   ![同步电机启动参数](Initialization/sync.png "Start parameters page of synchronous generator") 
+   ![Start parameters page of synchronous generator](Initialization/sync.png "同步电机启动参数") 
 
 ::: tip
 The phase voltage base value of the synchronous generator and the line voltage base value of the connected bus shall match correctly, otherwise the input `node voltage amplitude (p.u.)` shall be converted to the base value voltage of the synchronous motor.
@@ -43,13 +43,13 @@ The phase voltage base value of the synchronous generator and the line voltage b
 
 In the bus `Cofiguration` page, the `node voltage amplitude (p.u.)` and `node voltage phase (Deg)` of each bus in the power flow calculation results shall be filled in the `Voltage Magnitude [p.u.]`，`Voltage Angle [Deg]` options. The `basic value of line voltage` used for power flow calculation is filled in `Bus Voltage (L-L, RMS) [kV]`, and the rated frequency of AC system is filled in `Rated Frequency [Hz]`. An item of `Ramping Time (s)` can be left blank (this parameter is not used temporarily).
 
-![母线启动参数](Initialization/bus.png "Three phase bus starting parameters page")
+![Three phase bus starting parameters page](Initialization/bus.png "母线启动参数")
 
 ### Start parameter configuration of three-phase voltage source
 
 If the system also contains three-phase AC voltage source, the voltage source needs special treatment. Its `Function Type` needs to be set to `Cosine`, `Initial Phase [Deg]` to fill in the bus voltage phase of the connected bus, `Rated Voltage (L-L, RMS) [kV]` to fill in **the bus voltage actual value** of the power flow calculation result, `Start-up Type` select `Linear Ramp`, `Voltage Ramp Up Time [s]` to set to `0`.
 
-![三相电压源启动参数](Initialization/source.png "Three-phase voltage source start parameter page")
+![Three-phase voltage source start parameter page](Initialization/source.png "三相电压源启动参数")
 
 
 ::: tip

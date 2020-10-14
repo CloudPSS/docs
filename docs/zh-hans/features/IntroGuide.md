@@ -28,7 +28,7 @@ author_email:
 2. 一套独立的`参数（Parameter）体系`，用以维护当前系统的全部可配置参数和引脚；系统参数及变量的使用方法见[参数及引脚体系](../features/ParameterSystem.md)。
 3. 若干`图纸（Canvas）`，用以承载元件和拓扑的图形化展示功能。每个`系统`至少需要包含一张`图纸`。图纸功能的使用方法见[图纸功能](../features/Canvas.md)；
 
-![系统组成](IntroGuide/System.png "系统组件示例")
+![系统组件示例](IntroGuide/System.png "系统组成")
 
 基于上述`系统`设计理念，保证了在CloudPSS中`系统`与`元件`具备一致的结构和使用体验。
 
@@ -66,7 +66,7 @@ author_email:
 
 CloudPSS工作台包含了`资源管理栏`、`工作区`、`属性栏`、`导航栏`、`信息栏`五个主要部分。
 
-![CloudPSS工作台](IntroGuide/CloudPSS平台.png "CloudPSS工作台组成")
+![CloudPSS工作台组成](IntroGuide/CloudPSS平台.png "CloudPSS工作台")
 
 ### 2.1 资源管理栏
 

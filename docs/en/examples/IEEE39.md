@@ -17,11 +17,11 @@ In CloudPSS, a complete 39-bus system electromagnetic transient simulation examp
 
 The topology diagram of the IEEE 39-bus system is as follows, where bus 39 is a slack bus. Except for the slack bus, the buses (30-38) connected to each motor have a voltage level of 20kV, and the bus is 25kV, and all other buses voltages are 500kV.
 
-![拓扑图](IEEE39/I1.png "IEEE 39-bus system topology")
+![IEEE 39-bus system topology](IEEE39/I1.png "拓扑图")
 
 In the Cloudpss, the example case is built using a single-line diagram with the following topology.
 
-![仿真图](IEEE39/IEEE39All.png "IEEE 39-bus system in the CloudPSS")
+![IEEE 39-bus system in the CloudPSS](IEEE39/IEEE39All.png "仿真图")
 
 ### Model Parameter
 
@@ -148,8 +148,8 @@ The per-unit value of the line parameters of the following base values is select
 
 In this example case, the IEEE standard EXST1(PTI) type excitation regulator is used. See the reference^[IEEE Std 421.5™-2005. IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, IEEE, 2005] for specific information. The module simulation diagram built in CloudPSS is as follows:
 
-![励磁元件图](IEEE39/EXST1_PTI.png "The excitation regulator module diagram" =x180)
-![励磁原理图](IEEE39/EXST1_PTI_Inner.png "The excitation regulator module schematic diagram")
+![The excitation regulator module diagram](IEEE39/EXST1_PTI.png "励磁元件图" =x180)
+![The excitation regulator module schematic diagram](IEEE39/EXST1_PTI_Inner.png "励磁原理图")
  
 Among the various pins, Vref, Vs, VT, IT, Ef0, and S2M are input pins, among which:
 + The Ef0 pin should be connected to the motor internal measurement #Ef0, which is the initial value of Ef.
@@ -178,8 +178,8 @@ The parameters introductions are as follows:
 
 In this example case, the IEEE standard STEAM_GOV_1 type speed regulator and STEAM_TUR_1 type prime mover are used. The STEAM_GOV_1 type speed regulator module simulation diagram built in CloudPSS is as follows:
 
-![调速器元件图](IEEE39/STEAM_GOV_1.png "The speed regulator module diagram" =x180)
-![调速器原理图](IEEE39/GOV.png "The speed regulator module schematic diagram")
+![The speed regulator module diagram](IEEE39/STEAM_GOV_1.png "调速器元件图" =x180)
+![The speed regulator module schematic diagram](IEEE39/GOV.png "调速器原理图")
 
 The parameters are set as follows:
 |||||||||
@@ -189,8 +189,8 @@ The parameters are set as follows:
 
 The STEAM_TUR_1 type prime mover module simulation diagram built in CloudPSS is as follows:
 
-![调速器元件图](IEEE39/STEAM_TUR_1.png "The prime mover module diagram" =x180)
-![调速器原理图](IEEE39/TUR1.png "The prime mover module schematic diagram")
+![The prime mover module diagram](IEEE39/STEAM_TUR_1.png "调速器元件图" =x180)
+![The prime mover module schematic diagram](IEEE39/TUR1.png "调速器原理图")
 
 The parameters are set as follows:
 |||||||
@@ -219,23 +219,23 @@ The following shows the results of the simulation results. Note that between 2s 
 
 The power angle waveforms of all motors are shown in the figure:
 
-![电机功角](IEEE39/3-1.png "Power angle of all motors")
+![Power angle of all motors](IEEE39/3-1.png "电机功角")
 
 The speed waveforms of all motors are shown in the figure:
 
-![电机转速](IEEE39/3-2.png "Speed waveforms of all motors")
+![Speed waveforms of all motors](IEEE39/3-2.png "电机转速")
 
 The voltage per-unit value of all motors are shown in the figure:
 
-![电机的端电压标幺值](IEEE39/3-3.png "Voltage per-unit value of all motors")
+![Voltage per-unit value of all motors](IEEE39/3-3.png "电机的端电压标幺值")
 
 The instantaneous power waveform of all motors are shown in the figure:
 
-![机端瞬时功率](IEEE39/3-4.png "Instantaneous power of all motors")
+![Instantaneous power of all motors](IEEE39/3-4.png "机端瞬时功率")
 
 Taking bus 37 as an example, the simulation results of the voltage waveform before and after the fault are:
 
-![机端电压波形](IEEE39/3-5.png "Voltage waveform of bus 37")
+![Voltage waveform of bus 37](IEEE39/3-5.png "机端电压波形")
 
 
 
