@@ -38,17 +38,15 @@ function katexReplaceWithTex(fragment: DocumentFragment, copyDelimiters = defaul
     katexHtml.forEach((el) => el.remove());
     // Replace .katex-mathml elements with their annotation (TeX source)
     // descendant, with inline delimiters.
-    const allKatex = fragment.querySelectorAll('.katex > .katex-mathml');
+    const allKatex = fragment.querySelectorAll('.katex');
     allKatex.forEach((el) => {
-        const texSource = el.querySelector('annotation');
+        const texSource = el.getAttribute('aria-label');
         if (texSource) {
-            el.replaceWith(texSource);
-            const content = (texSource.textContent ?? '').trim();
-            texSource.textContent = `${copyDelimiters.inline[0]}${content}${copyDelimiters.inline[1]}`;
+            el.textContent = `${copyDelimiters.inline[0]}${texSource}${copyDelimiters.inline[1]}`;
         }
     });
     // Switch display math to display delimiters.
-    const displays = fragment.querySelectorAll('.katex-display > .katex > annotation');
+    const displays = fragment.querySelectorAll('.katex-display > .katex');
     displays.forEach((el) => {
         let content = el.textContent ?? '';
         content = content.slice(copyDelimiters.inline[0].length, content.length - copyDelimiters.inline[1].length);
