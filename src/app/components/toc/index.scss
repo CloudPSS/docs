@@ -3,6 +3,7 @@ $marker-width: 2px;
 :host {
   display: block;
   background: var(--theme-background-background);
+  pointer-events: none;
 
   &::before,
   &:after {
@@ -74,12 +75,16 @@ li.toc-item {
 nav {
   position: absolute;
   width: 100%;
+  will-change: transform;
   overflow: hidden;
   transition: top 0.3s ease-out;
+
+  ul {
+    margin: 0;
+  }
 }
 
 .mask {
-  pointer-events: none;
   position: relative;
   height: 100%;
   &::after,

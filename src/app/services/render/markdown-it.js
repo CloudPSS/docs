@@ -293,11 +293,12 @@ module.exports = function (global, options) {
         [
             require('markdown-it-anchor'),
             {
-                slugify: (s) => String(s).trim().toLowerCase().replace(/\s+/g, '-'),
+                slugify: (s) => String(s).trim(),
                 permalink: true,
                 permalinkSpace: false,
                 permalinkSymbol: '',
                 permalinkHref: (slug) => md.normalizeLink(`#${slug}`),
+                permalinkAttrs: (slug) => ({ 'aria-label': slug }),
             },
         ],
         [require('markdown-it-front-matter'), options.frontMatter],
@@ -394,6 +395,9 @@ module.exports = function (global, options) {
         });
         t.content.querySelectorAll('pre > code').forEach((e) => {
             e.setAttribute('is', 'md-highlight');
+        });
+        t.content.querySelectorAll('.katex').forEach((e) => {
+            e.setAttribute('aria-label', (e.querySelector('.katex-mathml annotation')?.textContent ?? '').trim());
         });
         return t;
     };

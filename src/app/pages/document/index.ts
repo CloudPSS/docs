@@ -78,6 +78,9 @@ export class DocumentComponent implements AfterViewInit {
             await this.router.navigate(['error', 404], { replaceUrl: true });
             return null;
         }),
+        tap((file) => {
+            this.global.setDescription(file?.data);
+        }),
     );
 
     /** 当前标题 */
