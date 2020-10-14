@@ -1,8 +1,6 @@
 ---
 title: 中文文案排版指北
-date: 2019-12-25 16:49:00
-author: lzy
-author_email: lzy@live.in
+order: 100
 ---
 
 原文链接：<https://github.com/mzlogin/chinese-copywriting-guidelines>
