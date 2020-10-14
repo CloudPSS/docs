@@ -16,6 +16,8 @@ export class TocComponent {
 
     /** nav */
     @ViewChild('nav') nav?: ElementRef<HTMLElement>;
+    /** mask */
+    @ViewChild('mask') mask!: ElementRef<HTMLElement>;
     /** li items */
     @ViewChildren('itemElement') items?: QueryList<ElementRef<HTMLLIElement>>;
 
@@ -46,33 +48,30 @@ export class TocComponent {
         if (!(nav && this.items)) {
             return;
         }
-        if (!value) {
-            nav.scrollTo({
-                top: 0,
-            });
-            return;
+        const mask = this.mask.nativeElement;
+        if (value) {
+            const item = this.items.find((i) => i.nativeElement?.dataset?.id === value);
+            if (item) {
+                this.offset = item.nativeElement.offsetTop - mask.clientHeight / 4;
+            }
+        } else {
+            this.offset = 0;
         }
-        const item = this.items.find((i) => i.nativeElement?.dataset?.id === value);
-        if (item) {
-            nav.scrollTo({
-                top: item.nativeElement.offsetTop - nav.clientHeight / 4,
-            });
-        }
+        const max = Math.max(nav.clientHeight - mask.clientHeight, 0);
+        this.offset = Math.max(this.offset, 0);
+        this.offset = Math.min(this.offset, max);
+        this.scrollInfo = {
+            before: this.offset > 1,
+            after: this.offset < max - 1,
+        };
     }
+
+    /** 菜单偏移 */
+    offset = 0;
 
     /** 滚动遮罩信息 */
     scrollInfo = {
         before: false,
         after: false,
     };
-
-    /** 更新滚动 */
-    updateScroll(): void {
-        const nav = this.nav?.nativeElement;
-        if (!nav) return;
-        this.scrollInfo = {
-            before: nav.scrollTop > 1,
-            after: nav.scrollTop < nav.scrollHeight - nav.clientHeight - 1,
-        };
-    }
 }

@@ -1,5 +1,5 @@
-<div class="mask" [class]="scrollInfo">
-  <nav #nav class="toc" (scroll)="updateScroll()">
+<div #mask class="mask" [class]="scrollInfo">
+  <nav #nav class="toc" [style.top.px]="-offset">
     <li
       *ngIf="1 <= level"
       #itemElement

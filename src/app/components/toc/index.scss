@@ -2,6 +2,24 @@ $marker-width: 2px;
 
 :host {
   display: block;
+  background: var(--theme-background-background);
+
+  &::before,
+  &:after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    background: var(--theme-background-background);
+    height: 16px;
+    width: 100%;
+  }
+
+  &::before {
+    top: 0;
+  }
+  &::after {
+    bottom: 0;
+  }
 }
 li.toc-item {
   list-style: none;
@@ -19,7 +37,7 @@ li.toc-item {
     $width: 2px;
     width: $marker-width;
     left: -$marker-width;
-    transition: background-color 0.2s ease-in-out;
+    transition: background 0.3s ease-in-out;
     background: var(--theme-foreground-dividers);
   }
   &.current::before {
@@ -54,17 +72,16 @@ li.toc-item {
   }
 }
 nav {
-  position: relative;
-  height: 100%;
-  overflow-y: hidden;
-  scroll-behavior: smooth;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  transition: top 0.3s ease-out;
 }
 
 .mask {
   pointer-events: none;
   position: relative;
   height: 100%;
-  background: var(--theme-background-background);
   &::after,
   &::before {
     content: '';
