@@ -5,7 +5,7 @@
     "start:ng": "ng serve",
     "start:docs": "http-server -p4201 --cors -c-1 .",
     "start": "concurrently yarn:start:* --raw",
-    "build": "ng build --prod && cp ./dist/index.html ./dist/404.html",
+    "build": "ng build --prod && node ./tools/build-manifest.js && node ./tools/post-build.js",
     "serve": "http-server -p4200 ./dist/",
     "lint": "ng lint",
     "format": "prettier --write .",

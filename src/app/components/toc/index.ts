@@ -34,14 +34,14 @@ export class TocComponent {
     observer?: Subscription;
 
     /** 当前活跃 ID */
-    _currentId?: string;
+    _currentId = '';
     /** 当前活跃 ID */
-    @Input() get currentId(): string | undefined {
+    @Input() get currentId(): string {
         return this._currentId;
     }
     /** 当前活跃 ID */
-    set currentId(value: string | undefined) {
-        this._currentId = value;
+    set currentId(value: string) {
+        this._currentId = value ?? '';
         const nav = this.nav?.nativeElement;
         if (!(nav && this.items)) {
             return;
@@ -49,7 +49,6 @@ export class TocComponent {
         if (!value) {
             nav.scrollTo({
                 top: 0,
-                behavior: 'smooth',
             });
             return;
         }
@@ -57,7 +56,6 @@ export class TocComponent {
         if (item) {
             nav.scrollTo({
                 top: item.nativeElement.offsetTop - nav.clientHeight / 4,
-                behavior: 'smooth',
             });
         }
     }
