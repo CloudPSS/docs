@@ -17,8 +17,8 @@
         <h1 id="title">{{(frontMatter | async)?.title}}</h1>
         <app-markdown #md [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>
       </div>
-      <app-toc #toc [document]="md" [currentId]="currentId"></app-toc>
     </div>
+    <app-toc #toc [document]="md" [currentId]="currentId"></app-toc>
   </mat-sidenav-content>
 </mat-sidenav-container>
 

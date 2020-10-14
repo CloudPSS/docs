@@ -32,14 +32,15 @@ mat-sidenav-content {
   }
   #scroll {
     padding: 0 24px;
+    position: relative;
     @media screen {
       height: 100%;
+      will-change: transform;
       scroll-behavior: smooth;
       overflow: auto;
     }
   }
   #scroll-container {
-    position: relative;
     padding: 24px 0;
     margin: auto;
     @media screen {

@@ -43,6 +43,15 @@ export class GlobalService {
     setTitle(value: string | undefined): void {
         this.titleSource.next(value ?? '');
     }
+    /**
+     * 标题
+     */
+    setDescription(value: string | undefined): void {
+        const meta = document.querySelector<HTMLMetaElement>('meta[name=description]');
+        if (meta) {
+            meta.content = value ?? this.titleSuffix;
+        }
+    }
 
     /**
      * 标题
