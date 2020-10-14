@@ -5,9 +5,8 @@
     #item
     [class.current]="(node.document.path?.raw || '--no-path--') === currentRawPath"
     [attr.data-raw-path]="node.document.path?.raw"
-    [href]="node.document.path == null ? '' : url(node.document)"
+    [href]="url(node.document)"
     (click)="onNavigate(node.document, $event)"
-    [disabled]="node.document.path == null"
   >
     <span [style.marginLeft.px]="treeControl.getLevel(node) * 16">{{ node.document.title }}</span>
   </a>
