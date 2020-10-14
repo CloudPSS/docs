@@ -15,17 +15,19 @@ async function main() {
     /** @type {import('../src/app/interfaces/manifest').Manifest} */
     const base = yaml.load(await fs.readFile('./manifest.yml', 'utf-8'));
     const matches = await promisify(glob)('**/*.md');
+    matches.sort();
     base.documents = {};
-    await Promise.all(
+    const info = await Promise.all(
         matches.map(async (v) => {
             const file = await fs.readFile(v, 'utf-8');
             fm = undefined;
             md.render(file);
             const front = fm ? yaml.safeLoad(fm) : undefined;
             const frontObj = typeof front == 'object' ? front : undefined;
-            base.documents[`/${v}`] = { title: path.basename(v, '.md'), ...frontObj };
+            return [`/${v}`, { title: path.basename(v, '.md'), ...frontObj }];
         }),
     );
+    Object.assign(base.documents, Object.fromEntries(info));
     fs.writeFile('./manifest.json', JSON.stringify(base), 'utf-8');
 }
 

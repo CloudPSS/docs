@@ -17,7 +17,7 @@ jobs:
       - name: Install
         uses: bahmutov/npm-install@v1.1.0
       - name: Build
-        run: yarn build --baseHref /docs/ && yarn postbuild
+        run: yarn build -c production,github && yarn postbuild && cp -r docs dist/content
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.1
         with:
