@@ -18,6 +18,7 @@ import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
 import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, Scroll } from '@angular/router';
+import { FrontMatter } from '@/interfaces/manifest';
 
 // Set these to how you want inline and display math to be delimited.
 const defaultCopyDelimiters = {
@@ -62,8 +63,6 @@ function katexReplaceWithTex(fragment: DocumentFragment, copyDelimiters = defaul
     });
 }
 
-export default katexReplaceWithTex;
-
 /**
  * 显示md文档
  */
@@ -85,6 +84,8 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
 
     /** MD 渲染结果 */
     private readonly rendered = new BehaviorSubject<HTMLTemplateElement>(document.createElement('template'));
+    /** MD 渲染结果 */
+    readonly frontMatter = new BehaviorSubject<FrontMatter | undefined>(undefined);
 
     /** MD 文档节点 */
     @ViewChild('doc') readonly doc!: ElementRef<HTMLElement>;
@@ -113,17 +114,15 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             doc.innerHTML = '';
             // 将清空 parsed 的内容
             doc.appendChild(parsed.content);
-            const headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1,h2,h3,h4,h5,h6'));
-            this.headers.next(
-                headers.map((h) => {
-                    return {
-                        id: h.id,
-                        title: h.innerText,
-                        level: Number.parseInt(h.tagName.slice(1)),
-                        element: h,
-                    };
-                }),
-            );
+            const headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1,h2,h3,h4,h5,h6')).map((h) => {
+                return {
+                    id: h.id,
+                    title: h.innerText,
+                    level: Number.parseInt(h.tagName.slice(1)),
+                    element: h,
+                };
+            });
+            this.headers.next(headers);
             if (hash) {
                 setTimeout(() => this.scrollTo(hash), 200);
             }
@@ -159,12 +158,14 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             return;
         }
         try {
-            const html = this.render.render(this.file);
+            const [html, fm] = this.render.render(this.file);
             this.rendered.next(html);
+            this.frontMatter.next(fm);
         } catch (ex) {
             const el = document.createElement('template');
             el.innerHTML = this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '';
             this.rendered.next(el);
+            this.frontMatter.next(undefined);
         }
     }
 

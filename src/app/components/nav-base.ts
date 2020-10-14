@@ -19,7 +19,7 @@ export class NavBaseComponent implements NavigateEventSource {
         if (!item) return;
         event?.preventDefault();
         if (item.path) {
-            this.navigate.next(new NavigateEvent(item.path.parsed));
+            this.navigate.next(new NavigateEvent(item.path.parsed.file));
         } else {
             this.onNavigate(item.children[0]);
         }
@@ -29,7 +29,7 @@ export class NavBaseComponent implements NavigateEventSource {
     url(item?: DocumentItem): string {
         if (!item) return '';
         if (item.path) {
-            return item.path.parsed;
+            return item.path.parsed.file;
         } else {
             return this.url(item.children[0]);
         }

@@ -29,6 +29,109 @@
   }
 }
 
+@mixin markdown-color($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+
+  $primary: map-get($config, primary);
+  $warn: map-get($config, warn);
+  $accent: map-get($config, accent);
+  $background: map-get($config, background);
+  $foreground: map-get($config, foreground);
+  $is-dark: map-get($config, is-dark);
+
+  $theme: map-get($primary, default);
+  $bg: map-get($background, background);
+  $border: color.mix(color.change(map-get($foreground, divider), $alpha: 1), $bg, 20%);
+  $codebg: color.adjust($bg, $lightness: -3%);
+  $shadow: map-get($foreground, icon);
+
+  $primary-color: map-get($primary, 900);
+  @if $is-dark {
+    $primary-color: map-get($primary, 100);
+  }
+
+  // font sizes
+  $body-font-size: 15px;
+  $code-font-size: 0.9em;
+
+  [markdown] {
+    p,
+    dd {
+      word-spacing: 0.05em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: $primary-color;
+      a.header-anchor {
+        color: $primary-color;
+      }
+    }
+    abbr[title] {
+      border-bottom-color: $border;
+    }
+
+    code:not([is]),
+    samp {
+      background-color: $codebg;
+    }
+
+    code:not([is]) {
+      border-color: $border;
+    }
+
+    figcaption,
+    caption {
+      color: $primary-color;
+    }
+    pre {
+      background-color: $codebg;
+      box-shadow: 0 0 4px $shadow;
+    }
+
+    dl,
+    blockquote,
+    details {
+      @include quote-color($primary);
+    }
+    [is='md-container'] {
+      &[class|='tip'] {
+        @include quote-color($primary, '!');
+      }
+    }
+
+    // table
+    table {
+      td,
+      th {
+        border: 1px solid $border;
+      }
+      > thead > tr > th {
+        background-color: $border;
+      }
+      > thead > tr:nth-last-child(2n) > th {
+        background-color: color.mix($border, $bg, 50%);
+      }
+      > tbody > tr > td {
+        background-color: $bg;
+      }
+      > tbody > tr:nth-child(2n) > td {
+        background-color: color.mix($border, $bg, 10%);
+      }
+      tr:hover > td {
+        background-color: rgba(map-get($primary, A100), 0.1) !important;
+      }
+    }
+
+    hr {
+      border: 1px inset mat-color($foreground, divider);
+    }
+  }
+}
+
 @mixin markdown-theme($config-or-theme) {
   $config: mat-get-color-config($config-or-theme);
 
@@ -55,8 +158,8 @@
   $code-font-size: 0.9em;
 
   @keyframes outline-blink {
-    $c: map-get($primary, default);
-    $tc: color.change($c, $alpha: 0);
+    $c: var(--theme-primary-default);
+    $tc: transparent;
     from {
       outline-color: $tc;
     }
@@ -67,32 +170,25 @@
       outline-color: $tc;
     }
   }
+
   [markdown] {
+    color: var(--theme-foreground-base);
+    background: var(--theme-background-background);
     @media print {
       background: white !important;
       color: black !important;
     }
-    @media screen {
-      background: $bg;
-    }
+  }
+
+  [markdown] {
     .target,
     :target {
       outline: solid 2px;
       animation: outline-blink 0.8s 5 forwards;
     }
-
-    @each $v in (-moz-focusring, focus-visible) {
-      :#{$v} {
-        outline: none;
-        border-radius: 4px;
-        transition: box-shadow 0.2s;
-        box-shadow: 0 0 1px 2px mat-color($primary, A400);
-      }
-    }
   }
 
   [markdown] {
-    color: mat-color($foreground, base);
     min-width: 0;
     * {
       scroll-behavior: smooth;
@@ -112,30 +208,29 @@
     h5,
     h6 {
       font-weight: 600;
-      color: $primary-color;
       position: relative;
-      @media screen {
-        a.header-anchor {
-          position: absolute;
-          left: 0;
-          padding: 0 0.25em;
-          transform: translateX(-100%);
-          color: $primary-color;
-          opacity: 0;
-          transition: all 0.2s;
-          &::before {
-            content: '¶';
-          }
-          &:focus {
-            opacity: 1;
-          }
+      a.header-anchor {
+        position: absolute;
+        left: 0;
+        padding: 0 0.25em;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.2s;
+        &::before {
+          content: '¶';
         }
-        &:hover,
-        &:focus,
-        &:focus-within {
-          a.header-anchor {
-            opacity: 1;
-          }
+        &:focus {
+          opacity: 1;
+        }
+        @media print {
+          display: none;
+        }
+      }
+      &:hover,
+      &:focus,
+      &:focus-within {
+        a.header-anchor {
+          opacity: 1;
         }
       }
     }
@@ -149,12 +244,17 @@
     }
     a {
       text-decoration: none;
-      color: map-get($primary, 500);
+      kbd,
+      samp,
+      code {
+        color: inherit !important;
+      }
+      color: var(--theme-primary-500);
       &:hover {
-        color: map-get($primary, 700);
+        color: var(--theme-primary-700);
       }
       &:active {
-        color: map-get($primary, 600);
+        color: var(--theme-primary-600);
       }
       &.footnote-backref {
         user-select: none;
@@ -170,29 +270,29 @@
       margin: 0.8em 0;
     }
     mark {
-      @media screen {
-        background: rgba(map-get($mat-yellow, A700), 40%);
-        color: map-get($foreground, text);
-      }
+      background: rgba(map-get($mat-yellow, A700), 40%);
+      color: var(--theme-foreground-text);
       @media print {
-        border: 2px solid map-get($mat-yellow, 500) !important;
         background: none;
+        color: #000;
+        border: 2px solid map-get($mat-yellow, 500) !important;
       }
     }
     abbr[title] {
       cursor: help;
       text-decoration: none;
-      border-bottom: 1px dotted #777;
+      border-bottom: 1px dotted;
       @media print {
         &:after {
           content: '(' attr(title) ')';
+          border-bottom-color: #777;
           color: #777;
         }
       }
     }
 
     .katex-error {
-      color: map-get($warn, text);
+      color: var(--theme-warn-text);
     }
     p.katex-block {
       page-break-before: avoid;
@@ -202,7 +302,7 @@
         margin: 0;
         overflow: auto;
         > .katex {
-          overflow: visible clip;
+          overflow: visible hidden;
         }
       }
     }
@@ -224,9 +324,6 @@
     kbd,
     samp {
       font-size: $code-font-size;
-      @media screen {
-        background-color: $codebg;
-      }
       @media print {
         background-color: white !important;
       }
@@ -237,7 +334,7 @@
       white-space: nowrap;
       border-radius: 3px;
       padding: 2px 6px;
-      box-shadow: 0 0 2px 1px $shadow;
+      box-shadow: 0 0 2px 1px var(--theme-foreground-icon);
       margin: 0 2px;
       font-size: small;
       background: #eee;
@@ -247,27 +344,27 @@
       letter-spacing: 0.5px;
       line-height: 1em;
       @media print {
-        background: #fff;
-        color: #000;
-        box-shadow: none;
-        border: 2px solid $border;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: 2px solid #888 !important;
       }
       &:hover {
         color: #000;
-        box-shadow: 0 0 2px 2px $shadow;
+        box-shadow: 0 0 2px 2px var(--theme-foreground-icon);
       }
     }
 
     code:not([is]) {
       display: inline-block;
-      color: map-get($accent, text);
       padding: 0 2px;
       margin: 0 2px;
-      border: 1px solid $border;
+      border: 1px solid;
       border-radius: 2px;
       vertical-align: text-bottom;
+      color: var(--theme-accent-text);
       @media print {
-        border: rgba(map-get($accent, A700), 0.25) solid 1px;
+        border: var(--theme-accent-A400) solid 1px;
       }
     }
 
@@ -296,7 +393,6 @@
       margin: 0.3em auto;
       font-weight: bolder;
       font-size: 14px;
-      color: $primary-color;
     }
     caption {
       page-break-after: avoid;
@@ -306,13 +402,11 @@
     }
 
     pre {
-      background-color: $codebg;
       padding: 1em 0.5em;
       margin: 1.2em 0;
       border-radius: 4px;
-      box-shadow: 0 0 4px $shadow;
       @media print {
-        background-color: white;
+        background-color: white !important;
       }
     }
     code[is='md-highlight'] {
@@ -377,7 +471,6 @@
       margin: 1em 0;
       padding: 0 12px 0 20px;
       page-break-inside: avoid;
-      @include quote-color($primary);
       &::before {
         user-select: none;
         position: absolute;
@@ -392,25 +485,22 @@
       }
     }
     [is='md-container'] {
-      &[class='tip'] {
-        @include quote-color($primary, '!');
-      }
-      &[class='info'] {
+      &[class|='info'] {
         @include quote-color($mat-blue, 'i');
       }
-      &[class='warning'] {
+      &[class|='warning'] {
         @include quote-color($mat-orange, '!');
       }
-      &[class='error'] {
+      &[class|='error'] {
         @include quote-color($mat-red, '☓');
       }
-      &[class='success'] {
+      &[class|='success'] {
         @include quote-color($mat-light-green, '✓');
       }
-      &[class='fail'] {
+      &[class|='fail'] {
         @include quote-color($mat-red, '✗');
       }
-      &[class='question'] {
+      &[class|='question'] {
         @include quote-color($mat-amber, '?');
       }
     }
@@ -459,7 +549,6 @@
       th {
         line-height: 1.5em;
         padding: 0.4em 0.8em;
-        border: 1px solid $border;
       }
       > tbody:not(:first-child) > tr:first-of-type > td {
         border-top-width: 2px;
@@ -472,31 +561,19 @@
           font-weight: bold;
           top: 0;
         }
-      }
-      @media screen {
-        > thead > tr > th {
-          background-color: $border;
+        @media print {
+          > thead > tr > th,
+          > tbody > tr > td {
+            background-color: white !important;
+          }
         }
-        > thead > tr:nth-last-child(2n) > th {
-          background-color: color.mix($border, $bg, 50%);
-        }
-        > tbody > tr > td {
-          background-color: $bg;
-        }
-        > tbody > tr:nth-child(2n) > td {
-          background-color: color.mix($border, $bg, 10%);
-        }
-      }
-      tr:hover > td {
-        background-color: rgba(map-get($primary, A100), 0.1) !important;
       }
     }
 
     hr {
       margin: 0.5em auto;
-      border: 1px inset mat-color($foreground, divider);
       &.footnotes-sep {
-        margin: 1em -32px 2em;
+        margin: 1em -20px 2em;
         border-width: 1.5px;
       }
     }
@@ -515,4 +592,6 @@
       }
     }
   }
+
+  @include markdown-color($config);
 }

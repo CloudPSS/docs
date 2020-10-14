@@ -8,6 +8,7 @@ import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { GlobalService } from '@/services/global';
+import { I18nService } from '@/services/i18n';
 
 /**
  * 文档页面组件
@@ -23,6 +24,7 @@ export class DocumentComponent implements AfterViewInit {
         readonly source: SourceService,
         readonly layout: LayoutService,
         readonly global: GlobalService,
+        readonly i18n: I18nService,
     ) {}
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
@@ -33,7 +35,7 @@ export class DocumentComponent implements AfterViewInit {
     /** url */
     readonly url = this.route.params.pipe(
         map((s) => {
-            const lang = s.language as string;
+            const lang = this.i18n.lang.value;
             const category = s.category as string;
             const path: string[] = [];
             for (const key in s) {
@@ -72,11 +74,6 @@ export class DocumentComponent implements AfterViewInit {
             this.global.setTitle(fm?.title);
             return merge(of(null), this.source.file(doc, 'text'));
         }),
-        tap((f) => {
-            if (f) {
-                this.scroll?.nativeElement?.focus();
-            }
-        }),
         catchError(async () => {
             await this.router.navigate(['error', 404], { replaceUrl: true });
             return null;
@@ -84,7 +81,7 @@ export class DocumentComponent implements AfterViewInit {
     );
 
     /** 当前标题 */
-    currentId?: string;
+    currentId = '';
 
     /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
@@ -95,7 +92,7 @@ export class DocumentComponent implements AfterViewInit {
         combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {
             const host = this.scroll.nativeElement;
             if (headers.length === 0 || !host) {
-                this.currentId = undefined;
+                this.currentId = '';
                 return;
             }
             if (scrollMarginTop < 0) {
@@ -108,7 +105,7 @@ export class DocumentComponent implements AfterViewInit {
             const top = host.scrollTop + scrollMarginTop;
             let i = headers.findIndex((h) => h.element.offsetTop > top);
             if (i < 0) i = headers.length;
-            this.currentId = headers[i - 1]?.id;
+            this.currentId = headers[i - 1]?.id ?? '';
         });
         this.updateToc();
         this.layout.sidenavMode

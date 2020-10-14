@@ -1,5 +1,5 @@
 <mat-toolbar [color]="'primary'">
-  <a mat-button id="home" [routerLink]="i18n.lang | async">CloudPSS</a>
+  <a mat-button id="home" [routerLink]="'/'">CloudPSS</a>
   <a mat-button *ngFor="let item of (nav | async)!" [href]="url(item)" (click)="onNavigate(item, $event)"
     >{{item.title}}</a
   >

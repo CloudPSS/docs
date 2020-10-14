@@ -22,14 +22,13 @@ mat-sidenav-content {
     position: absolute;
     user-select: none;
     width: $toc-width;
-    padding: 16px;
+    margin: 16px;
     right: -$toc-width;
     top: 0;
     bottom: 0;
     display: none;
   }
   #scroll {
-    position: relative;
     padding: 0 24px;
     @media screen {
       height: 100%;
@@ -38,6 +37,7 @@ mat-sidenav-content {
     }
   }
   #scroll-container {
+    position: relative;
     padding: 24px 0;
     margin: auto;
     @media screen {
