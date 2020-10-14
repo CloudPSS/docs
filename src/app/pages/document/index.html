@@ -12,7 +12,7 @@
     [class.toc]="(frontMatter | async)?.toc != false"
     [class.nav]="(frontMatter | async)?.nav != false"
   >
-    <div #scroll id="scroll" (scroll)="updateToc()">
+    <div #scroll id="scroll" tabindex="0" (scroll)="updateToc()">
       <div id="scroll-container">
         <h1 id="title">{{(frontMatter | async)?.title}}</h1>
         <app-markdown #md [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>

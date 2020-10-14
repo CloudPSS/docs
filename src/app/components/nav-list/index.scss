@@ -14,12 +14,18 @@ a.mat-list-item {
   white-space: nowrap;
   text-overflow: ellipsis;
   user-select: none;
+  position: relative;
   &.current {
-    color: map-get($primary, text);
-    background: map-get($background, hover);
-    &:hover,
-    &:focus {
-      background: map-get($primary, 50);
+    color: var(--theme-primary-text) !important;
+    &::before {
+      content: '';
+      background: var(--theme-primary-default) !important;
+      opacity: 0.15;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
   }
 }

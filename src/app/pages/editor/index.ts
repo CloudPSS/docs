@@ -3,12 +3,12 @@ import { of, merge, combineLatest, BehaviorSubject } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, mergeMap, catchError, debounceTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
-import { Title } from '@angular/platform-browser';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { saveAs } from 'file-saver';
 import * as path from 'path';
+import { GlobalService } from '@/services/global';
 
 /**
  * 编辑页面组件
@@ -23,7 +23,7 @@ export class EditorComponent implements AfterViewInit {
         readonly router: Router,
         readonly source: SourceService,
         readonly layout: LayoutService,
-        readonly title: Title,
+        readonly global: GlobalService,
     ) {}
 
     /** 预览组件 */

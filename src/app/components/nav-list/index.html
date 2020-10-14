@@ -8,7 +8,6 @@
     [href]="node.document.path == null ? '' : url(node.document)"
     (click)="onNavigate(node.document, $event)"
     [disabled]="node.document.path == null"
-    tabindex="0"
   >
     <span [style.marginLeft.px]="treeControl.getLevel(node) * 16">{{ node.document.title }}</span>
   </a>

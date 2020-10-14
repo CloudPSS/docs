@@ -1,6 +1,6 @@
 import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
 import { SourceService } from '@/services/source';
-import { map, debounceTime } from 'rxjs/operators';
+import { map, debounceTime, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, BehaviorSubject, merge, of, Subject } from 'rxjs';
 import { I18nService } from '@/services/i18n';
 import { DocumentItem } from '@/interfaces/manifest';
@@ -89,24 +89,24 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit 
     @ViewChildren('item', { read: ElementRef }) items!: QueryList<ElementRef<HTMLElement>>;
 
     /** 聚焦选中元素 */
-    private _focus = new Subject<boolean>();
+    private _focus = new Subject<void>();
     /** 聚焦选中元素 */
     focus(): void {
-        this._focus.next(true);
+        this._focus.next();
     }
 
     /** @inheritdoc */
     ngAfterViewInit(): void {
-        combineLatest(this._currentRawPath, merge(of(null), this.items.changes), this._focus.pipe(debounceTime(50)))
+        combineLatest(this._currentRawPath, merge(of(null), this.items.changes))
             .pipe(debounceTime(50))
-            .subscribe(([currentRawPath, _, focus]) => {
+            .subscribe(([currentRawPath]) => {
                 const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
                 current?.nativeElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-                if (focus) {
-                    current?.nativeElement.focus({ preventScroll: true });
-                }
             });
-        this._focus.next(false);
+        this._focus.pipe(withLatestFrom(this._currentRawPath), debounceTime(50)).subscribe(([_, currentRawPath]) => {
+            const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+            current?.nativeElement.focus({ preventScroll: true });
+        });
     }
 
     /**
