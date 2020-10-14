@@ -20,17 +20,17 @@ IEEE 39节点标准系统，是美国新英格兰地区的一个电力网络。�
 
 IEEE39节点算例拓扑图如下，其中39号节点为松弛节点。除松弛节点外，各电机相连的母线（30-38）电压等级均为20kV，另外12号节点为25kV，剩下所有母线电压均为500kV.
 
-![拓扑图](IEEE39/I1.png "IEEE39节点算例拓扑图")
+![IEEE39节点算例拓扑图](IEEE39/I1.png "拓扑图")
 
 CloudPSS上该算例采用单线图构建，其拓扑如下。
 
-![仿真图](IEEE39/IEEE39All.png "IEEE39节点算例仿真图")
+![IEEE39节点算例仿真图](IEEE39/IEEE39All.png "仿真图")
 
 #### 子系统功能
 
 CloudPSS上的IEEE39节点标准系统中，对电机采用了子系统功能进行封装。每个子系统内部的拓扑如下图所示（以30号电机为例），每台电机包含励磁器、调速器、原动机、电力系统稳定器四种控制器模型。
 
-![电机拓扑图](IEEE39/IEEE39Single.png "电机子系统内部拓扑图")
+![电机子系统内部拓扑图](IEEE39/IEEE39Single.png "电机拓扑图")
 
 子系统功能的详细介绍详见“功能帮助”。
 
@@ -157,8 +157,8 @@ CloudPSS上的IEEE39节点标准系统中，对电机采用了子系统功能进
 
 本算例中采用IEEE标准的EXST1(PTI)型励磁调节器。具体信息见参考文献^[IEEE Std 421.5™-2005. IEEE Recommended Practice for Excitation System Models for Power System Stability Studies. New York, IEEE, 2005]。在CloudPSS中构建的元件图标以及原理图如下：
 
-![励磁元件图](IEEE39/EXST1_PTI.png "励磁调节器元件图标" =x180)
-![励磁原理图](IEEE39/EXST1_PTI_Inner.png "励磁调节器原理图")
+![励磁调节器元件图标](IEEE39/EXST1_PTI.png "励磁元件图" =x180)
+![励磁调节器原理图](IEEE39/EXST1_PTI_Inner.png "励磁原理图")
  
 各个引脚中，Vref、Vs、VT、IT、Ef0、S2M为输入引脚，其中：
 + Ef0引脚应与电机内部量测量#Ef0相连，为Ef的初值。

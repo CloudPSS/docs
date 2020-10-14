@@ -16,7 +16,7 @@ CloudPSS 提供了移频电磁暂态仿真平台。
 
 ![解析信号与解析包络原理图](SFEMT/fig3.png "解析信号与解析包络原理图")
 
-![解析信号与原信号gif原理图](SFEMT/fig4.gif "解析信号的实部虚部演示") 
+![解析信号的实部虚部演示](SFEMT/fig4.gif "解析信号与原信号gif原理图") 
 
 ::: tip
 <span style="font-weight: bold;color: #E9B224;">黄实线</span>代表原始信号，<span style="font-weight: bold;color: #D95A23;">橙实线</span>代表原始信号的Hilbert变换，<span style="font-weight: bold;color: #006ABD;">蓝实线</span>代表解析信号，<span style="font-weight: bold;color: #006ABD;">蓝虚线</span>代表解析包络。

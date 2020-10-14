@@ -11,7 +11,7 @@ CloudPSS is a free online simulation tool for every registered user. Enter [www.
 
 Click `Log in` button on the upper right corner and go to the login page as the picture shown below. If the user has registered an account, please enter the registered email and password in the corresponding location and then click `Log in` button to log in.
 
-![Login interface](User1/Z1.png "Login Interface")
+![Login Interface](User1/Z1.png "Login interface")
 
 If the user is new to our web, please click `Create New Account` button and go to the registration page. Following the instructions, user should fill in corresponding information and click `Send Registration Code` to verify the email used for registration. Please copy the registration code from the mailbox to registration page and click `Sign up` button to create the new account. After successful registration, the page will automatically jump to the login interface.
 

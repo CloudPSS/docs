@@ -17,8 +17,8 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 
 例如要实现对某一电阻的电流测量可拖拽`电流表`与该电阻串联，并设置该电流表输出信号名称，或在该电阻的`参数设置->Monitoring`填写Branch Current [kA]对应的标签名称，如图所示。量测所得的信号或引脚可进一步连接至其余的控制、电气或输出元件。
 
-![电流测量](Measure/L1.png "采用电流表测量电流")
-![电流测量](Measure/L2.png "采用内部量输出得到电流测量信号")
+![采用电流表测量电流](Measure/L1.png "电流测量")
+![采用内部量输出得到电流测量信号](Measure/L2.png "电流测量")
 
 ## 信号整理
 
@@ -31,28 +31,28 @@ CloudPSS提供了灵活的量测方法及量测/输出元件供用户使用。
 ## 示波器窗口类型
 
 CloudPSS提供了四种示波器窗口类型，用户可选择每个示波器的显示模式，如下图所示。
-![示波器模式选择](Measure/示波器模式选择.png "示波器显示模式选择")
+![示波器显示模式选择](Measure/示波器模式选择.png "示波器模式选择")
 一共有四种模式可选，其含义分别如下：
 1. Compressed Time Axis Window: 默认模式，时间坐标轴最大值随仿真时间变化，最小值为仿真开始时间不变，如下图所示。
-![输出1号](Measure/输出1号-1.gif "Compressed Time Axis Window模式演示")
+![Compressed Time Axis Window模式演示](Measure/输出1号-1.gif "输出1号")
 
 2. Global Time Axis Window: 时间坐标轴最大值为仿真结束时间不变，最小值为仿真开始时间不变，如下图所示。
-![输出2号](Measure/输出2号-1.gif "Global Time Axis Window模式演示")
+![Global Time Axis Window模式演示](Measure/输出2号-1.gif "输出2号")
 
 3. Moving Time Axis Window: 默认模式，时间坐标轴最大值随仿真时间变化，时间坐标轴范围为参数Window Width指示的值，如下图所示。
-![Moving](Measure/Moving.png "Moving Time Axis Window示波器参数")
-![输出3号](Measure/输出3号-1.gif "Moving Time Axis Window模式演示")
+![Moving Time Axis Window示波器参数](Measure/Moving.png "Moving")
+![Moving Time Axis Window模式演示](Measure/输出3号-1.gif "输出3号")
 
 4. Oscilloscope Time Axis Window: 与示波器显示模式相近，仿真窗口时间轴范围为Window Width指示的值，如下图所示。
-![输出4号](Measure/输出4号.gif "Oscilloscope Time Axis Window模式演示")
+![Oscilloscope Time Axis Window模式演示](Measure/输出4号.gif "输出4号")
 
 ## 结果下载
 
 仿真运行结束后（需手动点击`结束`按钮），可在弹出的波形展示界面中选择`数据下载`，即可选择相应的数据通道进行下载。
  
 
-![波形展示](Measure/datadownload.png "波形展示界面")
-![数据下载](Measure/datadownloaddialog.png "数据下载界面")
+![波形展示界面](Measure/datadownload.png "波形展示")
+![数据下载界面](Measure/datadownloaddialog.png "数据下载")
 
 ::: tip
 只有**保存后**的算例工程才可进行数据下载。

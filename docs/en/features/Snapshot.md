@@ -16,7 +16,7 @@ Before simulation, select `whether to save the snapshot` and fill in the `snapsh
 
 As shown in the figure below, set the `simulation end time` as 2S, and the `snapshot saving time` as 1.5s. Click `start`. After the simulation, the following information can be seen in the `system information`, indicating that the snapshot saving is successful.
 
-![断面保存](Snapshot/savesnapshot.png "Snapshot saving page")
+![Snapshot saving page](Snapshot/savesnapshot.png "断面保存")
 
 ::: success
 [info] Snapshot saved at 1.5 s.
@@ -32,7 +32,7 @@ Before simulation, select `whether to import the snapshot` and select the import
 
 As shown in the figure below, set the `simulation end time` to 2s, select the `Stable snapshot`, and the `snapshot importing time` will be automatically filled to 1.5s.
 
-![断面载入](Snapshot/loadsnapshot.png "Snapshot importing page")
+![Snapshot importing page](Snapshot/loadsnapshot.png "断面载入")
 
 Set the `simulation start time` to be the same as the `snapshot importing time`, which is 1.5s. Click `start` and then the following information can be seen in the `system information` window, indicating that the snapshot is loaded successfully.
 
@@ -41,7 +41,7 @@ Set the `simulation start time` to be the same as the `snapshot importing time`,
 [info] Snapshot loaded at 1.50001 s.
 :::
 
-![断面载入结果](Snapshot/result.png "The result of the snapshot importing")
+![The result of the snapshot importing](Snapshot/result.png "断面载入结果")
 
 In the display window of simulation results, the simulaton start directly from the importing time of the snapshot.
 
