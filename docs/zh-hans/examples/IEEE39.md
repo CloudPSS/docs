@@ -26,6 +26,14 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 
 ![仿真图](IEEE39/IEEE39All.png "IEEE39节点算例仿真图")
 
+#### 子系统功能
+
+CloudPSS上的IEEE39节点标准系统中，对电机采用了子系统功能进行封装。每个子系统内部的拓扑如下图所示（以30号电机为例），每台电机包含励磁器、调速器、原动机、电力系统稳定器四种控制器模型。
+
+![电机拓扑图](IEEE39/IEEE39Single.png "电机子系统内部拓扑图")
+
+子系统功能的详细介绍详见“功能帮助”。
+
 ### 模型参数
 
 所有电机参数、传输线参数、变压器参数来源于文献^[Luc Gérin-Lajoie. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. EMTP-RV 39-bus system, Version 1.5 - Mars 04, 2015]。

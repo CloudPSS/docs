@@ -1,8 +1,6 @@
 ---
 title: Features
 order: 300
-author: songyk
-author_email: songyankan@cloudpss.net
 ---
 
 To quickly understand the relevant functions of CloudPSS, users can read the following documents.

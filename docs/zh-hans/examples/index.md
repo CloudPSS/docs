@@ -1,8 +1,6 @@
 ---
 title: 案例介绍
 order: 400
-author: songyk
-author_email: songyankan@cloudpss.net
 ---
 
 CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户熟悉CloudPSS各类功能，快速理解相关算例的使用，并在相关算例的基础上进行修改。 
@@ -24,5 +22,8 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 ### 潮流计算仿真案例
 * [IEEE 标准系统](IEEE39PF.md)
 
-### 供热系统仿真案例
-* [区域集中供热系统](HeatingSystem.md)
+### 综合能源系统案例
+* [综合能源系统展示案例](IntegratedEnergySystem.md)
+* [分布式供热综合能源系统](IES-Distributed.md)
+* [集中式供热综合能源系统](IES-Centralized.md)
+* [以蒸汽利用为核心的综合能源系统](IES-Steam.md)
