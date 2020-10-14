@@ -18,8 +18,8 @@ symbol: newExpLoad
 
 > **该元件用以建模指数型三相静态负载（单线图），其基本表达式如下。**
 > $$\begin{gathered}
-  P = {P_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NP} }\left( {1 + {K_{PF}}\Delta f} \right) \\
-  Q = {Q_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NQ} }\left( {1 + {K_{QF}}\Delta f} \right) \\ 
+  P = {P_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NP} }\left( {1 + {K_{PF} }\Delta f} \right) \\
+  Q = {Q_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NQ} }\left( {1 + {K_{QF} }\Delta f} \right) \\ 
 \end{gathered}$$
 
 ## 参数列表

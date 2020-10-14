@@ -18,8 +18,8 @@ symbol: newExpLoad
 
 > **This component models the load characteristics as a function of voltage magnitude and frequency, where the load real and reactive power our considered separately using the well known expressions:**
 > $$\begin{gathered}
-  P = {P_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NP} }\left( {1 + {K_{PF}}\Delta f} \right) \\
-  Q = {Q_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NQ} }\left( {1 + {K_{QF}}\Delta f} \right) \\ 
+  P = {P_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NP} }\left( {1 + {K_{PF} }\Delta f} \right) \\
+  Q = {Q_N}{\left( {\frac{V}{ { {V_N} } } } \right)^{NQ} }\left( {1 + {K_{QF} }\Delta f} \right) \\ 
 \end{gathered}$$
 
 ## Parameter

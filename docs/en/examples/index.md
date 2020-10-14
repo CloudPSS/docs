@@ -1,8 +1,6 @@
 ---
 title: Examples
 order: 400
-author: songyk
-author_email: songyankan@cloudpss.net
 ---
 
 To quickly understand the provided cases in the project wizard, users can read the following documents.

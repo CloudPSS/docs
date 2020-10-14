@@ -1,8 +1,8 @@
 ---
 title: 关于
 order: 999
-full_footer: true
-sidebar: false
+toc: false
+nav: false
 ---
 
 
