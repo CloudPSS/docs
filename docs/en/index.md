@@ -1,5 +1,7 @@
 ---
 title: Home
+nav: false
+toc: false
 ---
 
 <link href="index/app.css" rel="stylesheet">
