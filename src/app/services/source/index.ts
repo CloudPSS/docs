@@ -103,8 +103,8 @@ export class SourceService {
             item.children.forEach(reorder);
             item.children.sort((a, b) => {
                 const o = (x: DocumentItem): number => {
-                    const o = Number(x.order ?? Number.MAX_SAFE_INTEGER);
-                    if (Number.isNaN(o)) return Number.MAX_SAFE_INTEGER;
+                    const o = Number(x.order ?? 0);
+                    if (Number.isNaN(o)) return 0;
                     return o;
                 };
                 const ao = o(a);
