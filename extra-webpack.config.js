@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 /**
  *
  * @param {import('webpack').Configuration} config
@@ -12,5 +14,9 @@ module.exports = function (config) {
         fs: 'empty',
         path: true,
     };
+    config.plugins.push(new webpack.IgnorePlugin({
+        resourceRegExp: /^esprima$/,
+        contextRegExp: /js-yaml/
+    }));
     return config;
 };
