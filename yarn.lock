@@ -4238,10 +4238,10 @@ eslint-config-prettier@^6.12.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-plugin-jsdoc@^30.6.4:
-  version "30.6.4"
-  resolved "https://registry.npm.taobao.org/eslint-plugin-jsdoc/download/eslint-plugin-jsdoc-30.6.4.tgz#ae7dab1ff24dff2c75fab7bb96a6b5f12621c212"
-  integrity sha1-rn2rH/JN/yx1+re7lqa18SYhwhI=
+eslint-plugin-jsdoc@^30.6.5:
+  version "30.6.5"
+  resolved "https://registry.npm.taobao.org/eslint-plugin-jsdoc/download/eslint-plugin-jsdoc-30.6.5.tgz#4d6c794430afe1593459e56ecc65a2df0230b8d1"
+  integrity sha1-TWx5RDCv4Vk0WeVuzGWi3wIwuNE=
   dependencies:
     comment-parser "^0.7.6"
     debug "^4.2.0"
