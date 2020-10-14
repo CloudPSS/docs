@@ -13,20 +13,20 @@ The switching modules (solid-state transformer, three-phase H-bridge converter, 
 
 ## Model Introduction
 The DC microgrid example case includes a 10-module solid-state transformer (120 IGBTs/diodes in total), an energy storage system (lead battery with half-bridge converter), and two photovoltaic systems (photovoltaic cells with half-bridge converter) ) And a three-phase inverter with a resistive load, each converter system corresponds to their own control system. The solid-state transformer adopts the DC bus voltage outer loop, the grid-connected current inner loop, and the capacitor voltage ratio closed-loop control. The energy storage system adopts power outer loop and output current inner loop control. The photovoltaic system uses the voltage control and the MPPT control, also, the MPPT control adopts the fixed-step perturbation observation method. The three-phase inverter uses off-grid VF control.
-![拓扑图](DCgrid/DCgrid.png "The topology diagram of DC microgrid")
+![The topology diagram of DC microgrid](DCgrid/DCgrid.png "拓扑图")
 
 ## Simulation
 Click the `Global Parameters` column on the right side of the workspace to set the MPPT start time of the two sets of photovoltaic systems \$StartMPPT1\_time, \$StartMPPT2\_time; the time for the reference change of the energy storage system \$PrefChange\_time and three Load change time \$LoadChange\_time. It is worth noting that the load change is achieved by the fault resistor.
 
 Click `Format Panel`->`Electromagnetic Transient`->`Simulation Control`->`Start` and select the corresponding calculation node to get the simulation result.
-![仿真结果图](DCgrid/T.png "The voltage of the DC bus")
+![The voltage of the DC bus](DCgrid/T.png "仿真结果图")
 It can be found that when the load (PV, battery, three-phase load) changes, the DC bus is kept basically constant.
-![仿真结果图](DCgrid/T2.png "The current of AC side")
+![The current of AC side](DCgrid/T2.png "仿真结果图")
 The current of AC side has a good sine waveform. When the load changes, the current follows the change and the response speed is fast.
-![仿真结果图](DCgrid/T3.png "The power of the battery")
+![The power of the battery](DCgrid/T3.png "仿真结果图")
 The battery power changes according to a given reference, and the response speed is fast.
-![仿真结果图](DCgrid/T4.png "The voltage of PV1")
-![仿真结果图](DCgrid/T6.png "The voltage of PV2")
+![The voltage of PV1](DCgrid/T4.png "仿真结果图")
+![The voltage of PV2](DCgrid/T6.png "仿真结果图")
 MPPT stabilizes the output power of photovoltaic cells at the maximum power point by disturbing the input voltage.
-![仿真结果图](DCgrid/T7.png "The current of the three-phase load")
+![The current of the three-phase load](DCgrid/T7.png "仿真结果图")
 The change of load resistance causes the load current to change accordingly. It can be seen that the response speed of the current loop is fast and has a good sine waveform.

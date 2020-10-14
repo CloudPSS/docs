@@ -17,8 +17,8 @@ There are two methods for electrical quantity (voltage, current, power, etc.) me
 
 For example, to measure the current of a resistance, drag the ammeter and connect it in series, and fill in the corresponding label name in `Parameter settings->Monitoring->Branch Current [kA]`, as shown in the figure below. The measured signal can be further connected to the control, electrical or output elements.
 
-![电流测量](Measure/L1.png "Current measurement using current meter")
-![电流测量](Measure/L2.png "Current measurement using signal name")
+![Current measurement using current meter](Measure/L1.png "电流测量")
+![Current measurement using signal name](Measure/L2.png "电流测量")
 
 ## Signal Management
 
@@ -32,8 +32,8 @@ In order to display the output signal, both the `Output Channel` and the `Oscill
 
 After the simulation is finished, users can click the `Data Download` button, and then select the corresponding data channels to download.
 
-![波形展示](Measure/datadownload.png "Waveform display interface")
-![数据下载](Measure/datadownloaddialog.png "Data download interface")
+![Waveform display interface](Measure/datadownload.png "波形展示")
+![Data download interface](Measure/datadownloaddialog.png "数据下载")
 
 ::: tip
 Data download can only be available for **The saved project**.

@@ -47,8 +47,8 @@ In Components List, multiple simulation components are provided and are classifi
 
 To find a component, please fill in its name in the search field above the list and press [[Enter]] to search for the component. The below picture shows the searching result of `Resistor`. User can also search component in the Component List based on its classification. For example, to find `Sine Generator`, user could find it in the `Control-Wave Generator` class.
 
-![元件查找界面](User2/G2.png "Using search filed to find components")
-![元件查找界面](User2/G3.png "finding components by category")
+![Using search filed to find components](User2/G2.png "元件查找界面")
+![finding components by category](User2/G3.png "元件查找界面")
 
 ## Main Workspace
 
@@ -62,7 +62,7 @@ Press [[Alt]] on keyboard and slide mouse pully to zoom in or out the page. The 
 
 Gridline could be shown or hidden in `Menu->View->Grid`. `Menu->File->Page setup` could modify the grid size, background color, page size and Portrait/Landscape.
 
-![页面设置界面](User2/G4.png "Page setting interface")
+![Page setting interface](User2/G4.png "页面设置界面")
 
 ### Outline
 
@@ -72,7 +72,7 @@ Outline picture is a reduced hovering box display of the workspace and is used t
 
 The system information window, as shown below, is used to view simulation feedback and fault resolution, including errors and warnings. This window pops up automatically during simulation. The error or warning messages use red font and the statement information uses blue font. In general, the warning message can be ignored.
 
-![系统信息界面](User2/G5.png "Picture of system information window")
+![Picture of system information window](User2/G5.png "系统信息界面")
 
 ### Common Error Info
 

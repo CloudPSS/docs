@@ -33,7 +33,7 @@ CloudPSS的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 同步电机的`Initial Condition`页面中，
 1. `Startup Type`需选择`from Steady-state`一项
 2. 需将潮流计算结果中发电机节点的`节点电压幅值（p.u.）`、`节点电压相位（Deg）`、`注入有功（MW）`、`注入无功（MVar）`分别填入依次填入`Initial Voltage Magnitude [p.u.]`，`Initial Voltage Phase [Deg]`，`Initial Active Power [MW]`，`Initial Reactive Power [MVar]`四栏中。
-   ![同步电机启动参数](Initialization/sync.png "同步发电机启动参数页") 
+   ![同步发电机启动参数页](Initialization/sync.png "同步电机启动参数") 
 
 ::: tip
 同步发电机的相电压基值与所连母线的线电压基值匹配正确，否则填入的`节点电压幅值（p.u.）`应换算到同步电机的基值电压下。
@@ -43,13 +43,13 @@ CloudPSS的电磁暂态仿真中电气系统的启动分为两种：`从零启�
 
 母线的`Cofiguration`页面中，应将潮流计算结果中各个母线的`节点电压幅值（p.u.）`、`节点电压相位（Deg）`填入`Voltage Magnitude [p.u.]`，`Voltage Angle [Deg]`选项中。潮流计算所用的`线电压基值`填入`Bus Voltage (L-L, RMS) [kV]`中，交流系统额定频率填入`Rated Frequency [Hz]`。`Ramping Time (s)`一项可留空（该参数暂无用处）。
 
-![母线启动参数](Initialization/bus.png "三相母线启动参数页")
+![三相母线启动参数页](Initialization/bus.png "母线启动参数")
 
 ### 三相电压源启动参数配置
 
 若系统中还含有三相交流电压源，则电压源需特殊处理。其`Function Type`需设置为`Cosine`，`Initial Phase [Deg]`填入所连母线的母线电压相位，`Rated Voltage (L-L, RMS) [kV]`填入潮流计算结果的**母线电压有名值**，启动方式`Start-up Type`选择`Linear Ramp`，`Voltage Ramp Up Time [s]`设置为`0`。
 
-![三相电压源启动参数](Initialization/source.png "三相电压源启动参数页")
+![三相电压源启动参数页](Initialization/source.png "三相电压源启动参数")
 
 
 ::: tip
