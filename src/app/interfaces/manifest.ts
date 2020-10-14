@@ -36,7 +36,10 @@ export class DocumentItem implements FrontMatter {
      */
     path?: {
         raw: string;
-        parsed: string;
+        parsed: {
+            lang: string;
+            file: string;
+        };
     };
     /**
      * 子节点

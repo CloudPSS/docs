@@ -1,5 +1,16 @@
 <div class="mask" [class]="scrollInfo">
   <nav #nav class="toc" (scroll)="updateScroll()">
+    <li
+      *ngIf="1 <= level"
+      #itemElement
+      [attr.data-id]=""
+      class="toc-item toc-level-1"
+      [class.current]="'' === currentId"
+      [style.paddingLeft.px]="1 * 8"
+      [title]="(document?.frontMatter | async)?.title"
+    >
+      <a [routerLink]="" [fragment]="''">{{ (document?.frontMatter | async)?.title }}</a>
+    </li>
     <ng-container *ngFor="let item of document?.headers | async">
       <li
         *ngIf="item.level <= level"

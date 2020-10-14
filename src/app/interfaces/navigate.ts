@@ -9,25 +9,26 @@ export class NavigateEvent {
          * 目标路径
          */
         readonly path: string,
-        fragment?: string,
+        fragment?: string | null,
     ) {
-        if (!fragment) {
-            this.fragment = '';
+        if (fragment == null) {
+            this.fragment = undefined;
         } else {
             if (fragment.startsWith('#')) fragment = fragment.slice(1);
             this.fragment = fragment;
         }
+        console.log(this);
     }
 
     /**
      * 目标 fragment
      */
-    readonly fragment: string;
+    readonly fragment: string | undefined;
     /**
      * 导航路径
      */
     get url(): string {
-        if (this.fragment) return `${this.path}#${this.fragment}`;
+        if (this.fragment != null) return `${this.path}#${this.fragment}`;
         return this.path;
     }
 }

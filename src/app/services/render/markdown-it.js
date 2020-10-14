@@ -23,9 +23,6 @@ function loadCustomElements(global) {
                 if ('Prism' in window) return;
                 if (this.loading) return this.loading;
                 this.loading = (async () => {
-                    const link = document.createElement('link');
-                    link.href = `https://unpkg.com/prismjs@${version}/themes/prism.css`;
-                    link.rel = 'stylesheet';
                     const script = document.createElement('script');
                     script.src = `https://unpkg.com/prismjs@${version}/components/prism-core.min.js`;
                     const plugins = document.createElement('script');
@@ -34,7 +31,7 @@ function loadCustomElements(global) {
                         script.addEventListener('load', resolve);
                         script.addEventListener('error', reject);
                     });
-                    document.documentElement.append(link, script);
+                    document.documentElement.append(script);
                     await l1;
                     const l2 = new Promise((resolve, reject) => {
                         plugins.addEventListener('load', resolve);
@@ -169,16 +166,17 @@ function loadCustomElements(global) {
 
 /**
  * @param {import('@/services/global').GlobalService} global
- * @param {markdownIt.Options} options
+ * @param {markdownIt.Options & {frontMatter: (fm:string)=>void}} options
  */
-module.exports = function (
-    global,
-    options = {
-        html: true,
-        typographer: true,
-        frontMatter: () => {},
-    },
-) {
+module.exports = function (global, options) {
+    options = Object.assign(
+        {
+            html: true,
+            typographer: true,
+            frontMatter: () => {},
+        },
+        options,
+    );
     if (options.highlight == null && customElements) {
         options.highlight = loadCustomElements(global);
     }

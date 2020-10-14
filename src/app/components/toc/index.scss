@@ -10,11 +10,9 @@ li.toc-item {
   line-height: 1.5em;
   padding: 0.5em 0;
   position: relative;
-  pointer-events: visible;
   margin-left: $marker-width;
   &::before {
     content: '';
-    pointer-events: none;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -29,9 +27,10 @@ li.toc-item {
   }
   a {
     display: inline-block;
+    pointer-events: visible;
     overflow: hidden;
     white-space: nowrap;
-    width: 100%;
+    min-width: 100px;
     text-decoration: none;
     vertical-align: middle;
     color: var(--theme-foreground-secondary-text);
@@ -46,7 +45,6 @@ li.toc-item {
   }
   &::after {
     content: '';
-    pointer-events: none;
     position: absolute;
     right: 0;
     top: 0;
@@ -60,12 +58,13 @@ nav {
   height: 100%;
   overflow-y: hidden;
   scroll-behavior: smooth;
-  pointer-events: none;
 }
 
 .mask {
+  pointer-events: none;
   position: relative;
   height: 100%;
+  background: var(--theme-background-background);
   &::after,
   &::before {
     content: '';
@@ -75,7 +74,6 @@ nav {
     right: 0;
     height: 4em;
     z-index: 100;
-    pointer-events: none;
     transition: opacity 0.5s;
   }
   &::before {

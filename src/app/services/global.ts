@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
+import { StorageService } from './storage';
 
 /**
  * 主题
@@ -14,9 +15,9 @@ export type Theme = 'default' | 'dark';
     providedIn: 'root',
 })
 export class GlobalService {
-    constructor(private readonly titleService: Title) {
+    constructor(private readonly titleService: Title, private readonly storage: StorageService) {
         this.titleSource.subscribe(() => this.updateTitle());
-        this.themeSource.subscribe(() => this.updateTheme());
+        this.theme.subscribe((theme) => this.updateTheme(theme));
     }
 
     /** 标题后缀 */
@@ -25,9 +26,9 @@ export class GlobalService {
     /** 标题 */
     private titleSource = new BehaviorSubject('');
     /** 主题 */
-    private themeSource = new BehaviorSubject<Theme>(
-        (localStorage?.getItem('theme') ??
-            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default')) as Theme,
+    readonly theme = this.storage.watch<Theme>(
+        'theme',
+        window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
     );
 
     /**
@@ -66,33 +67,24 @@ export class GlobalService {
      * 主题
      */
     getTheme(): Theme {
-        return this.themeSource.value;
+        return this.storage.get('theme');
     }
     /**
      * 主题
      */
     setTheme(value: Theme): void {
-        this.themeSource.next(value);
-    }
-
-    /**
-     * 主题
-     */
-    get theme(): Observable<Theme> {
-        return this.themeSource.asObservable();
+        this.storage.set('theme', value);
     }
 
     /**
      * 更新主题
      */
-    private updateTheme(): void {
+    private updateTheme(theme: Theme): void {
         const html = document.querySelector('html');
-        const theme = this.themeSource.value;
         if (html) {
             html.setAttribute('theme', theme);
             html.setAttribute('color-scheme', this.isDark(theme) ? 'dark' : 'light');
         }
-        localStorage.setItem('theme', theme);
     }
 
     /**

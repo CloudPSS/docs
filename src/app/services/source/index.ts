@@ -76,7 +76,10 @@ export class SourceService {
             item: FrontMatter,
             path: {
                 raw: string;
-                parsed: string;
+                parsed: {
+                    lang: string;
+                    file: string;
+                };
             },
         ): void => {
             const [current, ...rest] = segments;
@@ -121,7 +124,10 @@ export class SourceService {
             if (name !== 'index.md') pathSegments.push(name.slice(0, name.length - '.md'.length));
             put(pathSegments, root, doc, {
                 raw: path,
-                parsed: '/' + pathSegments.join('/'),
+                parsed: {
+                    lang: pathSegments[0],
+                    file: `/${pathSegments.slice(1).join('/')}`,
+                },
             });
         }
         console.log(root);
