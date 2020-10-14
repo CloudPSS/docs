@@ -33,6 +33,7 @@
   :root {
     background: var(--theme-background-background);
     color: var(--theme-foreground-base);
+    overflow: hidden;
     &[theme='dark'] {
       @include apply($dark-theme);
     }
