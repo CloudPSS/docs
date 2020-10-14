@@ -23,3 +23,26 @@ $docs-theme: mat-light-theme(
     ),
   )
 );
+
+$dark-primary: mat-palette($mat-blue);
+$dark-accent: mat-palette($mat-pink, A200, A100, A400);
+$dark-warn: mat-palette($mat-orange);
+$dark-theme: mat-dark-theme(
+  (
+    color: (
+      primary: $dark-primary,
+      accent: $dark-accent,
+      warn: $dark-warn,
+    ),
+  )
+);
+
+@mixin css-map($map, $prefix) {
+  @each $key, $value in $map {
+    @if type-of($value) == map {
+      @include css-map($value, '#{$prefix}-#{$key}');
+    } @else {
+      --#{$prefix}-#{$key}: #{$value};
+    }
+  }
+}

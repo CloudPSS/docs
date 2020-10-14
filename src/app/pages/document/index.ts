@@ -7,7 +7,7 @@ import { MatSidenav } from '@angular/material/sidenav';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
-import { TitleService } from '@/services/title';
+import { GlobalService } from '@/services/global';
 
 /**
  * 文档页面组件
@@ -22,7 +22,7 @@ export class DocumentComponent implements AfterViewInit {
         readonly router: Router,
         readonly source: SourceService,
         readonly layout: LayoutService,
-        readonly title: TitleService,
+        readonly global: GlobalService,
     ) {}
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
@@ -69,8 +69,13 @@ export class DocumentComponent implements AfterViewInit {
                 return of(null);
             }
             const [doc, fm] = u;
-            this.title.title = fm?.title ?? '';
+            this.global.setTitle(fm?.title);
             return merge(of(null), this.source.file(doc, 'text'));
+        }),
+        tap((f) => {
+            if (f) {
+                this.scroll?.nativeElement?.focus();
+            }
         }),
         catchError(async () => {
             await this.router.navigate(['error', 404], { replaceUrl: true });

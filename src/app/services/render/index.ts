@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import { File } from './source/interfaces';
-import { SourceService } from './source';
+import { File } from '../source/interfaces';
+import { SourceService } from '../source';
 import type MarkdownIt from 'markdown-it';
-import markdownIt from '~/markdown-it.config';
+import markdownIt from './markdown-it';
+import { GlobalService } from '../global';
 
 /**
  * 渲染设置
@@ -26,8 +27,8 @@ export class RenderService {
         replaceDocExt: true,
     };
 
-    constructor(readonly source: SourceService) {
-        this.md = markdownIt();
+    constructor(readonly source: SourceService, readonly global: GlobalService) {
+        this.md = markdownIt(global);
         const normalizeLink = this.md.normalizeLink.bind(this.md);
         this.md.normalizeLink = (url: string): string => {
             if (!this.file) return normalizeLink(url);

@@ -3,6 +3,7 @@
 @import '~sanitize.css/typography';
 
 @import './config';
+@import './markdown';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -12,9 +13,27 @@
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($docs-theme);
 
-@import './markdown';
+@mixin apply($theme) {
+  @include css-map($theme, 'theme');
+  @include angular-material-theme($theme);
+  @include markdown-theme($theme);
+}
+
+:root {
+  @include apply($docs-theme);
+  @import '~prismjs/themes/prism-coy';
+  @media screen {
+    &[theme='dark'] {
+      @include apply($dark-theme);
+    }
+    &[color-scheme='dark'] {
+      @import '~prismjs/themes/prism-tomorrow';
+    }
+    background: var(--theme-background-background);
+    color: var(--theme-foreground-base);
+  }
+}
 
 .print-only {
   @media screen {

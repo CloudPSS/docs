@@ -1,470 +1,518 @@
 @use "sass:color";
-@import './config.scss';
+@import '~@angular/material/theming';
 @import '~katex/dist/katex.css';
 
-$dark: #2c3e50;
-$medium: #34495e;
-$light: #7f8c8d;
-$theme: map-get($docs-primary, default);
-$border: #dddddd;
-$codebg: #f8f8f8;
-$shadow: rgba(0, 0, 0, 0.5);
-$red: #ff6666;
-$info: #1c90f3;
-
-// font sizes
-$body-font-size: 15px;
-$code-font-size: 0.9em;
-
-@keyframes outline-blink {
-  $c: map-get($docs-primary, default);
-  $tc: color.change($c, $alpha: 0);
-  from {
-    outline-color: $tc;
+// block quotes and def lists
+@mixin quote-color($palette, $char: false) {
+  $quotebg: rgba(map-get($palette, A100), 0.05);
+  $quotebd: rgba(map-get($palette, A200), 0.2);
+  $qoutefg: map-get($palette, 400);
+  background-color: $quotebg;
+  @media print {
+    background: white !important;
   }
-  50% {
-    outline-color: $c;
-  }
-  to {
-    outline-color: $tc;
-  }
-}
-[markdown] {
-  .target,
-  :target {
-    outline: solid 2px;
-    animation: outline-blink 0.8s 5 forwards;
-  }
-  @mixin focus {
-    outline: none;
-    border-radius: 4px;
-    transition: box-shadow 0.2s;
-    box-shadow: 0 0 1px 2px map-get($docs-primary, A400);
-  }
-  :-moz-focusring {
-    @include focus();
-  }
-  :focus-visible {
-    @include focus();
-  }
-}
-
-[markdown] {
-  min-width: 0;
-  * {
-    scroll-behavior: smooth;
-    scroll-margin: 20px;
-  }
-  .text-align-center {
-    text-align: center;
-  }
-  p,
-  dd {
-    word-spacing: 0.05em;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 600;
-    color: map-get($docs-primary, 900);
-    position: relative;
-    @media screen {
-      a.header-anchor {
-        position: absolute;
-        left: 0;
-        padding: 0 0.25em;
-        transform: translateX(-100%);
-        color: map-get($docs-primary, 900);
-        opacity: 0;
-        transition: all 0.2s;
-        &::before {
-          content: '¶';
-        }
-        &:focus {
-          opacity: 1;
-        }
-      }
-      &:hover,
-      &:focus,
-      &:focus-within {
-        a.header-anchor {
-          opacity: 1;
-        }
-      }
-    }
-  }
-  h1,
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
-  br {
-    word-spacing: 0;
-  }
-  a {
-    text-decoration: none;
-    color: map-get($docs-primary, 500);
-    &:hover {
-      color: map-get($docs-primary, 700);
-    }
-    &:active {
-      color: map-get($docs-primary, 600);
-    }
-    &.footnote-backref {
-      user-select: none;
-    }
-    @media print {
-      text-decoration: underline;
-    }
-  }
-  p,
-  dt,
-  dd,
-  summary {
-    margin: 0.8em 0;
-  }
-  mark {
-    @media print {
-      border: 2px solid yellow !important;
-      background: none;
-    }
-  }
-  abbr[title] {
-    cursor: help;
-    text-decoration: none;
-    border-bottom: 1px dotted #777;
-    @media print {
-      &:after {
-        content: '(' attr(title) ')';
-        color: #777;
-      }
-    }
-  }
-
-  .katex-error {
-    color: red;
-  }
-  p.katex-block {
-    page-break-before: avoid;
-    page-break-inside: avoid;
-    position: relative;
-    > .katex-display {
-      margin: 0;
-      overflow: auto;
-      > .katex {
-        overflow: visible clip;
-      }
-    }
-  }
-  .katex-block,
-  .katex-display,
-  .katex,
-  .katex-error {
-    user-select: all;
-  }
-  span.katex {
-    &:before,
-    &:after {
-      content: ' ';
-      user-select: none;
-    }
-  }
-
-  code:not([is]),
-  kbd,
-  samp {
-    font-size: $code-font-size;
-    background-color: #f8f8f8;
-    @media print {
-      background-color: white !important;
-    }
-  }
-
-  kbd {
-    display: inline-block;
-    white-space: nowrap;
-    border-radius: 3px;
-    padding: 2px 6px;
-    box-shadow: 0 0 2px 1px $shadow;
-    margin: 0 2px;
-    font-size: small;
-    background: #eee;
-    color: #222;
-    font-variant: small-caps;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    line-height: 1em;
-    @media print {
-      background: #fff;
-      color: #000;
-      box-shadow: none;
-      border: 2px solid $border;
-    }
-    &:hover {
-      color: #000;
-      box-shadow: 0 0 2px 2px $shadow;
-    }
-  }
-
-  code:not([is]) {
-    display: inline-block;
-    color: map-get($docs-accent, text);
-    padding: 0 2px;
-    margin: 0 2px;
-    border: 1px solid #eee;
-    border-radius: 2px;
-    vertical-align: text-bottom;
-    @media print {
-      border: rgba(map-get($docs-accent, A700), 0.25) solid 1px;
-    }
-  }
-
-  img {
-    max-width: 100%;
-  }
-
-  figure {
-    margin: 1em auto 0.75em;
-    min-width: 240px;
-    display: table;
-    page-break-inside: avoid;
-    img {
-      display: block;
-      margin: auto;
-    }
-    > figcaption {
-      display: table-caption;
-      caption-side: bottom;
-    }
-  }
-
-  figcaption,
-  caption {
-    text-align: center;
-    margin: 0.3em auto;
-    font-weight: bolder;
-    font-size: 14px;
-    color: map-get($docs-primary, 900);
-  }
-  caption {
-    page-break-after: avoid;
-  }
-  figcaption {
-    page-break-before: avoid;
-  }
-
-  pre {
-    background-color: $codebg;
-    padding: 1em 0.5em;
-    margin: 1.2em 0;
-    border-radius: 4px;
-    box-shadow: 0 0 4px $shadow;
-    @media print {
-      background-color: white;
-    }
-  }
-  code[is='md-highlight'] {
-    font-size: $body-font-size;
-  }
-
-  pre-md-mermaid,
-  pre-md-chart {
-    display: block;
-    overflow-x: auto;
-    position: relative;
-    margin: 1em 0;
-    page-break-inside: avoid;
-    > * {
-      display: block;
-      margin: auto;
-    }
-
-    svg * {
-      user-select: none;
-    }
-  }
-
-  // embed videos
-  .block-embed {
-    display: flex;
-    width: 100%;
-    max-width: 720px;
-    user-select: none;
-    margin: 1em auto;
-    page-break-inside: avoid;
+  border: 0.02px solid $quotebd;
+  border-left: 4px solid $qoutefg;
+  @if $char {
     @media screen {
       &::before {
-        display: block;
-        padding-bottom: 60%;
-        content: '';
+        content: $char;
+        background-color: $qoutefg;
+        @if (lightness($qoutefg) > 60) {
+          color: #000;
+        } @else {
+          color: #fff;
+        }
+        color: #fff;
       }
     }
-    > * {
-      flex: auto;
+  }
+}
+
+@mixin markdown-theme($config-or-theme) {
+  $config: mat-get-color-config($config-or-theme);
+
+  $primary: map-get($config, primary);
+  $warn: map-get($config, warn);
+  $accent: map-get($config, accent);
+  $background: map-get($config, background);
+  $foreground: map-get($config, foreground);
+  $is-dark: map-get($config, is-dark);
+
+  $theme: map-get($primary, default);
+  $bg: map-get($background, background);
+  $border: color.mix(color.change(map-get($foreground, divider), $alpha: 1), $bg, 20%);
+  $codebg: color.adjust($bg, $lightness: -3%);
+  $shadow: map-get($foreground, icon);
+
+  $primary-color: map-get($primary, 900);
+  @if $is-dark {
+    $primary-color: map-get($primary, 100);
+  }
+
+  // font sizes
+  $body-font-size: 15px;
+  $code-font-size: 0.9em;
+
+  @keyframes outline-blink {
+    $c: map-get($primary, default);
+    $tc: color.change($c, $alpha: 0);
+    from {
+      outline-color: $tc;
     }
-    .block-embed-hint {
-      display: none;
+    50% {
+      outline-color: $c;
+    }
+    to {
+      outline-color: $tc;
+    }
+  }
+  [markdown] {
+    @media print {
+      background: white !important;
+      color: black !important;
+    }
+    @media screen {
+      background: $bg;
+    }
+    .target,
+    :target {
+      outline: solid 2px;
+      animation: outline-blink 0.8s 5 forwards;
     }
 
-    @media print {
-      > * {
-        display: none;
-      }
-      .block-embed-hint {
-        display: block;
-        text-decoration: $theme underline;
+    @each $v in (-moz-focusring, focus-visible) {
+      :#{$v} {
+        outline: none;
+        border-radius: 4px;
+        transition: box-shadow 0.2s;
+        box-shadow: 0 0 1px 2px mat-color($primary, A400);
       }
     }
   }
 
-  // block quotes and def lists
-  @mixin quote-color($palette, $char: false) {
-    $quotebg: rgba(map-get($palette, A100), 0.05);
-    $quotebd: rgba(map-get($palette, A200), 0.2);
-    $qoutefg: map-get($palette, 400);
-    background-color: $quotebg;
-    @media print {
-      background: white !important;
+  [markdown] {
+    color: mat-color($foreground, base);
+    min-width: 0;
+    * {
+      scroll-behavior: smooth;
+      scroll-margin: 20px;
     }
-    border: 0.02px solid $quotebd;
-    border-left: 4px solid $qoutefg;
-    @if $char {
+    .text-align-center {
+      text-align: center;
+    }
+    p,
+    dd {
+      word-spacing: 0.05em;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 600;
+      color: $primary-color;
+      position: relative;
       @media screen {
-        &::before {
-          content: $char;
-          background-color: $qoutefg;
-          @if (lightness($qoutefg) > 60) {
-            color: #000;
-          } @else {
-            color: #fff;
+        a.header-anchor {
+          position: absolute;
+          left: 0;
+          padding: 0 0.25em;
+          transform: translateX(-100%);
+          color: $primary-color;
+          opacity: 0;
+          transition: all 0.2s;
+          &::before {
+            content: '¶';
           }
-          color: #fff;
+          &:focus {
+            opacity: 1;
+          }
+        }
+        &:hover,
+        &:focus,
+        &:focus-within {
+          a.header-anchor {
+            opacity: 1;
+          }
         }
       }
     }
-  }
-
-  dl,
-  blockquote,
-  [is='md-container'],
-  details {
-    position: relative;
-    margin: 1em 0;
-    padding: 0 12px 0 20px;
-    page-break-inside: avoid;
-    @include quote-color($docs-primary);
-    &::before {
-      user-select: none;
-      position: absolute;
-      transform: translate(-32px, 8px);
-      width: 20px;
-      height: 20px;
-      border-radius: 100%;
-      text-align: center;
-      line-height: 20px;
-      font-weight: bold;
-      font-size: 14px;
+    h1,
+    h2,
+    h3 {
+      page-break-after: avoid;
     }
-  }
-  [is='md-container'] {
-    &[class='tip'] {
-      @include quote-color($docs-primary, '!');
+    br {
+      word-spacing: 0;
     }
-    &[class='info'] {
-      @include quote-color($mat-blue, 'i');
+    a {
+      text-decoration: none;
+      color: map-get($primary, 500);
+      &:hover {
+        color: map-get($primary, 700);
+      }
+      &:active {
+        color: map-get($primary, 600);
+      }
+      &.footnote-backref {
+        user-select: none;
+      }
+      @media print {
+        text-decoration: underline;
+      }
     }
-    &[class='warning'] {
-      @include quote-color($mat-orange, '!');
+    p,
+    dt,
+    dd,
+    summary {
+      margin: 0.8em 0;
     }
-    &[class='error'] {
-      @include quote-color($mat-red, '☓');
-    }
-    &[class='success'] {
-      @include quote-color($mat-light-green, '✓');
-    }
-    &[class='fail'] {
-      @include quote-color($mat-red, '✗');
-    }
-    &[class='question'] {
-      @include quote-color($mat-amber, '?');
-    }
-  }
-  dl {
-    @include quote-color($mat-teal);
-  }
-
-  [is='md-container'] > summary {
-    display: block;
-  }
-
-  dt,
-  summary {
-    font-size: 1.2em;
-    font-weight: bolder;
-  }
-
-  dd {
-    margin-left: 1em;
-  }
-
-  // footnotes
-  a[id^='fnref'] {
-    text-decoration: none !important;
-  }
-  .footnote-backref {
-    @media print {
-      display: none;
-    }
-  }
-
-  // table
-  table {
-    min-width: 240px;
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin: 1.2em auto;
-    text-align: left;
-    &[id] {
-      margin-top: 0.9em;
-    }
-    th {
-      min-width: 60px;
-    }
-    td,
-    th {
-      line-height: 1.5em;
-      padding: 0.4em 0.8em;
-      border: 1px solid $border;
-    }
-    > tbody:not(:first-child) > tr:first-of-type > td {
-      border-top-width: 2px;
-    }
-    > thead > tr:last-of-type > th {
-      border-bottom-width: 2px;
+    mark {
       @media screen {
-        position: sticky;
-        z-index: 100;
+        background: rgba(map-get($mat-yellow, A700), 40%);
+        color: map-get($foreground, text);
+      }
+      @media print {
+        border: 2px solid map-get($mat-yellow, 500) !important;
+        background: none;
+      }
+    }
+    abbr[title] {
+      cursor: help;
+      text-decoration: none;
+      border-bottom: 1px dotted #777;
+      @media print {
+        &:after {
+          content: '(' attr(title) ')';
+          color: #777;
+        }
+      }
+    }
+
+    .katex-error {
+      color: map-get($warn, text);
+    }
+    p.katex-block {
+      page-break-before: avoid;
+      page-break-inside: avoid;
+      position: relative;
+      > .katex-display {
+        margin: 0;
+        overflow: auto;
+        > .katex {
+          overflow: visible clip;
+        }
+      }
+    }
+    .katex-block,
+    .katex-display,
+    .katex,
+    .katex-error {
+      user-select: all;
+    }
+    span.katex {
+      &:before,
+      &:after {
+        content: ' ';
+        user-select: none;
+      }
+    }
+
+    code:not([is]),
+    kbd,
+    samp {
+      font-size: $code-font-size;
+      @media screen {
+        background-color: $codebg;
+      }
+      @media print {
+        background-color: white !important;
+      }
+    }
+
+    kbd {
+      display: inline-block;
+      white-space: nowrap;
+      border-radius: 3px;
+      padding: 2px 6px;
+      box-shadow: 0 0 2px 1px $shadow;
+      margin: 0 2px;
+      font-size: small;
+      background: #eee;
+      color: #222;
+      font-variant: small-caps;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      line-height: 1em;
+      @media print {
+        background: #fff;
+        color: #000;
+        box-shadow: none;
+        border: 2px solid $border;
+      }
+      &:hover {
+        color: #000;
+        box-shadow: 0 0 2px 2px $shadow;
+      }
+    }
+
+    code:not([is]) {
+      display: inline-block;
+      color: map-get($accent, text);
+      padding: 0 2px;
+      margin: 0 2px;
+      border: 1px solid $border;
+      border-radius: 2px;
+      vertical-align: text-bottom;
+      @media print {
+        border: rgba(map-get($accent, A700), 0.25) solid 1px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    figure {
+      margin: 1em auto 0.75em;
+      min-width: 240px;
+      display: table;
+      page-break-inside: avoid;
+      img {
+        display: block;
+        margin: auto;
+      }
+      > figcaption {
+        display: table-caption;
+        caption-side: bottom;
+      }
+    }
+
+    figcaption,
+    caption {
+      text-align: center;
+      margin: 0.3em auto;
+      font-weight: bolder;
+      font-size: 14px;
+      color: $primary-color;
+    }
+    caption {
+      page-break-after: avoid;
+    }
+    figcaption {
+      page-break-before: avoid;
+    }
+
+    pre {
+      background-color: $codebg;
+      padding: 1em 0.5em;
+      margin: 1.2em 0;
+      border-radius: 4px;
+      box-shadow: 0 0 4px $shadow;
+      @media print {
+        background-color: white;
+      }
+    }
+    code[is='md-highlight'] {
+      font-size: $body-font-size;
+    }
+
+    pre-md-mermaid,
+    pre-md-chart {
+      display: block;
+      overflow-x: auto;
+      position: relative;
+      margin: 1em 0;
+      page-break-inside: avoid;
+      > * {
+        display: block;
+        margin: auto;
+      }
+
+      svg * {
+        user-select: none;
+      }
+    }
+
+    // embed videos
+    .block-embed {
+      display: flex;
+      width: 100%;
+      max-width: 720px;
+      user-select: none;
+      margin: 1em auto;
+      page-break-inside: avoid;
+      @media screen {
+        &::before {
+          display: block;
+          padding-bottom: 60%;
+          content: '';
+        }
+      }
+      > * {
+        flex: auto;
+      }
+      .block-embed-hint {
+        display: none;
+      }
+
+      @media print {
+        > * {
+          display: none;
+        }
+        .block-embed-hint {
+          display: block;
+          text-decoration: $theme underline;
+        }
+      }
+    }
+
+    dl,
+    blockquote,
+    [is='md-container'],
+    details {
+      position: relative;
+      margin: 1em 0;
+      padding: 0 12px 0 20px;
+      page-break-inside: avoid;
+      @include quote-color($primary);
+      &::before {
+        user-select: none;
+        position: absolute;
+        transform: translate(-32px, 8px);
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        text-align: center;
+        line-height: 20px;
         font-weight: bold;
-        top: 0;
+        font-size: 14px;
       }
     }
-    @media screen {
-      > thead > tr > th {
-        background-color: color.mix($border, white, 40%);
+    [is='md-container'] {
+      &[class='tip'] {
+        @include quote-color($primary, '!');
       }
-      > tbody > tr > th {
-        background-color: color.mix($border, white, 10%);
+      &[class='info'] {
+        @include quote-color($mat-blue, 'i');
       }
-      > thead > tr:nth-last-child(2n) > th,
-      > tbody > tr:nth-child(2n) > td {
-        background-color: color.mix($border, white, 30%);
+      &[class='warning'] {
+        @include quote-color($mat-orange, '!');
+      }
+      &[class='error'] {
+        @include quote-color($mat-red, '☓');
+      }
+      &[class='success'] {
+        @include quote-color($mat-light-green, '✓');
+      }
+      &[class='fail'] {
+        @include quote-color($mat-red, '✗');
+      }
+      &[class='question'] {
+        @include quote-color($mat-amber, '?');
       }
     }
-    tr:hover > td {
-      background-color: rgba(map-get($docs-primary, A100), 0.1) !important;
+    dl {
+      @include quote-color($mat-teal);
+    }
+
+    [is='md-container'] > summary {
+      display: block;
+    }
+
+    dt,
+    summary {
+      font-size: 1.2em;
+      font-weight: bolder;
+    }
+
+    dd {
+      margin-left: 1em;
+    }
+
+    // footnotes
+    a[id^='fnref'] {
+      text-decoration: none !important;
+    }
+    .footnote-backref {
+      @media print {
+        display: none;
+      }
+    }
+
+    // table
+    table {
+      min-width: 240px;
+      border-spacing: 0;
+      border-collapse: collapse;
+      margin: 1.2em auto;
+      text-align: left;
+      &[id] {
+        margin-top: 0.9em;
+      }
+      th {
+        min-width: 60px;
+      }
+      td,
+      th {
+        line-height: 1.5em;
+        padding: 0.4em 0.8em;
+        border: 1px solid $border;
+      }
+      > tbody:not(:first-child) > tr:first-of-type > td {
+        border-top-width: 2px;
+      }
+      > thead > tr:last-of-type > th {
+        border-bottom-width: 2px;
+        @media screen {
+          position: sticky;
+          z-index: 100;
+          font-weight: bold;
+          top: 0;
+        }
+      }
+      @media screen {
+        > thead > tr > th {
+          background-color: $border;
+        }
+        > thead > tr:nth-last-child(2n) > th {
+          background-color: color.mix($border, $bg, 50%);
+        }
+        > tbody > tr > td {
+          background-color: $bg;
+        }
+        > tbody > tr:nth-child(2n) > td {
+          background-color: color.mix($border, $bg, 10%);
+        }
+      }
+      tr:hover > td {
+        background-color: rgba(map-get($primary, A100), 0.1) !important;
+      }
+    }
+
+    hr {
+      margin: 0.5em auto;
+      border: 1px inset mat-color($foreground, divider);
+      &.footnotes-sep {
+        margin: 1em -32px 2em;
+        border-width: 1.5px;
+      }
+    }
+    ol.footnotes-list {
+      counter-reset: footnotes;
+      list-style: none;
+      li.footnote-item {
+        counter-increment: footnotes;
+        position: relative;
+        &::before {
+          text-align: end;
+          position: absolute;
+          transform: translateX(calc(-100% - 0.5em));
+          content: '[' counter(footnotes) '] ';
+        }
+      }
     }
   }
 }
