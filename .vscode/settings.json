@@ -7,7 +7,7 @@
   "eslint.options": {
     "extensions": [".ts", ".html"]
   },
-  "typescript.tsdk": "c:\\Users\\lzy\\Documents\\Source\\Open-CloudPSS\\docs\\node_modules\\typescript\\lib",
+  "typescript.tsdk": "node_modules/typescript/lib",
   "files.eol": "\n",
   "editor.tabSize": 2,
   "[javascript]": {

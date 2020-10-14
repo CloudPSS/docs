@@ -11,7 +11,7 @@ export const environment = {
  */
 export function docUrls(ref: string): string[] {
     void ref;
-    return [`http://localhost:4201/docs/`];
+    return [`${location.protocol}//${location.hostname}:4201/docs/`];
 }
 
 /*
