@@ -8,7 +8,6 @@ import {
     EventEmitter,
     SecurityContext,
     AfterViewInit,
-    HostListener,
 } from '@angular/core';
 import { SourceService } from '@/services/source';
 import { RenderService } from '@/services/render';
@@ -19,47 +18,6 @@ import { BehaviorSubject } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, Scroll } from '@angular/router';
 import { FrontMatter } from '@/interfaces/manifest';
-
-// Set these to how you want inline and display math to be delimited.
-const defaultCopyDelimiters = {
-    inline: ['$', '$'] as [string, string], // alternative: ['\(', '\)']
-    display: ['$$ ', ' $$'] as [string, string], // alternative: ['\[', '\]']
-};
-
-/**
- * Replace .katex elements with their TeX source (<annotation> element).
- * Modifies fragment in-place.  Useful for writing your own 'copy' handler,
- * as in copy-tex.js.
- */
-function katexReplaceWithTex(fragment: DocumentFragment, copyDelimiters = defaultCopyDelimiters): void {
-    // Remove .katex-html blocks that are preceded by .katex-mathml blocks
-    // (which will get replaced below).
-    const katexHtml = fragment.querySelectorAll('.katex-mathml + .katex-html');
-    katexHtml.forEach((el) => el.remove());
-    // Replace .katex-mathml elements with their annotation (TeX source)
-    // descendant, with inline delimiters.
-    const allKatex = fragment.querySelectorAll('.katex');
-    allKatex.forEach((el) => {
-        const texSource = el.getAttribute('aria-label');
-        if (texSource) {
-            el.textContent = `${copyDelimiters.inline[0]}${texSource}${copyDelimiters.inline[1]}`;
-        }
-    });
-    // Switch display math to display delimiters.
-    const displays = fragment.querySelectorAll('.katex-display > .katex');
-    displays.forEach((el) => {
-        let content = el.textContent ?? '';
-        content = content.slice(copyDelimiters.inline[0].length, content.length - copyDelimiters.inline[1].length);
-        el.textContent = `${copyDelimiters.display[0]}${content}${copyDelimiters.display[1]}`;
-    });
-
-    const errors = fragment.querySelectorAll<HTMLElement>('.katex-error');
-    errors.forEach((el) => {
-        const delimiters = copyDelimiters[el.classList.contains('katex-display') ? 'display' : 'inline'];
-        const content = (el.textContent ?? '').trim();
-        el.textContent = `${delimiters[0]}${content}${delimiters[1]}`;
-    });
-}
 
 /**
  * 显示md文档
@@ -184,29 +142,5 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
                 window.open(href.href, '_blank', 'noopener');
             }
         }
-    }
-
-    /**复制 */
-    @HostListener('document:copy', ['$event'])
-    onCopy(event: HTMLElementEventMap['copy']): void {
-        const selection = window.getSelection();
-        if (!selection || selection.isCollapsed || !event.clipboardData) {
-            return; // default action OK if selection is empty
-        }
-        const fragment = selection.getRangeAt(0).cloneContents();
-        if (!fragment.querySelector('.katex-mathml, .katex-error')) {
-            return; // default action OK if no .katex-mathml elements
-        }
-        // Preserve usual HTML copy/paste behavior.
-        const html: string[] = [];
-        fragment.childNodes.forEach((node) => {
-            html.push((node as Element).outerHTML);
-        });
-        event.clipboardData.setData('text/html', html.join(''));
-        katexReplaceWithTex(fragment);
-        // Rewrite plain-text version.
-        event.clipboardData.setData('text/plain', fragment.textContent ?? '');
-        // Prevent normal copy handling.
-        event.preventDefault();
     }
 }

@@ -2,11 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, fromEvent } from 'rxjs';
 import { filter, map, distinctUntilChanged, shareReplay } from 'rxjs/operators';
 
-/**
- * 主题
- */
-export type Theme = 'default' | 'dark';
-
 const storage = window.localStorage;
 
 /**

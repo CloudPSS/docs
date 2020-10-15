@@ -1,4 +1,4 @@
-import { Component, Input, ViewChildren, QueryList, ElementRef, ViewChild } from '@angular/core';
+import { Component, Input, ViewChildren, QueryList, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MarkdownComponent } from '../markdown';
 
@@ -10,7 +10,7 @@ import { MarkdownComponent } from '../markdown';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class TocComponent {
+export class TocComponent implements AfterViewInit {
     /** MD 文件 */
     _document?: MarkdownComponent;
 
@@ -44,26 +44,7 @@ export class TocComponent {
     /** 当前活跃 ID */
     set currentId(value: string) {
         this._currentId = value ?? '';
-        const nav = this.nav?.nativeElement;
-        if (!(nav && this.items)) {
-            return;
-        }
-        const mask = this.mask.nativeElement;
-        if (value) {
-            const item = this.items.find((i) => i.nativeElement?.dataset?.id === value);
-            if (item) {
-                this.offset = item.nativeElement.offsetTop - mask.clientHeight / 4;
-            }
-        } else {
-            this.offset = 0;
-        }
-        const max = Math.max(nav.clientHeight - mask.clientHeight, 0);
-        this.offset = Math.max(this.offset, 0);
-        this.offset = Math.min(this.offset, max);
-        this.scrollInfo = {
-            before: this.offset > 1,
-            after: this.offset < max - 1,
-        };
+        this.setState();
     }
 
     /** 菜单偏移 */
@@ -74,4 +55,36 @@ export class TocComponent {
         before: false,
         after: false,
     };
+
+    /**
+     * @inheritdoc
+     */
+    ngAfterViewInit(): void {
+        this.items?.changes.subscribe(() => this.setState());
+    }
+
+    /**
+     * 设置状态
+     */
+    private setState(): void {
+        const nav = this.nav?.nativeElement;
+        if (!(nav && this.items)) {
+            return;
+        }
+        const mask = this.mask.nativeElement;
+        this.offset = 0;
+        if (this._currentId) {
+            const item = this.items.find((i) => i.nativeElement?.dataset?.id === this._currentId);
+            if (item) {
+                this.offset = item.nativeElement.offsetTop - mask.clientHeight / 4;
+            }
+        }
+        const max = Math.max(nav.clientHeight - mask.clientHeight, 0);
+        this.offset = Math.max(this.offset, 0);
+        this.offset = Math.min(this.offset, max);
+        this.scrollInfo = {
+            before: this.offset > 1,
+            after: this.offset < max - 1,
+        };
+    }
 }
