@@ -4,7 +4,7 @@ title: MarkDown 语法介绍
 
 ## 公式
 
-使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-katex](https://github.com/iktakahiro/markdown-it-katex) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
+使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-math](https://github.com/runarberg/markdown-it-math) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 
 ```tex equation
 行内公式：$\sin{x}$

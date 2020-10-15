@@ -14,9 +14,17 @@ module.exports = function (config) {
         fs: 'empty',
         path: true,
     };
-    config.plugins.push(new webpack.IgnorePlugin({
-        resourceRegExp: /^esprima$/,
-        contextRegExp: /js-yaml/
-    }));
+    config.plugins.push(
+        new webpack.IgnorePlugin({
+            resourceRegExp: /^esprima$/,
+            contextRegExp: /js-yaml/,
+        }),
+    );
+    config.plugins.push(
+        new webpack.IgnorePlugin({
+            resourceRegExp: /^ascii2mathml$/,
+            contextRegExp: /markdown-it-math/,
+        }),
+    );
     return config;
 };

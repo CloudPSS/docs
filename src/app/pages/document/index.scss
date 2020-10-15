@@ -17,7 +17,6 @@ mat-sidenav-content {
     margin: 0 !important;
     overflow: visible;
   }
-  overflow: hidden;
   $toc-width: 240px;
   app-toc {
     position: absolute;
@@ -35,7 +34,7 @@ mat-sidenav-content {
     position: relative;
     @media screen {
       height: 100%;
-      will-change: transform;
+      will-change: scroll-position;
       scroll-behavior: smooth;
       overflow: auto;
     }
