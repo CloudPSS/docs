@@ -1,8 +1,10 @@
 const markdownIt = require('markdown-it');
 const { escapeHtml } = require('markdown-it/lib/common/utils');
-const { fromEvent, merge } = require('rxjs');
-const { map, debounceTime, distinctUntilChanged, tap, share } = require('rxjs/operators');
 const VideoServiceBase = require('markdown-it-block-embed/lib/services/VideoServiceBase');
+const { MdHighlight } = require('./markdown-components/highlight');
+const { MdMermaid } = require('./markdown-components/mermaid');
+const { MdChart } = require('./markdown-components/chart');
+const { MdMath } = require('./markdown-components/math');
 
 function loadPlugin(plugin) {
     if (typeof plugin != 'function' && typeof plugin.default == 'function') {
@@ -16,150 +18,21 @@ function loadPlugin(plugin) {
  * @param {import('@/services/global').GlobalService} global
  */
 function loadCustomElements(global) {
-    customElements.define(
-        'md-highlight',
-        class extends HTMLElement {
-            static async loadPrism(version = '^1') {
-                if ('Prism' in window) return;
-                if (this.loading) return this.loading;
-                this.loading = (async () => {
-                    const script = document.createElement('script');
-                    script.src = `https://unpkg.com/prismjs@${version}/components/prism-core.min.js`;
-                    const plugins = document.createElement('script');
-                    plugins.src = `https://unpkg.com/prismjs@${version}/plugins/autoloader/prism-autoloader.min.js`;
-                    const l1 = new Promise((resolve, reject) => {
-                        script.addEventListener('load', resolve);
-                        script.addEventListener('error', reject);
-                    });
-                    document.documentElement.append(script);
-                    await l1;
-                    const l2 = new Promise((resolve, reject) => {
-                        plugins.addEventListener('load', resolve);
-                        plugins.addEventListener('error', reject);
-                    });
-                    document.documentElement.append(plugins);
-                    await l2;
-                    await new Promise((resolve) => setTimeout(resolve, 1));
-                    script.remove();
-                    plugins.remove();
-                })();
-                return this.loading;
-            }
-            async connectedCallback() {
-                const lang = this.getAttribute('language');
-                await this.constructor.loadPrism();
-                const highlighter = Prism.languages[lang];
-                const code = this.textContent;
-                if (highlighter) {
-                    this.innerHTML = Prism.highlight(code, Prism.languages[lang], lang);
-                } else {
-                    Prism.plugins.autoloader.loadLanguages(lang, () => {
-                        this.innerHTML = Prism.highlight(code, Prism.languages[lang], lang);
-                    });
-                }
-            }
-        },
-        { extends: 'code' },
-    );
-
-    /** @param {HTMLElement} el */
-    function resizing(el) {
-        return fromEvent(window, 'resize').pipe(
-            debounceTime(100),
-            map(() => `${el.scrollWidth},${el.scrollHeight}`),
-            distinctUntilChanged(),
-        );
-    }
-
-    customElements.define(
-        'pre-md-mermaid',
-        class extends HTMLElement {
-            static async initMermaid() {
-                /** @type {import('mermaid').Mermaid} */
-                const mermaid = await import('mermaid');
-                if (!this.watchTheme) {
-                    this.watchTheme = global.theme.pipe(
-                        tap((theme) => {
-                            mermaid.initialize({
-                                theme: global.isDark(theme) ? 'dark' : 'default',
-                            });
-                        }),
-                        share(),
-                    );
-                }
-                return mermaid;
-            }
-            async connectedCallback() {
-                const code = this.textContent;
-                this.innerHTML = '';
-                const id = 'mermaid_' + Math.floor(Math.random() * 10000000000);
-                /** @type {import('mermaid').Mermaid} */
-                const mermaid = await this.constructor.initMermaid();
-                const render = () => {
-                    this.innerHTML = `<div id="${id}"></div>`;
-                    mermaid.render(
-                        id,
-                        code,
-                        (svg, func) => {
-                            this.innerHTML = svg;
-                            func?.(this);
-                        },
-                        this,
-                    );
-                };
-                this.rerender = merge(resizing(this), this.constructor.watchTheme).subscribe(render);
-                render();
-            }
-            rerender;
-            disconnectedCallback() {
-                this.rerender?.unsubscribe();
-            }
-        },
-    );
-    customElements.define(
-        'pre-md-chart',
-        class extends HTMLElement {
-            async connectedCallback() {
-                const code = this.textContent;
-                const root = this.attachShadow({ mode: 'closed' });
-                try {
-                    /** @type {import('chart.js').ChartConfiguration} */
-                    const opt = JSON.parse(code);
-                    opt.options = { ...opt.options, responsive: false };
-                    this.style.display = 'block';
-                    const canvas = document.createElement('canvas');
-                    root.appendChild(canvas);
-                    canvas.style.maxWidth = '800px';
-                    const chartJs = await import('chart.js');
-                    const chart = new chartJs.default(canvas, opt);
-                    const render = () => {
-                        canvas.style.width = '100%';
-                        canvas.style.height = '';
-                        chart.resize();
-                        canvas.style.width = '100%';
-                        canvas.style.height = '';
-                    };
-                    render();
-                    this.rerender = resizing(this).subscribe(render);
-                } catch (ex) {
-                    root.innerText = String(ex);
-                }
-            }
-            rerender;
-            disconnectedCallback() {
-                this.rerender?.unsubscribe();
-            }
-        },
-    );
+    customElements.define(MdHighlight.tagName, MdHighlight, { extends: 'code' });
+    MdMermaid.global = global;
+    customElements.define(MdMermaid.tagName, MdMermaid);
+    customElements.define(MdChart.tagName, MdChart);
+    customElements.define(MdMath.tagName, MdMath);
     return (string, lang) => {
         const code = escapeHtml(string);
         switch (lang) {
             case 'mermaid':
+                return `<${MdMermaid.tagName}>${code}</${MdMermaid.tagName}>`;
             case 'chart':
-                return `<pre-md-${lang}>${code}</pre-md-${lang}>`;
+                return `<${MdChart.tagName}>${code}</${MdChart.tagName}>`;
             default:
                 const l = escapeHtml(lang);
-                return `<pre><code is="md-highlight" language="${l}">${code}</code></pre>`;
+                return `<pre><code is="${MdHighlight.tagName}" language="${l}">${code}</code></pre>`;
         }
     };
 }
@@ -274,7 +147,23 @@ module.exports = function (global, options) {
                 };
             },
         ],
-        [require('@iktakahiro/markdown-it-katex')],
+        [
+            require('markdown-it-math'),
+            {
+                inlineOpen: '$',
+                inlineClose: '$',
+                blockOpen: '$$',
+                blockClose: '$$',
+                inlineRenderer: (content, token) => {
+                    return `<${MdMath.tagName} language="tex" mode="inline">${escapeHtml(content)}</${MdMath.tagName}>`;
+                },
+                blockRenderer: (content, token) => {
+                    return `<${MdMath.tagName} language="tex" mode="display">${escapeHtml(content)}</${
+                        MdMath.tagName
+                    }>`;
+                },
+            },
+        ],
         [require('markdown-it-deflist')],
         [require('markdown-it-abbr')],
         [require('markdown-it-ins')],
@@ -395,9 +284,6 @@ module.exports = function (global, options) {
         });
         t.content.querySelectorAll('pre > code').forEach((e) => {
             e.setAttribute('is', 'md-highlight');
-        });
-        t.content.querySelectorAll('.katex').forEach((e) => {
-            e.setAttribute('aria-label', (e.querySelector('.katex-mathml annotation')?.textContent ?? '').trim());
         });
         return t;
     };

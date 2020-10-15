@@ -4,23 +4,6 @@ $marker-width: 2px;
   display: block;
   background: var(--theme-background-background);
   pointer-events: none;
-
-  &::before,
-  &:after {
-    content: '';
-    position: absolute;
-    z-index: 100;
-    background: var(--theme-background-background);
-    height: 16px;
-    width: 100%;
-  }
-
-  &::before {
-    top: 0;
-  }
-  &::after {
-    bottom: 0;
-  }
 }
 li.toc-item {
   list-style: none;
@@ -49,7 +32,6 @@ li.toc-item {
     pointer-events: visible;
     overflow: hidden;
     white-space: nowrap;
-    min-width: 100px;
     text-decoration: none;
     vertical-align: middle;
     color: var(--theme-foreground-secondary-text);
@@ -75,9 +57,9 @@ li.toc-item {
 nav {
   position: absolute;
   width: 100%;
-  will-change: transform;
   overflow: hidden;
   transition: top 0.3s ease-out;
+  will-change: top;
 
   ul {
     margin: 0;
@@ -87,6 +69,7 @@ nav {
 .mask {
   position: relative;
   height: 100%;
+  contain: content;
   &::after,
   &::before {
     content: '';

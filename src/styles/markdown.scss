@@ -291,32 +291,33 @@
       }
     }
 
-    .katex-error {
-      color: var(--theme-warn-text);
-    }
-    p.katex-block {
-      page-break-before: avoid;
-      page-break-inside: avoid;
-      position: relative;
-      > .katex-display {
-        margin: 0;
+    md-math {
+      user-select: all;
+      &[mode='display'] {
+        display: block;
+        text-align: center;
+        page-break-before: avoid;
+        page-break-inside: avoid;
         overflow: auto;
-        > .katex {
-          overflow: visible hidden;
+        margin: 0.8em 0;
+      }
+      &[mode='inline'] {
+        display: inline;
+        &:before,
+        &:after {
+          content: ' ';
+          user-select: none;
         }
       }
-    }
-    .katex-block,
-    .katex-display,
-    .katex,
-    .katex-error {
-      user-select: all;
-    }
-    span.katex {
-      &:before,
-      &:after {
-        content: ' ';
-        user-select: none;
+      &[language='tex'] {
+        display: inline;
+        .katex-display,
+        .katex {
+          user-select: all;
+        }
+      }
+      .error {
+        color: var(--theme-warn-text);
       }
     }
 
