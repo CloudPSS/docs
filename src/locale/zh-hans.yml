@@ -1,1 +1,12 @@
-Welcome: 欢迎
+welcome: 欢迎
+
+footnote:
+  toFootnote: 转到脚注
+  backToArticle: 回到正文
+
+theme:
+  change: 切换主题
+
+sidenav:
+  open: 打开侧边栏
+  close: 关闭侧边栏

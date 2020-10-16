@@ -1,6 +1,7 @@
 import { Component, Input, ViewChildren, QueryList, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, fromEvent, merge, Observable } from 'rxjs';
 import { MarkdownComponent } from '../markdown';
+import { mapTo, filter, scan, map, debounceTime } from 'rxjs/operators';
 
 /**
  * 显示 TOC
@@ -56,11 +57,26 @@ export class TocComponent implements AfterViewInit {
         after: false,
     };
 
+    /** 正在滚动 */
+    scrolling!: Observable<boolean>;
+
     /**
      * @inheritdoc
      */
     ngAfterViewInit(): void {
         this.items?.changes.subscribe(() => this.setState());
+        const ele = this.nav?.nativeElement;
+        if (ele) {
+            const filterProp = filter<TransitionEvent>((e) => e.propertyName === 'top');
+            const start = fromEvent<TransitionEvent>(ele, 'transitionstart').pipe(filterProp, mapTo(1));
+            const end = fromEvent<TransitionEvent>(ele, 'transitionend').pipe(filterProp, mapTo(-1));
+            const cancel = fromEvent<TransitionEvent>(ele, 'transitioncancel').pipe(filterProp, mapTo(-1));
+            this.scrolling = merge(start, end, cancel).pipe(
+                scan((sum, v) => sum + v, 0),
+                debounceTime(0),
+                map((v) => v > 0),
+            );
+        }
     }
 
     /**

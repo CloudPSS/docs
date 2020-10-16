@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { StorageService } from './storage';
+import { TranslateService } from '@ngx-translate/core';
+import { WebpackTranslateLoader } from '@/webpack-translate-loader';
 
 /**
  * 主题
@@ -15,9 +17,14 @@ export type Theme = 'default' | 'dark';
     providedIn: 'root',
 })
 export class GlobalService {
-    constructor(private readonly titleService: Title, private readonly storage: StorageService) {
+    constructor(
+        private readonly titleService: Title,
+        private readonly storage: StorageService,
+        private readonly translateService: TranslateService,
+    ) {
         this.titleSource.subscribe(() => this.updateTitle());
         this.theme.subscribe((theme) => this.updateTheme(theme));
+        this.language.subscribe((lang) => this.updateLanguage(lang));
     }
 
     /** 标题后缀 */
@@ -30,6 +37,8 @@ export class GlobalService {
         'theme',
         window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default',
     );
+    /** 语言 */
+    readonly language = this.storage.watch<string>('language', this.defaultLanguage());
 
     /**
      * 标题
@@ -105,6 +114,40 @@ export class GlobalService {
                 return true;
             default:
                 return false;
+        }
+    }
+
+    /** 默认语言 */
+    private defaultLanguage(): string {
+        const candidates = (window.navigator.languages ?? [window.navigator.language]).map((s) => s.toLowerCase());
+        const available = Object.fromEntries(
+            Object.entries(WebpackTranslateLoader.langs)
+                .map(([k, v]) => [[k, k] as const, ...(v.alias ?? []).map((v) => [v, k] as const)])
+                .flat(1),
+        );
+        for (const candidate of candidates) {
+            if (candidate in available) {
+                return available[candidate];
+            }
+        }
+        return this.translateService.defaultLang;
+    }
+
+    /** 语言 */
+    getLanguage(): string {
+        return this.storage.get('language');
+    }
+    /** 语言 */
+    setLanguage(value: string): void {
+        this.storage.set('language', value);
+    }
+
+    /** 设置语言 */
+    private updateLanguage(value: string): void {
+        this.translateService.use(value);
+        const html = document.querySelector('html');
+        if (html) {
+            html.lang = value;
         }
     }
 }

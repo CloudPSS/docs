@@ -5,11 +5,22 @@ import { __importDefault } from 'tslib';
 import locale from '../locale/index.yml';
 
 /**
+ * 语言定义
+ */
+type LocaleManifest = Record<
+    string,
+    {
+        name: string;
+        alias?: string[];
+    }
+>;
+
+/**
  * 翻译加载器
  */
 export class WebpackTranslateLoader implements TranslateLoader {
     /** 可用语言 */
-    static langs: Record<string, { name: string }> = locale as Record<string, { name: string }>;
+    static readonly langs = locale as LocaleManifest;
 
     /**
      * @inheritdoc

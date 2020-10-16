@@ -4,6 +4,7 @@ import { SwUpdate } from '@angular/service-worker';
 import { SourceService } from './services/source';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
 import { Observable } from 'rxjs';
+import { GlobalService } from './services/global';
 
 /**
  * 提供文档内容
@@ -13,7 +14,12 @@ import { Observable } from 'rxjs';
 })
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppInitializerService {
-    constructor(readonly translate: TranslateService, readonly updates: SwUpdate, readonly source: SourceService) {
+    constructor(
+        readonly translate: TranslateService,
+        readonly updates: SwUpdate,
+        readonly source: SourceService,
+        readonly global: GlobalService,
+    ) {
         return ((() =>
             Promise.all(
                 this.initializers.map((i) => {
@@ -29,7 +35,6 @@ export class AppInitializerService {
     private initializers: Array<() => Promise<void> | void | Observable<void>> = [
         () => {
             this.translate.addLangs(Object.keys(WebpackTranslateLoader.langs));
-            return this.translate.use(this.translate.defaultLang);
         },
         () => {
             if (this.updates.isEnabled) {

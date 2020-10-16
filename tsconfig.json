@@ -26,6 +26,6 @@
     "strictInjectionParameters": true,
     "strictTemplates": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*.ts", "src/**/*.js"],
   "exclude": ["**/*.spec.ts", "**/*.worker.ts", "src/environments/**.ts"]
 }

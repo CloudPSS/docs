@@ -8,7 +8,6 @@ import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { GlobalService } from '@/services/global';
-import { I18nService } from '@/services/i18n';
 
 /**
  * 文档页面组件
@@ -24,7 +23,6 @@ export class DocumentComponent implements AfterViewInit {
         readonly source: SourceService,
         readonly layout: LayoutService,
         readonly global: GlobalService,
-        readonly i18n: I18nService,
     ) {}
     /** 侧边栏 */
     @ViewChild('sidenav') readonly sidenav!: MatSidenav;
@@ -35,7 +33,7 @@ export class DocumentComponent implements AfterViewInit {
     /** url */
     readonly url = this.route.params.pipe(
         map((s) => {
-            const lang = this.i18n.lang.value;
+            const lang = this.global.getLanguage();
             const category = s.category as string;
             const path: string[] = [];
             for (const key in s) {
