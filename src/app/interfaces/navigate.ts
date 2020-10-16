@@ -10,6 +10,7 @@ export class NavigateEvent {
          */
         readonly path: string,
         fragment?: string | null,
+        readonly replaceUrl = false,
     ) {
         if (fragment == null) {
             this.fragment = undefined;

@@ -155,7 +155,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
      */
     async onNavigate(target?: NavigateEvent): Promise<void> {
         if (target) {
-            await this.router.navigate([target.path], { fragment: target.fragment });
+            await this.router.navigate([target.path], { fragment: target.fragment, replaceUrl: target.replaceUrl });
         } else {
             await this.router.navigate(['error', 404], { replaceUrl: true });
         }

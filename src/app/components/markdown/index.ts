@@ -76,7 +76,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             }),
             this.frontMatter.subscribe((fm) => {
                 if (fm?.['redirect to']) {
-                    this.navigateImpl(fm['redirect to']);
+                    this.navigateImpl(fm['redirect to'], true);
                 }
             }),
             this.rendered.subscribe((parsed) => {
@@ -148,13 +148,13 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     /**
      * 导航
      */
-    private navigateImpl(href: string): boolean {
+    private navigateImpl(href: string, replaceUrl = false): boolean {
         const file = this.file;
         if (!file) return false;
         const hrefUrl = new URL(href, location.href);
         if (hrefUrl.origin === location.origin) {
             const hash = decodeURIComponent(hrefUrl.hash.slice(1));
-            this.navigate.emit(new NavigateEvent(hrefUrl.pathname, hash));
+            this.navigate.emit(new NavigateEvent(hrefUrl.pathname, hash, replaceUrl));
             return true;
         } else {
             window.open(hrefUrl.href, '_blank', 'noopener');
