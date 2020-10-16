@@ -41,7 +41,8 @@ export class MdMermaid extends MdComponentBase {
      * @inheritdoc
      */
     async connectedCallback(): Promise<void> {
-        const code = this.textContent ?? '';
+        const code = this.dataset.source ?? this.textContent ?? '';
+        this.dataset.source = code;
         this.innerHTML = '';
         const id = `mermaid_${Math.floor(Math.random() * 10000000000)}`;
         await MdMermaid.init();
