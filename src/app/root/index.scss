@@ -3,15 +3,24 @@
   flex-direction: column;
   @media screen {
     height: 100vh;
-    ::ng-deep router-outlet + * {
-      flex: auto;
+    main {
+      flex: 1;
       overflow-y: auto;
     }
   }
 }
 
-app-navbar {
+mat-toolbar {
   @media print {
     display: none;
   }
+  gap: 24px;
+  z-index: 10;
+  app-navbar {
+    flex: 1;
+  }
+}
+
+#menu-button.hidden {
+  visibility: hidden;
 }

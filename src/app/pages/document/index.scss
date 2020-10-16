@@ -5,6 +5,8 @@ mat-sidenav-container {
   }
 }
 
+$content-padding-lr: 24px;
+
 mat-sidenav {
   width: 320px;
   @media print {
@@ -30,7 +32,10 @@ mat-sidenav-content {
     display: none;
   }
   #scroll {
-    padding: 0 24px;
+    padding: 0 $content-padding-lr;
+    @media (max-width: 600px) {
+      padding: 0 $content-padding-lr / 2;
+    }
     position: relative;
     @media screen {
       height: 100%;
@@ -49,24 +54,12 @@ mat-sidenav-content {
   &.toc {
     @media screen and (min-width: 960px) {
       #scroll {
-        padding-right: $toc-width;
+        padding-right: $toc-width + $content-padding-lr;
       }
       app-toc {
         display: block;
         right: 0;
       }
     }
-  }
-}
-
-#sidenav-button {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 64px;
-  height: 64px;
-  mat-icon {
-    display: block;
-    margin: auto;
   }
 }

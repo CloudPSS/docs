@@ -64,13 +64,22 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
         this.router.events.pipe(filter((x): x is Scroll => x instanceof Scroll)).subscribe((scroll) => {
             this.scrollTo(scroll.anchor);
         });
+        this.frontMatter.subscribe((fm) => {
+            if (fm?.['redirect to']) {
+                this.navigateImpl(fm['redirect to']);
+            }
+        });
         this.rendered.subscribe((parsed) => {
             const doc = this.doc.nativeElement;
             const hash = decodeURIComponent(location.hash.slice(1));
             doc.innerHTML = '';
             // 将清空 parsed 的内容
             doc.appendChild(parsed.content);
-            const headers = Array.from(doc.querySelectorAll<HTMLHeadingElement>('h1,h2,h3,h4,h5,h6')).map((h) => {
+            const headers = Array.from(
+                doc.querySelectorAll<HTMLHeadingElement>(
+                    'article > h1,article > h2,article > h3,article > h4,article > h5,article > h6',
+                ),
+            ).map((h) => {
                 return {
                     id: h.id,
                     title: h.innerText,
@@ -126,20 +135,31 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     }
 
     /**
+     * 导航
+     */
+    private navigateImpl(href: string): boolean {
+        const file = this.file;
+        if (!file) return false;
+        const hrefUrl = new URL(href, location.href);
+        if (hrefUrl.origin === location.origin) {
+            const hash = decodeURIComponent(hrefUrl.hash.slice(1));
+            this.navigate.emit(new NavigateEvent(hrefUrl.pathname, hash));
+            return true;
+        } else {
+            window.open(hrefUrl.href, '_blank', 'noopener');
+            return true;
+        }
+    }
+
+    /**
      * 点击文档元素
      */
     onClick(event: HTMLElementEventMap['click']): void {
-        const file = this.file;
-        if (!file) return;
         const target = event.target as HTMLElement;
-        if (target instanceof HTMLAnchorElement && target.href) {
-            event.preventDefault();
-            const href = new URL(target.href, file.url);
-            if (href.origin === location.origin) {
-                const hash = decodeURIComponent(href.hash.slice(1));
-                this.navigate.emit(new NavigateEvent(href.pathname, hash));
-            } else {
-                window.open(href.href, '_blank', 'noopener');
+        const link = target.closest<HTMLAnchorElement>('a[href]');
+        if (link) {
+            if (this.navigateImpl(link.href)) {
+                event.preventDefault();
             }
         }
     }

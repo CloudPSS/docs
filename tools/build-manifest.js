@@ -24,7 +24,14 @@ async function main() {
             md.render(file);
             const front = fm ? yaml.safeLoad(fm) : undefined;
             const frontObj = typeof front == 'object' ? front : undefined;
-            return [`/${v}`, { title: path.basename(v, '.md'), ...frontObj }];
+
+            const filename = path.basename(v, '.md');
+            let title = filename;
+            if (filename.toLowerCase() === 'index') {
+                title = path.basename(path.dirname(v));
+            }
+
+            return [`/${v}`, { title, ...frontObj }];
         }),
     );
     Object.assign(base.documents, Object.fromEntries(info));

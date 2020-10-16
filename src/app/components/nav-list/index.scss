@@ -2,11 +2,22 @@
   display: block;
 }
 
+:host-context([color-scheme='dark']) {
+  mat-nav-list {
+    --selected-color: var(--theme-primary-lighter);
+  }
+}
+:host-context([color-scheme='light']) {
+  mat-nav-list {
+    --selected-color: var(--theme-primary-darker);
+  }
+}
+
 a.mat-list-item {
   user-select: none;
   position: relative;
   &.current {
-    color: var(--theme-primary-text) !important;
+    color: var(--selected-color, var(--theme-primary-default)) !important;
     &::before {
       content: '';
       background: var(--theme-primary-default) !important;

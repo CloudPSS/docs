@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { StorageService } from './storage';
@@ -39,6 +39,9 @@ export class GlobalService {
     );
     /** 语言 */
     readonly language = this.storage.watch<string>('language', this.defaultLanguage());
+
+    /** 菜单按钮 */
+    readonly menuButton = new EventEmitter<{ icon: string; title: string; click?: () => void } | null>(true);
 
     /**
      * 标题
