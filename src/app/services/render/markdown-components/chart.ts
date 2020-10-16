@@ -42,6 +42,7 @@ export class MdChart extends MdComponentBase {
             canvas.style.maxWidth = '800px';
             await MdChart.init();
             const chart = new MdChart.chartJs(canvas, config);
+            console.log(MdChart.chartJs.defaults);
             const render = (): void => {
                 canvas.style.width = '100%';
                 canvas.style.height = '';

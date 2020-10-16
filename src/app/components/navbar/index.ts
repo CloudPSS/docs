@@ -22,15 +22,4 @@ export class NavbarComponent extends NavBaseComponent {
     readonly nav = combineLatest([this.global.language, this.source.current]).pipe(
         map(([lang, info]) => info.manifest.sitemap[lang].children.filter((c) => c.order != null)),
     );
-
-    /**
-     * 更改主题
-     */
-    changeTheme(): void {
-        if (this.global.isDark(this.global.getTheme())) {
-            this.global.setTheme('default');
-        } else {
-            this.global.setTheme('dark');
-        }
-    }
 }

@@ -95,6 +95,6 @@ import { EditorComponent } from './pages/editor';
 // eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppModule {
     constructor(injector: Injector) {
-        constants.initInjectable(injector);
+        constants.initInjectable(Injector, injector);
     }
 }

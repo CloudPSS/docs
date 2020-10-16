@@ -33,7 +33,11 @@ export class RenderService {
     constructor(readonly source: SourceService, readonly global: GlobalService) {
         this.md = markdownIt({
             frontMatter: (fm) => {
-                this.frontMatter = safeLoad(fm) as FrontMatter;
+                const frontMatter = safeLoad(fm) as FrontMatter;
+                if (frontMatter['redirect to']) {
+                    frontMatter['redirect to'] = this.md.normalizeLink(frontMatter['redirect to']);
+                }
+                this.frontMatter = frontMatter;
             },
         });
         const normalizeLink = this.md.normalizeLink.bind(this.md);
@@ -67,7 +71,14 @@ export class RenderService {
             this.options = { ...RenderService.defaultOptions, ...options };
             this.file = file;
             const rendered = this.md.renderFragment(file.data);
-            return [rendered, { title: path.basename(file.path, '.md'), ...this.frontMatter }];
+
+            const filename = path.basename(file.path, '.md');
+            let title = filename;
+            if (filename.toLowerCase() === 'index') {
+                title = path.basename(path.dirname(file.path));
+            }
+
+            return [rendered, { title, ...this.frontMatter }];
         } catch (ex) {
             console.warn(file, options, ex);
             throw ex;

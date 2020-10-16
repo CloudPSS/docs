@@ -1,2 +1,27 @@
-<app-navbar #xx (navigate)="router.navigateByUrl($event.url)"></app-navbar>
-<router-outlet></router-outlet>
+<mat-toolbar [color]="'primary'" class="mat-elevation-z8">
+  <button
+    id="menu-button"
+    [class.hidden]="(global.menuButton | async) == null"
+    [title]="(global.menuButton | async)?.title || '' | translate"
+    (click)="menuClick()"
+    mat-icon-button
+  >
+    <mat-icon>{{(global.menuButton | async)?.icon}}</mat-icon>
+  </button>
+  <app-navbar #xx (navigate)="router.navigateByUrl($event.url)"></app-navbar>
+  <button mat-icon-button (click)="changeTheme()" [title]="'topBar.changeTheme' | translate">
+    <mat-icon>{{global.isDark(global.theme | async) ? 'brightness_2' : 'brightness_7'}}</mat-icon>
+  </button>
+  <button mat-icon-button [title]="'topBar.changeLanguage' | translate" [matMenuTriggerFor]="languageMenu">
+    <mat-icon>language</mat-icon>
+    <mat-menu #languageMenu>
+      <button mat-menu-item *ngFor="let item of translate.langs" (click)="global.setLanguage(item)">
+        {{languageName(item)}}
+      </button>
+    </mat-menu>
+  </button>
+</mat-toolbar>
+
+<main>
+  <router-outlet></router-outlet>
+</main>

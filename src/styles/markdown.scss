@@ -89,7 +89,6 @@
     }
     pre {
       background-color: $codebg;
-      box-shadow: 0 0 4px $shadow;
       &::before {
         color: $primary-color;
       }
@@ -101,7 +100,7 @@
       @include quote-color($primary);
     }
     [is='md-container'] {
-      &[class|='tip'] {
+      &[class~='tip'] {
         @include quote-color($primary, '!');
       }
     }
@@ -252,12 +251,22 @@
       code {
         color: inherit !important;
       }
-      color: var(--theme-primary-500);
-      &:hover {
-        color: var(--theme-primary-700);
+      color: var(--theme-primary-text);
+      & {
+        &:hover {
+          color: var(--theme-primary-darker);
+        }
+        &:active {
+          color: var(--theme-primary-lighter);
+        }
       }
-      &:active {
-        color: var(--theme-primary-600);
+      [color-scheme='dark'] & {
+        &:hover {
+          color: var(--theme-primary-lighter);
+        }
+        &:active {
+          color: var(--theme-primary-darker);
+        }
       }
       &.footnote-backref {
         user-select: none;
@@ -368,7 +377,7 @@
       vertical-align: text-bottom;
       color: var(--theme-accent-text);
       @media print {
-        border: var(--theme-accent-A400) solid 1px;
+        border: var(--theme-accent-darker) solid 1px;
       }
     }
 
@@ -512,22 +521,22 @@
       }
     }
     [is='md-container'] {
-      &[class|='info'] {
+      &[class~='info'] {
         @include quote-color($mat-blue, 'i');
       }
-      &[class|='warning'] {
+      &[class~='warning'] {
         @include quote-color($mat-orange, '!');
       }
-      &[class|='error'] {
+      &[class~='error'] {
         @include quote-color($mat-red, '☓');
       }
-      &[class|='success'] {
+      &[class~='success'] {
         @include quote-color($mat-light-green, '✓');
       }
-      &[class|='fail'] {
+      &[class~='fail'] {
         @include quote-color($mat-red, '✗');
       }
-      &[class|='question'] {
+      &[class~='question'] {
         @include quote-color($mat-amber, '?');
       }
     }

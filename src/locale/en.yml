@@ -1,12 +1,14 @@
 welcome: Welcome
 
-footnote:
-  toFootnote: Go to footnote
-  backToArticle: Back to article
-
-theme:
-  change: Change theme
+topBar:
+  changeTheme: Change theme
+  changeLanguage: Change language
 
 sidenav:
   open: Open sidebar
   close: Close sidebar
+
+article:
+  footnote:
+    toFootnote: Go to footnote
+    backToArticle: Back to article
