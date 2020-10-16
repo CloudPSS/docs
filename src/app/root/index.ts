@@ -3,7 +3,6 @@ import { Router } from '@angular/router';
 import { GlobalService } from '@/services/global';
 import { Subscription, noop } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
-import { WebpackTranslateLoader } from '@/webpack-translate-loader';
 
 /**
  * App 组件
@@ -45,12 +44,5 @@ export class AppComponent implements OnInit, OnDestroy {
         } else {
             this.global.setTheme('dark');
         }
-    }
-
-    /**
-     * 语言名称
-     */
-    languageName(lang: string): string {
-        return WebpackTranslateLoader.langs[lang].name;
     }
 }

@@ -12,15 +12,20 @@ type LocaleManifest = Record<
     {
         name: string;
         alias?: string[];
+        default?: boolean;
     }
 >;
+
+const langs = locale as LocaleManifest;
 
 /**
  * 翻译加载器
  */
 export class WebpackTranslateLoader implements TranslateLoader {
     /** 可用语言 */
-    static readonly langs = locale as LocaleManifest;
+    static readonly langs = langs;
+    /** 默认语言 */
+    static readonly defaultLang = Object.entries(langs).find(([_, v]) => v.default)?.[0] ?? Object.keys(langs)[0];
 
     /**
      * @inheritdoc

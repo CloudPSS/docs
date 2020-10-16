@@ -1,13 +1,15 @@
 en:
   name: English
 zh-hans:
-  name: 中文
+  name: 中文 # 添加繁中后此处改为“简体中文”
+  default: true
   alias:
     - zh-chs
     - zh-cn
     - zh-sg
+    # 中文默认使用简体
     - zh
-    # 以下使用繁中
+    # 以下应使用繁中，现暂用简中代替
     - zh-hk
     - zh-mo
     - zh-tw

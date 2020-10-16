@@ -145,6 +145,13 @@ export class GlobalService {
         this.storage.set('language', value);
     }
 
+    /**
+     * 语言名称
+     */
+    languageName(lang: string): string {
+        return WebpackTranslateLoader.langs[lang].name;
+    }
+
     /** 设置语言 */
     private updateLanguage(value: string): void {
         this.translateService.use(value);

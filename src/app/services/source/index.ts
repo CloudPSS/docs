@@ -6,6 +6,18 @@ import { safeLoadAll } from 'js-yaml';
 import { VersionSpec, VersionInfo, File } from './interfaces';
 import { Manifest, FrontMatter, DocumentItem } from '@/interfaces/manifest';
 import { docUrls } from 'src/environments/environment';
+import { TranslateService } from '@ngx-translate/core';
+
+/**
+ * 查找文档的结果
+ */
+type FindDocumentResult =
+    | {
+          path: string;
+          frontMatter: FrontMatter;
+          fallback?: string;
+      }
+    | undefined;
 
 /**
  * 提供文档内容
@@ -14,7 +26,7 @@ import { docUrls } from 'src/environments/environment';
     providedIn: 'root',
 })
 export class SourceService {
-    constructor(private readonly http: HttpClient) {}
+    constructor(private readonly http: HttpClient, private readonly translate: TranslateService) {}
 
     /** 当前版本 */
     readonly current = new BehaviorSubject<VersionInfo>({
@@ -156,15 +168,48 @@ export class SourceService {
         return new URL(p, 'app-path:' + base).href.slice('app-path:'.length);
     }
 
-    /** 查找文档 */
-    findDocument(path: string, base?: string): [string, FrontMatter] | undefined {
-        path = this.normalizePath(path, base);
-        path = path.replace(/(\.md|\.html?|\/)$/, '');
-        const k = Object.keys(this.current.value.manifest.documents).find(
+    /**
+     * 查找具体文档
+     */
+    private findDocumentImpl(path: string, fallbackLang?: string): FindDocumentResult {
+        if (fallbackLang) path = path.replace(/^\/[^/]+/, `/${fallbackLang}`);
+        const p = Object.keys(this.current.value.manifest.documents).find(
             (p) => p === path || p === path + '.md' || p === path + '/index.md',
         );
-        if (!k) return undefined;
-        return [k, this.current.value.manifest.documents[k]];
+        if (!p) return undefined;
+        return {
+            path: p,
+            frontMatter: this.current.value.manifest.documents[p],
+            fallback: fallbackLang,
+        };
+    }
+
+    /** 查找文档 */
+    findDocument(
+        path: string,
+        base?: string,
+    ):
+        | {
+              path: string;
+              frontMatter: FrontMatter;
+              fallback?: string;
+          }
+        | undefined {
+        path = this.normalizePath(path, base);
+        path = path.replace(/(\.md|\.html?|\/)$/, '');
+
+        const k = this.findDocumentImpl(path);
+        if (k) return k;
+
+        const f = this.findDocumentImpl(path, this.translate.getDefaultLang());
+        if (f) return f;
+
+        for (const lang of this.translate.getLangs()) {
+            const l = this.findDocumentImpl(path, lang);
+            if (l) return l;
+        }
+
+        return undefined;
     }
 
     /** 获取版本详情 */

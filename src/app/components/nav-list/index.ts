@@ -1,7 +1,7 @@
-import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core';
+import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit, OnDestroy } from '@angular/core';
 import { SourceService } from '@/services/source';
 import { map, debounceTime, withLatestFrom } from 'rxjs/operators';
-import { combineLatest, BehaviorSubject, merge, of, Subject } from 'rxjs';
+import { combineLatest, BehaviorSubject, merge, of, Subject, Subscription } from 'rxjs';
 import { DocumentItem } from '@/interfaces/manifest';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
@@ -30,7 +30,7 @@ interface TreeItem {
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class NavListComponent extends NavBaseComponent implements AfterViewInit {
+export class NavListComponent extends NavBaseComponent implements AfterViewInit, OnDestroy {
     constructor(readonly source: SourceService, readonly global: GlobalService) {
         super();
         this.nav.subscribe((i) => {
@@ -90,23 +90,36 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit 
 
     /** 聚焦选中元素 */
     private _focus = new Subject<void>();
-    /** 聚焦选中元素 */
-    focus(): void {
-        this._focus.next();
+
+    /** 订阅事件 */
+    private readonly subscriptions: Subscription[] = [];
+    /** @inheritdoc */
+    ngOnDestroy(): void {
+        const subscriptions = this.subscriptions.splice(0);
+        subscriptions.forEach((s) => s.unsubscribe());
     }
 
     /** @inheritdoc */
     ngAfterViewInit(): void {
-        combineLatest(this._currentRawPath, merge(of(null), this.items.changes))
-            .pipe(debounceTime(50))
-            .subscribe(([currentRawPath]) => {
-                const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
-                current?.nativeElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
-            });
-        this._focus.pipe(withLatestFrom(this._currentRawPath), debounceTime(50)).subscribe(([_, currentRawPath]) => {
-            const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
-            current?.nativeElement.focus({ preventScroll: true });
-        });
+        this.subscriptions.push(
+            combineLatest(this._currentRawPath, merge(of(null), this.items.changes))
+                .pipe(debounceTime(50))
+                .subscribe(([currentRawPath]) => {
+                    const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+                    current?.nativeElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+                }),
+            this._focus
+                .pipe(withLatestFrom(this._currentRawPath), debounceTime(50))
+                .subscribe(([_, currentRawPath]) => {
+                    const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+                    current?.nativeElement.focus({ preventScroll: true });
+                }),
+        );
+    }
+
+    /** 聚焦选中元素 */
+    focus(): void {
+        this._focus.next();
     }
 
     /**

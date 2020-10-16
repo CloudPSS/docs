@@ -3,6 +3,14 @@ mat-sidenav-container {
   @media print {
     background-color: white;
   }
+  &.no-nav {
+    mat-sidenav-content {
+      margin: 0 !important;
+    }
+    mat-sidenav {
+      visibility: hidden !important;
+    }
+  }
 }
 
 $content-padding-lr: 24px;
@@ -49,6 +57,9 @@ mat-sidenav-content {
     margin: auto;
     @media screen {
       max-width: 800px;
+    }
+    mat-card {
+      user-select: none;
     }
   }
   &.toc {
