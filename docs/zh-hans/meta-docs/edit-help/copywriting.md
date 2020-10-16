@@ -1,6 +1,6 @@
 ---
 title: 中文文案排版指北
-order: 100
+order: 30
 ---
 
 原文链接：<https://github.com/mzlogin/chinese-copywriting-guidelines>

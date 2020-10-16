@@ -1,8 +1,6 @@
 ---
 title: 图表与流程图
-date: 2018-08-17 09:20:00
-author: lzy
-author_email: lzy@live.in
+order: 30
 ---
 
 Examples from <http://mdp.tylingsoft.com/>.
