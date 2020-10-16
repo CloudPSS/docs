@@ -1,6 +1,25 @@
 ---
 title: MarkDown 语法介绍
+order: 10
 ---
+
+## 换行与分段
+
+在一行的末尾添加两个空格来换行，使用一个空行来分段。
+
+```md line breaks
+一行的内容
+不会因为换行断开
+
+需要在行末  
+添加两个空格
+```
+
+一行的内容
+不会因为换行断开
+
+需要在行末  
+添加两个空格
 
 ## 公式
 
@@ -30,92 +49,15 @@ $$ \sum_{i=1}^n a_i = 0 $$
 :::
 
 ```md
-<!-- in /zh/component/comp_newClarkTransform.md-->
+<!-- in /zh-hans/components/comp_newClarkTransform.md-->
 
 [CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
 [Park 变换器](comp_newParkTransform.md)
 ```
 
-## 容器
-
-显示一个特定样式的容器。
-
-如：
-
-```md pullquote
-:::tip
-tip
-:::
-
-:::question
-question
-:::
-
-:::success
-success
-:::
-
-:::fail 自定义[内容](#)
-fail
-:::
-
-:::warning
-warning
-:::
-
-:::error
-error
-:::
-
-::::info
-info
-
-:::summary 标题
-内容
-:::
-```
-
-效果：
-
-:::tip
-tip
-:::
-
-:::question
-question
-:::
-
-:::success
-success
-:::
-
-:::fail 自定义[内容](#)
-fail
-:::
-
-:::warning
-warning
-:::
-
-:::error
-error
-:::
-
-::::info
-info
-
-:::summary 标题
-内容
-:::
-::::
-
 ## 图片
 
-图片存储的文件结构如图
-
-![](asset-folder.jpg)
-
-即图片存储于和页面同名（此处为`markdown-intro`）的文件夹内，引用时使用 `![alt text](path "title" =size)` 语法。
+引用图片时使用 `![alt text](path "title" =size)` 语法。
 
 图片显示规则如下：
 
@@ -251,67 +193,7 @@ console.log('hello world');
 console.log('hello world');
 ```
 
-## 引用
-
-如：
-
-```md quote
-> Level1
->
-> > Level2
->
->  <!-- 退出层级需要一行空行-->
->
-> Level1
-```
-
-效果：
-
-> Level1
->
-> > Level2
->
->  <!-- 退出层级需要一行空行-->
->
-> Level1
-
-::: info
-同理，引用结束需要一行空行。
-:::
-
-## 定义
-
-如：
-
-```tex deflist
-有效值
-: 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
-  $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
-: 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2}}$ ，约 $0.707$ 倍。
-
-另一个定义
-~ 也可以使用波浪线。
-  通过缩进确定定义的范围。
-~ 另起一段。
-  ...
-```
-
-效果：
-
-有效值
-: 在相同的电阻上分别通过直流电流和交流电流，经过一个交流周期的时间，如果它们在电阻上所消耗的电能相等的话，则把该直流电流（电压）的大小作为交流电流（电压）的有效值。
-  $$ G_{rms} = \sqrt{\frac{1}{T} \int_{-\frac{T}{2} } ^{\frac{T}{2} }{ g(t)^{2} \operatorname{d}\! t } } $$
-: 正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2} }$ ，约 $0.707$ 倍。
-
-另一个定义
-~ 也可以使用波浪线。
-通过缩进确定定义的范围。
-~ 另起一段。
-...
-
-::: info
-定义的前后需要空行分隔。
-:::
+代码块也可以使用标题进行交叉引用，如 `[上文的代码](#a-simple-js-script)` [上文的代码](#a-simple-js-script)。
 
 ## 缩写
 

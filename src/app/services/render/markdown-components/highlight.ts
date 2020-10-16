@@ -2,6 +2,64 @@
 
 import { MdComponentBase } from './base';
 
+const languageNameReplacement: Record<string, string> = {
+    js: 'javascript',
+    g4: 'antlr4',
+    adoc: 'asciidoc',
+    shell: 'bash',
+    shortcode: 'bbcode',
+    cs: 'csharp',
+    dotnet: 'csharp',
+    coffee: 'coffeescript',
+    conc: 'concurnas',
+    jinja2: 'django',
+    'dns-zone': 'dns-zone-file',
+    dockerfile: 'docker',
+    eta: 'ejs',
+    xlsx: 'excel-formula',
+    xls: 'excel-formula',
+    gamemakerlanguage: 'gml',
+    hs: 'haskell',
+    kt: 'kotlin',
+    kts: 'kotlin',
+    tex: 'latex',
+    ly: 'lilypond',
+    emacs: 'lisp',
+    elisp: 'lisp',
+    'emacs-lisp': 'lisp',
+    md: 'markdown',
+    moon: 'moonscript',
+    n4jsd: 'n4js',
+    nani: 'naniscript',
+    objc: 'objectivec',
+    px: 'pcaxis',
+    pcode: 'peoplecode',
+    pq: 'powerquery',
+    pbfasm: 'purebasic',
+    purs: 'purescript',
+    py: 'python',
+    rkt: 'racket',
+    rpy: 'renpy',
+    robot: 'robotframework',
+    rb: 'ruby',
+    'sh-session': 'shell-session',
+    shellsession: 'shell-session',
+    smlnj: 'sml',
+    sol: 'solidity',
+    sln: 'solution-file',
+    rq: 'sparql',
+    t4: 't4-cs',
+    trig: 'turtle',
+    ts: 'typescript',
+    tsconfig: 'typoscript',
+    uscript: 'unrealscript',
+    uc: 'unrealscript',
+    vb: 'visual-basic',
+    vba: 'visual-basic',
+    xeoracube: 'xeora',
+    yml: 'yaml',
+};
+
 /**
  * 高亮组件
  */
@@ -38,12 +96,19 @@ export class MdHighlight extends MdComponentBase {
      * @inheritdoc
      */
     async connectedCallback(): Promise<void> {
-        const lang = this.getAttribute('language');
+        let lang = this.getAttribute('language') ?? '';
         if (!lang) return;
+        lang = lang.toLowerCase();
+        if (lang in languageNameReplacement) {
+            lang = languageNameReplacement[lang];
+        }
+        this.setAttribute('language', lang);
+        const code = this.dataset.source ?? this.textContent ?? '';
+        this.dataset.source = code;
+        this.textContent = code;
         await MdHighlight.init();
         const Prism = window.Prism;
         const highlighter = Prism.languages[lang];
-        const code = this.textContent ?? '';
         if (highlighter) {
             this.innerHTML = Prism.highlight(code, Prism.languages[lang], lang);
         } else {
