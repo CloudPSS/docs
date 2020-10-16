@@ -1,5 +1,5 @@
-import { Component, ViewChild, AfterViewInit, HostListener, ElementRef } from '@angular/core';
-import { of, merge, Subject, combineLatest } from 'rxjs';
+import { Component, ViewChild, AfterViewInit, HostListener, ElementRef, OnDestroy } from '@angular/core';
+import { of, merge, Subject, combineLatest, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, delay, mergeMap, catchError, throttleTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
@@ -16,7 +16,7 @@ import { GlobalService } from '@/services/global';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class DocumentComponent implements AfterViewInit {
+export class DocumentComponent implements AfterViewInit, OnDestroy {
     constructor(
         readonly route: ActivatedRoute,
         readonly router: Router,
@@ -87,40 +87,63 @@ export class DocumentComponent implements AfterViewInit {
     /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
 
+    /** 订阅事件 */
+    private readonly subscriptions: Subscription[] = [];
+    /** @inheritdoc */
+    ngOnDestroy(): void {
+        const subscriptions = this.subscriptions.splice(0);
+        subscriptions.forEach((s) => s.unsubscribe());
+        this.global.menuButton.next(null);
+    }
+
     /** @inheritdoc */
     ngAfterViewInit(): void {
         let scrollMarginTop = -1;
-        combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {
-            const host = this.scroll.nativeElement;
-            if (headers.length === 0 || !host) {
-                this.currentId = '';
-                return;
-            }
-            if (scrollMarginTop < 0) {
-                scrollMarginTop = Number.parseFloat(
-                    ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
-                );
-                if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
-                scrollMarginTop += 1;
-            }
-            const top = host.scrollTop + scrollMarginTop;
-            let i = headers.findIndex((h) => h.element.offsetTop > top);
-            if (i < 0) i = headers.length;
-            this.currentId = headers[i - 1]?.id ?? '';
-        });
-        this.updateToc();
-        this.layout.sidenavMode
-            .pipe(
-                delay(100),
-                mergeMap(async (d) => {
-                    if (d === 'side') {
-                        await this.sidenav.open();
-                    } else {
-                        await this.sidenav.close();
+        this.subscriptions.push(
+            combineLatest(this.frontMatter, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable()))
+                .subscribe(([fm, opened]) => {
+                    if (fm?.nav === false) {
+                        this.global.menuButton.next(null);
                     }
-                }),
-            )
-            .subscribe();
+                    this.global.menuButton.next({
+                        icon: 'menu',
+                        title: 'sidenav.' + (opened ? 'close' : 'open'),
+                        click: () => this.sidenav.toggle(),
+                    });
+                })
+                .add(() => this.global.menuButton.next(null)),
+            combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {
+                const host = this.scroll.nativeElement;
+                if (headers.length === 0 || !host) {
+                    this.currentId = '';
+                    return;
+                }
+                if (scrollMarginTop < 0) {
+                    scrollMarginTop = Number.parseFloat(
+                        ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
+                    );
+                    if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
+                    scrollMarginTop += 1;
+                }
+                const top = host.scrollTop + scrollMarginTop;
+                let i = headers.findIndex((h) => h.element.offsetTop > top);
+                if (i < 0) i = headers.length;
+                this.currentId = headers[i - 1]?.id ?? '';
+            }),
+            this.layout.sidenavMode
+                .pipe(
+                    delay(100),
+                    mergeMap(async (d) => {
+                        if (d === 'side') {
+                            await this.sidenav.open();
+                        } else {
+                            await this.sidenav.close();
+                        }
+                    }),
+                )
+                .subscribe(),
+        );
+        this.updateToc();
     }
 
     /**

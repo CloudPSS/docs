@@ -65,7 +65,7 @@ module.exports = function (options) {
                     const summary = m?.[1];
 
                     if (token.nesting === 1) {
-                        const detailsOpen = `<details data-source-line="${token.map[0] + 1}">\n`;
+                        const detailsOpen = `<details is="md-container" data-source-line="${token.map[0] + 1}">\n`;
                         if (summary) {
                             return `${detailsOpen}<summary>${md.renderInline(summary, {
                                 ...env,

@@ -1,5 +1,10 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenav [mode]="(layout.sidenavMode | async) || 'side'" (openedStart)="navList.focus()">
+  <mat-sidenav
+    #sidenav
+    class="mat-elevation-z4"
+    [mode]="(layout.sidenavMode | async) || 'side'"
+    (openedStart)="navList.focus()"
+  >
     <app-nav-list
       #navList
       [category]="(category | async) || ''"
@@ -21,13 +26,3 @@
     <app-toc #toc [document]="md" [currentId]="currentId"></app-toc>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<button
-  id="sidenav-button"
-  class="mat-toolbar mat-primary mat-toolbar-single-row"
-  [title]="'sidenav.' + (sidenav.opened ? 'close' : 'open') | translate"
-  (click)="sidenav.toggle()"
-  mat-icon-button
->
-  <mat-icon>menu</mat-icon>
-</button>

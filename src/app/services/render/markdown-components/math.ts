@@ -132,8 +132,8 @@ export class MdMath extends MdComponentBase {
         const mode = (this.getAttribute('mode') ?? 'inline').toLowerCase() as MathMode;
         this.setAttribute('mode', mode);
 
-        const source = (this.textContent ?? '').trim();
-        this.setAttribute('aria-label', source);
+        const source = (this.dataset.source ?? this.textContent ?? '').trim();
+        this.dataset.source = source;
 
         if (!langDef) {
             this.innerHTML = `<span class='error'>Unsupported language ${lang}</span>`;
