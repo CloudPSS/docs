@@ -31,7 +31,7 @@ export class RenderService {
     };
 
     constructor(readonly source: SourceService, readonly global: GlobalService) {
-        this.md = markdownIt(global, {
+        this.md = markdownIt({
             frontMatter: (fm) => {
                 this.frontMatter = safeLoad(fm) as FrontMatter;
             },
@@ -52,7 +52,7 @@ export class RenderService {
     }
 
     /** markdown-it 实例 */
-    private md: MarkdownIt;
+    private md: MarkdownIt.MarkdownItExt;
     /** 正在处理的文件 */
     private file?: File<string>;
     /** 正在处理的FrontMatter */
@@ -66,12 +66,7 @@ export class RenderService {
         try {
             this.options = { ...RenderService.defaultOptions, ...options };
             this.file = file;
-            const rendered = ((this.md as unknown) as {
-                /**
-                 * 渲染为 HTMLTemplateElement
-                 */
-                renderFragment(value: string): HTMLTemplateElement;
-            }).renderFragment(file.data);
+            const rendered = this.md.renderFragment(file.data);
             return [rendered, { title: path.basename(file.path, '.md'), ...this.frontMatter }];
         } catch (ex) {
             console.warn(file, options, ex);

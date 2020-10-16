@@ -1,5 +1,5 @@
 <div #mask class="mask" [class]="scrollInfo">
-  <nav #nav class="toc" [style.top.px]="-offset">
+  <nav #nav class="toc" [class.scrolling]="scrolling | async" [style.top.px]="-offset">
     <ul>
       <li
         *ngIf="1 <= level"

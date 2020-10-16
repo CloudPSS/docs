@@ -130,7 +130,6 @@ export class SourceService {
                 },
             });
         }
-        console.log(root);
         reorder(root);
         manifest = {
             ...manifest,

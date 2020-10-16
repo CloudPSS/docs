@@ -65,4 +65,8 @@ mat-sidenav-content {
   left: 0;
   width: 64px;
   height: 64px;
+  mat-icon {
+    display: block;
+    margin: auto;
+  }
 }

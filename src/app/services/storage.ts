@@ -1,8 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, fromEvent } from 'rxjs';
 import { filter, map, distinctUntilChanged, shareReplay } from 'rxjs/operators';
+import { JsonValue } from 'type-fest';
 
 const storage = window.localStorage;
+
+/**
+ * 默认值
+ */
+type Default<T extends JsonValue> = T | (() => T);
 
 /**
  *  设置全局状态
@@ -23,15 +29,20 @@ export class StorageService {
     /**
      * 设置存储内容
      */
-    set<T>(key: string, value: T): void {
-        storage.setItem(key, JSON.stringify(value));
+    set<T extends JsonValue>(key: string, value: T | undefined): void {
+        const v = JSON.stringify(value);
+        if (v == null) {
+            storage.removeItem(key);
+        } else {
+            storage.setItem(key, v);
+        }
         this.check.next(key);
     }
 
     /**
      * 解析存储原始内容
      */
-    private parse<T>(value: string): [true, T] | [false] {
+    private parse<T extends JsonValue>(value: string): [true, T] | [false] {
         try {
             return [true, JSON.parse(value) as T];
         } catch {
@@ -42,19 +53,22 @@ export class StorageService {
     /**
      * 获取存储内容
      */
-    private getImpl<T>(key: string, value: string | null, def?: T): T {
+    private getImpl<T extends JsonValue>(key: string, value: string | null, def?: Default<T>): T {
         if (value != null) {
             const ret = this.parse<T>(value);
             if (ret[0]) return ret[1];
         }
-        this.set(key, def);
+        if (typeof def == 'function') {
+            def = def();
+        }
+        this.set<T>(key, def as T);
         return def as T;
     }
 
     /**
      * 获取存储内容
      */
-    get<T>(key: string, def?: T): T {
+    get<T extends JsonValue>(key: string, def?: Default<T>): T {
         const current = storage.getItem(key);
         return this.getImpl(key, current, def);
     }
@@ -62,7 +76,7 @@ export class StorageService {
     /**
      * 获取存储内容
      */
-    watch<T>(key: string, def?: T): Observable<T> {
+    watch<T extends JsonValue>(key: string, def?: Default<T>): Observable<T> {
         this.get(key, def);
         return this.check.pipe(
             filter((k) => k === key || k == null),

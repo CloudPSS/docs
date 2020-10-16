@@ -11,7 +11,7 @@ let katex: typeof katexModule;
  * 一种公式语言
  */
 type Language = {
-    delimiters: Record<MathMode, [string, string]>;
+    copyDelimiters: Record<MathMode, [string, string]>;
     /**
      * 渲染公式
      */
@@ -20,9 +20,9 @@ type Language = {
 
 const languages: Record<string, Language | { aliasOf: string }> = {
     tex: {
-        delimiters: {
+        copyDelimiters: {
             inline: ['$', '$'],
-            display: ['$$', '$$'],
+            display: ['$$ ', ' $$'],
         },
         render(source: string, mode: 'display' | 'inline'): void {
             katex.render(source, this, {
@@ -33,9 +33,9 @@ const languages: Record<string, Language | { aliasOf: string }> = {
     latex: { aliasOf: 'tex' },
     katex: { aliasOf: 'tex' },
     // asciimath: {
-    //     delimiters: {
+    //     copyDelimiters: {
     //         inline: ['\\(', '\\)'],
-    //         display: ['\\[', '\\]'],
+    //         display: ['\\[ ', ' \\]'],
     //     },
     //     render(source: string, mode: 'display' | 'inline'): void | Promise<void> {
     //         const tex = asciimathToLatex(source);
@@ -57,7 +57,7 @@ function replaceMathText(fragment: DocumentFragment): void {
         if (!lang || !(lang in languages)) {
             return;
         }
-        const d = (languages[lang] as Language).delimiters[mode];
+        const d = (languages[lang] as Language).copyDelimiters[mode];
         if (source) {
             el.textContent = `${d[0]}${source}${d[1]}`;
         }

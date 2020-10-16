@@ -3,9 +3,6 @@
 }
 
 a.mat-list-item {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
   user-select: none;
   position: relative;
   &.current {

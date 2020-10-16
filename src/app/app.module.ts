@@ -1,4 +1,4 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule, APP_INITIALIZER, Injector } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -11,10 +11,12 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { MonacoEditorModule } from 'ngx-monaco-editor';
 
+import * as constants from './constants';
 import { AppComponent } from './root';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
@@ -78,6 +80,7 @@ import { EditorComponent } from './pages/editor';
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
+        MatTooltipModule,
         MatTreeModule,
     ],
     providers: [
@@ -89,4 +92,9 @@ import { EditorComponent } from './pages/editor';
     ],
     bootstrap: [AppComponent],
 })
-export class AppModule {}
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
+export class AppModule {
+    constructor(injector: Injector) {
+        constants.initInjectable(injector);
+    }
+}

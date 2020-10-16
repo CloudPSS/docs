@@ -9,7 +9,6 @@ import { MarkdownComponent } from '@/components/markdown';
 import { saveAs } from 'file-saver';
 import * as path from 'path';
 import { GlobalService } from '@/services/global';
-import { I18nService } from '@/services/i18n';
 
 /**
  * 编辑页面组件
@@ -25,7 +24,6 @@ export class EditorComponent implements AfterViewInit {
         readonly source: SourceService,
         readonly layout: LayoutService,
         readonly global: GlobalService,
-        readonly i18n: I18nService,
     ) {}
 
     /** 预览组件 */
@@ -145,10 +143,10 @@ export class EditorComponent implements AfterViewInit {
      * 导航页面
      */
     onNavigate(target?: NavigateEvent): void {
-        if (target) {
-            if (`/${this.i18n.lang.value}${target.path}` === this.route.snapshot.queryParams.path && target.fragment) {
-                this.preview.scrollTo(target.fragment);
-            }
+        if (!target) return;
+
+        if (`/${this.global.getLanguage()}${target.path}` === this.route.snapshot.queryParams.path && target.fragment) {
+            this.preview.scrollTo(target.fragment);
         }
     }
 }

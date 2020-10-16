@@ -22,4 +22,12 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-<button id="sidenav-button" (click)="sidenav.toggle()" mat-icon-button><mat-icon>menu</mat-icon></button>
+<button
+  id="sidenav-button"
+  class="mat-toolbar mat-primary mat-toolbar-single-row"
+  [title]="'sidenav.' + (sidenav.opened ? 'close' : 'open') | translate"
+  (click)="sidenav.toggle()"
+  mat-icon-button
+>
+  <mat-icon>menu</mat-icon>
+</button>
