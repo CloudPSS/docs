@@ -6,8 +6,9 @@
     [class.current]="(node.document.path?.raw || '--no-path--') === currentRawPath"
     [attr.data-raw-path]="node.document.path?.raw"
     [href]="url(node.document)"
+    [title]="node.document.title"
     (click)="onNavigate(node.document, $event)"
   >
-    <span [style.marginLeft.px]="treeControl.getLevel(node) * 16">{{ node.document.title }}</span>
+    <div matLine #content [style.paddingLeft.px]="treeControl.getLevel(node) * 16">{{ node.document.title }}</div>
   </a>
 </mat-nav-list>

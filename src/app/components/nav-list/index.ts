@@ -2,11 +2,11 @@ import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit } 
 import { SourceService } from '@/services/source';
 import { map, debounceTime, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, BehaviorSubject, merge, of, Subject } from 'rxjs';
-import { I18nService } from '@/services/i18n';
 import { DocumentItem } from '@/interfaces/manifest';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { NavBaseComponent } from '../nav-base';
+import { GlobalService } from '@/services/global';
 
 /**
  * 树节点
@@ -31,7 +31,7 @@ interface TreeItem {
     styleUrls: ['./index.scss'],
 })
 export class NavListComponent extends NavBaseComponent implements AfterViewInit {
-    constructor(readonly source: SourceService, readonly i18n: I18nService) {
+    constructor(readonly source: SourceService, readonly global: GlobalService) {
         super();
         this.nav.subscribe((i) => {
             this.dataSource.data = i ? [i] : [];
@@ -59,7 +59,7 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit 
     }
 
     /** 导航文档列表 */
-    readonly nav = combineLatest([this.i18n.lang, this.source.current, this._category]).pipe(
+    readonly nav = combineLatest([this.global.language, this.source.current, this._category]).pipe(
         map(([lang, info, category]) => {
             if (!category) return null;
             const root = info.manifest.sitemap[lang].children;

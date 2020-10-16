@@ -30,6 +30,9 @@ li.toc-item {
   a {
     display: inline-block;
     pointer-events: visible;
+    .scrolling & {
+      pointer-events: none;
+    }
     overflow: hidden;
     white-space: nowrap;
     text-decoration: none;

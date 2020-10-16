@@ -90,6 +90,9 @@
     pre {
       background-color: $codebg;
       box-shadow: 0 0 4px $shadow;
+      &::before {
+        color: $primary-color;
+      }
     }
 
     dl,
@@ -403,15 +406,38 @@
     }
 
     pre {
-      padding: 1em 0.5em;
+      padding: 2em 0.5em 1em;
       margin: 1.2em 0;
       border-radius: 4px;
+      position: relative;
+      contain: content;
+      &[title]::before {
+        content: attr(title);
+      }
       @media print {
         background-color: white !important;
       }
     }
     code[is='md-highlight'] {
       font-size: $body-font-size;
+      @media print {
+        white-space: pre-wrap;
+      }
+      &[language]::before {
+        content: attr(language);
+        text-transform: uppercase;
+        color: var(--theme-foreground-secondary-text);
+        text-align: right;
+      }
+    }
+    pre::before,
+    code[is='md-highlight']::before {
+      font-size: 0.8em;
+      position: sticky;
+      display: block;
+      left: 0;
+      height: 0;
+      transform: translateY(-2em);
     }
 
     pre-md-mermaid,

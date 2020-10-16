@@ -5,43 +5,38 @@ const { MdHighlight } = require('./markdown-components/highlight');
 const { MdMermaid } = require('./markdown-components/mermaid');
 const { MdChart } = require('./markdown-components/chart');
 const { MdMath } = require('./markdown-components/math');
-
-function loadPlugin(plugin) {
-    if (typeof plugin != 'function' && typeof plugin.default == 'function') {
-        plugin = plugin.default;
-    }
-    return plugin;
-}
+const { extend, loadPlugin, slugify } = require('./utils');
+require('./post-render');
 
 /**
  *
- * @param {import('@/services/global').GlobalService} global
  */
-function loadCustomElements(global) {
+function loadCustomHighlights() {
     customElements.define(MdHighlight.tagName, MdHighlight, { extends: 'code' });
-    MdMermaid.global = global;
     customElements.define(MdMermaid.tagName, MdMermaid);
     customElements.define(MdChart.tagName, MdChart);
-    customElements.define(MdMath.tagName, MdMath);
-    return (string, lang) => {
+    return (string, lang, attr) => {
         const code = escapeHtml(string);
+        attr = (attr ?? '').trim();
+        const htmlAttr = attr ? `id="${escapeHtml(slugify(attr))}" title="${escapeHtml(attr)}"` : '';
         switch (lang) {
             case 'mermaid':
-                return `<${MdMermaid.tagName}>${code}</${MdMermaid.tagName}>`;
+                return `<${MdMermaid.tagName} ${htmlAttr}>${code}</${MdMermaid.tagName}>`;
             case 'chart':
-                return `<${MdChart.tagName}>${code}</${MdChart.tagName}>`;
+                return `<${MdChart.tagName} ${htmlAttr}>${code}</${MdChart.tagName}>`;
             default:
-                const l = escapeHtml(lang);
-                return `<pre><code is="${MdHighlight.tagName}" language="${l}">${code}</code></pre>`;
+                const langAttr = lang ? `language="${escapeHtml(lang)}"` : '';
+                return `<pre ${htmlAttr}><code is="${MdHighlight.tagName}" ${langAttr}>${code}</code></pre>`;
         }
     };
 }
 
 /**
- * @param {import('@/services/global').GlobalService} global
  * @param {markdownIt.Options & {frontMatter: (fm:string)=>void}} options
+ *
+ * @returns {markdownIt.MarkdownItExt}
  */
-module.exports = function (global, options) {
+module.exports = function (options) {
     options = Object.assign(
         {
             html: true,
@@ -51,7 +46,7 @@ module.exports = function (global, options) {
         options,
     );
     if (options.highlight == null && customElements) {
-        options.highlight = loadCustomElements(global);
+        options.highlight = loadCustomHighlights(global);
     }
     let md = markdownIt(options);
 
@@ -121,8 +116,8 @@ module.exports = function (global, options) {
         [require('markdown-it-sub')],
         [require('markdown-it-sup')],
         [
-            (md) => {
-                md.use(require('markdown-it-footnote'));
+            extend(require('markdown-it-footnote'), (md, use) => {
+                use();
                 md.renderer.rules.footnote_ref = function render_footnote_ref(tokens, idx, options, env, slf) {
                     const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
                     const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
@@ -145,10 +140,13 @@ module.exports = function (global, options) {
                     /* ↩ with escape code to prevent display as Apple Emoji on iOS */
                     return ` <a href="${href}" class="footnote-backref">\u21a9\uFE0E</a>`;
                 };
-            },
+            }),
         ],
         [
-            require('markdown-it-math'),
+            extend(require('markdown-it-math'), (md, use) => {
+                customElements?.define(MdMath.tagName, MdMath);
+                use();
+            }),
             {
                 inlineOpen: '$',
                 inlineClose: '$',
@@ -182,7 +180,7 @@ module.exports = function (global, options) {
         [
             require('markdown-it-anchor'),
             {
-                slugify: (s) => String(s).trim(),
+                slugify: slugify,
                 permalink: true,
                 permalinkSpace: false,
                 permalinkSymbol: '',
@@ -193,14 +191,14 @@ module.exports = function (global, options) {
         [require('markdown-it-front-matter'), options.frontMatter],
         [require('markdown-it-implicit-figures'), { figcaption: true }],
         [
-            (md, opt) => {
-                md.use(loadPlugin(require('markdown-it-block-embed')), opt);
+            extend(require('markdown-it-block-embed'), (md, use) => {
+                use();
                 const original = md.renderer.rules['video'];
                 md.renderer.rules['video'] = (tokens, idx, opt, env, slf) => {
                     const ret = original(tokens, idx, opt, env, slf);
-                    return `<div  data-source-line="${tokens[idx].map[0] + 1}"` + ret.slice('<div'.length);
+                    return `<div data-source-line="${tokens[idx].map[0] + 1}" ` + ret.slice('<div'.length);
                 };
-            },
+            }),
             {
                 outputPlayerSize: false,
                 services: {
@@ -261,35 +259,6 @@ module.exports = function (global, options) {
     md = plugins.reduce((i, [plugin, ...options]) => {
         return i.use(loadPlugin(plugin), ...options);
     }, md);
-
-    const render = md.render.bind(md);
-    md.renderFragment = (src, env) => {
-        const r = render(src, env);
-        if (!document) {
-            return r;
-        }
-        const t = document.createElement('template');
-        t.innerHTML = r;
-        t.content.querySelectorAll('table > caption').forEach((e) => {
-            e.parentElement.id = e.innerText;
-        });
-        t.content.querySelectorAll('figure > figcaption').forEach((e) => {
-            e.parentElement.id = e.innerText;
-        });
-        t.content.querySelectorAll('.block-embed > iframe').forEach((e) => {
-            const hint = document.createElement('p');
-            hint.classList.add('block-embed-hint');
-            hint.innerText = e.src;
-            e.parentElement.appendChild(hint);
-        });
-        t.content.querySelectorAll('pre > code').forEach((e) => {
-            e.setAttribute('is', 'md-highlight');
-        });
-        return t;
-    };
-    md.render = (src, env) => {
-        return md.renderFragment(src, env).innerHTML;
-    };
 
     return md;
 };

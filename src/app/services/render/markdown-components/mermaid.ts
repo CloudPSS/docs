@@ -3,7 +3,8 @@ import { tap, share } from 'rxjs/operators';
 import { resizing } from '../utils';
 import { MdComponentBase } from './base';
 import type { Mermaid } from 'mermaid';
-import type { GlobalService, Theme } from '@/services/global';
+import { GlobalService, Theme } from '@/services/global';
+import { injector } from '@/constants';
 
 /**
  * mermaid 流程图组件
@@ -24,6 +25,7 @@ export class MdMermaid extends MdComponentBase {
      */
     static async initImpl(): Promise<void> {
         this.mermaid = (await import('mermaid')).default;
+        this.global = injector.get(GlobalService);
         if (!this.watchTheme) {
             this.watchTheme = this.global.theme.pipe(
                 tap((theme) => {

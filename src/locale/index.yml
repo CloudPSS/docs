@@ -2,3 +2,14 @@ en:
   name: English
 zh-hans:
   name: 中文
+  alias:
+    - zh-chs
+    - zh-cn
+    - zh-sg
+    - zh
+    # 以下使用繁中
+    - zh-hk
+    - zh-mo
+    - zh-tw
+    - zh-hant
+    - zh-cht
