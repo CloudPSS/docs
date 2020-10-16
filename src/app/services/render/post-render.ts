@@ -39,7 +39,7 @@ markdownIt.renderFragment = function (src: string, env?: unknown): HTMLTemplateE
         e.setAttribute('is', 'md-highlight');
         (e.parentElement as HTMLPreElement).classList.add('mat-elevation-z2');
     });
-    t.content.querySelectorAll<HTMLElement>('dl, blockquote, [is=md-container]').forEach((e) => {
+    t.content.querySelectorAll<HTMLElement>('dl, blockquote, details, [is=md-container]').forEach((e) => {
         e.classList.add('mat-elevation-z1');
     });
     return t;

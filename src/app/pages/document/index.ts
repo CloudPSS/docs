@@ -1,7 +1,7 @@
 import { Component, ViewChild, AfterViewInit, HostListener, ElementRef, OnDestroy } from '@angular/core';
 import { of, merge, Subject, combineLatest, Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, tap, pluck, delay, mergeMap, catchError, throttleTime } from 'rxjs/operators';
+import { map, tap, pluck, delay, mergeMap, catchError, throttleTime, distinctUntilChanged } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SourceService } from '@/services/source';
@@ -31,46 +31,49 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     /** toc */
     @ViewChild('md') readonly md!: MarkdownComponent;
     /** url */
-    readonly url = this.route.params.pipe(
-        map((s) => {
-            const lang = this.global.getLanguage();
-            const category = s.category as string;
-            const path: string[] = [];
-            for (const key in s) {
-                const i = Number.parseInt(key);
-                if (!Number.isNaN(i)) {
-                    path[i] = s[key] as string;
+    readonly url = combineLatest(
+        this.route.params.pipe(
+            map((s) => {
+                const category = s.category as string;
+                const path: string[] = [];
+                for (const key in s) {
+                    const i = Number.parseInt(key);
+                    if (!Number.isNaN(i)) {
+                        path[i] = s[key] as string;
+                    }
                 }
-            }
-            if (category) path.unshift(category);
-            if (lang) path.unshift(lang);
-            path.unshift('');
-            return path.join('/');
-        }),
-        tap(() => {
-            if (this.sidenav && this.sidenav.mode !== 'side') {
-                void this.sidenav.close();
-            }
-        }),
-    );
+                if (category) path.unshift(category);
+                return path.join('/');
+            }),
+            tap(() => {
+                if (this.sidenav && this.sidenav.mode !== 'side') {
+                    void this.sidenav.close();
+                }
+            }),
+        ),
+        this.global.language,
+    ).pipe(map(([path, lang]) => `/${lang}/${path}`));
 
     /** 当前文件信息 */
     readonly info = this.url.pipe(map((u) => this.source.findDocument(u)));
     /** 当前文件 frontMatter */
-    readonly frontMatter = this.info.pipe(map((u) => u?.[1]));
+    readonly frontMatter = this.info.pipe(map((u) => u?.frontMatter));
     /** 触发更新TOC */
     readonly updateTocSource = new Subject<void>();
 
     /** 当前文档 */
     readonly document = this.info.pipe(
-        mergeMap((u) => {
-            if (!u) {
+        tap((u) => {
+            this.global.setTitle(u?.frontMatter?.title);
+        }),
+        map((u) => u?.path),
+        distinctUntilChanged(),
+        mergeMap((path) => {
+            if (!path) {
                 void this.onNavigate();
                 return of(null);
             }
-            const [doc, fm] = u;
-            this.global.setTitle(fm?.title);
-            return merge(of(null), this.source.file(doc, 'text'));
+            return merge(of(null), this.source.file(path, 'text'));
         }),
         catchError(async () => {
             await this.router.navigate(['error', 404], { replaceUrl: true });
@@ -93,7 +96,6 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     ngOnDestroy(): void {
         const subscriptions = this.subscriptions.splice(0);
         subscriptions.forEach((s) => s.unsubscribe());
-        this.global.menuButton.next(null);
     }
 
     /** @inheritdoc */
@@ -104,12 +106,14 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 .subscribe(([fm, opened]) => {
                     if (fm?.nav === false) {
                         this.global.menuButton.next(null);
+                        void this.sidenav.toggle(this.sidenav.opened);
+                    } else {
+                        this.global.menuButton.next({
+                            icon: 'menu',
+                            title: 'sidenav.' + (opened ? 'close' : 'open'),
+                            click: () => this.sidenav.toggle(),
+                        });
                     }
-                    this.global.menuButton.next({
-                        icon: 'menu',
-                        title: 'sidenav.' + (opened ? 'close' : 'open'),
-                        click: () => this.sidenav.toggle(),
-                    });
                 })
                 .add(() => this.global.menuButton.next(null)),
             combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {

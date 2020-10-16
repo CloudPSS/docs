@@ -9,6 +9,7 @@ sidenav:
   close: 关闭侧边栏
 
 article:
+  notTranslated: 本主题尚未翻译。当前正显示 {{language}} 版本。
   footnote:
     toFootnote: 转到脚注
     backToArticle: 回到正文
