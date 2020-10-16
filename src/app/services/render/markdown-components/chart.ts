@@ -25,7 +25,8 @@ export class MdChart extends MdComponentBase {
      * @inheritdoc
      */
     async connectedCallback(): Promise<void> {
-        const code = this.textContent ?? '{}';
+        const code = this.dataset.source ?? this.textContent ?? '{}';
+        this.dataset.source = code;
         let root: ShadowRoot | this;
         if ('attachShadow' in (this as object)) {
             root = this.attachShadow({ mode: 'open' });
@@ -42,7 +43,6 @@ export class MdChart extends MdComponentBase {
             canvas.style.maxWidth = '800px';
             await MdChart.init();
             const chart = new MdChart.chartJs(canvas, config);
-            console.log(MdChart.chartJs.defaults);
             const render = (): void => {
                 canvas.style.width = '100%';
                 canvas.style.height = '';
