@@ -49,12 +49,20 @@ export class EditorComponent implements AfterViewInit {
 
     /** 当前文档 */
     readonly document = this.url.pipe(
-        mergeMap((u) => {
-            if (!u) return of(null);
+        map((u) => {
+            if (!u) return undefined;
             const f = this.source.findDocument(u);
+            if (f?.fallback == null) return f;
+            return undefined;
+        }),
+    );
+
+    /** 当前文档文件 */
+    readonly documentFile = this.document.pipe(
+        mergeMap((f) => {
             if (!f) return of(null);
-            const [doc] = f;
-            return merge(of(null), this.source.file(doc, 'text'));
+            const { path } = f;
+            return merge(of(null), this.source.file(path, 'text'));
         }),
         catchError(async () => {
             await this.router.navigate(['error', 404], { replaceUrl: true });
@@ -69,7 +77,7 @@ export class EditorComponent implements AfterViewInit {
     readonly content = new BehaviorSubject('');
 
     /** 更新内容后的当前文档 */
-    readonly currentDocument = combineLatest(this.document, this.content.pipe(debounceTime(500)), this.url).pipe(
+    readonly currentDocument = combineLatest(this.documentFile, this.content.pipe(debounceTime(500)), this.url).pipe(
         map(([doc, data, path]) => {
             if (doc) {
                 return { ...doc, data };

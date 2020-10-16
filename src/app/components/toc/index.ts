@@ -1,4 +1,13 @@
-import { Component, Input, ViewChildren, QueryList, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import {
+    Component,
+    Input,
+    ViewChildren,
+    QueryList,
+    ElementRef,
+    ViewChild,
+    AfterViewInit,
+    OnDestroy,
+} from '@angular/core';
 import { Subscription, fromEvent, merge, Observable } from 'rxjs';
 import { MarkdownComponent } from '../markdown';
 import { mapTo, filter, scan, map, debounceTime } from 'rxjs/operators';
@@ -11,7 +20,7 @@ import { mapTo, filter, scan, map, debounceTime } from 'rxjs/operators';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class TocComponent implements AfterViewInit {
+export class TocComponent implements AfterViewInit, OnDestroy {
     /** MD 文件 */
     _document?: MarkdownComponent;
 
@@ -20,7 +29,7 @@ export class TocComponent implements AfterViewInit {
     /** mask */
     @ViewChild('mask') mask!: ElementRef<HTMLElement>;
     /** li items */
-    @ViewChildren('itemElement') items?: QueryList<ElementRef<HTMLLIElement>>;
+    @ViewChildren('itemElement') items!: QueryList<ElementRef<HTMLLIElement>>;
 
     /** MD 文件 */
     @Input() get document(): MarkdownComponent | undefined {
@@ -60,11 +69,19 @@ export class TocComponent implements AfterViewInit {
     /** 正在滚动 */
     scrolling!: Observable<boolean>;
 
+    /** 订阅事件 */
+    private readonly subscriptions: Subscription[] = [];
+    /** @inheritdoc */
+    ngOnDestroy(): void {
+        const subscriptions = this.subscriptions.splice(0);
+        subscriptions.forEach((s) => s.unsubscribe());
+    }
+
     /**
      * @inheritdoc
      */
     ngAfterViewInit(): void {
-        this.items?.changes.subscribe(() => this.setState());
+        this.subscriptions.push(this.items?.changes.subscribe(() => this.setState()));
         const ele = this.nav?.nativeElement;
         if (ele) {
             const filterProp = filter<TransitionEvent>((e) => e.propertyName === 'top');

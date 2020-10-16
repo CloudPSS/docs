@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container [class.no-nav]="(frontMatter | async)?.nav === false">
   <mat-sidenav
     #sidenav
     class="mat-elevation-z4"
@@ -8,7 +8,7 @@
     <app-nav-list
       #navList
       [category]="(category | async) || ''"
-      [currentRawPath]="((info | async)|| [])[0]"
+      [currentRawPath]="(info | async)?.path"
       (navigate)="onNavigate($event)"
     ></app-nav-list>
   </mat-sidenav>
@@ -18,10 +18,15 @@
     [class.nav]="(frontMatter | async)?.nav != false"
   >
     <div #scroll id="scroll" (scroll)="updateToc()">
-      <div id="scroll-container">
+      <main id="scroll-container">
         <h1 id="title">{{(frontMatter | async)?.title}}</h1>
+        <mat-card
+          *ngIf="(info | async)?.fallback"
+          [translate]="'article.notTranslated'"
+          [translateParams]="{language: global.languageName((info | async)?.fallback || '')}"
+        ></mat-card>
         <app-markdown #md [file]="document | async" (navigate)="onNavigate($event)"></app-markdown>
-      </div>
+      </main>
     </div>
     <app-toc #toc [document]="md" [currentId]="currentId"></app-toc>
   </mat-sidenav-content>

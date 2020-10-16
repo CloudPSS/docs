@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
@@ -58,7 +59,7 @@ import { EditorComponent } from './pages/editor';
                 provide: TranslateLoader,
                 useClass: WebpackTranslateLoader,
             },
-            defaultLanguage: 'zh-hans',
+            defaultLanguage: WebpackTranslateLoader.defaultLang,
         }),
 
         MonacoEditorModule.forRoot({
@@ -75,6 +76,7 @@ import { EditorComponent } from './pages/editor';
         }),
 
         MatButtonModule,
+        MatCardModule,
         MatIconModule,
         MatMenuModule,
         MatListModule,

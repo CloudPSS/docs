@@ -8,13 +8,14 @@ import {
     EventEmitter,
     SecurityContext,
     AfterViewInit,
+    OnDestroy,
 } from '@angular/core';
 import { SourceService } from '@/services/source';
 import { RenderService } from '@/services/render';
 import { File } from '@/services/source/interfaces';
 import { DomSanitizer } from '@angular/platform-browser';
 import { NavigateEvent, NavigateEventSource } from '@/interfaces/navigate';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, Scroll } from '@angular/router';
 import { FrontMatter } from '@/interfaces/manifest';
@@ -27,7 +28,7 @@ import { FrontMatter } from '@/interfaces/manifest';
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEventSource {
+export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEventSource, OnDestroy {
     constructor(
         readonly source: SourceService,
         readonly render: RenderService,
@@ -59,39 +60,49 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
         }>
     >([]);
 
+    /** 订阅事件 */
+    private readonly subscriptions: Subscription[] = [];
+    /** @inheritdoc */
+    ngOnDestroy(): void {
+        const subscriptions = this.subscriptions.splice(0);
+        subscriptions.forEach((s) => s.unsubscribe());
+    }
+
     /** @inheritdoc */
     ngAfterViewInit(): void {
-        this.router.events.pipe(filter((x): x is Scroll => x instanceof Scroll)).subscribe((scroll) => {
-            this.scrollTo(scroll.anchor);
-        });
-        this.frontMatter.subscribe((fm) => {
-            if (fm?.['redirect to']) {
-                this.navigateImpl(fm['redirect to']);
-            }
-        });
-        this.rendered.subscribe((parsed) => {
-            const doc = this.doc.nativeElement;
-            const hash = decodeURIComponent(location.hash.slice(1));
-            doc.innerHTML = '';
-            // 将清空 parsed 的内容
-            doc.appendChild(parsed.content);
-            const headers = Array.from(
-                doc.querySelectorAll<HTMLHeadingElement>(
-                    'article > h1,article > h2,article > h3,article > h4,article > h5,article > h6',
-                ),
-            ).map((h) => {
-                return {
-                    id: h.id,
-                    title: h.innerText,
-                    level: Number.parseInt(h.tagName.slice(1)),
-                    element: h,
-                };
-            });
-            this.headers.next(headers);
-            if (hash) {
-                setTimeout(() => this.scrollTo(hash), 200);
-            }
-        });
+        this.subscriptions.push(
+            this.router.events.pipe(filter((x): x is Scroll => x instanceof Scroll)).subscribe((scroll) => {
+                this.scrollTo(scroll.anchor);
+            }),
+            this.frontMatter.subscribe((fm) => {
+                if (fm?.['redirect to']) {
+                    this.navigateImpl(fm['redirect to']);
+                }
+            }),
+            this.rendered.subscribe((parsed) => {
+                const doc = this.doc.nativeElement;
+                const hash = decodeURIComponent(location.hash.slice(1));
+                doc.innerHTML = '';
+                // 将清空 parsed 的内容
+                doc.appendChild(parsed.content);
+                const headers = Array.from(
+                    doc.querySelectorAll<HTMLHeadingElement>(
+                        'article > h1,article > h2,article > h3,article > h4,article > h5,article > h6',
+                    ),
+                ).map((h) => {
+                    return {
+                        id: h.id,
+                        title: h.innerText,
+                        level: Number.parseInt(h.tagName.slice(1)),
+                        element: h,
+                    };
+                });
+                this.headers.next(headers);
+                if (hash) {
+                    setTimeout(() => this.scrollTo(hash), 200);
+                }
+            }),
+        );
     }
 
     /**
