@@ -77,7 +77,7 @@
               "serviceWorker": true,
               "ngswConfigPath": "ngsw-config.json"
             },
-            "github":{
+            "github": {
               "baseHref": "/docs/",
               "fileReplacements": [
                 {
