@@ -51,16 +51,15 @@ function replaceMathText(fragment: DocumentFragment): void {
     const math = fragment.querySelectorAll<MdMath>(`${MdMath.tagName}[language]`);
     console.log(math);
     math.forEach((el) => {
-        const source = el.getAttribute('aria-label') ?? '';
+        const source = el.dataset.source ?? '';
+        if (!source) return;
         const lang = el.getAttribute('language');
         const mode = el.getAttribute('mode') === 'display' ? 'display' : 'inline';
         if (!lang || !(lang in languages)) {
             return;
         }
         const d = (languages[lang] as Language).copyDelimiters[mode];
-        if (source) {
-            el.textContent = `${d[0]}${source}${d[1]}`;
-        }
+        el.textContent = `${d[0]}${source}${d[1]}`;
     });
 }
 
@@ -136,14 +135,14 @@ export class MdMath extends MdComponentBase {
         this.dataset.source = source;
 
         if (!langDef) {
-            this.innerHTML = `<span class='error'>Unsupported language ${lang}</span>`;
+            this.innerHTML = `<span class="error">Unsupported language ${lang}</span>`;
             return;
         }
         await MdMath.init();
         try {
             await langDef.render.call(this, source, mode);
         } catch (ex) {
-            this.innerHTML = `<span class='error' title='${escapeHtml(String(ex))}'>${escapeHtml(source)}</span>`;
+            this.innerHTML = `<span class="error" title="${escapeHtml(String(ex))}">${escapeHtml(source)}</span>`;
         }
     }
 }
