@@ -11,5 +11,6 @@ sidenav:
 article:
   notTranslated: The topic has not been translated to your language. We are currently showing you the {{language}} version.
   footnote:
+    label: Footnotes
     toFootnote: Go to footnote
     backToArticle: Back to article

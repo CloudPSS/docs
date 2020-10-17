@@ -39,8 +39,9 @@ export class AppInitializerService {
         () => {
             if (this.updates.isEnabled) {
                 this.updates.available.subscribe((event) => {
-                    console.log(`Updating from ${event.current.hash} to ${event.available.hash}.`);
-                    this.updates.activateUpdate().finally(() => location.reload());
+                    console.log(
+                        `Updates from ${event.current.hash} to ${event.available.hash} is currently available.`,
+                    );
                 });
                 this.updates.activated.subscribe((event) => {
                     console.log(`Updated from ${event.previous?.hash ?? 'unknown'} to ${event.current.hash}.`);

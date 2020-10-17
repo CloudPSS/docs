@@ -11,5 +11,6 @@ sidenav:
 article:
   notTranslated: 本主题尚未翻译。当前正显示 {{language}} 版本。
   footnote:
+    label: 脚注
     toFootnote: 转到脚注
     backToArticle: 回到正文

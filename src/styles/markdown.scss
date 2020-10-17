@@ -127,10 +127,6 @@
         background-color: rgba(map-get($primary, A100), 0.1) !important;
       }
     }
-
-    hr {
-      border: 1px inset mat-color($foreground, divider);
-    }
   }
 }
 
@@ -267,9 +263,6 @@
         &:active {
           color: var(--theme-primary-darker);
         }
-      }
-      &.footnote-backref {
-        user-select: none;
       }
       @media print {
         text-decoration: underline;
@@ -559,10 +552,53 @@
     }
 
     // footnotes
-    a[id^='fnref'] {
+    a.footnote-ref {
+      &::before {
+        content: '[';
+        vertical-align: initial;
+      }
+      &::after {
+        content: ']';
+        vertical-align: initial;
+      }
+      user-select: none;
+      display: inline-block;
+      vertical-align: super;
+      font-size: smaller;
+      padding: 1px;
       text-decoration: none !important;
     }
-    .footnote-backref {
+    footer.footnotes {
+      border-top: 1px solid var(--theme-foreground-divider);
+      margin: 3em -8px 1em;
+      padding: 0 8px;
+    }
+    ol.footnotes-list {
+      margin: 1em 0;
+      counter-reset: footnotes;
+      list-style: none;
+    }
+    li.footnote-item {
+      margin: 0.8em 0;
+      counter-increment: footnotes;
+      position: relative;
+      &::before {
+        text-align: end;
+        position: absolute;
+        transform: translateX(calc(-100% - 0.5em));
+        content: '[' counter(footnotes) ']';
+      }
+      p {
+        margin: 0.5em 0;
+      }
+    }
+    a.footnote-backref {
+      user-select: none;
+      display: inline-block;
+      margin: 4px;
+      &::before {
+        content: '↩\fe0e';
+      }
       @media print {
         display: none;
       }
@@ -608,24 +644,7 @@
 
     hr {
       margin: 0.5em auto;
-      &.footnotes-sep {
-        margin: 1em -20px 2em;
-        border-width: 1.5px;
-      }
-    }
-    ol.footnotes-list {
-      counter-reset: footnotes;
-      list-style: none;
-      li.footnote-item {
-        counter-increment: footnotes;
-        position: relative;
-        &::before {
-          text-align: end;
-          position: absolute;
-          transform: translateX(calc(-100% - 0.5em));
-          content: '[' counter(footnotes) '] ';
-        }
-      }
+      border: 1px inset var(--theme-foreground-divider);
     }
   }
 

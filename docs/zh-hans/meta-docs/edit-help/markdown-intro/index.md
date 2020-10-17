@@ -23,7 +23,7 @@ order: 10
 
 ## 公式
 
-使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-math](https://github.com/runarberg/markdown-it-math) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](<https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support>)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
+使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎和 [markdown-it-math](https://github.com/runarberg/markdown-it-math) 插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
 
 ```tex equation
 行内公式：$\sin{x}$
@@ -220,8 +220,10 @@ RMS 指有效值
 定义一个脚注：
 [^test-platform]: 测试平台为 NVIDIA(R) Tesla(R) V100
 
+    使用缩进来产生多行内容
+
 在文中使用脚注：
-测试[^test-platform]结果如下：……
+测试[^test-platform]结果如下[^test-platform]：……
 
 如果只使用一次的话，也可以使用内联语法。^[内联脚注更方便吗？]
 ```
@@ -230,10 +232,12 @@ RMS 指有效值
 
 > 定义一个脚注：
 > [^test-platform]: 测试平台为 NVIDIA(R) Tesla(R) V100
->
+> 
+>     使用缩进来产生多行内容
+> 
 > 在文中使用脚注：
-> 测试[^test-platform]结果如下：……
->
+> 测试[^test-platform]结果如下[^test-platform]：……
+> 
 > 如果只使用一次的话，也可以使用内联语法。^[内联脚注更方便吗？]
 
 ## 杂项
