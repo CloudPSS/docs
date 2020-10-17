@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { File } from '../source/interfaces';
 import { SourceService } from '../source';
 import type MarkdownIt from 'markdown-it';
-import markdownIt from './markdown-it';
+import type markdownIt from './markdown-it';
 import { GlobalService } from '../global';
 import { FrontMatter } from '@/interfaces/manifest';
 import { safeLoad } from 'js-yaml';
@@ -31,7 +31,7 @@ export class RenderService {
     };
 
     constructor(readonly source: SourceService, readonly global: GlobalService) {
-        this.md = markdownIt({
+        this.md = (require('./markdown-it') as typeof markdownIt)({
             frontMatter: (fm) => {
                 const frontMatter = safeLoad(fm) as FrontMatter;
                 if (frontMatter['redirect to']) {
@@ -43,7 +43,7 @@ export class RenderService {
         const normalizeLink = this.md.normalizeLink.bind(this.md);
         this.md.normalizeLink = (url: string): string => {
             if (!this.file) return normalizeLink(url);
-            if (url.includes(':')) return normalizeLink(url);
+            if (/^([a-z][a-z0-9]*:|\/\/)/i.test(url)) return normalizeLink(url);
             if (url.startsWith('#') || /\.md(#[^#]*)?$/i.test(url)) {
                 const path = source.normalizePath(url, this.file.path).replace(/^\/[^/]+/, '');
                 return normalizeLink(

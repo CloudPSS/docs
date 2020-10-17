@@ -6,7 +6,7 @@
       "name": "app",
       "installMode": "prefetch",
       "resources": {
-        "files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js", "!/*-es5*.js"]
+        "files": ["/favicon.ico", "/index.html", "/manifest.webmanifest", "/*.css", "/*.js", "!/*-es5.*.js"]
       }
     },
     {
@@ -14,7 +14,7 @@
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/*-es5*.js"]
+        "files": ["/*-es5.*.js"]
       }
     },
     {
@@ -29,9 +29,9 @@
   "dataGroups": [
     {
       "name": "docs",
-      "urls": ["**/*.md"],
+      "urls": ["**/*.md", "**/manifest.json"],
       "cacheConfig": {
-        "maxAge": "100d",
+        "maxAge": "30d",
         "maxSize": 1000,
         "timeout": "1s",
         "strategy": "freshness"

@@ -6,6 +6,8 @@ const { MdMermaid } = require('./markdown-components/mermaid');
 const { MdChart } = require('./markdown-components/chart');
 const { MdMath } = require('./markdown-components/math');
 const { extend, loadPlugin, slugify } = require('./utils');
+const { injector } = require('@/constants');
+const { TranslateService } = require('@ngx-translate/core');
 require('./post-render');
 
 /**
@@ -117,28 +119,80 @@ module.exports = function (options) {
         [require('markdown-it-sup')],
         [
             extend(require('markdown-it-footnote'), (md, use) => {
+                let labels = {};
+                injector
+                    .get(TranslateService)
+                    .getStreamOnTranslationChange('article.footnote')
+                    .subscribe((v) => {
+                        if (!v) {
+                            return;
+                        }
+                        for (const key in v) {
+                            const element = v[key];
+                            labels[key] = escapeHtml(v[key]);
+                        }
+                    });
+
                 use();
+                md.renderer.rules.footnote_block_open = function render_footnote_block_open(tokens, idx, options) {
+                    return `<footer class="footnotes" aria-label="${labels.label}">\n<ol class="footnotes-list">\n`;
+                };
+                md.renderer.rules.footnote_block_close = function render_footnote_block_close() {
+                    return '</ol>\n</footer>\n';
+                };
+                md.renderer.rules.footnote_anchor_name = function render_footnote_anchor_name(
+                    tokens,
+                    idx,
+                    options,
+                    env /*, slf*/,
+                ) {
+                    var label = slugify(tokens[idx].meta.label ?? Number(tokens[idx].meta.id + 1).toString());
+                    var prefix = '';
+
+                    if (typeof env.docId === 'string') {
+                        prefix = env.docId + '-';
+                    }
+
+                    return prefix + label;
+                };
+                md.renderer.rules.footnote_caption = function render_footnote_caption(
+                    tokens,
+                    idx /*, options, env, slf*/,
+                ) {
+                    return Number(tokens[idx].meta.id + 1).toString();
+                };
                 md.renderer.rules.footnote_ref = function render_footnote_ref(tokens, idx, options, env, slf) {
                     const id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
                     const caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
                     let refid = id;
 
                     if (tokens[idx].meta.subId > 0) {
-                        refid += ':' + tokens[idx].meta.subId;
+                        refid += '::' + (tokens[idx].meta.subId + 1);
                     }
-                    const href = md.normalizeLink(`#fn${id}`);
-                    return `<sup class="footnote-ref"><a href="${href}" id="fnref${refid}">${caption}</a></sup>`;
+                    const href = md.normalizeLink(`#fn-${id}`);
+                    const linkId = escapeHtml(`fnref-${refid}`);
+                    return (
+                        `<a id="${linkId}" href="${href}" class="footnote-ref" ` +
+                        `aria-label="${labels.toFootnote}" aria-describedby="fn-${escapeHtml(id)}">${caption}</a>`
+                    );
+                };
+                md.renderer.rules.footnote_open = function render_footnote_open(tokens, idx, options, env, slf) {
+                    var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+
+                    if (tokens[idx].meta.subId > 0) {
+                        id += '::' + tokens[idx].meta.subId;
+                    }
+
+                    return `<li id="fn-${escapeHtml(id)}"" class="footnote-item">`;
                 };
                 md.renderer.rules.footnote_anchor = function render_footnote_anchor(tokens, idx, options, env, slf) {
                     var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
 
                     if (tokens[idx].meta.subId > 0) {
-                        id += ':' + tokens[idx].meta.subId;
+                        id += '::' + (tokens[idx].meta.subId + 1);
                     }
-
-                    const href = md.normalizeLink(`#fnref${id}`);
-                    /* ↩ with escape code to prevent display as Apple Emoji on iOS */
-                    return ` <a href="${href}" class="footnote-backref">\u21a9\uFE0E</a>`;
+                    const href = md.normalizeLink(`#fnref-${id}`);
+                    return `<a href="${href}" class="footnote-backref" aria-label="${labels.backToArticle}"></a>`;
                 };
             }),
         ],
