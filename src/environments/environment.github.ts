@@ -7,7 +7,5 @@ export const environment = {
  */
 export function docUrls(ref: string): string[] {
     void ref;
-    return [
-        `https://cloudpss.github.io/docs/content/`
-    ];
+    return [`https://cloudpss.github.io/docs/content/`];
 }
