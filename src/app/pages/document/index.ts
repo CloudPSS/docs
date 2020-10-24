@@ -46,6 +46,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 return path.join('/');
             }),
             tap(() => {
+                // 导航后关闭侧边栏
                 if (this.sidenav && this.sidenav.mode !== 'side') {
                     void this.sidenav.close();
                 }
@@ -90,6 +91,13 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     /** 当前分类 */
     readonly category = this.route.params.pipe<string>(pluck('category'));
 
+    /** 显示导航列表 */
+    showNav = combineLatest(this.frontMatter, this.layout.displayMode).pipe(
+        map(([fm, displayMode]) => {
+            return !(fm?.nav === false && displayMode === 'large');
+        }),
+    );
+
     /** 订阅事件 */
     private readonly subscriptions: Subscription[] = [];
     /** @inheritdoc */
@@ -102,17 +110,20 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     ngAfterViewInit(): void {
         let scrollMarginTop = -1;
         this.subscriptions.push(
-            combineLatest(this.frontMatter, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable()))
-                .subscribe(([fm, opened]) => {
-                    if (fm?.nav === false) {
-                        this.global.menuButton.next(null);
-                        void this.sidenav.toggle(this.sidenav.opened);
-                    } else {
+            combineLatest(this.showNav, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable()))
+                .subscribe(([showNav, opened]) => {
+                    if (showNav) {
                         this.global.menuButton.next({
                             icon: 'menu',
                             title: 'sidenav.' + (opened ? 'close' : 'open'),
                             click: () => this.sidenav.toggle(),
                         });
+                        if (this.sidenav.mode === 'side') {
+                            void this.sidenav.open();
+                        }
+                    } else {
+                        this.global.menuButton.next(null);
+                        void this.sidenav.close();
                     }
                 })
                 .add(() => this.global.menuButton.next(null)),

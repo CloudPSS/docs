@@ -1,4 +1,4 @@
-<mat-sidenav-container [class.no-nav]="(frontMatter | async)?.nav === false">
+<mat-sidenav-container [class.no-nav]="(showNav | async) === false">
   <mat-sidenav
     #sidenav
     class="mat-elevation-z4"
@@ -7,6 +7,7 @@
   >
     <app-nav-list
       #navList
+      [showCategories]="(layout.displayMode | async) !== 'large'"
       [category]="(category | async) || ''"
       [currentRawPath]="(info | async)?.path"
       (navigate)="onNavigate($event)"

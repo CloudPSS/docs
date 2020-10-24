@@ -1,4 +1,4 @@
-import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, Input, ElementRef, ViewChildren, QueryList, AfterViewInit, OnDestroy, OnInit } from '@angular/core';
 import { SourceService } from '@/services/source';
 import { map, debounceTime, withLatestFrom } from 'rxjs/operators';
 import { combineLatest, BehaviorSubject, merge, of, Subject, Subscription } from 'rxjs';
@@ -30,13 +30,9 @@ interface TreeItem {
     templateUrl: './index.html',
     styleUrls: ['./index.scss'],
 })
-export class NavListComponent extends NavBaseComponent implements AfterViewInit, OnDestroy {
+export class NavListComponent extends NavBaseComponent implements AfterViewInit, OnInit, OnDestroy {
     constructor(readonly source: SourceService, readonly global: GlobalService) {
         super();
-        this.nav.subscribe((i) => {
-            this.dataSource.data = i ? [i] : [];
-            this.treeControl.expandAll();
-        });
     }
 
     /** 当前分类 */
@@ -58,13 +54,36 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
         this._currentRawPath.next(value);
     }
 
+    /** 是否展示分类 */
+    private _showCategories = new BehaviorSubject<boolean>(false);
+    /** 是否展示分类 */
+    @Input() get showCategories(): boolean {
+        return this._showCategories.value;
+    }
+    set showCategories(value: boolean) {
+        this._showCategories.next(value);
+    }
+
     /** 导航文档列表 */
-    readonly nav = combineLatest([this.global.language, this.source.current, this._category]).pipe(
-        map(([lang, info, category]) => {
+    readonly nav = combineLatest([
+        this.global.language,
+        this.source.current,
+        this._category,
+        this._showCategories,
+    ]).pipe(
+        map(([lang, info, category, showCategory]) => {
+            const root = info.manifest.sitemap[lang];
+            if (root?.children == null) return null;
+            if (showCategory)
+                return root.children
+                    .filter((c) => c.order != null || c.name === category)
+                    .map((c) => {
+                        if (c.name === category) return c;
+                        const n = new DocumentItem(c.name);
+                        return Object.assign(n, c, { children: [] });
+                    });
             if (!category) return null;
-            const root = info.manifest.sitemap[lang].children;
-            if (!root) return null;
-            return root.find((v) => v.name === category);
+            return root.children.find((v) => v.name === category);
         }),
     );
 
@@ -97,6 +116,17 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
     ngOnDestroy(): void {
         const subscriptions = this.subscriptions.splice(0);
         subscriptions.forEach((s) => s.unsubscribe());
+    }
+    /** @inheritdoc */
+    ngOnInit(): void {
+        this.subscriptions.push(
+            this.nav.subscribe((i) => {
+                if (i == null) this.dataSource.data = [];
+                else if (Array.isArray(i)) this.dataSource.data = i;
+                else this.dataSource.data = [i];
+                this.treeControl.expandAll();
+            }),
+        );
     }
 
     /** @inheritdoc */

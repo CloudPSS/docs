@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { combineLatest } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { map, distinctUntilChanged } from 'rxjs/operators';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { MatDrawerMode } from '@angular/material/sidenav';
 
@@ -23,10 +23,11 @@ export class LayoutService {
             if (m.matches) return 'medium';
             return 'large';
         }),
+        distinctUntilChanged(),
     );
 
     /** 侧边栏模式 */
-    readonly sidenavMode = this.displayMode.pipe<MatDrawerMode>(
+    readonly sidenavMode: Observable<MatDrawerMode> = this.displayMode.pipe(
         map((s) => (s === 'small' ? 'over' : s === 'medium' ? 'push' : 'side')),
     );
 }
