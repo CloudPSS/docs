@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { GlobalService } from '@/services/global';
 import { Subscription, noop } from 'rxjs';
 import { TranslateService } from '@ngx-translate/core';
+import { LayoutService } from '@/services/layout';
 
 /**
  * App 组件
@@ -13,7 +14,12 @@ import { TranslateService } from '@ngx-translate/core';
     styleUrls: ['./index.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    constructor(readonly router: Router, readonly global: GlobalService, readonly translate: TranslateService) {}
+    constructor(
+        readonly router: Router,
+        readonly global: GlobalService,
+        readonly translate: TranslateService,
+        readonly layout: LayoutService,
+    ) {}
     /** 订阅事件 */
     private readonly subscriptions: Subscription[] = [];
 

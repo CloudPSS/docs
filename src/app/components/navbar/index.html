@@ -1,4 +1,6 @@
 <a mat-button id="home" [routerLink]="'/'">CloudPSS</a>
-<a mat-button *ngFor="let item of (nav | async)!" [href]="url(item)" (click)="onNavigate(item, $event)"
-  >{{item.title}}</a
->
+<ng-container *ngIf="showCategories">
+  <a mat-button *ngFor="let item of (nav | async)!" [href]="url(item)" (click)="onNavigate(item, $event)"
+    >{{item.title}}</a
+  >
+</ng-container>
