@@ -8,7 +8,11 @@
   >
     <mat-icon>{{(global.menuButton | async)?.icon}}</mat-icon>
   </button>
-  <app-navbar #xx (navigate)="router.navigateByUrl($event.url)"></app-navbar>
+  <app-navbar
+    #xx
+    (navigate)="router.navigateByUrl($event.url)"
+    [showCategories]="(layout.displayMode | async) === 'large'"
+  ></app-navbar>
   <button mat-icon-button (click)="changeTheme()" [title]="'topBar.changeTheme' | translate">
     <mat-icon>{{global.isDark(global.theme | async) ? 'brightness_2' : 'brightness_7'}}</mat-icon>
   </button>
