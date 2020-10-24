@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, fromEvent } from 'rxjs';
+import { Observable, fromEvent, merge, of, Subject } from 'rxjs';
 import { filter, map, distinctUntilChanged, shareReplay } from 'rxjs/operators';
 import { JsonValue } from 'type-fest';
 
@@ -11,7 +11,7 @@ const storage = window.localStorage;
 type Default<T extends JsonValue> = T | (() => T);
 
 /**
- *  设置全局状态
+ *  获取存储
  */
 @Injectable({
     providedIn: 'root',
@@ -24,7 +24,7 @@ export class StorageService {
     }
 
     /** 检查存储更新 */
-    private readonly check = new BehaviorSubject<string | null>(null);
+    private readonly check = new Subject<string | null>();
 
     /**
      * 设置存储内容
@@ -78,12 +78,12 @@ export class StorageService {
      */
     watch<T extends JsonValue>(key: string, def?: Default<T>): Observable<T> {
         this.get(key, def);
-        return this.check.pipe(
+        return merge(of(null), this.check).pipe(
             filter((k) => k === key || k == null),
             map(() => storage.getItem(key)),
             distinctUntilChanged(),
             map((v) => this.getImpl(key, v, def)),
-            shareReplay(),
+            shareReplay(1),
         );
     }
 }

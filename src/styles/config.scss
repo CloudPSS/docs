@@ -39,9 +39,9 @@ $dark-theme: mat-dark-theme(
 
 @mixin css-map($map, $prefix) {
   @each $key, $value in $map {
-    @if type-of($value) == map {
+    @if type-of($value) == 'map' {
       @include css-map($value, '#{$prefix}-#{$key}');
-    } @else {
+    } @else if type-of($value) != 'null' {
       --#{$prefix}-#{$key}: #{$value};
     }
   }
