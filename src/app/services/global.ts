@@ -101,11 +101,9 @@ export class GlobalService {
      * 更新主题
      */
     private updateTheme(theme: Theme): void {
-        const html = document.querySelector('html');
-        if (html) {
-            html.setAttribute('theme', theme);
-            html.setAttribute('color-scheme', this.isDark(theme) ? 'dark' : 'light');
-        }
+        const html = document.documentElement;
+        html.setAttribute('theme', theme);
+        html.setAttribute('color-scheme', this.isDark(theme) ? 'dark' : 'light');
     }
 
     /**
@@ -155,9 +153,6 @@ export class GlobalService {
     /** 设置语言 */
     private updateLanguage(value: string): void {
         this.translateService.use(value);
-        const html = document.querySelector('html');
-        if (html) {
-            html.lang = value;
-        }
+        document.documentElement.lang = value;
     }
 }
