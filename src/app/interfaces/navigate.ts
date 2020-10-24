@@ -18,7 +18,6 @@ export class NavigateEvent {
             if (fragment.startsWith('#')) fragment = fragment.slice(1);
             this.fragment = fragment;
         }
-        console.log(this);
     }
 
     /**
