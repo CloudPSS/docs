@@ -5,6 +5,8 @@ import { SourceService } from './services/source';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
 import { Observable } from 'rxjs';
 import { GlobalService } from './services/global';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter, mergeMap } from 'rxjs/operators';
 
 /**
  * 提供文档内容
@@ -19,6 +21,7 @@ export class AppInitializerService {
         readonly updates: SwUpdate,
         readonly source: SourceService,
         readonly global: GlobalService,
+        readonly router: Router,
     ) {
         return ((() =>
             Promise.all(
@@ -42,6 +45,12 @@ export class AppInitializerService {
                     console.log(
                         `Updates from ${event.current.hash} to ${event.available.hash} is currently available.`,
                     );
+                    this.router.events
+                        .pipe(
+                            filter((ev) => ev instanceof NavigationEnd),
+                            mergeMap(() => this.updates.activateUpdate()),
+                        )
+                        .subscribe(() => document.location.reload());
                 });
                 this.updates.activated.subscribe((event) => {
                     console.log(`Updated from ${event.previous?.hash ?? 'unknown'} to ${event.current.hash}.`);
