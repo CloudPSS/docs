@@ -3,14 +3,19 @@ import { Routes, RouterModule } from '@angular/router';
 import { DocumentComponent } from './pages/document';
 import { ErrorComponent } from './pages/error';
 import { EditorComponent } from './pages/editor';
+import { ContentComponent } from './pages/content';
 
 const routes: Routes = [
     {
-        path: 'edit',
+        path: '_content',
+        component: ContentComponent,
+    },
+    {
+        path: '_edit',
         component: EditorComponent,
     },
     {
-        path: 'error/:code',
+        path: '_error/:code',
         component: ErrorComponent,
     },
     {
