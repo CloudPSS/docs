@@ -33,6 +33,9 @@ export class ContentComponent implements AfterViewInit {
     /** @inheritdoc */
     ngAfterViewInit(): void {
         this.global.navbar.emit('hidden');
+        if (window.parent !== window) {
+            window.parent.postMessage({ state: 'ready' }, '*');
+        }
     }
 
     /**
@@ -46,7 +49,7 @@ export class ContentComponent implements AfterViewInit {
         if (typeof data.path != 'string') return;
 
         this.document.next(data);
-        source.postMessage({ status: true }, origin);
+        source.postMessage({ state: 'ready' }, origin);
     }
 
     /**
