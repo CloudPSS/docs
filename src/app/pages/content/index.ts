@@ -69,6 +69,12 @@ export class ContentComponent implements AfterViewInit {
                     this.document.next(file);
                     break;
                 }
+                case 'theme': {
+                    const theme = payload as string;
+                    if (typeof theme != 'string') throw new Error('Invalid payload.');
+                    this.global.setTheme(theme === 'dark' ? 'dark' : 'default');
+                    break;
+                }
                 default:
                     throw new Error(`Unknown type ${data.type}`);
             }
