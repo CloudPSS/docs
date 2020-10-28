@@ -26,7 +26,7 @@ export class EditorComponent implements AfterViewInit {
         readonly global: GlobalService,
     ) {}
 
-    /** 预览组件 */
+    /** 编辑器语言 */
     lang = 'markdown';
     /** 编辑组件 */
     editor!: monaco.editor.IStandaloneCodeEditor;
@@ -65,7 +65,7 @@ export class EditorComponent implements AfterViewInit {
             return merge(of(null), this.source.file(path, 'text'));
         }),
         catchError(async () => {
-            await this.router.navigate(['error', 404], { replaceUrl: true });
+            await this.router.navigate(['_error', 404], { replaceUrl: true });
             return null;
         }),
         tap((file) => {
@@ -95,7 +95,7 @@ export class EditorComponent implements AfterViewInit {
 
     /** @inheritdoc */
     ngAfterViewInit(): void {
-        //
+        this.global.navbar.emit('simple');
     }
 
     /**
