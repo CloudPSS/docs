@@ -1,4 +1,4 @@
-<mat-toolbar [color]="'primary'" class="mat-elevation-z8">
+<mat-toolbar *ngIf="(global.navbar | async) !== 'hidden'" [color]="'primary'" class="mat-elevation-z8">
   <button
     id="menu-button"
     [class.hidden]="(global.menuButton | async) == null"
@@ -9,9 +9,8 @@
     <mat-icon>{{(global.menuButton | async)?.icon}}</mat-icon>
   </button>
   <app-navbar
-    #xx
     (navigate)="router.navigateByUrl($event.url)"
-    [showCategories]="(layout.displayMode | async) === 'large'"
+    [showCategories]="(layout.displayMode | async) === 'large' && (global.navbar | async) !== 'simple'"
   ></app-navbar>
   <button mat-icon-button (click)="changeTheme()" [title]="'topBar.changeTheme' | translate">
     <mat-icon>{{global.isDark(global.theme | async) ? 'brightness_2' : 'brightness_7'}}</mat-icon>

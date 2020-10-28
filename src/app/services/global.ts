@@ -43,6 +43,9 @@ export class GlobalService {
     /** 菜单按钮 */
     readonly menuButton = new EventEmitter<{ icon: string; title: string; click?: () => void } | null>(true);
 
+    /** 导航栏状态 */
+    readonly navbar = new EventEmitter<'hidden' | 'simple' | 'visible'>(true);
+
     /**
      * 标题
      */

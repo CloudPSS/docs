@@ -77,7 +77,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
             return merge(of(null), this.source.file(path, 'text'));
         }),
         catchError(async () => {
-            await this.router.navigate(['error', 404], { replaceUrl: true });
+            await this.router.navigate(['_error', 404], { replaceUrl: true });
             return null;
         }),
         tap((file) => {
@@ -159,6 +159,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 .subscribe(),
         );
         this.updateToc();
+        this.global.navbar.emit('visible');
     }
 
     /**
@@ -168,7 +169,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
         if (target) {
             await this.router.navigate([target.path], { fragment: target.fragment, replaceUrl: target.replaceUrl });
         } else {
-            await this.router.navigate(['error', 404], { replaceUrl: true });
+            await this.router.navigate(['_error', 404], { replaceUrl: true });
         }
     }
 
