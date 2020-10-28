@@ -7,6 +7,7 @@ import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { GlobalService } from '@/services/global';
 import { File } from '@/services/source/interfaces';
+import { FixedLengthArray } from 'type-fest';
 
 /**
  * 编辑页面组件
@@ -30,6 +31,9 @@ export class ContentComponent implements AfterViewInit {
     /** 当前文档 */
     readonly document = new Subject<File<string>>();
 
+    /** 边框 */
+    padding: FixedLengthArray<number, 4> = [0, 8, 0, 8];
+
     /** @inheritdoc */
     ngAfterViewInit(): void {
         this.global.navbar.emit('hidden');
@@ -42,14 +46,36 @@ export class ContentComponent implements AfterViewInit {
      * 接受消息
      */
     @HostListener('window:message', ['$event.data', '$event.source', '$event.origin'])
-    onMessage(data: File<string>, source: Window, origin: string): void {
+    onMessage(data: { type: string; payload: unknown }, source: Window, origin: string): void {
         if (!data) return;
-        if (typeof data != 'object') return;
-        if (typeof data.data != 'string') return;
-        if (typeof data.path != 'string') return;
-
-        this.document.next(data);
-        source.postMessage({ state: 'ready' }, origin);
+        try {
+            if (typeof data != 'object') throw new Error('Invalid data.');
+            if (typeof data.type != 'string') throw new Error('Invalid type.');
+            const payload = data.payload;
+            switch (data.type) {
+                case 'padding': {
+                    const padding = payload as number[];
+                    if (!Array.isArray(padding) || padding.length <= 0) throw new Error('Invalid payload.');
+                    else if (padding.length === 1) this.padding = [padding[0], padding[0], padding[0], padding[0]];
+                    else if (padding.length === 2) this.padding = [padding[0], padding[1], padding[0], padding[1]];
+                    else if (padding.length === 3) this.padding = [padding[0], padding[1], padding[2], padding[1]];
+                    else this.padding = [padding[0], padding[1], padding[2], padding[3]];
+                    break;
+                }
+                case 'document': {
+                    const file = payload as File<string>;
+                    if (typeof file.data != 'string') throw new Error('Invalid payload.');
+                    if (typeof file.path != 'string') throw new Error('Invalid payload.');
+                    this.document.next(file);
+                    break;
+                }
+                default:
+                    throw new Error(`Unknown type ${data.type}`);
+            }
+            source.postMessage({ state: 'ready' }, origin);
+        } catch (ex) {
+            source.postMessage({ state: 'error', message: String(ex) }, origin);
+        }
     }
 
     /**
