@@ -33,6 +33,7 @@
   :root {
     background: var(--theme-background-background);
     color: var(--theme-foreground-base);
+    scrollbar-color: var(--theme-foreground-slider-off-active) var(--theme-background-app-bar);
     overflow: hidden;
     &[theme='dark'] {
       @include apply($dark-theme);
