@@ -1,0 +1,42 @@
+* {
+  scrollbar-color: var(--theme-foreground-slider-off) var(--theme-background-app-bar);
+  scrollbar-width: thin;
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-corner {
+    background-color: var(--theme-background-app-bar);
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-resizer {
+    background: url("data:image/svg+xml,%3Csvg height='5' viewBox='0 0 5 5' width='5'%3E%3Crect fill='%23888' opacity='0' width='5' height='5' /%3E%3Cpath fill='%23888' d='M4.74.01a.24927.24927,0,0,0-.17676.07324l-4.48,4.48A.25.25,0,0,0,.26,4.99H4.74a.25.25,0,0,0,.25-.25V.26A.25.25,0,0,0,4.74.01Z' /%3E%3C/svg%3E")
+      75% no-repeat;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: solid var(--theme-background-app-bar);
+    border-width: 1px;
+    background-color: var(--theme-foreground-slider-off);
+    &:hover {
+      background-color: var(--theme-foreground-hint-text);
+    }
+    &:active {
+      background-color: var(--theme-foreground-secondary-text);
+    }
+  }
+  &::-webkit-scrollbar-button {
+    display: none;
+  }
+}
+@media (pointer: coarse) {
+  * {
+    scrollbar-color: var(--theme-foreground-hint-text) var(--theme-background-app-bar);
+    &::-webkit-scrollbar,
+    &::-webkit-scrollbar-corner {
+      width: 4px;
+      height: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--theme-foreground-hint-text);
+      border-width: 0;
+    }
+  }
+}
