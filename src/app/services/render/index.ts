@@ -78,7 +78,7 @@ export class RenderService {
                 title = path.basename(path.dirname(file.path));
             }
 
-            return [rendered, { title, ...this.frontMatter }];
+            return [rendered, { title, ...this.frontMatter, content: file.data }];
         } catch (ex) {
             console.warn(file, options, ex);
             throw ex;
