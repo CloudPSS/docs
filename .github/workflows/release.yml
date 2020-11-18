@@ -1,0 +1,35 @@
+name: release
+
+on:
+  push:
+    tags: ['*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2.3.3
+      - uses: actions/setup-node@v2.1.2
+        with:
+          node-version: 14
+      - name: Install
+        uses: bahmutov/npm-install@v1.1.0
+      - name: Build
+        run: yarn build -c production
+      - name: Deploy
+        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        with:
+          host: ${{ secrets.DC_HOST }}
+          port: ${{ secrets.DC_PORT }}
+          user: ${{ secrets.DC_USER }}
+          key: ${{ secrets.DC_KEY }}
+          connect_timeout: 60s
+          first_ssh: |
+            rm -rf /home/docs/${{ github.event.ref }}
+            mkdir -p /home/docs/${{ github.event.ref }}
+          scp: |
+            './dist/' => /home/docs/${{ github.event.ref }}
+          last_ssh: |
+            rm /home/docs/latest
+            ln -s /home/docs/${{ github.event.ref }} /home/docs/latest

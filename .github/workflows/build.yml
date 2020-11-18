@@ -1,4 +1,4 @@
-name: CI
+name: build
 
 on:
   push:
@@ -20,6 +20,7 @@ jobs:
         run: yarn build -c production,github
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.1
+        if: github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
