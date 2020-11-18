@@ -31,7 +31,7 @@ async function main() {
                 title = path.basename(path.dirname(v));
             }
 
-            return [`/${v}`, { title, ...frontObj }];
+            return [`/${v}`, { title, ...frontObj, content: file }];
         }),
     );
     Object.assign(base.documents, Object.fromEntries(info));
