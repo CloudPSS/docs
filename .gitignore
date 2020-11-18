@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/docs/manifest.json
 nohup.out
 
 # Only exists if Bazel was run
