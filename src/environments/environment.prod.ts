@@ -7,6 +7,7 @@ export const environment = {
  */
 export function docUrls(ref: string): string[] {
     return [
+        `${document.baseURI}/content/`,
         `https://cdn.jsdelivr.net/gh/CloudPSS/docs@${ref}/docs/`,
         `https://gitcdn.xyz/cdn/CloudPSS/docs/${ref}/docs/`,
         `https://rawcdn.githack.com/CloudPSS/docs/${ref}/docs/`,
