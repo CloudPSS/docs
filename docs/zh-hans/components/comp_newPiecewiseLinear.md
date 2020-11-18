@@ -14,7 +14,7 @@ classname: _newPiecewiseLinear
 symbol: newPiecewiseLinear
 ---
 ## 基本描述
-{% compsymbol newPiecewiseLinear %}
+
 
 > **该元件根据设定参数生成分段线性函数，输入信号根据该函数，输出对应在线段上的值。**
 

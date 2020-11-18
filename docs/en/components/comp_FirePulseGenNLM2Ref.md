@@ -14,7 +14,7 @@ classname: _FirePulseGenNLM2Ref
 symbol: NLM2Ref
 ---
 ## Basic Description
-{% compsymbol NLM2Ref %}
+
 
 > **This component realizes the nearest level modulation and capacitance voltage balancing algorithms in MMC applications.**
 

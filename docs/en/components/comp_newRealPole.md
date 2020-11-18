@@ -14,7 +14,7 @@ classname: _newRealPole
 symbol: newRealPole
 ---
 ## Basic Description
-{% compsymbol newRealPole %}
+
 
 > **This component simulates a lag or 'real pole' function, where the output can be reset to the user specified value at any instant.**
 

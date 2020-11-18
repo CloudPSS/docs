@@ -14,7 +14,7 @@ classname: _newFaultResistor
 symbol: newFaultResistance_1p
 ---
 ## Basic Description
-{% compsymbol newFaultResistance_1p %}
+
 
 > **This component is used to model single-phase fault resistor.**
 

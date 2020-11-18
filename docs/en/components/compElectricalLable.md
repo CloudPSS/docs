@@ -14,7 +14,7 @@ classname: ElectricalLable
 symbol: NC
 ---
 ## Basic Description
-{% compsymbol NC %}
+
 
 > **This component is used to connect with the pin of control component which has no connection.**
 

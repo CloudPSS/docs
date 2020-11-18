@@ -14,7 +14,7 @@ classname: newInductorRouter
 symbol: newInductor
 ---
 ## Basic Description
-{% compsymbol newInductor %}
+
 
 > **This component is used to model single or three phase inductor.**
 

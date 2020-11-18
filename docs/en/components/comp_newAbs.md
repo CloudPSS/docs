@@ -14,7 +14,7 @@ classname: _newAbs
 symbol: newAbs
 ---
 ## Basic Description
-{% compsymbol newAbs %}
+
 
 > **This component implements absolute value calculation.**
 > $$y(t) = |u(t)|$$

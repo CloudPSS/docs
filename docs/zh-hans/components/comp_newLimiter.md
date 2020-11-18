@@ -14,7 +14,7 @@ classname: _newLimiter
 symbol: newLimiter
 ---
 ## 基本描述
-{% compsymbol newLimiter %}
+
 
 > **该元件用以实现对输入信号的限幅输出功能。**
 

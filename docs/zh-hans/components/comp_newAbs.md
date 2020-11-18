@@ -14,7 +14,7 @@ classname: _newAbs
 symbol: newAbs
 ---
 ## 基本描述
-{% compsymbol newAbs %}
+
 
 > **该元件实现绝对值运算。函数式为：**
 > $$y(t) = |u(t)|$$

@@ -14,7 +14,7 @@ classname: _newTriGen
 symbol: newTriGen
 ---
 ## 基本描述
-{% compsymbol newTriGen %}
+
 
 > **该元件用以产生定频率、相位、幅值、脉宽的三角波信号。**
 

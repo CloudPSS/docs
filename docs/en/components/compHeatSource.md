@@ -14,7 +14,7 @@ classname: HeatSource
 symbol: heat1
 ---
 ## Basic Description
-{% compsymbol heat1 %}
+
 
 > **This component refers to the equipment that supplies heat (or cold) to the heating system.**
 

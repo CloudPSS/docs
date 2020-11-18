@@ -14,7 +14,7 @@ classname: _newFFT
 symbol: newFFT
 ---
 ## Basic Description
-{% compsymbol newFFT %}
+
 
 > **This component is used to implement FFT (Fast Fourier Transformation) analysis.**
 

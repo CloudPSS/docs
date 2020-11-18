@@ -14,7 +14,7 @@ classname: _newPRCoordinate
 symbol: newPRCoordinate
 ---
 ## Basic Description
-{% compsymbol newPRCoordinate %}
+
 
 > **This component converts a Cartesian (Rectangular) coordinates to Polar format and vice versa.**
 

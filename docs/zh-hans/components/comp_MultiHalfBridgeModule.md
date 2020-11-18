@@ -14,7 +14,7 @@ classname: _MultiHalfBridgeModule
 symbol: HBM
 ---
 ## 基本描述
-{% compsymbol HBM %}
+
 
 > **该元件用于建模MMC（模块化多电平变流器）中的半桥子模块。**
 

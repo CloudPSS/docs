@@ -14,7 +14,7 @@ classname: _newSinGen
 symbol: newSinGen
 ---
 ## Basic Description
-{% compsymbol newSinGen %}
+
 
 > **This component is used to generate single or three phase sinusoidal signals with adjustable frequency, phase, amplitude and offset.**
 

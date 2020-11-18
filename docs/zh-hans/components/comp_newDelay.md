@@ -14,7 +14,7 @@ classname: _newDelay
 symbol: newDelay
 ---
 ## 基本描述
-{% compsymbol newDelay %}
+
 
 > **该元件实现对输入信号延时设定时间输出**。
 

@@ -14,7 +14,7 @@ classname: _ChannelMerge
 symbol: ChannelMerge
 ---
 ## Basic Description
-{% compsymbol ChannelMerge %}
+
 
 > **The component realizes combined output of multiple input signals, and the output signal is a multi-dimensional signal.**
 

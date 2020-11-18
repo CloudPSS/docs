@@ -14,7 +14,7 @@ classname: _newStepGen
 symbol: newStepGen
 ---
 ## 基本描述
-{% compsymbol newStepGen %}
+
 
 > **该元件用以产生阶跃信号。**
 

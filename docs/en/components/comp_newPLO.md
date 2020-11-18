@@ -14,7 +14,7 @@ classname: _newPLO
 symbol: newPLO
 ---
 ## Basic Description
-{% compsymbol newPLO %}
+
 
 **This component is a three-phase phase-locked loop using π Control, The output signal θ1 is a ramp synchronized to the input signal Va, other output signals (θ2~θ6) are then phase shifted by simply adding a constant angle (60°) to the ramp respectively.**
 

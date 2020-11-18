@@ -14,7 +14,7 @@ classname: _newDiffPole
 symbol: newDiffPole
 ---
 ## 基本描述
-{% compsymbol newDiffPole %}
+
 
 > **该元件实现对输入信号加入微分极点环节。**
 

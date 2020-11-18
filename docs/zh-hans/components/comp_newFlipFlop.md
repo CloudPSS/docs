@@ -14,7 +14,7 @@ classname: _newFlipFlop
 symbol: newFlipFlop
 ---
 ## 基本描述
-{% compsymbol newFlipFlop %}
+
 
 > **该元件用以实现JK、RS、D、T类触发器。**
 

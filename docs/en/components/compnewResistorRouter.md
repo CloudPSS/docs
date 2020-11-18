@@ -14,7 +14,7 @@ classname: newResistorRouter
 symbol: newResistor
 ---
 ## Basic Description
-{% compsymbol newResistor %}
+
 
 > **This component is used to model single-phase or 3-phase resistor.**
 

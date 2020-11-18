@@ -14,7 +14,7 @@ classname: BLDC
 symbol: BLDC
 ---
 ## 基本描述
-{% compsymbol BLDC %}
+
 
 > **该元件用以建模无刷直流电机。**
 

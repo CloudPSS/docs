@@ -14,7 +14,7 @@ classname: HeatLoad_Building
 symbol: Heat5
 ---
 ## Basic Description
-{% compsymbol Heat5 %}
+
 
 > **This component represents a simple model of an ordinary residential building.**
 

@@ -14,7 +14,7 @@ classname: newCapacitorRouterWithInitValue
 symbol: newCapacitorRouterWithInitValue
 ---
 ## Basic Description
-{% compsymbol newCapacitorRouterWithInitValue %}
+
 
 > **This component is used to model single/three-phase capacitor with the initial voltage.**
 

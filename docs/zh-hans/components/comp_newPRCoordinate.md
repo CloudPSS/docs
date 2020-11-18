@@ -14,7 +14,7 @@ classname: _newPRCoordinate
 symbol: newPRCoordinate
 ---
 ## 基本描述
-{% compsymbol newPRCoordinate %}
+
 
 > **该元件用以实现极坐标转与直角坐标的互相转换功能。**
 

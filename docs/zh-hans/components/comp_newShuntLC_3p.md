@@ -14,7 +14,7 @@ classname: _newShuntLC_3p
 symbol: newShuntLC
 ---
 ## 基本描述
-{% compsymbol newShuntLC %}
+
 
 > **该元件用以建模三相并联电容/电抗器（单线图）。**
 

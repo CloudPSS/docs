@@ -14,7 +14,7 @@ classname: _NewVoltageMeter
 symbol: newVoltageMeter
 ---
 ## 基本描述
-{% compsymbol newVoltageMeter %}
+
 
 > **该元件用以测量对地电压，输出单位为kV。**
 

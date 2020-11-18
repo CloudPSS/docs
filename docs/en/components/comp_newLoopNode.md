@@ -14,7 +14,7 @@ classname: _newLoopNode
 symbol: newLoopNode
 ---
 ## Basic Description
-{% compsymbol newLoopNode %}
+
 
 > **This component is used to implement the algebraic loop break function.**
 

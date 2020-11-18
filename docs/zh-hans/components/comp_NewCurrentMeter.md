@@ -14,7 +14,7 @@ classname: _NewCurrentMeter
 symbol: newCurrentMeter
 ---
 ## 基本描述
-{% compsymbol newCurrentMeter %}
+
 
 > **该元件用以测量支路电流，输出单位为kA。**
 

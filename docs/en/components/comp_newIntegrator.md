@@ -14,7 +14,7 @@ classname: _newIntegrator
 symbol: newIntegrator
 ---
 ## Basic Description
-{% compsymbol newIntegrator %}
+
 
 > **This component models a resettable integrator.**
 

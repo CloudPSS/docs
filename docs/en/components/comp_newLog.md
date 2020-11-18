@@ -14,7 +14,7 @@ classname: _newLog
 symbol: newLog
 ---
 ## Basic Description
-{% compsymbol newLog %}
+
 
 > **This component output the logatithm of the input signal, either base of 10, a natural constant e, or a custom constant a may be used. The function is：**
 > $y(t) = \log u(t)$或$y(t) = \ln u(t)$或$y(t) = {\log _a}u(t)$，$u(t)>0$。

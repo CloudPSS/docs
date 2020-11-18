@@ -14,7 +14,7 @@ classname: _newCtrlVoltageSource
 symbol: newCtrlVoltageSource
 ---
 ## 基本描述
-{% compsymbol newCtrlVoltageSource %}
+
 
 > **该元件用以建模受控电压源。**
 

@@ -14,7 +14,7 @@ classname: _HarmonicVoltageSource
 symbol: HarmonicVoltageSource
 ---
 ## 基本描述
-{% compsymbol HarmonicVoltageSource %}
+
 
 > **该元件用以建模谐波电压源。**
 

@@ -14,7 +14,7 @@ classname: _newConstant
 symbol: newConstant
 ---
 ## 基本描述
-{% compsymbol newConstant %}
+
 
 > **该元件用以产生常数输出信号。**
 

@@ -16,7 +16,7 @@ symbol: FQ
 
 ## 基本描述
 
-{% compsymbol FQ %}
+
 
 ## 参数列表
 ### 励磁系统模型（F）

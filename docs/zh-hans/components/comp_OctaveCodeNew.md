@@ -14,7 +14,7 @@ classname: _OctaveCodeNew
 symbol: OctaveCodeNew
 ---
 ## 基本描述
-{% compsymbol OctaveCodeNew %}
+
 
 > **.M脚本元件的语法与MATLAB语法(M语言)兼容，用户可利用该元件编写M程序，实现复杂控制、逻辑算法，科学计算及数值分析。**
 

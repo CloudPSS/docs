@@ -14,7 +14,7 @@ classname: _newOsc
 symbol: oscg
 ---
 ## Basic Description
-{% compsymbol oscg %}
+
 
 > **This component implements a grouped display of the signals collected by the "Output Channel", analogous to the actual physical oscilloscope.**
 

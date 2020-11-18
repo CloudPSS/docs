@@ -14,7 +14,7 @@ classname: _newPICtrl
 symbol: newPICtrl
 ---
 ## Basic Description
-{% compsymbol newPICtrl %}
+
 
 > **This component performs a proportional integral. And the output is the sum of proportional and integral gains of the input signal.**
 

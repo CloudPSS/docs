@@ -14,7 +14,7 @@ classname: _SubSysPort
 symbol: SystemPort
 ---
 ## 基本描述
-{% compsymbol SystemPort %}
+
 
 > **该元件为系统对外连接的端口，可配置为电气端口，输入端口或输出端口。**
 

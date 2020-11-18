@@ -14,7 +14,7 @@ classname: _TUR1
 symbol: TUR1
 ---
 ## 基本描述
-{% compsymbol TUR1 %}
+
 
 ## 参数列表
 ### Rated Conditions

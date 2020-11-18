@@ -14,7 +14,7 @@ classname: _newBinaryDelay
 symbol: newBinaryDelay
 ---
 ## Basic Description
-{% compsymbol newBinaryDelay %}
+
 
 > **This component is used to implement an on delay and off delay of the input switch signal.**
 

@@ -14,7 +14,7 @@ classname: _newAFPMGen
 symbol: newAFPMGen
 ---
 ## Basic Description
-{% compsymbol newAFPMGen %}
+
 
 > **The component is used to generate a sine wave output signal. Its  amplitude, frequency and phase are defined by input signals.**
 

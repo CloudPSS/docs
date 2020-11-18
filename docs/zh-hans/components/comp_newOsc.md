@@ -14,7 +14,7 @@ classname: _newOsc
 symbol: oscg
 ---
 ## 基本描述
-{% compsymbol oscg %}
+
 
 > **该元件实现对“输出通道”采集到的信号的分组显示，类比于实际的物理示波器。**
 

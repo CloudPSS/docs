@@ -14,7 +14,7 @@ classname: WoundRotorIMRouter
 symbol: WoundIM
 ---
 ## 基本描述
-{% compsymbol BLDC %}
+
 
 > **该元件用以建模绕线式感应电机。**
 

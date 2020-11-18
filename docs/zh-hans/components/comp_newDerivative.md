@@ -14,7 +14,7 @@ classname: _newDerivative
 symbol: newDerivative
 ---
 ## 基本描述
-{% compsymbol newDerivative %}
+
 
 > **该元件实现对输入一维信号的微分计算。**
 

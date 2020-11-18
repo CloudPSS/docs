@@ -14,7 +14,7 @@ classname: RandomGeneratorRouter
 symbol: newRandom
 ---
 ## Basic Description
-{% compsymbol newRandom %}
+
 
 > **This component is used to generate a random output signal by following methods:**
 > + Uniform Int Distribution

@@ -14,7 +14,7 @@ classname: _newSgn
 symbol: newSgn
 ---
 ## Basic Description
-{% compsymbol newSgn %}
+
 
 > **This component performs a 'sign' function on the input signal.**
 > $$y(x) = \left\{ \begin{gathered}

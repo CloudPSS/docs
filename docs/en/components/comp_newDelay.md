@@ -14,7 +14,7 @@ classname: _newDelay
 symbol: newDelay
 ---
 ## Basic Description
-{% compsymbol newDelay %}
+
 
 > **This component output a time delay of the input signal.**
 

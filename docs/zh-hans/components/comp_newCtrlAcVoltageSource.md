@@ -14,7 +14,7 @@ classname: _newCtrlAcVoltageSource
 symbol: newCtrlVFACSource
 ---
 ## 基本描述
-{% compsymbol newCtrlVFACSource %}
+
 
 > **该元件用以建模幅值、频率可控的单相或三相交流电压源。**
 

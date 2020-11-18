@@ -14,7 +14,7 @@ classname: _newZero
 symbol: newZero
 ---
 ## Basic Description
-{% compsymbol newZero %}
+
 
 > This component simulates the zero-point function.
 

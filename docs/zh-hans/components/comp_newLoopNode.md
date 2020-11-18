@@ -14,7 +14,7 @@ classname: _newLoopNode
 symbol: newLoopNode
 ---
 ## 基本描述
-{% compsymbol newLoopNode %}
+
 
 > **该元件用以实现代数环解环功能。**
 

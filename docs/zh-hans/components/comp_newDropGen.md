@@ -14,7 +14,7 @@ classname: _newDropGen
 symbol: newDropGen
 ---
 ## 基本描述
-{% compsymbol newDropGen %}
+
 
 > **该元件用以产生陷落信号。**
 

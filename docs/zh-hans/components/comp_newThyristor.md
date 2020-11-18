@@ -14,7 +14,7 @@ classname: _newThyristor
 symbol: newThyristor
 ---
 ## 基本描述
-{% compsymbol newThyristor %}
+
 
 > **该元件用以建模晶闸管。**
 

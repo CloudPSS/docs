@@ -14,7 +14,7 @@ classname: _newSampleHold
 symbol: newSampleHold
 ---
 ## 基本描述
-{% compsymbol newSampleHold %}
+
 
 > **该元件根据hold端特性对输入信号进行保持输出。**
 

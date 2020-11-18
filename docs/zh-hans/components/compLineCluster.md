@@ -14,7 +14,7 @@ classname: LineCluster
 symbol: newLineCluster
 ---
 ## 基本描述
-{% compsymbol newLineCluster %}
+
 
 > **该元件实现单线图与三线图连接的功能。**
 

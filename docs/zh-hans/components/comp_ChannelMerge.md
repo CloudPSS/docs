@@ -14,7 +14,7 @@ classname: _ChannelMerge
 symbol: ChannelMerge
 ---
 ## 基本描述
-{% compsymbol ChannelMerge %}
+
 
 > **该元件实现将多路输入信号进行合并输出，输出信号为多维信号。**
 

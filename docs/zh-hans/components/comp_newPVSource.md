@@ -14,7 +14,7 @@ classname: _newPVSource
 symbol: newPVSource
 ---
 ## 基本描述
-{% compsymbol newPVSource %}
+
 
 > **该元件用以建模N*M的光伏阵列，其假定构成光伏阵列的所有光伏单元特性都相同**
 

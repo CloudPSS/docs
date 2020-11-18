@@ -14,7 +14,7 @@ classname: _newTrigonometric
 symbol: newTrigonometric
 ---
 ## Basic Description
-{% compsymbol newTrigonometric %}
+
 
 > **This component implements trigonometric functions. The function types can be configured as six types: Sin, Cos, Tan, ArcSin, ArcCos, and ArcTan.**
 

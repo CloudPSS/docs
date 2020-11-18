@@ -14,7 +14,7 @@ classname: _newNonlinear
 symbol: newNonlinear
 ---
 ## 基本描述
-{% compsymbol newNonlinear %}
+
 
 ## 参数列表
 ### Configuration

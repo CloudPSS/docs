@@ -14,7 +14,7 @@ classname: _newExp
 symbol: newExp
 ---
 ## Basic Description
-{% compsymbol newExp %}
+
 
 > **The component implements an exponential operation with a configurable base of 10, a natural constant e, or a custom constant a. The function is：**
 > $y(t) = {10^{u(t)} }$ or $y(t) = {e^{u(t)} }$ or $y(t) = {a^{u(t)} }$，$u(t)>0$。

@@ -14,7 +14,7 @@ classname: _GOV2
 symbol: GOV2
 ---
 ## 基本描述
-{% compsymbol GOV2 %}
+
 
 ## 参数列表
 ### Configuration

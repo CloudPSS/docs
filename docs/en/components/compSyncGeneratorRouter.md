@@ -14,7 +14,7 @@ classname: SyncGeneratorRouter
 symbol: SyncGen
 ---
 ## Basic Description
-{% compsymbol SyncGen %}
+
 
 > **This component is used to model the synchronous generator.**
 

@@ -14,7 +14,7 @@ classname: _newMultiply
 symbol: newMultiply
 ---
 ## 基本描述
-{% compsymbol newMultiply %}
+
 
 > **该元件实现两个一维输入信号的乘法运算。**
 

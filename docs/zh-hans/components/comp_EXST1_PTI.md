@@ -16,7 +16,7 @@ symbol: EXST1_PTI
 
 ## 基本描述
 
-{% compsymbol EXST1_PTI %}
+
 
 ## 参数列表
 ### Configuration

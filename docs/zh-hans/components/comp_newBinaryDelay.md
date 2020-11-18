@@ -14,7 +14,7 @@ classname: _newBinaryDelay
 symbol: newBinaryDelay
 ---
 ## 基本描述
-{% compsymbol newBinaryDelay %}
+
 
 > **该元件用以实现对输入开关信号的延时开通、关断。**
 

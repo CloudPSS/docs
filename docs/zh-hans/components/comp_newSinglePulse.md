@@ -14,7 +14,7 @@ classname: _newSinglePulse
 symbol: newSinglePulse
 ---
 ## 基本描述
-{% compsymbol newSinglePulse %}
+
 
 > **该元件用以产单一脉冲信号，脉冲持续时间为一个仿真步长。**
 

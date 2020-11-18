@@ -14,7 +14,7 @@ classname: _newCtrlVoltageSource
 symbol: newCtrlVoltageSource
 ---
 ## Basic Description
-{% compsymbol newCtrlVoltageSource %}
+
 
 > **This component is used to model a controlled voltage source.**
 

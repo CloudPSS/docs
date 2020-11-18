@@ -14,7 +14,7 @@ classname: GND
 symbol: newGND
 ---
 ## 基本描述
-{% compsymbol newGND %}
+
 
 > **该元件代表电网的接地点。**
 

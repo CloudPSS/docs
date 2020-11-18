@@ -14,7 +14,7 @@ classname: _MeanValue
 symbol: MeanValue
 ---
 ## 基本描述
-{% compsymbol MeanValue %}
+
 
 > **该元件实现对输入信号在一个滑动时间窗口的平均值输出，滑动时间窗口可自由配置。**
 

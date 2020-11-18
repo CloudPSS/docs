@@ -14,7 +14,7 @@ classname: LineCluster
 symbol: newLineCluster
 ---
 ## Basic Description
-{% compsymbol newLineCluster %}
+
 
 > **The component realizes the function of connecting the one-line component and the three-line component**
 

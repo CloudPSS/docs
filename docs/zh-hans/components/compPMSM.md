@@ -14,7 +14,7 @@ classname: PMSM
 symbol: PMSM
 ---
 ## 基本描述
-{% compsymbol PMSM %}
+
 
 > **该元件用以建模无刷直流电机。**
 

@@ -14,7 +14,7 @@ classname: _newXYtoDQ
 symbol: newXYtoDQ
 ---
 ## Basic Description
-{% compsymbol newXYtoDQ %}
+
 
 > **This component performs transformation from αβ to dq, or dq to αβ.**
 

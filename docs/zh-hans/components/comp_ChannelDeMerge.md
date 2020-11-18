@@ -14,7 +14,7 @@ classname: _ChannelDeMerge
 symbol: ChannelDeMerge
 ---
 ## 基本描述
-{% compsymbol ChannelDeMerge %}
+
 
 > **该元件实现将单路多维输入信号拆分为多路输出信号，每路输出信号可以为多维。**
 

@@ -14,7 +14,7 @@ classname: _newConstant
 symbol: newConstant
 ---
 ## Basic Description
-{% compsymbol newConstant %}
+
 
 > **This component is used to generate a constant output signal.**
 

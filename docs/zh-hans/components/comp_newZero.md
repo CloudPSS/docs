@@ -14,7 +14,7 @@ classname: _newZero
 symbol: newZero
 ---
 ## 基本描述
-{% compsymbol newZero %}
+
 
 > 该元件用以建模零点环节。
 

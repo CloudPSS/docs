@@ -14,7 +14,7 @@ classname: _newExpLoad_3p
 symbol: newExpLoad
 ---
 ## Basic Description
-{% compsymbol newExpLoad %}
+
 
 > **This component models the load characteristics as a function of voltage magnitude and frequency, where the load real and reactive power our considered separately using the well known expressions:**
 > $$\begin{gathered}

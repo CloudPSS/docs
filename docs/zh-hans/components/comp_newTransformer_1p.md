@@ -14,7 +14,7 @@ classname: _newTransformer_1p
 symbol: newTransformer_1p
 ---
 ## 基本描述
-{% compsymbol newTransformer_1p %}
+
 
 > **该元件用以建模单相两绕组变压器。**
 

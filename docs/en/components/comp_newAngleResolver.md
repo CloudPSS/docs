@@ -14,7 +14,7 @@ classname: _newAngleResolver
 symbol: newAngleResolver
 ---
 ## Basic Description
-{% compsymbol newAngleResolver %}
+
 
 > **This component converts an input angle signal from degrees to radians, or radians to degrees.  The output range can be selected as 0 to 2π or π to -π.**
 

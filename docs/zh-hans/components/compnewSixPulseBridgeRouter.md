@@ -14,7 +14,7 @@ classname: newSixPulseBridgeRouter
 symbol: newSixValveBridge
 ---
 ## 基本描述
-{% compsymbol newSixValveBridge %}
+
 
 > **该元件用于建模六脉动晶闸管桥。**
 

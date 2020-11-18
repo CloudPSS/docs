@@ -14,7 +14,7 @@ classname: _newStorageBattery
 symbol: newStorageBattery
 ---
 ## Basic Description
-{% compsymbol newStorageBattery %}
+
 
 > **This component is used to model the lead-acid battery.**
 
