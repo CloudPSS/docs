@@ -38,4 +38,4 @@ async function main() {
     fs.writeFile('./manifest.json', JSON.stringify(base), 'utf-8');
 }
 
-main().catch(console.error);
+module.exports = main().catch(console.error);
