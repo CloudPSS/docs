@@ -14,7 +14,7 @@ classname: _newRampGen
 symbol: newRampGen
 ---
 ## Basic Description
-{% compsymbol newRampGen %}
+
 
 > **This component is used to generate ramp signal.**
 

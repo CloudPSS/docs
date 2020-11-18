@@ -14,7 +14,7 @@ classname: _FirePulseGenNLM2Ref
 symbol: NLM2Ref
 ---
 ## 基本描述
-{% compsymbol NLM2Ref %}
+
 
 > **该元件用于实现MMC应用中的最近电平调制及电容电压平衡算法。**
 

@@ -14,7 +14,7 @@ classname: _newSurgeGen
 symbol: newSurgeGen
 ---
 ## Basic Description
-{% compsymbol newSurgeGen %}
+
 
 > **This component is used to generate a surge wave.** 
 > $$f\left( t \right) = \left\{ \begin{aligned}

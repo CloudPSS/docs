@@ -14,7 +14,7 @@ classname: newInductorRouter
 symbol: newInductor
 ---
 ## 基本描述
-{% compsymbol newInductor %}
+
 
 > **该元件用以建模单相或三相电感（单线图）。**
 

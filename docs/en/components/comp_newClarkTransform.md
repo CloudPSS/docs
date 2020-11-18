@@ -14,7 +14,7 @@ classname: _newClarkTransform
 symbol: newClarkTransform
 ---
 ## Basic Description
-{% compsymbol newClarkTransform %}
+
 
 > **This component performs Clark transformation and inverse Clark transformation.**
 

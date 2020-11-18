@@ -14,10 +14,10 @@ classname: _newLogicGate
 symbol: newLogicGate3
 ---
 ## 基本描述
-{% compsymbol newLogicGate %}
-{% compsymbol newLogicGate1 %}
-{% compsymbol newLogicGate2 %}  
-{% compsymbol newLogicGate3 %}
+
+
+  
+
 
 > **该元件实现四类基本逻辑运算：与、或、非、异或。**
 

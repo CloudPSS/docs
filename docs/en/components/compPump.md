@@ -14,7 +14,7 @@ classname: Pump
 symbol: Heat4
 ---
 ## Basic Description
-{% compsymbol Heat4 %}
+
 
 > **This component refers to a device that provides circulating power to a heating system.**
 

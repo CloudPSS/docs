@@ -14,7 +14,7 @@ classname: TranssmissionLineRouter
 symbol: TLine_3p
 ---
 ## Basic Description
-{% compsymbol TLine_3p %}
+
 
 > **The component uses a π-type lumped parameter model and a Begeron distributed parameter model to model a three-phase transmission line.**
 

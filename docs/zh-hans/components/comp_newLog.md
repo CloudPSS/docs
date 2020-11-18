@@ -14,7 +14,7 @@ classname: _newLog
 symbol: newLog
 ---
 ## 基本描述
-{% compsymbol newLog %}
+
 
 > **该元件实现对数运算，可配置底数为10、自然常数e或自定义常数a。函数式为：**
 > $y(t) = \log u(t)$或$y(t) = \ln u(t)$或$y(t) = {\log _a}u(t)$，$u(t)>0$。

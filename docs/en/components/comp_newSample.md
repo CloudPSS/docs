@@ -14,7 +14,7 @@ classname: _newSample
 symbol: newSample
 ---
 ## Basic Description
-{% compsymbol newSample %}
+
 
 > **This component samples a continuous input signal at discrete intervals, and then holds the output at the sampled level until the next sample is taken.**
 

@@ -16,7 +16,7 @@ symbol: TW
 
 ## 基本描述
 
-{% compsymbol TW %}
+
 
 ## 参数列表
 ### 水轮机模型（TW）

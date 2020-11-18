@@ -14,7 +14,7 @@ classname: _newTrigonometric
 symbol: newTrigonometric
 ---
 ## 基本描述
-{% compsymbol newTrigonometric %}
+
 
 > **该元件实现三角函数运算，函数种类可配置为Sin、Cos、Tan、ArcSin、ArcCos、ArcTan六种。**
 

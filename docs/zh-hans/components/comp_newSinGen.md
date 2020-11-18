@@ -14,7 +14,7 @@ classname: _newSinGen
 symbol: newSinGen
 ---
 ## 基本描述
-{% compsymbol newSinGen %}
+
 
 > **该元件用以产生单相或三相，定频率、相位、幅值、偏置的正弦信号。**
 

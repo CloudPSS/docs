@@ -14,7 +14,7 @@ classname: _newCtrlVPAcVoltageSource
 symbol: newCtrlVPACSource
 ---
 ## Basic Description
-{% compsymbol newCtrlVPACSource %}
+
 
 > **This component is used to model a single-phase or three-phase AC voltage source with controllable amplitude and phase.**
 

@@ -14,7 +14,7 @@ classname: _newDivide
 symbol: newDivide
 ---
 ## Basic Description
-{% compsymbol newDivide %}
+
 
 > **This component implements division of two one-dimensional input signals.**
 

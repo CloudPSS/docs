@@ -14,7 +14,7 @@ classname: _newComparator
 symbol: newComparator
 ---
 ## 基本描述
-{% compsymbol newComparator %}
+
 
 > **该元件对两个输入信号比较，并输出矩形波。**
 

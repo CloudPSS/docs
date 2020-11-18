@@ -14,7 +14,7 @@ classname: _newSampleHold
 symbol: newSampleHold
 ---
 ## Basic Description
-{% compsymbol newSampleHold %}
+
 
 > **This component samples the input signal and output a value based on the value of the hold terminal.**
 

@@ -14,7 +14,7 @@ classname: _newPulseGen
 symbol: newPulseGen
 ---
 ## Basic Description
-{% compsymbol newPulseGen %}
+
 
 > **The component is used to generate a impulse signal with variable amplitude and frequency, and each impulse duration is one simulation time step.**
 

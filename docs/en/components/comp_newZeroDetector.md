@@ -14,7 +14,7 @@ classname: _newZeroDetector
 symbol: newZeroDetector
 ---
 ## Basic Description
-{% compsymbol newZeroDetector %}
+
 
 > **This component detects when the input crosses zero, and differentiates between positive and negative crossings. A zero crossing on the input with a positive 1st derivative will produce a single time step output of 1. A zero crossing on the input with a negative 1st derivative will produce a single-time-step output of -1.  At all other times the output is 0.**
 

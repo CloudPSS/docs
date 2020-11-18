@@ -14,7 +14,7 @@ classname: _newEdgeDetector
 symbol: newEdgeDetector
 ---
 ## 基本描述
-{% compsymbol newEdgeDetector %}
+
 
 > **该元件实现对输入信号的跳变检测。**
 

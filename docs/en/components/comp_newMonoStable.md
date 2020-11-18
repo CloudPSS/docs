@@ -14,7 +14,7 @@ classname: _newMonoStable
 symbol: newMonoStable
 ---
 ## Basic Description
-{% compsymbol newMonoStable %}
+
 
 > **This component simulates a monostable multivibrator.  If a positive edge of the input signal is detected, then outputs high and remains high for a set time (Pulse Duration).**
 

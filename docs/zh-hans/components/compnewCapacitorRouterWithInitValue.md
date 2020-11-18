@@ -14,7 +14,7 @@ classname: newCapacitorRouterWithInitValue
 symbol: newCapacitorRouterWithInitValue
 ---
 ## 基本描述
-{% compsymbol newCapacitorRouterWithInitValue %}
+
 
 > **该元件用以建模带初始电压的单相或三相电容（单线图）。**
 

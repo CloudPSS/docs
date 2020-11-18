@@ -14,7 +14,7 @@ classname: _ST5B
 symbol: ST5B
 ---
 ## 基本描述
-{% compsymbol ST5B %}
+
 
 ## 参数列表
 ### Configuration

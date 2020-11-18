@@ -14,7 +14,7 @@ classname: _newThyristor
 symbol: newThyristor
 ---
 ## Basic Description
-{% compsymbol newThyristor %}
+
 
 > **This component is used to model the thyristor.**
 

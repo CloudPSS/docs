@@ -14,7 +14,7 @@ classname: _newTransformer_3p3w
 symbol: newTransformer_3p3w
 ---
 ## Basic Description
-{% compsymbol newTransformer_3p3w %}
+
 
 > **This component is used to model a three-phase three-winding transformer with built-in neutral point.**
 

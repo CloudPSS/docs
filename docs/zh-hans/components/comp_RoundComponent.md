@@ -14,7 +14,7 @@ classname: _RoundComponent
 symbol: newRound
 ---
 ## 基本描述
-{% compsymbol newRound %}
+
 
 > **该元件实现对输入信号进行取整。**
 

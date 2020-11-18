@@ -14,7 +14,7 @@ classname: _newPLL
 symbol: newPLL
 ---
 ## Basic Description
-{% compsymbol newPLL %}
+
 
 > **The component is a three-phase π-controlled phase locked loop that produces theta, a ramp-up signal that is synchronized or phase-locked with the input voltage Va, varying from 0° to 360°.**
 

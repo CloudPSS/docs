@@ -14,7 +14,7 @@ classname: _DCMachine
 symbol: DCMachine
 ---
 ## 基本描述
-{% compsymbol DCMachine %}
+
 
 > **该元件用以建模直流电机。**
 

@@ -14,7 +14,7 @@ classname: _newSample
 symbol: newSample
 ---
 ## 基本描述
-{% compsymbol newSample %}
+
 
 > **该元件在离散区间内对连续输入信号进行采样，并保持输出直到下一个采样点。**
 

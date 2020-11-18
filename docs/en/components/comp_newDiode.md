@@ -14,7 +14,7 @@ classname: _newDiode
 symbol: newDiode
 ---
 ## Basic Description
-{% compsymbol newDiode %}
+
 
 > **This component is used to model the diode.**
 

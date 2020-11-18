@@ -14,7 +14,7 @@ classname: _newDiffPole
 symbol: newDiffPole
 ---
 ## Basic Description
-{% compsymbol newDiffPole %}
+
 
 > **This component simulates the differential pole function.**
 

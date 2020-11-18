@@ -14,7 +14,7 @@ classname: _newPower
 symbol: newPower
 ---
 ## Basic Description
-{% compsymbol newPower %}
+
 
 > **This component performs mathematical exponentiation: The base x being the input signal and the exponent y a user-defined input parameter. The output signal is x to the exponent y.**
 > $$y(t) = x{(t)^Y}$$

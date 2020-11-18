@@ -14,7 +14,7 @@ classname: _newDeltaT
 symbol: newDeltaT
 ---
 ## 基本描述
-{% compsymbol newDeltaT %}
+
 
 > **该元件用以输出仿真步长的常数**
 

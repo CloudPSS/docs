@@ -14,7 +14,7 @@ classname: _newMonoStable
 symbol: newMonoStable
 ---
 ## 基本描述
-{% compsymbol newMonoStable %}
+
 
 > **该元件用以实现对上升沿输入以高电平持续输出固定时间后，以低电平输出。**
 

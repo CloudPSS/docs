@@ -14,7 +14,7 @@ classname: ElectricalLable
 symbol: NC
 ---
 ## 基本描述
-{% compsymbol NC %}
+
 
 > **该元件用于控制元件输出端悬空连接。**
 

@@ -14,7 +14,7 @@ classname: _MultiHalfBridgeModule
 symbol: HBM
 ---
 ## Basic Description
-{% compsymbol HBM %}
+
 
 > **This component is used to model a half bridge submodule in an MMC (Modular Multilevel Converter).**
 

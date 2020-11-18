@@ -14,7 +14,7 @@ classname: _newMaxMinOneCycle
 symbol: newMaxMinOneCycle
 ---
 ## Basic Description
-{% compsymbol newMaxMinOneCycle %}
+
 > **This Component caculates the maximum or minimum value of the input signal in a defined slide time window.** 
 
 ## Parameter

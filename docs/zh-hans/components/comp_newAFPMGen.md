@@ -14,7 +14,7 @@ classname: _newAFPMGen
 symbol: newAFPMGen
 ---
 ## 基本描述
-{% compsymbol newAFPMGen %}
+
 
 > **该元件用以输出幅值、频率、相位可调的正弦波输出信号。**
 

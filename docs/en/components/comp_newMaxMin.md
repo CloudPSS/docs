@@ -14,7 +14,7 @@ classname: _newMaxMin
 symbol: newMaxMin
 ---
 ## Basic Description
-{% compsymbol newMaxMin %}
+
 
 > **This component output the maximum or minimum of several input signals, and up to seven inputs may enter the block.**
 

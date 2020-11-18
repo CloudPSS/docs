@@ -14,7 +14,7 @@ classname: _newDerivative
 symbol: newDerivative
 ---
 ## Basic Description
-{% compsymbol newDerivative %}
+
 
 > **This component simulates a differentiator.**
 

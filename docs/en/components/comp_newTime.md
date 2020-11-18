@@ -14,7 +14,7 @@ classname: _newTime
 symbol: newTime
 ---
 ## Basic Description
-{% compsymbol newTime %}
+
 
 > **This component is used primarily to assign the value of the chosen simulation time to a data signal wire, or a component input. The output of this component is adjusted only by changing the simulation time for the project.**
 

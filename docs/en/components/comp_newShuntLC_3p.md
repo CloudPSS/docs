@@ -14,7 +14,7 @@ classname: _newShuntLC_3p
 symbol: newShuntLC
 ---
 ## Basic Description
-{% compsymbol newShuntLC %}
+
 
 > **This component is used to model a three-phase shunt capacitor/reactor.**
 

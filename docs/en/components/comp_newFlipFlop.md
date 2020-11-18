@@ -14,7 +14,7 @@ classname: _newFlipFlop
 symbol: newFlipFlop
 ---
 ## Basic Description
-{% compsymbol newFlipFlop %}
+
 
 > **This component represents one of four flip-flop configurations: JK, SR, D and T.**
 

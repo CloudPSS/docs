@@ -14,7 +14,7 @@ classname: _newFaultResistor
 symbol: newFaultResistance_1p
 ---
 ## 基本描述
-{% compsymbol newFaultResistance_1p %}
+
 
 > **该元件用以建模单相故障电阻。**
 

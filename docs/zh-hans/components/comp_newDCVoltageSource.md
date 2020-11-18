@@ -14,7 +14,7 @@ classname: _newDCVoltageSource
 symbol: newDCVoltageSource
 ---
 ## 基本描述
-{% compsymbol newDCVoltageSource %}
+
 
 > **该元件用以建模直流电压源。**
 

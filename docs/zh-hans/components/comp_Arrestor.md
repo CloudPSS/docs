@@ -15,7 +15,7 @@ classname: _Arrestor
 symbol: Arrestor
 ---
 ## 基本描述
-{% compsymbol Arrestor %}
+
 
 > **该元件用以建模避雷器**
 

@@ -14,7 +14,7 @@ classname: _newGain
 symbol: newGain
 ---
 ## 基本描述
-{% compsymbol newGain %}
+
 
 > **该元件实现对输入信号的比例放大。函数式为：**
 > $$y(t) = Ku(t)$$

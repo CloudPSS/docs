@@ -14,7 +14,7 @@ classname: _newSum
 symbol: newSum
 ---
 ## 基本描述
-{% compsymbol newSum %}
+
 
 > **该元件实现1-7个一维输入信号的加减组合运算，每个输入端口可以选择为加、减、禁用三种状态之一。**
 

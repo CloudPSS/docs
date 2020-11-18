@@ -16,7 +16,7 @@ symbol: STEAM_GOV_1
 
 ## 基本描述
 
-{% compsymbol STEAM_GOV_1 %}
+
 
 ## 参数列表
 ### Gov1:Mechanical-Hydraulic Governor

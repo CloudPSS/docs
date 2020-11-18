@@ -14,7 +14,7 @@ classname: _newCtrlCurrentSource
 symbol: newCtrlCurrentSource
 ---
 ## Basic Description
-{% compsymbol newCtrlCurrentSource %}
+
 
 > **This component is used to model a controlled current source.**
 

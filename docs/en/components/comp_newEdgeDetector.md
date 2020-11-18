@@ -14,7 +14,7 @@ classname: _newEdgeDetector
 symbol: newEdgeDetector
 ---
 ## Basic Description
-{% compsymbol newEdgeDetector %}
+
 
 > **The component compare its present input to its input from the previous time step, and output the defined values of positive transition, non-transition or negative transition.**
 

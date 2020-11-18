@@ -14,7 +14,7 @@ classname: RMSRouter
 symbol: newRMS
 ---
 ## 基本描述
-{% compsymbol newRMS %}
+
 
 > **该元件实现单相、三相有效值测量。**
 

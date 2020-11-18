@@ -14,7 +14,7 @@ classname: _newPVSource
 symbol: newPVSource
 ---
 ## Basic Description
-{% compsymbol newPVSource %}
+
 
 > **This component can be used to model a photovoltaic (PV) source. The photovoltaic source is assumed to consist of several strings of PV modules connected in parallel, where each string can consist of a number of PV modules connected in series. All PV modules in the array are assumed identical.**
 

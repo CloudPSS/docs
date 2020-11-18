@@ -14,7 +14,7 @@ classname: _newPiecewiseLinear
 symbol: newPiecewiseLinear
 ---
 ## Basic Description
-{% compsymbol newPiecewiseLinear %}
+
 
 > **This component generates a piesewise linear function composed of 3-line segments. The three segments are joined at two points (x1, y1) and (x2, y2).**
 

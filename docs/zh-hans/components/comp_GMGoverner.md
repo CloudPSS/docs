@@ -16,7 +16,7 @@ symbol: GM
 
 ## 基本描述
 
-{% compsymbol GM %}
+
 
 ## 参数列表
 ### 调节系统模型4（GM）

@@ -15,7 +15,7 @@ classname: _BacktoBackModule
 symbol: BacktoBackModule
 ---
 ## 基本描述
-{% compsymbol BacktoBackModule %}
+
 
 > **该元件为背靠背H桥电路模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建AC/AC变流器拓扑等**
 

@@ -14,7 +14,7 @@ classname: _NewBranchVoltageMeter
 symbol: newBranchVoltageMeter
 ---
 ## Basic Description
-{% compsymbol newBranchVoltageMeter %}
+
 
 > **This component is used to measure the branch voltage and the output unit is kV.**
 

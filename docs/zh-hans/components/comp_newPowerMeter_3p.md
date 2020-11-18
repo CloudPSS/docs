@@ -14,7 +14,7 @@ classname: _newPowerMeter_3p
 symbol: newPowerMeter_3p
 ---
 ## 基本描述
-{% compsymbol newPowerMeter_3p %}
+
 
 > **该元件用以测量三相功率数据。**
 

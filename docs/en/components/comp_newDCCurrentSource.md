@@ -14,7 +14,7 @@ classname: _newDCCurrentSource
 symbol: newDCCurrentSource
 ---
 ## Basic Description
-{% compsymbol newDCCurrentSource %}
+
 
 > **This component is used to model the DC current source.**
 

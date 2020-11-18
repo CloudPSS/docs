@@ -14,7 +14,7 @@ classname: _newSquareGen
 symbol: newSquareGen
 ---
 ## Basic Description
-{% compsymbol newSquareGen %}
+
 
 > **This component is used to generate a square wave signal with constant frequency, phase, amplitude, and pulse width.**
 

@@ -14,7 +14,7 @@ classname: _newDeltaT
 symbol: newDeltaT
 ---
 ## Basic Description
-{% compsymbol newDeltaT %}
+
 
 > **This component is used to assign the value of the chosen simulation time step to output pin.**
 

@@ -14,7 +14,7 @@ classname: _newPLL
 symbol: newPLL
 ---
 ## 基本描述
-{% compsymbol newPLL %}
+
 
 > **该元件是一个三相π控制的锁相环，可以产生一个在0到2π变化的，与输入电压Va同步或锁相的斜升信号theta。**
 

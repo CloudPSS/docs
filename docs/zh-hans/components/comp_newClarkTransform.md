@@ -14,7 +14,7 @@ classname: _newClarkTransform
 symbol: newClarkTransform
 ---
 ## 基本描述
-{% compsymbol newClarkTransform %}
+
 
 > **该元件实现Clark变换和逆Clark变换计算。**
 

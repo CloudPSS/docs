@@ -16,7 +16,7 @@ symbol: GJ
 
 ## 基本描述
 
-{% compsymbol GJ %}
+
 
 ## 参数列表
 ### 调节系统模型2（GJ）

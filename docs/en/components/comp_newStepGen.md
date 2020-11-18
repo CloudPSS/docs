@@ -14,7 +14,7 @@ classname: _newStepGen
 symbol: newStepGen
 ---
 ## Basic Description
-{% compsymbol newStepGen %}
+
 
 > **This component is used to generate a step signal.**
 

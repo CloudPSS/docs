@@ -14,7 +14,7 @@ classname: _newSgn
 symbol: newSgn
 ---
 ## 基本描述
-{% compsymbol newSgn %}
+
 
 > **该元件实现符号函数运算，函数关系式为：**
 > $$y(x) = \left\{ \begin{gathered}

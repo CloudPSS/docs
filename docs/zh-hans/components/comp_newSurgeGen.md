@@ -14,7 +14,7 @@ classname: _newSurgeGen
 symbol: newSurgeGen
 ---
 ## 基本描述
-{% compsymbol newSurgeGen %}
+
 
 > **该元件用以产生浪涌信号。** 
 > $$f\left( t \right) = \left\{ \begin{aligned}

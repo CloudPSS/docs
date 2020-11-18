@@ -14,7 +14,7 @@ classname: _newBus_3p
 symbol: newBus_3p
 ---
 ## 基本描述
-{% compsymbol newBus_3p %}
+
 
 > **该元件用以建模三相交流母线。三相交流母线仅作为理想的连接点，无实际物理意义。**
 

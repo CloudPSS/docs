@@ -14,7 +14,7 @@ classname: _ST5B
 symbol: ST5B
 ---
 ## Basic Description
-{% compsymbol ST5B %}
+
 
 ## Parameter
 ### Configuration

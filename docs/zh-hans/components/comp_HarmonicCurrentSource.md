@@ -14,7 +14,7 @@ classname: _HarmonicCurrentSource
 symbol: HarmonicCurrentSource
 ---
 ## 基本描述
-{% compsymbol HarmonicCurrentSource %}
+
 
 > **该元件用以建模谐波电流源。**
 

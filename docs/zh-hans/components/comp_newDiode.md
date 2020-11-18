@@ -14,7 +14,7 @@ classname: _newDiode
 symbol: newDiode
 ---
 ## 基本描述
-{% compsymbol newDiode %}
+
 
 > **该元件用以建模电力二极管。**
 

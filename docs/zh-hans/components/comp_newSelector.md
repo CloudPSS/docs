@@ -14,7 +14,7 @@ classname: _newSelector
 symbol: newSelector
 ---
 ## 基本描述
-{% compsymbol newSelector %}
+
 
 > **该元件根据控制端信号，选择输出信号为某一输入信号(非控制信号)。**
 

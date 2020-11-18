@@ -15,7 +15,7 @@ classname: _newBreaker_1p
 symbol: newBreaker_1p
 ---
 ## 基本描述
-{% compsymbol newBreaker_1p %}
+
 
 > **该元件用以建模单相断路器**
 
