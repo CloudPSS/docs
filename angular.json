@@ -78,13 +78,7 @@
               "ngswConfigPath": "ngsw-config.json"
             },
             "github": {
-              "baseHref": "/docs/",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.github.ts"
-                }
-              ]
+              "baseHref": "/docs/"
             }
           }
         },
