@@ -28,6 +28,8 @@ export class DocumentItem implements FrontMatter {
         this.title = name;
     }
     /** @inheritdoc */
+    content = '';
+    /** @inheritdoc */
     toc?: boolean | undefined;
     /** @inheritdoc */
     nav?: boolean | undefined;
@@ -76,4 +78,6 @@ export interface FrontMatter {
     nav?: boolean;
     /** 重定向  */
     'redirect to'?: string;
+    /** 文件内容 */
+    content: string;
 }
