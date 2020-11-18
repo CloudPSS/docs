@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "scripts": {
     "start:ng": "ng serve",
-    "start:docs": "http-server -p4201 --cors -c-1 .",
+    "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",
     "start": "concurrently yarn:start:* --raw",
+    "prebuild": "yarn clean",
     "build": "ng build --prod",
     "postbuild": "node ./tools/post-build.js",
     "serve": "http-server -p4000 ./dist/",
     "lint": "ng lint",
     "format": "prettier --write .",
-    "analyze": "webpack-bundle-analyzer --mode=static --default-sizes=gzip --report=dist/report.html dist/stats.json"
+    "analyze": "webpack-bundle-analyzer --mode=static --default-sizes=gzip --report=dist/report.html dist/stats.json",
+    "clean": "rimraf dist docs/manifest.json",
+    "build-manifest": "node tools/build-manifest.js"
   },
   "private": true,
   "dependencies": {
