@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, from, BehaviorSubject } from 'rxjs';
 import { first, map, catchError, concatMap, tap, share } from 'rxjs/operators';
-import { safeLoadAll } from 'js-yaml';
 import { VersionSpec, VersionInfo, File } from './interfaces';
 import { Manifest, FrontMatter, DocumentItem } from '@/interfaces/manifest';
 import { docUrls } from 'src/environments/environment';
@@ -220,7 +219,6 @@ export class SourceService {
     }
 
     file<T>(path: string, responseType: 'json', spec?: VersionSpec): Observable<File<T>>;
-    file<T>(path: string, responseType: 'yaml', spec?: VersionSpec): Observable<File<T>>;
     file(path: string, responseType: 'text', spec?: VersionSpec): Observable<File<string>>;
     file(path: string, responseType: 'arraybuffer', spec?: VersionSpec): Observable<File<ArrayBuffer>>;
     /**
@@ -228,16 +226,33 @@ export class SourceService {
      */
     file(
         path: string,
-        responseType: 'json' | 'yaml' | 'text' | 'arraybuffer',
+        responseType: 'json' | 'text' | 'arraybuffer',
         spec: VersionSpec = this.current.value,
     ): Observable<File<unknown>> {
         path = this.normalizePath(path);
+        if (spec.ref === this.current.value.ref) {
+            const file = this.current.value.manifest.documents[path];
+            if (file?.content) {
+                const data =
+                    responseType === 'json'
+                        ? (JSON.parse(file.content) as unknown)
+                        : responseType === 'arraybuffer'
+                        ? new TextEncoder().encode(file.content)
+                        : file.content;
+                return of({
+                    version: spec,
+                    path,
+                    url: this.fileUrl(path, spec)[0],
+                    data,
+                });
+            }
+        }
         const urls = this.fileUrl(path, spec);
         return from(urls).pipe(
             concatMap((url) => {
                 return this.http
                     .get(url.href, {
-                        responseType: (responseType === 'yaml' ? 'text' : responseType) as 'text',
+                        responseType: responseType as 'json',
                     })
                     .pipe(
                         catchError((err) => {
@@ -246,14 +261,6 @@ export class SourceService {
                         }),
                         map<unknown, File<unknown> | undefined>((res) => {
                             if (res === undefined) return undefined;
-                            if (responseType === 'yaml') {
-                                const docs = safeLoadAll(res as string, undefined, {
-                                    filename: path,
-                                    json: true,
-                                });
-                                if (docs.length === 1) res = docs[0];
-                                else res = docs;
-                            }
                             return {
                                 version: spec,
                                 path,
