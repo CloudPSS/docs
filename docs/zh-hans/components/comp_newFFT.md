@@ -14,7 +14,7 @@ classname: _newFFT
 symbol: newFFT
 ---
 ## 基本描述
-{% compsymbol newFFT %}
+
 
 > **该元件用以实现FFT分析。**
 

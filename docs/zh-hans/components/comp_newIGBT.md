@@ -14,7 +14,7 @@ classname: _newIGBT
 symbol: newIGBT
 ---
 ## 基本描述
-{% compsymbol newIGBT %}
+
 
 > **该元件用以建模IGBT。**
 

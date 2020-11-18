@@ -14,7 +14,7 @@ classname: _newIGBT
 symbol: newIGBT
 ---
 ## Basic Description
-{% compsymbol newIGBT %}
+
 
 > **This component is use to model the IGBT.**
 

@@ -14,7 +14,7 @@ classname: _newPICtrl
 symbol: newPICtrl
 ---
 ## 基本描述
-{% compsymbol newPICtrl %}
+
 
 > **元件实现对输入信号的比例积分环节。**
 

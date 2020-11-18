@@ -14,7 +14,7 @@ classname: _newACVoltageSource_3p
 symbol: newACVoltageSource_3p
 ---
 ## Basic Description
-{% compsymbol newACVoltageSource_3p %}
+
 
 > **This component is used to model a three-phase AC voltage source.**
 

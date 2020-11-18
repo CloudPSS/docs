@@ -14,7 +14,7 @@ classname: _newExpLoad_3p
 symbol: newExpLoad
 ---
 ## 基本描述
-{% compsymbol newExpLoad %}
+
 
 > **该元件用以建模指数型三相静态负载（单线图），其基本表达式如下。**
 > $$\begin{gathered}

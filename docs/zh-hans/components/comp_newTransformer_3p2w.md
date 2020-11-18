@@ -14,7 +14,7 @@ classname: _newTransformer_3p2w
 symbol: newTransformer_3p2w
 ---
 ## 基本描述
-{% compsymbol newTransformer_3p2w %}
+
 
 > **该元件用以建模三相两绕组变压器（单线图，中性点内置）。**
 

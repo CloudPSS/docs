@@ -14,7 +14,7 @@ classname: _newSquareGen
 symbol: newSquareGen
 ---
 ## 基本描述
-{% compsymbol newSquareGen %}
+
 
 > **该元件用以产生定频率、相位、幅值、脉宽的正弦信号。**
 

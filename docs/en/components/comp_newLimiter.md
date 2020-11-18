@@ -14,7 +14,7 @@ classname: _newLimiter
 symbol: newLimiter
 ---
 ## Basic Description
-{% compsymbol newLimiter %}
+
 
 > **This component is used to limit the amplitude of the input signal, If the signal exceeds either limit, the output value remains at that limit.**
 

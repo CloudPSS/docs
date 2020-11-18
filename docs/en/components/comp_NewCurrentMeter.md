@@ -14,7 +14,7 @@ classname: _NewCurrentMeter
 symbol: newCurrentMeter
 ---
 ## Basic Description
-{% compsymbol newCurrentMeter %}
+
 
 > **This component is used to measure the branch current, and the output unit is kA.**
 

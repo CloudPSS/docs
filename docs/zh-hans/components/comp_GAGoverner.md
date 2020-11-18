@@ -16,7 +16,7 @@ symbol: GA
 
 ## 基本描述
 
-{% compsymbol GA %}
+
 
 ## 参数列表
 ### 电液伺服系统模型（GA）

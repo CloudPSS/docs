@@ -14,7 +14,7 @@ classname: _newComparator
 symbol: newComparator
 ---
 ## Basic Description
-{% compsymbol newComparator %}
+
 
 > **This component compares two input signals and outputs a rectangular wave.**
 

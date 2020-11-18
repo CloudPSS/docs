@@ -14,7 +14,7 @@ classname: _newXYtoDQ
 symbol: newXYtoDQ
 ---
 ## 基本描述
-{% compsymbol newXYtoDQ %}
+
 
 > **该元件实现dq坐标轴到αβ坐标轴的互相转换功能。**
 

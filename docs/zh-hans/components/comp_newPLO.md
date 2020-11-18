@@ -14,7 +14,7 @@ classname: _newPLO
 symbol: newPLO
 ---
 ## 基本描述
-{% compsymbol newPLO %}
+
 
 **该元件是一个三相π控制的锁相环，可以产生6个与输入电压Va同步且依次相差60度的斜升信号theta。**
 

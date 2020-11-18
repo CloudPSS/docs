@@ -14,7 +14,7 @@ classname: _newTime
 symbol: newTime
 ---
 ## 基本描述
-{% compsymbol newTime %}
+
 
 > **该元件用以产生时间信号。**
 

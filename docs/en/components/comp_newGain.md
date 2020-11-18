@@ -14,7 +14,7 @@ classname: _newGain
 symbol: newGain
 ---
 ## Basic Description
-{% compsymbol newGain %}
+
 
 > **This component multiply input signal by the factor specified. Its math function is:**
 > $$y(t) = Ku(t)$$

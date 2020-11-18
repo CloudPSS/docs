@@ -14,7 +14,7 @@ classname: _ChannelDeMerge
 symbol: ChannelDeMerge
 ---
 ## Basic Description
-{% compsymbol ChannelDeMerge %}
+
 
 > **The component realizes splitting a single multi-dimensional input signal into multiple output signals, and each output signal can be multi-dimensional.**
 

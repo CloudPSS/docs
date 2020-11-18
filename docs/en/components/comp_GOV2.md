@@ -14,7 +14,7 @@ classname: _GOV2
 symbol: GOV2
 ---
 ## Basic Description
-{% compsymbol GOV2 %}
+
 
 ## Parameter
 ### Configuration

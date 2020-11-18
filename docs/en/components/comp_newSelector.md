@@ -14,7 +14,7 @@ classname: _newSelector
 symbol: newSelector
 ---
 ## Basic Description
-{% compsymbol newSelector %}
+
 
 > **This component selects input A or B to output depend on the value of the Ctrl signal.**
 

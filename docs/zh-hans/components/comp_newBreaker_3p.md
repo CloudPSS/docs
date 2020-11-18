@@ -15,7 +15,7 @@ classname: _newBreaker_3p
 symbol: newBreaker_3p
 ---
 ## 基本描述
-{% compsymbol newBreaker_3p %}
+
 
 > **该元件用以建模三相断路器**
 

@@ -14,7 +14,7 @@ classname: RandomGeneratorRouter
 symbol: newRandom
 ---
 ## 基本描述
-{% compsymbol newRandom %}
+
 
 > **该元件用于产生随机数据，可选择4种随机数产生方式。**
 > + Uniform Int Distribution:统一整数分布

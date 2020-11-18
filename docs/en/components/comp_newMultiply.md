@@ -14,7 +14,7 @@ classname: _newMultiply
 symbol: newMultiply
 ---
 ## Basic Description
-{% compsymbol newMultiply %}
+
 
 > **This component is used to multiply two one-dimensional input signals.**
 

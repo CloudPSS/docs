@@ -14,7 +14,7 @@ classname: _newACVoltageSource_1p
 symbol: newACVoltageSource_1p
 ---
 ## Basic Description
-{% compsymbol newACVoltageSource_1p %}
+
 
 > **This component is used to model a single-phase AC voltage source.**
 

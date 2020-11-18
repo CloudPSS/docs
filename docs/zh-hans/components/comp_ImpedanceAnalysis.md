@@ -15,7 +15,7 @@ classname: _ImpedanceAnalysis
 symbol: ImpedanceAnalysis
 ---
 ## 基本描述
-{% compsymbol ImpedanceAnalysis %}
+
 
 > **该元件用以进行阻抗分析**
 

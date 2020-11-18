@@ -15,7 +15,7 @@ classname: _FirePulseGenSST
 symbol: FirePulseGenSST
 ---
 ## 基本描述
-{% compsymbol FirePulseGenSST %}
+
 
 > **该元件用于产生多模块SST的脉冲信号。**
 

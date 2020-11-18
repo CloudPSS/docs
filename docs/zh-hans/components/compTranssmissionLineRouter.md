@@ -14,7 +14,7 @@ classname: TranssmissionLineRouter
 symbol: TLine_3p
 ---
 ## 基本描述
-{% compsymbol TLine_3p %}
+
 
 > **该元件采用π型集总参数模型和Begeron分布参数模型建模三相传输线。**
 

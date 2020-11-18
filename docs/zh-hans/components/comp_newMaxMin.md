@@ -14,7 +14,7 @@ classname: _newMaxMin
 symbol: newMaxMin
 ---
 ## 基本描述
-{% compsymbol newMaxMin %}
+
 
 > **该元件对2-7个一维输入信号进行比较，并输出输入信号中的最大值或最小值**。
 

@@ -14,7 +14,7 @@ classname: _newNthOrderTransFunc
 symbol: newNthOrderTransFunc
 ---
 ## 基本描述
-{% compsymbol newNthOrderTransFunc %}
+
 
 > **该元件用以实现高阶传递函数（1-10阶）。**
 

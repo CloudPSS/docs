@@ -15,7 +15,7 @@ classname: _HalfBridgeModule
 symbol: HalfBridgeModule
 ---
 ## 基本描述
-{% compsymbol HalfBridgeModule %}
+
 
 > **该元件为半桥电路模块(双向DC/DC)的快速化仿真模型，其与详细电磁暂态模型的精度相当。通过对S1或S2的开关信号置零，可将其配置为BOOST或BUCK电路。**
 

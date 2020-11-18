@@ -14,7 +14,7 @@ classname: _newLeadLag
 symbol: newLeadLag
 ---
 ## Basic Description
-{% compsymbol newLeadLag %}
+
 
 > **This component models a lead-lag function with gain.**
 

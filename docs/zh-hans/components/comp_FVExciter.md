@@ -16,7 +16,7 @@ symbol: FV
 
 ## 基本描述
 
-{% compsymbol FV %}
+
 
 ## 参数列表
 ### 励磁系统模型（F）

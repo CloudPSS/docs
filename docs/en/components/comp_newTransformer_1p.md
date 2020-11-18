@@ -14,7 +14,7 @@ classname: _newTransformer_1p
 symbol: newTransformer_1p
 ---
 ## Basic Description
-{% compsymbol newTransformer_1p %}
+
 
 > **This component is used to model a single-phase two-winding transformer.**
 

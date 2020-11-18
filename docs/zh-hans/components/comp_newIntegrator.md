@@ -14,7 +14,7 @@ classname: _newIntegrator
 symbol: newIntegrator
 ---
 ## 基本描述
-{% compsymbol newIntegrator %}
+
 
 > **该元件用以实现积分器。**
 

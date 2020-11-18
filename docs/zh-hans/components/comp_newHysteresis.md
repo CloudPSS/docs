@@ -14,7 +14,7 @@ classname: _newHysteresis
 symbol: newHysteresis
 ---
 ## 基本描述
-{% compsymbol newHysteresis %}
+
 
 > **该元件实现对输入信号的滞环比较并输出矩形波。**
 

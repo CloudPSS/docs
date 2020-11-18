@@ -14,7 +14,7 @@ classname: _newNthOrderTransFunc
 symbol: newNthOrderTransFunc
 ---
 ## Basic Description
-{% compsymbol newNthOrderTransFunc %}
+
 
 > **This component models the nth-order transfer functions (1-order to 10-order).**
 

@@ -16,7 +16,7 @@ symbol: PSS1A
 
 ## 基本描述
 
-{% compsymbol PSS1A %}
+
 
 ## 参数列表
 ### Pss1A: Power System Stabilizer Data

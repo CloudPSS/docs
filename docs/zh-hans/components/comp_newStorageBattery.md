@@ -14,7 +14,7 @@ classname: _newStorageBattery
 symbol: newStorageBattery
 ---
 ## 基本描述
-{% compsymbol newStorageBattery %}
+
 
 > **该元件用以建模铅酸蓄电池。**
 

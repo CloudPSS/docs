@@ -14,7 +14,7 @@ classname: _newDivide
 symbol: newDivide
 ---
 ## 基本描述
-{% compsymbol newDivide %}
+
 
 > **该元件实现两个一维输入信号的除法运算。**
 

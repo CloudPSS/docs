@@ -14,7 +14,7 @@ classname: _newFaultResistor_3p
 symbol: newFaultResistance_3p
 ---
 ## 基本描述
-{% compsymbol newFaultResistance_3p %}
+
 
 > **该元件用以建模三相故障电阻（单线图）。**
 

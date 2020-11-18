@@ -14,7 +14,7 @@ classname: _SpaceVectorPWM
 symbol: SpaceVectorPWM
 ---
 ## 基本描述
-{% compsymbol SpaceVectorPWM %}
+
 
 > **该元件用以产生基于空间矢量脉宽调制(SVPWM)的脉冲信号或调制波信号**
 

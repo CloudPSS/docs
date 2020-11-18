@@ -14,7 +14,7 @@ classname: _newChannel
 symbol: newChannel
 ---
 ## 基本描述
-{% compsymbol newChannel %}
+
 
 > **该元件实现对仿真产生的信号进行采集并传递至`示波器分组`元件，类比于实际物理示波器的探头。** 
 

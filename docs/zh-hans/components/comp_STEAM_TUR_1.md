@@ -16,7 +16,7 @@ symbol: STEAM_TUR_1
 
 ## 基本描述
 
-{% compsymbol STEAM_TUR_1 %}
+
 
 ## 参数列表
 ### Hp Turbine: Contributions

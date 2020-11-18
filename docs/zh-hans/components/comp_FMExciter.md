@@ -16,7 +16,7 @@ symbol: FM
 
 ## 基本描述
 
-{% compsymbol FM %}
+
 
 ## 参数列表
 ### 励磁系统模型（F）

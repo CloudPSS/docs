@@ -14,7 +14,7 @@ classname: _newPower
 symbol: newPower
 ---
 ## 基本描述
-{% compsymbol newPower %}
+
 
 > **该元件实现幂函数运算。函数式为：**
 > $$y(t) = x{(t)^Y}$$

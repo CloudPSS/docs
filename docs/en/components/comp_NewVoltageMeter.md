@@ -14,7 +14,7 @@ classname: _NewVoltageMeter
 symbol: newVoltageMeter
 ---
 ## Basic Description
-{% compsymbol newVoltageMeter %}
+
 
 > **This component is used to measure the voltage to ground and the output unit is kV.**
 

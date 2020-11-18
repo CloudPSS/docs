@@ -14,7 +14,7 @@ classname: _NewBranchVoltageMeter
 symbol: newBranchVoltageMeter
 ---
 ## 基本描述
-{% compsymbol newBranchVoltageMeter %}
+
 
 > **该元件用以测量支路电压，输出单位为kV。**
 

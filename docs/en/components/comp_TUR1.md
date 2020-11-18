@@ -14,7 +14,7 @@ classname: _TUR1
 symbol: TUR1
 ---
 ## Basic Description
-{% compsymbol TUR1 %}
+
 
 ## Parameter
 ### Rated Conditions

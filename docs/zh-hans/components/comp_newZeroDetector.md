@@ -14,7 +14,7 @@ classname: _newZeroDetector
 symbol: newZeroDetector
 ---
 ## 基本描述
-{% compsymbol newZeroDetector %}
+
 
 > **该元件实现对输入信号的过零检测，当检测到由负过零时输出幅值为1的脉冲信号，当检测到由正过零时输出幅值为-1的脉冲信号**
 

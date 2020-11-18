@@ -14,7 +14,7 @@ classname: _newPulseGen
 symbol: newPulseGen
 ---
 ## 基本描述
-{% compsymbol newPulseGen %}
+
 
 > **该元件用以产生幅值、频率可变的脉冲信号，脉冲持续时间为一个仿真步长。**
 

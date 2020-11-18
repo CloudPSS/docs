@@ -14,7 +14,7 @@ classname: RMSRouter
 symbol: newRMS
 ---
 ## Basic Description
-{% compsymbol newRMS %}
+
 
 > **This component calculates the RMS value of the input variables, which can measure the single-phase or three-phase RMS value.**
 

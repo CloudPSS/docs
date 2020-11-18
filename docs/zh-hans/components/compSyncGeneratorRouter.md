@@ -14,7 +14,7 @@ classname: SyncGeneratorRouter
 symbol: SyncGen
 ---
 ## 基本描述
-{% compsymbol SyncGen %}
+
 
 > **该元件用以建模三相同步电机。**
 

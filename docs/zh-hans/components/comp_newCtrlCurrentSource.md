@@ -14,7 +14,7 @@ classname: _newCtrlCurrentSource
 symbol: newCtrlCurrentSource
 ---
 ## 基本描述
-{% compsymbol newCtrlCurrentSource %}
+
 
 > **该元件用以建模受控电流源。**
 

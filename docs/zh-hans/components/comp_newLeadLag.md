@@ -14,7 +14,7 @@ classname: _newLeadLag
 symbol: newLeadLag
 ---
 ## 基本描述
-{% compsymbol newLeadLag %}
+
 
 > **该元件用以实现超前滞后校正环节。**
 

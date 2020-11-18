@@ -14,7 +14,7 @@ classname: _newFaultResistor_3p
 symbol: newFaultResistance_3p
 ---
 ## Basic Description
-{% compsymbol newFaultResistance_3p %}
+
 
 > **This component is used to model three-phase fault resistor.**
 

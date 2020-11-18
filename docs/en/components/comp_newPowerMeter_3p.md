@@ -14,7 +14,7 @@ classname: _newPowerMeter_3p
 symbol: newPowerMeter_3p
 ---
 ## Basic Description
-{% compsymbol newPowerMeter_3p %}
+
 
 > **This component measures 3-phase active and reactive power.**
 

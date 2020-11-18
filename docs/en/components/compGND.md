@@ -14,7 +14,7 @@ classname: GND
 symbol: newGND
 ---
 ## Basic description
-{% compsymbol newGND %}
+
 
 > **This component represents the ground point of circuit.**
 

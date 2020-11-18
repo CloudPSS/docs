@@ -14,7 +14,7 @@ classname: _newBus_3p
 symbol: newBus_3p
 ---
 ## Basic Description
-{% compsymbol newBus_3p %}
+
 
 > **This component is used to model a three-phase AC bus. The three-phase AC bus is only an ideal connection point and has no practical physical meaning.**
 

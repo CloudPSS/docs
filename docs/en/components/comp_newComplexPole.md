@@ -14,7 +14,7 @@ classname: _newComplexPole
 symbol: newComplexPole
 ---
 ## Basic Description
-{% compsymbol newComplexPole %}
+
 
 > **This component simulates the second-order transfer function and can be configured as the following nine second-order filters (the current version only supports the first two).**
 >  + 1-Low Pass

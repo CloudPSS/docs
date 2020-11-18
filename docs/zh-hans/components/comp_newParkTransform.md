@@ -14,7 +14,7 @@ classname: _newParkTransform
 symbol: newParkTransform
 ---
 ## 基本描述
-{% compsymbol newParkTransform %}
+
 
 > **该元件实现Park变换和逆Park变换计算。**
 

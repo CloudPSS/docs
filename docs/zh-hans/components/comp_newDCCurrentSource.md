@@ -14,7 +14,7 @@ classname: _newDCCurrentSource
 symbol: newDCCurrentSource
 ---
 ## 基本描述
-{% compsymbol newDCCurrentSource %}
+
 
 > **该元件用以建模直流电流源。**
 

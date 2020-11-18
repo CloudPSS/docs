@@ -14,7 +14,7 @@ classname: _newSum
 symbol: newSum
 ---
 ## Basic Description
-{% compsymbol newSum %}
+
 
 > **The component models the addition and subtraction operation of 1-7 one-dimensional input signals, and each input port can be selected as one of three states of addition, subtraction and disable.**
 

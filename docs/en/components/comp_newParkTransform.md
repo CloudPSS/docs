@@ -14,7 +14,7 @@ classname: _newParkTransform
 symbol: newParkTransform
 ---
 ## Basic Description
-{% compsymbol newParkTransform %}
+
 
 > **This component performs Park transformation and inverse Park transformation.**
 

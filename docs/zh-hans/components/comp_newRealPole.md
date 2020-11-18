@@ -14,7 +14,7 @@ classname: _newRealPole
 symbol: newRealPole
 ---
 ## 基本描述
-{% compsymbol newRealPole %}
+
 
 > **该元件用以实现一阶惯性环节。**
 

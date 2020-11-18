@@ -14,7 +14,7 @@ classname: _newTriGen
 symbol: newTriGen
 ---
 ## Basic Description
-{% compsymbol newTriGen %}
+
 
 > **The component is used to generate a triangular wave signal with constant frequency, phase, amplitude, and pulse width.**
 

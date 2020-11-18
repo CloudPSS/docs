@@ -14,7 +14,7 @@ classname: _newAngleResolver
 symbol: newAngleResolver
 ---
 ## 基本描述
-{% compsymbol newAngleResolver %}
+
 
 > **该元件实现对输入信号的角度/弧度变换计算。**
 

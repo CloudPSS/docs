@@ -14,7 +14,7 @@ classname: _newMaxMinOneCycle
 symbol: newMaxMinOneCycle
 ---
 ## 基本描述
-{% compsymbol newMaxMinOneCycle %}
+
 > **该元件通过定义一个时间窗口，滑动求取输入信号在窗口内的最大/最小值。** 
 
 ## 参数列表

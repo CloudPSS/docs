@@ -14,7 +14,7 @@ classname: newResistorRouter
 symbol: newResistor
 ---
 ## 基本描述
-{% compsymbol newResistor %}
+
 
 > **该元件用以建模单相或三相电阻（单线图模式）。**
 

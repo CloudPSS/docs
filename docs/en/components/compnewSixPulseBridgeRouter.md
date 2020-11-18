@@ -14,7 +14,7 @@ classname: newSixPulseBridgeRouter
 symbol: newSixValveBridge
 ---
 ## Basic Description
-{% compsymbol newSixValveBridge %}
+
 
 > **This component is used to model a six-pulse thyristor bridge.**
 

@@ -14,7 +14,7 @@ classname: ConnectionNode
 symbol: Heat3
 ---
 ## Basic Description
-{% compsymbol Heat3 %}
+
 
 > **This component realizes the merging and demerging of multiple pipes.**
 

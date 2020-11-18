@@ -14,10 +14,10 @@ classname: _newLogicGate
 symbol: newLogicGate3
 ---
 ## Basic Description
-{% compsymbol newLogicGate %}
-{% compsymbol newLogicGate1 %}
-{% compsymbol newLogicGate2 %}  
-{% compsymbol newLogicGate3 %}
+
+
+  
+
 
 > **This component implements four types of basic logic operations: AND, OR, NOT, XOR.**
 

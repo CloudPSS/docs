@@ -14,7 +14,7 @@ classname: _newHysteresis
 symbol: newHysteresis
 ---
 ## Basic Description
-{% compsymbol newHysteresis %}
+
 
 > **This component implements a hysteresis comparison of the input signal and outputs a rectangular wave.**
 

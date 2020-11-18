@@ -14,7 +14,7 @@ classname: _newDropGen
 symbol: newDropGen
 ---
 ## Basic Description
-{% compsymbol newDropGen %}
+
 
 > **This component is used to generate drop signal.**
 

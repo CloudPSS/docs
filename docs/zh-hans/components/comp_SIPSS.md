@@ -16,7 +16,7 @@ symbol: SI
 
 ## 基本描述
 
-{% compsymbol SI %}
+
 
 ## 参数列表
 ### PSS模型（SI）

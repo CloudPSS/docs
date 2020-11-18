@@ -14,7 +14,7 @@ classname: _newSinglePulse
 symbol: newSinglePulse
 ---
 ## Basic Description
-{% compsymbol newSinglePulse %}
+
 
 > **The component is used to generate a single impulse signal with a duration of one simulation time step.**
 

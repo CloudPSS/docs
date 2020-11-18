@@ -14,7 +14,7 @@ classname: _newRampGen
 symbol: newRampGen
 ---
 ## 基本描述
-{% compsymbol newRampGen %}
+
 
 > **该元件用以产生斜坡信号。**
 

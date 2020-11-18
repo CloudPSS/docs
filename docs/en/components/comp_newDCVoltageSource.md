@@ -14,7 +14,7 @@ classname: _newDCVoltageSource
 symbol: newDCVoltageSource
 ---
 ## Basic Description
-{% compsymbol newDCVoltageSource %}
+
 
 > **This component is used to model the DC voltage source.**
 

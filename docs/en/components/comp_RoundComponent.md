@@ -14,7 +14,7 @@ classname: _RoundComponent
 symbol: newRound
 ---
 ## Basic Description
-{% compsymbol newRound %}
+
 
 > **This component is used primarily to a data signal of a particular type to integer type. The method can be "Floor","Round", or "Ceil"**
 

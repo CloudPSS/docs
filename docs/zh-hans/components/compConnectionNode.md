@@ -14,7 +14,7 @@ classname: ConnectionNode
 symbol: Heat3
 ---
 ## 基本描述
-{% compsymbol Heat3 %}
+
 
 > **该元件实现多根管道的汇集和分流。**
 

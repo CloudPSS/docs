@@ -14,7 +14,7 @@ classname: _newNonlinear
 symbol: newNonlinear
 ---
 ## Basic Description
-{% compsymbol newNonlinear %}
+
 
 ## Parameter
 ### Configuration
