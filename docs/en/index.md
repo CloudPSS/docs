@@ -55,3 +55,9 @@ Introduction of provided template, index examples. It helps users to become fami
 
 Instructions of the previous CloudPSS version (Documents in the original CloudPSS "Download" page)
 + [Open](//www.cloudpss.net/downloadnew/)
+
+
+---
+->Copyright (c) 2015- by CloudPSS<-
+->[京ICP备16015429号-1](https://beian.miit.gov.cn)<-
+->[Sichuan Energy Internet Research Institute, Tsinghua University](http://www.eiri.tsinghua.edu.cn)<-

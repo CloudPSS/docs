@@ -54,3 +54,9 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 CloudPSS旧版平台的使用说明（原CloudPSS“下载”区的文档）。
 
 + [打开](//www.cloudpss.net/downloadnew/)
+
+
+---
+->Copyright (c) 2015- by CloudPSS<-
+->[京ICP备16015429号-1](https://beian.miit.gov.cn)<-
+->[清华大学能源互联网创新研究院](http://www.eiri.tsinghua.edu.cn)<-
