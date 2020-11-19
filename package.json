@@ -57,7 +57,7 @@
     "markdown-it-sup": "^1.0.0",
     "mermaid": "^8.8.3",
     "monaco-markdown": "^0.0.11",
-    "ngx-monaco-editor": "10.0.0-beta.1",
+    "ngx-monaco-editor": "^9.0.0",
     "prismjs": "^1.22.0",
     "rxjs": "~6.6.3",
     "sanitize.css": "^12.0.1",
