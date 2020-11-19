@@ -16,10 +16,12 @@ jobs:
       - name: Install
         uses: bahmutov/npm-install@v1.1.0
       - name: Build
-        run: yarn build -c production
+        run: |
+          yarn build -c production
+          tar -czvf dist.tar.gz -C ./dist .
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Deploy
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
@@ -28,12 +30,13 @@ jobs:
           user: ${{ secrets.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 60s
-          first_ssh: |
+          # first_ssh:
+          scp: |
+            './dist.tar.gz' => /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz
+          last_ssh: |
             rm -rf /root/docs/${{ steps.get_version.outputs.VERSION }}
             mkdir -p /root/docs/${{ steps.get_version.outputs.VERSION }}
-          scp: |
-            './dist/*' => /root/docs/${{ steps.get_version.outputs.VERSION }}
-          last_ssh: |
+            tar -xzvf /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
             rm -f /root/docs/latest
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
             service nginx reload
