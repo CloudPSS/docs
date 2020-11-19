@@ -31,7 +31,6 @@ import { NavListComponent } from './components/nav-list';
 import { NavBaseComponent } from './components/nav-base';
 import { TocComponent } from './components/toc';
 import { EditorComponent } from './pages/editor';
-import { ContentComponent } from './pages/content';
 
 /**
  * 主模块
@@ -43,7 +42,6 @@ import { ContentComponent } from './pages/content';
         NavBaseComponent,
         NavbarComponent,
         NavListComponent,
-        ContentComponent,
         DocumentComponent,
         EditorComponent,
         ErrorComponent,

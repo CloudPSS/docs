@@ -1,8 +1,0 @@
-<div
-  [style.paddingTop.px]="padding[0]"
-  [style.paddingRight.px]="padding[1]"
-  [style.paddingBottom.px]="padding[2]"
-  [style.paddingLeft.px]="padding[3]"
->
-  <app-markdown id="preview" #preview [file]="document | async" (navigate)="onNavigate($event)"> </app-markdown>
-</div>
