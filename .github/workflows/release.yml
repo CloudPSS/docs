@@ -18,6 +18,7 @@ jobs:
       - name: Build
         run: |
           yarn build -c production
+          rm -f dist/stats.json
           tar -czvf dist.tar.gz -C ./dist .
       - name: Get the version
         id: get_version
