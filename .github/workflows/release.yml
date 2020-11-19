@@ -20,6 +20,7 @@ jobs:
           yarn build -c production
           rm -f dist/stats.json
           tar -cJvf dist.tar.xz -C ./dist .
+          ls -l dist.tar.xz
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
