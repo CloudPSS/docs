@@ -17,6 +17,9 @@ jobs:
         uses: bahmutov/npm-install@v1.1.0
       - name: Build
         run: yarn build -c production
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
       - name: Deploy
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
@@ -26,11 +29,11 @@ jobs:
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 60s
           first_ssh: |
-            rm -rf /root/docs/${{ github.event.ref }}
-            mkdir -p /root/docs/${{ github.event.ref }}
+            rm -rf /root/docs/${{ steps.get_version.outputs.VERSION }}
+            mkdir -p /root/docs/${{ steps.get_version.outputs.VERSION }}
           scp: |
-            './dist/' => /root/docs/${{ github.event.ref }}
+            './dist/*' => /root/docs/${{ steps.get_version.outputs.VERSION }}
           last_ssh: |
             rm -f /root/docs/latest
-            ln -s /root/docs/${{ github.event.ref }} /root/docs/latest
+            ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
             service nginx reload
