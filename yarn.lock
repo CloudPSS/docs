@@ -7869,12 +7869,10 @@ next-tick@~1.0.0:
   resolved "https://registry.npm.taobao.org/next-tick/download/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ngx-monaco-editor@10.0.0-beta.1:
-  version "10.0.0-beta.1"
-  resolved "https://registry.npm.taobao.org/ngx-monaco-editor/download/ngx-monaco-editor-10.0.0-beta.1.tgz#eb588862f18b7056bd5777658be22a69fe2e4b9c"
-  integrity sha1-61iIYvGLcFa9V3dli+Iqaf4uS5w=
-  dependencies:
-    tslib "^2.0.0"
+ngx-monaco-editor@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.npm.taobao.org/ngx-monaco-editor/download/ngx-monaco-editor-9.0.0.tgz#bb69784606f549e369cee3f483ecf26bab2fcc97"
+  integrity sha1-u2l4Rgb1SeNpzuP0g+zya6svzJc=
 
 nice-try@^1.0.4:
   version "1.0.5"
