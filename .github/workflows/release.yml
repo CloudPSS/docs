@@ -19,7 +19,7 @@ jobs:
         run: |
           yarn build -c production
           rm -f dist/stats.json
-          tar -czvf dist.tar.gz -C ./dist .
+          tar -cJvf dist.tar.xz -C ./dist .
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
@@ -32,18 +32,18 @@ jobs:
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 60s
           first_ssh: |
-            rm -f /root/docs/dist.tar.gz
+            rm -f /root/docs/dist.tar.xz
           scp: |
-            './dist.tar.gz' => /root/docs/
+            './dist.tar.xz' => /root/docs/
           last_ssh: |
             rm -rf /root/docs/${{ steps.get_version.outputs.VERSION }}
             mkdir -p /root/docs/${{ steps.get_version.outputs.VERSION }}
-            tar -xzvf /root/docs/dist.tar.gz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
+            tar -xJvf /root/docs/dist.tar.xz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
             gzipper c --exclude br,gz,map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --level 9 --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
             gzipper c --exclude br,gz,map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --brotli --level 9 --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
             rm -f /root/docs/latest
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
-            rm -f /root/docs/dist.tar.gz
+            rm -f /root/docs/dist.tar.xz
             service nginx reload
       - name: Release
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
