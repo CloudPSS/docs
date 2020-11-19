@@ -4,7 +4,7 @@ import { Observable, of, from, BehaviorSubject } from 'rxjs';
 import { first, map, catchError, concatMap, tap, share } from 'rxjs/operators';
 import { VersionSpec, VersionInfo, File } from './interfaces';
 import { Manifest, FrontMatter, DocumentItem } from '@/interfaces/manifest';
-import { docUrls } from 'src/environments/environment';
+import { docUrls, environment } from 'src/environments/environment';
 import { TranslateService } from '@ngx-translate/core';
 
 /**
@@ -230,7 +230,7 @@ export class SourceService {
         spec: VersionSpec = this.current.value,
     ): Observable<File<unknown>> {
         path = this.normalizePath(path);
-        if (spec.ref === this.current.value.ref) {
+        if (environment.production && spec.ref === this.current.value.ref) {
             const file = this.current.value.manifest.documents[path];
             if (file?.content) {
                 const data =

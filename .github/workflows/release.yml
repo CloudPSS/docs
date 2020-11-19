@@ -47,6 +47,7 @@ jobs:
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
             rm -f /root/docs/dist.tar.xz
             service nginx reload
+            ls -l
       - name: Release
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         if: ${{ !contains(steps.get_version.outputs.VERSION, '-') }}
@@ -59,3 +60,4 @@ jobs:
           first_ssh: |
             rm -f /root/docs/release
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/release
+            ls -l
