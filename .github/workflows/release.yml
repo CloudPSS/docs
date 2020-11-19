@@ -30,7 +30,7 @@ jobs:
           user: ${{ secrets.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 60s
-          # first_ssh:
+          first_ssh: rm -f /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz
           scp: |
             './dist.tar.gz' => /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz
           last_ssh: |
@@ -39,4 +39,5 @@ jobs:
             tar -xzvf /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
             rm -f /root/docs/latest
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
+            rm -f /root/docs/${{ steps.get_version.outputs.VERSION }}.tar.gz
             service nginx reload
