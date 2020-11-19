@@ -1,13 +1,24 @@
 import { Component, ViewChild, AfterViewInit, HostListener, ElementRef, OnDestroy } from '@angular/core';
-import { of, merge, Subject, combineLatest, Subscription } from 'rxjs';
+import { of, merge, Subject, combineLatest, Subscription, fromEvent } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
-import { map, tap, pluck, delay, mergeMap, catchError, throttleTime, distinctUntilChanged } from 'rxjs/operators';
+import {
+    map,
+    tap,
+    pluck,
+    delay,
+    mergeMap,
+    catchError,
+    throttleTime,
+    distinctUntilChanged,
+    switchMap,
+} from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
 import { MatSidenav } from '@angular/material/sidenav';
 import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { GlobalService } from '@/services/global';
+import { environment } from '~/src/environments/environment';
 
 /**
  * 文档页面组件
@@ -31,7 +42,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     /** toc */
     @ViewChild('md') readonly md!: MarkdownComponent;
     /** url */
-    readonly url = combineLatest(
+    readonly url = combineLatest([
         this.route.params.pipe(
             map((s) => {
                 const category = s.category as string;
@@ -53,7 +64,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
             }),
         ),
         this.global.language,
-    ).pipe(map(([path, lang]) => `/${lang}/${path}`));
+    ]).pipe(map(([path, lang]) => `/${lang}/${path}`));
 
     /** 当前文件信息 */
     readonly info = this.url.pipe(map((u) => this.source.findDocument(u)));
@@ -69,10 +80,19 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
         }),
         map((u) => u?.path),
         distinctUntilChanged(),
-        mergeMap((path) => {
+        switchMap((path) => {
             if (!path) {
                 void this.onNavigate();
                 return of(null);
+            }
+            if (!environment.production) {
+                return merge(of(null), fromEvent(window, 'focus')).pipe(
+                    switchMap((e) => {
+                        if (e === null) return merge(of(null), this.source.file(path, 'text'));
+                        else return this.source.file(path, 'text');
+                    }),
+                    distinctUntilChanged((x, y) => x?.data === y?.data),
+                );
             }
             return merge(of(null), this.source.file(path, 'text'));
         }),
@@ -92,7 +112,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     readonly category = this.route.params.pipe<string>(pluck('category'));
 
     /** 显示导航列表 */
-    showNav = combineLatest(this.frontMatter, this.layout.displayMode).pipe(
+    showNav = combineLatest([this.frontMatter, this.layout.displayMode]).pipe(
         map(([fm, displayMode]) => {
             return !(fm?.nav === false && displayMode === 'large');
         }),
@@ -110,7 +130,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     ngAfterViewInit(): void {
         let scrollMarginTop = -1;
         this.subscriptions.push(
-            combineLatest(this.showNav, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable()))
+            combineLatest([this.showNav, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable())])
                 .subscribe(([showNav, opened]) => {
                     if (showNav) {
                         this.global.menuButton.next({
@@ -127,7 +147,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                     }
                 })
                 .add(() => this.global.menuButton.next(null)),
-            combineLatest(this.md.headers, this.updateTocSource.pipe(throttleTime(50))).subscribe(([headers]) => {
+            combineLatest([this.md.headers, this.updateTocSource.pipe(throttleTime(50))]).subscribe(([headers]) => {
                 const host = this.scroll.nativeElement;
                 if (headers.length === 0 || !host) {
                     this.currentId = '';
