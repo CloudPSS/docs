@@ -26,10 +26,11 @@ jobs:
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 60s
           first_ssh: |
-            rm -rf /home/docs/${{ github.event.ref }}
-            mkdir -p /home/docs/${{ github.event.ref }}
+            rm -rf /root/docs/${{ github.event.ref }}
+            mkdir -p /root/docs/${{ github.event.ref }}
           scp: |
-            './dist/' => /home/docs/${{ github.event.ref }}
+            './dist/' => /root/docs/${{ github.event.ref }}
           last_ssh: |
-            rm /home/docs/latest
-            ln -s /home/docs/${{ github.event.ref }} /home/docs/latest
+            rm -f /root/docs/latest
+            ln -s /root/docs/${{ github.event.ref }} /root/docs/latest
+            service nginx reload
