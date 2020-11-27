@@ -23,7 +23,7 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 * [IEEE 标准系统](IEEE39PF.md)
 
 ### 综合能源系统案例
-* [综合能源系统展示案例](IntegratedEnergySystem.md)
+* [综合能源系统展示案例](./IESLab/demo_case/index.md)
 * [分布式供热综合能源系统](IES-Distributed.md)
 * [集中式供热综合能源系统](IES-Centralized.md)
 * [以蒸汽利用为核心的综合能源系统](IES-Steam.md)
