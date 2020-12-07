@@ -17,6 +17,7 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > + [建模仿真操作](guide/User3.md)
 > + [简单案例](guide/User4.md)
 > + [cloudpss-mini](guide/manual.md)
+> + [用户中心](guide/userCenter.md)
 > 
 > [更多](guide/index.md)
 
