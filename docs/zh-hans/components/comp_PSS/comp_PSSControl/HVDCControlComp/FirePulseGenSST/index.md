@@ -42,12 +42,16 @@ symbol: FirePulseGenSST
 
 ## 使用说明
 一个模块SST脉冲发生器的控制框图如图所示：
-![控制框图](comp_SSTgen/SSTgen.png)
+
+![控制框图](./SSTgen.png)
+
 + 输入Duty信号经过限幅及采样处理后，用于产生不同相位差的三角载波信号，载波幅值为[0,1]，频率为$f_{DAB}$。数值0.5与两个载波比较后产生S1~S8的开关信号。
 + 输入Uref与三角载波比较后产生S9、S10的开关信号。载波幅值为[-1，1]，频率为$f_{HB}$。Uref乘以-1，与三角载波比较后产生S11、S12的开关信号。
 
 下图示出了SST脉冲发生器的单元测试算例，算例详见[Test_NSSTs](https://www.cloudpss.net/editor/?id=1187)。
-![单元测试图](comp_VSCModule/SSTN.png)
+
+![单元测试图](./NSSTs.png)
+
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。
 ## 相关元件
-[多模块SST](comp_NSSTsModule.md)
+[多模块SST](../../../comp_PSSelectrical/PowerEletronicModuleComp/NSSTsModule/index.md)

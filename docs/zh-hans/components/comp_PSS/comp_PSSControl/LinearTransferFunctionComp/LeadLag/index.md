@@ -55,5 +55,4 @@ symbol: newLeadLag
 
 
 ## 相关元件
-
-[一阶惯性环节](comp_newRealPole.md)、[二阶传递函数](comp_newComplexPole.md)、[微分极点](comp_newDiffPole.md)
+[一阶惯性环节](../RealPole/index.md)、[二阶传递函数](../ComplexPole/index.md)、[微分极点](../DiffPole/index.md)

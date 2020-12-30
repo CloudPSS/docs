@@ -15,7 +15,6 @@ symbol: AsynchronousMotor
 ---
 ## 基本描述
 
-
 > **该元件用以建模多相异步电机。**
 
 ## 参数列表

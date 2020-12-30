@@ -29,6 +29,7 @@ symbol: SyncGen
 | Base Operation Frequency | Hz | 额定频率 | 实数（常量） | 电机额定电频率，非转子转动频率 |
 | Neutral Resistance | p.u. | 中性点电阻 | 实数（常量） | 电机定子侧中性点的接地电阻，基值同定子绕组参数的基值 |
 | Parameter Format |  | 参数输入方式 | 选择 | 可选择Equivalent Circuit Data（等效电路参数）和Experimental Data（试验参数）两种参数输入方法 |
+| Model Type |  | 选择电机模型 | 选择 | 可选择PD(Constant Conductance) 和VBR-dq0 两种电机模型 |
 
 ### Equivalent Circuit Data
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
@@ -125,7 +126,7 @@ symbol: SyncGen
 
 ## 使用说明
 
-同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)。
+同步电机标幺值与有名值的转换关系，请参考[CloudPSS同步电机标幺值和有名值系统](../../../../../other/SyncGenPerUnitSystem.md)。
 
 ### 同步发电机的启动方法
 
@@ -139,11 +140,11 @@ CloudPSS提供了3种同步发电机的启动方法，通过修改参数表的`I
 
 2.	稳态启动
 
-    设定`Initial Condition`->`Startup Type`为`from Steady-state`，即稳态启动。此时电机需要设置`Initial Voltage Magnitude`（初始相电压标幺值）, `Initial Voltage Phase`（初始相电压相位），`Initial Active Power`（初始有功功率），`Initial Reactive Power`（初始无功功率）四个参数。此类启动方式适用于整个系统从潮流断面直接启动，详见[潮流断面启动](../features/Initialization.md)功能。
+    设定`Initial Condition`->`Startup Type`为`from Steady-state`，即稳态启动。此时电机需要设置`Initial Voltage Magnitude`（初始相电压标幺值）, `Initial Voltage Phase`（初始相电压相位），`Initial Active Power`（初始有功功率），`Initial Reactive Power`（初始无功功率）四个参数。此类启动方式适用于整个系统从潮流断面直接启动，详见[潮流断面启动](../../../../../features/Initialization.md)功能。
 
 3.	电压源转电机
 
-    设定`Initial Condition`栏中`Startup Type`为`Source to Machine`，即电压源转电机启动类型。此时需要指定`Ramping Time`（电压爬升时间），`Initial Voltage Magnitude`（初始相电压标幺值），`Initial Voltage Phase`（初始相电压相位），以及`Source to Machine Transition Signal`(电压源-电机切换信号)动态参数，动态参数的使用详见[参数及引脚体系](../features/ParameterSystem.md)。如：可填入`@S2M`。`@S2M`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@S2M`为0时，电机为一个理想电压源，其幅值和相位线性爬升至`Initial Voltage Magnitude`，`Initial Voltage Phase`两参数给定的端电压值。当`@S2M`信号阶跃到1时，电压源切换为电机。
+    设定`Initial Condition`栏中`Startup Type`为`Source to Machine`，即电压源转电机启动类型。此时需要指定`Ramping Time`（电压爬升时间），`Initial Voltage Magnitude`（初始相电压标幺值），`Initial Voltage Phase`（初始相电压相位），以及`Source to Machine Transition Signal`(电压源-电机切换信号)动态参数，动态参数的使用详见[参数及引脚体系](../../../../../features/ParameterSystem.md)。如：可填入`@S2M`。`@S2M`信号由一个阶跃信号发生器产生，是一个从0阶跃到1的信号。在`@S2M`为0时，电机为一个理想电压源，其幅值和相位线性爬升至`Initial Voltage Magnitude`，`Initial Voltage Phase`两参数给定的端电压值。当`@S2M`信号阶跃到1时，电压源切换为电机。
 
     需要说明的是，`电压源转电机`模式下，同步发电机量测标识中`稳态开路电势Ef0量测信号`、`稳态机械转矩Tm0量测信号`、`转子角量测信号`以及`Q轴与端电压相量夹角`信号在`@S2M`信号为1前，均无意义。
 

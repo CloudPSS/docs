@@ -39,4 +39,4 @@ symbol: newAbs
 
 ## 相关元件
 
-[符号函数](comp_newSgn.md)
+[符号函数](../Sgn/index.md)

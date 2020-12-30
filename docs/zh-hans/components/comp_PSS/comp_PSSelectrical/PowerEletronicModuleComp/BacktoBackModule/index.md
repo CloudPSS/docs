@@ -16,7 +16,6 @@ symbol: BacktoBackModule
 ---
 ## 基本描述
 
-
 > **该元件为背靠背H桥电路模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建AC/AC变流器拓扑等**
 
 ## 参数列表
@@ -53,12 +52,10 @@ symbol: BacktoBackModule
 
 ## 使用说明
 下图示出了背靠背H桥模块的单元测试算例，算例详见[Test_BacktBackHBridge](https://www.cloudpss.net/editor/?id=1184)。
-![单元测试图](comp_VSCModule/BtB.png)
+
+![单元测试图](./BacktoBack.png)
+
 开关S1\~S4及开关S5\~S8的脉冲信号分别由两组正弦脉宽调制逻辑实现，开关频率为5KHz。两组脉宽调制器产生的8路PWM信号，经过**ChannelMerge**元件合成为一个8\*1维的输出信号，送至背靠背H桥模块的GS端。前级S1\~S4进行整流，直流电容电压为100Hz脉动直流，电感电流为准正弦波形。后级S5\~S8进行逆变，电阻负载侧为准正弦波形。
 
 ## 相关元件
-[H桥模块](comp_HBridgeModule.md)
-[三相H桥模块](comp_ThreePhaseHBridgeModule.md)
-[H桥电感模块](comp_HBridgeWithInductanceModule.md)
-[H桥变压器模块](comp_HBridgeWithTransformerModule.md)
-[半桥模块](comp_HalfBridgeModule.md)
+[H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

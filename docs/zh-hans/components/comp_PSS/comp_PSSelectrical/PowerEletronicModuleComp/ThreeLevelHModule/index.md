@@ -16,7 +16,6 @@ symbol: ThreeLevelHModule
 ---
 ## 基本描述
 
-
 > **该元件为三电平H桥模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建整流/逆变器拓扑，适用于大规模微电网仿真。**
 
 ## 参数列表
@@ -56,8 +55,4 @@ symbol: ThreeLevelHModule
 
 
 ## 相关元件
-[背靠背H桥模块](comp_BacktoBackModule.md)
-[H桥模块](comp_HBridgeModule.md)
-[H桥电感模块](comp_HBridgeWithInductanceModule.md)
-[H桥变压器模块](comp_HBridgeWithTransformerModule.md)
-[半桥模块](comp_HalfBridgeModule.md)
+[背靠背H桥模块](../BacktoBackModule/index.md)、[H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

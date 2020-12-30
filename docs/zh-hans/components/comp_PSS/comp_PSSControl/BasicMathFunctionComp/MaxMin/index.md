@@ -52,4 +52,4 @@ symbol: newMaxMin
 
 ## 相关元件
 
-[周期最大最小值](comp_newMaxMinOneCycle.md)
+[周期最大最小值](../MaxMinOneCycle/index.md)

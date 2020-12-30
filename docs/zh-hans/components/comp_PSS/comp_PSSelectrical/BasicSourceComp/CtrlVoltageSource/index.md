@@ -15,7 +15,7 @@ symbol: newCtrlVoltageSource
 ---
 ## 基本描述
 
-
+<!-- ![受控电压源](./受控电压源.png) -->
 > **该元件用以建模受控电压源。**
 
 ## 参数列表
@@ -50,4 +50,4 @@ symbol: newCtrlVoltageSource
 
 ## 相关元件
 
-[受控电压源(VP)](../CtrlVPAcVoltageSource.md)、[受控电压源(VF)](../CtrlVFAcVoltageSource.md)、[受控电流源](../CtrlCurrentSource.md)
+[受控交流电压源(VP)](../CtrlVPAcVoltageSource.md)、[受控交流电压源(VF)](../CtrlVFAcVoltageSource.md)、[受控电流源](../CtrlCurrentSource.md)

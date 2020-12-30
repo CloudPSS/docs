@@ -15,7 +15,7 @@ symbol: newFaultResistance_3p
 ---
 ## 基本描述
 
-
+<!-- ![三相故障电阻](./故障电阻.png) -->
 > **该元件用以建模三相故障电阻（单线图）。**
 
 ## 参数列表
@@ -49,4 +49,4 @@ symbol: newFaultResistance_3p
 
 ## 相关元件
 
-[单相故障电阻](../FaultResistor.md)、[电阻](../ResistorRouter/index.md)
+[单相故障电阻](../FaultResistor.md)、[电阻](../Resistor/index.md)

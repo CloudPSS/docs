@@ -16,7 +16,6 @@ symbol: HBridgeWithInductanceModule
 ---
 ## 基本描述
 
-
 > **该元件为带电感单相H桥电路模块的快速化仿真模型，其与详细电磁暂态模型的精度相当。该元件可用于构建整流/逆变器拓扑，适用于大规模微电网仿真。**
 
 ## 参数列表
@@ -55,12 +54,10 @@ symbol: HBridgeWithInductanceModule
 
 ## 使用说明
 下图示出了H桥电感模块的单元测试算例，算例详见[Test_HLBridge](https://www.cloudpss.net/editor/?id=1182)。
-![单元测试图](comp_VSCModule/HL.png)
+
+![单元测试图](./HBridgeWithInductance.png)
+
 该电路为基本的电压源PWM整流拓扑。开关S1\~S4的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的4路PWM信号，经过**ChannelMerge**元件合成为一个4\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为100Hz脉动直流。
 
 ## 相关元件
-[背靠背H桥模块](comp_BacktoBackModule.md)
-[H桥模块](comp_HBridgeModule.md)
-[三相H桥模块](comp_ThreePhaseHBridgeModule.md)
-[H桥变压器模块](comp_HBridgeWithTransformerModule.md)
-[半桥模块](comp_HalfBridgeModule.md)
+[背靠背H桥模块](../BacktoBackModule/index.md)、[H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

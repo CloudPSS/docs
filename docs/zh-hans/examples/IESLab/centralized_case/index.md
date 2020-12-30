@@ -13,7 +13,7 @@ author_email:
 
 *模型拓扑结构图如下：*
 
-![拓扑结构图](./Thesis-IESlab-Centralized.png)
+![拓扑结构图](./Thesis-IESlab-Centralized.png "拓扑结构图")
 
 
 ## 模型参数及边界条件
@@ -29,36 +29,36 @@ author_email:
 
 *电负荷：*
 
-![电负荷](./IEScase-typical-load.png =600x)
+![电负荷](./IEScase-typical-load.png "电负荷" =600x)
 
 ## 结果分析
 
-利用CloudPSS-IESLab平台对集中式供热的综合能源系统进行为期一年的仿真，并对各项计算结果进行分析。
+利用`CloudPSS-IESLab`平台对集中式供热的综合能源系统进行为期一年的仿真，并对各项计算结果进行分析。
 
 ### 供电分析：
 
-![某典型日的供用电能源供需构成图](./Thesis-IESlab-Distributed-result-1.png)
+![某典型日的供用电能源供需构成图](./Thesis-IESlab-Distributed-result-1.png "某典型日的供用电能源供需构成图")
 
 可再生能源（光伏和风力发电）在能源结构改革和综合能源系统中发挥了重要作用，由下图可知，可再生能源发电功率波动较大，在5～65MW之间。
 
-![可再生能源供需图](./Thesis-IESlab-Distributed-result-Renewable-6.png)
+![可再生能源供需图](./Thesis-IESlab-Distributed-result-Renewable-6.png "可再生能源供需图")
 
 ### 夏季供冷分析：
 
-![集中式综合能源系统供冷结果](./Thesis-IESlab-Distributed-result-3.png)
+![集中式综合能源系统供冷结果](./Thesis-IESlab-Distributed-result-3.png "集中式综合能源系统供冷结果")
 
 ### 经济性和环保性分析：
 
-用户可以在CloudPSS-IESLab平台的计算结果基础上进行进一步的分析。对于综合能源系统，经济性和环保性是重要的两个指标。我们收集了主要设备经济参数和二氧化碳排放系数，如下所示：
+用户可以在`CloudPSS-IESLab`平台的计算结果基础上进行进一步的分析。对于综合能源系统，经济性和环保性是重要的两个指标。我们收集了主要设备经济参数和二氧化碳排放系数，如下所示：
 
 *主要设备经济参数：*
 
-![主要设备经济参数](./IEScase-typical-para1.png =400x)
+![主要设备经济参数](./IEScase-typical-para1.png "主要设备经济参数" =400x)
 
 *主要设备二氧化碳排放系数：*
 
-![主要设备二氧化碳排放系数](./IEScase-typical-para2.png =400x)
+![主要设备二氧化碳排放系数](./IEScase-typical-para2.png "主要设备二氧化碳排放系数" =400x)
 
 在上述参数的基础上，计算了项目投资和二氧化碳年排放量，其结果如下所示：
 
-![经济性和环保性指标](./IEScase-typical-result-1.png =400x)
+![经济性和环保性指标](./IEScase-typical-result-1.png "经济性和环保性指标" =400x)

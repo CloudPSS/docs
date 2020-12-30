@@ -34,8 +34,13 @@ symbol: newConstant
 
 ## 使用说明
 
+::: info
+若常数的数值是一个表达式，需要在表达式之前加`=`，如下图所示。 
+:::
+
+![设置常数为表达式](./constant.png)  
 
 
 ## 相关元件
 
-[时间输入](comp_newTime.md)、[仿真步长输入](comp_newDeltaT.md)
+[时间输入](../Time/index.md)、[仿真步长输入](../DeltaT/index.md)

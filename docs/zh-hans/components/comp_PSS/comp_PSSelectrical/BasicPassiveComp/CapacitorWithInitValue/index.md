@@ -15,7 +15,7 @@ symbol: newCapacitorRouterWithInitValue
 ---
 ## 基本描述
 
-
+<!-- ![电容](./电阻.png) -->
 > **该元件用以建模带初始电压的单相或三相电容（单线图）。**
 
 ## 参数列表
@@ -23,7 +23,7 @@ symbol: newCapacitorRouterWithInitValue
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
 | Name |  | 元件名称 | 文本 | 此处输入电容的名称（可缺省） |
-| Dimension |  | 单相电容或是三相电容？ | 选择 | 选择电容为单相或三相 |
+| Dimension |  | 单相电容或是三相电容 | 选择 | 选择电容为单相或三相 |
 | Capacitance | μF | 电容值 | 实数（常量） | 电容值 |
 | Initial Capacitor Voltage | kV | 电容初始电压 | 实数（常量）|电容初始电压 |
 
