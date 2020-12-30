@@ -20,8 +20,8 @@ symbol: ST5B
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| \[Rc\] Load Compensating Resistance | pu |  | 实数（常量） |  |
-| \[Xc\] Load Compensating Reactance | pu |  | 实数（常量） |  |
+| \[Rc\] Load Compensating Resistance | p.u. |  | 实数（常量） |  |
+| \[Xc\] Load Compensating Reactance | p.u. |  | 实数（常量） |  |
 | \[Tr\] Transducer Time Constant | s |  | 实数（常量） |  |
 
 ### St5B Forward Lead-Lag Parameters
@@ -31,30 +31,30 @@ symbol: ST5B
 | \[TB1\] 1st Lag Time Constant | s |  | 实数（常量） |  |
 | \[TC2\] 2nd Lead Time Constant | s |  | 实数（常量） |  |
 | \[TB2\] 2nd Lag Time Constant | s |  | 实数（常量） |  |
-| \[KR\] Regulator Gain | pu |  | 实数（常量） |  |
+| \[KR\] Regulator Gain | p.u. |  | 实数（常量） |  |
 | \[T1\] Regulator Time Constant | s |  | 实数（常量） |  |
 
 ### St5B Field Circuit Constants
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| \[VRMAX\] Maximum Field Voltage | pu |  | 实数（常量） |  |
-| \[VRMIN\] Minimum Field Voltage | pu |  | 实数（常量） |  |
-| \[KC\] Field Current Commutating Impednace | pu |  | 实数（常量） |  |
+| \[VRMAX\] Maximum Field Voltage | p.u. |  | 实数（常量） |  |
+| \[VRMIN\] Minimum Field Voltage | p.u. |  | 实数（常量） |  |
+| \[KC\] Field Current Commutating Impednace | p.u. |  | 实数（常量） |  |
 
 
 ## 端口列表
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
-|  | 自动 | |
+| VS | 自动 | |
+| VT | 自动 | |
+| IT | 自动 | |
+| Ef0 | 自动 | |
+| If | 自动 | |
+| Vref | 自动 | |
+| S2M | 自动 | |
+| Ef | 自动 | |
+| Vref0 | 自动 | |
 
 ## 使用说明
 

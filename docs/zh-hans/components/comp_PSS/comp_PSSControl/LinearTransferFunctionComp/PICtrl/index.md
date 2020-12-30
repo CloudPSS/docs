@@ -57,4 +57,4 @@ symbol: newPICtrl
 
 ## 相关元件
 
-[积分器](comp_newIntegrator.md)、[增益](comp_newGain.md)
+[积分器](../Integrator/index.md)、[增益](../Gain/index.md)

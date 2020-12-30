@@ -16,7 +16,7 @@ symbol: STEAM_GOV_1
 
 ## 基本描述
 
-
+[^_^]:![](./STEAM_GOV_1S.png)
 
 ## 参数列表
 ### Gov1:Mechanical-Hydraulic Governor
@@ -44,7 +44,8 @@ symbol: STEAM_GOV_1
 
 ## 使用说明
 IEEE的STEAM_GOV1调速器控制框图如下所示。
-![等效图](comp_Governors/STEAM_GOV1.png)
+
+![等效图](./STEAM_GOV1.png)
 
 
 ## 相关元件

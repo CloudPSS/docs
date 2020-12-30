@@ -15,7 +15,7 @@ author_email:
 
 *模型拓扑结构图如下：*
 
-![拓扑结构图](./IESCase-Topology.png)
+![拓扑结构图](./IESCase-Topology.png "拓扑结构图")
 
 
 ## 模型参数及边界条件
@@ -27,43 +27,43 @@ author_email:
 
 *典型日光照水平：*
 
-![典型日光照水平](./IESCaseRadiation.png =2000x)
+![典型日光照水平](./IESCaseRadiation.png "典型日光照水平" =2000x)
 
 *电负荷：*
 
-![电负荷](./IESCasePowerLoad.png =500x)
+![电负荷](./IESCasePowerLoad.png "电负荷" =500x)
 
 *热负荷：*
 
-![热负荷](./IESCaseHeatLoad.png =500x)
+![热负荷](./IESCaseHeatLoad.png "热负荷" =500x)
 
 *冷负荷：*
 
-![冷负荷](./IESCaseColdLoad.png =500x)
+![冷负荷](./IESCaseColdLoad.png "冷负荷" =500x)
 
 *运行策略：*
 
-![运行策略](./IESCaserRuningStrategy.png =800x)
+![运行策略](./IESCaserRuningStrategy.png "运行策略" =800x)
 
 ## 开始仿真
 
-正确设置完所有元件参数后，点击仿真控制模块中的“开始”按钮，系统自动校验通过后即可开始仿真。仿真计算结果以能量供需组成图的形式显示在工作台中央。用户也可通过选中具体元件在系统监控面板中查看其运行状态。
+正确设置完所有元件参数后，点击`仿真控制模块`中`开始`按钮，系统自动`校验`通过后即可开始仿真。仿真计算结果以`能量供需组成图`的形式显示在工作台中央。用户也可通过选中具体元件在`系统监控面板`中查看其运行状态。
 
-![开始运行](./IESCaseRunning.gif =2000x)
+![开始运行](./IESCaseRunning.gif "开始运行" =2000x)
 
 ## 仿真结果分析验证
 
 *供冷仿真结果示例：*
 
-![供冷仿真结果](./IESCaseColdResult.png)
+![供冷仿真结果](./IESCaseColdResult.png "供冷仿真结果")
 
 *外部电网供电购电仿真结果示例：*
 
-![外部电网供电购电仿真结果](./IESCaseExternalPowerResult.png)
+![外部电网供电购电仿真结果](./IESCaseExternalPowerResult.png "外部电网供电购电仿真结果")
 
 *供热负荷仿真结果示例：*
 
-![供热仿真结果](./IESCaseHeatLoadResult.png)
+![供热仿真结果](./IESCaseHeatLoadResult.png "供热仿真结果")
 
 
 ## 相关视频

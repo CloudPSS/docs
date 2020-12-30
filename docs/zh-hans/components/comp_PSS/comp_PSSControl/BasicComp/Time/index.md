@@ -37,4 +37,4 @@ symbol: newTime
 
 ## 相关元件
 
-[常量输入](comp_newConstant.md)、[仿真步长输入](comp_newDeltaT.md)
+[常量输入](../Constant/index.md)、[仿真步长输入](../DeltaT/index.md)

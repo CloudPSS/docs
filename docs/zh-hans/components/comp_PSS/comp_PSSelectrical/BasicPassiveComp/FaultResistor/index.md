@@ -15,7 +15,7 @@ symbol: newFaultResistance_1p
 ---
 ## 基本描述
 
-
+<!-- ![单相故障电阻](./故障电阻.png) -->
 > **该元件用以建模单相故障电阻。**
 
 ## 参数列表
@@ -49,4 +49,4 @@ symbol: newFaultResistance_1p
 
 ## 相关元件
 
-[三相故障电阻](../FaultResistor_3p/index.md)、[电阻](../ResistorRouter/index.md)
+[三相故障电阻](../FaultResistor_3p/index.md)、[电阻](../Resistor/index.md)

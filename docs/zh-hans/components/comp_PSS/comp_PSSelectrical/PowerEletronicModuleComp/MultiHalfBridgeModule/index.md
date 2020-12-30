@@ -15,7 +15,6 @@ symbol: HBM
 ---
 ## 基本描述
 
-
 > **该元件用于建模MMC（模块化多电平变流器）中的半桥子模块。**
 
 ## 参数列表
@@ -61,5 +60,5 @@ symbol: HBM
 
 ## 相关元件
 
-[NLM2Ref](comp_FirePulseGenNLM2Ref.md)
+[NLM2Ref](../../../comp_PSSControl/HVDCControlComp/FirePulseGenNLM2Ref/index.md)
 

@@ -16,7 +16,7 @@ symbol: STEAM_TUR_1
 
 ## 基本描述
 
-
+[^_^]:![](./STEAM_TUR_1S.png)
 
 ## 参数列表
 ### Hp Turbine: Contributions
@@ -60,7 +60,8 @@ symbol: STEAM_TUR_1
 
 ## 使用说明
 IEEE的STEAM_TUR1原动机控制框图如下所示。
-![等效图](comp_Governors/STEAM_TUR1.png)
+
+![等效图](./STEAM_TUR1.png)
 
 ## 相关元件
 

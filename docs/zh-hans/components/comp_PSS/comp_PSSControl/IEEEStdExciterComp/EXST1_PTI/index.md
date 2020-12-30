@@ -16,7 +16,7 @@ symbol: EXST1_PTI
 
 ## 基本描述
 
-
+[^_^]:![](./EXST1_PTIS.png)
 
 ## 参数列表
 ### Configuration
@@ -66,7 +66,9 @@ symbol: EXST1_PTI
 
 ## 使用说明
 IEEE的EXST1_PTI励磁器控制框图如下所示。
-![等效图](comp_Exciters/EXST1_PTI_Inner.png)
+
+![等效图](./EXST1_PTI_Inner.png)
+
 ## 测试模型
 []()显示了EXST1_PTI的典型应用。
 

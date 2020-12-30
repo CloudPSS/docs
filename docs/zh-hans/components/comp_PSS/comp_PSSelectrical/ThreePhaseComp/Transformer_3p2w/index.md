@@ -81,4 +81,4 @@ symbol: newTransformer_3p2w
 
 ## 相关元件
 
-[单相变压器](../../BasicPassiveComp/Transformer_1p/index.md)、[三相三绕组变压器](../comp_newTransformer_3p3w.md)
+[单相变压器](../../BasicPassiveComp/Transformer_1p/index.md)、[三相三绕组变压器](../Transformer_3p3w/index.md)

@@ -37,4 +37,4 @@ symbol: newMaxMinOneCycle
 
 ## 相关元件
 
-[最大/最小值](comp_newMaxMin.md)
+[最大/最小值](../MaxMin/index.md)

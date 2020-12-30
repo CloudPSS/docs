@@ -3,10 +3,11 @@ title: 快速入门
 order: 100
 ---
 
-* [账号管理](User1.md)
-* [工作台介绍](User2.md)
-* [建模仿真操作](User3.md)
-* [简单案例](User4.md)
-* [CloudPSS-MiNi](manual.md)
-* [用户中心](userCenter.md)
+* [账号注册与登录](Login.md)
 
+* [入门案例](rumen.md)
+  
+
+
+* [CloudPSS-MiNi简介](manual.md)
+* [CloudPSS-MiNi用户中心](UserCenter_Mini.md)

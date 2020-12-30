@@ -60,5 +60,4 @@ symbol: newComplexPole
 
 
 ## 相关元件
-
-[零点](comp_newZero.md)、[高阶传递函数](comp_newNthOrderTransFunc.md)、[超前滞后校正](comp_newLeadLag.md)
+[零点](../Zero/index.md)、[高阶传递函数](../NthOrderTransFunc/index.md)、[超前滞后校正](../LeadLag/index.md)

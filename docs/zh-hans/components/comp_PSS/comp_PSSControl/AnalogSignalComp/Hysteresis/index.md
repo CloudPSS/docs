@@ -41,4 +41,4 @@ symbol: newHysteresis
 
 ## 相关元件
 
-[比较器](comp_newComparator.md)
+[比较器](../Comparator/index.md)

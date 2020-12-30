@@ -15,7 +15,6 @@ symbol: newStorageBattery
 ---
 ## 基本描述
 
-
 > **该元件用以建模铅酸蓄电池。**
 
 ## 参数列表

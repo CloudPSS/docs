@@ -40,4 +40,4 @@ symbol: newStepGen
 
 ## 相关元件
 
-[斜坡函数发生器](comp_newRampGen.md)
+[斜坡函数发生器](../RampGen/index.md)

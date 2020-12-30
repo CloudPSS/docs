@@ -16,7 +16,7 @@ symbol: newSquareGen
 ## 基本描述
 
 
-> **该元件用以产生定频率、相位、幅值、脉宽的正弦信号。**
+> **该元件用以产生定频率、相位、幅值、脉宽的方波信号。**
 
 ## 参数列表
 ### Configuration
@@ -42,4 +42,4 @@ symbol: newSquareGen
 
 ## 相关元件
 
-[脉冲发生器](comp_newPulseGen.md)
+[脉冲发生器](../PulseGen/index.md)

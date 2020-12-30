@@ -41,4 +41,4 @@ symbol: newSample
 
 ## 相关元件
 
-[采样保持](comp_newSampleHold.md)
+[采样保持](../SampleHold/index.md)

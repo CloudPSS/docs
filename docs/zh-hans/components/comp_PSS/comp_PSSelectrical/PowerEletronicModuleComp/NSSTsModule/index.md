@@ -16,7 +16,6 @@ symbol: NSSTsModule
 ---
 ## 基本描述
 
-
 > **该元件为多模块固态变压器(SST)电路的快速化仿真模型。通过填写模块数N，可快速形成包含12*N个开关管的大型电力电子网络。该元件在保持与详细电磁暂态模型精度相当的同时，其独特的快速仿真建模方法还可极大减小仿真时间，提高仿真效率。**
 
 ## 参数列表
@@ -69,11 +68,14 @@ symbol: NSSTsModule
 
 ## 使用说明
 多模块SST的电路图及开关编号如图所示：
-![电路图](comp_NSSTsModule/SST.png)
+
+![电路图](./NSSTs1.png)
 
 下图示出了SST脉冲发生器的单元测试算例，算例详见[Test_NSSTs](https://www.cloudpss.net/editor/?id=1187)。
-![单元测试图](comp_VSCModule/SSTN.png)
+
+![单元测试图](./NSSTs2.png)
+
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。该信号的维数为12N*1。如果不使用SST脉冲发生器，则需要利用**ChannelMerge**元件将所有的开关信号进行合并。合并方式如`端口列表`中GS的输入信号要求进行。
 
 ## 相关元件
-[SST脉冲发生器](comp_FirePulseGenSST.md)
+[SST脉冲发生器](../../../comp_PSSControl/HVDCControlComp/FirePulseGenSST/index.md)

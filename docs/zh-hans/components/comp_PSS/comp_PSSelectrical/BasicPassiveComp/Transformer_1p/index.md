@@ -15,7 +15,7 @@ symbol: newTransformer_1p
 ---
 ## 基本描述
 
-
+<!-- ![变压器](./变压器.png) -->
 > **该元件用以建模单相两绕组变压器。**
 
 ## 参数列表
@@ -69,4 +69,4 @@ symbol: newTransformer_1p
 
 ## 相关元件
 
-[三相双绕组变压器](../Transformer_3p2w.md)、[三相三绕组变压器](../Transformer_3p3w.md)
+[三相双绕组变压器](../../ThreePhaseComp/Transformer_3p2w/index.md)、[三相三绕组变压器](../../ThreePhaseComp/Transformer_3p3w/index.md)
