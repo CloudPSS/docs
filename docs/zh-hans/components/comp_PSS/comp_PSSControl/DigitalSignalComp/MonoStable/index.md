@@ -39,4 +39,4 @@ symbol: newMonoStable
 
 ## 相关元件
 
-[延迟触发器](comp_newBinaryDelay.md)
+[延迟触发器](../BinaryDelay/index.md)

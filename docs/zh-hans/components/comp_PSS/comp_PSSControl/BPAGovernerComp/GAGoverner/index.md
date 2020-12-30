@@ -16,6 +16,7 @@ symbol: GA
 
 ## 基本描述
 
+[comment]: ![](./GA_Schematic.PNG)
 
 
 ## 参数列表
@@ -53,7 +54,8 @@ symbol: GA
 
 ## 使用说明
 BPA的GA伺服器控制框图如下所示。
-![等效图](comp_Governors/GA.png)
+
+![等效图](./GA.png)
 
 ## 相关元件
 

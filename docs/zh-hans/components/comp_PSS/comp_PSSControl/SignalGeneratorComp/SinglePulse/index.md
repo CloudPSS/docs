@@ -39,4 +39,4 @@ symbol: newSinglePulse
 
 ## 相关元件
 
-[脉冲发生器](comp_newPulseGen.md)
+[脉冲发生器](../PulseGen/index.md)

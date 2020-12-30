@@ -41,4 +41,4 @@ symbol: newDerivative
 
 ## 相关元件
 
-[积分器](comp_newIntegrator.md)
+[积分器](../Integrator/index.md)

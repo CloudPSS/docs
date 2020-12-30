@@ -15,7 +15,6 @@ symbol: newSixValveBridge
 ---
 ## 基本描述
 
-
 > **该元件用于建模六脉动晶闸管桥。**
 
 ## 参数列表

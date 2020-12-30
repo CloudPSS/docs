@@ -43,28 +43,29 @@ symbol: newClarkTransform
 
 ## 使用说明
 
-![坐标位置](comp_newClarkTransform/Clark.png "坐标位置")
-αβ轴为静止坐标轴，其相对位置为图所示。Park变换及逆Park变换的计算公式为：
+![坐标位置](./ClarkTransform.png )
+
+αβ轴为静止坐标轴，其相对位置为图所示。Clark变换及逆Clark变换的计算公式为：
  + **Clark变换**
 $$\begin{bmatrix}
 U_{\alpha }\\ 
 U_{\beta }
 \end{bmatrix}
-=\frac{2}{3}*\begin{bmatrix}
+=\frac{2}{3}\begin{bmatrix}
 1 &-\frac{1}{2}  &-\frac{1}{2} \\ 
  0&\frac{\sqrt{3} }{2}  &-\frac{\sqrt{3} }{2} 
 \end{bmatrix}
 \begin{bmatrix}
-U_{a}\\ 
-U_{b}\\ 
-U_{c}
+U_{\mathrm a}\\ 
+U_{\mathrm b}\\ 
+U_{\mathrm c}
 \end{bmatrix}$$
 
 + **逆Clark变换**
 $$\begin{bmatrix}
-U_{a}\\ 
-U_{b}\\ 
-U_{c}
+U_{\mathrm a}\\ 
+U_{\mathrm b}\\ 
+U_{\mathrm c}
 \end{bmatrix}
 =
 \begin{bmatrix}
@@ -79,4 +80,4 @@ U_{\beta }
 
 ## 相关元件
 
-[Park变换器](comp_newParkTransform.md)、[dq-αβ坐标转换器](comp_newXYtoDQ.md)
+[Park变换器](../ParkTransform/index.md)、[dq-αβ坐标转换器](../XYtoDQ/index.md)

@@ -41,4 +41,4 @@ symbol: newLog
 
 ## 相关元件
 
-[指数函数](comp_newExp.md)
+[指数函数](../Exp/index.md)

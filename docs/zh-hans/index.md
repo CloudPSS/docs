@@ -12,12 +12,10 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > ![](快速入门.png)
 > 
 > CloudPSS建模及仿真平台的介绍和快速入门文档。帮助用户快速熟悉平台的基本操作，建立简单电路模型，执行仿真功能，并查看仿真结果曲线。
-> + [账号管理](guide/User1.md)
-> + [工作台介绍](guide/User2.md)
-> + [建模仿真操作](guide/User3.md)
-> + [简单案例](guide/User4.md)
-> + [cloudpss-mini](guide/manual.md)
-> + [用户中心](guide/userCenter.md)
+> + [账号注册与登录](guide/Login.md)
+> + [入门案例](guide/rumen.md)
+> + [CloudPSS-MiNi简介](guide/manual.md)
+> + [CloudPSS-MiNi用户中心](guide/UserCenter_Mini.md)
 > 
 > [更多](guide/index.md)
 
@@ -25,10 +23,10 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > ![](元件帮助.png)
 > 
 > CloudPSS模型库提供的全部元件的帮助文档，包括元件的基本原理、参数列表、引脚列表的详细说明，部分复杂元件的使用说明，以及测试算例链接。
-> + [电气元件](components/compGND.md)
-> + [量测元件](components/comp_NewBranchVoltageMeter.md)
-> + [控制元件](components/comp_newConstant.md)
-> + [综合能源元件](components/comp-IES-Generator-PhotovoltaicSys.md)
+> + [电气元件](components/comp_PSS/comp_PSSelectrical/BasicPassiveComp.md)
+> + [量测元件](components/comp_PSS/comp_PSSMeasure.md)
+> + [控制元件](components/comp_PSS/comp_PSSControl/BasicComp.md)
+> + [综合能源元件](components/comp_IES/PowerSourceComp.md)
 > 
 > [更多](components/index.md)
 
@@ -36,10 +34,14 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > ![](功能帮助.png)
 > 
 > CloudPSS建模及仿真平台提供的全部功能的详细说明文档。
-> + [参数及引脚体系](features/ParameterSystem.md)
-> + [断面保存及导入](features/Snapshot.md)
-> + [高级数据可视化](features/Dashboard.md)
-> + [综合能源系统建模仿真](features/IntegratedEnergySysGuide.md)
+> + [CloudPSS功能帮助向导](features/IntroGuide.md)
+> + [工作台介绍](features/Workbench.md)
+> + [基础功能](features/Basic.md)
+> + [其他功能](features/Other.md)
+> + [电磁暂态建模仿真工作台](features/EMTP.md)
+> + [移频电磁暂态仿真工作台](features/SFEMT.md)
+> + [潮流计算仿真工作台](features/Powerflow.md)
+> + [综合能源系统建模仿真平台](features/IESLab.md)
 > 
 > [更多](features/index.md)
 
@@ -47,10 +49,10 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > ![](案例介绍.png)
 > 
 > CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户熟悉CloudPSS各类功能，快速理解相关算例的使用，并在相关算例的基础上进行修改。
-> + [IEEE标准测试系统](examples/IEEE39.md)
-> + [LCC-HVDC测试系统](examples/LCC.md)
-> + [MMC-HVDC测试系统](examples/MMC.md)
-> + [综合能源系统案例](examples/IntegratedEnergySystem.md)
+> + [IEEE标准测试系统](examples/EMTP/IEEE39.md)
+> + [LCC-HVDC测试系统](examples/EMTP/LCC.md)
+> + [MMC-HVDC测试系统](examples/EMTP/MMC.md)
+> + [综合能源系统案例](examples/IESLab/demo_case.md)
 > 
 >  [更多](examples/index.md)
 

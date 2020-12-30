@@ -16,7 +16,7 @@ symbol: GM
 
 ## 基本描述
 
-
+[^_^]:![](./GMS.png)
 
 ## 参数列表
 ### 调节系统模型4（GM）
@@ -60,7 +60,7 @@ symbol: GM
 
 ## 使用说明
 BPA的GM调速器控制框图如下所示。
-![等效图](comp_Governors/GM.png)
+![等效图](./GM.png)
 
 ## 相关元件
 

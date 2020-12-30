@@ -39,4 +39,4 @@ symbol: newMultiply
 
 ## 相关元件
 
-[增益](comp_newGain.md)
+[增益](../../LinearTransferFunctionComp/Gain/index.md)

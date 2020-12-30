@@ -36,8 +36,11 @@ CloudPSS提供了丰富的元件库，其分类及具体元件组成如下表所
 | 直流系统 | 锁相振荡器、最近电平调制、SST脉冲发生器、空间矢量调制模块 |
 | 交流系统 | ST5B、Hydro Governor、Hydro Turbine |
 | BPA-励磁器 | FM、FQ、FV |
-| BPA-调速器 | GA、GJ、GM、TB、TW |
-| BPA-电力系统稳定器 | SI |
+| BPA-调速器 | GA、GJ、GM、GH、GI、GN、GX、TV、TB、TW |
+| BPA-电力系统稳定器 | SI、SF_SP_SS_SG |
+| PSASP-励磁器 | PSASP_AVR_1、PSASP_AVR_2、PSASP_AVR_3\~10、PSASP_AVR_11\~12、PSASP_AVR_14 |
+| PSASP-调速器 | PSASP_GOV_1、PSASP_GOV_3、PSASP_GOV_4、PSASP_GOV_7、PSASP_GOV_8 |
+| PSASP-电力系统稳定器 | PSASP_GOV_1、PSASP_GOV_2、PSASP_GOV_4、PSASP_GOV_5 |
 | IEEE Std.-励磁器 | EXST1_PTI |
 | IEEE Std.-调速器 | Steam_GOV_1、STEAM_TUR_1 |
 | IEEE Std.-电力系统稳定器 | PSS1A |

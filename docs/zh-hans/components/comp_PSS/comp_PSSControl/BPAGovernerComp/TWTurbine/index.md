@@ -16,7 +16,7 @@ symbol: TW
 
 ## 基本描述
 
-
+[^_^]:![](./TWS.png)
 
 ## 参数列表
 ### 水轮机模型（TW）
@@ -36,7 +36,8 @@ symbol: TW
 
 ## 使用说明
 BPA的TW原动机控制框图如下所示。
-![等效图](comp_Governors/TW.png)
+
+![等效图](./TW.png)
 
 ## 相关元件
 

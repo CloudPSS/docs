@@ -16,7 +16,7 @@ symbol: PSS1A
 
 ## 基本描述
 
-
+[^_^]:![](./PSS1AS.png)
 
 ## 参数列表
 ### Pss1A: Power System Stabilizer Data
@@ -45,7 +45,8 @@ symbol: PSS1A
 
 ## 使用说明
 IEEE的PSS1A励磁器控制框图如下所示。
-![等效图](comp_PSSs/PSS1A.png)
+
+![等效图](./PSS1A.png)
 
 ## 相关元件
 

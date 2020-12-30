@@ -43,16 +43,17 @@ symbol: newXYtoDQ
 
 ## 使用说明
 
-![坐标位置](comp_newXYtoDQ/t1.png "坐标位置")
+![坐标位置](./XYtoDQ1.png )
+
 当选择**d轴与a相对齐**时，其相对位置为图所示。计算公式为：
 + **αβ到dq变换**
 $$\begin{bmatrix}
-U_{d }\\ 
-U_{q }
+U_{\mathrm d }\\ 
+U_{\mathrm q }
 \end{bmatrix}
 =\begin{bmatrix}
-cos\theta  &sin\theta\\ 
--sin\theta &cos\theta
+\mathrm{cos}\theta  &\mathrm{sin}\theta\\ 
+-\mathrm{sin}\theta &\mathrm{cos}\theta
 \end{bmatrix}
 \begin{bmatrix}
 U_{\alpha}\\ 
@@ -64,24 +65,25 @@ U_{\alpha}\\
 U_{\beta} 
 \end{bmatrix}
 =\begin{bmatrix}
-cos\theta  &-sin\theta\\ 
-sin\theta &cos\theta
+\mathrm{cos}\theta  &-\mathrm{sin}\theta\\ 
+\mathrm{sin}\theta &\mathrm{cos}\theta
 \end{bmatrix}
 \begin{bmatrix}
-U_{d }\\ 
-U_{q }
+U_{\mathrm d }\\ 
+U_{\mathrm q }
 \end{bmatrix}$$
 
-![坐标位置](comp_newXYtoDQ/t2.png "坐标位置")
+![坐标位置](./XYtoDQ2.png)
+
 当选择**d轴滞后a相90°**时，其相对位置为图所示。计算公式为：
 + **αβ到dq变换**
 $$\begin{bmatrix}
-U_{d }\\ 
-U_{q }
+U_{\mathrm d }\\ 
+U_{\mathrm q }
 \end{bmatrix}
 =\begin{bmatrix}
-sin\theta  &-cos\theta\\ 
-cos\theta &sin\theta
+\mathrm{sin}\theta  &-\mathrm{cos}\theta\\ 
+\mathrm{cos}\theta &\mathrm{sin}\theta
 \end{bmatrix}
 \begin{bmatrix}
 U_{\alpha}\\ 
@@ -93,14 +95,14 @@ U_{\alpha}\\
 U_{\beta} 
 \end{bmatrix}
 =\begin{bmatrix}
-sin\theta  &cos\theta\\ 
--cos\theta &sin\theta
+\mathrm{sin}\theta  &\mathrm{cos}\theta\\ 
+-\mathrm{cos}\theta &\mathrm{sin}\theta
 \end{bmatrix}
 \begin{bmatrix}
-U_{d }\\ 
-U_{q }
+U_{\mathrm d }\\ 
+U_{\mathrm q }
 \end{bmatrix}$$
 
 ## 相关元件
 
-[Park变换器](comp_newParkTransform.md)、[Clark变换器](comp_newClarkTransform.md)
+[Park变换器](../ParkTransform/index.md)、[Clark变换器](../ClarkTransform/index.md)

@@ -16,7 +16,6 @@ symbol: HalfBridgeModule
 ---
 ## 基本描述
 
-
 > **该元件为半桥电路模块(双向DC/DC)的快速化仿真模型，其与详细电磁暂态模型的精度相当。通过对S1或S2的开关信号置零，可将其配置为BOOST或BUCK电路。**
 
 ## 参数列表
@@ -51,13 +50,11 @@ symbol: HalfBridgeModule
 
 ## 使用说明
 下图示出了半桥模块的单元测试算例，算例详见[Test_HalfBridge](https://www.cloudpss.net/editor/?id=1188)。
-![单元测试图](comp_VSCModule/halfH.png)
+
+![单元测试图](./HalfBridge.png)
+
 该算例从电源侧往输出RL负载看，为一个双向DC/DC电路(降压)。开关信号由50Hz正弦波与三角载波比较产生，经过**ChannelMerge**元件合成为一个2\*1维的输出信号，送至半桥模块的GS端。。由于PWM占空比信号按照正弦分布，因此负载电阻R上的电压为50Hz准正弦变化的直流。
 
 
 ## 相关元件
-[背靠背H桥模块](comp_BacktoBackModule.md)
-[H桥模块](comp_HBridgeModule.md)
-[三相H桥模块](comp_ThreePhaseHBridgeModule.md)
-[H桥电感模块](comp_HBridgeWithInductanceModule.md)
-[H桥变压器模块](comp_HBridgeWithTransformerModule.md)
+[背靠背H桥模块](../BacktoBackModule/index.md)、[H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)

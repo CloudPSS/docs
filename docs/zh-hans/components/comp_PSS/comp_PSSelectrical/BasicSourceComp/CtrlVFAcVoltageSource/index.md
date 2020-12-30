@@ -15,7 +15,7 @@ symbol: newCtrlVFACSource
 ---
 ## 基本描述
 
-
+<!-- ![受控交流电压源（VF）](./受控交流电压源（VF）.png) -->
 > **该元件用以建模幅值、频率可控的单相或三相交流电压源。**
 
 ## 参数列表
@@ -68,4 +68,4 @@ symbol: newCtrlVFACSource
 
 ## 相关元件
 
-[受控电压源(VP)](../CtrlVPAcVoltageSource.md)、[受控电压源](../CtrlVoltageSource.md)
+[受控交流电压源(VP)](../CtrlVPAcVoltageSource.md)、[受控电压源](../CtrlVoltageSource.md)

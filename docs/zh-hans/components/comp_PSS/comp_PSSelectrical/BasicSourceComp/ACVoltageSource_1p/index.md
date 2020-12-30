@@ -15,7 +15,7 @@ symbol: newACVoltageSource_1p
 ---
 ## 基本描述
 
-
+<!-- ![单相交流电压源](./单相交流电压源.png) -->
 > **该元件用以建模单相交流电压源。**
 
 ## 参数列表
@@ -64,4 +64,4 @@ symbol: newACVoltageSource_1p
 
 ## 相关元件
 
-[三相交流电压源](../ACVoltageSource_3p.md)
+[三相交流电压源](../../ThreePhaseComp/ACVoltageSource_3p/index.md)
