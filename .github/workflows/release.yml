@@ -24,6 +24,14 @@ jobs:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
+      - name: Upload Release Asset
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          artifacts: dist.tar.xz
+          prerelease: ${{ contains(github.event.ref, '-') }}
+          replacesArtifacts: true
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
@@ -31,7 +39,7 @@ jobs:
           port: ${{ secrets.DC_PORT }}
           user: ${{ secrets.DC_USER }}
           key: ${{ secrets.DC_KEY }}
-          connect_timeout: 60s
+          connect_timeout: 600s
           first_ssh: |
             rm -f /root/docs/dist.tar.xz
           scp: |
@@ -56,7 +64,7 @@ jobs:
           port: ${{ secrets.DC_PORT }}
           user: ${{ secrets.DC_USER }}
           key: ${{ secrets.DC_KEY }}
-          connect_timeout: 60s
+          connect_timeout: 600s
           first_ssh: |
             rm -f /root/docs/release
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/release
