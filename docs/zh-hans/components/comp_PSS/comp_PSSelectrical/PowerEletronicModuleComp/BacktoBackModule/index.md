@@ -51,11 +51,11 @@ symbol: BacktoBackModule
 | KB | 1×1 | 模块闭锁信号输入端，输入0则闭锁全部开关信号，输入非零则不闭锁 |
 
 ## 使用说明
-下图示出了背靠背H桥模块的单元测试算例，算例详见[Test_BacktBackHBridge](https://www.cloudpss.net/editor/?id=1184)。
+下图示出了背靠背H桥模块的单元测试算例，算例详见[单相背靠背变流器](https://cloudpss.net/project/CloudPSSTemplate/B2BModule#/design)。
 
-![单元测试图](./BacktoBack.png)
+![单元测试图](./T5.png)
 
-开关S1\~S4及开关S5\~S8的脉冲信号分别由两组正弦脉宽调制逻辑实现，开关频率为5KHz。两组脉宽调制器产生的8路PWM信号，经过**ChannelMerge**元件合成为一个8\*1维的输出信号，送至背靠背H桥模块的GS端。前级S1\~S4进行整流，直流电容电压为100Hz脉动直流，电感电流为准正弦波形。后级S5\~S8进行逆变，电阻负载侧为准正弦波形。
+开关S1\~S4及开关S5\~S8的脉冲信号分别由两组正弦脉宽调制逻辑实现，开关频率为5KHz。两组脉宽调制器产生的8路PWM信号，经过**多路信号合并**元件合成为一个8\*1维的输出信号，送至背靠背H桥模块的GS端。前级S1\~S4进行整流，直流电容电压为100Hz脉动直流，电感电流为准正弦波形。后级S5\~S8进行逆变，电阻负载侧为准正弦波形。
 
 ## 相关元件
 [H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

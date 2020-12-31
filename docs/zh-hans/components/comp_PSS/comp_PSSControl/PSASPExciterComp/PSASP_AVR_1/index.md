@@ -14,6 +14,8 @@ classname: _PSASP_AVR_1
 symbol: PSASP_AVR_1
 ---
 
+## 基本描述
+
 ## 参数列表
 
 ### PSASP_AVR_1（常规励磁调节系统）参数

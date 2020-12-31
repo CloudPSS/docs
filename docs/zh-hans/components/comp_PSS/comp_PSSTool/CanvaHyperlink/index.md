@@ -34,7 +34,6 @@ symbol: CanvaHyperlink
 
 该元件功能类似于Windows系统的快捷方式。选择“超链接”元件，右侧格式面板中，可以更改元件名称，在“链接图纸”选项中选择用户想要链接的图纸即可。双击该该元件，可直接跳转到所链接的图纸。
 
-图纸超链接在图纸切换中的应用详见[图纸功能](../../../../features/Basic/Canvas/index.md)
+图纸超链接在图纸切换中的应用详见[图纸功能](../../../../features/Workbench/Design/Canvas/index.md)。
 
 ## 相关元件
-

@@ -49,11 +49,11 @@ symbol: ThreePhaseHBridgeModule
 | KB | 1×1 |模块闭锁信号输入端，输入0则闭锁全部开关信号，输入非零则不闭锁 |
 
 ## 使用说明
-下图示出三相H桥模块的单元测试算例，算例详见[Test_ThreePhaseHBridge](https://www.cloudpss.net/editor/?id=1186)。
+下图示出三相H桥模块的单元测试算例，算例详见[三相H桥变流器](https://cloudpss.net/project/CloudPSSTemplate/3HM#/design)。
 
-![单元测试图](./HBridge3P.png)
+![单元测试图](./T6.png)
 
-该电路为基本的三相电压源逆变拓扑。开关S1\~S6的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的6路PWM信号，经过**ChannelMerge**元件合成为一个6\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为带高频纹波的直流。
+该电路为基本的三相电压源逆变拓扑。开关S1\~S6的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的6路PWM信号，经过**多路信号合并**元件合成为一个6\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为带高频纹波的直流。
 
 ## 相关元件
 [背靠背H桥模块](../BacktoBackModule/index.md)、[H桥模块](../HBridgeModule/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

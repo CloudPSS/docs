@@ -13,6 +13,9 @@ order: 100
 classname: _GXGoverner
 symbol: GX
 ---
+
+## 基本描述
+
 ## 参数列表
 
 ### 锅炉的主汽压力变化模型（GX）
