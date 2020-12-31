@@ -14,6 +14,8 @@ classname: _GNGoverner
 symbol: GN
 ---
 
+## 基本描述
+
 ## 参数列表
 
 ### 调节系统模型5（GN）

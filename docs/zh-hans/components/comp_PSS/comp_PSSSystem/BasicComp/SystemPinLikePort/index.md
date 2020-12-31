@@ -1,5 +1,5 @@
 ---
-title: 模块端口
+title: 模块虚拟端口
 author: 
 author_email:
 
@@ -8,23 +8,21 @@ updated: 2018/12/4 10:03:10
 
 type: components
 category: 30000
-order: 101
+order: 102
 
-classname: _SubSysPort
+classname: _SubSysPort_不确定
 symbol: SystemPort
 ---
+
 ## 基本描述
 
-
-
-> **该元件为模块对外连接的端口，仅在该项目为元件类型时使用，且需要与引脚键名进行绑定。**
+> **该元件为模块连接虚拟引脚的端口，仅在该项目为元件类型时使用，且需要与虚拟引脚键名进行绑定。**
 
 ## 参数列表
 ### Configuration
 | 参数名 |备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- | :--- |
-| Pin Key | 引脚键名 | 选择 | 选择该端口对应的引脚键名，完成引脚绑定 |
-
+| Pin Key | 引脚键名 | 选择 | 选择该端口对应的虚拟引脚键名，完成虚拟引脚绑定 |
 
 
 ## 端口列表
@@ -39,7 +37,7 @@ symbol: SystemPort
 
 ## 使用说明
 
-该元件用于模块封装功能，使用方法详见[模块封装](../../../../../features/Basic/Mask/index.md)功能帮助。
+该元件用于模块封装功能，使用方法详见[模块封装](../../../../../features/Basic/Mask/index.md)功能帮助中的虚拟引脚参数类型的使用。
 
 ## 相关元件
 

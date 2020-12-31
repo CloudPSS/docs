@@ -1,8 +1,20 @@
+---
+title: PSS（SI/SP/SS/SG）
+author:
+author_email:
 
+date: 2019/12/24 10:26:16
+updated: 2019/12/24 10:26:16
 
+type: components
+category: -4002
+order: 100
 
+classname: _
+symbol: 
+---
 
-> &nbsp;
+## 基本描述
 
 ## 参数列表
 

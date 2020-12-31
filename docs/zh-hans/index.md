@@ -19,16 +19,6 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > 
 > [更多](guide/index.md)
 
-> ## 元件帮助
-> ![](元件帮助.png)
-> 
-> CloudPSS模型库提供的全部元件的帮助文档，包括元件的基本原理、参数列表、引脚列表的详细说明，部分复杂元件的使用说明，以及测试算例链接。
-> + [电气元件](components/comp_PSS/comp_PSSelectrical/BasicPassiveComp.md)
-> + [量测元件](components/comp_PSS/comp_PSSMeasure.md)
-> + [控制元件](components/comp_PSS/comp_PSSControl/BasicComp.md)
-> + [综合能源元件](components/comp_IES/PowerSourceComp.md)
-> 
-> [更多](components/index.md)
 
 > ## 功能帮助
 > ![](功能帮助.png)
@@ -45,6 +35,19 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > 
 > [更多](features/index.md)
 
+
+> ## 元件帮助
+> ![](元件帮助.png)
+> 
+> CloudPSS模型库提供的全部元件的帮助文档，包括元件的基本原理、参数列表、引脚列表的详细说明，部分复杂元件的使用说明，以及测试算例链接。
+> + [电气元件](components/comp_PSS/comp_PSSelectrical/BasicPassiveComp.md)
+> + [量测元件](components/comp_PSS/comp_PSSMeasure.md)
+> + [控制元件](components/comp_PSS/comp_PSSControl/BasicComp.md)
+> + [综合能源元件](components/comp_IES/PowerSourceComp.md)
+> 
+> [更多](components/index.md)
+
+
 > ## 案例介绍
 > ![](案例介绍.png)
 > 
@@ -55,6 +58,7 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 > + [综合能源系统案例](examples/IESLab/demo_case.md)
 > 
 >  [更多](examples/index.md)
+
 
 > ## 旧平台文档
 > ![](旧平台文档.png)

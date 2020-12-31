@@ -54,7 +54,7 @@ CloudPSS提供了四种示波器窗口类型，用户可选择每个示波器的
 
 ![Moving Time Axis Window模式演示](./输出3号-1.gif "输出3号")
 
-1. Oscilloscope Time Axis Window: 与示波器显示模式相近，仿真窗口时间轴范围为Window Width指示的值，如下图所示。
+4. Oscilloscope Time Axis Window: 与示波器显示模式相近，仿真窗口时间轴范围为Window Width指示的值，如下图所示。
 
 ![Oscilloscope Time Axis Window模式演示](./输出4号-1.gif "输出4号")
 
