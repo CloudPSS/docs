@@ -18,9 +18,6 @@ symbol: 十二相同步发电机
 
 ### Configuration
 
-
-
-
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
 | Name |  | 元件名称 | 文本 |  |
@@ -33,9 +30,6 @@ symbol: 十二相同步发电机
 | Model Type |  | 选择电机模型 | 选择 |  |
 
 ### Equivalent Circuit Data
-
-Equivalent Circuit Data
-
 
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
@@ -58,19 +52,7 @@ Equivalent Circuit Data
 | [Rkq2] Q-Axis Damper No. 2 Resistance | p.u. | q轴阻尼绕组2电阻（Q绕组） | 实数（常量） |  |
 | [Xlkq2] Q-Axis Damper No. 2 Leakage Reactance | p.u. | q轴阻尼绕组2漏电抗（Q绕组） | 实数（常量） |  |
 
-### Experimental Data
-
-Experimental Data
-
-
-| 参数名 |  描述 | 类型 | 备注 |
-| ------ |  ---- |:----:| ---- |
-
-
 ### Rotor Equation
-
-Rotor Equation
-
 
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
@@ -79,9 +61,6 @@ Rotor Equation
 | Damping Constant | s | 机械阻尼时间常数 | 实数（常量） |  |
 
 ### Initial Condition
-
-Initial Condition
-
 
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
@@ -95,9 +74,6 @@ Initial Condition
 | Rotor Unlocking Signal |  | 转子方程解锁信号 | 虚拟引脚（输入） |  |
 
 ### Monitoring
-
-Monitoring
-
 
 | 参数名 |  描述 | 类型 | 备注 |
 | ------ |  ---- |:----:| ---- |
@@ -115,8 +91,6 @@ Monitoring
 | Terminal Reactive Power [MVar] |  定子端输出无功功率信号 | 虚拟引脚（输出） |  |
 | Terminal Current Vector [kA] |  定子端多相电流 | 虚拟引脚（输出） |  |
 
-
-
 ## 端口列表
 
 | 端口名 | 描述 | 类型 | 数据维数 |
@@ -127,7 +101,4 @@ Monitoring
 | Te |  | 输出 | 1 x 1 |
 | Ef |  | 输入 | 1 x 1 |
 | If |  | 输出 | 1 x 1 |
-
-
-
 

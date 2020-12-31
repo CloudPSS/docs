@@ -19,7 +19,7 @@ symbol: Text
 
 ## 使用说明
 
-该文本编辑器用于注释时，其文本内容编辑支持MarkDwon语法，MarkDown的基本用法见[MarkDown语法介绍](../../../../features/Basic/Markdown/index.md)。
+该文本编辑器用于注释时，其文本内容编辑支持MarkDwon语法，MarkDown的基本用法见[MarkDown语法介绍](../../../../features/Other/Markdown/index.md)。
 
 用于背景时，可以通过格式面板进行相应的设置。
 

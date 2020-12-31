@@ -52,7 +52,9 @@ symbol: ThreeLevelHModule
 | KB | 1×1 |模块闭锁信号输入端，输入0则闭锁全部开关信号，输入非零则不闭锁 |
 
 ## 使用说明
+下图示出了三电平H桥模块的单元测试算例，算例详见[中点钳位三电平半桥变流器](https://cloudpss.net/project/CloudPSSTemplate/NPCmodule#/design)。
 
+![单元测试图](./T8.png)
 
 ## 相关元件
 [背靠背H桥模块](../BacktoBackModule/index.md)、[H桥模块](../HBridgeModule/index.md)、[三相H桥模块](../HBridgeModule_3p/index.md)、[H桥电感模块](../HBridgeWithInductanceModule/index.md)、[H桥变压器模块](../HBridgeWithTransformerModule/index.md)、[半桥模块](../HalfBridgeModule/index.md)

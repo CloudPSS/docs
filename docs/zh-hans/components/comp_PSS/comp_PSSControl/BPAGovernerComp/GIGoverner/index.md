@@ -14,6 +14,8 @@ classname: _GIGoverner
 symbol: GI
 ---
 
+## 基本描述
+
 ## 参数列表
 
 ### 调节系统模型1（GI）

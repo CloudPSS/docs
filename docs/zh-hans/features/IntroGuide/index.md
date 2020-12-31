@@ -107,7 +107,7 @@ CloudPSS SimStudio内置了即时错误校验功能。用户在搭建算例的�
 - 我希望熟悉电力系统模型和仿真工具，搭建简单仿真算例
 - 我希望完成课程实验
 :::success 
-你只需要在`项目类型`处选择`简单项目`，按照**快速入门**中的3个算例构建提示，掌握CloudPSS SimStudio的基础功能，学习**量测和输出系统**，即可实现上述需求。
+你只需要在`项目类型`处选择`简单项目`，按照[**快速入门**](../../guide/rumen/index.md)中的3个算例构建提示，掌握CloudPSS SimStudio的基础功能，学习[**量测和输出系统**](../../features/Basic/Measure/index.md)，即可实现上述需求。
 :::
 
 :::info 研究型用户
@@ -115,7 +115,7 @@ CloudPSS SimStudio内置了即时错误校验功能。用户在搭建算例的�
 - 我需要做多场景分析
 - ...
 :::success 
-在掌握CloudPSS SimStudio的基础功能后，你需要进一步了解CloudPSS的**参数和引脚体系**、**元件表**、**方案管理**功能。在`项目类型`处选择`普通项目`，即可使用CloudPSS完成这些研究。
+在掌握CloudPSS SimStudio的基础功能后，你需要进一步了解CloudPSS的[**参数和引脚体系**](../../features/Basic/ParameterSystem/index.md)、[**元件表**](../../features/Basic/ComponentTable/index.md)、[**方案管理**](../../features/Basic/ParameterCal/index.md)功能。在`项目类型`处选择`普通项目`，即可使用CloudPSS完成这些研究。
 :::
 
 :::info 专业型用户
@@ -124,10 +124,10 @@ CloudPSS SimStudio内置了即时错误校验功能。用户在搭建算例的�
 - 我需要自定义元件和自定义应用
 - ...
 :::success 
-你需要进一步掌握**模块封装**、**模块调用**、**权限管理**等功能。在`项目类型`处选择`元件`，即可使用CloudPSS构建自定义元件。
+你需要进一步掌握[**模块封装**](../../features/Basic/Mask/index.md)、[**模块调用**](../../features/Basic/System/index.md)、[**权限管理**](../../features/Workbench/Summary/index.md)等功能。在`项目类型`处选择`元件`，即可使用CloudPSS构建自定义元件。
 :::
 
-:::info 专业用户
+:::info 其他用户
 - 我希望获得更快的建模仿真体验。
 - 觉得线上版平台还无法满足我的需求。
 - ...
@@ -135,4 +135,4 @@ CloudPSS SimStudio内置了即时错误校验功能。用户在搭建算例的�
 没问题！请直接通过CloudPSS公众号与我们联系。CloudPSS SimStudio也提供私有化部署和软硬件一体化版本。相比线上版本，软硬件一体化版本的功能和性能更强大。同时，我们也提供其他高级仿真功能和定制化开发服务。
 :::
 
-最后，祝大家在模型工坊“玩”地顺利！
+最后，祝大家在模型工坊“玩”得顺利！

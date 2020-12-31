@@ -18,9 +18,6 @@ symbol: 综合负荷模型
 
 ### Configuration
 
-Configuration
-
-
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
 | Name |  | 元件名称 | 文本 |  |
@@ -31,9 +28,6 @@ Configuration
 | Model Type |  | 选择负荷模型种类 | 选择 |  |
 
 ### Load Data
-
-Load Data
-
 
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
@@ -51,9 +45,6 @@ Load Data
 
 ### Induction Motor Data
 
-Induction Motor Data
-
-
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
 | Magnetizing Parameter Format |  | 选择输入激磁电抗Xm或定子开路转子回路时间常数Tdol' | 选择 |  |
@@ -66,9 +57,6 @@ Induction Motor Data
 
 ### Rotor Equation
 
-Rotor Equation
-
-
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
 | Mechanical Torque Type |  | 选择自动计算的机械转矩计算模型 | 选择 |  |
@@ -80,9 +68,6 @@ Rotor Equation
 
 ### Initial Condition
 
-Initial Condition
-
-
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
 | ------ | ---- | ---- |:----:| ---- |
 | Initial Parameter Format |  | 异步电机初始参数输入类型 | 选择 |  |
@@ -91,9 +76,6 @@ Initial Condition
 | Initial Load Factor Mlf |  | 初始负载率 | 实数（常量） |  |
 
 ### Monitoring
-
-Monitoring
-
 
 | 参数名 |  描述 | 类型 | 备注 |
 | ------ |  ---- |:----:| ---- |
@@ -104,9 +86,6 @@ Monitoring
 | Reactive Power [MW] |  定子侧无功功率 | 虚拟引脚（输出） |  |
 
 ### Monitoring (Induction Motor)
-
-Monitoring (Induction Motor)
-
 
 | 参数名 |  描述 | 类型 | 备注 |
 | ------ |  ---- |:----:| ---- |
@@ -124,8 +103,6 @@ Monitoring (Induction Motor)
 | Active Power (Induction Motor) [MW] |  感应电机定子侧有功功率 | 虚拟引脚（输出） |  |
 | Reactive Power (Induction Motor) [MW] |  感应电机定子侧无功功率 | 虚拟引脚（输出） |  |
 
-
-
 ## 端口列表
 
 | 端口名 | 描述 | 类型 | 数据维数 |
@@ -135,6 +112,4 @@ Monitoring (Induction Motor)
 | Control Switch Signal |  | 输入 | 1 x 1 |
 | Input Torque |  | 输入 | 1 x 1 |
 
-
-
-
+##

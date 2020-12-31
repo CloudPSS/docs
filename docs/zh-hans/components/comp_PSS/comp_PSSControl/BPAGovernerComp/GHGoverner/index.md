@@ -14,6 +14,8 @@ classname: _GHGoverner
 symbol: GH
 ---
 
+## 基本描述
+
 ## 参数列表
 
 ### 水轮机调速器和原动机模型（GH）
