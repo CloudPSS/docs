@@ -84,6 +84,7 @@ nav {
 .mask {
   position: relative;
   height: 100%;
+  overflow: hidden;
   contain: content;
   &::after,
   &::before {
