@@ -22,7 +22,7 @@ async function main() {
             const file = await fs.readFile(v, 'utf-8');
             fm = undefined;
             md.render(file);
-            const front = fm ? yaml.safeLoad(fm) : undefined;
+            const front = fm ? yaml.load(fm) : undefined;
             const frontObj = typeof front == 'object' ? front : undefined;
 
             const filename = path.basename(v, '.md');

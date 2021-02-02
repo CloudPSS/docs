@@ -5,7 +5,7 @@ import type MarkdownIt from 'markdown-it';
 import type markdownIt from './markdown-it';
 import { GlobalService } from '../global';
 import { FrontMatter } from '@/interfaces/manifest';
-import { safeLoad } from 'js-yaml';
+import { load } from 'js-yaml';
 import * as path from 'path';
 
 /**
@@ -33,7 +33,7 @@ export class RenderService {
     constructor(readonly source: SourceService, readonly global: GlobalService) {
         this.md = (require('./markdown-it') as typeof markdownIt)({
             frontMatter: (fm) => {
-                const frontMatter = safeLoad(fm) as FrontMatter;
+                const frontMatter = load(fm) as FrontMatter;
                 if (frontMatter['redirect to']) {
                     frontMatter['redirect to'] = this.md.normalizeLink(frontMatter['redirect to']);
                 }
