@@ -72,7 +72,7 @@ It can provide users with modeling and simulation analysis functions for a varie
 
 ---
 ->Copyright (c) 2015- by CloudPSS<-
-->[京ICP备16015429号-1](https://beian.miit.gov.cn)<-
+->[蜀ICP备2020037721号](https://beian.miit.gov.cn)<-
 ->[Sichuan Energy Internet Research Institute, Tsinghua University](http://www.eiri.tsinghua.edu.cn)<-
 
 <style>

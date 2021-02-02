@@ -70,7 +70,7 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 
 ---
 ->Copyright (c) 2015- by CloudPSS<-
-->[京ICP备16015429号-1](https://beian.miit.gov.cn)<-
+->[蜀ICP备2020037721号](https://beian.miit.gov.cn)<-
 ->[清华大学能源互联网创新研究院](http://www.eiri.tsinghua.edu.cn)<-
 
 <style>
