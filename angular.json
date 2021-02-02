@@ -1,28 +1,50 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "cli": {
+    "analytics": "3d0969a7-fb2f-4686-91f1-07dd90c86196"
+  },
+  "defaultProject": "docs",
   "newProjectRoot": "projects",
   "projects": {
     "docs": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
+          "configurations": {
+            "github": {
+              "baseHref": "/docs/"
+            },
+            "production": {
+              "budgets": [
+                {
+                  "maximumError": "5mb",
+                  "maximumWarning": "2mb",
+                  "type": "initial"
+                },
+                {
+                  "maximumError": "10kb",
+                  "maximumWarning": "6kb",
+                  "type": "anyComponentStyle"
+                }
+              ],
+              "buildOptimizer": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "namedChunks": false,
+              "ngswConfigPath": "ngsw-config.json",
+              "optimization": true,
+              "outputHashing": "all",
+              "serviceWorker": true,
+              "sourceMap": false,
+              "vendorChunk": false
+            }
+          },
           "options": {
-            "outputPath": "dist",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.json",
-            "statsJson": true,
             "aot": true,
             "assets": [
               "src/favicon.ico",
@@ -39,60 +61,18 @@
                 "output": "./assets/amd/monaco-markdown/"
               }
             ],
-            "styles": ["src/styles/index.scss"],
-            "scripts": [],
             "customWebpackConfig": {
               "path": "./extra-webpack.config.js",
               "replaceDuplicatePlugins": true
-            }
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ],
-              "serviceWorker": true,
-              "ngswConfigPath": "ngsw-config.json"
             },
-            "github": {
-              "baseHref": "/docs/"
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "options": {
-            "browserTarget": "docs:build",
-            "host": "0.0.0.0",
-            "port": 4000
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "docs:build:production"
-            }
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "outputPath": "dist",
+            "polyfills": "src/polyfills.ts",
+            "scripts": [],
+            "statsJson": true,
+            "styles": ["src/styles/index.scss"],
+            "tsConfig": "tsconfig.json"
           }
         },
         "lint": {
@@ -100,12 +80,31 @@
           "options": {
             "lintFilePatterns": ["src/**/*.ts", "src/**/*.component.html"]
           }
+        },
+        "serve": {
+          "builder": "@angular-builders/custom-webpack:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "docs:build:production"
+            }
+          },
+          "options": {
+            "browserTarget": "docs:build",
+            "host": "0.0.0.0",
+            "port": 4000
+          }
         }
-      }
+      },
+      "prefix": "app",
+      "projectType": "application",
+      "root": "",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "sourceRoot": "src"
     }
   },
-  "defaultProject": "docs",
-  "cli": {
-    "analytics": "3d0969a7-fb2f-4686-91f1-07dd90c86196"
-  }
+  "version": 1
 }
