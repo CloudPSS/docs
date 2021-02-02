@@ -1,9 +1,9 @@
 <mat-toolbar *ngIf="(global.navbar | async) !== 'hidden'" [color]="'primary'" class="mat-elevation-z8">
   <button
     id="menu-button"
-    [class.hidden]="(global.menuButton | async) == null"
     [title]="(global.menuButton | async)?.title || '' | translate"
     (click)="menuClick()"
+    [class.hidden]="(global.menuButton | async) == null"
     mat-icon-button
   >
     <mat-icon>{{(global.menuButton | async)?.icon}}</mat-icon>
