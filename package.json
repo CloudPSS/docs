@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "5.0.4",
+  "version": "5.0.5",
   "scripts": {
     "start:ng": "ng serve",
     "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",
