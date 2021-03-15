@@ -294,10 +294,10 @@
   dependencies:
     eslint-scope "^5.1.0"
 
-"@angular/animations@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/animations/download/@angular/animations-11.0.9.tgz#fb8052f55aa2851ab375dcb99d8d59c34a03a745"
-  integrity sha1-+4BS9VqihRqzddy5nY1Zw0oDp0U=
+"@angular/animations@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/animations/download/@angular/animations-11.2.5.tgz#f964a5dc7667a84b0431bddfbb5a61934040f501"
+  integrity sha1-+WSl3HZnqEsEMb3fu1phk0BA9QE=
   dependencies:
     tslib "^2.0.0"
 
@@ -338,17 +338,17 @@
     universal-analytics "0.4.23"
     uuid "8.3.2"
 
-"@angular/common@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/common/download/@angular/common-11.0.9.tgz#423a10eb6133b5090966e33b14cfcb2a7ed1c118"
-  integrity sha1-QjoQ62EztQkJZuM7FM/LKn7RwRg=
+"@angular/common@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/common/download/@angular/common-11.2.5.tgz#4b4d9aaf226eb2f24f238e143ee564ab1f4bc749"
+  integrity sha1-S02aryJusvJPI44UPuVkqx9Lx0k=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/compiler-cli@~11.1.1":
-  version "11.1.1"
-  resolved "https://registry.npm.taobao.org/@angular/compiler-cli/download/@angular/compiler-cli-11.1.1.tgz#72dc37f0ef079a556661d2b87683c1d39dde4e88"
-  integrity sha1-ctw38O8HmlVmYdK4doPB053eTog=
+"@angular/compiler-cli@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/compiler-cli/download/@angular/compiler-cli-11.2.5.tgz#1843c4d469aa3d4638db022a02523f5aeeea8274"
+  integrity sha1-GEPE1GmqPUY42wIqAlI/Wu7qgnQ=
   dependencies:
     "@babel/core" "^7.8.6"
     "@babel/types" "^7.8.6"
@@ -366,24 +366,24 @@
     tslib "^2.0.0"
     yargs "^16.1.1"
 
-"@angular/compiler@~11.1.1":
-  version "11.1.1"
-  resolved "https://registry.npm.taobao.org/@angular/compiler/download/@angular/compiler-11.1.1.tgz#cafe43b52fb69f0b9493e597baec14fcffd13d7d"
-  integrity sha1-yv5DtS+2nwuUk+WXuuwU/P/RPX0=
+"@angular/compiler@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/compiler/download/@angular/compiler-11.2.5.tgz#5d0aef6161484b6f8f67ff2fef10db5a631c7661"
+  integrity sha1-XQrvYWFIS2+PZ/8v7xDbWmMcdmE=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/core@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/core/download/@angular/core-11.0.9.tgz#5e509af2d2580a07f9ddfe3b99ce86ae67689daf"
-  integrity sha1-XlCa8tJYCgf53f47mc6Grmdona8=
+"@angular/core@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/core/download/@angular/core-11.2.5.tgz#2d2b669f991b11322c8731124c4cdd5f07157e76"
+  integrity sha1-LStmn5kbETIshzESTEzdXwcVfnY=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/forms@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/forms/download/@angular/forms-11.0.9.tgz#c7238af3d42e75f436840f5cf3002cbd41811d84"
-  integrity sha1-xyOK89QudfQ2hA9c8wAsvUGBHYQ=
+"@angular/forms@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/forms/download/@angular/forms-11.2.5.tgz#3e669568d5a3805f36756fe4d4a4ebb6eac9b1b1"
+  integrity sha1-PmaVaNWjgF82dW/k1KTrturJsbE=
   dependencies:
     tslib "^2.0.0"
 
@@ -394,31 +394,31 @@
   dependencies:
     tslib "^2.0.0"
 
-"@angular/platform-browser-dynamic@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-11.0.9.tgz#280f5733ffd0135ad232d56022d445b57cee976d"
-  integrity sha1-KA9XM//QE1rSMtVgItRFtXzul20=
+"@angular/platform-browser-dynamic@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-11.2.5.tgz#2dfb5ccd700818a9f3bb756401642f043b0c2dfe"
+  integrity sha1-LftczXAIGKnzu3VkAWQvBDsMLf4=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/platform-browser@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/platform-browser/download/@angular/platform-browser-11.0.9.tgz#354795d82b961c164e40b54fe8125ceabcd096b6"
-  integrity sha1-NUeV2CuWHBZOQLVP6BJc6rzQlrY=
+"@angular/platform-browser@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/platform-browser/download/@angular/platform-browser-11.2.5.tgz#a00829cf0c23a3bfd28942fac35fafde9a7c970c"
+  integrity sha1-oAgpzwwjo7/SiUL6w1+v3pp8lww=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/router@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/router/download/@angular/router-11.0.9.tgz#3798ab2c5a905f73d927d3779942e3a9d2bf5ddc"
-  integrity sha1-N5irLFqQX3PZJ9N3mULjqdK/Xdw=
+"@angular/router@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/router/download/@angular/router-11.2.5.tgz#d13c81df10691f08e8fff765813ea03532493972"
+  integrity sha1-0TyB3xBpHwjo//dlgT6gNTJJOXI=
   dependencies:
     tslib "^2.0.0"
 
-"@angular/service-worker@~11.0.5":
-  version "11.0.9"
-  resolved "https://registry.npm.taobao.org/@angular/service-worker/download/@angular/service-worker-11.0.9.tgz#63b243ae2237c37d3b046af96bc3b7addf46c640"
-  integrity sha1-Y7JDriI3w307BGr5a8O3rd9GxkA=
+"@angular/service-worker@~11.2.5":
+  version "11.2.5"
+  resolved "https://registry.npm.taobao.org/@angular/service-worker/download/@angular/service-worker-11.2.5.tgz#ded697dab6624af599606612f006cf389c9830d6"
+  integrity sha1-3taX2rZiSvWZYGYS8AbPOJyYMNY=
   dependencies:
     tslib "^2.0.0"
 
