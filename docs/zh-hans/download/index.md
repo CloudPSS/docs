@@ -4,7 +4,7 @@ order: 600
 ---
 这里是cloudpss的下载中心，cloudpss的相关可下载软件可以在这里找到
 ### 可用软件列表
-<div id='download_table_container'>sdfsdf</div>
+<div id='download_table_container'></div>
 <script lang='js' id='download_script'>
 this.remove();
 const downloadTableContainer = document.getElementById('download_table_container');
