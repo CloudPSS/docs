@@ -3,4 +3,4 @@ declare module '*.yml' {
     export default data;
 }
 
-declare const monaco: import('monaco-editor');
+declare const monaco: typeof import('monaco-editor');
