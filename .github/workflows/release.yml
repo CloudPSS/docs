@@ -17,7 +17,7 @@ jobs:
         uses: bahmutov/npm-install@v1.1.0
       - name: Build for docs.cloudpss.net
         run: |
-          yarn build
+          yarn build:main
           rm -f dist/stats.json
           tar -cJvf dist.tar.xz -C ./dist .
           ls -l dist.tar.xz
