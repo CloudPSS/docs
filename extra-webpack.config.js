@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const _ = require('lodash');
 
 /**
  *
@@ -10,21 +11,7 @@ module.exports = function (config) {
         type: 'json', // Required by Webpack v4
         use: 'yaml-loader',
     });
-    config.node = {
-        fs: 'empty',
-        path: true,
-    };
-    config.plugins.push(
-        new webpack.IgnorePlugin({
-            resourceRegExp: /^esprima$/,
-            contextRegExp: /js-yaml/,
-        }),
-    );
-    config.plugins.push(
-        new webpack.IgnorePlugin({
-            resourceRegExp: /^ascii2mathml$/,
-            contextRegExp: /markdown-it-math/,
-        }),
-    );
+    _.set(config, 'resolve.fallback.path', require.resolve('path-browserify'));
+    _.set(config, 'resolve.fallback.fs', false);
     return config;
 };

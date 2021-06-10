@@ -2,7 +2,7 @@
   "name": "docs",
   "version": "5.0.5",
   "scripts": {
-    "start:ng": "ng serve",
+    "start:ng": "ng serve --disable-host-check",
     "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",
     "start": "concurrently yarn:start:* --raw",
     "prebuild": "yarn clean",
@@ -60,6 +60,7 @@
     "mermaid": "^8.10.2",
     "monaco-markdown": "^0.0.11",
     "ngx-monaco-editor": "^9.0.0",
+    "path-browserify": "^1.0.1",
     "prismjs": "^1.23.0",
     "rxjs": "~6.6.6",
     "sanitize.css": "^12.0.1",
@@ -67,7 +68,7 @@
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-builders/custom-webpack": "^11.1.1",
+    "@angular-builders/custom-webpack": "^12.1.0",
     "@angular-devkit/architect": "~0.1200.3",
     "@angular-devkit/build-angular": "~12.0.3",
     "@angular-devkit/schematics": "^12.0.3",
@@ -93,8 +94,8 @@
     "@types/prismjs": "^1.16.5",
     "@types/punycode": "^2.1.0",
     "@types/webpack": "^5.28.0",
-    "@typescript-eslint/eslint-plugin": "4.23.0",
-    "@typescript-eslint/parser": "4.23.0",
+    "@typescript-eslint/eslint-plugin": "4.26.1",
+    "@typescript-eslint/parser": "4.26.1",
     "concurrently": "^6.2.0",
     "eslint": "^7.26.0",
     "eslint-config-prettier": "^8.3.0",
