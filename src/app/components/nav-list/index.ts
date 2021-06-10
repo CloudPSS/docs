@@ -135,13 +135,13 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
             combineLatest(this._currentRawPath, merge(of(null), this.items.changes))
                 .pipe(debounceTime(50))
                 .subscribe(([currentRawPath]) => {
-                    const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+                    const current = this.items.find((i) => i.nativeElement.dataset['rawPath'] === currentRawPath);
                     current?.nativeElement.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
                 }),
             this._focus
                 .pipe(withLatestFrom(this._currentRawPath), debounceTime(50))
                 .subscribe(([_, currentRawPath]) => {
-                    const current = this.items.find((i) => i.nativeElement.dataset.rawPath === currentRawPath);
+                    const current = this.items.find((i) => i.nativeElement.dataset['rawPath'] === currentRawPath);
                     current?.nativeElement.focus({ preventScroll: true });
                 }),
         );

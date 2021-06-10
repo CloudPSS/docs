@@ -17,7 +17,7 @@ const routes: Routes = [
         matcher: (segments) => {
             const [category, ...rest] = segments;
             const posParams = { ...Object.fromEntries(Object.entries(rest)) };
-            if (category) posParams.category = category;
+            if (category) posParams['category'] = category;
             return {
                 consumed: segments,
                 posParams,

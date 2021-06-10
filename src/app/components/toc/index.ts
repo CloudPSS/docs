@@ -107,7 +107,7 @@ export class TocComponent implements AfterViewInit, OnDestroy {
         const mask = this.mask.nativeElement;
         this.offset = 0;
         if (this._currentId) {
-            const item = this.items.find((i) => i.nativeElement?.dataset?.id === this._currentId);
+            const item = this.items.find((i) => i.nativeElement?.dataset?.['id'] === this._currentId);
             if (item) {
                 this.offset = item.nativeElement.offsetTop - mask.clientHeight / 4;
             }

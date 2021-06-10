@@ -31,6 +31,7 @@ export class RenderService {
     };
 
     constructor(readonly source: SourceService, readonly global: GlobalService) {
+        // eslint-disable-next-line @typescript-eslint/no-var-requires
         this.md = (require('./markdown-it') as typeof markdownIt)({
             frontMatter: (fm) => {
                 const frontMatter = load(fm) as FrontMatter;
@@ -80,6 +81,7 @@ export class RenderService {
 
             return [rendered, { title, ...this.frontMatter, content: file.data }];
         } catch (ex) {
+            // eslint-disable-next-line no-console
             console.warn(file, options, ex);
             throw ex;
         } finally {
