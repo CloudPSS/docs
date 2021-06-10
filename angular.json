@@ -11,10 +11,14 @@
         "build": {
           "builder": "@angular-builders/custom-webpack:browser",
           "configurations": {
-            "github": {
+            "for-github": {
               "baseHref": "/Docs/"
             },
+            "for-standalone": {
+              "baseHref": "/docs/"
+            },
             "production": {
+              "aot": true,
               "budgets": [
                 {
                   "maximumError": "5mb",
@@ -44,7 +48,7 @@
             }
           },
           "options": {
-            "aot": true,
+            "aot": false,
             "assets": [
               "src/favicon.ico",
               "src/assets",
