@@ -6,7 +6,11 @@ plugins:
 overrides:
   - files: ['*.js']
     parserOptions:
-      ecmaVersion: 2017
+      ecmaVersion: 2020
+      sourceType: module
+    extends:
+      - eslint:recommended
+      - plugin:prettier/recommended
   - files: ['*.ts']
     parser: '@typescript-eslint/parser'
     parserOptions:
@@ -16,10 +20,11 @@ overrides:
       - plugin:@typescript-eslint/recommended
       - plugin:@typescript-eslint/recommended-requiring-type-checking
       - plugin:@angular-eslint/recommended
-      - plugin:prettier/recommended
       - plugin:jsdoc/recommended
+      - plugin:prettier/recommended
     rules:
-      'prettier/prettier': [1]
+      no-console: [1]
+      prettier/prettier: [1]
       '@typescript-eslint/array-type': [1, { default: array-simple }]
       '@typescript-eslint/explicit-function-return-type':
         - 2
@@ -32,7 +37,7 @@ overrides:
         - 1
         - allows: [protected readonly, private readonly, public readonly, readonly]
       '@typescript-eslint/no-throw-literal': [2]
-      'no-unused-vars': [0]
+      no-unused-vars: [0]
       '@typescript-eslint/no-unused-vars':
         - 1
         - varsIgnorePattern: ^_
@@ -47,7 +52,7 @@ overrides:
             object: false
       no-void: [1, { allowAsStatement: true }]
       eqeqeq: [1, smart]
-      'jsdoc/require-jsdoc':
+      jsdoc/require-jsdoc:
         - 1
         - require:
             ClassDeclaration: true
@@ -59,15 +64,16 @@ overrides:
             - MethodDefinition[ kind=/(method|get)/ ]:has(FunctionExpression)
             - { context: ClassProperty, inlineCommentBlock: true }
             - { context: TSInterfaceBody > TSPropertySignature, inlineCommentBlock: true }
-      'jsdoc/no-types': 1
-      'jsdoc/require-description':
+      jsdoc/no-types: 1
+      jsdoc/require-description:
         - 1
         - contexts: [any]
-      'jsdoc/require-param': 0
-      'jsdoc/require-param-type': 0
-      'jsdoc/require-returns': 0
-      'jsdoc/require-returns-check': 0
-      'jsdoc/require-returns-type': 0
+      jsdoc/require-param: 0
+      jsdoc/require-param-type: 0
+      jsdoc/require-returns: 0
+      jsdoc/require-returns-check: 0
+      jsdoc/require-returns-type: 0
+      jsdoc/require-yields: 0
   - files: ['*.html']
     extends:
       - plugin:@angular-eslint/template/recommended

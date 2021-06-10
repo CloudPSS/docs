@@ -65,9 +65,11 @@ import { EditorComponent } from './pages/editor';
         MonacoEditorModule.forRoot({
             baseUrl: './assets/amd',
             onMonacoLoad: () => {
-                ((window.require as unknown) as {
-                    config: (c: unknown) => void;
-                }).config({
+                (
+                    window.require as unknown as {
+                        config: (c: unknown) => void;
+                    }
+                ).config({
                     paths: {
                         MonacoMarkdown: './assets/amd/monaco-markdown/monaco-markdown.min.js',
                     },
