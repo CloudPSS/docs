@@ -1,34 +1,37 @@
 {
   "root": true,
-  "plugins": ["@typescript-eslint", "prettier", "jsdoc"],
   "env": {
-    "commonjs": true,
-    "browser": true
+    "browser": true,
+    "commonjs": true
   },
+  "plugins": ["@typescript-eslint", "prettier", "jsdoc"],
   "overrides": [
     {
+      "extends": ["eslint:recommended", "plugin:prettier/recommended"],
       "files": ["*.js"],
       "parserOptions": {
         "ecmaVersion": 2020,
         "sourceType": "module"
       },
-      "extends": ["eslint:recommended", "plugin:prettier/recommended"],
       "rules": {
+        "prettier/prettier": [1],
+        "eqeqeq": [1, "smart"],
         "no-unused-vars": [
           1,
           {
             "argsIgnorePattern": "^_",
             "varsIgnorePattern": "^_"
           }
+        ],
+        "no-void": [
+          1,
+          {
+            "allowAsStatement": true
+          }
         ]
       }
     },
     {
-      "files": ["*.ts"],
-      "parserOptions": {
-        "project": "tsconfig.json"
-      },
-      "parser": "@typescript-eslint/parser",
       "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
@@ -37,16 +40,64 @@
         "plugin:jsdoc/recommended",
         "plugin:prettier/recommended"
       ],
+      "files": ["*.ts"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "tsconfig.json"
+      },
       "rules": {
-        "jsdoc/require-yields": 0,
-        "jsdoc/require-returns": 0,
-        "@typescript-eslint/prefer-for-of": [1],
+        "@typescript-eslint/array-type": [
+          1,
+          {
+            "default": "array-simple"
+          }
+        ],
         "@typescript-eslint/ban-types": [
           1,
           {
             "types": {
               "object": false
             }
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          2,
+          {
+            "allowExpressions": true
+          }
+        ],
+        "@typescript-eslint/no-extraneous-class": [
+          1,
+          {
+            "allowStaticOnly": true,
+            "allowWithDecorator": true
+          }
+        ],
+        "@typescript-eslint/no-parameter-properties": [
+          1,
+          {
+            "allows": ["protected readonly", "private readonly", "public readonly", "readonly"]
+          }
+        ],
+        "@typescript-eslint/no-throw-literal": [2],
+        "no-unused-vars": [0],
+        "@typescript-eslint/no-unused-vars": [
+          1,
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_"
+          }
+        ],
+        "@typescript-eslint/prefer-for-of": [1],
+        "@typescript-eslint/prefer-function-type": [1],
+        "@typescript-eslint/prefer-nullish-coalescing": [1],
+        "@typescript-eslint/prefer-optional-chain": [1],
+        "eqeqeq": [1, "smart"],
+        "jsdoc/no-types": 1,
+        "jsdoc/require-description": [
+          1,
+          {
+            "contexts": ["any"]
           }
         ],
         "jsdoc/require-jsdoc": [
@@ -58,12 +109,12 @@
               "TSTypeAliasDeclaration",
               "MethodDefinition[ kind=/(method|get)/ ]:has(FunctionExpression)",
               {
-                "inlineCommentBlock": true,
-                "context": "ClassProperty"
+                "context": "ClassProperty",
+                "inlineCommentBlock": true
               },
               {
-                "inlineCommentBlock": true,
-                "context": "TSInterfaceBody > TSPropertySignature"
+                "context": "TSInterfaceBody > TSPropertySignature",
+                "inlineCommentBlock": true
               }
             ],
             "require": {
@@ -72,70 +123,32 @@
             }
           }
         ],
-        "@typescript-eslint/array-type": [
-          1,
-          {
-            "default": "array-simple"
-          }
-        ],
         "jsdoc/require-param": 0,
-        "@typescript-eslint/no-extraneous-class": [
-          1,
-          {
-            "allowWithDecorator": true,
-            "allowStaticOnly": true
-          }
-        ],
         "jsdoc/require-param-type": 0,
-        "jsdoc/no-types": 1,
-        "no-console": [1],
-        "@typescript-eslint/prefer-nullish-coalescing": [1],
-        "@typescript-eslint/prefer-optional-chain": [1],
-        "jsdoc/require-description": [
-          1,
-          {
-            "contexts": ["any"]
-          }
-        ],
-        "@typescript-eslint/no-unused-vars": [
-          1,
-          {
-            "argsIgnorePattern": "^_",
-            "varsIgnorePattern": "^_"
-          }
-        ],
-        "@typescript-eslint/prefer-function-type": [1],
-        "jsdoc/require-returns-type": 0,
-        "@typescript-eslint/no-parameter-properties": [
-          1,
-          {
-            "allows": ["protected readonly", "private readonly", "public readonly", "readonly"]
-          }
-        ],
-        "no-unused-vars": [0],
+        "jsdoc/require-returns": 0,
         "jsdoc/require-returns-check": 0,
-        "eqeqeq": [1, "smart"],
-        "@typescript-eslint/explicit-function-return-type": [
-          2,
-          {
-            "allowExpressions": true
-          }
-        ],
-        "prettier/prettier": [1],
+        "jsdoc/require-returns-type": 0,
+        "jsdoc/require-yields": 0,
+        "no-console": [1],
         "no-void": [
           1,
           {
             "allowAsStatement": true
           }
         ],
-        "@typescript-eslint/no-throw-literal": [2]
+        "prettier/prettier": [1]
       }
     },
     {
-      "files": ["*.html"],
       "extends": ["plugin:@angular-eslint/template/recommended"],
+      "files": ["*.html"],
       "rules": {
-        "@angular-eslint/template/eqeqeq": [1, { "allowNullOrUndefined": true }]
+        "@angular-eslint/template/eqeqeq": [
+          1,
+          {
+            "allowNullOrUndefined": true
+          }
+        ]
       }
     }
   ]

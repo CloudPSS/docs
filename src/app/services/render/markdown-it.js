@@ -276,7 +276,7 @@ module.exports = function (options) {
                             if (id[1] != null && id[1].toLowerCase() === 'av') {
                                 idArg = 'aid=' + id[2];
                             }
-                            if (id[1] == '') {
+                            if (id[1] === '') {
                                 idArg = 'aid=' + id[2];
                             }
                             return `//player.bilibili.com/player.html?${idArg}&as_wide=1&high_quality=1&danmaku=0`;
