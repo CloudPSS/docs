@@ -1,21 +1,17 @@
-
 # compiled output
 /dist
 /tmp
 /out-tsc
 
-/*.config.js
+# config files
+/*.config.{js,ts}
 .*.{js,ts}
-
-*.js
 
 # packages
 **/node_modules/
 /.pnp.js
 /.pnp/
 
-/src/index.html
-/src/environments/
-
+# no code data
 /tools/
 /docs/
