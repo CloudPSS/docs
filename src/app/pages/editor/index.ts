@@ -121,7 +121,7 @@ export class EditorComponent implements AfterViewInit {
             run: (ed) => {
                 const data = ed.getValue();
                 const file = new Blob([data], { type: 'text/markdown;charset=utf-8' });
-                let name = path.basename(this.route.snapshot.queryParams.path ?? 'Untitled');
+                let name = path.basename(this.route.snapshot.queryParams['path'] ?? 'Untitled');
                 if (!/\.md$/i.test(name)) {
                     name += '.md';
                 }
@@ -140,7 +140,7 @@ export class EditorComponent implements AfterViewInit {
         const editorLine = visible[0].startLineNumber;
         const ele = Array.from(this.preview.doc.nativeElement.querySelectorAll<HTMLElement>('[data-source-line]')).find(
             (el) => {
-                const line = Number.parseInt(el.dataset.sourceLine ?? '');
+                const line = Number.parseInt(el.dataset['sourceLine'] ?? '');
                 return line >= editorLine;
             },
         );
@@ -153,7 +153,10 @@ export class EditorComponent implements AfterViewInit {
     onNavigate(target?: NavigateEvent): void {
         if (!target) return;
 
-        if (`/${this.global.getLanguage()}${target.path}` === this.route.snapshot.queryParams.path && target.fragment) {
+        if (
+            `/${this.global.getLanguage()}${target.path}` === this.route.snapshot.queryParams['path'] &&
+            target.fragment
+        ) {
             this.preview.scrollTo(target.fragment);
         }
     }

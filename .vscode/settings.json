@@ -1,13 +1,12 @@
 {
   "npm.packageManager": "yarn",
   "eslint.packageManager": "yarn",
-  "eslint.enable": true,
   "eslint.lintTask.enable": true,
   "eslint.format.enable": true,
   "eslint.options": {
     "extensions": [".ts", ".html"]
   },
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.tsdk": "./node_modules/typescript/lib",
   "files.eol": "\n",
   "editor.tabSize": 2,
   "[javascript]": {
@@ -22,6 +21,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"]
