@@ -102,10 +102,12 @@ export class EditorComponent implements AfterViewInit {
      * 加载编辑器插件
      */
     initMonaco(editor: monaco.editor.IStandaloneCodeEditor): void {
-        ((window.require as unknown) as (
-            require: ['MonacoMarkdown'],
-            callback: (MonacoMarkdown: typeof import('monaco-markdown')) => void,
-        ) => void)(['MonacoMarkdown'], ({ MonacoMarkdownExtension }) => {
+        (
+            window.require as unknown as (
+                require: ['MonacoMarkdown'],
+                callback: (MonacoMarkdown: typeof import('monaco-markdown')) => void,
+            ) => void
+        )(['MonacoMarkdown'], ({ MonacoMarkdownExtension }) => {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             new MonacoMarkdownExtension().activate(editor as any);
             this.lang = 'markdown-math';

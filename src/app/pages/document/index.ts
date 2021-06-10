@@ -45,7 +45,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     readonly url = combineLatest([
         this.route.params.pipe(
             map((s) => {
-                const category = s.category as string;
+                const category = s['category'] as string;
                 const path: string[] = [];
                 for (const key in s) {
                     const i = Number.parseInt(key);
@@ -155,9 +155,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 }
                 if (scrollMarginTop < 0) {
                     scrollMarginTop = Number.parseFloat(
-                        ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>)[
-                            'scrollMarginTop'
-                        ],
+                        (getComputedStyle(headers[0].element) as unknown as Record<string, string>)['scrollMarginTop'],
                     );
                     if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
                     scrollMarginTop += 1;

@@ -1,12 +1,13 @@
+@use 'sass:map';
 @use "sass:color";
 @use '~@angular/material' as mat;
 @import '~katex/dist/katex.css';
 
 // block quotes and def lists
 @mixin quote-color($palette, $char: false) {
-  $quotebg: rgba(map-get($palette, A100), 0.05);
-  $quotebd: rgba(map-get($palette, A200), 0.2);
-  $qoutefg: map-get($palette, 400);
+  $quotebg: rgba(map.get($palette, A100), 0.05);
+  $quotebd: rgba(map.get($palette, A200), 0.2);
+  $qoutefg: map.get($palette, 400);
   background-color: $quotebg;
   @media print {
     background: white !important;
@@ -30,24 +31,24 @@
 }
 
 @mixin markdown-color($config-or-theme) {
-  $config: mat-get-color-config($config-or-theme);
+  $config: mat.get-color-config($config-or-theme);
 
-  $primary: map-get($config, primary);
-  $warn: map-get($config, warn);
-  $accent: map-get($config, accent);
-  $background: map-get($config, background);
-  $foreground: map-get($config, foreground);
-  $is-dark: map-get($config, is-dark);
+  $primary: map.get($config, primary);
+  $warn: map.get($config, warn);
+  $accent: map.get($config, accent);
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+  $is-dark: map.get($config, is-dark);
 
-  $theme: map-get($primary, default);
-  $bg: map-get($background, background);
-  $border: color.mix(color.change(map-get($foreground, divider), $alpha: 1), $bg, 20%);
+  $theme: map.get($primary, default);
+  $bg: map.get($background, background);
+  $border: color.mix(color.change(map.get($foreground, divider), $alpha: 1), $bg, 20%);
   $codebg: color.adjust($bg, $lightness: -3%);
-  $shadow: map-get($foreground, icon);
+  $shadow: map.get($foreground, icon);
 
-  $primary-color: map-get($primary, 900);
+  $primary-color: map.get($primary, 900);
   @if $is-dark {
-    $primary-color: map-get($primary, 100);
+    $primary-color: map.get($primary, 100);
   }
 
   // font sizes
@@ -124,31 +125,31 @@
         background-color: color.mix($border, $bg, 10%);
       }
       tr:hover > td {
-        background-color: rgba(map-get($primary, A100), 0.1) !important;
+        background-color: rgba(map.get($primary, A100), 0.1) !important;
       }
     }
   }
 }
 
 @mixin markdown-theme($config-or-theme) {
-  $config: mat-get-color-config($config-or-theme);
+  $config: mat.get-color-config($config-or-theme);
 
-  $primary: map-get($config, primary);
-  $warn: map-get($config, warn);
-  $accent: map-get($config, accent);
-  $background: map-get($config, background);
-  $foreground: map-get($config, foreground);
-  $is-dark: map-get($config, is-dark);
+  $primary: map.get($config, primary);
+  $warn: map.get($config, warn);
+  $accent: map.get($config, accent);
+  $background: map.get($config, background);
+  $foreground: map.get($config, foreground);
+  $is-dark: map.get($config, is-dark);
 
-  $theme: map-get($primary, default);
-  $bg: map-get($background, background);
-  $border: color.mix(color.change(map-get($foreground, divider), $alpha: 1), $bg, 20%);
+  $theme: map.get($primary, default);
+  $bg: map.get($background, background);
+  $border: color.mix(color.change(map.get($foreground, divider), $alpha: 1), $bg, 20%);
   $codebg: color.adjust($bg, $lightness: -3%);
-  $shadow: map-get($foreground, icon);
+  $shadow: map.get($foreground, icon);
 
-  $primary-color: map-get($primary, 900);
+  $primary-color: map.get($primary, 900);
   @if $is-dark {
-    $primary-color: map-get($primary, 100);
+    $primary-color: map.get($primary, 100);
   }
 
   // font sizes
@@ -275,12 +276,12 @@
       margin: 0.8em 0;
     }
     mark {
-      background: rgba(map-get(mat.$yellow-palette, A700), 40%);
+      background: rgba(map.get(mat.$yellow-palette, A700), 40%);
       color: var(--theme-foreground-text);
       @media print {
         background: none;
         color: #000;
-        border: 2px solid map-get(mat.$yellow-palette, 500) !important;
+        border: 2px solid map.get(mat.$yellow-palette, 500) !important;
       }
     }
     abbr[title] {

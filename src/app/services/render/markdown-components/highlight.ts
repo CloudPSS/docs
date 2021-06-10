@@ -103,8 +103,8 @@ export class MdHighlight extends MdComponentBase {
             lang = languageNameReplacement[lang];
         }
         this.setAttribute('language', lang);
-        const code = this.dataset.source ?? this.textContent ?? '';
-        this.dataset.source = code;
+        const code = this.dataset['source'] ?? this.textContent ?? '';
+        this.dataset['source'] = code;
         this.textContent = code;
         await MdHighlight.init();
         const Prism = window.Prism;
@@ -112,7 +112,7 @@ export class MdHighlight extends MdComponentBase {
         if (highlighter) {
             this.innerHTML = Prism.highlight(code, Prism.languages[lang], lang);
         } else {
-            const autoloader = Prism.plugins.autoloader as {
+            const autoloader = Prism.plugins['autoloader'] as {
                 loadLanguages: (name: string, callback: () => void) => void;
             };
             autoloader.loadLanguages(lang, () => {
