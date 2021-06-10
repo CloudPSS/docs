@@ -1,3 +1,4 @@
+@use '~@angular/material' as mat;
 @import '~sanitize.css';
 @import '~sanitize.css/forms';
 @import '~sanitize.css/typography';
@@ -11,7 +12,7 @@ $material-icons-font-path: '~material-icons/iconfont/';
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
-@include mat-core();
+@include mat.core();
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -19,11 +20,11 @@ $material-icons-font-path: '~material-icons/iconfont/';
 
 @mixin apply($theme) {
   @include css-map($theme, 'theme');
-  @include angular-material-color($theme);
+  @include mat.all-component-colors($theme);
   @include markdown-color($theme);
 }
 
-@include angular-material-theme($docs-theme);
+@include mat.all-component-themes($docs-theme);
 @include markdown-theme($docs-theme);
 :root {
   @include css-map($docs-theme, 'theme');
