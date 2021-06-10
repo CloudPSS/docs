@@ -3319,10 +3319,10 @@ cssesc@^3.0.0:
   resolved "https://registry.npm.taobao.org/cssesc/download/cssesc-3.0.0.tgz#37741919903b868565e1c09ea747445cd18983ee"
   integrity sha1-N3QZGZA7hoVl4cCep0dEXNGJg+4=
 
-cssnano-preset-default@^5.1.2:
-  version "5.1.2"
-  resolved "https://registry.nlark.com/cssnano-preset-default/download/cssnano-preset-default-5.1.2.tgz#5d4877a91769823c5da6bcebd54996ecdf8aca12"
-  integrity sha1-XUh3qRdpgjxdprzr1UmW7N+KyhI=
+cssnano-preset-default@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.nlark.com/cssnano-preset-default/download/cssnano-preset-default-5.1.3.tgz?cache=0&sync_timestamp=1623330413864&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcssnano-preset-default%2Fdownload%2Fcssnano-preset-default-5.1.3.tgz#caa54183a8c8df03124a9e23f374ab89df5a9a99"
+  integrity sha1-yqVBg6jI3wMSSp4j83Srid9ampk=
   dependencies:
     css-declaration-sorter "^6.0.3"
     cssnano-utils "^2.0.1"
@@ -3346,9 +3346,9 @@ cssnano-preset-default@^5.1.2:
     postcss-normalize-string "^5.0.1"
     postcss-normalize-timing-functions "^5.0.1"
     postcss-normalize-unicode "^5.0.1"
-    postcss-normalize-url "^5.0.1"
+    postcss-normalize-url "^5.0.2"
     postcss-normalize-whitespace "^5.0.1"
-    postcss-ordered-values "^5.0.1"
+    postcss-ordered-values "^5.0.2"
     postcss-reduce-initial "^5.0.1"
     postcss-reduce-transforms "^5.0.1"
     postcss-svgo "^5.0.2"
@@ -3360,12 +3360,12 @@ cssnano-utils@^2.0.1:
   integrity sha1-hmCqKzfthp0uLyKRgZapqLZJjOI=
 
 cssnano@^5.0.0:
-  version "5.0.5"
-  resolved "https://registry.nlark.com/cssnano/download/cssnano-5.0.5.tgz#6b8787123bf4cd5a220a2fa6cb5bc036b0854b48"
-  integrity sha1-a4eHEjv0zVoiCi+my1vANrCFS0g=
+  version "5.0.6"
+  resolved "https://registry.nlark.com/cssnano/download/cssnano-5.0.6.tgz#2a91ad34c6521ae31eab3da9c90108ea3093535d"
+  integrity sha1-KpGtNMZSGuMeqz2pyQEI6jCTU10=
   dependencies:
     cosmiconfig "^7.0.0"
-    cssnano-preset-default "^5.1.2"
+    cssnano-preset-default "^5.1.3"
     is-resolvable "^1.1.0"
 
 csso@^4.2.0:
@@ -6643,10 +6643,10 @@ normalize-range@^0.1.2:
   resolved "https://registry.npm.taobao.org/normalize-range/download/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha1-LRDAa9/TEuqXd2laTShDlFa3WUI=
 
-normalize-url@^4.5.0:
-  version "4.5.1"
-  resolved "https://registry.nlark.com/normalize-url/download/normalize-url-4.5.1.tgz?cache=0&sync_timestamp=1621862036609&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnormalize-url%2Fdownload%2Fnormalize-url-4.5.1.tgz#0dd90cf1288ee1d1313b87081c9a5932ee48518a"
-  integrity sha1-DdkM8SiO4dExO4cIHJpZMu5IUYo=
+normalize-url@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.nlark.com/normalize-url/download/normalize-url-6.0.1.tgz?cache=0&sync_timestamp=1621862036609&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fnormalize-url%2Fdownload%2Fnormalize-url-6.0.1.tgz#a4f27f58cf8c7b287b440b8a8201f42d0b00d256"
+  integrity sha1-pPJ/WM+Meyh7RAuKggH0LQsA0lY=
 
 npm-bundled@^1.1.1:
   version "1.1.2"
@@ -7565,13 +7565,13 @@ postcss-normalize-unicode@^5.0.1:
     browserslist "^4.16.0"
     postcss-value-parser "^4.1.0"
 
-postcss-normalize-url@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.nlark.com/postcss-normalize-url/download/postcss-normalize-url-5.0.1.tgz#ffa9fe545935d8b57becbbb7934dd5e245513183"
-  integrity sha1-/6n+VFk12LV77Lu3k03V4kVRMYM=
+postcss-normalize-url@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.nlark.com/postcss-normalize-url/download/postcss-normalize-url-5.0.2.tgz?cache=0&sync_timestamp=1623330254932&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-normalize-url%2Fdownload%2Fpostcss-normalize-url-5.0.2.tgz#ddcdfb7cede1270740cf3e4dfc6008bd96abc763"
+  integrity sha1-3c37fO3hJwdAzz5N/GAIvZarx2M=
   dependencies:
     is-absolute-url "^3.0.3"
-    normalize-url "^4.5.0"
+    normalize-url "^6.0.1"
     postcss-value-parser "^4.1.0"
 
 postcss-normalize-whitespace@^5.0.1:
@@ -7581,10 +7581,10 @@ postcss-normalize-whitespace@^5.0.1:
   dependencies:
     postcss-value-parser "^4.1.0"
 
-postcss-ordered-values@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.nlark.com/postcss-ordered-values/download/postcss-ordered-values-5.0.1.tgz#79ef6e2bd267ccad3fc0c4f4a586dfd01c131f64"
-  integrity sha1-ee9uK9JnzK0/wMT0pYbf0BwTH2Q=
+postcss-ordered-values@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.nlark.com/postcss-ordered-values/download/postcss-ordered-values-5.0.2.tgz?cache=0&sync_timestamp=1623330247733&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpostcss-ordered-values%2Fdownload%2Fpostcss-ordered-values-5.0.2.tgz#1f351426977be00e0f765b3164ad753dac8ed044"
+  integrity sha1-HzUUJpd74A4PdlsxZK11PayO0EQ=
   dependencies:
     cssnano-utils "^2.0.1"
     postcss-value-parser "^4.1.0"
