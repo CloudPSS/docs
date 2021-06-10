@@ -27,5 +27,5 @@
     "strictTemplates": true
   },
   "include": ["src/**/*.ts", "src/**/*.js"],
-  "exclude": ["**/*.spec.ts", "**/*.worker.ts", "src/environments/**.ts"]
+  "exclude": ["**/*.spec.ts", "**/*.worker.ts"]
 }
