@@ -15,12 +15,18 @@ jobs:
           node-version: 14
       - name: Install
         uses: bahmutov/npm-install@v1.1.0
-      - name: Build
+      - name: Build for docs.cloudpss.net
         run: |
-          yarn build -c production
+          yarn build
           rm -f dist/stats.json
           tar -cJvf dist.tar.xz -C ./dist .
           ls -l dist.tar.xz
+      - name: Build for standalone
+        run: |
+          yarn build:standalone
+          rm -f dist/stats.json
+          tar -cJvf dist-standalone.tar.xz -C ./dist .
+          ls -l dist-standalone.tar.xz
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
@@ -28,7 +34,7 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: dist.tar.xz
+          artifacts: dist.tar.xz,dist-standalone.tar.xz
           prerelease: ${{ contains(github.event.ref, '-') }}
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}

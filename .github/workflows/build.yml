@@ -17,7 +17,7 @@ jobs:
       - name: Install
         uses: bahmutov/npm-install@v1.1.0
       - name: Build
-        run: yarn build -c production,github
+        run: yarn build:github
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3.7.1
         if: github.event_name == 'push'
