@@ -40,7 +40,6 @@
               "optimization": true,
               "outputHashing": "all",
               "serviceWorker": true,
-              "sourceMap": false,
               "vendorChunk": false
             }
           },
@@ -62,8 +61,7 @@
               }
             ],
             "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "replaceDuplicatePlugins": true
+              "path": "./extra-webpack.config.js"
             },
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -72,7 +70,10 @@
             "scripts": [],
             "statsJson": true,
             "styles": ["src/styles/index.scss"],
-            "tsConfig": "tsconfig.json"
+            "tsConfig": "tsconfig.json",
+            "optimization": false,
+            "buildOptimizer": false,
+            "sourceMap": true
           }
         },
         "lint": {

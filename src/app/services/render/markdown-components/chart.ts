@@ -1,6 +1,6 @@
 import { MdComponentBase } from './base';
 import { Subscription } from 'rxjs';
-import type ChartJs from 'chart.js';
+import type { Chart, ChartConfiguration } from 'chart.js';
 import { resizing } from '../utils';
 
 /**
@@ -10,16 +10,18 @@ export class MdChart extends MdComponentBase {
     /** @inheritdoc */
     static tagName = 'pre-md-chart';
     /** chartJs */
-    private static chartJs: typeof ChartJs;
+    private static chartJs: typeof Chart;
     /** 渲染 */
     private rerender?: Subscription;
     /** 图表配置 */
-    config?: ChartJs.ChartConfiguration;
+    config?: ChartConfiguration;
     /**
      * @inheritdoc
      */
     protected static async initImpl(): Promise<void> {
-        this.chartJs = (await import('chart.js')).default;
+        const { Chart, registerables } = await import('chart.js');
+        Chart.register(...registerables);
+        this.chartJs = Chart;
     }
     /**
      * @inheritdoc
@@ -35,14 +37,14 @@ export class MdChart extends MdComponentBase {
             root = this;
         }
         try {
-            const config = (this.config = JSON.parse(code) as ChartJs.ChartConfiguration);
+            const config = (this.config = JSON.parse(code) as ChartConfiguration);
             config.options = { ...config.options, responsive: false };
             this.style.display = 'block';
             const canvas = document.createElement('canvas');
             root.appendChild(canvas);
             canvas.style.maxWidth = '800px';
             await MdChart.init();
-            const chart = new MdChart.chartJs.Chart(canvas, config);
+            const chart = new MdChart.chartJs(canvas, config);
             const render = (): void => {
                 canvas.style.width = '100%';
                 canvas.style.height = '';

@@ -48,7 +48,7 @@ module.exports = function (options) {
         options,
     );
     if (options.highlight == null && customElements) {
-        options.highlight = loadCustomHighlights(global);
+        options.highlight = loadCustomHighlights();
     }
     let md = markdownIt(options);
 
