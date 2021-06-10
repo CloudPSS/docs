@@ -6,7 +6,7 @@
     "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",
     "start": "concurrently yarn:start:* --raw",
     "prebuild": "yarn clean",
-    "build": "ng build --prod",
+    "build": "ng build --configuration production",
     "postbuild": "node ./tools/post-build.js",
     "serve": "http-server -p4000 ./dist/",
     "lint": "ng lint",
