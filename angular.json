@@ -12,7 +12,7 @@
           "builder": "@angular-builders/custom-webpack:browser",
           "configurations": {
             "github": {
-              "baseHref": "/docs/"
+              "baseHref": "/Docs/"
             },
             "production": {
               "budgets": [
