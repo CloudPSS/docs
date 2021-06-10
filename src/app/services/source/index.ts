@@ -149,7 +149,6 @@ export class SourceService {
                 return m;
             }, {} as Manifest['sitemap']),
         };
-        console.log(manifest);
         return manifest;
     }
 
@@ -256,6 +255,7 @@ export class SourceService {
                     })
                     .pipe(
                         catchError((err) => {
+                            // eslint-disable-next-line no-console
                             console.warn(err);
                             return of(undefined);
                         }),

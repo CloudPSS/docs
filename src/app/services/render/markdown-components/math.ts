@@ -49,9 +49,8 @@ const languages: Record<string, Language | { aliasOf: string }> = {
  */
 function replaceMathText(fragment: DocumentFragment): void {
     const math = fragment.querySelectorAll<MdMath>(`${MdMath.tagName}[language]`);
-    console.log(math);
     math.forEach((el) => {
-        const source = el.dataset.source ?? '';
+        const source = el.dataset['source'] ?? '';
         if (!source) return;
         const lang = el.getAttribute('language');
         const mode = el.getAttribute('mode') === 'display' ? 'display' : 'inline';
@@ -65,7 +64,6 @@ function replaceMathText(fragment: DocumentFragment): void {
 
 /**复制 */
 function onCopy(event: HTMLElementEventMap['copy']): void {
-    console.log('copy');
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || !event.clipboardData) {
         return;
@@ -74,7 +72,6 @@ function onCopy(event: HTMLElementEventMap['copy']): void {
     if (!fragment.querySelector(MdMath.tagName)) {
         return;
     }
-    console.log('update');
     // Preserve usual HTML copy/paste behavior.
     const html: string[] = [];
     fragment.childNodes.forEach((node) => {
@@ -131,8 +128,8 @@ export class MdMath extends MdComponentBase {
         const mode = (this.getAttribute('mode') ?? 'inline').toLowerCase() as MathMode;
         this.setAttribute('mode', mode);
 
-        const source = (this.dataset.source ?? this.textContent ?? '').trim();
-        this.dataset.source = source;
+        const source = (this.dataset['source'] ?? this.textContent ?? '').trim();
+        this.dataset['source'] = source;
 
         if (!langDef) {
             this.innerHTML = `<span class="error">Unsupported language ${lang}</span>`;

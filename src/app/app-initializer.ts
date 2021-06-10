@@ -42,6 +42,7 @@ export class AppInitializerService {
         () => {
             if (this.updates.isEnabled) {
                 this.updates.available.subscribe((event) => {
+                    // eslint-disable-next-line no-console
                     console.log(
                         `Updates from ${event.current.hash} to ${event.available.hash} is currently available.`,
                     );
@@ -53,6 +54,7 @@ export class AppInitializerService {
                         .subscribe(() => document.location.reload());
                 });
                 this.updates.activated.subscribe((event) => {
+                    // eslint-disable-next-line no-console
                     console.log(`Updated from ${event.previous?.hash ?? 'unknown'} to ${event.current.hash}.`);
                 });
             }
