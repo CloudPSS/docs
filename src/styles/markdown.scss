@@ -1,5 +1,5 @@
 @use "sass:color";
-@import '~@angular/material/theming';
+@use '~@angular/material' as mat;
 @import '~katex/dist/katex.css';
 
 // block quotes and def lists
@@ -275,12 +275,12 @@
       margin: 0.8em 0;
     }
     mark {
-      background: rgba(map-get($mat-yellow, A700), 40%);
+      background: rgba(map-get(mat.$yellow-palette, A700), 40%);
       color: var(--theme-foreground-text);
       @media print {
         background: none;
         color: #000;
-        border: 2px solid map-get($mat-yellow, 500) !important;
+        border: 2px solid map-get(mat.$yellow-palette, 500) !important;
       }
     }
     abbr[title] {
@@ -515,26 +515,26 @@
     }
     [is='md-container'] {
       &[class~='info'] {
-        @include quote-color($mat-blue, 'i');
+        @include quote-color(mat.$blue-palette, 'i');
       }
       &[class~='warning'] {
-        @include quote-color($mat-orange, '!');
+        @include quote-color(mat.$orange-palette, '!');
       }
       &[class~='error'] {
-        @include quote-color($mat-red, '☓');
+        @include quote-color(mat.$red-palette, '☓');
       }
       &[class~='success'] {
-        @include quote-color($mat-light-green, '✓');
+        @include quote-color(mat.$light-green-palette, '✓');
       }
       &[class~='fail'] {
-        @include quote-color($mat-red, '✗');
+        @include quote-color(mat.$red-palette, '✗');
       }
       &[class~='question'] {
-        @include quote-color($mat-amber, '?');
+        @include quote-color(mat.$amber-palette, '?');
       }
     }
     dl {
-      @include quote-color($mat-teal);
+      @include quote-color(mat.$teal-palette);
     }
 
     [is='md-container'] > summary {

@@ -381,12 +381,12 @@
   dependencies:
     tslib "^2.1.0"
 
-"@angular/material@^11.2.4":
-  version "11.2.13"
-  resolved "https://registry.nlark.com/@angular/material/download/@angular/material-11.2.13.tgz#99960316d3ce58aac7497d7bb8b0c05468f502b9"
-  integrity sha1-mZYDFtPOWKrHSX17uLDAVGj1Ark=
+"@angular/material@^12.0.4":
+  version "12.0.4"
+  resolved "https://registry.nlark.com/@angular/material/download/@angular/material-12.0.4.tgz#0cd88328f846d7ba6485abc7f1888aef174d7e4c"
+  integrity sha1-DNiDKPhG17pkhavH8YiK7xdNfkw=
   dependencies:
-    tslib "^2.0.0"
+    tslib "^2.1.0"
 
 "@angular/platform-browser-dynamic@~12.0.4":
   version "12.0.4"
