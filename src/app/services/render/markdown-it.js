@@ -26,9 +26,10 @@ function loadCustomHighlights() {
                 return `<${MdMermaid.tagName} ${htmlAttr}>${code}</${MdMermaid.tagName}>`;
             case 'chart':
                 return `<${MdChart.tagName} ${htmlAttr}>${code}</${MdChart.tagName}>`;
-            default:
+            default: {
                 const langAttr = lang ? `language="${escapeHtml(lang)}"` : '';
                 return `<pre ${htmlAttr}><code is="${MdHighlight.tagName}" ${langAttr}>${code}</code></pre>`;
+            }
         }
     };
 }
@@ -61,7 +62,7 @@ module.exports = function (options) {
         [
             'summary',
             {
-                render(tokens, idx, opt, env, slf) {
+                render(tokens, idx, _opt, env, _slf) {
                     const token = tokens[idx];
                     const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
@@ -88,7 +89,7 @@ module.exports = function (options) {
                 /**
                  * @param {import('markdown-it/lib/token')[]} tokens
                  */
-                render(tokens, idx, opt, env, slf) {
+                render(tokens, idx, _opt, env, _slf) {
                     const token = tokens[idx];
                     const m = token.info.trim().match(/^\S+\s+(.*)$/);
                     const summary = m?.[1];
@@ -128,13 +129,12 @@ module.exports = function (options) {
                             return;
                         }
                         for (const key in v) {
-                            const element = v[key];
                             labels[key] = escapeHtml(v[key]);
                         }
                     });
 
                 use();
-                md.renderer.rules.footnote_block_open = function render_footnote_block_open(tokens, idx, options) {
+                md.renderer.rules.footnote_block_open = function render_footnote_block_open(_tokens, _idx, _options) {
                     return `<footer class="footnotes" aria-label="${labels.label}">\n<ol class="footnotes-list">\n`;
                 };
                 md.renderer.rules.footnote_block_close = function render_footnote_block_close() {
@@ -143,7 +143,7 @@ module.exports = function (options) {
                 md.renderer.rules.footnote_anchor_name = function render_footnote_anchor_name(
                     tokens,
                     idx,
-                    options,
+                    _options,
                     env /*, slf*/,
                 ) {
                     var label = slugify(tokens[idx].meta.label ?? Number(tokens[idx].meta.id + 1).toString());
@@ -197,7 +197,7 @@ module.exports = function (options) {
             }),
         ],
         [
-            extend(require('markdown-it-math'), (md, use) => {
+            extend(require('markdown-it-math'), (_md, use) => {
                 customElements?.define(MdMath.tagName, MdMath);
                 use();
             }),
@@ -206,10 +206,10 @@ module.exports = function (options) {
                 inlineClose: '$',
                 blockOpen: '$$',
                 blockClose: '$$',
-                inlineRenderer: (content, token) => {
+                inlineRenderer: (content, _token) => {
                     return `<${MdMath.tagName} language="tex" mode="inline">${escapeHtml(content)}</${MdMath.tagName}>`;
                 },
-                blockRenderer: (content, token) => {
+                blockRenderer: (content, _token) => {
                     return `<${MdMath.tagName} language="tex" mode="display">${escapeHtml(content)}</${
                         MdMath.tagName
                     }>`;
