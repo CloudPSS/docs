@@ -15,8 +15,8 @@
   </mat-sidenav>
   <mat-sidenav-content
     role="main"
-    [class.toc]="(frontMatter | async)?.toc != false"
-    [class.nav]="(frontMatter | async)?.nav != false"
+    [class.toc]="(frontMatter | async)?.toc !== false"
+    [class.nav]="(frontMatter | async)?.nav !== false"
   >
     <div #scroll id="scroll" (scroll)="updateToc()">
       <main id="scroll-container">
