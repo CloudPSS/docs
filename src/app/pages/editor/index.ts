@@ -8,6 +8,7 @@ import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { saveAs } from 'file-saver';
 import * as path from 'path';
+import type { editor, IScrollEvent } from 'monaco-editor';
 import { GlobalService } from '@/services/global';
 
 /**
@@ -29,7 +30,7 @@ export class EditorComponent implements AfterViewInit {
     /** 编辑器语言 */
     lang = 'markdown';
     /** 编辑组件 */
-    editor!: monaco.editor.IStandaloneCodeEditor;
+    editor!: editor.IStandaloneCodeEditor;
 
     /** 预览组件 */
     @ViewChild('preview') preview!: MarkdownComponent;
@@ -101,7 +102,7 @@ export class EditorComponent implements AfterViewInit {
     /**
      * 加载编辑器插件
      */
-    initMonaco(editor: monaco.editor.IStandaloneCodeEditor): void {
+    initMonaco(editor: editor.IStandaloneCodeEditor): void {
         (
             window.require as unknown as (
                 require: ['MonacoMarkdown'],
@@ -135,7 +136,7 @@ export class EditorComponent implements AfterViewInit {
     /**
      * 编辑器滚动
      */
-    private editorScroll(e: monaco.IScrollEvent): void {
+    private editorScroll(e: IScrollEvent): void {
         if (!e.scrollTopChanged && !e.scrollHeightChanged) return;
         const visible = this.editor.getVisibleRanges();
         if (visible.length < 1) return;
