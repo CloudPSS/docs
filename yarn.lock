@@ -6452,6 +6452,11 @@ monaco-editor@^0.17.1:
   resolved "https://registry.nlark.com/monaco-editor/download/monaco-editor-0.17.1.tgz#8fbe96ca54bfa75262706e044f8f780e904aa45c"
   integrity sha1-j76WylS/p1JicG4ET494DpBKpFw=
 
+monaco-editor@^0.24.0:
+  version "0.24.0"
+  resolved "https://registry.nlark.com/monaco-editor/download/monaco-editor-0.24.0.tgz#990b55096bcc95d08d8d28e55264c6eb17707269"
+  integrity sha1-mQtVCWvMldCNjSjlUmTG6xdwcmk=
+
 monaco-markdown@^0.0.11:
   version "0.0.11"
   resolved "https://registry.nlark.com/monaco-markdown/download/monaco-markdown-0.0.11.tgz#3b81c7f3ca6032dc826ed3afb46c9512f2509a7f"
@@ -6549,10 +6554,12 @@ neo-async@^2.6.2:
   resolved "https://registry.npm.taobao.org/neo-async/download/neo-async-2.6.2.tgz?cache=0&sync_timestamp=1594317853334&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fneo-async%2Fdownload%2Fneo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha1-tKr7k+OustgXTKU88WOrfXMIMF8=
 
-ngx-monaco-editor@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.nlark.com/ngx-monaco-editor/download/ngx-monaco-editor-9.0.0.tgz#bb69784606f549e369cee3f483ecf26bab2fcc97"
-  integrity sha1-u2l4Rgb1SeNpzuP0g+zya6svzJc=
+ngx-monaco-editor@^12.0.0:
+  version "12.0.0"
+  resolved "https://registry.nlark.com/ngx-monaco-editor/download/ngx-monaco-editor-12.0.0.tgz#060b46d764df68319826e3664358cf1529c5ca11"
+  integrity sha1-BgtG12TfaDGYJuNmQ1jPFSnFyhE=
+  dependencies:
+    tslib "^2.1.0"
 
 nice-try@^1.0.4:
   version "1.0.5"
