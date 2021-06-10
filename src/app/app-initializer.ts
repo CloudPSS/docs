@@ -23,7 +23,7 @@ export class AppInitializerService {
         readonly global: GlobalService,
         readonly router: Router,
     ) {
-        return ((() =>
+        return (() =>
             Promise.all(
                 this.initializers.map((i) => {
                     let r = i();
@@ -31,7 +31,7 @@ export class AppInitializerService {
                     if ('toPromise' in r) r = r.toPromise();
                     return r;
                 }),
-            )) as unknown) as AppInitializerService;
+            )) as unknown as AppInitializerService;
     }
 
     /** 初始化函数 */

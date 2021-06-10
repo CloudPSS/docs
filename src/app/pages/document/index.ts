@@ -155,7 +155,9 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 }
                 if (scrollMarginTop < 0) {
                     scrollMarginTop = Number.parseFloat(
-                        ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>).scrollMarginTop,
+                        ((getComputedStyle(headers[0].element) as unknown) as Record<string, string>)[
+                            'scrollMarginTop'
+                        ],
                     );
                     if (Number.isNaN(scrollMarginTop)) scrollMarginTop = 0;
                     scrollMarginTop += 1;
