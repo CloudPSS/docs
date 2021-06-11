@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /docs/manifest.json
+/report
 nohup.out
 
 # Only exists if Bazel was run
