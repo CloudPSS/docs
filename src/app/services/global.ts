@@ -123,7 +123,15 @@ export class GlobalService {
 
     /** 默认语言 */
     private defaultLanguage(): string {
-        const candidates = (window.navigator.languages ?? [window.navigator.language]).map((s) => s.toLowerCase());
+        const candidates = (window.navigator.languages ?? [window.navigator.language])
+            .map((s) => s.toLowerCase())
+            .flatMap((e) => {
+                if (e.indexOf('-') > 0) {
+                    return [e, e.split('-')[0]];
+                } else {
+                    return [e];
+                }
+            });
         const available = Object.fromEntries(
             Object.entries(WebpackTranslateLoader.langs)
                 .map(([k, v]) => [[k, k] as const, ...(v.alias ?? []).map((v) => [v, k] as const)])
