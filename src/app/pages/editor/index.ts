@@ -78,7 +78,7 @@ export class EditorComponent implements AfterViewInit {
     readonly content = new BehaviorSubject('');
 
     /** 更新内容后的当前文档 */
-    readonly currentDocument = combineLatest(this.documentFile, this.content.pipe(debounceTime(500)), this.url).pipe(
+    readonly currentDocument = combineLatest([this.documentFile, this.content.pipe(debounceTime(500)), this.url]).pipe(
         map(([doc, data, path]) => {
             if (doc) {
                 return { ...doc, data };

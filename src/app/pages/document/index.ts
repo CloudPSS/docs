@@ -129,24 +129,29 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     /** @inheritdoc */
     ngAfterViewInit(): void {
         let scrollMarginTop = -1;
+        const sidenav = combineLatest([
+            this.showNav,
+            merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable()),
+        ]).subscribe(([showNav, opened]) => {
+            if (showNav) {
+                if (this.sidenav.mode === 'side') {
+                    void this.sidenav.open();
+                    this.global.menuButton.next(null);
+                } else {
+                    this.global.menuButton.next({
+                        icon: 'menu',
+                        title: 'sidenav.' + (opened ? 'close' : 'open'),
+                        click: () => this.sidenav.toggle(),
+                    });
+                }
+            } else {
+                this.global.menuButton.next(null);
+                void this.sidenav.close();
+            }
+        });
+        sidenav.add(() => this.global.menuButton.next(null));
         this.subscriptions.push(
-            combineLatest([this.showNav, merge(of(this.sidenav.opened), this.sidenav.openedChange.asObservable())])
-                .subscribe(([showNav, opened]) => {
-                    if (showNav) {
-                        this.global.menuButton.next({
-                            icon: 'menu',
-                            title: 'sidenav.' + (opened ? 'close' : 'open'),
-                            click: () => this.sidenav.toggle(),
-                        });
-                        if (this.sidenav.mode === 'side') {
-                            void this.sidenav.open();
-                        }
-                    } else {
-                        this.global.menuButton.next(null);
-                        void this.sidenav.close();
-                    }
-                })
-                .add(() => this.global.menuButton.next(null)),
+            sidenav,
             combineLatest([this.md.headers, this.updateTocSource.pipe(throttleTime(50))]).subscribe(([headers]) => {
                 const host = this.scroll.nativeElement;
                 if (headers.length === 0 || !host) {

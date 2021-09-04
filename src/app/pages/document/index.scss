@@ -1,3 +1,5 @@
+@use "sass:math";
+
 mat-sidenav-container {
   height: 100%;
   @media print {
@@ -42,7 +44,7 @@ mat-sidenav-content {
   #scroll {
     padding: 0 $content-padding-lr;
     @media (max-width: 600px) {
-      padding: 0 $content-padding-lr / 2;
+      padding: 0 math.div($content-padding-lr, 2);
     }
     position: relative;
     @media screen {
