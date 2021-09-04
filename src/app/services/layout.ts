@@ -14,10 +14,10 @@ export class LayoutService {
     constructor(readonly breakpointObserver: BreakpointObserver) {}
 
     /** 显示模式 */
-    readonly displayMode = combineLatest(
+    readonly displayMode = combineLatest([
         this.breakpointObserver.observe([Breakpoints.XSmall]),
         this.breakpointObserver.observe([Breakpoints.Small, Breakpoints.Medium]),
-    ).pipe(
+    ]).pipe(
         map(([s, m]) => {
             if (s.matches) return 'small';
             if (m.matches) return 'medium';
