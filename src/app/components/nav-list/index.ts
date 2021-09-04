@@ -132,7 +132,7 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
     /** @inheritdoc */
     ngAfterViewInit(): void {
         this.subscriptions.push(
-            combineLatest(this._currentRawPath, merge(of(null), this.items.changes))
+            combineLatest([this._currentRawPath, merge(of(null), this.items.changes)])
                 .pipe(debounceTime(50))
                 .subscribe(([currentRawPath]) => {
                     const current = this.items.find((i) => i.nativeElement.dataset['rawPath'] === currentRawPath);
