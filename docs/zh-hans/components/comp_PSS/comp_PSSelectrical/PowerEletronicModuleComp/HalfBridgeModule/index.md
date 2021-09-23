@@ -51,7 +51,7 @@ symbol: HalfBridgeModule
 ## 使用说明
 下图示出了半桥模块的单元测试算例，算例详见[双向DC/DC变流器](https://cloudpss.net/project/CloudPSSTemplate/HalfBridgeModule#/design)。
 
-![单元测试图](./T1.png)
+![单元测试图](./单元测试.png)
 
 该算例从电源侧往输出RL负载看，为一个双向DC/DC电路(降压)。开关信号由50Hz正弦波与三角载波比较产生，经过**多路信号合并**元件合成为一个2\*1维的输出信号，送至半桥模块的GS端。由于PWM占空比信号按照正弦分布，因此负载电阻R上的电压为50Hz准正弦变化的直流。
 

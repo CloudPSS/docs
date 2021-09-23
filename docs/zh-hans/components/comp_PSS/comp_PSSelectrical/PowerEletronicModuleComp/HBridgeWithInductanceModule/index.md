@@ -55,7 +55,7 @@ symbol: HBridgeWithInductanceModule
 ## 使用说明
 下图示出了H桥电感模块的单元测试算例，算例详见[单相H桥变流器（带电感）](https://cloudpss.net/project/CloudPSSTemplate/HLM#/design)。
 
-![单元测试图](./T3.png)
+![单元测试图](./单元测试.png)
 
 该电路为基本的电压源PWM整流拓扑。开关S1\~S4的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的4路PWM信号，经过**多路信号合并**元件合成为一个4\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为100Hz脉动直流。
 

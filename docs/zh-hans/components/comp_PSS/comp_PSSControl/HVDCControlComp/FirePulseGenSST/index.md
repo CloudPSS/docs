@@ -50,7 +50,7 @@ symbol: FirePulseGenSST
 
 下图示出了SST脉冲发生器的单元测试算例，算例详见[多模块固态变压器](https://cloudpss.net/project/CloudPSSTemplate/NSSTs#/design)。
 
-![单元测试图](./T7.png)
+![单元测试图](./单元测试图.png)
 
 图中SST脉冲发生器配置为所以模块输入Duty、Uref都一致，模块数为10。该模块只需两个输入，即可产生10个模块SST对应的全部开关信号。
 ## 相关元件

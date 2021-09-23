@@ -51,7 +51,7 @@ symbol: ThreePhaseHBridgeModule
 ## 使用说明
 下图示出三相H桥模块的单元测试算例，算例详见[三相H桥变流器](https://cloudpss.net/project/CloudPSSTemplate/3HM#/design)。
 
-![单元测试图](./T6.png)
+![单元测试图](./单元测试.png)
 
 该电路为基本的三相电压源逆变拓扑。开关S1\~S6的脉冲信号分别由正弦脉宽调制逻辑实现，开关频率为5KHz。脉宽调制器产生的6路PWM信号，经过**多路信号合并**元件合成为一个6\*1维的输出信号，送至H桥模块的GS端。电感电流为准正弦波，直流电压为带高频纹波的直流。
 

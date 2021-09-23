@@ -38,7 +38,7 @@ symbol: newLoopNode
 
 通常，当搭建好一个含有反馈环的系统后（如图），点击开始仿真，`系统信息`会报多个`警告`。
 
-![带环系统](./loopnew.png)
+![带环系统](./带环系统.png)
 
 ::: tip
 **`[warning]`** There are loop nodes in system!You can use Component 'LoopNode' to specify the loop nodes and the initial value, or the program will choose random loop nodes.  
@@ -50,7 +50,7 @@ symbol: newLoopNode
 
 但自动的解环算法往往不是最优的。因此，建议用户采用本元件进行解环。例如，对上图所示的控制环，可在输出位置加入一步延时，即可解开反馈环。还可为解环后反馈路径设定一个初值，以降低解环带来的误差。
 
-![带环系统解环](./breakloopnew.png)
+![带环系统解环](./带环系统解环.jpg)
 
 
 ## 相关元件
