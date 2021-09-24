@@ -1,62 +1,51 @@
-
 ---
-title: CloudPSS框架介绍
+title: 功能帮助
 order: 500
 ---
 
----
+CloudPSS建模及仿真平台提供的全部功能的详细说明文档。请先阅读[CloudPSS SimStudio 模型工坊帮助向导](./IntroGuide/index.md)。（持续更新）
 
-      ### [框架图](./framwork/pic/index.md)
+### 工作台介绍
+* [项目](./Workbench/Project/index.md)
+* [总览标签页](./Workbench/Summary/index.md)
+* [接口标签页](./Workbench/Interface/index.md)
+* [实现标签页](./Workbench/Design/index.md)
 
-        * [系统结构图](./framwork/pic/index.md)
+* [运行标签页](./Workbench/Run/index.md)
 
-        * [浏览器/客户端程序](./framwork/pic/index.md)
+### 基础功能
 
-        * [安全服务](./framwork/pic/index.mdframwork/pic/index.md)
+* [元件表](./Basic/ComponentTable/index.md)
+* [量测和输出系统](./Basic/Measure/index.md)
+* [参数及引脚体系](./Basic/ParameterSystem/index.md)
+* [参数方案配置](./Basic/ParameterCal/index.md)
 
-        * [中台服务群](./framwork/pic/index.md)
-
-        * [计算中心](./framwork/pic/index.md)
-
-      ### [仿真项目架构](./framwork/simulation project framwork/index.md)
-
-      
-
-        * 解决方案(solution）
-        * 项目（project）
-
-        * 参数集（parameter set）
-
-        * 项目类型（project type）
-
-        * 应用(application）
-
-        * 计算任务（job）
-
-        * 项目/子系统及其管理
-
-        * 项目
-
-        * 项目版本（project revision）
-
-        * 确定需要计算的版本
-
-        * 启动任务
+* [计算方案配置](./Basic/SimulationCal/index.md)
   
-        * 获取结果
+* [模块封装](./Basic/Mask/index.md)
+  
+* [模块调用](./Basic/System/index.md)
 
-      ### 接口文档
+### 其他功能
+* [个人中心](./Other/UserCenter/index.md)
+  
+* [MarkDown语法简介](./Other/Markdown/index.md)
+* [CloudPSS帮助文档撰写规范](./Other/DocStyleGuide/index.md)
 
-        * [cloudpss](./interface/cloudpss/index.md)
 
-      ### 测试用例
+### 电磁暂态建模仿真工作台
+* [电磁暂态仿真介绍](./EMTP/EMTPIntro/index.md) 
 
-        * [案例1 通过项目rid运行项目](./test demo/demo1/index.md)
+* [断面保存及导入](./EMTP/Snapshot/index.md) 
+* [潮流断面启动](./EMTP/Initialization/index.md)
 
-        * [案例2 项目使用案例](./test demo/demo2/index.md)
+### 移频电磁暂态仿真工作台
+* [移频电磁暂态仿真介绍](./SFEMT/SFAIntro/index.md)
 
-        * [案例3 运行项目并使用matplot动态绘制曲线](./test demo/demo3/index.md)
+* [复包络信号的量测](./SFEMT/SFEMTpin/index.md)
 
-        * [案例4 使用项目版本的hash运行算例文件](./test demo/demo4/index.md)
+### 潮流计算仿真工作台
+* [潮流计算仿真原理介绍](./Powerflow/PowerFlowIntro/index.md)
 
-        * [案例5 导入本地结果文件](./test demo/demo5/index.md)
+### 综合能源系统建模仿真平台
+* [综合能源系统建模仿真平台简介](./IESLab/IESLabIntro/index.md)
