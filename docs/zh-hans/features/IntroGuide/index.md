@@ -120,7 +120,7 @@ CloudPSS SimStudio内置了即时错误校验功能。用户在搭建算例的�
 - 我需要做多场景分析
 - ...
 :::success 
-在掌握CloudPSS SimStudio的基础功能后，你需要进一步了解CloudPSS的[**参数和引脚体系**](../../features/Basic/ParameterSystem/index.md)、[**元件表**](../../features/Basic/ComponentTable/index.md)、[**方案管理**](../../features/Basic/ParameterCal/index.md)功能。在`项目类型`处选择`普通项目`，即可使用CloudPSS完成这些研究。
+在掌握CloudPSS SimStudio的基础功能后，你需要进一步了解CloudPSS的[**参数和引脚体系**](../../features/Basic/ParameterSystem/index.md)、[**元件表**](../../features/Basic/ComponentTable/index.md)、[**参数方案配置**](../../features/Basic/ParameterCal/index.md)功能。在`项目类型`处选择`普通项目`，即可使用CloudPSS完成这些研究。
 :::
 
 :::info 专业型用户
