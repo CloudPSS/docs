@@ -1,25 +1,21 @@
+---
 
-    \---
-    
-    title: demo4
-    
-    type: examples
-    
-    author: pcp
-    
-    category: 300
-    
-    order: 103
-    
-    \---
+title: 案例4 使用项目版本的hash运行算例文件
+
+type: examples
+
+author: pcp
+
+category: 300
+
+order: 103
+
+---
+
 
 
 ​    
 ​    
-    ## 案例4 使用项目版本的hash运行算例文件
-    
-    *********************************************
-    
     使用项目版本的hash运行算例文件。具体见**example-revison.py**,案例参数代码:
     ```
        import sys,os
