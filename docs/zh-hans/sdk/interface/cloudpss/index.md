@@ -1,16 +1,10 @@
-\---
-
+---
 title: cloudpss接口文档
-
 type: help
-
 author: pcp
-
-category: 200
-
+category: 20
 order: 100
-
-\---
+---
 
  ## cloudpss接口文档
 *************

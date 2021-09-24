@@ -1,13 +1,8 @@
 ---
-
 title: 仿真项目架构
-
 author: pcp
-
 category: 100
-
 order: 101
-
 ---
 
 
