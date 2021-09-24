@@ -40,14 +40,12 @@ order: 101
 ```
        filePath= './simulation/test.cproj'
        cloudpss.Project.dump(project,filePath)
-    
        project =cloudpss.Project.load('./simulation/test.cproj')
        print('项目',project.rid)
 ```
 
 **创建一个改项目的参数方案**
 
-   
        config = project.createConfig('测试参数方案')
        print('参数方案',config)
   
