@@ -1,13 +1,12 @@
 ---
 title: cloudpss接口文档
-type: help
+type: examples
 author: pcp
 category: 20
 order: 100
 ---
 
- ## cloudpss接口文档
-*************
+
 ```
 class cloudpss.DateTimeEncode(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
 ```
