@@ -60,13 +60,6 @@ CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自
 >  [更多](examples/index.md)
 
 
-> ## 下载中心
-> ![](旧平台文档.png)
->
-> cloudpss下载中心。
->
-> [打开](download/index.md)
-
 > ## 旧平台文档
 > ![](旧平台文档.png)
 > 
