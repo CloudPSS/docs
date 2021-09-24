@@ -10,14 +10,16 @@ order: 103
 
 ​    
 ​    
-**使用项目版本的hash运行算例文件**。具体见**example-revison.py**,案例参数代码:
+**使用项目版本的hash运行算例文件**。具体见**example-revison.py**。
+
+**案例参数代码:**
+
        import sys,os
        sys.path.append(os.path.join(os.path.dirname(__file__), '..\\'))
        import cloudpss
        import json
        import time
  
-    
 **运行指定项目版本的仿真程序**
 
        if __name__ == '__main__':
