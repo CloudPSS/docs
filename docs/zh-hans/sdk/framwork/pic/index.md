@@ -1,13 +1,8 @@
 ---
-
 title: CloudPSS框架图
-
 author: pcp
-
 category: 100
-
 order: 100
-
 ---
 
 
