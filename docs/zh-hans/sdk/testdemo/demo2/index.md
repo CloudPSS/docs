@@ -1,15 +1,9 @@
 ---
-
 title: 案例2 项目使用案例
-
 type: examples
-
 author: pcp
-
 category: 300
-
 order: 101
-
 ---
 
 
