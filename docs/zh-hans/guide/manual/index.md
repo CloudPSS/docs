@@ -21,23 +21,11 @@ order: 700
 **如果不方便使用Wi-Fi链接怎么办？**
 
 可以使用CloudPSS-Finder工具搜索CloudPSS-Mini的局域网IP
-1. 在同一局域网下的计算机(目前仅支持 Windows )上下载 CloudPSS-Finder 工具
-2. 开启工具,工具会自行搜索同域的 MiNi ,单击 MiNi 的 ip 即可打开 MiNi 主页
-3. 连接互联网的情况下finder也可以开启同一局域网下 MiNi 的远程维护模式,以便CloudPSS的维护人员进行远程维护
+1. 在同域计算机上安装CloudPSS-Finder工具，输入需要搜索的IP网段，点击搜索。 
+2. 搜索成功后，CloudPSS-Mini的有线IP会显示到弹出提示框内，点击进入按钮进入主页
+3. 如搜索失败，请确认计算机设备是否与CloudPSS-Mini设备在同一局域网中。
   
-[下载CloudPSS-Finder(右键打开新窗口)](./download)
-:::
-
-::: question
-**需要网线直连如何设置？**
-#### 相互访问的要求
-如果两台设备用网线直连，他们需要互相访问，那么，他们需要有
-1. 相同的默认网关地址
-2. 相同的子网掩码
-3. 合法的ip地址
-#### 一个可用的实例
-- mini设置为 ip：192.168.1.10  子网掩码：255.255.255.0 默认网关：192.168.1.1
-- 访问的设备mini设置为 ip：192.168.1.11  子网掩码：255.255.255.0 默认网关：192.168.1.1
+ [下载CloudPSS-Finder](https://pan.baidu.com/s/1MSoWOym-fwkaSQKdwifCmA) 提取码: `xzbr`
 :::
 ## 产品清单
 | :--- | :--:  | :--- |
