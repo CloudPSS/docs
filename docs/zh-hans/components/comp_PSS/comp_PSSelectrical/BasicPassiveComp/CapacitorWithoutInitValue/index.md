@@ -26,6 +26,11 @@ symbol: newCapacitorRouterWithInitValue
 | Dimension |  | 单相电容或是三相电容 | 选择 | 选择电容为单相或三相 |
 | Capacitance | μF | 电容值 | 实数（常量） | 电容值 |
 
+### Configuration-SFEMT
+| 参数名 | 备注 | 类型 | 描述 |
+| :--- | :--- | :--- | :--: | :--- |
+| Numerical Integration method | 数字积分方法选择 | 梯形积分方法/根匹配方法 | 移频暂态仿真设置 |
+
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--: | :--- |
@@ -46,4 +51,4 @@ symbol: newCapacitorRouterWithInitValue
 
 ## 相关元件
 
-[电感](../Inductor/index.md)、[电阻](../Resistor/index.md)、[电容](../CapacitorWithInitValue/index.md)
+[电感](../Inductor/index.md)、[电阻](../Resistor/index.md)、[电容（初值）](../CapacitorWithInitValue/index.md)
