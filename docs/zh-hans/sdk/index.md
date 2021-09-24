@@ -1,10 +1,10 @@
-*   * \---
 
-      title: CloudPSS框架介绍
+---
+title: CloudPSS框架介绍
+order: 500
+---
 
-      order: 500
-
-      \---
+---
 
       ### [框架图](./framwork/pic/index.md)
 
