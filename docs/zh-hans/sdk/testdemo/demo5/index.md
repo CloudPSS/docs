@@ -1,24 +1,18 @@
-    \---
-    
-    title: demo5
-    
-    type: examples
-    
-    author: pcp
-    
-    category: 300
-    
-    order: 104
-    
-    \---
+---
+
+title:  案例5 导入本地结果文件
+
+type: examples
+
+author: pcp
+
+category: 300
+
+order: 104
+
+---
 
 
-​    
-​    
-    ##  案例5 导入本地结果文件
-    
-    *******************************
-    
     导入本地结果文件并使用 plotly 绘制曲线，导入的结果文件支持 SDK 保存的
     和从网站下载的结果文件。具体见 **example-load-result.py** ,案例参数代码:
     ```
