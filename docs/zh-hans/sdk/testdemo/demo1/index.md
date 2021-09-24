@@ -1,15 +1,9 @@
 ---
-
 title: 案例1 通过项目rid运行项目
-
 type: examples
-
 author: pcp
-
 category: 300
-
 order: 100
-
 ---
 
 
