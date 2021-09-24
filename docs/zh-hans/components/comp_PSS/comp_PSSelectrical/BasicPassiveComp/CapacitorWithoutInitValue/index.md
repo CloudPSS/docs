@@ -1,5 +1,5 @@
 ---
-title: 电容(初值)
+title: 电容
 author: 
 author_email:
 
@@ -8,24 +8,23 @@ updated: 2018/12/4 10:03:10
 
 type: components
 category: 3001
-order: 401
+order: 402
 
 classname: newCapacitorRouterWithInitValue
 symbol: newCapacitorRouterWithInitValue
 ---
 ## 基本描述
 
-<!-- ![电容(初值)](./电阻.png) -->
-> **该元件用以建模带初始电压的单相或三相电容（单线图）。**
+<!-- ![电容](./电阻.png) -->
+> **该元件用以建模不带初始电压的单相或三相电容（单线图）。**
 
 ## 参数列表
 ### Configuration
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| Name |  | 元件名称 | 文本 | 此处输入电容(初值)的名称（可缺省） |
+| Name |  | 元件名称 | 文本 | 此处输入电容的名称（可缺省） |
 | Dimension |  | 单相电容或是三相电容 | 选择 | 选择电容为单相或三相 |
 | Capacitance | μF | 电容值 | 实数（常量） | 电容值 |
-| Initial Capacitor Voltage | kV | 电容初始电压 | 实数（常量）|电容初始电压 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
@@ -47,4 +46,4 @@ symbol: newCapacitorRouterWithInitValue
 
 ## 相关元件
 
-[电感](../Inductor/index.md)、[电阻](../Resistor/index.md)、[电容](../CapacitorWithoutInitValue/index.md)
+[电感](../Inductor/index.md)、[电阻](../Resistor/index.md)、[电容](../CapacitorWithInitValue/index.md)
