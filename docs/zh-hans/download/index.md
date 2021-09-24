@@ -6,7 +6,8 @@ order: 600
 ### 可用软件列表
 <div id='download_table_container'>sdfsdf</div>
 <script lang='js' id='download_script'>
-this.remove();
+console.log('sdfsdfsdfsdff');
+console.log('sdfsdfsdfsdff');
 const downloadTableContainer = document.getElementById('download_table_container');
 downloadTableContainer.innerHTML = '';
 fetch('http://10.112.10.86/download')
@@ -33,6 +34,7 @@ const url = new window.URL(document.URL);
     </tbody>
   </table>`;
                 console.log(markdownContentOfAvailableDownloadList);
+this.remove();
             })
             .catch((e) => {
                 console.error(e);
