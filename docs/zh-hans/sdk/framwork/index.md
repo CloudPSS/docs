@@ -1,5 +1,7 @@
---- title: CloudPSS架构
+--- 
+title: CloudPSS架构
 redirect to: ./pic/index.md 
+order: 100
 ---
 
           
