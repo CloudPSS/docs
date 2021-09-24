@@ -1,9 +1,9 @@
 ---
-title: CloudPSSSDK介绍
+title: SDK介绍
 order: 500
 ---
 
-## [CloudPSS框架](./framwork/pic/index.md)
+## [CloudPSS仿真框架](./framwork/pic/index.md)
 
  *  系统结构
   
@@ -15,7 +15,7 @@ order: 500
   
  *  计算中心
 
-## [仿真项目架构](./framwork/simulation_project_framwork/index.md)
+## [CloudPSS仿真项目架构](./framwork/simulation_project_framwork/index.md)
 
 * 解决方案(solution）
 
