@@ -1,10 +1,6 @@
-*   *   * \---
-
-          title: CloudPSS架构
-
-          redirect to: ./pic/index.md
-
-          \---
+--- title: CloudPSS架构
+redirect to: ./pic/index.md 
+---
 
           
 
