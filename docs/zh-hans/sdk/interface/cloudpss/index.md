@@ -7,10 +7,12 @@ order: 100
 ---
 
 
+### class cloudpss.DateTimeEncode
 
+```
 class cloudpss.DateTimeEncode(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
 
-  ### 基类："json.encoder.JSONEncoder"
+  基类："json.encoder.JSONEncoder"
 
    default(field)
 
@@ -30,15 +32,19 @@ class cloudpss.DateTimeEncode(*, skipkeys=False, ensure_ascii=True, check_circul
                  return list(iterable)
              # Let the base class default method raise the TypeError
              return JSONEncoder.default(self, o)
+```
 
+ ### class cloudpss.EMTResult 
+
+电磁暂态结果处理类，继承 Result，提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式，不在是接收时分段的数据
+，该类只提供 EMT 仿真使用
+
+```
 class cloudpss.EMTResult(*args, **kwargs)
 
-   ### 基类："cloudpss.runner.result.Result"
+   基类："cloudpss.runner.result.Result"
    
-   电磁暂态结果处理类，继承 Result，
-   提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式
-   ，不在是接收时分段的数据
-   该类只提供 EMT 仿真使用
+
 
    getPlot(index: int)
 
@@ -49,7 +55,6 @@ class cloudpss.EMTResult(*args, **kwargs)
     
       >>> result.getPlot(0)
       {...}
-
    getPlotChannelData(index, channelName)
 
       获取一组输出分组下指定通道名称的数据
@@ -64,7 +69,6 @@ class cloudpss.EMTResult(*args, **kwargs)
          通道数据, 一个 trace 数据
     
       >>>channel= result.getPlotChannelData(0，’’) {…}
-
    getPlotChannelNames(index)
 
       获取一组输出分组下的所有通道名称
@@ -83,10 +87,14 @@ class cloudpss.EMTResult(*args, **kwargs)
     
       >>> result.getPlots()
       {...}
+```
 
+### class cloudpss.MatlabDataEncoder
+
+```
 class cloudpss.MatlabDataEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
 
-   ### 基类："json.encoder.JSONEncoder"
+    基类："json.encoder.JSONEncoder"
 
    default(field)
 
@@ -106,16 +114,16 @@ class cloudpss.MatlabDataEncoder(*, skipkeys=False, ensure_ascii=True, check_cir
                  return list(iterable)
              # Let the base class default method raise the TypeError
              return JSONEncoder.default(self, o)
+```
 
+### class cloudpss.PowerFlowResult
+
+潮流结果处理类，继承Result,提供快速获取buses和branches的接口，并提供潮流写入项目的接口,该类只提供潮流仿真时使用.
+
+```
 class cloudpss.PowerFlowResult(*args, **kwargs)
 
-   ### 基类："cloudpss.runner.result.Result"
-
-   潮流结果处理类，继承 Result，
-
-   提供快速获取 buses 和 branches 的接口，并提供潮流写入项目的接口
-
-   该类只提供潮流仿真时使用
+    基类："cloudpss.runner.result.Result"
 
    getBranches()
 
@@ -136,13 +144,16 @@ class cloudpss.PowerFlowResult(*args, **kwargs)
       潮流数据写入 project
     
       >>> channel= result.powerFlowModify(project)
+```
 
+### class cloudpss.Project
+
+ CloudPSS工程类，用于处理加载后的工程数据
+
+```
 class cloudpss.Project(project: dict = {})
 
-   ### 基类："object"
-
-   CloudPSS工程类，用于处理加载后的工程数据
-
+   基类："object"
    实例变量说明：
 
    rid         项目的 rid
@@ -422,12 +433,16 @@ class cloudpss.Project(project: dict = {})
          保存成功/保存失败
     
       >>> Project.update(project)
+```
 
+### class cloudpss.ProjectRevision
+
+表示一个项目的版本数据
+
+```
 class cloudpss.ProjectRevision(revision: dict = {})
 
-   ### 基类："object"
-
-   表示一个项目的版本数据
+   基类："object"
 
    实例变量说明：
 
@@ -505,14 +520,17 @@ class cloudpss.ProjectRevision(revision: dict = {})
    toJSON()
 
       类对象序列化为 dict :return: dict
+```
 
+
+### class cloudpss.ProjectTopology
+
+项目拓扑类，通过该类的静态方法fetch获取一个拓扑实例
+
+```
 class cloudpss.ProjectTopology(topology: dict = {})
 
-   ### 基类："object"
-
-   项目拓扑类
-
-   通过 该类的静态方法 fetch 获取一个拓扑实例
+    基类："object"
 
    static dump(topology, filePath, indent=None)
 
@@ -551,14 +569,16 @@ class cloudpss.ProjectTopology(topology: dict = {})
    toJSON()
 
       将类转换为 dict 数据
+```
 
+### class cloudpss.Result
+
+结果处理类，从消息存储库中获取数据，并进行简单的整理。可迭代器，迭代时按接收顺序返回数据
+
+```
 class cloudpss.Result(db)
 
-   ### 基类："object"
-
-   结果处理类，从消息存储库中获取数据，并进行简单的整理
-
-   可迭代器，迭代时按接收顺序返回数据
+   基类："object"
 
    >>> for data in result:
    >>> print(data)
@@ -598,10 +618,14 @@ class cloudpss.Result(db)
          返回一个结果实例
     
       >>> result = Result.load('C:\Users\dps-dm\cloudpss-sdk\result\424111.cjob')
+```
 
+### class cloudpss.Runner
+
+```
 class cloudpss.Runner(taskId, name, job, config, revision, projectRid, **kwargs)
 
-   ### 基类："object"
+    基类："object"
 
    static create(revisionHash, job, config, name=None, rid='', **kwargs)
 
@@ -640,3 +664,4 @@ cloudpss.setToken(token)
 
    Params:
       token token
+```
