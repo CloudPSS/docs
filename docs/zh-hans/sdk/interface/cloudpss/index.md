@@ -1,5 +1,5 @@
 ---
-title: cloudpss接口文档
+title: CloudPSS接口文档
 type: examples
 author: pcp
 category: 20
@@ -7,11 +7,11 @@ order: 100
 ---
 
 
-```
+
 class cloudpss.DateTimeEncode(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
-```
-   **基类："json.encoder.JSONEncoder"**
-```
+
+  ### 基类："json.encoder.JSONEncoder"
+
    default(field)
 
       Implement this method in a subclass such that it returns a
@@ -32,16 +32,16 @@ class cloudpss.DateTimeEncode(*, skipkeys=False, ensure_ascii=True, check_circul
              return JSONEncoder.default(self, o)
 
 class cloudpss.EMTResult(*args, **kwargs)
-```
-   **基类："cloudpss.runner.result.Result"**
+
+   ### 基类："cloudpss.runner.result.Result"
    
    电磁暂态结果处理类，继承 Result，
    提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式
    ，不在是接收时分段的数据
    该类只提供 EMT 仿真使用
-```
+
    getPlot(index: int)
-```
+
       获取指定序号的数据分组
     
       Params:
@@ -49,9 +49,9 @@ class cloudpss.EMTResult(*args, **kwargs)
     
       >>> result.getPlot(0)
       {...}
-```
+
    getPlotChannelData(index, channelName)
-```
+
       获取一组输出分组下指定通道名称的数据
     
       Params:
@@ -86,7 +86,7 @@ class cloudpss.EMTResult(*args, **kwargs)
 
 class cloudpss.MatlabDataEncoder(*, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, sort_keys=False, indent=None, separators=None, default=None)
 
-   **基类："json.encoder.JSONEncoder"**
+   ### 基类："json.encoder.JSONEncoder"
 
    default(field)
 
@@ -109,7 +109,7 @@ class cloudpss.MatlabDataEncoder(*, skipkeys=False, ensure_ascii=True, check_cir
 
 class cloudpss.PowerFlowResult(*args, **kwargs)
 
-   **基类："cloudpss.runner.result.Result"**
+   ### 基类："cloudpss.runner.result.Result"
 
    潮流结果处理类，继承 Result，
 
@@ -139,7 +139,7 @@ class cloudpss.PowerFlowResult(*args, **kwargs)
 
 class cloudpss.Project(project: dict = {})
 
-   **基类："object"**
+   ### 基类："object"
 
    CloudPSS工程类，用于处理加载后的工程数据
 
@@ -425,7 +425,7 @@ class cloudpss.Project(project: dict = {})
 
 class cloudpss.ProjectRevision(revision: dict = {})
 
-   **基类："object"**
+   ### 基类："object"
 
    表示一个项目的版本数据
 
@@ -508,7 +508,7 @@ class cloudpss.ProjectRevision(revision: dict = {})
 
 class cloudpss.ProjectTopology(topology: dict = {})
 
-   **基类："object"**
+   ### 基类："object"
 
    项目拓扑类
 
@@ -554,7 +554,7 @@ class cloudpss.ProjectTopology(topology: dict = {})
 
 class cloudpss.Result(db)
 
-   **基类："object"**
+   ### 基类："object"
 
    结果处理类，从消息存储库中获取数据，并进行简单的整理
 
@@ -601,7 +601,7 @@ class cloudpss.Result(db)
 
 class cloudpss.Runner(taskId, name, job, config, revision, projectRid, **kwargs)
 
-   **基类："object"**
+   ### 基类："object"
 
    static create(revisionHash, job, config, name=None, rid='', **kwargs)
 
@@ -640,4 +640,3 @@ cloudpss.setToken(token)
 
    Params:
       token token
-```
