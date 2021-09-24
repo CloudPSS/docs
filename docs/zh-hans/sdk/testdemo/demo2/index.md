@@ -30,7 +30,8 @@ order: 101
        print('获取项目列表',data)
  ```   
   **获取指定 rid 的项目**
-       ```
+
+      
        project=cloudpss.Project.fetch('project/Demo/SDK_TEST1')
        print('项目',project)
 

@@ -9,7 +9,7 @@ updated: 2019/4/12 10:20:50
 
 type: components
 category: 3001
-order: 2000
+order: 1200
 
 classname: _Arrestor
 symbol: Arrestor
