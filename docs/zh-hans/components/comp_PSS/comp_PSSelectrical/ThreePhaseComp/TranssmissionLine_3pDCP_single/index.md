@@ -16,7 +16,7 @@ symbol: TLine_Bergeron_3p_SinglePort
 ## 基本描述
 
 
-> **该元件为三相长传输线，用于分网解耦。**
+> **该元件为三相传输线单端，用于分网解耦。**
 
 ## 参数列表
 ### Configuration
@@ -72,9 +72,8 @@ symbol: TLine_Bergeron_3p_SinglePort
 
 | 端口名 | 数据维数 | 描述 |
 | :--- | :--:  | :--- |
-| Sending(i) | 3×1 | 电气 |
-| 3-Phase Voltage(Other Side) | 3×1 | 另一端电压量测值 |
-| 3-Phase Current(Other Side) | 3×1 | 另一端电流量测值 |
+| Sending(i) Pin | 3×1 | 电气 |
+
 
 ## 使用说明
 
