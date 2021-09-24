@@ -24,7 +24,6 @@ import sys,os
        result = cloudpss.ResultDb.load('C:\\Users\\dps-dm\\cloudpss-sdk\\result\\电磁暂态仿真方案 1_参数方案 1.cjob')
        print (result)
        plots = result.getPlots()
-
        for i in range(len(plots)):
            fig = go.Figure()
            channels= result.getPlotChannelNames(i)
