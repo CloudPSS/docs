@@ -23,13 +23,10 @@ order: 100
 
     project=cloudpss.Project.fetch('project/Demo/SDK_TEST1')
     print('项目',project)
-
      config=project.configs[0] **不填默认用project的第一个config**
      job=project.jobs[1]  **不填默认用project的第一个job**
      try:
-    
         runner=project.run('424111',job=job,config=config)
-    
         while  not runner.status():
         print('running')
         print(runner.result.getLogs())
@@ -38,12 +35,9 @@ order: 100
 **获取所有分组信息**
 
            plots = runner.result.getPlots()
-    
            print(plots)
-    
            filePath= './result/result.cjob'
            cloudpss.ResultDb.dump(runner.result,filePath)
-    
        except Exception as e:
            print(e)
 
