@@ -6,9 +6,6 @@ category: 300
 order: 103
 ---
 
-
-
-​    
 ​    
 **使用项目版本的hash运行算例文件**。具体见**example-revison.py**。
 
