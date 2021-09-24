@@ -8,7 +8,7 @@ updated: 2018/12/4 10:03:10
 
 type: components
 category: -3004
-order: 500
+order: 600
 
 classname: _newSpeedLimiter
 symbol: newSpeedLimiter
