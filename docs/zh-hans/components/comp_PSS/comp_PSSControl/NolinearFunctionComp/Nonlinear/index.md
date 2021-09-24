@@ -14,7 +14,7 @@ classname: _newSpeedLimiter
 symbol: newSpeedLimiter
 ---
 ## 基本描述
-
+ **该元件用以实现对输入信号变化速率的限幅输出功能。**
 
 ## 参数列表
 ### Configuration
