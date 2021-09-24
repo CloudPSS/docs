@@ -19,30 +19,31 @@ order: 103
        import cloudpss
        import json
        import time
- 
-**运行指定项目版本的仿真程序**
-
        if __name__ == '__main__':
 
-    cloudpss.setToken('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTUsInVzZXJuYW1lIjoiRGVtbyIsInR5cGUiOiJTREsiLCJpYXQiOjE2MTk0Mzg3ODMsImV4cCI6MTYyMTU2NTM5M30.nzpUimT3vg1Ad72DIFp_99Lh2btU5cnqmbqnwKHvJnVi7QfLn1jZdprVQkNtV1ixtIb-JPRez_rGBPVCHBZXmDr2x-7SOGPvB492I8IP_FkmQVGV083zBzN-8L9EGU54kdOL2H70ByVjJcSS34kSRvzukWPo8SCxjm_oLWQKkyk')
-    
-           config={'args': {'T_Tm_change': '1.5', 'T_Speed_change': '2'}, 'name': '参数方案 1', 'pins': {}}
-           job={'rid': 'job-definition/cloudpss/emtp', 'args': {'debug': '0', 'n_cpu': '1', 'solver': '1', 'end_time': '3', 'task_cmd': '', 'step_time': '0.000002', 'begin_time': '0', 'task_queue': '', 'initial_type': '0', 'ramping_time': '0', 'load_snapshot': '0', 'save_snapshot': '0', 'solver_option': '0', 'output_channels': [['电磁转矩', '1000', '1000', '', 'canvas_0_122,canvas_0_404'], ['a相定子电流', '1000', '1000', '', 'canvas_0_305'], ['转速', '1000', '1000', '', 'canvas_0_399,canvas_0_403']], 'max_initial_time': '1', 'load_snapshot_name': '', 'save_snapshot_name': 'snapshot', 'save_snapshot_time': '1'}, 'name': '电磁暂态仿真方案 1'}
-           try:
+ 
+**运行指定项目版本的仿真程序** 
+
+cloudpss.setToken('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTUsInVzZXJuYW1lIjoiRGVtbyIsInR5cGUiOiJTREsiLCJpYXQiOjE2MTk0Mzg3ODMsImV4cCI6MTYyMTU2NTM5M30.nzpUimT3vg1Ad72DIFp_99Lh2btU5cnqmbqnwKHvJnVi7QfLn1jZdprVQkNtV1ixtIb-JPRez_rGBPVCHBZXmDr2x-7SOGPvB492I8IP_FkmQVGV083zBzN-8L9EGU54kdOL2H70ByVjJcSS34kSRvzukWPo8SCxjm_oLWQKkyk')
+
+
+    config={'args': {'T_Tm_change': '1.5', 'T_Speed_change': '2'}, 'name': '参数方案 1', 'pins': {}}
+    job={'rid': 'job-definition/cloudpss/emtp', 'args': {'debug': '0', 'n_cpu': '1', 'solver': '1', 'end_time': '3', 'task_cmd': '', 'step_time': '0.000002', 'begin_time': '0', 'task_queue': '', 'initial_type': '0', 'ramping_time': '0', 'load_snapshot': '0', 'save_snapshot': '0', 'solver_option': '0', 'output_channels': [['电磁转矩', '1000', '1000', '', 'canvas_0_122,canvas_0_404'], ['a相定子电流', '1000', '1000', '', 'canvas_0_305'], ['转速', '1000', '1000', '', 'canvas_0_399,canvas_0_403']], 'max_initial_time': '1', 'load_snapshot_name': '', 'save_snapshot_name': 'snapshot', 'save_snapshot_time': '1'}, 'name': '电磁暂态仿真方案 1'}
+     try:
         
-               runner=cloudpss.Runner.create('424111','4043acbddb9ce0c6174be65573c0380415bc48186c74a459f88865313743230c',job=job,config=config)
-               while  not runner.status():
-                   print('running')
-                   print(runner.result.getLogs())
-                   time.sleep(1)
-​    
+        runner=cloudpss.Runner.create('424111','4043acbddb9ce0c6174be65573c0380415bc48186c74a459f88865313743230c',job=job,config=config)
+         while  not runner.status():
+         print('running')
+        print(runner.result.getLogs())
+        time.sleep(1)
+
 **获取所有分组信息**
 
-               plots = runner.result.getPlots()
-               print(plots)
-           except Exception as e:
-               print(e)
-               xxxxxxxxxx        # 获取所有分组信息  
-               plots = runner.result.getPlots()      
-               print(plots)   except Exception as e:
-               print(e)
+    plots = runner.result.getPlots()
+     print(plots)
+     except Exception as e:
+     print(e)
+     xxxxxxxxxx   # 获取所有分组信息  
+     plots = runner.result.getPlots()      
+     print(plots)  except Exception as e:
+     print(e)
