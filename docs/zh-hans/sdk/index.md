@@ -3,9 +3,9 @@ title: 功能帮助
 order: 500
 ---
 
-CloudPSS建模及仿真平台提供的全部功能的详细说明文档。请先阅读[CloudPSS SimStudio 模型工坊帮助向导](./IntroGuide/index.md)。（持续更新）
 
-# [框架图](./framwork/pic/index.md)
+
+### [框架图](./framwork/pic/index.md)
  -----------------------------
     
         * [系统结构图](./framwork/pic/index.md)
@@ -18,7 +18,7 @@ CloudPSS建模及仿真平台提供的全部功能的详细说明文档。请先
     
         * [计算中心](./framwork/pic/index.md)
     
-# [仿真项目架构](./framwork/simulation project framwork/index.md)
+### [仿真项目架构](./framwork/simulation project framwork/index.md)
  -----------------------------
 
 ​      
@@ -47,12 +47,12 @@ CloudPSS建模及仿真平台提供的全部功能的详细说明文档。请先
       
         * 获取结果
     
-# 接口文档
+### [接口文档](./interface/index.md)
  -----------------------------
     
         * [cloudpss](./interface/cloudpss/index.md)
     
-# 测试用例
+### [测试用例](./test demos/index.md)
  -----------------------------
     
         * [案例1 通过项目rid运行项目](./test demo/demo1/index.md)
