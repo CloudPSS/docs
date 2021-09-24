@@ -2,7 +2,7 @@
 title: CloudPSS接口文档
 type: examples
 author: pcp
-category: 20
+category: 200
 order: 100
 ---
 
