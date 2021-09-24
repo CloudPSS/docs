@@ -44,8 +44,6 @@ class cloudpss.EMTResult(*args, **kwargs)
 
    基类："cloudpss.runner.result.Result"
    
-
-
    getPlot(index: int)
 
       获取指定序号的数据分组
@@ -521,7 +519,6 @@ class cloudpss.ProjectRevision(revision: dict = {})
 
       类对象序列化为 dict :return: dict
 ```
-
 
 ### class cloudpss.ProjectTopology
 
