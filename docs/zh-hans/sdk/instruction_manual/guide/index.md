@@ -8,7 +8,7 @@ order: 101
 
 ## CloudPSS SDK python调用快速入门
 
-### 3机9节点标准测试系统算例
+### 1.3机9节点标准测试系统算例
 
 以[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)为例，假设现在需要多次修改算例中某个元件的某个参数，并分别获得其输出的数据,在CloudPSS Studio中可以通过python调用快速实现。
 首先，在CloudPSS Simstudio中打开[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)，电路拓扑图如下图所示。
@@ -23,7 +23,7 @@ order: 101
 
 假设现在需要探究`Gen2`发电机的有功出力与`Bus2`的电压相角之间的关系，那么必然需要进行多次仿真获得数据描点作图，使用传统仿真工具复杂且低效。而在CloudPSS Simstudio中可以使用SDK工具快速完成。
 
-### 潮流计算交互python代码
+### 2.潮流计算交互python代码
 在VScode中配置好python环境，打开SDK文件夹的CLOUDPSS-SDK-EXAMPLE/example/example-run-power-flow.py文件，未经用户修改过的代码应如下。
 ```python
 import time
@@ -62,11 +62,11 @@ if __name__ == '__main__':
     # runner.result.(project)
     # project.save()
 ```
-### 指定具体的算例
+### 3.指定具体的算例
 
 在代码第15行project = cloudpss.Project.fetch('project/admin/aaaa')中，通过fetch函数指定具体的算例，其中的('project/admin/aaaa')部分需要换成用户使用的算例地址。以本算例为例，算例网址为`.net/`之后，`#`之前的内容，即是下面网址标红的部分，https://internal.cloudpss.net/`project/k/cs`#/design/diagram/canvas/canvas_0对于任何算例皆取对应位置。
 
-### 指定具体元件
+### 4.指定具体元件
 
 点击发电机`Gen2`，此时右侧参数一栏中找到`Power Flow Data`组中的`Injected Active Power`输入框。此时的默认参数是`=150`。其表示此PV节点输入系统的有功功率为150MW。在对应的代码中，第19行的位置暂时是空行，但是没有关系，在其中补充以下语句即可。
 ```python
@@ -74,7 +74,7 @@ comp = project.getComponentsByKey('canvas_0_757')
 ```
 此语句可以直接复制进代码中，不用修改。不过Python中要注意缩进。此语句中的参数“canvas_0_757”其实就是此算例中的发电机的名称。当用户点击发电机元件的时候，会发现浏览器的网址变成了https://cloudpss.net/project/k/cs#/design/diagram/cells/`canvas_0_757`，此网址中的最后一个单词即是发电机模块。如果后续需要使用其他的模块，可以如此获得模块名称。
 
-### 指定具体元件的参数
+### 5.指定具体元件的参数
 在第19行的后面，也就是第20行插入一行代码。
 print(comp.args)
 然后运行代码，此语句会输出此同步发电机的所有输入参数。如下所示。
@@ -82,7 +82,7 @@ print(comp.args)
 其中标红部分就是在拓扑图中的“Injected Active Power”。注意其前面的参数名称“pf_P”就是我们后面需要使用的有功功率的参数名称。
 然后在第21行插入代码为comp.args['pf_P'] = '180'，此时便是通过设置此“pf_P”参数重新设置了同步发电机的注入功率。此时在网页的拓扑图中的发电机的参数依然是150，但是实际在运行Python代码仿真的时候，使用的参数是180。
 
-### 运行Python程序，查看输出结果
+### 6.运行Python程序，查看输出结果
 完成了以上步骤之后，可以直接运行此Python文件，输出结果中，除了之前的
 ```python
 print(comp.args)
