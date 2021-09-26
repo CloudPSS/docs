@@ -1,5 +1,5 @@
 ---
-title: 项目版本
+title: 项目版本类
 type: examples
 author: pcp
 category: 101
