@@ -21,10 +21,10 @@ order: 101
 
 ![潮流计算结果页面](./3.png "潮流计算结果页面")
 
-假设现在需要探究`Gen2`发电机的有功出力与`Bus2`的电压相角之间的关系，那么必然需要进行多次仿真获得数据描点作图，使用传统仿真工具复杂且低效。而在CloudPSS Simstudio中可以使用SDK工具快速完成。
+假设现在需要探究`Gen2`发电机的有功出力与`Bus2`的电压相角之间的关系，那么必然需要进行多次仿真获得数据描点作图，使用传统仿真工具复杂且低效。而在CloudPSS Simstudio中可以使用`SDK工具`快速完成。
 
 ### 2.潮流计算交互python代码
-在VScode中配置好python环境，打开SDK文件夹的CLOUDPSS-SDK-EXAMPLE/example/example-run-power-flow.py文件，未经用户修改过的代码应如下。
+在`VScode`中配置好`python`环境，打开`example-run-power-flow.py`文件，未经用户修改过的代码应如下。
 ```python
 import time
 import json
@@ -64,7 +64,7 @@ if __name__ == '__main__':
 ```
 ### 3.指定具体的算例
 
-在代码第15行project = cloudpss.Project.fetch('project/admin/aaaa')中，通过fetch函数指定具体的算例，其中的('project/admin/aaaa')部分需要换成用户使用的算例地址。以本算例为例，算例网址为`.net/`之后，`#`之前的内容，即是下面网址标红的部分，https://internal.cloudpss.net/`project/k/cs`#/design/diagram/canvas/canvas_0对于任何算例皆取对应位置。
+在代码`第15行`project = cloudpss.Project.fetch('project/admin/aaaa')中，通过fetch函数指定具体的算例，其中的('project/admin/aaaa')部分需要换成用户使用的算例地址。以本算例为例，算例网址为`.net/`之后，`#`之前的内容，即是下面网址标红的部分，https://internal.cloudpss.net/`project/k/cs`#/design/diagram/canvas/canvas_0对于任何算例皆取对应位置。
 
 ### 4.指定具体元件
 
@@ -72,7 +72,7 @@ if __name__ == '__main__':
 ```python
 comp = project.getComponentsByKey('canvas_0_757')
 ```
-此语句可以直接复制进代码中，不用修改。不过Python中要注意缩进。此语句中的参数“canvas_0_757”其实就是此算例中的发电机的名称。当用户点击发电机元件的时候，会发现浏览器的网址变成了https://cloudpss.net/project/k/cs#/design/diagram/cells/`canvas_0_757`，此网址中的最后一个单词即是发电机模块。如果后续需要使用其他的模块，可以如此获得模块名称。
+此语句可以直接复制进代码中，不用修改。不过Python中要注意缩进。此语句中的参数`canvas_0_757`其实就是此算例中的发电机的名称。当用户点击发电机元件的时候，会发现浏览器的网址变成了https://cloudpss.net/project/k/cs#/design/diagram/cells/`canvas_0_757`，此网址中的最后一个单词即是发电机模块。如果后续需要使用其他的模块，可以如此获得模块名称。
 
 ### 5.指定具体元件的参数
 在第19行的后面，也就是第20行插入一行代码。
@@ -98,4 +98,5 @@ print(runner.result.getBranches())
 print(runner.result.getBuses())
 ```
 语句即可。
+
 至此，本文便使用Python命令得到了一个算例输出的所有结果。如果需要输出的表格中的某些单元格的数值，使用Python的切片操作去获取即可。
