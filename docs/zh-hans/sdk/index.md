@@ -1,21 +1,13 @@
 ---
-title: SDK介绍
+title: SDK
 order: 500
 ---
 
-## [CloudPSS仿真框架](./framwork/pic/index.md)
+## [SDK介绍](./framwork/pic/index.md)
 
- *  系统结构
-  
- *  浏览器/客户端程序
-  
- *  安全服务
-  
- *  中台服务群
-  
- *  计算中心
+### [SDK简介](./framwork/pic/index.md)
 
-## [CloudPSS仿真项目架构](./framwork/simulation_project_framwork/index.md)
+### [CloudPSS SimStudio工程架构](./framwork/simulation_project_framwork/index.md)
 
 * 解决方案(solution）
 
@@ -41,12 +33,17 @@ order: 500
 
 * 获取结果
 
+## [SDK使用说明](./framwork/simulation_project_framwork/index.md)
+
+### [SDK简介](./framwork/pic/index.md)
+
+### [SDK简介](./framwork/pic/index.md)
 
 ## [CloudPSS接口文档](./interface/index.md)
 
 * [CloudPSS接口文档](./interface/cloudpss/index.md)
 
-## [测试用例](./testdemos/index.md)
+## [案例介绍](./testdemos/index.md)
 
 * [案例1 通过项目rid运行项目](./testdemo/demo1/index.md)
 
