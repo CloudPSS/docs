@@ -6,10 +6,9 @@ category: 101
 order: 103
 ---
 
-### 项目拓扑类
-:::info
-classcloudpss.project.topology.ProjectTopology(topology: dict = {})
-:::
+
+>项目拓扑类 classcloudpss.project.topology.ProjectTopology(topology: dict = {})
+
 通过该类的静态方法fetch获取一个拓扑实例
 
 **实例变量说明：**
@@ -18,7 +17,7 @@ classcloudpss.project.topology.ProjectTopology(topology: dict = {})
 
 **mappings：** 拓扑分析后的一些映射数据
 
-### 以 JSON 格式保存数据到指定文件
+### 1.以 JSON 格式保存数据到指定文件
 :::info
 staticdump(topology, filePath, indent=None)
 :::
@@ -29,7 +28,7 @@ staticdump(topology, filePath, indent=None)
 
 **Params indent json：** 格式缩进
 
-### 获取拓扑
+### 2.获取拓扑
 :::info
 staticfetch(hash, implementType, config, maximumDepth=None)
 :::
@@ -46,7 +45,7 @@ staticfetch(hash, implementType, config, maximumDepth=None)
 ```python
 data = ProjectTopology.fetch('','emtp',{})
 ```
-### 将类转换为 dict 数据
+### 3.将类转换为 dict 数据
 :::info
 toJSON()
 :::
