@@ -15,7 +15,7 @@ order: 500
 
 #### [快速入门](./instruction_manual/guide/index.md)
 
-## [接口文档](./interface/index.md)
+## [CloudPSS接口文档](./interface/index.md)
 
 #### [setToken用户认证](./interface/setToken/index.md)
 
