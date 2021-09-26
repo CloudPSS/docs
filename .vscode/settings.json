@@ -18,7 +18,7 @@
     "editor.tabSize": 4
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
