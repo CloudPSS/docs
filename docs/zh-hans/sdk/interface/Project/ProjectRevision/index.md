@@ -6,10 +6,10 @@ category: 101
 order: 101
 ---
 
-### 1.表示一个项目的版本数据
-:::info
-class cloudpss.project.revision.ProjectRevision(revision: dict = {})
-:::
+## 表示一个项目的版本数据
+
+>class cloudpss.project.revision.ProjectRevision(revision: dict = {})
+
 **实例变量说明**：
 
 **implements:** 项目当前版本的实现数据
@@ -20,7 +20,7 @@ class cloudpss.project.revision.ProjectRevision(revision: dict = {})
 
 **documentation：** 项目当前版本的文档信息
 
-### 2.创建一个新版本
+### 1.创建一个新版本
 :::info
 staticcreate(revision, parentHash=None)
 :::
@@ -32,7 +32,7 @@ ProjectRevision.create(project.revision)
 {hash:'4043acbddb9ce0c6174be65573c0380415bc48186c74a459f88865313743230c'}
 ```
 
-### 3.获取当前项目版本的拓扑数据
+### 2.获取当前项目版本的拓扑数据
 :::info
 fetchTopology(implementType, config, maximumDepth)
 :::
@@ -50,7 +50,7 @@ topology=revision.fetchTopology()
     topology=revision.fetchTopology(maximumDepth=2) # 获取仅展开 2 层的拓扑数据
 ```
 
-### 4.获取当前版本的实现
+### 3.获取当前版本的实现
 :::info
 getImplements()
 :::
@@ -59,7 +59,7 @@ getImplements()
 revision.getImplements()
 ```
 
-### 5.运行某个指定版本的项目
+### 4.运行某个指定版本的项目
 :::info
 run(job, config, name=None, rid='', kwargs)
 :::
@@ -77,7 +77,7 @@ run(job, config, name=None, rid='', kwargs)
 revision.run(revision,job,config,'')
 ```
 
-### 6.类对象序列化为dict:return:dict
+### 5.类对象序列化为dict:return:dict
 :::info
 toJSON()
 :::

@@ -8,10 +8,10 @@ order: 101
 
 
 
-### 1.CloudPSS工程类，用于处理加载后的工程数据
-:::info
- class cloudpss.project.revision.ProjectRevision(revision: dict = {})
-:::
+## CloudPSS工程类，用于处理加载后的工程数据
+
+>class cloudpss.project.revision.ProjectRevision(revision: dict = {})
+
 **实例变量说明：**
 
 **rid:** 项目的 rid
@@ -28,7 +28,7 @@ order: 101
 
 **context：** 当前项目的上下文相关信息
 
-### 2.将参数方案添加到工程中
+### 1.将参数方案添加到工程中
 :::info
 addConfig(config)
 :::
@@ -37,7 +37,7 @@ addConfig(config)
 config = project.createConfig('my config')
          project.addConfig(config)
 ```
-### 3.将计算方案添加到工程中
+### 2.将计算方案添加到工程中
 :::info
 addJob(job: dict)
 :::
@@ -46,7 +46,7 @@ addJob(job: dict)
 job = project.createJob('emtp','emtp job')
           project.addJob(job)
 ```
-### 4.新建项目
+### 3.新建项目
 :::info
 static create(project)
 :::
@@ -58,7 +58,7 @@ Project.create(project)
 保存成功
 ```
 
-### 5.创建一个参数方案 
+### 4.创建一个参数方案 
 :::info
 createConfig(name)
 :::
@@ -69,7 +69,7 @@ createConfig(name)
 job = project.createConfig('my config')
     参数方案
 ```
-### 6.创建一个计算方案
+### 5.创建一个计算方案
 :::info
 createJob(jobType: str, name)
 :::
@@ -82,7 +82,7 @@ createJob(jobType: str, name)
 project.createJob('emtp','emtp job')
 计算方案
 ```
-### 7.下载项目文件
+### 6.下载项目文件
 :::info
 staticdump(project, file)
 :::
@@ -94,7 +94,7 @@ staticdump(project, file)
 ```python
 Project.dump(project,file)
 ```
-### 8.获取项目
+### 7.获取项目
 :::info
 staticfetch(rid)
 :::
@@ -104,7 +104,7 @@ staticfetch(rid)
 ```python
 project=Project.fetch('project/Demo/test')
 ```
-### 9.获取用户可以运行的项目列表
+### 8.获取用户可以运行的项目列表
 :::info
 staticfetchMany(name=None, pageSize=10, pageOffset=0)
 :::
@@ -123,7 +123,7 @@ data=Project.fetchMany()
     ...
 ]
 ```
-### 10.通过项目信息，获取当前项目对应的拓扑数据
+### 9.通过项目信息，获取当前项目对应的拓扑数据
 :::info
 fetchTopology(implementType=None, config=None, maximumDepth=None)
 :::
@@ -139,7 +139,7 @@ topology=project.fetchTopology()
     topology=project.fetchTopology(implementType='powerFlow',config=config) # 获取潮流实现的拓扑数据
     topology=project.fetchTopology(maximumDepth=2) # 获取仅展开 2 层的拓扑数据
 ```
-### 11.获取实现
+### 10.获取实现
 :::info
 getAllComponents()
 :::
@@ -150,7 +150,7 @@ project.getAllComponents()
     'canvas_0_2': Component 实例
 }
 ```
-### 12.通过元件的key获取对应的元件
+### 11.通过元件的key获取对应的元件
 :::info
 getComponentByKey(componentKey: str)
 :::
@@ -161,7 +161,7 @@ getComponentByKey(componentKey: str)
 project.getComponentByKey('canvas_0_757')
 Component 实例
 ```
-### 13.通过指定元件类型获取元件
+### 12.通过指定元件类型获取元件
 :::info
 getComponentsByRid(rid: str)
 :::
@@ -174,7 +174,7 @@ project.getComponentsByRid('project/CloudPSS/newInductorRouter')
     'canvas_0_2': Component 实例
 }
 ```
-### 14.获取指定名称的参数方案
+### 13.获取指定名称的参数方案
 :::info
 getProjectConfig(name)
 :::
@@ -184,7 +184,7 @@ getProjectConfig(name)
 ```python
 project.getProjectConfig('参数方案 1')
 ```
-### 15.获取指定名称的计算方案
+### 14.获取指定名称的计算方案
 :::info
 getProjectJob(name)
 :::
@@ -194,7 +194,7 @@ getProjectJob(name)
 ```python
 project.getProjectJob('电磁暂态方案 1')
 ```
-### 16.加载本地项目文件
+### 15.加载本地项目文件
 :::info
 staticload(filePath)
 :::
@@ -204,7 +204,7 @@ staticload(filePath)
 ```python
 project = Project.load('filePath')
 ```
-### 17.调用仿真
+### 16.调用仿真
 :::info
 run(job=None, config=None, name=None, **kwargs)
 :::
@@ -219,7 +219,7 @@ run(job=None, config=None, name=None, **kwargs)
 runner=project.run(job,config,'')
 runner
 ```
-### 18.保存/创建项目
+### 17.保存/创建项目
 :::info
 save(key=None)
 :::
@@ -234,11 +234,11 @@ save(key=None)
 project.save(project)
     project.save(project,'newKey') # 另存为新的项目
 ```
-### 19.类对象序列化为dict:return:dict
+### 18.类对象序列化为dict:return:dict
 :::info
 toJSON()
 :::
-### 20.更新项目
+### 29.更新项目
 :::info
 staticupdate(project)
 :::
