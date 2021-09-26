@@ -2,7 +2,7 @@
 title: 案例4 使用项目版本的hash运行算例文件
 type: examples
 author: pcp
-category: 300
+category: 400
 order: 103
 ---
 

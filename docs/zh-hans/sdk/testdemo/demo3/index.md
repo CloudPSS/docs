@@ -2,7 +2,7 @@
 title: 案例3 运行项目并使用matplot动态绘制曲线
 type: examples
 author: pcp
-category: 300
+category: 400
 order: 102
 ---
 
