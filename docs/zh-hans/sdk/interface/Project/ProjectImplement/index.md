@@ -9,9 +9,9 @@ order: 102
 
 ## ProjectImplement
 
-:::info
-实现类 class cloudpss.project.implements.ProjectImplement(implements: dict = {})
-:::
+
+>实现类 class cloudpss.project.implements.ProjectImplement(implements: dict = {})
+
 
 ### 1.获取拓扑实现，不存在返回空
 :::info
