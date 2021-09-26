@@ -1,5 +1,5 @@
 ---
-title: 仿真运行类
+title: Runner类
 type: examples
 author: pcp
 category: 200
@@ -7,7 +7,7 @@ order: 199
 ---
 
 
-## Runner仿真运行类
+## Runner类
 :::info
 classcloudpss.runner.runner.Runner(taskId, name, job, config, revision, projectRid, **kwargs)
 :::

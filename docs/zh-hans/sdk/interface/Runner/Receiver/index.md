@@ -1,5 +1,5 @@
 ---
-title: 接收服务类
+title: Receiver类
 type: examples
 author: pcp
 category: 199

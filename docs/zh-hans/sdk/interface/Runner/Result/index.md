@@ -1,5 +1,5 @@
 ---
-title: 结果处理类
+title: Result类
 type: examples
 author: pcp
 category: 199
