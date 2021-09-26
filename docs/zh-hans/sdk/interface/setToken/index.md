@@ -20,11 +20,9 @@ order: 100
 
 ![申请Token界面](./token3.png "申请Token界面")
 
-点击`复制`按钮将所申请的Token复制到剪贴板，也可至`设置/Token申请`界面查看已申请的Token。
+点击`复制`按钮将所申请的Token复制到剪贴板。
 
 ![复制Token](./token4.png "复制Token")
-
-![查看Token](./token5.png "查看Token")
 
 ## 设置token
 
