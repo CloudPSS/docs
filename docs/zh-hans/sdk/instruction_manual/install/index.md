@@ -1,5 +1,5 @@
 ---
-title: SDK安装
+title: SDK安装与卸载
 type: examples
 author: pcp
 category: 200

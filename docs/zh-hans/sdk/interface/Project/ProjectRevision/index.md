@@ -55,7 +55,7 @@ topology=revision.fetchTopology()
 revision.getImplements()
 ```
 
-### 4.run(job, config, name=None, rid='', kwargs)
+### 4.run(job, config, name=None, rid='', **kwargs)
 运行某个指定版本的项目
 
 **Params job：**  调用仿真时使用的计算方案，为空时使用项目的第一个计算方案
