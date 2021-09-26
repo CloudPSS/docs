@@ -1,5 +1,5 @@
 ---
-title: 消息存储类
+title: Storage类
 type: examples
 author: pcp
 category: 199
