@@ -25,7 +25,7 @@ order: 500
   
 * [项目实现类](./interface/Project/ProjectImplement/index.md)
 
-* [项目拓扑类](./interface/interface/Project/ProjectTopology/index.md)
+* [项目拓扑类](./interface/Project/ProjectTopology/index.md)
 
 #### [仿真运行类](./interface/Runner/index.md)
 
