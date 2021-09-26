@@ -17,10 +17,8 @@ order: 103
 
 **mappings：** 拓扑分析后的一些映射数据
 
-### 1.以 JSON 格式保存数据到指定文件
-:::info
-staticdump(topology, filePath, indent=None)
-:::
+### 1.staticdump(topology, filePath, indent=None)
+以 JSON 格式保存数据到指定文件
 
 **Params topology：** 拓扑实例
 
@@ -28,10 +26,8 @@ staticdump(topology, filePath, indent=None)
 
 **Params indent json：** 格式缩进
 
-### 2.获取拓扑
-:::info
-staticfetch(hash, implementType, config, maximumDepth=None)
-:::
+### 2.staticfetch(hash, implementType, config, maximumDepth=None)
+获取拓扑
 
 **Params hash：**   哈希值
 
@@ -45,7 +41,5 @@ staticfetch(hash, implementType, config, maximumDepth=None)
 ```python
 data = ProjectTopology.fetch('','emtp',{})
 ```
-### 3.将类转换为 dict 数据
-:::info
-toJSON()
-:::
+### 3.toJSON()
+将类转换为 dict 数据

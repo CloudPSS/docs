@@ -6,20 +6,25 @@ category: 200
 order: 101
 ---
 
-## CloudPSS SDK python调用快速入门
+### python调用CloudPSS SDK实现批量潮流仿真
+
+:::info
+**通过python调用CloudPSS SDK，快速实现算例中元件参数的批量修改和仿真。本例以3机9节点标准测试系统算例的批量潮流仿真为例，帮助用户快速入门CloudPSS SDK的使用。**
+:::
 
 ### 1.3机9节点标准测试系统算例
 
-以[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)为例，假设现在需要多次修改算例中某个元件的某个参数，并分别获得其输出的数据,在CloudPSS Studio中可以通过python调用快速实现。
-首先，在CloudPSS Simstudio中打开[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)，电路拓扑图如下图所示。
+首先，在CloudPSS Simstudio中打开[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)。
 
 ![3机9节点标准测试系统算例](./1.png "3机9节点标准测试系统算例")
 
-点击`运行`图标进入计算方案选择界面，选择潮流计算方案1。然后点击`启动任务`按钮启动仿真。此时窗口会自动跳转到`结果`页面，生成潮流计算结果。
+点击`运行`标签页，在计算方案中选择默认的**潮流计算方案1**。
 
-![潮流计算方案选择](./2.png "潮流计算方案选择")
+![选择潮流计算方案](./2-1.png "选择潮流计算方案")
 
-![潮流计算结果页面](./3.png "潮流计算结果页面")
+点击`启动任务`运行仿真，在`结果`页面会生成潮流计算结果。
+
+![潮流计算结果](./3-2.png "潮流计算结果")
 
 假设现在需要探究`Gen2`发电机的有功出力与`Bus2`的电压相角之间的关系，那么必然需要进行多次仿真获得数据描点作图，使用传统仿真工具复杂且低效。而在CloudPSS Simstudio中可以使用`SDK工具`快速完成。
 
@@ -78,7 +83,9 @@ comp = project.getComponentsByKey('canvas_0_757')
 在第19行的后面，也就是第20行插入一行代码。
 print(comp.args)
 然后运行代码，此语句会输出此同步发电机的所有输入参数。如下所示。
+```python
 {'Name': 'Gen2', 'P': '=4', 'Smva': '=325', 'V': '=$Bus_2_Vbase / sqrt(3)', 'freq': '=50', 'R0': '=10000', 'ParamType': '0', 'ModelType': '0', 'Rs': '=0.000301', 'Xls': '=0', 'Xq': '=0.283875', 'Xd': '=0.283875', 'Rfd': '=0.000117219', 'Xlfd': '=0.047921256', 'Rkd': '=0.009822918', 'Xlkd': '=0.097868236', 'Rkqg': '=50000', 'Xlkqg': '=50000', 'RkqQ': '=0.005334267', 'XlkqQ': '=0.059027851', 'Rs_2': '=0.000301', 'Xls_2': '=0', 'Xd_2': '=0.283875', 'Xdp_2': '=0.041', 'Xdpp_2': '=0.028895', 'Xq_2': '=0.283875', 'Xqp_2': '=0.056603', 'Xqpp_2': '=0.028895', 'Td0p_2': '=9.01', 'Td0pp_2': '=0.045', 'Tq0p_2': '=0.956', 'Tq0pp_2': '=0.069', 'Control': '1', 'Tj': '=5', 'Dm': '=0', 'StartupType': '4', 'RampingTime': '=0.06', 'V_mag': 1, 'V_ph': 8.092582389805873, 'AP': 150, 'RP': 10.551261791343547, 's2m': '@S2M', 'l2n': '@L2N', 'BusType': '1', 'pf_P': '=150', 'pf_Q': '=100', 'pf_V': '=1', 'pf_Theta': '=0', 'pf_Vmin': '=0.001', 'pf_Vmax': '=10', `'pf_Qmin'`: '=-200', 'pf_Qmax': '=200', 's2m_o': '#initEx2', 'l2n_o': '#initGv2', 'Ef0_o': '#Ef02', 'Tm0_o': '#Tm02', 'wr_o': '#wr2', 'theta_o': '', 'loadangle_o': '', 'loadangle_so': '', 'VT_o': '#VT2', 'IT_o': '#IT2', 'PT_o': '#P2', 'QT_o': '#Q2', 'IT_inst': ''}
+```
 其中标红部分就是在拓扑图中的“Injected Active Power”。注意其前面的参数名称“pf_P”就是我们后面需要使用的有功功率的参数名称。
 然后在第21行插入代码为comp.args['pf_P'] = '180'，此时便是通过设置此“pf_P”参数重新设置了同步发电机的注入功率。此时在网页的拓扑图中的发电机的参数依然是150，但是实际在运行Python代码仿真的时候，使用的参数是180。
 
