@@ -26,10 +26,13 @@ order: 101
 
 ![潮流计算结果](./3-2.png "潮流计算结果")
 
-假设现在需要探究`Gen2`发电机的有功出力与`Bus2`的电压相角之间的关系，那么必然需要进行多次仿真获得数据描点作图，使用传统仿真工具复杂且低效。而在CloudPSS Simstudio中可以使用`SDK工具`快速完成。
+:::tip
+若要分析算例中**Gen2**发电机的有功出力与**Bus2**的电压相角之间的关系，常规方法是修改参数后多次仿真，绘制出有功出力与电压相角的描点图。这个方法操作复杂且效率低下，而用python调用**CloudPSS SDK**可以快速完成批量仿真。
+:::
 
 ### 2.潮流计算交互python代码
-在`VScode`中配置好`python`环境，打开`example-run-power-flow.py`文件，未经用户修改过的代码应如下。
+
+在**VScode**中配置好**python**环境，输入以下代码。
 ```python
 import time
 import json
@@ -41,9 +44,9 @@ if __name__ == '__main__':
     import cloudpss
     cloud-pss.setToken('eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJ1bmtub3duIl0sInR5cGUiOiJTREsiLCJleHAiOjE2NTg1NjgzNDYsImlhdCI6MTYyNjk0MTQ1MX0.hDRBisqpd2bXzg5HZVoTVnxw2GmOAihY5HHALNpFs_gcLCL45Xt8rYKrCUq3CZKq-iM-mYfQvPgWIn2B_QCmUezHtUuRQw_nmBBLb5NMpIAiFJJiBFDGjBvzwBAINCbBFnr8zDxUvwHZMoAb3ed9VNJDqI_CTzB8Q3udTb10-TXs')
 
-    os.environ['CLOUDPSS_API_URL'] = 'https://internal.cloudpss.net/'
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
     # 获取指定 rid 的项目
-    project = cloudpss.Project.fetch('project/k/cs')
+    project = cloudpss.Project.fetch('project/admin/aaaa')
 
     config = project.configs[0]  # 不填默认用project的第一个config
     job = project.jobs[0]  # 不填默认用project的第一个job
@@ -67,17 +70,32 @@ if __name__ == '__main__':
     # runner.result.(project)
     # project.save()
 ```
-### 3.指定具体的算例
 
-在代码`第15行`project = cloudpss.Project.fetch('project/admin/aaaa')中，通过fetch函数指定具体的算例，其中的('project/admin/aaaa')部分需要换成用户使用的算例地址。以本算例为例，算例网址为`.net/`之后，`#`之前的内容，即是下面网址标红的部分，https://internal.cloudpss.net/`project/k/cs`#/design/diagram/canvas/canvas_0对于任何算例皆取对应位置。
+:::tip
+**地址与Token替换**  
 
-### 4.指定具体元件
+使用时需要将 `os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'`中的`'https://cloudpss.net/'`替换为用户当前使用的平台网址地址。
 
-点击发电机`Gen2`，此时右侧参数一栏中找到`Power Flow Data`组中的`Injected Active Power`输入框。此时的默认参数是`=150`。其表示此PV节点输入系统的有功功率为150MW。在对应的代码中，第19行的位置暂时是空行，但是没有关系，在其中补充以下语句即可。
+同时需要申请和修改Token，替换`cloud-pss.setToken`后的内容。Token的申请和注销详见[setToken用户认证](../../interface/setToken.md)帮助文档。
+:::
+
+:::tip
+**算例指定**  
+
+使用时需要将 `project = cloudpss.Project.fetch('project/admin/aaaa')`中的`('project/admin/aaaa')`替换为用户当前使用的算例地址。
+
+例如：算例地址为https://cloudpss.net/project/user/example#，则代码中对应部分应替换为`project/user/example`。
+:::
+
+:::tip
+**元件指定**
+
+点击算例中的发电机**Gen2**，在**Power Flow Data**参数组中，**Injected Active Power**的值为150，即此PV节点输入系统的有功功率为150MW。在对应的代码中，第19行的位置暂时是空行，但是没有关系，在其中补充以下语句即可。
 ```python
 comp = project.getComponentsByKey('canvas_0_757')
 ```
 此语句可以直接复制进代码中，不用修改。不过Python中要注意缩进。此语句中的参数`canvas_0_757`其实就是此算例中的发电机的名称。当用户点击发电机元件的时候，会发现浏览器的网址变成了https://cloudpss.net/project/k/cs#/design/diagram/cells/`canvas_0_757`，此网址中的最后一个单词即是发电机模块。如果后续需要使用其他的模块，可以如此获得模块名称。
+:::
 
 ### 5.指定具体元件的参数
 在第19行的后面，也就是第20行插入一行代码。
