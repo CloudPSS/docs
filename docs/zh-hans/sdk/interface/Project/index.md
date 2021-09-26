@@ -1,5 +1,5 @@
 ---
-title: 项目
+title: 项目类
 type: examples
 author: pcp
 category: 200
