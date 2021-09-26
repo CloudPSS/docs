@@ -90,7 +90,8 @@ if __name__ == '__main__':
 :::tip
 **元件指定**
 
-点击算例中的发电机**Gen2**，在**Power Flow Data**参数组中，**Injected Active Power**的值为150，即此PV节点输入系统的有功功率为150MW。在对应的代码中，第19行的位置暂时是空行，但是没有关系，在其中补充以下语句即可。
+选中算例中的发电机**Gen2**，此时地址变为`https://cloudpss.net/project/user/example#/design/diagram/cells/canvas_0_757`，`canvas_0_757`即为发电机**Gen2**的元件标识，其它元件的元件标识可以用相同的方式获取，并替换代码中
+
 ```python
 comp = project.getComponentsByKey('canvas_0_757')
 ```
@@ -98,6 +99,9 @@ comp = project.getComponentsByKey('canvas_0_757')
 :::
 
 ### 5.指定具体元件的参数
+
+
+在**Power Flow Data**参数组中，**Injected Active Power**的值为150，即此PV节点输入系统的有功功率为150MW。在对应的代码中，第19行的位置暂时是空行，但是没有关系，在其中补充以下语句即可。
 在第19行的后面，也就是第20行插入一行代码。
 print(comp.args)
 然后运行代码，此语句会输出此同步发电机的所有输入参数。如下所示。
