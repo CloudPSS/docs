@@ -9,9 +9,10 @@ order: 101
 
 
 ### 1.CloudPSS工程类，用于处理加载后的工程数据
-#### class cloudpss.project.revision.ProjectRevision(revision: dict = {})
-
-实例变量说明：
+:::info
+ class cloudpss.project.revision.ProjectRevision(revision: dict = {})
+:::
+**实例变量说明：**
 
 **rid:** 项目的 rid
 
@@ -28,25 +29,27 @@ order: 101
 **context：** 当前项目的上下文相关信息
 
 ### 2.将参数方案添加到工程中
-#### addConfig(config)
-
+:::info
+addConfig(config)
+:::
 **Params config:**  参数方案dict
 ```python
 config = project.createConfig('my config')
          project.addConfig(config)
 ```
 ### 3.将计算方案添加到工程中
-#### addJob(job: dict)
-
+:::info
+addJob(job: dict)
+:::
 **Params job:**  计算方案 dict
 ```python
 job = project.createJob('emtp','emtp job')
           project.addJob(job)
 ```
 ### 4.新建项目
-
-#### static create(project)
-
+:::info
+static create(project)
+:::
 **Params:**  project 项目
 **返回：**   保存成功/保存失败
 
@@ -56,8 +59,9 @@ Project.create(project)
 ```
 
 ### 5.创建一个参数方案 
-#### createConfig(name)
-
+:::info
+createConfig(name)
+:::
 根据项目的第一个参数方案生成一个方案 创建出的方案默认不加入到项目中，需要加入请调用**addConfig :params name:**参数方案名称
 
 **返回：**  返回一个参数方案 dict
@@ -66,8 +70,9 @@ job = project.createConfig('my config')
     参数方案
 ```
 ### 6.创建一个计算方案
-#### createJob(jobType: str, name)
-
+:::info
+createJob(jobType: str, name)
+:::
 创建出的方案默认不加入到项目中，需要加入请调用 **addJob**
 
 **Params jobType:**  方案类型，包括电磁暂态仿真方案emtp、移频电磁暂态仿真方案sfemt、潮流计算方案powerFlow
@@ -78,8 +83,9 @@ project.createJob('emtp','emtp job')
 计算方案
 ```
 ### 7.下载项目文件
-#### staticdump(project, file)
-
+:::info
+staticdump(project, file)
+:::
 **Params project：**  项目
 
 **Params file：**  文件路径
@@ -89,8 +95,9 @@ project.createJob('emtp','emtp job')
 Project.dump(project,file)
 ```
 ### 8.获取项目
-#### staticfetch(rid)
-
+:::info
+staticfetch(rid)
+:::
 **Params rid：**  项目 rid
 
 **返回：**  返回一个项目实例
@@ -98,8 +105,9 @@ Project.dump(project,file)
 project=Project.fetch('project/Demo/test')
 ```
 ### 9.获取用户可以运行的项目列表
-#### staticfetchMany(name=None, pageSize=10, pageOffset=0)
-
+:::info
+staticfetchMany(name=None, pageSize=10, pageOffset=0)
+:::
 **Params name：**  查询名称，模糊查询
 
 **Params pageSize：**  分页大小
@@ -116,8 +124,9 @@ data=Project.fetchMany()
 ]
 ```
 ### 10.通过项目信息，获取当前项目对应的拓扑数据
-#### fetchTopology(implementType=None, config=None, maximumDepth=None)
-
+:::info
+fetchTopology(implementType=None, config=None, maximumDepth=None)
+:::
 **Params implementType:**  实现类型
 
 **Params config:**  config 项目参数, 不指定将使用算例保存时选中的参数方案
@@ -131,8 +140,9 @@ topology=project.fetchTopology()
     topology=project.fetchTopology(maximumDepth=2) # 获取仅展开 2 层的拓扑数据
 ```
 ### 11.获取实现
-#### getAllComponents()
-
+:::info
+getAllComponents()
+:::
 **返回：**  所有元件信息
 ```python
 project.getAllComponents()
@@ -141,8 +151,9 @@ project.getAllComponents()
 }
 ```
 ### 12.通过元件的key获取对应的元件
-#### getComponentByKey(componentKey: str)
-
+:::info
+getComponentByKey(componentKey: str)
+:::
 **Params key：**  key 元件的key
 
 **Return：**  Component 实例
@@ -151,8 +162,9 @@ project.getComponentByKey('canvas_0_757')
 Component 实例
 ```
 ### 13.通过指定元件类型获取元件
-#### getComponentsByRid(rid: str)
-
+:::info
+getComponentsByRid(rid: str)
+:::
 **Params str：**  元件类型
 
 **返回：**  按照元件的 rid 过滤后的 dict<>
@@ -163,8 +175,9 @@ project.getComponentsByRid('project/CloudPSS/newInductorRouter')
 }
 ```
 ### 14.获取指定名称的参数方案
-#### getProjectConfig(name)
-
+:::info
+getProjectConfig(name)
+:::
 **Params name：**  参数方案名称
 
 **返回:**  同名的方案数组
@@ -172,8 +185,9 @@ project.getComponentsByRid('project/CloudPSS/newInductorRouter')
 project.getProjectConfig('参数方案 1')
 ```
 ### 15.获取指定名称的计算方案
-#### getProjectJob(name)
-
+:::info
+getProjectJob(name)
+:::
 **Params Name:**  参数名称
 
 **返回:**  返回同名计算方案数组
@@ -181,8 +195,9 @@ project.getProjectConfig('参数方案 1')
 project.getProjectJob('电磁暂态方案 1')
 ```
 ### 16.加载本地项目文件
-#### staticload(filePath)
-
+:::info
+staticload(filePath)
+:::
 **Params file:**  文件目录
 
 **返回:**  返回一个项目实例
@@ -190,8 +205,9 @@ project.getProjectJob('电磁暂态方案 1')
 project = Project.load('filePath')
 ```
 ### 17.调用仿真
-#### run(job=None, config=None, name=None, **kwargs)
-
+:::info
+run(job=None, config=None, name=None, **kwargs)
+:::
 **Params job:**  调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 
 **Params config:**  调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
@@ -204,8 +220,9 @@ runner=project.run(job,config,'')
 runner
 ```
 ### 18.保存/创建项目
-#### save(key=None)
-
+:::info
+save(key=None)
+:::
 **key**不为空时如果远程存在相同的资源名称时将覆盖远程项目。**key**为空时如果项目rid不存在则抛异常，需要重新设置**key**。如果保存时，当前用户不是该项目的拥有者时，将重新创建项目，重建项目时如果参数的**key**为空将使用当前当前项目的**key**作为资源的**key**，当资源的**key**和远程冲突时保存失败
 
 **Params:**  project 项目
@@ -218,11 +235,13 @@ project.save(project)
     project.save(project,'newKey') # 另存为新的项目
 ```
 ### 19.类对象序列化为dict:return:dict
-#### toJSON()
-
+:::info
+toJSON()
+:::
 ### 20.更新项目
-#### staticupdate(project)
-
+:::info
+staticupdate(project)
+:::
 **Params:**  project 项目
 
 **返回:**  保存成功/保存失败

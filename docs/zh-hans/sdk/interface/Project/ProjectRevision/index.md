@@ -7,9 +7,10 @@ order: 101
 ---
 
 ### 1.表示一个项目的版本数据
-#### class cloudpss.project.revision.ProjectRevision(revision: dict = {})
-
-实例变量说明：
+:::info
+class cloudpss.project.revision.ProjectRevision(revision: dict = {})
+:::
+**实例变量说明**：
 
 **implements:** 项目当前版本的实现数据
 
@@ -20,8 +21,9 @@ order: 101
 **documentation：** 项目当前版本的文档信息
 
 ### 2.创建一个新版本
-#### staticcreate(revision, parentHash=None)
-
+:::info
+staticcreate(revision, parentHash=None)
+:::
 **Params revision：**  版本数据
 
 **返回：**  项目版本hash
@@ -31,8 +33,9 @@ ProjectRevision.create(project.revision)
 ```
 
 ### 3.获取当前项目版本的拓扑数据
-#### fetchTopology(implementType, config, maximumDepth)
-
+:::info
+fetchTopology(implementType, config, maximumDepth)
+:::
 **Params implementType：**  实现类型
 
 **Params config：**  项目参数
@@ -48,16 +51,18 @@ topology=revision.fetchTopology()
 ```
 
 ### 4.获取当前版本的实现
-#### getImplements()
-
+:::info
+getImplements()
+:::
 **返回：**  实现实例
 ```python
 revision.getImplements()
 ```
 
 ### 5.运行某个指定版本的项目
-#### run(job, config, name=None, rid='', kwargs)
-
+:::info
+run(job, config, name=None, rid='', kwargs)
+:::
 **Params job：**  调用仿真时使用的计算方案，为空时使用项目的第一个计算方案
 
 **Params config：**  调用仿真时使用的参数方案，为空时使用项目的第一个参数方案
@@ -73,4 +78,6 @@ revision.run(revision,job,config,'')
 ```
 
 ### 6.类对象序列化为dict:return:dict
-#### toJSON()
+:::info
+toJSON()
+:::
