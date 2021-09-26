@@ -9,7 +9,7 @@ order: 100
 
 设置用户申请的**sdk token**。
 
-**params:**  **token** token
+**params:**  token token
 
 ```[pyhton][setToken]
 cloudpss.setToken(token)
