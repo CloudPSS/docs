@@ -7,30 +7,20 @@ order: 112
 ---
 
 
->class cloudpss.runner.receiver.Receiver(taskId, db, url: Optional[str] = None, **kwargs)
+## class cloudpss.runner.receiver.Receiver(taskId, db, url: Optional[str] = None, **kwargs)
 
 **socket接收服务类**
 
-:::info
-close(ws)
-:::
+### close(ws)
 
-:::info
-connect()
-:::
+### connect()
 
-:::info
-on_close(ws)
-:::
+### on_close(ws)
 
-:::info
-on_error(ws, error)
-:::
+### on_error(ws, error)
 
-### 消息接收处理
-:::info
-on_message(ws, message)
-:::
+### on_message(ws, message)
+消息接收处理
 
 **Params ws:**  socket实例
 
@@ -38,10 +28,7 @@ on_message(ws, message)
 
 **heartbeat ws:**   心跳服务 __testData__
 
-:::info
-on_open(ws)
-:::
 
-:::info
-status()
-:::
+### on_open(ws)
+
+### status()
