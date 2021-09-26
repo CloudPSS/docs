@@ -7,9 +7,9 @@ order: 103
 ---
 
 
->项目拓扑类 classcloudpss.project.topology.ProjectTopology(topology: dict = {})
+> classcloudpss.project.topology.ProjectTopology(topology: dict = {})
 
-通过该类的静态方法fetch获取一个拓扑实例
+项目拓扑类，通过该类的静态方法fetch获取一个拓扑实例
 
 **实例变量说明：**
 
