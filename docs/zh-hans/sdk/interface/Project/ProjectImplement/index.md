@@ -7,11 +7,8 @@ order: 102
 ---
 
 
-## ProjectImplement
 
-
->实现类 class cloudpss.project.implements.ProjectImplement(implements: dict = {})
-
+>项目实现类 class cloudpss.project.implements.ProjectImplement(implements: dict = {})
 
 ### 1.获取拓扑实现，不存在返回空
 :::info
@@ -29,9 +26,8 @@ toJSON()
 implement.toJSON()
 ```
 ## diagram
-:::info
-拓扑实现class cloudpss.project.implements.diagram.DiagramImplement(diagram: dict = {})
-:::
+
+>项目拓扑实现类 class cloudpss.project.implements.diagram.DiagramImplement(diagram: dict = {})
 
 ### 1.获取所有元件
 :::info
@@ -50,9 +46,8 @@ diagram.toJSON()
 ```
 
 ## component
-:::info
-元件类 class cloudpss.project.implements.component.Component(diagram: dict = {})
-:::
+
+>项目元件类 class cloudpss.project.implements.component.Component(diagram: dict = {})
 
 **实例变量说明：**
 
