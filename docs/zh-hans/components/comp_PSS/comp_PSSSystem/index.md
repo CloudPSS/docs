@@ -1,5 +1,5 @@
 ---
 title: 模块元件
-order: 3500
+order: 20
 redirect to: ./BasicComp/index.md
 ---

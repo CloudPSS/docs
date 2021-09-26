@@ -1,5 +1,5 @@
 ---
-title: 项目类
+title: Project类
 type: examples
 author: pcp
 category: 200
@@ -238,7 +238,7 @@ project.save(project)
 :::info
 toJSON()
 :::
-### 29.更新项目
+### 19.更新项目
 :::info
 staticupdate(project)
 :::
