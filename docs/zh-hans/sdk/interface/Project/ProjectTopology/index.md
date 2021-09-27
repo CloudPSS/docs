@@ -17,7 +17,7 @@ order: 103
 
 **mappings:** 拓扑分析后的一些映射数据
 
-### staticdump(topology, filePath, indent=None)
+### static dump(topology, filePath, indent=None)
 :::info
 以JSON格式`保存`数据到指定文件
 :::
@@ -27,7 +27,7 @@ order: 103
 
 **Params:** indent json 格式缩进
 
-### staticfetch(hash, implementType, config, maximumDepth=None)
+### static fetch(hash, implementType, config, maximumDepth=None)
 :::info
 `获取`拓扑
 :::
