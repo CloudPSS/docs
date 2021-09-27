@@ -6,23 +6,28 @@ category: 199
 order: 113
 ---
 
-## classcloudpss.runner.result.EMTResult(*args, **kwargs)
-电磁暂态结果处理类
+## ==class cloudpss.runner.result.EMTResult==
+:::info
+`电磁暂态`结果处理类，继承 Result
 
-**电磁暂态结果处理类**，继承 Result，提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式，不在是接收时分段的数据,该类只提供 EMT 仿真使用
+提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式，不在是接收时分段的数据
 
-### 1.getPlot(index: int)
-获取指定序号的数据分组
-
+该类只提供 EMT 仿真使用
+:::
+### getPlot(index: int)
+:::info
+`获取`指定序号的`数据分组`
+:::
 **Params index:**  图表位置
 ```python
 result.getPlot(0)
 {...}
 ```
 
-### 2.getPlotChannelData(index, channelName)
-获取一组输出分组下指定通道名称的数据
-
+### getPlotChannelData(index, channelName)
+:::info
+`获取`一组输出分组下指定通道名称的`数据`
+:::
 **Params index:** 输出通道位置
 
 **Params channelName:**  输出通道名称
@@ -32,9 +37,10 @@ result.getPlot(0)
 channel= result.getPlotChannelData(0，’’) {…}
 ```
 
-### 3.getPlotChannelNames(index)
-获取一组输出分组下的所有通道名称
-
+### getPlotChannelNames(index)
+:::info
+`获取`一组输出分组下的所有`通道名称`
+:::
 **Params index:**  输出通道位置
 
 **返回:**  通道名称数组
@@ -42,76 +48,89 @@ channel= result.getPlotChannelData(0，’’) {…}
 names= result.getPlotChannelNames(0) []
 ```
 
-### 4.getPlots()
-获取所有的 plots 数据
-
+### getPlots()
+:::info
+`获取`所有的 plots 数据
+:::
 
 ```python
 result.getPlots()
 {...}
 ```
-## classcloudpss.runner.result.PowerFlowResult(*args, **kwargs)
+## ==class cloudpss.runner.result.PowerFlowResult==
+:::info
+`潮流`结果处理类，继承 Result
 
-**潮流结果处理类**，继承 Result，提供快速获取 buses 和 branches 的接口，并提供潮流写入项目的接口,该类只提供潮流仿真时使用
+提供快速获取 buses 和 branches 的接口，并提供潮流写入项目的接口
 
-### 1.getBranches()
-获取潮流结果branches数据
-
+该类只提供潮流仿真时使用
+:::
+### getBranches()
+:::info
+`获取`潮流结果`branches数据`
+:::
 ```python
 channel= result.getBranches()
 [...]
 ```
 
-### 2.getBuses()
-获取潮流结果buses数据
-
+### getBuses()
+:::info
+`获取`潮流结果`buses数据`
+:::
 ```python
 channel= result.getBuses()
 [...]
 ```
 
-### 3.powerFlowModify(project)
-潮流数据写入project
-
+### powerFlowModify(project)
+:::info
+潮流数据`写入`project
+:::
 ```python
 channel= result.powerFlowModify(project)
 ```
-## classcloudpss.runner.result.Result(db)
-结果处理类
+## ==class cloudpss.runner.result.Result==
+:::info
+`结果处理`类，从消息存储库中获取数据，并进行简单的整理
 
-**结果处理类**，从消息存储库中获取数据，并进行简单的整理
-**可迭代器**，迭代时按接收顺序返回数据
+可迭代器，迭代时按接收顺序返回数据
+:::
 ```python
 for data in result:
-print(data)
+    print(data)
 ```
 也可以从类的 db 变量，获取数据存储类实例进行操作
 
-### 1.staticdump(result, file)
-保存结果到本地文件
-
-**Params file:**  保存文件的目录
+### staticdump(result, file)
+:::info
+`保存`结果到本地文件
+:::
+**Params:**   file保存文件的目录
 ```python
 Result.dump(file)
 {...}
 ```
-### 2.getLogs()
-获取当前任务的日志
-
+### getLogs()
+:::info
+`获取`当前任务的`日志`
+:::
 ```python
 logs= result.getLogs() {…}
 ```
 
-### 3.getMessagesByType(type)
-获取指定类型的消息数据
-
+### getMessagesByType(type)
+:::info
+`获取`指定类型的`消息数据`
+:::
 ```python
 message= result.getMessagesByType('log')
 ```
 
-### 4.classmethodload(filePath)
-加载本地结果文件
-
+### classmethod load(filePath)
+:::info
+`加载`本地结果文件
+:::
 **Params file:** 文件目录
 
 **返回:**  返回一个结果实例
