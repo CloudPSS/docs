@@ -7,7 +7,7 @@ order: 103
 ---
 
 ​    
-本实例代码为**使用项目版本的hash运行算例文件**。具体见**example-revison.py**,案例参数代码:
+本实例代码介绍**使用项目版本的hash运行算例文件**的流程。
 ```python
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\\'))

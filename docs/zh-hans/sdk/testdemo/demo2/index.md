@@ -8,7 +8,7 @@ order: 101
 
 
 
-本实例代码为**项目使用案例**。具体见 **example-project.py**,案例参数代码:
+本实例代码介绍**项目Project对象**的使用方法。
 
 ```python
 import sys,os
