@@ -61,7 +61,9 @@ diagram.toJSON()
 
 **pins:** 元件引脚数据，连接线没有引脚数据
 
-**shapes diagram-component:** 表示元件，diagram-edge 表示连接线
+**shapes diagram-component:** 表示元件
+
+**diagram-edge：** 表示连接线
 
 ### toJSON()
 :::info

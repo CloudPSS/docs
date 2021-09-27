@@ -94,7 +94,7 @@ project.createJob('emtp','emtp job')
 ```python
 Project.dump(project,file)
 ```
-### staticfetch(rid)
+### static fetch(rid)
 :::info
 `获取项目`
 :::
