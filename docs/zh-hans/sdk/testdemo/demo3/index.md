@@ -7,7 +7,7 @@ order: 102
 ---
 
 
-本实例代码为**运行项目并使用matplot动态绘制曲线**，具体见 **example-run-matplot.py** ，案例参数代码:
+本实例代码介绍**项目运行及使用matplotlib动态绘制曲线**的方法。
 ```python
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\\'))
