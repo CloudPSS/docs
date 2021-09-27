@@ -24,10 +24,14 @@ order: 100
 
 ![复制Token](./token4.png "复制Token")
 
+:::warning 
+Token将不会保存在`用户中心`->`Token申请`页面。离开页面后数据将丢失。用户需将Token记录下来，防止丢失。如不慎丢失，需重新申请。
+:::
+
 ## 设置token
 
 **params:**  token token
 
 ```[pyhton][setToken]
-cloudpss.setToken(token)
+cloudpss.setToken('{token}')
 ```

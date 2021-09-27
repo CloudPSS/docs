@@ -6,7 +6,7 @@ order: 100
 ---
 
 
-本实例代码为**通过rid运行项目，等待项目运行结束并获取结果数据**。具体见 example-run.py,案例参数代码:
+本实例代码介绍**通过rid运行项目，等待项目运行结束并获取结果数据**的流程。
 ```python
 import sys,os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..\\'))
