@@ -23,7 +23,7 @@
     tsconfig-paths "^3.9.0"
     webpack-merge "^5.7.3"
 
-"@angular-devkit/architect@0.1202.4", "@angular-devkit/architect@>=0.1200.0 < 0.1300.0", "@angular-devkit/architect@~0.1202.4":
+"@angular-devkit/architect@0.1202.4", "@angular-devkit/architect@>=0.1200.0 < 0.1300.0":
   version "0.1202.4"
   resolved "https://registry.nlark.com/@angular-devkit/architect/download/@angular-devkit/architect-0.1202.4.tgz#0db02f48f8863b3cfb68d6a8cb5ae781953d414c"
   integrity sha1-DbAvSPiGOzz7aNaoy1rngZU9QUw=
@@ -31,7 +31,15 @@
     "@angular-devkit/core" "12.2.4"
     rxjs "6.6.7"
 
-"@angular-devkit/build-angular@^12.0.0", "@angular-devkit/build-angular@~12.2.4":
+"@angular-devkit/architect@0.1202.7", "@angular-devkit/architect@~0.1202.7":
+  version "0.1202.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/architect/download/@angular-devkit/architect-0.1202.7.tgz#0f25851c72d45dd15e86c92cd72c6390e88be432"
+  integrity sha1-DyWFHHLUXdFehsks1yxjkOiL5DI=
+  dependencies:
+    "@angular-devkit/core" "12.2.7"
+    rxjs "6.6.7"
+
+"@angular-devkit/build-angular@^12.0.0":
   version "12.2.4"
   resolved "https://registry.nlark.com/@angular-devkit/build-angular/download/@angular-devkit/build-angular-12.2.4.tgz#dfb185bcb5f1488511a5d32c54c0222248b98717"
   integrity sha1-37GFvLXxSIURpdMsVMAiIki5hxc=
@@ -106,10 +114,96 @@
     webpack-merge "5.8.0"
     webpack-subresource-integrity "1.5.2"
 
+"@angular-devkit/build-angular@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/build-angular/download/@angular-devkit/build-angular-12.2.7.tgz#0ac0576c72a238d0a4cb2b2339e910720fe9c155"
+  integrity sha1-CsBXbHKiONCkyysjOekQcg/pwVU=
+  dependencies:
+    "@ampproject/remapping" "1.0.1"
+    "@angular-devkit/architect" "0.1202.7"
+    "@angular-devkit/build-optimizer" "0.1202.7"
+    "@angular-devkit/build-webpack" "0.1202.7"
+    "@angular-devkit/core" "12.2.7"
+    "@babel/core" "7.14.8"
+    "@babel/generator" "7.14.8"
+    "@babel/helper-annotate-as-pure" "7.14.5"
+    "@babel/plugin-proposal-async-generator-functions" "7.14.7"
+    "@babel/plugin-transform-async-to-generator" "7.14.5"
+    "@babel/plugin-transform-runtime" "7.14.5"
+    "@babel/preset-env" "7.14.8"
+    "@babel/runtime" "7.14.8"
+    "@babel/template" "7.14.5"
+    "@discoveryjs/json-ext" "0.5.3"
+    "@jsdevtools/coverage-istanbul-loader" "3.0.5"
+    "@ngtools/webpack" "12.2.7"
+    ansi-colors "4.1.1"
+    babel-loader "8.2.2"
+    browserslist "^4.9.1"
+    cacache "15.2.0"
+    caniuse-lite "^1.0.30001032"
+    circular-dependency-plugin "5.2.2"
+    copy-webpack-plugin "9.0.1"
+    core-js "3.16.0"
+    critters "0.0.10"
+    css-loader "6.2.0"
+    css-minimizer-webpack-plugin "3.0.2"
+    esbuild-wasm "0.12.29"
+    find-cache-dir "3.3.1"
+    glob "7.1.7"
+    https-proxy-agent "5.0.0"
+    inquirer "8.1.2"
+    karma-source-map-support "1.4.0"
+    less "4.1.1"
+    less-loader "10.0.1"
+    license-webpack-plugin "2.3.20"
+    loader-utils "2.0.0"
+    mini-css-extract-plugin "2.2.1"
+    minimatch "3.0.4"
+    open "8.2.1"
+    ora "5.4.1"
+    parse5-html-rewriting-stream "6.0.1"
+    piscina "3.1.0"
+    postcss "8.3.6"
+    postcss-import "14.0.2"
+    postcss-loader "6.1.1"
+    postcss-preset-env "6.7.0"
+    regenerator-runtime "0.13.9"
+    resolve-url-loader "4.0.0"
+    rxjs "6.6.7"
+    sass "1.36.0"
+    sass-loader "12.1.0"
+    semver "7.3.5"
+    source-map-loader "3.0.0"
+    source-map-support "0.5.19"
+    style-loader "3.2.1"
+    stylus "0.54.8"
+    stylus-loader "6.1.0"
+    terser "5.7.1"
+    terser-webpack-plugin "5.1.4"
+    text-table "0.2.0"
+    tree-kill "1.2.2"
+    tslib "2.3.0"
+    webpack "5.50.0"
+    webpack-dev-middleware "5.0.0"
+    webpack-dev-server "3.11.2"
+    webpack-merge "5.8.0"
+    webpack-subresource-integrity "1.5.2"
+  optionalDependencies:
+    esbuild "0.12.29"
+
 "@angular-devkit/build-optimizer@0.1202.4":
   version "0.1202.4"
   resolved "https://registry.nlark.com/@angular-devkit/build-optimizer/download/@angular-devkit/build-optimizer-0.1202.4.tgz#844ad7003eaa384a66a475ed07b9d76a9f80e334"
   integrity sha1-hErXAD6qOEpmpHXtB7nXap+A4zQ=
+  dependencies:
+    source-map "0.7.3"
+    tslib "2.3.0"
+    typescript "4.3.5"
+
+"@angular-devkit/build-optimizer@0.1202.7":
+  version "0.1202.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/build-optimizer/download/@angular-devkit/build-optimizer-0.1202.7.tgz?cache=0&sync_timestamp=1632359916698&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40angular-devkit%2Fbuild-optimizer%2Fdownload%2F%40angular-devkit%2Fbuild-optimizer-0.1202.7.tgz#e9d2239fd49b81ec2c020cc584caaa4219ba4aa2"
+  integrity sha1-6dIjn9SbgewsAgzFhMqqQhm6SqI=
   dependencies:
     source-map "0.7.3"
     tslib "2.3.0"
@@ -121,6 +215,14 @@
   integrity sha1-gIpmlb4hPviC1peUlWUPgef4P1Q=
   dependencies:
     "@angular-devkit/architect" "0.1202.4"
+    rxjs "6.6.7"
+
+"@angular-devkit/build-webpack@0.1202.7":
+  version "0.1202.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/build-webpack/download/@angular-devkit/build-webpack-0.1202.7.tgz#d0db1912c6ee8fba1f7a1483b577088273b5d696"
+  integrity sha1-0NsZEsbuj7ofehSDtXcIgnO11pY=
+  dependencies:
+    "@angular-devkit/architect" "0.1202.7"
     rxjs "6.6.7"
 
 "@angular-devkit/core@12.2.4", "@angular-devkit/core@^12.0.0":
@@ -135,12 +237,24 @@
     rxjs "6.6.7"
     source-map "0.7.3"
 
-"@angular-devkit/schematics@12.2.4", "@angular-devkit/schematics@^12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular-devkit/schematics/download/@angular-devkit/schematics-12.2.4.tgz#298f7a48ccedfbfc817e49c37017437f10cccb23"
-  integrity sha1-KY96SMzt+/yBfknDcBdDfxDMyyM=
+"@angular-devkit/core@12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/core/download/@angular-devkit/core-12.2.7.tgz#f114b12d81797c84c9adf6ced7e355565cd4a54a"
+  integrity sha1-8RSxLYF5fITJrfbO1+NVVlzUpUo=
   dependencies:
-    "@angular-devkit/core" "12.2.4"
+    ajv "8.6.2"
+    ajv-formats "2.1.0"
+    fast-json-stable-stringify "2.1.0"
+    magic-string "0.25.7"
+    rxjs "6.6.7"
+    source-map "0.7.3"
+
+"@angular-devkit/schematics@12.2.7", "@angular-devkit/schematics@^12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular-devkit/schematics/download/@angular-devkit/schematics-12.2.7.tgz?cache=0&sync_timestamp=1632359786073&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40angular-devkit%2Fschematics%2Fdownload%2F%40angular-devkit%2Fschematics-12.2.7.tgz#46df2cb7a5917ff59ebcb47028b69b75572b12f6"
+  integrity sha1-Rt8st6WRf/WevLRwKLabdVcrEvY=
+  dependencies:
+    "@angular-devkit/core" "12.2.7"
     ora "5.4.1"
     rxjs "6.6.7"
 
@@ -151,7 +265,16 @@
   dependencies:
     "@nrwl/devkit" ">= 12.0.0 < 13.0.0"
 
-"@angular-eslint/eslint-plugin-template@12.3.1", "@angular-eslint/eslint-plugin-template@^12.3.1":
+"@angular-eslint/eslint-plugin-template@12.5.0":
+  version "12.5.0"
+  resolved "https://registry.nlark.com/@angular-eslint/eslint-plugin-template/download/@angular-eslint/eslint-plugin-template-12.5.0.tgz#9b77647c7d850a956d4e2fc8343230f3076e5892"
+  integrity sha1-m3dkfH2FCpVtTi/INDIw8wduWJI=
+  dependencies:
+    "@typescript-eslint/experimental-utils" "4.28.2"
+    aria-query "^4.2.2"
+    axobject-query "^2.2.0"
+
+"@angular-eslint/eslint-plugin-template@^12.3.1":
   version "12.3.1"
   resolved "https://registry.nlark.com/@angular-eslint/eslint-plugin-template/download/@angular-eslint/eslint-plugin-template-12.3.1.tgz#33260cd5356df5db7e27719443eabcf6c214e32e"
   integrity sha1-MyYM1TVt9dt+J3GUQ+q89sIU4y4=
@@ -160,20 +283,28 @@
     aria-query "^4.2.2"
     axobject-query "^2.2.0"
 
-"@angular-eslint/eslint-plugin@12.3.1", "@angular-eslint/eslint-plugin@^12.3.1":
+"@angular-eslint/eslint-plugin@12.5.0":
+  version "12.5.0"
+  resolved "https://registry.nlark.com/@angular-eslint/eslint-plugin/download/@angular-eslint/eslint-plugin-12.5.0.tgz#cb4eca50338bf41398bd62796c1068b937ff53a1"
+  integrity sha1-y07KUDOL9BOYvWJ5bBBouTf/U6E=
+  dependencies:
+    "@angular-eslint/utils" "12.5.0"
+    "@typescript-eslint/experimental-utils" "4.28.2"
+
+"@angular-eslint/eslint-plugin@^12.3.1":
   version "12.3.1"
   resolved "https://registry.nlark.com/@angular-eslint/eslint-plugin/download/@angular-eslint/eslint-plugin-12.3.1.tgz#00ac44d5986d86113d65a5373746e1fc22fd8702"
   integrity sha1-AKxE1ZhthhE9ZaU3N0bh/CL9hwI=
   dependencies:
     "@typescript-eslint/experimental-utils" "4.28.2"
 
-"@angular-eslint/schematics@^12.3.1":
-  version "12.3.1"
-  resolved "https://registry.nlark.com/@angular-eslint/schematics/download/@angular-eslint/schematics-12.3.1.tgz#99060a64fd6dd36ffb4c5e254b85562f4d0150d9"
-  integrity sha1-mQYKZP1t02/7TF4lS4VWL00BUNk=
+"@angular-eslint/schematics@^12.5.0":
+  version "12.5.0"
+  resolved "https://registry.nlark.com/@angular-eslint/schematics/download/@angular-eslint/schematics-12.5.0.tgz#bbfe5f543f26ddb38727163a7426fcd99572b282"
+  integrity sha1-u/5fVD8m3bOHJxY6dCb82ZVysoI=
   dependencies:
-    "@angular-eslint/eslint-plugin" "12.3.1"
-    "@angular-eslint/eslint-plugin-template" "12.3.1"
+    "@angular-eslint/eslint-plugin" "12.5.0"
+    "@angular-eslint/eslint-plugin-template" "12.5.0"
     ignore "5.1.8"
     strip-json-comments "3.1.1"
     tmp "0.2.1"
@@ -185,31 +316,38 @@
   dependencies:
     eslint-scope "^5.1.0"
 
-"@angular/animations@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/animations/download/@angular/animations-12.2.4.tgz#85c060d5c268170fcb720a61c595991b196e7829"
-  integrity sha1-hcBg1cJoFw/LcgphxZWZGxlueCk=
+"@angular-eslint/utils@12.5.0":
+  version "12.5.0"
+  resolved "https://registry.nlark.com/@angular-eslint/utils/download/@angular-eslint/utils-12.5.0.tgz#9e1164de3ceffc1b79d24bd5e5788d6bb63bc905"
+  integrity sha1-nhFk3jzv/Bt50kvV5XiNa7Y7yQU=
+  dependencies:
+    "@typescript-eslint/experimental-utils" "4.28.2"
+
+"@angular/animations@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/animations/download/@angular/animations-12.2.7.tgz#7000cd81ae3d84a09082c3e6576f1b75a72cf629"
+  integrity sha1-cADNga49hKCQgsPmV28bdacs9ik=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/cdk@^12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/cdk/download/@angular/cdk-12.2.4.tgz#2d744413d847030f0562c568054db780473c3ef1"
-  integrity sha1-LXREE9hHAw8FYsVoBU23gEc8PvE=
+"@angular/cdk@^12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/cdk/download/@angular/cdk-12.2.7.tgz?cache=0&sync_timestamp=1632428457482&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40angular%2Fcdk%2Fdownload%2F%40angular%2Fcdk-12.2.7.tgz#df8636bc81cbe2f8ceaa69feed46fbb99a2b7183"
+  integrity sha1-34Y2vIHL4vjOqmn+7Ub7uZorcYM=
   dependencies:
     tslib "^2.2.0"
   optionalDependencies:
     parse5 "^5.0.0"
 
-"@angular/cli@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/cli/download/@angular/cli-12.2.4.tgz#bf624b5a7ffe6a25429ceb31a553f26195164447"
-  integrity sha1-v2JLWn/+aiVCnOsxpVPyYZUWREc=
+"@angular/cli@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/cli/download/@angular/cli-12.2.7.tgz#609b68dbe3887163957728d94f84d32182669871"
+  integrity sha1-YJto2+OIcWOVdyjZT4TTIYJmmHE=
   dependencies:
-    "@angular-devkit/architect" "0.1202.4"
-    "@angular-devkit/core" "12.2.4"
-    "@angular-devkit/schematics" "12.2.4"
-    "@schematics/angular" "12.2.4"
+    "@angular-devkit/architect" "0.1202.7"
+    "@angular-devkit/core" "12.2.7"
+    "@angular-devkit/schematics" "12.2.7"
+    "@schematics/angular" "12.2.7"
     "@yarnpkg/lockfile" "1.1.0"
     ansi-colors "4.1.1"
     debug "4.3.2"
@@ -226,17 +364,17 @@
     symbol-observable "4.0.0"
     uuid "8.3.2"
 
-"@angular/common@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/common/download/@angular/common-12.2.4.tgz#4e0ac9ad0e19c2eb0ef052d17d846e83bd7298f7"
-  integrity sha1-TgrJrQ4ZwusO8FLRfYRug71ymPc=
+"@angular/common@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/common/download/@angular/common-12.2.7.tgz#4cc6573fb29d32b6fe5513f6150a18a00381b9af"
+  integrity sha1-TMZXP7KdMrb+VRP2FQoYoAOBua8=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/compiler-cli@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/compiler-cli/download/@angular/compiler-cli-12.2.4.tgz#28175ef1073a48cfede22714bc353b0e2185b779"
-  integrity sha1-KBde8Qc6SM/t4icUvDU7DiGFt3k=
+"@angular/compiler-cli@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/compiler-cli/download/@angular/compiler-cli-12.2.7.tgz#3781100124a68b43d379a033ab4b5eff2f2b9eac"
+  integrity sha1-N4EQASSmi0PTeaAzq0te/y8rnqw=
   dependencies:
     "@babel/core" "^7.8.6"
     "@babel/types" "^7.8.6"
@@ -253,24 +391,24 @@
     tslib "^2.2.0"
     yargs "^17.0.0"
 
-"@angular/compiler@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/compiler/download/@angular/compiler-12.2.4.tgz#8451b8f5d0326ad69cd93e6c8ff2be1f54410834"
-  integrity sha1-hFG49dAyatac2T5sj/K+H1RBCDQ=
+"@angular/compiler@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/compiler/download/@angular/compiler-12.2.7.tgz#bd0e9071bc0a07261b8ba3e63fdd640853aa0659"
+  integrity sha1-vQ6QcbwKByYbi6PmP91kCFOqBlk=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/core@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/core/download/@angular/core-12.2.4.tgz#000f76eda4382e249f39fe67cda5ac0976594ade"
-  integrity sha1-AA927aQ4LiSfOf5nzaWsCXZZSt4=
+"@angular/core@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/core/download/@angular/core-12.2.7.tgz#92af3daf79a7656745323c13226dbb839bffddf9"
+  integrity sha1-kq89r3mnZWdFMjwTIm27g5v/3fk=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/forms@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/forms/download/@angular/forms-12.2.4.tgz#2fab23c604ca5fd8f5e39689a9399e4dcf45bac2"
-  integrity sha1-L6sjxgTKX9j145aJqTmeTc9FusI=
+"@angular/forms@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/forms/download/@angular/forms-12.2.7.tgz#3e904cc388ab1da4a0977de3b3cd753c2748a4f6"
+  integrity sha1-PpBMw4irHaSgl33js811PCdIpPY=
   dependencies:
     tslib "^2.2.0"
 
@@ -281,31 +419,31 @@
   dependencies:
     tslib "^2.2.0"
 
-"@angular/platform-browser-dynamic@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-12.2.4.tgz#4d35f736df6d1ded27f37b5902f7d177e56e08bd"
-  integrity sha1-TTX3Nt9tHe0n83tZAvfRd+VuCL0=
+"@angular/platform-browser-dynamic@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser-dynamic/download/@angular/platform-browser-dynamic-12.2.7.tgz#ae0a70d9d13e4a95b8af4b5f526c5a937c9dd369"
+  integrity sha1-rgpw2dE+SpW4r0tfUmxak3yd02k=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/platform-browser@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/platform-browser/download/@angular/platform-browser-12.2.4.tgz#9b1c941ad5edf804cc11bcf34ce9024a68529109"
-  integrity sha1-mxyUGtXt+ATMEbzzTOkCSmhSkQk=
+"@angular/platform-browser@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser/download/@angular/platform-browser-12.2.7.tgz#0eeebf2888f21bc42bcdc604dfff3cc312382ced"
+  integrity sha1-Du6/KIjyG8QrzcYE3/88wxI4LO0=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/router@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/router/download/@angular/router-12.2.4.tgz#3b8f30b1d690d3438c66720a573d4cc5275871a8"
-  integrity sha1-O48wsdaQ00OMZnIKVz1MxSdYcag=
+"@angular/router@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/router/download/@angular/router-12.2.7.tgz#15c8707e98c29beb8216733a79b4f95c490324b0"
+  integrity sha1-FchwfpjCm+uCFnM6ebT5XEkDJLA=
   dependencies:
     tslib "^2.2.0"
 
-"@angular/service-worker@~12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@angular/service-worker/download/@angular/service-worker-12.2.4.tgz#ef462f7eca183806fe7b1a30d7b8c07d9c59d1de"
-  integrity sha1-70YvfsoYOAb+exow17jAfZxZ0d4=
+"@angular/service-worker@~12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@angular/service-worker/download/@angular/service-worker-12.2.7.tgz#0dc65594e154f95703cb74dbde219297b838bbe7"
+  integrity sha1-DcZVlOFU+VcDy3Tb3iGSl7g4u+c=
   dependencies:
     tslib "^2.2.0"
 
@@ -1496,6 +1634,11 @@
   resolved "https://registry.nlark.com/@ngtools/webpack/download/@ngtools/webpack-12.2.4.tgz#0c6ec97d1deee15698c44b34fc3c20277673fb2a"
   integrity sha1-DG7JfR3u4VaYxEs0/DwgJ3Zz+yo=
 
+"@ngtools/webpack@12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@ngtools/webpack/download/@ngtools/webpack-12.2.7.tgz?cache=0&sync_timestamp=1632359918892&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40ngtools%2Fwebpack%2Fdownload%2F%40ngtools%2Fwebpack-12.2.7.tgz#864b66c0c80acbe6b0cb15ff205b7fbbca7f8d0e"
+  integrity sha1-hktmwMgKy+awyxX/IFt/u8p/jQ4=
+
 "@ngx-translate/core@^13.0.0":
   version "13.0.0"
   resolved "https://registry.npm.taobao.org/@ngx-translate/core/download/@ngx-translate/core-13.0.0.tgz#60547cb8a0845a2a0abfde6b0bf5ec6516a63fd6"
@@ -1617,13 +1760,13 @@
   resolved "https://registry.nlark.com/@polka/url/download/@polka/url-1.0.0-next.20.tgz#111b5db0f501aa89b05076fa31f0ea0e0c292cd3"
   integrity sha1-ERtdsPUBqomwUHb6MfDqDgwpLNM=
 
-"@schematics/angular@12.2.4":
-  version "12.2.4"
-  resolved "https://registry.nlark.com/@schematics/angular/download/@schematics/angular-12.2.4.tgz#db3b3a1c68a7d5a70043f717a0775889027a5667"
-  integrity sha1-2zs6HGin1acAQ/cXoHdYiQJ6Vmc=
+"@schematics/angular@12.2.7":
+  version "12.2.7"
+  resolved "https://registry.npmmirror.com/@schematics/angular/download/@schematics/angular-12.2.7.tgz#f384baddbe996b1929d755f4a495d144b5c15833"
+  integrity sha1-84S63b6Zaxkp11X0pJXRRLXBWDM=
   dependencies:
-    "@angular-devkit/core" "12.2.4"
-    "@angular-devkit/schematics" "12.2.4"
+    "@angular-devkit/core" "12.2.7"
+    "@angular-devkit/schematics" "12.2.7"
     jsonc-parser "3.0.0"
 
 "@tootallnate/once@1":
@@ -1689,10 +1832,10 @@
   resolved "https://registry.nlark.com/@types/file-saver/download/@types/file-saver-2.0.3.tgz#b734c4f5a04d20615eaed3dc106e2ab321082009"
   integrity sha1-tzTE9aBNIGFertPcEG4qsyEIIAk=
 
-"@types/fs-extra@^9.0.12":
-  version "9.0.12"
-  resolved "https://registry.nlark.com/@types/fs-extra/download/@types/fs-extra-9.0.12.tgz#9b8f27973df8a7a3920e8461517ebf8a7d4fdfaf"
-  integrity sha1-m48nlz34p6OSDoRhUX6/in1P368=
+"@types/fs-extra@^9.0.13":
+  version "9.0.13"
+  resolved "https://registry.nlark.com/@types/fs-extra/download/@types/fs-extra-9.0.13.tgz?cache=0&sync_timestamp=1632250966317&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Ffs-extra%2Fdownload%2F%40types%2Ffs-extra-9.0.13.tgz#7594fbae04fe7f1918ce8b3d213f74ff44ac1f45"
+  integrity sha1-dZT7rgT+fxkYzos9IT90/0SsH0U=
   dependencies:
     "@types/node" "*"
 
@@ -1729,10 +1872,10 @@
   resolved "https://registry.nlark.com/@types/linkify-it/download/@types/linkify-it-3.0.2.tgz#fd2cd2edbaa7eaac7e7f3c1748b52a19143846c9"
   integrity sha1-/SzS7bqn6qx+fzwXSLUqGRQ4Rsk=
 
-"@types/lodash-es@^4.17.4":
-  version "4.17.4"
-  resolved "https://registry.nlark.com/@types/lodash-es/download/@types/lodash-es-4.17.4.tgz#b2e440d2bf8a93584a9fd798452ec497986c9b97"
-  integrity sha1-suRA0r+Kk1hKn9eYRS7El5hsm5c=
+"@types/lodash-es@^4.17.5":
+  version "4.17.5"
+  resolved "https://registry.nlark.com/@types/lodash-es/download/@types/lodash-es-4.17.5.tgz#1c3fdd16849d84aea43890b1c60da379fb501353"
+  integrity sha1-HD/dFoSdhK6kOJCxxg2jeftQE1M=
   dependencies:
     "@types/lodash" "*"
 
@@ -1770,10 +1913,15 @@
   resolved "https://registry.nlark.com/@types/minimist/download/@types/minimist-1.2.2.tgz?cache=0&sync_timestamp=1629708337116&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fminimist%2Fdownload%2F%40types%2Fminimist-1.2.2.tgz#ee771e2ba4b3dc5b372935d549fd9617bf345b8c"
   integrity sha1-7nceK6Sz3Fs3KTXVSf2WF780W4w=
 
-"@types/node@*", "@types/node@^16.7.10":
+"@types/node@*":
   version "16.7.10"
   resolved "https://registry.nlark.com/@types/node/download/@types/node-16.7.10.tgz#7aa732cc47341c12a16b7d562f519c2383b6d4fc"
   integrity sha1-eqcyzEc0HBKha31WL1GcI4O21Pw=
+
+"@types/node@^16.10.1":
+  version "16.10.1"
+  resolved "https://registry.npmmirror.com/@types/node/download/@types/node-16.10.1.tgz?cache=0&sync_timestamp=1632567964280&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.10.1.tgz#f3647623199ca920960006b3dccf633ea905f243"
+  integrity sha1-82R2IxmcqSCWAAaz3M9jPqkF8kM=
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -1818,13 +1966,13 @@
     tapable "^2.2.0"
     webpack "^5"
 
-"@typescript-eslint/eslint-plugin@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.30.0.tgz#4a0c1ae96b953f4e67435e20248d812bfa55e4fb"
-  integrity sha1-Sgwa6WuVP05nQ14gJI2BK/pV5Ps=
+"@typescript-eslint/eslint-plugin@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/download/@typescript-eslint/eslint-plugin-4.31.2.tgz#9f41efaee32cdab7ace94b15bd19b756dd099b0a"
+  integrity sha1-n0HvruMs2res6UsVvRm3Vt0Jmwo=
   dependencies:
-    "@typescript-eslint/experimental-utils" "4.30.0"
-    "@typescript-eslint/scope-manager" "4.30.0"
+    "@typescript-eslint/experimental-utils" "4.31.2"
+    "@typescript-eslint/scope-manager" "4.31.2"
     debug "^4.3.1"
     functional-red-black-tree "^1.0.1"
     regexpp "^3.1.0"
@@ -1843,26 +1991,26 @@
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/experimental-utils@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.30.0.tgz#9e49704fef568432ae16fc0d6685c13d67db0fd5"
-  integrity sha1-nklwT+9WhDKuFvwNZoXBPWfbD9U=
+"@typescript-eslint/experimental-utils@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/experimental-utils/download/@typescript-eslint/experimental-utils-4.31.2.tgz#98727a9c1e977dd5d20c8705e69cd3c2a86553fa"
+  integrity sha1-mHJ6nB6XfdXSDIcF5pzTwqhlU/o=
   dependencies:
     "@types/json-schema" "^7.0.7"
-    "@typescript-eslint/scope-manager" "4.30.0"
-    "@typescript-eslint/types" "4.30.0"
-    "@typescript-eslint/typescript-estree" "4.30.0"
+    "@typescript-eslint/scope-manager" "4.31.2"
+    "@typescript-eslint/types" "4.31.2"
+    "@typescript-eslint/typescript-estree" "4.31.2"
     eslint-scope "^5.1.1"
     eslint-utils "^3.0.0"
 
-"@typescript-eslint/parser@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/parser/download/@typescript-eslint/parser-4.30.0.tgz#6abd720f66bd790f3e0e80c3be77180c8fcb192d"
-  integrity sha1-ar1yD2a9eQ8+DoDDvncYDI/LGS0=
+"@typescript-eslint/parser@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/parser/download/@typescript-eslint/parser-4.31.2.tgz?cache=0&sync_timestamp=1632334708110&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fparser%2Fdownload%2F%40typescript-eslint%2Fparser-4.31.2.tgz#54aa75986e3302d91eff2bbbaa6ecfa8084e9c34"
+  integrity sha1-VKp1mG4zAtke/yu7qm7PqAhOnDQ=
   dependencies:
-    "@typescript-eslint/scope-manager" "4.30.0"
-    "@typescript-eslint/types" "4.30.0"
-    "@typescript-eslint/typescript-estree" "4.30.0"
+    "@typescript-eslint/scope-manager" "4.31.2"
+    "@typescript-eslint/types" "4.31.2"
+    "@typescript-eslint/typescript-estree" "4.31.2"
     debug "^4.3.1"
 
 "@typescript-eslint/scope-manager@4.28.2":
@@ -1873,23 +2021,23 @@
     "@typescript-eslint/types" "4.28.2"
     "@typescript-eslint/visitor-keys" "4.28.2"
 
-"@typescript-eslint/scope-manager@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.30.0.tgz#1a3ffbb385b1a06be85cd5165a22324f069a85ee"
-  integrity sha1-Gj/7s4WxoGvoXNUWWiIyTwaahe4=
+"@typescript-eslint/scope-manager@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/scope-manager/download/@typescript-eslint/scope-manager-4.31.2.tgz?cache=0&sync_timestamp=1632333947261&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fscope-manager%2Fdownload%2F%40typescript-eslint%2Fscope-manager-4.31.2.tgz#1d528cb3ed3bcd88019c20a57c18b897b073923a"
+  integrity sha1-HVKMs+07zYgBnCClfBi4l7Bzkjo=
   dependencies:
-    "@typescript-eslint/types" "4.30.0"
-    "@typescript-eslint/visitor-keys" "4.30.0"
+    "@typescript-eslint/types" "4.31.2"
+    "@typescript-eslint/visitor-keys" "4.31.2"
 
 "@typescript-eslint/types@4.28.2":
   version "4.28.2"
   resolved "https://registry.nlark.com/@typescript-eslint/types/download/@typescript-eslint/types-4.28.2.tgz#e6b9e234e0e9a66c4d25bab881661e91478223b5"
   integrity sha1-5rniNODppmxNJbq4gWYekUeCI7U=
 
-"@typescript-eslint/types@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/types/download/@typescript-eslint/types-4.30.0.tgz#fb9d9b0358426f18687fba82eb0b0f869780204f"
-  integrity sha1-+52bA1hCbxhof7qC6wsPhpeAIE8=
+"@typescript-eslint/types@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/types/download/@typescript-eslint/types-4.31.2.tgz?cache=0&sync_timestamp=1632333893685&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Ftypes%2Fdownload%2F%40typescript-eslint%2Ftypes-4.31.2.tgz#2aea7177d6d744521a168ed4668eddbd912dfadf"
+  integrity sha1-Kupxd9bXRFIaFo7UZo7dvZEt+t8=
 
 "@typescript-eslint/typescript-estree@4.28.2":
   version "4.28.2"
@@ -1904,13 +2052,13 @@
     semver "^7.3.5"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.30.0.tgz?cache=0&sync_timestamp=1630692859284&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40typescript-eslint%2Ftypescript-estree%2Fdownload%2F%40typescript-eslint%2Ftypescript-estree-4.30.0.tgz#ae57833da72a753f4846cd3053758c771670c2ac"
-  integrity sha1-rleDPacqdT9IRs0wU3WMdxZwwqw=
+"@typescript-eslint/typescript-estree@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/typescript-estree/download/@typescript-eslint/typescript-estree-4.31.2.tgz#abfd50594d8056b37e7428df3b2d185ef2d0060c"
+  integrity sha1-q/1QWU2AVrN+dCjfOy0YXvLQBgw=
   dependencies:
-    "@typescript-eslint/types" "4.30.0"
-    "@typescript-eslint/visitor-keys" "4.30.0"
+    "@typescript-eslint/types" "4.31.2"
+    "@typescript-eslint/visitor-keys" "4.31.2"
     debug "^4.3.1"
     globby "^11.0.3"
     is-glob "^4.0.1"
@@ -1925,12 +2073,12 @@
     "@typescript-eslint/types" "4.28.2"
     eslint-visitor-keys "^2.0.0"
 
-"@typescript-eslint/visitor-keys@4.30.0":
-  version "4.30.0"
-  resolved "https://registry.nlark.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.30.0.tgz#a47c6272fc71b0c627d1691f68eaecf4ad71445e"
-  integrity sha1-pHxicvxxsMYn0WkfaOrs9K1xRF4=
+"@typescript-eslint/visitor-keys@4.31.2":
+  version "4.31.2"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/visitor-keys/download/@typescript-eslint/visitor-keys-4.31.2.tgz?cache=0&sync_timestamp=1632333943878&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2F%40typescript-eslint%2Fvisitor-keys%2Fdownload%2F%40typescript-eslint%2Fvisitor-keys-4.31.2.tgz#7d5b4a4705db7fe59ecffb273c1d082760f635cc"
+  integrity sha1-fVtKRwXbf+Wez/snPB0IJ2D2Ncw=
   dependencies:
-    "@typescript-eslint/types" "4.30.0"
+    "@typescript-eslint/types" "4.31.2"
     eslint-visitor-keys "^2.0.0"
 
 "@webassemblyjs/ast@1.11.1":
@@ -4323,10 +4471,20 @@ es-module-lexer@^0.7.1:
   resolved "https://registry.nlark.com/es-module-lexer/download/es-module-lexer-0.7.1.tgz#c2c8e0f46f2df06274cdaf0dd3f3b33e0a0b267d"
   integrity sha1-wsjg9G8t8GJ0za8N0/OzPgoLJn0=
 
+esbuild-wasm@0.12.29:
+  version "0.12.29"
+  resolved "https://registry.npmmirror.com/esbuild-wasm/download/esbuild-wasm-0.12.29.tgz#1d210bb7d463b2ca51c54d69bb4192d9709f6100"
+  integrity sha1-HSELt9RjsspRxU1pu0GS2XCfYQA=
+
 esbuild@0.12.24:
   version "0.12.24"
   resolved "https://registry.nlark.com/esbuild/download/esbuild-0.12.24.tgz?cache=0&sync_timestamp=1630598715108&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fesbuild%2Fdownload%2Fesbuild-0.12.24.tgz#21966fad25a80f368ed308101e88102bce0dc68f"
   integrity sha1-IZZvrSWoDzaO0wgQHogQK84Nxo8=
+
+esbuild@0.12.29:
+  version "0.12.29"
+  resolved "https://registry.npmmirror.com/esbuild/download/esbuild-0.12.29.tgz#be602db7c4dc78944a9dbde0d1ea19d36c1f882d"
+  integrity sha1-vmAtt8TceJRKnb3g0eoZ02wfiC0=
 
 escalade@^3.1.1:
   version "3.1.1"
@@ -4353,10 +4511,10 @@ eslint-config-prettier@^8.3.0:
   resolved "https://registry.nlark.com/eslint-config-prettier/download/eslint-config-prettier-8.3.0.tgz#f7471b20b6fe8a9a9254cc684454202886a2dd7a"
   integrity sha1-90cbILb+ipqSVMxoRFQgKIai3Xo=
 
-eslint-plugin-jsdoc@^36.0.8:
-  version "36.0.8"
-  resolved "https://registry.nlark.com/eslint-plugin-jsdoc/download/eslint-plugin-jsdoc-36.0.8.tgz#cd72f76593c8fb3362374b0052d4d49b2711408a"
-  integrity sha1-zXL3ZZPI+zNiN0sAUtTUmycRQIo=
+eslint-plugin-jsdoc@^36.1.0:
+  version "36.1.0"
+  resolved "https://registry.nlark.com/eslint-plugin-jsdoc/download/eslint-plugin-jsdoc-36.1.0.tgz?cache=0&sync_timestamp=1631025112479&other_urls=https%3A%2F%2Fregistry.nlark.com%2Feslint-plugin-jsdoc%2Fdownload%2Feslint-plugin-jsdoc-36.1.0.tgz#8dfe5f27edfb6aa3812e6d86ccaea849ddc86b03"
+  integrity sha1-jf5fJ+37aqOBLm2GzK6oSd3IawM=
   dependencies:
     "@es-joy/jsdoccomment" "0.10.8"
     comment-parser "1.2.4"
@@ -5018,10 +5176,22 @@ glob-to-regexp@^0.4.1:
   resolved "https://registry.nlark.com/glob-to-regexp/download/glob-to-regexp-0.4.1.tgz#c75297087c851b9a578bd217dd59a92f59fe546e"
   integrity sha1-x1KXCHyFG5pXi9IX3VmpL1n+VG4=
 
-glob@7.1.7, glob@^7.0.3, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6, glob@^7.1.7:
+glob@7.1.7, glob@^7.0.3, glob@^7.1.3, glob@^7.1.4, glob@^7.1.6:
   version "7.1.7"
   resolved "https://registry.nlark.com/glob/download/glob-7.1.7.tgz#3b193e9233f01d42d0b3f78294bbeeb418f94a90"
   integrity sha1-Oxk+kjPwHULQs/eClLvutBj5SpA=
+  dependencies:
+    fs.realpath "^1.0.0"
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.npmmirror.com/glob/download/glob-7.2.0.tgz?cache=0&sync_timestamp=1632354209679&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fglob%2Fdownload%2Fglob-7.2.0.tgz#d15535af7732e02e948f4c41628bd910293f6023"
+  integrity sha1-0VU1r3cy4C6Uj0xBYovZECk/YCM=
   dependencies:
     fs.realpath "^1.0.0"
     inflight "^1.0.4"
@@ -5305,10 +5475,10 @@ http-proxy@^1.17.0, http-proxy@^1.18.0:
     follow-redirects "^1.0.0"
     requires-port "^1.0.0"
 
-http-server@^13.0.1:
-  version "13.0.1"
-  resolved "https://registry.nlark.com/http-server/download/http-server-13.0.1.tgz#e7340d082925c4b1d6484c905d0df29d7d8ec16f"
-  integrity sha1-5zQNCCklxLHWSEyQXQ3ynX2OwW8=
+http-server@^13.0.2:
+  version "13.0.2"
+  resolved "https://registry.nlark.com/http-server/download/http-server-13.0.2.tgz#36f8a8ae0e1b78e7bf30a4dfb01ae89b904904ef"
+  integrity sha1-Nviorg4beOe/MKTfsBrom5BJBO8=
   dependencies:
     basic-auth "^1.0.3"
     colors "^1.4.0"
@@ -6320,10 +6490,10 @@ markdown-it-abbr@^1.0.4:
   resolved "https://registry.nlark.com/markdown-it-abbr/download/markdown-it-abbr-1.0.4.tgz#d66b5364521cbb3dd8aa59dadfba2fb6865c8fd8"
   integrity sha1-1mtTZFIcuz3Yqlna37ovtoZcj9g=
 
-markdown-it-anchor@^8.3.0:
-  version "8.3.0"
-  resolved "https://registry.nlark.com/markdown-it-anchor/download/markdown-it-anchor-8.3.0.tgz#9e1a71766f778c382e5b6d3808d8c4d3a3b4ae30"
-  integrity sha1-nhpxdm93jDguW204CNjE06O0rjA=
+markdown-it-anchor@^8.3.1:
+  version "8.3.1"
+  resolved "https://registry.nlark.com/markdown-it-anchor/download/markdown-it-anchor-8.3.1.tgz?cache=0&sync_timestamp=1631929407270&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmarkdown-it-anchor%2Fdownload%2Fmarkdown-it-anchor-8.3.1.tgz#b48a2097c89f82e1625db772b8a6a03e9e637cdc"
+  integrity sha1-tIogl8ifguFiXbdyuKagPp5jfNw=
 
 markdown-it-block-embed@^0.0.3:
   version "0.0.3"
@@ -6397,10 +6567,10 @@ markdown-it-math@^4.1.1:
   optionalDependencies:
     ascii2mathml "^0.6.2"
 
-markdown-it-multimd-table@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.nlark.com/markdown-it-multimd-table/download/markdown-it-multimd-table-4.1.0.tgz#5c23eba9ceda580dc5c7301927a01610e0ee37b9"
-  integrity sha1-XCPrqc7aWA3FxzAZJ6AWEODuN7k=
+markdown-it-multimd-table@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.nlark.com/markdown-it-multimd-table/download/markdown-it-multimd-table-4.1.1.tgz#255b7f93b17f09d33eeabc6fc5f8175552bd8107"
+  integrity sha1-JVt/k7F/CdM+6rxvxfgXVVK9gQc=
   dependencies:
     markdown-it "^11.0.0"
 
@@ -6441,10 +6611,10 @@ markdown-it@^12.2.0:
     mdurl "^1.0.1"
     uc.micro "^1.0.5"
 
-material-icons@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.nlark.com/material-icons/download/material-icons-1.2.1.tgz#2e204c126bcc4f2a2187f314020d9b8dc2e3d6d6"
-  integrity sha1-LiBMEmvMTyohh/MUAg2bjcLj1tY=
+material-icons@^1.5.1:
+  version "1.5.1"
+  resolved "https://registry.npmmirror.com/material-icons/download/material-icons-1.5.1.tgz#5ffff35547e94030e434fb0915bccac996ebfa44"
+  integrity sha1-X//zVUfpQDDkNPsJFbzKyZbr+kQ=
 
 mdn-data@2.0.14:
   version "2.0.14"
@@ -6523,10 +6693,10 @@ merge2@^1.3.0:
   resolved "https://registry.nlark.com/merge2/download/merge2-1.4.1.tgz#4368892f885e907455a6fd7dc55c0c9d404990ae"
   integrity sha1-Q2iJL4hekHRVpv19xVwMnUBJkK4=
 
-mermaid@^8.12.0:
-  version "8.12.0"
-  resolved "https://registry.nlark.com/mermaid/download/mermaid-8.12.0.tgz#b49daf775b923df5fcf47406b721904c229e7c70"
-  integrity sha1-tJ2vd1uSPfX89HQGtyGQTCKefHA=
+mermaid@^8.13.0:
+  version "8.13.0"
+  resolved "https://registry.npmmirror.com/mermaid/download/mermaid-8.13.0.tgz#2a65bb65d806323dfd813980cff6265181dbc4ad"
+  integrity sha1-KmW7ZdgGMj39gTmAz/YmUYHbxK0=
   dependencies:
     "@braintree/sanitize-url" "^3.1.0"
     d3 "^7.0.0"
@@ -6737,10 +6907,10 @@ monaco-editor@^0.17.1:
   resolved "https://registry.nlark.com/monaco-editor/download/monaco-editor-0.17.1.tgz#8fbe96ca54bfa75262706e044f8f780e904aa45c"
   integrity sha1-j76WylS/p1JicG4ET494DpBKpFw=
 
-monaco-editor@^0.27.0:
-  version "0.27.0"
-  resolved "https://registry.nlark.com/monaco-editor/download/monaco-editor-0.27.0.tgz#4b69108bb1dc1f60174c5dcdf51bc5306ab5ba26"
-  integrity sha1-S2kQi7HcH2AXTF3N9RvFMGq1uiY=
+monaco-editor@^0.28.1:
+  version "0.28.1"
+  resolved "https://registry.npmmirror.com/monaco-editor/download/monaco-editor-0.28.1.tgz#732788ff2172d59e6d436b206da8cac715413940"
+  integrity sha1-cyeI/yFy1Z5tQ2sgbajKxxVBOUA=
 
 monaco-markdown@^0.0.11:
   version "0.0.11"
@@ -8074,20 +8244,20 @@ prettier-linter-helpers@^1.0.0:
   dependencies:
     fast-diff "^1.1.2"
 
-prettier@^2.3.2:
-  version "2.3.2"
-  resolved "https://registry.nlark.com/prettier/download/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
-  integrity sha1-7ygKBewlNxLkhiM9tcbyNEHnNC0=
+prettier@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.nlark.com/prettier/download/prettier-2.4.1.tgz?cache=0&sync_timestamp=1631777167012&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fprettier%2Fdownload%2Fprettier-2.4.1.tgz#671e11c89c14a4cfc876ce564106c4a6726c9f5c"
+  integrity sha1-Zx4RyJwUpM/Ids5WQQbEpnJsn1w=
 
 pretty-bytes@^5.3.0:
   version "5.6.0"
   resolved "https://registry.nlark.com/pretty-bytes/download/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
   integrity sha1-NWJW9kOAR3PIL2RyP+eMksYr6us=
 
-prismjs@^1.24.1:
-  version "1.24.1"
-  resolved "https://registry.nlark.com/prismjs/download/prismjs-1.24.1.tgz#c4d7895c4d6500289482fa8936d9cdd192684036"
-  integrity sha1-xNeJXE1lACiUgvqJNtnN0ZJoQDY=
+prismjs@^1.25.0:
+  version "1.25.0"
+  resolved "https://registry.nlark.com/prismjs/download/prismjs-1.25.0.tgz#6f822df1bdad965734b310b315a23315cf999756"
+  integrity sha1-b4It8b2tllc0sxCzFaIzFc+Zl1Y=
 
 process-nextick-args@~2.0.0:
   version "2.0.1"
@@ -8590,10 +8760,10 @@ safe-regex@^1.1.0:
   resolved "https://registry.npm.taobao.org/safer-buffer/download/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
-sanitize.css@^12.0.1:
-  version "12.0.1"
-  resolved "https://registry.npm.taobao.org/sanitize.css/download/sanitize.css-12.0.1.tgz#f20369357557ba2b41d7278eeb3ea691a3bee514"
-  integrity sha1-8gNpNXVXuitB1yeO6z6mkaO+5RQ=
+sanitize.css@^13.0.0:
+  version "13.0.0"
+  resolved "https://registry.nlark.com/sanitize.css/download/sanitize.css-13.0.0.tgz#2675553974b27964c75562ade3bd85d79879f173"
+  integrity sha1-JnVVOXSyeWTHVWKt472F15h58XM=
 
 sass-loader@12.1.0:
   version "12.1.0"
@@ -9597,10 +9767,10 @@ type-fest@^0.8.1:
   resolved "https://registry.nlark.com/type-fest/download/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha1-CeJJ696FHTseSNJ8EFREZn8XuD0=
 
-type-fest@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.nlark.com/type-fest/download/type-fest-2.1.0.tgz#1f8b20ff51519f3b01b3188d50dea9f9ebfbf1b8"
-  integrity sha1-H4sg/1FRnzsBsxiNUN6p+ev78bg=
+type-fest@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.nlark.com/type-fest/download/type-fest-2.3.4.tgz#59bd28c5715a7ea39f8fb0d7e424355ae231a24e"
+  integrity sha1-Wb0oxXFafqOfj7DX5CQ1WuIxok4=
 
 type-is@~1.6.17, type-is@~1.6.18:
   version "1.6.18"
