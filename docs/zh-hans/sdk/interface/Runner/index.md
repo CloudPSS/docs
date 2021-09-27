@@ -7,11 +7,11 @@ order: 199
 ---
 
 
-## classcloudpss.runner.runner.Runner(taskId, name, job, config, revision, projectRid, **kwargs)
-
-### 1.staticcreate(revisionHash, job, config, name=None, rid='',**kwargs)
-创建一个运行任务
-
+## ==class cloudpss.runner.runner.Runner==
+  ### static create(revisionHash, job, config, name=None, rid='',**kwargs)
+  :::info
+  `创建`一个运行任务
+:::
 **Params revision:** 项目版本号
 
 **Params job:**  调用仿真时使用的计算方案，为空时使用项目的第一个计算方案
@@ -26,10 +26,10 @@ order: 199
 ```python
 runner = Runner.runRevision(revision,job,config,'')
 ```
-### 2.status()
-运行状态 
-
-return: 返回运行状态0/1/-1。1表示正常结束,0表示运行中，-1表示数据接收异常
+  ### status()
+  :::info
+运行`状态` :return: 返回运行状态0/1/-1。1表示正常结束,0表示运行中，-1表示数据接收异常
+:::
 ```python
 runner.status()
 ```
