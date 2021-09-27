@@ -14,7 +14,7 @@ order: 101
 
 ### 1.3机9节点标准测试系统算例
 
-首先，在CloudPSS Simstudio中打开[3机9节点标准测试系统算例](https://internal.cloudpss.net/project/k/cs#/design/diagram/canvas/canvas_0)。
+首先，在CloudPSS Simstudio中打开[3机9节点标准测试系统算例](https://cloudpss.net/project/cxbaby/11#/design/diagram/canvas/canvas_0)。
 
 ![3机9节点标准测试系统算例](./1.png "3机9节点标准测试系统算例")
 
