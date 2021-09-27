@@ -82,7 +82,7 @@ job = project.createConfig('my config')
 project.createJob('emtp','emtp job')
 计算方案
 ```
-### staticdump(project, file)
+### static dump(project, file)
 :::info
 `下载`项目文件
 :::
@@ -104,7 +104,7 @@ Project.dump(project,file)
 ```python
 project=Project.fetch('project/Demo/test')
 ```
-### staticfetchMany(name=None, pageSize=10, pageOffset=0)
+### static fetchMany(name=None, pageSize=10, pageOffset=0)
 :::info
 `获取`用户可以运行的项目`列表`
 :::
@@ -194,7 +194,7 @@ project.getProjectConfig('参数方案 1')
 ```python
 project.getProjectJob('电磁暂态方案 1')
 ```
-### staticload(filePath)
+### static load(filePath)
 :::info
 `加载`本地项目文件
 :::
@@ -238,7 +238,7 @@ project.save(project,'newKey') # 另存为新的项目
 :::info
 类对象`序列化`为 dict :return: dict
 :::
-### staticupdate(project)
+### static update(project)
 :::info
 `更新`项目
 :::
