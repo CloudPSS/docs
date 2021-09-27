@@ -13,7 +13,7 @@ order: 111
 消息`存储`类，用于存储接收到的消息数据，并提供数据保存、加载两个数据本地化函数。
 提供通过数据类型获取数据，通过数据位置获取数据、和获取当前数据长度的函数
 :::
-### staticdump(result, file)
+### static dump(result, file)
 :::info
 `保存`结果到本地文件
 :::
@@ -52,7 +52,7 @@ length=db.getMessageLength()
 ```python
 message= db.getMessagesByType('log')
 ```
-### staticload(file)
+### static load(file)
 :::info
 `加载`本地结果文件
 :::

@@ -102,7 +102,7 @@ for data in result:
 ```
 也可以从类的 db 变量，获取数据存储类实例进行操作
 
-### staticdump(result, file)
+### static dump(result, file)
 :::info
 `保存`结果到本地文件
 :::
