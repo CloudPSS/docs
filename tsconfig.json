@@ -1,7 +1,6 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "./tsconfig.check.json",
-  "compileOnSave": false,
+  "extends": "@cloudpss/tsconfig",
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./out-tsc/app",
@@ -12,9 +11,8 @@
     "esModuleInterop": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2015",
+    "target": "es2020",
     "module": "es2020",
-    "lib": ["ES2020", "dom"],
     "paths": {
       "@/*": ["src/app/*"],
       "~/*": ["*"]
