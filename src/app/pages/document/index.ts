@@ -18,7 +18,7 @@ import { SourceService } from '@/services/source';
 import { NavigateEvent } from '@/interfaces/navigate';
 import { MarkdownComponent } from '@/components/markdown';
 import { GlobalService } from '@/services/global';
-import { environment } from '~/src/environments/environment';
+import { environment } from '../../../environments/environment';
 
 /**
  * 文档页面组件

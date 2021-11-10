@@ -118,7 +118,7 @@ export class EditorComponent implements AfterViewInit {
         this.editor.addAction({
             id: 'save',
             label: 'Save',
-            keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KEY_S],
+            keybindings: [monaco.KeyMod.CtrlCmd | monaco.KeyCode.KeyS],
             contextMenuGroupId: 'file',
             contextMenuOrder: 3,
             run: (ed) => {

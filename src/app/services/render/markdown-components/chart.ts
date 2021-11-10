@@ -8,7 +8,7 @@ import { resizing } from '../utils';
  */
 export class MdChart extends MdComponentBase {
     /** @inheritdoc */
-    static tagName = 'pre-md-chart';
+    static override tagName = 'pre-md-chart';
     /** chartJs */
     private static chartJs: typeof Chart;
     /** 渲染 */
@@ -18,7 +18,7 @@ export class MdChart extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    protected static async initImpl(): Promise<void> {
+    protected static override async initImpl(): Promise<void> {
         const { Chart, registerables } = await import('chart.js');
         Chart.register(...registerables);
         this.chartJs = Chart;
@@ -26,7 +26,7 @@ export class MdChart extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    async connectedCallback(): Promise<void> {
+    override async connectedCallback(): Promise<void> {
         const code = this.dataset['source'] ?? this.textContent ?? '{}';
         this.dataset['source'] = code;
         let root: ShadowRoot | this;
@@ -63,7 +63,7 @@ export class MdChart extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    disconnectedCallback(): void {
+    override disconnectedCallback(): void {
         this.rerender?.unsubscribe();
     }
 }
