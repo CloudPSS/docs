@@ -4,10 +4,8 @@
 /out-tsc
 
 # config files
-*.config.js
-*.config.ts
-.*.js
-.*.ts
+*.config.*
+.*.*
 
 # packages
 **/node_modules/

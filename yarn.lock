@@ -391,12 +391,12 @@
   dependencies:
     tslib "^2.3.0"
 
-"@angular/material@^12.2.7":
-  version "12.2.12"
-  resolved "https://registry.npmmirror.com/@angular/material/download/@angular/material-12.2.12.tgz#66add3fb649422128b3273c10b9b7cce2f77e0cf"
-  integrity sha1-Zq3T+2SUIhKLMnPBC5t8zi934M8=
+"@angular/material@^13.0.0":
+  version "13.0.0"
+  resolved "https://registry.npmmirror.com/@angular/material/download/@angular/material-13.0.0.tgz#4ae47de400ee01a985ec544c2152edd8cd4432c0"
+  integrity sha1-SuR95ADuAamF7FRMIVLt2M1EMsA=
   dependencies:
-    tslib "^2.2.0"
+    tslib "^2.3.0"
 
 "@angular/platform-browser-dynamic@~13.0.0":
   version "13.0.0"
@@ -10287,7 +10287,7 @@ tslib@2.3.0:
   resolved "https://registry.nlark.com/tslib/download/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4=
 
-tslib@2.3.1, tslib@^2, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.2.0, tslib@^2.3.0, tslib@^2.3.1:
+tslib@2.3.1, tslib@^2, tslib@^2.0.0, tslib@^2.1.0, tslib@^2.3.0, tslib@^2.3.1:
   version "2.3.1"
   resolved "https://registry.nlark.com/tslib/download/tslib-2.3.1.tgz?cache=0&sync_timestamp=1628722556410&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
   integrity sha1-6KM1rdXOrlGqJh0ypJAVjvBC7wE=
