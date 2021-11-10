@@ -95,11 +95,11 @@ type MathMode = 'inline' | 'display';
  */
 export class MdMath extends MdComponentBase {
     /** @inheritdoc */
-    static tagName = 'md-math';
+    static override tagName = 'md-math';
     /**
      * @inheritdoc
      */
-    protected static async initImpl(): Promise<void> {
+    protected static override async initImpl(): Promise<void> {
         katex = (await import('katex')).default;
         // asciimathToLatex = (await import('asciimath-to-latex')).default;
         document.addEventListener('copy', onCopy);
@@ -107,7 +107,7 @@ export class MdMath extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    async connectedCallback(): Promise<void> {
+    override async connectedCallback(): Promise<void> {
         let lang = (this.getAttribute('language') ?? '').toLowerCase();
         let langDef: Language | undefined;
         while (lang) {

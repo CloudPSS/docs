@@ -11,7 +11,7 @@ import { injector } from '@/constants';
  */
 export class MdMermaid extends MdComponentBase {
     /** @inheritdoc */
-    static tagName = 'pre-md-mermaid';
+    static override tagName = 'pre-md-mermaid';
     /** 提供主题服务 */
     static global: GlobalService;
     /** 监视主题更改 */
@@ -23,7 +23,7 @@ export class MdMermaid extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    static async initImpl(): Promise<void> {
+    static override async initImpl(): Promise<void> {
         this.mermaid = (await import('mermaid')).default;
         this.global = injector.get(GlobalService);
         if (!this.watchTheme) {
@@ -40,7 +40,7 @@ export class MdMermaid extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    async connectedCallback(): Promise<void> {
+    override async connectedCallback(): Promise<void> {
         const code = this.dataset['source'] ?? this.textContent ?? '';
         this.dataset['source'] = code;
         this.innerHTML = '';
@@ -65,7 +65,7 @@ export class MdMermaid extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    disconnectedCallback(): void {
+    override disconnectedCallback(): void {
         this.rerender?.unsubscribe();
     }
 }
