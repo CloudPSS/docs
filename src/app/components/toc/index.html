@@ -10,7 +10,7 @@
         [style.paddingLeft.px]="1 * 8"
         [title]="(document?.frontMatter | async)?.title"
       >
-        <a [routerLink]="" [fragment]="''">{{ (document?.frontMatter | async)?.title }}</a>
+        <a [routerLink]="[]" [fragment]="''">{{ (document?.frontMatter | async)?.title }}</a>
       </li>
       <ng-container *ngFor="let item of document?.headers | async">
         <li
@@ -22,7 +22,7 @@
           [style.paddingLeft.px]="item.level * 8"
           [title]="item.title"
         >
-          <a [routerLink]="" [fragment]="item.id">{{ item.title }}</a>
+          <a [routerLink]="[]" [fragment]="item.id">{{ item.title }}</a>
         </li>
       </ng-container>
     </ul>
