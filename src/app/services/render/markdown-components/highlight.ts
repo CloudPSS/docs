@@ -65,11 +65,11 @@ const languageNameReplacement: Record<string, string> = {
  */
 export class MdHighlight extends MdComponentBase {
     /** @inheritdoc */
-    static tagName = 'md-highlight';
+    static override tagName = 'md-highlight';
     /**
      * @inheritdoc
      */
-    protected static async initImpl(version = '^1'): Promise<void> {
+    protected static override async initImpl(version = '^1'): Promise<void> {
         if ('Prism' in window && 'autoloader' in window.Prism.plugins) return;
         const script = document.createElement('script');
         script.src = `https://unpkg.com/prismjs@${version}/components/prism-core.min.js`;
@@ -95,7 +95,7 @@ export class MdHighlight extends MdComponentBase {
     /**
      * @inheritdoc
      */
-    async connectedCallback(): Promise<void> {
+    override async connectedCallback(): Promise<void> {
         let lang = this.getAttribute('language') ?? '';
         if (!lang) return;
         lang = lang.toLowerCase();
