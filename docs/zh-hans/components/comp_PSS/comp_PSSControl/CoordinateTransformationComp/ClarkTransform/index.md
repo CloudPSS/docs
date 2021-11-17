@@ -43,7 +43,7 @@ symbol: newClarkTransform
 
 ## 使用说明
 
-![坐标位置](./ClarkTransform2.png )
+![坐标位置](./ClarkTransform2.jpg )
 
 αβ轴为静止坐标轴，其相对位置为图所示。Clark变换及逆Clark变换的计算公式为：
  + **Clark变换**
