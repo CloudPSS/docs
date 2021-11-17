@@ -60,7 +60,7 @@ jobs:
             rm -f /root/docs/latest
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
             rm -f /root/docs/dist.tar.xz
-            service nginx reload
+            systemctl reload caddy
             ls -l
       - name: Release
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
@@ -74,4 +74,5 @@ jobs:
           first_ssh: |
             rm -f /root/docs/release
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/release
+            systemctl reload caddy
             ls -l
