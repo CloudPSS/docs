@@ -1,10 +1,10 @@
 ---
-title: 铅酸蓄电池
+title: 蓄电池
 author: 
 author_email:
 
 date: 2018/12/4 10:03:10
-updated: 2018/12/4 10:03:10
+updated: 2021/11/24 17:30:10
 
 type: components
 category: 3006
@@ -15,7 +15,7 @@ symbol: newStorageBattery
 ---
 ## 基本描述
 
-> **该元件用以建模铅酸蓄电池。**
+> **蓄电池通用模型（Modified Shepherd Model）[^Tremblay]，可用于铅酸蓄电池（Lead-Acid）、锂离子电池（Li-Ion）、镍镉电池（NiCd）和镍金属氢化物（NiMH）电池的建模。**
 
 ## 参数列表
 ### Configuration
@@ -54,4 +54,6 @@ symbol: newStorageBattery
 
 ## 相关元件
 
+
+[^Tremblay]: O. Tremblay, L. Dessaint and A. Dekkiche, "A Generic Battery Model for the Dynamic Simulation of Hybrid Electric Vehicles," 2007 IEEE Vehicle Power and Propulsion Conference, 2007, pp. 284-289, doi: 10.1109/VPPC.2007.4544139.
 
