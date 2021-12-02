@@ -2,9 +2,6 @@
   place-self: stretch;
   display: flex;
   gap: 12px;
-  grid-template-columns: minmax(auto, 1.5fr);
-  grid-auto-columns: minmax(auto, 1fr);
-  grid-auto-flow: column;
   align-items: center;
 }
 
@@ -13,7 +10,9 @@
 }
 
 #nav-list {
-  display: flex;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
   gap: 12px;
   flex: none;
 }
