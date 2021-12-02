@@ -1,5 +1,5 @@
 import { Component, ViewChild, AfterViewInit, HostListener, ElementRef, OnDestroy } from '@angular/core';
-import { of, merge, Subject, combineLatest, Subscription, fromEvent } from 'rxjs';
+import { of, merge, Subject, combineLatest, Subscription, fromEvent, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import {
     map,
@@ -109,7 +109,7 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
     currentId = '';
 
     /** 当前分类 */
-    readonly category = this.route.params.pipe<string>(pluck('category'));
+    readonly category = (this.route.params as Observable<{ category: string }>).pipe(pluck('category'));
 
     /** 显示导航列表 */
     showNav = combineLatest([this.frontMatter, this.layout.displayMode]).pipe(
