@@ -1,6 +1,9 @@
+title: CloudPSS Documentation
+
 welcome: Welcome
 
 topBar:
+  search: Search
   changeTheme: Change theme
   changeLanguage: Change language
 

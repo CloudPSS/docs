@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, Observable } from 'rxjs';
 import { Title } from '@angular/platform-browser';
 import { StorageService } from './storage';
 import { TranslateService } from '@ngx-translate/core';
@@ -22,13 +22,19 @@ export class GlobalService {
         private readonly storage: StorageService,
         private readonly translateService: TranslateService,
     ) {
-        this.titleSource.subscribe(() => this.updateTitle());
+        combineLatest([this.titleSource, this.titleSuffix]).subscribe(([title, suffix]) => {
+            if (title) {
+                this.titleService.setTitle(`${title} - ${suffix}`);
+            } else {
+                this.titleService.setTitle(suffix);
+            }
+        });
         this.theme.subscribe((theme) => this.updateTheme(theme));
         this.language.subscribe((lang) => this.updateLanguage(lang));
     }
 
     /** 标题后缀 */
-    titleSuffix = `CloudPSS 文档`;
+    private readonly titleSuffix = this.translateService.stream('title') as Observable<string>;
 
     /** 标题 */
     private titleSource = new BehaviorSubject('');
@@ -64,7 +70,7 @@ export class GlobalService {
     setDescription(value: string | undefined): void {
         const meta = document.querySelector<HTMLMetaElement>('meta[name=description]');
         if (meta) {
-            meta.content = value ?? this.titleSuffix;
+            meta.content = value ?? 'CloudPSS';
         }
     }
 
@@ -73,18 +79,6 @@ export class GlobalService {
      */
     get title(): Observable<string> {
         return this.titleSource.asObservable();
-    }
-
-    /**
-     * 更新标题
-     */
-    private updateTitle(): void {
-        const title = this.titleSource.value;
-        if (title) {
-            this.titleService.setTitle(`${title} - ${this.titleSuffix}`);
-        } else {
-            this.titleService.setTitle(this.titleSuffix);
-        }
     }
 
     /**
