@@ -1,4 +1,5 @@
 <a mat-button id="home" [routerLink]="'/'">CloudPSS</a>
+
 <div id="nav-list" *ngIf="showCategories">
   <a mat-button *ngFor="let item of (nav | async)!" [href]="url(item)" (click)="onNavigate(item, $event)"
     >{{item.title}}</a
@@ -8,8 +9,13 @@
 <mat-form-field id="search-from" floatLabel="never">
   <mat-label>{{'topBar.search' | translate}}</mat-label>
   <mat-icon id="search-icon" matPrefix>search</mat-icon>
-  <input type="text" matInput [matAutocomplete]="auto" />
-  <mat-autocomplete #auto="matAutocomplete">
-    <mat-option *ngFor="let option of searchResults | async" [value]="option"> {{option}} </mat-option>
+  <input #searchInput="matInput" type="text" matInput ngModel #searchModel="ngModel" [matAutocomplete]="auto" />
+  <mat-autocomplete (optionSelected)="onSelect($event.option.value)" #auto="matAutocomplete">
+    <mat-option *ngFor="let doc of searchResults | async" [value]="doc">
+      <div class="search-option-content">
+        <span class="title" [innerHTML]="doc.title"></span>
+        <span class="subtitle" [innerHTML]="doc.subtitle"></span>
+      </div>
+    </mat-option>
   </mat-autocomplete>
 </mat-form-field>
