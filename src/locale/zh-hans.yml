@@ -1,6 +1,9 @@
+title: CloudPSS 文档
+
 welcome: 欢迎
 
 topBar:
+  search: 搜索
   changeTheme: 切换主题
   changeLanguage: 切换语言
 
