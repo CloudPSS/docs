@@ -1,7 +1,50 @@
 :host {
-  display: grid;
+  place-self: stretch;
+  display: flex;
   gap: 12px;
   grid-template-columns: minmax(auto, 1.5fr);
   grid-auto-columns: minmax(auto, 1fr);
   grid-auto-flow: column;
+  align-items: center;
+}
+
+#home {
+}
+#nav-list {
+  display: flex;
+  gap: 12px;
+  flex: none;
+}
+
+#search-from {
+  font-size: 14px;
+  align-self: end;
+  margin-left: auto;
+  mat-label {
+    transition: opacity 0.2s ease-in;
+  }
+
+  &:focus-within {
+    mat-label {
+      opacity: 0.5;
+    }
+  }
+}
+
+#search-icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1;
+  font-size: 20px;
+}
+
+@media (max-width: 600px) {
+  #home {
+    display: none;
+  }
+  #search-from {
+    flex: auto;
+  }
 }

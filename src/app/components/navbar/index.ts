@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { SourceService } from '@/services/source';
 import { map } from 'rxjs/operators';
-import { combineLatest } from 'rxjs';
+import { combineLatest, from } from 'rxjs';
 import { NavBaseComponent } from '../nav-base';
 import { GlobalService } from '@/services/global';
 
@@ -25,4 +25,6 @@ export class NavbarComponent extends NavBaseComponent {
     readonly nav = combineLatest([this.global.language, this.source.current]).pipe(
         map(([lang, info]) => info.manifest.sitemap[lang].children.filter((c) => c.order != null)),
     );
+
+    readonly searchResults = from(['1', '2', '3', '4', '5']);
 }
