@@ -1,5 +1,5 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
-import { of, merge, combineLatest, BehaviorSubject } from 'rxjs';
+import { of, merge, combineLatest, BehaviorSubject, Observable } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { map, tap, pluck, mergeMap, catchError, debounceTime } from 'rxjs/operators';
 import { LayoutService } from '@/services/layout';
@@ -36,9 +36,9 @@ export class EditorComponent implements AfterViewInit {
     @ViewChild('preview') preview!: MarkdownComponent;
 
     /** url */
-    readonly url = this.route.queryParams.pipe(
+    readonly url = (this.route.queryParams as Observable<{ path?: string }>).pipe(
         pluck('path'),
-        map((p: string | undefined) => {
+        map((p) => {
             if (!p) return undefined;
             const path = this.source.normalizePath(p);
             if (path !== p) {
@@ -109,8 +109,7 @@ export class EditorComponent implements AfterViewInit {
                 callback: (MonacoMarkdown: typeof import('monaco-markdown')) => void,
             ) => void
         )(['MonacoMarkdown'], ({ MonacoMarkdownExtension }) => {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            new MonacoMarkdownExtension().activate(editor as any);
+            new MonacoMarkdownExtension().activate(editor);
             this.lang = 'markdown-math';
         });
         this.editor = editor;
@@ -124,7 +123,7 @@ export class EditorComponent implements AfterViewInit {
             run: (ed) => {
                 const data = ed.getValue();
                 const file = new Blob([data], { type: 'text/markdown;charset=utf-8' });
-                let name = path.basename(this.route.snapshot.queryParams['path'] ?? 'Untitled');
+                let name = path.basename((this.route.snapshot.queryParams['path'] as string) ?? 'Untitled');
                 if (!/\.md$/i.test(name)) {
                     name += '.md';
                 }
