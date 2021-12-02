@@ -29,7 +29,7 @@ export function loadPlugin(plugin: unknown): PluginWithParams {
  */
 export function extend(plugin: unknown, load: (md: MarkdownIt, usePlugin: () => void) => void): PluginWithParams {
     const p = loadPlugin(plugin);
-    return (md, ...params) => {
+    return (md, ...params: unknown[]) => {
         load(md, () => {
             md.use(p, ...params);
         });

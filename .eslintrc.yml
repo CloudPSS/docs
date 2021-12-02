@@ -1,5 +1,8 @@
 root: true
+extends:
+  - '@cloudpss'
 env:
+  es2020: true
   browser: true
   commonjs: true
 overrides:
