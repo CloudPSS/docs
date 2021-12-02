@@ -15,7 +15,7 @@ export class NavBaseComponent implements NavigateEventSource {
     /**
      * 触发导航事件
      */
-    onNavigate(item?: DocumentItem, event?: MouseEvent): void {
+    onNavigate(item?: DocumentItem, event?: Event): void {
         if (!item) return;
         event?.preventDefault();
         if (item.path) {

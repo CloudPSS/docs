@@ -34,6 +34,8 @@ export class DocumentItem implements FrontMatter {
     /** @inheritdoc */
     nav?: boolean | undefined;
     /** @inheritdoc */
+    search?: boolean;
+    /** @inheritdoc */
     'redirect to': string;
     /** @inheritdoc */
     title: string;
@@ -76,6 +78,8 @@ export interface FrontMatter {
     toc?: boolean;
     /** 是否显示 nav */
     nav?: boolean;
+    /** 是否显示在搜索结果中 */
+    search?: boolean;
     /** 重定向  */
     'redirect to'?: string;
     /** 文件内容 */

@@ -135,7 +135,6 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
         ]).subscribe(([showNav, opened]) => {
             if (showNav) {
                 if (this.sidenav.mode === 'side') {
-                    void this.sidenav.open();
                     this.global.menuButton.next(null);
                 } else {
                     this.global.menuButton.next({
@@ -146,7 +145,6 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                 }
             } else {
                 this.global.menuButton.next(null);
-                void this.sidenav.close();
             }
         });
         sidenav.add(() => this.global.menuButton.next(null));
