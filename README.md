@@ -6,6 +6,10 @@ Master 分支预览地址：<https://cloudpss.github.io/Docs/>
 最新标签版本地址：<https://latest.docs.cloudpss.net/>  
 文档地址：<https://docs.cloudpss.net/>
 
+## 编辑指南
+
+编辑时，请参考 <https://docs.cloudpss.net/meta-docs> 内容进行编写。
+
 ## 内网操作指南
 
 本项目在内网部署了在线编辑 <https://docs-internal.cloudpss.net:4443/> 和预览 <http://docs-internal.cloudpss.net:4000/> 服务。
