@@ -6,64 +6,58 @@ toc: false
 
 ![](bg.jpg)
 
-CloudPSS是一款面向能源互联网的建模仿真平台，其采用完全自主研发的电磁暂态仿真内核，利用云端的异构并行计算资源，为用户提供面向交直流混联电网、可再生能源发电、微电网、配电网、供热网等多种能源网络的建模及仿真分析功能。
+CloudPSS 是一款面向能源互联网的数字孪生应用构建平台，其采用完全自主研发的电磁暂态仿真内核，利用云端的异构并行计算资源，为用户提供面向交直流混联电网、可再生能源发电、微电网、配电网、供热网等多种能源网络的建模、仿真、分析功能。
 
-> ## 快速入门
+其中 SimStudio 可以组织和管理能源电力系统数字孪生模型仿真模型；
+
+FuncStudio 助力能源电力系统数字孪生云边融合业务订制；
+
+AppStudio 用于构建能源电力系统数字孪生应用场景。
+
+> ## 引导
 > ![](快速入门.png)
 > 
-> CloudPSS建模及仿真平台的介绍和快速入门文档。帮助用户快速熟悉平台的基本操作，建立简单电路模型，执行仿真功能，并查看仿真结果曲线。
-> + [账号注册与登录](guide/Login.md)
-> + [入门案例](guide/rumen.md)
-> + [CloudPSS-MiNi简介](guide/manual.md)
-> + [CloudPSS-MiNi用户中心](guide/UserCenter_Mini.md)
+> CloudPSS 平台的引导介绍。帮助用户登录平台，熟悉主页内容。
+> + [账号注册与登录](guide1/login.md)
+> + [首页介绍](guide1/main.md)
 > 
-> [更多](guide/index.md)
+> [更多](guide1/index.md)
 
-
-> ## 功能帮助
+> ## SimStudio
 > ![](功能帮助.png)
 > 
-> CloudPSS建模及仿真平台提供的全部功能的详细说明文档。
-> + [CloudPSS功能帮助向导](features/IntroGuide.md)
-> + [工作台介绍](features/Workbench.md)
-> + [基础功能](features/Basic.md)
-> + [其他功能](features/Other.md)
-> + [电磁暂态建模仿真工作台](features/EMTP.md)
-> + [移频电磁暂态仿真工作台](features/SFEMT.md)
-> + [潮流计算仿真工作台](features/Powerflow.md)
-> + [综合能源系统建模仿真平台](features/IESLab.md)
+> 提供 CloudPSS SimStudio 建模及仿真应用的快速入门文档，帮助用户快速熟悉应用的基本操作；提供全部功能的详细说明文档；提供模板算例以及主页展示案例的模型和使用说明，帮助用户熟悉 SimStudio 各类功能，快速理解相关算例的使用，并在相关算例的基础上进行修改。
+> + [快速入门](simstudio/guide.md)
+> + [功能帮助](simstudio/features.md)
+> + [案例介绍](simstudio/examples.md)
 > 
-> [更多](features/index.md)
+> [更多](simstudio/index.md)
 
-
-> ## 元件帮助
+> ## FuncStudio
 > ![](元件帮助.png)
 > 
-> CloudPSS模型库提供的全部元件的帮助文档，包括元件的基本原理、参数列表、引脚列表的详细说明，部分复杂元件的使用说明，以及测试算例链接。
-> + [电气元件](components/comp_PSS/comp_PSSelectrical/BasicPassiveComp.md)
-> + [量测元件](components/comp_PSS/comp_PSSMeasure.md)
-> + [控制元件](components/comp_PSS/comp_PSSControl/BasicComp.md)
-> + [综合能源元件](components/comp_IES/PowerSourceComp.md)
+> 提供 CloudPSS FuncStudio 业务订制应用的快速入门文档，帮助用户快速熟悉应用的基本操作；提供全部功能的详细说明文档；帮助用户熟悉 FuncStudio 各类功能，快速理解相关函数的构建方法。
+> + [快速入门](funcstudio/guide.md)
+> + [功能帮助](funcstudio/features.md)
 > 
-> [更多](components/index.md)
+> [更多](funcstudio/index.md)
 
 
-> ## 案例介绍
+> ## AppStudio
 > ![](案例介绍.png)
 > 
-> CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户熟悉CloudPSS各类功能，快速理解相关算例的使用，并在相关算例的基础上进行修改。
-> + [IEEE标准测试系统](examples/EMTP/IEEE39.md)
-> + [LCC-HVDC测试系统](examples/EMTP/LCC.md)
-> + [MMC-HVDC测试系统](examples/EMTP/MMC.md)
-> + [综合能源系统案例](examples/IESLab/demo_case.md)
+> 提供 CloudPSS AppStudio 舞台构建应用的快速入门文档，帮助用户快速熟悉应用的基本操作；提供全部功能的详细说明文档；提供全部控件的详细功能说明文档；帮助用户熟悉 AppStudio 各类功能，快速理解相关舞台场景的搭建方法。
+> + [快速入门](appstudio/guide.md)
+> + [功能帮助](appstudio/features.md)
+> + [控件帮助](appstudio/control.md)
 > 
->  [更多](examples/index.md)
+>  [更多](appstudio/index.md)
 
 
 > ## 旧平台文档
 > ![](旧平台文档.png)
 > 
-> CloudPSS旧版平台的使用说明（原CloudPSS“下载”区的文档）。
+> CloudPSS 旧版平台的使用说明（原 CloudPSS “下载”区的文档）。
 > 
 > [打开](//www.cloudpss.net/downloadnew/)
 
