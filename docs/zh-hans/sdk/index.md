@@ -1,6 +1,5 @@
 ---
 title: SDK
-order: 800
 ---
 
 ## [SDK介绍](./SDK_introduction/index.md)
