@@ -1,10 +1,8 @@
 ---
 title: 综合能源系统建模仿真平台简介
-type: features
-category: 2300
-order: 1000
-author: Jack
-author_email: 
+type: guide
+author: xy
+order: 100
 ---
 
 ## 平台介绍

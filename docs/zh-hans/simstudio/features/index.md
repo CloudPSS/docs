@@ -48,4 +48,4 @@ CloudPSS建模及仿真平台提供的全部功能的详细说明文档。请先
 * [潮流计算仿真原理介绍](./Powerflow/PowerFlowIntro/index.md)
 
 ### 综合能源系统建模仿真平台
-* [综合能源系统建模仿真平台简介](./IESLab/IESLabIntro/index.md)
+* [综合能源系统建模仿真原理介绍](./IES/IESSimu/index.md)

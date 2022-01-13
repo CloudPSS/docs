@@ -1,6 +1,6 @@
 ---
 title: 关于
-order: 900
+order: 1000
 toc: false
 nav: false
 ---
