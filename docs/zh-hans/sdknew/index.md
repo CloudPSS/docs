@@ -53,4 +53,4 @@ order: 800
 
 * [案例 5 导入本地结果文件](./testdemo/demo5/index.md)
     
-	
+* [案例 7 使用综合能源仿真SDK](./testdemo/demo7/index.md)
