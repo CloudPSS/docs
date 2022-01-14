@@ -23,7 +23,7 @@ order: 610
 
 ![加法器函数的参数方案列表](./加法器函数的参数方案列表.png "加法器函数的参数方案列表")
 
-参数方案配置的具体使用方法和 CloudPSS SimStudio 一致，详见[参数方案配置](../../Basic/ParameterCal/index.md)功能帮助。
+参数方案配置的具体使用方法和 CloudPSS SimStudio 一致，详见[参数方案配置](simstudio/../../../../../simstudio/features/Basic/ParameterCal/index.md)功能帮助。
 
 ## 执行器管理
 
