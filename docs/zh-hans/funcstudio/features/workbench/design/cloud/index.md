@@ -10,7 +10,7 @@ order: 609
 
 :::
 
-可以，将代码提交到远程服务器，使用远程服务器的资源运行函数。实现目前只支持 JavaScript。
+除了将本地计算内核接入 FuncStudio 外，还可以将代码提交到远程服务器，使用远程服务器的资源运行函数。实现目前只支持 JavaScript。
 
 ###  FuncStudio 支持的标准 JavaScript 代码
  
@@ -27,11 +27,11 @@ export default async function* (args,signal,env) {
     yield "Good bye, "+args.name+"!"
 }  
  ```
- ![输入 JavaScript 代码](./输入 JavaScript 代码.png "输入 JavaScript 代码")
+ ![输入 JavaScript 代码](./输入JavaScript代码.png "输入 JavaScript 代码")
 
 ::: tip
 
-注意args.键名的参数调用形式。
+注意`args.键名`的参数调用形式。
 
 :::
 
