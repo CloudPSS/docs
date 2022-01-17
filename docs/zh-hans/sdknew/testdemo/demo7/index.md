@@ -12,7 +12,7 @@ order: 106
 
 ## 算例创建和使用
 
-首先，在 CloudPSS Simstudio 中打开[三联供算例](https://cloudpss.net/model/cloudpss/CHPCase)，该算例也可以通过模板算例进行创建。
+首先，在 CloudPSS Simstudio 中打开[三联供算例](https://cloudpss.net/model/CloudPSS/CHPCase)，该算例也可以通过模板算例进行创建。
 
 ![三联供算例](./1.svg "三联供算例")
 
@@ -31,23 +31,55 @@ order: 106
 
 ## 示例代码
 
-配置好 **Python** 开发环境，输入以下脚本。
+配置好 **Python** 开发环境，这里主要用到了第三方绘图库`Dash`和`JupyterDash`，用户可以使用`pip install dash`和`pip install jupyter-dash`指令进行安装。接下来执行以下脚本：
 ```python
 import time
 import cloudpss
 import os
 import sys
-
+from jupyter_dash import JupyterDash
+from dash.dependencies import Input, Output
+from dash import html,dcc
 from functools import reduce
+
+app =JupyterDash(__name__)
+
+def init_html():
+    tabs=[]
+    for val in tabData:
+        tabs.append(dcc.Tab(label=val['name'], value=val['id']),)
+#     tabs.append(dcc.Tab(label='Tab Two', value='tab-2-example-graph'))
+    app.layout = html.Div([
+        html.H1('Total Thermal Load'),
+        dcc.Tabs(id="tabs-example-graph", value=tabData[0]['id'], children=tabs),
+        html.Div(id='tabs-content-example-graph')
+    ])
+
+@app.callback(Output('tabs-content-example-graph', 'children'),
+              Input('tabs-example-graph', 'value'))
+def render_content(tab):
+    for data in tabData:
+        if data["id"]==tab:
+          return html.Div([
+            dcc.Graph(
+              id=data["id"],
+              figure={
+                'data': [{
+                  'x': data['x'],
+                  'y': data['y'],
+                }]
+              }
+            )
+          ])
 
 if __name__ == '__main__':
     cloudpss.setToken('{token}')
 
     ### 获取指定 rid 的项目
-    project = cloudpss.Model.fetch('model/cloudpss/CHPCase')
+    project = cloudpss.Model.fetch('model/CloudPSS/CHPCase')
 
     ### 通过采暖制冷负荷的rid获取所有的采暖制冷负荷元件信息
-    loadComponents = project.getComponentsByRid('model/cloudpss/IES-HeatColdLoad')
+    loadComponents = project.getComponentsByRid('model/CloudPSS/IES-HeatColdLoad')
 
     try:
         # 运行仿真
@@ -67,26 +99,31 @@ if __name__ == '__main__':
           runner.result.getPlotData('/' + key, 'Power(kW)', 'Thermal Load')['Thermal Load']['y'] 
           for key in loadComponents.keys()
         ]
-        
+        timeSerial = runner.result.getPlotData('/' + list(loadComponents.keys())[0], 'Power(kW)', 'Thermal Load')['Thermal Load']['x']
+
         # 分别统计分时热负荷和分时冷负荷，热负荷在LoadList中的数值为正，冷负荷为负
         totalHeatLoad = [0.0]*len(loadList[0])
         totalCoolLoad = [0.0]*len(loadList[0])
         totalHeatLoad = reduce(lambda x, y: 
                                   [x[i] + (y[i] if y[i] > 0 else 0) for i in range(len(x))], 
-                               loadList, 
-                               totalHeatLoad)
+                              loadList, 
+                              totalHeatLoad)
         totalCoolLoad = reduce(lambda x, y: 
                                   [x[i] + (-y[i] if y[i] < 0 else 0) for i in range(len(x))], 
-                               loadList, 
-                               totalCoolLoad)
+                              loadList, 
+                              totalCoolLoad)
 
-        # 打印结果
-        print(totalHeatLoad)
-        print(totalCoolLoad)
-        print('end')
+        tabData =[]
+        tabData.append({"name":"HeatLoad","x":timeSerial,"y":totalHeatLoad,"id":"HeatLoad"})
+        tabData.append({"name":"CoolLoad","x":timeSerial,"y":totalCoolLoad,"id":"CoolLoad"})
+        init_html()
+        app.run_server(mode='inline')
     except Exception as e:
         print('error', e)
 ```
+上述代码运行后，将在python终端输出如下图的结果曲线。
+![SDK代码运行结果1](./4-1.png "SDK代码运行结果1")
+![SDK代码运行结果2](./4-2.png "SDK代码运行结果2")
 
 ## 获取结果
 
@@ -112,5 +149,3 @@ loadValue = runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(
 print(loadValue)
 ```
 此时输出的数值即为此算例的 **component_ies_heat_cold_load_8** 采暖制冷负荷（冷库负荷）的时序结果。
-
-![对应的实际负荷数据](./4.jpg "对应的实际负荷数据")
