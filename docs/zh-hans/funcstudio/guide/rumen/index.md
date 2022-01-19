@@ -54,8 +54,8 @@ if __name__ == '__main__':
     a=int(job.args.a)
     b=int(job.args.b)
     #利用提供的plot函数绘图
-    job.plot(key='plot-1',[{'name':'t1','type':'scatter','x':[a,a+1],'y':[b,b+1]}])
-    job.plot(key='plot-2',[{'name':'t2','type':'scatter','x':[a+2,a+3],'y':[b+2,b+3]}])
+    job.plot('plot-1',[{'name':'t1','type':'scatter','x':[a,a+1],'y':[b,b+1]}])
+    job.plot('plot-2',[{'name':'t2','type':'scatter','x':[a+2,a+3],'y':[b+2,b+3]}])
     #利用提供的message函数输出信息
     job.message(a+b,key='c')
     print(a+b,flush=True)
