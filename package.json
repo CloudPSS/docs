@@ -1,6 +1,6 @@
 {
   "name": "docs",
-  "version": "5.3.8",
+  "version": "5.3.9",
   "scripts": {
     "start:ng": "ng serve --disable-host-check",
     "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",

@@ -28,7 +28,7 @@ jobs:
         run: |
           yarn build:standalone
           rm -f dist/stats.json
-          sed -i 's/__VERSION__/${{ steps.get_version.outputs.VERSION }}/g' deb/DEBIAN/control
+          sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/\./g' )/g" deb/DEBIAN/control
           cp -r dist/ deb/usr/share/cloudpss/static/docs/
           dpkg-deb --build deb .
           ls -l *.deb
