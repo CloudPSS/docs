@@ -22,15 +22,15 @@ jobs:
         run: |
           yarn build:main
           rm -f dist/stats.json
-          tar -cJvf dist.tar.xz -C ./dist .
+          tar -cJf dist.tar.xz -C ./dist .
           ls -l dist.tar.xz
       - name: Build for standalone
         run: |
           yarn build:standalone
           rm -f dist/stats.json
-          sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/\./g' )/g" deb/DEBIAN/control
-          cp -r dist/ deb/usr/share/cloudpss/static/docs/
-          dpkg-deb --build deb .
+          sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/./g' )/g" deb/DEBIAN/control
+          cp -a dist/. deb/usr/share/cloudpss/static/docs/
+          dpkg-deb --build --root-owner-group deb .
           ls -l *.deb
       - name: Upload Release Asset
         uses: ncipollo/release-action@v1
@@ -56,7 +56,7 @@ jobs:
             source /root/.profile
             rm -rf /root/docs/${{ steps.get_version.outputs.VERSION }}
             mkdir -p /root/docs/${{ steps.get_version.outputs.VERSION }}
-            tar -xJvf /root/docs/dist.tar.xz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
+            tar -xJf /root/docs/dist.tar.xz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
             gzipper c --exclude map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --gzip-level 9 --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
             gzipper c --exclude map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --brotli --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
             rm -f /root/docs/latest
