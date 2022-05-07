@@ -1,0 +1,13 @@
+Package: cloudpss-docs
+Version: __VERSION__
+Section: non-free/misc
+Priority: optional
+Architecture: all
+Maintainer: CloudPSS <business@cloudpss.net>
+Vendor: CloudPSS
+Depends: cloudpss-caddy (>=2)
+Homepage: https://github.com/CloudPSS/Docs
+Description: Documents of CloudPSS products
+ The content of this package is distubuted under Creative Commons Attribution-NonCommercial 4.0 International Public License
+ .
+ Source can be found at https://github.com/CloudPSS/Docs
