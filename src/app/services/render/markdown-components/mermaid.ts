@@ -30,7 +30,9 @@ export class MdMermaid extends MdComponentBase {
             this.watchTheme = this.global.theme.pipe(
                 tap((theme) => {
                     this.mermaid.initialize({
-                        theme: this.global.isDark(theme) ? 'dark' : 'default',
+                        theme: (this.global.isDark(theme)
+                            ? 'dark'
+                            : 'default') as unknown as Mermaid['mermaidAPI']['Theme']['Dark' | 'Default'],
                     });
                 }),
                 share(),
