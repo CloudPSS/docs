@@ -15,6 +15,9 @@ jobs:
           node-version: 14
       - name: Install
         uses: bahmutov/npm-install@v1.1.0
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Build for docs.cloudpss.net
         run: |
           yarn build:main
@@ -25,16 +28,15 @@ jobs:
         run: |
           yarn build:standalone
           rm -f dist/stats.json
-          tar -cJvf dist-standalone.tar.xz -C ./dist .
-          ls -l dist-standalone.tar.xz
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
+          sed -i 's/__VERSION__/${{ steps.get_version.outputs.VERSION }}/g' deb/DEBIAN/control
+          cp -r dist/ deb/usr/share/cloudpss/static/docs/
+          dpkg-deb --build deb .
+          ls -l *.deb
       - name: Upload Release Asset
         uses: ncipollo/release-action@v1
         with:
           allowUpdates: true
-          artifacts: dist.tar.xz,dist-standalone.tar.xz
+          artifacts: dist.tar.xz,*.deb
           prerelease: ${{ contains(github.event.ref, '-') }}
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
