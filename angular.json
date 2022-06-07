@@ -3,7 +3,6 @@
   "cli": {
     "analytics": "3d0969a7-fb2f-4686-91f1-07dd90c86196"
   },
-  "defaultProject": "docs",
   "newProjectRoot": "projects",
   "projects": {
     "docs": {
