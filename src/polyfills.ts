@@ -18,9 +18,6 @@
  * BROWSER POLYFILLS
  */
 
-import 'core-js/modules/es.object.entries';
-import 'core-js/modules/es.object.from-entries';
-
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
  * user can disable parts of macroTask/DomEvents patch by setting following flags
