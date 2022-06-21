@@ -9,12 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2.3.3
-      - uses: actions/setup-node@v2.1.2
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: lts/*
       - name: Install
-        uses: bahmutov/npm-install@v1.1.0
+        uses: bahmutov/npm-install@v1
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
