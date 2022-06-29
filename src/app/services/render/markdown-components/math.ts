@@ -62,7 +62,7 @@ function replaceMathText(fragment: DocumentFragment): void {
     });
 }
 
-/**复制 */
+/** 复制 */
 function onCopy(event: HTMLElementEventMap['copy']): void {
     const selection = window.getSelection();
     if (!selection || selection.isCollapsed || !event.clipboardData) {
