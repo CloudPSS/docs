@@ -140,7 +140,9 @@ export class DocumentComponent implements AfterViewInit, OnDestroy {
                     this.global.menuButton.next({
                         icon: 'menu',
                         title: 'sidenav.' + (opened ? 'close' : 'open'),
-                        click: () => this.sidenav.toggle(),
+                        click: () => {
+                            void this.sidenav.toggle();
+                        },
                     });
                 }
             } else {
