@@ -34,6 +34,7 @@ export class MdChart extends MdComponentBase {
             root = this.attachShadow({ mode: 'open' });
         } else {
             this.innerHTML = '';
+            // eslint-disable-next-line @typescript-eslint/no-this-alias
             root = this;
         }
         try {
