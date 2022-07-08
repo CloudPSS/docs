@@ -144,10 +144,10 @@ export class SourceService {
         reorder(root);
         manifest = {
             ...manifest,
-            sitemap: (root.children ?? []).reduce((m, s) => {
+            sitemap: (root.children ?? []).reduce<Manifest['sitemap']>((m, s) => {
                 m[s.name] = s;
                 return m;
-            }, {} as Manifest['sitemap']),
+            }, {}),
         };
         return manifest;
     }
@@ -216,13 +216,13 @@ export class SourceService {
             map((f) => ({ ...spec, manifest: this.buildManifest(f.data) })),
         );
     }
-
+    /** 获取文件内容 */
     file<T>(path: string, responseType: 'json', spec?: VersionSpec): Observable<File<T>>;
+    /** 获取文件内容 */
     file(path: string, responseType: 'text', spec?: VersionSpec): Observable<File<string>>;
+    /** 获取文件内容 */
     file(path: string, responseType: 'arraybuffer', spec?: VersionSpec): Observable<File<ArrayBuffer>>;
-    /**
-     * 获取文件内容
-     */
+    /** 获取文件内容 */
     file(
         path: string,
         responseType: 'json' | 'text' | 'arraybuffer',
