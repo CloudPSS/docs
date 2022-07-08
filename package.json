@@ -1,6 +1,11 @@
 {
   "name": "docs",
-  "version": "5.3.15",
+  "version": "5.3.16",
+  "homepage": "https://docs.cloudpss.net",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CloudPSS/Docs"
+  },
   "scripts": {
     "start:ng": "ng serve --disable-host-check",
     "start:docs": "yarn build-manifest && http-server -p4201 --cors -c-1 .",

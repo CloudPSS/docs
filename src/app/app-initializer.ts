@@ -3,10 +3,11 @@ import { TranslateService } from '@ngx-translate/core';
 import { SwUpdate } from '@angular/service-worker';
 import { SourceService } from './services/source';
 import { WebpackTranslateLoader } from './webpack-translate-loader';
-import { Observable } from 'rxjs';
+import { Observable, firstValueFrom } from 'rxjs';
 import { GlobalService } from './services/global';
 import { Router, NavigationEnd } from '@angular/router';
-import { filter, mergeMap } from 'rxjs/operators';
+import { filter, mergeMap, tap } from 'rxjs/operators';
+import pkgJson from 'package.json';
 
 /**
  * 提供文档内容
@@ -23,12 +24,14 @@ export class AppInitializerService {
         readonly global: GlobalService,
         readonly router: Router,
     ) {
+        // eslint-disable-next-line no-console
+        console.log(`App version ${pkgJson.version}`);
         return (() =>
             Promise.all(
                 this.initializers.map((i) => {
                     let r = i();
                     if (!r) return r;
-                    if ('toPromise' in r) r = r.toPromise();
+                    if (!('then' in r)) r = firstValueFrom(r);
                     return r;
                 }),
             )) as unknown as AppInitializerService;
@@ -41,21 +44,25 @@ export class AppInitializerService {
         },
         () => {
             if (this.updates.isEnabled) {
-                this.updates.available.subscribe((event) => {
-                    // eslint-disable-next-line no-console
-                    console.log(
-                        `Updates from ${event.current.hash} to ${event.available.hash} is currently available.`,
-                    );
-                    this.router.events
-                        .pipe(
-                            filter((ev) => ev instanceof NavigationEnd),
-                            mergeMap(() => this.updates.activateUpdate()),
-                        )
-                        .subscribe(() => document.location.reload());
-                });
-                this.updates.activated.subscribe((event) => {
-                    // eslint-disable-next-line no-console
-                    console.log(`Updated from ${event.previous?.hash ?? 'unknown'} to ${event.current.hash}.`);
+                this.updates.versionUpdates.subscribe((event) => {
+                    if (event.type === 'VERSION_READY') {
+                        // eslint-disable-next-line no-console
+                        console.log(
+                            `Updates from ${event.currentVersion.hash} to ${event.latestVersion.hash} is currently available.`,
+                        );
+                        this.router.events
+                            .pipe(
+                                filter((ev) => ev instanceof NavigationEnd),
+                                mergeMap(() => this.updates.activateUpdate()),
+                                tap(() => {
+                                    // eslint-disable-next-line no-console
+                                    console.log(
+                                        `Updated from ${event.currentVersion.hash} to ${event.latestVersion.hash}.`,
+                                    );
+                                }),
+                            )
+                            .subscribe(() => document.location.reload());
+                    }
                 });
             }
         },
