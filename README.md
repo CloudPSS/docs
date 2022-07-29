@@ -12,7 +12,7 @@ Master 分支预览地址：<https://cloudpss.github.io/Docs/>
 
 ## 内网操作指南
 
-本项目在内网部署了在线编辑 <https://docs-internal.cloudpss.net:4443/> 和预览 <http://docs-internal.cloudpss.net:4000/> 服务。
+本项目在内网部署了在线编辑 <https://docs-internal.cloudpss.net/> 和预览 <http://docs-internal.cloudpss.net:4000/> 服务。
 
 ### 启动预览服务
 
