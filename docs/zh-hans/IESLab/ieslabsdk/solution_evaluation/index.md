@@ -6,7 +6,7 @@ order: 40
 ## ==方案评估选模块对应有两个Python类，第一种类实例与具体的算例（`Model`类的实例）相绑定，第二种类实例与计算结果（`Result`类的实例）相绑定。对第一种python类（`EvaluationModel`），提供以下接口方法：==
 
 ### 1 获取指定方案的财务评估参数信息，函数签名如下：
-### GetFinancialParas(planID)
+### GetFinancialParams(planID)
 :::info
 获取planID对应的优化方案下财务评估模块的基础信息
 :::
@@ -37,3 +37,18 @@ order: 40
 
 **返回:**  array类型，代表该方案对应的概览结果
 
+### 3 获取当前结果类对应的优化方案下的环保评价，函数签名如下：
+### GetEnvironmentalEvaluationResult()
+:::info
+获取当前结果类对应的优化方案下的能效评价
+:::
+
+**返回:**  array类型，代表该方案对应的能效评价结果
+
+### 4 获取当前结果类对应的优化方案下的环保评价，函数签名如下：
+### GetEnvironmentalEvaluationResult()
+:::info
+获取当前结果类对应的优化方案下的环保评价
+:::
+
+**返回:**  array类型，代表该方案对应的环保评价结果

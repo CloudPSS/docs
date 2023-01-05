@@ -8,4 +8,4 @@ order: 300
 ## [SimStudio 工作台相关接口](./simstudio/index.md)
 ## [方案优选模块相关接口](./solution_optimization/index.md)
 ## [方案评估模块相关接口](./solution_evaluation/index.md)
-## [内核运行接口添加](./kernel_operation/index.md)
+

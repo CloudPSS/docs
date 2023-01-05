@@ -13,7 +13,7 @@ order: 716
 
 ### 2. MarkDown 文本框内容属性
 
-![MarkDown 文本框内容属性](./MarkDown 文本框内容属性.png "MarkDown 文本框内容属性")
+![ MarkDown 文本框内容属性 ](./MarkDown 文本框内容属性.png "MarkDown 文本框内容属性")
 
 值：输入 MarkDown 文本，支持值模式和表达式模式输入。
 
