@@ -68,7 +68,7 @@ symbol: SyncGen
 | :--- | :--- | :--- | :--: | :--- |
 | Control Type |  | 选择控制类型 | 选择 | 选择Speed Control（转速控制）或Torque Control（转矩控制）模式 |
 | Inertia Constant | s | 发电机转子惯性时间常数 | 实数（常量） | 此处应填写惯性时间常数$T_J=2H$，其中H为惯性常数（北美和欧洲参数形式） |
-| Damping Constant | s | 机械阻尼时间常数 | 实数（常量） |  |
+| Damping Constant | p.u. | 机械阻尼系数 | 实数（常量） |  |
 
 ### Initial Condition
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
