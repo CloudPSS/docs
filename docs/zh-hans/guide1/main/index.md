@@ -25,7 +25,9 @@ CloudPSS 应用包括 `SimStudio`、`FuncStudio`、`AppStudio`、`CloudPSS 4.1`�
 
 ## 案例搜索
 
-可以在搜索栏内搜索 CloudPSS 应用包括典型案例项目和帮助文档。
+可以在搜索栏内搜索 CloudPSS 应用包括典型案例项目和帮助文档，支持[高级搜索功能](../advanced-search.md "高级搜索功能")
+
+![搜索主界面](./搜索主界面.png "搜索主界面")
 
 ## 用户设置
 	

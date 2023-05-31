@@ -27,7 +27,7 @@ IEEE-123 测试系统的介绍见`http://svn.code.sf.net/p/electricdss/code/trun
 
 母线页面中，$V$为母线相电压有效值；$Theta$为母线各相相角；$Pgen$和$Qgen$为发电机各相发出有功功率和无功功率；$Pload$和$Qload$为负荷各相吸收的有功功率和无功功率。
 
-支路页面中，$P_{ij}, Q_{ij}, $ 表示 from bus 和 to bus 流出的功率；
+支路页面中，$P_{ij}$和 $Q_{ij}$  表示 from bus 和 to bus 流出的功率；
 
 在结果页面中，点击`潮流初始化断面`下的`修改项目文件`按钮，可以将潮流计算得到的结果作为元件启动参数填入各元件。
 

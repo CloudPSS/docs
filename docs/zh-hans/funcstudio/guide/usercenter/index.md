@@ -55,17 +55,17 @@ order: 601
 
 右击系统状态栏中`FuncStudio`执行器的小图标，选择`编辑配置文件`的选项，点击后打开配置文件进行编辑，如下图所示：
 
-![编辑配置文件](./编辑配置文件.png "编辑配置文件")
+![编辑配置文件](./编辑配置文件1.png "编辑配置文件")
 
 对于公网平台用户，配置文件如下图所示，安装时已默认完成配置，用户无需自行更改。
 
-![公网配置文件](./公网配置文件.png "公网配置文件")
+![公网配置文件](./公网配置文件1.png "公网配置文件")
 
 
 对于`CloudPSS-Minni`用户，需要将配置文件的`HOME_URL`配置为`CloudPSS-Mini`的`IP地址`如下图所示：
 
-![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
+![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件1.png "CloudPSS-Mini配置文件")
 
 对于非公网用户，如：internal 用户，需要将配置文件的`HOME_URL`配置为`https://internal.cloudpss.net/`，如下图所示：
 
-![internal平台配置文件](./internal平台配置文件.png "internal平台配置文件")
+![internal平台配置文件](./internal平台配置文件1.png "internal平台配置文件")
