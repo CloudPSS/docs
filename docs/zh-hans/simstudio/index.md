@@ -7,6 +7,8 @@ order: 500
 
 * [功能帮助](features.md)
 
+* [元件库](components.md)
+
 * [案例介绍](examples.md)
 
 

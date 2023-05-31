@@ -33,8 +33,10 @@ symbol: DLoad
 | Voltage Index for Q |  | 无功功率-电压指数 | 实数（常量） | 无功功率-电压指数$NQ$ |
 | Freq Index for P |  | 有功功率-频率系数 | 实数（常量） |  有功功率-频率系数$K_{PF}$ |
 | Freq Index for Q |  | 无功功率-频率系数 | 实数（常量） | 无功功率-频率系数$K_{QF}$ |
-| Initial Voltage |  | 初始电压幅值，由潮流计算决定 | 实数（常量） | 初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
 | Connection Type |  | 连接类型 | 选择 | 有“Wye” 和 “Delta”两种 |
+| Phase A Initial Voltage |  | A相初始电压幅值，由潮流计算决定 | 实数（常量） | A相初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
+| Phase B Initial Voltage |  | B相初始电压幅值，由潮流计算决定 | 实数（常量） | B相初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
+| Phase C Initial Voltage |  | C相初始电压幅值，由潮流计算决定 | 实数（常量） | C相初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
 
 ### Wye
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
@@ -51,12 +53,12 @@ symbol: DLoad
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
 | Load Type_Delta|  | 连接类型 | 选择 | 有AB相，BC相，AC相，AB-BC相，BC-AC相，AB-AC相，AB-BC-AC7种,当“Connection Type”选择“Delta”时有效 |
-| Phase AB Active Power | kW | AB相有功功率 | 实数（常量） |  AB相有功功率$P_ab$,当Load Type_Delta选择“Phase AB Load”， “Phase ABBC Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效|
-| Phase AB Reactive Power | kVar | AB相无功功率 | 实数（常量） |  AB相无功功率$Q_ab$,当Load Type_Delta选择“Phase AB Load”， “Phase ABBC Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效|
-| Phase BC Active Power | kW | BC相有功功率 | 实数（常量） |  BC相有功功率$P_bc$,当Load Type_Delta选择“Phase BC Load”， “Phase ABBC Load”，“Phase BCCA Load”和“Phase ABBCCA Load”时有效 |
-| Phase BC Reactive Power | kVar | BC相无功功率 | 实数（常量） |  BC相无功功率$Q_bc$,当Load Type_Delta选择“Phase BC Load”， “Phase ABBC Load”，“Phase BCCA Load”和“Phase ABBCCA Load”时有效 |
-| Phase CA Active Power | kW | AC相有功功率 | 实数（常量） |  AC相有功功率$P_ac$,当Load Type_Delta选择“Phase CA Load”， “Phase  BCCA Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效 |
-| Phase CA Reactive Power| kVar | AC相无功功率 | 实数（常量） |  AC相无功功率$Q_ac$,当Load Type_Delta选择“Phase CA Load”， “Phase  BCCA Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效 |
+| Phase AB Active Power | kW | AB相有功功率 | 实数（常量） |  AB相有功功率$P_{ab}$,当Load Type_Delta选择“Phase AB Load”， “Phase ABBC Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效|
+| Phase AB Reactive Power | kVar | AB相无功功率 | 实数（常量） |  AB相无功功率$Q_{ab}$,当Load Type_Delta选择“Phase AB Load”， “Phase ABBC Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效|
+| Phase BC Active Power | kW | BC相有功功率 | 实数（常量） |  BC相有功功率$P_{bc}$,当Load Type_Delta选择“Phase BC Load”， “Phase ABBC Load”，“Phase BCCA Load”和“Phase ABBCCA Load”时有效 |
+| Phase BC Reactive Power | kVar | BC相无功功率 | 实数（常量） |  BC相无功功率$Q_{bc}$,当Load Type_Delta选择“Phase BC Load”， “Phase ABBC Load”，“Phase BCCA Load”和“Phase ABBCCA Load”时有效 |
+| Phase CA Active Power | kW | AC相有功功率 | 实数（常量） |  AC相有功功率$P_{ac}$,当Load Type_Delta选择“Phase CA Load”， “Phase  BCCA Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效 |
+| Phase CA Reactive Power| kVar | AC相无功功率 | 实数（常量） |  AC相无功功率$Q_{ac}$,当Load Type_Delta选择“Phase CA Load”， “Phase  BCCA Load”，“Phase ABCA Load”和“Phase ABBCCA Load”时有效 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |

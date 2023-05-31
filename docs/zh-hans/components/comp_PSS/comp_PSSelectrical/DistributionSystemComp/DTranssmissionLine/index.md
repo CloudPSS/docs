@@ -58,24 +58,24 @@ symbol: DTranssmissionLine
 | Rated Voltage (L-L, RMS) | kV | 额定电压 | 实数（常量） | 输入额定电压（电压基值） |
 | Rated Power Capacity | MVA | 额定容量 | 实数（常量） | 输入额定容量（容量基值） |
 | Line Type |  | 线路类型 | 选择 | 选择线路类型，有A相、B相、C相、AB相、BC相、AC相和ABC相7种,当选择“Phase component”和“R, X, B (p.u.)”时有效| 
-| Raa: Phase A Self Resistance| p.u./km | 单位长度A相自电阻 | 实数（常量） | 输入单位长度A相自电阻$R_aaPB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
-| Rba: Phase B-A Mutual Resistance| p.u./km | 单位长度A-B相互电阻 | 实数（常量） | 输入单位长度A-B相互电阻$R_abPB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
-| Rbb: Phase B Self Resistance| p.u./km | 单位长度B相自电阻 | 实数（常量） | 输入单位长度B相自电阻$R_bbPB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
-| Rca: Phase C-A Mutual Resistance| p.u./km | 单位长度A-C相互电阻 | 实数（常量） | 输入单位长度A-C相互电阻$R_acPB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
-| Rcb: Phase C-B Mutual Resistance| p.u./km | 单位长度B-C相互电阻 | 实数（常量） | 输入单位长度B-C相互电阻$R_bcPB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
-| Rcc: Phase C Self Resistance| p.u./km | 单位长度C相自电阻 | 实数（常量） | 输入单位长度C相自电阻$R_ccPB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
-| Xaa: Phase A Self Reactance| p.u./km | 单位长度A相自电抗 | 实数（常量） | 输入单位长度A相自电抗$X_aaPB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
-| Xba: Phase B-A Mutual Reactance| p.u./km | 单位长度A-B相互电抗 | 实数（常量） | 输入单位长度A-B相互电抗$X_abPB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
-| Xbb: Phase B Self Reactance| p.u./km | 单位长度B相自电抗 | 实数（常量） | 输入单位长度B相自电抗$X_bbPB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
-| Xca: Phase C-A Mutual Reactance| p.u./km | 单位长度A-C相互电抗 | 实数（常量） | 输入单位长度A-C相互电抗$X_acPB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
-| Xcb: Phase C-B Mutual Reactance| p.u./km | 单位长度B-C相互电抗 | 实数（常量） | 输入单位长度B-C相互电抗$X_bcPB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
-| Xcc: Phase C Self Resistance| p.u./km | 单位长度C相自电抗 | 实数（常量） | 输入单位长度C相自电抗$X_ccPB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
-| Caa: Phase A Self Reactance| p.u./km | 单位长度A相自电纳 | 实数（常量） | 输入单位长度A相自电纳$C_aaPB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
-| Cba: Phase B-A Mutual Reactance| p.u./km | 单位长度A-B相互电纳 | 实数（常量） | 输入单位长度A-B相互电纳$C_abPB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
-| Cbb: Phase B Self Reactance| p.u./km | 单位长度B相自电纳 | 实数（常量） | 输入单位长度B相自电纳$C_bbPB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
-| Cca: Phase C-A Mutual Reactance| p.u./km | 单位长度A-C相互电纳 | 实数（常量） | 输入单位长度A-C相互电纳$C_acPB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
-| Ccb: Phase C-B Mutual Reactance| p.u./km | 单位长度B-C相互电纳 | 实数（常量） | 输入单位长度B-C相互电纳$C_bcPB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
-| Ccc: Phase C Self Resistance| p.u./km | 单位长度C相自电纳 | 实数（常量） | 输入单位长度C相自电纳$C_ccPB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Raa: Phase A Self Resistance| p.u./km | 单位长度A相自电阻 | 实数（常量） | 输入单位长度A相自电阻$R_{aa}PB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
+| Rba: Phase B-A Mutual Resistance| p.u./km | 单位长度A-B相互电阻 | 实数（常量） | 输入单位长度A-B相互电阻$R_{ab}PB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
+| Rbb: Phase B Self Resistance| p.u./km | 单位长度B相自电阻 | 实数（常量） | 输入单位长度B相自电阻$R_{bb}PB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Rca: Phase C-A Mutual Resistance| p.u./km | 单位长度A-C相互电阻 | 实数（常量） | 输入单位长度A-C相互电阻$R_{ac}PB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
+| Rcb: Phase C-B Mutual Resistance| p.u./km | 单位长度B-C相互电阻 | 实数（常量） | 输入单位长度B-C相互电阻$R_{bc}PB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
+| Rcc: Phase C Self Resistance| p.u./km | 单位长度C相自电阻 | 实数（常量） | 输入单位长度C相自电阻$R_{cc}PB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Xaa: Phase A Self Reactance| p.u./km | 单位长度A相自电抗 | 实数（常量） | 输入单位长度A相自电抗$X_{aa}PB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
+| Xba: Phase B-A Mutual Reactance| p.u./km | 单位长度A-B相互电抗 | 实数（常量） | 输入单位长度A-B相互电抗$X_{ab}PB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
+| Xbb: Phase B Self Reactance| p.u./km | 单位长度B相自电抗 | 实数（常量） | 输入单位长度B相自电抗$X_{bb}PB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Xca: Phase C-A Mutual Reactance| p.u./km | 单位长度A-C相互电抗 | 实数（常量） | 输入单位长度A-C相互电抗$X_{ac}PB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
+| Xcb: Phase C-B Mutual Reactance| p.u./km | 单位长度B-C相互电抗 | 实数（常量） | 输入单位长度B-C相互电抗$X_{bc}PB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
+| Xcc: Phase C Self Resistance| p.u./km | 单位长度C相自电抗 | 实数（常量） | 输入单位长度C相自电抗$X_{cc}PB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Caa: Phase A Self Reactance| p.u./km | 单位长度A相自电纳 | 实数（常量） | 输入单位长度A相自电纳$C_{aa}PB$,当选择“Phase A Line”，“Phase AB Line”，“Phase AC Line”和“Phase ABC Line”时有效 |
+| Cba: Phase B-A Mutual Reactance| p.u./km | 单位长度A-B相互电纳 | 实数（常量） | 输入单位长度A-B相互电纳$C_{ab}PB$,当选择“Phase AB Line” 和 “Phase ABC Line”时有效 |
+| Cbb: Phase B Self Reactance| p.u./km | 单位长度B相自电纳 | 实数（常量） | 输入单位长度B相自电纳$C_{bb}PB$,当选择“Phase B Line”，“Phase AB Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
+| Cca: Phase C-A Mutual Reactance| p.u./km | 单位长度A-C相互电纳 | 实数（常量） | 输入单位长度A-C相互电纳$C_{ac}PB$,当选择“Phase AC Line”和“Phase ABC Line”时有效 |
+| Ccb: Phase C-B Mutual Reactance| p.u./km | 单位长度B-C相互电纳 | 实数（常量） | 输入单位长度B-C相互电纳$C_{bc}PB$,当选择“Phase BC Line”和“Phase ABC Line”时有效 |
+| Ccc: Phase C Self Resistance| p.u./km | 单位长度C相自电纳 | 实数（常量） | 输入单位长度C相自电纳$C_{cc}PB$,当选择“Phase C Line”，“Phase AC Line”，“Phase BC Line”和“Phase ABC Line”时有效 |
 
 ### Sequence component-R, X, B (p.u.)
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
@@ -92,12 +92,12 @@ symbol: DTranssmissionLine
 ### Sequence component-R, X, B (Ω))
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
-| +/- Seq. Resistance | Ω/km | 单位长度正序电阻 | 实数（常量） | 输入单位长度正序电阻有名值$R_1SS$ |
-| +/- Seq. Inductive Reactance | Ω/km | 单位长度正序感抗 | 实数（常量） | 输入单位长度正序串联电抗有名值$X_1SS$ |
-| +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 实数（常量） | 输入单位长度正序并联容抗有名值$B_1SS$ |
-| 0 Seq. Resistance | Ω/km | 单位长度零序电阻 | 实数（常量） | 输入单位长度零序电阻有名值$R_01SS$ |
-| 0 Seq. Inductive Reactance | Ω/km | 单位长度零序感抗 | 实数（常量） | 输入单位长度零序串联电抗有名值$X_0SS$ |
-| 0 Seq. Capacitive Reactance | MΩ*km | 单位长度零序容抗 | 实数（常量） | 输入单位长度零序并联容抗有名值$B_0SS$ |
+| +/- Seq. Resistance | Ω/km | 单位长度正序电阻 | 实数（常量） | 输入单位长度正序电阻有名值$R11SS$ |
+| +/- Seq. Inductive Reactance | Ω/km | 单位长度正序感抗 | 实数（常量） | 输入单位长度正序串联电抗有名值$X11SS$ |
+| +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 实数（常量） | 输入单位长度正序并联容抗有名值$B11SS$ |
+| 0 Seq. Resistance | Ω/km | 单位长度零序电阻 | 实数（常量） | 输入单位长度零序电阻有名值$R00SS$ |
+| 0 Seq. Inductive Reactance | Ω/km | 单位长度零序感抗 | 实数（常量） | 输入单位长度零序串联电抗有名值$X00SS$ |
+| 0 Seq. Capacitive Reactance | MΩ*km | 单位长度零序容抗 | 实数（常量） | 输入单位长度零序并联容抗有名值$B00SS$ |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |

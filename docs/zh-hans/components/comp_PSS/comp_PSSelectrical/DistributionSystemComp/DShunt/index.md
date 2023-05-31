@@ -41,12 +41,12 @@ symbol: DShunt
 | 参数名 | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- |
 | ShuntType_Delta|  | 连接类型 | 选择 | 有AB相，BC相，AC相，AB-BC相，BC-AC相，AB-AC相，AB-BC-AC7种,当“Connection Type”选择“Delta”时有效 |
-| Phase AB Input Capacity | kVar | AB相投入容量 | 实数（常量） |  AB相投入容量$S_ab$,当“ShuntType_Delta”选择“Phase AB Shunt”， “Phase ABBC Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效|
-| Phase AB Rated Voltage | kV | AB相额定电压有效值 | 实数（常量） |  AB相额定电压有效值$V_ab$,当“ShuntType_Delta”选择“Phase AB Shunt”， “Phase ABBC Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效|
-| Phase BC Input Capacity | kVar | BC相投入容量 | 实数（常量） |  BC相投入容量$S_bc$,,当“ShuntType_Delta”选择“Phase BC Shunt”， “Phase ABBC Shunt”，“Phase BCCA Shunt”和“Phase ABBCCA Shunt”时有效 |
-| Phase BC Rated Voltage | kV | BC相额定电压有效值 | 实数（常量） |  BC相额定电压有效值$V_bc$,当“ShuntType_Delta”选择“Phase BC Shunt”， “Phase ABBC Shunt”，“Phase BCCA Shunt”和“Phase ABBCCA Shunt”时有效 |
-| Phase CA Input Capacity | kVar | AC相投入容量 | 实数（常量） |  AC相投入容量$S_ac$,当“ShuntType_Delta”选择“Phase CA Shunt”， “Phase  BCCA Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效 |
-| Phase CA Rated Voltage | kV | AC相额定电压有效值 | 实数（常量） |  AC相额定电压有效值$V_ac$,当“ShuntType_Delta”选择“Phase CA Shunt”， “Phase  BCCA Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效 |
+| Phase AB Input Capacity | kVar | AB相投入容量 | 实数（常量） |  AB相投入容量$S_{ab}$,当“ShuntType_Delta”选择“Phase AB Shunt”， “Phase ABBC Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效|
+| Phase AB Rated Voltage | kV | AB相额定电压有效值 | 实数（常量） |  AB相额定电压有效值$V_{ab}$,当“ShuntType_Delta”选择“Phase AB Shunt”， “Phase ABBC Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效|
+| Phase BC Input Capacity | kVar | BC相投入容量 | 实数（常量） |  BC相投入容量$S_{bc}$,,当“ShuntType_Delta”选择“Phase BC Shunt”， “Phase ABBC Shunt”，“Phase BCCA Shunt”和“Phase ABBCCA Shunt”时有效 |
+| Phase BC Rated Voltage | kV | BC相额定电压有效值 | 实数（常量） |  BC相额定电压有效值$V_{bc}$,当“ShuntType_Delta”选择“Phase BC Shunt”， “Phase ABBC Shunt”，“Phase BCCA Shunt”和“Phase ABBCCA Shunt”时有效 |
+| Phase CA Input Capacity | kVar | AC相投入容量 | 实数（常量） |  AC相投入容量$S_{ac}$,当“ShuntType_Delta”选择“Phase CA Shunt”， “Phase  BCCA Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效 |
+| Phase CA Rated Voltage | kV | AC相额定电压有效值 | 实数（常量） |  AC相额定电压有效值$V_{ac}$,当“ShuntType_Delta”选择“Phase CA Shunt”， “Phase  BCCA Shunt”，“Phase ABCA Shunt”和“Phase ABBCCA Shunt”时有效 |
 
 ### Monitoring
 | 参数名 | 备注 | 类型 | 描述 |
