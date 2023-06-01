@@ -1,7 +1,7 @@
 ---
 title: 综合能源系统建模仿真平台简介
 type: guide
-author: xy
+author: jack
 order: 101
 ---
 
