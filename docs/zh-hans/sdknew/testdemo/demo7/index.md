@@ -1,13 +1,14 @@
 ---
-title: 案例 7 使用综合能源仿真SDK
+title: 案例 7 SimStudio综合能源仿真
 type: examples
 author: xy
 category: 400
+order: 200
 
 ---
 
 :::info
-**本例以通过 Python 脚本获取三联供算例计算结果为例，帮助用户快速入门综合能源 CloudPSS SDK 的使用。**
+**本例以通过 Python 脚本获取SimStudio平台三联供算例计算结果为例，帮助用户快速入门综合能源 CloudPSS SDK 的使用。**
 :::
 
 ## 算例创建和使用
