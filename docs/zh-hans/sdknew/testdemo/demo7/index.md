@@ -3,7 +3,7 @@ title: 案例 7 使用综合能源仿真SDK
 type: examples
 author: xy
 category: 400
-order: 106
+
 ---
 
 :::info
