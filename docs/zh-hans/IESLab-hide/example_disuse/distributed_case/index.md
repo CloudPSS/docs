@@ -1,10 +1,3 @@
----
-title: 分布式供热综合能源系统
-type: examples
-author: Jack
-category: 2300
-author_email: 
----
 
 ## 模型描述
 

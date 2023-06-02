@@ -1,10 +1,4 @@
----
-title: 以蒸汽利用为核心的综合能源系统
-type: examples
-author: Jack
-category: 2300
-author_email: 
----
+
 
 ## 模型描述
 

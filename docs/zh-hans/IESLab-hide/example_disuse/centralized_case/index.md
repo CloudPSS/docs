@@ -1,9 +1,4 @@
----
-title: 集中式供热综合能源系统
-type: examples
-author: Jack
-author_email: 
----
+
 
 ## 模型描述
 
