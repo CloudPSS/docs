@@ -8,14 +8,14 @@ updated: 2020/4/21 18:05:35
 
 type: components
 category: 11000
-order: 1000
+order:
 
 classname: PhotovoltaicSys
 symbol: IES-Generator-PhotovoltaicSys
 ---
 ## 基本描述
 
-> **该元件指光伏发电系统的设备设施, A为方阵总面积，η为方阵总的光电转换效率，r为辐照强度，则其输出功率为：**
+> **指光伏发电系统的设备设施, A为方阵总面积，η为方阵总的光电转换效率，r为辐照强度，则其输出功率为：**
 > $$P_M=rA\eta$$
 
 ![光伏系统](./IES-Generator-1PV.png =x300)
