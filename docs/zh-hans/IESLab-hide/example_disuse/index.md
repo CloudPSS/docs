@@ -1,6 +1,3 @@
----
-title: 案例
----
 
 ## [综合能源系统展示案例](./demo_case/index.md)
 ## [三联供综合能源系统](./CHP_case/index.md)

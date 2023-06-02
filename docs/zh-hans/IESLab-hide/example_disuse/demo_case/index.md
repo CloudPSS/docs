@@ -1,10 +1,3 @@
----
-title: 综合能源系统展示案例
-type: examples
-author: Jack
-category: 2300
-author_email: 
----
 
 ## 模型描述
 

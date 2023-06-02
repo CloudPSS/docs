@@ -1,10 +1,3 @@
----
-title: 三联供综合能源系统
-type: examples
-author: Jack
-category: 2300
-author_email: 
----
 
 ## 模型描述
 
