@@ -2,12 +2,10 @@
 title: 数据管理模块相关接口
 order: 10
 ---
+## ==数据管理模块对应一个 Python 类 `DataManageModel` ，类实例与具体的算例（`Model` 类的实例）相绑定，本教程将介绍如何使用该模块的各个接口方法。==
 
-## ==数据管理模块对应一个 Python 类 `DataManageModel` ，类实例与具体的算例（`Model` 类的实例）相绑定，本教程将介绍如何使用以下接口方法: ==
-
-
-## 0. 准备工作
-### 描述
+### 0. 准备工作
+#### 描述
 在进行对各个接口的具体操作前，您需要先获取指定的项目。
 
 ```python 
@@ -26,21 +24,21 @@ iesProject = cloudpss.IESLabSimulation.fetch('632')
 ```
 
 
-## 1. GetItemList()
-### 描述
+### 1. GetItemList()
+#### 描述
 根据数据种类获取该类型下所有数据项的列表。
 
-### 语法
+#### 语法
 ```python
 GetItemList(dataType)
 ```
 参数说明:
 - `dataType`：string 类型，数据的种类标识，包含：“光伏”、“风机”、“燃气轮机”、“热泵”、“燃气锅炉”、“热管式太阳能集热器”、“电压缩制冷机”、“吸收式制冷机”、“蓄电池”、“储水罐”、“变压器”、“传输线”、“模块化多电平变流器”、“离心泵”、“管道”、“采暖制冷负荷”、“电负荷”、“燃料”、“热”、“冷”、“常数电价”、“分时电价”、“阶梯电价”、“分时阶梯电价”
   
-### 返回值
+#### 返回值
 - list 类型，返回该种类下所有数据项的列表
 
-### 实例
+#### 实例
 以下实例展示了 GetItemList 的使用方法：
 ```python
 data_type = "光伏"
@@ -63,11 +61,11 @@ List of 光伏 items: [
 ]
 ```
 
-## 2. AddDataItem()
-### 描述
+### 2. AddDataItem()
+#### 描述
 使用 AddDataItem(dataType, data) 方法，向数据库中添加数据项。
 
-### 语法
+#### 语法
 ```python
 AddDataItem(data_type, data)
 ```
@@ -75,10 +73,10 @@ AddDataItem(data_type, data)
 - `dataType`：string 类型，数据的种类标识
 - `data`：dict 类型，表示添加的数据内容，其数据结构应满足对应数据项的结构要求
   
-### 返回值
+#### 返回值
 - string 类型，返回新添加数据项的 ID
 
-### 实例
+#### 实例
 以下实例展示了 AddDataItem 的使用方法：
 ```python
 data_type = "光伏"
@@ -111,11 +109,11 @@ List of 光伏 items(add): [
 
 
 
-## 3. UpdateDataItem()
-### 描述
+### 3. UpdateDataItem()
+#### 描述
 使用 UpdateDataItem() 方法，向数据库中更新数据项。
 
-### 语法
+#### 语法
 ```python
 UpdateDataItem(ID, data)
 ```
@@ -123,10 +121,10 @@ UpdateDataItem(ID, data)
 - `ID`：：string 类型，代表数据项的标识符，可以在所有类型的数据项中实现唯一标识
 - `data`：dict 类型，表示添加的数据内容，其数据结构应满足对应数据项的结构要求
   
-### 返回值
+#### 返回值
 - bool 类型，返回 True 更新成功
 
-### 实例
+#### 实例
 以下实例展示了 AddDataItem 的使用方法：
 ```python
 items_list[1]['manufacturer'] = 'PV720'
@@ -163,21 +161,21 @@ List of 光伏 items(update): [
 
 
 
-## 4. DeleteDataItem()
-### 描述
+### 4. DeleteDataItem()
+#### 描述
 使用 DeleteDataItem(ID) 方法，通过ID在数据库中删除数据项。
 
-### 语法
+#### 语法
 ```python
 DeleteDataItem(ID)
 ```
 参数说明:
 - `ID`：：string 类型，代表数据项的标识符，可以在所有类型的数据项中实现唯一标识
   
-### 返回值
+#### 返回值
 - bool 类型，删除是否成功，如果 ID 错误，抛出异常
 
-### 实例
+#### 实例
 以下实例展示了 DeleteDataItem 的使用方法：
 ```python
 trueDelete = iesProject.dataManageModel.DeleteDataItem(items_list[-1]['id'])
@@ -207,11 +205,11 @@ List of 光伏 items(delete): [
 
 
 
-## 5. SetProjectPosition()
-### 描述
+### 5. SetProjectPosition()
+#### 描述
 设定项目经纬度位置坐标。
 
-### 语法
+#### 语法
 ```python
 SetProjectPosition(longitude, latitude)
 ```
@@ -220,7 +218,7 @@ SetProjectPosition(longitude, latitude)
 - `latitude`：float 类型，表示纬度
   
 
-### 实例
+#### 实例
 以下实例展示了 SetProjectPosition 的使用方法：
 ```
 longitude, latitude = 120.5, 33.0
@@ -228,11 +226,11 @@ iesProject.dataManageModel.SetProjectPosition(longitude, latitude)
 ```
 
 
-## 6. GetAtmosData()
-### 描述
+### 6. GetAtmosData()
+#### 描述
 使用 GetAtmosData(startDate, endDate) 方法，获取指定时间范围内的气象数据。
 
-### 语法
+#### 语法
 ```python
 GetAtmosData(startDate, endDate)
 ```
@@ -240,10 +238,10 @@ GetAtmosData(startDate, endDate)
 - `startDate`：dateTime 类型，表示开始时间
 - `endDate`：dateTime 类型，表示结束时间
   
-### 返回值
+#### 返回值
 - list 类型，为源数据的引⽤，返回当前项⽬位置对应时间范围内的⽓象数据序列，每个元素⽤字典进⾏表⽰，字典的 key 即区分不同的⽓象数据项（如风速、太阳辐照等）以及标识当前时间点。
 
-### 实例
+#### 实例
 以下实例展示了 GetAtmosData 的使用方法：
 ```python
 startDate = "2021-01-01"

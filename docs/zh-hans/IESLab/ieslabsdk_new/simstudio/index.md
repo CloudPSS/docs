@@ -3,11 +3,10 @@ title: SimStudio 工作台相关接口
 order: 20
 ---
 
-## 1 建模仿真平台
 ## ==目前该模块 `SimStudio` 中的计算方案主要包括综合能源仿真和综合能源运⾏优化两种，这两种方案的算例操作、启动计算的接口与现有 `SimStudio` 相关 `SDK` 保持⼀致，主要实现 `result` 类的相关接口（两种计算方案可共用一个 `result` 类）==
 
-
-##  1.0 准备工作
+## 1 建模仿真平台
+###  1.0 准备工作
 :::info
 在进行对各个接口的具体操作前，您需要先获取指定的项目。
 :::
@@ -29,11 +28,11 @@ if __name__ == '__main__':
 ```
 
 
-## 1.1 getPlotData()
-### 描述
+### 1.1 getPlotData()
+#### 描述
 对 `result` 实例，获取时序的曲线数据。
 
-### 语法
+#### 语法
 获取元件 `ID` 为` compID` 的元件，对应标签为 `labelName` 、图例名称为 `traceName` 的 `plot` 数据的第 `index` 项：
 ```python
 getPlotData(self, compID, labelName, traceName=‘all’, index=-1)
@@ -44,10 +43,10 @@ getPlotData(self, compID, labelName, traceName=‘all’, index=-1)
 - `traceName`： string类型，代表 `plot `曲线对应分组下的图例名称，当为 `all` 时，返回所有图例的数据
 - `index`：int类型，代表对应图例时序数据中的第 `index` 项，当⼩于0时，返回该图例所有的时序数据
   
-### 返回值
+#### 返回值
 - dict 类型
 
-### 实例
+#### 实例
 以下实例展示了 getPlotData 的使用方法：
 ```python
     # 仿真计算测试
@@ -77,12 +76,12 @@ Plot data:  defaultdict(<function IESResult.getPlotData.<locals>.<lambda> at 0x0
 
 
 
-# 2 规划设计平台 
+## 2 规划设计平台 
 目前该模块 `SimStudio` 中的计算方案为典型日生成，对该计算方案的 `result` 类新增的接口包括
 
 
-##  2.0 准备工作
-### 描述
+###  2.0 准备工作
+#### 描述
 在进行对各个接口的具体操作前，您需要先获取指定的项目, 开始计算并获得结果。
 
 ```python
@@ -108,20 +107,20 @@ if __name__ == '__main__':
 ```
 
 
-## 2.1 GetTypicalDay()
-### 描述
+### 2.1 GetTypicalDay()
+#### 描述
 对 `result` 实例，获取所有典型日的数据项。
 
-### 语法
+#### 语法
 获取当前 `result` 的典型日:
 ```python
 GetTypicalDay()
 ```
   
-### 返回值
+#### 返回值
 - list类型，代表所有典型日数据项
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalDay 的使用方法：
 ```python
     typical = iesplan_result.GetTypical()
@@ -133,20 +132,20 @@ GetTypicalDay()
 ```
 
 
-## 2.2 GetTypicalDayNum()
-### 描述
+### 2.2 GetTypicalDayNum()
+#### 描述
 对 `result` 实例，获取典型日的数量。
 
-### 语法
+#### 语法
 获取当前 `result` 的典型日数量:
 ```python
 GetTypicalDayNum()
 ```
   
-### 返回值
+#### 返回值
 - int 类型，代表典型日数量
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalDayNum 的使用方法：
 ```python
     typical_num = iesplan_result.GetTypicalDayNum()
@@ -159,11 +158,11 @@ GetTypicalDayNum()
 
 
 
-## 2.3 GetTypicalDayInfo()
-### 描述
+### 2.3 GetTypicalDayInfo()
+#### 描述
 对 `result` 实例，获取指定典型日的基础信息。
 
-### 语法
+#### 语法
 获取 `dayID` 对应典型日的基础信息:
 ```python
 GetTypicalDayInfo(dayID)
@@ -171,10 +170,10 @@ GetTypicalDayInfo(dayID)
  参数说明:
 - `dayID`： int类型，表示典型日的 `ID` ，数值位于`0~典型日数量`之间
 
-### 返回值
+#### 返回值
 - dict 类型，代表典型日的基础信息，包括典型日所代表的日期范围、典型日的名称等
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalDayInfo 的使用方法：
 ```python
     typical_info = iesplan_result.GetTypicalDayInfo(0)
@@ -186,11 +185,11 @@ GetTypicalDayInfo(dayID)
 ```
 
 
-## 2.4 GetTypicalDayCurve()
-### 描述
+### 2.4 GetTypicalDayCurve()
+#### 描述
 对 `result` 实例，获取指定典型日下指定参数类型的时序曲线。
 
-### 语法
+#### 语法
 获取 `dayID` 对应典型日下 `dataType` 参数的时序曲线:
 ```python
 GetTypicalDayCurve(dayID, dataType)
@@ -201,10 +200,10 @@ print(typical_curve)
 - `dataType`：`enum` 类型，标识辐照强度、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
 
   
-### 返回值
+#### 返回值
 -  list 类型，代表以1h为时间间隔的该参数的日内时序曲线
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalDayCurve 的使用方法：
 ```python
     typical_curve = iesplan_result.GetTypicalDayCurve(0, '辐照强度')
@@ -215,20 +214,20 @@ print(typical_curve)
 ```
 
 
-## 2.5 GetTypicalMonth()
-### 描述
+### 2.5 GetTypicalMonth()
+#### 描述
 对 `result` 实例，获取所有月份的典型日数据项。
 
-### 语法
+#### 语法
 获取所有月份的典型日数据:
 ```python
 GetTypicalMonth()
 ```
   
-### 返回值
+#### 返回值
 - list 类型，代表各月各类型的典型日数据
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalMonth 的使用方法：
 ```python
     typical_month = iesplan_result.GetTypicalMonth()
@@ -241,11 +240,11 @@ GetTypicalMonth()
 
 
 
-## 2.6 GetTypicalMonthNum()
-### 描述
+### 2.6 GetTypicalMonthNum()
+#### 描述
 对 `result` 实例，获取指定月份的典型日数量。
 
-### 语法
+#### 语法
 获取第 `monthID` 月各类型的典型日数据:
 ```python
 GetTypicalMonthNum(monthID)
@@ -254,10 +253,10 @@ GetTypicalMonthNum(monthID)
 - `monthID`：int类型，表示典型月的 `ID`，数值位于 `1-12` 之间
 
   
-### 返回值
+#### 返回值
 -  dict 类型，代表第 `monthID` 月各类型的典型日数据
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalMonthNum 的使用方法：
 ```python
     month = input('请指定月份：')
@@ -272,11 +271,11 @@ GetTypicalMonthNum(monthID)
 
 
 
-## 2.7 GetTypicalMonthCurve()
-### 描述
+### 2.7 GetTypicalMonthCurve()
+#### 描述
 对 `result` 实例，获取指定月份典型日下指定参数类型的时序曲线。
 
-### 语法
+#### 语法
 获取第 `monthID` 月典型日下 `dataType` 参数的时序曲线:
 ```python
 GetTypicalMonthCurve(monthID, dataType)
@@ -286,10 +285,10 @@ GetTypicalMonthCurve(monthID, dataType)
 - `dataType`：`enum` 类型，标识辐照强度、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
 
   
-### 返回值
+#### 返回值
 -  list类型，代表以1h为时间间隔的该参数的典型日内时序曲线
 
-### 实例
+#### 实例
 以下实例展示了 GetTypicalMonthCurve 的使用方法：
 ```python
     month = input('请指定月份：')
