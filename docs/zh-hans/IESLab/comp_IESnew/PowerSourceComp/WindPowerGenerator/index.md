@@ -49,6 +49,7 @@ symbol: -WindPowerGenerator
 - 切入风速(m/s)
 - 切出风速(m/s)
 - 轮毂高度(m)
+- 功率因数
 
 
 **风速功率模型为厂家功率曲线时**
