@@ -1,8 +1,9 @@
 ---
 title: 综合能源系统元件
-order: 100
+order: 150
 ---
-* 返回 [元件库](../index.md)
+
+返回 [综合能源系统](../index.md)
   
 * [电源元件](./PowerSourceComp/index.md)
   
