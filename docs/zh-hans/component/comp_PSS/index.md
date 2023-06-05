@@ -2,7 +2,6 @@
 title: 电磁暂态仿真
 order: 200
 ---
-* 返回 [元件库](../index.md)
 
 * [输出元件](./comp_PSSOutput/index.md)
   

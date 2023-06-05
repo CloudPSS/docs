@@ -2,7 +2,7 @@
 title: 综合能源系统建模仿真平台简介
 type: guide
 author: jack
-order: 101
+order: 10
 ---
 
 ## 平台介绍
