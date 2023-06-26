@@ -3,7 +3,7 @@ title: DSLab SDK 介绍
 order: 300
 ---
 
-返回 [综合能源系统](../index.md)
+返回 [源网荷储协调仿真平台](../index.md)
 
 - [数据管理模块相关接口](./data/index.md)
 - [负荷预测模块相关接口](./load_prediction/index.md)
