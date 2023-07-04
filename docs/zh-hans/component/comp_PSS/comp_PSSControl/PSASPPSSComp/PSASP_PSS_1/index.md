@@ -1,8 +1,22 @@
+---
+title: PSASP_PSS_1
+author:
+author_email:
 
+date: 2023/07/03 15:00:00
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4002
+order: 100
 
+classname: _PSASP_PSS_1
+symbol: PSASP_PSS_1
+---
 
-> &nbsp;
+## 基本描述
+> **该元件用以建模电力系统稳定器**
+
 
 ## 参数列表
 
@@ -40,6 +54,11 @@ PSS模型（PSASP_PSS_1）
 | Pe |  | 输入 | 1 x 1 |
 | Vs |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的1型PSS模型框图如下所示，输入信号根据需要可取转速偏差、功率偏差、端电压偏差。模型采用两级移相结构。
 
+![1型PSS框图](./PSASP_PSS_1.png)
+
+## 相关元件
 
 

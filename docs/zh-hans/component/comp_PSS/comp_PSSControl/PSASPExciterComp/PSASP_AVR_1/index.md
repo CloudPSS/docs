@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4003
@@ -15,6 +15,7 @@ symbol: PSASP_AVR_1
 ---
 
 ## 基本描述
+> **该元件用以建模励磁调压器模型**
 
 ## 参数列表
 
@@ -49,6 +50,11 @@ PSASP_AVR_1（常规励磁调节系统）参数
 | Vref0 |  | 输出 | 1 x 1 |
 | Ef |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的1型励磁调节器框图如下所示，其中$V_{Amax} = E_{fdmax}$, $V_{Amin} = -E_{fdmax}$。
 
+![等效图](./PSASP_AVR_1.png)
+
+## 相关元件
 
 

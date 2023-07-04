@@ -1,8 +1,21 @@
+---
+title: PSASP_PSS_2
+author:
+author_email:
 
+date: 2023/07/03 15:00:00
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4002
+order: 100
 
+classname: _PSASP_PSS_2
+symbol: PSASP_PSS_2
+---
 
-> &nbsp;
+## 基本描述
+> **该元件用以建模电力系统稳定器**
 
 ## 参数列表
 
@@ -43,6 +56,11 @@ PSS模型（PSASP_PSS_2）
 | Pe |  | 输入 | 1 x 1 |
 | Vs |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的2型PSS模型框图如下所示，输入信号根据需要可取转速偏差、电磁功率偏差、机械功率偏差。与 1 型 PSS 相比，2 型 PSS 增加了 1 级隔直环节和 1 级移相环节，另外体现了测量环节的惯性延迟作用。
 
+![2型PSS框图](./PSASP_PSS_2.png)
+
+## 相关元件
 
 

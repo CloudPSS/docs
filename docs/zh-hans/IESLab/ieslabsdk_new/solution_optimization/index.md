@@ -98,7 +98,7 @@ SetOptimizationInfo(optType)
 #### 语法
 获取当前 `result` 实例对应的优化方案数量:
 ```python
-GetTypicalDayInfo(dayID)
+GetPlanNum()
 ```
 #### 返回值
 -  int 类型，代表优化方案的数量

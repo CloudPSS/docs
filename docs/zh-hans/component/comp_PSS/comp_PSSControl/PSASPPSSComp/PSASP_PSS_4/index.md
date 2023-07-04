@@ -1,8 +1,18 @@
+---
+title: PSASP_PSS_4
+author:
+author_email:
 
+date: 2023/07/03 15:00:00
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4002
+order: 100
 
-
-> &nbsp;
+classname: _PSASP_PSS_4
+symbol: PSASP_PSS_4
+---
 
 ## 参数列表
 
@@ -59,6 +69,12 @@ PSS模型（SI+）
 | ENAB |  | 输入 | 1 x 1 |
 | Vs |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的4型PSS模型框图如下所示，输入信号根据需要可取转速偏差、电磁功率偏差。
+
+![4型PSS框图](./PSASP_PSS_4.png)
+
+## 相关元件
 
 
 

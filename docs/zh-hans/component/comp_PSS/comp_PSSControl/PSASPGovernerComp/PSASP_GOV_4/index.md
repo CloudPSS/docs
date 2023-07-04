@@ -1,8 +1,21 @@
+---
+title: PSASP_GOV_4
+author:
+author_email:
 
+date: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4003
+order: 103
 
+classname: _PSASP_GOV_4
+symbol: PSASP_GOV_4
+---
 
-> &nbsp;
+## 基本描述
+> **该元件用以建模适用于汽轮机电气液压式调速系统模型**
 
 ## 参数列表
 
@@ -119,6 +132,17 @@
 | F |  | 输入 | 1 x 1 |
 | Pm |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的4型调速器框图如下所示，由电液调节系统、电液伺服机构、汽轮机模型、主汽压力变化模型组成。
 
+![电液调节系统](./PSASP_GOV_4_1.png)
+
+![电液伺服机构](./PSASP_GOV_4_2.png)
+
+![汽轮机模型](./PSASP_GOV_4_3.png)
+
+![主汽压力变化模型](./PSASP_GOV_4_4.png)
+
+## 相关元件
 
 
