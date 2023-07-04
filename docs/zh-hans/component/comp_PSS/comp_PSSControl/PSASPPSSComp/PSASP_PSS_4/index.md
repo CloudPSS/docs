@@ -14,6 +14,9 @@ classname: _PSASP_PSS_4
 symbol: PSASP_PSS_4
 ---
 
+## 基本描述
+> **该元件用以建模电力系统稳定器**
+
 ## 参数列表
 
 ### PSS模型（SI）
