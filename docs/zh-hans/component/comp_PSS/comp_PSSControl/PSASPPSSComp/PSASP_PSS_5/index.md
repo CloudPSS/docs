@@ -14,7 +14,8 @@ classname: _PSASP_PSS_5
 symbol: PSASP_PSS_5
 ---
 
-
+## 基本描述
+> **该元件用以建模电力系统稳定器**
 
 ## 参数列表
 
