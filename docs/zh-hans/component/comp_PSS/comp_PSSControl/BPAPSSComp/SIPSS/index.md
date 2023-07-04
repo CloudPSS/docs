@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4002
@@ -15,8 +15,7 @@ symbol: SI
 ---
 
 ## 基本描述
-
-[^_^]:![](./SIS.png)
+> **该元件用以建模电力系统稳定器模型**
 
 ## 参数列表
 ### PSS模型（SI）

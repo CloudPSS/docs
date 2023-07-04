@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4003
@@ -15,6 +15,7 @@ symbol: PSASP_AVR_2
 ---
 
 ## 基本描述
+> **该元件用以建模励磁调压器模型**
 
 ## 参数列表
 
@@ -57,6 +58,13 @@ PSASP_AVR_2（自并励和自复励快速励磁系统）
 | Vref0 |  | 输出 | 1 x 1 |
 | Ef |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的2型励磁调节器框图如下所示，其中:  
+$$\~{E}_{fdmax} = \frac{1}{V_{t0}V_{ta}}|K_{pt}\.{V_t} + jK_{it}\.{I}_t|E_{fdmax} - K_eI_{fd}$$ 
+$$\~{E}_{fdmin} = \frac{1}{V_{t0}V_{tb}}|K_{pt}\.{V_t} + jK_{it}\.{I}_t|E_{fdmin} - K_eI_{fd}$$
 
+![等效图](./PSASP_AVR_2.png)
+
+## 相关元件
 
 

@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4001
@@ -15,8 +15,7 @@ symbol: GA
 ---
 
 ## 基本描述
-
-[comment]: ![](./GA_Schematic.PNG)
+> **该元件用以建模电液伺服系统模型**
 
 
 ## 参数列表

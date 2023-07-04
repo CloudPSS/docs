@@ -1,26 +1,27 @@
 ---
-title: PSS（SI/SP/SS/SG）
+title: PSS（SF/SP/SS/SG）
 author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4002
 order: 100
 
-classname: _
-symbol: 
+classname: _SF_P_S_GPSS
+symbol: SF_P_S_GPSS
 ---
 
 ## 基本描述
+> **该元件用以建模电力系统稳定器模型**
 
 ## 参数列表
 
-### PSS模型（SI/SP/SS/SG）
+### PSS模型（SF/SP/SS/SG）
 
-PSS模型（SI/SP/SS/SG）
+PSS模型（SF/SP/SS/SG）
 
 
 | 参数名 | 单位 | 描述 | 类型 | 备注 |
@@ -55,6 +56,11 @@ PSS模型（SI/SP/SS/SG）
 | ENAB |  | 输入 | 1 x 1 |
 | Vs |  | 输出 | 1 x 1 |
 
+## 使用说明
+BPA的PSS模型（SF/SP/SS/SG）传递函数框图如下所示。
 
+![等效图](./PSS.png)
+
+## 相关元件
 
 

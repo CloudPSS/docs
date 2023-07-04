@@ -100,7 +100,7 @@ if __name__ == '__main__':
 #### 描述
 获取指定优化方案的特定类型的财务评估表格。
 #### 语法
-获取当前 `result` 实例对应的优化方案数量:
+获取 `planID` 方案 `resultType` 类型的财务评估结果:
 ```python
 GetFinancialResult(planID, resultType)
 ```

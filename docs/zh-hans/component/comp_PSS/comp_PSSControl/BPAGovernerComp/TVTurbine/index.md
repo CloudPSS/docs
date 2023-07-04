@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4001
@@ -15,6 +15,7 @@ symbol: TV
 ---
 
 ## 基本描述
+> **该元件用以建模原动机模型**
 
 ## 参数列表
 
@@ -46,6 +47,11 @@ symbol: TV
 | L2N |  | 输入 | 1 x 1 |
 | PM |  | 输出 | 1 x 1 |
 
+## 使用说明
+BPA的TV原动机控制框图如下所示。
 
+![等效图](./TV.png)
+
+## 相关元件
 
 

@@ -1,8 +1,21 @@
+---
+title: PSASP_GOV_1
+author:
+author_email:
 
+date: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4003
+order: 103
 
+classname: _PSASP_GOV_1
+symbol: PSASP_GOV_1
+---
 
-> &nbsp;
+## 基本描述
+> **该元件用以建模适用于水、火电机组的通用调速器模型**
 
 ## 参数列表
 
@@ -41,6 +54,11 @@ PSASP_Gov1：水、火电机组均适用的通用调速器模型
 | L2N |  | 输入 | 1 x 1 |
 | Pm |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的1型调速器框图如下所示。
 
+![1型调速器框图](./PSASP_GOV_1.png)
+
+## 相关元件
 
 

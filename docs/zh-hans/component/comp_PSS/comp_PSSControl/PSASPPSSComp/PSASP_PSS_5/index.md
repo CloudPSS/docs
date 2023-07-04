@@ -1,8 +1,20 @@
+---
+title: PSASP_PSS_5
+author:
+author_email:
+
+date: 2023/07/03 15:00:00
+updated: 2023/07/03 15:00:00
+
+type: components
+category: -4002
+order: 100
+
+classname: _PSASP_PSS_5
+symbol: PSASP_PSS_5
+---
 
 
-
-
-> &nbsp;
 
 ## 参数列表
 
@@ -38,6 +50,11 @@ PSS模型（PSASP_PSS_5）
 | ENAB |  | 输入 | 1 x 1 |
 | Vs |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的5型PSS模型框图如下所示,本模型的输入信号取为功率偏差信号。
 
+![5型PSS框图](./PSASP_PSS_5.png)
+
+## 相关元件
 
 

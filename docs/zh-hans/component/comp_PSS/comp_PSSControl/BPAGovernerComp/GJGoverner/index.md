@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4001
@@ -15,8 +15,7 @@ symbol: GJ
 ---
 
 ## 基本描述
-
-[^_^]: ![](./GJ_Schematic.png)
+> **该元件用以建模调节系统模型**
 
 ## 参数列表
 ### 调节系统模型2（GJ）
@@ -62,6 +61,7 @@ symbol: GJ
 
 ## 使用说明
 BPA的GJ调速器控制框图如下所示。
+
 ![等效图](./GJ.png)
 
 ## 相关元件

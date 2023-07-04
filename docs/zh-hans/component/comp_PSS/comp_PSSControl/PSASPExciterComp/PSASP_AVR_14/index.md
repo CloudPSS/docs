@@ -4,7 +4,7 @@ author:
 author_email:
 
 date: 2019/12/24 10:26:16
-updated: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
 type: components
 category: -4003
@@ -15,6 +15,7 @@ symbol: PSASP_AVR_14
 ---
 
 ## 基本描述
+> **该元件用以建模励磁调压器模型**
 
 ## 参数列表
 
@@ -75,6 +76,11 @@ Monitoring
 | Vref0 |  | 输出 | 1 x 1 |
 | Ef |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的14型励磁调节器框图如下所示，用以模型自并励励磁系统模型。
 
+![14型励磁调节器框图](./PSASP_AVR_14.png)
+
+## 相关元件
 
 

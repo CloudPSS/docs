@@ -1,8 +1,21 @@
+---
+title: PSASP_GOV_7
+author:
+author_email:
 
+date: 2019/12/24 10:26:16
+updated: 2023/07/03 15:00:00
 
+type: components
+category: -4003
+order: 103
 
+classname: _PSASP_GOV_7
+symbol: PSASP_GOV_7
+---
 
-> &nbsp;
+## 基本描述
+> **该元件用以建模适用于水轮机调速器模型**
 
 ## 参数列表
 
@@ -112,6 +125,15 @@
 | L2N |  | 输入 | 1 x 1 |
 | Pm |  | 输出 | 1 x 1 |
 
+## 使用说明
+PSASP的7型调速器框图如下所示，由调节系统模型、液压系统模型以及水轮机模型组成。
 
+![调节系统模型](./PSASP_GOV_7_1.png)
+
+![液压系统模型](./PSASP_GOV_7_2.png)
+
+![水轮机模型](./PSASP_GOV_7_3.png)
+
+## 相关元件
 
 
