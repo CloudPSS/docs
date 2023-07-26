@@ -10,7 +10,5 @@ module.exports = function (config) {
         test: /\.ya?ml$/,
         use: 'yaml-loader',
     });
-    _.set(config, 'resolve.fallback.path', require.resolve('path-browserify'));
-    _.set(config, 'resolve.fallback.fs', false);
     return config;
 };

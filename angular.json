@@ -54,13 +54,8 @@
               "src/manifest.webmanifest",
               {
                 "glob": "**/*",
-                "input": "node_modules/monaco-editor",
-                "output": "./assets/amd/monaco-editor/"
-              },
-              {
-                "glob": "**/*",
-                "input": "node_modules/monaco-markdown/umd/",
-                "output": "./assets/amd/monaco-markdown/"
+                "input": "docs",
+                "output": "./content/"
               }
             ],
             "customWebpackConfig": {

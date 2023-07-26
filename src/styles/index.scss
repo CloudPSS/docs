@@ -1,13 +1,12 @@
 @use '@angular/material' as mat;
-@import '~sanitize.css';
-@import '~sanitize.css/forms';
-@import '~sanitize.css/typography';
+@import 'sanitize.css';
+@import 'sanitize.css/forms';
+@import 'sanitize.css/typography';
 
 @import './config';
 @import './markdown';
 
-$material-icons-font-path: '~material-icons/iconfont/';
-@import '~material-icons/iconfont/material-icons.scss';
+@import 'material-icons/iconfont/material-icons.scss';
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -29,9 +28,6 @@ $material-icons-font-path: '~material-icons/iconfont/';
 :root {
   @include css-map($docs-theme, 'theme');
 }
-@media print {
-  @import '~prismjs/themes/prism-coy';
-}
 
 @media screen {
   :root {
@@ -41,15 +37,17 @@ $material-icons-font-path: '~material-icons/iconfont/';
     &[theme='dark'] {
       @include apply($dark-theme);
     }
-    &[color-scheme='dark'] {
-      @import '~prismjs/themes/prism-tomorrow';
-    }
-    &[color-scheme='light'] {
-      @import '~prismjs/themes/prism-coy';
-    }
   }
 
   @import './scrollbar';
+
+  [color-scheme='light'] {
+    color-scheme: light;
+  }
+
+  [color-scheme='dark'] {
+    color-scheme: dark;
+  }
 }
 
 .print-only {

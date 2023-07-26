@@ -17,7 +17,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatTreeModule } from '@angular/material/tree';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { MonacoEditorModule } from 'ngx-monaco-editor';
 
 import * as constants from './constants';
 import { AppComponent } from './root';
@@ -32,7 +31,6 @@ import { NavbarComponent } from './components/navbar';
 import { NavListComponent } from './components/nav-list';
 import { NavBaseComponent } from './components/nav-base';
 import { TocComponent } from './components/toc';
-import { EditorComponent } from './pages/editor';
 
 /**
  * 主模块
@@ -45,7 +43,6 @@ import { EditorComponent } from './pages/editor';
         NavbarComponent,
         NavListComponent,
         DocumentComponent,
-        EditorComponent,
         ErrorComponent,
         TocComponent,
     ],
@@ -62,21 +59,6 @@ import { EditorComponent } from './pages/editor';
                 useClass: WebpackTranslateLoader,
             },
             defaultLanguage: WebpackTranslateLoader.defaultLang,
-        }),
-
-        MonacoEditorModule.forRoot({
-            baseUrl: './assets/amd',
-            onMonacoLoad: () => {
-                (
-                    window.require as unknown as {
-                        config: (c: unknown) => void;
-                    }
-                ).config({
-                    paths: {
-                        MonacoMarkdown: './assets/amd/monaco-markdown/monaco-markdown.min.js',
-                    },
-                });
-            },
         }),
 
         MatAutocompleteModule,

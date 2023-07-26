@@ -88,10 +88,16 @@
     caption {
       color: $primary-color;
     }
-    pre {
+
+    cwe-highlight {
       background-color: $codebg;
+
       &::before {
         color: $primary-color;
+      }
+
+      &::after {
+        color: var(--theme-foreground-secondary-text);
       }
     }
 
@@ -297,34 +303,20 @@
       }
     }
 
-    md-math {
-      user-select: all;
+    cwe-math {
       &[mode='display'] {
-        display: block;
-        text-align: center;
         page-break-before: avoid;
         page-break-inside: avoid;
-        overflow: auto;
-        margin: 0.8em 0;
       }
       &[mode='inline'] {
-        display: inline;
         &:before,
         &:after {
           content: ' ';
           user-select: none;
         }
       }
-      &[language='tex'] {
-        display: inline;
-        .katex-display,
-        .katex {
-          user-select: all;
-        }
-      }
-      .error {
-        color: var(--theme-warn-text);
-      }
+
+      --cwe-math-error-color: var(--theme-warn-text);
     }
 
     code:not([is]),
@@ -408,43 +400,23 @@
       page-break-before: avoid;
     }
 
-    pre {
-      padding: 2em 0.5em 1em;
+    cwe-highlight {
+      padding: 0.5em;
       margin: 1.2em 0;
       border-radius: 4px;
       position: relative;
       contain: content;
-      &[title]::before {
-        content: attr(title);
-      }
+      line-height: 1.5;
+      font-size: $body-font-size;
+
       @media print {
         background-color: white !important;
+        border: $border 1px solid;
       }
-    }
-    code[is='md-highlight'] {
-      font-size: $body-font-size;
-      @media print {
-        white-space: pre-wrap;
-      }
-      &[language]::before {
-        content: attr(language);
-        text-transform: uppercase;
-        color: var(--theme-foreground-secondary-text);
-        text-align: right;
-      }
-    }
-    pre::before,
-    code[is='md-highlight']::before {
-      font-size: 0.8em;
-      position: sticky;
-      display: block;
-      left: 0;
-      height: 0;
-      transform: translateY(-2em);
     }
 
-    pre-md-mermaid,
-    pre-md-chart {
+    cwe-mermaid,
+    cwe-chart {
       display: block;
       overflow-x: auto;
       position: relative;
@@ -461,36 +433,12 @@
     }
 
     // embed videos
-    .block-embed {
-      display: flex;
+    cwe-embed-media {
       width: 100%;
       max-width: 720px;
       user-select: none;
       margin: 1em auto;
       page-break-inside: avoid;
-      @media screen {
-        &::before {
-          display: block;
-          padding-bottom: 60%;
-          content: '';
-        }
-      }
-      > * {
-        flex: auto;
-      }
-      .block-embed-hint {
-        display: none;
-      }
-
-      @media print {
-        > * {
-          display: none;
-        }
-        .block-embed-hint {
-          display: block;
-          text-decoration: $theme underline;
-        }
-      }
     }
 
     dl,
