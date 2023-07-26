@@ -9,5 +9,8 @@ import { ActivatedRoute, Router } from '@angular/router';
     styleUrls: ['./index.scss'],
 })
 export class ErrorComponent {
-    constructor(readonly route: ActivatedRoute, readonly router: Router) {}
+    constructor(
+        readonly route: ActivatedRoute,
+        readonly router: Router,
+    ) {}
 }

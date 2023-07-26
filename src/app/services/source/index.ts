@@ -25,7 +25,10 @@ type FindDocumentResult =
     providedIn: 'root',
 })
 export class SourceService {
-    constructor(private readonly http: HttpClient, private readonly translate: TranslateService) {}
+    constructor(
+        private readonly http: HttpClient,
+        private readonly translate: TranslateService,
+    ) {}
 
     /** 当前版本 */
     readonly current = new BehaviorSubject<VersionInfo>({
