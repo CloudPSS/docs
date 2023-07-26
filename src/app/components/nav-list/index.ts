@@ -31,12 +31,15 @@ interface TreeItem {
     styleUrls: ['./index.scss'],
 })
 export class NavListComponent extends NavBaseComponent implements AfterViewInit, OnInit, OnDestroy {
-    constructor(readonly source: SourceService, readonly global: GlobalService) {
+    constructor(
+        readonly source: SourceService,
+        readonly global: GlobalService,
+    ) {
         super();
     }
 
     /** 当前分类 */
-    private _category = new BehaviorSubject<string>('');
+    private readonly _category = new BehaviorSubject<string>('');
     /** 当前分类 */
     @Input() get category(): string {
         return this._category.value;
@@ -45,7 +48,7 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
         this._category.next(value);
     }
     /** 当前文档 */
-    private _currentRawPath = new BehaviorSubject<string | undefined>(undefined);
+    private readonly _currentRawPath = new BehaviorSubject<string | undefined>(undefined);
     /** 当前文档 */
     @Input() get currentRawPath(): string | undefined {
         return this._currentRawPath.value;
@@ -55,7 +58,7 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
     }
 
     /** 是否展示分类 */
-    private _showCategories = new BehaviorSubject<boolean>(false);
+    private readonly _showCategories = new BehaviorSubject<boolean>(false);
     /** 是否展示分类 */
     @Input() get showCategories(): boolean {
         return this._showCategories.value;
@@ -108,7 +111,7 @@ export class NavListComponent extends NavBaseComponent implements AfterViewInit,
     @ViewChildren('item', { read: ElementRef }) items!: QueryList<ElementRef<HTMLElement>>;
 
     /** 聚焦选中元素 */
-    private _focus = new Subject<void>();
+    private readonly _focus = new Subject<void>();
 
     /** 订阅事件 */
     private readonly subscriptions: Subscription[] = [];
