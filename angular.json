@@ -90,6 +90,7 @@
           "options": {
             "browserTarget": "docs:build",
             "host": "0.0.0.0",
+            "disableHostCheck": true,
             "port": 4000
           }
         }
