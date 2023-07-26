@@ -1,9 +1,8 @@
-const fs = require('fs-extra');
-const { resolve } = require('path');
+import { copyFile } from 'fs-extra';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-async function main() {
-    await require('./build-manifest');
-    await fs.copyFile(resolve(__dirname, '../dist/index.html'), resolve(__dirname, '../dist/404.html'));
-}
+await import('./build-manifest.js');
 
-module.exports = main();
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+await copyFile(path.resolve(__dirname, '../dist/index.html'), path.resolve(__dirname, '../dist/404.html'));
