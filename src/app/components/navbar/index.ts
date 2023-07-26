@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
-import { MatInput } from '@angular/material/input';
+import { MatLegacyInput as MatInput } from '@angular/material/legacy-input';
 import { NgModel } from '@angular/forms';
 import { SourceService } from '@/services/source';
 import { GlobalService } from '@/services/global';
@@ -30,7 +30,10 @@ type Candidate = {
 };
 /** 搜索 */
 class Searcher {
-    constructor(readonly documents: DocumentItem[], readonly keyword: string) {
+    constructor(
+        readonly documents: DocumentItem[],
+        readonly keyword: string,
+    ) {
         this.keywordRe = new RegExp(escapeRE(escapeHtml(this.keyword)), 'g');
     }
     private readonly keywordRe;
@@ -113,7 +116,10 @@ class Searcher {
     styleUrls: ['./index.scss'],
 })
 export class NavbarComponent extends NavBaseComponent implements AfterViewInit {
-    constructor(readonly source: SourceService, readonly global: GlobalService) {
+    constructor(
+        readonly source: SourceService,
+        readonly global: GlobalService,
+    ) {
         super();
     }
     @ViewChild('searchInput') readonly searchInput!: MatInput;
