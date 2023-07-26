@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/CloudPSS/Docs"
   },
+  "type": "module",
   "scripts": {
     "start": "yarn prebuild && ng serve",
     "build:main": "yarn build --configuration production",
