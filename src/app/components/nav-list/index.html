@@ -1,4 +1,4 @@
-<mat-nav-list>
+<mat-nav-list tabindex="0" (focus)="focus()">
   <a
     mat-list-item
     *ngFor="let node of treeControl.dataNodes"
