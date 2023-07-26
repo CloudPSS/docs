@@ -5,6 +5,8 @@ env:
   es2020: true
   browser: true
   commonjs: true
+rules:
+  unicorn/prefer-event-target: 0
 overrides:
   - extends:
       - plugin:@angular-eslint/template/recommended

@@ -11,7 +11,7 @@ export const environment = {
  */
 export function docUrls(ref: string): string[] {
     void ref;
-    return [`${location.protocol}//${location.hostname}:4201/docs/`];
+    return [new URL('content/', document.baseURI).href];
 }
 
 /*

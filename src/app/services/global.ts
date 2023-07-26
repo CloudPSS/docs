@@ -37,7 +37,7 @@ export class GlobalService {
     private readonly titleSuffix = this.translateService.stream('title') as Observable<string>;
 
     /** 标题 */
-    private titleSource = new BehaviorSubject('');
+    private readonly titleSource = new BehaviorSubject('');
     /** 主题 */
     readonly theme = this.storage.watch<Theme>(
         'theme',
@@ -127,9 +127,10 @@ export class GlobalService {
                 }
             });
         const available = Object.fromEntries(
-            Object.entries(WebpackTranslateLoader.langs)
-                .map(([k, v]) => [[k, k] as const, ...(v.alias ?? []).map((v) => [v, k] as const)])
-                .flat(1),
+            Object.entries(WebpackTranslateLoader.langs).flatMap(([k, v]) => [
+                [k, k] as const,
+                ...(v.alias ?? []).map((v) => [v, k] as const),
+            ]),
         );
         for (const candidate of candidates) {
             if (candidate in available) {

@@ -84,7 +84,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
                 const hash = decodeURIComponent(location.hash.slice(1));
                 doc.innerHTML = '';
                 // 将清空 parsed 的内容
-                doc.appendChild(parsed.content);
+                doc.append(parsed.content);
                 const headers = Array.from(
                     doc.querySelectorAll<HTMLHeadingElement>(
                         'article > h1,article > h2,article > h3,article > h4,article > h5,article > h6',
@@ -92,7 +92,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
                 ).map((h) => {
                     return {
                         id: h.id,
-                        title: h.innerText,
+                        title: h.textContent ?? '',
                         level: Number.parseInt(h.tagName.slice(1)),
                         element: h,
                     };
@@ -118,6 +118,7 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             }
             return true;
         }
+        // eslint-disable-next-line unicorn/prefer-query-selector
         const target = document.getElementById(id);
         if (!target) return false;
         target.classList.add('target');
