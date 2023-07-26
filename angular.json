@@ -105,5 +105,13 @@
       "sourceRoot": "src"
     }
   },
-  "version": 1
+  "version": 1,
+  "schematics": {
+    "@angular-eslint/schematics:application": {
+      "setParserOptionsProject": true
+    },
+    "@angular-eslint/schematics:library": {
+      "setParserOptionsProject": true
+    }
+  }
 }
