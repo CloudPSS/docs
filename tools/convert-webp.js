@@ -52,7 +52,7 @@ function getLibWebpUrl() {
  */
 async function prepareLibWebp() {
     const url = getLibWebpUrl();
-    const folder = path.basename(url, path.extname(url));
+    const folder = path.basename(url).replace(/\.zip|\.tar\.gz$/, '');
     const bin = path.resolve('vendor', folder, 'bin');
     console.log(bin);
     if ((await execa(`${bin}/webpinfo`, ['-version'], { reject: false })).exitCode === 0) {
