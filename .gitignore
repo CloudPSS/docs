@@ -13,6 +13,7 @@ nohup.out
 
 # dependencies
 node_modules/
+/vendor
 
 # profiling files
 chrome-profiler-events*.json
