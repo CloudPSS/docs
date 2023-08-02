@@ -28,23 +28,23 @@
     tsconfig-paths "^4.1.0"
     webpack-merge "^5.7.3"
 
-"@angular-devkit/architect@0.1601.5", "@angular-devkit/architect@>=0.1600.0 < 0.1700.0", "@angular-devkit/architect@^0.1601.5":
-  version "0.1601.5"
-  resolved "https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1601.5.tgz#84b758b84f02e8ae5d633661f34a292f0fc5108a"
-  integrity sha512-f6oOXR+0gXdMl2papEkTt28GJJBsYtuuoHSQYM09UltkXPkj4bc9QEOzRXKQ0hDjNYYj3UT00E3CalBO/5uGTA==
+"@angular-devkit/architect@0.1601.6", "@angular-devkit/architect@>=0.1600.0 < 0.1700.0", "@angular-devkit/architect@^0.1601.6":
+  version "0.1601.6"
+  resolved "https://registry.npmmirror.com/@angular-devkit/architect/-/architect-0.1601.6.tgz#16dd6d091cb629d5bbb49c2c5083a336113c5b7b"
+  integrity sha512-dY+/FNUNrOj+m4iG5/v8N0PfbDmjkjjoy/YkquRHS1yo7fGGDFNqji2552mbtjN6/LwyWDhOO7fxdqppadjnvA==
   dependencies:
-    "@angular-devkit/core" "16.1.5"
+    "@angular-devkit/core" "16.1.6"
     rxjs "7.8.1"
 
-"@angular-devkit/build-angular@^16.0.0", "@angular-devkit/build-angular@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-16.1.5.tgz#eea42f0f794a164c282d0668125e578dd9c444fb"
-  integrity sha512-F78nvdDgVknqA9MekZ6xnmwKLH+qIQ5gBuP+/JnUiSZs1u1i8qS/GGNUL+T/Zsxk1HMRbG+erQ7N6nn1sBKMMw==
+"@angular-devkit/build-angular@^16.0.0", "@angular-devkit/build-angular@^16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular-devkit/build-angular/-/build-angular-16.1.6.tgz#5460a334c49fcba148867319d9ff6c752a45f01f"
+  integrity sha512-IEC1tApX8/Qa/RIVmbj0nYbOQ5WGcrkGNJ7D42q4DkIo74XKPzxDRruJE1RCjdZsj8lf4CCCZgSOPBsEI8Zbdw==
   dependencies:
     "@ampproject/remapping" "2.2.1"
-    "@angular-devkit/architect" "0.1601.5"
-    "@angular-devkit/build-webpack" "0.1601.5"
-    "@angular-devkit/core" "16.1.5"
+    "@angular-devkit/architect" "0.1601.6"
+    "@angular-devkit/build-webpack" "0.1601.6"
+    "@angular-devkit/core" "16.1.6"
     "@babel/core" "7.22.5"
     "@babel/generator" "7.22.7"
     "@babel/helper-annotate-as-pure" "7.22.5"
@@ -56,7 +56,7 @@
     "@babel/runtime" "7.22.5"
     "@babel/template" "7.22.5"
     "@discoveryjs/json-ext" "0.5.7"
-    "@ngtools/webpack" "16.1.5"
+    "@ngtools/webpack" "16.1.6"
     "@vitejs/plugin-basic-ssl" "1.0.1"
     ansi-colors "4.1.3"
     autoprefixer "10.4.14"
@@ -108,18 +108,18 @@
   optionalDependencies:
     esbuild "0.17.19"
 
-"@angular-devkit/build-webpack@0.1601.5":
-  version "0.1601.5"
-  resolved "https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1601.5.tgz#97ae770e96be77f035f819812b59ed475873304a"
-  integrity sha512-Mc61mrSFFpplBMl11r8ryUrKRDf9Clugnpe8770JcoDe99xEsBFwUUMRS9xNqmVroCgdLMxFijgLSI1ANkUvMg==
+"@angular-devkit/build-webpack@0.1601.6":
+  version "0.1601.6"
+  resolved "https://registry.npmmirror.com/@angular-devkit/build-webpack/-/build-webpack-0.1601.6.tgz#8032b9c1454a9c2a8ca4fbf4d22fbfd880df55a2"
+  integrity sha512-Uz/GjnhgAqSDPxrO4HP/tHNGPPZU3tEShtAVKyAypBl20bh2Aw1L5D+lCZi/Uq3Sh2JTPD9/M0ei2u9CMLhLDw==
   dependencies:
-    "@angular-devkit/architect" "0.1601.5"
+    "@angular-devkit/architect" "0.1601.6"
     rxjs "7.8.1"
 
-"@angular-devkit/core@16.1.5", "@angular-devkit/core@^16.0.0":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular-devkit/core/-/core-16.1.5.tgz#4d455c1af807500c5af89bb49d3a19d930d1384e"
-  integrity sha512-0Mui2Nuib7kzOLWkz18v1OdxK6wd0SWdSFsAXavrRv03495vv+JUqVq0z0vGMtcbURkjOxIwdj3coj+Y0szkPQ==
+"@angular-devkit/core@16.1.6", "@angular-devkit/core@^16.0.0":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular-devkit/core/-/core-16.1.6.tgz#13fecea02870ac12a93a90521df6addd4a9c851e"
+  integrity sha512-3OjtrPWvsqVkMBwqPeE65ccCIw56FooNpVVAJ0XwhVQv5mA81pmbCzU7JsR6U449ZT7O4cQblzZMQvWvx74HCg==
   dependencies:
     ajv "8.12.0"
     ajv-formats "2.1.1"
@@ -127,12 +127,12 @@
     rxjs "7.8.1"
     source-map "0.7.4"
 
-"@angular-devkit/schematics@16.1.5", "@angular-devkit/schematics@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-16.1.5.tgz#9917e98ae6362dcf00cbf0a2ad9ad160651108a3"
-  integrity sha512-s6D/I0pfJJ7+XaAYyXh6IsS3Tya4WKeBuVcWWE7IK6TMEd5a1yDQ5O9RO2/G8UcxBwlKZmeuFbJkclpF6q3hYA==
+"@angular-devkit/schematics@16.1.6", "@angular-devkit/schematics@^16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular-devkit/schematics/-/schematics-16.1.6.tgz#3cc3b77fdcaf88ed3824676f73bbd36446bb68d0"
+  integrity sha512-KA8P78gaS76HMHGBOM8JHJXWLOxCIShYVB2Un/Cu6z3jVODvXq+ILZUc1Y0RsAce/vsl2wf8qpoh5Lku9KJHUQ==
   dependencies:
-    "@angular-devkit/core" "16.1.5"
+    "@angular-devkit/core" "16.1.6"
     jsonc-parser "3.2.0"
     magic-string "0.30.0"
     ora "5.4.1"
@@ -200,31 +200,31 @@
     "@angular-eslint/bundled-angular-compiler" "16.1.0"
     "@typescript-eslint/utils" "5.62.0"
 
-"@angular/animations@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/animations/-/animations-16.1.6.tgz#d139ebc4dfcba6bfa2f6d257e175ad3227b129ed"
-  integrity sha512-LsU3/qXom/tLB76Exvjz+7SkifwJ9QG/+gSjWj+DTVlj1+dO7awb8iWQi+YmTmqN7ijTJi9ye6is3iuJSYuCLw==
+"@angular/animations@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/animations/-/animations-16.1.7.tgz#c2534d6d93f453709fd00536ef0402bc286fb3e9"
+  integrity sha512-+fMLwUlHLNsHWzX2cnsr4sMyix0R5v/a5srQTQjl6BYhdyqFgT82h5F4P49yFu+nZr0jdsxF012wPJbDRR+1qQ==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/cdk@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular/cdk/-/cdk-16.1.5.tgz#f3e0bec73c43e0c055e9c230e4b94c59b3f16c48"
-  integrity sha512-8wjYhLwW9bWicBYSdDXuN71SBP7NbJmXs+XiWiRkaFUkVDeU9z8Qkitogl+qqsSXvsOmi+12MowrbJ3tPizaLw==
+"@angular/cdk@^16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular/cdk/-/cdk-16.1.6.tgz#b85fb6b318dc58f506bd5cc5e060e2b6f153c541"
+  integrity sha512-ICwX3OyxmVotlhzlkvilvfZz32y9RXvUAaVtPsU1i20orgQBOMp+JGdP/vahLjTQRioUus834Wh6bu0KdHjCEg==
   dependencies:
     tslib "^2.3.0"
   optionalDependencies:
     parse5 "^7.1.2"
 
-"@angular/cli@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular/cli/-/cli-16.1.5.tgz#af70360487cf675a8512cd80145f6ed5e2e731ed"
-  integrity sha512-um9hWEU3HUMRnQnaDfw0QSNdDLbdLA9tSzp81kz3Rx2VFsSssCABq6xQ+7w09xCUx0jg88r1lBPc2pwV7Pu7FQ==
+"@angular/cli@^16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular/cli/-/cli-16.1.6.tgz#62a382bda5b9412a5ed73271d814ce3a0aa5bfbb"
+  integrity sha512-yXVgUKMXxlAHkhc6xk3ljR7TXpMLBykyu8do+ooSP08VKEQnWjTdVgrcOHd0n5w9YHXUQgBSmjDKxtQaBmvyZQ==
   dependencies:
-    "@angular-devkit/architect" "0.1601.5"
-    "@angular-devkit/core" "16.1.5"
-    "@angular-devkit/schematics" "16.1.5"
-    "@schematics/angular" "16.1.5"
+    "@angular-devkit/architect" "0.1601.6"
+    "@angular-devkit/core" "16.1.6"
+    "@angular-devkit/schematics" "16.1.6"
+    "@schematics/angular" "16.1.6"
     "@yarnpkg/lockfile" "1.1.0"
     ansi-colors "4.1.3"
     ini "4.1.1"
@@ -240,17 +240,17 @@
     symbol-observable "4.0.0"
     yargs "17.7.2"
 
-"@angular/common@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/common/-/common-16.1.6.tgz#45f8a32e95c153095bc4c4c818562117076ee159"
-  integrity sha512-30Y8DGs+oosA+BcDZd1SuZ4HDT+DVZ6lVT4L+mBUH1BSkNna08FrbmrGQxO82CcxU6ZK0q1YLVkkb5cGx8y9ew==
+"@angular/common@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/common/-/common-16.1.7.tgz#184fd912d5ac469a1aa146e479ddfe68ffe02412"
+  integrity sha512-7WwYwtJjuJtUkutB+aMCvtV5zxa43T4x+kqT+kS4KnUmLv5KdrGPxcS+/7YUuKEELWp1SG032UTwGPX0DXxH4g==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/compiler-cli@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/compiler-cli/-/compiler-cli-16.1.6.tgz#66985b8885725f77ae24fe34aa2a4c513908d645"
-  integrity sha512-unWmH2CcuCkVuEr1fQuzlJtSGzRirsyg8cGQmRh16orx6N8oa/fCvxYRSOed/5aE9YiRpIFZ2TQWT2myY10/6Q==
+"@angular/compiler-cli@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/compiler-cli/-/compiler-cli-16.1.7.tgz#022f15a126eaed846727a71ee47b01f87dc24456"
+  integrity sha512-6iuogfVrbCh6o4hWbNCClsLQdLtlXiaNc72LGz5LMXI0TOwKVlRXhbzhiQeLS0/nsYIdHFbgyr1aepI2wQA3mQ==
   dependencies:
     "@babel/core" "7.22.5"
     "@jridgewell/sourcemap-codec" "^1.4.14"
@@ -261,31 +261,31 @@
     tslib "^2.3.0"
     yargs "^17.2.1"
 
-"@angular/compiler@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/compiler/-/compiler-16.1.6.tgz#5a58266c509df4418fbd7de661413d4448233572"
-  integrity sha512-BVDfKZLMb7mmLwdek+ZyzI43Zv0WNNNqnYpMeOI6egmkhtjNCxpQAy2YFKgNPse3bBGP8tKutwAtBB+Lqu/Kcw==
+"@angular/compiler@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/compiler/-/compiler-16.1.7.tgz#5575d60c3aa38ddebecb59e7cca614db807507ed"
+  integrity sha512-93nbMFPSpKNfUyuRvEQxPdYLU6g25oZ4Gp7ewzNLyDHIbTQv6FwsthHfgPigPJJUUyKak6Gr3koFsgk7Dl3LAA==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/core@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/core/-/core-16.1.6.tgz#9ed2b412e0c1be696e39cedcad2487063048ab78"
-  integrity sha512-tUXvVLc+Vbl8Se7hajwyUTNmKD9uPq+SZH6x8sRM2n5azzjBZltOoJfzxK5JKAkiFf/KkQhteHkMBfoDLZ2tmw==
+"@angular/core@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/core/-/core-16.1.7.tgz#c53b449aa642dbed67628a2c7bfc636ed64d9952"
+  integrity sha512-Wl5BR9X1xnV7Z9v/MNVANhymuTKAuRv4etr4rRgaC5NbbJSuFM4y+mg4yVI4wmrYJo0gKRcV9+2mHaePr41fTg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/forms@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/forms/-/forms-16.1.6.tgz#fe0cc48e10c4a2d690fc985a0b076d82cc7101b2"
-  integrity sha512-6MMQx3qCFrXyX4sSNvQRLRm6smGZshMjuWSCSkyEvvTYpZSA3F7h8ba762PDKYE3vMAON2OczCr8y9MyjBEruA==
+"@angular/forms@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/forms/-/forms-16.1.7.tgz#1591fd0ac5eb7d757e8419ea42bd89fbe16bb1a6"
+  integrity sha512-AZ6oCIAS2JwH7rJiTOj2uKl1eykiDP98y0trgQ/42+zzpOQZyZAjXrtdqHkVUXMc1PFf5NmYioz19Muj1p+Ttg==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/material@^16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@angular/material/-/material-16.1.5.tgz#5ba16d5b8c3e3bbe1582fd70ac21df675a48a3a6"
-  integrity sha512-l11mH/WWBmfiBhrf4/0hCihhLxK4Ldu7+fP8zucHO3X2TiLlpsgJZpcYwJkZf0Ai0rDqIzqCVnks7L9jiuTGCQ==
+"@angular/material@^16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@angular/material/-/material-16.1.6.tgz#2edbde9c76973fe237108c5c990de61e8d05883d"
+  integrity sha512-PhfwqWN6cCiKCN2B1hUqrg3uwHC3ZwiCndJ/2CWEwEC824aOdf2b2ifTXZdtGbP3bFTkURkfvwfJVle4j/fbHw==
   dependencies:
     "@material/animation" "15.0.0-canary.b994146f6.0"
     "@material/auto-init" "15.0.0-canary.b994146f6.0"
@@ -336,31 +336,31 @@
     "@material/typography" "15.0.0-canary.b994146f6.0"
     tslib "^2.3.0"
 
-"@angular/platform-browser-dynamic@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-16.1.6.tgz#4680af5b4b21c88af3d96a5fea89ff3b2ca40696"
-  integrity sha512-NZ3bcXgWq9k0pJE7EvZsatvY8++5NzAtxCdV9IM+fqgzBzkSR4le0Iud4hdBSNQF1DOwwB8KdU7Xpe9q4YsdqA==
+"@angular/platform-browser-dynamic@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-16.1.7.tgz#3ec974eccc43b7fe4c16749b6d339e2b9519eb2a"
+  integrity sha512-xoT4wDl7Kurg2N5gcLNmkvqYx14xnYwa2Zm1ZIOM7kYMRXiAg1+XBzaxFXog0fCCs/lqUKUwaNn32YpLKwMNaw==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/platform-browser@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-16.1.6.tgz#23e97f36c052f6b3daf51ec55954cbf29035ac42"
-  integrity sha512-qHwQpqhcWFAwroWwe7iiSsJrs38lrW82vHEm/sX/fcbUuLtqEDaNMf90KqzeSPIkFEkX5wwUZxdRwEh2bepf6g==
+"@angular/platform-browser@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/platform-browser/-/platform-browser-16.1.7.tgz#669badfdc4211a3c2ff75e1d0154c137cff51d7c"
+  integrity sha512-AjdUUv5+v50cclHPsKVVdNRdCQZJMGNKmvxyLgeGj2hs61lGoJxBYcYqPre2PpM0SvezNJBreUvjwqM3ttOjng==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/router@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/router/-/router-16.1.6.tgz#c52a7f0103676a831869458241ef61d1bcde4274"
-  integrity sha512-4+MniaDghKurV117URJZzCQBNCdMfiu6lRpTdcKWbHgGZqOQRG9N/gcHah5eLYVB0s6mfQ1OQ9HavNyjujF6Fg==
+"@angular/router@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/router/-/router-16.1.7.tgz#03f7c3e7220baf866dcba6dcdc382b6ddedb3eef"
+  integrity sha512-nzjuAEAXLktA3puvSae54noAHEiuizNTvaOpuvQYHfvZF27QMW28XlC33+vDhckWjSD02K7Fb2+AELkOJhUM5Q==
   dependencies:
     tslib "^2.3.0"
 
-"@angular/service-worker@^16.1.6":
-  version "16.1.6"
-  resolved "https://registry.npmmirror.com/@angular/service-worker/-/service-worker-16.1.6.tgz#ca980462652577fc8ac4361e9c25bed67cc7feec"
-  integrity sha512-R9JwT3bcmRMrl0wF3/LEytefW339oZGpEvOgwe7HmObLPrqSPUMzA8nQRK7lrNmT0wfKQmeQ9YnOLNBwkNh+kw==
+"@angular/service-worker@^16.1.7":
+  version "16.1.7"
+  resolved "https://registry.npmmirror.com/@angular/service-worker/-/service-worker-16.1.7.tgz#9525c46f2621a85b45baec025bf0425b665b2860"
+  integrity sha512-54Z123g6e3beJTxUT2a7c3sihuQpeclf1CrGk0QJalYMclxB7qmjFNdi0OdbPL19YupRou7NxSo1XHMTBWDQ1g==
   dependencies:
     tslib "^2.3.0"
 
@@ -1370,9 +1370,9 @@
     to-fast-properties "^2.0.0"
 
 "@braintree/sanitize-url@^6.0.2":
-  version "6.0.2"
-  resolved "https://registry.npmmirror.com/@braintree/sanitize-url/-/sanitize-url-6.0.2.tgz#6110f918d273fe2af8ea1c4398a88774bb9fc12f"
-  integrity sha512-Tbsj02wXCbqGmzdnXNk0SOF19ChhRU70BsroIi4Pm6Ehp56in6vch94mfbdQ17DozxkL3BAVjbZ4Qc1a0HFRAg==
+  version "6.0.3"
+  resolved "https://registry.npmmirror.com/@braintree/sanitize-url/-/sanitize-url-6.0.3.tgz#dbe78ce0c3a6412d03acf8b9c920f6bd76ce81e6"
+  integrity sha512-g2hMyGSFYOvt0eeY2c2wrG1B6dVWF1be4vGxG9mI1BEHJuQm4Hie2HrooxYHBDRDi8hANIzQ8cuvBgxSVlQOTQ==
 
 "@cloudpss/commitlint-config@^1.5.5":
   version "1.5.5"
@@ -1758,15 +1758,15 @@
   dependencies:
     eslint-visitor-keys "^3.3.0"
 
-"@eslint-community/regexpp@^4.4.0", "@eslint-community/regexpp@^4.5.1":
+"@eslint-community/regexpp@^4.5.1", "@eslint-community/regexpp@^4.6.1":
   version "4.6.2"
   resolved "https://registry.npmmirror.com/@eslint-community/regexpp/-/regexpp-4.6.2.tgz#1816b5f6948029c5eaacb0703b850ee0cb37d8f8"
   integrity sha512-pPTNuaAG3QMH+buKyBIGJs3g/S5y0caxw0ygM3YyE6yJFySwiGGSzA+mM3KJ8QQvzeLh3blwgSonkFjgQdxzMw==
 
-"@eslint/eslintrc@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.npmmirror.com/@eslint/eslintrc/-/eslintrc-2.1.0.tgz#82256f164cc9e0b59669efc19d57f8092706841d"
-  integrity sha512-Lj7DECXqIVCqnqjjHMPna4vn6GJcMgul/wuS0je9OZ9gsL0zzDpKPVtcG1HaDVc+9y+qgXneTeUMbCqXJNpH1A==
+"@eslint/eslintrc@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.npmmirror.com/@eslint/eslintrc/-/eslintrc-2.1.1.tgz#18d635e24ad35f7276e8a49d135c7d3ca6a46f93"
+  integrity sha512-9t7ZA7NGGK8ckelF0PQCfcxIUzs1Md5rrO6U/c+FIQNanea5UZC0wqKXH4vHBccmu4ZJgZ2idtPeW7+Q2npOEA==
   dependencies:
     ajv "^6.12.4"
     debug "^4.3.2"
@@ -1778,10 +1778,10 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
-"@eslint/js@8.44.0":
-  version "8.44.0"
-  resolved "https://registry.npmmirror.com/@eslint/js/-/js-8.44.0.tgz#961a5903c74139390478bdc808bcde3fc45ab7af"
-  integrity sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==
+"@eslint/js@^8.46.0":
+  version "8.46.0"
+  resolved "https://registry.npmmirror.com/@eslint/js/-/js-8.46.0.tgz#3f7802972e8b6fe3f88ed1aabc74ec596c456db6"
+  integrity sha512-a8TLtmPi8xzPkCbp/OGFUo5yhRkHM2Ko9kOWP4znJr0WAhWyThaw3PnwX4vOTWOAMsV2uRt32PPDcEz63esSaA==
 
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
@@ -2612,10 +2612,10 @@
     "@material/theme" "15.0.0-canary.b994146f6.0"
     tslib "^2.1.0"
 
-"@ngtools/webpack@16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@ngtools/webpack/-/webpack-16.1.5.tgz#aa6faab5c11b807a5438a5ecc22d6d53070250b6"
-  integrity sha512-XQkanGAtB9S2EE14xa/04hPNYSkAzJOeaHJkirfqk/p40p8nA2pNsfLYCMd2N7K4kzqcET8UYAZ+wIpQxp12HA==
+"@ngtools/webpack@16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@ngtools/webpack/-/webpack-16.1.6.tgz#6d31b01c5619969c0fdc8557aa210060ff2d606e"
+  integrity sha512-rDE1bV3+Ys/VyeD6l7JKtbs3+bTQAfWhi7meEuq5mkaJHOERu6Z40ce866faAIX2I1AVpsSv8rLlb7kB7t7kzw==
 
 "@ngx-translate/core@^15.0.0":
   version "15.0.0"
@@ -2801,13 +2801,13 @@
   resolved "https://registry.npmmirror.com/@polka/url/-/url-1.0.0-next.21.tgz#5de5a2385a35309427f6011992b544514d559aa1"
   integrity sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==
 
-"@schematics/angular@16.1.5":
-  version "16.1.5"
-  resolved "https://registry.npmmirror.com/@schematics/angular/-/angular-16.1.5.tgz#d9f92815d4e15f26c93952c52576e6cfca5f09eb"
-  integrity sha512-GwSweqKGjMc9oqU6fukqYKlBflCCDA/l2qfA60YIdf4SubaZnIUpkpNXTbWeFRPJh8zQShb8OZE7cVj8MZRruw==
+"@schematics/angular@16.1.6":
+  version "16.1.6"
+  resolved "https://registry.npmmirror.com/@schematics/angular/-/angular-16.1.6.tgz#f54e29dc9b79bc774522abfcfa536bc9b6c89d88"
+  integrity sha512-BxghkeLfnMgV0D4DZDcbfPpox/Orw1ismSVGoQMIV/Daj2pqfSK+n97NAu0r0EsQyR5agPxOX9khVft+otODhg==
   dependencies:
-    "@angular-devkit/core" "16.1.5"
-    "@angular-devkit/schematics" "16.1.5"
+    "@angular-devkit/core" "16.1.6"
+    "@angular-devkit/schematics" "16.1.6"
     jsonc-parser "3.2.0"
 
 "@sigstore/bundle@^1.0.0":
@@ -2909,6 +2909,23 @@
   integrity sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==
   dependencies:
     "@types/node" "*"
+
+"@types/d3-scale-chromatic@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.npmmirror.com/@types/d3-scale-chromatic/-/d3-scale-chromatic-3.0.0.tgz#103124777e8cdec85b20b51fd3397c682ee1e954"
+  integrity sha512-dsoJGEIShosKVRBZB0Vo3C8nqSDqVGujJU6tPznsBJxNJNwMF8utmS83nvCBKQYPpjCzaaHcrf66iTRpZosLPw==
+
+"@types/d3-scale@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.npmmirror.com/@types/d3-scale/-/d3-scale-4.0.3.tgz#7a5780e934e52b6f63ad9c24b105e33dd58102b5"
+  integrity sha512-PATBiMCpvHJSMtZAMEhc2WyL+hnzarKzI6wAHYjhsonjWJYGq5BXTzQjv4l8m2jO183/4wZ90rKvSeT7o72xNQ==
+  dependencies:
+    "@types/d3-time" "*"
+
+"@types/d3-time@*":
+  version "3.0.0"
+  resolved "https://registry.npmmirror.com/@types/d3-time/-/d3-time-3.0.0.tgz#e1ac0f3e9e195135361fa1a1d62f795d87e6e819"
+  integrity sha512-sZLCdHvBUcNby1cB6Fd3ZBrABbjz3v1Vm90nysCQ6Vt7vd6e/h9Lt7SiJUoEX0l4Dzc7P5llKyhqSi1ycSf1Hg==
 
 "@types/debug@^4.0.0":
   version "4.1.8"
@@ -3188,15 +3205,15 @@
     "@types/node" "*"
 
 "@typescript-eslint/eslint-plugin@^6.0.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.2.0.tgz#57047c400be0632d4797ac081af8d399db3ebc3b"
-  integrity sha512-rClGrMuyS/3j0ETa1Ui7s6GkLhfZGKZL3ZrChLeAiACBE/tRc1wq8SNZESUuluxhLj9FkUefRs2l6bCIArWBiQ==
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-6.2.1.tgz#41b79923fee46a745a3a50cba1c33c622aa3c79a"
+  integrity sha512-iZVM/ALid9kO0+I81pnp1xmYiFyqibAHzrqX4q5YvvVEyJqY+e6rfTXSCsc2jUxGNqJqTfFSSij/NFkZBiBzLw==
   dependencies:
     "@eslint-community/regexpp" "^4.5.1"
-    "@typescript-eslint/scope-manager" "6.2.0"
-    "@typescript-eslint/type-utils" "6.2.0"
-    "@typescript-eslint/utils" "6.2.0"
-    "@typescript-eslint/visitor-keys" "6.2.0"
+    "@typescript-eslint/scope-manager" "6.2.1"
+    "@typescript-eslint/type-utils" "6.2.1"
+    "@typescript-eslint/utils" "6.2.1"
+    "@typescript-eslint/visitor-keys" "6.2.1"
     debug "^4.3.4"
     graphemer "^1.4.0"
     ignore "^5.2.4"
@@ -3206,14 +3223,14 @@
     ts-api-utils "^1.0.1"
 
 "@typescript-eslint/parser@^6.0.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/parser/-/parser-6.2.0.tgz#d37c30b0f459c6f39455335d8f4f085919a1c644"
-  integrity sha512-igVYOqtiK/UsvKAmmloQAruAdUHihsOCvplJpplPZ+3h4aDkC/UKZZNKgB6h93ayuYLuEymU3h8nF1xMRbh37g==
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/parser/-/parser-6.2.1.tgz#e18a31eea1cca8841a565f1701960c8123ed07f9"
+  integrity sha512-Ld+uL1kYFU8e6btqBFpsHkwQ35rw30IWpdQxgOqOh4NfxSDH6uCkah1ks8R/RgQqI5hHPXMaLy9fbFseIe+dIg==
   dependencies:
-    "@typescript-eslint/scope-manager" "6.2.0"
-    "@typescript-eslint/types" "6.2.0"
-    "@typescript-eslint/typescript-estree" "6.2.0"
-    "@typescript-eslint/visitor-keys" "6.2.0"
+    "@typescript-eslint/scope-manager" "6.2.1"
+    "@typescript-eslint/types" "6.2.1"
+    "@typescript-eslint/typescript-estree" "6.2.1"
+    "@typescript-eslint/visitor-keys" "6.2.1"
     debug "^4.3.4"
 
 "@typescript-eslint/scope-manager@5.62.0":
@@ -3224,13 +3241,13 @@
     "@typescript-eslint/types" "5.62.0"
     "@typescript-eslint/visitor-keys" "5.62.0"
 
-"@typescript-eslint/scope-manager@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/scope-manager/-/scope-manager-6.2.0.tgz#412a710d8fa20bc045533b3b19f423810b24f87a"
-  integrity sha512-1ZMNVgm5nnHURU8ZSJ3snsHzpFeNK84rdZjluEVBGNu7jDymfqceB3kdIZ6A4xCfEFFhRIB6rF8q/JIqJd2R0Q==
+"@typescript-eslint/scope-manager@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/scope-manager/-/scope-manager-6.2.1.tgz#b6f43a867b84e5671fe531f2b762e0b68f7cf0c4"
+  integrity sha512-UCqBF9WFqv64xNsIEPfBtenbfodPXsJ3nPAr55mGPkQIkiQvgoWNo+astj9ZUfJfVKiYgAZDMnM6dIpsxUMp3Q==
   dependencies:
-    "@typescript-eslint/types" "6.2.0"
-    "@typescript-eslint/visitor-keys" "6.2.0"
+    "@typescript-eslint/types" "6.2.1"
+    "@typescript-eslint/visitor-keys" "6.2.1"
 
 "@typescript-eslint/type-utils@5.62.0":
   version "5.62.0"
@@ -3242,13 +3259,13 @@
     debug "^4.3.4"
     tsutils "^3.21.0"
 
-"@typescript-eslint/type-utils@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/type-utils/-/type-utils-6.2.0.tgz#02b27a3eeb41aa5460d6275d12cce5dd72e1c9fc"
-  integrity sha512-DnGZuNU2JN3AYwddYIqrVkYW0uUQdv0AY+kz2M25euVNlujcN2u+rJgfJsBFlUEzBB6OQkUqSZPyuTLf2bP5mw==
+"@typescript-eslint/type-utils@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/type-utils/-/type-utils-6.2.1.tgz#8eb8a2cccdf39cd7cf93e02bd2c3782dc90b0525"
+  integrity sha512-fTfCgomBMIgu2Dh2Or3gMYgoNAnQm3RLtRp+jP7A8fY+LJ2+9PNpi5p6QB5C4RSP+U3cjI0vDlI3mspAkpPVbQ==
   dependencies:
-    "@typescript-eslint/typescript-estree" "6.2.0"
-    "@typescript-eslint/utils" "6.2.0"
+    "@typescript-eslint/typescript-estree" "6.2.1"
+    "@typescript-eslint/utils" "6.2.1"
     debug "^4.3.4"
     ts-api-utils "^1.0.1"
 
@@ -3257,10 +3274,10 @@
   resolved "https://registry.npmmirror.com/@typescript-eslint/types/-/types-5.62.0.tgz#258607e60effa309f067608931c3df6fed41fd2f"
   integrity sha512-87NVngcbVXUahrRTqIK27gD2t5Cu1yuCXxbLcFtCzZGlfyVWWh8mLHkoxzjsB6DDNnvdL+fW8MiwPEJyGJQDgQ==
 
-"@typescript-eslint/types@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/types/-/types-6.2.0.tgz#b341a4e6d5f609267306b07afc6f62bcf92b1495"
-  integrity sha512-1nRRaDlp/XYJQLvkQJG5F3uBTno5SHPT7XVcJ5n1/k2WfNI28nJsvLakxwZRNY5spuatEKO7d5nZWsQpkqXwBA==
+"@typescript-eslint/types@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/types/-/types-6.2.1.tgz#7fcdeceb503aab601274bf5e210207050d88c8ab"
+  integrity sha512-528bGcoelrpw+sETlyM91k51Arl2ajbNT9L4JwoXE2dvRe1yd8Q64E4OL7vHYw31mlnVsf+BeeLyAZUEQtqahQ==
 
 "@typescript-eslint/typescript-estree@5.62.0":
   version "5.62.0"
@@ -3275,13 +3292,13 @@
     semver "^7.3.7"
     tsutils "^3.21.0"
 
-"@typescript-eslint/typescript-estree@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/typescript-estree/-/typescript-estree-6.2.0.tgz#4969944b831b481996aa4fbd73c7164ca683b8ef"
-  integrity sha512-Mts6+3HQMSM+LZCglsc2yMIny37IhUgp1Qe8yJUYVyO6rHP7/vN0vajKu3JvHCBIy8TSiKddJ/Zwu80jhnGj1w==
+"@typescript-eslint/typescript-estree@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/typescript-estree/-/typescript-estree-6.2.1.tgz#2af6e90c1e91cb725a5fe1682841a3f74549389e"
+  integrity sha512-G+UJeQx9AKBHRQBpmvr8T/3K5bJa485eu+4tQBxFq0KoT22+jJyzo1B50JDT9QdC1DEmWQfdKsa8ybiNWYsi0Q==
   dependencies:
-    "@typescript-eslint/types" "6.2.0"
-    "@typescript-eslint/visitor-keys" "6.2.0"
+    "@typescript-eslint/types" "6.2.1"
+    "@typescript-eslint/visitor-keys" "6.2.1"
     debug "^4.3.4"
     globby "^11.1.0"
     is-glob "^4.0.3"
@@ -3302,17 +3319,17 @@
     eslint-scope "^5.1.1"
     semver "^7.3.7"
 
-"@typescript-eslint/utils@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/utils/-/utils-6.2.0.tgz#606a20e5c13883c2d2bd0538ddc4b96b8d410979"
-  integrity sha512-RCFrC1lXiX1qEZN8LmLrxYRhOkElEsPKTVSNout8DMzf8PeWoQG7Rxz2SadpJa3VSh5oYKGwt7j7X/VRg+Y3OQ==
+"@typescript-eslint/utils@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/utils/-/utils-6.2.1.tgz#2aa4279ec13053d05615bcbde2398e1e8f08c334"
+  integrity sha512-eBIXQeupYmxVB6S7x+B9SdBeB6qIdXKjgQBge2J+Ouv8h9Cxm5dHf/gfAZA6dkMaag+03HdbVInuXMmqFB/lKQ==
   dependencies:
     "@eslint-community/eslint-utils" "^4.4.0"
     "@types/json-schema" "^7.0.12"
     "@types/semver" "^7.5.0"
-    "@typescript-eslint/scope-manager" "6.2.0"
-    "@typescript-eslint/types" "6.2.0"
-    "@typescript-eslint/typescript-estree" "6.2.0"
+    "@typescript-eslint/scope-manager" "6.2.1"
+    "@typescript-eslint/types" "6.2.1"
+    "@typescript-eslint/typescript-estree" "6.2.1"
     semver "^7.5.4"
 
 "@typescript-eslint/visitor-keys@5.62.0":
@@ -3323,12 +3340,12 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@typescript-eslint/visitor-keys@6.2.0":
-  version "6.2.0"
-  resolved "https://registry.npmmirror.com/@typescript-eslint/visitor-keys/-/visitor-keys-6.2.0.tgz#71943f42fdaa2ec86dc3222091f41761a49ae71a"
-  integrity sha512-QbaYUQVKKo9bgCzpjz45llCfwakyoxHetIy8CAvYCtd16Zu1KrpzNHofwF8kGkpPOxZB2o6kz+0nqH8ZkIzuoQ==
+"@typescript-eslint/visitor-keys@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.npmmirror.com/@typescript-eslint/visitor-keys/-/visitor-keys-6.2.1.tgz#442e7c09fe94b715a54ebe30e967987c3c41fbf4"
+  integrity sha512-iTN6w3k2JEZ7cyVdZJTVJx2Lv7t6zFA8DCrJEHD2mwfc16AEvvBWVhbFh34XyG2NORCd0viIgQY1+u7kPI0WpA==
   dependencies:
-    "@typescript-eslint/types" "6.2.0"
+    "@typescript-eslint/types" "6.2.1"
     eslint-visitor-keys "^3.4.1"
 
 "@vitejs/plugin-basic-ssl@1.0.1":
@@ -3594,7 +3611,7 @@ ajv@8.12.0, ajv@^8.0.0, ajv@^8.11.0, ajv@^8.9.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-ajv@^6.10.0, ajv@^6.12.4, ajv@^6.12.5:
+ajv@^6.12.4, ajv@^6.12.5:
   version "6.12.6"
   resolved "https://registry.npmmirror.com/ajv/-/ajv-6.12.6.tgz#baf5a62e802b07d977034586f8c3baf5adf26df4"
   integrity sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
@@ -3941,13 +3958,13 @@ braces@^3.0.2, braces@~3.0.2:
     fill-range "^7.0.1"
 
 browserslist@^4.14.5, browserslist@^4.21.5, browserslist@^4.21.9:
-  version "4.21.9"
-  resolved "https://registry.npmmirror.com/browserslist/-/browserslist-4.21.9.tgz#e11bdd3c313d7e2a9e87e8b4b0c7872b13897635"
-  integrity sha512-M0MFoZzbUrRU4KNfCrDLnvyE7gub+peetoTid3TBIqtunaDJyXlwhakT+/VkvSXcfIzFfK/nkCs4nmyTmxdNSg==
+  version "4.21.10"
+  resolved "https://registry.npmmirror.com/browserslist/-/browserslist-4.21.10.tgz#dbbac576628c13d3b2231332cb2ec5a46e015bb0"
+  integrity sha512-bipEBdZfVH5/pwrvqc+Ub0kUPVfGUhlKxbvfD+z1BDnPEO/X98ruXGA1WP5ASpAFKan7Qr6j736IacbZQuAlKQ==
   dependencies:
-    caniuse-lite "^1.0.30001503"
-    electron-to-chromium "^1.4.431"
-    node-releases "^2.0.12"
+    caniuse-lite "^1.0.30001517"
+    electron-to-chromium "^1.4.477"
+    node-releases "^2.0.13"
     update-browserslist-db "^1.0.11"
 
 buffer-alloc-unsafe@^1.1.0:
@@ -4073,10 +4090,10 @@ camelcase@^5.3.1:
   resolved "https://registry.npmmirror.com/camelcase/-/camelcase-5.3.1.tgz#e3c9b31569e106811df242f715725a1f4c494320"
   integrity sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==
 
-caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001503:
-  version "1.0.30001517"
-  resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001517.tgz#90fabae294215c3495807eb24fc809e11dc2f0a8"
-  integrity sha512-Vdhm5S11DaFVLlyiKu4hiUTkpZu+y1KA/rZZqVQfOD5YdDT/eQKlkt7NaE0WGOFgX32diqt9MiP9CAiFeRklaA==
+caniuse-lite@^1.0.30001464, caniuse-lite@^1.0.30001517:
+  version "1.0.30001518"
+  resolved "https://registry.npmmirror.com/caniuse-lite/-/caniuse-lite-1.0.30001518.tgz#b3ca93904cb4699c01218246c4d77a71dbe97150"
+  integrity sha512-rup09/e3I0BKjncL+FesTayKtPrdwKhUufQFd3riFw1hHg8JmIFoInYfB102cFcY/pPgGmdyl/iy+jgiDi2vdA==
 
 chalk@5.2.0:
   version "5.2.0"
@@ -4111,9 +4128,9 @@ chardet@^0.7.0:
   integrity sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
 
 chart.js@^4.3.1:
-  version "4.3.1"
-  resolved "https://registry.npmmirror.com/chart.js/-/chart.js-4.3.1.tgz#b83ea014ff9f45e43bfd98ef2bdaba2a9aed8a16"
-  integrity sha512-QHuISG3hTJ0ftq0I0f5jqH9mNVO9bqG8P+zvMOVslgKajQVvFEX7QAhYNJ+QEmw+uYTwo8XpTimaB82oeTWjxw==
+  version "4.3.2"
+  resolved "https://registry.npmmirror.com/chart.js/-/chart.js-4.3.2.tgz#904ebe0376eb368a659a92d2050df47336847e4c"
+  integrity sha512-pvQNyFOY1QmbmIr8oDORL16/FFivfxj8V26VFpFilMo4cNvkV5WXLJetDio365pd9gKUHGdirUTbqJfw8tr+Dg==
   dependencies:
     "@kurkle/color" "^0.3.0"
 
@@ -4417,9 +4434,9 @@ copy-webpack-plugin@11.0.0:
     serialize-javascript "^6.0.0"
 
 core-js-compat@^3.30.2, core-js-compat@^3.31.0:
-  version "3.31.1"
-  resolved "https://registry.npmmirror.com/core-js-compat/-/core-js-compat-3.31.1.tgz#5084ad1a46858df50ff89ace152441a63ba7aae0"
-  integrity sha512-wIDWd2s5/5aJSdpOJHfSibxNODxoGoWOBHt8JSPB41NOE94M7kuTPZCYLOlTtuoXTsBPKobpJ6T+y0SSy5L9SA==
+  version "3.32.0"
+  resolved "https://registry.npmmirror.com/core-js-compat/-/core-js-compat-3.32.0.tgz#f41574b6893ab15ddb0ac1693681bd56c8550a90"
+  integrity sha512-7a9a3D1k4UCVKnLhrgALyFcP7YCsLOQIxPd0dKjf/6GuPcgyiGP70ewWdCGrSK7evyhymi0qO4EqCmSJofDeYw==
   dependencies:
     browserslist "^4.21.9"
 
@@ -4541,6 +4558,13 @@ cytoscape@^3.23.0:
     heap "^0.2.6"
     lodash "^4.17.21"
 
+"d3-array@1 - 2":
+  version "2.12.1"
+  resolved "https://registry.npmmirror.com/d3-array/-/d3-array-2.12.1.tgz#e20b41aafcdffdf5d50928004ececf815a465e81"
+  integrity sha512-B0ErZK/66mHtEsR1TkPEEkwdy+WDesimkM5gpZr5Dsg54BiTA5RXtYW5qTLIAcekaS9xfZrzBLF/OAkB3Qn1YQ==
+  dependencies:
+    internmap "^1.0.0"
+
 "d3-array@2 - 3", "d3-array@2.10.0 - 3", "d3-array@2.5.0 - 3", d3-array@3, d3-array@^3.2.0:
   version "3.2.4"
   resolved "https://registry.npmmirror.com/d3-array/-/d3-array-3.2.4.tgz#15fec33b237f97ac5d7c986dc77da273a8ed0bb5"
@@ -4657,6 +4681,11 @@ d3-hierarchy@3:
   dependencies:
     d3-color "1 - 3"
 
+d3-path@1:
+  version "1.0.9"
+  resolved "https://registry.npmmirror.com/d3-path/-/d3-path-1.0.9.tgz#48c050bb1fe8c262493a8caf5524e3e9591701cf"
+  integrity sha512-VLaYcn81dtHVTjEHd8B+pbe9yHWpXKZUC87PzoFmsFrJqgFwDe/qxfp5MlfsfM1V5E/iVt0MmEbWQ7FVIXh/bg==
+
 "d3-path@1 - 3", d3-path@3, d3-path@^3.1.0:
   version "3.1.0"
   resolved "https://registry.npmmirror.com/d3-path/-/d3-path-3.1.0.tgz#22df939032fb5a71ae8b1800d61ddb7851c42526"
@@ -4676,6 +4705,14 @@ d3-random@3:
   version "3.0.1"
   resolved "https://registry.npmmirror.com/d3-random/-/d3-random-3.0.1.tgz#d4926378d333d9c0bfd1e6fa0194d30aebaa20f4"
   integrity sha512-FXMe9GfxTxqd5D6jFsQ+DJ8BJS4E/fT5mqqdjovykEB2oFbTMDVdg1MGFxfQW+FBOGoB++k8swBrgwSHT1cUXQ==
+
+d3-sankey@^0.12.3:
+  version "0.12.3"
+  resolved "https://registry.npmmirror.com/d3-sankey/-/d3-sankey-0.12.3.tgz#b3c268627bd72e5d80336e8de6acbfec9d15d01d"
+  integrity sha512-nQhsBRmM19Ax5xEIPLMY9ZmJ/cDvd1BG3UVvt5h3WRxKg5zGRbvnteTyWAbzeSvlh3tW7ZEmq4VwR5mB3tutmQ==
+  dependencies:
+    d3-array "1 - 2"
+    d3-shape "^1.2.0"
 
 d3-scale-chromatic@3:
   version "3.0.0"
@@ -4707,6 +4744,13 @@ d3-shape@3:
   integrity sha512-SaLBuwGm3MOViRq2ABk3eLoxwZELpH6zhl3FbAoJ7Vm1gofKx6El1Ib5z23NUEhF9AsGl7y+dzLe5Cw2AArGTA==
   dependencies:
     d3-path "^3.1.0"
+
+d3-shape@^1.2.0:
+  version "1.3.7"
+  resolved "https://registry.npmmirror.com/d3-shape/-/d3-shape-1.3.7.tgz#df63801be07bc986bc54f63789b4fe502992b5d7"
+  integrity sha512-EUkvKjqPFUAZyOlhY5gzCxCeI0Aep04LwIRpsZ/mLFelJiUfnK56jo5JMDSE7yyP2kLSb6LtF+S5chMk7uqPqw==
+  dependencies:
+    d3-path "1"
 
 "d3-time-format@2 - 4", d3-time-format@4:
   version "4.1.0"
@@ -5087,10 +5131,10 @@ domhandler@^5.0.2, domhandler@^5.0.3:
   dependencies:
     domelementtype "^2.3.0"
 
-dompurify@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.npmmirror.com/dompurify/-/dompurify-3.0.3.tgz#4b115d15a091ddc96f232bcef668550a2f6f1430"
-  integrity sha512-axQ9zieHLnAnHh0sfAamKYiqXMJAVwu+LM/alQ7WDagoWessyWvMSFyW65CqF3owufNu8HBcE4cM2Vflu7YWcQ==
+dompurify@3.0.5:
+  version "3.0.5"
+  resolved "https://registry.npmmirror.com/dompurify/-/dompurify-3.0.5.tgz#eb3d9cfa10037b6e73f32c586682c4b2ab01fbed"
+  integrity sha512-F9e6wPGtY+8KNMRAVfxeCOHU0/NPWMSENNq4pQctuXRqqdEPW7q3CrLbR5Nse044WwacyjHGOMlvNsBe1y6z9A==
 
 domutils@^3.0.1, domutils@^3.1.0:
   version "3.1.0"
@@ -5157,10 +5201,10 @@ ejs@^3.1.7:
   dependencies:
     jake "^10.8.5"
 
-electron-to-chromium@^1.4.431:
-  version "1.4.471"
-  resolved "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.471.tgz#14cb056d0ce4bfa99df57946d57fe46c2330dac3"
-  integrity sha512-GpmGRC1vTl60w/k6YpQ18pSiqnmr0j3un//5TV1idPi6aheNfkT1Ye71tMEabWyNDO6sBMgAR+95Eb0eUUr1tA==
+electron-to-chromium@^1.4.477:
+  version "1.4.480"
+  resolved "https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.480.tgz#40e32849ca50bc23ce29c1516c5adb3fddac919d"
+  integrity sha512-IXTgg+bITkQv/FLP9FjX6f9KFCs5hQWeh5uNSKxB9mqYj/JXhHDbu+ekS43LVvbkL3eW6/oZy4+r9Om6lan1Uw==
 
 elkjs@^0.8.2:
   version "0.8.2"
@@ -5324,14 +5368,14 @@ escape-string-regexp@^4.0.0:
   integrity sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
 
 eslint-config-prettier@^8.8.0:
-  version "8.8.0"
-  resolved "https://registry.npmmirror.com/eslint-config-prettier/-/eslint-config-prettier-8.8.0.tgz#bfda738d412adc917fd7b038857110efe98c9348"
-  integrity sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==
+  version "8.9.0"
+  resolved "https://registry.npmmirror.com/eslint-config-prettier/-/eslint-config-prettier-8.9.0.tgz#094b6254b2804b0544f7cee535f802b6d29ee10b"
+  integrity sha512-+sbni7NfVXnOpnRadUA8S28AUlsZt9GjgFvABIRL9Hkn8KqNzOp+7Lw4QWtrwn20KzU3wqu1QoOj2m+7rKRqkA==
 
 eslint-plugin-jsdoc@^46.4.3:
-  version "46.4.4"
-  resolved "https://registry.npmmirror.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.4.4.tgz#cdcf9f59238381e3ee57110ceccefdfef388455d"
-  integrity sha512-D8TGPOkq3bnzmYmA7Q6jdsW+Slx7CunhJk1tlouVq6wJjlP1p6eigZPvxFn7aufud/D66xBsNVMhkDQEuqumMg==
+  version "46.4.5"
+  resolved "https://registry.npmmirror.com/eslint-plugin-jsdoc/-/eslint-plugin-jsdoc-46.4.5.tgz#f06fd71505d60078a8e4dff792f7cb20261e7e58"
+  integrity sha512-HjTuxqDYplAQFu29F3MHFCDDBgeqOxPXI6TyBhL0u2rr4XntJ0z3C9PmJvpjFscKdHwkZDN/0l1QCG0QwyRi4g==
   dependencies:
     "@es-joy/jsdoccomment" "~0.39.4"
     are-docs-informative "^0.0.2"
@@ -5340,7 +5384,7 @@ eslint-plugin-jsdoc@^46.4.3:
     escape-string-regexp "^4.0.0"
     esquery "^1.5.0"
     is-builtin-module "^3.2.1"
-    semver "^7.5.1"
+    semver "^7.5.4"
     spdx-expression-parse "^3.0.1"
 
 eslint-plugin-prettier@^5.0.0:
@@ -5381,40 +5425,40 @@ eslint-scope@5.1.1, eslint-scope@^5.1.1:
     esrecurse "^4.3.0"
     estraverse "^4.1.1"
 
-eslint-scope@^7.0.0, eslint-scope@^7.2.0:
-  version "7.2.1"
-  resolved "https://registry.npmmirror.com/eslint-scope/-/eslint-scope-7.2.1.tgz#936821d3462675f25a18ac5fd88a67cc15b393bd"
-  integrity sha512-CvefSOsDdaYYvxChovdrPo/ZGt8d5lrJWleAc1diXRKhHGiTYEI26cvo8Kle/wGnsizoCJjK73FMg1/IkIwiNA==
+eslint-scope@^7.0.0, eslint-scope@^7.2.2:
+  version "7.2.2"
+  resolved "https://registry.npmmirror.com/eslint-scope/-/eslint-scope-7.2.2.tgz#deb4f92563390f32006894af62a22dba1c46423f"
+  integrity sha512-dOt21O7lTMhDM+X9mB4GX+DZrZtCUJPL/wlcTqxyrx5IvO0IYtILdtrQGQp+8n5S0gwSVmOf9NQrjMOgfQZlIg==
   dependencies:
     esrecurse "^4.3.0"
     estraverse "^5.2.0"
 
-eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1:
-  version "3.4.1"
-  resolved "https://registry.npmmirror.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.1.tgz#c22c48f48942d08ca824cc526211ae400478a994"
-  integrity sha512-pZnmmLwYzf+kWaM/Qgrvpen51upAktaaiI01nsJD/Yr3lMOdNtq0cxkrrg16w64VtisN6okbs7Q8AfGqj4c9fA==
+eslint-visitor-keys@^3.3.0, eslint-visitor-keys@^3.4.1, eslint-visitor-keys@^3.4.2:
+  version "3.4.2"
+  resolved "https://registry.npmmirror.com/eslint-visitor-keys/-/eslint-visitor-keys-3.4.2.tgz#8c2095440eca8c933bedcadf16fefa44dbe9ba5f"
+  integrity sha512-8drBzUEyZ2llkpCA67iYrgEssKDUu68V8ChqqOfFupIaG/LCVPUT+CoGJpT77zJprs4T/W7p07LP7zAIMuweVw==
 
 eslint@^8.44.0:
-  version "8.45.0"
-  resolved "https://registry.npmmirror.com/eslint/-/eslint-8.45.0.tgz#bab660f90d18e1364352c0a6b7c6db8edb458b78"
-  integrity sha512-pd8KSxiQpdYRfYa9Wufvdoct3ZPQQuVuU5O6scNgMuOMYuxvH0IGaYK0wUFjo4UYYQQCUndlXiMbnxopwvvTiw==
+  version "8.46.0"
+  resolved "https://registry.npmmirror.com/eslint/-/eslint-8.46.0.tgz#a06a0ff6974e53e643acc42d1dcf2e7f797b3552"
+  integrity sha512-cIO74PvbW0qU8e0mIvk5IV3ToWdCq5FYG6gWPHHkx6gNdjlbAYvtfHmlCMXxjcoVaIdwy/IAt3+mDkZkfvb2Dg==
   dependencies:
     "@eslint-community/eslint-utils" "^4.2.0"
-    "@eslint-community/regexpp" "^4.4.0"
-    "@eslint/eslintrc" "^2.1.0"
-    "@eslint/js" "8.44.0"
+    "@eslint-community/regexpp" "^4.6.1"
+    "@eslint/eslintrc" "^2.1.1"
+    "@eslint/js" "^8.46.0"
     "@humanwhocodes/config-array" "^0.11.10"
     "@humanwhocodes/module-importer" "^1.0.1"
     "@nodelib/fs.walk" "^1.2.8"
-    ajv "^6.10.0"
+    ajv "^6.12.4"
     chalk "^4.0.0"
     cross-spawn "^7.0.2"
     debug "^4.3.2"
     doctrine "^3.0.0"
     escape-string-regexp "^4.0.0"
-    eslint-scope "^7.2.0"
-    eslint-visitor-keys "^3.4.1"
-    espree "^9.6.0"
+    eslint-scope "^7.2.2"
+    eslint-visitor-keys "^3.4.2"
+    espree "^9.6.1"
     esquery "^1.4.2"
     esutils "^2.0.2"
     fast-deep-equal "^3.1.3"
@@ -5437,7 +5481,7 @@ eslint@^8.44.0:
     strip-ansi "^6.0.1"
     text-table "^0.2.0"
 
-espree@^9.6.0:
+espree@^9.6.0, espree@^9.6.1:
   version "9.6.1"
   resolved "https://registry.npmmirror.com/espree/-/espree-9.6.1.tgz#a2a17b8e434690a5432f2f8018ce71d331a48c6f"
   integrity sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==
@@ -5516,9 +5560,9 @@ execa@^5.0.0:
     strip-final-newline "^2.0.0"
 
 execa@^7.0.0, execa@^7.1.1:
-  version "7.1.1"
-  resolved "https://registry.npmmirror.com/execa/-/execa-7.1.1.tgz#3eb3c83d239488e7b409d48e8813b76bb55c9c43"
-  integrity sha512-wH0eMf/UXckdUYnO21+HDztteVv05rq2GXksxT4fCGeHkBhw1DROXh40wcjMcRqDOWE7iPJ4n3M7e2+YFP+76Q==
+  version "7.2.0"
+  resolved "https://registry.npmmirror.com/execa/-/execa-7.2.0.tgz#657e75ba984f42a70f38928cedc87d6f2d4fe4e9"
+  integrity sha512-UduyVP7TLB5IcAQl+OzLyLcS/l32W/GLg+AhHJ+ow40FOk2U3SAllPwR44v4vmdFwIWqpdwxxpQbF1n5ta9seA==
   dependencies:
     cross-spawn "^7.0.3"
     get-stream "^6.0.1"
@@ -6509,6 +6553,11 @@ internal-slot@^1.0.4:
   version "2.0.3"
   resolved "https://registry.npmmirror.com/internmap/-/internmap-2.0.3.tgz#6685f23755e43c524e251d29cbc97248e3061009"
   integrity sha512-5Hh7Y1wQbvY5ooGgPbDaL5iYLAPzMTUrjMulskHLH6wnv/A+1q5rgEaiuqEjB+oxGXIVZs1FF+R/KPN3ZSQYYg==
+
+internmap@^1.0.0:
+  version "1.0.1"
+  resolved "https://registry.npmmirror.com/internmap/-/internmap-1.0.1.tgz#0017cc8a3b99605f0302f2b198d272e015e5df95"
+  integrity sha512-lDB5YccMydFBtasVtxnZ3MRBHuaoE8GKsppq+EchKL2U4nK/DmEpPHNH8MZe5HkMtpSiTSOZwfN0tzYjO/lJEw==
 
 into-stream@^3.1.0:
   version "3.1.0"
@@ -7544,18 +7593,21 @@ merge2@^1.3.0, merge2@^1.4.1:
   integrity sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==
 
 mermaid@^10.2.4:
-  version "10.2.4"
-  resolved "https://registry.npmmirror.com/mermaid/-/mermaid-10.2.4.tgz#3358adc61346ce51858b1b5b1078c20411efabdc"
-  integrity sha512-zHGjEI7lBvWZX+PQYmlhSA2p40OzW6QbGodTCSzDeVpqaTnyAC+2sRGqrpXO+uQk3CnoeClHQPraQUMStdqy2g==
+  version "10.3.0"
+  resolved "https://registry.npmmirror.com/mermaid/-/mermaid-10.3.0.tgz#45c1399fc8b95818822cbbd7b03a6093d15685a9"
+  integrity sha512-H5quxuQjwXC8M1WuuzhAp2TdqGg74t5skfDBrNKJ7dt3z8Wprl5S6h9VJsRhoBUTSs1TMtHEdplLhCqXleZZLw==
   dependencies:
     "@braintree/sanitize-url" "^6.0.2"
+    "@types/d3-scale" "^4.0.3"
+    "@types/d3-scale-chromatic" "^3.0.0"
     cytoscape "^3.23.0"
     cytoscape-cose-bilkent "^4.1.0"
     cytoscape-fcose "^2.1.0"
     d3 "^7.4.0"
+    d3-sankey "^0.12.3"
     dagre-d3-es "7.0.10"
     dayjs "^1.11.7"
-    dompurify "3.0.3"
+    dompurify "3.0.5"
     elkjs "^0.8.2"
     khroma "^2.0.0"
     lodash-es "^4.17.21"
@@ -8058,7 +8110,7 @@ node-gyp@^9.0.0:
     tar "^6.1.2"
     which "^2.0.2"
 
-node-releases@^2.0.12:
+node-releases@^2.0.13:
   version "2.0.13"
   resolved "https://registry.npmmirror.com/node-releases/-/node-releases-2.0.13.tgz#d5ed1627c23e3461e819b02e57b75e4899b1c81d"
   integrity sha512-uYr7J37ae/ORWdZeQ1xxMJe3NtdmqMC/JZK+geofDrkLUApKRHPd18/TxtBOJ4A0/+uUIliorNrfYV6s1b02eQ==
@@ -8160,10 +8212,20 @@ npm-packlist@^7.0.0:
   dependencies:
     ignore-walk "^6.0.0"
 
-npm-pick-manifest@8.0.1, npm-pick-manifest@^8.0.0:
+npm-pick-manifest@8.0.1:
   version "8.0.1"
   resolved "https://registry.npmmirror.com/npm-pick-manifest/-/npm-pick-manifest-8.0.1.tgz#c6acd97d1ad4c5dbb80eac7b386b03ffeb289e5f"
   integrity sha512-mRtvlBjTsJvfCCdmPtiu2bdlx8d/KXtF7yNXNWe7G0Z36qWA9Ny5zXsI2PfBZEv7SXgoxTmNaTzGSbbzDZChoA==
+  dependencies:
+    npm-install-checks "^6.0.0"
+    npm-normalize-package-bin "^3.0.0"
+    npm-package-arg "^10.0.0"
+    semver "^7.3.5"
+
+npm-pick-manifest@^8.0.0:
+  version "8.0.2"
+  resolved "https://registry.npmmirror.com/npm-pick-manifest/-/npm-pick-manifest-8.0.2.tgz#2159778d9c7360420c925c1a2287b5a884c713aa"
+  integrity sha512-1dKY+86/AIiq1tkKVD3l0WI+Gd3vkknVGAggsFeBkTvbhMQ1OND/LKkYv4JtXPKUJ8bOTCyLiqEg2P6QNdK+Gg==
   dependencies:
     npm-install-checks "^6.0.0"
     npm-normalize-package-bin "^3.0.0"
@@ -9124,9 +9186,9 @@ robust-predicates@^3.0.0:
   integrity sha512-IXgzBWvWQwE6PrDI05OvmXUIruQTcoMDzRsOd5CDvHCVLcLHMTSYvOK5Cm46kWqlV3yAbuSpBZdJ5oP5OUoStg==
 
 rollup@^3.21.0:
-  version "3.26.3"
-  resolved "https://registry.npmmirror.com/rollup/-/rollup-3.26.3.tgz#bbc8818cadd0aebca348dbb3d68d296d220967b8"
-  integrity sha512-7Tin0C8l86TkpcMtXvQu6saWH93nhG3dGQ1/+l5V2TDMceTxO7kDiK6GzbfLWNNxqJXm591PcEZUozZm51ogwQ==
+  version "3.27.0"
+  resolved "https://registry.npmmirror.com/rollup/-/rollup-3.27.0.tgz#15bd07e2e1cbfa9255bf6a3f04a432621c2f3550"
+  integrity sha512-aOltLCrYZ0FhJDm7fCqwTjIUEVjWjcydKBV/Zeid6Mn8BWgDCUBBWT5beM5ieForYNo/1ZHuGJdka26kvQ3Gzg==
   optionalDependencies:
     fsevents "~2.3.2"
 
@@ -9284,7 +9346,7 @@ semver@^6.0.0, semver@^6.3.0, semver@^6.3.1:
   resolved "https://registry.npmmirror.com/semver/-/semver-6.3.1.tgz#556d2ef8689146e46dcea4bfdd095f3434dffcb4"
   integrity sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==
 
-semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.1, semver@^7.5.4:
+semver@^7.0.0, semver@^7.1.1, semver@^7.3.4, semver@^7.3.5, semver@^7.3.7, semver@^7.3.8, semver@^7.5.4:
   version "7.5.4"
   resolved "https://registry.npmmirror.com/semver/-/semver-7.5.4.tgz#483986ec4ed38e1c6c48c34894a9182dbff68a6e"
   integrity sha512-1bCSESV6Pv+i21Hvpxp3Dx+pSD8lIPt8uVjRrxAUt/nbswYc+tK6Y2btiULjd4+fnq15PX+nqQDC7Oft7WkwcA==
@@ -9394,9 +9456,9 @@ signal-exit@^3.0.2, signal-exit@^3.0.3, signal-exit@^3.0.7:
   integrity sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ==
 
 signal-exit@^4.0.1:
-  version "4.0.2"
-  resolved "https://registry.npmmirror.com/signal-exit/-/signal-exit-4.0.2.tgz#ff55bb1d9ff2114c13b400688fa544ac63c36967"
-  integrity sha512-MY2/qGx4enyjprQnFaZsHib3Yadh3IXyV2C321GY0pjGfVBu4un0uDJkwgdxqO+Rdx8JMT8IfJIRwbYVz3Ob3Q==
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/signal-exit/-/signal-exit-4.1.0.tgz#952188c1cbd546070e2dd20d0f41c0ae0530cb04"
+  integrity sha512-bzyZ1e88w9O1iNJbKnOlvYTrWPDl46O1bG0D3XInv+9tkPrxrN8jUUTiFlDkkmKWgn1M6CfIA13SuGqOa9Korw==
 
 sigstore@^1.3.0:
   version "1.8.0"
@@ -10049,10 +10111,10 @@ type-fest@^0.8.1:
   resolved "https://registry.npmmirror.com/type-fest/-/type-fest-0.8.1.tgz#09e249ebde851d3b1e48d27c105444667f17b83d"
   integrity sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
 
-type-fest@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.npmmirror.com/type-fest/-/type-fest-4.0.0.tgz#1c87b05c3f0304a2f911b5a47bb45fa4d62031db"
-  integrity sha512-d/oYtUnPM9zar2fqqGLYPzgcY0qUlYK0evgNVti93xpzfjGkMgZHu9Lvgrkn0rqGXTgsFRxFamzjGoD9Uo+dgw==
+type-fest@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.npmmirror.com/type-fest/-/type-fest-4.1.0.tgz#7e214aa81b843478396f832164ae8f058be95f9e"
+  integrity sha512-VJGJVepayd8OWavP+rgXt4i3bfLk+tSomTV7r4mca2XD/oTCWnkJlNkpXavkxdmtU2aKdAmFGeHvoQutOVHCZg==
 
 type-is@~1.6.18:
   version "1.6.18"
