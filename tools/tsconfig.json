@@ -7,5 +7,5 @@
     "target": "ES2022",
     "module": "NodeNext"
   },
-  "include": ["./**.js", "./**.ts"]
+  "include": ["./**/*.js", "./**/*.ts"]
 }
