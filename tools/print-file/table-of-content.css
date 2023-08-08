@@ -1,0 +1,66 @@
+main {
+  max-width: 800px;
+  padding: 24px 0;
+  margin: auto;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+  display: block;
+  margin-block-start: 0.67em;
+  margin-block-end: 0.67em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+
+td {
+  color: #3f51b5;
+}
+
+table {
+  width: 100%;
+}
+
+.name0 {
+  padding-bottom: 0.67em;
+}
+
+.name1 {
+  padding-left: 1em;
+  padding-bottom: 0.67em;
+}
+
+.name2 {
+  padding-left: 2em;
+  padding-bottom: 0.67em;
+}
+
+.name3 {
+  padding-left: 3em;
+  padding-bottom: 0.67em;
+}
+
+.name4 {
+  padding-left: 4em;
+  padding-bottom: 0.67em;
+}
+
+.name5 {
+  padding-left: 5em;
+  padding-bottom: 0.67em;
+}
+
+.name6 {
+  padding-left: 6em;
+  padding-bottom: 0.67em;
+}
+
+.page {
+  text-align: right;
+}
+
+.breaker {
+  text-align: center;
+}
