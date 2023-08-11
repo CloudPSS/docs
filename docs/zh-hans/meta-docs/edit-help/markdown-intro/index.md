@@ -3,6 +3,10 @@ title: MarkDown 语法介绍
 order: 10
 ---
 
+## Front-matter
+
+[Front-matter 介绍](../frontmatter-intro.md)
+
 ## 换行与分段
 
 在一行的末尾添加两个空格来换行，使用一个空行来分段。
@@ -88,6 +92,18 @@ $$ \sum_{i=1}^n a_i = 0 $$
 :::
 ::::
 
+## 重用内容
+
+使用类似图片的语法，可以将 MarkDown 文件内容导入。导入声明上下必须各有一行空白行，导入声明不能包含 `alt text` `title` 等元素。
+
+```md
+
+![](../edit-help/markdown-intro/index.md)
+
+![](../../about/bad.md)
+
+```
+
 ## 媒体
 
 使用 `@[provider](id_or_url)` 语法插入媒体。
@@ -128,9 +144,9 @@ $$ \sum_{i=1}^n a_i = 0 $$
 |              | Grouping                    ||
 | First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
-| Content      | _Long Cell_                 ||
-| ^^           | **Cell**      | Cell         |
-| Content      | **Cell**      | ^^           |
+| Content      |  _Long Cell_  |              |
+| ^^           |   **Cell**    |         Cell |
+| Content      |   **Cell**    |           ^^ |
 
 | New section  | More          | Data         |
 
@@ -143,9 +159,9 @@ $$ \sum_{i=1}^n a_i = 0 $$
 |              | Grouping                    ||
 | First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
-| Content      | _Long Cell_                 ||
-| ^^           | **Cell**      | Cell         |
-| Content      | **Cell**      | ^^           |
+| Content      |  _Long Cell_  |              |
+| ^^           |   **Cell**    |         Cell |
+| Content      |   **Cell**    |           ^^ |
 
 | New section  | More          | Data         |
 
