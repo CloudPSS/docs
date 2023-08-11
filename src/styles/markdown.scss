@@ -595,6 +595,11 @@
       margin: 0.5em auto;
       border: 1px inset var(--theme-foreground-divider);
     }
+
+    .import-not-found {
+      color: var(--theme-warn-text);
+      font-weight: 700;
+    }
   }
 
   @include markdown-color($config);

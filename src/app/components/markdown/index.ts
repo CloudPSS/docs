@@ -134,16 +134,18 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
             this.rendered.next(document.createElement('template'));
             return;
         }
-        try {
-            const [html, fm] = this.render.render(this.file);
-            this.rendered.next(html);
-            this.frontMatter.next(fm);
-        } catch (ex) {
-            const el = document.createElement('template');
-            el.innerHTML = this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '';
-            this.rendered.next(el);
-            this.frontMatter.next(undefined);
-        }
+        this.render.render(this.file).subscribe({
+            next: ([html, fm]) => {
+                this.rendered.next(html);
+                this.frontMatter.next(fm);
+            },
+            error: (ex) => {
+                const el = document.createElement('template');
+                el.innerHTML = this.sanitizer.sanitize(SecurityContext.HTML, String(ex)) ?? '';
+                this.rendered.next(el);
+                this.frontMatter.next(undefined);
+            },
+        });
     }
 
     /**
