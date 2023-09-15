@@ -194,6 +194,55 @@ model.getModelConfig('参数方案 1')
 ```python
 model.getModelJob('电磁暂态方案 1')
 ```
+
+### addComponent(definition: str,label: str,args: dict = {},pins: dict = {},canvas: Optional[str] = None,position: Optional[dict] = None,size: Optional[dict] =None,)
+:::info
+`添加元件`
+:::
+**Params definition:**  元件定义， 连接线没有definition
+
+**Params label:**  元件标签
+
+**Params args:** 元件参数数据，连接线没有参数数据
+
+**Params pins:** 元件引脚数据，连接线没有引脚数据
+
+**Params canvas:** 元件所在图纸数据
+
+**Params position:** 元件位置数据, 连接线没有位置数据
+
+**Params size:** 元件大小数据，连接线没有大小数据
+
+**返回:**  Component 元件实例
+```python
+model.addComponent(dic["definition"], dic["label"], dic["args"], dic["pins"], dic["canvas"], dic["position"], dic["size"])
+```
+
+### removeComponent(key: str)
+:::info
+`删除元件`
+:::
+**Params key:**  元件ID
+
+**返回:**  返回布尔值，True 代表删除成功， False 代表删除失败
+```python
+model.removeComponent("component_new_diode_1")
+```
+
+### updateComponent(key: str, args: dict)
+:::info
+`更新元件`
+:::
+**Params key:**  元件ID
+
+**Params args:**  元件参数
+
+**返回:**  返回布尔值，True 代表更新成功， False 代表更新失败
+```python
+model.updateComponent("component_new_diode_1", dic)
+```
+
+
 ### static load(filePath)
 :::info
 `加载`本地项目文件

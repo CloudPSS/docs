@@ -1,9 +1,9 @@
 ---
-title: IESLab
+title: IESLab建模仿真平台
 order: 100
 ---
 
-* [综合能源系统建模仿真平台简介](intro_IESSim/index.md)
+* [综合能源系统建模仿真平台简介](./intro_IESSim/index.md)
 
 * [综合能源系统建模仿真平台快速入门](./guide_IESSim/index.md)
 
