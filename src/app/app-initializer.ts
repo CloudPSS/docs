@@ -38,7 +38,7 @@ export class AppInitializerService {
     }
 
     /** 初始化函数 */
-    private initializers: Array<() => Promise<void> | void | Observable<void>> = [
+    private readonly initializers: Array<() => Promise<void> | void | Observable<void>> = [
         () => {
             this.translate.addLangs(Object.keys(WebpackTranslateLoader.langs));
         },
