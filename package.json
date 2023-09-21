@@ -43,13 +43,8 @@
     "@angular/service-worker": "^16.2.6",
     "@cloudpss/web-components": "^0.6.10",
     "@ngx-translate/core": "^15.0.0",
-    "@pdf-lib/fontkit": "^1.1.1",
     "js-yaml": "^4.1.0",
     "material-icons": "^1.13.11",
-    "minimatch": "^9.0.3",
-    "pdf-lib": "^1.17.1",
-    "pdfjs": "^2.5.2",
-    "puppeteer": "^21.3.1",
     "rxjs": "~7.8.1",
     "sanitize.css": "^13.0.0",
     "tslib": "^2.6.2",
@@ -88,6 +83,9 @@
     "type-fest": "^4.3.1",
     "typescript": "~5.1.6",
     "webpack-bundle-analyzer": "^4.9.1",
-    "yaml-loader": "^0.8.0"
+    "yaml-loader": "^0.8.0",
+    "minimatch": "^9.0.3",
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^21.3.1"
   }
 }
