@@ -7,5 +7,5 @@ order: 100
 
 * [搭建入门案例](./basics/index.md)
 
-* [EMTLab文档使用指南](./docGuide/index.md)
+* [CloudPSS EMTLab文档使用指南](./docGuide/index.md)
   

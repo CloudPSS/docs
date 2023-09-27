@@ -9,5 +9,3 @@ order: 200
   
 * [RLC电路的电磁暂态仿真](RLC_EMTP.md)
 
-* [RLC电路的移频电磁暂态仿真](RLC_SFA.md)
-

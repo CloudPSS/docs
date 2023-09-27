@@ -22,10 +22,10 @@ order: 50
 
 ![MMC算例的参数方案列表](./MMC算例的参数方案列表.png "MMC算例的参数方案列表")
 
-参数方案配置的具体使用方法详见[参数方案配置](../../Basic/ParameterCal/index.md)功能帮助。
+参数方案配置的具体使用方法详见[参数方案配置](/docs/zh-hans/EMTLab/SimStudio/basic/parameterCalculate/index.md)功能帮助。
 
 ### 2)	计算方案配置：
-CloudPSS SimStudio支持潮流仿真、电磁暂态仿真、移频电磁暂态仿真三种类型仿真计算。用户可根据仿真涉及的应用方向，进行计算方案的配置。潮流仿真支持潮流计算以及功率不平衡量两种求解方式，输出结果为表格形式，潮流仿真的基本原理详见[潮流仿真](../../Powerflow/PowerFlowIntro/index.md)功能帮助。电磁暂态仿真和移频电磁暂态仿真支持启动参数设置以及断面参数设置，相关功能的的使用方法详见[断面保存及导入](../../EMTP/Snapshot/index.md)、 [潮流断面启动](../../EMTP/Initialization/index.md)功能帮助。电磁暂态仿真和移频电磁暂态仿真的仿真输出结果为图线形式，可通过输出通道参数框进行输出通道的选择及配置。电磁暂态仿真和移频电磁暂态仿真的基本原理详见[电磁暂态仿真](../../EMTP/EMTPIntro/index.md)及[移频电磁暂态仿真](../../SFEMT/SFAIntro/index.md)功能帮助。
+CloudPSS SimStudio支持潮流仿真和电磁暂态仿真。用户可根据仿真涉及的应用方向，进行计算方案的配置。潮流仿真支持潮流计算以及功率不平衡量两种求解方式，输出结果为表格形式，潮流仿真的基本原理详见[潮流仿真](/docs/zh-hans/EMTLab/powerFlow/fundamental/index.md)功能帮助。电磁暂态仿真支持启动参数设置以及断面参数设置，相关功能的的使用方法详见[断面保存及导入](/docs/zh-hans/EMTLab/EMPT/snapshot/index.md)、 [潮流断面启动](/docs/zh-hans/EMTLab/powerFlow/initialization/index.md)功能帮助。电磁暂态仿真的仿真输出结果为图线形式，可通过输出通道参数框进行输出通道的选择及配置。电磁暂态仿真的基本原理详见[电磁暂态仿真](/docs/zh-hans/EMTLab/EMPT/fundamental/index.md)功能帮助。
 
 ## 仿真结果页面：
 
@@ -59,8 +59,4 @@ CloudPSS SimStudio支持单个仿真结果波形数据下载功能，点击`下�
 ![csv格式波形数据下载](./数据下载1.png "csv格式波形数据下载")
 
 ![使用Excel查看](./数据下载3.png "使用Excel查看")
-
-
-
-
 

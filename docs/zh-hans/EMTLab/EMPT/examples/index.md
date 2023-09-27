@@ -7,7 +7,6 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 
 ### 电磁暂态仿真案例
 * [高压直流输电系统](./EMTP/LCC.md)
-
 * [模块化多电平变流器及其控制系统](./EMTP/MMC.md)
 * [光伏并网发电系统](./EMTP/PVsystem.md)
 * [储能并网发电系统](./EMTP/BESS.md)
@@ -16,9 +15,6 @@ CloudPSS模板算例及主页示例案例的模型和使用说明，帮助用户
 * [飞轮储能系统](./EMTP/FESS.md) 
 * [异步电机矢量控制系统](./EMTP/DTC.md) 
 * [双馈电机控制系统](./EMTP/DFIG.md) 
-
-### 移频电磁暂态仿真案例
-* [IEEE标准系统（移频）](./SFEMT/IEEE39SFEMT.md)
 
 ### 潮流计算仿真案例
 * [IEEE标准系统（潮流）](./Powerflow/IEEE39PF.md)

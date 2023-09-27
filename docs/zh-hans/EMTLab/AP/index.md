@@ -7,4 +7,4 @@ order: 500
 
 * [并行计算方案配置](./calculateSettings/index.md)
 
-* [并行计算方案配置](./examples/index.md)
+* [案例介绍](./examples/index.md)

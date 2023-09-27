@@ -44,7 +44,7 @@ order: 20
 
 此外，电气元件本身支持部分内部量输出，也即不需要外加量测元件，也可以输出测量信号。如在电阻元件中添加量测，点击电阻元件,在`参数->Monitoring`中填写以#号开头的量测信号输出名称即可。
 
-更多关于信号名称的信息，详见：[参数及引脚体系](../../../features/Basic/ParameterSystem/index.md)。
+更多关于信号名称的信息，详见：[参数及引脚体系](/docs/zh-hans/EMTLab/SimStudio/basic/parameterSystem/index.md)。
 
 ### 添加输出通道
 
