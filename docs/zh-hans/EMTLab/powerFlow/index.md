@@ -6,7 +6,7 @@ order: 500
 
 * [计算方案配置](./calculateSettings/index.md)
 
-* [潮流结果写回及初始化](./writing/index.md)
+* [潮流结果写回及初始化](./initialization/index.md)
 
 * [自定义潮流元件](./customModel/index.md)
 

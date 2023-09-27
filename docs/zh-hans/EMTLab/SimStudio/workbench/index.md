@@ -1,5 +1,5 @@
 ---
-title: 工作台设计
+title: SimStudio 工作台
 order: 200
 ---
 
