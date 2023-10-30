@@ -1,5 +1,5 @@
 ---
-title: 综合能源系统建模仿真平台简介
+title: 平台简介
 type: intro
 author: jack
 order: 10
