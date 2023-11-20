@@ -1,9 +1,9 @@
 ---
-title: 仿真模拟模块
+title: 典型场景生成模块
 order: 500
 ---
 
-* [综合能源仿真计算原理](./fundamental/index.md)
+* [典型场景聚类生成基本原理](./fundamental/index.md)
 
 * [计算方案配置](./caculation/index.md)
 
