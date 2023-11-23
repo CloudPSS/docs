@@ -6,11 +6,18 @@
   >
 </div>
 
-<mat-form-field id="search-from" floatLabel="never">
-  <mat-label>{{'topBar.search' | translate}}</mat-label>
+<mat-form-field id="search-from" subscriptSizing="dynamic" appearance="outline" color="accent">
   <mat-icon id="search-icon" matPrefix>search</mat-icon>
-  <input #searchInput="matInput" type="text" matInput ngModel #searchModel="ngModel" [matAutocomplete]="auto" />
-  <mat-autocomplete (optionSelected)="onSelect($event.option.value)" #auto="matAutocomplete">
+  <input
+    #searchInput="matInput"
+    type="text"
+    matInput
+    ngModel
+    #searchModel="ngModel"
+    [matAutocomplete]="auto"
+    [placeholder]="'topBar.search' | translate"
+  />
+  <mat-autocomplete (optionSelected)="onSelect($event.option.value)" #auto="matAutocomplete" panelWidth="auto">
     <mat-option *ngFor="let doc of searchResults | async" [value]="doc">
       <div class="search-option-content">
         <span class="title" [innerHTML]="doc.title"></span>

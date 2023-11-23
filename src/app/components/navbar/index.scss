@@ -19,17 +19,8 @@
 
 #search-from {
   font-size: 14px;
-  align-self: end;
+  align-self: center;
   margin-left: auto;
-  mat-label {
-    transition: opacity 0.2s ease-in;
-  }
-
-  &:focus-within {
-    mat-label {
-      opacity: 0.5;
-    }
-  }
 }
 
 #search-icon {
@@ -56,6 +47,7 @@
   line-height: 1.1;
   font-size: 14px;
   gap: 4px;
+  margin: 4px;
 
   .subtitle {
     font-size: 12px;

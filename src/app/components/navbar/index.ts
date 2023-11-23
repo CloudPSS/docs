@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit, ViewChild } from '@angular/core';
-import { MatLegacyInput as MatInput } from '@angular/material/legacy-input';
+import { MatInput } from '@angular/material/input';
 import { NgModel } from '@angular/forms';
 import { SourceService } from '@/services/source';
 import { GlobalService } from '@/services/global';

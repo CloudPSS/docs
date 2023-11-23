@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use 'sass:color';
 @use '@angular/material' as mat;
-@import '~katex/dist/katex.css';
+@import 'katex/dist/katex.css';
 
 // block quotes and def lists
 @mixin quote-color($palette, $char: false) {

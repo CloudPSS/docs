@@ -1,12 +1,12 @@
 @use '@angular/material' as mat;
-@import 'sanitize.css';
-@import 'sanitize.css/forms';
-@import 'sanitize.css/typography';
+@import url('sanitize.css');
+@import url('sanitize.css/forms');
+@import url('sanitize.css/typography');
 
 @import './config';
 @import './markdown';
 
-@import 'material-icons/iconfont/material-icons.scss';
+@import url('material-icons/iconfont/material-icons.scss');
 
 // Include the common styles for Angular Material. We include this here so that you only
 // have to load a single css file for Angular Material in your app.
@@ -18,9 +18,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -28,11 +28,11 @@
 
 @mixin apply($theme) {
   @include css-map($theme, 'theme');
-  @include mat.all-legacy-component-colors($theme);
+  @include mat.all-component-colors($theme);
   @include markdown-color($theme);
 }
 
-@include mat.all-legacy-component-themes($docs-theme);
+@include mat.all-component-themes($docs-theme);
 @include markdown-theme($docs-theme);
 :root {
   @include css-map($docs-theme, 'theme');

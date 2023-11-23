@@ -60,9 +60,6 @@ mat-sidenav-content {
     @media screen {
       max-width: 800px;
     }
-    mat-card {
-      user-select: none;
-    }
   }
   &.toc {
     @media screen and (min-width: 960px) {

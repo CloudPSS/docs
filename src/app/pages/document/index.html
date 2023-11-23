@@ -22,6 +22,7 @@
       <main id="scroll-container">
         <h1 id="title">{{(frontMatter | async)?.title}}</h1>
         <mat-card
+          appearance="outlined"
           *ngIf="(info | async)?.fallback"
           [translate]="'article.notTranslated'"
           [translateParams]="{language: global.languageName((info | async)?.fallback || '')}"
