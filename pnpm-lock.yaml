@@ -151,6 +151,9 @@ devDependencies:
   image-size:
     specifier: ^1.0.2
     version: 1.0.2
+  katex:
+    specifier: ^0.16.9
+    version: 0.16.9
   markdown-it:
     specifier: ^13.0.2
     version: 13.0.2
@@ -5879,7 +5882,6 @@ packages:
     resolution:
       { integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww== }
     engines: { node: '>= 12' }
-    dev: false
 
   /comment-parser@1.4.1:
     resolution:
@@ -9132,7 +9134,6 @@ packages:
     hasBin: true
     dependencies:
       commander: 8.3.0
-    dev: false
 
   /keyv@3.0.0:
     resolution:
