@@ -15,7 +15,6 @@ import pkgJson from 'package.json';
 @Injectable({
     providedIn: 'root',
 })
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppInitializerService {
     constructor(
         readonly translate: TranslateService,

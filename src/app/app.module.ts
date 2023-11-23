@@ -82,7 +82,6 @@ import { TocComponent } from './components/toc';
     ],
     bootstrap: [AppComponent],
 })
-// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class AppModule {
     constructor(injector: Injector) {
         constants.initInjectable(Injector, injector);

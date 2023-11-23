@@ -21,7 +21,7 @@
     "build-manifest": "node -e \"import('./tools/build-manifest.js').then(({default: d}) => d())\"",
     "convert-webp": "node -e \"import('./tools/convert-webp.js').then(({default: d}) => d('docs'))\"",
     "prepare": "husky install || echo Failed to initialize husky",
-    "format": "prettier --cache --cache-strategy content --ignore-path .gitignore --write .",
+    "format": "prettier --cache --cache-strategy content --write .",
     "lint": "ng lint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content"
   },
   "private": true,

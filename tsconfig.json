@@ -6,12 +6,10 @@
     "outDir": "./out-tsc/app",
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
-    "importHelpers": true,
+    "moduleResolution": "Bundler",
     "target": "ES2022",
     "module": "ES2022",
     "paths": {
