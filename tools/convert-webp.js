@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 import os from 'node:os';
 import fs from 'fs-extra';
-import execa from 'execa';
+import { execa } from 'execa';
 import download from 'download';
 import path from 'node:path/posix';
 import { glob } from 'glob';
 import { imageSize } from 'image-size';
-import chalk from 'chalk';
+import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
 import rxjs from 'rxjs';
 
