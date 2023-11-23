@@ -20,7 +20,7 @@ jobs:
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Build for standalone
         run: |
-          yarn build:standalone
+          pnpm build:standalone
           rm -f dist/stats.json dist/*.map
           sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/./g' | sed -e 's/-/~/g')/g" deb/DEBIAN/control
           sed -i "s/__INSTALLED_SIZE__/$(du -sk dist | cut -f 1)/g" deb/DEBIAN/control
@@ -52,7 +52,7 @@ jobs:
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Build for docs.cloudpss.net
         run: |
-          yarn build:main
+          pnpm build:main
           rm -f dist/stats.json
           tar -cJf dist.tar.xz -C ./dist .
           ls -l dist.tar.xz

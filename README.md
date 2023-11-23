@@ -19,7 +19,7 @@ Master 分支预览地址：<https://cloudpss.github.io/Docs/>
 如访问预览服务地址无法打开，一般是因为预览服务未正常运行导致的。使用以下命令启动预览服务。
 
 ```sh
-nohup yarn start &
+nohup pnpm start &
 ```
 
 ![](./.github/assets/terminal.png)
@@ -29,7 +29,7 @@ nohup yarn start &
 当文档的文件结构发生变化（增加、删除或移动 MarkDown 文件）时，需要运行以下命令更新文件列表。
 
 ```sh
-yarn build-manifest
+pnpm build-manifest
 ```
 
 ### 编辑与提交
