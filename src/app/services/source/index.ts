@@ -239,8 +239,8 @@ export class SourceService {
                     responseType === 'json'
                         ? (JSON.parse(file.content) as unknown)
                         : responseType === 'arraybuffer'
-                        ? new TextEncoder().encode(file.content)
-                        : file.content;
+                          ? new TextEncoder().encode(file.content)
+                          : file.content;
                 return of({
                     version: spec,
                     path,
