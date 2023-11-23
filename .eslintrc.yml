@@ -1,6 +1,6 @@
 root: true
 env:
-  es2020: true
+  es2022: true
   browser: true
   commonjs: true
 overrides:

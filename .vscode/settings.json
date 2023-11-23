@@ -1,7 +1,5 @@
 {
-  "npm.packageManager": "yarn",
-  "eslint.lintTask.enable": true,
-  "eslint.format.enable": true,
+  "npm.packageManager": "pnpm",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "files.eol": "\n",
   "editor.tabSize": 2,
