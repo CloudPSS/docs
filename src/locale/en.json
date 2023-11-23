@@ -1,0 +1,15 @@
+{
+  "title": "CloudPSS Documentation",
+
+  "welcome": "Welcome",
+
+  "topBar": { "search": "Search", "changeTheme": "Change theme", "changeLanguage": "Change language" },
+  "sidenav": {
+    "open": "Open sidebar",
+    "close": "Close sidebar"
+  },
+
+  "article": {
+    "notTranslated": "The topic has not been translated to your language. We are currently showing you the {{language}} version."
+  }
+}
