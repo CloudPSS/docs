@@ -8,7 +8,7 @@
     "docs": {
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser-esbuild",
           "configurations": {
             "for-github": {
               "baseHref": "/Docs/"
@@ -58,9 +58,6 @@
                 "output": "./content/"
               }
             ],
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js"
-            },
             "index": "src/index.html",
             "main": "src/main.ts",
             "outputPath": "dist",
@@ -81,14 +78,14 @@
           }
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "docs:build:production"
+              "buildTarget": "docs:build:production"
             }
           },
           "options": {
-            "browserTarget": "docs:build",
+            "buildTarget": "docs:build",
             "host": "0.0.0.0",
             "disableHostCheck": true,
             "port": 4000

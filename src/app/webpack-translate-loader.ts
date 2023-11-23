@@ -2,7 +2,7 @@ import { TranslateLoader } from '@ngx-translate/core';
 import { Observable, from } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { __importDefault } from 'tslib';
-import locale from '../locale/index.yml';
+import locale from '../locale/index.json';
 
 /**
  * 语言定义
@@ -31,11 +31,8 @@ export class WebpackTranslateLoader implements TranslateLoader {
      * @inheritdoc
      */
     getTranslation(lang: string): Observable<unknown> {
-        return from(
-            import(
-                /* webpackMode: 'eager' */
-                `../locale/${lang}.yml`
-            ),
-        ).pipe(map((mod: { default: unknown }) => __importDefault(mod).default));
+        return from(import(`../locale/${lang}.json`)).pipe(
+            map((mod: { default: unknown }) => __importDefault(mod).default),
+        );
     }
 }
