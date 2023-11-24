@@ -19,6 +19,7 @@ import { BehaviorSubject, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { Router, Scroll } from '@angular/router';
 import { FrontMatter } from '@/interfaces/manifest';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
 
 /**
  * 显示md文档
@@ -103,6 +104,26 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
                 }
             }),
         );
+
+        const lightbox = new PhotoSwipeLightbox({
+            pswpModule: () => import('photoswipe'),
+            wheelToZoom: true,
+            gallery: this.doc.nativeElement,
+            children: 'figure',
+        });
+        lightbox.addFilter('domItemData', (itemData, element) => {
+            const img = element.querySelector('img');
+            if (img) {
+                itemData.element = img;
+                itemData.src = img.src;
+                itemData.msrc = img.src;
+                itemData.width = img.naturalWidth;
+                itemData.height = img.naturalHeight;
+                itemData.alt = img.alt || img.title;
+            }
+            return itemData;
+        });
+        lightbox.init();
     }
 
     /**
@@ -111,18 +132,22 @@ export class MarkdownComponent implements OnChanges, AfterViewInit, NavigateEven
     scrollTo(id: string | null): boolean {
         this.doc.nativeElement.querySelectorAll('.target').forEach((el) => el.classList.remove('target'));
         if (!id) {
-            if (this.doc.nativeElement.offsetParent) {
-                this.doc.nativeElement.offsetParent.scrollTo({ top: 0 });
-            } else {
-                this.doc.nativeElement.scrollIntoView();
-            }
+            requestAnimationFrame(() => {
+                if (this.doc.nativeElement.offsetParent) {
+                    this.doc.nativeElement.offsetParent.scrollTo({ top: 0 });
+                } else {
+                    this.doc.nativeElement.scrollIntoView();
+                }
+            });
             return true;
         }
         // eslint-disable-next-line unicorn/prefer-query-selector
         const target = document.getElementById(id);
         if (!target) return false;
-        target.classList.add('target');
-        target.scrollIntoView();
+        requestAnimationFrame(() => {
+            target.classList.add('target');
+            target.scrollIntoView();
+        });
         return true;
     }
 
