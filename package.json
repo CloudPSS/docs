@@ -45,6 +45,7 @@
     "@ngx-translate/core": "^15.0.0",
     "js-yaml": "^4.1.0",
     "material-icons": "^1.13.12",
+    "photoswipe": "^5.4.2",
     "rxjs": "~7.8.1",
     "sanitize.css": "^13.0.0",
     "tslib": "^2.6.2",
