@@ -19,6 +19,8 @@ Master 分支预览地址：<https://cloudpss.github.io/Docs/>
 如访问预览服务地址无法打开，一般是因为预览服务未正常运行导致的。使用以下命令启动预览服务。
 
 ```sh
+pkill 'ng serve'
+rm -f nohup.out
 nohup pnpm start &
 ```
 
