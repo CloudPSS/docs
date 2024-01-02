@@ -76,7 +76,7 @@ running
 running
 running
 end
-{'verb': 'append', 'data': {'title': '35kV城新线-file0_PD_10100000_436F功率(kW)', 'traces': [
+{'verb': 'append', 'data': {'title': 'XXX线-file0_PD_10100000_436F功率(kW)', 'traces': [
             {'name': '有功损失', 'type': 'scatter', 'x': ['2021-01-01 22: 00: 00'
                 ], 'y': [
                     77.60716779440949
