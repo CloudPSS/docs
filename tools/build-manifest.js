@@ -59,6 +59,7 @@ export default async function () {
     } catch (ex) {
         // eslint-disable-next-line no-console
         console.error(ex);
+        process.exitCode = 1;
     } finally {
         process.chdir(cwd);
     }
