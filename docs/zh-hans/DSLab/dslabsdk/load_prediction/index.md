@@ -88,7 +88,7 @@ running
 running
 running
 {'type': 'log', 'verb': 'create', 'version': 1, 'key': '1686724621.322948694', 'data': {'level': 'info', 'content': '计算任务运行结束'}, 'sender': 'remote', 'when': datetime.datetime(2023, 6, 14, 14, 37, 1, 322948)}
-{'data': {'items': [{'placeholder': '暂无数据', 'query': {'key': '卢氏县', 'type': 'message'}, 'title': '卢氏县'}, {'placeholder': '暂无数据', 'query': {'key': '三门峡220kV卢氏变电站', 'type': 'message'}, 'title': '卢氏县/三门峡220kV卢氏变电站'}, {'placeholder': '暂无数据', 'query': {'key': '三门峡220kV卢氏变电站卢明线', 'type': 'message'}, 'title': '卢氏县/三门峡220kV卢氏变电站/卢明线'}, ...(由于结果过长，此处省略后续内容)...
+{'data': {'items': [{'placeholder': '暂无数据', 'query': {'key': 'XXX地区', 'type': 'message'}, 'title': 'XXX地区'}, {'placeholder': '暂无数据', 'query': {'key': 'XXX变电站', 'type': 'message'}, 'title': 'XXX地区/XXX变电站'}, {'placeholder': '暂无数据', 'query': {'key': 'XXX线', 'type': 'message'}, 'title': 'XXX地区/XXX变电站/XXX线'}, ...(由于结果过长，此处省略后续内容)...
 
 ```
 

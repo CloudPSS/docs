@@ -9,5 +9,5 @@ order: 300
 
 - ### [时序潮流模块相关接口](./power_flow/index.md)
   
-- ### [技术经济分析模块相关接口](./financial/index.md)
+
 
