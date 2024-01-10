@@ -64,11 +64,15 @@ export class RenderService {
         const replaceDocExt = context.replaceDocExt ?? true;
         const normalizeLink = md.normalizeLink.bind(md);
         md.normalizeLink = (url: string): string => {
+            // absolute url
             if (/^([a-z][a-z0-9]*:|\/\/)/i.test(url)) return normalizeLink(url);
+            // in page target
             if (url.startsWith('#')) {
+                // find absolute path; remove language path prefix, ie '/zh-hans/'
                 const path = this.source.normalizePath(url, context.root.path).replace(/^\/[^/]+/, '');
                 return normalizeLink(replaceDocExt ? path.replace(/(\/index)?\.md(#[^#]*)?$/i, '$2') : path);
             }
+            // markdown file
             if (/\.md(#[^#]*)?$/i.test(url)) {
                 const path = this.source.normalizePath(url, context.file.path).replace(/^\/[^/]+/, '');
                 return normalizeLink(replaceDocExt ? path.replace(/(\/index)?\.md(#[^#]*)?$/i, '$2') : path);
