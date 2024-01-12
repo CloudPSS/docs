@@ -11,7 +11,7 @@ order: 500
 
 * [电磁暂态仿真计算](./EMPT/index.md)
 
-* [潮流计算及初始化](./introEMTLab/index.md)
+* [潮流计算及初始化](./powerFlow/index.md)
 
 * [电磁暂态仿真并行加速](./powerFlow/index.md)
 
