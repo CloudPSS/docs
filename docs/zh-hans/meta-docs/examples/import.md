@@ -14,3 +14,7 @@ order: 99999
 # 以下内容来自 ```![](../../about/index.md)```
 
 ![](../../about/index.md)
+
+# 以下内容来自 ```![](./import-index/index.md)```
+
+![](./import-index/index.md)
