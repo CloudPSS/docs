@@ -1,6 +1,6 @@
 ---
 title: 计算方案配置
-order: 85
+order: 30
 author: ZR
 ---
 

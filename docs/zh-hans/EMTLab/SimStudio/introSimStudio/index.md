@@ -1,6 +1,6 @@
 ---
 title: SimStudio介绍
-order: 500
+order: 100
 ---
 ::: tip
 **CloudPSS SimStudio 相比前代产品，在定位、设计和功能角度都有了很大的革新。这篇文档将引导新老用户快速熟悉 CloudPSS SimStudio 的基本设计理念和常用功能，从而快速掌握算例构建的能力。**

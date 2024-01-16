@@ -1,6 +1,6 @@
 ---
 title: 元件库
-order: 500
+order: 1000
 ---
 
 * [基础库](./basic/index.md)

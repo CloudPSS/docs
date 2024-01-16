@@ -1,6 +1,6 @@
 ---
 title: SimStudio基础功能
-order: 100
+order: 400
 ---
 
 * [参数及引脚体系](./parameterSystem/index.md)
@@ -11,7 +11,7 @@ order: 100
 
 * [元件表](./componentTable/index.md)
 
-* [搜索栏](./find/index.md)
+* [搜索栏](./search/index.md)
 
 * [模块封装](./moduleEncapsulation/index.md)
 

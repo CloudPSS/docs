@@ -1,6 +1,6 @@
 ---
 title: 电磁暂态仿真计算
-order: 100
+order: 400
 ---
 
 * [电磁暂态仿真基本原理](./fundamental/index.md)

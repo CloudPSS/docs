@@ -1,6 +1,6 @@
 ---
 title: SimStudio 工作台
-order: 200
+order: 300
 ---
 
 * [工具栏](./toolbar/index.md)

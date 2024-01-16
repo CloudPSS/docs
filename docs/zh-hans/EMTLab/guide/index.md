@@ -1,6 +1,6 @@
 ---
 title: 快速入门
-order: 100
+order: 200
 ---
 
 * [SimStudio 个人中心](./center/index.md)

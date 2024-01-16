@@ -5,7 +5,7 @@ order: 200
 
 * [总览标签页](./summary/index.md)
 
-* [接口标签页](./interface/index.md)
+* [接口标签页](./Interface/index.md)
 
 * [实现标签页](./design/index.md)
 

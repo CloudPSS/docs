@@ -1,6 +1,6 @@
 ---
 title: 交直流电网拓扑分析
-order: 500
+order: 900
 ---
 
 * [拓扑分析功能介绍](./intro/index.md)

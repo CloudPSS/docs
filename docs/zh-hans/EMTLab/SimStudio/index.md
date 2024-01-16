@@ -1,6 +1,6 @@
 ---
 title: SimStudio工作台功能帮助
-order: 100
+order: 300
 ---
 
 * [SimStudio 介绍](./introSimStudio/index.md)

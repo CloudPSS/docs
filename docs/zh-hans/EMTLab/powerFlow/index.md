@@ -1,6 +1,6 @@
 ---
 title: 潮流计算及初始化
-order: 500
+order: 600
 ---
 * [潮流计算基本原理](./fundamental/index.md)
 

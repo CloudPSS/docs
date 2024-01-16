@@ -1,6 +1,6 @@
 ---
 title: 高级管理功能
-order: 500
+order: 1200
 ---
 
 * [计算资源管理](./computingResources/index.md)
