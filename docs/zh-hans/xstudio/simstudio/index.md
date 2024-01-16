@@ -8,14 +8,18 @@ order: 500
 :::
 
 
-* [快速入门](guide.md)
+* [SimStudio快速入门](guide.md)
 
-* [SimStudio介绍](features.md)
+* [SimStudio介绍](intro.md)
 
-* [元件库](components.md)
+* [个人中心功能](center.md)
 
-* [案例介绍](examples.md)
+* [SimStudio工作台](workbench.md)
 
+* [SimStudio基础功能](basic.md)
 
+* [SimStudio SDK](simstudio-sdk.md)
+
+* [模型案例](case.md)
 
   
