@@ -3,9 +3,12 @@ title: AppStudio
 order: 700
 ---
 
-* [快速入门](guide.md)
+* [AppStudio介绍](intro.md)
 
-* [功能帮助](features.md)
+* [个人中心功能](usercenter.md)
   
-* [控件帮助](control.md)
+* [快速入门](gudie.md)
 
+* [AppStudio工作台](workbench.md)
+
+* [AppStudio基础功能](basic.md)
