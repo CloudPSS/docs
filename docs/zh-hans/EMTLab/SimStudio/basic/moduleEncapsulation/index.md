@@ -288,7 +288,7 @@ author: zr
 ![子系统内虚拟输出引脚使用方法](./PinLike4.png "子系统内虚拟输出引脚使用方法")
 :::
 
-总结来说，[模块端口](../../../components/comp_PSS/comp_PSSSystem/BasicComp/SystemPort/index.md)元件给模块提供了与外部电路连接的实体引脚，而虚拟引脚类型参数提供了与外部电路连接的虚拟引脚。
+总结来说，[模块端口](../../../../components/comp_PSS/comp_PSSSystem/BasicComp/SystemPort/index.md)元件给模块提供了与外部电路连接的实体引脚，而虚拟引脚类型参数提供了与外部电路连接的虚拟引脚。
 
 
 ## 如何构建一个模块封装？
@@ -329,7 +329,7 @@ author: zr
 
 ![引脚编辑栏配置截图](./N5new.png "引脚编辑栏配置截图")
 
-在`实现`标签页，添加[模块端口](../../../components/comp_PSS/comp_PSSSystem/BasicComp/SystemPort/index.md)元件至图纸上，连接至选择器的输出端，配置该端口的Pin Key为Output。
+在`实现`标签页，添加[模块端口](../../../../components/comp_PSS/comp_PSSSystem/BasicComp/SystemPort/index.md)元件至图纸上，连接至选择器的输出端，配置该端口的Pin Key为Output。
 
 ![添加模块端口示意图](./添加模块端口示意图.png "添加模块端口示意图")
 
@@ -353,7 +353,7 @@ author: zr
 
 ![添加模块名称与高级设置](./N9.png "添加模块名称与高级设置")  
 
-`描述`为项目的简要描述，可以使用MarkDown输入。`文档`是对该模块的说明，在`接口`标签页将参数列表和引脚列表定义好后，`文档`会自动生成相关参数列表和端口列表的描述，显示参数和端口的信息，用户只需要手动添加模块的功能或使用说明即可。`文档`同样支持MarkDown输入，页面右侧会实时渲染编写的效果。MarkDown语法的介绍详见[MarkDown语法介绍](../../Other/Markdown/index.md)功能帮助。
+`描述`为项目的简要描述，可以使用MarkDown输入。`文档`是对该模块的说明，在`接口`标签页将参数列表和引脚列表定义好后，`文档`会自动生成相关参数列表和端口列表的描述，显示参数和端口的信息，用户只需要手动添加模块的功能或使用说明即可。`文档`同样支持MarkDown输入，页面右侧会实时渲染编写的效果。MarkDown语法的介绍详见[MarkDown语法介绍](../../workbench/function/summary/Markdown.md)功能帮助。
 
 ![添加模块描述与文档](./N10.png "添加模块描述与文档")  
 

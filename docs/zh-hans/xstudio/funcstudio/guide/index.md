@@ -1,9 +1,9 @@
 ---
 title: 快速入门
-order: 100
+order: 400
 ---
 
-* [FuncStudio个人中心](usercenter.md)
+* [新建本地实现的函数](local.md)
 
-* [入门案例](rumen.md)
+* [新建云端实现的函数](cloud.md)
   

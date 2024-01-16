@@ -14,7 +14,7 @@ author: ZR
 
 ## 潮流计算
 
-潮流计算原理详见[潮流计算仿真原理介绍](../../Powerflow/PowerFlowIntro/index.md)功能帮助。
+潮流计算原理详见[潮流计算仿真原理介绍](../../../powerFlow/fundamental/index.md)功能帮助。
 
 ### 进行潮流计算的要求
 
@@ -55,7 +55,7 @@ author: ZR
 
 ## 电磁暂态仿真
 
-电磁暂态仿真原理详见[电磁暂态仿真原理介绍](../../EMTP/EMTPIntro/index.md)功能帮助。
+电磁暂态仿真原理详见[电磁暂态仿真原理介绍](../../../EMPT/fundamental/index.md)功能帮助。
 
 ### 电磁暂态仿真方案的参数设定
 
@@ -76,7 +76,7 @@ author: ZR
 + `求解器设置` 
   包含`常规`和`开关/离散事件处理增强`两个选项，对于包含由分立开关元件的算例（例如IGBT、二极管、晶闸管等），必须选择为`开关/离散事件处理增强`。`常规`选项下系统仿真计算的效率更高。
 
-电磁暂态仿真的`启动参数`及`断面参数`的使用方法详见[断面保存及导入](../../EMTP/Snapshot/index.md)、 [潮流断面启动](../../EMTP/Initialization/index.md)功能帮助。
+电磁暂态仿真的`启动参数`及`断面参数`的使用方法详见[断面保存及导入](../../../EMPT/snapshot/index.md)、 [潮流断面启动](../../../powerFlow/initialization/index.md)功能帮助。
 
 ### 输出通道选择
 

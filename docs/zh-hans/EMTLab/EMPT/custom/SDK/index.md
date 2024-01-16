@@ -16,7 +16,7 @@ order: 400
 
 ## 导入元件编译产物
 
-在`实现标签页`选择`电磁暂态`，将`EMTLab Core SDK`的`.so`编译产物拖放至电磁暂态实现框中。 `EMTLab Core SDK`的使用和元件代码编写等内容详见[EMTLab Core SDK](/docs/zh-hans/EMTLab/SDK/CoreSDK/index.md)帮助文档。
+在`实现标签页`选择`电磁暂态`，将`EMTLab Core SDK`的`.so`编译产物拖放至电磁暂态实现框中。 `EMTLab Core SDK`的使用和元件代码编写等内容详见[EMTLab Core SDK](../../../SDK/CoreSDK/index.md)帮助文档。
 
 ## 元件接口与图形设计
 
