@@ -1,6 +1,5 @@
 ---
 title: SimStudio
-order: 500
 ---
 
 * [快速入门](guide.md)

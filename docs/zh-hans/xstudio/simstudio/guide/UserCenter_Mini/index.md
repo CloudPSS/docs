@@ -2,7 +2,6 @@
 title: CloudPSS-MiNi用户中心
 type: guide
 author: yms
-order: 800
 ---
 ## 首页
 1. 点击首页的应用栏卡片可以进入对应的应用。

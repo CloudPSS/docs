@@ -2,7 +2,6 @@
 title: CloudPSS-MiNi简介
 type: guide
 author: yms
-order: 700
 ---
 
 

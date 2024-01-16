@@ -1,6 +1,5 @@
 ---
 title: AppStudio
-order: 700
 ---
 
 * [快速入门](guide.md)
