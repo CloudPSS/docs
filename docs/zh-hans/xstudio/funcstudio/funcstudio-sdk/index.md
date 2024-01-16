@@ -1,6 +1,6 @@
 ---
 title: FuncStudio SDK
-order: 600
+order: 700
 ---
 
 * [Function类](function.md)

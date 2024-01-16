@@ -1,6 +1,6 @@
 ---
 title: FuncStudio 案例
-order: 600
+order: 800
 ---
 
 * [第三方计算内核的接入案例](third.md)
