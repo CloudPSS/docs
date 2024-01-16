@@ -8,5 +8,3 @@ order: 100
 * [新建综合能源系统模型](rumen.md)
   
 * [新建电路仿真模型](manual.md)
-
-* [CloudPSS-MiNi用户中心](UserCenter_Mini.md)
