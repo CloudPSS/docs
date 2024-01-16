@@ -1,5 +1,5 @@
 ---
-title: EMTLab 电磁暂态仿真平台
+title: EMTLab
 order: 500
 ---
 
