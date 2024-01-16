@@ -10,7 +10,7 @@ order: 500
 
 * [快速入门](guide.md)
 
-* [功能帮助](features.md)
+* [SimStudio介绍](features.md)
 
 * [元件库](components.md)
 
