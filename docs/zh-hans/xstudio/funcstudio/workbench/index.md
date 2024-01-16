@@ -1,5 +1,5 @@
 ---
-title: SimStudio 工作台
+title: FuncStudio 工作台
 order: 500
 ---
 

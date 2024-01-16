@@ -13,7 +13,7 @@ order: 500
 
 * [潮流计算及初始化](./powerFlow/index.md)
 
-* [电磁暂态仿真并行加速](./powerFlow/index.md)
+* [电磁暂态仿真并行加速](./AP/index.md)
 
 * [电磁暂态实时仿真](./realTime/index.md)
 
