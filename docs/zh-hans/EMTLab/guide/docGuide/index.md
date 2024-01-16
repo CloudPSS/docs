@@ -1,5 +1,5 @@
 ---
-title:CloudPSS EMTLab文档使用指南
+title: CloudPSS EMTLab文档使用指南
 order: 500
 ---
 CloudPSS EMTLab电磁暂态仿真平台提供全部功能的详细说明文档，请先阅读[SimStudio 介绍](/docs/zh-hans/EMTLab/SimStudio/introSimStudio/index.md)。
