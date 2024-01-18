@@ -12,3 +12,7 @@ order: 700
 * [AppStudio工作台](workbench.md)
 
 * [AppStudio基础功能](basic.md)
+  
+* [控件库](stuff.md)
+  
+* [案例介绍](case.md)
