@@ -22,9 +22,9 @@ Linux 64 位系统环境下编译生成的 `.so` 文件。
 
 ### 编译来源：  
 
-1. MATLAB/Simulink 编译生成S-Function时自动生成的代码文件。  
+1. MATLAB/Simulink 编译生成 S-Function 时自动生成的代码文件。  
 
-2. 用户自定义函数和接口的二进制文件。  
+2. 用户自定义函数和接口的代码文件。  
 
 ## S-Function 实现的整体流程
 
@@ -32,15 +32,15 @@ Linux 64 位系统环境下编译生成的 `.so` 文件。
 
 用户可将 Simulink 白箱模型封装成 S-Function 子系统，利用 MATLAB 的自动代码生成功能，得到 `.c` 和 `.h` 文件，在 Linux 环境中编译生成 `.so` 文件；也可以提供包含自定义函数和接口的二进制文件，在Linux 环境中再编译，生成 `.so` 文件。  
 
-用户需要获取 S-Function 子系统或自定义二进制文件的`全局参数`、`输入/输出接口信息`，并根据信息构建 CloudPSS 的前台元件，即定义元件的`参数`、`引脚`和`图形`。  
+用户需要获取 S-Function 子系统或自定义代码文件的`全局参数`、`输入/输出接口信息`，并根据信息构建 CloudPSS 的前台元件，即定义元件的`参数`、`引脚`和`图形`。  
 
 导入 `.so` 文件，与前台元件关联后，即完成 S-Function 元件的构建。
 
 ## 具体步骤
 
-若编译来源是 **MATLAB/Simulink 白箱模型**，从[步骤1](#步骤1)开始；若编译来源是**用户自定义函数和接口的二进制文件**，跳过步骤1，从[步骤2](#步骤2)开始。
+若编译来源是 **MATLAB/Simulink 自动生成代码**，从 [步骤 1](#步骤1) 开始；若编译来源是**用户自定义函数和接口代码**，从 [步骤 2-b](#步骤2-b) 开始。
 
-### 步骤1<span id = "步骤1"></span>：将 Simulink 模型封装为 S-Function 并自动生成代码
+### 步骤 1<span id = "步骤1"></span>：将 Simulink 模型封装为 S-Function 并自动生成代码
 
 #### a. 解算器设置
 
@@ -82,17 +82,17 @@ S-Function 参数必须以字母开头（不能是数字或下划线），目前
 
 ![S-Function 自动代码生成](./1-6.png "S-Function 自动代码生成") 
 
-:::warning
+:::tip
 若提示无编译器，则下载并安装一个 **MingGW64** 编译器，流程可参考：  ->https://zhuanlan.zhihu.com/p/359962279?ivk_sa=1024320u<-
 :::
 
 ![MATLAB 编译器安装与配置](./1-7.png "MATLAB 编译器安装与配置") 
 
-### 步骤2<span id = "步骤2"></span>：在 Linux 环境编译生成 .so 文件
+### 步骤 2：在 Linux 环境编译生成 .so 文件
 
-#### a. 添加接口定义  
+#### a. 对于编译来源 1：MATLAB/Simulink 自动生成的代码文件
 
-在步骤1生成的 `sfcn_rtw` 文件夹中找到以 S-Function 名称命名的 `.c` 文件，在 #include 之后添加如下接口定义并保存：
+在 [步骤 1](#步骤1) 生成的 `sfcn_rtw` 文件夹中找到以 S-Function 名称命名的 `.c` 文件，在 #include 之后添加如下接口定义并保存：
 ```c
 #define ssSetInputPortVectorDimension(S, port, d)   \
   (ssSetInputPortWidth(S, port, d))
@@ -103,9 +103,8 @@ S-Function 参数必须以字母开头（不能是数字或下划线），目前
 此函数定义是为识别 S-Function 的输入输出引脚，若每个输入输出引脚维数均为 1，则不用添加；若有引脚维数大于 1，则必须添加。
 :::
 
-#### b. 编译  
-
 将 `sfcn_rtw` 文件夹复制到 Linux 环境，在其路径下输入以下编译命令：
+
 ```
 gcc -Wall -DRT -DRT_MALLOC -fPIC -lm -shared *.c -o xxxx.so
 ```  
@@ -114,16 +113,34 @@ gcc -Wall -DRT -DRT_MALLOC -fPIC -lm -shared *.c -o xxxx.so
 :::
 
 如报错缺少 `.h` 头文件，需要手动添加。不同版本的 MATLAB 所调用的头文件不同，获取路径可参考：
+
 ```
 安装路径\MATLAB\Rxxxxx\simulink\include
 安装路径\MATLAB\Rxxxxx\extern\include
 安装路径\MATLAB\Rxxxxx\rtw\c\src
 ```  
-:::warning
+:::tip
 `xxxxx` 为 MATLAB 版本。
 :::  
+  
+#### b. 对于编译来源 2：用户自定义函数和接口的代码文件<span id = "步骤2-b"></span>
 
-### 步骤3：根据全局参数和输入输出接口信息构建 S-Function 实现元件  
+将代码文件 `.cpp` 复制到 Linux 环境，使用以下指令编译：  
+
+```
+gcc -Wall -fPIC -s -lm -shared -DRT xx1.cpp xx2.cpp -o xx.so
+```
+
+对于已经编译为 `.a` 的文件，使用以下指令编译：  
+
+```
+gcc -Wall -fPIC -s -lm -shared xx.a -o xx.so -u <entry_name>
+```
+:::tip
+`<entry_name>`是入口函数名。
+:::
+
+### 步骤 3：根据全局参数和输入输出接口信息构建 S-Function 实现元件  
 
 #### a. 参数引脚列表定义  
 
@@ -145,7 +162,7 @@ gcc -Wall -DRT -DRT_MALLOC -fPIC -lm -shared *.c -o xxxx.so
 
 ## 开环测试  
 
-### 步骤1：获取 S-Function 正常运行时的输入数据  
+### 步骤 1：获取 S-Function 正常运行时的输入数据  
 
 #### a. 添加示波器
 
@@ -159,13 +176,13 @@ gcc -Wall -DRT -DRT_MALLOC -fPIC -lm -shared *.c -o xxxx.so
 
 ![示波器设置录波](./2-2.png "示波器设置录波")   
 
-### 步骤2：数据处理并导出为 .csv 格式文件 
+### 步骤 2：数据处理并导出为 .csv 格式文件 
 
 #### a. 数据处理  
 
 在 MATLAB 中处理示波器保存的数据，将每一路引脚的数据按照第一列时间、第二列数据的方式另存。  
 
-:::warning
+:::tip
 每组数据的第一行添加一个索引号，第一列是 `0`，第二列是 `1`（将数据导入 CloudPSS 时的识别需要）。
 :::  
 
@@ -182,7 +199,7 @@ dlmwrite('input1.csv', input1, 'delimiter', ',', 'precision', 9);
 为保证导出的 `.csv` 文件中数据的精度，请使用 `dlmwrite` 而不使用 `csvwrite`。
 :::  
 
-### 步骤3：利用 CloudPSS 自定义曲线元件导入 .csv 格式文件 
+### 步骤 3：利用 CloudPSS 自定义曲线元件导入 .csv 格式文件 
 
 #### a. 自定义曲线元件导入 .csv   
 
@@ -196,7 +213,7 @@ dlmwrite('input1.csv', input1, 'delimiter', ',', 'precision', 9);
 
 ![开环数据输入](./2-5.png "开环数据输入")     
 
-### 步骤4：对比开环测试结果  
+### 步骤 4：对比开环测试结果  
 
 #### a. 将 S-Function 元件的所有输入引脚都以 .csv 导入的形式输入数据。
 
