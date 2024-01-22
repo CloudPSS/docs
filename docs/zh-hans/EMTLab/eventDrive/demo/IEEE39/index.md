@@ -1,7 +1,5 @@
 ---
 title: 案例 1 通过监控母线电压幅值控制断路器开断
-author: 潘春鹏
-category: 500
 order: 100
 ---
 :::info

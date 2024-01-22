@@ -1,6 +1,6 @@
 ---
 title: 案例介绍
-order: 600
+order: 200
 ---
 
 * [控制事件](./control/index.md)
