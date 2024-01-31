@@ -1,16 +1,15 @@
-# compiled output
-/dist
-/tmp
-/out-tsc
+# Production
+/build
 
-# config files
-*.config.*
-.*.*
+# Generated files
+.docusaurus
+.cache-loader
+nohup.out
 
-# packages
-**/node_modules/
-/.pnp.js
-/.pnp/
+# dependencies
+node_modules/
+/vendor/
 
-# no code data
+# Docs
 /docs/
+/blog/

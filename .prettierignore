@@ -1,4 +1,16 @@
-/.angular
-/docs
-/dist
-/node_modules
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+nohup.out
+
+
+# dependencies
+node_modules/
+/vendor/
+
+# Docs
+/docs/
+/blog/
