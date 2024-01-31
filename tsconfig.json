@@ -1,29 +1,7 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "extends": "@cloudpss/tsconfig",
+  // This file is not used in compilation. It is here just for a nice editor experience.
+  "extends": ["@cloudpss/tsconfig", "@docusaurus/tsconfig"],
   "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./out-tsc/app",
-    "sourceMap": true,
-    "declaration": false,
-    "experimentalDecorators": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "moduleResolution": "Bundler",
-    "target": "ES2022",
-    "module": "ES2022",
-    "paths": {
-      "@/*": ["src/app/*"],
-      "~/*": ["*"]
-    },
-    "allowJs": true,
-    "useDefineForClassFields": false
+    "baseUrl": ".",
   },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true,
-    "strictTemplates": true
-  },
-  "include": ["src/**/*.ts", "src/**/*.js"],
-  "exclude": ["**/*.spec.ts", "**/*.worker.ts"]
 }
