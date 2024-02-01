@@ -15,9 +15,9 @@ const mdxOptions = {
 };
 
 const config: Config = {
-    title: 'CloudPSS 文档',
-    tagline: 'Dinosaurs are cool',
-    favicon: 'img/favicon.ico',
+    title: 'CloudPSS',
+    tagline: '云仿真 / 云同步 / 云协作',
+    favicon: 'img/logo.ico',
 
     // Set the production url of your site here
     url: 'https://docs.cloudpss.net',
@@ -88,7 +88,7 @@ const config: Config = {
 
     themeConfig: {
         // Replace with your project's social card
-        image: 'img/docusaurus-social-card.jpg',
+        // image: 'img/docusaurus-social-card.jpg',
         docs: {
             sidebar: {
                 hideable: true,
@@ -96,11 +96,15 @@ const config: Config = {
             },
         },
         navbar: {
-            title: 'CloudPSS 文档',
+            title: 'CloudPSS',
             hideOnScroll: false,
             logo: {
                 alt: 'CloudPSS',
                 src: 'img/logo.svg',
+                style: {
+                    width: '2em',
+                    margin: '0 0.5em',
+                },
             },
             items: [
                 {
@@ -164,7 +168,7 @@ const config: Config = {
                 },
             ],
             // eslint-disable-next-line no-irregular-whitespace
-            copyright: `Copyright © 2015-${new Date().getFullYear()} CloudPSS <a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank>蜀 ICP 备 2020037721 号</a>`,
+            copyright: `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS\u00A0\u00A0<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号</a>`,
         },
         prism: {
             theme: prismThemes.github,
