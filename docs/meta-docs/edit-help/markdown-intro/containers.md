@@ -86,6 +86,10 @@ tip
 note
 :::
 
+:::caution
+caution
+:::
+
 :::warning
 warning
 :::
@@ -111,6 +115,10 @@ tip
 
 :::note[Your Title **with** some _Markdown_ `syntax`!]
 note
+:::
+
+:::caution
+caution
 :::
 
 :::warning
