@@ -1,0 +1,41 @@
+@import url('katex/dist/katex.css');
+@import url('./theme.css');
+@import url('./print.css');
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-code-font-size: 95%;
+  scroll-padding: calc(var(--ifm-navbar-height) + 2rem);
+}
+
+.markdown {
+  .center {
+    text-align: center;
+  }
+
+  figure {
+    margin: 1em 0;
+
+    > img {
+      display: block;
+      margin: auto;
+    }
+
+    > figcaption {
+      text-align: center;
+      font-size: 0.8em;
+      font-weight: 700;
+      color: var(--ifm-color-primary);
+
+      &:empty {
+        display: none;
+      }
+    }
+  }
+}
