@@ -11,10 +11,18 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-code-font-size: 95%;
-  scroll-padding: calc(var(--ifm-navbar-height) + 2rem);
+
+  user-select: none;
+  scrollbar-width: thin;
 }
 
 .markdown {
+  user-select: text;
+
+  * {
+    scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
+  }
+
   .center {
     text-align: center;
   }

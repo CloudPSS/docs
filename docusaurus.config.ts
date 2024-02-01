@@ -52,6 +52,7 @@ const config: Config = {
                 docs: {
                     routeBasePath: '/',
                     sidebarPath: './sidebars.ts',
+                    showLastUpdateTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
@@ -109,9 +110,15 @@ const config: Config = {
             items: [
                 {
                     type: 'docSidebar',
-                    sidebarId: 'tutorialSidebar',
+                    sidebarId: 'docs',
                     position: 'left',
-                    label: 'Tutorial',
+                    label: '文档',
+                },
+                {
+                    type: 'docSidebar',
+                    sidebarId: 'meta',
+                    position: 'left',
+                    label: '编写指南',
                 },
                 { to: '/blog', label: '博客', position: 'left' },
                 {
@@ -167,8 +174,7 @@ const config: Config = {
                     ],
                 },
             ],
-            // eslint-disable-next-line no-irregular-whitespace
-            copyright: `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS\u00A0\u00A0<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号</a>`,
+            copyright: `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS\u00A0\u00A0<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`,
         },
         prism: {
             theme: prismThemes.github,
