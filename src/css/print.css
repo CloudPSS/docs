@@ -1,0 +1,28 @@
+@media print {
+  :root {
+    --doc-sidebar-width: 0px !important;
+    --doc-sidebar-hidden-width: 0px !important;
+    --ifm-link-decoration: underline !important;
+  }
+
+  .theme-edit-this-page {
+    display: none !important;
+  }
+
+  .theme-doc-sidebar-container {
+    display: none !important;
+  }
+
+  .theme-doc-breadcrumbs {
+    display: none !important;
+  }
+
+  .theme-admonition {
+    --ifm-alert-border-width: 1px;
+    background-color: transparent;
+  }
+
+  .theme-back-to-top-button {
+    display: none !important;
+  }
+}

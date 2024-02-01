@@ -2,7 +2,17 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import remarkMath from 'remark-math';
+import remarkIns from 'remark-ins';
 import rehypeKatex from 'rehype-katex';
+import rehypeFigure from './src/rehype/figure';
+
+const mdxOptions = {
+    admonitions: {},
+    remarkPlugins: [remarkIns, remarkMath],
+    rehypePlugins: [rehypeKatex, rehypeFigure],
+    beforeDefaultRemarkPlugins: [],
+    beforeDefaultRehypePlugins: [],
+};
 
 const config: Config = {
     title: 'CloudPSS 文档',
@@ -10,7 +20,7 @@ const config: Config = {
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
-    url: 'https://your-docusaurus-site.example.com',
+    url: 'https://docs.cloudpss.net',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
@@ -44,26 +54,37 @@ const config: Config = {
                     sidebarPath: './sidebars.ts',
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/CloudPSS/Docs/blob/master/',
-                    remarkPlugins: [remarkMath],
-                    rehypePlugins: [rehypeKatex],
+                    editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
+                    ...mdxOptions,
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/CloudPSS/Docs/blob/master/',
-                    remarkPlugins: [remarkMath],
-                    rehypePlugins: [rehypeKatex],
+                    editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
+                    ...mdxOptions,
                 },
                 theme: {
-                    customCss: './src/css/custom.css',
+                    customCss: './src/css/index.css',
                 },
             } satisfies Preset.Options,
         ],
     ],
 
-    plugins: [],
+    clientModules: ['./src/js/index.ts'],
+
+    plugins: [
+        'docusaurus-plugin-image-zoom',
+        [
+            '@easyops-cn/docusaurus-search-local',
+            {
+                docsRouteBasePath: '/',
+                blogRouteBasePath: '/blog',
+                language: ['zh', 'en'],
+                hashed: 'filename',
+            },
+        ],
+    ],
 
     themeConfig: {
         // Replace with your project's social card
@@ -75,9 +96,10 @@ const config: Config = {
             },
         },
         navbar: {
-            title: 'My Site',
+            title: 'CloudPSS 文档',
+            hideOnScroll: false,
             logo: {
-                alt: 'My Site Logo',
+                alt: 'CloudPSS',
                 src: 'img/logo.svg',
             },
             items: [
@@ -87,10 +109,9 @@ const config: Config = {
                     position: 'left',
                     label: 'Tutorial',
                 },
-                { to: '/blog', label: 'Blog', position: 'left' },
+                { to: '/blog', label: '博客', position: 'left' },
                 {
-                    href: 'https://github.com/facebook/docusaurus',
-                    label: 'GitHub',
+                    type: 'search',
                     position: 'right',
                 },
             ],
@@ -148,6 +169,10 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
+            additionalLanguages: ['java', 'python'],
+        },
+        zoom: {
+            selector: '.markdown figure > img',
         },
     } satisfies Preset.ThemeConfig,
 };

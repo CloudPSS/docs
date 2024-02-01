@@ -1,0 +1,24 @@
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #4c4fa9;
+  --ifm-color-primary-dark: #444798;
+  --ifm-color-primary-darker: #414390;
+  --ifm-color-primary-darkest: #353776;
+  --ifm-color-primary-light: #595cb4;
+  --ifm-color-primary-lighter: #6264b8;
+  --ifm-color-primary-lightest: #7b7dc4;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #94afcc;
+  --ifm-color-primary-dark: #7c9dc1;
+  --ifm-color-primary-darker: #7094bb;
+  --ifm-color-primary-darkest: #507aa7;
+  --ifm-color-primary-light: #acc1d7;
+  --ifm-color-primary-lighter: #b8cadd;
+  --ifm-color-primary-lightest: #dce4ee;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
