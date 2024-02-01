@@ -1,5 +1,5 @@
 ---
 title: 文档系统使用指南
-search: false
+sidebar_position: 1
 ---
 
