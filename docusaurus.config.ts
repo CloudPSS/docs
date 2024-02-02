@@ -122,6 +122,10 @@ const config: Config = {
                 },
                 { to: '/blog', label: '博客', position: 'left' },
                 {
+                    type: 'localeDropdown',
+                    position: 'right',
+                },
+                {
                     type: 'search',
                     position: 'right',
                 },
