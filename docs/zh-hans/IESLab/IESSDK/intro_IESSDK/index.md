@@ -1,6 +1,6 @@
 ---
-title: SDK
-order: 800
+title: CloudPSS SDK
+order: 100
 ---
 
 ## [SDK 介绍](./sdk-introduction/index.md)

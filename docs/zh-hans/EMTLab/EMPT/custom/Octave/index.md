@@ -6,6 +6,9 @@ order: 100
 :::info
 使用 MATLAB/Octave 语言构建自定义电磁暂态仿真元件。  
 :::
+
+CloudPSS-EMTLab电磁暂态仿真平台支持使用Matlab/Octave语言构建自定义控制元件。本节主要介绍自定义Octave元件的使用方法。
+
 本节以一个可调斜率和分段点的分段函数，展示 Octave 元件的创建和使用方法。
 
 ## 新建 Octave 元件  

@@ -1,5 +1,5 @@
 ---
-title: 平台简介
+title: 仿真平台简介
 type: intro
 author: jack
 order: 10

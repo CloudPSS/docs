@@ -1,9 +1,9 @@
 ---
-title: 快速入门
+title: 规划平台快速入门
 order: 100
 ---
 
-* [IESLab 个人中心](./center/index.md)
+* [IESLab 规划平台个人中心](./center/index.md)
 
 * [搭建入门案例](./demo/index.md)
 

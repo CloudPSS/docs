@@ -10,74 +10,15 @@ order: 608
 
 :::
 
-### 1）安装 SDK
+由两部分组成：上面的命令行输入窗口和下面的工作目录输入窗口。
 
-为了让函数的本地算法内核能够获取我们配置好的接口参数，并格式化输出函数的计算结果， CloudPSS 提供 FuncStudio 的接口 SDK 和格式化输出的 SDK，目前只支持 Python（Python 推荐安装 3.8.5 以上），因此，首先需要 `pip install cloudpss` 来获取 CloudPSS FuncStudio的 SDK 文件。
+在`本地：自定义命令`实现页面的`命令窗口`内输入执行本地内核文件的命令，在`工作目录`内指定本地内核文件所在的目录。
 
-### 2）利用Python编写函数的算法内核
+### 1. Python内核的本地实现格式
 
-安装好 SDK 后，在本地编写 Python 文件来作函数的算法内核。
+执行语句的标准格式为：
 
-####  获取接口参数
-
- 导入安装好的Cloudpss package
- ```python
- import cloudpss 
- ```
- 根据提供的SDK获取FuncStudio当前函数的任务信息
-  ```python
- if __name__ == '__main__':
-    job = cloudpss.function.currentJob()
- ```
- 利用SDK提供的args函数按照键名获取函数的参数
-```python
-    a=int(job.args.a)
-    b=int(job.args.b)
-```
-####  格式化输出
-
- 利用 SDK 提供的 plot 函数绘图
-
- ```python
-    job.plot('plot-1',[{'name':'t1','type':'scatter','x':[a,a+1],'y':[b,b+1]}])
-    job.plot('plot-2',[{'name':'t2','type':'scatter','x':[a+2,a+3],'y':[b+2,b+3]}])
- ```
- 利用SDK提供的message函数输出信息
- ```python
-    job.message(a+b,key='c')
- ``` 
-
-::: tip
-
-目前 CloudPSS FuncStudio SDK 提供的函数有：
-
-打开已有函数项目: job=cloudpss.function.currentJob()
-
-获取函数的参数: job.args
-
-发送进度信息: job.progress
-
-发送日志: job.message
-
-发送表格数据: job.table
-
-发送绘图图消息: job.plot
-
-发送结束信息: job.terminate
-
-发送终止信息: job.abort
-
-上述 CloudPSS FuncStudio SDK提供的函数的具体用法都可以在 Cloudpss package的 `Job` 类里面查看详细的定义。
-
-![SDK 文件位置](./SDK文件位置.png "SDK 文件位置")
-
-![SDK 提供的函数](./SDK提供的函数.png "SDK 提供的函数")
-
-:::
-
-### 3）使用命令来执行 Python 文件
-
-在`本地：自定义命令`实现页面的命令窗口内输入执行 python 文件的命令，在工作目录内指定 python 文件所在的本地目录。
+`‘指定执行计算内核的python环境‘  + 需要接入的计算内核的文件名称`
 
 ::: tip
 
@@ -90,3 +31,33 @@ order: 608
 ![指定环境](./指定环境.png "指定环境")
 
 :::
+
+### 2. Matlab内核的本地实现格式
+
+需要注意的是Matlab接口和Python接口的命令行执行语句在格式上是有所不同的，这是因为FuncStudio 接入 Matlab 计算内核的本质是在 Matlab 脚本中调用Python SDK。
+
+因此在实现标签页的命令窗口内就要输入如下固定的执行语句格式，用指定的python地址执行run.py文件，用run.py文件启动Matlab来执行Matlab脚本。
+
+`‘指定执行计算内核的python环境‘  + 需要接入的计算内核的文件名称`
+
+::: tip
+
+以执行乘法函数的计算内核为例，先指定之前新建的虚拟python环境 加 run.py，最后加上product这个需要执行的Matlab脚本名称。
+
+![指定matlab环境](./指定matlab环境.png "指定matlab环境")
+
+工作目录就是我们存放product.m文件的位置，也就是matlab sdk 所在的位置。
+
+:::
+
+::: info
+Funcstuio 为什么叫执行器，就是因为它是一个帮助用户在终端执行计算内核的工具
+
+本质上相当于在本地打开命令窗口，执行以下命令:
+``` shell
+cd E:\FuncStudio
+'C:\py37env1\cloudpss\Scripts\python.exe' adder.py
+```
+先cd 到计算内核所在的工作目录，再执行命令窗口里面的语句。
+:::
+

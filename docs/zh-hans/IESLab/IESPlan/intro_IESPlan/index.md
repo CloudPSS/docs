@@ -2,7 +2,7 @@
 title: 综合能源系统规划设计平台简介
 type: guide
 author: xy
-order: 100
+order: 10
 ---
 
 ## 综合能源系统
