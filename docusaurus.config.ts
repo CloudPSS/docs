@@ -1,18 +1,10 @@
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import remarkMath from 'remark-math';
-import remarkIns from 'remark-ins';
-import rehypeKatex from 'rehype-katex';
-import rehypeFigure from './src/rehype/figure';
-
-const mdxOptions = {
-    admonitions: {},
-    remarkPlugins: [remarkIns, remarkMath],
-    rehypePlugins: [rehypeKatex, rehypeFigure],
-    beforeDefaultRemarkPlugins: [],
-    beforeDefaultRehypePlugins: [],
-};
+import type * as Search from '@easyops-cn/docusaurus-search-local';
+import { mdxOptions } from './docusaurus/mdx';
+import navbars from './docusaurus/navbars';
+import footers from './docusaurus/footers';
 
 const config: Config = {
     title: 'CloudPSS',
@@ -51,7 +43,7 @@ const config: Config = {
             {
                 docs: {
                     routeBasePath: '/',
-                    sidebarPath: './sidebars.ts',
+                    sidebarPath: './docusaurus/sidebars.ts',
                     showLastUpdateTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
@@ -65,8 +57,11 @@ const config: Config = {
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
                     ...mdxOptions,
                 },
+                pages: {
+                    ...mdxOptions,
+                },
                 theme: {
-                    customCss: './src/css/index.css',
+                    customCss: './src/css/index.scss',
                 },
             } satisfies Preset.Options,
         ],
@@ -75,6 +70,7 @@ const config: Config = {
     clientModules: ['./src/js/index.ts'],
 
     plugins: [
+        'docusaurus-plugin-sass',
         'docusaurus-plugin-image-zoom',
         [
             '@easyops-cn/docusaurus-search-local',
@@ -83,7 +79,7 @@ const config: Config = {
                 blogRouteBasePath: '/blog',
                 language: ['zh', 'en'],
                 hashed: 'filename',
-            },
+            } satisfies Search.PluginOptions,
         ],
     ],
 
@@ -96,6 +92,10 @@ const config: Config = {
                 autoCollapseCategories: true,
             },
         },
+        colorMode: {
+            defaultMode: 'light',
+            respectPrefersColorScheme: true,
+        },
         navbar: {
             title: 'CloudPSS',
             hideOnScroll: false,
@@ -107,77 +107,11 @@ const config: Config = {
                     margin: '0 0.5em',
                 },
             },
-            items: [
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'docs',
-                    position: 'left',
-                    label: '文档',
-                },
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'meta',
-                    position: 'left',
-                    label: '编写指南',
-                },
-                { to: '/blog', label: '博客', position: 'left' },
-                {
-                    type: 'localeDropdown',
-                    position: 'right',
-                },
-                {
-                    type: 'search',
-                    position: 'right',
-                },
-            ],
+            items: navbars,
         },
         footer: {
             style: 'dark',
-            links: [
-                {
-                    title: 'Docs',
-                    items: [
-                        {
-                            label: 'Tutorial',
-                            to: '/docs/intro',
-                        },
-                    ],
-                },
-                {
-                    title: 'Community',
-                    items: [
-                        {
-                            label: 'Stack Overflow',
-                            href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                        },
-                        {
-                            label: 'Discord',
-                            href: 'https://discordapp.com/invite/docusaurus',
-                        },
-                        {
-                            label: 'Twitter',
-                            href: 'https://twitter.com/docusaurus',
-                        },
-                    ],
-                },
-                {
-                    title: 'More',
-                    items: [
-                        {
-                            label: '清华大学电机工程与应用电子技术系',
-                            href: 'https://www.eea.tsinghua.edu.cn/',
-                        },
-                        {
-                            label: '清华大学能源互联网创新研究院',
-                            href: 'http://www.eiri.tsinghua.edu.cn/',
-                        },
-                        {
-                            label: '清华四川能源互联网研究院',
-                            href: 'https://www.tsinghua-eiri.org/',
-                        },
-                    ],
-                },
-            ],
+            links: footers,
             copyright: `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS\u00A0\u00A0<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`,
         },
         prism: {
