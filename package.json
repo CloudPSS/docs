@@ -40,7 +40,6 @@
     "@mdx-js/react": "^3.0.0",
     "clsx": "^2.1.0",
     "docusaurus-plugin-image-zoom": "^1.0.1",
-    "docusaurus-plugin-sass": "^0.2.5",
     "hast-util-whitespace": "^3.0.0",
     "hastscript": "^9.0.0",
     "katex": "^0.16.9",
@@ -51,7 +50,6 @@
     "remark-extended-table": "^2.0.1",
     "remark-ins": "^1.0.2",
     "remark-math": "^6.0.0",
-    "sass": "^1.70.0",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit": "^5.0.0"
   },
@@ -67,6 +65,7 @@
     "@types/hast": "^3.0.4",
     "@types/node": "^20.11.14",
     "husky": "^9.0.7",
+    "postcss-preset-env": "^9.3.0",
     "typescript": "~5.3.3"
   }
 }

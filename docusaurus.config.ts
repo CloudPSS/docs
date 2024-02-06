@@ -1,5 +1,5 @@
 import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
+import type { Config, Plugin } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type * as Search from '@easyops-cn/docusaurus-search-local';
 import { mdxOptions } from './docusaurus/mdx';
@@ -61,7 +61,7 @@ const config: Config = {
                     ...mdxOptions,
                 },
                 theme: {
-                    customCss: './src/css/index.scss',
+                    customCss: './src/css/index.css',
                 },
             } satisfies Preset.Options,
         ],
@@ -70,7 +70,15 @@ const config: Config = {
     clientModules: ['./src/js/index.ts'],
 
     plugins: [
-        'docusaurus-plugin-sass',
+        (): Plugin => {
+            return {
+                name: 'docusaurus-plugin-postcss-configure',
+                configurePostCss(options) {
+                    options.plugins.push('postcss-preset-env');
+                    return options;
+                },
+            };
+        },
         'docusaurus-plugin-image-zoom',
         [
             '@easyops-cn/docusaurus-search-local',
