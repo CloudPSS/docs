@@ -47,14 +47,14 @@ const config: Config = {
                     showLastUpdateTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
+                    editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
                     ...mdxOptions,
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl: 'https://github.com/CloudPSS/Docs/blob/docusaurus/',
+                    editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
                     ...mdxOptions,
                 },
                 pages: {
