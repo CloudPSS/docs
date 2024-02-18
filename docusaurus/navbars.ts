@@ -11,12 +11,6 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         position: 'left',
         label: '文档',
     },
-    {
-        type: 'docSidebar',
-        sidebarId: 'meta',
-        position: 'left',
-        label: '编写指南',
-    },
     { to: '/blog', label: '博客', position: 'left' },
     {
         type: 'localeDropdown',

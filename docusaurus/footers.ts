@@ -10,8 +10,8 @@ const footers: NonNullable<ThemeConfig['footer']>['links'] = [
         title: 'Docs',
         items: [
             {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: '编写指南',
+                to: '/meta',
             },
         ],
     },

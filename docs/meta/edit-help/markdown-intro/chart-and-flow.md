@@ -1,6 +1,6 @@
 ---
 title: 图表与流程图
-order: 30
+sidebar_position: 30
 ---
 
 你可以通过[在线编辑器](https://mermaid.live/)设计图表。

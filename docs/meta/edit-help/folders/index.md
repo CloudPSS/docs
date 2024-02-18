@@ -1,6 +1,6 @@
 ---
 title: 文档组织
-sidebar_position: 300
+sidebar_position: 200
 ---
 
 ## 命名
