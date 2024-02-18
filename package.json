@@ -7,7 +7,7 @@
     "url": "https://github.com/CloudPSS/Docs"
   },
   "engines": {
-    "node": ">=18.0",
+    "node": ">=20.0",
     "pnpm": ">=8.0"
   },
   "private": true,
@@ -22,6 +22,7 @@
     "write-translations": "docusaurus write-translations",
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
+    "optimize": "pnpm run convert-webp",
     "convert-webp": "node -e \"import('./tools/convert-webp.js').then(({default: d}) => d('docs'))\"",
     "prepare": "husky || echo Failed to initialize husky",
     "format": "prettier --cache --cache-strategy content --write .",
