@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import os from 'node:os';
-import fs from 'fs-extra';
+import fs from 'node:fs/promises';
 import { execa } from 'execa';
 import download from 'download';
 import path from 'node:path/posix';

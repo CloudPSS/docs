@@ -63,10 +63,18 @@
     "@docusaurus/module-type-aliases": "3.1.1",
     "@docusaurus/tsconfig": "3.1.1",
     "@docusaurus/types": "3.1.1",
+    "@types/download": "^8.0.5",
     "@types/hast": "^3.0.4",
     "@types/node": "^20.11.14",
+    "chalk-template": "^1.1.0",
+    "download": "^8.0.0",
+    "execa": "^8.0.1",
+    "glob": "^10.3.10",
     "husky": "^9.0.7",
+    "image-size": "^1.1.1",
     "postcss-preset-env": "^9.3.0",
+    "pretty-bytes": "^6.1.1",
+    "rxjs": "^7.8.1",
     "typescript": "~5.3.3"
   }
 }
