@@ -66,14 +66,12 @@ async function prepareLibWebp() {
 
 /**
  * 压缩图片
- * @param {string} root 查找需要压缩的图片的路径
+ * @param {string | string[] | undefined} root 查找需要压缩的图片的路径
  */
 export default async function (root) {
     // 检查 libwebp，打印版本
     const bin = await prepareLibWebp();
     await execa(`${bin}/webpinfo`, ['-version'], { stdio: 'inherit' });
-
-    const CONVERT_ROOT = (root || 'dist').replaceAll('\\', '/').replace(/\/$/, '');
 
     /** 转换中的错误 @type {Error[]} */
     const errors = [];
@@ -137,7 +135,19 @@ export default async function (root) {
     };
 
     const parallelism = typeof os.availableParallelism == 'function' ? os.availableParallelism() : 4;
-    const files = await glob(`${CONVERT_ROOT}/**/*.{png,jpg,jpeg,gif}`);
+
+    if (!root) {
+        root = ['dist'];
+    } else if (!Array.isArray(root)) {
+        root = [root];
+    }
+    const files = [];
+    for (const r of root) {
+        if (!r) continue;
+        const findRoot = r.replaceAll('\\', '/').replace(/\/$/, '');
+        const f = await glob(`${findRoot}/**/*.{png,jpg,jpeg,gif}`);
+        files.push(...f);
+    }
     await rxjs.lastValueFrom(rxjs.from(files).pipe(rxjs.mergeMap((file) => compress(file), parallelism)), {
         defaultValue: undefined,
     });
