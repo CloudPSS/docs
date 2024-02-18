@@ -14,18 +14,19 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Install
-        uses: NullVoxPopuli/action-setup-pnpm@v2
+        uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: lts/*
           pnpm-version: 8
       - name: Build for standalone
+        env:
+          DOCS_BASE_URL: /docs/
         run: |
-          pnpm build:standalone
-          rm -f dist/stats.json dist/*.map
+          pnpm optimize
+          pnpm build
           sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/./g' | sed -e 's/-/~/g')/g" deb/DEBIAN/control
           sed -i "s/__INSTALLED_SIZE__/$(du -sk dist | cut -f 1)/g" deb/DEBIAN/control
           cat deb/DEBIAN/control
-          cp -a dist/. deb/usr/share/cloudpss/static/docs/
+          cp -a build/. deb/usr/share/cloudpss/static/docs/
           dpkg-deb --build --root-owner-group deb .
           ls -l *.deb
       - name: Upload Release Asset
@@ -46,15 +47,16 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g')
       - name: Install
-        uses: NullVoxPopuli/action-setup-pnpm@v2
+        uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: lts/*
           pnpm-version: 8
       - name: Build for docs.cloudpss.net
+        env:
+          DOCS_BASE_URL: /
         run: |
-          pnpm build:main
-          rm -f dist/stats.json
-          tar -cJf dist.tar.xz -C ./dist .
+          pnpm optimize
+          pnpm build
+          tar -cJf dist.tar.xz -C ./build .
           ls -l dist.tar.xz
       - name: Upload Release Asset
         uses: ncipollo/release-action@v1

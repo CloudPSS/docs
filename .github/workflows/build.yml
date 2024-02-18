@@ -2,7 +2,7 @@ name: build
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
 
 jobs:
@@ -12,19 +12,22 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install
-        uses: NullVoxPopuli/action-setup-pnpm@v2
+        uses: wyvox/action-setup-pnpm@v3
         with:
-          node-version: lts/*
           pnpm-version: 8
+      - name: Optimize
+        run: pnpm optimize
       - name: Build
-        run: pnpm build:github
+        env:
+          DOCS_BASE_URL: /${{ github.repository }}/
+        run: pnpm build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: dist
+          publish_dir: build
           force_orphan: true
           enable_jekyll: false
           user_name: 'github-actions[bot]'

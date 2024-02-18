@@ -6,6 +6,9 @@ import { mdxOptions } from './docusaurus/mdx';
 import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
 
+let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
+if (!baseUrl.endsWith('/')) baseUrl += '/';
+
 const config: Config = {
     title: 'CloudPSS',
     tagline: '云仿真 / 云同步 / 云协作',
@@ -15,7 +18,7 @@ const config: Config = {
     url: 'https://docs.cloudpss.net',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/',
+    baseUrl,
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
@@ -30,7 +33,10 @@ const config: Config = {
     // may want to replace "en" with "zh-Hans".
     i18n: {
         defaultLocale: 'zh-Hans',
-        locales: ['zh-Hans', 'en'],
+        locales: [
+            'zh-Hans',
+            //'en'
+        ],
     },
     markdown: {
         mermaid: true,
