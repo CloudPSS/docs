@@ -1,6 +1,6 @@
 ---
 title: 文档块
-order: 20
+sidebar_position: 20
 ---
 
 ## 引用

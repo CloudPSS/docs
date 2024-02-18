@@ -5,6 +5,18 @@
     scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
   }
 
+  > :is(h1, h2, h3):first-child {
+    margin-top: var(--ifm-leading) !important;
+  }
+
+  ol,
+  ul {
+    ol,
+    ul {
+      --ifm-list-left-padding: 1rem;
+    }
+  }
+
   .center {
     text-align: center;
   }

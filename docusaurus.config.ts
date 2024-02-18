@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+import path from 'node:path';
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config, Plugin } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
@@ -82,6 +84,14 @@ const config: Config = {
                 configurePostCss(options) {
                     options.plugins.push('postcss-preset-env');
                     return options;
+                },
+            };
+        },
+        (context): Plugin => {
+            return {
+                name: 'docusaurus-plugin-split-config',
+                getPathsToWatch() {
+                    return [`${path.resolve(context.siteDir)}/docusaurus/**/*.{ts,js}`];
                 },
             };
         },
