@@ -10,7 +10,7 @@ import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
 import rxjs from 'rxjs';
 
-const LIB_WEBP_VERSION = '1.3.1';
+const LIB_WEBP_VERSION = '1.3.2';
 // A4, 300dpi
 const MAX_WIDTH = 2400;
 // 16383 is the maximum height for webp
