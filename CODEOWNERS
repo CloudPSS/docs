@@ -1,5 +1,9 @@
+# See: https://help.aliyun.com/document_detail/153877.htm
+
 # 注释行，以下为配置正文，每一行代表一个配置。
 # 一个路径规则后边，需要有一个或多个Owner
+
+# 路径 @负责人1主邮箱 @负责人2主邮箱 ...
 
 ** @opportunity@live.in
 
