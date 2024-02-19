@@ -63,6 +63,9 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
+                    blogTitle: '博客',
+                    blogDescription: 'CloudPSS 博客',
+                    blogSidebarTitle: '最近文章',
                     ...mdxOptions,
                 },
                 pages: {
