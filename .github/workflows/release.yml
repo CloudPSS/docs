@@ -69,9 +69,9 @@ jobs:
       - name: Deploy
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         with:
-          host: ${{ env.DC_HOST }}
-          port: ${{ env.DC_PORT }}
-          user: ${{ env.DC_USER }}
+          host: ${{ vars.DC_HOST }}
+          port: ${{ vars.DC_PORT }}
+          user: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 600s
           first_ssh: |
@@ -94,9 +94,9 @@ jobs:
         uses: cross-the-world/ssh-scp-ssh-pipelines@latest
         if: ${{ !contains(steps.get_version.outputs.VERSION, '-') }}
         with:
-          host: ${{ env.DC_HOST }}
-          port: ${{ env.DC_PORT }}
-          user: ${{ env.DC_USER }}
+          host: ${{ vars.DC_HOST }}
+          port: ${{ vars.DC_PORT }}
+          user: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           connect_timeout: 600s
           first_ssh: |
