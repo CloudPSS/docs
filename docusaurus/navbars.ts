@@ -12,14 +12,10 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         label: '文档',
     },
     { to: '/blog', label: '博客', position: 'left' },
-    {
-        type: 'localeDropdown',
-        position: 'right',
-    },
-    {
-        type: 'search',
-        position: 'right',
-    },
+    // {
+    //     type: 'localeDropdown',
+    //     position: 'right',
+    // },
 ];
 
 export default navbars;
