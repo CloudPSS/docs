@@ -4,7 +4,7 @@ title: 控件
 
 ## 选项卡
 
-````jsx
+`````` tsx
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -38,7 +38,7 @@ class HelloWorld {
 
 </TabItem>
 </Tabs>
-````
+``````
 
 效果：
 
@@ -95,7 +95,7 @@ import DocCardList from '@theme/DocCardList';
 ```jsx
 import {Redirect} from '@docusaurus/router';
 
-<Redirect to="../edit-help"/>
+<Redirect to={require("../edit-help/index.md").metadata.permalink} />
 ```
 
 效果参考 [重定向](../../examples/redirect.md)

@@ -53,12 +53,13 @@ $$
 对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径。如：
 
 ```md
-<!-- in /zh-hans/components/comp_newClarkTransform.md-->
+<!-- in /docs/components/comp_newClarkTransform.md-->
 
 [CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
 [Park 变换器](comp_newParkTransform.md)
 ```
 
+参考 [docusaurus 文档](https://docusaurus.io/docs/markdown-features/links)
 :::
 
 
@@ -91,32 +92,7 @@ import Intro from '../edit-help/markdown-intro/index.md';
 
 ## 媒体
 
-使用 `![alt-text](provider:id_or_url)` 语法插入媒体。
-
-```md media
-![](youtube:_QobdWOa02o)
-
-![](youku:XMTQ2MjU2NTU2OA)
-
-![](vimeo:111114712)
-
-![](bilibili:https://www.bilibili.com/video/av27150168/)
-
-![](tencent:w3156zebhpv)
-```
-
-效果：
-
-![](youtube:_QobdWOa02o)
-
-![](youku:XMTQ2MjU2NTU2OA)
-
-![](vimeo:111114712)
-
-![](bilibili:https://www.bilibili.com/video/av27150168/)
-
-![](tencent:w3156zebhpv)
-
+见[媒体](./media.md)。
 
 ## 表格
 
