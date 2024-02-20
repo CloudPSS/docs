@@ -26,7 +26,7 @@
     "convert-webp": "node -e \"import('./tools/convert-webp.js').then(({default: d}) => d(['docs', 'blog']))\"",
     "prepare": "husky || echo Failed to initialize husky",
     "format": "prettier --cache --cache-strategy content --write .",
-    "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --ext .js,.ts ."
+    "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --ext .js,.ts,.jsx,.tsx ."
   },
   "prettier": "@cloudpss/prettier-config",
   "commitlint": {

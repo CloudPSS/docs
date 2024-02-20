@@ -2,6 +2,11 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
+import undraw_docusaurus_mountain from '@site/static/img/undraw_docusaurus_mountain.svg';
+import undraw_docusaurus_tree from '@site/static/img/undraw_docusaurus_tree.svg';
+import undraw_docusaurus_react from '@site/static/img/undraw_docusaurus_react.svg';
+
+/** 列表项 */
 type FeatureItem = {
     title: string;
     Svg: React.ComponentType<React.ComponentProps<'svg'>>;
@@ -11,12 +16,12 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
     {
         title: 'Easy to Use',
-        Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+        Svg: undraw_docusaurus_mountain,
         description: <>Docusaurus was designed from the ground up to be easily installed and used to get your website up and running quickly.</>,
     },
     {
         title: 'Focus on What Matters',
-        Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+        Svg: undraw_docusaurus_tree,
         description: (
             <>
                 Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go ahead and move your docs into the <code>docs</code> directory.
@@ -25,16 +30,17 @@ const FeatureList: FeatureItem[] = [
     },
     {
         title: 'Powered by React',
-        Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+        Svg: undraw_docusaurus_react,
         description: <>Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same header and footer.</>,
     },
 ];
 
-function Feature({ title, Svg, description }: FeatureItem) {
+/** 列表项 */
+function Feature({ title, Svg, description }: FeatureItem): JSX.Element {
     return (
         <div className={clsx('col col--4')}>
             <div className="text--center">
-                <Svg className={styles.featureSvg} role="img" />
+                <Svg className={styles['featureSvg']} role="img" />
             </div>
             <div className="text--center padding-horiz--md">
                 <Heading as="h3">{title}</Heading>
@@ -44,9 +50,10 @@ function Feature({ title, Svg, description }: FeatureItem) {
     );
 }
 
+/** 列表 */
 export default function HomepageFeatures(): JSX.Element {
     return (
-        <section className={styles.features}>
+        <section className={styles['features']}>
             <div className="container">
                 <div className="row">
                     {FeatureList.map((props, idx) => (
