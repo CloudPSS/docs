@@ -2,12 +2,19 @@
 
 # 注释行，以下为配置正文，每一行代表一个配置。
 # 一个路径规则后边，需要有一个或多个Owner
+# 最后一个匹配成功的路径生效
 
 # 路径 @负责人1主邮箱 @负责人2主邮箱 ...
 
+# 默认的负责人
 ** @opportunity@live.in
 
+# 本文件的负责人
+CODEOWNERS @opportunity@live.in
+
+# 博客的负责人
 blog/** @opportunity@live.in
 
+# 文档的负责人
 docs/meta/** @opportunity@live.in
 docs/about/** @opportunity@live.in
