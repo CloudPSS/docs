@@ -43,6 +43,13 @@ const config: Config = {
     },
     markdown: {
         mermaid: true,
+        remarkRehypeOptions: {
+            footnoteLabel: '脚注',
+            footnoteBackLabel(referenceIndex, rereferenceIndex) {
+                return `返回引文位置 ${referenceIndex + 1}${rereferenceIndex > 1 ? '-' + rereferenceIndex : ''}`;
+            },
+            footnoteLabelProperties: { className: ['visually-hidden'] },
+        },
     },
     themes: ['@docusaurus/theme-mermaid'],
 

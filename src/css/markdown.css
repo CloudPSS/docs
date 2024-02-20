@@ -13,9 +13,61 @@
     }
   }
 
+  [hidden],
+  .hidden {
+    display: none !important;
+  }
+
+  .visually-hidden {
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+
+    &:not(caption) {
+      position: absolute !important;
+    }
+  }
+
   .center,
   center {
     text-align: center;
+  }
+
+  [data-footnote-ref] {
+    &::before {
+      content: '[';
+    }
+    &::after {
+      content: ']';
+    }
+  }
+
+  [data-footnotes] {
+    margin-top: 2.5rem;
+    border-top: var(--ifm-hr-height) solid var(--ifm-hr-background-color);
+
+    --ifm-list-paragraph-margin: 0.5rem;
+    --ifm-paragraph-margin-bottom: 0.5rem;
+
+    > ol {
+      counter-reset: footnotes 0;
+      > li {
+        margin-top: 1rem;
+        counter-increment: footnotes 1;
+        &::marker {
+          content: '[' counter(footnotes) '] ';
+        }
+      }
+    }
+  }
+
+  [data-footnote-backref] {
+    user-select: none;
   }
 
   figure {
