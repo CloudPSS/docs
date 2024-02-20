@@ -4,6 +4,7 @@ import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config, Plugin } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import type * as Search from '@easyops-cn/docusaurus-search-local';
+import type * as Pwa from '@docusaurus/plugin-pwa';
 import { mdxOptions } from './docusaurus/mdx';
 import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
@@ -12,9 +13,9 @@ let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
 if (!baseUrl.endsWith('/')) baseUrl += '/';
 
 const config: Config = {
-    title: 'CloudPSS',
+    title: 'CloudPSS 文档',
     tagline: '云仿真 / 云同步 / 云协作',
-    favicon: 'img/logo.ico',
+    favicon: 'icons/favicon.ico',
 
     // Set the production url of your site here
     url: 'https://docs.cloudpss.net',
@@ -25,7 +26,7 @@ const config: Config = {
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'CloudPSS', // Usually your GitHub org/user name.
-    projectName: 'Docs', // Usually your repo name.
+    projectName: 'docs', // Usually your repo name.
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
@@ -108,6 +109,56 @@ const config: Config = {
                 hashed: 'filename',
             } satisfies Search.PluginOptions,
         ],
+        [
+            '@docusaurus/plugin-pwa',
+            {
+                pwaHead: [
+                    {
+                        tagName: 'link',
+                        rel: 'icon',
+                        type: 'image/svg+xml',
+                        href: 'icons/favicon.svg',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'manifest',
+                        href: 'manifest.json', // your PWA manifest
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'theme-color',
+                        content: '#242526',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'application-name',
+                        content: 'CloudPSS 文档',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'apple-touch-icon',
+                        sizes: '180x180',
+                        href: 'icons/apple-touch-icon.png',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'apple-mobile-web-app-title',
+                        content: 'CloudPSS 文档',
+                    },
+                    {
+                        tagName: 'meta',
+                        name: 'apple-mobile-web-app-capable',
+                        content: 'yes',
+                    },
+                    {
+                        tagName: 'link',
+                        rel: 'mask-icon',
+                        color: '#94afcc',
+                        href: 'icons/safari-pinned-tab.svg',
+                    },
+                ],
+            } satisfies Pwa.Options,
+        ],
     ],
 
     themeConfig: {
@@ -128,7 +179,7 @@ const config: Config = {
             hideOnScroll: false,
             logo: {
                 alt: 'CloudPSS',
-                src: 'img/logo.svg',
+                src: 'icons/favicon.svg',
                 style: {
                     width: '2em',
                     margin: '0 0.5em',
@@ -144,7 +195,7 @@ const config: Config = {
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
-            additionalLanguages: ['java', 'python'],
+            additionalLanguages: ['java', 'python', 'matlab'],
         },
         zoom: {
             selector: '.markdown figure > img',

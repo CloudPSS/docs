@@ -5,10 +5,6 @@
     scroll-margin-top: calc(var(--ifm-navbar-height) + 0.5rem);
   }
 
-  > :is(h1, h2, h3):first-child {
-    margin-top: var(--ifm-leading) !important;
-  }
-
   ol,
   ul {
     ol,
@@ -17,12 +13,14 @@
     }
   }
 
-  .center {
+  .center,
+  center {
     text-align: center;
   }
 
   figure {
     margin: 1em 0;
+    page-break-inside: avoid;
 
     > img {
       display: block;

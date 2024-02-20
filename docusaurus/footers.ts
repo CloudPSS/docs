@@ -11,7 +11,7 @@ const footers: NonNullable<ThemeConfig['footer']>['links'] = [
         items: [
             {
                 label: '编写指南',
-                to: '/meta',
+                to: '/meta/',
             },
         ],
     },
