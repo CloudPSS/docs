@@ -7,5 +7,7 @@
 
 ** @opportunity@live.in
 
-**/*.ts @opportunity@live.in
+blog/** @opportunity@live.in
 
+docs/meta/** @opportunity@live.in
+docs/about/** @opportunity@live.in
