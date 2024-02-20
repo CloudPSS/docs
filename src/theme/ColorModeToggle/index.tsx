@@ -10,7 +10,7 @@ import { useEffect, useMemo } from 'react';
 type Props = WrapperProps<typeof ColorModeToggleType>;
 
 /** Wrapped ColorModeToggle */
-export default function ColorModeToggleWrapper(props: Props): JSX.Element {
+export default function ColorModeToggleWrapper(props: Props): React.JSX.Element {
     const isBrowser = useIsBrowser();
     const { colorMode } = useColorMode();
     const metaThemeColor = useMemo(() => {
