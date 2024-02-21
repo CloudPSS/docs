@@ -7,18 +7,23 @@ import i18n from './i18n';
  */
 const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     {
-        type: 'docSidebar',
-        sidebarId: 'docs',
         position: 'left',
         label: '文档',
+        type: 'docSidebar',
+        sidebarId: 'docs',
     },
-    { to: '/blog', label: '博客', position: 'left' },
-    i18n.locales.length > 1
-        ? {
-              type: 'localeDropdown',
-              position: 'right',
-          }
-        : {},
+    {
+        position: 'left',
+        label: '博客',
+        to: '/blog',
+    },
 ];
+
+if (i18n.locales.length > 1) {
+    navbars.push({
+        position: 'right',
+        type: 'localeDropdown',
+    });
+}
 
 export default navbars;
