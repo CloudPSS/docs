@@ -15,7 +15,7 @@
 
    :::tip 分接头电压计算
    $$
-   {V_{i,act} } = {V_{i,N} } + {V_{i,N} }{V_{i,step}\%}\left( { {Pos_{i,N} } - {Pos_{i,act} } } \right)/100
+   { V_{i,act} } = {V_{i,N} } + {V_{i,N} }{V_{i,step}\%}\left( { {Pos_{i,N} } - {Pos_{i,act} } } \right) / 100
    $$
    其中，$Pos_{i,N}$ 为额定电压下主接头位置；$Pos_{i,act}$ 为实际分接头位置；$V_{i,step}\%$ 为连续两个分接头之间的电压变化率。
    :::
