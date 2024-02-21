@@ -1,4 +1,5 @@
 import type { ThemeConfig } from '@docusaurus/preset-classic';
+import i18n from './i18n';
 
 /**
  * 配置导航栏条目
@@ -12,10 +13,12 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         label: '文档',
     },
     { to: '/blog', label: '博客', position: 'left' },
-    // {
-    //     type: 'localeDropdown',
-    //     position: 'right',
-    // },
+    i18n.locales.length > 1
+        ? {
+              type: 'localeDropdown',
+              position: 'right',
+          }
+        : {},
 ];
 
 export default navbars;
