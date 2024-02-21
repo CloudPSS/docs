@@ -189,8 +189,7 @@ const config: Config = {
         },
         footer: {
             style: 'dark',
-            links: footers,
-            copyright: `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS\u00A0\u00A0<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`,
+            ...footers,
         },
         prism: {
             theme: prismThemes.github,
