@@ -65,7 +65,7 @@ $$
 
 ## 图片
 
-引用图片时使用 `![alt text](path "title")` 语法。
+引用图片时使用 `![alt text :size[100x100]](path "title")` 语法。
 
 图片显示规则如下：
 
@@ -75,7 +75,7 @@ $$
 
 如 `![alt-text](intro1.png "Title")` 得到 
 
-![alt-text](intro1.png "Title")
+![alt-text :size[100x100]](intro1.png "Title")
 
 ## 重用内容
 

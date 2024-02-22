@@ -1,7 +1,7 @@
 import { visit } from 'unist-util-visit';
 import { whitespace } from 'hast-util-whitespace';
 import { h } from 'hastscript';
-import { Root, Element, RootContentMap } from 'hast';
+import type { Root, Element, RootContentMap } from 'hast';
 
 /**
  * Create figure element for images
