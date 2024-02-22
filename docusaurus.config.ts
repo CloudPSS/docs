@@ -6,13 +6,19 @@ import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
 import plugins from './docusaurus/plugins';
+import { translateConfig } from './docusaurus/utils';
 
 let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
 if (!baseUrl.endsWith('/')) baseUrl += '/';
 
 const config: Config = {
-    title: 'CloudPSS 文档',
-    tagline: '云仿真 / 云同步 / 云协作',
+    title: translateConfig({
+        'zh-hans': 'CloudPSS 文档',
+    }),
+    tagline: translateConfig({
+        'zh-hans': '云仿真 / 云同步 / 云协作',
+    }),
+
     favicon: 'icons/favicon.ico',
 
     // Set the production url of your site here
@@ -34,11 +40,15 @@ const config: Config = {
     markdown: {
         mermaid: true,
         remarkRehypeOptions: {
-            footnoteLabel: '脚注',
-            footnoteBackLabel(referenceIndex, rereferenceIndex) {
-                return `返回引文位置 ${referenceIndex + 1}${rereferenceIndex > 1 ? '-' + rereferenceIndex : ''}`;
-            },
             footnoteLabelProperties: { className: ['visually-hidden'] },
+            ...translateConfig({
+                'zh-hans': {
+                    footnoteLabel: '脚注',
+                    footnoteBackLabel(referenceIndex, rereferenceIndex) {
+                        return `返回引文位置 ${referenceIndex + 1}${rereferenceIndex > 1 ? '-' + rereferenceIndex : ''}`;
+                    },
+                },
+            }),
         },
     },
 
