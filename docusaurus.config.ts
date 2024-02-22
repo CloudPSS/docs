@@ -1,14 +1,11 @@
-/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
-import path from 'node:path';
 import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config, Plugin } from '@docusaurus/types';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import type * as Search from '@easyops-cn/docusaurus-search-local';
-import type * as Pwa from '@docusaurus/plugin-pwa';
 import { mdxOptions } from './docusaurus/mdx';
 import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
+import plugins from './docusaurus/plugins';
 
 let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
 if (!baseUrl.endsWith('/')) baseUrl += '/';
@@ -44,7 +41,12 @@ const config: Config = {
             footnoteLabelProperties: { className: ['visually-hidden'] },
         },
     },
+
+    clientModules: ['./src/js/index.ts'],
+
     themes: ['@docusaurus/theme-mermaid'],
+
+    plugins,
 
     presets: [
         [
@@ -54,15 +56,11 @@ const config: Config = {
                     routeBasePath: '/',
                     sidebarPath: './docusaurus/sidebars.ts',
                     showLastUpdateTime: true,
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
                     ...mdxOptions,
                 },
                 blog: {
                     showReadingTime: true,
-                    // Please change this to your repo.
-                    // Remove this to remove the "edit this page" links.
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',
@@ -76,88 +74,6 @@ const config: Config = {
                     customCss: './src/css/index.css',
                 },
             } satisfies Preset.Options,
-        ],
-    ],
-
-    clientModules: ['./src/js/index.ts'],
-
-    plugins: [
-        (): Plugin => {
-            return {
-                name: 'docusaurus-plugin-postcss-configure',
-                configurePostCss(options) {
-                    options.plugins.push('postcss-preset-env');
-                    return options;
-                },
-            };
-        },
-        (context): Plugin => {
-            return {
-                name: 'docusaurus-plugin-split-config',
-                getPathsToWatch() {
-                    return [`${path.resolve(context.siteDir)}/docusaurus/**/*.{ts,js}`];
-                },
-            };
-        },
-        'docusaurus-plugin-image-zoom',
-        [
-            '@easyops-cn/docusaurus-search-local',
-            {
-                docsRouteBasePath: '/',
-                blogRouteBasePath: '/blog',
-                language: ['zh', 'en'],
-                hashed: 'filename',
-            } satisfies Search.PluginOptions,
-        ],
-        [
-            '@docusaurus/plugin-pwa',
-            {
-                pwaHead: [
-                    {
-                        tagName: 'link',
-                        rel: 'icon',
-                        type: 'image/svg+xml',
-                        href: 'icons/favicon.svg',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'manifest',
-                        href: 'manifest.json', // your PWA manifest
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'theme-color',
-                        content: '#242526',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'application-name',
-                        content: 'CloudPSS 文档',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'apple-touch-icon',
-                        sizes: '180x180',
-                        href: 'icons/apple-touch-icon.png',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'apple-mobile-web-app-title',
-                        content: 'CloudPSS 文档',
-                    },
-                    {
-                        tagName: 'meta',
-                        name: 'apple-mobile-web-app-capable',
-                        content: 'yes',
-                    },
-                    {
-                        tagName: 'link',
-                        rel: 'mask-icon',
-                        color: '#94afcc',
-                        href: 'icons/safari-pinned-tab.svg',
-                    },
-                ],
-            } satisfies Pwa.Options,
         ],
     ],
 
