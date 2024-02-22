@@ -4,11 +4,12 @@ import type { PluginOptions as DocsOptions } from '@docusaurus/plugin-content-do
 import remarkMath from 'remark-math';
 import remarkIns from 'remark-ins';
 import rehypeKatex from 'rehype-katex';
-import rehypeFigure from '../src/rehype/figure';
+import rehypeFigure from './plugins/rehype/figure';
+import remarkDirectiveSize from './plugins/remark/size';
 
 export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
     admonitions: {},
-    remarkPlugins: [remarkIns, remarkMath],
+    remarkPlugins: [remarkDirectiveSize, remarkIns, remarkMath],
     rehypePlugins: [rehypeKatex, rehypeFigure],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
