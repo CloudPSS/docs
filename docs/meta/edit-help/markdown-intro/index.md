@@ -65,17 +65,30 @@ $$
 
 ## 图片
 
-引用图片时使用 `![alt text :size[100x100]](path "title")` 语法。
+引用图片时使用 `![alt text =size](path "title")` 语法。
 
 图片显示规则如下：
 
 - 当图片上下为空行时，图片将居中显示；
 - `title` 为鼠标悬停时的提示文本；
-- `alt text` 为图片题注。
+- `alt text` 为图片题注；
+- `size` 用于指定图片尺寸，具体使用方法见下文。
 
-如 `![alt-text](intro1.png "Title")` 得到 
+如 `![alt-text =x100](intro1.png "Title")` 得到 
 
-![alt-text :size[100x100]](intro1.png "Title")
+![alt-text =x100](intro1.png "Title")
+
+:::info
+
+可以使用以下语法指定图片的尺寸：
+- 指定最大宽度  
+  `![alt text =200x](intro1.png "Title")`
+- 指定最大高度  
+  `![alt text =x100](intro1.png "Title")`
+
+对于文档系统外的图片，需要同时指定宽度和高度，否则显示效果可能受文档样式影响。
+
+:::
 
 ## 重用内容
 
