@@ -5,11 +5,10 @@ import remarkMath from 'remark-math';
 import remarkIns from 'remark-ins';
 import rehypeKatex from 'rehype-katex';
 import rehypeFigure from './plugins/rehype/figure';
-import remarkDirectiveSize from './plugins/remark/size';
 
 export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
     admonitions: {},
-    remarkPlugins: [remarkDirectiveSize, remarkIns, remarkMath],
+    remarkPlugins: [remarkIns, remarkMath],
     rehypePlugins: [rehypeKatex, rehypeFigure],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
