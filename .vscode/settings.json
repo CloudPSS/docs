@@ -17,6 +17,7 @@
   "[mdx]": {
     "editor.defaultFormatter": "unifiedjs.vscode-mdx",
     "editor.tabSize": 4,
+    "editor.formatOnSave": false,
     "editor.unicodeHighlight.allowedLocales": {
       "en": true,
       "zh-hans": true,

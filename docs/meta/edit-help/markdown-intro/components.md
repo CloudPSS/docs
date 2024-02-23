@@ -2,9 +2,9 @@
 title: 控件
 ---
 
-## 选项卡
+## [选项卡](https://docusaurus.io/docs/markdown-features/tabs)
 
-`````` tsx
+````tsx
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -38,7 +38,7 @@ class HelloWorld {
 
 </TabItem>
 </Tabs>
-``````
+````
 
 效果：
 

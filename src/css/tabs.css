@@ -1,0 +1,31 @@
+@media print {
+  .tabs-container {
+    > .tabs {
+      display: none;
+    }
+
+    [role='tabpanel'] {
+      margin-top: 1rem;
+      display: block !important;
+
+      &::before {
+        content: attr(label);
+        color: var(--ifm-tabs-color);
+        display: flex;
+        font-weight: var(--ifm-font-weight-bold);
+        overflow-x: auto;
+        padding: var(--ifm-tabs-padding-vertical) var(--ifm-tabs-padding-horizontal);
+        page-break-after: avoid;
+      }
+    }
+
+    > .tabs--block {
+      + * > [role='tabpanel'],
+      + [role='tabpanel'] {
+        &::before {
+          justify-content: center;
+        }
+      }
+    }
+  }
+}

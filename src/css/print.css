@@ -2,7 +2,19 @@
   :root {
     --doc-sidebar-width: 0px !important;
     --doc-sidebar-hidden-width: 0px !important;
-    --ifm-link-decoration: underline !important;
+  }
+
+  a {
+    --ifm-link-decoration: underline;
+
+    &.card {
+      --ifm-link-decoration: none;
+      page-break-inside: avoid;
+    }
+  }
+
+  .hash-link {
+    display: none;
   }
 
   .theme-edit-this-page {
