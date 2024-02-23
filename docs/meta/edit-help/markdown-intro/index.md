@@ -25,9 +25,63 @@ sidebar_position: 100
 需要在行末  
 添加两个空格
 
+## 列表
+
+使用 `- ` 构建无序列表，使用 `1. ` 构建有序列表。通过缩进构建列表及列表内容的嵌套关系。
+
+为了避免有序列表序号超过一位数导致缩进量变化，应当始终使用一位数字对有序列表编号。最后渲染的实际数字与编号无关。
+
+对于包含复杂内容的列表，应当在每个元素间保留一行空行。
+
+```md
+复杂有序列表：
+
+1. Item 1
+
+1. Item 2
+
+1. Item 3
+   1. Sub Item 1  
+      description of sub item 1
+   1. Sub Item 2
+      
+      description of sub item 2, in a seperate paragraph.
+   1. Sub Item 3
+
+1. Item 4
+
+简单无序列表：
+- Item
+- Item  
+  description of item
+- Item
+
+```
+
+> 复杂有序列表：
+> 1. Item 1
+> 
+> 1. Item 2
+> 
+> 1. Item 3
+>    1. Sub Item 1  
+>       description of sub item 1
+>    1. Sub Item 2
+>       
+>       description of sub item 2, in a seperate paragraph.
+>    1. Sub Item 3
+> 
+> 1. Item 4
+> 
+> 简单无序列表：
+> - Item
+> - Item  
+>   description of item
+> - Item
+
 ## 公式
 
-使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式。
+使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式，插入行间公式时，`$$` 必须位于独立的行。
 
 ```tex equation
 行内公式：$\sin{x}$  
@@ -70,9 +124,9 @@ $$
 图片显示规则如下：
 
 - 当图片上下为空行时，图片将居中显示；
-- `title` 为鼠标悬停时的提示文本；
-- `alt text` 为图片题注；
-- `size` 用于指定图片尺寸，具体使用方法见下文。
+- `title` 为鼠标悬停时的提示文本，可省略；
+- `alt text` 为图片题注，可省略；
+- `=size` 用于指定图片尺寸，可省略，具体使用方法见下文。
 
 如 `![alt-text =x100](intro1.png "Title")` 得到 
 
@@ -101,11 +155,6 @@ import Intro from '../edit-help/markdown-intro/index.md';
 <Intro/>
 
 ```
-
-
-## 媒体
-
-见[媒体](./media.md)。
 
 ## 表格
 
@@ -145,54 +194,6 @@ text
 > centered  
 > text
 > </center>
-
-## 代码
-
-语法如下：
-
-````markdown codeblock
-```[语言]
-
-```
-````
-
-可用的 `[语言]` 包括 `plain` `tex` `md` `yaml` `js` `html` `css` `c` `cpp` `csharp` `pyhton` `matlab`……
-
-使用 `title="标题"` 可以添加标题，使用 `{}` 可以高亮指定行，使用 `showLineNumbers` 可以显示行号。
-
-如：
-
-````md
-```jsx title="a simple js script" {1,4-6,11} showLineNumbers
-import React from 'react';
-
-function MyComponent(props) {
-  if (props.isBar) {
-    return <div>Bar</div>;
-  }
-
-  return <div>Foo</div>;
-}
-
-export default MyComponent;
-```
-````
-
-效果：
-
-```jsx title="a simple js script" {1,4-6,11} showLineNumbers
-import React from 'react';
-
-function MyComponent(props) {
-  if (props.isBar) {
-    return <div>Bar</div>;
-  }
-
-  return <div>Foo</div>;
-}
-
-export default MyComponent;
-```
 
 ## 脚注
 
