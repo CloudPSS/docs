@@ -168,7 +168,6 @@ import Intro from '../edit-help/markdown-intro/index.md';
 | Content      |  _Long Cell_  |              |
 |              |   **Cell**    |         Cell |
 | Content      |   **Cell**    |              |
-
 ```
 
 效果：
@@ -221,6 +220,9 @@ text
 
 ## 杂项
 
+- **粗体**：`**bold**` **bold**
+- **斜体**：`*italic*` *italic*
+- **代码**：`` `code` `` `code`
 - **下标**：`H<sub>2</sub>0` H<sub>2</sub>0
 - **上标**：`x<sup>2</sup>` x<sup>2</sup>
 - **标记**：`<mark>mark</mark>` <mark>mark</mark>
