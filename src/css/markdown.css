@@ -90,4 +90,18 @@
       }
     }
   }
+
+  span.katex {
+    user-select: none;
+
+    .katex-mathml {
+      annotation {
+        display: block;
+        user-select: all;
+      }
+    }
+    .katex-html {
+      user-select: none;
+    }
+  }
 }

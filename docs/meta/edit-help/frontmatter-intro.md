@@ -1,9 +1,6 @@
 ---
 title: Front-matter 介绍
 sidebar_position: 200
-tags:
-- front-matter
-- markdown
 ---
 
 Front-matter 是文件最上方以 `---` 分隔的区域，用于指定文件的元数据。

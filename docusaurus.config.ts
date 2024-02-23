@@ -1,4 +1,3 @@
-import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 import { mdxOptions } from './docusaurus/mdx';
@@ -6,6 +5,7 @@ import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
 import plugins from './docusaurus/plugins';
+import prism from './docusaurus/prism';
 import { translateConfig } from './docusaurus/utils';
 
 let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
@@ -117,11 +117,7 @@ const config: Config = {
             style: 'dark',
             ...footers,
         },
-        prism: {
-            theme: prismThemes.github,
-            darkTheme: prismThemes.dracula,
-            additionalLanguages: ['java', 'python', 'matlab', 'cpp', 'lua'],
-        },
+        prism,
         zoom: {
             selector: '.markdown figure > img',
         },
