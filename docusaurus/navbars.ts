@@ -8,9 +8,51 @@ import i18n from './i18n';
 const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     {
         position: 'left',
-        label: '文档',
+        label: '概述',
         type: 'docSidebar',
+        sidebarId: 'overview',
+    },
+    // {
+    //     position: 'left',
+    //     label: '文档',
+    //     type: 'docSidebar',
+    //     sidebarId: 'docs',
+    // },
+    {
+        position: 'left',
+        label: '文档',
+        type: 'dropdown',
+        items: [
+            {
+                label: 'XStudio',
+                type: 'docSidebar',
+                sidebarId: 'xstudio',
+            },
+            {
+                label: 'EMTLab',
+                type: 'docSidebar',
+                sidebarId: 'emtlab',
+            },
+        ],
         sidebarId: 'docs',
+    },
+    {
+        position: 'left',
+        label: '教程',
+        type: 'docSidebar',
+        sidebarId: 'tutorials',
+    },
+    {
+        position: 'left',
+        label: '其他',
+        type: 'docSidebar',
+        sidebarId: 'others',
+    },
+    {
+        position: 'left',
+        label: '关于',
+        type: 'docSidebar',
+        sidebarId: 'about',
     },
     {
         position: 'left',

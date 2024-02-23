@@ -66,6 +66,7 @@ const config: Config = {
                     routeBasePath: '/',
                     sidebarPath: './docusaurus/sidebars.ts',
                     showLastUpdateTime: true,
+                    showLastUpdateAuthor: true,
                     editUrl: 'https://github.com/CloudPSS/Docs/blob/main/',
                     ...mdxOptions,
                 },
