@@ -1,35 +1,13 @@
 {
-  "npm.packageManager": "pnpm",
-  "typescript.tsdk": "./node_modules/typescript/lib",
-  "files.eol": "\n",
-  "editor.tabSize": 2,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 4
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.tabSize": 4
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
-    "editor.tabSize": 4,
-    "editor.formatOnPaste": false,
-    "editor.formatOnSave": false,
-    "editor.unicodeHighlight.allowedLocales": {
-      "en": true,
-      "zh-hans": true,
-      "zh-hant": true
-    }
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -37,5 +15,28 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"]
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4,
+    "editor.unicodeHighlight.allowedLocales": {
+      "en": true,
+      "zh-hans": true,
+      "zh-hant": true
+    }
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"],
+  "editor.tabSize": 2,
+  "files.eol": "\n",
+  "github-actions.remote-name": "mirror",
+  "npm.packageManager": "pnpm",
+  "typescript.tsdk": "./node_modules/typescript/lib"
 }
