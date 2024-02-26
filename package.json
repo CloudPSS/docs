@@ -7,7 +7,7 @@
     "url": "https://github.com/CloudPSS/Docs"
   },
   "engines": {
-    "node": ">=20.0",
+    "node": ">=20.10",
     "pnpm": ">=8.0"
   },
   "private": true,

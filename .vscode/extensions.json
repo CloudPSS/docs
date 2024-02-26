@@ -5,7 +5,7 @@
   // List of extensions which should be recommended for users of this workspace.
   "recommendations": [
     "MS-CEINTL.vscode-language-pack-zh-hans",
-    "unifiedjs.vscode-mdx",
+    "yzhang.markdown-all-in-one",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
     "jasonnutter.vscode-codeowners",
