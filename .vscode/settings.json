@@ -2,9 +2,6 @@
   "npm.packageManager": "pnpm",
   "typescript.tsdk": "./node_modules/typescript/lib",
   "files.eol": "\n",
-  "files.associations": {
-    "*.md": "mdx"
-  },
   "editor.tabSize": 2,
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -14,9 +11,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
-  "[mdx]": {
-    "editor.defaultFormatter": "unifiedjs.vscode-mdx",
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one",
     "editor.tabSize": 4,
+    "editor.formatOnPaste": false,
     "editor.formatOnSave": false,
     "editor.unicodeHighlight.allowedLocales": {
       "en": true,
