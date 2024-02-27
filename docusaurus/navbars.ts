@@ -8,30 +8,44 @@ import i18n from './i18n';
 const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     {
         position: 'left',
-        label: '概述',
+        label: '首页',
         type: 'docSidebar',
         sidebarId: 'overview',
     },
-    // {
-    //     position: 'left',
-    //     label: '文档',
-    //     type: 'docSidebar',
-    //     sidebarId: 'docs',
-    // },
     {
         position: 'left',
         label: '文档',
         type: 'dropdown',
         items: [
             {
-                label: 'XStudio',
+                label: '快速入门',
                 type: 'docSidebar',
-                sidebarId: 'xstudio',
+                sidebarId: 'guide',
             },
             {
-                label: 'EMTLab',
+                label: '软件产品',
                 type: 'docSidebar',
-                sidebarId: 'emtlab',
+                sidebarId: 'soft',
+            },
+            {
+                label: '硬件产品',
+                type: 'docSidebar',
+                sidebarId: 'hard',
+            },
+            {
+                label: '软件工具',
+                type: 'docSidebar',
+                sidebarId: 'softtools',
+            },
+            {
+                label: '开发工具',
+                type: 'docSidebar',
+                sidebarId: 'devtools',
+            },
+            {
+                label: '已归档内容',
+                type: 'docSidebar',
+                sidebarId: 'archivedcontent',
             },
         ],
         sidebarId: 'docs',
@@ -50,14 +64,14 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     },
     {
         position: 'left',
-        label: '关于',
-        type: 'docSidebar',
-        sidebarId: 'about',
+        label: '博客',
+        to: '/blog',
     },
     {
         position: 'left',
-        label: '博客',
-        to: '/blog',
+        label: '关于',
+        type: 'docSidebar',
+        sidebarId: 'about',
     },
 ];
 
