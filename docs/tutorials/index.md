@@ -1,1 +1,5 @@
-# 教程
+---
+title: 教程
+description: 教程资料
+sidebar_position: 10
+---
