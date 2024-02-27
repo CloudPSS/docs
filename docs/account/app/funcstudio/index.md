@@ -1,7 +1,6 @@
 ---
 title: FuncStudio 应用介绍
-author: guan
-order: 32
+sidebar_position: 32
 ---
 
 用户成功登录后，在 CloudPSS 主页点击 FuncStudio 的图标后，页面将跳转至 `FuncStudio 个人中心`，如图所示。该界面包含新建项目、项目管理、执行器下载等。

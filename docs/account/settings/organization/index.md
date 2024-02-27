@@ -1,7 +1,6 @@
 ---
 title: 组织管理
-author: guan
-order: 44
+sidebar_position: 44
 ---
 
 点击页面左下角的账户`设置`按钮，然后点击左侧的`组织管理`按钮，进入组织管理页面。

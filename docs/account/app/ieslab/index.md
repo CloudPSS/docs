@@ -1,7 +1,6 @@
 ---
 title: IESLab 应用介绍
-author: guan
-order: 33
+sidebar_position: 33
 ---
 
 IESLab 应用包括 IESLab 2 建模仿真和 IESLab 2 规划设计两个平台，基本界面功能布局一致。

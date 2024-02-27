@@ -1,7 +1,6 @@
 ---
 title: 语言切换
-author: guan
-order: 53
+sidebar_position: 53
 ---
 
 点击页面右上角的`设置`图标，下方选择中英文语言切换。

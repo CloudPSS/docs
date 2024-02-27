@@ -1,7 +1,6 @@
 ---
 title: 其他功能
-author: guan
-order: 50
+sidebar_position: 50
 ---
 
 * ## [高级搜索](./advanced-search/index.md)

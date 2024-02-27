@@ -1,7 +1,6 @@
 ---
 title: 策略管理
-author: guan
-order: 46
+sidebar_position: 46
 ---
 
 点击页面左下角的账户`设置`按钮，然后点击左侧的`策略管理`按钮，进入策略管理页面。

@@ -1,7 +1,6 @@
 ---
 title: 主题切换
-author: guan
-order: 52
+sidebar_position: 52
 ---
 
 点击页面右上角的`设置`图标，下方选择主题切换。

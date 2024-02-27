@@ -1,7 +1,6 @@
 ---
 title: DSLab 应用介绍
-author: guan
-order: 34
+sidebar_position: 34
 ---
 
 用户成功登录后，在 CloudPSS 主页点击源网荷储协同的图标后，页面跳转至 `DSLab-源网荷储协同 个人中心`，该界面包含项目组管理、项目管理等。
