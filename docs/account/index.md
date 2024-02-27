@@ -1,6 +1,6 @@
 ---
 title: 个人中心
-order: 1100
+sidebar_position: 1100
 ---
 
 

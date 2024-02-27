@@ -1,7 +1,6 @@
 ---
 title: CloudPSS 应用介绍
-author: guan
-order: 30
+sidebar_position: 30
 ---
 
 * ### [SimStudio 应用介绍](./simstudio/index.md)

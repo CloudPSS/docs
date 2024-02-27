@@ -1,7 +1,6 @@
 ---
 title: 账户安全设置
-author: guan
-order: 42
+sidebar_position: 42
 ---
 
 点击页面左下角的账户设置按钮，然后点击左侧的`安全设置`按钮，进入账户安全设置页面。

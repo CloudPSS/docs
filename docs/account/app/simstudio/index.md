@@ -1,7 +1,6 @@
 ---
 title: SimStudio 应用介绍
-author: guan
-order: 31
+sidebar_position: 31
 ---
 
 用户成功登录后，在 CloudPSS 主页点击 SimStudio 的图标后，页面将跳转至 `SimStudio 个人中心`，如图所示。该界面包含新建项目、项目管理等。

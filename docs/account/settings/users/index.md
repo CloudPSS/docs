@@ -1,7 +1,6 @@
 ---
 title: 用户管理
-author: guan
-order: 48
+sidebar_position: 48
 ---
 
 > 此页面仅为管理员使用页面

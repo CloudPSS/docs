@@ -1,7 +1,6 @@
 ---
 title: 个人信息设置
-author: guan
-order: 41
+sidebar_position: 41
 ---
 
 点击页面左下角的账户`设置`按钮，进入的默认页面就是个人信息设置页面。

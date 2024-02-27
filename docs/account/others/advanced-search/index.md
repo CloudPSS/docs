@@ -1,7 +1,6 @@
 ---
 title: 高级搜索
-author: guan
-order: 51
+sidebar_position: 51
 ---
 
 CloudPSS 支持高级搜索功能；高级搜索指定了一系列搜索条件过滤搜索结果。

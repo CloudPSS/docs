@@ -1,8 +1,7 @@
 ---
 title: 简介
 type: guide
-author: guan
-order: 10
+sidebar_position: 10
 ---
 
 CloudPSS 是一款基于网页的在线仿真软件，用户注册账号即可免费试用。为保证最佳显示效果，建议使用Chrome浏览器。CloudPSS 个人中心是该平台面向用户的核心服务之一，为平台用户提供以下服务：

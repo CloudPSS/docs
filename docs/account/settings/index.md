@@ -1,7 +1,6 @@
 ---
 title: CloudPSS 账户设置
-author: guan
-order: 40
+sidebar_position: 40
 ---
 
 * ### [个人信息设置](./information/index.md)

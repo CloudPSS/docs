@@ -1,7 +1,6 @@
 ---
 title: 队列管理
-author: guan
-order: 45
+sidebar_position: 45
 ---
 
 点击页面左下角的账户`设置`按钮，然后点击左侧的`队列管理`按钮，进入队列管理页面。

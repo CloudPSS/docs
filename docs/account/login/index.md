@@ -1,7 +1,6 @@
 ---
 title: 登录与注册功能
-author: guan
-order: 20
+sidebar_position: 20
 ---
 
 ## 如何访问

@@ -1,13 +1,12 @@
 ---
 title: 首页介绍
-author: guan
-order: 20
+sidebar_position: 20
 ---
 
 用户登录成功后，页面将跳转至 **CloudPSS 首页**，展示如下图所示。该界面包含了多个部分：CloudPSS 应用、CloudPSS 新闻、CloudPSS 典型案例、案例搜索以及用户设置、系统设置、客服系统等。
 
 
-![CloudPSS 首页](./首页.png "CloudPSS 首页")
+![CloudPSS 首页](./首页.png)
 
 
 ## CloudPSS 应用
@@ -15,7 +14,7 @@ order: 20
 CloudPSS 应用包括 `SimStudio`、`FuncStudio`、`AppStudio`、`CloudPSS 4.1(该版本已停止更新)`、`IESLab 2 建模仿真` 、`IESLab 2 规划设计` 、`源网荷储协同(DSLab)`和 `CloudPSS Docs`。用户可以通过点击应用标签或左侧的功能按钮进行页面跳转，进入相应的应用中心，如下图所示。
 
 
-![SimStudio 应用中心](./功能应用.png "SimStudio 应用中心")
+![SimStudio 应用中心](./功能应用.png)
 
 
 ## CloudPSS 新闻
@@ -29,10 +28,10 @@ CloudPSS 应用包括 `SimStudio`、`FuncStudio`、`AppStudio`、`CloudPSS 4.1(�
 
 ## 案例搜索
 
-用户可以在搜索栏内搜索 CloudPSS 的应用，包括典型案例项目和帮助文档。此外，支持[高级搜索功能](../../others/advanced-search/index.md "高级搜索功能")。
+用户可以在搜索栏内搜索 CloudPSS 的应用，包括典型案例项目和帮助文档。此外，支持[高级搜索功能](../others/advanced-search/index.md)。
 
 
-![搜索主界面](./搜索主界面.png "搜索主界面")
+![搜索主界面](./搜索主界面.png)
 
 
 ## 用户设置
