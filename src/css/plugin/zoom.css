@@ -1,6 +1,7 @@
 .medium-zoom-container {
   position: fixed;
-  top: calc(max(calc(var(--titlebar-area-y) + var(--titlebar-area-height)), var(--ifm-navbar-height)));
+  top: var(--ifm-navbar-height);
+  top: max(var(--titlebar-area-y) + var(--titlebar-area-height), var(--ifm-navbar-height));
   bottom: 0;
   left: 0;
   right: 0;
