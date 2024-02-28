@@ -124,7 +124,7 @@ tags:
 
 #### 参数与引脚定义
 
-元件的参数与引脚类型可参考[参数及引脚体系](../../../SimStudio/basic/parameterSystem/index.md)帮助文档，参数与引脚的添加和设置方法可参考[模块封装](../../../SimStudio/basic/moduleEncapsulation/index.md)帮助文档。    
+元件的参数与引脚类型可参考[参数及引脚体系](/docs/docs/soft/xstudio/simstudio/basic/parameterSystem/index.md)帮助文档，参数与引脚的添加和设置方法可参考[模块封装](/docs/docs/soft/xstudio/simstudio/basic/moduleEncapsulation/index.md)帮助文档。    
   
 
 本例中需要用到的可设置参数有第一段函数斜率 *k1*、第二段函数斜率 *k2*、分段点横坐标 *a* 和分段点纵坐标 *b*。 在`接口标签页`的参数列表定义中作如下设置。  
