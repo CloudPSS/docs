@@ -120,7 +120,10 @@ const config: Config = {
         },
         prism,
         zoom: {
-            selector: '.markdown figure > img',
+            selector: '.markdown figure > img, .markdown .docusaurus-mermaid-container > svg',
+            config: {
+                container: '.medium-zoom-container',
+            },
         },
     } satisfies Preset.ThemeConfig,
 };

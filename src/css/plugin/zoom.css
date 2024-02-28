@@ -1,0 +1,14 @@
+.medium-zoom-container {
+  position: fixed;
+  top: calc(max(calc(var(--titlebar-area-y) + var(--titlebar-area-height)), var(--ifm-navbar-height)));
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1000;
+  pointer-events: none;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: calc(var(--ifm-z-index-fixed) - 1);
+}
