@@ -25,22 +25,22 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
             {
                 label: '软件产品',
                 type: 'docSidebar',
-                sidebarId: 'soft',
+                sidebarId: 'software',
             },
             {
                 label: '硬件产品',
                 type: 'docSidebar',
-                sidebarId: 'hard',
+                sidebarId: 'hardware',
             },
             {
                 label: '软件工具',
                 type: 'docSidebar',
-                sidebarId: 'softtools',
+                sidebarId: 'softwaretools',
             },
             {
                 label: '开发工具',
                 type: 'docSidebar',
-                sidebarId: 'devtools',
+                sidebarId: 'developertools',
             },
             {
                 label: '已归档内容',
