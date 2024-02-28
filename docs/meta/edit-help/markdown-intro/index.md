@@ -144,18 +144,6 @@ $$
 
 :::
 
-## 重用内容
-
-可以将 MarkDown 文件内容导入。导入声明上下必须各有一行空白行。
-
-```tsx
-
-import Intro from '../edit-help/markdown-intro/index.md';
-
-<Intro/>
-
-```
-
 ## 表格
 
 支持表格功能。
