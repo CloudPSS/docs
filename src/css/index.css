@@ -1,13 +1,15 @@
 @import url('katex/dist/katex.css');
 
-@import url('./common.css');
+@import url('./common');
+@import url('./plugin');
 
-@import url('./navbar.css');
-@import url('./footer.css');
-@import url('./markdown.css');
-@import url('./code.css');
-@import url('./tabs.css');
+@import url('./navbar');
+@import url('./main');
+@import url('./footer');
+@import url('./markdown');
+@import url('./code');
+@import url('./tabs');
 
-@import url('./global.css');
-@import url('./theme.css');
-@import url('./print.css');
+@import url('./global');
+@import url('./theme');
+@import url('./print');

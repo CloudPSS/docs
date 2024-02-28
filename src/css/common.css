@@ -22,3 +22,32 @@
 center {
   text-align: center;
 }
+
+ol,
+ul {
+  ol,
+  ul {
+    --ifm-list-left-padding: 1rem;
+  }
+}
+
+figure {
+  margin: 1em 0;
+  page-break-inside: avoid;
+
+  > img {
+    display: block;
+    margin: auto;
+  }
+
+  > figcaption {
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: 700;
+    color: var(--ifm-color-primary);
+
+    &:empty {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+:root.plugin-docs {
+  .markdown {
+    user-select: text;
+  }
+}
+
+:root.plugin-blog {
+  article {
+    .markdown,
+    header {
+      user-select: text;
+    }
+  }
+}
+
+@import url(./zoom.css);
