@@ -70,8 +70,7 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     {
         position: 'left',
         label: '关于',
-        type: 'docSidebar',
-        sidebarId: 'about',
+        to: '/about',
     },
 ];
 
