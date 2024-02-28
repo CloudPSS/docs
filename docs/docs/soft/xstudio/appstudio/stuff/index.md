@@ -9,14 +9,3 @@ import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
 
-<!-- ![控件种类](./控件种类.png "控件种类")
-
-* [INPUT类](input.md)
-
-* [TEXT类](text.md)
-
-* [ACTION类](action.md)
-
-* [VIEW类](view.md) -->
-
-

@@ -8,10 +8,4 @@ import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
 
-<!-- * [工具栏](./toolbar/index.md)
-
-* [功能区](./function/index.md)
-
-* [状态栏](./status/index.md) -->
-
 
