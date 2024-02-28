@@ -1,5 +1,6 @@
 ---
 title: 控件
+sidebar_position: 400
 ---
 
 ## [选项卡](https://docusaurus.io/docs/markdown-features/tabs)
