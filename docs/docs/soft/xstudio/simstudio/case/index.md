@@ -1,7 +1,7 @@
 ---
-title: XStudio
-description: XStudio 文档
-sidebar_position: 10
+title: 模型案例
+description: 模型案例
+sidebar_position: 70
 ---
 
 import DocCardList from '@theme/DocCardList';

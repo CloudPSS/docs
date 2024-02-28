@@ -1,6 +1,6 @@
 ---
-title: XStudio
-description: XStudio 文档
+title: 新建本地实现的函数
+description: 新建本地实现的函数
 sidebar_position: 10
 ---
 
