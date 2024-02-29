@@ -101,23 +101,13 @@ $$
 > $$
 > 渲染错误的公式 $\error$。
 
-## 链接
+## 链接和图片
 
-:::tip
-对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径。如：
+### 链接
 
-```md
-<!-- in /docs/components/comp_newClarkTransform.md-->
+添加链接时使用 `[text](url "title")` 语法。
 
-[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
-[Park 变换器](comp_newParkTransform.md)
-```
-
-参考 [docusaurus 文档](https://docusaurus.io/docs/markdown-features/links)
-:::
-
-
-## 图片
+### 图片
 
 引用图片时使用 `![alt text =size](path "title")` 语法。
 
@@ -143,6 +133,35 @@ $$
 对于文档系统外的图片，需要同时指定宽度和高度，否则显示效果可能受文档样式影响。
 
 :::
+
+### URL
+
+使用 `cloudpss:` 协议创建指向主站的链接，如：
+
+```md
+[IEEE39](cloudpss:/model/CloudPSS/IEEE39)
+```
+
+以上链接在部署到公网时解析为 `https://cloudpss.com/model/CloudPSS/IEEE39`；部署到内网时解析为 `/model/CloudPSS/IEEE39`。
+ 
+:::tip
+对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径，并指定到文件。如：
+
+```md
+[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
+[Park 变换器](comp_newParkTransform.md)
+```
+
+不要写：
+```md
+[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem)
+[Park 变换器](comp_newParkTransform)
+```
+
+参考 [docusaurus 文档](https://docusaurus.io/docs/markdown-features/links)
+:::
+
+
 
 ## 表格
 

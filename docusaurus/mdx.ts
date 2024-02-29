@@ -5,11 +5,12 @@ import remarkMath from 'remark-math';
 import remarkIns from 'remark-ins';
 import rehypeKatex from 'rehype-katex';
 import rehypeFigure from './plugins/rehype/figure';
+import rehypeUrl from './plugins/rehype/url';
 
 export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
     admonitions: {},
     remarkPlugins: [remarkIns, remarkMath],
-    rehypePlugins: [rehypeKatex, rehypeFigure],
+    rehypePlugins: [rehypeUrl, rehypeKatex, rehypeFigure],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
 };

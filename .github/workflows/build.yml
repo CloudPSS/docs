@@ -20,6 +20,7 @@ jobs:
       - name: Build
         env:
           DOCS_BASE_URL: /${{ github.event.repository.name }}/
+          DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
