@@ -33,6 +33,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
+  "[codeowners]": {
+    "editor.rulers": [48, 72, 96, 120, 144, 168, 192, 246, 240],
+    "editor.tabSize": 24
+  },
   "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"],
   "editor.tabSize": 2,
   "files.eol": "\n",
