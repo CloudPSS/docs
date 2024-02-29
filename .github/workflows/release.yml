@@ -20,6 +20,7 @@ jobs:
       - name: Build for standalone
         env:
           DOCS_BASE_URL: /docs/
+          DOCS_HOME_URL: /
         run: |
           pnpm optimize
           pnpm build
@@ -53,6 +54,7 @@ jobs:
       - name: Build for docs.cloudpss.net
         env:
           DOCS_BASE_URL: /
+          DOCS_HOME_URL: https://cloudpss.net/
         run: |
           pnpm optimize
           pnpm build

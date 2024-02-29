@@ -6,10 +6,7 @@ import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
 import plugins from './docusaurus/plugins';
 import prism from './docusaurus/prism';
-import { translateConfig } from './docusaurus/utils';
-
-let baseUrl = process.env['DOCS_BASE_URL'] ?? '';
-if (!baseUrl.endsWith('/')) baseUrl += '/';
+import { translateConfig, BASE_URL, HOME_URL } from './docusaurus/utils';
 
 const config: Config = {
     title: translateConfig({
@@ -25,7 +22,7 @@ const config: Config = {
     url: 'https://docs.cloudpss.net',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl,
+    baseUrl: BASE_URL,
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
@@ -34,6 +31,10 @@ const config: Config = {
 
     onBrokenLinks: 'throw',
     onBrokenMarkdownLinks: 'warn',
+
+    customFields: {
+        HOME_URL,
+    },
 
     i18n,
 

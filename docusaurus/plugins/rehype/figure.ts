@@ -2,6 +2,7 @@ import { visit } from 'unist-util-visit';
 import { whitespace } from 'hast-util-whitespace';
 import { h } from 'hastscript';
 import type { Root, Element, RootContentMap } from 'hast';
+import { getAttribute, getOrInitAttribute } from './utils';
 
 // "xxx =100x100"
 // "xxx =x100"
@@ -82,23 +83,6 @@ export default function rehypeFigure() {
     };
 }
 
-/** 获取属性 */
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-function getAttribute(node: RootContentMap['mdxJsxTextElement'], name: string) {
-    const attr = node.attributes.find((attr) => attr.type === 'mdxJsxAttribute' && attr.name === name);
-    return attr;
-}
-
-/** 获取属性 */
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-function getOrInitAttribute(node: RootContentMap['mdxJsxTextElement'], name: string, value: string) {
-    let attr = node.attributes.find((attr) => attr.type === 'mdxJsxAttribute' && attr.name === name);
-    if (attr) return attr;
-    attr = { type: 'mdxJsxAttribute', name, value };
-    node.attributes.push(attr);
-    return attr;
-}
-
 /** 获取唯一的图片节点 */
 function getOnlyImages({ children }: Element): [RootContentMap['mdxJsxTextElement'] | Element, string] | undefined {
     const nodes = children.filter((child) => !whitespace(child));
@@ -120,9 +104,13 @@ function getOnlyImages({ children }: Element): [RootContentMap['mdxJsxTextElemen
 /** 转换为视频 */
 function toVideoNode(node: Element): Element | undefined {
     const { src } = node.properties;
-    if (!src) return undefined;
-    const url = new URL(src as string);
-    const service = url.protocol.slice(0, -1);
-    if (['http', 'https', 'data', 'blob'].includes(service)) return undefined;
-    return h('cwe-embed-media', { service, srcid: url.href.slice(url.protocol.length) });
+    if (typeof src != 'string' || !src.includes(':')) return undefined;
+    try {
+        const url = new URL(src);
+        const service = url.protocol.slice(0, -1);
+        if (['http', 'https', 'data', 'blob', 'pathname'].includes(service)) return undefined;
+        return h('cwe-embed-media', { service, srcid: url.href.slice(url.protocol.length) });
+    } catch {
+        return undefined;
+    }
 }
