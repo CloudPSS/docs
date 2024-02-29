@@ -33,7 +33,7 @@ sidebar_position: 200
 
 ### 博客
 
-博客内容存放于 `/blog` 文件夹，使用 `YYYY-MM-dd-title/` 或 `YYYY-MM-dd-title.md`  存放博客文章。
+博客内容存放于 `/blog` 文件夹，使用 `YYYY/MM-dd-blog-title/` 或 `YYYY/MM-dd-blog-title.md` 存放博客文章。
 
 ### 页面
 
