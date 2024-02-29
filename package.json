@@ -4,7 +4,7 @@
   "homepage": "https://docs.cloudpss.net",
   "repository": {
     "type": "git",
-    "url": "https://github.com/CloudPSS/Docs"
+    "url": "https://github.com/CloudPSS/docs"
   },
   "engines": {
     "node": ">=20.10",
