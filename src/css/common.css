@@ -51,3 +51,41 @@ figure {
     }
   }
 }
+
+dl,
+dt,
+dd {
+  display: block;
+}
+
+dl {
+  margin: var(--ifm-leading) 0;
+}
+
+dt {
+  font-size: 1.2em;
+  font-weight: bolder;
+  margin-top: var(--ifm-leading);
+
+  + dt {
+    margin-top: calc(var(--ifm-leading) * 0.25);
+  }
+}
+
+dd {
+  margin-inline-start: 1rem;
+  margin-top: calc(var(--ifm-leading) * 0.5);
+
+  + dd {
+    margin-top: calc(var(--ifm-leading) * 0.75);
+  }
+
+  > p:first-child {
+    margin-top: var(--ifm-leading);
+  }
+}
+
+mark {
+  color: inherit;
+  background-color: #c2bf0050;
+}

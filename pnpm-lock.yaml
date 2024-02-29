@@ -56,6 +56,9 @@ dependencies:
   rehype-katex:
     specifier: ^7.0.0
     version: 7.0.0
+  remark-definition-list:
+    specifier: ^2.0.0
+    version: 2.0.0
   remark-directive:
     specifier: ^3.0.0
     version: 3.0.0
@@ -71,6 +74,9 @@ dependencies:
   remark-ins:
     specifier: ^1.0.2
     version: 1.0.2
+  remark-join-cjk-lines:
+    specifier: ^1.0.11
+    version: 1.0.11
   remark-math:
     specifier: ^6.0.0
     version: 6.0.0
@@ -8643,6 +8649,28 @@ packages:
     dependencies:
       function-bind: 1.1.2
 
+  /hast-util-definition-list@2.0.0:
+    resolution:
+      { integrity: sha512-EnkqD6a7R1fwyC9F5R6fu0ucpcwfkxjiga7/G8J7KU+uuUHVENzmgo/Da68fZBy9SZAkQOAC/8gK3m2BnuutUg== }
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.3
+      '@types/unist': 3.0.2
+      hast-util-to-mdast: 10.1.0
+      mdast-util-definition-list: 2.0.0
+      mdast-util-phrasing: 4.1.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /hast-util-embedded@3.0.0:
+    resolution:
+      { integrity: sha512-naH8sld4Pe2ep03qqULEtvYr7EjrLK2QHY8KJR6RJkTUjPGObe1vnx585uzem2hGra+s1q08DZZpfgDVYRbaXA== }
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-is-element: 3.0.0
+    dev: false
+
   /hast-util-from-dom@5.0.0:
     resolution:
       { integrity: sha512-d6235voAp/XR3Hh5uy7aGLbM3S4KamdW0WEgOaU1YoewnuYw4HXb5eRtv9g65m/RFGEfUY1Mw4UqCc5Y8L4Stg== }
@@ -8688,6 +8716,20 @@ packages:
       web-namespaces: 2.0.1
     dev: false
 
+  /hast-util-has-property@3.0.0:
+    resolution:
+      { integrity: sha512-MNilsvEKLFpV604hwfhVStK0usFY/QmM5zX16bo7EjnAEGofr5YyI37kzopBlZJkHD4t887i+q/C8/tr5Q94cA== }
+    dependencies:
+      '@types/hast': 3.0.4
+    dev: false
+
+  /hast-util-is-body-ok-link@3.0.0:
+    resolution:
+      { integrity: sha512-VFHY5bo2nY8HiV6nir2ynmEB1XkxzuUffhEGeVx7orbu/B1KaGyeGgMZldvMVx5xWrDlLLG/kQ6YkJAMkBEx0w== }
+    dependencies:
+      '@types/hast': 3.0.4
+    dev: false
+
   /hast-util-is-element@3.0.0:
     resolution:
       { integrity: sha512-Val9mnv2IWpLbNPqc/pUem+a7Ipj2aHacCwgNfTiK0vJKl0LF+4Ba4+v1oPHFpf3bLYmreq0/l3Gud9S5OH42g== }
@@ -8700,6 +8742,17 @@ packages:
       { integrity: sha512-wkQCkSYoOGCRKERFWcxMVMOcYE2K1AaNLU8DXS9arxnLOUEWbOXKXiJUNzEpqZ3JOKpnha3jkFrumEjVliDe7A== }
     dependencies:
       '@types/hast': 3.0.4
+    dev: false
+
+  /hast-util-phrasing@3.0.1:
+    resolution:
+      { integrity: sha512-6h60VfI3uBQUxHqTyMymMZnEbNl1XmEGtOxxKYL7stY2o601COo62AWAYBQR9lZbYXYSBoxag8UpPRXK+9fqSQ== }
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-embedded: 3.0.0
+      hast-util-has-property: 3.0.0
+      hast-util-is-body-ok-link: 3.0.0
+      hast-util-is-element: 3.0.0
     dev: false
 
   /hast-util-raw@9.0.2:
@@ -8744,6 +8797,24 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /hast-util-to-html@9.0.0:
+    resolution:
+      { integrity: sha512-IVGhNgg7vANuUA2XKrT6sOIIPgaYZnmLx3l/CCOAK0PtgfoHrZwX7jCSYyFxHTrGmC6S9q8aQQekjp4JPZF+cw== }
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/unist': 3.0.2
+      ccount: 2.0.1
+      comma-separated-tokens: 2.0.3
+      hast-util-raw: 9.0.2
+      hast-util-whitespace: 3.0.0
+      html-void-elements: 3.0.0
+      mdast-util-to-hast: 13.1.0
+      property-information: 6.4.1
+      space-separated-tokens: 2.0.2
+      stringify-entities: 4.0.3
+      zwitch: 2.0.4
+    dev: false
+
   /hast-util-to-jsx-runtime@2.3.0:
     resolution:
       { integrity: sha512-H/y0+IWPdsLLS738P8tDnrQ8Z+dj12zQQ6WC11TIM21C8WFVoIxcqWXf2H3hiTVZjF1AWqoimGwrTWecWrnmRQ== }
@@ -8765,6 +8836,26 @@ packages:
       vfile-message: 4.0.2
     transitivePeerDependencies:
       - supports-color
+
+  /hast-util-to-mdast@10.1.0:
+    resolution:
+      { integrity: sha512-DsL/SvCK9V7+vfc6SLQ+vKIyBDXTk2KLSbfBYkH4zeF/uR1yBajHRhkzuaUSGOB1WJSTieJBdHwxlC+HLKvZZw== }
+    dependencies:
+      '@types/hast': 3.0.4
+      '@types/mdast': 4.0.3
+      '@ungap/structured-clone': 1.2.0
+      hast-util-phrasing: 3.0.1
+      hast-util-to-html: 9.0.0
+      hast-util-to-text: 4.0.0
+      hast-util-whitespace: 3.0.0
+      mdast-util-phrasing: 4.1.0
+      mdast-util-to-hast: 13.1.0
+      mdast-util-to-string: 4.0.0
+      rehype-minify-whitespace: 6.0.0
+      trim-trailing-lines: 2.1.0
+      unist-util-position: 5.0.0
+      unist-util-visit: 5.0.0
+    dev: false
 
   /hast-util-to-parse5@8.0.0:
     resolution:
@@ -10370,6 +10461,21 @@ packages:
       { integrity: sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw== }
     dev: false
 
+  /mdast-util-definition-list@2.0.0:
+    resolution:
+      { integrity: sha512-aFWuASQs77BJndNSDcNdvB1HRqWZBptcEjwv67mnPbaAZsfwMHxI8MwoQxAz4I2bHx41hft/HDRC57ZkhpayOQ== }
+    dependencies:
+      '@types/mdast': 4.0.3
+      '@types/unist': 3.0.2
+      mdast-util-from-markdown: 2.0.0
+      mdast-util-to-hast: 13.1.0
+      mdast-util-to-markdown: 2.1.0
+      micromark-extension-definition-list: 2.0.0
+      unist-builder: 4.0.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
   /mdast-util-directive@3.0.0:
     resolution:
       { integrity: sha512-JUpYOqKI4mM3sZcNxmF/ox04XYFFkNwr0CFlrQIkCwbvH0xzMCqkMqAde9wRd80VAhaUrwFwKm2nxretdT1h7Q== }
@@ -10809,6 +10915,20 @@ packages:
       micromark-util-subtokenize: 2.0.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
+
+  /micromark-extension-definition-list@2.0.0:
+    resolution:
+      { integrity: sha512-92SSfTdG7YIXiYj60sNDPoo3MTJXK94LRLfKsoDHgDqiE61p4w4pzdyCc9SuoQ74/bzb5SXPVK11kjlYnIjzKA== }
+    dependencies:
+      assert: 2.1.0
+      micromark-core-commonmark: 2.0.0
+      micromark-factory-space: 2.0.0
+      micromark-util-character: 2.1.0
+      micromark-util-chunked: 2.0.0
+      micromark-util-symbol: 2.0.0
+      micromark-util-types: 2.0.0
+      ts-dedent: 2.2.0
+    dev: false
 
   /micromark-extension-directive@3.0.0:
     resolution:
@@ -13514,6 +13634,17 @@ packages:
       vfile: 6.0.1
     dev: false
 
+  /rehype-minify-whitespace@6.0.0:
+    resolution:
+      { integrity: sha512-i9It4YHR0Sf3GsnlR5jFUKXRr9oayvEk9GKQUkwZv6hs70OH9q3OCZrq9PpLvIGKt3W+JxBOxCidNVpH/6rWdA== }
+    dependencies:
+      '@types/hast': 3.0.4
+      hast-util-embedded: 3.0.0
+      hast-util-is-element: 3.0.0
+      hast-util-whitespace: 3.0.0
+      unist-util-is: 6.0.0
+    dev: false
+
   /rehype-raw@7.0.0:
     resolution:
       { integrity: sha512-/aE8hCfKlQeA8LmyeyQvQF3eBiLRGNlfBJEvWH7ivp9sBqs7TNqBL5X3v157rM4IFETqDnIOO+z5M/biZbo9Ww== }
@@ -13527,6 +13658,17 @@ packages:
     resolution:
       { integrity: sha512-G08Dxvm4iDN3MLM0EsP62EDV9IuhXPR6blNz6Utcp7zyV3tr4HVNINt6MpaRWbxoOHT3Q7YN2P+jaHX8vUbgog== }
     engines: { node: '>= 0.10' }
+    dev: false
+
+  /remark-definition-list@2.0.0:
+    resolution:
+      { integrity: sha512-OOJ0zUrfUGITUNxOBnsipyFUjqq1m4AgYOqQk10jDXyz+RoODJL3qYvRn8qzYQDzRnz1wlCP3dbDEOpl05LlQw== }
+    dependencies:
+      hast-util-definition-list: 2.0.0
+      mdast-util-definition-list: 2.0.0
+      micromark-extension-definition-list: 2.0.0
+    transitivePeerDependencies:
+      - supports-color
     dev: false
 
   /remark-directive@3.0.0:
@@ -13606,6 +13748,13 @@ packages:
       '@types/mdast': 4.0.3
       unist-builder: 4.0.0
       unist-util-visit: 5.0.0
+    dev: false
+
+  /remark-join-cjk-lines@1.0.11:
+    resolution:
+      { integrity: sha512-5wPXZUF2haWauiDutSX+MXDQHMVNrDnxeXuSrd+S2mbS6t3eChPWclmTGnBhDyggS7mhoqA10Zs6goT1emnhXw== }
+    dependencies:
+      unist-util-visit: 2.0.3
     dev: false
 
   /remark-math@6.0.0:
@@ -14860,6 +15009,11 @@ packages:
       escape-string-regexp: 1.0.5
     dev: true
 
+  /trim-trailing-lines@2.1.0:
+    resolution:
+      { integrity: sha512-5UR5Biq4VlVOtzqkm2AZlgvSlDJtME46uV0br0gENbwN4l5+mMKT4b9gJKqWtuL2zAIqajGJGuvbCbcAJUZqBg== }
+    dev: false
+
   /trough@2.2.0:
     resolution:
       { integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw== }
@@ -15111,6 +15265,11 @@ packages:
       unist-util-is: 6.0.0
     dev: false
 
+  /unist-util-is@4.1.0:
+    resolution:
+      { integrity: sha512-ZOQSsnce92GrxSqlnEEseX0gi7GH9zTJZ0p9dtu87WRb/37mMPO2Ilx1s/t9vBHrFhbgweUwb+t7cIn5dxPhZg== }
+    dev: false
+
   /unist-util-is@6.0.0:
     resolution:
       { integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw== }
@@ -15158,12 +15317,29 @@ packages:
     dependencies:
       '@types/unist': 3.0.2
 
+  /unist-util-visit-parents@3.1.1:
+    resolution:
+      { integrity: sha512-1KROIZWo6bcMrZEwiH2UrXDyalAa0uqzWCxCJj6lPOvTve2WkfgCytoDTPaMnodXh1WrXOq0haVYHj99ynJlsg== }
+    dependencies:
+      '@types/unist': 2.0.10
+      unist-util-is: 4.1.0
+    dev: false
+
   /unist-util-visit-parents@6.0.1:
     resolution:
       { integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw== }
     dependencies:
       '@types/unist': 3.0.2
       unist-util-is: 6.0.0
+
+  /unist-util-visit@2.0.3:
+    resolution:
+      { integrity: sha512-iJ4/RczbJMkD0712mGktuGpm/U4By4FfDonL7N/9tATGIF4imikjOuagyMY53tnZq3NP6BcmlrHhEKAfGWjh7Q== }
+    dependencies:
+      '@types/unist': 2.0.10
+      unist-util-is: 4.1.0
+      unist-util-visit-parents: 3.1.1
+    dev: false
 
   /unist-util-visit@5.0.0:
     resolution:

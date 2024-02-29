@@ -107,6 +107,9 @@ $$
 
 添加链接时使用 `[text](url "title")` 语法。
 
+- `text` 为链接文本，可嵌套其他 MarkDown 语法；
+- `title` 为鼠标悬停时的提示文本，可省略；
+
 ### 图片
 
 引用图片时使用 `![alt text =size](path "title")` 语法。
