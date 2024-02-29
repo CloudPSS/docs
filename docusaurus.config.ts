@@ -1,6 +1,6 @@
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-import { mdxOptions } from './docusaurus/mdx';
+import { mdxOptions, remarkRehypeOptions } from './docusaurus/mdx';
 import navbars from './docusaurus/navbars';
 import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
@@ -41,7 +41,24 @@ const config: Config = {
     markdown: {
         mermaid: true,
         remarkRehypeOptions: {
+            ...remarkRehypeOptions,
+            clobberPrefix: '',
             footnoteLabelProperties: { className: ['visually-hidden'] },
+            footnoteBackContent(referenceIndex, rereferenceIndex) {
+                const main = { type: 'text', value: '\u21A9\uFE0E' } as const;
+                if (rereferenceIndex <= 1) {
+                    return [main];
+                }
+                return [
+                    main,
+                    {
+                        type: 'element',
+                        tagName: 'sup',
+                        properties: {},
+                        children: [{ type: 'text', value: String(rereferenceIndex) }],
+                    },
+                ];
+            },
             ...translateConfig({
                 'zh-hans': {
                     footnoteLabel: '脚注',

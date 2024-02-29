@@ -50,11 +50,13 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rehype-katex": "^7.0.0",
+    "remark-definition-list": "^2.0.0",
     "remark-directive": "^3.0.0",
     "remark-extended-table": "^2.0.1",
     "remark-frontmatter": "^5.0.0",
     "remark-gfm": "^4.0.0",
     "remark-ins": "^1.0.2",
+    "remark-join-cjk-lines": "^1.0.11",
     "remark-math": "^6.0.0",
     "unist-util-remove": "^4.0.0",
     "unist-util-visit": "^5.0.0"
