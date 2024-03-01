@@ -1,7 +1,7 @@
 ---
-title: IESLab
-description: IESLab 文档
-sidebar_position: 30
+title: IESLab SDK
+description: IESLab SDK 文档
+sidebar_position: 20
 ---
 
 import DocCardList from '@theme/DocCardList';
