@@ -4,6 +4,6 @@ description: 高级管理功能
 sidebar_position: 110
 ---
 
-import simstudio from '../../xstudio/simstudio/index.md';
+import DocCardList from '@theme/DocCardList';
 
-<simstudio />
+<DocCardList />
