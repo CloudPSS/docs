@@ -14,7 +14,6 @@ CloudPSS Mini 搭载 CloudPSS 高性能电力系统电磁暂态云仿真平台�
 
 ### 型号与参数
 
-[CloudPSS Mini 参数]
 |     产品型号   |    CloudPSS Mini    |
 |              | 型号 A  |   型号 B（RT）     |
 |----------------|:--------:| ----------:|
