@@ -1,7 +1,7 @@
 ---
-title: EMTLab
-description: EMTLab 文档
-sidebar_position: 20
+title: 工具元件
+description: 工具元件
+sidebar_position: 600
 ---
 
 import DocCardList from '@theme/DocCardList';
