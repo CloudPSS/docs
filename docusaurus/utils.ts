@@ -27,7 +27,7 @@ if (!baseUrl.endsWith('/')) baseUrl += '/';
  */
 export const BASE_URL = baseUrl;
 
-let homeUrl = process.env['DOCS_HOME_URL'] || 'https://cloudpss.com';
+let homeUrl = process.env['DOCS_HOME_URL'] || 'https://cloudpss.net';
 if (!homeUrl.endsWith('/')) homeUrl += '/';
 
 /**

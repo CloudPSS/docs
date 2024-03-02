@@ -8,9 +8,18 @@
     }
   }
 
+  h1,
+  h2,
+  .theme-admonition,
+  .theme-code-block,
+  table {
+    clear: both;
+  }
+
   [data-footnotes] {
     margin-top: 2.5rem;
     border-top: var(--ifm-hr-height) solid var(--ifm-hr-background-color);
+    clear: both;
 
     --ifm-list-paragraph-margin: 0.5rem;
     --ifm-paragraph-margin-bottom: 0.5rem;

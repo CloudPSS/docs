@@ -91,6 +91,10 @@ import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
 
+:::warning
+该控件只能在包含多个文档（`.md` 文件）的文件夹中使用。
+:::
+
 ## 重定向
 
 ```jsx

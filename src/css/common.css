@@ -89,3 +89,10 @@ mark {
   color: inherit;
   background-color: #c2bf0050;
 }
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  display: table;
+  position: relative;
+}
