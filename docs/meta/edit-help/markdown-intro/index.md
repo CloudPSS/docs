@@ -83,7 +83,7 @@ sidebar_position: 100
 
 使用 [$\KaTeX$](https://github.com/Khan/KaTeX) 引擎插件渲染，兼容 $\LaTeX$ 公式，对 $\LaTeX$ 的支持情况见 [Things that $\KaTeX$ does not (yet) support](https://github.com/Khan/KaTeX/wiki/Things-that-KaTeX-does-not-(yet)-support)。使用 `$` 插入行内公式，使用 `$$` 插入行间公式，插入行间公式时，`$$` 必须位于独立的行。
 
-```tex equation
+```md
 行内公式：$\sin{x}$  
 行间公式：
 $$ 
@@ -145,7 +145,7 @@ $$
 [IEEE39](cloudpss:/model/CloudPSS/IEEE39)
 ```
 
-以上链接在部署到公网时解析为 `https://cloudpss.com/model/CloudPSS/IEEE39`；部署到内网时解析为 `/model/CloudPSS/IEEE39`。
+以上链接在部署到公网时解析为 `https://cloudpss.net/model/CloudPSS/IEEE39`；部署到内网时解析为 `/model/CloudPSS/IEEE39`。
  
 :::tip
 对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径，并指定到文件。如：
@@ -172,25 +172,25 @@ $$
 
 如：
 
-```md table
+```md
 | First Header | Second Header | Third Header |
-| ------------ | :-----------: | -----------: |
-| Content      |  _Long Cell_  |              |
-|              |   **Cell**    |         Cell |
-| Content      |   **Cell**    |              |
+| ------------ | :-----------: | -----------: | {/* 使用 `:` 调整某一列的对齐方式 */}
+| Content      |  _Long Cell_  | Cell         |
+| Content      |   **Cell**    | Cell         |
+| Content      |   **Cell**    | Cell         |
 ```
 
 效果：
 
 | First Header | Second Header | Third Header |
 | ------------ | :-----------: | -----------: |
-| Content      |  _Long Cell_  |              |
-|              |   **Cell**    |         Cell |
-| Content      |   **Cell**    |              |
+| Content      |  _Long Cell_  | Cell         |
+| Content      |   **Cell**    | Cell         |
+| Content      |   **Cell**    | Cell         |
 
 ## 文本居中
 
-```md center
+```md
 <center>
 centered  
 text
@@ -208,7 +208,7 @@ text
 
 如：
 
-```md footnote
+```md
 定义一个脚注：
 [^test-platform]: 测试平台为 NVIDIA(R) Tesla(R) V100
 
@@ -233,10 +233,11 @@ text
 - **粗体**：`**bold**` **bold**
 - **斜体**：`*italic*` *italic*
 - **代码**：`` `code` `` `code`
-- **下标**：`H<sub>2</sub>0` H<sub>2</sub>0
-- **上标**：`x<sup>2</sup>` x<sup>2</sup>
-- **标记**：`<mark>mark</mark>` <mark>mark</mark>
 - **插入与删除**：`++Inserted++` ++Inserted++；`~~Del~~` ~~Del~~
 - **[Emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/)**：`:smile:` :smile:
+- **标记**：`<mark>mark</mark>` <mark>mark</mark>
 - **键盘按键**：`<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>` <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>
-- 其他标准 MarkDown 语法不再赘述。
+- **下标**：`H<sub>2</sub>O` H<sub>2</sub>O
+- **上标**：`x<sup>2</sup>` x<sup>2</sup>
+- **分隔线**：`---`（独立一行放置）
+---

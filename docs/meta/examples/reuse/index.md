@@ -30,16 +30,16 @@ import Comp from './_comp-comp.md';
 传递内容：
 ```tsx
 <Hello>
-    :::note
-    内容
-    :::
+  :::note
+  内容
+  :::
 </Hello>
 ```
 
 > <Hello>
->    :::note
->    内容
->    :::
+>   :::note
+>   内容
+>   :::
 > </Hello>
 
 组件嵌套：
