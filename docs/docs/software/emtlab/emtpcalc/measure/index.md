@@ -1,8 +1,16 @@
 ---
-title: 量测及输出系统
-description: 量测及输出系统
-sidebar_position: 40
----
+title: 量测和输出系统
+description: 介绍 EMTLab 的量测和输出系统
+sidebar_position: 300
 
-EMTLab使用SimStudio模型工坊作为模型编辑、分析计算的工作台。
+tags: 
+- EMTLab
+---
+本节首先介绍。
+
+## 功能定义
+
+
+## 功能说明
+
 
