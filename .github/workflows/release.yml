@@ -10,6 +10,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Get the version
         id: get_version
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
@@ -44,6 +46,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Get the version
         id: get_version
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
