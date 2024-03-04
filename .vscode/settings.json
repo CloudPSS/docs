@@ -34,8 +34,9 @@
     "editor.tabSize": 4
   },
   "[codeowners]": {
-    "editor.rulers": [48, 72, 96, 120, 144, 168, 192, 246, 240],
-    "editor.tabSize": 24
+    "editor.rulers": [48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336, 360],
+    "editor.tabSize": 24,
+    "editor.wordWrap": "on"
   },
   "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"],
   "editor.tabSize": 2,

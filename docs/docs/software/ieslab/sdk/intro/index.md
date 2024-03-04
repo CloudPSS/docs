@@ -1,5 +1,5 @@
 ---
-title: IESLab SDK 简介
+title: SDK 简介
 description: IESLab SDK 简介
 sidebar_position: 10
 ---
