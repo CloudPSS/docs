@@ -16,8 +16,8 @@ CODEOWNERS                                      @opportunity@live.in    @1094779
 blog/**                                         @opportunity@live.in    @sykfmlrc@163.com
 
 # 文档的负责人
-docs/meta/**                                    @opportunity@live.in    @sykfmlrc@163.com
-docs/about/**                                   @opportunity@live.in    @sykfmlrc@163.com
+docs/meta/**                                    @opportunity@live.in    @sykfmlrc@163.com       @1094779545@qq.com 
+docs/about/**                                   @opportunity@live.in    @sykfmlrc@163.com       @1094779545@qq.com 
 docs/archived-content/**                        @opportunity@live.in    @1094779545@qq.com      @sykfmlrc@163.com
 docs/developer-tools/**                         @opportunity@live.in    @1094779545@qq.com      @sykfmlrc@163.com
 docs/guide/**                                   @opportunity@live.in    @1094779545@qq.com      @sykfmlrc@163.com
