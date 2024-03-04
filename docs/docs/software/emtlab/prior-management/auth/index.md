@@ -1,7 +1,17 @@
 ---
 title: 权限、优先级管理
 description: 权限、优先级管理
-sidebar_position: 200
+sidebar_position: 30
 ---
 
-EMTLab使用SimStudio模型工坊作为模型编辑、分析计算的工作台。
+
+## 功能定义
+
+
+## 功能说明
+
+
+## 案例
+
+
+## 常见问题 Q&A
