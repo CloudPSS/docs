@@ -1,7 +1,7 @@
 ---
-title: 帮助向导
+title: 帮组向导
 description: CloudPSS EMTLab文档使用指南
-sidebar_position: 40
+sidebar_position: 30
 ---
 
 
