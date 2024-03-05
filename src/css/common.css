@@ -55,33 +55,59 @@ figure {
 dl,
 dt,
 dd {
+  position: relative;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
 dl {
+  --dl-border-radius: 0.4rem;
   margin: var(--ifm-leading) 0;
 }
 
 dt {
+  border: 1px solid var(--ifm-color-primary-contrast-background);
+  border-top-left-radius: var(--dl-border-radius);
+  border-top-right-radius: var(--dl-border-radius);
+
+  color: var(--ifm-color-primary-contrast-foreground);
+  background: var(--ifm-color-primary-contrast-background);
+
   font-size: 1.2em;
   font-weight: bolder;
+
   margin-top: var(--ifm-leading);
+  padding: calc(var(--ifm-leading) * 0.25) 0.8rem;
 
   + dt {
-    margin-top: calc(var(--ifm-leading) * 0.25);
+    border-radius: 0;
+    border-top: none;
+    margin-top: 0;
+
+    &::before {
+      position: absolute;
+      top: calc(-0.5 * var(--ifm-hr-height));
+      height: var(--ifm-hr-height);
+      left: 0.75rem;
+      right: 0.75rem;
+      content: '';
+      background: var(--ifm-color-primary-contrast-foreground);
+    }
   }
 }
 
 dd {
-  margin-inline-start: 1rem;
-  margin-top: calc(var(--ifm-leading) * 0.5);
+  border: 1px solid var(--ifm-color-primary-contrast-background);
+  border-top: none;
+  padding: calc(var(--ifm-leading) * 0.8) 1rem;
 
-  + dd {
-    margin-top: calc(var(--ifm-leading) * 0.75);
+  > :first-child {
+    margin-top: 0;
   }
 
-  > p:first-child {
-    margin-top: var(--ifm-leading);
+  > :last-child {
+    margin-bottom: 0;
   }
 }
 
