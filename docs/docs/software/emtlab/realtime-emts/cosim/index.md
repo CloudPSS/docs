@@ -13,12 +13,12 @@ sidebar_position: 40
 ### 硬件平台
 #### CloudPSS-RT
 #### 基本框架
-#### Aurora协议
+#### Aurora 协议
 #### 主从式同步
 
 ### 软件接口
 
-#### SFP64接口元件
+#### SFP64 接口元件
 
 ## 案例
 #### 构建联合仿真接口模型
@@ -28,6 +28,6 @@ sidebar_position: 40
 
 
 ## 常见问题
-### 仿真运行失败？start failed
-### 仿真启动超时？time out
+### 仿真运行失败？报错 start failed
+### 仿真启动超时？报错 time out
 ### 如何与其它更多仿真平台联合仿真？

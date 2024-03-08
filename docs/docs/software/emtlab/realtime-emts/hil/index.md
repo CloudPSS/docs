@@ -39,7 +39,7 @@ sidebar_position: 20
 
 
 ## 常见问题
-### 仿真运行失败？start failed
-### 仿真启动超时？time out
-### 为何Siganl Hub超时帧增加？
+### 仿真运行失败？报错 start failed
+### 仿真启动超时？报错 time out
+### 为何 Signal Hub 超时帧增加？
 ### 如何观测实时仿真结果？

@@ -19,7 +19,7 @@ sidebar_position: 30
 
 
 ### 软件接口
-#### SFP64接口
+#### SFP64 接口
 
 
 ## 案例
@@ -30,7 +30,7 @@ sidebar_position: 30
 
 
 ## 常见问题
-### 仿真运行失败？start failed
-### 仿真启动超时？time out
+### 仿真运行失败？报错 start failed
+### 仿真启动超时？报错 time out
 ### 如何观测实时仿真结果？
 
