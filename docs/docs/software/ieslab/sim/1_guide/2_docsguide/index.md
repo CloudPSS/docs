@@ -4,9 +4,6 @@ description: IESLab 建模仿真平台文档使用指南
 sidebar_position: 30
 ---
 
-
-## 文档摘要
-
 本节主要介绍如何学习使用IESLab 建模仿真平台文档。
 
 ## 文档使用说明
