@@ -40,7 +40,7 @@ sidebar_position: 20
 
 #### 配置Matlab环境
 
-详见[Python环境配置](../../../envir/Matlab/index.md)。
+详见[Python环境配置](../../../envir/matlab/index.md)。
 
 #### 编写本地Matlab代码
 

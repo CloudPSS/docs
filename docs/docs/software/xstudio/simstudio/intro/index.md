@@ -132,7 +132,7 @@ CloudPSS SimStudio 内置了即时错误校验功能。用户在搭建算例的�
 - 我需要自定义元件和自定义应用
 - ...
 :::success 
-你需要进一步掌握[**模块封装**](../basic/moduleEncapsulation/index.md)、[**模块调用**](../basic/callModule/index.md)、[**权限管理**](../../SimStudio/workbench/function/summary/index.md)等功能。在`项目类型`处选择`元件`，即可使用 CloudPSS 构建自定义元件。
+你需要进一步掌握[**模块封装**](../basic/moduleEncapsulation/index.md)、[**模块调用**](../basic/callModule/index.md)、[**权限管理**]等功能。在`项目类型`处选择`元件`，即可使用 CloudPSS 构建自定义元件。
 :::
 
 :::info 其他用户
