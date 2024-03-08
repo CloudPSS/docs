@@ -1,7 +1,7 @@
 ---
 title: 事件驱动仿真
 description: 事件驱动仿真
-sidebar_position: 60
+sidebar_position: 90
 ---
 
 本节详细介绍事件驱动仿真的功能和使用方法，并以案例进行说明。
