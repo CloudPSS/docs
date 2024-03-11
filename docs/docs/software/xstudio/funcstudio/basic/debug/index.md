@@ -1,6 +1,6 @@
 ---
-title: 内核的本地调试
-description: 内核的本地调试
+title: 函数的本地调试
+description: 函数内核的本地调试
 sidebar_position: 30
 ---
 
