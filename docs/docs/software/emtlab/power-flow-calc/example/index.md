@@ -4,6 +4,7 @@ description: 案例介绍
 sidebar_position: 200
 ---
 
+## IEEE 标准系统的潮流计算
 
 ## IEEE39节点系统的潮流计算
 
