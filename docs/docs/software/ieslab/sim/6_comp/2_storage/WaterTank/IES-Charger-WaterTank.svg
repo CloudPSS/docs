@@ -53,7 +53,7 @@
             <script>
             //
             function mp(t){t.querySelectorAll("template[shadowroot]").forEach((t=&gt;{const e=t.getAttribute("shadowroot"),n=t.parentNode.attachShadow({mode:e??"open"});n.appendChild(t.content),t.remove(),mp(n)}))}
-            window.addEventListener('DOMContentLoaded', ()=&gt;{mp(document),document.querySelectorAll("#export-svg-buttons &gt; .export-svg-button").forEach(((t,e)=&gt;{t.setAttribute("transform",`translate(0, ${30*e})`)}))});
+            window.addEventListener('DOMContentLoaded', ()=&gt;{mp(document),document.querySelectorAll("#export-svg-buttons &gt; .export-svg-button").forEach(((t,e)=&gt;{t.setAttribute("transform",**translate(0, ${30*e})**)}))});
             //
             </script>
             <script>
