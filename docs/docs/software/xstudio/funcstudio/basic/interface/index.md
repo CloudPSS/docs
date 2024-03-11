@@ -1,6 +1,6 @@
 ---
-title: 函数外部接口录入
-description: 函数外部接口录入
+title: 函数定义配置
+description: 函数外部接口定义
 sidebar_position: 10
 ---
 
