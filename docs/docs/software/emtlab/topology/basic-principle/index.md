@@ -25,13 +25,22 @@ sidebar_position: 10
 自动聚合母线功能用于……场景，具体可参见[负载均衡配置](../load-average/index.md)
 
 ## 案例
-### 10机39节点系统分网并行
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
+<Tabs>
+<TabItem value="case1" label="10机39节点系统分网并行">
+
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题 Q&A
-### 为什么在分网后，线路的模型没有发生改变？
-** 线路参数问题，可能零序参数过低等 **
+为什么在分网后，线路的模型没有发生改变？
+:
+    ** 线路参数问题，可能零序参数过低等 **
 
-### 为什么在分网后，仿真效率没有提高？ 
-** 核数配置 **
+为什么在分网后，仿真效率没有提高？ 
+:
+    ** 核数配置 **
