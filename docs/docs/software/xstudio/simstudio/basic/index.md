@@ -1,6 +1,6 @@
 ---
-title: SimStudio 基础功能
-description: SimStudio 基础功能
+title: SimStudio 建模功能
+description: SimStudio 建模功能
 sidebar_position: 50
 ---
 
