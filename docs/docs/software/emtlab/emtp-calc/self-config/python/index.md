@@ -47,3 +47,5 @@ import TabItem from '@theme/TabItem';
 
 仿真运行报错："execute python module failed"
 :
+为什么使用 print() 函数没有效果？
+:   暂不支持在前台输出 print() 结果。
