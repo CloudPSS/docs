@@ -27,13 +27,6 @@ sidebar_position: 400
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<<<<<<< HEAD
-#### (1) 元件前端设计
-
-#### (2) 元件后端设计
-
-#### (3) 元件调试
-=======
 <Tabs>
 <TabItem value="case1" label="电感元件（SDK 电气元件）">
 - 元件前端设计
@@ -44,24 +37,14 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 </Tabs>
->>>>>>> d8338346 (docs: 修改实时仿真文档)
 
 
 ## 常见问题
 前端创建的SDK元件的参数与引脚怎么与后端程序进行绑定
 :   
 
-<<<<<<< HEAD
-## 常见问题 Q&A
-###  前端创建的SDK元件的参数与引脚怎么与后端程序进行绑定
-
-###  如何通过一个SDK元件实现多种功能 
-
-###  SDK元件除了案例中介绍的调试方法，还有什么常用的调试方法
-=======
 如何通过一个SDK元件实现多种功能 
 :   
->>>>>>> d8338346 (docs: 修改实时仿真文档)
 
 SDK元件除了案例中介绍的调试方法，还有什么常用的调试方法
 :   
