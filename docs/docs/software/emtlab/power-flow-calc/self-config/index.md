@@ -35,11 +35,25 @@ sidebar_position: 40
 #### 支路类模型返回值变量
 
 ## 案例
-### 静态负载
-### 三相传输线
-### 三相三绕组变压器
-### 同步发电机
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="静态负载">
+
+</TabItem>
+<TabItem value="case2" label="三相传输线">
+
+</TabItem>
+<TabItem value="case3" label="三相三绕组变压器">
+
+</TabItem>
+<TabItem value="case4" label="同步发电机">
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题 Q&A
-### 如何处理自定义直流系统的潮流？
+如何处理自定义直流系统的潮流？
+:

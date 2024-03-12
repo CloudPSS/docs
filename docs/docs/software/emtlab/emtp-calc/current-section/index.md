@@ -24,10 +24,19 @@ CloudPSS SimStudio提供了电磁暂态仿真过程中的断面保存和断面�
 如下图，选择断面，断面加载时间自动填充为1s。需要说明的是如果**仿真开始时间**与**断面载入时间**不一致，则可能会引发错误的断面导入。
 
 ## 案例
-### 3 机 9 节点算例从给定断面开始仿真
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="3 机 9 节点算例从给定断面开始仿真">
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题 Q&A
-### 可以保存断面后，修改元件参数，然后再从断面启动吗
+可以保存断面后，修改元件参数，然后再从断面启动吗
+:
 
-### 如何使用 SimStudio SDK 实现断面启动功能
+如何使用 SimStudio SDK 实现断面启动功能
+:

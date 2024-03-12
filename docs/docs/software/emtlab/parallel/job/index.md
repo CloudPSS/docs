@@ -27,7 +27,11 @@ EMTLab 提供的并行计算方案配置功能。
 
 ## 案例介绍
 
-### 10机39节点系统分网并行
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="10机39节点系统分网并行">
 
 #### 创建算例
 
@@ -39,13 +43,23 @@ EMTLab 提供的并行计算方案配置功能。
 
 #### 效率对比
 
+</TabItem>
+</Tabs>
+
+
 ## 常见问题 Q&A
-### 为什么我无法选择多个逻辑核心？
+为什么我无法选择多个逻辑核心？
+:
 
-### 在仿真时报错Error: +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead.
+在仿真时报错Error: +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead.
+:
 
-### 交直流电网拓扑分析方案报错：选择一个电磁暂态仿真方案="args":"@debug":"","@priority":0,"@queue":1,"@tres":"cpu=1","begin time":0,"comm":I,"comm freg"。
+交直流电网拓扑分析方案报错：选择一个电磁暂态仿真方案="args":"@debug":"","@priority":0,"@queue":1,"@tres":"cpu=1","begin time":0,"comm":I,"comm freg"。
+:
 
-### 如何在拓扑中查看分网结果？
+如何在拓扑中查看分网结果？
+:
 
-### 为什么我在分网后仿真效率提升不大？
+
+为什么我在分网后仿真效率提升不大？
+:
