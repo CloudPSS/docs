@@ -20,16 +20,30 @@ EMTLab 支持使用 Python 语言构建自定义电磁暂态仿真元件。本�
 ### 调用方式
 
 ## 案例
-### 简单控制元件
 
-### 固定频率触发式Python元件
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### 外部触发式Python元件
+<Tabs>
+<TabItem value="case1" label="简单控制元件">
+
+</TabItem>
+<TabItem value="case2" label="固定频率触发式Python元件">
+
+</TabItem>
+
+<TabItem value="case3" label="外部触发式Python元件">
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题
-### 仿真运行报错："compile python code failed"
+仿真运行报错："compile python code failed"
+:
 
-### 仿真运行报错："python module return type error"
+仿真运行报错："python module return type error"
+:
 
-### 仿真运行报错："execute python module failed"
+仿真运行报错："execute python module failed"
+:

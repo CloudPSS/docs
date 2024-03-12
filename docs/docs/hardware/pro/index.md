@@ -54,3 +54,8 @@ CloudPSS Pro 是搭载 CloudPSS 电力系统电磁暂态云仿真平台的高性
 ## 注意事项
 
 ## 常见问题
+一台 CloudPSS Pro 可以计算多大规模的算例？
+:   
+
+与 CloudPSS Mini 相比，CloudPSS Pro 具有哪些优势？
+:   
