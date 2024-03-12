@@ -84,9 +84,9 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="js" label="光伏系统出力模式为由气象参数计算得到">
+<TabItem value="js" label="案例1">
 
-以建模仿真平台**含风光储交直流配网仿真优化展示算例**为例。
+光伏系统出力模式为由气象参数计算得到，以建模仿真平台**含风光储交直流配网仿真优化展示算例**为例。
 
 - 首先在**数据管理模块**录入不同类型的光伏设备；
 
@@ -113,12 +113,16 @@ import TabItem from '@theme/TabItem';
   ![仿真结果查看](./仿真结果查看.png)
 
 </TabItem>
-<TabItem value="py" label="光伏系统出力模式为指定出力曲线">
+<TabItem value="py" label="案例2">
+
+光伏系统出力模式为指定出力曲线
 
 可继续补充，丰富案例。
 
 </TabItem>
-<TabItem value="java" label="光伏系统运行方式优化">
+<TabItem value="java" label="案例3">
+
+光伏系统运行方式优化
 
 可继续补充，丰富案例。
 
