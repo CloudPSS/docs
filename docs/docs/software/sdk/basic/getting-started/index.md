@@ -32,11 +32,11 @@ tags:
 
 ![alt text](image-3.png)
 
-## 快速调用 sdk
-
-### 示例代码
+## 快速上手 sdk
 
 创建 `test.py` 文件，输入以下代码：
+
+### 示例代码
 
 ```python
 import sys,os
@@ -58,7 +58,7 @@ if __name__ == '__main__':
     # 选择参数方案，若未设置，则默认用model的第一个config（参数方案）
     config = model.configs[0]
 
-    # 选择计算方案，若未设置，则默认用model的第一个job（计算方案）
+    # 选择计算方案，若未设置，则默认用model的第一个job（潮流计算方案）
     job = model.jobs[0]
 
     runner = model.run(job,config) # 运行算例
@@ -79,4 +79,4 @@ if __name__ == '__main__':
 
 ### Token 从何而来？
 
-用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[SDK Token 管理](../../../account/settings/sdk-token/index.md)。注意，该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则会报错。
+用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[SDK Token 管理](../../../account/settings/sdk-token/index.md)。注意，该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则程序运行会报错。
