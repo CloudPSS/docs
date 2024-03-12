@@ -57,4 +57,7 @@ import TabItem from '@theme/TabItem';
 :
 
 仿真运行报错："The function belongs to the image package from Octave Forge which seems to not be installed in your system."
-:
+:   
+
+为什么使用 disp() 函数没有效果？
+:   暂不支持在前台输出 disp() 结果。
