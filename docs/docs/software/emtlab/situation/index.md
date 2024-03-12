@@ -27,14 +27,60 @@ sidebar_position: 90
 
 
 ## 案例
-### 案例 1 通过监控母线电压幅值控制断路器开断
-#### 算例构建
-#### 运行仿真并获取仿真任务ID
-#### Python代码参数配置
-#### 仿真结果
-### 案例 2 控制事件-参数修改
-### 案例 3 控制事件-断面保存
-### 案例 4 控制事件-结束程序
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="通过监控母线电压幅值控制断路器开断">
+
+- **算例构建**  
+
+- **运行仿真并获取仿真任务ID**
+
+- **Python代码参数配置**
+
+- **仿真结果**
+
+
+</TabItem>
+<TabItem value="case2" label="控制事件-参数修改">
+
+- **算例构建**  
+
+- **运行仿真并获取仿真任务ID**
+
+- **Python代码参数配置**
+
+- **仿真结果**
+
+
+</TabItem>
+<TabItem value="case3" label="控制事件-断面保存">
+
+- **算例构建**  
+
+- **运行仿真并获取仿真任务ID**
+
+- **Python代码参数配置**
+
+- **仿真结果**
+
+
+
+
+</TabItem>
+<TabItem value="case4" label="控制事件-结束程序">
+
+- **算例构建**  
+
+- **运行仿真并获取仿真任务ID**
+
+- **Python代码参数配置**
+
+- **仿真结果**
+
+</TabItem>
+</Tabs>
+
 
 ## 常见问题 Q&A
-
