@@ -27,3 +27,6 @@ sidebar_position: 20
 
 
 ## 常见问题 Q&A
+### 为什么我无法选择多个逻辑核心？
+
+### 在仿真时报错Error: +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead.
