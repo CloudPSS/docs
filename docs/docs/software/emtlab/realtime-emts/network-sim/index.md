@@ -11,26 +11,53 @@ sidebar_position: 30
 
 ## 功能说明
 ### 硬件平台
-#### CloudPSS-RT
-#### 基本框架
-##### CloudPSS-RT 一对一
-##### CloudPSS-RT 一对多
-#### Aurora协议
+框图  
+CloudPSS-RT 一对一  
+CloudPSS-RT 一对多  
+可跳转链接：硬件产品 CloudPSS-RT
 
+### 高速通信协议
+Aurora 介绍，可复用
+
+### 主从式同步机制
+一台 CloudPSS-RT 为主模式，另一台或多台 CloudPSS-RT 为从模式
 
 ### 软件接口
 #### SFP64 接口
 
 
 ## 案例
-#### 构建组网仿真接口模型
-#### 实时仿真方案设置
-#### 组网仿真硬件接线
-#### 结果展示
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="两台 CloudPSS-RT 的组网实时仿真">
+- 构建组网仿真接口模型
+  
+- 实时仿真方案设置
+  
+- 组网仿真硬件接线
+  
+- 组网仿真启动时序
+  
+- 结果展示
+
+</TabItem>
+
+<TabItem value="case2" label="多台 CloudPSS-RT 的组网实时仿真">
+
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题
-### 仿真运行失败？报错 start failed
-### 仿真启动超时？报错 time out
-### 如何观测实时仿真结果？
+仿真运行报错："start failed"
+:   可复用
+
+仿真运行报错："time out"
+:   可复用
+
+如何观测组网仿真的结果？
+:   
 
