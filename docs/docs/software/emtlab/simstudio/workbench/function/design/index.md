@@ -7,3 +7,5 @@ sidebar_position: 30
 import Design from '../../../../../xstudio/simstudio/workbench/function/design/index.md';
 
 <Design />
+
+
