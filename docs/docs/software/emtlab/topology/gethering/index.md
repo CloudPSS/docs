@@ -19,9 +19,20 @@ sidebar_position: 20
 ### 实现方法
 
 ## 案例
-### 长链配网系统自动聚合母线
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="长链配网系统自动聚合母线">
+
+
+</TabItem>
+</Tabs>
+
 
 ## 常见问题 Q&A
-### 自动聚合母线后，为什么产生了若干引脚悬空的报错？
+自动聚合母线后，为什么产生了若干引脚悬空的报错？
+:
 
-### 为什么自动聚合母线功能没有起到效果？
+为什么自动聚合母线功能没有起到效果？
+:

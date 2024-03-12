@@ -4,6 +4,15 @@ description: 案例介绍
 sidebar_position: 200
 ---
 
-## IEEE39节点系统的潮流计算
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-## 3机9节点系统潮流计算
+<Tabs>
+<TabItem value="case1" label="IEEE39节点系统的潮流计算">
+
+</TabItem>
+<TabItem value="case2" label="3机9节点系统潮流计算">
+
+
+</TabItem>
+</Tabs>
