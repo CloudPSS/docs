@@ -18,12 +18,22 @@ sidebar_position: 10
 
 ## 典型模板案例
 
-### 10机39节点系统
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### 3机9节点系统
+<Tabs>
+<TabItem value="case1" label="10机39节点系统">
 
-### 光伏发电系统
+</TabItem>
+<TabItem value="case2" label="3机9节点系统">
+
+</TabItem>
+<TabItem value="case3" label="光伏发电系统">
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题 Q&A
-### 模板案例是否会限制算例编辑的自由度？
+模板案例是否会限制算例编辑的自由度？
+:
