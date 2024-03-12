@@ -10,6 +10,8 @@ CloudPSS Mini 搭载 CloudPSS 高性能电力系统电磁暂态云仿真平台�
 
 ![CloudPSS Mini =x300](./mini.png "CloudPSS Mini")  
 
+## 产品特点
+
 ## 产品规格
 
 ### 型号与参数
@@ -41,9 +43,9 @@ CloudPSS Mini 搭载 CloudPSS 高性能电力系统电磁暂态云仿真平台�
 |     ^^    |最大控制系统节点规模（实时） | x | 2000 |
 
 
-### 前面板
+### 前面板接口
 
-### 后面板
+### 后面板接口
 
 
 ## 设备安装
