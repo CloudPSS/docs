@@ -27,20 +27,37 @@ Aurora 介绍，可复用
 
 
 ## 案例
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
-### 两台 CloudPSS-RT 的组网实时仿真
-#### 构建组网仿真接口模型
-#### 实时仿真方案设置
-#### 组网仿真硬件接线
-#### 组网仿真启动时序
-#### 结果展示
+<Tabs>
+<TabItem value="case1" label="两台 CloudPSS-RT 的组网实时仿真">
+- 构建组网仿真接口模型
+  
+- 实时仿真方案设置
+  
+- 组网仿真硬件接线
+  
+- 组网仿真启动时序
+  
+- 结果展示
 
-### 多台 CloudPSS-RT 的组网实时仿真（待实现）
+</TabItem>
+
+<TabItem value="case2" label="多台 CloudPSS-RT 的组网实时仿真">
+
+
+</TabItem>
+</Tabs>
+
 
 ## 常见问题
-### 仿真运行报错："start failed"
-可复用
-### 仿真运行报错："time out"
-可复用
-### 如何观测组网仿真的结果？
+仿真运行报错："start failed"
+:   可复用
+
+仿真运行报错："time out"
+:   可复用
+
+如何观测组网仿真的结果？
+:   
 

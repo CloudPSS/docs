@@ -38,15 +38,33 @@ Signal Hub 为主模式，CloudPSS-RT 为从模式
 #### 虚拟输入端口
 
 ## 案例
-### 模拟量自闭环测试
-#### 构建实时仿真接口模型
-#### 实时仿真方案设置
-#### 硬件在环仿真硬件接线
-#### 硬件在环仿真启动时序
-#### 结果展示
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="case1" label="模拟量自闭环测试">
+- 构建实时仿真接口模型
+  
+- 实时仿真方案设置
+  
+- 硬件在环仿真硬件接线
+  
+- 硬件在环仿真启动时序
+  
+- 结果展示
+
+</TabItem>
+</Tabs>
 
 
 ## 常见问题
-### 仿真运行报错："start failed"
-### 仿真运行报错："time out"
-### 为什么在硬件在环仿真过程中 Signal Hub 超时帧增加？
+
+仿真运行报错："start failed"
+:   
+
+仿真运行报错："time out"
+:   
+
+为什么在硬件在环仿真过程中 Signal Hub 超时帧增加？
+:   
