@@ -13,16 +13,23 @@ EMTLab 支持使用 Matlab/Octave 语言构建自定义控制元件。本节主�
 
 
 ## 功能说明
-### 新建 Octave 元件
-### 元件接口与图形设计
-### 添加 Octave 实现
-### 元件名称与权限设置
+### 创建元件
+### 参数、引脚设置
+### 调用方式
+
 
 ## 案例
-### 分段函数元件
-#### 元件接口定义
-#### 元件 Octave 实现
-#### 仿真结果
+### 简单控制元件
 
-## 常见问题 Q&A
-#### Octave 元件的参数与引脚如何与 Octave 代码绑定？
+### 带有全局变量的控制元件
+
+### 多维输入、多维输出控制元件
+
+### 固定频率触发式Octave元件
+
+### 外部触发式Octave元件
+
+## 常见问题
+### 我同时设置了一个元件的“拓扑”和“电磁暂态”的两种实现方法，为什么“拓扑”中的内容没有正确地生效？
+### 带有Octave元件的算例运行很慢？
+### 仿真运行报错："The function belongs to the image package from Octave Forge which seems to not be installed in your system."
