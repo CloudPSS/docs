@@ -16,7 +16,7 @@ tags:
 
 ### 选择示例算例
 
-首先，在 **CloudPSS Simstudio** 中打开 **3 机 9 节点标准测试系统**算例（算例 rid：model/CloudPSS/IEEE3）。
+首先，在 **CloudPSS Simstudio** 中打开 **3 机 9 节点标准测试系统**算例（算例 rid：**model/CloudPSS/IEEE3**）。
 
 ![3机9节点标准测试系统算例](image-1.png "3机9节点标准测试系统算例")
 
@@ -38,7 +38,7 @@ tags:
 
 ### 示例代码
 
-```python
+```python title="3 机 9 节点标准测试系统" showLineNumbers
 import sys,os
 import cloudpss # 引入 cloudpss 依赖
 import json
@@ -79,4 +79,8 @@ if __name__ == '__main__':
 
 ### Token 从何而来？
 
-用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[SDK Token 管理](../../../account/settings/sdk-token/index.md)。注意，该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则程序运行会报错。
+用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[ SDK Token 管理](../../../account/settings/sdk-token/index.md)。
+
+:::warning
+该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则程序运行会报错。
+:::
