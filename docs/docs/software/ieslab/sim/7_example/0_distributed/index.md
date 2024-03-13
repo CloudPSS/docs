@@ -1,6 +1,6 @@
 ---
 title: 分布式综合能源系统
-description: 分布式综合能源系统项目
+description: 分布式综合能源系统项目搭建及仿真分析示例
 sidebar_position: 10
 ---
 

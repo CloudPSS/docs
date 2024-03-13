@@ -1,6 +1,6 @@
 ---
-title: 含风光储交直流配网综合能源系统
-description: IES-含风光储交直流配网综合能源
+title: 风光储交直流配网
+description: 含风光储交直流配网综合能源系统项目搭建及仿真分析示例
 sidebar_position: 30
 ---
 
