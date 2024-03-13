@@ -5,6 +5,6 @@ sidebar_position: 30
 ---
 
 
-* [新建项目组和项目](./0_new/index.md)
+import DocCardList from '@theme/DocCardList';
 
-* [项目管理](./1_pm/index.md)
+<DocCardList />
