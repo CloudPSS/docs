@@ -1,7 +1,7 @@
 ---
-title: 参数绑定
-description: IESLab 建模仿真平台-拓扑编辑模块-参数绑定
-sidebar_position: 20
+title: 参数设置
+description: 绑定数据管理模块参数及仿真参数设置方法
+sidebar_position: 30
 ---
 
 本节主要介绍了拓扑编辑模块绑定数据管理模块参数的方法，并通过常见问题答疑快速熟悉方法。

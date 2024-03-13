@@ -1,6 +1,6 @@
 ---
 title: 冷热电三联供综合能源系统
-description: IESLab 建模仿真平台-典型案例-冷热电三联供综合能源系统
+description: 冷热电三联供综合能源系统
 sidebar_position: 50
 ---
 
