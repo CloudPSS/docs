@@ -12,8 +12,8 @@ tags:
 
 ## 使用 matplotlib 绘制曲线
 
-```python
-import matplotlib.pyplot as plt
+```python title="3 机 9 节点标准测试系统" showLineNumbers
+import matplotlib.pyplot as plt 
 import sys,os
 import cloudpss
 import json
@@ -47,6 +47,7 @@ if __name__ == '__main__':
     # 打印结果
     plots = runner.result.getPlots() #获取全部输出通道
 
+    # 使用 matplotlib 绘制曲线
     for it in range(0,len(plots)):
         legend = runner.result.getPlotChannelNames(it)
         print('示波器分组',it,':',legend)
@@ -64,7 +65,7 @@ if __name__ == '__main__':
 
 ## 使用 plotly 绘制曲线
 
-```python
+```python title="3 机 9 节点标准测试系统" showLineNumbers
 import plotly.graph_objects as go
 import sys,os
 import cloudpss
@@ -99,6 +100,7 @@ if __name__ == '__main__':
     # 打印结果
     plots = runner.result.getPlots() #获取全部输出通道
     
+    # 使用 plotly 绘制曲线
     for i in range(len(plots)):
         fig = go.Figure()
         channels= runner.result.getPlotChannelNames(i)

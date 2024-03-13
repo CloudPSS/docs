@@ -1,6 +1,6 @@
 ---
-title: 拓扑编辑
-description: CloudPSS SDK API 文档拓扑编辑页面相关接口
+title: 算例类
+description: CloudPSS SDK API 文档算例类
 sidebar_position: 41
 
 tags:
@@ -8,537 +8,618 @@ tags:
 
 ---
 
-## 拓扑编辑页面相关接口
+## Class: `Model`
 
-- 该模块包含项目本身相关的
-
-### Model
-
-- CloudPSS工程类，用于处理加载后的工程数据
-
-#### 实例变量说明
-
-##### 项目Rid model.rid
-
-- 项目在平台中的唯一值
-
-##### 项目名称 model.name
-
-- 项目的名称
-
-##### 项目描述 model.description  
-
-- 项目的描述
-
-##### 项目的版本信息 model.revision
-
-- [ModelRevision](#modelrevision) 当前项目的版本信息
-
-##### 项目的参数方案 model.configs
-
-- 当前项目的所有参数方案
-
-##### 项目的计算方案 model.jobs
-
-- 当前项目的所有计算方案
-
-##### 项目的上下文相关信息 model.context
-
-- 当前项目的上下文相关信息
-
-
-#### 静态方法说明
-
-##### 获取项目 static Model.fetch(rid)
-
-- 获取指定 rid 的项目
-  - 参数：
-    - rid 项目的 rid 格式为 `model/{owner}/{key}`
-  - 返回值
-    - 返回当前项目实例
-    - 如果 rid 不存在直接抛异常
-  - 实例：
- 
-    ``` python
-        model = Model.fetch('model/Demo/demo')
-
-    ```
-
-##### 新建项目 static Model.create(model)
-
-- 新建项目
-  - 参数:
-    - model 需要创建的项目
-  - 返回值
-    - 保存成功，项目正确，且 rid 和已存在的 rid 不冲突则返回保存成功
-    - 保存失败，项目不正确，或者 rid 和已存在的 rid 冲突则抛异常
-  - 实例：
-
-    ``` python
-        model = Model.fetch('model/Demo/demo')
-        model.rid = 'model/Demo/demo1'
-        Model.create(model)
-    ```
-
-##### 更新项目 static Model.update(model)
-
-- 更新项目
-  - 参数：
-    - model 需要更新的项目
-  - 返回：
-    - 保存成功，项目正确，且 rid 存在则返回保存成功
-    - 保存失败，项目不正确，或者 rid 不存在则抛异常
-  - 实例：
-
-    ```python
-        model = Model.fetch('model/Demo/demo')
-        Model.update(model)
-    ```
-
-##### 保存当前项目到本地文件 static Model.dump(model, file, format='yaml', compress='gzip')
-
-- 保存当前项目到本地文件
-  - 参数
-    - model 需要保存的项目
-    - file  文件路径
-    - format 支持 json, ubjson, yaml, zstd
-    - compress 压缩格式目前支持gzip 为None时不压缩
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        model = Model.fetch('model/Demo/demo')
-        Model.dump(model,'D:\\data\\demo.cmdl')
-    ```
-
-##### 加载本地项目文件 static Model.load(filePath, format="yaml")
-
-- 加载本地项目文件
-  - 参数
-    - file 本地文件地址
-    - format 默认格式为yaml
-  - 返回值
-    - 返回一个项目实例
-  - 实例：
-
-    ```python
-        model = Model.load('D:\\data\\demo.cmdl')
-    ```
-
-#### 实例函数说明
-
-- 以下函数均为实例函数，需要先实例化一个项目对象，然后调用实例函数
-
-##### 创建一个计算方案 model.createJob( jobType: str, name:str)
-
-- 创建一个计算方案
-  - 创建出的方案默认不加入到项目中，需要加入请调用 addJob
-    - 参数
-      - jobType 计算方案类型
-      - name 计算方案名称
-    - 返回值
-      - 返回一个指定类型的计算方案
-    - 实例：
-
-      ```python
-          job = model.createJob('emtp','emtp job')
-      ```
-
-##### 将计算方案添加到工程中 model.addJob(job: dict)
-
-- 将计算方案添加到工程中
-  - 参数
-    - job 计算方案
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        job = model.createJob('emtp','emtp job')
-        model.addJob(job)
-    ```
-
-##### 获取指定名称的计算方案 model.getModelJob
-
-- 获取指定名称的计算方案
-  - 参数
-    - name 计算方案名称
-  - 返回值
-    - 同名计算方案数组
-  - 实例：
-
-      ```python
-          job = model.getModelJob('电磁暂态方案 1')
-      ```
-
-##### 创建一个参数方案 model.createConfig(name)
-
-- 创建一个参数方案
-  - 根据项目的第一个参数方案生成一个方案，创建出的方案默认不加入到项目中，需要加入请调用 addConfig
-  - 参数
-    - name 参数方案名称
-  - 返回值
-    - 返回一个参数方案
-  - 实例：
-
-    ```python
-        config = model.createConfig('config 1')
-    ```
-
-##### 将参数方案添加到工程中 model.addConfig(config)
-
-- 将参数方案添加到工程中
-  - 参数
-    - config 参数方案
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        config = model.createConfig('config 1')
-        model.addConfig(config)
-    ```
-
-##### 获取指定名称的参数方案 model.getModelConfig(name)
-
-- 获取指定名称的参数方案
-  - 参数
-    - name 参数方案名称
-  - 返回值
-    - 返回一个参数方案
-  - 实例：
-
-    ```python
-        config = model.getModelConfig('config 1')
-    ```
-
-##### 添加元件 model.addComponent(definition, label, args, pins, canvas=None, position=None, size=None)
-
-- 添加元件
-  - 创建一个新的元件并添加到拓扑中
-  - 参数
-    - definition 元件定义，元件的Rid
-    - label 元件标签
-    - args 元件参数数据
-    - pins 元件引脚数据
-    - canvas 元件所在图纸数据
-    - position 元件位置信息
-    - size 元件大小信息
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        component = model.addComponent(
-            definition='model/CloudPSS/newResistorRouter',
-            label='电阻1',
-            args={
-                'Name': '电阻1',
-                'Dim': '0',
-                'R': '1'
-            },
-            pins={
-                '0': '',
-                '1': ''
-            },
-            canvas='canvas_0',
-            position={'x': 0, 'y': 0},
-            size={'width': 50, 'height': 30}
-        )
-    ```
-
-##### 更新元件 model.updateComponent(key,label=None,args=None,pins=None, canvas=None, position=None, size=None)
-
-- 更新元件
-  - 参数
-    - key 元件key
-    - label 元件标签
-    - args 元件参数数据
-    - pins 元件引脚数据
-    - canvas 元件所在图纸数据
-    - position 元件位置信息
-    - size 元件大小信息
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        component = model.addComponent(definition='model/CloudPSS/newResistorRouter',
-            label='电阻1',
-            args={
-                'Name': '电阻1',
-                'Dim': '0',
-                'R': '1'
-            },
-            pins={
-                '0': '',
-                '1': ''
-            })
-        model.updateComponent(component.id, label='电阻2')
-    ```
-
-##### 删除元件 model.removeComponent(key)
-
-- 删除元件
-  - 参数
-    - key 元件key
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        component = model.addComponent(definition='model/CloudPSS/newResistorRouter',
-            label='电阻1',
-            args={
-                'Name': '电阻1',
-                'Dim': '0',
-                'R': '1'
-            },
-            pins={
-                '0': '',
-                '1': ''
-            })
-        model.removeComponent(component.id)
-    ```
-
-##### 获取所有元件 model.getAllComponents()
-
-- 获取所有元件
-  - 参数
-    - 无
-  - 返回值
-    - 返回所有元件
-  - 实例：
-
-    ```python
-        components = model.getAllComponents()
-    ```
-
-##### 获取指定key的元件 model.getComponentByKey(componentKey)
-
-- 获取指定key的元件
-  - 参数
-    - key 元件key
-  - 返回值
-    - 返回指定key的元件
-  - 实例：
-
-    ```python
-        component = model.getComponentByKey('component_new_resistor_router_1')
-    ```
-
-##### 获取指定rid的所有元件 model.getComponentsByRid(rid: str)
-
-- 获取指定rid的所有元件
-  - 参数
-    - rid 元件rid
-  - 返回值
-    - 返回指定rid的元件
-  - 实例：
-
-    ```python
-        component = model.getComponentsByRid('rid')
-    ```
-
-    ##### 运行仿真任务 model.run(job=None, config=None, name=None, policy=None,stop_on_entry=None, **kwargs)-> Job[View]
-
-- 运行仿真任务
-  - 参数
-    - job 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
-    - config 调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
-    - name 任务名称，为空时使用项目的参数方案名称和计算方案名称
-    - policy 仿真策略
-    - stop_on_entry 是否在仿真开始时停止
-    - kwargs 仿真参数
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
-
-    ```python
-        job = model.createJob('emtp','emtp job')
-        model.run(job)
-    ```
-
-##### 运行电磁暂态仿真计算任务 model.runEMT(job=None, config=None,stop_on_entry=None,**kwargs)-> Job[EMTView]
-
-- 运行 emtp 内核，如果当前 model 没有创建  Job 时报错，默认使用算例中选中的计算方案进行仿真，如果选中的计算方案不是 EMT 方案则选第一个EMT 计算方案，如果不存在计算方案则直接报错。
-  - 参数
-    - job 计算方案
-    - config 参数方案
-    - stop_on_entry 是否在仿真开始时停止
-    - kwargs 仿真参数
-  - 返回值
-    - 返回一个电磁暂态仿真任务
-  - 实例：
-
-    ```python
-        job = model.createJob('emtp','emtp job')
-        model.runEMT(job)
-    ```
-
-
-    ##### 运行移频电磁暂态仿真计算任务 model.runSFEMT(job=None, config=None,stop_on_entry=None,**kwargs)-> Job[EMTView]
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-##### 运行潮流计算任务 model.runPowerFlow(job=None, config=None,**kwargs) -> Job[PowerFlowView]
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-##### model.runIESEnergyStoragePlan( job=None, config=None,**kwargs) -> Job[IESView]
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-##### model.runIESLoadPrediction
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-##### model.runIESPowerFlow
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-##### model.runThreePhasePowerFlow
-
-- 参照  [运行电磁暂态仿真计算任务](#运行电磁暂态仿真计算任务-modelrunemtjobnone-confignonestop_on_entrynonekwargs--jobemtview)
-
-
-##### 保存/另存项目 model.save(key=None)
-
-- 保存/另存项目
-  - key 不为空时如果远程存在相同的资源名称时将覆盖远程项目。
-  - key 为空时如果项目 rid 不存在则抛异常，需要重新设置 key。
-  - 如果保存时，当前用户不是该项目的拥有者时，将重新创建项目，重建项目时如果参数的 key 为空将使用当前当前项目的 key 作为资源的 key ，当资源的 key 和远程冲突时保存失败
-  - 参数
-    - key 资源 id 的唯一标识符
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        model.save(model)
-        model.save(model,'newKey') # 另存为新的项目
-    ```
+- Extends: [Object][Object]
   
-### ModelRevision
+**CloudPSS** 算例类
 
-- 项目版本信息
+### `model.rid`
 
-#### ModelRevision 实例变量说明
+- [String][String]
 
-##### 项目当前版本的实现数据 ModelRevision.implements
+项目在平台中的唯一值
 
-- 项目当前版本的实现数据
+### `model.name`
 
-##### 项目当前版本的参数信息 ModelRevision.parameters
+- [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)
 
-- 项目当前版本的参数定义
+项目的名称
 
-##### 项目当前版本的引脚信息 ModelRevision.pins
+### `model.description`
 
-- 项目当前版本的引脚定义
+- [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)
 
-##### 项目当前版本的文档信息 ModelRevision.documentation
+项目的描述
 
-- 项目当前版本的文档信息
+### `model.revision`
 
-#### ModelRevision 静态方法说明
+- [ModelRevision](#modelrevision) 
 
-##### 创建一个新版本 static ModelRevision.create(revision, parentHash=None)
+当前项目的版本信息
 
-- 参数
-  - revision 版本号
-  - parentHash 父版本的 hash
-- 返回值
-  - 返回当前版本hash
-- 实例：
+### `model.configs`
 
-    ```python
-        revision = ModelRevision.create(revision)
-    ```
+- [List](https://docs.python.org/3.8/tutorial/introduction.html#lists)
 
-#### ModelRevision 实例函数说明
+当前项目的所有参数方案
 
-##### 运行当前版本 modelRevision.run( job, config, name=None,rid=None, policy=None,stop_on_entry=None, **kwargs)
+### `model.jobs`
 
-- 运行当前版本
-  - 参数
-    - job 调用仿真时使用的计算方案
-    - config 调用仿真时使用的参数方案
-    - name 任务名称
-    - policy 仿真策略
-    - stop_on_entry 是否在仿真开始时停止
-    - kwargs 仿真参数
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+- [List](https://docs.python.org/3.8/tutorial/introduction.html#lists)
 
-    ```python
-        revision = ModelRevision.create(revision)
-        revision.run()
-    ```
+当前项目的所有计算方案
 
-##### 获取当前版本的拓扑 modelRevision.getTopology(implementType, config, maximumDepth)
+### `model.context`
 
-- 获取当前版本的拓扑
-  - 参数
-    - implementType 拓扑实现类型
-    - config 拓扑实现配置
-    - maximumDepth 拓扑最大深度
-  - 返回值
-    - 返回一个拓扑
-  - 实例：
+- [List](https://docs.python.org/3.8/tutorial/introduction.html#lists)
 
-    ```python
-        revision.getTopology()
-    ```
+当前项目的上下文相关信息
 
-##### 获取当前版本的实现 modelRevision.getImplements()
 
-- 获取当前版本的实现
-  - 参数
-    - 无
-  - 返回值
-    - 返回一个实现
-  - 实例：
+### `Model.fetch(rid)`
 
-    ```python
-        revision.getImplements()
-    ```
+- `rid`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；项目的 rid 格式为 `model/{owner}/{key}`
+- Returns: [Model](#class-model)；返回当前 `Model` 算例实例，如果 rid 不存在直接抛异常
 
-### ModelTopology
+获取指定 rid 的项目
+ 
+``` python showLineNumbers
+# highlight-next-line
+model = Model.fetch('model/Demo/demo')
+```
 
-- 拓扑类，用于处理拓扑数据
-- 该类不需要实例化，直接调用静态方法即可
+### `Model.create(model)`
 
-#### ModelTopology 静态方法说明
+- `model`: [Model](#class-model)；需要创建的算例实例
+- Returns: 无；项目正确，且 rid 和已存在的 rid 不冲突则返回保存成功；项目不正确，或者 rid 和已存在的 rid 冲突则抛异常
 
-##### 获取拓扑 ModelTopology.getTopology(implementType, config, maximumDepth)
+新建项目
 
-- 获取拓扑
-  - 参数
-    - implementType 拓扑实现类型
-    - config 拓扑实现配置
-    - maximumDepth 拓扑最大深度
-  - 返回值
-    - 返回一个拓扑
-  - 实例：
+``` python showLineNumbers
+model = Model.fetch('model/Demo/demo')
+model.rid = 'model/Demo/demo1'
+# highlight-next-line
+Model.create(model)
+```
 
-    ```python
-        ModelTopology.getTopology()
-    ```
+### `Model.update(model)`
 
-##### 获取拓扑 ModelTopology.dump(topology, filePath, indent=None)
+- `model`：[Model](#class-model)；需要更新的项目
+- Returns: 无；项目正确，且 rid 和已存在的 rid 不冲突则返回更新成功；项目不正确，或者 rid 和已存在的 rid 冲突则抛异常
 
-- 保存拓扑到本地文件
-  - 参数
-    - topology 拓扑数据
-    - filePath 保存文件路径
-    - indent 缩进
-  - 返回值
-    - 无
-  - 实例：
+更新项目
 
-    ```python
-        ModelTopology.dump(topology, filePath)
-    ```
+```python showLineNumbers
+model = Model.fetch('model/Demo/demo')
+# highlight-next-line
+Model.update(model)
+```
+
+### `Model.dump(model, file, format='yaml', compress='gzip')`
+
+- `model`: [Model](#class-model)；需要保存的项目
+- `file`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；文件保存路径
+- `format`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；文件保存格式，支持 `json`, `ubjson`, `yaml`, `zstd`，默认 `yaml` 格式
+- `compress`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；是否开启文件压缩，默认开启 `gzip` 格式，若为 `None` 时不开启文件压缩
+- Returns: 无
+
+保存当前项目到本地文件
+
+```python showLineNumbers
+model = Model.fetch('model/Demo/demo')
+# highlight-next-line
+Model.dump(model,'D:\\data\\demo.cmdl')
+```
+
+### `Model.load(filePath, format="yaml")`
+
+- `file`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；本地文件路径
+- `format`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；文件导入格式，默认格式为 `yaml`
+- Returns: [Model](#class-model)；返回一个 `Model` 实例
+
+加载本地项目文件
+
+```python showLineNumbers
+# highlight-next-line
+model = Model.load('D:\\data\\demo.cmdl')
+```
+
+:::tip
+以下方法均是实例方法，需要先创建一个 model 类的实例，随后通过这个实例来调用这些方法。
+:::
+
+### `model.save(key=None)`
+
+- `key`: [String][String]；资源 id 的唯一标识符
+- Returns: 无
+
+保存/另存项目
+
+```python showLineNumbers
+model.save(model)
+model.save(model,'newKey') # 另存为新的项目
+```
+
+:::note
+- key 不为空时如果远程存在相同的资源名称时将覆盖远程项目。
+- key 为空时如果项目 rid 不存在则抛异常，需要重新设置 key。
+- 如果保存时，当前用户不是该项目的拥有者时，将重新创建项目，重建项目时如果参数的 key 为空将使用当前当前项目的 key 作为资源的 key ，当资源的 key 和远程冲突时保存失败
+:::
+
+### `model.createJob(jobType:str, name:str)`
+- `jobType`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；计算方案类型如下：
+  - `emtp`：电磁暂态仿真方案
+  - `sfemt`：移频电磁暂态仿真方案
+  - `powerFlow`：潮流计算方案
+  - `iesLoadPrediction`: 负荷预测方案
+  - `iesPowerFlow`: 时序潮流方案
+  - `iesEnergyStoragePlan`: 储能规划方案
+- `name`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；计算方案名称
+- Returns: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；返回一个指定类型的计算方案
+
+创建一个计算方案
+
+```python showLineNumbers
+# highlight-next-line
+job = model.createJob('emtp','emtp job')
+```
+
+:::note
+创建出的方案默认不加入到工程中，需要加入请调用 `addJob`
+:::
+
+### `model.addJob(job: dict)`
+
+- `job`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；计算方案
+- Returns: 无
+
+将计算方案添加到工程中
+
+```python showLineNumbers
+job = model.createJob('emtp','emtp job')
+# highlight-next-line
+model.addJob(job)
+```
+
+### `model.getModelJob`
+
+- `name`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；计算方案名称
+- Returns: [List](https://docs.python.org/3.8/tutorial/introduction.html#lists)；同名计算方案列表
+
+获取指定名称的计算方案
+
+```python showLineNumbers
+# highlight-next-line
+job = model.getModelJob('电磁暂态方案 1')
+```
+
+### `model.createConfig(name)`
+
+- `name`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；参数方案名称
+- Returns: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；返回一个参数方案
+
+创建一个参数方案
+
+```python showLineNumbers
+# highlight-next-line
+config = model.createConfig('config 1')
+```
+
+:::note
+根据项目的第一个参数方案生成一个方案，创建出的方案默认不加入到项目中，需要加入请调用 `addConfig`
+:::
+
+### `model.addConfig(config)`
+
+- `config`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；参数方案
+- Returns: 无
+
+将参数方案添加到工程中
+
+```python showLineNumbers
+config = model.createConfig('config 1')
+# highlight-next-line
+model.addConfig(config)
+```
+
+### `model.getModelConfig(name)`
+
+- `name`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；参数方案名称
+- Returns: [List](https://docs.python.org/3.8/tutorial/introduction.html#lists)；同名的参数方案列表
+
+获取指定名称的参数方案
+
+```python showLineNumbers
+config = model.getModelConfig('config 1')
+```
+
+### `model.addComponent(definition, label, args, pins, canvas=None, position=None, size=None)`
+
+- `definition`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；元件定义，元件的Rid
+- `label`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；元件标签
+- `args`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；元件参数数据
+- `pins`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；元件引脚数据
+- `canvas`: [String](https://docs.python.org/3.8/tutorial/introduction.html#strings)；元件所在图纸数据，默认为 None
+- `position`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；元件位置信息，默认为 None
+- `size`: [Dict](https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries)；元件大小信息，默认为 None
+- Returns: [Component](#Component)，返回一个元件类
+
+添加元件（创建一个新的元件并添加到拓扑中）
+
+```python showLineNumbers
+component = model.addComponent(
+    definition='model/CloudPSS/newResistorRouter',
+    label='电阻1',
+    args={
+        'Name': '电阻1',
+        'Dim': '0',
+        'R': '1'
+    },
+    pins={
+        '0': '',
+        '1': ''
+    },
+    canvas='canvas_0',
+    position={'x': 0, 'y': 0},
+    size={'width': 50, 'height': 30}
+)
+```
+
+### `model.updateComponent(key,label=None,args=None,pins=None, canvas=None, position=None, size=None)`
+
+- `key`: [String][String]；元件key
+- `label`: [String][String]；元件标签，默认为 None
+- `args`: [Dict][Dict]；元件参数数据，默认为 None
+- `pins`: [Dict][Dict]；元件引脚数据，默认为 None
+- `canvas`: [String][String]；元件所在图纸数据，默认为 None
+- `position`: [Dict][Dict]；元件位置信息，默认为 None
+- `size`: [Dict][Dict]；元件大小信息，默认为 None
+- Returns: [Boolean][Boolean]；True or False
+
+更新元件
+
+```python showLineNumbers
+component = model.addComponent(definition='model/CloudPSS/newResistorRouter',
+    label='电阻1',
+    args={
+        'Name': '电阻1',
+        'Dim': '0',
+        'R': '1'
+    },
+    pins={
+        '0': '',
+        '1': ''
+    })
+# highlight-next-line
+model.updateComponent(component.id, label='电阻2')
+```
+
+### `model.removeComponent(key)`
+
+- `key`: [String][String]；元件key
+- Returns: [Boolean][Boolean]；True or False
+
+删除元件
+
+```python showLineNumbers
+component = model.addComponent(definition='model/CloudPSS/newResistorRouter',
+    label='电阻1',
+    args={
+        'Name': '电阻1',
+        'Dim': '0',
+        'R': '1'
+    },
+    pins={
+        '0': '',
+        '1': ''
+    })
+# highlight-next-line
+model.removeComponent(component.id)
+```
+
+### `model.getAllComponents()`
+
+- Returns: [Dict][Dict]，返回所有元件信息
+
+获取所有元件
+
+```python showLineNumbers
+components = model.getAllComponents()
+```
+
+### `model.getComponentByKey(componentKey)`
+
+- `key`: [String][String]；元件 key
+- Returns: [Component](#Component)；返回指定 key 的元件实例
+
+获取指定key的元件
+
+```python showLineNumbers
+component = model.getComponentByKey('component_new_resistor_router_1')
+```
+
+### `model.getComponentsByRid(rid: str)`
+
+- `rid`: [String][String]；元件 rid
+- Returns: [Component](#Component)；返回指定 rid 的元件实例
+
+获取指定 rid 的所有元件
+
+```python showLineNumbers
+component = model.getComponentsByRid('rid')
+```
+
+### `model.run(job=None, config=None, name=None, policy=None,stop_on_entry=None, **kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `name`: [String][String]；任务名称，为空时使用项目的参数方案名称和计算方案名称
+- `policy`: [Dict][Dict]；仿真策略
+- `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个仿真任务
+
+运行仿真任务
+
+```python showLineNumbers
+job = model.createJob('emtp','emtp job')
+# highlight-next-line
+model.run(job)
+```
+
+### `model.runEMT(job=None, config=None,stop_on_entry=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个电磁暂态仿真任务
+
+运行电磁暂态仿真
+
+```python showLineNumbers
+job = model.createJob('emtp','emtp job')
+# highlight-next-line
+model.runEMT(job)
+```
+
+### `model.runSFEMT(job=None, config=None,stop_on_entry=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个移频电磁暂态仿真任务
+
+运行移频电磁暂态仿真
+
+```python showLineNumbers
+job = model.createJob('sfemt','sfemt job')
+# highlight-next-line
+model.runSFEMT(job)
+```
+
+### `model.runPowerFlow(job=None, config=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个潮流计算仿真任务
+
+运行潮流计算仿真
+
+```python showLineNumbers
+job = model.createJob('powerFlow','powerFlow job')
+# highlight-next-line
+model.runPowerFlow(job)
+```
+
+### `model.runIESEnergyStoragePlan(job=None, config=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个储能规划方案任务
+
+运行储能规划方案
+
+```python showLineNumbers
+job = model.createJob('iesEnergyStoragePlan','iesEnergyStoragePlan job')
+# highlight-next-line
+model.runIESEnergyStoragePlan(job)
+```
+
+### `model.runIESLoadPrediction(job=None, config=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个负荷预测方案任务
+
+运行负荷预测方案
+
+```python showLineNumbers
+job = model.createJob('iesLoadPrediction','iesLoadPrediction job')
+# highlight-next-line
+model.runIESLoadPrediction(job)
+```
+
+### `model.runIESPowerFlow(job=None, config=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个时序潮流方案任务
+
+运行时序潮流方案
+
+```python showLineNumbers
+job = model.createJob('iesPowerFlow','iesPowerFlow job')
+# highlight-next-line
+model.runIESPowerFlow(job)
+```
+
+### `model.runThreePhasePowerFlow(job=None, config=None,**kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `kwargs`: [Dict][Dict]；可变数量仿真参数
+- Returns: [Job](#job)；返回一个三相不平衡潮流任务
+
+运行三相不平衡潮流
+
+```python showLineNumbers
+job = model.createJob('powerFlow','powerFlow job')
+# highlight-next-line
+model.runThreePhasePowerFlow(job)
+```
+  
+## Class: `ModelRevision`
+
+- Extends: [Object][Object]
+  
+**CloudPSS** 算例的版本数据类
+
+### `ModelRevision.implements`
+
+- [Dict][Dict]
+
+当前版本的实现数据
+
+### `ModelRevision.parameters`
+
+- [Dict][Dict]
+
+项目当前版本的参数定义
+
+### `ModelRevision.pins`
+
+- [Dict][Dict]
+
+项目当前版本的引脚定义
+
+### `ModelRevision.documentation`
+
+- [Dict][Dict]
+
+项目当前版本的文档信息
+
+### `ModelRevision.create(revision, parentHash=None)`
+
+- `revision`: [Dict][Dict]；版本号
+- `parentHash`; [Dict][Dict]；父版本的 hash
+- Returns: [String][String]；返回当前版本 hash
+
+创建一个新版本
+
+```python showLineNumbers
+revision = ModelRevision.create(revision)
+```
+:::tip
+以下方法均是实例方法，需要先创建一个 modelRevision 类的实例，随后通过这个实例来调用这些方法。
+:::
+
+### `modelRevision.run(job, config, name=None, policy=None, stop_on_entry=None, rid=None, **kwargs)`
+
+- `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
+- `name`: [String][String]；任务名称，为空时使用项目的参数方案名称和计算方案名称
+- `policy`: [Dict][Dict]；仿真策略
+- `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
+- `rid`: [String][String]；项目 rid
+- Returns: [Job](#Job)；返回一个仿真任务
+
+运行当前版本
+
+```python showLineNumbers
+revision = ModelRevision.create(revision)
+# highlight-next-line
+revision.run()
+```
+
+### `modelRevision.fetchTopology(implementType, config, maximumDepth)`
+
+- `implementType`: [String][String]；拓扑实现类型
+- `config`: [Dict][Dict]；拓扑实现配置
+- `maximumDepth`: [Number][Number]；拓扑最大递归深度，用于自定义项目中使用 diagram 实现元件展开情况
+- Returns: [ModelTopology](#ModelTopology)；返回一个拓扑实例
+
+获取当前版本的拓扑
+
+```python showLineNumbers
+topology=revision.fetchTopology()
+# 获取潮流实现的拓扑数据
+topology=revision.fetchTopology(implementType='powerFlow',config=config)
+# 获取仅展开 2 层的拓扑数据
+topology=revision.fetchTopology(maximumDepth=2)
+```
+
+### `modelRevision.getImplements()`
+
+- Returns: [Dict][Dict]；返回一个实现实例
+
+获取当前版本的实现
+
+```python
+revision.getImplements()
+```
+
+## Class: `ModelTopology`
+
+- Extends: [Object][Object]
+
+算例拓扑类，用于处理拓扑数据
+
+:::tip
+该类不需要实例化，直接调用静态方法即可
+:::
+
+### `ModelTopology.components`
+
+- [Dict][Dict]
+
+摊平后的拓扑元件，参数和引脚不再保留表达式的形式，如果元件为拓扑实现，并有读取权限时将被展开
+
+### `ModelTopology.mappings`
+
+- [Dict][Dict]
+
+拓扑分析后的一些映射数据
+
+### `ModelTopology.fetch(hash, implementType, config, maximumDepth=None)`
+
+- `hash`: [String][String] 算例 hash
+- `implementType`: [String][String] 拓扑实现类型
+- `config`: [Dict][Dict] 拓扑实现配置
+- `maximumDepth`: [Number][Number] 拓扑最大深度，用于自定义项目中使用 diagram 实现元件展开情况
+- Returns: [ModelTopology](#ModelTopology) 返回一个拓扑
+
+获取拓扑
+
+```python showLineNumbers
+ModelTopology.fetch('','emtp',{})
+```
+
+### `ModelTopology.dump(topology, filePath, indent=None)`
+
+- `topology`: [Dict][Dict] 拓扑实例
+- `filePath`: [String][String] 保存文件路径
+- `indent`: [Number][Number] 缩进
+- Returns: 无
+
+保存拓扑到本地文件（JSON 格式）
+
+```python showLineNumbers
+ModelTopology.dump(topology, filePath)
+```
+
+
+
+
+[Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
+[Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers
+[String]: https://docs.python.org/3.8/tutorial/introduction.html#strings
+[Boolean]: https://docs.python.org/3.8/c-api/bool.html
+[List]: https://docs.python.org/3.8/tutorial/introduction.html#lists
+[Dict]: https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries
