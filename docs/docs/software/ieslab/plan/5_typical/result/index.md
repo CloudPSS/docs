@@ -1,7 +1,7 @@
 ---
 title: 结果页面
-description: IESLab 规划设计平台-典型场景生成模块-结果页面
-sidebar_position: 10
+description: 典型场景生成模块-结果页面
+sidebar_position: 30
 ---
 
 本文主要介绍了场景生成结果页面的查看和导入导出方法。
