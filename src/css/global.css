@@ -1,6 +1,9 @@
 :root {
   --ifm-code-font-size: 95%;
-
   user-select: none;
-  scrollbar-width: thin;
+
+  @media (max-width: 996px) {
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
 }

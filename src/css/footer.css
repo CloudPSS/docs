@@ -1,4 +1,14 @@
 .footer {
   --ifm-footer-link-hover-color: var(--ifm-color-gray-500);
   --ifm-link-hover-decoration: none;
+  user-select: none;
+}
+
+.footer__copyright-sep {
+  @media (max-width: 996px) {
+    display: none;
+  }
+
+  display: inline-block;
+  width: 1em;
 }

@@ -1,0 +1,12 @@
+.table-of-contents {
+  &.table-of-contents__left-border {
+    user-select: none;
+  }
+
+  .table-of-contents__link {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    overflow: clip;
+  }
+}

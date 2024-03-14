@@ -13,7 +13,7 @@ sidebar_position: 40
 ## 功能说明
 
 ### 元件基础配置
-参见[元件封装及调用](../../simstudio/basic/moduleEncapsulation/index.md)
+参见[模块封装](../../simstudio/basic/moduleEncapsulation/index.md)
 
 ### 创建元件的潮流实现
 

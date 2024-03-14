@@ -4,6 +4,7 @@
 @import url('./plugin');
 
 @import url('./navbar');
+@import url('./toc');
 @import url('./main');
 @import url('./footer');
 @import url('./markdown');

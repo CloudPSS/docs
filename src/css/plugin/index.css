@@ -10,6 +10,15 @@
     header {
       user-select: text;
     }
+    .avatar__photo {
+      user-select: none;
+    }
+  }
+}
+
+:root.plugin-pages {
+  .main-wrapper {
+    user-select: text;
   }
 }
 

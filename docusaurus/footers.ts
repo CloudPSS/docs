@@ -1,4 +1,5 @@
 import type { ThemeConfig } from '@docusaurus/preset-classic';
+import { HOME_URL } from './utils';
 
 /**
  * 配置底栏链接
@@ -52,8 +53,12 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
 ];
 
 const copyright = [
-    `<span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS`,
-    `<a href="https://beian.miit.gov.cn" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`,
-].join('\u00A0\u00A0');
+    `<a href="https://cloudpss.net/" class=footer__link-item target=_blank ><span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS</a>`,
+    HOME_URL.includes('cloudpss.net')
+        ? `<a href="https://beian.miit.gov.cn/" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`
+        : undefined,
+]
+    .filter(Boolean)
+    .join('<span class=footer__copyright-sep></span>');
 
 export default { links, copyright };
