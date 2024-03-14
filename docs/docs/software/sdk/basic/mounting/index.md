@@ -10,7 +10,7 @@ tags:
 
 ## 安装
 
-**CloudPSS** 可以直接从这里 [PyPi](https://pypi.org/) 下载，但是更方便的方式是通过 **pip**，直接运行下面的命令进行安装：
+**CloudPSS** 可以在 [PyPi](https://pypi.org/) 上搜索直接下载，也可以通过 `pip` 安装更为便捷。只需运行以下命令即可安装：
 
 ```python
 pip install cloudpss
@@ -25,7 +25,7 @@ pip install --upgrade cloudpss
 
 ## 卸载
 
-执行下面的命令进行完全卸载：
+执行下面的命令进行卸载：
 
 
 ```python
