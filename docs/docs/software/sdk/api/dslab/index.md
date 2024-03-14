@@ -1,11 +1,11 @@
 ---
-title: dslab
-description: CloudPSS SDK API 文档 dslab 相关接口
-sidebar_position: 45
+title: DSLab
+description: CloudPSS SDK API 文档 DSLab
+sidebar_position: 46
 
 tags:
 - SDK
 
 ---
 
-## DSlab 相关接口
+## DSLab 相关接口

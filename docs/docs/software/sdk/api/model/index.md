@@ -127,8 +127,8 @@ model = Model.load('D:\\data\\demo.cmdl')
 保存/另存项目。
 
 ```python showLineNumbers
-model.save(model)
-model.save(model,'newKey') # 另存为新的项目
+model.save()
+model.save('newKey') # 另存为新的项目
 ```
 
 :::note
@@ -137,7 +137,7 @@ model.save(model,'newKey') # 另存为新的项目
 - 如果保存时，当前用户不是该项目的拥有者时，将重新创建项目，重建项目时如果参数的 key 为空将使用当前当前项目的 key 作为资源的 key ，当资源的 key 和远程冲突时保存失败
 :::
 
-### `model.createJob(jobType:str, name:str)`
+### `model.createJob(jobType, name)`
 - `jobType`: [String][String]；计算方案类型如下：
   - `emtp`：电磁暂态仿真方案
   - `sfemt`：移频电磁暂态仿真方案
@@ -158,7 +158,7 @@ job = model.createJob('emtp','emtp job')
 创建出的方案默认不加入到工程中，需要加入请调用 [model.addJob](#modeladdjobjob-dict)
 :::
 
-### `model.addJob(job:dict)`
+### `model.addJob(job)`
 
 - `job`: [Dict][Dict]；计算方案
 
@@ -324,7 +324,7 @@ components = model.getAllComponents()
 component = model.getComponentByKey('component_new_resistor_router_1')
 ```
 
-### `model.getComponentsByRid(rid: str)`
+### `model.getComponentsByRid(rid)`
 
 - `rid`: [String][String]；元件 rid
 - Returns: [Component](#Component)；返回指定 rid 的元件实例
