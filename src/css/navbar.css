@@ -17,6 +17,7 @@
 .navbar,
 .navbar-sidebar__brand {
   app-region: drag;
+  user-select: none;
 
   --ifm-navbar-padding-left: calc(var(--ifm-navbar-padding-horizontal) + var(--titlebar-area-x));
   --ifm-navbar-padding-right: max(
