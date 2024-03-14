@@ -2,7 +2,7 @@
   --titlebar-area-x: 0px;
   --titlebar-area-y: 0px;
   --titlebar-area-width: 100vw;
-  --titlebar-area-height: 32px;
+  --titlebar-area-height: 0px;
 }
 
 @supports (width: env(titlebar-area-width)) {
@@ -10,6 +10,6 @@
     --titlebar-area-x: env(titlebar-area-x, 0px);
     --titlebar-area-y: env(titlebar-area-y, 0px);
     --titlebar-area-width: env(titlebar-area-width, 100vw);
-    --titlebar-area-height: max(32px, env(titlebar-area-height, 32px));
+    --titlebar-area-height: env(titlebar-area-height, 0px);
   }
 }
