@@ -1,5 +1,5 @@
 ---
-title: 仿真任务和结果相关接口
+title: 仿真任务和结果
 description: CloudPSS SDK API 文档仿真任务和结果相关接口
 sidebar_position: 43
 
