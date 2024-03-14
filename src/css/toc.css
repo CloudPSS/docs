@@ -1,0 +1,11 @@
+.theme-doc-toc-desktop,
+.theme-doc-toc-mobile {
+  .table-of-contents {
+    .table-of-contents__link {
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      overflow: clip;
+    }
+  }
+}
