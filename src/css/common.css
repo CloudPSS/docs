@@ -41,6 +41,7 @@ figure {
   }
 
   > figcaption {
+    margin: 0.4em;
     text-align: center;
     font-size: 0.8em;
     font-weight: 700;
@@ -78,7 +79,7 @@ dt {
   font-weight: bolder;
 
   margin-top: var(--ifm-leading);
-  padding: calc(var(--ifm-leading) * 0.25) 0.8rem;
+  padding: calc(var(--ifm-leading) * 0.3) 0.8rem;
 
   + dt {
     border-radius: 0;
