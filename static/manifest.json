@@ -2,7 +2,7 @@
   "name": "CloudPSS 文档",
   "short_name": "CloudPSS 文档",
   "description": "CloudPSS 文档系统",
-  "theme_color": "#94afcc",
+  "theme_color": "#242526",
   "background_color": "#242526",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "fullscreen"],

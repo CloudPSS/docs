@@ -1,19 +1,3 @@
-:root {
-  --titlebar-area-x: 0px;
-  --titlebar-area-y: 0px;
-  --titlebar-area-width: 100vw;
-  --titlebar-area-height: 32px;
-}
-
-@supports (width: env(titlebar-area-width)) {
-  :root {
-    --titlebar-area-x: env(titlebar-area-x, 0px);
-    --titlebar-area-y: env(titlebar-area-y, 0px);
-    --titlebar-area-width: env(titlebar-area-width, 100vw);
-    --titlebar-area-height: env(titlebar-area-height, 32px);
-  }
-}
-
 .navbar,
 .navbar-sidebar__brand {
   app-region: drag;
