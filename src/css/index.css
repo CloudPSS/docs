@@ -1,5 +1,6 @@
 @import url('katex/dist/katex.css');
 
+@import url('./titlebar');
 @import url('./common');
 @import url('./plugin');
 
