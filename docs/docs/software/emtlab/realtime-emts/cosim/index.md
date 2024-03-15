@@ -1,7 +1,7 @@
 ---
 title: 联合实时仿真
 description: 联合实时仿真
-sidebar_position: 40
+sidebar_position: 30
 ---
 
 

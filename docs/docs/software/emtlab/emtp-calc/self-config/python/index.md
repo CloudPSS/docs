@@ -17,23 +17,27 @@ EMTLab 支持使用 Python 语言构建自定义电磁暂态仿真元件。本�
 
 ### 参数、引脚设置
 
+### 代码编辑
+
 ### 调用方式
 
 ## 案例
+本文档提供 3 个案例，分别是...
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="case1" label="简单控制元件">
-
-</TabItem>
-<TabItem value="case2" label="固定频率触发式Python元件">
-
+<TabItem value="case1" label="案例 1">
+简单控制元件，每时步触发
 </TabItem>
 
-<TabItem value="case3" label="外部触发式Python元件">
+<TabItem value="case2" label="案例 2">
+带有全局变量的控制元件，固定频率触发式
+</TabItem>
 
+<TabItem value="case3" label="案例 3">
+多维输入、多维输出控制元件，外部触发式
 </TabItem>
 </Tabs>
 
