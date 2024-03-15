@@ -12,7 +12,7 @@ tags:
 
 - Extends: [Object][Object]
   
-**CloudPSS** 算例任务类。
+**CloudPSS** 任务类。
 
 ### `job.id`
 
