@@ -52,10 +52,18 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
     },
 ];
 
+const beian = {
+    'cloudpss.com.cn': '蜀 ICP 备 2021015330 号 - 1',
+    'cloudpss.cn': '蜀 ICP 备 2021015330 号 - 2',
+    'cloudpss.net': '蜀 ICP 备 2021015330 号 - 3',
+};
+
+const currentBeian = Object.entries(beian).find(([domain]) => HOME_URL.includes(domain))?.[1];
+
 const copyright = [
     `<a href="https://cloudpss.net/" class=footer__link-item target=_blank ><span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS</a>`,
-    HOME_URL.includes('cloudpss.net')
-        ? `<a href="https://beian.miit.gov.cn/" class=footer__link-item target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2020037721 号 - 3</a>`
+    currentBeian
+        ? `<a href="https://beian.miit.gov.cn/" class=footer__link-item target=_blank style="word-spacing: -0.3ch">${currentBeian}</a>`
         : undefined,
 ]
     .filter(Boolean)
