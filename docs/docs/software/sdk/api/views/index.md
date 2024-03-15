@@ -8,673 +8,401 @@ tags:
 
 ---
 
-### view
+## Class: `View`
 
-- 结果视图相关类
+- Extends: [Object][Object]
 
-#### View
+**CloudPSS** 结果视图基类
 
-##### View 实例变量说明
+### `view.result`
 
-###### 处理后的结果缓存 View.result
+- [Dict][Dict]
 
-- 处理后的结果缓存
+处理后的结果缓存。
 
-###### 原始消息数据库（旧版本兼容） View.db
+### `view.modify(data, model)`
 
-- 原始消息数据库（旧版本兼容）
+- `data`: [Dict][Dict] 消息字典
+- `model`: [Model](../model/index.md) 算例
 
-##### View 实例方法说明
+通过指定消息修改算例文件。
 
-###### 通过指定消息修改算例文件 View.modify(model, message)
+```python showLineNumbers
+view.modify(data, model)
+```
 
-- 通过指定消息修改算例文件
-  - 参数：
-    - model 算例文件
-    - message 消息
-  - 返回值
-    - 无
-  - 实例：
+### `view.getMessagesByKey(key)`
 
-    ```python
-        View.modify(model, message)
-    ```
+- `key`: [String][String] 消息key
+- Returns: [List][List] 对应 key 的数据数组
 
-###### 获取指定key的消息 View.getMessagesByKey(key)
+获取指定 key 的消息数据。
 
-- 获取指定key的消息
-  - 参数：
-    - key 消息key
-  - 返回值
-    - 返回消息所有相同key的消息
-  - 实例：
+```python showLineNumbers
+message = view.getMessagesByKey('log')
+```
 
-    ```python
-        View.getMessagesByKey(key)
-    ```
+### `view.getMessagesByType(type)`
 
-###### 获取指定类型的消息数据 View.getMessagesByType(type)
+- `type`: [String][String] 消息类型
+- Returns: [List][List] 对应类型的数据数组
 
-- 获取指定类型的消息数据
-  - 参数：
-    - type 消息类型
-  - 返回值
-    - 返回消息中相同类型的消息
-  - 实例：
+获取指定类型的消息数据。
 
-    ```python
-        View.getMessagesByType(type)
-    ```
+```python showLineNumbers
+view.getMessagesByType('log')
+```
 
-###### 获取指定位置的消息数据 View.getMessage(index)
+### `view.getMessage(index)`
 
-- 获取指定位置的消息数据
-  - 参数：
-    - index 消息位置
-  - 返回值
-    - 返回消息中指定位置的消息
-  - 实例：
+- `index`: [Number][Number] 数据的位置信息
+- Returns: [Dict][Dict] 获取指定位置的消息数据
 
-    ```python
-        View.getMessage(index)
-    ```
+获取指定位置的消息数据。
 
-###### 获取所有消息数据 View.getMessages()
+```python showLineNumbers
+view.getMessage(index)
+```
 
-- 获取所有消息数据
-  - 参数：
-    - 无
-  - 返回值
-    - 返回消息中所有消息
-  - 实例：
+### `view.getMessages()`
 
-    ```python
-        View.getMessages()
-    ```
+- Returns: [List][List] 返回消息数据列表
 
-###### 获取当前任务的日志 View.getLogs()
+获取所有消息数据。
 
-- 获取当前任务的日志
-  - 参数：
-    - 无
-  - 返回值
-    - 返回当前任务的日志，日志只会返回最新的，如果已经获取过日志，再次获取将不在返回
-  - 实例：
+```python showLineNumbers
+view.getMessages()
+```
 
-    ```python
-        View.getLogs()
-    ```
+### `view.getLogs()`
 
-###### 获取消息数据的长度 View.getMessageLength()
+- Returns: [List][List] 返回当前任务的日志，日志只会返回最新的，如果已经获取过日志，再次获取将不在返回
 
-- 获取消息数据的长度
-  - 参数：
-    - 无
-  - 返回值
-    - 返回消息数据的长度
-  - 实例：
-
-    ```python
-        View.getMessageLength()
-    ```
-
-###### pop 出缓存中的消息 View.pop()
-
-- pop 出缓存中的消息
-  - 参数：
-    - 无
-  - 返回值
-    - 返回消息数据
-  - 实例：
-
-    ```python
-        View.pop()
-    ```
-
-#### EMTView
-
-- [继承自 View，电磁暂态仿真结果视图，提供了电磁暂态仿真结果的相关方法](#view)
-
-##### EMTView 实例方法说明
-
-###### 获取所有的曲线分组 EMTView.getPlots()
-
-- 获取所有的曲线分组
-  - 参数：
-    - 无
-  - 返回值
-    - 返回所有图表的数据
-  - 实例：
-
-    ```python
-        EMTView.getPlots()
-    ```
-
-###### 获取指定序号的曲线分组 EMTView.getPlot(index: int)
-
-- 获取指定序号的曲线分组
-  - 参数：
-    - index 图表位置
-  - 返回值
-    - 返回指定图表的数据
-  - 实例：
-
-    ```python
-        EMTView.getPlot(index)
-    ```
-
-###### 获取一组输出分组下的所有通道名称 EMTView.getPlotChannelNames(index: int)
-
-- 获取一组输出分组下的所有通道名称
-  - 参数：
-    - index 图表位置
-  - 返回值
-    - 返回指定图表的通道名称
-  - 实例：
-
-    ```python
-        EMTView.getPlotChannelNames(index)
-    ```
-
-###### 获取一组输出分组下指定通道名称的曲线数据 EMTView.getPlotChannelData(index, channelName)
-
-- 获取一组输出分组下指定通道名称的曲线数据
-  - 参数：
-    - index 图表位置
-    - channelName 通道名称
-  - 返回值
-    - 返回指定图表指定通道的曲线数据
-  - 实例：
-
-    ```python
-        EMTView.getPlotChannelData(index, channelName)
-    ```
-
-###### 调试接口，前进一步 EMTView.next()
-
-- 调试接口，前进一步
-  - 参数：
-    - 无
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.next()
-    ```
-
-###### 调试接口，前进到指定位置 EMTView.goto(step)
-
-- 调试接口，前进到指定位置
-  - 参数：
-    - step 指定位置
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.goto(step)
-    ```
-
-###### 写内存接口（debug） EMTView.writeShm(path,buffer,offset)
-
-- 写内存接口 （未最终确定，后续版本进行修改）
-  - 参数：
-    - path 内存路径
-    - buffer 写入的数据
-    - offset 写入的偏移量
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.writeShm(path,buffer,offset)
-    ```
-
-###### 事件链接口，停止仿真（debug） EMTView.stopSimulation()
-
-- 通过事件链接口停止仿真 （未最终确定，后续版本进行修改）
-  - 参数：
-    - 无
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.stopSimulation()
-    ```
-
-###### 事件链接口，保存断面（debug） EMTView.saveSnapshot(snapshotNumber,log='保存断面成功')
-
-- 通过事件链接口保存断面 （未最终确定，后续版本进行修改）
-  - 参数：
-    - snapshotNumber 断面序号
-    - log 保存断面成功的日志
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.saveSnapshot(snapshotNumber,log='保存断面成功')
-    ```
-
-###### 事件链接口，加载断面（debug） EMTView.loadSnapshot(snapshotNumber,log='加载断面成功')
-
-- 通过事件链接口加载断面 （未最终确定，后续版本进行修改）
-  - 参数：
-    - snapshotNumber 断面序号
-    - log 加载断面成功的日志
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.loadSnapshot(snapshotNumber,log='加载断面成功')
-    ```
-
-###### 事件链接口，修改元件数据（debug） EMTView.control(controlParam,eventTime='-1',eventTimeType='1')
-
-- 通过事件链接口修改元件数据 （未最终确定，后续版本进行修改）
-  - 参数：
-    - controlParam 控制参数
-    - eventTime 事件时间
-    - eventTimeType 事件时间类型
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.control(controlParam,eventTime='-1',eventTimeType='1')
-    ```
-
-###### 事件链接口，停止仿真（debug） EMTView.monitor(monitorParam,eventTime='-1',eventTimeType='1')
-
-- 通过事件链接口停止仿真 （未最终确定，后续版本进行修改）
-  - 参数：
-    - monitorParam 监视参数
-    - eventTime 事件时间
-    - eventTimeType 事件时间类型
-  - 返回值
-    - 无
-  - 实例：
-
-    ```python
-        EMTView.monitor(monitorParam,eventTime='-1',eventTimeType='1')
-    ```
-
-#### PowerFlowView
-
-- [继承自 View，潮流仿真结果视图，提供了潮流仿真结果的相关方法](#view)
+获取当前任务的日志。
+
+```python showLineNumbers
+view.getLogs()
+```
+
+### `view.getMessageLength()`
+
+- Returns: [Number][Number] 返回消息数据的长度
+
+获取消息数据的长度。
+
+```python showLineNumbers
+view.getMessageLength()
+```
+
+### `view.pop(index=-1)`
+
+- `index`: [Number][Number] 索引，默认为 -1
+- Returns: [Dict][Dict] 返回消息数据
+
+pop 出缓存中的消息。
+
+```python showLineNumbers
+view.pop(-1)
+```
+
+## Class: `EMTView`
+
+- Extends: [View](#class-view)
+
+电磁暂态结果视图，提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式，不在是接收时分段的数据。该类只提供 EMT 仿真使用。
+
+### `EMTView.getPlots()`
+
+- Returns: [Dict][Dict] 返回所有图表的数据
+
+获取所有的曲线分组数据。
+
+```python showLineNumbers
+EMTView.getPlots()
+```
+
+### `EMTView.getPlot(index)`
+
+- `index`: [Number][Number] 图表位置
+- Returns: [Dict][Dict] 返回指定图表的数据
+
+获取指定序号的曲线分组。
+
+```python showLineNumbers
+EMTView.getPlot(0)
+```
+
+### `EMTView.getPlotChannelNames(index)`
+
+- `index`: [Number][Number] 图表位置
+- Returns: [List][List] 返回指定图表的通道名称列表
+
+获取一组输出分组下的所有通道名称。
+
+```python showLineNumbers
+EMTView.getPlotChannelNames(0)
+```
+
+### `EMTView.getPlotChannelData(index, channelName)`
+
+- `index`: [Number][Number] 输出通道位置
+- `channelName`: [String][String] 输出通道名称
+- Returns: [Dict][Dict] 返回指定图表指定通道的曲线数据
+
+获取一组输出分组下指定通道名称的曲线数据。
+
+```python showLineNumbers
+EMTView.getPlotChannelData(0, '')
+```
+
+### `EMTView.next()`
+
+调试接口，前进一个时步。
+
+```python showLineNumbers
+EMTView.next()
+```
+
+### `EMTView.goto(step)`
+
+- `step`: [Number][Number] 指定时步
+
+调试接口，前进到指定时步。
+
+```python showLineNumbers
+EMTView.goto(-1)
+```
+
+### `EMTView.writeShm(path, buffer, offset)`
+
+- `path`: [String][String] 内存路径
+- `buffer`: [Float][Float] 写入的数据
+- `offset`: [Number][Number] 写入的偏移量
+
+写内存接口（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+EMTView.writeShm('data', buffer, 0)
+```
+
+### `EMTView.stopSimulation()`
+
+通过事件链接口停止仿真（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+EMTView.stopSimulation()
+```
+
+### `EMTView.saveSnapshot(snapshotNumber, log='保存断面成功')`
+
+- `snapshotNumber`: [Number][Number] 断面序号
+- `log` [String][String] 保存断面成功的日志
+
+通过事件链接口保存断面（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+EMTView.saveSnapshot(0, log='保存断面成功')
+```
+
+### `EMTView.loadSnapshot(snapshotNumber, log='加载断面成功')`
+
+- `snapshotNumber`: [Number][Number] 断面序号
+- `log` [String][String] 加载断面成功的日志
+
+通过事件链接口加载断面 （未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+EMTView.loadSnapshot(0, log='加载断面成功')
+```
+
+### `EMTView.control(controlParam, eventTime='-1', eventTimeType='1')`
+
+- `controlParam`: [List][List] 控制参数
+- `eventTime`: [Number][Number] 事件时间，默认为 -1
+- `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
+
+通过事件链接口修改元件数据 （未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+EMTView.control(controlParam, eventTime='-1', eventTimeType='1')
+```
+
+### `EMTView.monitor(monitorParam, eventTime='-1', eventTimeType='1')`
+
+- `monitorParam`: [List][List] 监视参数
+- `eventTime`: [Number][Number] 事件时间，默认为 -1
+- `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
+
+通过事件链接口停止仿真 （未最终确定，后续版本进行修改）
+
+```python showLineNumbers
+EMTView.monitor(monitorParam,eventTime='-1',eventTimeType='1')
+```
+
+## Class: `PowerFlowView`
+
+- Extends: [View](#class-view)
+
+潮流仿真结果视图，提供快速获取 buses 和 branches 的接口，并提供潮流写入项目的接口。该类只提供潮流仿真时使用。
+
+### `PowerFlowView.getBuses()`
+
+- Returns: [List][List] 返回所有 buses 数据
+
+获取所有的 buses 数据
+
+```python showLineNumbers
+PowerFlowView.getBuses()
+```
   
-##### PowerFlowView 实例方法说明
-
-###### 获取所有的 buses 数据 PowerFlowView.getBuses()
-
-- 获取所有的 buses 数据
-  - 参数：
-    - 无
-  - 返回值
-    - 返回所有 buses 数据
-  - 实例：
+### `PowerFlowView.getBranches()`
 
-    ```python
-        PowerFlowView.getBuses()
-    ```
-  
-###### 获取潮流结果 branches 数据 PowerFlowView.getBranches()
-
-- 获取潮流结果 branches 数据
-  - 参数：
-    - 无
-  - 返回值
-    - 返回所有 branches 数据
-  - 实例：
+- Returns: [List][List] 返回所有 branches 数据
 
-    ```python
-        PowerFlowView.getBranches(index)
-    ```
-
-###### 潮流数据写入 Model PowerFlowView.powerFlowModify(model)
-
-- 潮流数据写入 Model
-  - 参数：
-    - model 算例文件
-  - 返回值
-    - 无
-  - 实例：
+获取潮流结果 branches 数据
 
-    ```python
-        PowerFlowView.powerFlowModify(model)
-    ```
-
-#### IESView
-
-- [继承自 View，IES仿真结果视图，提供了IES仿真结果的相关方法](#view)
-
-##### IESView 实例方法说明
-
-###### 获取指定元件的 plot 数据 IESView.getPlotData(compID, labelName, traceName='all', index=-1)
-
-- 获取元件ID为compID的元件，对应标签为labelName、图例名称为traceName的plot 数据的第index项
-  - 参数：
-    - compID string类型，代表元件的标识符
-    - labelName string类型，代表plot曲线的分组标签
-    - traceName string类型，代表Plot曲线对应分组下的图例名称，当为'all'时，返回所有图例的数据
-    - index int类型，代表对应图例时序数据中的第index项，当小于0时，返回该图例所有的时序数据
-  - 返回值
-    - 返回指定元件的 plot 数据
-  - 实例：
-
-    ```python
-        IESView.getPlotData(compID, labelName, traceName='all', index=-1)
-    ```
-
-###### 获取第index个桑基图数据 IESView.getPlotData(index)
-
-- 获取第index个桑基图数据
-  - 参数：
-    - index int类型，代表第index个桑基图数据
-  - 返回值
-    - 返回第index个桑基图数据
-  - 实例：
-
-    ```python
-        IESView.getPlotData(index)
-    ```
-
-###### 获取桑基图数据序列的长度 plot 数据 IESView.getSankeyNum()
-
-- 获取桑基图数据序列的长度
-  - 参数：
-    - 无
-  - 返回值
-    - 返回桑基图数据序列的长度
-  - 实例：
-
-    ```python
-        IESView.getSankeyNum()
-    ```
-
-#### IESLabTypicalDayView
-
-- [继承自 View，IESLab典型日仿真结果视图，提供了IESLab典型日仿真结果的相关方法](#view)
-
-##### IESLabTypicalDayView 实例方法说明
-
-###### 获取所有的 GetTypical 典型日数据 IESLabTypicalDayView.GetTypical()
+```python showLineNumbers
+PowerFlowView.getBranches(index)
+```
 
-- 获取所有的 GetTypical 典型日数据
-  - 参数：
-    - 无
-  - 返回值
-    - 返回所有 GetTypical 典型日数据
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypical()
-    ```
-
-###### 获取当前result的典型日数量 IESLabTypicalDayView.GetTypicalDayNum()
-
-- 获取当前result的典型日数量
-  - 参数：
-    - 无
-  - 返回值
-    - 返回当前result的典型日数量
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalDayNum()
-    ```
-
-###### 获取dayID对应典型日的基础信息 IESLabTypicalDayView.GetTypicalDayInfo(dayID)
-
-- 获取dayID对应典型日的基础信息
-  - 参数：
-    - dayID 典型日ID
-  - 返回值
-    - 返回dayID对应典型日的基础信息
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalDayInfo(dayID)
-    ```
-
-###### 获取dayID对应典型日下dataType参数的时序曲线  IESLabTypicalDayView.GetTypicalDayData(dayID, dataType)
-
-- 获取dayID对应典型日下dataType参数的时序曲线
-  - 参数：
-    - dayID 典型日ID
-    - dataType 数据类型
-  - 返回值
-    - 返回dayID对应典型日下dataType参数的时序曲线
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalDayData(dayID, dataType)
-    ```
-
-###### 获取所有的 GetTypicalMonth 数据  IESLabTypicalDayView.GetTypicalMonth()
-
-- 获取所有的 GetTypicalMonth 数据
-  - 参数：
-    - 无
-  - 返回值
-    - 返回所有的 GetTypicalMonth 数据
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalMonth()
-    ```
-
-###### 获取第monthID月各类型的典型日数据 IESLabTypicalDayView.GetTypicalMonthData(monthID)
-
-- 获取第monthID月各类型的典型日数据
-  - 参数：
-    - monthID 月份ID
-  - 返回值
-    - 返回第monthID月各类型的典型日数据
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalMonthData(monthID)
-    ```
-
-###### 获取dayID对应典型日下dataType参数的时序曲线  IESLabTypicalDayView.GetTypicalMonthCurve(monthID, dataType)
-
-- 获取dayID对应典型日下dataType参数的时序曲线
-  - 参数：
-    - monthID 月份ID
-    - dataType 数据类型
-  - 返回值
-    - 返回dayID对应典型日下dataType参数的时序曲线
-  - 实例：
-
-    ```python
-        IESLabTypicalDayView.GetTypicalMonthCurve(monthID, dataType)
-    ```
-
-#### IESLabSimulationView
-
-- [继承自 IESView，IESLab仿真结果视图，提供了IESLab仿真结果的相关方法](#iesview)
-
-#### IESLabEvaluationResult
-
-##### IESLabEvaluationResult 实例方法说明
-
-###### 获取运行状态 IESLabEvaluationResult.status()
-
-- 获取运行状态
-  - 参数：
-    - 无
-  - 返回值
-    - 返回运行状态
-  - 实例：
-
-    ```python
-        IESLabEvaluationResult.status()
-    ```
-
-###### 获取planID对应的优化方案下resultType财务评估结果 IESLabEvaluationResult.GetFinancialResult(resultType, planID)
-
-- 获取planID对应的优化方案下resultType财务评估结果
-  - 参数：
-    - resultType 财务评估结果类型
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案下resultType财务评估结果
-  - 实例：
-
-    ```python
-        IESLabEvaluationResult.GetFinancialResult(resultType, planID)
-    ```
-
-###### 获取当前结果类对应的优化方案下的概览结果 IESLabEvaluationResult.GetOverviewResult(planID)
-
-- 获取当前结果类对应的优化方案下的概览结果
-  - 参数：
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案下的概览结果
-  - 实例：
-
-    ```python
-        IESLabEvaluationResult.GetOverviewResult(planID)
-    ```
-
-###### 获取当前结果类对应的优化方案下的能效评价 IESLabEvaluationResult.GetEnergyEvaluationResult(planID)
-
-- 获取当前结果类对应的优化方案下的能效评价
-  - 参数：
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案下的能效评价
-  - 实例：
-
-    ```python
-        IESLabEvaluationResult.GetEnergyEvaluationResult(planID)
-    ```
-
-###### 获取当前结果类对应的优化方案下的环保评价 IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
-
-- 获取当前结果类对应的优化方案下的环保评价
-  - 参数：
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案下的环保评价
-  - 实例：
-
-    ```python
-        IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
-    ```
-
-#### IESLabPlanResult
-
-##### IESLabPlanResult 实例方法说明
-
-###### 获取运行状态 IESLabPlanResult.status()
-
-- 获取运行状态
-  - 参数：
-    - 无
-  - 返回值
-    - 返回运行状态
-  - 实例：
-
-    ```python
-        IESLabPlanResult.status()
-    ```
-
-###### 获取运行日志 IESLabPlanResult.GetLogs()
-
-- 获取运行日志
-  - 参数：
-    - 无
-  - 返回值
-    - 返回运行日志
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetLogs()
-    ```
-
-###### 获取当前结果实例对应的优化方案数量 IESLabPlanResult.GetPlanNum()
-
-- 获取当前结果实例对应的优化方案数量
-  - 参数：
-    - 无
-  - 返回值
-    - 返回当前结果实例对应的优化方案数量
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetPlanNum()
-    ```
-
-###### 获取planID对应的优化方案的基础信息 IESLabPlanResult.GetPlanInfo(planID)
-
-- 获取planID对应的优化方案的基础信息
-  - 参数：
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案的基础信息
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetPlanInfo(planID)
-    ```
-
-###### 获取planID对应的优化方案的配置信息 IESLabPlanResult.GetPlanConfiguration(planID)
-
-- 获取planID对应的优化方案的配置信息
-  - 参数：
-    - planID 优化方案ID
-  - 返回值
-    - 返回planID对应的优化方案的配置信息
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetPlanConfiguration(planID)
-    ```
-
-###### 获取方案结果中的指定元件信息 IESLabPlanResult.GetComponentResult( planID, componentID, typicalDayName='')
-
-- 获取planID对应的优化方案下componentID对应元件的运行信息
-  - 参数：
-    - planID 优化方案ID
-    - componentID 元件ID
-    - typicalDayName 典型日名称
-  - 返回值
-    - 返回planID对应的优化方案下componentID对应元件的运行信息
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetComponentResult( planID, componentID, typicalDayName='')
-    ```
-
-###### 获取当前result实例对应的优化方案数量 IESLabPlanResult.GetComponentTypiDays(planId, componentID)
-
-- 获取当前result实例对应的优化方案数量
-  - 参数：
-    - planId 优化方案ID
-    - componentID 元件ID
-  - 返回值
-    - 返回当前result实例对应的优化方案数量
-  - 实例：
-
-    ```python
-        IESLabPlanResult.GetComponentTypiDays(planId, componentID)
-    ```
-
-###### 获取最后一次运行的taskID的运行结果 IESLabPlanResult.getLastTaskResult()
-
-- 获取最后一次运行的taskID的运行结果
-  - 参数：
-    - 无
-  - 返回值
-    - 返回最后一次运行的taskID的运行结果
-  - 实例：
-
-    ```python
-        IESLabPlanResult.getLastTaskResult()
-    ```
+### `PowerFlowView.powerFlowModify(model)`
+
+- `model`: [Model](../model/index.md) 算例文件
+
+潮流数据写入 Model
+
+```python showLineNumbers
+PowerFlowView.powerFlowModify(model)
+```
+
+## Class: `IESView`
+
+- Extends: [View](#class-view)
+
+综合能源结果视图，提供快捷 plot 数据的接口函数，获取到的 plot 数据为合并后的数据格式，不在是接收时分段的数据。该类只提供 IES 仿真使用。
+
+### `IESView.getPlotData(compID, labelName, traceName='all', index=-1)`
+
+- `compID`: [String][String] 代表元件的标识符
+- `labelName`: [String][String] 代表 plot 曲线的分组标签
+- `traceName`: [String][String] 代表 Plot 曲线对应分组下的图例名称，当为 'all' 时，返回所有图例的数据
+- `index`: [Number][Number] 代表对应图例时序数据中的第 index 项，当小于 0 时，返回该图例所有的时序数据
+- Returns: [Dict][Dict] 返回指定元件的 plot 数据
+
+获取元件 ID 为 compID 的元件，对应标签为 labelName、图例名称为 traceName 的 plot 数据的第 index 项。
+
+```python showLineNumbers
+IESView.getPlotData('/AbsorptionChiller_4', '压力(MPa)', traceName='all', index=-1)
+```
+
+### `IESView.getSankey(index)`
+
+- `index`: [Number][Number] 代表第 index 个桑基图数据
+- Returns: [List][List] 返回第 index个桑基图数据
+
+获取第 index 个桑基图数据。
+
+```python showLineNumbers
+IESView.getPlotData(index)
+```
+
+### `IESView.getSankeyNum()`
+
+- Returns: [Number][Number] 返回桑基图数据序列的长度
+
+获取桑基图数据序列的长度。
+
+```python showLineNumbers
+IESView.getSankeyNum()
+```
+
+## Class: `IESLabTypicalDayView`
+
+- Extends: [View](#class-view)
+
+IESLab 典型日仿真结果视图，提供了 IESLab 典型日仿真结果的相关方法。
+
+### `IESLabTypicalDayView.GetTypical()`
+
+- Returns: [List][List] 返回所有 GetTypical 典型日数据
+
+获取所有的 GetTypical 典型日数据。
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypical()
+```
+
+###  `IESLabTypicalDayView.GetTypicalDayNum()`
+
+- Returns: [Number][Number] 返回当前 result 的典型日数量
+
+获取当前 result 的典型日数量。
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalDayNum()
+```
+
+### `IESLabTypicalDayView.GetTypicalDayInfo(dayID)`
+
+- `dayID`: [Number][Number] 典型日 ID，数值位于 0 ~ 典型日数量 之间
+- Returns: [Dict][Dict] 返回 dayID 对应典型日的基础信息，包括典型日所代表的日期范围、典型日的名称等
+
+获取dayID对应典型日的基础信息。
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalDayInfo(0)
+```
+
+### `IESLabTypicalDayView.GetTypicalDayCurve(dayID, dataType)`
+
+- `dayID`: [Number][Number] 典型日 ID，数值位于 0 ~ 典型日数量 之间
+- `dataType`: [String][String] 数据类型，标识总辐射、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
+- Returns: [List][List] 返回 dayID 对应典型日下dataType参数的时序曲线
+
+获取 dayID 对应典型日下 dataType 参数的时序曲线。
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalDayCurve(0, '总辐射')
+```
+
+###  `IESLabTypicalDayView.GetTypicalMonth()`
+
+- Returns: [List][List] 返回所有的 GetTypicalMonth 数据
+
+获取所有的 GetTypicalMonth 数据。
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalMonth()
+```
+
+### `IESLabTypicalDayView.GetTypicalMonthNum(monthID)`
+
+
+- `monthID`: [Number][Number] 月份 ID，数值位于 1-12 之间
+- Returns: [List][List] 返回第 monthID 月各类型的典型日数据
+
+获取第 monthID 月各类型的典型日数据
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalMonthData(1)
+```
+
+###  `IESLabTypicalDayView.GetTypicalMonthCurve(monthID, dataType)`
+
+- `monthID`: [Number][Number] 月份 ID，数值位于 1-12 之间
+- `dataType`: [String][String] 数据类型，标识总辐射、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
+- Returns: [List][List] 返回以 1h 为时间间隔的该参数的典型日内时序曲线
+
+获取 monthID 对应典型日下 dataType 参数的时序曲线
+
+```python showLineNumbers
+IESLabTypicalDayView.GetTypicalMonthCurve(12, '总辐射')
+```
+
+[Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
+[Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers
+[Float]: https://docs.python.org/3.8/c-api/float.html
+[String]: https://docs.python.org/3.8/tutorial/introduction.html#strings
+[Boolean]: https://docs.python.org/3.8/c-api/bool.html
+[List]: https://docs.python.org/3.8/tutorial/introduction.html#lists
+[Dict]: https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries
