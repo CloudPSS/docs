@@ -1,6 +1,6 @@
 ---
-title: DSLab
-description: CloudPSS SDK API 文档 DSLab
+title: DSLab 类
+description: CloudPSS SDK API 文档 DSLab 类
 sidebar_position: 46
 
 tags:
@@ -8,9 +8,277 @@ tags:
 
 ---
 
-## DSLab 相关接口
+## class: `DSLab`
 
+- Extends: [Object][Object]
 
+**CloudPSS** DSLab 基类
+
+### `dslab.id`
+
+- [String][String]
+
+算例 id
+
+### `dslab.resource`
+
+- [String][String]
+
+算例 resource id
+
+### `dslab.name`
+
+- [String][String]
+
+算例名称
+
+### `DSLab.fetch(simulationId)`
+
+- `simulationId`: [String][String] 数据项的算例 id
+- Returns: [DSLab][Object] 返回 DSLab 实例
+
+获取算例信息。
+
+```python showLineNumbers
+DSLab.fetch(simulationId)
+```
+
+### `DSLab.createProjectGroup(name, description=None, createById=None)`
+
+- `name`: [String][String] 项目组名称
+- `description`: [String][String] 项目组描述 可选参数
+- `createById`: [String][String] 父项目组 id 可选参数，如果是从已有项目组导入的项目组，必填此项
+- Returns: [Number][Number] 返回创建的项目组 id
+
+创建项目组。
+
+```python showLineNumbers
+DSLab.createProjectGroup(name, description=None, createById=None)
+```
+
+### `DSLab.createProject(name, gid, description=None, initialTerm=None, build=None, operate=None, yearsInOperation=None)`
+
+- `name`: [String][String] 项目名称
+- `gid`: [Number][Number] 父项目组 id
+- `description`: [String][String] 项目组描述 可选参数
+- `initialTerm`: [String][String] 项目起始年限，可选参数
+- `build`: [String][String] 项目建设期（年），可选参数
+- `operate`: [String][String] 项目生命周期（年），可选参数
+- `yearsInOperation`: [String][String] 已投运年限，可选参数
+- Returns: [Number][Number] 返回创建的项目 id
+
+创建项目
+
+```python showLineNumbers
+DSLab.createProject(name, gid, description=None, initialTerm=None, build=None, operate=None, yearsInOperation=None)
+```
+
+### `dslab.run(job=None, name=None)`
+
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+调用仿真。
+
+```python showLineNumbers
+dslab.run(simulationId)
+```
+
+### `dslab.runIESLoadPrediction(job=None, name=None, **kwargs)`
+
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行负荷预测方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab.runIESLoadPrediction()
+```
+
+### `dslab.runIESPowerFlow(job=None, name=None, **kwargs)`
+
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行时序潮流方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab.runIESPowerFlow()
+```
+
+### `dslab.runIESEnergyStoragePlan(job=None, name=None, **kwargs)`
+
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行储能规划方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab.runIESEnergyStoragePlan()
+```
+
+## Class: `DataManageModel`
+
+- Extends: [Object][Object]
+
+**CloudPSS** DSLab 数据管理模块类
+
+### `datamanageModel.GetItemList(kind)`
+
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- Returns: [List][List] 返回该种类下所有数据项的列表
+
+获取 kind 类型对应所有数据项的列表。
+
+```python showLineNumbers
+datamanageModel.GetItemList(kind)
+```
+
+### `GetItemExtra(kind, uuid)`
+
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- `uuid`: [String][String] 数据的唯一标识
+- Returns: [List][List] 返回 kind 类型对应数据项的基准出力曲线、负荷曲线、策略曲线数据，如果不存在返回 None
+
+获取 kind 类型对应数据项的基准出力曲线、负荷曲线、策略曲线数据
+
+```python showLineNumbers
+datamanageModel.GetItemExtra(kind, uuid)
+```
+
+### `datamanageModel.AddDataItem(kind, data, extra=None)`
+
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- `data`:  [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- `extra`: [List][List] 添加的基准出力曲线、负荷曲线、策略曲线数据
+- Returns: 返回新添加数据项的 ID，如果数据结构不满足要求，抛出异常
+
+向 kind 类型的数据库中添加内容为 data 的数据项。
+
+```python showLineNumbers
+datamanageModel.AddDataItem(dataType, data)
+```
+
+### `datamanageModel.UpdateDataItem(kind, data)`
+
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- `data`: [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- Returns: [List][List] 返回该种类下所有数据项的列表
+
+更新 kind 类型对应数据项。
+
+```python showLineNumbers
+datamanageModel.UpdateDataItem(kind, data)
+```
+
+### `datamanageModel.DeleteDataItem(id, kind)`
+
+- `id`: [Number][Number] 数据的 id
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- Returns: [List][List] 返回该种类下所有数据项的列表
+
+删除 id 和 kind 对应的数据。
+
+```python showLineNumbers
+datamanageModel.DeleteDataItem(id, kind)
+```
+
+### `datamanageModel.GetAtmosData(locationId, date)`
+
+- `locationId`: [String][String] 定位点 id
+- `date`: [String][String] 时间，格式为'YYYY-MM-DD'
+- Returns: [List][List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的key即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
+
+获取日期在 date 的气象数据
+
+```python showLineNumbers
+datamanageModel.GetAtmosData(locationId, date)
+```
+
+### `datamanageModel.LocationGet()`
+
+- Returns: [List][List] 返回气象定位点数据，包含id，经度坐标，纬度坐标，定位点名称
+
+获取气象定位点数据。
+
+```python showLineNumbers
+datamanageModel.LocationGet()
+```
+
+### `datamanageModel.LocationCreate(name=None, longitude=None, latitude=None)`
+
+- `name`: [String][String] 定位点名称，可选
+- `longitude`: [Float][Float] 可选，表示经度，范围为气象数据源的经度范围
+- `latitude`: [Float][Float] 可选，表示纬度，范围为气象数据源的纬度范围
+
+创建气象定位点。
+
+```python showLineNumbers
+datamanageModel.LocationCreate(name=None, longitude=None, latitude=None)
+```
+
+### `datamanageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)`
+
+- `id`: [String][String] 定位点id
+- `name`: [String][String] 定位点名称，可选
+- `longitude`: [Float][Float] 可选，表示经度，范围为气象数据源的经度范围
+- `latitude`: [Float][Float] 可选，表示纬度，范围为气象数据源的纬度范围
+
+修改气象定位点。
+
+```python showLineNumbers
+datamanageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)
+```
+
+### `datamanageModel.LocationDelete(id)`
+
+- `id`: [String][String] 定位点id
+
+删除气象定位点。
+
+```python showLineNumbers
+datamanageModel.LocationDelete(id)
+```
+
+### `datamanageModel.LoadWeather()`
+
+加载气象数据。
+
+```python showLineNumbers
+datamanageModel.LoadWeather()
+```
+
+## Class: `DSLabFinancialAnalysisModel`
+
+- Extends: [Object][Object]
+
+**CloudPSS** DSLab 经济分析模块类
+
+### `dslabFinancialAnalysisModel.GetFinancialParams(planID)`
+
+- `planID`: [Number][Number] 表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 代表方案对应的财务评价基础参数信息
+
+获取 planID 对应的优化方案下财务评估模块的基础信息。
+
+```python showLineNumbers
+dslabFinancialAnalysisModel.GetFinancialParams(planID)
+```
+
+### `dslabFinancialAnalysisModel.run(planID)`
+
+- `planID`: [Number][Number] 表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Runner][Object] 返回一个运行任务
+
+运行财务评价概览计算。
+
+```python showLineNumbers
+dslabFinancialAnalysisModel.run(planID)
+```
 
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
 [Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers

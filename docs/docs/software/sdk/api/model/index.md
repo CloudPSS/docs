@@ -155,7 +155,7 @@ job = model.createJob('emtp','emtp job')
 ```
 
 :::note
-创建出的方案默认不加入到工程中，需要加入请调用 [model.addJob](#modeladdjobjob-dict)
+创建出的方案默认不加入到工程中，需要加入请调用 [model.addJob](#modeladdjobjob)
 :::
 
 ### `model.addJob(job)`
@@ -228,7 +228,7 @@ config = model.getModelConfig('config 1')
 - `canvas`: [String][String]；元件所在图纸数据，默认为 None
 - `position`: [Dict][Dict]；元件位置信息，默认为 None
 - `size`: [Dict][Dict]；元件大小信息，默认为 None
-- Returns: [Component](#Component)，返回一个元件类
+- Returns: [Component][Object]，返回一个元件类
 
 添加元件（创建一个新的元件并添加到拓扑中）。
 
@@ -316,7 +316,7 @@ components = model.getAllComponents()
 ### `model.getComponentByKey(componentKey)`
 
 - `key`: [String][String]；元件 key
-- Returns: [Component](#Component)；返回指定 key 的元件实例
+- Returns: [Component][Object]；返回指定 key 的元件实例
 
 获取指定key的元件。
 
@@ -327,7 +327,7 @@ component = model.getComponentByKey('component_new_resistor_router_1')
 ### `model.getComponentsByRid(rid)`
 
 - `rid`: [String][String]；元件 rid
-- Returns: [Component](#Component)；返回指定 rid 的元件实例
+- Returns: [Component][Object]；返回指定 rid 的元件实例
 
 获取指定 rid 的所有元件。
 
@@ -343,7 +343,7 @@ component = model.getComponentsByRid('rid')
 - `policy`: [Dict][Dict]；仿真策略
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个仿真任务
+- Returns: [Job](../job/index.md)；返回一个仿真任务
 
 运行仿真任务。
 
@@ -359,7 +359,7 @@ model.run(job)
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个电磁暂态仿真任务
+- Returns: [Job](../job/index.md)；返回一个电磁暂态仿真任务
 
 运行电磁暂态仿真。
 
@@ -375,7 +375,7 @@ model.runEMT(job)
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个移频电磁暂态仿真任务
+- Returns: [Job](../job/index.md)；返回一个移频电磁暂态仿真任务
 
 运行移频电磁暂态仿真。
 
@@ -390,7 +390,7 @@ model.runSFEMT(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个潮流计算仿真任务
+- Returns: [Job](../job/index.md)；返回一个潮流计算仿真任务
 
 运行潮流计算仿真。
 
@@ -405,7 +405,7 @@ model.runPowerFlow(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个储能规划方案任务
+- Returns: [Job](../job/index.md)；返回一个储能规划方案任务
 
 运行储能规划方案。
 
@@ -420,7 +420,7 @@ model.runIESEnergyStoragePlan(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个负荷预测方案任务
+- Returns: [Job](../job/index.md)；返回一个负荷预测方案任务
 
 运行负荷预测方案。
 
@@ -435,7 +435,7 @@ model.runIESLoadPrediction(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个时序潮流方案任务
+- Returns: [Job](../job/index.md)；返回一个时序潮流方案任务
 
 运行时序潮流方案。
 
@@ -450,7 +450,7 @@ model.runIESPowerFlow(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](#job)；返回一个三相不平衡潮流任务
+- Returns: [Job](../job/index.md)；返回一个三相不平衡潮流任务
 
 运行三相不平衡潮流。
 
@@ -510,7 +510,7 @@ revision = ModelRevision.create(revision)
 - `policy`: [Dict][Dict]；仿真策略
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `rid`: [String][String]；项目 rid
-- Returns: [Job](#Job)；返回一个仿真任务
+- Returns: [Job](../job/index.md)；返回一个仿真任务
 
 运行当前版本。
 
@@ -525,7 +525,7 @@ revision.run()
 - `implementType`: [String][String]；拓扑实现类型
 - `config`: [Dict][Dict]；拓扑实现配置
 - `maximumDepth`: [Number][Number]；拓扑最大递归深度，用于自定义项目中使用 diagram 实现元件展开情况
-- Returns: [ModelTopology](#ModelTopology)；返回一个拓扑实例
+- Returns: [ModelTopology](#class-modeltopology)；返回一个拓扑实例
 
 获取当前版本的拓扑。
 
@@ -572,7 +572,7 @@ revision.getImplements()
 - `implementType`: [String][String] 拓扑实现类型
 - `config`: [Dict][Dict] 拓扑实现配置
 - `maximumDepth`: [Number][Number] 拓扑最大深度，用于自定义项目中使用 diagram 实现元件展开情况
-- Returns: [ModelTopology](#ModelTopology) 返回一个拓扑
+- Returns: [ModelTopology](#class-modeltopology) 返回一个拓扑
 
 获取拓扑。
 
