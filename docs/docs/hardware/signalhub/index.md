@@ -1,7 +1,7 @@
 ---
 title: CloudPSS A/D Signal Hub
 description: CloudPSS A/D Signal Hub 文档
-sidebar_position: 30
+sidebar_position: 50
 ---
 
 

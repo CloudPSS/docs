@@ -1,7 +1,7 @@
 ---
-title: 组网实时仿真
-description: 组网实时仿真
-sidebar_position: 30
+title: 多机实时仿真
+description: 多机实时仿真
+sidebar_position: 20
 ---
 
 
@@ -31,20 +31,20 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="case1" label="两台 CloudPSS-RT 的组网实时仿真">
-- 构建组网仿真接口模型
+<TabItem value="case1" label="两台 CloudPSS-RT 的实时仿真">
+- 构建多机仿真接口模型
   
 - 实时仿真方案设置
   
-- 组网仿真硬件接线
+- 多机仿真硬件接线
   
-- 组网仿真启动时序
+- 多机仿真启动时序
   
 - 结果展示
 
 </TabItem>
 
-<TabItem value="case2" label="多台 CloudPSS-RT 的组网实时仿真">
+<TabItem value="case2" label="多台 CloudPSS-RT 的实时仿真">
 
 
 </TabItem>
