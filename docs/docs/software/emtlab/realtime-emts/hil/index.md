@@ -1,7 +1,7 @@
 ---
 title: 硬件在环仿真
 description: 硬件在环仿真
-sidebar_position: 20
+sidebar_position: 10
 ---
 
 
