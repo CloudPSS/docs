@@ -1,6 +1,6 @@
 ---
-title: IESLab
-description: CloudPSS SDK API 文档 IESLab
+title: IESLab 类
+description: CloudPSS SDK API 文档 IESLab 类
 sidebar_position: 45
 
 tags:
