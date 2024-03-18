@@ -1,498 +1,529 @@
 ---
 title: IESLab
 description: CloudPSS SDK API 文档 IESLab
-sidebar_position: 46
+sidebar_position: 45
 
 tags:
 - SDK
 
 ---
 
-## IESlab 相关接口
+## Class: `IESLabSimulation`
 
-### IESLabSimulation
+- Extends: [Object][Object]
 
-#### IESLabSimulation 实例变量说明
+**CloudPSS** IESLabSimulation 基类
 
-##### 算例id IESLabSimulation.id
+### `ieslabSimulation.id`
 
-- 算例id
+- [String][String]
 
-##### 算例名称 IESLabSimulation.name
+算例 id
 
-- 算例名称
+### `ieslabSimulation.name`
 
-##### 算例分组信息 IESLabSimulation.project_group
+- [String][String]
 
-- 算例分组信息
+算例名称
 
-##### 算例拓扑信息 IESLabSimulation.model
+### `ieslabSimulation.project_group`
 
-- 算例拓扑信息（[见Model类](#model)）
+- [String][String]
 
-##### 算例的数据管理模块数据 IESLabSimulation.dataManageModel
+算例分组信息
 
-- 算例的数据管理模块数据
+### `ieslabSimulation.model`
 
-#### IESLabSimulation 静态方法说明
+- [Model](../model/index.md)
 
-##### 获取算例信息 static IESLabSimulation.fetch(id)
+算例拓扑信息
 
-- 获取算例信息
-  - 参数
-    - id 算例id
-  - 返回值
-    - 返回一个算例
-  - 实例：
+### `ieslabSimulation.dataManageModel`
 
-    ```python
-        IESLabSimulation.fetch(id)
-    ```
+- [IESSimulationDataManageModel][Object]
 
-##### 创建项目组 static IESLabSimulation.create(group_name, desc=None, createById=None)
+算例的数据管理模块数据
 
-- 创建项目组
-  - 参数
-    - group_name 项目组名称
-    - desc 项目组描述
-    - createById 创建者id
-  - 返回值
-    - 返回一个项目组
-  - 实例：
+### `IESLabSimulation.fetch(id)`
 
-    ```python
-        IESLabSimulation.create(group_name, desc=None, createById=None)
-    ```
+- `id`: 算例id
+- Returns: [IESLabSimulation](#class-ieslabsimulation) 返回一个算例
 
-##### 创建项目 static IESLabSimulation.createProject(project_group, desc=None, createById=None)
+获取算例信息
 
-- 创建项目
-  - 参数
-    - project_group 项目组id
-    - desc 项目描述
-    - createById 创建者id
-  - 返回值
-    - 返回一个项目
-  - 实例：
+```python showLineNumbers
+IESLabSimulation.fetch(id)
+```
 
-    ```python
-        IESLabSimulation.createProject(project_group, desc=None, createById=None)
-    ```
+### `IESLabSimulation.createProjectGroup(group_name, desc=None, createById=None)`
 
-#### IESLabSimulation 实例方法说明
+- `group_name`: [String][String] 项目组名称
+- `desc`: [String][String] 项目组描述
+- `createById`: [String][String]  父项目组 id  可选参数，如果是从已有项目组导入的项目组，必填此项
+- Returns: [Number][Number] 返回创建的项目组 id
 
-##### 调用仿真 IESLabSimulation.run( job=None, name=None)
+创建项目组。
 
-- 调用仿真
-  - 参数
-    - job 仿真任务
-    - name 仿真任务名称
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+```python showLineNumbers
+IESLabSimulation.createProjectGroup('test')
+```
 
-    ```python
-        IESLabSimulation.run( job=None, name=None)
-    ```
+### `IESLabSimulation.createProject(name, project_group, desc=None, createById=None)`
 
-### IESLabPlan
+- `name`: [String][String] 项目名称
+- `project_group`: [Number][Number] 父项目组 id
+- `desc`: [String][String] 项目描述
+- `createById`: [Number][Number] 父项目 id, 可选参数, 如果是从已有项目导入的项目，必填此项
+- Returns: [Number][Number] 返回创建的项目 id
 
-#### IESLabPlan 实例变量说明
+创建项目。
 
-##### 算例id IESLabPlan.id
+```python showLineNumbers
+IESLabSimulation.createProject('project', project_group=None, desc=None, createById=None)
+```
 
-- 算例id
+### `ieslabSimulation.run(job=None, name=None)`
 
-##### 算例名称 IESLabPlan.name
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 仿真任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job](../job/index.md) 返回一个仿真任务
 
-- 算例名称
 
-##### 算例分组信息 IESLabPlan.project_group
+```python showLineNumbers
+ieslabSimulation.run(job=None, name=None)
+```
 
-- 算例分组信息
+## Class: `IESLabPlan`
 
-##### 算例拓扑信息 IESLabPlan.model
+- Extends: [Object][Object]
 
-- 算例拓扑信息（[见Model类](#model)）
+**CloudPSS** IESLabPlan 基类
 
-##### 算例的数据管理模块数据 IESLabPlan.dataManageModel
+### `ieslabPlan.id`
 
-- 算例的数据管理模块数据，具体使用方法见[数据管理模块](#数据管理模块-datamanagemodel)
+- [String][String]
 
-##### 方案优选模块 IESLabPlan.planModel
+算例id。
 
-- 方案优选模块，具体使用方法见[方案优选模块](#方案优选模块-ieslabplanmodel)
+### `ieslabPlan.name`
 
-##### 方案评估模块 IESLabPlan.evaluationModel
+- [String][String]
 
-- 方案评估模块，具体使用方法见[方案评估模块](#方案评估模块-ieslabevaluationmodel)
+算例名称。
 
-##### 方案优选结果数据 IESLabPlan.currentPlanResult
+### `ieslabPlan.project_group`
 
-- 方案优选结果数据，具体使用方法见[方案优选结果数据](#ieslabplanresult)
+- [String][String]
 
-##### 方案评估结果数据 IESLabPlan.currentEvaluationResult
+算例分组信息。
 
-- 方案评估结果数据，具体使用方法见[方案评估结果数据](#ieslabevaluationresult)
+### `ieslabPlan.model`
 
-#### IESLabPlan 静态方法说明
+- [Model](../model/index.md)
 
-##### 获取算例信息 static IESLabPlan.fetch(id)
+算例拓扑信息。
 
-- 获取算例信息
-  - 参数
-    - id 算例id
-  - 返回值
-    - 返回一个算例
-  - 实例：
+### `ieslabPlan.dataManageModel`
 
-    ```python
-        IESLabPlan.fetch(id)
-    ```
+- [IESPlanDataManageModel][Object]
 
-##### 创建项目组 static IESLabPlan.create(group_name, desc=None, createById=None)
+算例的数据管理模块数据。
 
-- 创建项目组
-  - 参数
-    - group_name 项目组名称
-    - desc 项目组描述
-    - createById 创建者id
-  - 返回值
-    - 返回一个项目组
-  - 实例：
+### `ieslabPlan.planModel`
 
-    ```python
-        IESLabPlan.create(group_name, desc=None, createById=None)
-    ```
+- [IESLabPlanModel][Object]
 
-##### 创建项目 static IESLabPlan.createProject(project_group, desc=None, createById=None)
+方案优选模块。
 
-- 创建项目
-  - 参数
-    - project_group 项目组id
-    - desc 项目描述
-    - createById 创建者id
-  - 返回值
-    - 返回一个项目
-  - 实例：
+### `ieslabPlan.evaluationModel`
 
-    ```python
-        IESLabPlan.createProject(project_group, desc=None, createById=None)
-    ```
+- [IESLabEvaluationModel][Object]
 
-#### IESLabPlan 实例方法说明
+方案评估模块。
 
-##### 运行典型日计算 IESLabPlan.iesLabTypicalDayRun( job=None, name=None, **kwargs)
+### `ieslabPlan.currentPlanResult`
 
-- 运行典型日计算
-  - 参数
-    - job 仿真任务
-    - name 仿真任务名称
-    - kwargs 仿真参数
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+- [IESLabPlanResult][Object]
 
-    ```python
-        IESLabPlan.iesLabTypicalDayRun( job=None, name=None, **kwargs)
-    ```
+方案优选结果数据。
 
-##### 运行方案评估 IESLabPlan.iesLabEvaluationRun( planId, type=None)
+### `ieslabPlan.currentEvaluationResult`
 
-- 运行方案评估
-  - 参数
-    - planId 方案id
-    - type 评估类型
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+- [IESLabEvaluationResult][Object]
 
-    ```python
-        IESLabPlan.iesLabEvaluationRun( planId, type=None)
-    ```
+方案评估结果数据。
 
-##### 运行能效评价 IESLabPlan.iesLabEnergyEvaluationRun( planId)
+### `IESLabPlan.fetch(id)`
 
-- 运行能效评价
-  - 参数
-    - planId 方案id
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+- `id`: [String][String] 算例 id
+- Returns: [IESLabPlan](#class-ieslabplan) 返回一个算例
 
-    ```python
-        IESLabPlan.iesLabEnergyEvaluationRun( planId)
-    ```
+获取算例信息。
 
-##### 运行方案优选 IESLabPlan.iesLabPlanRun( )
+```python showLineNumbers
+IESLabPlan.fetch(id)
+```
 
-- 运行方案优选
-  - 参数
-    - 无
-  - 返回值
-    - 返回一个仿真任务
-  - 实例：
+### `IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)`
 
-    ```python
-        IESLabPlan.iesLabPlanRun( )
-    ```
+- `group_name`: [String][String] 项目组名称
+- `desc`: [String][String] 项目组描述
+- `createById`: [Number][Number] 父项目组id  可选参数，如果是从已有项目组导入的项目组，必填此项
+- Returns: [Number][Number] 返回创建的项目组 id
 
-##### 停止并删除方案优选算例 IESLabPlan.iesLabPlanRun( )
+创建项目组。
 
-- 停止并删除方案优选算例
-  - 参数
-    - 无
-  - 返回值
-    - 无
-  - 实例：
+```python showLineNumbers
+IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)
+```
 
-    ```python
-        IESLabPlan.iesLabPlanRun( )
-    ```
+### `IESLabPlan.createProject(name, project_group, start_date, end_date, construction_cycle, desc=None, createById=None)`
 
-### 数据管理模块 DataManageModel
+- `name`: [String][String] 项目名称
+- `project_group`: [Number][Number] 项目组 id
+- `start_date`: [Number][Number] 项目开始年限，范围在[1500,3000]之间
+- `end_date`: [Number][Number] 项目结束年限，范围在项目开始时间之后且不超过五十年
+- `construction_cycle`: [Number][Number] 项目建设周期(年), 必须小于等于 项目结束年限 - 项目开始年限
+- `desc`: [String][String] 项目描述
+- `createById`: 父项目 id, 可选参数, 如果是从已有项目导入的项目，必填此项
+- Returns: [Number][Number] 返回创建的项目 id
 
-#### DataManageModel 实例方法说明
 
-##### 获取ID对应的数据信息 DataManageModel.GetDataItem(ID: str)
+创建项目。
 
-- 获取ID对应的数据信息
-  - 参数
-    - ID 数据ID
-  - 返回值
-    - 返回ID对应的数据信息
-  - 实例：
+```python showLineNumbers
+ieslabPlan.createProject(name, project_group, start_date, construction_cycle, desc=None, createById=None)
+```
 
-    ```python
-        DataManageModel.GetDataItem(ID: str)
-    ```
+### `ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)`
 
-##### 获取dataType类型对应所有数据项的列表 DataManageModel.GetItemList(dataType)
+- `job`: [Dict][Dict] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job](../job/index.md) 返回一个运行实例
 
-- 获取dataType类型对应所有数据项的列表
-  - 参数
-    - dataType string类型，代表数据项的类型，可以在所有类型的数据项中实现唯一标识
-  - 返回值
-    - 返回dataType类型对应所有数据项的列表
-  - 实例：
+运行典型日计算。
 
-    ```python
-        DataManageModel.GetItemList(dataType)
-    ```
+```python showLineNumbers
+ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)
+```
 
-##### 向dataType类型的数据库中添加内容为data的数据项 DataManageModel.AddDataItem( dataType, data)
+### ieslabPlan.iesLabEvaluationRun(planId, type=None)
 
-- 向dataType类型的数据库中添加内容为data的数据项
-  - 参数
-    - dataType string类型，代表数据项的类型，可以在所有类型的数据项中实现唯一标识
-    - data dict类型，表示添加的数据内容，其数据结构应满足对应数据项的结构要求
-  - 返回值
-    - bool 类型，返回True 添加成功
-  - 实例：
+- `planId`: [Number][Number] 方案 id，表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `type`: [String][String] 评估类型，可选值为：**能效评价**、**环保评价**
+- Returns: [Runner][Object] 返回方案评估运行实例
 
-    ```python
-        DataManageModel.AddDataItem( dataType, data)
-    ```
+运行方案评估。
 
-##### 更新数据管理模块数据 DataManageModel.UpdateDataManageModel(ID: str, data)
+```python showLineNumbers
+ieslabPlan.iesLabEvaluationRun(planId, type=None)
+```
 
-- 更新数据库ID对应数据项"光伏"、"风机"、"燃气轮机"、"热泵"、"燃气锅炉"、"热管式太阳能集热器"、"电压缩制冷机"、"吸收式制冷机"、"蓄电池"、"储水罐"、"变压器"、"传输线"、"模块化多电平变流器"、"离心泵"、"管道"、"采暖制冷负荷"、"电负荷"、"燃料"、"热"、"冷"、"常数电价"、"分时电价"、"阶梯电价"、"分时阶梯电价"数据
-  - 参数
-    - ID string类型，代表数据项的标识符，可以在所有类型的数据项中实现唯一标识
-    - data dict类型，表示添加的数据内容，其数据结构应满足对应数据项的结构要求
-  - 返回值
-    - bool 类型，返回True 更新成功
-  - 实例：
+### `ieslabPlan.iesLabEnergyEvaluationRun(planId)`
 
-    ```python
-        DataManageModel.UpdateDataManageModel(ID: str, data)
-    ```
+- `planId`: [Number][Number] 方案 id
+- Returns: [Runner][Object] 返回能效评价运行实例
 
-##### 删除ID对应的数据 DataManageModel.DeleteDataItem(ID: str)
+运行能效评价。
 
-- 删除ID对应的数据
-  - 参数
-    - ID 数据ID
-  - 返回值
-    - 无
-  - 实例：
+```python showLineNumbers
+ieslabPlan.iesLabEnergyEvaluationRun(planId)
+```
 
-    ```python
-        DataManageModel.DeleteDataItem(ID: str)
-    ```
+### `ieslabPlan.iesLabPlanRun()`
 
-##### 设置项目的天气数据坐标，加载天气数据 DataManageModel.SetProjectPosition( longitude, latitude)
+- Returns: [Runner][Object] 返回方案优选运行实例
 
-- 设置项目的天气数据坐标，加载天气数据
-  - 参数
-    - longitude 经度
-    - latitude 纬度
-  - 返回值
-    - 无
-  - 实例：
+运行方案优选。
 
-    ```python
-        DataManageModel.SetProjectPosition( longitude, latitude)
-    ```
+```python showLineNumbers
+ieslabPlan.iesLabPlanRun()
+```
 
-##### 获取指定时间段的天气数据 DataManageModel.GetAtmosData(startDate, endDate)
+### `ieslabPlan.iesLabPlanRun()`
 
-- 获取在startDate到endDate之间的气象数据
-  - 参数
-    - startDate 开始时间
-    - endDate 结束时间
-  - 返回值
-    - 返回指定时间段的天气数据
-  - 实例：
 
-    ```python
-        DataManageModel.GetAtmosData(startDate, endDate)
-    ```
+停止并删除方案优选算例。
 
-### 方案优选模块 IESLabPlanModel
+```python showLineNumbers
+ieslabPlan.iesLabPlanRun()
+```
 
-#### IESLabPlanModel 实例变量说明
+## Class: `DataManageModel`
 
-##### 算例id IESLabPlanModel.simulationId
+- Extends: [Object][Object]
 
-##### 优化目标设置信息 IESLabPlanModel.optimizationInfo
+**CloudPSS** IESLab 数据管理模块类
 
-#### IESLabPlanModel 实例方法说明
+### `datamanageModel.GetDataItem(ID)`
 
-##### 设置优化目标 IESLabPlanModel.SetOptimizationInfo(optType)
+- `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- Returns: [Dict][Dict] 返回该数据项的信息（源数据的引用）
 
-- 设置优化目标
-  - 参数
-    - optType 优化目标类型
-  - 返回值
-    - 无
-  - 实例：
+获取 ID 对应的数据信息。
 
-    ```python
-        IESLabPlanModel.SetOptimizationInfo(optType)
-    ```
+```python showLineNumbers
+datamanageModel.GetDataItem(ID)
+```
 
-##### 获取优化目标 IESLabPlanModel.GetOptimizationInfo()
+### `datamanageModel.GetItemList(dataType)`
 
-- 获取优化目标
-  - 参数
-    - 无
-  - 返回值
-    - 返回优化目标
-  - 实例：
+- `dataType`: [Enum][Enum] 数据的种类标识，包含：
+  - "光伏": "PhotovoltaicSys"
+  - "风机": "WindPowerGenerator"
+  - "燃气轮机": "GasTurbine"
+  - "热泵": "HeatPump"
+  - "燃气锅炉": "GasBoiler"
+  - "热管式太阳能集热器": "HPSolarCollector"
+  - "电压缩制冷机": "CompRefrg"
+  - "吸收式制冷机": "AbsorptionChiller"
+  - "蓄电池": "Battery"
+  - "储水罐": "WaterTank"
+  - "变压器": "Transformer"
+  - "传输线": "TransferLine"
+  - "模块化多电平变流器": "MMC"
+  - "离心泵": "CentrifugalPump"
+  - "管道": "Pipe"
+  - "采暖制冷负荷": "thermalLoads"
+  - "电负荷": "electricLoads"
+  - "燃料": "fuels"
+  - "热": "HVACHeating"
+  - "冷": "HVACCooling"
+  - "常数电价": "常数电价"
+  - "分时电价": "分时电价"
+  - "阶梯电价": "阶梯电价"
+  - "分时阶梯电价": "分时阶梯电价"
+- Returns: [List][List] 返回该种类下所有数据项的列表
 
-    ```python
-        IESLabPlanModel.GetOptimizationInfo()
-    ```
+获取 dataType 类型对应所有数据项的列表。
 
-##### 运行方案优选 IESLabPlanModel.run()
+```python showLineNumbers
+datamanageModel.GetItemList(dataType)
+```
 
-- 运行方案优选
-  - 参数
-    - 无
-  - 返回值
-    - 成功返回运行任务实例
-    - 如果算例已经运行过方案优选，再次运行会抛异常
-  - 实例：
+### `datamanageModel.AddDataItem(dataType, data)`
 
-    ```python
-        IESLabPlanModel.run()
-    ```
+- `dataType`: [Enum][Enum] 数据的种类标识，包含：
+  - "光伏": "PhotovoltaicSys"
+  - "风机": "WindPowerGenerator"
+  - "燃气轮机": "GasTurbine"
+  - "热泵": "HeatPump"
+  - "燃气锅炉": "GasBoiler"
+  - "热管式太阳能集热器": "HPSolarCollector"
+  - "电压缩制冷机": "CompRefrg"
+  - "吸收式制冷机": "AbsorptionChiller"
+  - "蓄电池": "Battery"
+  - "储水罐": "WaterTank"
+  - "变压器": "Transformer"
+  - "传输线": "TransferLine"
+  - "模块化多电平变流器": "MMC"
+  - "离心泵": "CentrifugalPump"
+  - "管道": "Pipe"
+  - "采暖制冷负荷": "thermalLoads"
+  - "电负荷": "electricLoads"
+  - "燃料": "fuels"
+  - "热": "HVACHeating"
+  - "冷": "HVACCooling"
+  - "常数电价": "常数电价"
+  - "分时电价": "分时电价"
+  - "阶梯电价": "阶梯电价"
+  - "分时阶梯电价": "分时阶梯电价"
+- `data`:  [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- Returns: 返回新添加数据项的 ID，如果数据结构不满足要求，抛出异常
 
-##### 获得运行实例 IESLabPlanModel.GetRunner()
+向 dataType 类型的数据库中添加内容为 data 的数据项。
 
-- 获得运行实例
-  - 参数
-    - 无
-  - 返回值
-    - 返回运行实例
-  - 实例：
+```python showLineNumbers
+datamanageModel.AddDataItem(dataType, data)
+```
 
-    ```python
-        IESLabPlanModel.GetRunner()
-    ```
+### `datamanageModel.UpdateDataItem(ID, data)`
 
-##### 停止并删除当前运行的优化算例 IESLabPlanModel.kill()
+- ID: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- data: [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- Returns: [Boolean][Boolean] 返回 True，更新成功
 
-- 停止并删除当前运行的优化算例
-  - 参数
-    - 无
-  - 返回值
-    - 无
-  - 实例：
+更新数据库 ID 对应数据项。
 
-    ```python
-        IESLabPlanModel.kill()
-    ```
+```python showLineNumbers
+datamanageModel.UpdateDataItem(ID, data)
+```
 
-##### 获取当前算例是否处于运行中 GetLastTaskResult()
+### `datamanageModel.DeleteDataItem(ID)`
 
-- 获取当前算例是否处于运行中
-  - 参数
-    - 无
-  - 返回值
-    - 返回任务运行状态
-  - 实例：
+- `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- Returns: [Boolean][Boolean] 删除是否成功标志，如果ID错误，抛出异常
 
-    ```python
-        GetLastTaskResult()
-    ```
+删除 ID 对应的数据。
 
-### 方案评估模块 IESLabEvaluationModel
+```python showLineNumbers
+datamanageModel.DeleteDataItem(ID)
+```
 
-#### IESLabEvaluationModel 实例方法说明
+### `datamanageModel.SetProjectPosition(longitude, latitude)`
 
-##### 获取指定方案财务评估模块的基础信息 IESLabEvaluationModel.GetFinancialParams(planID)
+- `longitude`: [Float][Float] 经度，范围为气象数据源的经度范围
+- `latitude`: [Float][Float] 纬度，范围为气象数据源的纬度范围
 
-##### 运行方案评估 IESLabEvaluationModel.run(planID, type=None)
+设置项目的天气数据坐标，加载天气数据。
 
-- 运行方案评估
-  - 参数
-    - planID 方案id
-    - type 评估类型
-  - 返回值
-    - 成功返回运行任务实例
-  - 实例：
+```python showLineNumbers
+datamanageModel.SetProjectPosition(longitude, latitude)
+```
 
-    ```python
-        IESLabEvaluationModel.run(planID, type=None)
-    ```
+### `datamanageModel.GetAtmosData(startDate, endDate)`
 
-##### 运行环保评价方案评估 IESLabEvaluationModel.EnvironmentalEvaluationRun(planID)
 
-- 运行环保评价方案评估
-  - 参数
-    - planID 方案id
-  - 返回值
-    - 成功返回运行任务实例
-  - 实例：
+- `startDate`: [String][String] 开始时间，格式为'YYYY-MM-DD'
+- `endDate`: [String][String] 结束时间，格式为'YYYY-MM-DD'
+- Returns: [List][List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的 key 即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
 
-    ```python
-        IESLabEvaluationModel.EnvironmentalEvaluationRun(planID)
-    ```
+获取在 startDate 到 endDate 之间的气象数据。
 
-##### 运行能效评价方案评估 IESLabEvaluationModel.EnergyEvaluationRun(planID)
+```python showLineNumbers
+datamanageModel.GetAtmosData(startDate, endDate)
+```
 
-- 运行能效评价方案评估
-  - 参数
-    - planID 方案id
-  - 返回值
-    - 成功返回运行任务实例
-  - 实例：
+## Class: `IESLabPlanModel`
 
-    ```python
-        IESLabEvaluationModel.EnergyEvaluationRun(planID)
-    ```
+- Extends: [Object][Object]
 
-##### 获得运行实例 IESLabEvaluationModel.GetRunner(planID)
+**CloudPSS** IESLabPlanModel 方案优选模块类
 
-- 获得运行实例
-  - 参数
-    - planID 方案id
-  - 返回值
-    - 返回运行实例
-  - 实例：
+### `ieslabPlanModel.simulationId`
 
-    ```python
-        IESLabEvaluationModel.GetRunner(planID)
-    ```
+- [String][String]
+
+算例 id。
+
+### `ieslabPlanModel.optimizationInfo`
+
+- [Enum][Enum]
+
+当前算例的优化目标设置信息。
+
+### `ieslabPlanModel.SetOptimizationInfo(optType)`
+
+- `optType`: [Enum][Enum] 优化目标类型，经济性优化和环保性优化类型
+
+设置当前算例的优化目标。
+
+```python showLineNumbers
+ieslabPlanModel.SetOptimizationInfo(optType)
+```
+
+### `ieslabPlanModel.GetOptimizationInfo()`
+
+- Returns: [Enum][Enum] 返回优化目标
+
+获取当前算例的优化目标设置信息。
+
+```python showLineNumbers
+ieslabPlanModel.GetOptimizationInfo()
+```
+
+### `ieslabPlanModel.run()`
+
+- Returns: [Runner][Object] 生成方案优选算例，成功返回运行任务实例，如果算例已经运行过方案优选，再次运行会抛异常
+
+运行方案优选。
+
+```python showLineNumbers
+ieslabPlanModel.run()
+```
+
+###  `ieslabPlanModel.GetRunner()`
+
+- Returns: [Runner][Object] 返回运行实例
+
+获得运行实例。
+
+```python showLineNumbers
+ieslabPlanModel.GetRunner()
+```
+
+### `ieslabPlanModel.kill()`
+
+停止并删除当前运行的优化算例。
+
+```python showLineNumbers
+ieslabPlanModel.kill()
+```
+
+### `ieslabPlanModel.GetLastTaskResult()`
+
+- Returns: [Boolean][Boolean] 返回任务运行状态
+
+获取最后一次运行的 taskID 的任务运行状态
+
+```python showLineNumbers
+ieslabPlanModel.GetLastTaskResult()
+```
+
+## Class: `IESLabEvaluationModel`
+
+### ieslabEvaluationModel.GetFinancialParams(planID)
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
+
+获取 planID 对应的优化方案下财务评估模块的基础信息
+
+```python showLineNumbers
+ieslabEvaluationModel.GetFinancialParams(0)
+```
+
+### `ieslabEvaluationModel.run(planID, type=None)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `type`: [String][String] 任务类型：环保评价/能效评价
+- Returns: [Runner][Object] 返回运行任务实例
+
+运行方案评估。
+
+```python showLineNumbers
+ieslabEvaluationModel.run(planID, type=None)
+```
+
+### `ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)`
+
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
+
+运行环保评价方案评估。
+
+```python showLineNumbers
+ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)
+```
+
+### `ieslabEvaluationModel.EnergyEvaluationRun(planID)`
+
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
+
+运行能效评价方案评估。
+
+```python showLineNumbers
+ieslabEvaluationModel.EnergyEvaluationRun(planID)
+```
+
+### `ieslabEvaluationModel.GetRunner(planID)`
+
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
+
+获得运行实例。
+
+```python showLineNumbers
+ieslabEvaluationModel.GetRunner(planID)
+```
+
+
+[Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
+[Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers
+[Float]: https://docs.python.org/3.8/c-api/float.html
+[String]: https://docs.python.org/3.8/tutorial/introduction.html#strings
+[Boolean]: https://docs.python.org/3.8/c-api/bool.html
+[List]: https://docs.python.org/3.8/tutorial/introduction.html#lists
+[Dict]: https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries
+[Enum]: https://docs.python.org/3.8/library/enum.html
