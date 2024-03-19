@@ -8,6 +8,8 @@ sidebar_position: 10
 
 SimStudio 供了一套以参数（Parameter）和引脚（Pin）为核心的建模系统。用户可使用不同类型的参数和引脚实现对模块（包括元件和模型）的灵活维护和管理，进而实现各种高级仿真功能。
 
+或包含全局变量的[math.js表达式](https://mathjs.org/)。
+
 ## 参数
 
 ## 变量
