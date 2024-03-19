@@ -132,12 +132,30 @@ $$
 </Tabs>
 
 ## 常见问题 Q&A
+
+
 为什么电磁暂态仿真会发散
-: 
-![仿真结果发散 =x200](./bad-result.png)
+
+:   
+   基于节点分析方法的 EMT 模型可以用下式表示：
+   $$ 
+   \begin{aligned}\mathbf{I}(t) & =\mathbf{G}_{\mathrm{eq}} \mathbf{U}(t)+\mathbf{I}_{\mathrm{h}}(t) & \\ & =  \mathbf{G}_{\mathrm{eq}} \mathbf{U}(t)+\mathbf{A} \mathbf{I}(t-\Delta t)+\mathbf{B} \mathbf{U}(t-\Delta t) & \end{aligned}  
+   $$  
+   其中，$$ \mathbf{I}_{\mathrm{h}}(t) $$ 为注入历史电流项；$$ \mathbf{G}_{\mathrm{eq}} $$ 为 EMT 模型的等效导纳矩阵；$$ \mathbf{A} $$, $$ \mathbf{B} $$为参数矩阵，通常为常数矩阵。模型数值收敛的必要条件是其零输入响应收敛。即当 $$ \mathbf{U}(t) = 0 $$ 时，上式收敛。此时，参数矩阵 $$ \mathbf{A} $$ 应使得下式成立，否则会造成仿真发散。
+
+   $$
+   \begin{aligned} & {\left[\lambda_{i i}\right]=\operatorname{eig}\{\mathbf{A}\}} \\ & {\left[\lambda_{i i}\right] \leq 1} \end{aligned}
+   $$
+   其中，$$ \lambda_{i i} $$ 为参数矩阵 $$ \mathbf{A} $$ 的特征根，$$ \left[\lambda_{i i}\right] $$为特征根组成的对角阵，$$ \operatorname{eig}\{\mathbf{A}\} $$ 表示求 $$ \mathbf{A} $$ 的特征根对角阵的运算。由此可知，元件不合理的参数设置会影响参数矩阵 $$ \mathbf{A} $$ 的特征根，从而导致仿真的发散。
+
+      ![仿真结果发散 =x200](./bad-result.png)
+
+
+
 
 EMTLab 使用什么方法处理数值振荡
-:
 
-EMTLab 中的电力电子器件是怎么建模的
 :
+   梯形积分方法为 A-稳定的（在某步长下零输入响应收敛到 0），但不是 L-稳定的（在步长 →∞ 时仍然收敛到 0），在仿真中可能会出现数值振荡。为了克服数值稳定问题，EMTLab 采用的临界阻尼调整（CDA），在数值突变发生后的两个半步长（$$ \Delta t/2 $$）将积分方法变为后向欧拉法。通过采用步长为 $$ \Delta t/2 $$ 的后向欧拉法，导纳矩阵 $$ \mathbf{G}_{\mathrm{eq}} $$ 与梯形积分法采用的矩阵相同，只需调整参数矩阵 $$ \mathbf{A} $$, $$ \mathbf{B} $$。
+
+   ![数值振荡 =x170](numerical-oscillation.png)   
