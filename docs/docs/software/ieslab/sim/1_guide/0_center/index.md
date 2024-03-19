@@ -1,6 +1,6 @@
 ---
 title: 快速创建模板项目
-description: IESLab 建模仿真平台快速创建项目
+description: 建模仿真平台快速创建项目方法
 sidebar_position: 10
 ---
 

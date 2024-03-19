@@ -1,6 +1,6 @@
 ---
-title: 典型场景聚类生成基本原理
-description: IESLab 规划设计平台-典型场景生成模块-计算方案配置
+title: 典型场景生成的基本原理
+description: 典型场景生成的基本原理
 sidebar_position: 10
 ---
 

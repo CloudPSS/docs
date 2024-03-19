@@ -1,6 +1,6 @@
 ---
 title: 综合能源系统园区展示项目
-description: IESLab 规划设计平台-典型案例-综合能源系统园区展示项目
+description: 综合能源系统园区展示项目搭建及分析示例
 sidebar_position: 10
 ---
 
