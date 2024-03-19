@@ -4,6 +4,10 @@ description: 执行器的安装、配置和管理
 sidebar_position: 10
 ---
 
+打开之前安装好的本地执行器，进入 FuncStudio 工作台
+
+FuncStudio 分为网页版 FuncStudio 和 FuncStudio 本地执行器，
+
 本节首先介绍 FuncStudio 本地执行器的安装、配置和管理功能，然后通过 X 个案例介绍 FuncStudio 本地执行器的使用方法。该功能仅支持在 FuncStudio 平台使用。
 
 ## 功能定义
