@@ -37,7 +37,7 @@ const token = jwt.sign(r, privateKey, { algorithm: 'ES256', allowInvalidAsymmetr
 
 2. **跳转链接**
 
-例如：`http://10.101.10.45/jwt/签名/自定义token`
+构建 **ip 地址 + 签名 + 自定义 token** 的页面链接跳转，例如：`http://10.101.10.45/jwt/签名/自定义token`
 
 ![使用指南](image-1.png "使用指南")
 
