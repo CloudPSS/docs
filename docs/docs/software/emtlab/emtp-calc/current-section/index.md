@@ -67,8 +67,67 @@ import TabItem from '@theme/TabItem';
 
 
 ## 常见问题 Q&A
-可以保存断面后，修改元件参数，然后再从断面启动吗
+可以存储断面后，修改算例的参数，然后再从断面启动吗
 :
+   对于**控制元件**，修改后元件参数，断面启动后使用的控制元件参数为修改后的参数。  
+   对于**电气元件**，导纳矩阵在存储断面时进行了保存，因为一些电气元件参数在初始化导纳后不会主动更改导纳矩阵，比如电阻的阻值，变压器额定容量等，所以修改这些电气参数从断面启动不会生效；同理，修改初始化后还会主动更改导纳矩阵的电气元件参数，比如可变电阻的阻值，断面启动后该修改可以生效；另外，和导纳矩阵无关的电气参数，比如修改故障电阻的故障类型，断面启动后该修改可以生效。
 
 如何使用 SimStudio SDK 实现断面启动功能
 :
+   本节案例的断面启动的 SDK demo 如下：
+   ``` Python
+    import os
+    import cloudpss
+    import time
+
+    if __name__ == '__main__':
+        try:  
+            cloudpss.setToken('token')
+
+            #### 设置cloudpss_api_url环境变量
+            os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
+            
+            #### 获取指定 rid 的项目
+            model = cloudpss.Model.fetch('model/icepoooo/snapshot_test')
+
+            #### 保存断面
+            config = model.configs[0]
+            job = model.jobs[3]
+            job['args']['snapshot_cfg'] = 1
+            job['args']['load_snapshot'] = 0
+            job['args']['save_snapshot'] = 1
+            job['args']['save_snapshot_name'] = 'snapshot_1'
+            job['args']['save_snapshot_time'] = 1.5
+            print(job)
+
+            snapshot_key = ''
+            runner = model.run(job, config)
+
+            while not runner.status():
+                for message in runner.result:
+                    if (message['type'] == 'plot') or (message['type'] == 'progress'):
+                        continue
+                    print(message)
+
+                    if (message['type'] == 'modify'):
+                        if message['data']['payload']['context']['snapshots'] != '':
+                            snapshot_key = list(message['data']['payload']['context']['snapshots'].values())[0].get('key')
+                    time.sleep(0.05)
+            print('message end')
+            print(snapshot_key)
+            
+            #### 载入断面
+            job['args']['save_snapshot'] = 0
+            job['args']['load_snapshot'] = 1
+            job['args']['load_snapshot_time'] = 1.5
+            job['args']['load_snapshot_name'] = snapshot_key
+            runner = model.run(job, config)
+            while not runner.status():
+                for message in runner.result:
+                    if (message['type'] == 'plot') or (message['type'] == 'progress'):
+                        continue
+                    print(message)
+
+            except Exception as e:
+            print("程序出错，重启中")
+   ```
