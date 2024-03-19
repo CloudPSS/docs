@@ -1,6 +1,6 @@
 ---
-title: 入门案例
-description: IESLab 规划设计平台入门案例
+title: 搭建入门案例
+description: IESLab 规划设计平台入门案例搭建及分析示例
 sidebar_position: 20
 ---
 
@@ -9,8 +9,6 @@ sidebar_position: 20
 ## 功能定义
 
 在IESLab 规划设计平台搭建并分析一个简单案例。
-
-
 
 
 ## 规划设计步骤：
