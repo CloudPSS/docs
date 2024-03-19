@@ -1,6 +1,6 @@
 ---
 title: 计算方案配置
-description: IESLab 规划设计平台-典型场景生成模块-计算方案配置
+description: 典型场景生成模块-计算方案配置
 sidebar_position: 20
 ---
 

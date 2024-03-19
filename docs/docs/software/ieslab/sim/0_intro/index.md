@@ -1,6 +1,6 @@
 ---
 title: 平台介绍
-description: IESLab 建模仿真平台介绍
+description: 建模仿真平台介绍
 sidebar_position: 10
 ---
 
@@ -199,6 +199,8 @@ sidebar_position: 10
 ![元件运行结果](./image037.png "元件运行结果")
 
 ### 运行优化
+
+**注意：运行优化模块仅限于服务器版本，公网暂未开放**
 
 运行优化模块主要用于日前或日内优化，与仿真模拟模块的页面布局基本一致。
 
