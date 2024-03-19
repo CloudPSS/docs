@@ -462,6 +462,10 @@ ieslabPlanModel.GetLastTaskResult()
 
 ## Class: `IESLabEvaluationModel`
 
+- Extends: [Object][Object]
+
+**CloudPSS** IESLab 方案评估类
+
 ### ieslabEvaluationModel.GetFinancialParams(planID)
 
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
@@ -517,6 +521,173 @@ ieslabEvaluationModel.EnergyEvaluationRun(planID)
 ```python showLineNumbers
 ieslabEvaluationModel.GetRunner(planID)
 ```
+
+## Class: `IESLabEvaluationResult`
+
+- Extends: [Object][Object]
+
+**CloudPSS** IESLab 评价结果类
+
+
+### `IESLabEvaluationResult.status()`
+
+- Returns: [Boolean][Boolean] 返回运行状态
+  
+获取运行状态。
+
+```python showLineNumbers
+ieslabEvaluationResult.status()
+```
+
+### `IESLabEvaluationResult.GetFinancialResult(resultType, planID)`
+
+- `resultType`: [Enum][Enum] 财务评价结果表格的类型：
+  - `利润与利润分配`: getEconomyResult
+  - `财务计划现金`:  getFinancialPlanCashFlowResult
+  - `资产负债`:  getLiabilityAssetsResult
+  - `投资使用计划与资金筹措` :  getInvestPlanDataResult
+  - `借款还本付息计划`:  getLoanRepaymentPlanResult
+  - `流动资金估算`:  getFlowCashEvaluteResult
+  - `资产折旧与摊销估算`:  getFlowCashEvaluteResult 
+  - `总成本费用估算表`:  getSumCostResult
+  - `项目总投资现金流量`:  getSumInvestFlowCashResult 
+  - `项目资本金现金流量`:  getProjectCashFlowResult 
+  - `营业收入、税金、附加和增值税估算`:  getIncomeTaxResult 
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
+  
+获取 planID 对应的优化方案下 resultType 财务评估结果。
+
+```python showLineNumbers
+ieslabEvaluationResult.GetFinancialResult(resultType, planID)
+```
+
+### `IESLabEvaluationResult.GetOverviewResult(planID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的概览结果
+  
+获取当前结果类对应的优化方案下的概览结果。
+
+```python showLineNumbers
+ieslabEvaluationResult.GetOverviewResult(planID)
+```
+
+### `IESLabEvaluationResult.GetEnergyEvaluationResult(planID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的能效评价结果
+  
+获取当前结果类对应的优化方案下的能效评价。
+
+```python showLineNumbers
+ieslabEvaluationResult.GetEnergyEvaluationResult(planID)
+```
+
+### `IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的环保评价结果
+
+获取当前结果类对应的优化方案下的环保评价。
+
+```python showLineNumbers
+ieslabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
+```
+
+## Class: `IESLabPlanResult`
+
+- Extends: [Object][Object]
+
+**CloudPSS** IESLab 运行结果类
+
+### `ieslabPlanResult.status()`
+
+- Returns: [Boolean][Object] 返回运行状态
+
+获取运行状态。
+
+```python showLineNumbers
+ieslabPlanResult.status()
+```
+
+### `ieslabPlanResult.GetLogs()`
+
+- Returns: [Dict][Dict] 返回日志信息
+
+获取运行日志。
+
+```python showLineNumbers
+ieslabPlanResult.GetLogs()
+```
+
+### `ieslabPlanResult.GetPlanNum()`
+
+- Returns: [Number][Number] 返回优化方案的数量
+
+获取当前 result 实例对应的优化方案数量。
+
+```python showLineNumbers
+ieslabPlanResult.GetPlanNum()
+```
+
+### `ieslabPlanResult.GetPlanInfo(planID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 返回方案的基础信息，包括投资、运行成本、负荷总量等信息
+
+获取 planID 对应的优化方案的基础信息。
+
+```python showLineNumbers
+ieslabPlanResult.GetPlanInfo(planID)
+```
+
+### `ieslabPlanResult.GetPlanConfiguration(planID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 返回方案的配置信息，包括每种设备的选型配置、容量配置、成本等相关信息
+
+获取 planID 对应的优化方案的配置信息。
+
+```python showLineNumbers
+ieslabPlanResult.GetPlanConfiguration(planID)
+```
+
+### `ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `componentID`: [String][String] 元件的标识符
+- `typicalDayName`: [String][String] 典型日的名称
+- Returns: [Dict][Dict] 返回元件在不同典型日下的运行信息
+
+获取 planID 对应的优化方案下componentID对应元件的运行信息。
+
+```python showLineNumbers
+ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
+```
+
+### `ieslabPlanResult.GetComponentTypiDays(planID, componentID)`
+
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `componentID`: [String][String] 元件的标识符
+- Returns: [Number][Number] 返回优化方案的数量
+
+获取当前 result 实例对应的优化方案数量。
+
+```python showLineNumbers
+ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
+```
+
+### `ieslabPlanResult.getLastTaskResult()`
+
+- Returns: [Dict][Dict] 返回运行结果
+
+获取最后一次运行的 taskID 的运行结果。
+
+```python showLineNumbers
+ieslabPlanResult.getLastTaskResult()
+```
+
 
 
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects

@@ -280,6 +280,54 @@ dslabFinancialAnalysisModel.GetFinancialParams(planID)
 dslabFinancialAnalysisModel.run(planID)
 ```
 
+## Class: `DSLabResult`
+
+- Extends: [Object][Object]
+
+**CloudPSS** DSLab 结果类
+
+### `dslabResult.status()`
+
+- Returns: [Boolean][Boolean] 运行状态
+
+获取运行状态
+
+```python showLineNumbers
+dslabResult.status()
+```
+
+### `dslabResult.GetFinancialResult(resultType)`
+
+- `resultType`: [Enum][Enum] 财务评价结果表格的类型：
+  - `利润与利润分配`: getEconomyResult
+  - `财务计划现金`:  getFinancialPlanCashFlowResult
+  - `资产负债`:  getLiabilityAssetsResult
+  - `投资使用计划与资金筹措` :  getInvestPlanDataResult
+  - `借款还本付息计划`:  getLoanRepaymentPlanResult
+  - `流动资金估算`:  getFlowCashEvaluteResult
+  - `资产折旧与摊销估算`:  getFlowCashEvaluteResult 
+  - `总成本费用估算表`:  getSumCostResult
+  - `项目总投资现金流量`:  getSumInvestFlowCashResult 
+  - `项目资本金现金流量`:  getProjectCashFlowResult 
+  - `营业收入、税金、附加和增值税估算`:  getIncomeTaxResult 
+- Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
+
+获取优化方案 resultType 对应的财务评估结果。
+
+```python showLineNumbers
+dslabResult.GetFinancialResult(resultType)
+```
+
+### `dslabResult.GetOverviewResult()`
+
+- Returns: [List][List] 返回该方案对应的概览结果
+
+获取当前结果类对应的概览结果。
+
+```python showLineNumbers
+dslabResult.GetOverviewResult()
+```
+
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
 [Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers
 [Float]: https://docs.python.org/3.8/c-api/float.html
@@ -287,3 +335,4 @@ dslabFinancialAnalysisModel.run(planID)
 [Boolean]: https://docs.python.org/3.8/c-api/bool.html
 [List]: https://docs.python.org/3.8/tutorial/introduction.html#lists
 [Dict]: https://docs.python.org/3.8/tutorial/datastructures.html#dictionaries
+[Enum]: https://docs.python.org/3.8/library/enum.html
