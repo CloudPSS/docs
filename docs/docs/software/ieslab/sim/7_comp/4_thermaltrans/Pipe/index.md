@@ -21,7 +21,7 @@ tags:
 > $$ T_{end} = T_{a} + \left( T_{start} - T_{a} \right)e^{- \frac{\lambda l}{cm} } $$
 > 式中,T1代表管道的起点温度，T2代表管道的终点温度(℃)，cp代表流体的定压比热容(J/(kg·℃))，Ta代表环境温度(℃)，K代表换热系数(W/(m·K))
 
-![管道](./IES-HD-3Pipe.png )
+![管道 =x200](./IES-HD-3Pipe.png )
 
 ## 元件说明
 
