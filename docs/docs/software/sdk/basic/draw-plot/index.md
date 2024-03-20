@@ -61,7 +61,7 @@ if __name__ == '__main__':
             plt.xlabel('Time/s')
 ```
 
-![alt text](image-0.png)
+![使用 matplotlib 绘制曲线](image-0.png "使用 matplotlib 绘制曲线")
 
 ## 使用 plotly 绘制曲线
 
@@ -110,5 +110,5 @@ if __name__ == '__main__':
         fig.show()
 ```
 
-![alt text](image-1.png)
+![使用 plotly 绘制曲线](image-1.png "使用 plotly 绘制曲线")
 
