@@ -60,7 +60,7 @@ sidebar_position: 40
 
 #### 显示全部
 
-勾选**显示全部**后，会把用户在XStudio中执行过的所有任务的结果都加载进来，除了 SimStudio 外，还包括 FuncStudio 中执行过的任务结果。
+勾选**显示全部**后，会把用户在 XStudio 中执行过的所有任务的结果都加载进来，除了 SimStudio 外，还包括 FuncStudio 中函数执行过的任务结果。
 
 #### 删除
 
