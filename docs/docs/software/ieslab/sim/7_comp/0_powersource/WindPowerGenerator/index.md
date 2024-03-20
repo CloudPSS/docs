@@ -32,7 +32,7 @@ $$P=\frac{u^3}{(u_R^3-u_{ci}^3 )}P_R-\frac{u_{ci}^3}{(u_R^3-u_ci^3 )}P_R\qquad(u
 
 式中，u为风机轮毂高度处的风速；$u_{ci}$为切入风速；$u_{co}$为切出风速；$u_R$为额定风速；$P_R$为额定输出功率
 
-![风机](./IES-Generator-2WT.png )
+![风机 =x300](./IES-Generator-2WT.png )
 
 
 ## 元件说明
