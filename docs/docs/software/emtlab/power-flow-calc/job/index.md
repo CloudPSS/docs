@@ -24,7 +24,10 @@ EMTLab 提供的潮流计算计算方案设置功能。
 - 潮流计算中暂不考虑静态负载的功率特性。
 :::
 #### 元件的相关设置
-进行潮流计算前，需要对元件的初值和节点类型进行设置，单电气端口的元件潮流计算的相关设置如下所示：
+进行潮流计算前，需要对元件的初值和节点类型进行设置。
+:::info
+单电气端口的元件潮流计算的相关设置如下所示：
+:::
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -54,6 +57,8 @@ import TabItem from '@theme/TabItem';
 | Rated Active Power (3 Phase) | MW | 额定有功功率 | 潮流计算时节点消耗有功功率 |
 | Rated Reactive Power (3 Phase) | MVar | 额定无功功率，感性负荷为正 | 潮流计算时节点消耗无功功率 |
 | Initial Voltage | p.u. | 初始电压幅值，由潮流计算决定 | 潮流计算后迭代的节点电压有名值会换算为标幺值，潮流回写时修改该参数 |
+
+更多静态负载的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
 
 </TabItem>
 <TabItem value="case3" label="三相交流电压源">
@@ -91,6 +96,8 @@ import TabItem from '@theme/TabItem';
 | Upper Reactive Power Limit| MVar | 无功功率上限 | **PV** 节点和**平衡节点**的注入无功上界，越界后该节点由电压约束转为无功约束 |
 | Bus Voltage Angle | Deg | 母线电压相位 | **平衡节点**的相角 |
 
+更多同步发电机的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
+
 </TabItem>
 <TabItem value="case5" label="并联电容/电抗器">
 并联电容/电抗器需要设置的参数值如下图所示，具体的参数说明可见表格：
@@ -105,36 +112,115 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
+:::info
 多电气端口的元件潮流计算的相关设置如下所示：
+:::
 
 <Tabs>
 <TabItem value="case1" label="三相传输线">
 三相传输线需要设置的参数值如下图所示，具体的参数说明可见表格：
 
+![三相传输线潮流参数设置 =x500](./line-setting.png)
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Length of Line | km | 线路长度 | 用于计算传输线总电阻 R、总电抗 X 和总对地电纳 B |
+| Parameter Format |  | 参数输入方式，可选择标幺值或有名值 | 计算传输线总电阻 R、总电抗 X 和总对地电纳 B 时，标幺值会根据额定电压和额定容量转换为有名值 |
+| Has the Data Been Corrected for Long Line Effects? |  | 填入的线路参数是否已进行过长导线修正 | 如果选择 No，计算传输线总电阻 R、总电抗 X 和总对地电纳 B 时，会进行相应的参数修正 |
+| Rated Voltage (L-L, RMS) | kV | 额定电压 | 选择参数输入方式为标幺值时启用，用于将标幺值转换为有名值 |
+| Rated Power Capacity | MVA | 额定容量 | 选择参数输入方式为标幺值时启用，用于将标幺值转换为有名值 |
+| +/- Seq. Resistance | p.u./km | 单位长度正序电阻 | 选择参数输入方式为标幺值时启用，用于计算传输线总电阻 R |
+| +/- Seq. Inductive Reactance | p.u./km | 单位长度正序电抗 | 选择参数输入方式为标幺值时启用，用于计算传输线总电抗 X |
+| +/- Seq. Capacitive Susceptance | p.u./km | 单位长度正序电纳 | 选择参数输入方式为标幺值时启用，用于计算传输线总对地电纳 B |
+| +/- Seq. Resistance | Ω/km | 单位长度正序电阻 | 选择参数输入方式为有名值时启用，用于计算传输线总电阻 R |
+| +/- Seq. Inductive Reactance | Ω/km | 单位长度正序感抗 | 选择参数输入方式为有名值时启用，用于计算传输线总电抗 X |
+| +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 选择参数输入方式为有名值时启用，用于计算传输线总对地电纳 B |
 
+更多三相传输线的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
 
 </TabItem>
 <TabItem value="case2" label="三相电阻">
+三相电阻需要设置的参数值如下图所示，具体的参数说明可见表格：
+
+![三相电阻潮流参数设置](./resistor-setting.png)
+
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Dimension |  | 单相电阻或是三相电阻 | 潮流计算仅支持三相电阻 |
+| Resistance | Ω | （每相）电阻值 | 用于计算潮流中的线路电阻 |
 
 </TabItem>
 <TabItem value="case3" label="三相电感">
+三相电感需要设置的参数值如下图所示，具体的参数说明可见表格：
+
+![三相电感潮流参数设置](./inductor-setting.png)
+
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Dimension |  | 单相电感或是三相电感 | 潮流计算仅支持三相电感 |
+| Inductance | H | （每相）电感值 | 用于计算潮流中的线路电抗 |
 
 </TabItem>
 <TabItem value="case4" label="三相电容">
+三相电容需要设置的参数值如下图所示，具体的参数说明可见表格：
+
+![三相电容潮流参数设置](./capacitor-setting.png)
+
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Dimension |  | 单相电容或是三相电容 | 潮流计算仅支持三相电容 |
+| Capacitance | μF | （每相）电容值 | 用于计算潮流中的线路电抗 |
 
 </TabItem>
 <TabItem value="case5" label="三相双绕组变压器">
+三相双绕组变压器需要设置的参数值如下图所示，具体的参数说明可见表格：
+
+![三相双绕组变压器潮流参数设置 =x500](./transformer-3p-2w-setting.png)
+
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Rated Power | MVA	 | 变压器每侧绕组的额定容量 | 用于标幺值转换为有名值 |
+| Winding #1 Rated Voltage (L-L, RMS) | kV | 绕组#1额定线电压有效值 | 用于标幺值转换为有名值和计算变压器变比 |
+| Winding #2 Rated Voltage (L-L, RMS) | kV | 绕组#2额定线电压有效值 | 用于计算变压器变比 |
+| Winding #1 Type |  | 绕组#1连接类型为星形(Y)或三角形(Delta) | 用于计算潮流中的移相角度 |
+| Winding #2 Type |  | 绕组#2连接类型为星形(Y)或三角形(Delta) | 用于计算潮流中的移相角度 |
+| Delta Lags or Leads Y |  | Delta绕组连接方式 | 选择Delta连接绕组电压超前或滞后Y连接绕组电压30°，仅当有绕组为三角形连接时有效，用于计算潮流中的移相角度 |
+| Positive Sequence Leakage Reactance | p.u. | 正序漏电抗 | 用于计算潮流中的线路电抗 |
+| Positive Sequence Leakage Resistance | p.u. | 正序漏电阻 | 用于计算潮流中的线路电阻 |
+| Tap Changer |  | 选择变压器分接头位置（无/绕组1/绕组2）| 用于计算变压器变比 |
+| Initial Tap Ratio |  | 填写变压器初始的分接头档位下的标幺值变比| 用于计算变压器变比 |
 
 </TabItem>
 <TabItem value="case6" label="三相三绕组变压器">
+三相三绕组变压器需要设置的参数值如下图所示，具体的参数说明可见表格：
 
+![三相三绕组变压器潮流参数设置 =x600](./transformer-3p-3w-setting.png)
+
+| 参数名称 | 单位 | 备注 | 说明 |
+| :--- | :--- | :--- | :--- |
+| Winding #1 Rated Power | MVA | 绕组 #1 额定容量 | 取绕组 #1、#2 和 #3 中的容量最大值求解线路电阻和线路电抗 |
+| Winding #2 Rated Power | MVA | 绕组 #2 额定容量 | 取绕组 #1、#2 和 #3 中的容量最大值求解线路电阻和线路电抗 |
+| Winding #3 Rated Power | MVA | 绕组 #3 额定容量 | 取绕组 #1、#2 和 #3 中的容量最大值求解线路电阻和线路电抗 |
+| Base Operation Frequency | Hz | 额定频率 | 用于设置中心母线的频率 |
+| Winding #1 Rated Voltage (L-L, RMS) | kV | 绕组 #1 额定线电压有效值 | 用于求解中心母线与绕组 #1 间的变比 |
+| Winding #2 Rated Voltage (L-L, RMS) | kV | 绕组 #2 额定线电压有效值 | 用于求解中心母线与绕组 #2 间的变比 |
+| Winding #3 Rated Voltage (L-L, RMS) | kV | 绕组 #3 额定线电压有效值 | 用于求解中心母线与绕组 #2 间的变比 |
+| Winding #1 Type |  | 选择绕组 #1 的连接类型为星形(Y)或三角形(Delta) | 用于求解中心母线与绕组 #1 间的移相角度 |
+| Winding #2 Type |  | 选择绕组 #2 的连接类型为星形(Y)或三角形(Delta) | 用于求解中心母线与绕组 #2 间的移相角度 |
+| Winding #3 Type |  | 选择绕组 #3 的连接类型为星形(Y)或三角形(Delta) | 用于求解中心母线与绕组 #3 间的移相角度 |
+| Delta Lags or Leads Y |  | 选择Delta连接绕组电压超前或滞后Y连接绕组电压30°，仅当有绕组为三角形连接时起作用 | 用于求解中心母线与绕组间的移相角度 |
+| Tap Changer |  | 选择变压器分接头位置（无/绕组1/绕组2） | 用于计算中心母线与绕组间的变比 |
+| Initial Tap Ratio |  | 填写变压器初始的分接头档位下的标幺值变比 | 用于计算中心母线与绕组间的变比 |
+| Center Bus Voltage Magnitude | p.u. | 中心节点电压幅值 | 用于设置中心母线的初始电压，潮流回写时修改该参数 |
+| Center Bus Voltage Angle | Deg | 中心节点电压相角 | 用于设置中心母线的初始相角，潮流回写时修改该参数 |
+
+更多三相三绕组变压器的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
 
 </TabItem>
 </Tabs>
 
-
-
 ### 潮流计算方案的参数设置
+满足潮流计算基本要求后，可对潮流计算方案进行设置
+
 #### 初始设置
 
 #### 约束设置
