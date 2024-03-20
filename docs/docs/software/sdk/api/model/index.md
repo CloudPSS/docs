@@ -543,7 +543,7 @@ topology=revision.fetchTopology(maximumDepth=2)
 
 获取当前版本的实现。
 
-```python
+```python showLineNumbers
 revision.getImplements()
 ```
 

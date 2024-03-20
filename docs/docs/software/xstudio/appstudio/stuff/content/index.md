@@ -1,8 +1,9 @@
 ---
-title: INPUT 类
-description: INPUT 类
-sidebar_position: 10
+title: CONTENT 类
+description: CONTENT 类
+sidebar_position: 20
 ---
+
 
 import DocCardList from '@theme/DocCardList';
 
