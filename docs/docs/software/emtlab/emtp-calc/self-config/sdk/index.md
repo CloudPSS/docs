@@ -24,7 +24,7 @@ sidebar_position: 400
 
 ![总览标签页信息填写 =x430](./summary.png)
 
-### <span id="jump">导入元件编译产物</span>
+### 导入元件编译产物
 
 点击**实现标签页**，选择**电磁暂态**，将使用 EMTLab Core SDK 生成的 .so 编译产物拖放至电磁暂态实现框中。其中 ClassName 会根据上传的 .so 文件名自动生成，而 SubType 需要填写，表示元件的类型，大于 0 为电气元件，小于 0 为控制元件。
 
@@ -133,7 +133,7 @@ private:
 
 #endif
 ```
-代码的具体含义可参阅 [EMTLab Core SDK](../../../sdk/emtlab-core-sdk/index.md)帮助文档，本处不在赘述。
+代码的具体含义可参阅 [EMTLab Core SDK](../../../sdk/emtlab-core-sdk/index.md) 帮助文档，本处不在赘述。
 
 (2) .cpp 文件编写  
 在 EMTLab Core SDK 所在文件夹下新建 _Inductance_demo.cpp 文件，在该文件中添加如下代码：
@@ -280,7 +280,7 @@ set_warnings("all")
 add_linkdirs("/usr/local/lib/octave/6.3.0/")
 add_links("CloudPSSCore");
 ```
-使用docker容器进行代码编译，代码 .so 编译产物会生成在 build 文件夹下，按照 [导入元件编译产物](#jump) 方法进行导入，并保存元件。
+使用docker容器进行代码编译，代码 .so 编译产物会生成在 build 文件夹下，按照 [导入元件编译产物](#导入元件编译产物)  方法进行导入，并保存元件。
 
 #### 元件调试
 在SimStudio 工作台新建仿真项目，在**实现标签页**点击**模型**，在**用户名/自定义元件**标签下选中**单相电感demo**,拖拽至图纸中，开始构建测试算例，本案例构建的测试算例如下图所示：
