@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[43138],{74826:function(s){s.exports=JSON.parse('{"label":"update-notes","permalink":"/docs/blog/tags/update-notes","allTagsPath":"/docs/blog/tags","count":5,"unlisted":false}')}}]);

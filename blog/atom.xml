@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://docs.cloudpss.net/docs/blog</id>
+    <title>CloudPSS 文档 Blog</title>
+    <updated>2023-03-31T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://docs.cloudpss.net/docs/blog"/>
+    <subtitle>CloudPSS 文档 Blog</subtitle>
+    <icon>https://docs.cloudpss.net/docs/icons/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[2023.3.31 更新日志]]></title>
+        <id>https://docs.cloudpss.net/docs/blog/2023/03/31/update</id>
+        <link href="https://docs.cloudpss.net/docs/blog/2023/03/31/update"/>
+        <updated>2023-03-31T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[SimStudio 更新至 v3.5.0 版本]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_vHye" id="simstudio-更新至-v350-版本">SimStudio 更新至 v3.5.0 版本<a href="https://docs.cloudpss.net/docs/blog/2023/03/31/update#simstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v350-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="SimStudio 更新至 v3.5.0 版本的直接链接" title="SimStudio 更新至 v3.5.0 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>SimStudio 接入了全新任务管理服务和消息流服务：</p>
+<ol>
+<li>
+<p>SimStudio 中的计算功能支持从 FuncStudio 动态读取可用的计算方案列表；</p>
+</li>
+<li>
+<p>支持读取任务管理服务设置的任务策略，支持选择计算节点、计算资源和任务优先级</p>
+</li>
+<li>
+<p>支持从消息流服务读取任务输出，支持断点续传功能，用户运行计算任务后，可关闭当前页面，在后续打开时再次接收和查看结果。</p>
+</li>
+</ol>
+</li>
+<li>
+<p>添加了线形元件支持，可以将两端口元件转换为连接线形式。支持设置线条路由类型（无/正交）、连接类型（无/平滑/圆角）属性</p>
+<figure><img decoding="async" loading="lazy" alt="普通元件转换��为线性元件功能示例" src="https://docs.cloudpss.net/docs/assets/images/%E6%99%AE%E9%80%9A%E5%85%83%E4%BB%B6%E8%BD%AC%E6%8D%A2%E4%B8%BA%E7%BA%BF%E6%80%A7%E5%85%83%E4%BB%B6%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B-f22c2126764f78e823f7ec961ca712f1.png" width="938" height="765" class="img_FMFf"><figcaption>普通元件转换为线性元件功能示例</figcaption></figure>
+</li>
+<li>
+<p>在“实现”页面的“图纸选项”中，新增开启/关闭“引脚标签”显示选项。</p>
+<figure><img decoding="async" loading="lazy" alt="引脚标签显示开关" src="data:image/png;base64,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" width="327" height="254" class="img_FMFf"><figcaption>引脚标签显示开关</figcaption></figure>
+</li>
+<li>
+<p>更新了结果页面的显示功能和性能：</p>
+<ol>
+<li>
+<p>重构计算结果展示页面，优化了图形渲染性能；</p>
+</li>
+<li>
+<p>新增对复杂样式设置的支持；</p>
+</li>
+<li>
+<p>添加了多标签页功能，支持在计算结果展示页面显示拓扑标签页，支持在拓扑标签页中搜索和定位元件；</p>
+</li>
+<li>
+<p>多标签容器支持垂直标签布局；</p>
+</li>
+<li>
+<p>添加树形容器；</p>
+</li>
+<li>
+<p>新增对更多类型绘图接口的支持；</p>
+</li>
+<li>
+<p>新增将表格类结果导出为 CSV 文件的功能；</p>
+</li>
+<li>
+<p>新增将结果整体导出为 ZIP 文件的功能（见结果页面右上角“…”按钮）；</p>
+<figure><img decoding="async" loading="lazy" alt="导出为ZIP文件功能示例" src="https://docs.cloudpss.net/docs/assets/images/%E5%AF%BC%E5%87%BA%E4%B8%BAZIP%E6%96%87%E4%BB%B6%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B-0667d749e7b43527eaebeea163362184.png" width="1566" height="851" class="img_FMFf"><figcaption>导出为ZIP文件功能示例</figcaption></figure>
+</li>
+</ol>
+</li>
+<li>
+<p>在“运行”页面的计算结果页面支持在新窗口中打开（见结果页面右上角“…”按钮）。</p>
+<figure><img decoding="async" loading="lazy" alt="“在新窗口中打开”功能示例" src="https://docs.cloudpss.net/docs/assets/images/%E2%80%9C%E5%9C%A8%E6%96%B0%E7%AA%97%E5%8F%A3%E4%B8%AD%E6%89%93%E5%BC%80%E2%80%9D%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B-ff51fbfc40615c720ce8a93918d9120f.png" width="1562" height="840" class="img_FMFf"><figcaption>“在新窗口中打开”功能示例</figcaption></figure>
+</li>
+<li>
+<p>优化了“打开”对话框的性能；</p>
+</li>
+<li>
+<p>搜索功能更新，新增 <code>&lt;参数名/引脚名&gt;=&lt;keywords&gt;</code> 语法，支持对特定参数、特定连接关系的元件和值进行搜索定位。</p>
+<figure><img decoding="async" loading="lazy" alt="搜索功能示例" src="data:image/png;base64,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" width="457" height="181" class="img_FMFf"><figcaption>搜索功能示例</figcaption></figure>
+</li>
+<li>
+<p>优化错误检查性能，修复错误过多时无法显示的问题。</p>
+</li>
+<li>
+<p>支持打开历史运行结果及拓扑快照的功能；在打开的快照中，可以获取当次运行结果及其对应的算例拓扑、参数。</p>
+<figure><img decoding="async" loading="lazy" alt="“打开运行快照”功能示例" src="https://docs.cloudpss.net/docs/assets/images/%E2%80%9C%E6%89%93%E5%BC%80%E8%BF%90%E8%A1%8C%E5%BF%AB%E7%85%A7%E2%80%9D%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B-aa06955a559ba0b78ccdd6f2184de4cd.png" width="442" height="736" class="img_FMFf"><figcaption>“打开运行快照”功能示例</figcaption></figure>
+</li>
+<li>
+<p>优化了选择、多选控件在选项过多时的性能。</p>
+</li>
+<li>
+<p>元件库的“模块-基础”分组新增“模块虚拟端口”元件，为封装后的模块提供虚拟端口。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="用户中心更新至-v350-版本">用户中心更新至 v3.5.0 版本<a href="https://docs.cloudpss.net/docs/blog/2023/03/31/update#%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E6%9B%B4%E6%96%B0%E8%87%B3-v350-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="用户中心更新至 v3.5.0 版本的直接链接" title="用户中心更新至 v3.5.0 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>管理员账户新增任务管理、节点管理、策略管理功能。</p>
+</li>
+<li>
+<p>修复界面显示 app 数据无过滤的问题。</p>
+</li>
+<li>
+<p>修复 cloudpss-doc 未安装时导致搜索结果失效的问题。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="cloudpss-sdk-更新至-v310-版本">CloudPSS SDK 更新至 v3.1.0 版本<a href="https://docs.cloudpss.net/docs/blog/2023/03/31/update#cloudpss-sdk-%E6%9B%B4%E6%96%B0%E8%87%B3-v310-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="CloudPSS SDK 更新至 v3.1.0 版本的直接链接" title="CloudPSS SDK 更新至 v3.1.0 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p><code>Runner</code> 类添加 <code>terminate</code> 方法，用以结束当前运行的任务。</p>
+</li>
+<li>
+<p><code>cloudpss</code> 命名空间下新加 <code>currentJob</code>，用以获取当前的 <code>FunctionExecution</code> 实例</p>
+</li>
+<li>
+<p><code>cloudpss.function</code> 新增 <code>FunctionExecution</code> 类，代替原 <code>Job</code> 类，优化了 <code>FunctionExecution</code> 类中方法名称，使之更符合规范。以下是 <code>FunctionExecution</code> 类与原 <code>Job</code> 类之间的对应变化关系。原 <code>Job</code> 类将在未来版本停止兼容。</p>
+</li>
+</ol>
+<figure><img decoding="async" loading="lazy" alt="FuncStudio SDK 更新明细" src="https://docs.cloudpss.net/docs/assets/images/FuncStudioSDK%E6%9B%B4%E6%96%B0%E6%98%8E%E7%BB%86-0fbb531b2683ea797c2aa95675624cf5.png" width="720" height="759" class="img_FMFf"><figcaption>FuncStudio SDK 更新明细</figcaption></figure>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="cloudpss-官方计算功能更新">CloudPSS 官方计算功能更新<a href="https://docs.cloudpss.net/docs/blog/2023/03/31/update#cloudpss-%E5%AE%98%E6%96%B9%E8%AE%A1%E7%AE%97%E5%8A%9F%E8%83%BD%E6%9B%B4%E6%96%B0" class="hash-link" aria-label="CloudPSS 官方计算功能更新的直接链接" title="CloudPSS 官方计算功能更新的直接链接">​</a></h2>
+<ol>
+<li>
+<p>潮流计算内核新增“生成潮流文件”功能，可基于 CloudPSS 算例生成 IEEE 格式的潮流计算文件。</p>
+<figure><img decoding="async" loading="lazy" alt="IEEE 格式潮流计算文件生成功能示例" src="https://docs.cloudpss.net/docs/assets/images/IEEE%E6%A0%BC%E5%BC%8F%E6%BD%AE%E6%B5%81%E8%AE%A1%E7%AE%97%E6%96%87%E4%BB%B6%E7%94%9F%E6%88%90%E5%8A%9F%E8%83%BD%E7%A4%BA%E4%BE%8B-eb9c43ac9837aa68d6dd67bcc1cf44ec.png" width="910" height="277" class="img_FMFf"><figcaption>IEEE 格式潮流计算文件生成功能示例</figcaption></figure>
+</li>
+<li>
+<p>电磁暂态仿真官方元件库新增元件24个，包括频率相关架空线、频率相关地缆线、频率相关等值网络、多维RLC元件、励磁设备电压补偿环节 GVCOMPEN、BPA励磁控制器FM~FT卡、BPA励磁控制器FU~FV卡、基于注入谐波源的扫频模块、双端LCC直流模型、单极双端LCC直流模型、直驱风场等值模型、含外部控制的直驱风场等值模型、双馈风场等值模型、含外部控制的双馈风场等值模型、含外部控制的光伏模型、MMC直流单端模块、MMC半桥子模块、阶梯函数发生器、多维常量输入、多维单步长延时模块、多维代数解环点、数据提取模块、状态空间方程模型、事件日志元件。</p>
+</li>
+<li>
+<p>其他</p>
+<ol>
+<li>
+<p>修复了变压器电磁暂态仿真模型中分接头切换导致的数值问题。</p>
+</li>
+<li>
+<p>对三相可控静态负载元件新增了部分参数及状态监测。</p>
+</li>
+<li>
+<p>对三相断路器元件新增了部分参数及状态监测。</p>
+</li>
+</ol>
+</li>
+</ol>]]></content>
+        <author>
+            <name>Song Yankan</name>
+        </author>
+        <category label="update-notes" term="update-notes"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2022.6.23 更新日志]]></title>
+        <id>https://docs.cloudpss.net/docs/blog/2022/06/23/update</id>
+        <link href="https://docs.cloudpss.net/docs/blog/2022/06/23/update"/>
+        <updated>2022-06-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[SimStudio 更新至 v3.3.1 版本]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_vHye" id="simstudio-更新至-v331-版本">SimStudio 更新至 v3.3.1 版本<a href="https://docs.cloudpss.net/docs/blog/2022/06/23/update#simstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v331-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="SimStudio 更新至 v3.3.1 版本的直接链接" title="SimStudio 更新至 v3.3.1 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>在“实现”标签页中，新增“地理信息图”层级，支持导入并查看 svg 格式的地理信息图纸。</p>
+</li>
+<li>
+<p>在元件表功能中，新增导出数据至 .xlsx 文件的功能。</p>
+</li>
+<li>
+<p>搜索框支持加载更多搜索结果。</p>
+</li>
+<li>
+<p>优化了打开 SimStudio 工程时的元件加载性能。</p>
+</li>
+<li>
+<p>修复了元件在自环连接方式下复制粘贴出错的问题。</p>
+</li>
+<li>
+<p>修复了 Merge 等动态引脚元件在使用表达式作为参数时出错的问题。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="funcstudio-更新至-v331-版本">FuncStudio 更新至 v3.3.1 版本<a href="https://docs.cloudpss.net/docs/blog/2022/06/23/update#funcstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v331-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="FuncStudio 更新�至 v3.3.1 版本的直接链接" title="FuncStudio 更新至 v3.3.1 版本的直接链接">​</a></h2>
+<ol>
+<li>修复了执行器的安全漏洞。</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="appstudio-更新至-v331-版本">AppStudio 更新至 v3.3.1 版本<a href="https://docs.cloudpss.net/docs/blog/2022/06/23/update#appstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v331-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="AppStudio 更新至 v3.3.1 版本的直接链接" title="AppStudio 更新至 v3.3.1 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>优化了控件的颜色/背景输入，支持了颜色选择器，新增上传自定义背景图片的功能。</p>
+</li>
+<li>
+<p>修复了输入框输入事件的重复触发问题。</p>
+</li>
+<li>
+<p>修复了选择器、单选框控件在添加新控件时的内容丢失问题。</p>
+</li>
+<li>
+<p>修复了部分控件设置项失效的问题，添加了部分新设置项。</p>
+</li>
+</ol>]]></content>
+        <author>
+            <name>Song Yankan</name>
+        </author>
+        <category label="update-notes" term="update-notes"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2022.5.23 更新日志]]></title>
+        <id>https://docs.cloudpss.net/docs/blog/2022/05/23/update</id>
+        <link href="https://docs.cloudpss.net/docs/blog/2022/05/23/update"/>
+        <updated>2022-05-23T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[用户中心更新至 v3.0.15 版本]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_vHye" id="用户中心更新至-v3015-版本">用户中心更新至 v3.0.15 版本<a href="https://docs.cloudpss.net/docs/blog/2022/05/23/update#%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E6%9B%B4%E6%96%B0%E8%87%B3-v3015-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="用户中心更新至 v3.0.15 版本的直接链接" title="用户中心更新至 v3.0.15 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>增加了对软硬件一体化设备（CloudPSS Pro/Mini）最大注册数量显示支持。</p>
+</li>
+<li>
+<p>增加了 node-deb 组件支持。</p>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="simstudio-更新至-v324-版本">SimStudio 更新至 v3.2.4 版本<a href="https://docs.cloudpss.net/docs/blog/2022/05/23/update#simstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v324-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="SimStudio 更新至 v3.2.4 版本的直接链接" title="SimStudio 更新至 v3.2.4 版本的直接链接">​</a></h2>
+<ol>
+<li>大幅度优化了示波器输出通道配置页面的通道选择性能，解决了输出通道数量多时的卡顿问题。</li>
+</ol>]]></content>
+        <author>
+            <name>Song Yankan</name>
+        </author>
+        <category label="update-notes" term="update-notes"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2022.4.13 更新日志]]></title>
+        <id>https://docs.cloudpss.net/docs/blog/2022/04/13/update</id>
+        <link href="https://docs.cloudpss.net/docs/blog/2022/04/13/update"/>
+        <updated>2022-04-13T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[用户中心更新至 v3.0.13 版本]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_vHye" id="用户中心更新至-v3013-版本">用户中心更新至 v3.0.13 版本<a href="https://docs.cloudpss.net/docs/blog/2022/04/13/update#%E7%94%A8%E6%88%B7%E4%B8%AD%E5%BF%83%E6%9B%B4%E6%96%B0%E8%87%B3-v3013-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="用户中心更新至 v3.0.13 版本的直接链接" title="用户中心更新至 v3.0.13 版本的直接链接">​</a></h2>
+<p>拆分了 SimStudio 算例文件的“上传并打开”按钮，使用上传算例压缩包可批量导入嵌套依赖的算例（zip 格式），使用上传项目文件可导入单个算例（.cmdl 格式）。</p>]]></content>
+        <author>
+            <name>Song Yankan</name>
+        </author>
+        <category label="update-notes" term="update-notes"/>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[2022.4.11 更新日志]]></title>
+        <id>https://docs.cloudpss.net/docs/blog/2022/04/11/update</id>
+        <link href="https://docs.cloudpss.net/docs/blog/2022/04/11/update"/>
+        <updated>2022-04-11T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[SimStudio 更新至 v3.2.1 版本]]></summary>
+        <content type="html"><![CDATA[<h2 class="anchor anchorWithStickyNavbar_vHye" id="simstudio-更新至-v321-版本">SimStudio 更新至 v3.2.1 版本<a href="https://docs.cloudpss.net/docs/blog/2022/04/11/update#simstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v321-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="SimStudio 更新至 v3.2.1 版本的直接链接" title="SimStudio 更新至 v3.2.1 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>新增了外部触发式和固定频率触发式的 Octave 元件及其模板算例，相比每时步触发计算的 Octave 元件，计算方式更灵活，效率更高。</p>
+<ol>
+<li>
+<p>固定频率触发式 Octave 元件默认自带 Trigger 参数组和 Trigger 参数（触发频率[Hz]），通过设置触发计算频率 Trigger 实现固定频率触发计算。</p>
+</li>
+<li>
+<p>外部触发式 Octave 元件自带默认自带 Trigger 参数组和 Trigger 虚拟输入引脚（外部触发信号输入端口[上升沿触发]），通过在外部给定上升沿信号实现条件触发计算。<a href="https://cloudpss.net/model/songyankan/test_Octave_Gain_Trigger" target="_blank" rel="noopener noreferrer">示例算例</a></p>
+</li>
+</ol>
+</li>
+<li>
+<p>修复了 Octave 元件报错提示显示异常的问题。</p>
+</li>
+<li>
+<p>新增了多级嵌套算例的快捷导入导出功能。若当前用户拥有算例全部自定义子元件/算例的可读权限时，在个人中心中可对该算例及其依赖元件/算例进行批量导出和导入。</p>
+<figure><img decoding="async" loading="lazy" alt="批量导出按键" src="https://docs.cloudpss.net/docs/assets/images/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%87%BA%E6%8C%89%E9%94%AE-38bd409813630065bd1b9506bb7e8b10.png" width="977" height="326" class="img_FMFf"><figcaption>批量导出按键</figcaption></figure>
+<figure><img decoding="async" loading="lazy" alt="批量导入按键" src="https://docs.cloudpss.net/docs/assets/images/%E6%89%B9%E9%87%8F%E5%AF%BC%E5%85%A5%E6%8C%89%E9%94%AE-9891c333d2a245d4477439fd842651d2.png" width="1298" height="248" class="img_FMFf"><figcaption>批量导入按键</figcaption></figure>
+<div class="theme-admonition theme-admonition-tip admonition_gicU alert alert--success"><div class="admonitionHeading_PRbZ"><span class="admonitionIcon_tJeq"><svg viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>提示</div><div class="admonitionContent_O7U3"><p>可读权限定义为以下2种情况：</p><ol>
+<li>模块/算例为当前用户所有；</li>
+<li>模块/算例非当前用户所有，但模块/算例的权限为“公开”，且已勾选“允许查看内部细节”。</li>
+</ol></div></div>
+<div class="theme-admonition theme-admonition-warning admonition_gicU alert alert--warning"><div class="admonitionHeading_PRbZ"><span class="admonitionIcon_tJeq"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>注意</div><div class="admonitionContent_O7U3"><p>批量导入算例时，全部依赖的子模块将保存至当前用户名下。若存在 RID 冲突，则会自动覆盖 RID 相同的算例。请谨慎使用。</p></div></div>
+</li>
+</ol>
+<h2 class="anchor anchorWithStickyNavbar_vHye" id="appstudio-更新至-v320-版本">AppStudio 更新至 v3.2.0 版本<a href="https://docs.cloudpss.net/docs/blog/2022/04/11/update#appstudio-%E6%9B%B4%E6%96%B0%E8%87%B3-v320-%E7%89%88%E6%9C%AC" class="hash-link" aria-label="AppStudio 更新至 v3.2.0 版本的直接链接" title="AppStudio 更新至 v3.2.0 版本的直接链接">​</a></h2>
+<ol>
+<li>
+<p>改善了 AppStudio 和 SimStudio 在参数输入框中编辑复杂表达式的体验。在表达式输入模式下，选中输入框后，按 <kbd>Ctrl</kbd> 可呼出输入框的扩展编辑界面。在扩展编辑界面中，支持输入和编辑多行复杂表达式。</p>
+<figure><img decoding="async" loading="lazy" alt="扩展输入界面" src="https://docs.cloudpss.net/docs/assets/images/%E6%89%A9%E5%B1%95%E8%BE%93%E5%85%A5%E7%95%8C%E9%9D%A2-be70450c0e39af4f6d55374ff9a617c9.png" width="1920" height="969" class="img_FMFf"><figcaption>扩展输入界面</figcaption></figure>
+</li>
+</ol>]]></content>
+        <author>
+            <name>Song Yankan</name>
+        </author>
+        <category label="update-notes" term="update-notes"/>
+    </entry>
+</feed>

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[1734],{79697:function(e){e.exports=JSON.parse('{"permalink":"/docs/blog/tags/update-notes","page":1,"postsPerPage":10,"totalPages":1,"totalCount":5,"blogDescription":"CloudPSS \u535a\u5ba2","blogTitle":"\u535a\u5ba2"}')}}]);
