@@ -1,6 +1,6 @@
 ---
 title: 个人中心
-description: SimStudio 个人中心功能
+description: SimStudio 个人中心
 sidebar_position: 30
 ---
 

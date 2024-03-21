@@ -47,9 +47,18 @@ SimStudio 支持模块的多层嵌套，接口标签页可以实现模块嵌套�
 
 用户可通过预览功能及时查看模块参数配置以及各部分联动是否正常。
 
+
 ## 案例
 
-### 元件项目接口配置
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="案例1">
+
+元件项目接口配置
 
 ![元件项目](./3.png)
 
+</TabItem>
+</Tabs>
