@@ -67,28 +67,19 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="js" label="案例1">
-
-简单模型项目信息配置
+<TabItem value="js" label="简单模型项目信息配置">
 
 ![简单模型](./1.png)
 
-
 </TabItem>
-<TabItem value="java" label="案例2">
-
-普通模型项目信息配置
+<TabItem value="java" label="普通模型项目信息配置">
 
 ![普通模型](./2.png)
 
 </TabItem>
-<TabItem value="py" label="案例3">
-
-元件模型项目信息配置
+<TabItem value="py" label="元件模型项目信息配置">
 
 ![元件](./3.png)
-
-
 </TabItem>
 </Tabs>
 

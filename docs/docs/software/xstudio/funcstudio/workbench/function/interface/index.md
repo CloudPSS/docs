@@ -30,9 +30,16 @@ sidebar_position: 20
 
 ## 案例
 
-### 函数输入参数定义
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="函数输入参数定义">
 
 ![函数输入参数定义](./2.png)
+
+</TabItem>
+</Tabs>
 
 ## 常见问题
 

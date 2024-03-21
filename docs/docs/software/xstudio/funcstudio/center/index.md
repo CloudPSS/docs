@@ -1,6 +1,6 @@
 ---
-title: 个人中心功能
-description: FuncStudio 个人中心功能
+title: 个人中心
+description: FuncStudio 个人中心
 sidebar_position: 20
 ---
 
