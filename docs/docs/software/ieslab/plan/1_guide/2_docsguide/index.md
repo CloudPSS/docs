@@ -17,7 +17,7 @@ sidebar_position: 30
 
 欢迎扫码关注 CloudPSS 微信公众号：
 
-![ CloudPSS 微信公众号](./logo.png " CloudPSS 微信公众号")
+![ CloudPSS 微信公众号 x=300](./logo.png " CloudPSS 微信公众号")
 
 ## 综合能源系统
 
@@ -25,8 +25,7 @@ sidebar_position: 30
 
 综合能源系统示意图如下：
 
-![综合能源系统示意图](./IES-structure.png "综合能源系统示意图")
-
+![综合能源系统示意图 x=300](./IES-structure.png "综合能源系统
 综合能源系统的主要特点有：
 
 **耦合**：多种异质能源系统存在耦合关系复杂
