@@ -42,7 +42,7 @@ AppStudio 工作台的功能区可以切换展示总览、资源、场景三个�
 
 描述及文档内容的编写支持`MarkDown`语法，`Markdown`是一种轻量级标记语言，支持文字格式调整，图片、图表、数学公式等的输入。
 
-`MarkDown`语法的介绍详见[MarkDown语法介绍功能帮助]。
+`MarkDown`语法的介绍详见[MarkDown 语法介绍功能帮助](https://markdown.com.cn/)。
 
 ## 案例
 
@@ -52,7 +52,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="js" label="应用项目信息配置">
 
-<!-- ![应用配置](./1.png) -->
+![应用配置](./1.png)
 
 </TabItem>
 </Tabs>
