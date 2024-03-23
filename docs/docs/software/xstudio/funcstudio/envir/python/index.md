@@ -10,7 +10,7 @@ sidebar_position: 20
 
 安装好 FuncStudio 本地执行器后，还需要在配置**本地 python 环境**，因为用户在本地执行的算法内核程序，都需要借助 FuncStudio-SDK (CloudPSS-SDK的一个类)**给内核程序封装输入输出接口**后，才能接入本地执行器，如下图所示。
 
-![借助 FuncStudio-SDK 将内核接入本地执行器](./1.png)
+![借助 FuncStudio-SDK 将内核接入本地执行器 =x300](./1.png)
 
 FuncStudio-SDK 包括从执行器中**获取函数输入参数值的接口**以及在执行器中**格式化输出计算结果的接口**。
 
@@ -25,7 +25,7 @@ Matlab-SDK 在Matlab中启动一个 Python解释器，并且在 Python 解释器
 
 如果用户在本地设备上安装了多个版本的 python，建议使用**虚拟 Python 环境**来管理接入 FuncStudio 的算法内核，创建虚拟 Python 环境是为了让函数项目运行在一个独立的环境中，使得不同环境下的项目互不干扰。虚拟 Python 环境的配置流程如下：
 
-### 安装 `virtualenv`
+### 安装 virtualenv
 
 本地设备中打开终端命令窗口，输入并执行如下命令来安装 Python 的 virtualenv 包。
 
@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="js" label="在本地计算机上创建一个虚拟 Python 环境">
 
-1. 安装 virtualenv
+1.安装 virtualenv
    
 在本地计算机上打开命令窗口，输入并执行如下命令来安装virtualenv 包。
 
@@ -92,7 +92,7 @@ pip install virtualenv
 ```
 ![安装 virtualenv](./2.png)
 
-2. 新建虚拟环境地址
+2.新建虚拟环境地址
    
 比如，新建一个`C:\py37env1`的目录，并在命令窗口中输入并执行如下命令，将当前路径切换到该目录下。
 
@@ -101,7 +101,7 @@ cd C:\py37env1
 ```
 ![切换路径](./3.png)
 
-3. 创建虚拟环境
+3.创建虚拟环境
    
 在命令窗口中输入并执行如下命令:
    
@@ -114,7 +114,7 @@ virtualenv -p D:\python3.7\python.exe cloudpss
 
 ![创建环境](./5.png)
 
-4. 激活虚拟环境
+4.激活虚拟环境
    
 找到`scripts`子目录，将命令窗口的当前路径切换到该目录下，输入并执行`Activate`命令，即可激活虚拟环境。
 
@@ -124,7 +124,7 @@ virtualenv -p D:\python3.7\python.exe cloudpss
 
 ![虚拟环境](./7.png)
 
-5. 安装 CloudPSS SDK
+5.安装 CloudPSS SDK
    
 在命令窗口中执行如下命令:
 
