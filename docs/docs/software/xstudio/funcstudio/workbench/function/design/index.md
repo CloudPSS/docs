@@ -45,6 +45,23 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 详见[本地自定义命令帮助](../design/local/index.md)。
 
 
+:::tip
+
+在实现标签页的命令窗口内输入的执行语句格式固定为：
+
+**‘指定的执行算法内核的虚拟 python 环境’ + 空格 + run.py + 空格 + “Matlab脚本/函数名称”**
+
+即用指定的python环境执行matlab sdk 中的 run.py文件，用run.py文件启动Matlab来执行内核脚本。
+
+以执行上述乘法函数的计算内核为例，先指定python环境 加 run.py，最后加上product这个需要执行的Matlab脚本名称
+
+工作目录就是我们存放product.m文件的位置，也就是matlab sdk 所在的位置。
+
+这样就将本地的Matlab计算内核以一个乘法函数的形式接入到了FuncStudio。
+
+<!-- ![实现](./实现.png "实现") -->
+
+:::
 
 
 
