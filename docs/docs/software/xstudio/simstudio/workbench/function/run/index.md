@@ -31,7 +31,7 @@ sidebar_position: 40
 
 ![参数方案配置](./3.png)
 
-未创建参数列表则无需进行参数配置，参数方案配置的具体使用方法详见[参数方案配置帮助](../../../basic/parameterCalculate/index.md)。
+未创建参数列表则无需进行参数配置，参数方案配置的具体使用方法详见[参数方案配置帮助](/docs/docs/software/xstudio/simstudio/basic/parameterCalculate/index.md)。
 
 #### 计算方案
 
