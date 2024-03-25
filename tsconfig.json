@@ -8,5 +8,6 @@
   "mdx": {
     "plugins": [["remark-frontmatter", "yaml"], "remark-gfm", "remark-directive", "remark-ins", "remark-math"],
     "checkMdx": true
-  }
+  },
+  "include": ["src", "docusaurus", "docusaurus.config.ts"]
 }
