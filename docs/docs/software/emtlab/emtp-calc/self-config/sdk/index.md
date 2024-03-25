@@ -302,59 +302,62 @@ add_links("CloudPSSCore");
 
 ## 常见问题
 前端创建的 C++ 元件的参数与引脚怎么与后端程序进行绑定
-:   
-    .cpp 文件中的 initialComponent 函数的入参 root 为该元件的 JSON 脚本，包含了前端定义的参数和引脚信息。在 initialComponent 函数中，需要定义好元件的电气引脚、控制引脚、元件支路信息和内部监测信号。
-      
-    以案例1的电感元件为例，代码如下。该元件有两个电气引脚（1*1维），没有控制输入引脚和控制输出引脚。按照定义的电气引脚顺序，定义电气节点。电感元件只有一条支路，定义该支路的信息。前台元件参数可通过root脚本获取。内部监测信号则通过定义虚拟引脚进行初始化。
 
-    ```C ++
-    void _Inductance_demo::initialComponent(int id, string name, Json::Value &root) {
-    // nElePort、nCtrlInPort、nCtrlOutPort分别代表电气引脚数量、控制输入引脚数量、控制输出引脚数量
-    type = 22; // 大于0代表电气元件
-    nElePort = 2;
-    nCtrlInPort = 0;
-    nCtrlOutPort = 0;
-    this->id = id;
-    nOrder = 1;
-    mergeRequestNumber = 0;
-    this->name = name;
-    // 定义电气引脚
-    for (int i = 0; i < nElePort; ++i) {
-        char nodeName[100];
-        sprintf(nodeName, "%d", i);
-        // 定义一个tempNode为1*1维的电气引脚
-        EMTPNode tempNode(1, 1, root["pin"][nodeName]);
-        // eleNode为EMTPNode类型的Vector，使用push_back()在向量的末尾添加这个tempNode。
-        eleNode.push_back(tempNode);
-    }
-    // 定义支路信息
-    NodeIdx from;
-    from.init(0, 0);// from.init(0, i)代表这条支路的起始点为0号节点的第i维
-    NodeIdx to;
-    to.init(1, 0);// to.init(1, i)代表这条支路的终止点为1号节点的第i维。
-    branchInfo.push_back(EMTPBranchInfo(from, to)); 
-    // 获取前台元件参数
-    inductanceValue = atof(root["param"]["Inductance"].asCString());
-    // 初始化支路电流、电压等矩阵，必须调用
-    initialMatrix();
-    // 虚拟引脚的初始化
-    DECLAREOUTFLAG(IName) = setOutputVariable(IName, "I", vec(1).zeros(), root);
-    DECLAREOUTFLAG(VName) = setOutputVariable(VName, "V", vec(1).zeros(), root);
-    }
-    ```
+:   
+  .cpp 文件中的 initialComponent 函数的入参 root 为该元件的 JSON 脚本，包含了前端定义的参数和引脚信息。在 initialComponent 函数中，需要定义好元件的电气引脚、控制引脚、元件支路信息和内部监测信号。  
+    
+  以案例1的电感元件为例，代码如下。该元件有两个电气引脚（1*1维），没有控制输入引脚和控制输出引脚。按照定义的电气引脚顺序，定义电气节点。电感元件只有一条支路，定义该支路的信息。前台元件参数可通过root脚本获取。内部监测信号则通过定义虚拟引脚进行初始化。
+
+  ```C ++
+  void _Inductance_demo::initialComponent(int id, string name, Json::Value &root) {
+  // nElePort、nCtrlInPort、nCtrlOutPort分别代表电气引脚数量、控制输入引脚数量、控制输出引脚数量
+  type = 22; // 大于0代表电气元件
+  nElePort = 2;
+  nCtrlInPort = 0;
+  nCtrlOutPort = 0;
+  this->id = id;
+  nOrder = 1;
+  mergeRequestNumber = 0;
+  this->name = name;
+  // 定义电气引脚
+  for (int i = 0; i < nElePort; ++i) {
+      char nodeName[100];
+      sprintf(nodeName, "%d", i);
+      // 定义一个tempNode为1*1维的电气引脚
+      EMTPNode tempNode(1, 1, root["pin"][nodeName]);
+      // eleNode为EMTPNode类型的Vector，使用push_back()在向量的末尾添加这个tempNode。
+      eleNode.push_back(tempNode);
+  }
+  // 定义支路信息
+  NodeIdx from;
+  from.init(0, 0);// from.init(0, i)代表这条支路的起始点为0号节点的第i维
+  NodeIdx to;
+  to.init(1, 0);// to.init(1, i)代表这条支路的终止点为1号节点的第i维。
+  branchInfo.push_back(EMTPBranchInfo(from, to)); 
+  // 获取前台元件参数
+  inductanceValue = atof(root["param"]["Inductance"].asCString());
+  // 初始化支路电流、电压等矩阵，必须调用
+  initialMatrix();
+  // 虚拟引脚的初始化
+  DECLAREOUTFLAG(IName) = setOutputVariable(IName, "I", vec(1).zeros(), root);
+  DECLAREOUTFLAG(VName) = setOutputVariable(VName, "V", vec(1).zeros(), root);
+  }
+  ```
 
 如何通过一个 C++ 元件实现多种功能 
+
 :
-    在SDK元件的参数设计时，可以添加选择类型的参数，例如元件设计为可在电阻、电感和电容之间切换，可以按下图设置元件类型，通过元件类型来判断相关的参数是否启用。同样的，在元件后端程序中通过选择类型的参数进行判断，分别给出不同的元件逻辑，实现SDK元件的多种功能。
+  在SDK元件的参数设计时，可以添加选择类型的参数，例如元件设计为可在电阻、电感和电容之间切换，可以按下图设置元件类型，通过元件类型来判断相关的参数是否启用。同样的，在元件后端程序中通过选择类型的参数进行判断，分别给出不同的元件逻辑，实现SDK元件的多种功能。
 
-![参数设置 =x300](./parameter-1.png) 
+  ![参数设置 =x300](./parameter-1.png) 
 
-![参数启用条件 =x300](./parameter-2.png)
+  ![参数启用条件 =x300](./parameter-2.png)
 
 C++ 元件除了案例中介绍的调试方法，还有什么常用的调试方法
+
 :   
-    常用调试方法如下：
-    - 短仿真时间调试  
-    仿真时间设置为10个时步，比如积分步长为50μs，设置仿真结束时间为500μs。在后端 .cpp 代码中将关键的变量（支路电压、支路电流、诺顿等值电流等）都在日志中输出，通过日志查看各个变量是否与预期结果相符和。
-    - 多种测试用例  
-    在保证 C++ 元件可以正常使用后，用户可以根据元件的特性和功能，搭建多种符合元件使用的测试场景，对元件进行全面的测试。
+  常用调试方法如下：
+  - 短仿真时间调试  
+  仿真时间设置为10个时步，比如积分步长为50μs，设置仿真结束时间为500μs。在后端 .cpp 代码中将关键的变量（支路电压、支路电流、诺顿等值电流等）都在日志中输出，通过日志查看各个变量是否与预期结果相符和。
+  - 多种测试用例  
+  在保证 C++ 元件可以正常使用后，用户可以根据元件的特性和功能，搭建多种符合元件使用的测试场景，对元件进行全面的测试。
