@@ -4,33 +4,38 @@ description: 云端：JavaScript 模块
 sidebar_position: 20
 ---
 
-本节首先介绍 FuncStudio 实现标签页的云端：JavaScript 模块功能，然后通过 X 个案例介绍云端：JavaScript 模块的使用方法。该功能仅支持在 FuncStudio 平台使用。
+本节主要介绍如何在云端JavaScript 模块实现函数。
 
-## 功能定义
+除了将本地计算内核接入 FuncStudio 外，还可以将代码提交到远程服务器，使用远程服务器的资源运行函数。实现目前只支持 JavaScript。
 
-支持将代码提交到远程服务器，使用远程服务器的资源运行函数。实现目前只支持 JavaScript。
+###  FuncStudio 支持的标准 JavaScript 代码
+ 
+ 在云端 JavaScript 模块实现页面的代码编辑区中编写代码
 
-## 功能说明
+```js
+ /**
+ * @param {Record<string, unknown>} args
+ * @param {AbortSignal} signal
+ * @param {Record<string, unknown>} env
+ */
+export default async function* (args,signal,env) {
+    yield "hello, "+args.name+"!"
+    yield "Good bye, "+args.name+"!"
+}  
+```
 
-### FuncStudio 支持的标准 JavaScript 代码
+![输入 JavaScript 代码](./输入JavaScript代码.png "输入 JavaScript 代码")
 
-## 案例
+:::tip
 
-### 云端 JavaScript 代码实现
+注意**args.键名**的参数调用形式。
 
-## 常见问题
+:::
 
-### 任何 JavaScript 代码都可以实现吗？
+其中，**name** 是在参数列表中添加的参数键名，如下图所示：
 
-### 目前支持的输出格式是？
+![已配置的参数列表](./已配置的参数列表.png "已配置的参数列表")
 
-## 案例
+保存项目后，在**运行**标签页点击**启动任务** ,函数执行结果如下所示：
 
-### 云端执行代码接入
-### 本地算法文件接入
-
-## 常见问题
-
-### 本地自定义命令可以直接在终端执行吗？
-
-Funcstuio 为什么叫执行器，因为它是一个帮助用户在终端执行计算内核的工具，本质上相当于在本地打开命令窗口，先 cd 到计算内核所在的工作目录，再执行命令窗口里面的语句，因此上述命令也可以在终端执行。
+![执行结果](./执行结果.png "执行结果")
