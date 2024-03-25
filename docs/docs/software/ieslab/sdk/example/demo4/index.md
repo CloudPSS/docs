@@ -1,6 +1,6 @@
 ---
-title: 案例 4 典型日生成
-description: IESLab SDK 案例 4 典型日生成
+title: 案例 4 规划典型日生成
+description: IESLab SDK 案例 4 规划典型日生成
 sidebar_position: 30
 ---
 
