@@ -33,7 +33,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="case1" label="三相交流母线">
+<TabItem value="component1" label="三相交流母线">
 三相交流母线需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相交流母线潮流初值设置 =x250](./bus-setting.png)
@@ -44,9 +44,9 @@ import TabItem from '@theme/TabItem';
 | Voltage Angle | Deg | 母线电压相位（A相相电压） | 用于设定潮流计算时的母线的初始相位，潮流回写时，将母线相位迭代值写回该参数 |
 | Voltage Magnitude (L-L, RMS) | p.u. | 母线线电压幅值 | 线电压幅值与电压基值决定了潮流计算时的母线初始电压，潮流回写时，将母线电压迭代值写回该参数 |
 | Base Voltage (L-L, RMS) | kV | 母线的电压基准值 | 用于在潮流计算过程中将参与计算的母线电压数据转换为标幺值 |
-
 </TabItem>
-<TabItem value="case2" label="静态负载">
+
+<TabItem value="component2" label="静态负载">
 静态负载需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![静态负载潮流初值设置 =x300](./load-setting.png)
@@ -61,7 +61,7 @@ import TabItem from '@theme/TabItem';
 更多静态负载的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
 
 </TabItem>
-<TabItem value="case3" label="三相交流电压源">
+<TabItem value="component3" label="三相交流电压源">
 三相交流电压源需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相交流电压源潮流参数设置 =x300](./ac-voltage-source-setting.png)
@@ -77,9 +77,9 @@ import TabItem from '@theme/TabItem';
 | Lower Reactive Power Limit| MVar | 无功功率下限 | **PV** 节点和**平衡节点**的注入无功下界，越界后该节点由电压约束转为无功约束 |
 | Upper Reactive Power Limit| MVar | 无功功率上限 | **PV** 节点和**平衡节点**的注入无功上界，越界后该节点由电压约束转为无功约束 |
 | Bus Voltage Angle | Deg | 母线电压相位 | **平衡节点**的相角 |
-
 </TabItem>
-<TabItem value="case4" label="同步发电机">
+
+<TabItem value="component4" label="同步发电机">
 同步发电机需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![同步发电机潮流参数设置 =x300](./syn-generator-router-setting.png)
@@ -97,9 +97,9 @@ import TabItem from '@theme/TabItem';
 | Bus Voltage Angle | Deg | 母线电压相位 | **平衡节点**的相角 |
 
 更多同步发电机的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
-
 </TabItem>
-<TabItem value="case5" label="并联电容/电抗器">
+
+<TabItem value="component5" label="并联电容/电抗器">
 并联电容/电抗器需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![并联电容/电抗器潮流初值设置 =x200](./shunt-lc-setting.png)
@@ -108,7 +108,6 @@ import TabItem from '@theme/TabItem';
 | :--- | :--- | :--- | :--- |
 | Rated Voltage (L-L, RMS) | kV | 额定线电压有效值 | 与容量一起决定潮流计算时的对地电纳 |
 | Input Capacity | MVar | 投入容量（电容为负，电抗为正） |  与电压一起决定潮流计算时的对地电纳|
-
 </TabItem>
 </Tabs>
 
@@ -117,7 +116,7 @@ import TabItem from '@theme/TabItem';
 :::
 
 <Tabs>
-<TabItem value="case1" label="三相传输线">
+<TabItem value="component1" label="三相传输线">
 三相传输线需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相传输线潮流参数设置 =x500](./line-setting.png)
@@ -136,9 +135,9 @@ import TabItem from '@theme/TabItem';
 | +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 选择参数输入方式为有名值时启用，用于计算传输线总对地电纳 B |
 
 更多三相传输线的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
-
 </TabItem>
-<TabItem value="case2" label="三相电阻">
+
+<TabItem value="component2" label="三相电阻">
 三相电阻需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相电阻潮流参数设置](./resistor-setting.png)
@@ -147,9 +146,9 @@ import TabItem from '@theme/TabItem';
 | :--- | :--- | :--- | :--- |
 | Dimension |  | 单相电阻或是三相电阻 | 潮流计算仅支持三相电阻 |
 | Resistance | Ω | （每相）电阻值 | 用于计算潮流中的线路电阻 |
-
 </TabItem>
-<TabItem value="case3" label="三相电感">
+
+<TabItem value="component3" label="三相电感">
 三相电感需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相电感潮流参数设置](./inductor-setting.png)
@@ -158,9 +157,9 @@ import TabItem from '@theme/TabItem';
 | :--- | :--- | :--- | :--- |
 | Dimension |  | 单相电感或是三相电感 | 潮流计算仅支持三相电感 |
 | Inductance | H | （每相）电感值 | 用于计算潮流中的线路电抗 |
-
 </TabItem>
-<TabItem value="case4" label="三相电容">
+
+<TabItem value="component4" label="三相电容">
 三相电容需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相电容潮流参数设置](./capacitor-setting.png)
@@ -169,9 +168,9 @@ import TabItem from '@theme/TabItem';
 | :--- | :--- | :--- | :--- |
 | Dimension |  | 单相电容或是三相电容 | 潮流计算仅支持三相电容 |
 | Capacitance | μF | （每相）电容值 | 用于计算潮流中的线路电抗 |
-
 </TabItem>
-<TabItem value="case5" label="三相双绕组变压器">
+
+<TabItem value="component5" label="三相双绕组变压器">
 三相双绕组变压器需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相双绕组变压器潮流参数设置 =x500](./transformer-3p-2w-setting.png)
@@ -188,9 +187,9 @@ import TabItem from '@theme/TabItem';
 | Positive Sequence Leakage Resistance | p.u. | 正序漏电阻 | 用于计算潮流中的线路电阻 |
 | Tap Changer |  | 选择变压器分接头位置（无/绕组1/绕组2）| 用于计算变压器变比 |
 | Initial Tap Ratio |  | 填写变压器初始的分接头档位下的标幺值变比| 用于计算变压器变比 |
-
 </TabItem>
-<TabItem value="case6" label="三相三绕组变压器">
+
+<TabItem value="component6" label="三相三绕组变压器">
 三相三绕组变压器需要设置的参数值如下图所示，具体的参数说明可见表格：
 
 ![三相三绕组变压器潮流参数设置 =x600](./transformer-3p-3w-setting.png)
@@ -214,27 +213,74 @@ import TabItem from '@theme/TabItem';
 | Center Bus Voltage Angle | Deg | 中心节点电压相角 | 用于设置中心母线的初始相角，潮流回写时修改该参数 |
 
 更多三相三绕组变压器的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
-
 </TabItem>
 </Tabs>
 
 ### 潮流计算方案的参数设置
-满足潮流计算基本要求后，可对潮流计算方案进行设置
+选择**运行标签页**，新建**潮流计算**计算方案，选中新建的计算方案，即可对潮流计算方案进行配置。以下对电磁潮流计算的设置参数进行说明。
 
-#### 初始设置
+![潮流计算方案 =x500](./power-flow-setting.png)
 
-#### 约束设置
+<Tabs>
+<TabItem value="set1" label="初始设置">
+初始设置参数说明如下：
 
-#### 求解设置
+| 参数名 | 含义 | 说明 |
+| :--- | :--- | :--- | 
+| 使用母线电压幅值 | 母线电压幅值的启用开关 | 开启后，使用母线电压幅值作为潮流初值；不开启时，母线电压幅值默认为 1 p.u. |
+| 使用母线电压相角 | 母线电压相角的启用开关 | 开启后，使用母线电压相角作为潮流初值，不开启时，母线电压相角默认为 0 Deg |
+</TabItem>
 
-#### 输出设置
+<TabItem value="set2" label="约束设置">
+约束设置参数说明如下：
 
-#### 运行设置
+| 参数名 | 含义 | 说明 |
+| :--- | :--- | :--- | 
+| 考虑电压约束 | 电压约束的启用开关 | 开启后，在潮流计算求解过程中考虑 PQ 节点的电压约束；不开启时，不考率电压约束 |
+| 考虑无功约束 | 无功约束的启用开关 | 开启后，在潮流计算求解过程中考虑 PV 节点和平衡节点的无功约束；不开启时，不考率无功约束 |
+</TabItem>
+
+<TabItem value="set3" label="求解设置">
+求解设置参数说明如下：
+
+| 参数名 | 含义 | 说明 |
+| :--- | :--- | :--- | 
+| 求解方式 | 潮流求解方式的选择 | 可选择**潮流计算**，**功率不平衡量计算**，**生成潮流文件**。选择**潮流计算**时，进行完整的潮流计算，潮流计算反复迭代直至收敛或达到最大迭代次数；**功率不平衡量计算**和**生成潮流文件**为辅助功能选项，选择**功率不平衡量计算**时，仅求解当前母线电压下，系统的功率不平衡量；选择**生成潮流文件**，生成 IEEE Common Format 格式潮流文件，用于进行数据交互 |
+| 最大迭代次数 | 潮流计算的最大迭代次数 | 仅求解方式选择**潮流计算**时有效，设置潮流计算的最大迭代次数 |
+</TabItem>
+
+<TabItem value="set4" label="输出设置">
+输出设置参数说明如下：
+
+| 参数名 | 含义 | 说明 |
+| :--- | :--- | :--- | 
+| 报告输入错误 | 错误日志开关 | 检查并报告算例中可能存在的输入错误 |
+| 显示求解日志 | 显示求解日志的选择 | 显示潮流求解过程中产生的日志，可选择**关**，**仅显示错误**，**显示全部** |
+</TabItem>
+
+<TabItem value="set5" label="运行设置">
+运行设置参数说明如下：
+
+| 参数名 | 含义 | 说明 |
+| :--- | :--- | :--- | 
+| 任务队列 | 任务运行使用的队列 | 默认设置为**默认队列** |
+| 计算资源 | 任务运行使用的计算资源 | 默认设置为**1逻辑核心** |
+| 优先级 | 任务运行的优先级 | 默认值为0，即最低优先级, 更多内容请查看 [高级管理功能](../../prior-management/) 帮助文档 |
+| 调试参数 | 任务调试时使用的调试参数 | 默认为空，更多内容请查看 [高级管理功能](../../prior-management/) 帮助文档 |
+</TabItem>
+</Tabs>
+
+
 
 ## 常见问题 Q&A
 怎么导出 EMTLab 的潮流计算的结果
-:
 
+:
+    潮流计算的结果页面会展示 Buses 和 Branches 两个潮流数据表格，鼠标悬浮在表格上时，表格的右上角会出现导出数据按钮，点击按钮可将表格中的数据导出为 CSV 格式。
+
+    ![导出数据为 CSV 格式](./export.png)
 
 潮流计算方案的参数设置有哪些是必选项
+
 :
+    潮流计算方案的参数设置没有必选的选项，但为了潮流结果更好的收敛，建议开启初值设置和约束设置的所有选项。
