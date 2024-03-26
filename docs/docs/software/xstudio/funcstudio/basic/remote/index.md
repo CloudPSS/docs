@@ -1,7 +1,7 @@
 ---
 title: 函数的远程调用
 description: 函数内核的远程调用
-sidebar_position: 40
+sidebar_position: 50
 ---
 
 本节首先介绍 FuncStudio 内核的远程调用功能，然后通过 X 个案例介绍 FuncStudio 内核的远程调用功能使用方法。该功能仅支持在 FuncStudio 平台使用。
