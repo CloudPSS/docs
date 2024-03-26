@@ -1,7 +1,7 @@
 ---
 title: 函数的本地调试
 description: 函数内核的本地调试
-sidebar_position: 30
+sidebar_position: 40
 ---
 
 本节首先介绍 FuncStudio 内核的本地调试功能，然后通过 X 个案例介绍 FuncStudio 内核的本地调试功能使用方法。该功能仅支持在 FuncStudio 平台使用。
