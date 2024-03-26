@@ -47,3 +47,5 @@ sidebar_position: 20
 这个会在 AppStudio 的教程中为大家讲解。
 
 至此，一个可以接入 funcstudio 的典型python计算内核脚本文件就编写好了。
+
+

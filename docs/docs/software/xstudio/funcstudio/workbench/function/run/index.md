@@ -23,7 +23,7 @@ sidebar_position: 40
 
 ![参数方案配置](./2.png)
 
-未创建参数列表则无需进行参数配置，参数方案配置的具体使用方法详见[参数方案配置帮助](../../../../simstudio/basic/parameterSystem/index.md)。
+未创建参数列表则无需进行参数配置。
 
 ### 调试执行
 
