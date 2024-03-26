@@ -20,7 +20,7 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 
 用户也可以在云端 JS 执行器项目实现标签页下点击工具栏的**更改实现类型**按钮，将实现类型切换为**本地：自定义命令**。
 
-![云端JavaScript 模块](./2.png)
+![云端 JavaScript 模块](./2.png)
 
 ## 功能说明
 
@@ -30,9 +30,9 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 
 用户只需在代码编辑区中接入内核代码，FuncStudio 会将代码提交到 CloudPSS 云端服务器，使用云端服务器资源运行代码，该实现类型目前只支持JavaScript 代码。
 
-![实现标签页云端JavaScript 模块](./3.png)
+![实现标签页云端 JavaScript 模块](./3.png)
 
-详见[云端JavaScript 模块帮助](../design/cloud/index.md)。
+详见[云端 JavaScript 模块帮助](../design/cloud/index.md)。
 
 ### 本地：自定义命令
 
@@ -43,25 +43,6 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 ![实现标签页本地自定义命令](./4.png)
 
 详见[本地自定义命令帮助](../design/local/index.md)。
-
-
-:::tip
-
-在实现标签页的命令窗口内输入的执行语句格式固定为：
-
-**‘指定的执行算法内核的虚拟 python 环境’ + 空格 + run.py + 空格 + “Matlab脚本/函数名称”**
-
-即用指定的python环境执行matlab sdk 中的 run.py文件，用run.py文件启动Matlab来执行内核脚本。
-
-以执行上述乘法函数的计算内核为例，先指定python环境 加 run.py，最后加上product这个需要执行的Matlab脚本名称
-
-工作目录就是我们存放product.m文件的位置，也就是matlab sdk 所在的位置。
-
-这样就将本地的Matlab计算内核以一个乘法函数的形式接入到了FuncStudio。
-
-<!-- ![实现](./实现.png "实现") -->
-
-:::
 
 
 

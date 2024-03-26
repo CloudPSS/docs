@@ -32,7 +32,7 @@ sidebar_position: 20
 
 在**实现标签页面**的代码编辑区中编写代码，例如：
 
-```JavaScript
+```JavaScript showLineNumbers
  /**
  * @param {Record<string, unknown>} args
  * @param {AbortSignal} signal
