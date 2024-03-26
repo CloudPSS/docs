@@ -1,68 +1,116 @@
 ---
-title: 案例 1
-description: IESLab SDK 案例 1
+title: 案例 1 获取仿真结果数据
+description: IESLab SDK 案例 1 获取仿真结果数据
 sidebar_position: 30
 ---
 
   
 ### 1.1 案例概述
-简单说明案例背景和目的，能够实现的功能
-#### 模型实验
-可以帮助研究人员快速了解模型的行为和性能，以及**探索不同参数对模型输出和关注的指标的影响**，帮助研究人员进行模型和系统的优化。
-#### 敏感度分析
-用于**评估模型输出对于参数变化的敏感程度的方法**。通过参数敏感度分析，可以了解模型输出对于不同参数的变化的响应情况，进而确定哪些参数对于模型输出的影响最大。
-#### 支持的功能
-要实现参数扫描功能。常规方法是手动修改参数执行多次仿真，逐个记录结果并绘图，以探索参数变化对关注的指标的影响。这个方法操作复杂且效率低下。借助  `CloudPSS SDK`，利用 Python 脚本修改参数，批量调用系统仿真内核，可以快速完成上述功能。且此方法可以复用，**仅通过修改算例 `ID`、参数的名称、结果的 `lableName` 与 `traceName` 就可以实现不同的算例、全部的参数和所关注的结果的参数扫描**。极大的方便用户进行使用。
+本案例利用cloudpss平台提供的API接口，展示了如何对系统进行仿真计算，并获取系统的仿真结果数据。通过本案例，您可以学习到以下功能和方法如何在实际案例中使用：
+- [**cloudpss.setToken(token):**](https://sdk-directory.com/api/cloudpss/setToken) 设置访问云端仿真服务所需的API令牌。 
+- [**cloudpss.IESLabSimulation.fetch(id):**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 根据模型ID获取仿真模型对象。 
+- [**run():**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 启动模型的仿真计算。
+- [**status():**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 检查仿真计算的状态。
+- [**getPlotData(componentID, labelName):**](https://sdk-directory.com/api/cloudpss/getPlotData) 获取指定组件的绘图数据。
+
+
 ### 1.2 代码解析
-详细解释案例代码的关键步骤，帮助用户理解案例代码
-设置网址与账户 `token`。
+导入必要的库。确保已安装 cloudpss 库。如果没有安装，可以通过运行 pip install cloudpss 来安装它。
 ```python
-    # 申请并设置自己账户的token
-    cloudpss.setToken(Your_token)
+import time
+import os
+import cloudpss
+```
+使用cloudpss.setToken()方法设置有效的API访问令牌。通过os.environ['CLOUDPSS_API_URL']设置正确的API地址。注意令牌需要是有效且未过期的,否则无法调用云端仿真服务。地址URL需要准确,并以'/'结尾。
+```python
+if __name__ == '__main__':    
+    # 设置API访问令牌和API地址
+    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
+```
+使用cloudpss.IESLabSimulation.fetch()方法获取指定ID为1888的模型对象。确保使用的模型ID（本例中为 1888）是存在的。如果ID不存在，将无法获取模型对象。
+```python
+    # 获取模型对象
+    iesProject = cloudpss.IESLabSimulation.fetch(1888)    
+```
+通过调用iesProject.run()方法启动仿真计算。使用runner.status()来检查仿真是否完成。
+```python
+    # 仿真计算测试
+    runner = iesProject.run()
+    while not runner.status():
+        print('running', flush=True)
+        time.sleep(3)
+    print('计算完成')
+    ies_result = runner.result
+```
+指定组件ID为"/PhotovoltaicSys_6"，标签名为"功率(kW)"。调用ies_result.getPlotData()方法获取指定组件和标签的绘图数据。组件ID和标签名称的精确性非常重要。任何拼写错误或格式错误都可能导致无法获取预期的绘图数据。
+```python
+    # 示例：使用 getPlotData 方法
+    compID = "/PhotovoltaicSys_6"
+    labelName = "功率(kW)"
+    plot_data = ies_result.getPlotData(compID, labelName)
+    print("Plot data: ", plot_data) 
+```
 
-    # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
-    os.environ['CLOUDPSS_API_URL'] = Your_URL
-```
-通过 `fetch` 方法获取指定算例。
-```python
-    # 仿真测试——获取指定 simuid 的项目
-    iesProject = cloudpss.IESLabSimulation.fetch(simulation_id)
-```
-通过 `getComponentByKey` 方法获取拟修改的元件，然后通过 `args` 属性修改所指定的元件的参数值。
-```python
-        # 修改参数值
-        model = iesProject.model
-        thermalLoad = model.getComponentByKey(component_key)
-        thermalLoad.args[parameter_name] = str(value_1)
-```
-通过 `run` 方法调用算例进行仿真，通过 `runner.result` 获取仿真结果。仿真的结果都储存在 `result` 的数据结构中。
-```python
-        # 仿真计算测试
-        runner = iesProject.run()
-        while not runner.status():
-            print('running', flush=True)
-            time.sleep(1)
-        print('计算完成')
-        ies_result = runner.result
-```
-使用 `getPlotData` 方法获取结果数据并对获取的数据进行处理。用户可以通过切片的方式获取自己关注的数据。
-```python
-        # 示例：使用 getPlotData 方法
-        # 获取所有时间点的结果数据
-        ies_result_time = ies_result.getPlotData(compID, labelName)[traceName]['x']
-        # 转换时间输出格式为小时
-        hour_list = []
-
-        for time_str in ies_result_time:
-            datetime_obj = datetime.strptime(time_str, '%Y-%m-%d %H:%M:%S')
-            hour_str = datetime_obj.strftime('%H')
-            if hour_str.startswith('0'):
-                hour_str = hour_str[1:]
-            hour_list.append(hour_str)
-        plot_data = ies_result.getPlotData(compID, labelName)[traceName]['y']
-```
 ### 1.3 结果展示
-如案例有结果，将进行结果的展示
+以下为案例运行的结果
+```python
+running
+running
+running
+running
+计算完成
+Plot data:  defaultdict(<function IESResult.getPlotData.<locals>.<lambda> at 0x000001E417B7B920>, {'有功功率': {'x': ['2021-01-01 00:00:00', '2021-01-01 01:00:00', '2021-01-01 02:00:00', '2021-01-01 03:00:00', '2021-01-01 04:00:00', '2021-01-01 05:00:00', '2021-01-01 06:00:00', '2021-01-01 07:00:00', '2021-01-01 08:00:00', '2021-01-01 09:00:00', '2021-01-01 10:00:00', '2021-01-01 11:00:00', '2021-01-01 12:00:00', '2021-01-01 13:00:00', '2021-01-01 14:00:00', '2021-01-01 15:00:00', '2021-01-01 16:00:00', '2021-01-01 17:00:00', '2021-01-01 18:00:00', '2021-01-01 19:00:00', '2021-01-01 20:00:00', '2021-01-01 21:00:00', '2021-01-01 22:00:00', '2021-01-01 23:00:00'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.83453077690992, 14.606343058556925, 29.867047880425343, 35.292360874944606, 32.42029908112464, 17.067628492714082, 18.197775497994073, 15.81915160011411, 7.335965942276747, 1.3796850340064308, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}, '无功功率': {'x': ['2021-01-01 00:00:00', '2021-01-01 01:00:00', '2021-01-01 02:00:00', '2021-01-01 03:00:00', '2021-01-01 04:00:00', '2021-01-01 05:00:00', '2021-01-01 06:00:00', '2021-01-01 07:00:00', '2021-01-01 08:00:00', '2021-01-01 09:00:00', '2021-01-01 10:00:00', '2021-01-01 11:00:00', '2021-01-01 12:00:00', '2021-01-01 13:00:00', '2021-01-01 14:00:00', '2021-01-01 15:00:00', '2021-01-01 16:00:00', '2021-01-01 17:00:00', '2021-01-01 18:00:00', '2021-01-01 19:00:00', '2021-01-01 20:00:00', '2021-01-01 21:00:00', '2021-01-01 22:00:00', '2021-01-01 23:00:00'], 'y': [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]}})
+```
 
-### 1.4 完整代码
+
+### 1.4 常见问题
+
+**Q1: 如何解决 "API访问令牌无效或过期" 的问题？**  
+A1: 如果您的令牌已过期，您需要重新获取一个有效的API令牌。具体获取方法可以参考[链接](#)。
+
+**Q2: 我不知道算例ID，在哪里可以获取我的算例ID？**  
+A2: 如果您不知道具体的模型ID，您可以通过查看算例上方的URL地址，如本算例URL地址中的即为算例ID。
+![算例ID](./算例ID.png "算例ID")
+
+**Q3: 仿真一直在 "running" 状态，没有完成，我该怎么办？**  
+A3: 如果仿真在长时间内仍未完成，可能是因为模型过于复杂或者服务器负载过高。首先，检查您的模型配置是否正确，并尝试简化模型。如果问题仍然存在，请[联系客服](#)获取帮助。
+
+**Q4: 为什么我无法获取到我想要的绘图数据？**  
+A4: 确保您传入`getPlotData`方法的组件ID和标签名称与模型中定义的完全一致。任何拼写错误或格式错误都可能导臀无法检索到数据。如果您确认信息无误但仍然无法获取数据，可能是因为模型仿真结果中不存在该数据。组件ID和标签名称获取方法如下：
+获取元件ID
+![元件表](./元件表.png "元件表")
+![元件ID](./元件ID.png "元件ID")
+获取标签名称
+![标签名称](./标签名称.png "标签名称")
+
+### 1.5 完整代码
 附上案例完整代码，并说明使用该案例代码的注意事项
+```python
+import time
+import os
+import cloudpss
+
+if __name__ == '__main__':    
+    # 设置API访问令牌和API地址
+    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
+    
+    # 获取模型对象
+    iesProject = cloudpss.IESLabSimulation.fetch(1888)    
+
+    # 仿真计算测试
+    runner = iesProject.run()
+    while not runner.status():
+        print('running', flush=True)
+        time.sleep(3)
+    print('计算完成')
+    ies_result = runner.result
+
+    # 示例：使用 getPlotData 方法
+    compID = "/PhotovoltaicSys_6"
+    labelName = "功率(kW)"
+    plot_data = ies_result.getPlotData(compID, labelName)
+    print("Plot data: ", plot_data) 
+```
+
