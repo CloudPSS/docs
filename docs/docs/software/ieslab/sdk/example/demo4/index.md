@@ -6,15 +6,18 @@ sidebar_position: 30
 
   
 ### 1.1 案例概述
-本案例旨在展示如何利用IES Lab平台典型日生成模块，方便快速生成综合能源系统规划的典型日生成。您可以通过编写Python脚本自动化地获取特定项目的典型日、辐射强度、环境温度、负荷等数据。通过本案例，您可以学习到以下功能和方法在实际案例中的使用：
-cloudpss.IESLabPlan.fetch()：获取指定项目的详细信息。
-iesLabTypicalDayRun()：执行典型场景生成模块的计算。
-GetTypicalDayCurve():获取指定条件下的典型日曲线。
-GetTypicalMonthCurve()：获取指定条件下的典型月曲线。
+**本案例旨在展示如何利用 IESLab 平台典型日生成模块，方便快速生成综合能源系统规划的典型日生成**。您可以通过编写 Python 脚本自动化地获取指定项目的典型日数据，如辐射强度、环境温度、负荷数据等。通过本案例，您可以学习到以下功能和方法在实际案例中的使用：
+- [**cloudpss.IESLabPlan.fetch()：**](https://sdk-directory.com/api/cloudpss/setToken) 获取指定项目的详细信息。
+- [**iesLabTypicalDayRun()：**](https://sdk-directory.com/api/cloudpss/setToken) 执行典型场景生成模块的计算。
+- [**GetTypicalDayCurve()：**](https://sdk-directory.com/api/cloudpss/setToken) 
+ 获取指定条件下的典型日曲线。
+- [**GetTypicalMonthCurve()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定条件下的典型月曲线。
 
 ### 1.2 代码解析
-详细解释案例代码的关键步骤，帮助用户理解案例代码
-同样是一些常规的算例前期准备工作。包括导入所需的模块、设置访问令牌、设置API URL、获取指定项目的信息。这里需要注意的是cloudpss.IESLabPlan.fetch()与前面案例的cloudpss.IESLabPlan.fetch()类名不同，但功能相同，都是用于获取算例。使用此方法需要注意。
+首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例 1 代码解析。
+:::warning
+这里需要注意的是 `cloudpss.IESLabPlan.fetch()` 与前面案例的 `cloudpss.IESLabPlan.fetch()` 类名不同，但功能相同，都是用于获取算例。使用此方法时需要注意。
+:::
 ```python
 import os
 import cloudpss
@@ -29,7 +32,7 @@ if __name__ == '__main__':
     # 规划设计典型场景生成测试——获取指定 simuid 的项目
     iesplanProject = cloudpss.IESLabPlan.fetch(207)
 ```
-启动典型场景生成模块的计算。等待计算完成。这一步可能需要一些时间,取决于计算的复杂度。
+通过 `iesplanProject.iesLabTypicalDayRun()` 启动典型日生成模块的计算，耐心等待计算完成。
 ```python
     #典型场景生成模块计算测试
     typical_runner = iesplanProject.iesLabTypicalDayRun()
@@ -38,7 +41,7 @@ if __name__ == '__main__':
     print('计算完成')
     iesplan_result = typical_runner.result
 ```
-通过iesplan_result.GetTypicalDayCurve(0,'电负荷')获取第一个典型日的电负荷曲线数据。参数0表示第一个典型日,'电负荷'指定要获取的曲线类型。通过iesplan_result.GetTypicalMonthCurve(12,'电负荷')获取12月的典型日电负荷曲线数据。参数12表示12月,'电负荷'指定要获取的曲线类型。
+使用 `iesplan_result.GetTypical()`、`iesplan_result.GetTypicalDayNum()` 方法分别获取所有典型日信息以及典型日的数量。通过 `iesplan_result.GetTypicalDayCurve(0,'电负荷')` 获取第一个典型日的电负荷曲线数据。参数 `0` 表示第一个典型日,`'电负荷'` 指定要获取的曲线类型。通过 `iesplan_result.GetTypicalMonthCurve(12,'电负荷')` 获取 12 月的典型日电负荷曲线数据。参数 `12` 表示12月,`'电负荷'` 指定要获取的曲线类型。
 ```python
     # 综合能源典型场景的典型日曲线
     typical = iesplan_result.GetTypical()
@@ -46,7 +49,7 @@ if __name__ == '__main__':
     typical_info = iesplan_result.GetTypicalDayInfo(0)
     typical_curve = iesplan_result.GetTypicalDayCurve(0,'电负荷')
 ```
-获取指定月份（在此例中为12月）的典型日电负荷曲线数据。iesplan_result.GetTypicalMonth方法可以获取到所有月份的信息。
+`iesplan_result.GetTypicalMonth` 方法可以获取到所有月份的典型日信息。通过 `iesplan_result.GetTypicalMonthNum(12)` 获取指定月份（在此例中为12月）的典型日数量，电负荷曲线数据。通过 `iesplan_result.GetTypicalMonthCurve(12,'电负荷')` 获取指定月份的典型日的电负荷曲线数据。 
 ```python
     # 综合能源典型场景某月的典型日曲线
     typical_month = iesplan_result.GetTypicalMonth()
@@ -54,16 +57,16 @@ if __name__ == '__main__':
     typical_monthcurve = iesplan_result.GetTypicalMonthCurve(12,'电负荷')  
 ```
 ### 1.3 结果展示
-
+由于结果过长，在此只展示 `iesplan_result.GetTypicalDayCurve(0,'电负荷')` 的输出结果。
+```python
+计算完成
+1月典型日1电负荷曲线： [39.60529993363616, 35.71495216067563, 32.56108447836463, 31.616657068002272, 29.329236551161326, 30.17835477332198, 31.824604387715084, 35.74094557563972, 43.417667461704404, 48.63367939783412, 49.56077786488708, 49.283514771936645, 47.28202181970084, 44.578706663434275, 40.29845766601221, 45.670430091926555, 46.814140350347024, 48.31309394661021, 49.16221216877085, 46.623521973943596, 47.524627026032455, 45.48847618717783, 41.00027987004295, 35.446353539379906]
+```
 ### 1.4 常见问题
-Q3:请求不存在的典型日信息（例如，索引超出实际数量）。月份参数错误或请求的曲线类型不存在。
-Q3:
-Q3: 如何获取除了电负荷之外的其他类型的典型日曲线数据？
-A3: 通过修改GetTypicalDayCurve()和GetTypicalMonthCurve()方法中的曲线类型参数，您可以获取到不同类型的曲线数据。具体可用的曲线类型，请参考IES Lab平台的API文档。例如，如果您想获取气温曲线，您可能需要将'电负荷'替换为相应的曲线类型标识符。
-Q6: 如果我需要获取一个项目中所有典型月的曲线数据，应该如何操作？
-A6: 您可以通过循环遍历所有可能的月份（1至12），并使用GetTypicalMonthCurve()方法为每个月份获取曲线数据。请确保在循环中正确处理任何可能的异常或错误，比如对于没有典型日数据的月份。
-问题3:如何获取不同类型的曲线数据,比如辐射强度或环境温度? 答案:您可以将GetTypicalDayCurve()或GetTypicalMonthCurve()的第二个参数更改为其他类型,如'辐射强度'或'环境温度'。可用的曲线类型请查阅CloudPSS API文档，查询可支持的类型。
-如果想获取第二个典型日或第三个典型月的数据,应该如何修改代码? 答案:对于GetTypicalDayInfo()和GetTypicalDayCurve()函数,将参数从0改为1或2即可获取第二个或第三个典型日的数据。对于GetTypicalMonthNum()和GetTypicalMonthCurve()函数,将参数从12改为其他月份的数字即可。
+**Q1:请求的数据不存在是什么原因呢？**  
+A1:请仔细检查您的系统中是否包含此数据，例如您的系统中元件没有绑定负荷数据，或者数据管理模块没有创建相应的数据卡，则会出现数据不存在的情况。此外，您还需要仔细核查索引是否超出范围以及请求的曲线类型标识符是否存在。  
+**Q2:如何获取不同类型的曲线数据,比如辐射强度或环境温度?**  
+A2:您可以将 `GetTypicalDayCurve()` 或 `GetTypicalMonthCurve()` 的第二个曲线类型参数更改为其他类型,如'辐射强度'或'环境温度'。可用的曲线类型标识符请查阅 CloudPSS API 文档。  
 
 ### 1.5 完整代码
 ```python

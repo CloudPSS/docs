@@ -6,14 +6,17 @@ sidebar_position: 30
 
   
 ### 1.1 案例概述
-该案例主要用于演示如何通过IESLab SDK进行综合能源系统的规划设计,获取优化方案并查看各种详细信息。您也可以在本案例的基础上，比较多个优化方案的结果。将获取的结果进行二次处理，如将每个方案的关键指标如装机容量、投资成本、运行成本等提取出来,汇总到一个表格或数据结构中,然后进行对比分析。通过本案例，您可以学习到以下功能和方法在实际案例中的使用：
-iesLabPlanRun()方法启动规划设计计算过程。
-plan_result.GetPlanNum()方法用于获取优化方案的数量。
-plan_result.GetPlanInfo()方法用于获取指定优化方案的基础信息。
-plan_result.GetPlanConfiguration()方法用于获取指定优化方案的配置信息。
-plan_result.GetComponentResult()方法用于获取指定优化方案中特定组件的运行信息。
+该案例主要用于演示如何**通过 `IESLab SDK` 进行综合能源系统的规划设计,获取优化方案并查看各类详细信息**。通过本案例，您可以学习到以下功能和方法在实际案例中的应用：
+- [**iesLabPlanRun()：**](https://sdk-directory.com/api/cloudpss/setToken)方法启动规划设计计算过程。
+- [**plan_result.GetPlanNum()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取优化方案的数量。
+- [**plan_result.GetPlanInfo()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的基础信息。
+- [**plan_result.GetPlanConfiguration()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的配置信息。
+- [**plan_result.GetComponentResult()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案中特定组件的运行信息。
+:::tip
+您也可以在本案例的基础上，比较多个优化方案的结果，将获取的结果进行二次处理。如将每个方案的关键指标如装机容量、投资成本、运行成本等提取出来,汇总到一个表格或数据结构中,然后进行对比分析。
+:::
 ### 1.2 代码解析
-准备工作
+首先进行算例准备工作。包括设置网址与账户 token、获取算例，详细解释参考案例 1 的代码解析。
 ```python
 import os
 import cloudpss
@@ -29,7 +32,7 @@ if __name__ == '__main__':
     # 规划设计典型场景生成测试——获取指定 simuid 的项目
     iesplanProject = cloudpss.IESLabPlan.fetch('274')
 ```
-iesplanProject.iesLabPlanRun()启动规划设计计算过程。runner.result()获取计算结果对象。使用plan_result.GetPlanNum()获取优化方案的数量。
+`iesplanProject.iesLabPlanRun()` 启动规划设计计算过程。`runner.result()` 获取计算结果对象。使用 `plan_result.GetPlanNum()` 获取优化方案的数量。
 ```python
     # 启动计算
     runner = iesplanProject.iesLabPlanRun()
@@ -40,7 +43,7 @@ iesplanProject.iesLabPlanRun()启动规划设计计算过程。runner.result()�
         plan_result = runner.result
         plan_num = plan_result.GetPlanNum()
 ```
-当发现新的优化方案时，遍历并打印每个方案的基础信息、配置信息和特定组件的运行信息。使用GetPlanInfo()、GetPlanConfiguration()和GetComponentResult()分别获取优化方案的基础信息、配置信息和组件运行信息。（可以考虑加入图表，看是获取到了哪里的信息。）
+当发现新的优化方案时。使用 `GetPlanInfo()`、`GetPlanConfiguration()` 和`GetComponentResult()` 分别获取优化方案的**基础信息、配置信息和元件运行信息**。
 ```python
         if plan_num > last_plan_num:
             for plan_id in range(last_plan_num, plan_num):
@@ -56,18 +59,22 @@ iesplanProject.iesLabPlanRun()启动规划设计计算过程。runner.result()�
     print('计算完成')
 ```
 ### 1.3 结果展示
-如案例有结果，将进行结果的展示
+由于结果过长，在此只展示基础信息。
+```python
+优化方案 1
+基础信息: {'方案名称': '方案1', '综合成本（万元）': 13.901900078655967, '设备投资费用（万元）': 256.0, '设备年维护费用（万元）': 0.0, '年销售收入（万元）': 38.34719707186584, '年运营支出（万元）': 1.1019000786559667, '年CO2排放（吨）': 0.0, '年电负荷（kWh）': 840903.6702350642, '年热负荷（kWh）': 0.0, '年冷负荷（kWh）': 0.0}
+
+```
 ### 1.4 常见问题
-问题1：获取到的优化方案数量为0，这表示什么？如何解决？
+**Q1：获取到的优化方案数量为 `0`，这表示什么？如何解决？**
 
-答案1： 如果plan_result.GetPlanNum()返回0，这可能表示没有找到任何优化方案，或者计算过程中存在问题。首先，确认您的输入数据和配置是否正确无误。然后，检查CloudPSS平台是否有任何关于计算失败的日志或错误信息。如果问题仍不明确，考虑与平台的技术支持联系寻求帮助。
+A1： 如果 `plan_result.GetPlanNum()` 返回 `0`，这可能表示没有找到任何优化方案，或者计算过程中存在问题。首先，确认您的输入数据和配置是否正确无误。然后，**检查 CloudPSS 平台是否有任何关于计算失败的日志或错误信息**。
 
-问题2:GetComponentResult()方法的组件名称和典型日名称怎么获取? 
-答案2:组件名称可以在项目的组件列表中查看获取,注意名称两边要加上斜杠,如"/component_photovoltaic_2"。典型日名称可在规划典型日生成模块结果中进行查看,如"1月典型日1"。（加入图片）
+**Q2:`GetComponentResult()` 方法的组件名称和典型日名称怎么获取?**
+A2:组件名称可以在项目的组件列表中查看获取,注意名称两边要加上斜杠,如 `/component_photovoltaic_2`。典型日名称可在规划典型日生成模块结果中进行查看。（加入图片）
 
 
 ### 1.5 完整代码
-附上案例完整代码，并说明使用该案例代码的注意事项
 ```python
 import os
 import cloudpss
