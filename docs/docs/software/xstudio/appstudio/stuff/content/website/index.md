@@ -35,10 +35,11 @@ import CommonStyle from '../../grid/_common-style.md'
 
 ## 案例介绍
 
-###  事件触发机制
+### 颜色选择器类型
 
-事件是指对控件操作后产生的效果，事件触发使用 HTML 元素事件触发的回调函数结合 math.js 的表达式解析器进行控件属性或者资源的调用。详情参考[事件触发机制](../../../basic/event/index.md)
+import ColorPicker from '../../grid/_color-picker.md'
 
+<ColorPicker />
 
 ### 嵌套一个网页
 
@@ -49,3 +50,17 @@ import CommonStyle from '../../grid/_common-style.md'
 ![嵌套主页](image-1.png "嵌套主页")
 
 ![预览效果](image-2.png "预览效果")
+
+## 常见问题
+
+### (x) 与 f(x) 的区别
+
+import Fx from '../../grid/_fx.md'
+
+<Fx />
+
+###  事件触发机制
+
+import Event from '../../grid/_event.md'
+
+<Event />

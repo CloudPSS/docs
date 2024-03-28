@@ -44,14 +44,31 @@ import CommonStyle from '../../grid/_common-style.md'
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 值 | `srcdoc` |  | Markdown 文本框控件内容 | 表格 | 点击**编辑数据**按钮，弹出 Markdown 文本框控件内容表格 |
-| 溢出显示 | `style/overflow` |  | Markdown 文本框控件溢出显示方式 | 选择 | 溢出显示方式分为：自动、滚动、可见、隐藏，默认为自动 |
+| 溢出显示 | `style/overflow` |  | Markdown 文本框控件溢出显示方式 | 选择 | 文本溢出显示方式分为：自动、滚动、可见、隐藏，默认为自动 |
 
 ## 案例介绍
 
-###  事件触发机制
+### 颜色选择器类型
 
-事件是指对控件操作后产生的效果，事件触发使用 HTML 元素事件触发的回调函数结合 math.js 的表达式解析器进行控件属性或者资源的调用。详情参考[事件触发机制](../../../basic/event/index.md)
+import ColorPicker from '../../grid/_color-picker.md'
+
+<ColorPicker />
 
 ### Markdown 文本框控件内容
 
 ![Markdown 文本框控件内容](image-1.png "Markdown 文本框控件内容")
+
+
+## 常见问题
+
+### (x) 与 f(x) 的区别
+
+import Fx from '../../grid/_fx.md'
+
+<Fx />
+
+###  事件触发机制
+
+import Event from '../../grid/_event.md'
+
+<Event />
