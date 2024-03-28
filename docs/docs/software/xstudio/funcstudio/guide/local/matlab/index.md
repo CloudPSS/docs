@@ -72,13 +72,13 @@ job.log(c,'info','false','log-1') %利用 SDK 提供的 log 方法向 FuncStudio
 
 能够使用当前启动的 Matlab 实例运行由执行器下发的任务，来消除每次下发任务后需要重新启动 Matlab 的耗时，并具备断点调试功能。
 
-具体的，打开 Matlab ，在命令窗口内运行 ** matlab.engine.shareEngine ** 命令，就可以将当前打开的 Matlab 配置为执行脚本文件的实例。
+具体的，打开 Matlab ，在命令窗口内运行**matlab.engine.shareEngine**命令，就可以将当前打开的 Matlab 配置为执行脚本文件的实例。
 
-接着可以通过运行 **matlab.engine.isEngineShared** 命令，来查看当前Matlab实例是否已经共享，
+接着可以通过运行**matlab.engine.isEngineShared**命令，来查看当前 Matlab 实例是否已经共享，
 
 ![Matlab实例](./4.png)
 
-最后，将打开的 Matlab 的工作目录切换到product.m文件所在目录。
+最后，将打开的 Matlab 的工作目录切换到 product.m 文件所在目录。
 
 :::tip
 - 需要注意的是，在运行 matlab.engine.shareEngine 后，即使我们关闭了当前的 Matlab 实例，也可以在执行器内调用这个matlab实例执行计算内核；

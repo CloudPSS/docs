@@ -115,6 +115,7 @@ cloudpss.utils.syncenv; %同步环境变量
 cloudpssMod = py.importlib.import_module('cloudpss'); %加载 CloudPSS-SDK
 job = cloudpssMod.currentJob(); %获取函数在当前参数方案下的计算任务实例
 ```
+
 :::info
 
 在 2023 年 3.31 号更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加`cloudpss.currentJob()`方法，来代替之前版本的`cloudpss.function.currentJob()`方法获取当前的任务实例，目前这两个接口都可以用。
@@ -179,8 +180,20 @@ Matlab 语法里，要给 log 方法添加 key 参数的时候，前面的 level
 </TabItem>
 </Tabs>
 
-### 配置内核本地执行的命令行语句
+### 配置函数内核在本地执行命令行语句
 
-保存上述接入用户自定义算法内核的脚本文件。在执行器实现标签页的命令窗口中输入执行该文件的命令行语句，在工作目录中输入该文件所在的目录，即可完成内核的接入。
+保存上述接入用户自定义算法内核的脚本文件，在执行器实现标签页的命令窗口中输入执行该文件的**命令行语句**，在工作目录中输入该文件所在的目录，即可完成内核的接入。
 
-![配置内核本地执行的命令行语句](./1.png)
+<Tabs>
+<TabItem value="py" label="Python 内核">
+
+![本地执行 Python 内核的命令行配置](./1.png)
+
+</TabItem>
+<TabItem value="Matlab" label="Matlab 内核">
+
+![本地执行 Matlab 内核的命令行配置](./2.png)
+
+</TabItem>
+</Tabs>
+
