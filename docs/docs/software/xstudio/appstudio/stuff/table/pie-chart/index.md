@@ -47,6 +47,16 @@ import CommonStyle from '../../grid/_common-style.md'
 
 ## 案例介绍
 
+## 常见问题
+
+### (x) 与 f(x) 的区别
+
+import Fx from '../../grid/_fx.md'
+
+<Fx />
+
 ###  事件触发机制
 
-事件是指对控件操作后产生的效果，事件触发使用 HTML 元素事件触发的回调函数结合 math.js 的表达式解析器进行控件属性或者资源的调用。详情参考[事件触发机制](../../../basic/event/index.md)
+import Event from '../../grid/_event.md'
+
+<Event />
