@@ -53,7 +53,7 @@ import ColorPicker from '../../grid/_color-picker.md'
 
 ### (x) 与 f(x) 的区别
 
-import Fx from '../../grid/_fx.md'
+import Fx from '../../grid/_expression.md'
 
 <Fx />
 
