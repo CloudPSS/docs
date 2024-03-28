@@ -130,13 +130,11 @@ import TabItem from '@theme/TabItem';
     在代码编辑窗口编写可调斜率和分段点的分段函数代码：
 
     ```
-    x=input;
-    if x<args.a
-    y=args.k1*x+args.b-args.k1*args.a;
+    if input < args.a
+        output = args.k1 * input + args.b - args.k1 * args.a;
     else
-    y=args.k2*x+args.b-args.k2*args.a;
+        output = args.k2 * input + args.b - args.k2 * args.a;
     end
-    output=y;
     ```
     
     注意变量名称为 **args.键名**的形式。
@@ -324,7 +322,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 常见问题
-我同时设置了一个元件的“拓扑”和“电磁暂态”的两种实现方法，为什么“拓扑”中的内容没有正确地生效？
+同时设置了一个元件的“拓扑”和“电磁暂态”的两种实现方法，为什么“拓扑”中的内容没有正确地生效？
 
 :
     需要注意的是，在存在**电磁暂态**标签页的具体实现时，**拓扑**的实现方法将会失效。用户可以右键选择**电磁暂态**的子标签，并点击**删除**按钮，删除 Octave 的元件实现方法，保留**拓扑**实现方法，如下图所示。当然，也可以根据需要，自行选择需要保留的实现方法类型。
@@ -333,12 +331,15 @@ import TabItem from '@theme/TabItem';
 
 为什么带有 Octave 元件的算例运行很慢？
 
-:   对于含有 Octave 元件的算例，在仿真的过程中需要根据 Octave 元件的触发频率调用 Octave 的解释器，导致仿真速度较慢。用户可以根据需求，选用拓扑模块封装等速度更快的方式进行模块构建。
+:   
+    对于含有 Octave 元件的算例，在仿真的过程中需要根据 Octave 元件的触发频率调用 Octave 的解释器，导致仿真速度较慢。用户可以根据需求，选用拓扑模块封装等速度更快的方式进行模块构建。
 
 仿真运行报错："The function belongs to the image package from Octave Forge which seems to not be installed in your system."
 
-:   该报错原因为在代码中存在未识别的函数，目前暂不支持调用外部函数。
+:   
+    该报错原因为在代码中存在未识别的函数，目前暂不支持调用外部函数。
 
 为什么使用 disp( ) 函数没有效果？
 
-:   目前暂不支持直接输出 disp( ) 的结果。用户可通过添加输出引脚，输出 Octave 元件中需要观测的结果。
+:   
+    目前暂不支持直接输出 `disp( )` 的结果。用户可通过添加输出引脚，输出 Octave 元件中需要观测的结果。
