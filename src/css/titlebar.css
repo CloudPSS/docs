@@ -5,8 +5,8 @@
   --titlebar-area-height: 0px;
 }
 
-@supports (width: env(titlebar-area-width)) {
-  :root:not(:fullscreen) {
+@media screen and (display-mode: window-controls-overlay) {
+  :root {
     --titlebar-area-x: env(titlebar-area-x, 0px);
     --titlebar-area-y: env(titlebar-area-y, 0px);
     --titlebar-area-width: env(titlebar-area-width, 100vw);
