@@ -25,14 +25,14 @@ jobs:
           DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
       - id: Upload
-        if: !cancelled()
+        if: (!cancelled())
         uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
       - id: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: !cancelled() && github.event_name == 'push'
+        if: (!cancelled() && github.event_name == 'push')
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
