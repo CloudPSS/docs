@@ -33,7 +33,7 @@ plugins.push([
         docsRouteBasePath: '/',
         blogRouteBasePath: '/blog',
         language: ['zh', 'en'],
-        hashed: 'filename',
+        hashed: 'query',
     } satisfies Search.PluginOptions,
 ]);
 
