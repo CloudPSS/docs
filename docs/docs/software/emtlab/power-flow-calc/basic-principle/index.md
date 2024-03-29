@@ -61,8 +61,7 @@ $$
 ### 潮流计算基本原理
 #### 牛顿-拉夫逊法求解潮流
 
-(1) 基于牛顿-拉夫逊的潮流算法的基本步骤  
-基于牛顿-拉夫逊的潮流算法的基本步骤可以总结如下：
+ 基于牛顿-拉夫逊的潮流算法的基本步骤可以总结如下：
 - 形成节点导纳矩阵；
 - 给各节点电压相角赋初值；
 - 给各节点电压相角代入式2、式3，求出修正方程式的常数项向量。  
@@ -72,7 +71,7 @@ $$
 - 检查是否收敛，如不收敛，则以各节点电压的新值作为初值自第3步重新开始进行下一次迭代，否则转入下一步。
 - 计算支路功率分布，PV节点无功功率和平衡节点注入功率。  
 
-(2) 计算功率不平衡列向量
+**计算功率不平衡列向量**
 $$
 \Delta S = {[\Delta P,\Delta Q]^T}{\rm{ = }}{[\Delta {P_1},...,\Delta {P_{{\rm{n - }}1}},{\kern 1pt} \Delta {Q_1},...,\Delta {Q_m},]^T}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (1)
 $$
@@ -98,7 +97,7 @@ $$
 
 其中，$i=1,2,...,n-m-1.$
 
-(3) 计算雅可比矩阵
+**计算雅可比矩阵**
 $$
 J=\begin{bmatrix}
 H & N\\ 
@@ -108,7 +107,7 @@ $$
 
 雅可比矩阵的元素如下所示:
 
-**非对角元素：**
+非对角元素：
 
 $$
 \left. \begin{array}{l}
@@ -119,7 +118,7 @@ $$
 \end{array} \right\}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (5)
 $$
 
-**对角元素：**
+对角元素：
 
 $$
 \left. \begin{array}{l}
@@ -130,10 +129,48 @@ $$
 \end{array} \right\}{\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (6)
 $$
 
+**基于牛顿-拉夫逊的潮流算法**  
+
+$$
+\begin{bmatrix}
+{\Delta P}\\ 
+{\Delta Q}\\
+\end{bmatrix}=\begin{bmatrix}
+H & N\\ 
+J & L\\
+\end{bmatrix}\begin{bmatrix}
+{\Delta \theta }\\
+{{V^{ - 1}}\Delta V}
+\end{bmatrix} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (7)
+$$
+
+其中 $\Delta V$ 为节点电压幅值的修正量：
+
+由上式可求得第 k + 1 次迭代的修正量：
+
+$$
+\begin{bmatrix}
+{{\theta ^{(k + 1)}}}\\
+{{V^{(k + 1)}}}
+\end{bmatrix}=\begin{bmatrix}
+{{\theta ^{(k)}}}\\
+{{V^{(k)}}}
+\end{bmatrix}\begin{bmatrix}
+{\Delta {\theta ^{(k + 1)}}}\\
+{\Delta {V^{(k + 1)}}}
+\end{bmatrix} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} {\kern 1pt} (8)
+$$
+
+这样反复迭代计算，直至所有节点 $\Delta V < \varepsilon$ 和 $\Delta \theta<n$ 为止。
 
 ## 常见问题 Q&A
 为什么设置了 Y-D 型变压器会导致潮流不收敛
+
 :
 
+
+
 有哪些常见的潮流不收敛问题
+
 :
+
