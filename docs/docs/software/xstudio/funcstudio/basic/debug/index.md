@@ -23,12 +23,14 @@ sidebar_position: 40
 使用函数本地调试功能的前提如下：
 
 - 确保在接口标签页内定义好函数的输入参数；
-
+  
+- 确保借助 FuncStudio-SDK 给自定义算法内核封装好输入输出接口；
+  
 - 确保在实现标签页内指定好内核的命令行执行语句和工作目录。
 
 ### 调试方法
 
-满足上述前提后，点击运行标签页的**调试执行**功能，对函数内核启动本地调试，如果显示**运行失败**，可以点击 `···` 号查看详细的**报错信息**，根据报错信息修改函数内核。
+满足上述前提后，进入执行器的运行标签页，配置好参数方案后点击**调试执行**按钮，对函数内核进行本地调试，如果显示**运行失败**，可以点击 `···` 号查看详细的**报错信息**，根据报错信息修改函数内核。
 
 ![本地调试](./2.png)
 
@@ -64,9 +66,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
 #### 3.调通格式化输出代码
 
-确保 log、plot、table 等格式化输出方法的调用格式正确；
-
-对于 plot 方法，如果在 FuncStudio 中没有显示图形的话，检查 traces 参数的数据格式是否正确。
+确保 log、plot、table 等格式化输出方法的调用格式正确。
 
 </TabItem>
 <TabItem value="Matlab" label="Matlab 内核的调试流程">
@@ -92,6 +92,63 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
 ## 常见问题
 
+常见的调试报错有哪些？
+
+:   常见调试报错包括如下三类：
+
+    <Tabs>
+    <TabItem value="1" label="环境配置报错">
+
+    - cloudpss 模块不存在
+
+    ![cloudpss 模块不存在](./1-1.png)
+
+    报错原因：Python 环境没有安装 CloudPSS-SDK。
+
+    解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../envir/python/index.md)重新配置 Python 环境。
+
+    - matlab 模块不存在
+  
+    ![matlab 模块不存在](./1-2.png)
+
+    报错原因：Matlab 环境没有配置成功。
+
+    解决方法：参考[Matlab 环境配置](../../envir/matlab/index.md)重新配置 Matlab 的 Python 环境。
+
+    </TabItem>
+    <TabItem value="2" label="接口配置报错">
+
+    - keyError
+
+    ![keyError](./2-1.png)
+
+    报错原因：参数键引用错误。
+
+    解决方法：检查接口标签页的参数列表，确保参数键引用正确。
+
+    - log 方法不存在
+
+    ![log 方法不存在](./2-2.png)
+
+    报错原因：旧版本 SDK 的 `cloudpss.function.currentJob()` 接口没有 log 方法。
+
+    解决方法： 使用 log 方法要用 `cloudpss.currentJob() `接口。
+
+    </TabItem>
+    <TabItem value="6" label="其他问题">
+
+    - 中文乱码
+    
+    ![中文乱码](./3-1.png)
+
+    问题原因：Python 内核用 print 输出中文以及 Matlab 内核用 disp 输出中文在 FuncStudio 中都会显示乱码。
+
+    解决方法： 使用 log 方法输出中文。
+
+    </TabItem>
+    </Tabs>
+
+
 调试执行通过，但是 FuncStudio 结果栏中没有任何输出结果该如何排查错误？
 
-:  检查 log、plot、table 等格式化输出方法的调用格式是否正确。对于 plot 方法，如果在 FuncStudio 中没有显示图形的话，检查 traces 参数的数据格式是否正确。
+:  检查 log、plot、table 等格式化输出方法的调用格式是否正确；如果在 FuncStudio 中没有显示图形的话，检查 plot 方法的traces 参数数据格式是否正确。
