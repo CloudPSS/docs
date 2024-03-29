@@ -11,7 +11,7 @@ tags:
 
 ## 元件定义
 
-> **该元件指母线，平台支持交直流电网潮流计算，母线类型可选交流或直流。**
+该元件指母线，平台支持交直流电网潮流计算，母线类型可选交流或直流。
 
 ![母线 =x100](./IES-GD-4BusLine.png )
 
@@ -24,7 +24,8 @@ tags:
 CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[元件属性配置](/docs/docs/software/xstudio/simstudio/basic/moduleEncapsulation/index.md)页面。
 
 ### 引脚
-电接口，整个母线元件均有引脚供与其他元件相连，可以在引脚处填写相同的字符使得两个元件相连。
+
+整个母线元件均为电引脚供与其他元件相连，可以在引脚处填写相同的字符使得两个元件相连。
 
 ### 参数
 
@@ -32,11 +33,11 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| Name | **Name** |  | 元件名称 | 文本 | 元件名称 |
-| 元件类型 | **CompType** |  | 选择元件类型 | 选择 | 选择**交流元件**时为交流电，选择**直流元件**时为直流电|
-| Voltage Angle | **Voltage Angle** | deg | Voltage Angle | 实数 | 初始相角 |
-| Voltage Magnitude | **Voltage Magnitude** | p.u. | Voltage Magnitude | 实数 | 初始电压 |
-| Base Voltage | **Base Voltage** | Kv | Base Voltage | 实数 | 基准电压 |
+| Name | `Name` |  | 元件名称 | 文本 | 元件名称 |
+| 元件类型 | `CompType` |  | 选择元件类型 | 选择 | 选择**交流元件**时为交流电，选择**直流元件**时为直流电|
+| Voltage Angle | `Voltage Angle` | deg | Voltage Angle | 实数 | 初始相角 |
+| Voltage Magnitude | `Voltage Magnitude` | p.u. | Voltage Magnitude | 实数 | 初始电压 |
+| Base Voltage | `Base Voltage` | kV | Base Voltage | 实数 | 基准电压 |
 
 ### 引脚
 
@@ -46,9 +47,9 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 
 | 引脚名 | 键值 (key)  | 维度 | 描述 |
 | :--- | :--: | :--- | :--- |
-| 电接口 | **Pin DC/AC** | 1×1 | 可以在引脚处输入相同的字符使得元件与其他电元件相连，当基础参数**元件类型**项是**直流元件**时，键值为**Pin DC**；**元件类型**项是**交流元件**时，键值为**Pin AC**。|
+| 电接口 | `Pin DC/AC` | 1×1 | 可以在引脚处输入相同的字符使得元件与其他元件相连，当基础参数**元件类型**项是**直流元件**时，键值为**Pin DC**；**元件类型**项是**交流元件**时，键值为**Pin AC**。|
 
-
-特别注意：整个母线元件均为引脚，任意位置均可与其他元件连接
-
+:::tip
+整个母线元件均为引脚，任意位置均可与其他元件连接
+:::
 
