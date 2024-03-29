@@ -4,11 +4,10 @@ description: CloudPSS Signal Monitor 文档
 sidebar_position: 20
 ---
 
+本文档介绍实时数据查看器 CloudPSS Signal Monitor 的功能，并通过一个案例介绍它的使用方法。本工具需配合 CloudPSS-RT 实时仿真器使用，用于在实时仿真过程中监控数据和下发指令。
+
 ## 功能定义
 本工具提供实时仿真的数据观测、数据录波和数据下发功能。
-
-## 文档摘要
-本节介绍实时数据查看器 CloudPSS Signal Monitor 的功能，并通过一个案例介绍它的使用方法。本工具需配合 CloudPSS-RT 实时仿真器使用，用于在实时仿真过程中监控数据和下发指令。
 
 ## 功能说明
 ### 主界面
