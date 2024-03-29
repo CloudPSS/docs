@@ -4,11 +4,10 @@ description: 自定义 Octave 元件
 sidebar_position: 100
 ---
 
+本文档介绍自定义 Octave 元件的创建和调用方法，并通过 3 个案例介绍自定义 Octave 元件的使用方法。阅读该文档，用户需熟悉 MATLAB/Octave 语言的基本语法。该功能仅支持在 EMTLab 平台使用。
+
 ## 功能定义
 该功能支持使用 MATLAB/Octave 语言构建自定义电磁暂态仿真元件。
-
-## 文档摘要
-本文档介绍自定义 Octave 元件的创建和调用方法，并通过 3 个案例介绍自定义 Octave 元件的使用方法。阅读该文档，用户需熟悉 MATLAB/Octave 语言的基本语法。该功能仅支持在 EMTLab 平台使用。
 
 ## 功能说明
 ### 创建元件
