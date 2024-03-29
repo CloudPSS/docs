@@ -13,20 +13,26 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Install
+      - id: Install
         uses: wyvox/action-setup-pnpm@v3
         with:
           pnpm-version: 8
-      - name: Optimize
+      - id: Optimize
         run: pnpm optimize
-      - name: Build
+      - id: Build
         env:
           DOCS_BASE_URL: /${{ github.event.repository.name }}/
           DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
-      - name: Deploy
+      - id: Upload
+        if: !cancelled()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build
+          path: build
+      - id: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.event_name == 'push'
+        if: !cancelled() && github.event_name == 'push'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
