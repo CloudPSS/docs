@@ -146,7 +146,7 @@ model.save('newKey') # 另存为新的项目
   - `iesPowerFlow`: 时序潮流方案
   - `iesEnergyStoragePlan`: 储能规划方案
 - `name`: [String][String]；计算方案名称
-- Returns: [Dict][Dict]；返回一个指定类型的计算方案
+- Returns: [Dict][Dict]；返回一个指定类型的计算方案，数据格式例如：`{'rid': '', 'args': {}, 'name': ''}`
 
 创建一个计算方案。
 
@@ -160,7 +160,7 @@ job = model.createJob('emtp','emtp job')
 
 ### `model.addJob(job)`
 
-- `job`: [Dict][Dict]；计算方案
+- `job`: [Dict][Dict]；计算方案，数据格式例如：`{'rid': '', 'args': {}, 'name': ''}`
 
 将计算方案添加到工程中。
 
@@ -184,7 +184,7 @@ job = model.getModelJob('电磁暂态方案 1')
 ### `model.createConfig(name)`
 
 - `name`: [String][String]；参数方案名称
-- Returns: [Dict][Dict]；返回一个参数方案
+- Returns: [Dict][Dict]；返回一个参数方案，数据格式例如：`{'args': {}, 'name': '', 'pins': {}}`
 
 创建一个参数方案。
 
@@ -198,7 +198,7 @@ config = model.createConfig('config 1')
 
 ### `model.addConfig(config)`
 
-- `config`: [Dict][Dict]；参数方案
+- `config`: [Dict][Dict]；参数方案，数据格式例如：`{'args': {}, 'name': '', 'pins': {}}`
 
 将参数方案添加到工程中。
 
