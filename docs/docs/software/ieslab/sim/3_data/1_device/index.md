@@ -133,7 +133,7 @@ import TabItem from '@theme/TabItem';
 
 3. 保存
 </TabItem>
-<TabItem value="py" label="案例3">
+<TabItem value="c" label="案例3">
 
 以典型项目**含风光储交直流配网综合能源系统**中配电系统传输设备的**传输线**为例，说明从典型库导入设备的方法。
 
