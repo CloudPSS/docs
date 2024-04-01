@@ -30,7 +30,7 @@ sidebar_position: 200
 ![Python 代码编辑器](4.png "Python 代码编辑器")
 
 ### 参数、引脚设置
-自定义 Python 元件的参数、引脚设置与其它用户自定义元件类似，在**接口**标签页中进行配置。参数、引脚的类型和定义可以参考[模块封装](https://docs.cloudpss.net/simstudio/features/Basic/Mask)。
+自定义 Python 元件的参数、引脚设置与其它用户自定义元件类似，在**接口**标签页中进行配置。参数、引脚的类型和定义可以参考 [模块封装](../../../simstudio/basic/moduleEncapsulation/index.md)。
 
 参数、引脚定义后，将在代码编辑中作为变量被调用。
 
