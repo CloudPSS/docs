@@ -20,7 +20,7 @@ sidebar_position: 10
 
 XStudio 提供了统一的参数列表配置方法，支持实数、整数、文本、布尔、选择、多选、表格以及虚拟引脚 9 种类型参数的定义。
 
-每种类型参数的定义详见[参数列表定义](../../../simstudio/basic/moduleEncapsulation/parameter-list/index.md)。
+每种类型参数的定义详见[参数列表定义](../../../simstudio/basic/moduleEncapsulation/parameter-list/index.md/)。
 
 ### 配置参数方案
 
@@ -132,15 +132,18 @@ if __name__ == '__main__':
 </TabItem>
 <TabItem value="matlab" label="本地 Matlab 内核">
 
-通过`args.{'键'}(a){'0'}`的方式获取。
+首先需要将 Pyhton 的 list 类型数据转换为 Matlab 的 cell 类型数据，然后通过`{1,a}.xb-1`的形式获取表格中第 a 行 第 b 列的数据。
 
 ```matlab showLineNumbers
 cloudpss.utils.syncenv; %同步环境变量
 cloudpssMod = py.importlib.import_module('cloudpss'); %加载 CloudPSS-SDK
 job = cloudpssMod.currentJob(); %获取函数在当前参数方案下的计算任务实例
-a = job.args{'a'}; %利用 SDK 提供的 args 方法获取键为 a 的参数在当前方案下的值
-b = job.args{'b'}; %获取键为 b 在当前参数方案下的值
+a = job.args{'Table'}; %利用 SDK 提供的 args 方法获取键为 Table 的参数在当前方案下的值
+Table = cloudpss.utils.loadpydata(Table); % 并使用cloudpss工具将python数据格式转换为matlab数据格式
+num = Table{1,1}.x0; %获取表格第 1 行第 1 列的数据
+text = Table{1,2}.x1; %获取表格第 2 行第 2 列的数据
 ```
+![表格参数值得获取](./6-1.png)
 
 </TabItem>
 <TabItem value="js" label="云端 JavaScripts 内核">
@@ -149,10 +152,12 @@ b = job.args{'b'}; %获取键为 b 在当前参数方案下的值
 
 ```JavaScript showLineNumbers
 export default async function* (args,signal,env) {
-    yield "hello, "+args.name+"!" // #利用 SDK 提供的 args 方法获取键为 name 的参数在当前方案下的值
-    yield "Good bye, "+args.name+"!"
-}  
+    yield args.Table[0]['0']
+    yield args.Table[1]['1']
+} 
 ```
+![表格参数值得获取](./6-2.png)
+
 </TabItem>
 </Tabs>
 
