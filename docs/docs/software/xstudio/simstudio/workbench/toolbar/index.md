@@ -39,7 +39,7 @@ CloudPSS SimStudio 模型工坊预置了丰富的项目模板，除空白项目�
 ![打开项目](./3.png)
 
 :::warning 支持的本地文件类型
-**SimStudio 工作台** 内的 **打开本地文件** 功能，与 **SimStudio 导览页** 的 **上传并打开...** 功能相同，仅支持SimStudio导出的**cmdl**格式模型文件。
+**SimStudio 工作台** 内的 **打开本地文件** 功能，与 **SimStudio 云空间** 的 **上传并打开...** 功能相同，仅支持SimStudio导出的**cmdl**格式模型文件。
 
 通过**SimStudio 导览页**导出的模型压缩包（**zip**格式）无法通过该功能上传。
 :::
