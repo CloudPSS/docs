@@ -101,49 +101,49 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
     - cloudpss 模块不存在
 
-    ![cloudpss 模块不存在](./1-1.png)
+      ![cloudpss 模块不存在](./1-1.png)
 
-    报错原因：Python 环境没有安装 CloudPSS-SDK。
+      报错原因：Python 环境没有安装 CloudPSS-SDK。
 
-    解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../envir/python/index.md)重新配置 Python 环境。
+      解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../envir/python/index.md)重新配置 Python 环境。
 
     - matlab 模块不存在
   
-    ![matlab 模块不存在](./1-2.png)
+      ![matlab 模块不存在](./1-2.png)
 
-    报错原因：Matlab 环境没有配置成功。
+      报错原因：Matlab 环境没有配置成功。
 
-    解决方法：参考[Matlab 环境配置](../../envir/matlab/index.md)重新配置 Matlab 的 Python 环境。
+      解决方法：参考[Matlab 环境配置](../../envir/matlab/index.md)重新配置 Matlab 的 Python 环境。
 
     </TabItem>
     <TabItem value="2" label="接口配置报错">
 
     - keyError
 
-    ![keyError](./2-1.png)
+      ![keyError](./2-1.png)
 
-    报错原因：参数键引用错误。
+      报错原因：参数键引用错误。
 
-    解决方法：检查接口标签页的参数列表，确保参数键引用正确。
+      解决方法：检查接口标签页的参数列表，确保参数键引用正确。
 
     - log 方法不存在
 
-    ![log 方法不存在](./2-2.png)
+      ![log 方法不存在](./2-2.png)
 
-    报错原因：旧版本 SDK 的 `cloudpss.function.currentJob()` 接口没有 log 方法。
+      报错原因：旧版本 SDK 的 `cloudpss.function.currentJob()` 接口没有 log 方法。
 
-    解决方法： 使用 log 方法要用 `cloudpss.currentJob() `接口。
+      解决方法： 使用 log 方法要用 `cloudpss.currentJob() `接口。
 
     </TabItem>
     <TabItem value="6" label="其他问题">
 
     - 中文乱码
     
-    ![中文乱码](./3-1.png)
+      ![中文乱码](./3-1.png)
 
-    问题原因：Python 内核用 print 输出中文以及 Matlab 内核用 disp 输出中文在 FuncStudio 中都会显示乱码。
+      问题原因：Python 内核用 print 输出中文以及 Matlab 内核用 disp 输出中文在 FuncStudio 中都会显示乱码。
 
-    解决方法： 使用 log 方法输出中文。
+      解决方法： 使用 log 方法输出中文。
 
     </TabItem>
     </Tabs>
