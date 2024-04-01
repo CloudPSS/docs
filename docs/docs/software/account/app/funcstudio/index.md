@@ -115,32 +115,3 @@ tags:
 
 ## 常见问题
 
-**FuncStudio** 协作项目权限如何划分？
-
-:   **FuncStudio** 协作项目按人员权限划分为：
-
-    - **团队管理员**: admin
-
-    - **团队成员**: member
-
-    - **所有人（公开）**: everyone
-
-    **FuncStudio** 协作项目按操作权限划分为：
-
-    + **read-meta** 列出资源、读取元数据和权限数据
-
-    + **read** 读取资源内容数据
-    
-    + **write-meta** 修改资源元数据
-    
-    + **write** 修改资源内容数据
-    
-    + **admin** 修改资源权限数据
-    
-    + **publish** 修改资源发布数据
-    
-    + **delete** 删除资源
-    
-    + **excute** 读取函数参数信息，并运行函数
-
-    ![FuncStudio 协作项目权限划分](image-4.png "FuncStudio 协作项目权限划分")
