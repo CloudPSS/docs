@@ -150,8 +150,8 @@ $$
 对于指向文档系统内部的链接，包括超链接和图片，一般应使用相对路径，并指定到文件。如：
 
 ```md
-[CloudPSS 同步电机标幺值和有名值系统](../other/SyncGenPerUnitSystem.md)
-[Park 变换器](comp_newParkTransform.md)
+[CloudPSS 同步电机标幺值和有名值系统](../60-other/10-SyncGenPerUnitSystem.md)
+[Park 变换器](./10-comp_newParkTransform.md)
 ```
 
 不要写：
