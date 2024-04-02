@@ -11,7 +11,6 @@ Front-matter 是文件最上方以 `---` 分隔的区域，用于指定文件的
 title: 写作说明
 description: 本文档介绍了如何使用 Markdown 编写文档。
 
-sidebar_position: 100
 hide_table_of_contents: false
 unlisted: false
 draft: false
@@ -61,10 +60,6 @@ Front-matter 之后可以直接开始正文，大标题将依据 `title` 生成�
 ## 描述 `description`
 
 文章的描述，在链接预览中显示。未指定时，将使用文章的第一段作为描述。
-
-## 文章排序 `sidebar_position`
-
-可以使用任意浮点数，序号小的在前，序号相同则使用标题排序。如不指定，默认值为 `Infinity`，即排在最后。
 
 ## 隐藏 TOC `hide_table_of_contents`
 

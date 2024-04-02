@@ -1,4 +1,9 @@
 {
+  "[codeowners]": {
+    "editor.rulers": [48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336, 360],
+    "editor.tabSize": 24,
+    "editor.wordWrap": "on"
+  },
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -33,13 +38,9 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
-  "[codeowners]": {
-    "editor.rulers": [48, 72, 96, 120, 144, 168, 192, 216, 240, 264, 288, 312, 336, 360],
-    "editor.tabSize": 24,
-    "editor.wordWrap": "on"
-  },
   "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"],
   "editor.tabSize": 2,
+  "explorer.sortOrder": "mixed",
   "files.eol": "\n",
   "github-actions.remote-name": "mirror",
   "npm.packageManager": "pnpm",
