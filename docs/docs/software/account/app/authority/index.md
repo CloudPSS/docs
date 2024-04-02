@@ -9,7 +9,7 @@ tags:
 
 ---
 
-**CloudPSS** 应用分为 **SimStudio**、**AppStudio**、**FuncStudio** 三个基本应用，各自具有不同的权限划分，权限划分详情如下：
+**CloudPSS** 应用中 **SimStudio**、**AppStudio**、**FuncStudio** 三个基本应用各自具有不同的权限划分，详情如下：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
