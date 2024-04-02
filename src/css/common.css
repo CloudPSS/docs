@@ -35,7 +35,9 @@ figure {
   margin: 1em 0;
   page-break-inside: avoid;
 
-  > img {
+  > img,
+  > cwe-embed-media,
+  > video {
     display: block;
     margin: auto;
   }

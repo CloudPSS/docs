@@ -1,6 +1,5 @@
 ---
 title: 重用内容
-sidebar_position: 300
 ---
 
 
@@ -28,4 +27,4 @@ import Hello from './_hello-comp.md';
 
 你好，Alice！
 
-效果参考[重用内容](../../examples/reuse/index.md)。
+效果参考[重用内容](../../20-examples/40-reuse/index.md)。

@@ -1,6 +1,5 @@
 ---
 title: 控件
-sidebar_position: 400
 ---
 
 ## [选项卡](https://docusaurus.io/docs/markdown-features/tabs)
@@ -100,7 +99,7 @@ import DocCardList from '@theme/DocCardList';
 ```jsx
 import {Redirect} from '@docusaurus/router';
 
-<Redirect to={require("../edit-help/index.md").metadata.permalink} />
+<Redirect to={require("../10-edit-help/index.md").metadata.permalink} />
 ```
 
-效果参考 [重定向](../../examples/redirect.md)
+效果参考 [重定向](../../20-examples/30-redirect.md)
