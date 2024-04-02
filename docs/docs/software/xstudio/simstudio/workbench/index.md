@@ -10,7 +10,7 @@ sidebar_position: 40
 
 ![SimStudio 工作台](./1.png)
 
-本章主要对上述不同区域的**布局**和**功能**进行详细介绍。
+本节主要对上述不同区域的布局和功能进行详细介绍。
 
 import DocCardList from '@theme/DocCardList';
 
