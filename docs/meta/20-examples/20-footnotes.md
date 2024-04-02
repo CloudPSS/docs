@@ -1,5 +1,5 @@
 ---
-title: Footnotes
+title: 脚注
 ---
 
 [^1]: Here is the footnote.

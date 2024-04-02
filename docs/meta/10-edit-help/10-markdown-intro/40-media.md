@@ -1,13 +1,12 @@
 ---
 title: 媒体
-sidebar_position: 200
 ---
 
 
 使用 `![alt-text](provider:id_or_url)` 语法插入媒体。
 
 ```md
-![](youtube:_QobdWOa02o)
+![视频1](youtube:_QobdWOa02o)
 
 ![](youku:XMTQ2MjU2NTU2OA)
 
@@ -20,7 +19,7 @@ sidebar_position: 200
 
 效果：
 
-![](youtube:_QobdWOa02o)
+![视频1](youtube:_QobdWOa02o)
 
 ![](youku:XMTQ2MjU2NTU2OA)
 
