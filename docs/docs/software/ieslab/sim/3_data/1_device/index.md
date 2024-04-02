@@ -133,7 +133,7 @@ import TabItem from '@theme/TabItem';
 
 3. 保存
 </TabItem>
-<TabItem value="py" label="案例3">
+<TabItem value="c" label="案例3">
 
 以典型项目**含风光储交直流配网综合能源系统**中配电系统传输设备的**传输线**为例，说明从典型库导入设备的方法。
 
@@ -147,7 +147,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 常见问题Q&A
+## 常见问题
 
 设备参数从哪里可以找到呢？  
 :    IESLab 平台元件采用主流的稳态简化模型，其设备参数可以从设备厂家官网查找，若设备实际参数过多较为复杂，可进行适当简化以匹配平台模型参数。
