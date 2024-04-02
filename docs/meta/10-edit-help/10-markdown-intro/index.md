@@ -1,11 +1,10 @@
 ---
 title: MarkDown 语法介绍
-sidebar_position: 100
 ---
 
 ## Front-matter
 
-[Front-matter 介绍](../frontmatter-intro.md)
+[Front-matter 介绍](../30-frontmatter-intro.md)
 
 ## 换行与分段
 

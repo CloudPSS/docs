@@ -45,7 +45,7 @@ import Comp from './_comp-comp.md';
 组件嵌套：
 
 ```tsx
-<Comp compName={frontMatter.title}/>
+<Comp compName={frontMatter.title} />
 ```
 
 > <Comp compName={frontMatter.title} />

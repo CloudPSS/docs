@@ -1,6 +1,5 @@
 ---
 title: 代码块
-sidebar_position: 10
 ---
 
 代码块的基本语法如下：

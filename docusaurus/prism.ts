@@ -4,7 +4,7 @@ import { themes } from 'prism-react-renderer';
 /**
  * 需要支持高亮的语言，列表参考 https://prismjs.com/#supported-languages
  */
-const additionalLanguages = ['java', 'yaml', 'python', 'matlab', 'cpp', 'lua'];
+const additionalLanguages = ['java', 'json', 'yaml', 'python', 'matlab', 'cpp', 'lua'];
 
 export default {
     theme: themes.vsLight,
