@@ -108,7 +108,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-## 常见问题Q&A
+## 常见问题
 
 
 价格模型有什么意义？  
