@@ -139,11 +139,9 @@ import TabItem from '@theme/TabItem';
 
 ## 常见问题
 仿真运行报错："start failed"
-:   可复用
+: 
 
 仿真运行报错："time out"
-:   可复用
+:
 
-如何观测组网仿真的结果？
-:   
 
