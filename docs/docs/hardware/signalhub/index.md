@@ -1,17 +1,17 @@
 ---
-title: CloudPSS A/D Signal Hub
-description: CloudPSS A/D Signal Hub 文档
+title: CloudPSS I/O Signal Hub
+description: CloudPSS I/O Signal Hub 文档
 sidebar_position: 50
 ---
 
 
 
 ## 产品简介
-CloudPSS 数模信号枢纽（CloudPSS A/D Signal Hub）是一款多功能信号处理设备，具备高速率数模转换功能，可作为 CloudPSS-RT 实时仿真器的模拟量、数字量输入/输出的扩展接口，实现 CloudPSS 仿真模型与外部控制器、信号发生器或示波器的实时信号交互。
+CloudPSS 数模信号枢纽（CloudPSS I/O Signal Hub）是一款多功能信号处理设备，具备高速率数模转换功能，可作为 CloudPSS-RT 实时仿真器的模拟量、数字量输入/输出的扩展接口，实现 CloudPSS 仿真模型与外部控制器、信号发生器或示波器的实时信号交互。
 
 ## 产品特点
 
-CloudPSS A/D Signal Hub 可应用于外部信号实时输入、仿真波形实时输出、控制器硬件在环等多种场景，与 CloudPSS-RT 实时仿真器配合使用可满足用户的快速原型控制、硬件在环系统测试等多种需求。 
+CloudPSS I/O Signal Hub 可应用于外部信号实时输入、仿真波形实时输出、控制器硬件在环等多种场景，与 CloudPSS-RT 实时仿真器配合使用可满足用户的快速原型控制、硬件在环系统测试等多种需求。 
 
 - 具备 2 个 SFP 光口，通过光纤和定制通信协议与 CloudPSS-RT 通信，兼具稳定性与高效性。 
 
@@ -19,15 +19,15 @@ CloudPSS A/D Signal Hub 可应用于外部信号实时输入、仿真波形实�
 
 - 拥有屏幕及按钮式交互面板，可实时监控运行状态、设置和下发功能指令。  
 
-![CloudPSS 数模信号枢纽（CloudPSS A/D Signal Hub） =x300](./1.jpg "CloudPSS 数模信号枢纽（CloudPSS A/D Signal Hub）")   
+![CloudPSS 数模信号枢纽（CloudPSS I/O Signal Hub） =x300](./1.jpg "CloudPSS 数模信号枢纽（CloudPSS I/O Signal Hub）")   
 
 ## 产品规格
 ### 性能与参数
 Signal Hub 的尺寸参数与接口参数可参考下表：  
 
-[CloudPSS A/D Signal Hub 参数]
+[CloudPSS I/O Signal Hub 参数]
 |性能|参数指标||
-|-----|:----:| ----:|
+|-----|:----:| :----|
 |尺寸|275mm * 280mm * 110mm ||
 |供电特性| DC 12V，2A ||
 |通讯接口| SFP 接口，10G，850nm，300M ||
@@ -80,7 +80,7 @@ Signal Hub 的尺寸参数与接口参数可参考下表：
 
 ## 功能介绍  
   
-CloudPSS A/D Signal Hub 在默认的模拟量输入/输出、数字量输入/输出功能的基础上，通过功能按键和功能旋钮可以实现其它几个辅助功能。  
+CloudPSS I/O Signal Hub 在默认的模拟量输入/输出、数字量输入/输出功能的基础上，通过功能按键和功能旋钮可以实现其它几个辅助功能。  
 
 ![Signal Hub 交互面板 - 状态页](./6.png "Signal Hub 交互面板 - 状态页")  
 
