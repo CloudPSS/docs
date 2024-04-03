@@ -1,7 +1,7 @@
 ---
-title: 格式栏
-description: 格式栏
-sidebar_position: 30
+title: 格式卡
+description: 格式卡
+sidebar_position: 40
 ---
 :::warning 修改建议 
 1. 不要滥用代码框，对于平台中存在的按钮、选项，使用加粗即可。
