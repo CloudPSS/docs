@@ -1,7 +1,7 @@
 ---
 title: SDK
 description: IESLab SDK 文档
-sidebar_position: 30
+sidebar_position: 300
 ---
 
 import DocCardList from '@theme/DocCardList';
