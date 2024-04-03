@@ -4,9 +4,9 @@ description: SimStudio IES 介绍
 sidebar_position: 10
 ---
 
-:::tip
+
 随着IESLab 平台的逐步完善，将逐步代替 SimStudio IES
-:::
+
 
 ## 平台介绍
 
