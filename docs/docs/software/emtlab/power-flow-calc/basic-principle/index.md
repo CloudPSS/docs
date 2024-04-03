@@ -162,13 +162,16 @@ $$
 这样反复迭代计算，直至所有节点 $\Delta V < \varepsilon$ 和 $\Delta \theta<n$ 为止。
 
 ## 常见问题 Q&A
-为什么设置了 Y-D 型变压器会导致潮流不收敛
+有哪些常见的潮流仿真报错信息
 
 :
+  - 缺少 PV 节点或平衡节点，报错码为： `Buses xxx, and xxx are isolated, with neither a slack bus nor a PV bus found in this area.`
+  - 母线间短路，报错码为：`xxx is a short circuit. Try eliminating it.`
+  - 元件连接了非母线节点，报错码为：`Pin Pin - of xxx is connected to a non-bus node.`
 
-
-
-有哪些常见的潮流不收敛问题
+如果潮流不收敛该如何排查
 
 :
-
+   - 首先根据潮流仿真报错信息检查相应的元件；
+   - 如果是 PSASP 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/P2C/index.md)），并且 PSASP 原算例中含有 Y-D 变压器，可能会出现由于相角问题导致的潮流计算问题，可在计算方案的调试参数中填入 `PF_SKIP_PRE_OFFSET=1`；
+   - 通过潮流计算结果表格进行检查（[潮流数据说明](../write-back/index.md#潮流数据说明)）：Buses 表格的 $P_{res}$ 参数按正序或负序排序，如有大于 10 或小于 -10 的参数，检查连接该母线的同步发电机、三相交流电压源、静态负载、变压器等元件的容量、电压等参数是否设置合理，Branches 表格的 $P_{loss}$ 参数按正序或负序排序，，如有大于 50 或小于 -50 的参数，检查该元件的容量是否设置的太小。
