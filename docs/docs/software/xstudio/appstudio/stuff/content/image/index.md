@@ -51,13 +51,13 @@ import ColorPicker from '../../grid/_color-picker.md'
 
 ## 常见问题
 
-### (x) 与 f(x) 的区别
+
 
 import Fx from '../../grid/_expression.md'
 
 <Fx />
 
-###  事件触发机制
+
 
 import Event from '../../grid/_event.md'
 
