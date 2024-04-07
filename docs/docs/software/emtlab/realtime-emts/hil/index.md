@@ -180,10 +180,7 @@ import TabItem from '@theme/TabItem';
 
 ## 常见问题
 
-仿真运行报错："start failed"
-:   
-    
+如何修改 SFP 光纤接口通信协议？
 
-仿真运行报错："time out"
 :   
-
+    CloudPSS-RT 内置的 Aurora 通信协议已固化在通信模块中，无法由用户自定义，如需修改通信协议，可联系 CloudPSS 技术人员定制开发。
