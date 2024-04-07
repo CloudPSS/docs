@@ -79,7 +79,7 @@ import TabItem from '@theme/TabItem';
 
 如何使用 SimStudio SDK 实现断面启动功能
 :
-   本节案例的断面启动的 SDK demo 如下：
+  使用 SDK 实现断面启动功能，需要将 cloudpss SDK 更新到最新版本。 本节案例的断面启动的 SDK demo 如下：
    ``` Python
     import os
     import cloudpss
