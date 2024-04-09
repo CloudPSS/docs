@@ -25,9 +25,8 @@ EMTLab 提供的潮流计算计算方案设置功能。
 :::
 #### 元件的相关设置
 进行潮流计算前，需要对元件的初值和节点类型进行设置。
-:::info
-单电气端口的元件潮流计算的相关设置如下所示：
-:::
+
+**单电气端口**的元件潮流计算的相关设置如下所示：
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -111,9 +110,8 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-:::info
-多电气端口的元件潮流计算的相关设置如下所示：
-:::
+-----------------
+**多电气端口**的元件潮流计算的相关设置如下所示：
 
 <Tabs>
 <TabItem value="component1" label="三相传输线">
