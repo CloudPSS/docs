@@ -32,3 +32,29 @@
   --docusaurus-warning-code-line-bg: rgb(77, 56, 0, 0.3);
   --docusaurus-highlighted-code-line-fg: var(--ifm-color-gray-700);
 }
+
+[data-theme='light'] {
+  .themed,
+  img[src$='#themed'] {
+    filter: none;
+  }
+
+  .dark-mode-only,
+  img[src$='#dark-mode-only'],
+  figure > img[src$='#dark-mode-only'] ~ * {
+    display: none;
+  }
+}
+
+[data-theme='dark'] {
+  .themed,
+  img[src$='#themed'] {
+    filter: invert(100%) hue-rotate(180deg);
+  }
+
+  .light-mode-only,
+  img[src$='#light-mode-only'],
+  figure > img[src$='#light-mode-only'] ~ * {
+    display: none;
+  }
+}
