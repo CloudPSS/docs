@@ -148,11 +148,15 @@ import DocCardList from '@theme/DocCardList';
 
 当取消勾选该配置项时，用户调用模块时无法改变长宽比，如下图所示。
 
+<center>
 ![无法改变长宽比](image-1.png)![alt text](image-4.png)
+</center>
 
 当勾选该配置项时，用户将能在调用模块时自由更改长宽比，如下图所示。
 
+<center>
 ![可自由更改长宽比](image-5.png)![alt text](image-6.png)
+</center>
 
 注意，如果勾选该配置项，允许用户自由更改长宽比，可能导致**连线无法对齐**等问题，详见[Simstudio元件图标设计规范](./regulations/index.md)相关内容。
 
