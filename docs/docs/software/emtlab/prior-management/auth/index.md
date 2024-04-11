@@ -4,15 +4,6 @@ description: 权限、优先级管理
 sidebar_position: 30
 ---
 
+import Strategy from '../../../account/settings/strategy/index.md';
 
-## 功能定义
-
-## 文档摘要
-
-## 功能说明
-
-
-## 案例
-
-
-## 常见问题 Q&A
+<Strategy />
