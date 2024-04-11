@@ -159,4 +159,7 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 </Tabs>
+---------------
 
+## 示例模型下载连接
+案例： [五节点电力网络的潮流计算仿真](./case-2.cmdl)
