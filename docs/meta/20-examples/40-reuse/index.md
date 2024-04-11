@@ -3,49 +3,34 @@ title: 重用内容
 description: 通过 import 重用其他页面的内容
 ---
 
-导入内容：
+导入并使用组件：
 
 ```tsx
-import Hello from './_hello-comp.md';
-import Comp from './_comp-comp.md';
-```
+import Comp from './_comp.md';
 
-import Hello from './_hello-comp.md';
-import Comp from './_comp-comp.md';
+<Comp name="XXX" ieslab dslab >
+
+![普通模型项目的接口标签页](./2.png)
+
+![元件项目的接口标签页](./1.png)
+
+![元件项目](./3.png)
+
+</Comp>
+```
 
 以下为来自组件的内容：
-```tsx
-<Hello name="Alice" />
-```
 
-> <Hello name="Alice" />
+---
 
-使用默认参数：
-```tsx
-<Hello />
-```
+import Comp from './_comp.md';
 
-> <Hello />
+<Comp name="XXX" ieslab dslab >
 
-传递内容：
-```tsx
-<Hello>
-  :::note
-  内容
-  :::
-</Hello>
-```
+![普通模型项目的接口标签页](./2.png)
 
-> <Hello>
->   :::note
->   内容
->   :::
-> </Hello>
+![元件项目的接口标签页](./1.png)
 
-组件嵌套：
+![元件项目](./3.png)
 
-```tsx
-<Comp compName={frontMatter.title} />
-```
-
-> <Comp compName={frontMatter.title} />
+</Comp>
