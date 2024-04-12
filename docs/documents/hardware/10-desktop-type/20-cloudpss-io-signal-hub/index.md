@@ -1,9 +1,8 @@
 ---
 title: CloudPSS I/O Signal Hub
-description: CloudPSS I/O Signal Hub 文档
-sidebar_position: 50
+description: CloudPSS I/O Signal Hub
+sidebar_position: 20
 ---
-
 
 
 ## 产品简介
