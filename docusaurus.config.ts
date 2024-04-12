@@ -10,7 +10,7 @@ import { translateConfig, BASE_URL, HOME_URL } from './docusaurus/utils';
 
 const config: Config = {
     title: translateConfig({
-        'zh-hans': 'CloudPSS 文档',
+        'zh-hans': 'CloudPSS 知识库',
     }),
     tagline: translateConfig({
         'zh-hans': '云仿真 / 云同步 / 云协作',

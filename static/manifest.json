@@ -1,7 +1,7 @@
 {
-  "name": "CloudPSS 文档",
-  "short_name": "CloudPSS 文档",
-  "description": "CloudPSS 文档系统",
+  "name": "CloudPSS 知识库",
+  "short_name": "CloudPSS 知识库",
+  "description": "CloudPSS 知识库 - 文档/教程/博客",
   "theme_color": "#242526",
   "background_color": "#242526",
   "display": "standalone",
