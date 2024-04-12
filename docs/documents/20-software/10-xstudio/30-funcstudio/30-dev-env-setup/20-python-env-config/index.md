@@ -1,7 +1,6 @@
 ---
 title: Python 环境配置
 description: Python 环境配置
-sidebar_position: 20
 ---
 
 本节介绍在本地计算资源中配置 Python 环境的方法。
