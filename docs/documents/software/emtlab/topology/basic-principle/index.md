@@ -10,7 +10,7 @@ sidebar_position: 10
 
 拓扑分析功能主要用于交直流电网的电磁暂态仿真效率优化，包括分网功能、自动聚合母线、负载均衡三个功能。
 
-其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../../parallel/index.md)进行使用。
+其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../../parallel-acceleration/index.md)进行使用。
 
 ## 功能说明
 
@@ -24,7 +24,7 @@ sidebar_position: 10
 
 #### 分网功能原理
 
-基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基础原理](../../parallel/basic-principle/index.md)。
+基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../../parallel-acceleration/fundamentals/index.md)。
 
 值得注意的是，Bergeron传输线模型要求，波在传输线上的传输时间应**大于或等于仿真步长**，即：
 
@@ -81,7 +81,7 @@ $$
 
 负载均衡配置功能可在分网拓扑分析的同时，生成```负载均衡配置策略表```。该策略表定义了每个计算逻辑核心中分配的元件分区，具体可参见[负载均衡配置](../load-average/index.md)
 
-用户可进一步在并行仿真中修改该策略表，具体可见[并行计算方案配置](../../parallel/job/index.md#更多高级设置)。
+用户可进一步在并行仿真中修改该策略表，具体可见[并行计算高级参数设置](../../parallel-acceleration/advanced-param-setup/index.md#更多高级设置)。
 
 ## 案例
 
@@ -110,7 +110,7 @@ import TabItem from '@theme/TabItem';
 
 ![元件表中的传输线](image-11.png)
 
-用户可进一步参考见[并行计算方案配置案例介绍](../../parallel/job/index.md#案例介绍)文档，进行进一步的并行仿真计算设置。
+用户可进一步参考见[并行计算方案配置案例介绍](../../parallel-acceleration/advanced-param-setup/index.md#案例介绍)文档，进行进一步的并行仿真计算设置。
 
 
 </TabItem>
@@ -127,7 +127,7 @@ import TabItem from '@theme/TabItem';
 
 为什么在分网后，仿真效率没有提高？ 
 :
-    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行加速计算方案配置](../../parallel/job/index.md)进行配置。
+    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行计算高级参数设置](../../parallel-acceleration/advanced-param-setup/index.md)进行配置。
     
     除时域分析之外，风电接入宽频振荡问题更依赖于频域的阻抗分析。
     针对阻抗特性扫描需求，开发了基于电磁暂态仿真的面向大规模交直流电网的端口阻抗特性扫描模块，用户可针对不同需求可设置不同频率采样方式，在保证精度的同时提升效率。
