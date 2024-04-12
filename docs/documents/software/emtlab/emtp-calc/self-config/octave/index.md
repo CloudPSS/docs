@@ -162,6 +162,9 @@ import TabItem from '@theme/TabItem';
     
     ![Octave 分段函数输出结果](./3-7.png "Octave 分段函数输出结果")
 
+
+**案例 1** 算例文件下载：[model_admin_Octave_Test_Case1.zip](./model_admin_Octave_Test_Case1.zip "案例 1 算例文件")
+
 </TabItem>
 
 <TabItem value="case2" label="案例 2">
@@ -233,6 +236,9 @@ import TabItem from '@theme/TabItem';
     配置电磁暂态仿真方案和输出通道，运行电磁暂态仿真，得到如下图所示结果。元件的输出从 10 开始，每 1 秒爬升 20，与设置参数一致。
     
     ![Octave 阶梯爬坡信号发生器输出结果](./3-17.png "Octave 阶梯爬坡信号发生器输出结果")
+
+
+**案例 2** 算例文件下载：[model_admin_Octave_Test_Case2.zip](./model_admin_Octave_Test_Case2.zip "案例 2 算例文件")
 
 </TabItem>
 
@@ -316,6 +322,9 @@ import TabItem from '@theme/TabItem';
     配置电磁暂态仿真方案和输出通道，运行电磁暂态仿真，得到如下图所示结果。元件输出一个两维的数据，分别是计算得到的瞬时有功 P 和瞬时无功 Q，每 0.1s 计算一次，与设置的 Octave 元件外部触发频率一致。
     
     ![Octave 三相瞬时功率计算元件输出结果](./3-28.png "Octave 三相瞬时功率计算元件输出结果")
+
+
+**案例 3** 算例文件下载：[model_admin_Octave_Test_Case3.zip](./model_admin_Octave_Test_Case3.zip "案例 3 算例文件")
 
 </TabItem>
 </Tabs>

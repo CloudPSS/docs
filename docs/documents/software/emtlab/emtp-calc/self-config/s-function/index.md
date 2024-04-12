@@ -446,6 +446,9 @@ import TabItem from '@theme/TabItem';
 
     ![闭环测试结果对比（交流电流 A 相）](./3-23.png "闭环测试结果对比（交流电流 A 相）")   
 
+
+**三相整流器控制的 S-Function 实现** 算例文件下载：[model_admin_MicroGrid_Rectifier_S_Function_withpara.zip](./model_admin_MicroGrid_Rectifier_S_Function_withpara.zip "三相整流器控制的 S-Function 实现算例文件")
+
 </TabItem>
 </Tabs>
 
