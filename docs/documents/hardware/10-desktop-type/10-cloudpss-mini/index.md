@@ -1,6 +1,6 @@
 ---
-title: CloudPSS Mini
-description: CloudPSS Mini 文档
+title: CloudPSS Mini (RT)
+description: CloudPSS Mini (RT)
 sidebar_position: 10
 ---
 
