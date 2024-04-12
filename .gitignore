@@ -2,6 +2,8 @@
 
 # Production
 /build
+/*.deb
+/*.log
 
 # Generated files
 .docusaurus
