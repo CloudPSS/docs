@@ -20,7 +20,7 @@ title: 文档组织
 
 ## 组织结构
 
-每个文件夹中的 `index.md` 为该文件夹的默认页面，如 `/docs/meta/10-edit-help/20-folders/index.md` 在浏览时使用 `/meta/edit-help/folders/` 即可访问。
+每个文件夹中的 `index.md` 为该文件夹的默认页面，如 `/docs/meta/10-edit-help/20-folder-structure/index.md` 在浏览时使用 `/meta/edit-help/folder-structure/` 即可访问。
 
 因此，当一个文档（如 `10-foo/20-bar.md`）需要包含媒体文件时，建议建立同名的文件夹（`10-foo/20-bar/`） 进行存放，并将文档移动到文件夹内（`10-foo/20-bar/index.md`）。如图：
 

@@ -1,5 +1,5 @@
 ---
-title: 用户自定义控制元件（Octave、Matlab）
+title: 功能类文档 - 用户自定义控制元件（Octave、Matlab）
 description: 该功能支持使用 Octave、MATLAB 语言构建自定义电磁暂态仿真元件。
 sidebar_position: 100
 

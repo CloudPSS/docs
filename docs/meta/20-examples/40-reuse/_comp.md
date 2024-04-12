@@ -1,5 +1,5 @@
 
-在<b>{props.name ?? "未知模块"}</b>中，blah……
+在<strong>{props.name ?? "未知模块"}</strong>中，blah……
 
 ## 普通模型项目的接口标签页
 
@@ -13,20 +13,22 @@
 
 {props.children[2]}
 
-<div hidden={!props.ieslab}>
+<slot hidden={!props.ieslab}>
 
 IESLAB 中，blah……
 
-</div>
+![普通模型项目的接口标签页](./2.png)
 
-<div hidden={!props.dslab}>
+</slot>
+
+<slot hidden={!props.dslab}>
 
 DSLAB 中，blah……
 
-</div>
+</slot>
 
-<div hidden={!props.emtlab}>
+<slot hidden={!props.emtlab}>
 
 EMTLAB 中，blah……
 
-</div>
+</slot>
