@@ -173,7 +173,7 @@ $$
 
 :
    - 首先根据潮流仿真报错信息检查相应的元件；
-   - 如果是 PSASP 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/conversion-tools/bpa-to-cloudpss/index.md)），并且 PSASP 原算例中含有 Y-D 变压器，可能会出现由于相角问题导致的潮流计算问题，可用以下任意一种方法进行处理：
+   - 如果是 PSASP 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/P2C/index.md)），并且 PSASP 原算例中含有 Y-D 变压器，可能会出现由于相角问题导致的潮流计算问题，可用以下任意一种方法进行处理：
      - 在计算方案的调试参数中填入 `PF_SKIP_PRE_OFFSET=1`；
      - 在 PSASP-CloudPSS 算例转换时，勾选变压器强制 Y(G) 接选项；
      - 在**实现标签页**中点击**元件表**，将三相双绕组变压器和三相三绕组变压器的 `Winding#1 Type` 和 `Winding#2 Type` 均设为 0。
