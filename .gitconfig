@@ -1,0 +1,6 @@
+[pull]
+	rebase = true
+  ff = true
+
+[push]
+  followTags = true

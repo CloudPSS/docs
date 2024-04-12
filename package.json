@@ -24,7 +24,7 @@
     "typecheck": "tsc",
     "optimize": "pnpm run convert-webp",
     "convert-webp": "node -e \"import('./tools/convert-webp.js').then(({default: d}) => d(['docs', 'blog']))\"",
-    "prepare": "husky || echo Failed to initialize husky",
+    "prepare": "husky && git config --local include.path ../.gitconfig || echo Failed to initialize husky",
     "format": "prettier --cache --cache-strategy content --write .",
     "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --ext .js,.ts,.jsx,.tsx ."
   },
