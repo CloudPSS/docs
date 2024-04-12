@@ -18,6 +18,11 @@
   display: none;
 }
 
+slot,
+.slot {
+  display: contents;
+}
+
 .center,
 center {
   text-align: center;

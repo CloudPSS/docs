@@ -133,7 +133,7 @@ SimStudio 提供了 **MarkDown 文本**元件，支持用户通过 MarkDown 语�
 + 在模型标签栏，从模型库的**工具**分组拖拽**MarkDown 文本**元件至拓扑编辑区；
 + 在拓扑编辑区，点击选中添加的 MarkDown 文本元件，在其参数卡中输入 MarkDown 文本。
 
-更多 Markdown 语法的帮助参见 [MarkDown 语法介绍](/docs/meta/10-edit-help/10-markdown-intro/index.md) 帮助页。
+更多 Markdown 语法的帮助参见 [MarkDown 语法介绍](/docs/meta/10-edit-help/10-markdown-introduction/index.md) 帮助页。
 
 ![MarkDown 文本](./4-2.png)
 

@@ -4,7 +4,7 @@ title: MarkDown 语法介绍
 
 ## Front-matter
 
-[Front-matter 介绍](../30-frontmatter-intro.md)
+[Front-matter 介绍](../30-frontmatter-introduction.md)
 
 ## 换行与分段
 

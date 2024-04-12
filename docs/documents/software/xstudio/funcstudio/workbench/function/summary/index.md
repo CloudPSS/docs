@@ -32,7 +32,7 @@ sidebar_position: 10
 :::info Markdown 语法
 描述及文档内容的编写支持 **MarkDown** 语法，**Markdown** 是一种轻量级标记语言，支持文字格式调整，图片、图表、数学公式等的输入。
 
-具体用法参见 [MarkDown 语法介绍](/docs/meta/edit-help/markdown-intro/index.md)。
+具体用法参见 [MarkDown 语法介绍](/docs/meta/edit-help/markdown-introduction/index.md)。
 :::
 
 ### 预览
