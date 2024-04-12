@@ -42,8 +42,8 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 | 生产厂商 | `manufacturer` |  | 生产厂商 | 文本 | 生产厂商 |
 | 设备型号 | `equipType` |  | 设备型号 | 文本 | 设备型号 |
 | 储氢罐容量 | `HydrogenTankCap` | Nm3 | 储氢罐容量 | 实数 | 储氢罐容量 |
-| 储氢效率 | `HydrogenStoEff` | % | 储氢效率 | 实数 | 范围为0-1 |
-| 释氢效率 | `HydrogenRelEff` | % | 释氢效率 | 实数 | 范围为0-1 |
+| 储氢效率 | `HydrogenStoEff` |  | 储氢效率 | 实数 | 范围为0-1 |
+| 释氢效率 | `HydrogenRelEff` |  | 释氢效率 | 实数 | 范围为0-1 |
 | 最大储氢量 | `MaxHydrogenSto` | Nm3/h | 最大储氢量 | 实数 | 最大储氢量 |
 | 最大释氢量 | `MaxHydrogenRel` | Nm3/h | 最大释氢量 | 实数 | 最大释氢量 |
 | 采购成本 | `PurchaseCost` | 万元/台 | 采购成本 | 实数 | 设备采购成本 |
