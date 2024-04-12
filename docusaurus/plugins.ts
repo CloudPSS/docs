@@ -60,7 +60,7 @@ plugins.push([
             {
                 tagName: 'meta',
                 name: 'application-name',
-                content: 'CloudPSS 文档',
+                content: 'CloudPSS 知识库',
             },
             {
                 tagName: 'link',
@@ -71,7 +71,7 @@ plugins.push([
             {
                 tagName: 'meta',
                 name: 'apple-mobile-web-app-title',
-                content: 'CloudPSS 文档',
+                content: 'CloudPSS 知识库',
             },
             {
                 tagName: 'meta',
