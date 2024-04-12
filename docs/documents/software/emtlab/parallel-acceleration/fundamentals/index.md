@@ -1,13 +1,13 @@
 ---
-title: 并行仿真基础原理
-description: 并行仿真基础原理
+title: 并行仿真基本原理
+description: EMTLab 的并行仿真加速技术基本原理
 sidebar_position: 10
 ---
 
-本文档介绍EMTLab的大规模电力系统并行仿真技术基础原理，包括基于 Bergeron 模型的分网并行加速技术、基于负载均衡的 CPU Turbo 加速技术、 Super Turbo 加速技术以及电气、控制并行加速技术。
+本文档介绍 EMTLab 的大规模电力系统并行仿真技术基本原理，包括基于 Bergeron 模型的分网并行加速技术与 CPU Turbo 加速技术。
 
 ## 功能定义
-EMTLab 的并行仿真加速技术基础原理
+EMTLab 的并行仿真加速技术基本原理。
 
 ## 原理说明
 
