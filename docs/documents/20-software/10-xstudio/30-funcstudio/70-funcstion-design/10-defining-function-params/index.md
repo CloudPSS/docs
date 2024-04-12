@@ -1,7 +1,6 @@
 ---
 title: 函数参数定义及引用
 description: 定义函数外部接口，并在内核中引用。
-sidebar_position: 10
 ---
 
 本节介绍 FuncStudio 函数参数的定义及引用功能。

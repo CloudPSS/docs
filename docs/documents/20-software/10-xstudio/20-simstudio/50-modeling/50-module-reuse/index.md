@@ -1,7 +1,6 @@
 ---
 title: 模块调用
 description: 模块调用
-sidebar_position: 70
 ---
 
 CloudPSS SimStudio 提供了灵活稳定的模块封装和模块调用功能，在大型仿真算例中使用这些功能可使得仿真图结构清晰、界面简洁。关于模块封装的介绍和如何构建一个模块封装，详见[模块封装](../moduleEncapsulation/index.md)帮助文档。
