@@ -3,7 +3,7 @@ title: AppStudio 云空间
 description: AppStudio 云空间
 ---
 
-import AppStudio from '../../../account/app/appstudio/index.md';
+import AppStudio from '../../../50-user-center/30-cloudpss-apps/30-appstudio-cloud-space/index.md';
 
 <AppStudio />
 
