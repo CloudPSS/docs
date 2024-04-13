@@ -3,6 +3,6 @@ title: FuncStudio 云空间
 description: FuncStudio 云空间
 ---
 
-import FuncStudio from '../../../account/app/funcstudio/index.md';
+import FuncStudio from '../../../50-user-center/30-cloudpss-apps/20-funcstudio-cloud-space/index.md';
 
 <FuncStudio />
