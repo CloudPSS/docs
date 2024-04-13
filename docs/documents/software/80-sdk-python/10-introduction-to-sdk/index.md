@@ -1,6 +1,6 @@
 ---
-title: 简介
-description: CloudPSS SDK 简介文档
+title: SDK 介绍
+description: CloudPSS SDK 介绍文档
 sidebar_position: 10
 
 tags:

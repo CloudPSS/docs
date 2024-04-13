@@ -1,7 +1,7 @@
 ---
 title: API
 description: CloudPSS SDK API 文档
-sidebar_position: 40
+sidebar_position: 60
 
 tags:
 - SDK
