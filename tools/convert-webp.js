@@ -89,7 +89,7 @@ export default async function (root) {
             const size = imageSize(file);
             const type = size.type ?? path.extname(file).slice(1);
             if (type === 'webp') {
-                console.log(chalk`{yellow [SKIP]} {underline ${file}} Already webp`);
+                console.log(chalk`{yellow [SKIP]} {underline ${file}} \t Already webp`);
                 return;
             }
             if (type === 'gif') {
@@ -103,7 +103,7 @@ export default async function (root) {
                         resize = { width: Math.round((size.width / size.height) * MAX_HEIGHT), height: MAX_HEIGHT };
                     }
                 } else {
-                    console.error(chalk`{red [ERRO]} {underline ${file}} Cannot get image size`);
+                    console.error(chalk`{red [ERRO]} {underline ${file}} \t Cannot get image size`);
                 }
                 await execa(`${bin}/cwebp`, [
                     '-q',
@@ -117,7 +117,7 @@ export default async function (root) {
                 ]);
                 if (resize) {
                     console.log(
-                        chalk`{yellow [RSZE]} {underline ${file}} ${size.width}x${size.height} -> ${resize.width}x${resize.height}`,
+                        chalk`{yellow [RSZE]} {underline ${file}} \t ${size.width}x${size.height} -> ${resize.width}x${resize.height}`,
                     );
                 }
             }
@@ -131,7 +131,7 @@ export default async function (root) {
         converted += c.size;
         count++;
         const ratio = ((c.size / o.size) * 100).toFixed();
-        console.log(chalk`{green [CONV]} {underline ${file}}\t${pb(o.size)} -> ${pb(c.size)}\t(${ratio}%)`);
+        console.log(chalk`{green [CONV]} {underline ${file}} \t ${pb(o.size)} -> ${pb(c.size)} \t (${ratio}%)`);
     };
 
     const parallelism = typeof os.availableParallelism == 'function' ? os.availableParallelism() : 4;
