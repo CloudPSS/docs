@@ -203,7 +203,7 @@ f.tabsContainer([
 ### `functionExecution.gridContainer(item=[], grid="'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr", key=None)`
 
 - `item`: [List][List] 分组成员，如 `[{title: 'item1', placeholder: 'Data loading', html: false, query: {type: 'message', key: 'item-1'}}]`
-- `grid`: [String][String] grid 布局，如 `'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr`，详情参见 [grid 布局](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
+- `grid`: [String][String] grid 布局，如 `'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr`，详情参见 [grid布局](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
 - `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
 
 发送 grid 布局分组消息。
