@@ -4,6 +4,6 @@ description: 模块调用
 sidebar_position: 50
 ---
 
-import CallModule from '../../../../xstudio/simstudio/basic/callModule/index.md';
+import CallModule from 'docs/documents/software/10-xstudio/20-simstudio/50-modeling/50-module-reuse/index.md';
 
 <CallModule />
