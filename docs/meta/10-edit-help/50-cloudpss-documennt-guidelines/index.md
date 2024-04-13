@@ -11,7 +11,7 @@ title:  CloudPSS 文档撰写和审阅规范
 CloudPSS 文档基于用 MarkDown 语法编写。请严格按照以下两项指南要求基础格式撰写、审阅文档。
 1. [MarkDown 语法介绍](../10-markdown-introduction/index.md)：CloudPSS 文档支持的 MarkDown 语法说明
 2. [文档组织](../20-folder-structure/index.md)：文档命名、目录结构基本要求
-3. [Front-matter介绍](../30-frontmatter-introduction.md)：文档头（元数据）编写方法介绍
+3. [Front-matter 介绍](../30-frontmatter-introduction.md)：文档头（元数据）编写方法介绍
 4. [中文文案排版指北](../40-copywriting.md)：中文文档排版的基本格式
 
 ### 特殊格式要求
@@ -53,7 +53,7 @@ CloudPSS 文档基于用 MarkDown 语法编写。请严格按照以下两项指�
 
 > 本文档介绍 **SimStudio 工作台** - **实现标签页** - **拓扑编辑区** 的基本操作。
 
-语法:
+语法：
 > `本文档主要介绍 **SimStudio 工作台** - **工具栏** 的各项功能。`
 
 > `本文档介绍 **SimStudio 工作台** - **实现标签页** - **拓扑编辑区** 的基本操作。`
@@ -110,6 +110,12 @@ CloudPSS 文档基于用 MarkDown 语法编写。请严格按照以下两项指�
 效果：
 
 > 使用方法见 [代码块](../10-markdown-introduction/10-code.md) 帮助页。
+
+:::tip
+使用 Pangu 插件可以自动在 Markdown 文档中添加空格。
+
+![右键菜单中的 Pangu Format](pangu.png)
+::
 
 #### FAQ
 
@@ -177,7 +183,7 @@ CloudPSS 文档只允许以下 4 类文档块。
 ```
 假设你是一名电力仿真软件的说明文档撰写员。软件界面是中文，现在需要你对软件的每篇说明文档的名称进行翻译，并为每篇文档设计合理的英文文件名。英文文件名采用小写字母单词全拼格式，多个单词中间用'-'分隔符进行连接。
     
-从现在开始，我将中文文件名称批量发送给你，你为每个中文文件名设计3个合理的、简洁的英文文件名，并分别给出每个翻译的中文解释说明，不要说多余的话。
+从现在开始，我将中文文件名称批量发送给你，你为每个中文文件名设计 3 个合理的、简洁的英文文件名，并分别给出每个翻译的中文解释说明，不要说多余的话。
 
 例如，我将发给你如下内容：
 
@@ -199,12 +205,12 @@ CloudPSS 文档只允许以下 4 类文档块。
     * software-suite: 表示一套软件产品，强调多个软件的集合。
 3. XStudio
     * xstudio: 保留原名称，简单易识别。
-    * xstudio-suite: 强调XStudio作为一套工具或软件的概念。
-    * xstudio-platform: 指出XStudio是一个平台，包含多个工具和功能。
+    * xstudio-suite: 强调 XStudio 作为一套工具或软件的概念。
+    * xstudio-platform: 指出 XStudio 是一个平台，包含多个工具和功能。
 4. 软件介绍
     * software-introduction: 直接翻译，清晰明了。
-    * about-xstudio: 特定于XStudio的介绍。
-    * introduction-to-xstudio: 更正式的对XStudio进行介绍。
+    * about-xstudio: 特定于 XStudio 的介绍。
+    * introduction-to-xstudio: 更正式的对 XStudio 进行介绍。
 5. 探索典型案例
     * explore-case-studies: 直接翻译，强调“探索”和“案例学习”的意图。
     * case-studies-overview: 强调是对典型案例的概述。
@@ -230,9 +236,7 @@ CloudPSS 文档行文过程应遵循以下规范。
 
     > > 根据 CloudPSS SimStudio 所提供的仿真功能不同，**实现标签页**具备不同的建模界面。
 
-
 2. 介绍操作流程时应尽量采用标准、简洁、无明显语气的**无主句**方式介绍操作流程。应避免使用人称代词（你、我、他等），必要时使用**用户**代替；应避免使用时间连接词（首先、然后等），针对流程较长的操作，应采用顺序列表方式介绍步骤。
-
 
 **正确用法**
 
@@ -255,13 +259,11 @@ CloudPSS 文档行文过程应遵循以下规范。
 
 > 超链接工具使用方法包含 2 步：首先，获取被指向目标元素的链接，然后，添加超链接。
 
-
 ## 内容重用要求
 
 基础类文档，如个人中心、XStudio 工作台等文档应满足内容重用，其中的图片和文字应同时适配 EMTLab、IESLab 和 DSLab 平台的介绍。
 
 内容重用方法，参见 [重用内容](../../20-examples/40-reuse/index.md) 帮助页。
-
 
 ## 内容和逻辑要求
 
