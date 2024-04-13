@@ -10,7 +10,7 @@ import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
 import rxjs from 'rxjs';
 
-const LIB_WEBP_VERSION = '1.3.2';
+const LIB_WEBP_VERSION = '1.4.0';
 // A4, 300dpi
 const MAX_WIDTH = 2400;
 // 16383 is the maximum height for webp
@@ -89,7 +89,7 @@ export default async function (root) {
             const size = imageSize(file);
             const type = size.type ?? path.extname(file).slice(1);
             if (type === 'webp') {
-                console.log(chalk`{yellow [SKIP]} {underline ${file}}\tAlready webp`);
+                console.log(chalk`{yellow [SKIP]} {underline ${file}} Already webp`);
                 return;
             }
             if (type === 'gif') {
@@ -117,7 +117,7 @@ export default async function (root) {
                 ]);
                 if (resize) {
                     console.log(
-                        chalk`{yellow [RSZE]} {underline ${file}}\t${size.width}x${size.height} -> ${resize.width}x${resize.height}`,
+                        chalk`{yellow [RSZE]} {underline ${file}} ${size.width}x${size.height} -> ${resize.width}x${resize.height}`,
                     );
                 }
             }
