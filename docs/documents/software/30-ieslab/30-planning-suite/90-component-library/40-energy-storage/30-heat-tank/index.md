@@ -29,19 +29,12 @@ tags:
 
 
 **蓄能前后的蓄热罐量关系为:**
-<<<<<<< HEAD:docs/documents/software/30-ieslab/30-plan/90-component/30-storage/30-heat-tank/index.md
 $$
 W_{B}^{1} = W_{B}^{0}+ \left( {Q_{B,C}\eta_{B,C} - \frac{Q_{B,D} }{\eta_{B,D} } } \right)\Delta t
 $$
-式中，$W_{B}^{0}$、 $W_{B}^{1}$ 分别表示蓄热/释热前后蓄能装置的蓄热罐量（kWh）；$Q_{B,C}$、$Q_{B,D}$ 分别表示蓄能装置的蓄热/释热功率（kW）；$\eta_{B,C}$、$\eta_{B,D}$分别表示蓄能装置蓄热/释热效率，$\Delta t$ 为时间步长。
-=======
- $$
- W_{B}^{1} = W_{B}^{0}+ \left( {Q_{B,C}\eta_{B,C} - \frac{Q_{B,D} }{\eta_{B,D} } } \right)\Delta t
- $$
- 式中，$W_{B}^{0}$、 $W_{B}^{1}$ 分别表示蓄热/释热前后蓄能装置的蓄热罐量（kWh）；$Q_{B,C}$、$Q_{B,D}$分别表示蓄能装置的蓄热/释热功率（kW）；$\eta_{B,C}$、$\eta_{B,D}$ 分别表示蓄能装置蓄热/释热效率,$\Delta t$ 为时间步长。
->>>>>>> 9a5b07d6 (docs: IESLab re-comp):docs/documents/software/30-ieslab/30-plan/90-component/40-storage/30-heat-tank/index.md
+式中，$W_{B}^{0}$、$W_{B}^{1}$ 分别表示蓄热/释热前后蓄能装置的蓄热罐量（kWh）；$Q_{B,C}$、$Q_{B,D}$ 分别表示蓄能装置的蓄热/释热功率（kW）；$\eta_{B,C}$、$\eta_{B,D}$ 分别表示蓄能装置蓄热/释热效率，$\Delta t$ 为时间步长。
 
-![储热罐](./HeatTank.svg )
+![储热罐](./HeatTank.svg)
 
 
 ## 元件说明

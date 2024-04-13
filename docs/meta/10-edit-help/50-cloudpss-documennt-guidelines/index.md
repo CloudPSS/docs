@@ -115,7 +115,7 @@ CloudPSS 文档基于用 MarkDown 语法编写。请严格按照以下两项指�
 使用 Pangu 插件可以自动在 Markdown 文档中添加空格。
 
 ![右键菜单中的 Pangu Format](pangu.png)
-::
+:::
 
 #### FAQ
 
