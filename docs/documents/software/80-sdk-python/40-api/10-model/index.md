@@ -1,6 +1,6 @@
 ---
-title: 算例类
-description: CloudPSS SDK API 文档算例类
+title: 模型类
+description: CloudPSS SDK API 文档模型类
 sidebar_position: 41
 
 tags:
