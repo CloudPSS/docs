@@ -1,7 +1,7 @@
 ---
 title: 安装与卸载
 description: CloudPSS SDK 安装与卸载文档
-sidebar_position: 21
+sidebar_position: 30
 
 tags:
 - SDK
