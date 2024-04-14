@@ -43,6 +43,11 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
                 sidebarId: 'developertools',
             },
             {
+                label: '测试功能',
+                type: 'docSidebar',
+                sidebarId: 'betafeatures',
+            },
+            {
                 label: '已归档内容',
                 type: 'docSidebar',
                 sidebarId: 'archivedcontent',
