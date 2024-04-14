@@ -1,5 +1,5 @@
 ---
-title: CloudPSS 一般账户功能
+title: 系统管理员账户功能
 sidebar_position: 55
 
 tags: 
