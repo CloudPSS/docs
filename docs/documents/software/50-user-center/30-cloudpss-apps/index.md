@@ -1,5 +1,5 @@
 ---
-title: CloudPSS 应用介绍
+title: CloudPSS 应用
 description: CloudPSS 应用介绍
 sidebar_position: 53
 

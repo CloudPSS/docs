@@ -38,7 +38,7 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
                 sidebarId: 'softwaretools',
             },
             {
-                label: '开发工具',
+                label: '运维工具',
                 type: 'docSidebar',
                 sidebarId: 'developertools',
             },
