@@ -49,7 +49,7 @@
 [data-theme='dark'] {
   .themed,
   img[src$='#themed'] {
-    filter: invert(90%) hue-rotate(180deg);
+    filter: invert(89.453125%) hue-rotate(180deg);
   }
 
   .light-mode-only,
