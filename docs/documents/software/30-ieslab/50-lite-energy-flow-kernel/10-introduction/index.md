@@ -1,6 +1,6 @@
 ---
-title: SimStudio IES 介绍
-description: SimStudio IES 介绍
+title: 轻量级能量流仿真内核介绍
+description: SimStudio 轻量级能量流仿真内核介绍
 sidebar_position: 10
 ---
 
