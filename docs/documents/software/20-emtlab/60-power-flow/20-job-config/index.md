@@ -57,7 +57,7 @@ import TabItem from '@theme/TabItem';
 | Rated Reactive Power (3 Phase) | MVar | 额定无功功率，感性负荷为正 | 潮流计算时节点消耗无功功率 |
 | Initial Voltage | p.u. | 初始电压幅值，由潮流计算决定 | 潮流计算后迭代的节点电压有名值会换算为标幺值，潮流回写时修改该参数 |
 
-更多静态负载的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
+更多静态负载的潮流相关内容，可参考 [自定义潮流元件](../40-user-defined/index.md#案例) 帮助文档。
 
 </TabItem>
 <TabItem value="component3" label="三相交流电压源">
@@ -95,7 +95,7 @@ import TabItem from '@theme/TabItem';
 | Upper Reactive Power Limit| MVar | 无功功率上限 | **PV** 节点和**平衡节点**的注入无功上界，越界后该节点由电压约束转为无功约束 |
 | Bus Voltage Angle | Deg | 母线电压相位 | **平衡节点**的相角 |
 
-更多同步发电机的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
+更多同步发电机的潮流相关内容，可参考 [自定义潮流元件](../40-user-defined/index.md#案例) 帮助文档。
 </TabItem>
 
 <TabItem value="component5" label="并联电容/电抗器">
@@ -112,7 +112,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="component6" label="风机模型">
 风机模型包括**双馈风机风电场模型_含外部控制**、**双馈风机风场等值模型**、**风场等值模型I：PMSG网侧变流器模型**和**直驱风机风电场模型_含外部控制**四种模型，这四种模型的潮流参数值如下图所示，具体的参数说明可见表格：
 
-![风机模型潮流初值设置 =x200](./dfig-setting.png)
+![风机模型潮流初值设置 =x300](./dfig-setting.png)
 
 | 参数名称 | 单位 | 备注 | 说明 |
 | :--- | :--- | :--- | :--- |
@@ -130,7 +130,7 @@ import TabItem from '@theme/TabItem';
 <TabItem value="component7" label="光伏电站模型">
 光伏电站模型包括**光伏电站模型_含外部控制**和**光伏电站模型**两种模型，这两种模型的潮流参数值如下图所示，具体的参数说明可见表格：
 
-![光伏电站模型潮流初值设置 =x200](./pv-station-setting.png)
+![光伏电站模型潮流初值设置 =x250](./pv-station-setting.png)
 
 | 参数名称 | 单位 | 备注 | 说明 |
 | :--- | :--- | :--- | :--- |
@@ -164,7 +164,7 @@ import TabItem from '@theme/TabItem';
 | +/- Seq. Inductive Reactance | Ω/km | 单位长度正序感抗 | 选择参数输入方式为有名值时启用，用于计算传输线总电抗 X |
 | +/- Seq. Capacitive Reactance | MΩ*km | 单位长度正序容抗 | 选择参数输入方式为有名值时启用，用于计算传输线总对地电纳 B |
 
-更多三相传输线的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
+更多三相传输线的潮流相关内容，可参考 [自定义潮流元件](../40-user-defined/index.md#案例) 帮助文档。
 </TabItem>
 
 <TabItem value="component2" label="三相电阻">
@@ -242,7 +242,7 @@ import TabItem from '@theme/TabItem';
 | Center Bus Voltage Magnitude | p.u. | 中心节点电压幅值 | 用于设置中心母线的初始电压，潮流回写时修改该参数 |
 | Center Bus Voltage Angle | Deg | 中心节点电压相角 | 用于设置中心母线的初始相角，潮流回写时修改该参数 |
 
-更多三相三绕组变压器的潮流相关内容，可参考 [自定义潮流元件](../self-config/index.md#案例) 帮助文档。
+更多三相三绕组变压器的潮流相关内容，可参考 [自定义潮流元件](../40-user-defined/index.md#案例) 帮助文档。
 </TabItem>
 </Tabs>
 
@@ -295,8 +295,8 @@ import TabItem from '@theme/TabItem';
 | :--- | :--- | :--- | 
 | 任务队列 | 任务运行使用的队列 | 默认设置为**默认队列** |
 | 计算资源 | 任务运行使用的计算资源 | 默认设置为**1逻辑核心** |
-| 优先级 | 任务运行的优先级 | 默认值为0，即最低优先级, 更多内容请查看 [高级管理功能](../../prior-management/) 帮助文档 |
-| 调试参数 | 任务调试时使用的调试参数 | 默认为空，更多内容请查看 [高级管理功能](../../prior-management/) 帮助文档 |
+| 优先级 | 任务运行的优先级 | 默认值为0，即最低优先级 |
+| 调试参数 | 任务调试时使用的调试参数 | 默认为空 |
 </TabItem>
 </Tabs>
 
