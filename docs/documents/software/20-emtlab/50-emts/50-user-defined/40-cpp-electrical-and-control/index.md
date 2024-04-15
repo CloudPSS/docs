@@ -16,11 +16,11 @@ sidebar_position: 40
 
 
 ### 参数、引脚设置  
-点击**接口标签页**，分别对 C++ 元件的**参数组**，**引脚**和**元件图形**进行设置。参数组与引脚的详细说明可参考 [参数及引脚体系](../../../simstudio/basic/parameterCalculate/index.md) 帮助文档。 图标设计的详细说明可参数 [元件图标绘制](../../../simstudio/basic/moduleEncapsulation/icon/drawing/index.md)。
+点击**接口标签页**，分别对 C++ 元件的**参数组**，**引脚**和**元件图形**进行设置。参数组与引脚的详细说明可参考 [参数及引脚体系](../../../40-simstudio/30-modeling/10-params-variables-pins/index.md) 帮助文档。 图标设计的详细说明可参数 [元件图标绘制](../../../40-simstudio/30-modeling/40-module-packaging/icon/index.md)。
 
 ![参数、引脚和元件图形设置 =x430](./parameter-pin-icon.png)
 
-点击**总览标签页**，填写**元件名称**，设置元件的**权限**，选择**模型类型**，填写**元件标签**。更多详细说明可参考 [总览标签页](../../../simstudio/workbench/function/summary/index.md) 帮助文档。
+点击**总览标签页**，填写**元件名称**，设置元件的**权限**，选择**模型类型**，填写**元件标签**。更多详细说明可参考 [总览标签页](../../../40-simstudio/20-workbench/20-function-zone/10-summary-tab/index.md) 帮助文档。
 
 ![总览标签页信息填写 =x430](./summary.png)
 
@@ -133,7 +133,7 @@ private:
 
 #endif
 ```
-代码的具体含义可参阅 [EMTLab Core SDK](../../../sdk/emtlab-core-sdk/index.md) 帮助文档，本处不在赘述。
+代码的具体含义可参阅 [EMTLab Core SDK](../../../130-emtlab-sdk/emtlab-core-sdk/index.md) 帮助文档，本处不在赘述。
 
 (2) .cpp 文件编写  
 在 EMTLab Core SDK 所在文件夹下新建 _Inductance_demo.cpp 文件，在该文件中添加如下代码：
