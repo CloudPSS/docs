@@ -40,7 +40,7 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
             {
                 label: '运维工具',
                 type: 'docSidebar',
-                sidebarId: 'developertools',
+                sidebarId: 'maintenancetools',
             },
             {
                 label: '测试功能',
