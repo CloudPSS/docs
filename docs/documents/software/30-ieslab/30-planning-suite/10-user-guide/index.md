@@ -1,7 +1,7 @@
 ---
 title: 使用指南
 description: IESLab 规划设计平台使用指南
-sidebar_position: 1
+sidebar_position: 10
 ---
 
 循序渐进，带您全面了解熟悉 IESLab 规划设计平台。
@@ -9,12 +9,12 @@ sidebar_position: 1
 
 **1. 了解**
 
-* [快速入门](../20-quickstart-guide/index.md) 可以帮助您快速使用体验平台
+* [快速入门](../20-quick-start/index.md) 可以帮助您快速使用体验平台
 
 
 **2. 熟悉**
 
-* [个人中心](../30-center/index.md) 可以查看编辑用户个人信息、平台模块、项目项目，
+* [云空间](../30-cloud-space/index.md) 可以新建、查看和编辑项目组及项目信息
 
 * [数据管理模块](../40-data-module/index.md) 可以在气象数据库、设备信息库、负荷信息库和能源信息库录入项目基础信息
 
@@ -28,11 +28,11 @@ sidebar_position: 1
 
 **3. 元件模型**
 
-* [元件库](../90-component/index.md) 可以帮助您详细了解平台所有综合能源稳态设备的基本原理和数学模型
+* [元件库](../90-component-library/index.md) 可以帮助您详细了解平台所有综合能源稳态设备的基本原理和数学模型
 
 **4. 最佳实践**
 
-* [典型案例](../100-example/index.md) 可以帮助您了解平台的典型案例和项目分析使用方法
+* [典型案例](../100-typical-cases/index.md) 可以帮助您了解平台的典型案例和项目分析使用方法
 
 **5. 平台使用建议**
 

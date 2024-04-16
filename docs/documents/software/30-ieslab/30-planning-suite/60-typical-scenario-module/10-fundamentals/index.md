@@ -1,6 +1,6 @@
 ---
-title: 典型场景生成的基本原理
-description: 典型场景生成的基本原理
+title: 典型场景生成基本原理
+description: 典型场景生成基本原理
 sidebar_position: 10
 ---
 

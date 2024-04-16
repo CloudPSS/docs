@@ -1,6 +1,6 @@
 ---
-title: 参数绑定
-description: IESLab 规划设计平台-拓扑编辑模块-参数绑定
+title: 参数设置
+description: 参数设置方法
 sidebar_position: 20
 ---
 

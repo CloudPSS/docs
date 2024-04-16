@@ -1,6 +1,6 @@
 ---
-title: 冷热电三联供综合能源系统
-description: 冷热电三联供综合能源系统项目搭建及仿真分析示例
+title: 冷热电三联供系统
+description: 冷热电三联供系统项目的搭建及仿真分析示例
 sidebar_position: 50
 ---
 
