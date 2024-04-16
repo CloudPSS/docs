@@ -1,7 +1,7 @@
 ---
 title: SimStudio 工作台
 description: SimStudio 工作台功能说明
-sidebar_position: 20
+sidebar_position: 10
 ---
 
 **SimStudio 工作台** 分为**工具栏**（上方）、**功能区**（中间）、**状态栏**（下方）和**搜索栏**（右上方）共 4 个区域。
