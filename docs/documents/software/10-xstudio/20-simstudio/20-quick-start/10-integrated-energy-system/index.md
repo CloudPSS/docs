@@ -1,5 +1,5 @@
 ---
-title: ies 仿真快速入门
+title: IES 仿真快速入门
 description: SimStudio 综合能源系统仿真快速入门
 ---
 
