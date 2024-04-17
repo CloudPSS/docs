@@ -192,7 +192,7 @@ PSASP-CloudPSS 算例转换流程如下图所示，包括了 **PSASP 工程文�
 :   
     由于 PSASP-CloudPSS 算例转换工具是基于潮流结果进行转换的，对于**出力为 0 的设备将不会被转换**。需要在 PSASP 中启用风机并重跑潮流后进行转换。
 
-    ![PSASP中未启用风机](6b0ea9e5c1637b9c4f3e2fff02b3083.png)
+    ![PSASP中未启用风机](disable-wind-in-psasp.png)
 
 潮流计算不收敛时如何排查错误？
 
