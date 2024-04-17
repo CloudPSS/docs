@@ -1,7 +1,7 @@
 ---
 title: SimStudio IES SDK
 description: IESLab SDK 案例 SimStudio 综合能源仿真
-sidebar_position: 50
+sidebar_position: 40
 ---
 
 :::info
