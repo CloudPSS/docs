@@ -24,7 +24,7 @@ tags:
 ![用户协议](./用户协议.png "用户协议")
 
 :::tip
-使用本软件即代表用户同意证书界面的[用户协议](../../license/index.md)
+使用本软件即代表用户同意证书界面的[用户协议](../../../software/50-user-center/80-user-agreement/index.md)
 :::
 
 ## 上传证书
