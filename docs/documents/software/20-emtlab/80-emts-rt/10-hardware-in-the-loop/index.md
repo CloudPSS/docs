@@ -7,7 +7,7 @@ sidebar_position: 10
 本文档主要介绍 CloudPSS EMTLab 在电磁暂态实时仿真中半实物硬件在环的应用方法及案例。
 
 ## 功能定义
-CloudPSS EMTLab 可凭借高性能实时仿真器 CloudPSS-RT 和数模转换枢纽 CloudPSS I/O Signal Hub，实现硬件在环仿真的应用。
+CloudPSS EMTLab 可凭借高性能实时仿真器 [CloudPSS Mini (RT)](../../../../hardware/10-desktop-type/10-cloudpss-mini/index.md) 或 [CloudPSS Pro (RT)](../../../../hardware/20-rack-type/10-cloudpss-pro/index.md) ，以及数模转换枢纽 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md)，实现硬件在环仿真的应用。
 
 ## 功能说明
 ### 硬件平台
@@ -79,7 +79,7 @@ EMTLab 提供了一套**实时仿真工具库**，包含了硬件在环仿真的
 
     提供以太网接口交互功能，**虚拟输出端口**可将模型的数据从以太网接口输出，**虚拟输入端口**可接收以太网接口的输入到模型中。
     
-    虚拟端口元件一般用于在实时仿真过程中，通过以太网将仿真结果数据传输到上位机观测，也可以接收上位机下发的数据指令。使用方法可参考 [软件工具 CloudPSS Signal Monitor](../../../../software-tools/monitor/index.md) 文档。
+    虚拟端口元件一般用于在实时仿真过程中，通过以太网将仿真结果数据传输到上位机观测，也可以接收上位机下发的数据指令。使用方法可参考软件工具 [CloudPSS Signal Monitor](../../../../software-tools/20-signal-monitor/index.md) 文档。
     
     若需要通过以太网接口与真实物理装置通信，需定制开发通信协议，并选定一些虚拟端口元件与待输出、待输入信号绑定。
     
@@ -88,7 +88,7 @@ EMTLab 提供了一套**实时仿真工具库**，包含了硬件在环仿真的
 
 - **模拟量接口元件**
 
-    与 I/O Signal Hub 交互数据，实现**模拟量输出**、**模拟量输入**功能。一台 CloudPSS I/O Signal Hub 支持最多 32 路模拟量输出通道和 8 路模拟量输入通道，模拟量输出信号的幅值范围为 ±10V，模拟量输入信号的幅值范围为 ±5V，具体使用方法可参考 [硬件产品 CloudPSS I/O Signal Hub](../../../../hardware/signalhub/index.md) 文档。
+    与 I/O Signal Hub 交互数据，实现**模拟量输出**、**模拟量输入**功能。一台 CloudPSS I/O Signal Hub 支持最多 32 路模拟量输出通道和 8 路模拟量输入通道，模拟量输出信号的幅值范围为 ±10V，模拟量输入信号的幅值范围为 ±5V，具体使用方法可参考硬件产品 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 文档。
 
     ![模拟量输出与输入元件](./7.png "模拟量输出与输入元件")
     
@@ -105,7 +105,7 @@ EMTLab 提供了一套**实时仿真工具库**，包含了硬件在环仿真的
 
     ![调制波输出与输入元件](./9.png "调制波输出与输入元件")
     
-    数字量接口元件的具体使用方法可参考 [硬件产品 CloudPSS I/O Signal Hub](../../../../hardware/signalhub/index.md) 文档。
+    数字量接口元件的具体使用方法可参考硬件产品 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 文档。
 
 
 ## 案例
