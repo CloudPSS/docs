@@ -19,7 +19,7 @@ description: 定义函数外部接口，并在内核中引用。
 
 XStudio 提供了统一的参数列表配置方法，支持实数、整数、文本、布尔、选择、多选、表格以及虚拟引脚 9 种类型参数的定义。
 
-每种类型参数的定义详见[参数列表定义](../../../simstudio/basic/moduleEncapsulation/parameter-list/index.md/)。
+每种类型参数的定义详见[参数列表定义](../../../20-simstudio/50-modeling/40-module-packaging/10-define-module-param-list/index.md)。
 
 ### 配置参数方案
 

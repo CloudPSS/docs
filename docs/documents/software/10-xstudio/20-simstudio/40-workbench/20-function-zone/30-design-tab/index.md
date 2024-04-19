@@ -3,12 +3,6 @@ title: 实现标签页
 description: 实现标签页
 ---
 
-:::danger 批注
-1. 有几个实现没提供截图。(已修改)
-2. 注意规范命名，尤其是图片内部的标注、图片题注的命名，要与文字一致。例如：官方名称是 连接线，不是 连线。属性栏的Label下方会提示当前选中的名称。
-3. 按键用加粗即可，不用代码框。(已修改)
-:::
-
 本节介绍 **SimStudio 工作台** - **实现标签页** 的布局、实现种类，并重点介绍**拓扑编辑**功能。
 
 ## 页面功能
@@ -33,8 +27,8 @@ SimStudio 默认提供基于拓扑图的可视化建模方案。用户采用类�
 
 :::warning 功能可能受限
 **代码实现**仅在 EMTLab 电磁暂态仿真功能下可用。功能帮助参见：
-+ EMTLab - 电磁暂态仿真 - [自定义Octave元件](../../../../../emtlab/emtp-calc/self-config/octave/index.md)
-+ EMTLab - 电磁暂态仿真 - [自定义Python元件](../../../../../emtlab/emtp-calc/self-config/python/index.md) 
++ EMTLab - 电磁暂态仿真 - [自定义Octave元件](../../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)
++ EMTLab - 电磁暂态仿真 - [自定义Python元件](../../../../../20-emtlab/50-emts/50-user-defined/20-python-control/index.md) 
 :::
 
 ![代码实现界面](./1-1.png)
@@ -46,8 +40,8 @@ SimStudio 默认提供基于拓扑图的可视化建模方案。用户采用类�
 
 :::warning 功能可能受限
 **外部导入实现**仅在EMTLab电磁暂态仿真功能下可用。功能帮助参见：
-+ EMTLab - 电磁暂态仿真 - [自定义S-function元件](../../../../../emtlab/emtp-calc/self-config/s-function/index.md)
-+ EMTLab - 电磁暂态仿真 - [自定义C/C++元件](../../../../../emtlab/emtp-calc/self-config/sdk/index.md)（CloudPSS 原生实现）（暂未开放）
++ EMTLab - 电磁暂态仿真 - [自定义S-function元件](../../../../../20-emtlab/50-emts/50-user-defined/30-s-function-control/index.md)
++ EMTLab - 电磁暂态仿真 - [自定义C/C++元件](../../../../../20-emtlab/50-emts/50-user-defined/40-cpp-electrical-and-control/index.md)（CloudPSS 原生实现）（暂未开放）
 :::
 
 ![外部导入实现界面](./1-2.png)
@@ -57,7 +51,7 @@ SimStudio 默认提供基于拓扑图的可视化建模方案。用户采用类�
 #### 潮流实现界面
 
 在 EMTLab SimStudio 工作台中，**模型类型**选择为**元件**时，还可为模型添加潮流实现，用以兼容潮流计算功能。功能帮助参见：
-+ EMTLab - 潮流计算 - [自定义潮流元件](../../../../../emtlab/power-flow-calc/self-config/index.md)
++ EMTLab - 潮流计算 - [自定义潮流元件](../../../../../20-emtlab/60-power-flow/40-user-defined/index.md)
 
 ![潮流实现界面](./1-3.png)
 
@@ -103,10 +97,10 @@ EMTLab SimStudio 工作台中的**多实现选择栏**主要包括**拓扑**、*
 ### 模型
 
 模型标签栏以分组的形式显示当前项目**订阅**的全部模型库分组。CloudPSS 的不同仿真功能订阅的模型库分组不同：
-+ 原始 SimStudio 工作台：默认订阅 **CloudPSS 电磁暂态仿真元件库**的全部元件，模型库帮助文档参见 [EMTLab 元件库](../../../../../emtlab/components/index.md)
-+ IESLab 中的 SimStudio 工作台：默认订阅 **CloudPSS 综合能源系统元件库**的全部元件。模型库帮助文档参见 [IESLab 元件库](../../../../../ieslab/sim/7_comp/index.md)
++ 原始 SimStudio 工作台：默认订阅 **CloudPSS 电磁暂态仿真元件库**的全部元件，模型库帮助文档参见 [EMTLab 元件库](../../../../../20-emtlab/110-component-library/index.md)
++ IESLab 中的 SimStudio 工作台：默认订阅 **CloudPSS 综合能源系统元件库**的全部元件。模型库帮助文档参见 [IESLab 元件库](../../../../../30-ieslab/20-simulation-suite/70-component-library/index.md)
 
-点击模型标签栏最下方的**添加更多**可以为本项目订阅更多的模型。更多模型订阅的功能说明参见模块调用 > [模型订阅](../../../basic/callModule/index.md#模块导入) 帮助页。
+点击模型标签栏最下方的**添加更多**可以为本项目订阅更多的模型。更多模型订阅的功能说明参见模块调用 > [模型订阅](../../../50-modeling/50-module-reuse/index.md#模块导入) 帮助页。
 
 <!-- ![模型库](./2-2.png) -->
 
@@ -120,7 +114,7 @@ EMTLab SimStudio 工作台中的**多实现选择栏**主要包括**拓扑**、*
 
 选中一个图纸后可以在右侧的属性栏编辑当前项目的**全局变量**和**图纸选项**。
 
-图纸的详细帮助参见 [图纸](./canvas/index.md) 帮助页。
+图纸的详细帮助参见 [图纸](./10-canvas/index.md) 帮助页。
 
 <!-- ![图纸](./2-3.png) -->
 
@@ -132,7 +126,7 @@ EMTLab SimStudio 工作台中的**多实现选择栏**主要包括**拓扑**、*
 
 拓扑编辑区是构建模型拓扑图的主要编辑区域。用户可将模型库中的元件拖拽至拓扑编辑窗口内，进行元件连线及参数配置操作，从而构建完整的模型。
 
-拓扑编辑区的详细帮助参见 [拓扑编辑](./edit/index.md) 帮助页。
+拓扑编辑区的详细帮助参见 [拓扑编辑](./20-topology-editing/index.md) 帮助页。
 
 ### 属性栏
 
@@ -143,16 +137,16 @@ EMTLab SimStudio 工作台中的**多实现选择栏**主要包括**拓扑**、*
   + **元件标签**（`Label`）：位于属性栏最上方。可以自由更改，不同元件的标签名可以重复。
   + **元件名称**和**元件资源ID**（`RID`）：点击右侧的复制按钮，可复制当前元件的`RID`。
   + **元件帮助**按钮：点击可跳转该元件的帮助页，仅对 CloudPSS 官方提供元件有效。
-  + **参数卡**：用于配置与模型有效性、参数、连接关系有关的选项。参数卡的详细说明参见 [参数卡](./para/index.md) 帮助页。
-  + **格式卡**：用于配置与图形显示有关的选项。元件格式配置的详细说明参见 [格式卡](./font/index.md) 帮助页。
+  + **参数卡**：用于配置与模型有效性、参数、连接关系有关的选项。参数卡的详细说明参见 [参数卡](./30-param-panel/index.md) 帮助页。
+  + **格式卡**：用于配置与图形显示有关的选项。元件格式配置的详细说明参见 [格式卡](./40-style-panel/index.md) 帮助页。
 
-:::danger 批注
+<!-- :::danger 批注
 此处名称改了，图片需要改一下。此外，这张图标注太乱。
-:::
+::: -->
 
 ![元件属性栏](./2-2.png)
 
-+ 选中**连接线**，属性栏仅显示连接线的**格式卡**。连接线格式配置的详细说明参见 [格式卡](./font/index.md) 帮助页。
++ 选中**连接线**，属性栏仅显示连接线的**格式卡**。连接线格式配置的详细说明参见 [格式卡](./40-style-panel/index.md) 帮助页。
 
 ![连接线属性栏](./2-3.png)
 
@@ -163,9 +157,9 @@ EMTLab SimStudio 工作台中的**多实现选择栏**主要包括**拓扑**、*
 
 #### 参数卡
 
-元件参数卡支持配置元件**属性**、**参数**和**引脚**等功能特性，参数卡的详细使用说明参见 [参数卡](./para/index.md) 帮助页。
+元件参数卡支持配置元件**属性**、**参数**和**引脚**等功能特性，参数卡的详细使用说明参见 [参数卡](./30-param-panel/index.md) 帮助页。
 
 #### 格式卡
 
-格式卡支持配置元件或连接线的大小位置、排列、样式等显示特性。格式卡的详细使用说明参见 [格式卡](./font/index.md) 帮助页。
+格式卡支持配置元件或连接线的大小位置、排列、样式等显示特性。格式卡的详细使用说明参见 [格式卡](./40-style-panel/index.md) 帮助页。
 

@@ -31,7 +31,7 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 
 ![实现标签页云端 JavaScript 模块](./3.png)
 
-详见[云端 JavaScript 模块帮助](../design/cloud/index.md)。
+详见[云端 JavaScript 模块帮助](./20-cloud-js-module/index.md)。
 
 ### 本地：自定义命令
 
@@ -41,7 +41,7 @@ FuncStudio 目前提供有**云端：JavaScript 模块**和**本地：自定义�
 
 ![实现标签页本地自定义命令](./4.png)
 
-详见[本地自定义命令帮助](../design/local/index.md)。
+详见[本地自定义命令帮助](./10-local-custom-commands/index.md)。
 
 
 

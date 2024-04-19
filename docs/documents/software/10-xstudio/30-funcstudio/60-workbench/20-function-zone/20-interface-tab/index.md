@@ -21,7 +21,7 @@ description: 接口标签页
 
 提供了参数的键、名称、详细描述、条件、类型、默认值等配置选项。配置好的参数，可在内核中**通过特定的接口进行引用**。
 
-详见[函数定义配置](../../../basic/interface/index.md)。
+详见[函数定义](../../../70-funcstion-design/10-defining-function-params/index.md)。
 
 ### 参数预览
 

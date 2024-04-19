@@ -43,4 +43,4 @@ FuncStudio 内置了即时错误校验功能。用户在配置接口参数的同
 
 函数的执行进度可以自定义吗？
 
-:   可以通过 FuncStudio SDK 中提供的 progress 方法发送内核的当前执行进度。详见[FuncStudio SDK 帮助](../../simstudio-sdk/index.md)。
+:   可以通过 FuncStudio SDK 中提供的 progress 方法发送内核的当前执行进度。详见[FuncStudio SDK 帮助](../../../../80-sdk-python/60-api/20-function-execution/index.md)。
