@@ -96,13 +96,15 @@ CloudPSS 文档基于用 MarkDown 语法编写。请严格按照以下 4 项指�
 
 #### 键盘按键
 
-须用特殊格式重点标注。
+须用特殊格式重点标注，组合键使用空格分隔。
 
 效果：
-> <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>、<kbd>Alt</kbd>+<kbd>鼠标滚轮向上</kbd>
+> 使用 <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Del</kbd> 打开任务管理器。  
+> 使用 <kbd>Alt</kbd> <kbd>鼠标滚轮向上</kbd> 或 <kbd>Ctrl</kbd> <kbd>鼠标滚轮向上</kbd> 放大拓扑页面。
 
 语法：
-> `<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>、<kbd>Alt</kbd>+<kbd>鼠标滚轮向上</kbd>`
+> `使用 <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Del</kbd> 打开任务管理器。`  
+> `使用 <kbd>Alt</kbd> <kbd>鼠标滚轮向上</kbd> 或 <kbd>Ctrl</kbd> <kbd>鼠标滚轮向上</kbd> 放大拓扑页面。`
 
 #### 链接
 
