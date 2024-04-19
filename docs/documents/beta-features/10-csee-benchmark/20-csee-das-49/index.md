@@ -1,6 +1,6 @@
 ---
-title: 动态功角稳定算例
-description: 动态功角稳定算例
+title: 动态功角稳定问题算例
+description: 动态功角稳定问题算例
 ---
 
 
