@@ -18,11 +18,11 @@ description: 引脚
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制引脚左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](./regulations/index.md)。</td>
+        <td>控制引脚左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制引脚左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](./regulations/index.md)。</td>
+        <td>控制引脚左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
@@ -73,7 +73,7 @@ description: 引脚
     <tr>
         <td>数据</td>
         <td>引脚</td>
-        <td>下拉框，可以在这里选中[引脚列表](../../pins-list/index.md)中**可见**的引脚，进行绑定。</td>
+        <td>下拉框，可以在这里选中[引脚列表](../../20-define-module-pin-list/index.md)中**可见**的引脚，进行绑定。</td>
     </tr>
 </table>
 

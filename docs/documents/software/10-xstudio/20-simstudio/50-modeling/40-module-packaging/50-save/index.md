@@ -7,7 +7,7 @@ description: 保存
 
 ## 配置 RID
 
-点击[工具栏](../../../workbench/toolbar/index.md)中的[保存](../../../workbench/toolbar/index.md#保存)或[另存为](../../../workbench/toolbar/index.md#另存为)按钮，将会弹出保存选项配置窗口，如下图所示。
+点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，将会弹出保存选项配置窗口，如下图所示。
 
 ![图1 保存选项配置窗口](image.png)
 
@@ -17,9 +17,9 @@ description: 保存
 
 ## 元件标签
 
-元件标签的作用是对元件进行分类，只有填写了元件标签后，该元件才会在[模型库](../../../workbench/function/design/index.md#模型)中显示。
+元件标签的作用是对元件进行分类，只有填写了元件标签后，该元件才会在[模型库](../../../40-workbench/20-function-zone/30-design-tab/index.md#模型)中显示。
 
-在图1所示的保存窗口，以及[总览标签页](../../../workbench/function/summary/index.md)中，均可以找到元件标签的配置栏。
+在图1所示的保存窗口，以及[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)中，均可以找到元件标签的配置栏。
 
 元件标签可以填写中文。同元件标签的元件/模块将被置于模型库中的同一个栏目下，如下图所示。
 
@@ -31,7 +31,7 @@ description: 保存
 
 ![图3 自动生成的介绍](image-1.png)
 
-此外，用户可以在[总览标签页](../../../workbench/function/summary/index.md)中填写额外的```描述```和```文档```，如图3的左下方所示。
+此外，用户可以在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)中填写额外的```描述```和```文档```，如图3的左下方所示。
 
 ```描述```栏填写元件的简要描述，会被显示在元件文档的最上方。可以用markdown格式输入。
 
