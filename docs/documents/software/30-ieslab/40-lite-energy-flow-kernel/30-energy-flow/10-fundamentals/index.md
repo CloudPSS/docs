@@ -1,6 +1,6 @@
 ---
-title: 计算原理
-description: SimStudio IES 计算原理
+title: 基本原理
+description: 轻量级能量流计算内核的基本原理介绍
 sidebar_position: 40
 ---
 
