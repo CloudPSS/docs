@@ -38,7 +38,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
-  "cSpell.words": ["asciimath", "katex", "prismjs", "scrollbar", "sidenav"],
+  "cSpell.words": ["katex", "prismjs", "scrollbar", "sidenav"],
   "editor.tabSize": 2,
   "explorer.sortOrder": "mixed",
   "files.eol": "\n",

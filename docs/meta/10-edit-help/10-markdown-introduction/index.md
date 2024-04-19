@@ -239,7 +239,7 @@ text
 - **插入与删除**：`++Inserted++` ++Inserted++；`~~Del~~` ~~Del~~
 - **[Emoji](https://www.webpagefx.com/tools/emoji-cheat-sheet/)**：`:smile:` :smile:
 - **标记**：`<mark>mark</mark>` <mark>mark</mark>
-- **键盘按键**：`<kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>` <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>Del</kbd>
+- **键盘按键**：`<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Del</kbd>` <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>Del</kbd>
 - **下标**：`H<sub>2</sub>O` H<sub>2</sub>O
 - **上标**：`x<sup>2</sup>` x<sup>2</sup>
 - **分隔线**：`---`（独立一行放置）
