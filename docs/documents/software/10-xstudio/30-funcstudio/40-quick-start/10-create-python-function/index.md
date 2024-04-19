@@ -29,7 +29,7 @@ description: 新建本地函数：Python 实现
 
 #### 配置 Python 环境
 
-首先，需要在本地计算资源中配置 Python 环境来安装 CloudPSS-SDK，详见[Python 环境配置](../../../envir/python/index.md)。
+首先，需要在本地计算资源中配置 Python 环境来安装 CloudPSS-SDK，详见[Python 环境配置](../../30-dev-env-setup/20-python-env-config/index.md)。
 
 #### 给算法程序封装输入输出接口
 

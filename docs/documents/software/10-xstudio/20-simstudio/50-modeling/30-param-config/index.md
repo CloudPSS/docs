@@ -19,7 +19,7 @@ description: 参数方案配置
 
 - 首先，用户需要搭建好仿真算例，并选取需要进行参数方案配置的元件参数；
   
-- 其次，在接口标签页的参数列表内[定义参数列表](../moduleEncapsulation/pins-list/index.md)；
+- 其次，在接口标签页的参数列表内[定义参数列表](../40-module-packaging/10-define-module-param-list/index.md)；
   
 - 接着，在相应元件参数配置面板内通过**参数键名**引用该参数的值，例如参数键名为`R`时，在元件参数引用参数值时应
   切换为表达式输入模式填写`$R`；

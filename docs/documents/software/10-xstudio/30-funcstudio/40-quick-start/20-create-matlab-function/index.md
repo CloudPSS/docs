@@ -29,7 +29,7 @@ description: 新建本地函数：Matlab 实现
 
 #### 配置 Matlab 环境
 
-首先，需要在本地计算资源中配置 Matlab 环境来安装 CloudPSS-SDK，详见[Matlab 环境配置](../../../envir/matlab/index.md)。
+首先，需要在本地计算资源中配置 Matlab 环境来安装 CloudPSS-SDK，详见[Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md)。
 
 #### 给算法程序封装输入输出接口
 

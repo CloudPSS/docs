@@ -3,7 +3,7 @@ title: 接口标签页
 description: 接口标签页
 ---
 
-本文档介绍 **SimStudio 工作台** - **接口标签页** 的页面布局和功能概要。本页功能为进阶功能，在阅读前，请先熟悉 CloudPSS SimStudio 的 [参数、变量及引脚体系](../../../basic/parameterSystem/index.md)。 
+本文档介绍 **SimStudio 工作台** - **接口标签页** 的页面布局和功能概要。本页功能为进阶功能，在阅读前，请先熟悉 CloudPSS SimStudio 的 [参数、变量及引脚](../../../50-modeling/10-params-variables-pins/index.md)。 
 
 ## 页面功能
 
@@ -31,8 +31,8 @@ description: 接口标签页
 + 定义某参数“电阻”的`key`为`R`，引用时使用`$R`。
 
 参数列表定义主要有两种用法：
-+ **用法1**: 用于给**普通模型**类项目添加**全局参数**，配合**参数方案配置**功能进行使用，用于多场景仿真等应用。具体操作方法参见 [参数方案配置](../../../basic/parameterCalculate/index.md) 帮助页。
-+ **用法2**: 用于**模块封装**过程中的参数列表定义。具体使用方法参见 [定义元件/模块参数列表](../../../basic/moduleEncapsulation/parameter-list/index.md) 帮助页。
++ **用法1**: 用于给**普通模型**类项目添加**全局参数**，配合**参数方案配置**功能进行使用，用于多场景仿真等应用。具体操作方法参见 [参数方案配置](../../../50-modeling/30-param-config/index.md) 帮助页。
++ **用法2**: 用于**模块封装**过程中的参数列表定义。具体使用方法参见 [定义元件/模块参数列表](../../../50-modeling/40-module-packaging/10-define-module-param-list/index.md) 帮助页。
 
 ### 引脚列表定义
 
@@ -45,7 +45,7 @@ description: 接口标签页
 
 用户可在此处定义引脚名称、数据维数、数据类型、端口连接类型。引脚的显示与否可受条件表达式控制，以便根据不同的参数配置选项来显示不同的对外引脚。
 
-具体使用方法参见 [定义元件/模块引脚列表](../../../basic/moduleEncapsulation/pins-list/index.md) 帮助页。
+具体使用方法参见 [定义元件/模块引脚列表](../../../50-modeling/40-module-packaging/20-define-module-pin-list/index.md) 帮助页。
 
 ### 元件图形设计
 
@@ -53,7 +53,7 @@ description: 接口标签页
 
 图标绘制窗口提供了元件图标的绘图工具，支持图形、线、点、引脚、文字等元素的添加，以及线条/填充颜色的图形格式配置。各元素的显示与否可受条件表达式控制，以便根据不同的配置选项来显示不同的元件图标。
 
-具体使用方法参见 [设计元件/模块图标](../../../basic/moduleEncapsulation/icon/index.md) 帮助页。
+具体使用方法参见 [设计元件/模块图标](../../../50-modeling/40-module-packaging/30-design-module-icon/index.md) 帮助页。
 
 ### 预览
 
@@ -62,8 +62,8 @@ description: 接口标签页
 ## 功能说明
 
 接口标签页主要用于**参数方案配置**和**模块封装**两项功能，相关帮助参见：
-+ [参数方案配置](../../../basic/parameterCalculate/index.md)
-+ [模块封装](../../../basic/moduleEncapsulation/index.md)
++ [参数方案配置](../../../50-modeling/30-param-config/index.md)
++ [模块封装](../../../50-modeling/40-module-packaging/index.md)
 
 
 <!-- ## 案例
