@@ -74,7 +74,7 @@ import TabItem from '@theme/TabItem';
 
 在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：```X=0, Y=0, 宽度=40, 高度=60```
 
-拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
+拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
 
 ```
 M 20 0
@@ -132,7 +132,7 @@ v 3.2 h -6
 
 ![绘图区元件图标](image-2.png)
 
-采用[图标检查](../30-design-module-icon/regulations/index.md#图标检查)所述方法，打开图形预览，可以看到该图形满足绘图规范：
+采用[图标检查](../30-design-module-icon/70-simstudio-icon-guideline/index.md#图标检查)所述方法，打开图形预览，可以看到该图形满足绘图规范：
 
 ![图标检查](image-3.png)
 
@@ -277,7 +277,7 @@ v 3.2 h -6
 
 在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：```X=0, Y=0, 宽度=60, 高度=60```
 
-拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
+拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
 
 ```
 M 0 30
@@ -324,7 +324,7 @@ m -22.5 -5 h 25
 
 ![光伏图标](image-11.png)
 
-采用[图标检查](../30-design-module-icon/regulations/index.md#图标检查)所述方法，打开图形预览，可以看到该图形满足绘图规范：
+采用[图标检查](../30-design-module-icon/70-simstudio-icon-guideline/index.md#图标检查)所述方法，打开图形预览，可以看到该图形满足绘图规范：
 
 ![光伏-图标检查](image-12.png)
 
@@ -443,7 +443,7 @@ import Flowchart2 from './flowchart2.svg'
 
 **(1)在接口标签页中添加UnitTest参数**
 
-进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按[参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，添加一个名为**单元测试**的参数组，在参数组下建立一个[布尔参数](../10-define-module-param-list/bool/index.md)```UnitTest```，如下图所示进行配置。
+进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按[参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，添加一个名为**单元测试**的参数组，在参数组下建立一个[布尔参数](../10-define-module-param-list/50-boolean/index.md)```UnitTest```，如下图所示进行配置。
 
 ![UnitTest参数](image-22.png)
 

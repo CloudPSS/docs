@@ -6,7 +6,7 @@ sidebar_position: 90
 
 交直流拓扑分析主要用于交直流电网的电磁暂态仿真效率优化，包括分网功能、自动聚合母线、负载均衡三个功能。
 
-其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../parallel/index.md)进行使用，电磁暂态仿真的并行加速需要先行调用本节介绍的拓扑分析。需要注意公网(www.cloudpss.net)的用户无法使用该功能。
+其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../70-parallel-acceleration/index.md)进行使用，电磁暂态仿真的并行加速需要先行调用本节介绍的拓扑分析。需要注意公网(www.cloudpss.net)的用户无法使用该功能。
 
 本节介绍拓扑分析功能的基本原理以及配置方法，并使用模板算例进行演示。
 
@@ -14,7 +14,7 @@ sidebar_position: 90
 
 拓扑分析功能主要用于交直流电网的电磁暂态仿真效率优化，包括分网功能、自动聚合母线、负载均衡三个功能。
 
-其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../../parallel-acceleration/index.md)进行使用。
+其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../../70-parallel-acceleration/index.md)进行使用。
 
 ## 功能说明
 
@@ -28,7 +28,7 @@ sidebar_position: 90
 
 #### 分网功能原理
 
-基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../../parallel-acceleration/fundamentals/index.md)。
+基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../../70-parallel-acceleration/fundamentals/index.md)。
 
 值得注意的是，Bergeron传输线模型要求，波在传输线上的传输时间应**大于或等于仿真步长**，即：
 
@@ -52,7 +52,7 @@ $$
 
 #### 分网功能参数配置
 
-首先，在创建分网功能参数之前，应该先创建一个[电磁暂态仿真方案](../../emtp-calc/job/index.md)，并设置好```积分步长```。对于交直流电网的仿真，通常可将```积分步长```设为0.00005s。
+首先，在创建分网功能参数之前，应该先创建一个[电磁暂态仿真方案](../50-emts/20-job-config/index.md)，并设置好```积分步长```。对于交直流电网的仿真，通常可将```积分步长```设为0.00005s。
 
 ![图1 先创建电磁暂态计算方案](image-1.png)
 
@@ -79,13 +79,13 @@ $$
 注意，重置拓扑时，不会重设传输线类型```ModelType```，即不会修改传输线建模方式是Pi型还是Bergeron型。
 
 ### 自动聚合母线
-自动聚合母线功能可将电网中的悬空母线进行聚合，可以进一步提高仿真效率。具体可参见[自动聚合母线](../gethering/index.md)
+自动聚合母线功能可将电网中的悬空母线进行聚合，可以进一步提高仿真效率。具体可参见[自动聚合母线](./10-bus-merging/index.md)
 
 ### 负载均衡配置
 
-负载均衡配置功能可在分网拓扑分析的同时，生成```负载均衡配置策略表```。该策略表定义了每个计算逻辑核心中分配的元件分区，具体可参见[负载均衡配置](../load-average/index.md)
+负载均衡配置功能可在分网拓扑分析的同时，生成```负载均衡配置策略表```。该策略表定义了每个计算逻辑核心中分配的元件分区，具体可参见[负载均衡配置](./20-load-balancing/index.md)
 
-用户可进一步在并行仿真中修改该策略表，具体可见[并行计算高级参数设置](../../parallel-acceleration/advanced-param-setup/index.md#更多高级设置)。
+用户可进一步在并行仿真中修改该策略表，具体可见[并行计算高级参数设置](../70-parallel-acceleration/20-advanced-param-setup/index.md#更多高级设置)。
 
 ## 案例
 
@@ -110,11 +110,11 @@ import TabItem from '@theme/TabItem';
 
 ![返回结果](image-10.png)
 
-点击```设置传输线分网```卡的```修改项目文件```按钮后，回到[实现标签页](../../simstudio/workbench/function/design/index.md)中，打开[元件表](../../simstudio/workbench/toolbar/index.md#元件表)，找到```三相传输线```，可以看到所有符合分网要求的传输线已设置```ModelType=1```, ```Decoupled=1```，如下图所示。
+点击```设置传输线分网```卡的```修改项目文件```按钮后，回到[实现标签页](../40-simstudio/20-workbench/20-function-zone/30-design-tab/index.md)中，打开[元件表](../40-simstudio/20-workbench/10-toolbar/index.md#元件表)，找到```三相传输线```，可以看到所有符合分网要求的传输线已设置```ModelType=1```, ```Decoupled=1```，如下图所示。
 
 ![元件表中的传输线](image-11.png)
 
-用户可进一步参考见[并行计算方案配置案例介绍](../../parallel-acceleration/advanced-param-setup/index.md#案例介绍)文档，进行进一步的并行仿真计算设置。
+用户可进一步参考见[并行计算方案配置案例介绍](../70-parallel-acceleration/20-advanced-param-setup/index.md#案例介绍)文档，进行进一步的并行仿真计算设置。
 
 
 </TabItem>
@@ -131,7 +131,7 @@ import TabItem from '@theme/TabItem';
 
 为什么在分网后，仿真效率没有提高？ 
 :
-    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行计算高级参数设置](../../parallel-acceleration/advanced-param-setup/index.md)进行配置。
+    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行计算高级参数设置](../../70-parallel-acceleration/20-advanced-param-setup/index.md)进行配置。
     
     除时域分析之外，风电接入宽频振荡问题更依赖于频域的阻抗分析。
     针对阻抗特性扫描需求，开发了基于电磁暂态仿真的面向大规模交直流电网的端口阻抗特性扫描模块，用户可针对不同需求可设置不同频率采样方式，在保证精度的同时提升效率。
