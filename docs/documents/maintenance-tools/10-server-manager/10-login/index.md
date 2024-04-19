@@ -18,7 +18,7 @@ tags:
 :::tip
 系统管理员账号：**admin**
 
-系统管理员默认密码：**cloudpssadmin123**，建议用户修改默认密码。参见[用户管理](../../account/settings/users/index.md) 或者[重置密码（私有部署）](../../account/mini-login/index.md)页面
+系统管理员默认密码：**cloudpssadmin123**，建议用户修改默认密码。参见[用户管理](../../../software/50-user-center/50-system-administrator-settings/10-user-management/index.md) 或者[重置密码（私有部署）](../../../software/50-user-center/10-register-and-login/20-cloudpss-private/index.md)页面
 :::
 
 
