@@ -7,7 +7,8 @@ description: 保存
 
 ## 配置 RID
 
-点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，将会弹出保存选项配置窗口，如下图所示。
+点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或
+[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，将会弹出保存选项配置窗口，如下图所示。
 
 ![图1 保存选项配置窗口](image.png)
 

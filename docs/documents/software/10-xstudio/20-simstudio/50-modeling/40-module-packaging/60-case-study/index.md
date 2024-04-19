@@ -162,7 +162,8 @@ v 3.2 h -6
 
 在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab//index.md)中配置好模块的名称为“三相交流滤波器封装演示”，并设置```元件标签```为“模块封装演示”。这里的名称和元件标签均可以自行修改，其作用参考[元件标签相关文档](../50-save/index.md#元件标签)。此外，还可以按需求编写描述以及元件文档。
 
-进一步，点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如样例中填入```myRLCFilter```。
+进一步，点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或
+[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如样例中填入```myRLCFilter```。
 
 总览标签页的设置如下：
 
@@ -419,7 +420,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ### 保存
 
-点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如该样例中填入```myPVmodel```。
+点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如该样例中填入```myPVmodel```。
 
 ![保存窗口](image-20.png)
 
