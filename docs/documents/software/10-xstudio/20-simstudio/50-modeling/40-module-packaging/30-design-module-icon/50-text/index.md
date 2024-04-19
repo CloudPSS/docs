@@ -18,19 +18,19 @@ description: 文本
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制文本左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制文本左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制文本左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制文本左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
-        <td>控制文本的宽度。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。当填写负数时，文本选框将翻转，但无法反转文本的字符。</td>
+        <td>控制文本的宽度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，文本选框将翻转，但无法反转文本的字符。</td>
     </tr>
     <tr>
         <td>高度</td>
-        <td>控制文本的高度。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。当填写负数时，文本选框将翻转，但无法反转文本的字符。</td>
+        <td>控制文本的高度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，文本选框将翻转，但无法反转文本的字符。</td>
     </tr>
     <tr>
         <td rowspan="6">**排列**</td>
