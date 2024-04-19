@@ -1,6 +1,6 @@
 ---
-title: 动态功角稳定算例
-description: 动态功角稳定算例
+title: CSEE-DAS-49
+description: CSEE-DAS-49
 ---
 
 
