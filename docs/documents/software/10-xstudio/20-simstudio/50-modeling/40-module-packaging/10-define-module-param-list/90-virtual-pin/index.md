@@ -25,7 +25,8 @@ description: 虚拟引脚
 
 ## 虚拟引脚调用
 
-在配置好虚拟引脚后，可在[实现标签页](../../../../40-workbench/20-function-zone/30-design-tab/index.md)中引用该虚拟引脚。目前，Simstudio仅支持在[拓扑实现](../../../../40-workbench/20-function-zone/30-design-tab/index.md#拓扑实现界面默认界面)中完成虚拟引脚的调用，暂不支持[代码实现](../../../../40-workbench/20-function-zone/30-design-tab/index.md#代码实现界面)中调用虚拟引脚。
+在配置好虚拟引脚后，可在[实现标签页](../../../../40-workbench/20-function-zone/30-design-tab/index.md)中引用该虚拟引脚。目前，Simstudio仅支持在[拓扑实现](../../../../40-workbench/20-function-zone/30-design-tab/index.md#拓扑实现界面默认界面)中完成虚拟引脚的调用，暂不支持
+[代码实现](../../../../40-workbench/20-function-zone/30-design-tab/index.md#代码实现界面)中调用虚拟引脚。
 
 - 拓扑实现情况
 
