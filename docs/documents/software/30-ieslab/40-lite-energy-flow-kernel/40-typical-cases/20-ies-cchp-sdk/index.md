@@ -49,7 +49,7 @@ def init_html():
 #     tabs.append(dcc.Tab(label='Tab Two', value='tab-2-example-graph'))
     app.layout = html.Div([
         html.H1('Total Thermal Load'),
-        dcc.Tabs(id="tabs-example-graph", value=tabData[0]['id'], children=tabs),
+        dcc.Tabs(id="tabs-example-graph", value=tabData[0] ['id'], children=tabs),
         html.Div(id='tabs-content-example-graph')
     ])
 
@@ -94,14 +94,14 @@ if __name__ == '__main__':
           将每个采暖制冷负荷元件的时序负荷结果组成List
         '''
         loadList = [
-          runner.result.getPlotData('/' + key, 'Power(kW)', 'Thermal Load')['Thermal Load']['y'] 
+          runner.result.getPlotData('/' + key, 'Power(kW)', 'Thermal Load')['Thermal Load'] ['y'] 
           for key in loadComponents.keys()
         ]
-        timeSerial = runner.result.getPlotData('/' + list(loadComponents.keys())[0], 'Power(kW)', 'Thermal Load')['Thermal Load']['x']
+        timeSerial = runner.result.getPlotData('/' + list(loadComponents.keys())[0], 'Power(kW)', 'Thermal Load')['Thermal Load'] ['x']
 
         # 分别统计分时热负荷和分时冷负荷，热负荷在LoadList中的数值为正，冷负荷为负
-        totalHeatLoad = [0.0]*len(loadList[0])
-        totalCoolLoad = [0.0]*len(loadList[0])
+        totalHeatLoad = [0.0]*len(loadList [0])
+        totalCoolLoad = [0.0]*len(loadList [0])
         totalHeatLoad = reduce(lambda x, y: 
                                   [x[i] + (y[i] if y[i] > 0 else 0) for i in range(len(x))], 
                               loadList, 
@@ -143,7 +143,7 @@ print(runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 
 
 如果想整个取出目标key的数值结果，可直接访问该key下的`y`成员。例如：
 ```python
-loadValue = runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 'Thermal Load')['Thermal Load']['y']
+loadValue = runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 'Thermal Load')['Thermal Load'] ['y']
 print(loadValue)
 ```
 此时输出的数值即为此算例的 **component_ies_heat_cold_load_8** 采暖制冷负荷（冷库负荷）的时序结果。

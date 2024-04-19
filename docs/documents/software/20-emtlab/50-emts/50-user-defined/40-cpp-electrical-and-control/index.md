@@ -156,7 +156,7 @@ void _Inductance_demo::initialComponent(int id, string name, Json::Value &root) 
   for (int i = 0; i < nElePort; ++i) {
     char nodeName[100];
     sprintf(nodeName, "%d", i);
-    EMTPNode tempNode(1, 1, root["pin"][nodeName]);
+    EMTPNode tempNode(1, 1, root["pin"] [nodeName]);
     eleNode.push_back(tempNode);
   }
   // define branchInfo
@@ -166,7 +166,7 @@ void _Inductance_demo::initialComponent(int id, string name, Json::Value &root) 
   to.init(1, 0);
   branchInfo.push_back(EMTPBranchInfo(from, to)); 
   // init elementValue/matrix
-  inductanceValue = atof(root["param"]["Inductance"].asCString());
+  inductanceValue = atof(root["param"] ["Inductance"].asCString());
   initialMatrix();
   // define monitoring var
   DECLAREOUTFLAG(IName) = setOutputVariable(IName, "I", vec(1).zeros(), root);
@@ -324,7 +324,7 @@ add_links("CloudPSSCore");
       char nodeName[100];
       sprintf(nodeName, "%d", i);
       // 定义一个tempNode为1*1维的电气引脚
-      EMTPNode tempNode(1, 1, root["pin"][nodeName]);
+      EMTPNode tempNode(1, 1, root["pin"] [nodeName]);
       // eleNode为EMTPNode类型的Vector，使用push_back()在向量的末尾添加这个tempNode。
       eleNode.push_back(tempNode);
   }
@@ -335,7 +335,7 @@ add_links("CloudPSSCore");
   to.init(1, 0);// to.init(1, i)代表这条支路的终止点为1号节点的第i维。
   branchInfo.push_back(EMTPBranchInfo(from, to)); 
   // 获取前台元件参数
-  inductanceValue = atof(root["param"]["Inductance"].asCString());
+  inductanceValue = atof(root["param"] ["Inductance"].asCString());
   // 初始化支路电流、电压等矩阵，必须调用
   initialMatrix();
   // 虚拟引脚的初始化

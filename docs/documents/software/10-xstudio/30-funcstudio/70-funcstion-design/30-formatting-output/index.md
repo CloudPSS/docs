@@ -183,7 +183,7 @@ plot 方法的定义为：`def plot(self, traces=[], layout={}, title='', key=No
 
 以绘制**二维曲线图形**为例，trace 参数如下：
 
-`trace = [t1,t2,...]`，其中：`t1={'name':str,'type':'scatter','x':float[],'y':float[]}`
+`trace = [t1,t2,...]`，其中：`t1={'name':str,'type':'scatter','x':float [],'y':float []}`
 
 |参数|类型|描述|
 |:--:|:--:|--|

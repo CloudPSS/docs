@@ -49,7 +49,7 @@ if __name__ == '__main__':
     b = float(b) #数据类型的转换，针对老版本的执行器
     c = a + b #加法程序（用户自定义的算法）
     job.log(a+b,key='log-1') #利用 SDK 提供的 log 方法向 FuncStudio 发送文本结果
-    job.plot([{'name':'t1','type':'scatter','x':[a,a+1],'y':[b,b+1]}],key='plot-1') #利用 SDK 提供的 plot 方法向 FuncStudio 发送图形结果
+    job.plot([{'name':'t1','type':'scatter','x':[a,a+1],'y': [b,b+1]}],key='plot-1') #利用 SDK 提供的 plot 方法向 FuncStudio 发送图形结果
 ```
 :::warning
 需要注意的是，对于老版本的执行器，不论接口参数的类型设置为整数还是实数，在默认参数方案下通过接口 SDK 获取的值都是**字符串类型**；因此，为了保参数能够计算，建议用户在计算内核中对通过接口 SDK 获取的输入参数的值再做一次**数据类型的转换**。

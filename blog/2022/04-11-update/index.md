@@ -10,7 +10,7 @@ tags: [update-notes]
 
    1. 固定频率触发式 Octave 元件默认自带 Trigger 参数组和 Trigger 参数（触发频率[Hz]），通过设置触发计算频率 Trigger 实现固定频率触发计算。
 
-   2. 外部触发式 Octave 元件自带默认自带 Trigger 参数组和 Trigger 虚拟输入引脚（外部触发信号输入端口[上升沿触发]），通过在外部给定上升沿信号实现条件触发计算。[示例算例](https://cloudpss.net/model/songyankan/test_Octave_Gain_Trigger)
+   2. 外部触发式 Octave 元件自带默认自带 Trigger 参数组和 Trigger 虚拟输入引脚（外部触发信号输入端口[上升沿触发]），通过在外部给定上升沿信号实现条件触发计算。 [示例算例](https://cloudpss.net/model/songyankan/test_Octave_Gain_Trigger)
 
 2. 修复了 Octave 元件报错提示显示异常的问题。
 
