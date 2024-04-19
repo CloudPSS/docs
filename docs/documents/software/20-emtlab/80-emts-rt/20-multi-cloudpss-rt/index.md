@@ -60,7 +60,7 @@ CloudPSS-RT 的多机实时仿真应用中，选择一台 CloudPSS-RT 设置为*
 
 - **虚拟端口元件**
        
-    虚拟端口元件实现的是仿真器与上位机的数据交互，可在多机实时仿真过程中，通过以太网将仿真结果数据传输到上位机观测，也可以接收上位机下发的数据指令。使用方法可参考 [软件工具 CloudPSS Signal Monitor](../../../../software-tools/monitor/index.md) 文档。        
+    虚拟端口元件实现的是仿真器与上位机的数据交互，可在多机实时仿真过程中，通过以太网将仿真结果数据传输到上位机观测，也可以接收上位机下发的数据指令。使用方法可参考软件工具 [CloudPSS Signal Monitor](../../../../software-tools/20-signal-monitor/index.md) 文档。        
     
     ![虚拟端口元件](./6.png "虚拟端口元件")
 
@@ -125,7 +125,7 @@ import TabItem from '@theme/TabItem';
 
     使用**虚拟输出端口**元件，在上位机观测多机实时仿真的结果。
 
-    在风机并网模型中，添加三个虚拟输出端口元件，分别连接风机并网模型的直流侧电压、A 相并网电流以及风机的输出功率，使用 [软件工具 CloudPSS Signal Monitor](../../../../software-tools/monitor/index.md) 观测仿真结果如下图所示。
+    在风机并网模型中，添加三个虚拟输出端口元件，分别连接风机并网模型的直流侧电压、A 相并网电流以及风机的输出功率，使用软件工具 [CloudPSS Signal Monitor](../../../../software-tools/20-signal-monitor/index.md) 观测仿真结果如下图所示。
 
     ![多机实时仿真结果](./12.png "多机实时仿真结果")
 

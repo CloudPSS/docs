@@ -8,7 +8,7 @@ sidebar_position: 10
 ## 产品简介
 CloudPSS Mini 搭载 CloudPSS 高性能电力系统电磁暂态云仿真平台，是一台软硬件一体的仿真机。  
 
-![CloudPSS Mini =x300](./mini.png "CloudPSS Mini")  
+![CloudPSS Mini =x350](./mini.png "CloudPSS Mini")  
 
 ## 产品特点
 

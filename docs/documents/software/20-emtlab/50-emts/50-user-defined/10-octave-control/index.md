@@ -30,7 +30,7 @@ sidebar_position: 10
 ![Octave 代码编辑器](3.png "Octave 代码编辑器")
 
 ### 参数、引脚设置
-自定义 Octave 元件的参数、引脚设置与其它用户自定义元件类似，在**接口**标签页中进行配置。参数、引脚的类型和定义可以参考 [模块封装](../../../simstudio/basic/moduleEncapsulation/index.md)。
+自定义 Octave 元件的参数、引脚设置与其它用户自定义元件类似，在**接口**标签页中进行配置。参数、引脚的类型和定义可以参考 [定义模块参数列表](../../../40-simstudio/30-modeling/40-module-packaging/10-define-module-param-list/index.md) 和 [定义模块引脚列表](../../../40-simstudio/30-modeling/40-module-packaging/20-define-module-pin-list/index.md) 文档。
 
 参数、引脚定义后，将在代码编辑中作为变量被调用。
 
