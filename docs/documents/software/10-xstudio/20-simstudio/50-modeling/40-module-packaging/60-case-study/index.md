@@ -6,7 +6,7 @@ description: 案例
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-本文档共两个案例，分别为[从零开始建立一个simstudio元件模块项目](#从零开始建立一个simstudio元件模块项目)（以交流滤波器模块为例）、[将一个现有的SimStudio模型封装为模块](#将一个simstudio模型项目封装为模块)（以光伏为例），并在光伏封装模块的基础上介绍模块的单元测试方法。
+本文档共两个案例，分别为[从零开始建立一个simstudio元件模块项目](#从零开始建立一个simstudio元件模块项目)（以交流滤波器模块为例）、 [将一个现有的SimStudio模型封装为模块](#将一个simstudio模型项目封装为模块)（以光伏为例），并在光伏封装模块的基础上介绍模块的单元测试方法。
 
 <Tabs>
 <TabItem value="case1" label="案例1">
@@ -22,7 +22,7 @@ import TabItem from '@theme/TabItem';
 
 首先，[新建](../../../40-workbench/10-toolbar/index.md#新建)一个```空白电力系统元件(model/CloudPSS/Blank_Component)```。
 
-进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按[参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，新建名为**RLC设置**的参数组，分别按下表建立三个参数：
+进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，新建名为**RLC设置**的参数组，分别按下表建立三个参数：
 
 | 配置项 | 电阻 | 电感 | 电容 |
 | :--- | :--- | :--- | :--- | 
@@ -160,9 +160,9 @@ v 3.2 h -6
 
 ### 总览标签页配置以及保存
 
-在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab//index.md)中配置好模块的名称为“三相交流滤波器封装演示”，并设置```元件标签```为“模块封装演示”。这里的名称和元件标签均可以自行修改，其作用参考[元件标签相关文档](../50-save/index.md#元件标签)。此外，还可以按需求编写描述以及元件文档。
+在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab//index.md)中配置好模块的名称为“三相交流滤波器封装演示”，并设置```元件标签```为“模块封装演示”。这里的名称和元件标签均可以自行修改，其作用参考 [元件标签相关文档](../50-save/index.md#元件标签)。此外，还可以按需求编写描述以及元件文档。
 
-进一步，点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或
+进一步，点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的 [保存](../../../40-workbench/10-toolbar/index.md#保存)或
 [另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如样例中填入```myRLCFilter```。
 
 总览标签页的设置如下：
@@ -205,7 +205,7 @@ v 3.2 h -6
 
 ### 接口标签页配置
 
-进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)。这里的模板项目已经具有名为```光伏环境条件```的参数组，用于设置光照和温度的变化频率。由于我们需要从引脚直接输入光照和温度系数，因此这里可直接[删除](../10-define-module-param-list/index.md#删除参数组)该参数组。此外，按[参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，在**控制信息**的参数组下，分别按下表添加三个参数：
+进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)。这里的模板项目已经具有名为```光伏环境条件```的参数组，用于设置光照和温度的变化频率。由于我们需要从引脚直接输入光照和温度系数，因此这里可直接 [删除](../10-define-module-param-list/index.md#删除参数组)该参数组。此外，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，在**控制信息**的参数组下，分别按下表添加三个参数：
 
 | 配置项 | Ki | Ti | Ilim |
 | :--- | :--- | :--- | :--- | 
@@ -351,7 +351,7 @@ m -22.5 -5 h 25
 
 ![绑定引脚](image-14.png)
 
-此外，在原模板项目的**光伏电池设定**[图纸](../../../40-workbench/20-function-zone/30-design-tab/10-canvas/index.md)中，已有产生光照和温度信号的相关控制环节，这里可以将其删除或[关闭启用](../../../40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md#启用)，并按[在模型实现中添加引脚并绑定](../20-define-module-pin-list/index.md#在模型实现中添加引脚并绑定)文档所述内容，添加2个模块端口元件到图纸中，分别绑定**Gctrl**和**Tctrl**引脚，如下图所示：
+此外，在原模板项目的**光伏电池设定**[图纸](../../../40-workbench/20-function-zone/30-design-tab/10-canvas/index.md)中，已有产生光照和温度信号的相关控制环节，这里可以将其删除或 [关闭启用](../../../40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md#启用)，并按 [在模型实现中添加引脚并绑定](../20-define-module-pin-list/index.md#在模型实现中添加引脚并绑定)文档所述内容，添加2个模块端口元件到图纸中，分别绑定**Gctrl**和**Tctrl**引脚，如下图所示：
 
 ![控制引脚绑定](image-16.png)
 
@@ -396,7 +396,7 @@ import Flowchart2 from './flowchart2.svg'
 
 在参数列表中，定义了三个电流环相关参数：Ki, Ti, Ilim。现在需要将拓扑中电流环的相关元件参数绑定为这三个全局参数。
 
-在**平均化模型**[图纸](../../../40-workbench/20-function-zone/30-design-tab/10-canvas/index.md)中，找到电流环相关的两个**PI环节**，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将**Proportional Gain**参数改为```$Ki```，将**Integral Time Constant**参数改为```$Ti```，将**Maximum Limit**参数改为```$Ilim```，将**Minimum Limit**参数改为```-$Ilim```，如下图所示：
+在**平均化模型**[图纸](../../../40-workbench/20-function-zone/30-design-tab/10-canvas/index.md)中，找到电流环相关的两个**PI环节**，使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将**Proportional Gain**参数改为```$Ki```，将**Integral Time Constant**参数改为```$Ti```，将**Maximum Limit**参数改为```$Ilim```，将**Minimum Limit**参数改为```-$Ilim```，如下图所示：
 
 ![PI环节设置](image-17.png)
 
@@ -420,7 +420,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ### 保存
 
-点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的[保存](../../../40-workbench/10-toolbar/index.md#保存)或[另存为](../../../40-workbench/10-toolbar/index.md)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如该样例中填入```myPVmodel```。
+点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的 [保存](../../../40-workbench/10-toolbar/index.md#保存)或 [另存为](../../../40-workbench/10-toolbar/index.md)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如该样例中填入```myPVmodel```。
 
 ![保存窗口](image-20.png)
 
@@ -444,7 +444,7 @@ import Flowchart2 from './flowchart2.svg'
 
 **(1)在接口标签页中添加UnitTest参数**
 
-进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按[参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，添加一个名为**单元测试**的参数组，在参数组下建立一个[布尔参数](../10-define-module-param-list/50-boolean/index.md)```UnitTest```，如下图所示进行配置。
+进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，添加一个名为**单元测试**的参数组，在参数组下建立一个 [布尔参数](../10-define-module-param-list/50-boolean/index.md)```UnitTest```，如下图所示进行配置。
 
 ![UnitTest参数](image-22.png)
 
@@ -456,7 +456,7 @@ import Flowchart2 from './flowchart2.svg'
 
 这里构建一个外接电压源的简单测试回路。
 
-进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的```电气-三相交流元件```中找到```三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)```元件，添加到拓扑中，连接在风机的**pcc**端口处。使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的```启用```属性改为```$UnitTest```，并对应配置该电压源的其它参数，如下图所示。
+进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的```电气-三相交流元件```中找到```三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)```元件，添加到拓扑中，连接在风机的**pcc**端口处。使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的```启用```属性改为```$UnitTest```，并对应配置该电压源的其它参数，如下图所示。
 
 ![单元测试电压源元件设置](image-24.png)
 
@@ -476,13 +476,13 @@ import Flowchart2 from './flowchart2.svg'
 
 **(3)在运行标签页中设置参数，运行仿真测试。**
 
-进入[运行标签页](../../../40-workbench/20-function-zone/40-run-tab/index.md)，可以在这里的[参数方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#参数方案)找到[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)中定义的参数。
+进入[运行标签页](../../../40-workbench/20-function-zone/40-run-tab/index.md)，可以在这里的 [参数方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#参数方案)找到 [接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)中定义的参数。
 
 这里需要将```UnitTest```参数设定为**打开**，其它参数可根据需求设置，如下图所示。
 
 ![参数方案配置](image-29.png)
 
-在[计算方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#计算方案)方面，目前已经存在默认的电磁暂态仿真方案，我们可以[重新创建](../../../40-workbench/20-function-zone/40-run-tab/index.md#新建计算方案)一个[电磁暂态仿真方案](../../../../../20-emtlab/50-emts/20-job-config/index.md)，设置结束时间为10s、积分步长为0.00005s，在[配置输出通道](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#信号输出)中配置好刚才配置的**三相电流**量测通道，如下图所示：
+在[计算方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#计算方案)方面，目前已经存在默认的电磁暂态仿真方案，我们可以 [重新创建](../../../40-workbench/20-function-zone/40-run-tab/index.md#新建计算方案)一个 [电磁暂态仿真方案](../../../../../20-emtlab/50-emts/20-job-config/index.md)，设置结束时间为10s、积分步长为0.00005s，在 [配置输出通道](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#信号输出)中配置好刚才配置的**三相电流**量测通道，如下图所示：
 
 ![计算方案配置](image-30.png)
 

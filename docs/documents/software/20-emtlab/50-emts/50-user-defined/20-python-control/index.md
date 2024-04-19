@@ -280,8 +280,8 @@ import TabItem from '@theme/TabItem';
     ```
     import math    
 
-    Ps = V[0]*I[0] + V[1]*I[1] + V[2]*I[2]
-    Qs = (( V[1]*I[2] - I[1]*V[2] ) + ( V[2]*I[0] - I[2]*V[0] ) + ( V[0]*I[1] - I[0]*V[1] ))/(-math.sqrt(3))
+    Ps = V[0]*I [0] + V[1]*I [1] + V[2]*I [2]
+    Qs = (( V[1]*I [2] - I[1]*V [2] ) + ( V[2]*I [0] - I[2]*V [0] ) + ( V[0]*I [1] - I[0]*V [1] ))/(-math.sqrt(3))
     
     return [[Ps,Qs]]
     ```

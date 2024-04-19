@@ -110,7 +110,7 @@ import TabItem from '@theme/TabItem';
 
 ![返回结果](image-10.png)
 
-点击```设置传输线分网```卡的```修改项目文件```按钮后，回到[实现标签页](../40-simstudio/20-workbench/20-function-zone/30-design-tab/index.md)中，打开[元件表](../40-simstudio/20-workbench/10-toolbar/index.md#元件表)，找到```三相传输线```，可以看到所有符合分网要求的传输线已设置```ModelType=1```, ```Decoupled=1```，如下图所示。
+点击```设置传输线分网```卡的```修改项目文件```按钮后，回到[实现标签页](../40-simstudio/20-workbench/20-function-zone/30-design-tab/index.md)中，打开 [元件表](../40-simstudio/20-workbench/10-toolbar/index.md#元件表)，找到```三相传输线```，可以看到所有符合分网要求的传输线已设置```ModelType=1```, ```Decoupled=1```，如下图所示。
 
 ![元件表中的传输线](image-11.png)
 

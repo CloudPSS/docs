@@ -19,13 +19,13 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 ## 模块封装流程
 
-本节介绍模块封装的步骤。模块封装流程分为[模块构建](#模块构建编辑模块内部拓扑及参数)、[定义参数列表](#定义元件模块参数列表)、[定义引脚列表](#定义元件模块引脚列表)、[设计图标](#设计元件模块图标)、[配置调用权限](#配置元件模块调用权限)、[保存](#保存)六个步骤。可点击文档中的跳转链接查看更详细的说明。
+本节介绍模块封装的步骤。模块封装流程分为[模块构建](#模块构建编辑模块内部拓扑及参数)、 [定义参数列表](#定义元件模块参数列表)、 [定义引脚列表](#定义元件模块引脚列表)、 [设计图标](#设计元件模块图标)、 [配置调用权限](#配置元件模块调用权限)、 [保存](#保存)六个步骤。可点击文档中的跳转链接查看更详细的说明。
 
 ### 模块构建（编辑模块内部拓扑及参数）
 
 本节介绍模块的构建方法。在仿真计算中调用模块时，实际调用的是本节介绍的模块内部实现。
 
-模块内部实现的构建方法包括[拓扑搭建](#采用拓扑搭建方法)、[代码实现](#采用代码octavepython实现)、[S-Function模型](#采用s-function元件模型实现)实现三种。
+模块内部实现的构建方法包括[拓扑搭建](#采用拓扑搭建方法)、 [代码实现](#采用代码octavepython实现)、 [S-Function模型](#采用s-function元件模型实现)实现三种。
 
 #### 采用拓扑搭建方法
 用户可使用已有的Simstudio模型库元件，或其他的封装模型，通过拓扑连接的方式构建模块。
@@ -38,7 +38,7 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
     ![新建空白电力系统元件](./blank-component.png)
 
-    进一步，可以在[实现标签页](../../40-workbench/20-function-zone/30-design-tab/index.md)中进行[拓扑编辑](../../40-workbench/20-function-zone/30-design-tab/20-topology-editing/index.md)。
+    进一步，可以在[实现标签页](../../40-workbench/20-function-zone/30-design-tab/index.md)中进行 [拓扑编辑](../../40-workbench/20-function-zone/30-design-tab/20-topology-editing/index.md)。
 
 - 从已有待封装元件开始
     
@@ -52,7 +52,7 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 ![创建Octave实现的模块](./create-octave.png)
 
-具体的Octave及Python元件的实现方法可参考[自定义Octave元件文档](../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)以及[自定义Python元件文档](../../../../20-emtlab/50-emts/50-user-defined/20-python-control/index.md)
+具体的Octave及Python元件的实现方法可参考[自定义Octave元件文档](../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)以及 [自定义Python元件文档](../../../../20-emtlab/50-emts/50-user-defined/20-python-control/index.md)
 
 目前在公网平台 (www.cloudpss.net) 中，暂不支持自定义python元件。
 

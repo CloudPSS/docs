@@ -24,7 +24,7 @@ description: 代码
 
 ## 案例
 
-这里创建一个在调用时输入自定义代码进行计算的octave控制元件，项目下载链接：[代码形式案例](./model-code-example.zip)，可参考[上传算例压缩包](../../../../../../50-user-center/30-cloudpss-apps/10-simstudio-cloud-space/index.md#项目管理)的**上传算例压缩包**，上传该测试项目。
+这里创建一个在调用时输入自定义代码进行计算的octave控制元件，项目下载链接：[代码形式案例](./model-code-example.zip)，可参考 [上传算例压缩包](../../../../../../50-user-center/30-cloudpss-apps/10-simstudio-cloud-space/index.md#项目管理)的**上传算例压缩包**，上传该测试项目。
 
 首先，按照[octave元件文档](../../../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)所描述的方法，创建一个自定义octave元件。
 
