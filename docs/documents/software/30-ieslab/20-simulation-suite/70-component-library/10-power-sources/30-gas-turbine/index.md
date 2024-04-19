@@ -44,7 +44,7 @@ $$
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[元件属性配置](/docs/docs/software/xstudio/simstudio/basic/moduleEncapsulation/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
 
 ### 参数
 
