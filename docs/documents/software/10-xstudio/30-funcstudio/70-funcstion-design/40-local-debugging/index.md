@@ -104,7 +104,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
       报错原因：Python 环境没有安装 CloudPSS-SDK。
 
-      解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../envir/python/index.md)重新配置 Python 环境。
+      解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../30-dev-env-setup/20-python-env-config/index.md)重新配置 Python 环境。
 
     - matlab 模块不存在
   
@@ -112,7 +112,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
       报错原因：Matlab 环境没有配置成功。
 
-      解决方法：参考[Matlab 环境配置](../../envir/matlab/index.md)重新配置 Matlab 的 Python 环境。
+      解决方法：参考[Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md)重新配置 Matlab 的 Python 环境。
 
     </TabItem>
     <TabItem value="2" label="接口配置报错">

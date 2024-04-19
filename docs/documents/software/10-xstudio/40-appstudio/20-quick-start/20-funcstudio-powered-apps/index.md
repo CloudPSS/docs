@@ -8,7 +8,7 @@ description: 构建一个接入 FuncStudio 函数的简单应用
 
 ## 创建函数
 
-在 FuncStudio 创建一个加法函数，创建方法详见[FuncStudio 快速入门](../../../funcstudio/guide/local/python/index.md)的介绍。
+在 FuncStudio 创建一个加法函数，创建方法详见[FuncStudio 快速入门](../../../30-funcstudio/40-quick-start/10-create-python-function/index.md)的介绍。
 
 ## 创建应用
 

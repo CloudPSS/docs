@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
 自定义算法内核计算出结果后，添加格式化输出计算结果的代码，将结果发送到 FuncStudio 运行标签页的结果栏中显示。
 
-目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见[函数结果格式化输出](../result/index.md)。
+目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见[函数结果格式化输出](../30-formatting-output/index.md)。
 
 例如：在加法函数中，我们希望输出两个加数相加后的结果 c，可以使用 log 方法。
 
@@ -156,7 +156,7 @@ c= a*b; %接入用户编写的自定义算法内核
 
 自定义算法内核计算出结果后，可以通过 FuncStudio 提供的格式化输出方法将结果发送到运行标签页的结果栏中显示。
 
-目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见[函数结果格式化输出](../result/index.md)
+目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见[函数结果格式化输出](../30-formatting-output/index.md)
 
 例如：在乘法函数中，我们希望输出两个加数相加后的结果 c，可以使用 log 方法
 

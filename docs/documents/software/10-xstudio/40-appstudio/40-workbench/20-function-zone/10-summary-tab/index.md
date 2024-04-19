@@ -31,7 +31,7 @@ description: 总览标签页
 :::info Markdown 语法
 描述及文档内容的编写支持 **MarkDown** 语法，**Markdown** 是一种轻量级标记语言，支持文字格式调整，图片、图表、数学公式等的输入。
 
-具体用法参见 [MarkDown 语法介绍](/docs/meta/edit-help/markdown-intro/index.md)。
+具体用法参见 [MarkDown 语法介绍](../../../../../../../meta/10-edit-help/10-markdown-introduction/index.md)。
 :::
 
 ### 预览
@@ -63,7 +63,7 @@ CloudPSS AppStudio 设置了丰富的权限类型，方便项目的协作与分�
     + **私有**：该项目仅当前协作组内的用户可见，对组外用户隐藏，在 **AppStudio 云空间**的**项目广场**中不可见。当前协作组的用户具备完全的读/写（修改）权限。
     + **完全公开**：该项目对所在 CloudPSS 平台的全部用户可见，在 **AppStudio 云空间**的**项目广场**中可见。除当前协作组外的其他用户仅具备读权限，不能修改。
 
-除了上述简单权限外，点击 **权限** - **高级**，切换高级权限配置面板，可配置更多自定义权限。有关更多高级权限配置方法可参见 [高级权限配置](../../../../../account/settings/sdk-token/index.md) 帮助页。
+除了上述简单权限外，点击 **权限** - **高级**，切换高级权限配置面板，可配置更多自定义权限。有关更多高级权限配置方法可参见 [高级权限配置](../../../../../50-user-center/30-cloudpss-apps/70-permission/index.md) 帮助页。
 
 <!-- ## 案例
 
