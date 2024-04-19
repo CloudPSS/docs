@@ -1,6 +1,6 @@
 ---
-title: 暂态功角稳定问题算例
-description: 暂态功角稳定问题算例
+title: CSEE-TAS-173
+description: CSEE-TAS-173
 ---
 
 
