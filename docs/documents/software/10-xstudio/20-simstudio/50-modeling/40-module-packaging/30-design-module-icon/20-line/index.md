@@ -18,15 +18,15 @@ description: 直线
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制该组件左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制该组件左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制该组件左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制该组件左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
-        <td>控制直线的长度。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转直线。</td>
+        <td>控制直线的长度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转直线。</td>
     </tr>
     <tr>
         <td>高度</td>

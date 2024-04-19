@@ -22,11 +22,11 @@ description: 路径
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制路径左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制路径左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制路径左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](./70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制路径左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
