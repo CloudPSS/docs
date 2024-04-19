@@ -34,7 +34,7 @@ tags:
 
 ### `ieslabSimulation.model`
 
-- [Model](../model/index.md)
+- [Model](../10-model/index.md)
 
 算例拓扑信息
 
@@ -86,7 +86,7 @@ IESLabSimulation.createProject('project', project_group=None, desc=None, createB
 
 - `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 仿真任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job](../job/index.md) 返回一个仿真任务
+- Returns: [Job](../30-job/index.md) 返回一个仿真任务
 
 
 ```python showLineNumbers
@@ -119,7 +119,7 @@ ieslabSimulation.run(job=None, name=None)
 
 ### `ieslabPlan.model`
 
-- [Model](../model/index.md)
+- [Model](../10-model/index.md)
 
 算例拓扑信息。
 
@@ -199,7 +199,7 @@ ieslabPlan.createProject(name, project_group, start_date, construction_cycle, de
 
 - `job`: [Dict][Dict] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job](../job/index.md) 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行典型日计算。
 
