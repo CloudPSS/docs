@@ -190,13 +190,13 @@ Job.write(sender=None, dev=False, **kwargs)
 
 ### `job.view(viewType)`
 
-- `viewType`: [View](../views/index.md) 视图类，分为：
+- `viewType`: [View](../40-views/index.md) 视图类，分为：
     - `EMTView` 电磁暂态结果视图
     - `PowerFlowView` 潮流结果视图，
     - `IESView` 综合能源结果视图
     - `IESLabSimulationView` 综合能源建模仿真结果视图
     - `IESLabTypicalDayView` 综合能源典型日结果视图
-- Returns: [View](../views/index.md) 返回一个结果视图
+- Returns: [View](../40-views/index.md) 返回一个结果视图
 
 获取当前运行实例的输出。
 
