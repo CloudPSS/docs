@@ -1,6 +1,6 @@
 ---
-title: SimStudio 工作台
-description: SimStudio 工作台功能说明
+title: 工作台
+description: 工作台功能说明
 sidebar_position: 10
 ---
 

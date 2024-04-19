@@ -1,11 +1,11 @@
 ---
-title: SimStudio IES SDK
-description: IESLab SDK 案例 SimStudio 综合能源仿真
-sidebar_position: 40
+title:  三联供系统
+description: 利用 SDK 分析三联供系统示例
+sidebar_position: 20
 ---
 
 :::info
-**本例以通过 Python 脚本获取SimStudio平台三联供算例计算结果为例，帮助用户快速入门综合能源 CloudPSS SDK 的使用。**
+**本例以通过 Python 脚本获取SimStudio 平台三联供算例计算结果为例，帮助用户快速入门综合能源 CloudPSS SDK 的使用。**
 :::
 
 ## 算例创建和使用
