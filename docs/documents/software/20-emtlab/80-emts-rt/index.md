@@ -4,7 +4,7 @@ description: 电磁暂态实时仿真
 sidebar_position: 80
 ---
 
-本文档主要介绍电磁暂态实时仿真的原理和应用场景。为满足电磁暂态实时仿真对平台计算性能的要求，该功能需搭配 [CloudPSS-RT 硬件产品](../../../hardware/mini-rt/index.md) 使用，公网平台暂不支持电磁暂态实时仿真。
+本文档主要介绍电磁暂态实时仿真的原理和应用场景。为满足电磁暂态实时仿真对平台计算性能的要求，该功能需搭配硬件产品 [CloudPSS Mini (RT)](../../../hardware/10-desktop-type/10-cloudpss-mini/index.md) 或 [CloudPSS Pro (RT)](../../../hardware/20-rack-type/10-cloudpss-pro/index.md) 使用，公网平台暂不支持电磁暂态实时仿真。
 
 ## 功能定义
 EMTLab 可凭借 CloudPSS 高性能实时仿真器和实时仿真内核，实现电磁暂态实时仿真功能。
@@ -100,7 +100,7 @@ EMTLab 中，电磁暂态离线仿真与实时仿真可共用同一套模型，�
 哪些平台可以用实时仿真功能？
 
 :   
-    电磁暂态实时仿真功能需搭配 CloudPSS-RT 实时仿真器使用，其半实物硬件在环应用需与 CloudPSS I/O Signal Hub 数模转换枢纽配合实现。
+    电磁暂态实时仿真功能需搭配 CloudPSS-RT 实时仿真器使用，其半实物硬件在环应用需与数模转换枢纽 [CloudPSS I/O Signal Hub](../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 配合实现。
 
     公网平台暂不支持电磁暂态实时仿真功能。
 
@@ -127,7 +127,7 @@ EMTLab 中，电磁暂态离线仿真与实时仿真可共用同一套模型，�
 如何观测实时仿真结果？
 
 :   
-    在实时仿真中，离线仿真的输出通道将失效，用户可以通过 [软件工具 CloudPSS Signal Monitor](../../../software-tools/monitor/index.md) 观测实时仿真结果。
+    在实时仿真中，离线仿真的输出通道将失效，用户可以通过软件工具 [CloudPSS Signal Monitor](../../../software-tools/20-signal-monitor/index.md) 观测实时仿真结果。
 
 
 仿真运行报错："start failed"

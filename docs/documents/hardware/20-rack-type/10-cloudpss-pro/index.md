@@ -7,7 +7,7 @@ sidebar_position: 10
 ## 产品简介
 CloudPSS Pro 是搭载 CloudPSS 电力系统电磁暂态云仿真平台的高性能软硬件一体仿真机，相较于 CloudPSS Mini，它拥有更强大的计算性能、更大的仿真规模。 
 
-![CloudPSS Pro =x300](./pro.png "CloudPSS Pro")  
+![CloudPSS Pro](./pro.png "CloudPSS Pro")  
 ## 产品特点
 
 ## 产品规格
