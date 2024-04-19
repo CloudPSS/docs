@@ -16,7 +16,7 @@ sidebar_position: 40
 
 
 ### 参数、引脚设置  
-点击**接口标签页**，分别对 C++ 元件的**参数组**，**引脚**和**元件图形**进行设置。参数组与引脚的详细说明可参考 [参数及引脚体系](../../../40-simstudio/30-modeling/10-params-variables-pins/index.md) 帮助文档。 图标设计的详细说明可参数 [元件图标绘制](../../../40-simstudio/30-modeling/40-module-packaging/icon/index.md)。
+点击**接口标签页**，分别对 C++ 元件的**参数组**，**引脚**和**元件图形**进行设置。参数组与引脚的详细说明可参考 [参数及引脚体系](../../../40-simstudio/30-modeling/10-params-variables-pins/index.md) 帮助文档。 图标设计的详细说明可参数 [元件图标绘制](../../../40-simstudio/30-modeling/40-module-packaging/30-design-module-icon/index.md)。
 
 ![参数、引脚和元件图形设置 =x430](./parameter-pin-icon.png)
 
