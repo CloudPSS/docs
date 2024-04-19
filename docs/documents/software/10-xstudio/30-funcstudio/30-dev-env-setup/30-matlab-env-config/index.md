@@ -7,7 +7,7 @@ description: Matlab 环境配置
 
 ## 为什么要配置 Matlab 环境？
 
-对于 Matlab 语言编写的内核，安装好 FuncStudio 本地执行器，[配置好本地 python 环境后](../python/index.md)，还需要**配置 Matlab 环境**。
+对于 Matlab 语言编写的内核，安装好 FuncStudio 本地执行器，[配置好本地 python 环境后](../20-python-env-config/index.md)，还需要**配置 Matlab 环境**。
 
 因为用户在本地执行的算法内核程序，都需要借助 FuncStudio-SDK (CloudPSS-SDK的一个类)**给内核程序封装输入输出接口**后，才能接入本地执行器，如下图所示。
 
