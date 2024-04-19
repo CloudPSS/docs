@@ -28,7 +28,7 @@ sidebar_position: 90
 
 #### 分网功能原理
 
-基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../70-parallel-acceleration/fundamentals/index.md)。
+基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../70-parallel-acceleration/10-fundamentals/index.md)。
 
 值得注意的是，Bergeron传输线模型要求，波在传输线上的传输时间应**大于或等于仿真步长**，即：
 
@@ -131,7 +131,7 @@ import TabItem from '@theme/TabItem';
 
 为什么在分网后，仿真效率没有提高？ 
 :
-    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行计算高级参数设置](../../70-parallel-acceleration/20-advanced-param-setup/index.md)进行配置。
+    拓扑分析功能需要搭配多核并行加速的算法实现仿真效率的提高，具体请参考[电磁暂态仿真并行计算高级参数设置](../70-parallel-acceleration/20-advanced-param-setup/index.md)进行配置。
     
     除时域分析之外，风电接入宽频振荡问题更依赖于频域的阻抗分析。
     针对阻抗特性扫描需求，开发了基于电磁暂态仿真的面向大规模交直流电网的端口阻抗特性扫描模块，用户可针对不同需求可设置不同频率采样方式，在保证精度的同时提升效率。
