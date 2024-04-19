@@ -343,7 +343,7 @@ component = model.getComponentsByRid('rid')
 - `policy`: [Dict][Dict]；仿真策略
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个仿真任务
+- Returns: [Job](../30-job/index.md)；返回一个仿真任务
 
 运行仿真任务。
 
@@ -359,7 +359,7 @@ model.run(job)
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个电磁暂态仿真任务
+- Returns: [Job](../30-job/index.md)；返回一个电磁暂态仿真任务
 
 运行电磁暂态仿真。
 
@@ -375,7 +375,7 @@ model.runEMT(job)
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个移频电磁暂态仿真任务
+- Returns: [Job](../30-job/index.md)；返回一个移频电磁暂态仿真任务
 
 运行移频电磁暂态仿真。
 
@@ -390,7 +390,7 @@ model.runSFEMT(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个潮流计算仿真任务
+- Returns: [Job](../30-job/index.md)；返回一个潮流计算仿真任务
 
 运行潮流计算仿真。
 
@@ -405,7 +405,7 @@ model.runPowerFlow(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个储能规划方案任务
+- Returns: [Job](../30-job/index.md)；返回一个储能规划方案任务
 
 运行储能规划方案。
 
@@ -420,7 +420,7 @@ model.runIESEnergyStoragePlan(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个负荷预测方案任务
+- Returns: [Job](../30-job/index.md)；返回一个负荷预测方案任务
 
 运行负荷预测方案。
 
@@ -435,7 +435,7 @@ model.runIESLoadPrediction(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个时序潮流方案任务
+- Returns: [Job](../30-job/index.md)；返回一个时序潮流方案任务
 
 运行时序潮流方案。
 
@@ -450,7 +450,7 @@ model.runIESPowerFlow(job)
 - `job`: [Dict][Dict]；调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `config`: [Dict][Dict]；调用仿真时使用的参数方案，不指定将使用算例保存时选中的参数方案
 - `kwargs`: [Dict][Dict]；可变数量仿真参数
-- Returns: [Job](../job/index.md)；返回一个三相不平衡潮流任务
+- Returns: [Job](../30-job/index.md)；返回一个三相不平衡潮流任务
 
 运行三相不平衡潮流。
 
@@ -510,7 +510,7 @@ revision = ModelRevision.create(revision)
 - `policy`: [Dict][Dict]；仿真策略
 - `stop_on_entry`: [Boolean][Boolean]；是否在仿真开始时停止
 - `rid`: [String][String]；项目 rid
-- Returns: [Job](../job/index.md)；返回一个仿真任务
+- Returns: [Job](../30-job/index.md)；返回一个仿真任务
 
 运行当前版本。
 
