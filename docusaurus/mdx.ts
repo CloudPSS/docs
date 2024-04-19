@@ -4,6 +4,7 @@ import type { PluginOptions as DocsOptions } from '@docusaurus/plugin-content-do
 import { remarkDefinitionList, defListHastHandlers } from 'remark-definition-list';
 import remarkMath from 'remark-math';
 import remarkIns from 'remark-ins';
+import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
 import remarkJoinCjkLines from 'remark-join-cjk-lines';
 import rehypeKatex from 'rehype-katex';
 import rehypeFigure from './plugins/rehype/figure';
@@ -15,7 +16,7 @@ export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
         extendDefaults: true,
         keywords: ['summary'],
     },
-    remarkPlugins: [remarkJoinCjkLines, remarkDefinitionList, remarkIns, remarkMath],
+    remarkPlugins: [remarkJoinCjkLines, remarkIns, remarkMath, remarkExtendedTable, remarkDefinitionList],
     rehypePlugins: [rehypeUrl, rehypeKatex, rehypeFigure],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
@@ -24,5 +25,6 @@ export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
 export const remarkRehypeOptions: MarkdownConfig['remarkRehypeOptions'] = {
     handlers: {
         ...defListHastHandlers,
+        ...extendedTableHandlers,
     },
 };

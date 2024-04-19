@@ -60,7 +60,6 @@ title: 文档块
   正弦电流（电压）的有效值等于其最大值（幅值）的 $\frac{1}{\sqrt{2}}$ ，
   约 $0.707$ 倍。
 
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -97,7 +96,6 @@ Apple
 :   Pomaceous fruit of plants of the genus Malus in 
     the family Rosaceae.
 :   An American computer company.
-
 
 </TabItem>
 <TabItem value="多个术语" label="多个术语">

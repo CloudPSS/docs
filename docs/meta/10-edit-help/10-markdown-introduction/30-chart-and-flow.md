@@ -2,7 +2,7 @@
 title: 图表与流程图
 ---
 
-你可以通过[在线编辑器](https://mermaid.live/)设计图表。
+你可以通过 [在线编辑器](https://mermaid.live/) 设计图表。
 
 将结果放在 `mermaid` 代码块中以进行渲染。
 ````md
