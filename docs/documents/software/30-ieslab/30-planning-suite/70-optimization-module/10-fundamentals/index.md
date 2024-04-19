@@ -1,6 +1,6 @@
 ---
-title: 优化原理
-description: IESLab 规划设计平台-方案优选模块-优化原理
+title: 基本原理
+description: 方案优选基本原理介绍
 sidebar_position: 70
 ---
 
