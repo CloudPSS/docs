@@ -14,11 +14,11 @@ title: 文档组织
 
 禁止使用 ASCII 范围外字符（如汉字等）作为文件、文件夹名称。
 
-![ASCII 表](./ascii-table.svg)
+![ASCII 表](./ascii-table.svg#themed)
 
 :::
 
-## 组织结构
+## 文档组织
 
 每个文件夹中的 `index.md` 为该文件夹的默认页面，如 `/docs/meta/10-edit-help/20-folder-structure/index.md` 在浏览时使用 `/meta/edit-help/folder-structure/` 即可访问。
 
@@ -27,6 +27,12 @@ title: 文档组织
 ![文件组织结构](asset-folder.png)
 
 即图片存储于和原页面同名的文件夹内。
+
+:::warning
+不要上传大小超过 50MiB 的文件，如有需要请联系管理员。
+:::
+
+## 目录结构
 
 ### 文档
 
