@@ -14,7 +14,7 @@ sidebar_position: 90
 
 拓扑分析功能主要用于交直流电网的电磁暂态仿真效率优化，包括分网功能、自动聚合母线、负载均衡三个功能。
 
-其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../../70-parallel-acceleration/index.md)进行使用。
+其中，分网功能和负载均衡功能需结合[电磁暂态仿真并行加速](../70-parallel-acceleration/index.md)进行使用。
 
 ## 功能说明
 
@@ -28,7 +28,7 @@ sidebar_position: 90
 
 #### 分网功能原理
 
-基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../../70-parallel-acceleration/fundamentals/index.md)。
+基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../70-parallel-acceleration/fundamentals/index.md)。
 
 值得注意的是，Bergeron传输线模型要求，波在传输线上的传输时间应**大于或等于仿真步长**，即：
 
