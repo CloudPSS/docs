@@ -163,29 +163,33 @@ $$
 参考 [docusaurus 文档](https://docusaurus.io/docs/markdown-features/links)
 :::
 
-
-
 ## 表格
 
-支持表格功能。
+使用 `:` 调整某一列的对齐方式，`:---` 表示左对齐，`---:` 表示右对齐，`:---:` 表示居中对齐，默认 `---` 表示左对齐。
+
+使用 `^` 向上合并单元格，使用 `>` 向右合并单元格。
 
 如：
 
 ```md
-| First Header | Second Header | Third Header |
-| ------------ | :-----------: | -----------: | {/* 使用 `:` 调整某一列的对齐方式 */}
-| Content      |  _Long Cell_  | Cell         |
-| Content      |   **Cell**    | Cell         |
-| Content      |   **Cell**    | Cell         |
+| First Header     | Second Header |     Third Header |
+| ---------------- | :-----------: | ---------------: |
+| cell (rowspan=2) |   **Cell**    |             cell |
+| ^                |  *Long Cell*  |             cell |
+| >                |       >       | cell (colspan=3) |
+| escape >         |      \>       |             cell |
+| escape ^         |      \^       |             cell |
 ```
 
 效果：
 
-| First Header | Second Header | Third Header |
-| ------------ | :-----------: | -----------: |
-| Content      |  _Long Cell_  | Cell         |
-| Content      |   **Cell**    | Cell         |
-| Content      |   **Cell**    | Cell         |
+| First Header     | Second Header |     Third Header |
+| ---------------- | :-----------: | ---------------: |
+| cell (rowspan=2) |   **Cell**    |             cell |
+| ^                |  *Long Cell*  |             cell |
+| >                |       >       | cell (colspan=3) |
+| escape >         |      \>       |             cell |
+| escape ^         |      \^       |             cell |
 
 ## 文本居中
 
@@ -214,7 +218,7 @@ text
     使用缩进来产生多行内容
 
 在文中使用脚注：
-测试[^test-platform]结果如下[^test-platform]：……
+测试 [^test-platform] 结果如下 [^test-platform]：……
 ```
 
 效果：
@@ -225,7 +229,7 @@ text
 >     使用缩进来产生多行内容
 > 
 > 在文中使用脚注：
-> 测试[^test-platform]结果如下[^test-platform]：……
+> 测试 [^test-platform] 结果如下 [^test-platform]：……
 
 ## 杂项
 

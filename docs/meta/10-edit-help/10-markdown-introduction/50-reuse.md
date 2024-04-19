@@ -2,7 +2,6 @@
 title: 重用内容
 ---
 
-
 可以将 MarkDown 文件内容导入。导入声明上下必须各有一行空白行。
 
 对于仅用于重用内容的 MarkDown 文件，可以以 `_` 作为文件名前缀，将文件定义为组件。
@@ -27,4 +26,4 @@ import Hello from './_hello-comp.md';
 
 你好，Alice！
 
-效果参考[重用内容](../../20-examples/40-reuse/index.md)。
+效果参考 [重用内容](../../20-examples/40-reuse/index.md)。

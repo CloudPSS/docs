@@ -2,11 +2,10 @@
 title: 媒体
 ---
 
-
 使用 `![alt-text](provider:id_or_url)` 语法插入媒体。
 
 ```md
-![视频1](youtube:_QobdWOa02o)
+![视频 1](youtube:_QobdWOa02o)
 
 ![](youku:XMTQ2MjU2NTU2OA)
 
@@ -19,7 +18,7 @@ title: 媒体
 
 效果：
 
-![视频1](youtube:_QobdWOa02o)
+![视频 1](youtube:_QobdWOa02o)
 
 ![](youku:XMTQ2MjU2NTU2OA)
 

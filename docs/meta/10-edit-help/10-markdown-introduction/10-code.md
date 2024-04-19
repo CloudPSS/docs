@@ -34,7 +34,6 @@ console.log(`Hello world`)
 
 在首行使用 `title="标题"` 语法可以添加标题，使用 `showLineNumbers` 可以显示行号。
 
-
 如：
 
 ````md
@@ -54,7 +53,6 @@ def main():
 ## 高亮
 
 使用 `highlight-next-line`、`error-next-line`、`warning-next-line` 注释高亮下一行，使用 `highlight-start` 和 `highlight-end` （`error`、`warning` 同理）高亮多行。
-
 
 如：
 
