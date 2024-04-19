@@ -23,7 +23,7 @@ tags:
 ### `view.modify(data, model)`
 
 - `data`: [Dict][Dict] 消息字典
-- `model`: [Model](../model/index.md) 算例
+- `model`: [Model](../10-model/index.md) 算例
 
 通过指定消息修改算例文件。
 
@@ -267,7 +267,7 @@ powerflowview.getBranches(index)
 
 ### `powerflowview.powerFlowModify(model)`
 
-- `model`: [Model](../model/index.md) 算例文件
+- `model`: [Model](../10-model/index.md) 算例文件
 
 潮流数据写入 Model
 
