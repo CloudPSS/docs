@@ -3,5 +3,6 @@ title: 工具栏
 description: 工具栏
 ---
 
-本文档主要介绍 **拓扑编辑模块** - **工具栏** 的各项功能。
+import ToolBar from '/docs/documents/software/10-xstudio/20-simstudio/40-workbench/10-toolbar/index.md';
 
+<ToolBar />
