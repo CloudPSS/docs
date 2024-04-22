@@ -8,7 +8,7 @@ Vendor: CloudPSS
 Depends: cloudpss-caddy (>=2)
 Homepage: https://github.com/CloudPSS/docs
 Installed-Size: __INSTALLED_SIZE__
-Description: Documents of CloudPSS products
+Description: Knowledge base of CloudPSS products
  The content of this package is distubuted under Creative Commons Attribution-NonCommercial 4.0 International Public License
  .
  Source can be found at https://github.com/CloudPSS/docs
