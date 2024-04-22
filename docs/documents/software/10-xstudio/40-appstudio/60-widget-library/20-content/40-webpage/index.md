@@ -45,7 +45,7 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 1. 在 URL 中输入 `https://cloudpss.net/` 链接地址，调整一下页面大小，如下图所示
 
-2. 点击预览，或者快捷键 `Ctrl + P`
+2. 点击预览，或者快捷键 <kbd>Ctrl</kbd> + <kbd>P</kbd>
 
 ![嵌套主页](image-1.png "嵌套主页")
 
