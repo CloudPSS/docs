@@ -159,7 +159,7 @@ import DocCardList from '@theme/DocCardList';
 ![可自由更改长宽比](image-5.png)! [alt text](image-6.png)
 </center>
 
-<!-- 注意，如果勾选该配置项，允许用户自由更改长宽比，可能导致**连线无法对齐**等问题，详见 [Simstudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)相关内容。 -->
+注意，如果勾选该配置项，允许用户自由更改长宽比，可能导致**连线无法对齐**等问题，详见 [Simstudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)相关内容。
 
 ### 窗格
 
@@ -197,5 +197,5 @@ import DocCardList from '@theme/DocCardList';
 
 根据以上内容，已经可以完成一个元件图标的绘制了。
 
-<!-- 但是，**为了确保最后的元件图标能正常、美观地显示，在设计图标时请务必参考 [SimStudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)。** -->
+但是，**为了确保最后的元件图标能正常、美观地显示，在设计图标时请务必参考 [SimStudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)。**
 
