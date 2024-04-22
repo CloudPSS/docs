@@ -2,7 +2,7 @@
 
 title: 登录 CloudPSS 私有部署平台
 description: 个人中心登录 CloudPSS 私有部署平台文档
-sidebar_position: 52
+sidebar_position: 20
 
 tags: 
 - 个人中心
@@ -27,7 +27,7 @@ tags:
 
 1. 在登录页面的相应位置填写您的用户邮箱/手机号/账户名，并点击**下一步**。
 2. 输入您的登录密码，然后点击**登录**按钮，密码验证通过，即可成功登录。
-3. 如您需要其他登录方式，也可以使用微信、邮箱、手机号、动态口令码来验证登录，该功能需要提前绑定用户的微信、邮箱、手机号、动态口令，详情参见[安全设置功能页](../../40-general-account-settings/20-account-security/index.md "安全设置")。
+3. 如您需要其他登录方式，也可以使用微信、邮箱、手机号、动态口令码来验证登录，该功能需要提前绑定用户的微信、邮箱、手机号、动态口令，详情参见 [安全设置功能页](../../40-general-account-settings/20-account-security/index.md "安全设置")。
 
 
 ![输入登录账户](../10-cloudpss-public/输入登录账户.png "输入登录账户")
@@ -51,4 +51,4 @@ tags:
 
 ## 新建账户
 
-私有部署的 **CloudPSS** 服务，仅支持通过**用户管理**来管理账户（支持新建账户、修改账户密码），该功能仅限系统管理员权限。详情参见[用户管理页面](../../50-system-administrator-settings/10-user-management/index.md "用户管理")。
+私有部署的 **CloudPSS** 服务，仅支持通过**用户管理**来管理账户（支持新建账户、修改账户密码），该功能仅限系统管理员权限。详情参见 [用户管理页面](../../50-system-administrator-settings/10-user-management/index.md "用户管理")。

@@ -50,7 +50,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 标签 | `label` |  | 输入内容标签 | 常量 | 选择器控件文字标签 |
 | 禁用 | `disabled` |  | 禁用开关 | 开关 | 禁用选择**开**或者**关**，开启后控件禁止点击和交互，默认为**关** |
-| 可选项 | `items` |  | 选择器控件可选项表格 | 表格 | 点击编辑数据，弹出可选项表格进行编辑，上方的图标从左到右依次是： **撤销(<kbd>Ctrl</kbd> + <kbd>Z</kbd>)** 、**重做(<kbd>Ctrl</kbd> + <kbd>Y</kbd>)**、**在上方插入行(<kbd>Ctrl</kbd>> + <kbd>I</kbd>)**、**在下方插入行(<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>)** 、**导入 CSV**、**导出 CSV** |
+| 可选项 | `items` |  | 选择器控件可选项表格 | 表格 | 点击编辑数据，弹出可选项表格进行编辑，上方的图标从左到右依次是： **撤销(<kbd>Ctrl</kbd> <kbd>Z</kbd>)** 、**重做(<kbd>Ctrl</kbd>  <kbd>Y</kbd>)**、**在上方插入行(<kbd>Ctrl</kbd> <kbd>I</kbd>)**、**在下方插入行(<kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>I</kbd>)** 、**导入 CSV**、**导出 CSV** |
 | 值 | `value` |  | 选择器控件值 | 常量 | 选择器默认值，默认为 item 1 |
 
 

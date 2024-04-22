@@ -8,7 +8,7 @@ tags:
 
 ---
 
-:::tip
+:::tip 快速入门
 本例通过 **3 机 9 节点标准测试系统**算例进行**潮流计算**为例，帮助用户快速入门 **CloudPSS SDK** 的使用。
 :::
 
@@ -81,6 +81,6 @@ if __name__ == '__main__':
 
 用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[ SDK Token 管理](../../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)。
 
-:::warning
+:::warning 易错警告
 该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则程序运行会报错。
 :::

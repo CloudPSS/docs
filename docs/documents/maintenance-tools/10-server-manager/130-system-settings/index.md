@@ -1,6 +1,6 @@
 ---
 title: 系统设置
-sidebar_position: 74
+sidebar_position: 130
 
 tags: 
 - server manager
@@ -27,4 +27,4 @@ tags:
 
 什么情况下需要重启设备？
 
-:   重要组件更新后需要重启设备
+:  CloudPSS 服务重要组件更新后需要重启设备
