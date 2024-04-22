@@ -1,15 +1,25 @@
-:root {
+:root,
+:root:fullscreen {
   --titlebar-area-x: 0px;
   --titlebar-area-y: 0px;
   --titlebar-area-width: 100vw;
   --titlebar-area-height: 0px;
 }
 
-@media screen and (display-mode: window-controls-overlay) {
+@supports (width: env(titlebar-area-width, 100vw)) {
   :root {
     --titlebar-area-x: env(titlebar-area-x, 0px);
     --titlebar-area-y: env(titlebar-area-y, 0px);
     --titlebar-area-width: env(titlebar-area-width, 100vw);
     --titlebar-area-height: env(titlebar-area-height, 0px);
+  }
+}
+
+@media screen and (display-mode: fullscreen) {
+  :root {
+    --titlebar-area-x: 0px;
+    --titlebar-area-y: 0px;
+    --titlebar-area-width: 100vw;
+    --titlebar-area-height: 0px;
   }
 }
