@@ -3,5 +3,7 @@ title: 保存
 description: 保存
 ---
 
-本文档介绍封装元件/模块的保存操作，必要的步骤包括[配置 RID](#配置-rid)和 [配置元件标签](#元件标签)两步，此外可以按需求 [填写其它信息](#其他信息描述文档等)。
+import Lite from '/docs/documents/software/10-xstudio/20-simstudio/50-modeling/40-module-packaging/50-save/index.md';
+
+<Lite />
 

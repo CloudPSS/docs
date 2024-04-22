@@ -3,5 +3,8 @@ title: 元件表
 description: 元件表
 ---
 
-参数和引脚除了在元件的参数和引脚面板配置，还可以在元件表中进行批量配置，本节介绍元件表的功能和使用方法。
+
+import Lite from '/docs/documents/software/10-xstudio/20-simstudio/50-modeling/20-component-table/index.md';
+
+<Lite />
 
