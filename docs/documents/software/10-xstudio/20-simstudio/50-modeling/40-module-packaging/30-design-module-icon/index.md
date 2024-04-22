@@ -129,13 +129,13 @@ import DocCardList from '@theme/DocCardList';
 
 ### 导入当前图形
 
-```导入当前图形```功能的主要应用场景是：
+**导入当前图形**功能的主要应用场景是：
 
 - 部分CloudPSS旧版本的元件图标和当前的新版本图标不兼容，利用这些元件另存得到的元件中，图标绘制工作区中出现```导入当前图形```的按钮。
 
-<!-- - 对于原本为[```普通项目```或```简单项目```](../../../40-workbench/20-function-zone/10-summary-tab/index.md#模型类型)的模型，在 [总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)中修改为```元件```类型后，图标绘制工作区中出现```导入当前图形```的按钮。 -->
+- 对于原本为[```普通项目```或```简单项目```](../../../40-workbench/20-function-zone/10-summary-tab/index.md#模型类型)的模型，在 [总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)中修改为```元件```类型后，图标绘制工作区中出现```导入当前图形```的按钮。
 
-```导入当前图形```按钮如下图所示：
+导入当前图形按钮如下图所示：
 
 ![导入当前图形](image-3.png)
 
@@ -197,5 +197,5 @@ import DocCardList from '@theme/DocCardList';
 
 根据以上内容，已经可以完成一个元件图标的绘制了。
 
-但是，**为了确保最后的元件图标能正常、美观地显示，在设计图标时请务必参考 [SimStudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)。**
+但是，为了确保最后的元件图标能正常、美观地显示，在设计图标时请务必参考 [SimStudio元件图标设计规范](./70-simstudio-icon-guideline/index.md)。
 
