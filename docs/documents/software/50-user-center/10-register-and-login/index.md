@@ -1,7 +1,7 @@
 ---
 title: 注册与登录
 description: 个人中心注册与登录文档
-sidebar_position: 51
+sidebar_position: 10
 
 tags: 
 - 个人中心

@@ -1,7 +1,7 @@
 ---
 title: 个人中心主页
 description: 个人中心主页介绍文档
-sidebar_position: 52
+sidebar_position: 20
 
 tags: 
 - 个人中心
@@ -50,7 +50,7 @@ tags:
 
 ## 案例搜索
 
-用户可以在搜索栏内搜索 **CloudPSS** 的应用，包括典型案例项目和帮助文档。此外，支持[高级搜索功能](../60-advanced-search/index.md "高级搜索功能")。
+用户可以在搜索栏内搜索 **CloudPSS** 的应用，包括典型案例项目和帮助文档。此外，支持 [高级搜索功能](../60-advanced-search/index.md "高级搜索功能")。
 
 
 ![搜索主界面](./搜索主界面.png "搜索主界面")

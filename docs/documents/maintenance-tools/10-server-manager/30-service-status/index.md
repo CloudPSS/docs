@@ -1,6 +1,6 @@
 ---
 title: 服务状态
-sidebar_position: 63
+sidebar_position: 30
 
 tags: 
 - server manager
