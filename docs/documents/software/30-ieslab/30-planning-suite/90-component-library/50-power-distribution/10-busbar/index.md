@@ -37,7 +37,7 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 | 元件类型 | `CompType` |  | 选择元件类型 | 选择 | 选择**交流元件**时为交流电，选择**直流元件**时为直流电|
 | Voltage Angle | `Voltage Angle` | deg | Voltage Angle | 实数 | 初始相角 |
 | Voltage Magnitude | `Voltage Magnitude` | p.u. | Voltage Magnitude | 实数 | 初始电压 |
-| Base Voltage | `Base Voltage` | kV | Base Voltage | 实数 | 基准电压 |
+| Base Voltage | `Base Voltage` | $\mathrm{kV}$ | Base Voltage | 实数 | 基准电压 |
 
 ### 引脚
 

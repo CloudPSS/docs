@@ -116,3 +116,10 @@ sidebar_position: 20
 方案评估支持对方案进行财务、环保和能效综合评价。
 
 ![评估结果](./evaluation-result.png)
+
+
+## 项目文件下载
+
+点击下载项目 zip 文件：[分布式储能项目](./distributed-storage.zip)  
+
+项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间-导入与导出](../30-cloud-space/index.md#导入与导出)

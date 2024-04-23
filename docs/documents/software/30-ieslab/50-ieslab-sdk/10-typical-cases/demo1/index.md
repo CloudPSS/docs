@@ -46,12 +46,12 @@ if __name__ == '__main__':
     print('计算完成')
     ies_result = runner.result
 ```
-指定组件 ID 为 `"/PhotovoltaicSys_6"`，标签名为 `"功率(kW)"`。调用 `ies_result.getPlotData()` 方法获取指定组件和标签的绘图数据。  
+指定组件 ID 为 `"/PhotovoltaicSys_6"`，标签名为 `"功率（$\mathrm{kW}$）"`。调用 `ies_result.getPlotData()` 方法获取指定组件和标签的绘图数据。  
 组件 ID 和标签名称的精确性非常重要。任何拼写错误或格式错误都可能导致无法获取预期的绘图数据。
 ```python
     # 示例：使用 getPlotData 方法
     compID = "/PhotovoltaicSys_6"
-    labelName = "功率(kW)"
+    labelName = "功率（$\mathrm{kW}$）"
     plot_data = ies_result.getPlotData(compID, labelName)
     print("Plot data: ", plot_data) 
 ```
@@ -115,7 +115,7 @@ if __name__ == '__main__':
 
     # 示例：使用 getPlotData 方法
     compID = "/PhotovoltaicSys_6"
-    labelName = "功率(kW)"
+    labelName = "功率（$\mathrm{kW}$）"
     plot_data = ies_result.getPlotData(compID, labelName)
     print("Plot data: ", plot_data) 
 ```

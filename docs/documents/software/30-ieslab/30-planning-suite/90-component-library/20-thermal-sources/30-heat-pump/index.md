@@ -16,7 +16,7 @@ tags:
  $$
  P_r*cop = Q
  $$  
-式中：$P_r$是额定用电功率(kW)，$cop$是性能系数，$Q$是额定制冷制热功率(kW)。
+式中：$P_r$是额定用电功率（$\mathrm{kW}$），$cop$是性能系数，$Q$是额定制冷制热功率（$\mathrm{kW}$）。
 
 ![热泵 =x300](./IES-CH-1Heatpump.png )
 
