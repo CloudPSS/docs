@@ -2,7 +2,6 @@
 
 title: DSLab 云空间
 description: CloudPSS 个人中心 DSLab 云空间介绍
-sidebar_position: 60
 
 tags: 
 - 个人中心

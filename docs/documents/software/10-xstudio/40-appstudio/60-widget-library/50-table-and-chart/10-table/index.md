@@ -1,7 +1,6 @@
 ---
 title: 表格
 description: 表格控件
-sidebar_position: 51
 ---
 
 本节主要介绍 AppStudio 控件库里的表格控件。

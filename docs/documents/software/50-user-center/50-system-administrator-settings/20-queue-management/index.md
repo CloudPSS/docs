@@ -1,7 +1,5 @@
 ---
 title: 队列管理
-sidebar_position: 20
-
 tags: 
 - 个人中心
 

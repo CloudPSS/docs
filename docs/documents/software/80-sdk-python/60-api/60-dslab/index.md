@@ -1,7 +1,6 @@
 ---
 title: DSLab 类
 description: CloudPSS SDK API 文档 DSLab 类
-sidebar_position: 46
 
 tags:
 - SDK

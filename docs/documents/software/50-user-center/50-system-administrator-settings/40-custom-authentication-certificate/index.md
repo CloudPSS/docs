@@ -1,6 +1,5 @@
 ---
 title: 自定义认证证书管理
-sidebar_position: 40
 
 tags: 
 - 个人中心

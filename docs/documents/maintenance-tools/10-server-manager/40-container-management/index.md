@@ -1,9 +1,8 @@
 ---
 title: 容器管理
-sidebar_position: 40
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

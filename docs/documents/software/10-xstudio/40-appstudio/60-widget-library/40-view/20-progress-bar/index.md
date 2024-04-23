@@ -1,7 +1,6 @@
 ---
 title: 进度条
 description: 进度条控件
-sidebar_position: 42
 ---
 
 本节主要介绍 AppStudio 控件库里的进度条控件。

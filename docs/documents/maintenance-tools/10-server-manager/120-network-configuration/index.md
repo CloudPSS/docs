@@ -1,9 +1,8 @@
 ---
 title: 网络配置
-sidebar_position: 120
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

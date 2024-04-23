@@ -1,7 +1,6 @@
 ---
 title: 盒子
 description: 盒子控件
-sidebar_position: 21
 ---
 
 本节主要介绍 **AppStudio** 控件库里的盒子控件。

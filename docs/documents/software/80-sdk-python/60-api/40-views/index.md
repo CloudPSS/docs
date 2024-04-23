@@ -1,7 +1,6 @@
 ---
 title: 视图类
 description: CloudPSS SDK API 文档视图类
-sidebar_position: 44
 
 tags:
 - SDK

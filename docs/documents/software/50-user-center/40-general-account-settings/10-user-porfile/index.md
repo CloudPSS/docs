@@ -1,6 +1,5 @@
 ---
 title: 个人信息设置
-sidebar_position: 10
 
 tags: 
 - 个人中心

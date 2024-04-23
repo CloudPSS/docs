@@ -1,9 +1,8 @@
 ---
 title: 服务器组网
-sidebar_position: 100
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

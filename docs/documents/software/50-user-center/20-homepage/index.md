@@ -1,7 +1,6 @@
 ---
 title: 个人中心主页
 description: 个人中心主页介绍文档
-sidebar_position: 20
 
 tags: 
 - 个人中心

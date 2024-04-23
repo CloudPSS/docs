@@ -1,9 +1,8 @@
 ---
 title: 系统备份
-sidebar_position: 70
 
 tags: 
-- server manager
+- Server Manager
 
 --- 
 

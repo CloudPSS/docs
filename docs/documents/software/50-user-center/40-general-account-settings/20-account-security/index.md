@@ -1,6 +1,5 @@
 ---
 title: 账户安全设置
-sidebar_position: 20
 
 tags: 
 - 个人中心

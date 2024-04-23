@@ -1,7 +1,6 @@
 ---
 title: 操作按钮
 description: 操作按钮控件
-sidebar_position: 32
 ---
 
 本节主要介绍 AppStudio 控件库里的操作按钮控件。

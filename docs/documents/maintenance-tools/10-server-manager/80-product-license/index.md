@@ -1,9 +1,8 @@
 ---
 title: 产品许可证
-sidebar_position: 80
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

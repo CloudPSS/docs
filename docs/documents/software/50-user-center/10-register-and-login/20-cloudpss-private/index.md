@@ -2,7 +2,6 @@
 
 title: 登录 CloudPSS 私有部署平台
 description: 个人中心登录 CloudPSS 私有部署平台文档
-sidebar_position: 20
 
 tags: 
 - 个人中心

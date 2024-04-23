@@ -1,9 +1,8 @@
 ---
 title: 运维
-sidebar_position: 90
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

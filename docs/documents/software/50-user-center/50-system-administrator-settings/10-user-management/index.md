@@ -1,6 +1,5 @@
 ---
 title: 用户管理
-sidebar_position: 10
 
 tags: 
 - 个人中心

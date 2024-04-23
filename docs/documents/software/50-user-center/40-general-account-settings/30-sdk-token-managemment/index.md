@@ -1,6 +1,5 @@
 ---
 title: SDK Token 管理
-sidebar_position: 30
 
 tags: 
 - 个人中心

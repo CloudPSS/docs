@@ -2,7 +2,6 @@
 
 title: 项目权限介绍
 description: CloudPSS 个人中心项目权限介绍文档
-sidebar_position: 70
 
 tags: 
 - 个人中心
