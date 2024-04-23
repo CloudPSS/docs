@@ -1,9 +1,8 @@
 ---
 title: 登录
-sidebar_position: 10
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

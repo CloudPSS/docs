@@ -1,7 +1,6 @@
 ---
 title: 超链接
 description: 超链接控件
-sidebar_position: 33
 ---
 
 本节主要介绍 AppStudio 控件库里的超链接控件。

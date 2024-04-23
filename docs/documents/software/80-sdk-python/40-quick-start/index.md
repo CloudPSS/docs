@@ -1,7 +1,6 @@
 ---
 title: 快速入门
 description: CloudPSS SDK 快速入门
-sidebar_position: 40
 
 tags:
 - SDK

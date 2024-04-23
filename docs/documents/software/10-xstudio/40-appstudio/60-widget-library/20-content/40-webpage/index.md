@@ -1,7 +1,6 @@
 ---
 title: 网页
 description: 网页控件
-sidebar_position: 24
 ---
 
 本节主要介绍 AppStudio 控件库里的网页控件。
@@ -22,7 +21,8 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| 边框圆角半径 | `style/border-radius` | `px`、`cm`、`em`、`rem` | 输入边框圆角半径 | 常量 | 输入边框圆角半径 |
+| 边框圆角半径 | `style/border-radius` | `px`、`cm`、`em`、`rem`
+ | 输入边框圆角半径 | 常量 | 输入边框圆角半径 |
 | 边框宽度 | `style/border-width` | `px`、`cm`、`em`、`rem` | 输入边框宽度 | 常量 | 输入边框宽度 |
 | 边框颜色 | `style/border-color` |  | 边框颜色 | 颜色选择器 | 点击文字颜色，弹出颜色选择器自定义边框颜色 |
 | 边框类型 | `style/border-style` |  | 边框类型 | 选择 | 边框类型分为：默认、无边框、虚线边框、实线边框、双重边框、3 D 沟槽边框、3 D 脊边框、3 D 突出边框、3 D 嵌入边框，默认为实线边框 |

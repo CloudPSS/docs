@@ -1,7 +1,6 @@
 ---
 title: 折线图
 description: 折线图控件
-sidebar_position: 53
 ---
 
 本节主要介绍 AppStudio 控件库里的折线图控件。

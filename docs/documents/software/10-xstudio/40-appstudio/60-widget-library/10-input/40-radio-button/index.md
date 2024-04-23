@@ -1,7 +1,6 @@
 ---
 title: 单选框
 description: 单选框控件
-sidebar_position: 14
 ---
 
 本节主要介绍 **AppStudio** 控件库里的单选框控件。

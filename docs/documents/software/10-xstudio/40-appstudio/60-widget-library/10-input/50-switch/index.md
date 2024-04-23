@@ -1,7 +1,6 @@
 ---
 title: 开关
 description: 开关控件
-sidebar_position: 15
 ---
 
 本节主要介绍 **AppStudio** 控件库里的开关控件。

@@ -1,7 +1,6 @@
 ---
 title: 用户协议
 description: 用户协议 文档
-sidebar_position: 80
 
 tags: 
 - 用户协议

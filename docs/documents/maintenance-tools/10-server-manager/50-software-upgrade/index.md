@@ -1,9 +1,8 @@
 ---
 title: 平台升级
-sidebar_position: 50
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

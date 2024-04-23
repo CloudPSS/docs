@@ -2,7 +2,6 @@
 
 title: AppStudio 云空间
 description: CloudPSS 个人中心 AppStudio 云空间介绍
-sidebar_position: 30
 
 tags: 
 - 个人中心
