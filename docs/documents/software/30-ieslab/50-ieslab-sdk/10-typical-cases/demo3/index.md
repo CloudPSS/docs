@@ -52,7 +52,7 @@ if __name__ == '__main__':
     X, Y = np.meshgrid(dip_angles, maximum_powers)  # 创建参数网格
 ```
 **使用嵌套循环遍历参数网格中的每个参数组合。更新数据管理模块和拓扑编辑模块中的参数值**。
-使用 `iesProject.run()` 执行仿真计算。通过 `ies_result.getPlotData()` 获取指定元件 `"PhotovoltaicSys_6"` 的指定数据 `"功率(kW)")`。从获取的数据中提取特定时间点(本例为第 11 个时间点)的有功功率值,并存储在结果数组中。
+使用 `iesProject.run()` 执行仿真计算。通过 `ies_result.getPlotData()` 获取指定元件 `"PhotovoltaicSys_6"` 的指定数据 `"功率（$\mathrm{kW}$）")`。从获取的数据中提取特定时间点(本例为第 11 个时间点)的有功功率值,并存储在结果数组中。
 :::note
 这个过程可能会花费一定的时间。确保网络连接稳定并耐心等待。
 :::
@@ -73,7 +73,7 @@ if __name__ == '__main__':
             ies_result = runner.result
             # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
             compID = "/PhotovoltaicSys_6"
-            labelName = "功率(kW)"
+            labelName = "功率（$\mathrm{kW}$）"
             plot_data = ies_result.getPlotData(compID, labelName)
             results[i, j] = plot_data['有功功率'] ['y'] [11]  # 假设使用第11个时间点的值
 ```
@@ -150,7 +150,7 @@ if __name__ == '__main__':
             ies_result = runner.result
             # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
             compID = "/PhotovoltaicSys_6"
-            labelName = "功率(kW)"
+            labelName = "功率（$\mathrm{kW}$）"
             plot_data = ies_result.getPlotData(compID, labelName)
             results[i, j] = plot_data['有功功率'] ['y'] [11]  # 假设使用第11个时间点的值
 

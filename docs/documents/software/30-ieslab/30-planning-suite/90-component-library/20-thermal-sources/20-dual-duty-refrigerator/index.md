@@ -19,13 +19,13 @@ tags:
  $$
  P_r*cop = Q
  $$  
-式中：$P_r$是额定用电功率(kW)，$cop$是性能系数，$Q$是额定制冰/制冷功率(kW)。
+式中：$P_r$是额定用电功率（$\mathrm{kW}$），$cop$是性能系数，$Q$是额定制冰/制冷功率（$\mathrm{kW}$）。
 
 其他工况下，用电功率跟负载率有关：
  $$
  P_r*r_{pl} = P
  $$  
-式中：$P_r$是额定用电功率(kW)，$r_{pl}$是负载率 PLR （part load ratio），$P$是实际工况用电功率(kW)。
+式中：$P_r$是额定用电功率（$\mathrm{kW}$），$r_{pl}$是负载率 PLR （part load ratio），$P$是实际工况用电功率（$\mathrm{kW}$）。
 
 ![双工况电压缩制冷机 ](./dual-duty-refrigerator.svg )
 
