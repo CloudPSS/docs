@@ -1,7 +1,6 @@
 ---
 title: MarkDown 文本框
 description: MarkDown 文本框控件
-sidebar_position: 23
 ---
 
 本节主要介绍 AppStudio 控件库里的 MarkDown 文本框控件。

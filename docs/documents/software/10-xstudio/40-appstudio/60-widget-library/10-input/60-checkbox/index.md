@@ -1,7 +1,6 @@
 ---
 title: 复选框
 description: 复选框控件
-sidebar_position: 16
 ---
 
 本节主要介绍 **AppStudio** 控件库里的复选框控件。

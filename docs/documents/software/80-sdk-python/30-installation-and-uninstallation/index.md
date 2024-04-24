@@ -1,7 +1,6 @@
 ---
 title: 安装与卸载
 description: CloudPSS SDK 安装与卸载文档
-sidebar_position: 30
 
 tags:
 - SDK
@@ -32,6 +31,6 @@ pip install --upgrade cloudpss
 pip uninstall cloudpss
 ```
 
-:::tip
+:::tip Python 版本
 推荐使用 python 3.8 及以上版本。
 :::

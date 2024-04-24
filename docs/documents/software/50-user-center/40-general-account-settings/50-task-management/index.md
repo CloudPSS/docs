@@ -1,6 +1,5 @@
 ---
 title: 任务管理
-sidebar_position: 70
 
 tags: 
 - 个人中心
@@ -35,6 +34,6 @@ tags:
 
 ## 任务跳转
 
-点击列表操作里的**跳转图标**，进入该任务( SimStudio / FuncStudio )
+点击列表操作里的**跳转图标**，进入该任务( **SimStudio** 或者 **FuncStudio** )
 
 ![任务跳转](./任务跳转.png "任务跳转")
