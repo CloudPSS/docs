@@ -1,9 +1,8 @@
 ---
 title: 平台升级
-sidebar_position: 65
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 
@@ -30,7 +29,7 @@ tags:
 
 ### 上传更新包
 
-> 注意：此功能上传的更新包为 [CloudPSS 产品管理平台](https://admin.local.cloudpss.net/)下载的 tar 压缩包文件。
+> 注意：此功能上传的更新包为 [CloudPSS 产品管理平台](https://admin.local.cloudpss.net/) 下载的 tar 压缩包文件。
 
 以 **CloudPSS Caddy** 为例，解压后的文件包含以下内容：
 

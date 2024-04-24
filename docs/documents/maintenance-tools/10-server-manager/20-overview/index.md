@@ -1,9 +1,8 @@
 ---
 title: 状态概览
-sidebar_position: 62
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

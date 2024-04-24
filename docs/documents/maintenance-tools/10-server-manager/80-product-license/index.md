@@ -1,9 +1,8 @@
 ---
 title: 产品许可证
-sidebar_position: 68
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 
@@ -23,10 +22,10 @@ tags:
 
 ![用户协议](./用户协议.png "用户协议")
 
-:::tip
-使用本软件即代表用户同意证书界面的[用户协议](../../../software/50-user-center/80-user-agreement/index.md)
+:::tip 用户协议
+使用本软件即代表用户同意证书界面的 [用户协议](../../../software/50-user-center/80-user-agreement/index.md)
 :::
 
 ## 上传证书
 
-点击**上传证书**按钮，上传的证书来自[CloudPSS 产品管理平台](https://admin.local.cloudpss.net/)签发的证书文件。
+点击**上传证书**按钮，上传的证书来自 [CloudPSS 产品管理平台](https://admin.local.cloudpss.net/) 签发的证书文件。

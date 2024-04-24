@@ -1,6 +1,5 @@
 ---
 title: 系统管理员账户功能
-sidebar_position: 55
 
 tags: 
 - 个人中心

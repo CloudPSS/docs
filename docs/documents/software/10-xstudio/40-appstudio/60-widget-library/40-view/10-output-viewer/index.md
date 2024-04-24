@@ -1,7 +1,6 @@
 ---
 title: 运行结果
 description: 运行结果控件
-sidebar_position: 41
 ---
 
 本节主要介绍 AppStudio 控件库里的运行结果控件。

@@ -1,9 +1,8 @@
 ---
 title: 子服务器管理
-sidebar_position: 71
 
 tags: 
-- server manager
+- Server Manager
 
 ---
 

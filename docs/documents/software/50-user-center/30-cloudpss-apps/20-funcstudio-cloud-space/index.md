@@ -2,7 +2,6 @@
 
 title: FuncStudio 云空间
 description: CloudPSS 个人中心 FuncStudio 云空间介绍
-sidebar_position: 20
 
 tags: 
 - 个人中心
@@ -45,7 +44,7 @@ tags:
 + **协作项目**：显示当前用户所加入**协作组织**的协作项目。点击**协作项目**标签右侧的按钮，可切换显示不同组织管理的项目。有关协作组织的建立，可参见 [组织管理](../../40-general-account-settings/40-organization-management/index.md "组织管理") 帮助页。
 + **项目广场**：显示权限为**公开**的全部项目，包含其他用户创建的项目。 
 
-:::tip
+:::tip 使用技巧
 + 点击每个标签或分组列表下的**搜索个人项目/收藏项目/协作项目/项目广场**，可打开全局搜索，用于快速查找项目。**全局搜索** 功能详情参见 [高级搜索功能](../../60-advanced-search/index.md "高级搜索功能") 帮助页。
 :::
 

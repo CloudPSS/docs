@@ -1,7 +1,6 @@
 ---
 title: 文件选择
 description: 文件选择控件
-sidebar_position: 17
 ---
 
 本节主要介绍 **AppStudio** 控件库里的文件选择控件。

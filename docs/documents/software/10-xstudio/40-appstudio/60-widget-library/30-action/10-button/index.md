@@ -1,7 +1,6 @@
 ---
 title: 按钮
 description: 按钮控件
-sidebar_position: 31
 ---
 
 本节主要介绍 AppStudio 控件库里的按钮控件。

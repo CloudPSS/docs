@@ -1,13 +1,12 @@
 ---
 title: 用户管理
-sidebar_position: 10
 
 tags: 
 - 个人中心
 
 ---
 
-:::tip
+:::tip 权限提醒
 此页面需要系统管理员权限。
 :::
 

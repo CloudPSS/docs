@@ -1,6 +1,5 @@
 ---
 title: 组织管理
-sidebar_position: 40
 
 tags: 
 - 个人中心

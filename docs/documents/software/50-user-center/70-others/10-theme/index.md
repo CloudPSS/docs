@@ -1,6 +1,5 @@
 ---
 title: 主题切换
-sidebar_position: 20
 
 tags: 
 - 个人中心

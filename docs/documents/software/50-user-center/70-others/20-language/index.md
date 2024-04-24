@@ -1,6 +1,5 @@
 ---
 title: 语言切换
-sidebar_position: 30
 
 tags: 
 - 个人中心

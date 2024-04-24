@@ -1,7 +1,6 @@
 ---
 title: 子舞台
 description: 子舞台控件
-sidebar_position: 44
 ---
 
 本节主要介绍 AppStudio 控件库里的子舞台控件。
