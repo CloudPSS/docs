@@ -18,13 +18,13 @@ tags:
 对不同种类的电压缩制冷机来说，都是通过**消耗电能来制冷**，并未对不同类型的制冷机进行建模，而是采用通用模型，其数学模型如下：
 
 水力模型：  
- $$
- \mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
- $$  
- 热力模型：  
- $$
- P*cop = m(h_{in}-h_{out})
- $$  
+$$
+\mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
+$$  
+热力模型：  
+$$
+P*cop = m(h_{in}-h_{out})
+$$  
 式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in} 、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）, $m$是质量流量（$\mathrm{kg/s}$），$ρ$是密度（$\mathrm{kg/m^3}$），P是额定用电功率（$\mathrm{kW}$），cop是性能系数，$\ h_{in},h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
 
 ![电压缩制冷机 =x300](./IES-CH-5CR.png )

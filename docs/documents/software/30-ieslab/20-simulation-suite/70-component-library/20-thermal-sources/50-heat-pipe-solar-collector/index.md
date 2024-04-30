@@ -15,14 +15,14 @@ tags:
 
 
 水力模型：
- $$
- \mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
- $$
- 热力模型：
- $$
- Q = rA\eta = m\left( h_{out}{- h}_{in}） \right.
- $$
- 式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in} 、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）, $m$是质量流量（$\mathrm{kg/s}$），$ρ$是密度（$\mathrm{kg/m^3}$），$Q$是太阳能集热器的供热功率（$\mathrm{kW}$），$A$为总面积，$\eta$为光热转换效率，$r$为这一时间段内的实际光强（$\mathrm{W/{m^2}}$），$h_{in}，h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
+$$
+\mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
+$$
+热力模型：
+$$
+Q = rA\eta = m\left( h_{out}{- h}_{in}） \right.
+$$
+式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in} 、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）, $m$是质量流量（$\mathrm{kg/s}$），$ρ$是密度（$\mathrm{kg/m^3}$），$Q$是太阳能集热器的供热功率（$\mathrm{kW}$），$A$为总面积，$\eta$为光热转换效率，$r$为这一时间段内的实际光强（$\mathrm{W/{m^2}}$），$h_{in}，h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
 
 
 ![热管式集热器 =x300](./IES-CH-4HPSC.png )
