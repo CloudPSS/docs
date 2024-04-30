@@ -17,7 +17,7 @@ EMTLab 提供的并行计算高级参数设置功能。
 
 ### 计算选项与适用范围
 
-针对用户不同仿真场景的使用需求，EMTLab 提供了[常规](#jump)、 [分网并行](#jump1)、 [CPU Turbo](#jump2) 与 [CPU Super Turbo](#jump3) 等 4 种计算选项。对于新能源单机模型、三机九节点算例等**小规模算例**，可选择**常规**计算选项进行仿真；对于**含长传输线的大规模系统**（如省级电网模型），可以选择**分网并行**、 **CPU Turbo** 与 **CPU Super Turbo** 等三种采用计算选项进行仿真加速；对于**不具备分网条件的大规模系统**（如仅包含较短集电线的新能源场站模型），可以选择 **CPU Turbo** 或 **CPU Super Turbo** 等 2 种计算选项进行仿真加速。
+针对用户不同仿真场景的使用需求，EMTLab 提供了**常规**、 **分网并行**、 **CPU Turbo** 与 **CPU Super Turbo** 等 4 种计算选项。对于新能源单机模型、三机九节点算例等**小规模算例**，推荐选择[常规](#jump)计算选项进行仿真；对于**含长传输线的大规模系统**（如省级电网模型），推荐选择[分网并行](#jump1)、 [CPU Turbo](#jump2) 与 [CPU Super Turbo](#jump3) 等三种采用计算选项进行仿真加速；对于**不具备分网条件的大规模系统**（如仅包含较短集电线的新能源场站模型），推荐选择 [CPU Turbo](#jump2) 或 [CPU Super Turbo](#jump3) 等 2 种计算选项进行仿真加速。
 
 
 <table>
@@ -39,7 +39,7 @@ EMTLab 提供的并行计算高级参数设置功能。
 <Tabs>
 <TabItem value="para1" label="基本设置"> 
 
-在**运行**标签页，新建**电磁暂态仿真**计算方案，选中新建的计算方案进行配置。
+在**运行标签页**新建**电磁暂态仿真**计算方案，选中新建的计算方案进行配置。
 
 ![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
 
@@ -79,49 +79,51 @@ EMTLab 提供的并行计算高级参数设置功能。
 <Tabs>
 <TabItem value="para1" label="基本设置">
 
-首先，在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
+- 在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
 
-![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
+    ![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
 
-电磁暂态仿真基本设置的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
+    电磁暂态仿真**基本设置**的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
 
-![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
+    ![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
 
-然后，在高级设置中选择**分网并行**计算选项。
+- 在**高级设置**中选择**分网并行**计算选项。
 
-![计算选项配置](./40-Calculation-Options-Configuration.png)
+    ![计算选项配置](./40-Calculation-Options-Configuration.png)
 
 </TabItem>
 <TabItem value="para2" label="队列及逻辑核心设置">
 
-针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择队列并设置逻辑核心数。
+针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择**任务队列**并设置**逻辑核心数**。
   
-首先，点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
+- 点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
 
-![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
+    ![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
 
-然后，点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，核心数不能超过计算资源中配置的逻辑核心数限制。
+- 点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，**核心数不能超过计算资源中配置的逻辑核心数限制**。
 
-![核心数配置](./60-Core-Configuration.png)
+    ![核心数配置](./60-Core-Configuration.png)
  
 </TabItem>
 <TabItem value="para3" label="交直流拓扑分析">
 
-对含**长传输线**的大规模系统（如省级电网模型）进行仿真加速时，需要进行交直流拓扑分析实现自动分网。
+对**含长传输线**的大规模系统（如省级电网模型）进行仿真加速时，需要进行交直流拓扑分析实现自动分网。
   
-首先，在**运行标签页**新建**交直流电网拓扑分析方案**，并在基本设置中选择需要进行分网的电磁暂态仿真计算方案。
+- 在**运行标签页**新建**交直流电网拓扑分析**计算方案，并在**基本设置**中选择需要进行分网的电磁暂态仿真计算方案。
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+    ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
 
-然后，在交直流电网拓扑分析方案中，开启**自动分网**并点击**启动**按钮开始分网，在**结果标签页**点击**修改项目文件**，即可将分网结果应用到电磁暂态仿真方案中。
+- 在**基本设置**中开启**自动分网**并点击**启动**按钮开始分网。
 
-![配置自动分网](./80-Automated-network-segmentation-configuration.png)
+    ![配置自动分网](./80-Automated-network-segmentation-configuration.png)
 
-![应用分网结果](./90-Application-Results.png)
+- 在**结果标签页**点击**修改项目文件**按钮，即可将分网结果应用到所选电磁暂态仿真方案中。
 
-最后，在计算方案中选择**电磁暂态仿真方案**并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+    ![应用分网结果](./90-Application-Results.png)
 
-![启动电磁暂态仿真](./100-Start-Simulation.png)
+- 在计算方案中选择**电磁暂态仿真**计算方案并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+
+    ![启动电磁暂态仿真](./100-Start-Simulation.png)
 
 </TabItem>
 </Tabs>
@@ -131,51 +133,53 @@ EMTLab 提供的并行计算高级参数设置功能。
 ### CPU Turbo计算选项配置
 
 <Tabs>
-<TabItem value="paracpu1" label="基本设置">
+<TabItem value="para-cpu1" label="基本设置">
 
-首先，在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
+- 在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
 
-![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
+    ![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
 
-电磁暂态仿真基本设置的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
+    电磁暂态仿真基本设置的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
 
-![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
+    ![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
 
-然后，在高级设置中选择**CPU Turbo**计算选项。
+- 在**高级设置**中选择**CPU Turbo**计算选项。
 
-![计算选项配置](./40-Calculation-Options-Configuration.png)
-
-</TabItem>
-<TabItem value="paracpu2" label="队列及逻辑核心设置">
-
-针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择队列并设置逻辑核心数。
-  
-首先，点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
-
-![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
-
-然后，点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，核心数不能超过计算资源中配置的逻辑核心数限制。
-
-![核心数配置](./60-Core-Configuration.png)
+    ![计算选项配置](./40-Calculation-Options-Configuration.png)
 
 </TabItem>
-<TabItem value="paracpu3" label="交直流拓扑分析">
+<TabItem value="para-cpu2" label="队列及逻辑核心设置">
 
-对于**不具备分网条件**的大规模系统（如只有较短集电线的新能源场站模型），可以跳过此步骤直接点击**启动**按钮进行仿真。对于含**长传输线**的大规模系统（如省级电网模型），需要进行交直流拓扑分析实现自动分网。
+针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择**任务队列**并设置**逻辑核心数**。
   
-首先，在**运行标签页**新建**交直流电网拓扑分析方案**，并在基本设置中选择需要进行分网的电磁暂态仿真计算方案。
+- 点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+    ![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
 
-然后，在交直流电网拓扑分析方案中，开启**自动分网**并点击**启动**按钮开始分网，在**结果标签页**点击**修改项目文件**，即可将分网结果应用到电磁暂态仿真方案中。
+- 点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，**核心数不能超过计算资源中配置的逻辑核心数限制**。
 
-![配置自动分网](./80-Automated-network-segmentation-configuration.png)
+    ![核心数配置](./60-Core-Configuration.png)
 
-![应用分网结果](./90-Application-Results.png)
+</TabItem>
+<TabItem value="para-cpu3" label="交直流拓扑分析">
 
-最后，在计算方案中选择**电磁暂态仿真方案**并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+对于**不具备分网条件**的大规模系统（如只有较短集电线的新能源场站模型），可以跳过此步骤直接点击**启动**按钮进行仿真。对于**含长传输线**的大规模系统（如省级电网模型），需要进行交直流拓扑分析实现自动分网。
+  
+- 在**运行标签页**新建**交直流电网拓扑分析**计算方案，并在**基本设置**中选择需要进行分网的**电磁暂态仿真方案**。
 
-![启动电磁暂态仿真](./100-Start-Simulation.png)
+    ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+
+- 在**基本设置**中开启**自动分网**并点击**启动**按钮开始分网。
+
+    ![配置自动分网](./80-Automated-network-segmentation-configuration.png)
+
+- 在**结果标签页**点击**修改项目文件**按钮，即可将分网结果应用到电磁暂态仿真方案中。
+
+    ![应用分网结果](./90-Application-Results.png)
+
+- 在计算方案中选择**电磁暂态仿真**计算方案并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+
+    ![启动电磁暂态仿真](./100-Start-Simulation.png)
 
 </TabItem>
 </Tabs>
@@ -185,51 +189,53 @@ EMTLab 提供的并行计算高级参数设置功能。
 ### CPU Super Turbo计算选项配置
 
 <Tabs>
-<TabItem value="parasuper1" label="基本设置">
+<TabItem value="para-super1" label="基本设置">
 
-首先，在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
+- 在**运行标签页**新建**电磁暂态仿真**计算方案，对**基本设置**进行配置。
 
-![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
+    ![电磁暂态仿真计算方案](./10-emt-simulation-scheme.png)
 
-电磁暂态仿真基本设置的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
+    电磁暂态仿真**基本设置**的参数如下图所示，通常仿真仅需配置**结束时间**、**积分步长**与**输出通道**三个参数即可。积分步长通常选择 50us 即可，但如果需要仿真电力电子开关模型，则需要配置更小的仿真步长，同时切换求解器为**开关/离散事件处理增强**进行加速。更多详细内容可查看 [电磁暂态仿真计算方案配置](../../50-emts/20-job-config/index.md) 帮助文档。
 
-![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
+    ![电磁暂态仿真基本设置 =x350](./20-basic-setting.png)
 
-然后，在高级设置中选择**CPU Super Turbo**计算选项。
+- 在**高级设置**中选择**CPU Super Turbo**计算选项。
 
-![计算选项配置](./40-Calculation-Options-Configuration.png)
-
-</TabItem>
-<TabItem value="parasuper2" label="队列及逻辑核心设置">
-
-针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择队列并设置逻辑核心数。
-  
-首先，点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
-
-![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
-
-然后，点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，核心数不能超过计算资源中配置的逻辑核心数限制。
-
-![核心数配置](./60-Core-Configuration.png)
+    ![计算选项配置](./40-Calculation-Options-Configuration.png)
 
 </TabItem>
-<TabItem value="parasuper3" label="交直流拓扑分析">
+<TabItem value="para-super2" label="队列及逻辑核心设置">
 
-对于**不具备分网条件**的大规模系统（如只有较短集电线的新能源场站模型），可以跳过此步骤直接点击**启动**按钮进行仿真。对于含**长传输线**的大规模系统（如省级电网模型），需要进行交直流拓扑分析实现自动分网。
+针对大规模算例选择**分网并行**、**CPU Turbo** 或 **CPU Super Turbo** 进行仿真加速时，需要选择**任务队列**并设置**逻辑核心数**。
   
-首先，在**运行标签页**新建**交直流电网拓扑分析方案**，并在基本设置中选择需要进行分网的电磁暂态仿真计算方案。
+- 点击**运行设置**中**计算资源**选项，设置最大可用的逻辑核心数限制。
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+    ![队列及逻辑核心设置](./50-Queue-and-logical-core-setup.png)
 
-然后，在交直流电网拓扑分析方案中，开启**自动分网**并点击**启动**按钮开始分网，在**结果标签页**点击**修改项目文件**，即可将分网结果应用到电磁暂态仿真方案中。
+- 点击**高级设置**中**核心数**选项，根据仿真效率需求填写实际使用的 CPU 核数，**核心数不能超过计算资源中配置的逻辑核心数限制**。
 
-![配置自动分网](./80-Automated-network-segmentation-configuration.png)
+    ![核心数配置](./60-Core-Configuration.png)
 
-![应用分网结果](./90-Application-Results.png)
+</TabItem>
+<TabItem value="para-super3" label="交直流拓扑分析">
 
-最后，在计算方案中选择**电磁暂态仿真方案**并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+对于**不具备分网条件**的大规模系统（如只有较短集电线的新能源场站模型），可以跳过此步骤直接点击**启动**按钮进行仿真。对于**含长传输线**的大规模系统（如省级电网模型），需要进行交直流拓扑分析实现自动分网。
+  
+- 在**运行标签页**新建**交直流电网拓扑分析**计算方案，并在**基本设置**中选择需要进行分网的**电磁暂态仿真**计算方案。
 
-![启动电磁暂态仿真](./100-Start-Simulation.png)
+    ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+
+- 在**基本设置**中开启**自动分网**并点击**启动**按钮开始分网
+
+    ![配置自动分网](./80-Automated-network-segmentation-configuration.png)
+
+- 在**结果标签页**点击**修改项目文件**按钮，即可将分网结果应用到电磁暂态仿真方案中。
+
+    ![应用分网结果](./90-Application-Results.png)
+
+- 在计算方案中选择**电磁暂态仿真**计算方案并点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+
+    ![启动电磁暂态仿真](./100-Start-Simulation.png)
 
 </TabItem>
 </Tabs>
@@ -251,56 +257,61 @@ EMTLab 提供的并行计算高级参数设置功能。
 | 只进行分网 | 分网选项 | 开启此选项后，仿真只进行初始化分网，不进行后续仿真。更多详细说明可查看 [交直流拓扑分析](../../90-topology-analysis/index.md) 帮助文档 |
 
 <Tabs>
-<TabItem value="advsetting1" label="控制系统与电气系统并行">
+<TabItem value="adv-setting1" label="控制系统与电气系统并行">
 
-在**高级设置**中启用**控制系统与电气系统并行**，根据电气系统与控制系统规模合理配置电气核心数。其中，电气核心数不能超过核心数。
+在**高级设置**中启用**控制系统与电气系统并行**，根据电气系统与控制系统规模合理配置电气核心数。其中，**电气核心数不能超过核心数**。
 
 ![电气核心数配置](./110-n-ele-cpu.png)
 
 </TabItem>
-<TabItem value="advsetting2" label="配置负载均衡策略">
+<TabItem value="adv-setting2" label="配置负载均衡策略">
 
-使用该功能，需要先进行交直流电网拓扑分析，获取各个分区数据，并将拓扑分析得到的负载均衡策略表写回到计算方案。
+使用该功能，需要先进行**交直流电网拓扑分析**，获取各个分区数据，并将拓扑分析得到的负载均衡策略表写回到计算方案。
 
-- **自动写入负载均衡信息**
+1. **自动写入负载均衡信息**
   
-首先，在**运行标签页**新建**交直流电网拓扑分析方案**，并在基本设置中选择需要进行拓扑分析的电磁暂态仿真计算方案。详见[交直流电网拓扑分析](../../90-topology-analysis/index.md)帮助文档。
+   1. 在**运行标签页**新建**交直流电网拓扑分析**计算方案，并在**基本设置**中选择需要进行拓扑分析的**电磁暂态仿真**计算方案。详见[交直流电网拓扑分析](../../90-topology-analysis/index.md)帮助文档。
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+        ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
 
-然后，在交直流电网拓扑分析方案中，开启**生成负载均衡策略表**。此时点击**启动**按钮即可开始分网并生成生成负载均衡策略表。
+   1. 在**基本设置**中开启**生成负载均衡策略表**选项。此时点击**启动**按钮即可开始分网并生成生成负载均衡策略表。
 
-![配置生成负载均衡策略表](./120-Generate-Load-Balancing-Strategy.png)
+        ![配置生成负载均衡策略表](./120-Generate-Load-Balancing-Strategy.png)
 
-最后，在**结果标签页**中的负载均衡信息页面点击**修改项目文件**，即可将负载均衡策略表写回到电磁暂态仿真方案中。
+   1. 在**结果标签页**中的**负载均衡信息**页面点击**修改项目文件**按钮，即可将负载均衡策略表写回到电磁暂态仿真方案中。
   
-![自动写入负载均衡信息](./130-Automatic-write-load-balancing-information.png)
+        ![自动写入负载均衡信息](./130-Automatic-write-load-balancing-information.png)
   
-- **手动写入负载均衡信息**
+1. **手动写入负载均衡信息**
   
-用户也可以在**高级设置**中启用**配置负载均衡策略**，根据各个分区计算量和预估耗时，设计负载均衡策略，将分区编号对应手动填入“分区-核心”映射表。**普通用户不建议使用，风险自负！**
+        用户也可在**高级设置**中启用**配置负载均衡策略**，根据各个分区计算量和预估耗时，设计负载均衡策略，将分区编号对应手动填入“分区-核心”映射表。**此项操作具有一定风险，普通用户不建议使用！**
 
-![手动配置负载均衡策略](./140-Manually-load-avr.png)
+        ![手动配置负载均衡策略](./140-Manually-load-avr.png)
 
 </TabItem>
-<TabItem value="advsetting3" label="输出分块信息">
+<TabItem value="adv-setting3" label="输出分块信息">
 
+CloudPSS EMTLAB 支持在仿真过程中输出分块信息以及将分区结果应用到拓扑中进行染色显示。
 
-在**高级设置**中可以选择**是否输出分块信息**,选择开启可以输出**电气节点统计**、**控制节点统计**以及**CPU分区表**等信息。详见[交直流电网拓扑分析](../../90-topology-analysis/index.md)帮助文档。
+- 在**高级设置**中点击开启**是否输出分块信息**选项。
 
-![启用输出分块信息](./150-Enable-output-of-segmented-information.png)
+    ![启用输出分块信息](./150-Enable-output-of-segmented-information.png)
 
-![仿真结果-不输出分块信息](./160-sim-result-disable-output.png)
+- 开启**是否输出分块信息**选项后可以输出**电气节点统计**、**控制节点统计**以及**CPU分区表**等信息。
 
-![仿真结果-输出分块信息](./170-sim-result-enable-output.png)
+    ![仿真结果-输出分块信息](./170-sim-result-enable-output.png)
 
-此外，还可以将分区结果应用到拓扑中进行染色显示。在**分网结果**界面点击**修改项目文件**，即可将分网结果应用到电磁暂态仿真方案中，并在拓扑中显示分网结果。
+- 关闭**是否输出分块信息**选项后将不会输出**控制节点统计**以及**CPU分区表**等信息。
 
-![显示分网结果](./180-Display-network-segmentation-results.png)
+    ![仿真结果-不输出分块信息](./160-sim-result-disable-output.png)
+
+- 在**分网结果**界面点击**修改项目文件**按钮，即可将分网结果应用到电磁暂态仿真方案中，并在拓扑中显示分网结果。
+
+    ![显示分网结果](./180-Display-network-segmentation-results.png)
  
-![IEEE-39节点系统（分网前）](./190-Topology-before-network-segmentation.png)
+    ![IEEE-39节点系统（分网前）](./190-Topology-before-network-segmentation.png)
  
-![IEEE-39节点系统（分网后）](./200-Topology-after-network-segmentation.png)
+    ![IEEE-39节点系统（分网后）](./200-Topology-after-network-segmentation.png)
 
 </TabItem>
 </Tabs>
@@ -310,122 +321,122 @@ EMTLab 提供的并行计算高级参数设置功能。
 <Tabs>
 <TabItem value="case1" label="10 机 39 节点系统分网并行仿真加速">
 
-- **新建算例与电磁暂态仿真方案**  
+1. **新建算例与电磁暂态仿真方案**  
   
-在 **CloudPSS Simstudio** 个人中心打开 **IEEE-39 节点标准测试系统算例**。
+   1. 在 **CloudPSS SimStudio** 个人中心打开 **IEEE-39 节点标准测试系统算例**。
 
-![IEEE-39节点标准测试系统算例](210-IEEE-39.png)
+        ![IEEE-39节点标准测试系统算例](210-IEEE-39.png)
 
-选择**运行标签页**新建电磁暂态仿真方案进行参数配置。
+   1. 选择**运行标签页**新建电磁暂态仿真方案进行参数配置。
 
-![新建电磁暂态仿真方案](./220-Creat-EMT-Sim-Schemes.png)
+        ![新建电磁暂态仿真方案](./220-Creat-EMT-Sim-Schemes.png)
  
-- **并行计算方案配置**
+1. **并行计算方案配置**
 
-点击**运行设置**中**计算资源配置**选项，根据仿真效率需求选择需要使用的 CPU 核数。
+   1. 点击**运行设置**中**计算资源配置**选项，根据仿真效率需求选择需要使用的 CPU 核数。
 
-![配置需要使用的CPU核数](./50-Queue-and-logical-core-setup.png)
+        ![配置需要使用的CPU核数](./50-Queue-and-logical-core-setup.png)
 
-在**高级设置**中选择**分网并行**，并填写使用的核心数，**核心数需要小于等于计算资源中配置的值**。
+   1. 在**高级设置**中选择**分网并行**，并填写使用的核心数，**核心数需要小于等于计算资源中配置的值**。
 
-![分网并行配置](./60-Core-Configuration.png)
+        ![分网并行配置](./60-Core-Configuration.png)
 
-- **拓扑分析**
+1. **拓扑分析**
 
-在**运行标签页**新建交直流电网拓扑分析方案，并在基本设置中选择需要进行分网的电磁暂态仿真计算方案
+   1. 在**运行标签页**新建**交直流电网拓扑分析**方案，并在**基本设置**中选择需要进行分网的电磁暂态仿真计算方案。
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+        ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
 
-选择**自动分网**并点击启动任务开始分网，并在结果标签页点击修改项目文件，将分网结果应用到电磁暂态仿真方案中。
+   2. 选择**自动分网**并点击**启动**按钮开始分网。
 
-![启动分网](./80-Automated-network-segmentation-configuration.png)
+        ![启动分网](./80-Automated-network-segmentation-configuration.png)
 
-![应用分网结果](./90-Application-Results.png)
+   3. 在**结果标签页**点击**修改项目文件**按钮，将分网结果应用到电磁暂态仿真方案中。
 
-- **电磁暂态仿真计算**
+        ![应用分网结果](./90-Application-Results.png)
+
+2. **电磁暂态仿真计算**
   
-此时，点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+    点击**启动**按钮进行电磁暂态仿真。**一般算例仿真规模越大，分网并行加速效果越好**。
 
-![启动电磁暂态仿真](./100-Start-Simulation.png)
+        ![启动电磁暂态仿真](./100-Start-Simulation.png)
 
-- **效率对比**
+3. **效率对比**
 
-:::info
-**对于 IEEE39 节点标准测试算例，由于CPU单核性能已经足够，因此采用并行仿真的加速比仅为 1.5 左右。**
-:::
 
-![采用常规计算方案-IEEE39节点算例](./230-Simulation-results-of-general-scheme.png)
+   1. 对于 **IEEE39 节点标准测试算例**，由于**CPU单核性能已经足够**，因此采用并行仿真的**加速比**仅为 **1.5** 左右。
 
-![采用分网并行-IEEE39节点算例](./240-Simulation-results-of-network-segmentation-scheme.png)
 
-:::info
-**针对包含十一万电气与控制节点的大规模交直流电网算例，分网后 1s 仿真的物理过程从 884s 提升到了 30s 左右，加速比约为 29。**
-:::
+        ![采用常规计算方案-IEEE39节点算例](./230-Simulation-results-of-general-scheme.png)
 
-![采用常规计算方案-某大规模交直流电网算例](./260-Sim-results-of-general-scheme-AC-DC.png)
+        ![采用分网并行-IEEE39节点算例](./240-Simulation-results-of-network-segmentation-scheme.png)
 
-![采用分网并行-某大规模交直流电网算例](./270-Sim-results-of-network-segmentation-scheme-AC-DC.png)
+
+   1. 对于包含十一万电气与控制节点的**大规模交直流电网算例**，分网后 1s 仿真的物理过程从 **884s** 提升到了 **30s** 左右，**加速比**约为 **29**。
+
+
+        ![采用常规计算方案-某大规模交直流电网算例](./260-Sim-results-of-general-scheme-AC-DC.png)
+
+        ![采用分网并行-某大规模交直流电网算例](./270-Sim-results-of-network-segmentation-scheme-AC-DC.png)
 
 </TabItem>
 <TabItem value="case2" label="10 机 39 节点系统 CPU Turbo/Super Turbo 仿真加速">
 
 
-- **新建算例与电磁暂态仿真方案**  
+1. **新建算例与电磁暂态仿真方案**  
   
-在 **CloudPSS Simstudio** 个人中心打开 **IEEE-39 节点标准测试系统算例**。
+   1. 在 **CloudPSS SimStudio** 个人中心打开 **IEEE-39 节点标准测试系统算例**。
 
-![IEEE-39节点标准测试系统算例](./210-IEEE-39.png)
+        ![IEEE-39节点标准测试系统算例](./210-IEEE-39.png)
 
-选择**运行标签页**新建电磁暂态仿真方案进行参数配置。
+   1. 在**运行标签页**新建电磁暂态仿真方案进行参数配置。
 
-![新建电磁暂态仿真方案](./220-Creat-EMT-Sim-Schemes.png)
+        ![新建电磁暂态仿真方案](./220-Creat-EMT-Sim-Schemes.png)
 
-- **并行计算方案配置**
+1. **并行计算方案配置**
 
-点击**运行设置**中**计算资源配置**选项，根据仿真效率需求选择需要使用的 CPU 核数。
+   1. 点击**运行设置**中**计算资源配置**选项，根据仿真效率需求选择需要使用的 CPU 核数。
 
-![配置需要使用的CPU核数](./50-Queue-and-logical-core-setup.png)
+        ![配置需要使用的CPU核数](./50-Queue-and-logical-core-setup.png)
 
-在**高级设置**中选择 **CPU Turbo** 或**CPU Super Turbo**，并填写使用的核心数，**核心数需要小于等于计算资源中配置的值**。
+   1. 在**高级设置**中选择 **CPU Turbo** 或**CPU Super Turbo**，并填写使用的核心数，**核心数需要小于等于计算资源中配置的值**。
 
-![CPU Turbo配置](./60-Core-Configuration.png)
+        ![CPU Turbo配置](./60-Core-Configuration.png)
 
-- **拓扑分析**
+1. **拓扑分析**
 
-在**运行标签页**新建交直流电网拓扑分析方案，并在基本设置中选择需要进行分网的电磁暂态仿真计算方案
+   1. 在**运行标签页**新建**交直流电网拓扑分析**方案，并在**基本设置**中选择需要进行分网的电磁暂态仿真计算方案
 
-![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
+        ![新建交直流电网拓扑分析方案](./70-Creating-new-topology-analysis-configurations.png)
 
-选择**自动分网**并点击启动任务开始分网，并在结果标签页点击修改项目文件，将分网结果应用到电磁暂态仿真方案中。
+   1. 选择**自动分网**并点击**启动**按钮开始分网。
 
-![启动分网](./80-Automated-network-segmentation-configuration.png)
+        ![启动分网](./80-Automated-network-segmentation-configuration.png)
 
-![应用分网结果](./90-Application-Results.png)
+   1. 在**结果标签页**点击**修改项目文件**按钮，将分网结果应用到电磁暂态仿真方案中。
 
-- **电磁暂态仿真计算**
+        ![应用分网结果](./90-Application-Results.png)
+
+1. **电磁暂态仿真计算**
   
-此时，点击**启动**按钮即可实现并行仿真加速。**一般算例仿真规模越大，分网并行加速效果越好**。
+   点击**启动**按钮进行电磁暂态仿真。**一般算例仿真规模越大，分网并行加速效果越好**。
 
-![启动电磁暂态仿真](./100-Start-Simulation.png)
+        ![启动电磁暂态仿真](./100-Start-Simulation.png)
 
-- **效率对比**
+2. **效率对比**
 
-:::info
-**对于 IEEE39 节点标准测试算例，由于 CPU 单核性能已经足够，因此采用 CPU Turbo 仿真的加速比仅为 1.5 左右。**
-:::
+   1. 对于 **IEEE39 节点标准测试算例**，由于**CPU单核性能已经足够**，因此采用并行仿真的**加速比**仅为 **1.5** 左右。
 
-![采用常规计算方案-IEEE39节点算例](./230-Simulation-results-of-general-scheme.png)
+        ![采用常规计算方案-IEEE39节点算例](./230-Simulation-results-of-general-scheme.png)
 
-![CPU Turbo-IEEE39节点算例](./250-Simulation-results-of-CPU-Turbo.png)
+        ![CPU Turbo-IEEE39节点算例](./250-Simulation-results-of-CPU-Turbo.png)
 
-:::info
-**针对包含十一万电气与控制节点的大规模交直流电网算例，采用 CPU Turbo 加速后 1s 仿真的物理过程从 884s 提升到了 22s 左右，加速比约为 40。**
-:::
+   2. 对于包含十一万电气与控制节点的**大规模交直流电网算例**，采用 CPU Turbo 加速后 1s 仿真的物理过程从 **884s** 提升到了 **22s** 左右，**加速比**约为 **40**。
 
-![采用常规计算方案-某大规模交直流电网算例](./260-Sim-results-of-general-scheme-AC-DC.png)
+        ![采用常规计算方案-某大规模交直流电网算例](./260-Sim-results-of-general-scheme-AC-DC.png)
 
 
-![CPU Turbo-某大规模交直流电网算例](./280-Sim-results-of-CPU-Turbo-AC-DC.png)
+        ![CPU Turbo-某大规模交直流电网算例](./280-Sim-results-of-CPU-Turbo-AC-DC.png)
 
 </TabItem>
 </Tabs>
@@ -443,14 +454,14 @@ EMTLab 提供的并行计算高级参数设置功能。
 如何选取合适逻辑核心数量？
 :   对于新能源单机模型、三机九节点算例等小规模算例，选用单核进行仿真即可；对于新能源场站模型，一般选取 4 核、8 核即可；对于大规模省级电网，需要综合考虑设备的核数以及同时使用的人数，对于 32 核的仿真设备，一般选择 16 核即可达到较高效率。
 
-电磁暂态仿真报错:"Error: +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead."
+电磁暂态仿真报错: `Error: +/- Seq. Travel Time is less than the integration time step. Decrease the time step or use Lumped π-Model instead.`
 :  由于传输线解耦需要电气信号在传输线中的传播延时 $τ$ 大于一个仿真步长 $ΔT$ ，若传输线较短，需要减小仿真步长。
 
-交直流电网拓扑分析方案报错：`选择一个电磁暂态仿真方案="args":"@debug":"","@priority":0,"@queue":1,"@tres":"cpu=1`。
-:  通过新建电磁暂态仿真方案进行配置即可。
-  
-  ![交直流电网拓扑分析方案报错](./290-Topology-Analysis-Error1.png)
-  
+交直流电网拓扑分析方案报错：`选择一个电磁暂态仿真方案="args":"@debug":"","@priority":0,"@queue":1,"@tres":"cpu=1.`
 
-   ![新建电磁暂态仿真方案](./300-Creating-EMT-sim-scheme.png)
- 
+:   
+    在**运行标签页**新建**电磁暂态仿真方案**进行参数配置即可。  
+
+    ![交直流电网拓扑分析方案报错](./290-Topology-Analysis-Error1.png)
+
+    ![新建电磁暂态仿真方案](./220-Creat-EMT-Sim-Schemes.png)
