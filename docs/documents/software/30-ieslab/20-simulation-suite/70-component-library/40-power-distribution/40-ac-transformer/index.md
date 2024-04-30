@@ -21,9 +21,9 @@ tags:
 
 ![交流变压器 =x200](./IES-GD-1Transformer-1.png)
 
- $$
- Z_{e} = k_{*}Z_{T}
- $$
+$$
+Z_{e} = k_{*}Z_{T}
+$$
 $$
 Y_{1e} = \frac{k_{*} - 1}{k_{*}Z_{T} }
 $$

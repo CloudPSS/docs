@@ -16,19 +16,19 @@ tags:
 
  水力模型：
 
- $$
- \mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
- $$
- 热力模型  
- 制冷：  
- $$
- P*{cop}_{cool} = m(h_{in}-h_{out})
- $$
- 制热：
- $$
- P*{cop}_{heat} = m(h_{out}-h_{in})
- $$
- 式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in}、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）,$m$是质量流量（$\mathrm{kg/s}$），$\rho$是密度（$\mathrm{kg/m^3}$），$P$是额定用电功率（$\mathrm{kW}$），${cop}_{cool},{cop}_{heat}$分别是制冷和供热时的性能系数，$h_{in},h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
+$$
+\mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
+$$
+热力模型  
+制冷：  
+$$
+P*{cop}_{cool} = m(h_{in}-h_{out})
+$$
+制热：
+$$
+P*{cop}_{heat} = m(h_{out}-h_{in})
+$$
+式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in}、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）,$m$是质量流量（$\mathrm{kg/s}$），$\rho$是密度（$\mathrm{kg/m^3}$），$P$是额定用电功率（$\mathrm{kW}$），${cop}_{cool},{cop}_{heat}$分别是制冷和供热时的性能系数，$h_{in},h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
 
 ![热泵 =x300](./IES-CH-1Heatpump.png )
 

@@ -25,9 +25,9 @@ $$
 P =F\eta_e 
 $$  
 $$
- \eta_q + \eta_p+\eta_l = 1 
- $$  
- 式中：F 是燃料提供的总功率（$\mathrm{kW}$）,P 是发电机的额定功率（$\mathrm{kW}$）,$\eta_p$代表发电效率,$\eta_l$代表燃气轮机的损失系数。
+\eta_q + \eta_p+\eta_l = 1 
+$$  
+式中：F 是燃料提供的总功率（$\mathrm{kW}$）,P 是发电机的额定功率（$\mathrm{kW}$）,$\eta_p$代表发电效率,$\eta_l$代表燃气轮机的损失系数。
 
 $$ 
 Q =F\eta_h= m(h_{out}-h_{in})
