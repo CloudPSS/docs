@@ -4,6 +4,8 @@
 /build
 /*.deb
 /*.log
+/deb/usr/share/cloudpss/static/
+!/deb/usr/share/cloudpss/static/docs/
 
 # Generated files
 .docusaurus
