@@ -16,19 +16,19 @@ tags:
 
  水力模型：
 
- $$
- \mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
- $$
- 热力模型  
- 制冷：  
- $$
- P*{cop}_{cool} = m(h_{in}-h_{out})
- $$
- 制热：
- $$
- P*{cop}_{heat} = m(h_{out}-h_{in})
- $$
- 式中：${\Delta}p$是进出口压差(kPa)，$p_{in}、p_{out}$分别为流体进出口压力(kPa)，$k$是局部压降系数 (kPa/(m³·s⁻¹)²),$m$是质量流量(kg/s)，$\rho$是密度（kg/ m³），$P$是额定用电功率(kW)，${cop}_{cool},{cop}_{heat}$分别是制冷和供热时的性能系数，$h_{in},h_{out}$分别为工质的进出口比焓（kj/kg）。
+$$
+\mathrm{\Delta}p = p_{in} - p_{out} = k*m*|m|/\rho^{2}
+$$
+热力模型  
+制冷：  
+$$
+P*{cop}_{cool} = m(h_{in}-h_{out})
+$$
+制热：
+$$
+P*{cop}_{heat} = m(h_{out}-h_{in})
+$$
+式中：${\Delta}p$是进出口压差（$\mathrm{kPa}$），$p_{in}、p_{out}$分别为流体进出口压力（$\mathrm{kPa}$），$k$是局部压降系数（$\mathrm{kPa/(m^3 \cdot s^{-1})^2}$）,$m$是质量流量（$\mathrm{kg/s}$），$\rho$是密度（$\mathrm{kg/m^3}$），$P$是额定用电功率（$\mathrm{kW}$），${cop}_{cool},{cop}_{heat}$分别是制冷和供热时的性能系数，$h_{in},h_{out}$分别为工质的进出口比焓（$\mathrm{kJ/kg}$）。
 
 ![热泵 =x300](./IES-CH-1Heatpump.png )
 
@@ -43,6 +43,21 @@ tags:
 CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
 
 ### 参数
+
+#### 设备参数
+
+| 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
+| :--- | :--- | :--- | :--: | :--- | :--- |
+| 生产厂商 | `manufacturer` |  | 生产厂商 | 文本 | 生产厂商 |
+| 设备型号 | `equipType` |  | 设备型号 | 文本 | 设备型号 |
+| 局部压降系数 | `LocalPressureDropCoe` | $\mathrm{kPa/(m^3 \cdot s^{-1})^2}$ | 局部压降系数 | 实数 | 局部压降系数 |
+| 功率因数 | `PowerFactor` |  | 功率因数 | 实数 | 功率因数，范围为0-1，一般在0.9-1 |
+| 设备工况 | `OperateParam` |  | 设备工况 | 表格 | 设备多挡位变工况运行参数，为表格，分别录入不同挡位的**性能系数**：`COP`, **制冷制热功率**（制冷为负，制热为正）：`EnergySupply` |
+| 制热最小供水温度 | `MiniHeatOutletTemp` | ℃ | 制热最小供水温度 | 实数 | 制热最小供水温度，运行约束参数在计算时不生效，无意义 |
+| 最制热大供水温度 | `MaxHeatOutletTemp` | ℃ | 制热最大供水温度 | 实数 | 制热最大供水温度，运行约束参数在计算时不生效，无意义 |
+| 制冷最小供水温度 | `MiniCoolOutletTemp` | ℃ | 制冷最小供水温度 | 实数 | 制冷最小供水温度，运行约束参数在计算时不生效，无意义 |
+| 制冷最大供水温度 | `MaxCoolOutletTemp` | ℃ | 制冷最大供水温度 | 实数 | 制冷最大供水温度，运行约束参数在计算时不生效，无意义 |
+
 
 #### 基础参数
 

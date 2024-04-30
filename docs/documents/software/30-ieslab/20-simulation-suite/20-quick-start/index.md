@@ -7,6 +7,8 @@ sidebar_position: 20
 
 本节以**含风光储交直流配网仿真项目**为例，介绍IESLab 建模仿真平台的主要使用流程。
 
+
+
 ## 平台使用步骤
 
 建议您按照以下步骤使用 CloudPSS IESLab 建模仿真平台：
@@ -95,3 +97,9 @@ sidebar_position: 20
 在**元件运行结果**页面，选择设备及参数，检查分析计算结果。
 
 ![结果1](./result1.png "结果1")
+
+## 项目文件下载
+
+点击下载项目 zip 文件：[含风光储交直流配网仿真项目](../../20-simulation-suite/80-typical-cases/30-ac-dc-hybrid-distribution-system-with-renewables/ac-dc-hybrid-distribution-system-with-renewables.zip)  
+
+项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间-导入与导出](../30-cloud-space/index.md#导入与导出)
