@@ -11,13 +11,13 @@ tags:
 
 ## 元件定义
 
- **该元件指储水罐，利用水罐的能量储存和热惯性，解耦源与荷，动态调节机组出力**
+**该元件指储水罐，利用水罐的能量储存和热惯性，解耦源与荷，动态调节机组出力**
 
 进口流量
- $$
- P_{in}-ρgH=K_{in} m_{in} |m_{in} |
- $$
- 出口流量
+$$
+P_{in}-ρgH=K_{in} m_{in} |m_{in} |
+$$
+出口流量
 $$
 ρgH-P_{out}-=K_{out} m_{out} |m_{out} |
 $$
@@ -43,6 +43,18 @@ $$
 CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
 
 ### 参数
+
+#### 设备参数
+
+| 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
+| :--- | :--- | :--- | :--: | :--- | :--- |
+| 生产厂商 | `manufacturer` |  | 生产厂商 | 文本 | 生产厂商 |
+| 设备型号 | `equipType` |  | 设备型号 | 文本 | 设备型号 |
+| 入口侧局部压降系数 | `InletLocalPressureDropCoe` | $\mathrm{kPa/(m^3 \cdot s^{-1})^2}$ | 入口侧局部压降系数 | 实数 | 入口侧局部压降系数 |
+| 出口侧局部压降系数 | `OutletLocalPressureDropCoe` | $\mathrm{kPa/(m^3 \cdot s^{-1})^2}$ | 出口侧局部压降系数 | 实数 | 出口侧局部压降系数 |
+| 罐底面积 | `FloorArea` |  | 罐底面积 | 实数 | 罐底面积 |
+| 最大允许水位高度 | `MiniHeatOutletTemp` | m | 最大允许水位高度 | 实数 | 最大允许水位高度，运行约束参数在计算时不生效，无意义 |
+| 最小允许水位高度 | `MaxHeatOutletTemp` | m | 最小允许水位高度 | 实数 | 最小允许水位高度，运行约束参数在计算时不生效，无意义 |
 
 #### 基础参数
 

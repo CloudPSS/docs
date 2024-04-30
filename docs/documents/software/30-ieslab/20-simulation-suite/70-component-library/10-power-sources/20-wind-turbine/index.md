@@ -30,17 +30,17 @@ P=P_R\qquad(u_R<u<u_{co} )
 $$
 
 **三次函数模型**
- $$
- P=0\qquad(u≤u_ci 或 u≥u_co )
- $$
+$$
+P=0\qquad(u≤u_ci 或 u≥u_co )
+$$
 
 $$
 P=\frac{u^3}{(u_R^3-u_{ci}^3 )}P_R-\frac{u_{ci}^3}{(u_R^3-u_ci^3 )}P_R\qquad(u_ci≤u≤u_R)
 $$
  
- $$
- P=P_R\qquad(u_R<u<u_{co} )
- $$
+$$
+P=P_R\qquad(u_R<u<u_{co})
+$$
 
 式中，u为风机轮毂高度处的风速；$u_{ci}$为切入风速；$u_{co}$为切出风速；$u_R$为额定风速；$P_R$为额定输出功率
 
