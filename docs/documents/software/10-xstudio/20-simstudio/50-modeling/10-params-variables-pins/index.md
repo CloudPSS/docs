@@ -107,21 +107,25 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="py" label="全局参数">
 
-+ 定义全局参数的默认值时可以在“值”模式下输入常量。
++ 定义全局参数的默认值时可在“值”模式下输入常量。
 
 ![全局参数定义时的“值”模式输入](./70-value-mode-input-for-global-parameters-define.png)
 
-+ 配置全局参数方案时可以在“值”模式下输入常量。
++ 配置全局参数方案时可在“值”模式下输入常量。
 
 ![全局参数配置时的“值”模式输入](./80-value-mode-input-for-global-parameters-config.png)
 
 </TabItem>
 <TabItem value="java" label="变量">
 
+配置变量值时可在“值”模式下输入实数类型的常量。
+
 ![变量的“值”模式输入](./90-value-mode-input-for-variables.png)
 
 </TabItem>
 <TabItem value="java1" label="引脚">
+
+配置引脚参数时可在“值”模式下输入文本类型的引脚号。
 
 ![变量的“值”模式输入](./100-value-mode-input-for-pins.png)
 
@@ -134,8 +138,6 @@ import TabItem from '@theme/TabItem';
 
 全局参数和变量的引用格式为 **`$` + 参数或变量的键(`key`)**，例如`$R`、`$Vm`、`$var`等。
 
-![两种输入模式对比](./9.png)
-
 在“表达式”模式下，输入框会实时自动检查当前输入的表达式状态：
 1. 若表达式输入有误，会在当前选中输入框的最右侧显示错误提示符，鼠标悬浮至错误提示符时会显示报错信息；
 2. 若表达式输入正确，会在当前选中输入框的最右侧显示表达式的计算值。
@@ -147,6 +149,70 @@ import TabItem from '@theme/TabItem';
 在“表达式”输入模式下，选中输入框，按下 <kbd>Ctrl</kbd> 键可呼出 **扩展编辑框**。在扩展编辑框中，可方便编辑复杂、多行表达式。
 
 ![扩展编辑界面](./10.png)
+
+参数、变量及引脚的“表达式”模式输入方式如下：
+
+<Tabs>
+<TabItem value="js" label="内部参数">
+
++ 输入常量
+
+![内部参数在“表达式”模式下填入常量](./110-internal-parameters-filling-with-constants-in-expression-mode.png)
+
++ 引用全局参数
+
+![内部参数在“表达式”模式下引用全局参数](./120-internal-parameters-filling-with-global-parameter-in-expression-mode.png)
+
++ 引用变量
+
+![内部参数在“表达式”模式下引用变量](./130-internal-parameters-filling-with-variables-in-expression-mode.png)
+
++ 输入含全局参数及变量的计算表达式
+
+![内部参数引用全局参数及变量的计算表达式](./140-calculated-expressions-for-internal-parameters-referencing-global-parameters-and-variables.png)
+
+</TabItem>
+<TabItem value="py1" label="全局参数">
+
++ 全局参数在接口标签页定义默认值是必须为"值"模式输入，切换到"表达式"模式会报错
+
+![定义全局参数时不能用表达式模式](./150-expression-mode-is-not-allowed-when-defining-global-parameters.png)
+
++ 但是，配置全局参数方案时可在“表达式”模式下引用其他全局参数
+
+![配置全局参数方案时在“表达式”模式下引用其他全局参数](./160-referencing-other-global-parameters.png)
+
++ 配置全局参数方案时不能引用变量
+
+![配置全局参数方案时不能引用变量](./170-variables-cannot-be-referenced-when-configuring-global-parameter-scheme.png)
+  
+</TabItem>
+<TabItem value="java3" label="变量">
+
++ 输入常量
+
+<!-- ![填入常量](./180-variables-filling-with-constants-in-expression-mode.png) -->
+
++ 引用全局参数
+
+<!-- ![引用全局参数](./190-internal-parameters-filling-with-global-parameter-in-expression-mode.png) -->
+
++ 引用其他变量
+
+<!-- ![引用其他变量](./200-internal-parameters-filling-with-variables-in-expression-mode.png) -->
+
++ 输入含全局参数及变量的计算表达式
+
+<!-- ![引用含全局参数及变量的计算表达式](./210-calculated-expressions-for-internal-parameters-referencing-global-parameters-and-variables.png) -->
+
+
+</TabItem>
+<TabItem value="java2" label="引脚">
+
+![变量的“值”模式输入](./100-value-mode-input-for-pins.png)
+
+</TabItem>
+</Tabs>
 
 ## 参数、变量及引脚配置
 
