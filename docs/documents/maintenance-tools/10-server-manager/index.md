@@ -7,8 +7,8 @@ tags:
 
 ---
 
-:::tip
-注意，Server Manager 仅对系统管理员开放
+:::tip 权限提醒
+Server Manager 仅对系统管理员开放
 :::
 
 import DocCardList from '@theme/DocCardList';
