@@ -8,12 +8,6 @@ import i18n from './i18n';
 const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     {
         position: 'left',
-        label: '首页',
-        type: 'docSidebar',
-        sidebarId: 'overview',
-    },
-    {
-        position: 'left',
         label: '文档',
         type: 'dropdown',
         items: [
