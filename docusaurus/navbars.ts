@@ -51,12 +51,6 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
     },
     {
         position: 'left',
-        label: '案例',
-        type: 'docSidebar',
-        sidebarId: 'cases',
-    },
-    {
-        position: 'left',
         label: '教程',
         type: 'docSidebar',
         sidebarId: 'tutorials',
