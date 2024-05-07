@@ -9,16 +9,29 @@ import t from 'chalk-template';
  * @returns {string} formatted line
  */
 function formatLine(line) {
+    // 标点
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\.($|\s*)/g, '$1。');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]),\s*/g, '$1，');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]);\s*/g, '$1；');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])!\s*/g, '$1！');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]):\s*/g, '$1：');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\?\s*/g, '$1？');
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\\\s*/g, '$1、');
+    line = line.replace(/[(（]([\u4E00-\u9FA5\u3040-\u30FF。，；：、“”『』〖〗《》\s]+)[)）]/g, '（$1）');
+    line = line.replace(/[(（]([a-zA-Z0-9!;,.:?[\]\s]+)[)）]/g, '($1)');
+    line = line.replace(/。{3,}/g, '......');
+    line = line.replace(/([。，；：、“”『』〖〗《》])\1{1,}/g, '$1');
     // 中文 + 英文
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])([a-zA-Z0-9[(])/g, '$1 $2');
     // 英文 + 中文
     line = line.replace(/([a-zA-Z0-9\]!;,.:?)])([\u4E00-\u9FA5\u3040-\u30FF])/g, '$1 $2');
     // 链接中文括号替换
-    line = line.replace(/\[([^\]]+)\][（(]([^)]+)[）)]/g, '[$1]($2)');
+    line = line.replace(/\[([^\]]+)\]（([^）]+)）/g, '[$1]($2)');
     // Latex
     line = line.replace(/(?<p>\$+).+?\k<p>/g, (match, /** @type {string} */ p, /** @type {number} */ pos) => {
-        if (line[pos - 1] && line[pos - 1] !== ' ') match = ' ' + match;
-        if (line[pos + match.length] && line[pos + match.length] !== ' ') match += ' ';
+        if (line[pos - 1] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9\]!;,.:?)]/.test(line[pos - 1])) match = ' ' + match;
+        if (line[pos + match.length] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9[(]/.test(line[pos + match.length]))
+            match += ' ';
         return match;
     });
     return line;
@@ -40,10 +53,11 @@ async function formatFile(path) {
     return true;
 }
 
-const pattern = process.argv.slice(2);
+let pattern = process.argv.slice(2);
 if (!pattern.length) {
-    pattern.push('**/*.md');
+    pattern = ['**/*.md'];
 }
+pattern = pattern.map((p) => p.replace(/\\/g, '/'));
 
 for await (const file of globIterate(pattern)) {
     process.stdout.write(t`Formatting {underline ${file}} `);
