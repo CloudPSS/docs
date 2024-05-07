@@ -44,7 +44,7 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 | 生产厂商 | `manufacturer` |  | 生产厂商 | 文本 | 生产厂商 |
 | 设备型号 | `equipType` |  | 设备型号 | 文本 | 设备型号 |
 | 局部压降系数 | `LocalPressureDropCoe` | $\mathrm{kPa/(m^3 \cdot s^{-1})^2}$ | 局部压降系数 | 实数 | 局部压降系数 |
-| 设备工况 | `OperateParam` |  | 设备工况 | 表格 | 设备多挡位变工况运行参数，为表格，分别录入不同挡位的**制热效率**:`HeatEfficiency`和**制热功率**：`HeatPower` |
+| 设备工况 | `OperateParam` |  | 设备工况 | 表格 | 设备多挡位变工况运行参数，为表格，分别录入不同挡位的**制热效率**（`HeatEfficiency`）和**制热功率**（`HeatPower`） |
 | 最小供水温度 | `MiniOutletTemp` | ℃ | 最小供水温度 | 实数 | 最小供水温度，运行约束参数在计算时不生效，无意义 |
 | 最大供水温度 | `MaxOutletTemp` | ℃ | 最大供水温度 | 实数 | 最大供水温度，运行约束参数在计算时不生效，无意义 |
 
