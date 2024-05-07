@@ -26,61 +26,12 @@ tags:
 
 ![密码验证](./密码验证.png "密码验证")
 
-> 时效：1天/3天/30天/60天/90天/180天/360天
+:::tip Token 申请提示
+token 时效：1 天/ 3 天/ 30 天/ 60 天/ 90 天/ 180 天/ 360 天
 
-> 权限列表： model(**SimStudio** 操作权限)、function(**FuncStudio** 操作权限)、application(**AppStudio** 操作权限)
+token 权限： model(**SimStudio** 操作权限)、function(**FuncStudio** 操作权限)、application(**AppStudio** 操作权限)，权限列表详情查看[项目权限介绍](../../30-cloudpss-apps/70-permission/index.md)
+:::
 
-### model( SimStudio 操作权限)
-
-+ **read-meta** 列出资源、读取元数据和权限数据
-
-+ **read** 读取资源内容数据
-  
-+ **write-meta** 修改资源元数据
-  
-+ **write** 修改资源内容数据
-  
-+ **admin** 修改资源权限数据
-  
-+ **publish** 修改资源发布数据
-  
-+ **delete** 删除资源
-  
-+ **submodule** 读取模型接口信息，并作为子模块导入其他模型
-
-### function( FuncStudio 操作权限)
-
-+ **read-meta** 列出资源、读取元数据和权限数据
-
-+ **read** 读取资源内容数据
-  
-+ **write-meta** 修改资源元数据
-  
-+ **write** 修改资源内容数据
-  
-+ **admin** 修改资源权限数据
-  
-+ **publish** 修改资源发布数据
-  
-+ **delete** 删除资源
-  
-+ **excute** 读取函数参数信息，并运行函数
-
-### application( AppStudio 操作权限)
-
-+ **read-meta** 列出资源、读取元数据和权限数据
-
-+ **read** 读取资源内容数据
-  
-+ **write-meta** 修改资源元数据
-  
-+ **write** 修改资源内容数据
-  
-+ **admin** 修改资源权限数据
-  
-+ **publish** 修改资源发布数据
-  
-+ **delete** 删除资源
 
 ## 删除 token 
 

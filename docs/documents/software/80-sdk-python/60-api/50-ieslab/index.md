@@ -9,25 +9,25 @@ tags:
 
 ## Class: `IESLabSimulation`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLabSimulation 基类
 
 ### `ieslabSimulation.id`
 
-- [String] [String]
+- [String][String]
 
 算例 id
 
 ### `ieslabSimulation.name`
 
-- [String] [String]
+- [String][String]
 
 算例名称
 
 ### `ieslabSimulation.project_group`
 
-- [String] [String]
+- [String][String]
 
 算例分组信息
 
@@ -39,7 +39,7 @@ tags:
 
 ### `ieslabSimulation.dataManageModel`
 
-- [IESSimulationDataManageModel] [Object]
+- [IESSimulationDataManageModel][Object]
 
 算例的数据管理模块数据
 
@@ -56,10 +56,10 @@ IESLabSimulation.fetch(id)
 
 ### `IESLabSimulation.createProjectGroup(group_name, desc=None, createById=None)`
 
-- `group_name`: [String] [String] 项目组名称
-- `desc`: [String] [String] 项目组描述
-- `createById`: [String] [String]  父项目组 id  可选参数，如果是从已有项目组导入的项目组，必填此项
-- Returns: [Number] [Number] 返回创建的项目组 id
+- `group_name`: [String][String] 项目组名称
+- `desc`: [String][String] 项目组描述
+- `createById`: [String][String]  父项目组 id  可选参数，如果是从已有项目组导入的项目组，必填此项
+- Returns: [Number][Number] 返回创建的项目组 id
 
 创建项目组。
 
@@ -69,11 +69,11 @@ IESLabSimulation.createProjectGroup('test')
 
 ### `IESLabSimulation.createProject(name, project_group, desc=None, createById=None)`
 
-- `name`: [String] [String] 项目名称
-- `project_group`: [Number] [Number] 父项目组 id
-- `desc`: [String] [String] 项目描述
-- `createById`: [Number] [Number] 父项目 id, 可选参数, 如果是从已有项目导入的项目，必填此项
-- Returns: [Number] [Number] 返回创建的项目 id
+- `name`: [String][String] 项目名称
+- `project_group`: [Number][Number] 父项目组 id
+- `desc`: [String][String] 项目描述
+- `createById`: [Number][Number] 父项目 id, 可选参数, 如果是从已有项目导入的项目，必填此项
+- Returns: [Number][Number] 返回创建的项目 id
 
 创建项目。
 
@@ -83,8 +83,8 @@ IESLabSimulation.createProject('project', project_group=None, desc=None, createB
 
 ### `ieslabSimulation.run(job=None, name=None)`
 
-- `job`: [String] [String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
-- `name`: [String] [String] 仿真任务名称，为空时使用项目的参数方案名称和计算方案名称
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 仿真任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个仿真任务
 
 
@@ -94,25 +94,25 @@ ieslabSimulation.run(job=None, name=None)
 
 ## Class: `IESLabPlan`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLabPlan 基类
 
 ### `ieslabPlan.id`
 
-- [String] [String]
+- [String][String]
 
 算例id。
 
 ### `ieslabPlan.name`
 
-- [String] [String]
+- [String][String]
 
 算例名称。
 
 ### `ieslabPlan.project_group`
 
-- [String] [String]
+- [String][String]
 
 算例分组信息。
 
@@ -124,37 +124,37 @@ ieslabSimulation.run(job=None, name=None)
 
 ### `ieslabPlan.dataManageModel`
 
-- [IESPlanDataManageModel] [Object]
+- [IESPlanDataManageModel][Object]
 
 算例的数据管理模块数据。
 
 ### `ieslabPlan.planModel`
 
-- [IESLabPlanModel] [Object]
+- [IESLabPlanModel][Object]
 
 方案优选模块。
 
 ### `ieslabPlan.evaluationModel`
 
-- [IESLabEvaluationModel] [Object]
+- [IESLabEvaluationModel][Object]
 
 方案评估模块。
 
 ### `ieslabPlan.currentPlanResult`
 
-- [IESLabPlanResult] [Object]
+- [IESLabPlanResult][Object]
 
 方案优选结果数据。
 
 ### `ieslabPlan.currentEvaluationResult`
 
-- [IESLabEvaluationResult] [Object]
+- [IESLabEvaluationResult][Object]
 
 方案评估结果数据。
 
 ### `IESLabPlan.fetch(id)`
 
-- `id`: [String] [String] 算例 id
+- `id`: [String][String] 算例 id
 - Returns: [IESLabPlan](#class-ieslabplan) 返回一个算例
 
 获取算例信息。
@@ -165,10 +165,10 @@ IESLabPlan.fetch(id)
 
 ### `IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)`
 
-- `group_name`: [String] [String] 项目组名称
-- `desc`: [String] [String] 项目组描述
-- `createById`: [Number] [Number] 父项目组id  可选参数，如果是从已有项目组导入的项目组，必填此项
-- Returns: [Number] [Number] 返回创建的项目组 id
+- `group_name`: [String][String] 项目组名称
+- `desc`: [String][String] 项目组描述
+- `createById`: [Number][Number] 父项目组id  可选参数，如果是从已有项目组导入的项目组，必填此项
+- Returns: [Number][Number] 返回创建的项目组 id
 
 创建项目组。
 
@@ -178,14 +178,14 @@ IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)
 
 ### `IESLabPlan.createProject(name, project_group, start_date, end_date, construction_cycle, desc=None, createById=None)`
 
-- `name`: [String] [String] 项目名称
-- `project_group`: [Number] [Number] 项目组 id
-- `start_date`: [Number] [Number] 项目开始年限，范围在[1500,3000]之间
-- `end_date`: [Number] [Number] 项目结束年限，范围在项目开始时间之后且不超过五十年
-- `construction_cycle`: [Number] [Number] 项目建设周期(年), 必须小于等于 项目结束年限 - 项目开始年限
-- `desc`: [String] [String] 项目描述
+- `name`: [String][String] 项目名称
+- `project_group`: [Number][Number] 项目组 id
+- `start_date`: [Number][Number] 项目开始年限，范围在[1500,3000]之间
+- `end_date`: [Number][Number] 项目结束年限，范围在项目开始时间之后且不超过五十年
+- `construction_cycle`: [Number][Number] 项目建设周期(年), 必须小于等于 项目结束年限 - 项目开始年限
+- `desc`: [String][String] 项目描述
 - `createById`: 父项目 id, 可选参数, 如果是从已有项目导入的项目，必填此项
-- Returns: [Number] [Number] 返回创建的项目 id
+- Returns: [Number][Number] 返回创建的项目 id
 
 
 创建项目。
@@ -196,8 +196,8 @@ ieslabPlan.createProject(name, project_group, start_date, construction_cycle, de
 
 ### `ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)`
 
-- `job`: [Dict] [Dict] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
-- `name`: [String] [String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- `job`: [Dict][Dict] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行典型日计算。
@@ -208,9 +208,9 @@ ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)
 
 ### ieslabPlan.iesLabEvaluationRun(planId, type=None)
 
-- `planId`: [Number] [Number] 方案 id，表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- `type`: [String] [String] 评估类型，可选值为：**能效评价**、**环保评价**
-- Returns: [Runner] [Object] 返回方案评估运行实例
+- `planId`: [Number][Number] 方案 id，表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `type`: [String][String] 评估类型，可选值为：**能效评价**、**环保评价**
+- Returns: [Runner][Object] 返回方案评估运行实例
 
 运行方案评估。
 
@@ -220,8 +220,8 @@ ieslabPlan.iesLabEvaluationRun(planId, type=None)
 
 ### `ieslabPlan.iesLabEnergyEvaluationRun(planId)`
 
-- `planId`: [Number] [Number] 方案 id
-- Returns: [Runner] [Object] 返回能效评价运行实例
+- `planId`: [Number][Number] 方案 id
+- Returns: [Runner][Object] 返回能效评价运行实例
 
 运行能效评价。
 
@@ -231,7 +231,7 @@ ieslabPlan.iesLabEnergyEvaluationRun(planId)
 
 ### `ieslabPlan.iesLabPlanRun()`
 
-- Returns: [Runner] [Object] 返回方案优选运行实例
+- Returns: [Runner][Object] 返回方案优选运行实例
 
 运行方案优选。
 
@@ -250,14 +250,14 @@ ieslabPlan.iesLabPlanRun()
 
 ## Class: `DataManageModel`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLab 数据管理模块类
 
 ### `datamanageModel.GetDataItem(ID)`
 
-- `ID`: [String] [String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
-- Returns: [Dict] [Dict] 返回该数据项的信息（源数据的引用）
+- `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- Returns: [Dict][Dict] 返回该数据项的信息（源数据的引用）
 
 获取 ID 对应的数据信息。
 
@@ -267,7 +267,7 @@ datamanageModel.GetDataItem(ID)
 
 ### `datamanageModel.GetItemList(dataType)`
 
-- `dataType`: [Enum] [Enum] 数据的种类标识，包含：
+- `dataType`: [Enum][Enum] 数据的种类标识，包含：
   - "光伏": "PhotovoltaicSys"
   - "风机": "WindPowerGenerator"
   - "燃气轮机": "GasTurbine"
@@ -292,7 +292,7 @@ datamanageModel.GetDataItem(ID)
   - "分时电价": "分时电价"
   - "阶梯电价": "阶梯电价"
   - "分时阶梯电价": "分时阶梯电价"
-- Returns: [List] [List] 返回该种类下所有数据项的列表
+- Returns: [List][List] 返回该种类下所有数据项的列表
 
 获取 dataType 类型对应所有数据项的列表。
 
@@ -302,7 +302,7 @@ datamanageModel.GetItemList(dataType)
 
 ### `datamanageModel.AddDataItem(dataType, data)`
 
-- `dataType`: [Enum] [Enum] 数据的种类标识，包含：
+- `dataType`: [Enum][Enum] 数据的种类标识，包含：
   - "光伏": "PhotovoltaicSys"
   - "风机": "WindPowerGenerator"
   - "燃气轮机": "GasTurbine"
@@ -327,7 +327,7 @@ datamanageModel.GetItemList(dataType)
   - "分时电价": "分时电价"
   - "阶梯电价": "阶梯电价"
   - "分时阶梯电价": "分时阶梯电价"
-- `data`:  [Dict] [Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- `data`:  [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
 - Returns: 返回新添加数据项的 ID，如果数据结构不满足要求，抛出异常
 
 向 dataType 类型的数据库中添加内容为 data 的数据项。
@@ -338,9 +338,9 @@ datamanageModel.AddDataItem(dataType, data)
 
 ### `datamanageModel.UpdateDataItem(ID, data)`
 
-- ID: [String] [String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
-- data: [Dict] [Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
-- Returns: [Boolean] [Boolean] 返回 True，更新成功
+- ID: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- data: [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
+- Returns: [Boolean][Boolean] 返回 True，更新成功
 
 更新数据库 ID 对应数据项。
 
@@ -350,8 +350,8 @@ datamanageModel.UpdateDataItem(ID, data)
 
 ### `datamanageModel.DeleteDataItem(ID)`
 
-- `ID`: [String] [String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
-- Returns: [Boolean] [Boolean] 删除是否成功标志，如果ID错误，抛出异常
+- `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
+- Returns: [Boolean][Boolean] 删除是否成功标志，如果ID错误，抛出异常
 
 删除 ID 对应的数据。
 
@@ -361,8 +361,8 @@ datamanageModel.DeleteDataItem(ID)
 
 ### `datamanageModel.SetProjectPosition(longitude, latitude)`
 
-- `longitude`: [Float] [Float] 经度，范围为气象数据源的经度范围
-- `latitude`: [Float] [Float] 纬度，范围为气象数据源的纬度范围
+- `longitude`: [Float][Float] 经度，范围为气象数据源的经度范围
+- `latitude`: [Float][Float] 纬度，范围为气象数据源的纬度范围
 
 设置项目的天气数据坐标，加载天气数据。
 
@@ -373,9 +373,9 @@ datamanageModel.SetProjectPosition(longitude, latitude)
 ### `datamanageModel.GetAtmosData(startDate, endDate)`
 
 
-- `startDate`: [String] [String] 开始时间，格式为'YYYY-MM-DD'
-- `endDate`: [String] [String] 结束时间，格式为'YYYY-MM-DD'
-- Returns: [List] [List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的 key 即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
+- `startDate`: [String][String] 开始时间，格式为'YYYY-MM-DD'
+- `endDate`: [String][String] 结束时间，格式为'YYYY-MM-DD'
+- Returns: [List][List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的 key 即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
 
 获取在 startDate 到 endDate 之间的气象数据。
 
@@ -385,25 +385,25 @@ datamanageModel.GetAtmosData(startDate, endDate)
 
 ## Class: `IESLabPlanModel`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLabPlanModel 方案优选模块类
 
 ### `ieslabPlanModel.simulationId`
 
-- [String] [String]
+- [String][String]
 
 算例 id。
 
 ### `ieslabPlanModel.optimizationInfo`
 
-- [Enum] [Enum]
+- [Enum][Enum]
 
 当前算例的优化目标设置信息。
 
 ### `ieslabPlanModel.SetOptimizationInfo(optType)`
 
-- `optType`: [Enum] [Enum] 优化目标类型，经济性优化和环保性优化类型
+- `optType`: [Enum][Enum] 优化目标类型，经济性优化和环保性优化类型
 
 设置当前算例的优化目标。
 
@@ -413,7 +413,7 @@ ieslabPlanModel.SetOptimizationInfo(optType)
 
 ### `ieslabPlanModel.GetOptimizationInfo()`
 
-- Returns: [Enum] [Enum] 返回优化目标
+- Returns: [Enum][Enum] 返回优化目标
 
 获取当前算例的优化目标设置信息。
 
@@ -423,7 +423,7 @@ ieslabPlanModel.GetOptimizationInfo()
 
 ### `ieslabPlanModel.run()`
 
-- Returns: [Runner] [Object] 生成方案优选算例，成功返回运行任务实例，如果算例已经运行过方案优选，再次运行会抛异常
+- Returns: [Runner][Object] 生成方案优选算例，成功返回运行任务实例，如果算例已经运行过方案优选，再次运行会抛异常
 
 运行方案优选。
 
@@ -433,7 +433,7 @@ ieslabPlanModel.run()
 
 ###  `ieslabPlanModel.GetRunner()`
 
-- Returns: [Runner] [Object] 返回运行实例
+- Returns: [Runner][Object] 返回运行实例
 
 获得运行实例。
 
@@ -451,7 +451,7 @@ ieslabPlanModel.kill()
 
 ### `ieslabPlanModel.GetLastTaskResult()`
 
-- Returns: [Boolean] [Boolean] 返回任务运行状态
+- Returns: [Boolean][Boolean] 返回任务运行状态
 
 获取最后一次运行的 taskID 的任务运行状态
 
@@ -461,14 +461,14 @@ ieslabPlanModel.GetLastTaskResult()
 
 ## Class: `IESLabEvaluationModel`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLab 方案评估类
 
 ### ieslabEvaluationModel.GetFinancialParams(planID)
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [Dict] [Dict] 方案对应的财务评价基础参数信息（源数据的引用）
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
 
 获取 planID 对应的优化方案下财务评估模块的基础信息
 
@@ -478,9 +478,9 @@ ieslabEvaluationModel.GetFinancialParams(0)
 
 ### `ieslabEvaluationModel.run(planID, type=None)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- `type`: [String] [String] 任务类型：环保评价/能效评价
-- Returns: [Runner] [Object] 返回运行任务实例
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `type`: [String][String] 任务类型：环保评价/能效评价
+- Returns: [Runner][Object] 返回运行任务实例
 
 运行方案评估。
 
@@ -490,8 +490,8 @@ ieslabEvaluationModel.run(planID, type=None)
 
 ### `ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)`
 
-- `planID`: [Number] [Number] 优化方案的ID，数值位于0~优化方案数量之间
-- Returns: [Runner] [Object] 返回运行任务实例
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
 
 运行环保评价方案评估。
 
@@ -501,8 +501,8 @@ ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)
 
 ### `ieslabEvaluationModel.EnergyEvaluationRun(planID)`
 
-- `planID`: [Number] [Number] 优化方案的ID，数值位于0~优化方案数量之间
-- Returns: [Runner] [Object] 返回运行任务实例
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
 
 运行能效评价方案评估。
 
@@ -512,8 +512,8 @@ ieslabEvaluationModel.EnergyEvaluationRun(planID)
 
 ### `ieslabEvaluationModel.GetRunner(planID)`
 
-- `planID`: [Number] [Number] 优化方案的ID，数值位于0~优化方案数量之间
-- Returns: [Runner] [Object] 返回运行任务实例
+- `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
+- Returns: [Runner][Object] 返回运行任务实例
 
 获得运行实例。
 
@@ -523,14 +523,14 @@ ieslabEvaluationModel.GetRunner(planID)
 
 ## Class: `IESLabEvaluationResult`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLab 评价结果类
 
 
 ### `IESLabEvaluationResult.status()`
 
-- Returns: [Boolean] [Boolean] 返回运行状态
+- Returns: [Boolean][Boolean] 返回运行状态
   
 获取运行状态。
 
@@ -540,7 +540,7 @@ ieslabEvaluationResult.status()
 
 ### `IESLabEvaluationResult.GetFinancialResult(resultType, planID)`
 
-- `resultType`: [Enum] [Enum] 财务评价结果表格的类型：
+- `resultType`: [Enum][Enum] 财务评价结果表格的类型：
   - `利润与利润分配`: getEconomyResult
   - `财务计划现金`:  getFinancialPlanCashFlowResult
   - `资产负债`:  getLiabilityAssetsResult
@@ -552,8 +552,8 @@ ieslabEvaluationResult.status()
   - `项目总投资现金流量`:  getSumInvestFlowCashResult 
   - `项目资本金现金流量`:  getProjectCashFlowResult 
   - `营业收入、税金、附加和增值税估算`:  getIncomeTaxResult 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [Dict] [Dict] 方案对应的财务评价基础参数信息（源数据的引用）
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
   
 获取 planID 对应的优化方案下 resultType 财务评估结果。
 
@@ -563,8 +563,8 @@ ieslabEvaluationResult.GetFinancialResult(resultType, planID)
 
 ### `IESLabEvaluationResult.GetOverviewResult(planID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [List] [List] 返回该方案对应的概览结果
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的概览结果
   
 获取当前结果类对应的优化方案下的概览结果。
 
@@ -574,8 +574,8 @@ ieslabEvaluationResult.GetOverviewResult(planID)
 
 ### `IESLabEvaluationResult.GetEnergyEvaluationResult(planID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [List] [List] 返回该方案对应的能效评价结果
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的能效评价结果
   
 获取当前结果类对应的优化方案下的能效评价。
 
@@ -585,8 +585,8 @@ ieslabEvaluationResult.GetEnergyEvaluationResult(planID)
 
 ### `IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [List] [List] 返回该方案对应的环保评价结果
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [List][List] 返回该方案对应的环保评价结果
 
 获取当前结果类对应的优化方案下的环保评价。
 
@@ -596,13 +596,13 @@ ieslabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
 
 ## Class: `IESLabPlanResult`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
 
 **CloudPSS** IESLab 运行结果类
 
 ### `ieslabPlanResult.status()`
 
-- Returns: [Boolean] [Object] 返回运行状态
+- Returns: [Boolean][Object] 返回运行状态
 
 获取运行状态。
 
@@ -612,7 +612,7 @@ ieslabPlanResult.status()
 
 ### `ieslabPlanResult.GetLogs()`
 
-- Returns: [Dict] [Dict] 返回日志信息
+- Returns: [Dict][Dict] 返回日志信息
 
 获取运行日志。
 
@@ -622,7 +622,7 @@ ieslabPlanResult.GetLogs()
 
 ### `ieslabPlanResult.GetPlanNum()`
 
-- Returns: [Number] [Number] 返回优化方案的数量
+- Returns: [Number][Number] 返回优化方案的数量
 
 获取当前 result 实例对应的优化方案数量。
 
@@ -632,8 +632,8 @@ ieslabPlanResult.GetPlanNum()
 
 ### `ieslabPlanResult.GetPlanInfo(planID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [Dict] [Dict] 返回方案的基础信息，包括投资、运行成本、负荷总量等信息
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 返回方案的基础信息，包括投资、运行成本、负荷总量等信息
 
 获取 planID 对应的优化方案的基础信息。
 
@@ -643,8 +643,8 @@ ieslabPlanResult.GetPlanInfo(planID)
 
 ### `ieslabPlanResult.GetPlanConfiguration(planID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- Returns: [Dict] [Dict] 返回方案的配置信息，包括每种设备的选型配置、容量配置、成本等相关信息
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- Returns: [Dict][Dict] 返回方案的配置信息，包括每种设备的选型配置、容量配置、成本等相关信息
 
 获取 planID 对应的优化方案的配置信息。
 
@@ -654,10 +654,10 @@ ieslabPlanResult.GetPlanConfiguration(planID)
 
 ### `ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- `componentID`: [String] [String] 元件的标识符
-- `typicalDayName`: [String] [String] 典型日的名称
-- Returns: [Dict] [Dict] 返回元件在不同典型日下的运行信息
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `componentID`: [String][String] 元件的标识符
+- `typicalDayName`: [String][String] 典型日的名称
+- Returns: [Dict][Dict] 返回元件在不同典型日下的运行信息
 
 获取 planID 对应的优化方案下componentID对应元件的运行信息。
 
@@ -667,9 +667,9 @@ ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
 
 ### `ieslabPlanResult.GetComponentTypiDays(planID, componentID)`
 
-- `planID`: [Number] [Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
-- `componentID`: [String] [String] 元件的标识符
-- Returns: [Number] [Number] 返回优化方案的数量
+- `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
+- `componentID`: [String][String] 元件的标识符
+- Returns: [Number][Number] 返回优化方案的数量
 
 获取当前 result 实例对应的优化方案数量。
 
@@ -679,7 +679,7 @@ ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
 
 ### `ieslabPlanResult.getLastTaskResult()`
 
-- Returns: [Dict] [Dict] 返回运行结果
+- Returns: [Dict][Dict] 返回运行结果
 
 获取最后一次运行的 taskID 的运行结果。
 
