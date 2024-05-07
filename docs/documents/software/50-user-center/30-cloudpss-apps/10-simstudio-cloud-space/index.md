@@ -155,10 +155,9 @@ SimStudio 支持两种项目导入方法。
 用户可以自行设置另存项目的各种权限。
 :::
 
-![另存为模型](image-1.png "另存为模型")
+![另存为模型](save-as-model.png "另存为模型")
 
-![另存为协作项目](image-2.png "另存为协作项目")
-
+![另存为协作项目](save-as-collaborative-project.png "另存为协作项目")
 
 ## 常见问题
 

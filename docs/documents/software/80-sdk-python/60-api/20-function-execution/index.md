@@ -9,67 +9,67 @@ tags:
 
 ### Class: `FunctionExecution`
 
-- Extends: [Object] [Object]
+- Extends: [Object][Object]
   
 **CloudPSS** 当前执行器类。
 
 ### `functionExecution.id`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的任务ID。
 
 ### `functionExecution.functionId`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的任务函数ID。
 
 ### `functionExecution.executorId`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的执行器ID。
 
 ### `functionExecution.executorName`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的执行器名称。
 
 ### `functionExecution.executorVersion`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的执行器版本。
 
 ### `functionExecution.apiUrl`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的api地址。
 
 ### `functionExecution.gqlUrl`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的gql地址。
 
 ### `functionExecution.token`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的任务token。
 
 ### `functionExecution.functionToken`
 
-- [String] [String]
+- [String][String]
 
 执行器被创建时的函数token。
 
 ### `functionExecution.args`
 
-- [Dict] [Dict]
+- [Dict][Dict]
 
 执行器被创建时的函数参数。
 
@@ -86,8 +86,8 @@ FunctionExecution.current()
 
 ### `functionExecution.exit(code)`
 
-- `code`: [Number] [Number]；程序退出码
-- Returns: [Number] [Number]；运行成功返回 0，否则返回非 0
+- `code`: [Number][Number]；程序退出码
+- Returns: [Number][Number]；运行成功返回 0，否则返回非 0
 
 结束任务。调用此函数将导致进程直接终止，调用前请完成清理工作。
 
@@ -105,11 +105,11 @@ f.exit(0)
 
 ### `functionExecution.plot(traces=[], layout={}, title='', key=None, verb='replace')`
 
-- `traces`: [List] [List] 图表数据
-- `layout`: [Dict] [Dict] 图表布局
-- `title`: [String] [String] 图表标题
-- `key`: [String] [String] 图表key
-- `verb`: [String] [String] 特殊谓词，图表操作类型：
+- `traces`: [List][List] 图表数据
+- `layout`: [Dict][Dict] 图表布局
+- `title`: [String][String] 图表标题
+- `key`: [String][String] 图表key
+- `verb`: [String][String] 特殊谓词，图表操作类型：
   - `replace` 插入内容
   - `append` 追加内容
 
@@ -123,10 +123,10 @@ f.plot(traces=[], layout={}, title='', key=None, verb='replace')
 
 ### `functionExecution.table(columns=[], title='', key=None, verb='replace')`
 
-- `columns`: [List] [List] 按列分组的表格内容
-- `title`: [String] [String] 表格标题
-- `key`: [String] [String] 表格消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
-- `verb` [String] [String] 特殊谓词，表格操作类型：
+- `columns`: [List][List] 按列分组的表格内容
+- `title`: [String][String] 表格标题
+- `key`: [String][String] 表格消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
+- `verb` [String][String] 特殊谓词，表格操作类型：
   - `replace` 插入内容
   - `append` 追加内容
 
@@ -144,16 +144,16 @@ f.table(columns=[
 
 ### `functionExecution.log(content, level='info', html=False, key=None)`
 
-- `content`：[String] [String] 日志内容
-- `level`：[String] [String] 日志级别：
+- `content`：[String][String] 日志内容
+- `level`：[String][String] 日志级别：
   - `info`: 运行信息
   - `warning`：警告信息
   - `error`: 错误信息
   - `verbose`: 详细信息
   - `debug`：调试信息
   - `critical`: 严重信息
-- `html`: [Boolean] [Boolean] 是否为 html 内容
-- `key`: [String] [String] 日志消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
+- `html`: [Boolean][Boolean] 是否为 html 内容
+- `key`: [String][String] 日志消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
 
 发送日志消息。
 
@@ -165,9 +165,9 @@ f.log("日志测试内容", level='info', html=False, key=None)
 
 ### `functionExecution.container(items=[], layout={'type': 'tabs','position': 'top'}, key=None)`
 
-- `items`: [List] [List] 分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
-- `position`: [Dict] [Dict] 分组布局，如无特殊需求请直接使用 `{@link tabsContainer}` 和 `{@link gridContainer}`
-- `key`: [String] [String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
+- `items`: [List][List] 分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
+- `position`: [Dict][Dict] 分组布局，如无特殊需求请直接使用 `{@link tabsContainer}` 和 `{@link gridContainer}`
+- `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
 
 发送分组消息。
 
@@ -179,13 +179,13 @@ f.container([{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'qu
 
 ### `functionExecution.tabsContainer(items=[], position='top', key=None)`
 
-- `items`: [List] [List]  分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
-- `position`: [String] [String] tab 位置：
+- `items`: [List][List]  分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
+- `position`: [String][String] tab 位置：
   - `top`: 上
   - `bottom`: 下
   - `left`: 左
   - `right`: 右
-- `key`: [String] [String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
+- `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
 
 发送 tabs 布局分组消息。
 
@@ -201,9 +201,9 @@ f.tabsContainer([
 
 ### `functionExecution.gridContainer(item=[], grid="'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr", key=None)`
 
-- `item`: [List] [List] 分组成员，如 `[{title: 'item1', placeholder: 'Data loading', html: false, query: {type: 'message', key: 'item-1'}}]`
-- `grid`: [String] [String] grid 布局，如 `'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr`，详情参见 [grid布局](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
-- `key`: [String] [String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
+- `item`: [List][List] 分组成员，如 `[{title: 'item1', placeholder: 'Data loading', html: false, query: {type: 'message', key: 'item-1'}}]`
+- `grid`: [String][String] grid 布局，如 `'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr`，详情参见 [grid布局](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
+- `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
 
 发送 grid 布局分组消息。
 
@@ -221,9 +221,9 @@ f.gridContainer([
 
 ### `functionExecution.progress(value=0, title='', key='progress-1')`
 
-- `value`: [Number] [Number] 当前进度值，取值范围 0~1
-- `title`: [String] [String] 进度标题
-- `key`: [String] [String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器，默认为: `progress-1`
+- `value`: [Number][Number] 当前进度值，取值范围 0~1
+- `title`: [String][String] 进度标题
+- `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器，默认为: `progress-1`
 
 发送进度信息。
 
@@ -236,8 +236,8 @@ f.progress(0.1, '测试进度消息', 'progress-1')
 ### `functionExecution.on_abort(func, args=[], kwargs={})`
 
 - `func`: 响应后的回调函数
-- `args`: [List] [List] 回调函数参数
-- `kwargs`: [Dict] [Dict] 回调函数参数
+- `args`: [List][List] 回调函数参数
+- `kwargs`: [Dict][Dict] 回调函数参数
 
 监听前台的终止事件。
 
