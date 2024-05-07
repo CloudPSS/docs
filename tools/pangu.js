@@ -18,6 +18,17 @@ function formatLine(line) {
         return line;
     }
 
+    // 代码块
+    if (line.startsWith('```')) {
+        const begin = /^`{3,}/.exec(line)?.[0] ?? '';
+        if (line.lastIndexOf(begin) === 0) return line;
+    }
+    // Latex 块
+    if (line.startsWith('$$')) {
+        const begin = /^\${2,}/.exec(line)?.[0] ?? '';
+        if (line.lastIndexOf(begin) === 0) return line;
+    }
+
     /** @type {Map<string, string>} */
     const map = new Map();
     // Latex & code

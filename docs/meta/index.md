@@ -7,4 +7,3 @@ sidebar_position: 0
 import {Redirect} from '@docusaurus/router';
 
 <Redirect to="./edit-help/markdown-introduction/" /> 
-
