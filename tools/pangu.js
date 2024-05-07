@@ -37,6 +37,13 @@ function formatLine(line) {
         map.set(key, match);
         return `${FENCE_BEGIN}${key}${FENCE_END}`;
     });
+    // link href
+    line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, /** @type {string} */ text, /** @type {string} */ href) => {
+        if (href.includes(' ')) return match;
+        const key = Math.random().toString().slice(2);
+        map.set(key, href);
+        return `[${text}](${FENCE_BEGIN}${key}${FENCE_END})`;
+    });
     // 标点
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\.($|\s*)/g, '$1。');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]),\s*/g, '$1，');
@@ -52,9 +59,8 @@ function formatLine(line) {
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])([a-zA-Z0-9[(])/g, '$1 $2');
     // 英文 + 中文
     line = line.replace(/([a-zA-Z0-9\]!;,.:?)])([\u4E00-\u9FA5\u3040-\u30FF])/g, '$1 $2');
-    // 链接中文括号替换
-    line = line.replace(/\[([^\]]+)\]（([^）]+)）/g, '[$1]($2)');
-    // Latex & code
+
+    // replace back
     line = line.replace(FENCE_RE, (match, /** @type {string} */ key, /** @type {number} */ pos) => {
         let value = map.get(key) || match;
         if (line[pos - 1] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9\]!;,.:?)]/.test(line[pos - 1])) value = ' ' + value;
