@@ -3,12 +3,29 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { globIterate } from 'glob';
 import t from 'chalk-template';
 
+const FENCE_BEGIN = `ldopjybxlpjidtvhvjgguwqulpxufqnligzo`;
+const FENCE_END = `gemiuphdrawprrubzfizoeippnjtouodcpxh`;
+const FENCE_RE = new RegExp(`${FENCE_BEGIN}(\\d+)${FENCE_END}`, 'g');
+
 /**
  * 格式化行
  * @param {string} line line
  * @returns {string} formatted line
  */
 function formatLine(line) {
+    if (line.includes(FENCE_BEGIN) || line.includes(FENCE_END)) {
+        // 这么奇葩的输入还是不处理了
+        return line;
+    }
+
+    /** @type {Map<string, string>} */
+    const map = new Map();
+    // Latex & code
+    line = line.replace(/(?<p>(?<i>[$`])\k<i>*).+?\k<p>/g, (match) => {
+        const key = Math.random().toString().slice(2);
+        map.set(key, match);
+        return `${FENCE_BEGIN}${key}${FENCE_END}`;
+    });
     // 标点
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\.($|\s*)/g, '$1。');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]),\s*/g, '$1，');
@@ -18,21 +35,21 @@ function formatLine(line) {
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\?\s*/g, '$1？');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\\\s*/g, '$1、');
     line = line.replace(/[(（]([\u4E00-\u9FA5\u3040-\u30FF。，；：、“”『』〖〗《》\s]+)[)）]/g, '（$1）');
-    line = line.replace(/[(（]([a-zA-Z0-9!;,.:?[\]\s]+)[)）]/g, '($1)');
     line = line.replace(/。{3,}/g, '......');
-    line = line.replace(/([。，；：、“”『』〖〗《》])\1{1,}/g, '$1');
+    line = line.replace(/([。，；：、“”『』〖〗《》])\1+/g, '$1');
     // 中文 + 英文
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])([a-zA-Z0-9[(])/g, '$1 $2');
     // 英文 + 中文
     line = line.replace(/([a-zA-Z0-9\]!;,.:?)])([\u4E00-\u9FA5\u3040-\u30FF])/g, '$1 $2');
     // 链接中文括号替换
     line = line.replace(/\[([^\]]+)\]（([^）]+)）/g, '[$1]($2)');
-    // Latex
-    line = line.replace(/(?<p>\$+).+?\k<p>/g, (match, /** @type {string} */ p, /** @type {number} */ pos) => {
-        if (line[pos - 1] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9\]!;,.:?)]/.test(line[pos - 1])) match = ' ' + match;
+    // Latex & code
+    line = line.replace(FENCE_RE, (match, /** @type {string} */ key, /** @type {number} */ pos) => {
+        let value = map.get(key) || match;
+        if (line[pos - 1] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9\]!;,.:?)]/.test(line[pos - 1])) value = ' ' + value;
         if (line[pos + match.length] && /[\u4E00-\u9FA5\u3040-\u30FFa-zA-Z0-9[(]/.test(line[pos + match.length]))
-            match += ' ';
-        return match;
+            value += ' ';
+        return value;
     });
     return line;
 }
