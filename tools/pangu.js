@@ -32,17 +32,23 @@ function formatLine(line) {
     /** @type {Map<string, string>} */
     const map = new Map();
     // Latex & code
-    line = line.replace(/(?<p>(?<i>[$`])\k<i>*).+?\k<p>/g, (match) => {
+    line = line.replace(/(?<!\\)(?<p>(?<i>[$`])\k<i>*).+?\k<p>/g, (match) => {
         const key = Math.random().toString().slice(2);
         map.set(key, match);
         return `${FENCE_BEGIN}${key}${FENCE_END}`;
     });
     // link href
     line = line.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (match, /** @type {string} */ text, /** @type {string} */ href) => {
-        if (href.includes(' ')) return match;
+        href = href.trim();
+        const [l, ...t] = href.split(/\s+/g);
         const key = Math.random().toString().slice(2);
-        map.set(key, href);
-        return `[${text}](${FENCE_BEGIN}${key}${FENCE_END})`;
+        if (t.length) {
+            map.set(key, l);
+            return `[${text}](${FENCE_BEGIN}${key}${FENCE_END} ${t.join(' ')})`;
+        } else {
+            map.set(key, href);
+            return `[${text}](${FENCE_BEGIN}${key}${FENCE_END})`;
+        }
     });
     // 标点
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\.($|\s*)/g, '$1。');
@@ -78,7 +84,7 @@ function formatLine(line) {
 async function formatFile(path) {
     const data = await readFile(path, 'utf8');
     const formatted = data
-        .replace(/^(.*)(\r?\n\1)+$/gm, '$1')
+        .replace(/^(.*)(\r?\n)\2+$/gm, '$1$2')
         .split('\n')
         .map((line) => formatLine(line))
         .join('\n');
