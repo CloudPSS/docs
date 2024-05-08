@@ -14,10 +14,15 @@ tags:
 
 **SimStudio 云空间**是 SimStudio 模型工坊的项目管理页面，是进入 **SimStudio 工作台** 的入口。
 
+
+
+
+
 用户首先需注册并登录 **CloudPSS 个人中心**。根据 CloudPSS 平台部署方式的不同，注册及登录方法略有区别，具体如下
 
 + **CloudPSS公网主站（`www.cloudpss.net`）** 的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
 + **CloudPSS Mini、CloudPSS Pro** 等私有部署平台的用户，可参见 [登录 CloudPSS 私有部署平台](../../10-register-and-login/20-cloudpss-private/index.md "登录 CloudPSS 私有部署平台")。
+
 
 成功登录后，在 **CloudPSS 个人中心** 点击 **SimStudio** 的图标后，页面将跳转至**SimStudio 云空间**。如图所示，该界面包含新建项目、项目管理两部分区域。
 

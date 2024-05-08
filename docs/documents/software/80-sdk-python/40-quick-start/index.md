@@ -76,9 +76,9 @@ if __name__ == '__main__':
 
 ## 常见问题
 
-### Token 从何而来？
+Token 从何而来？
 
-用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[ SDK Token 管理](../../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)。
+:   用户示例代码中，需要用户填入自己申请的 **CloudPSS Token**，如何获取 **token** 参见[ SDK Token 管理](../../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)。
 
 :::warning 易错警告
 该 **token** 来源需要与 **CLOUDPSS_API_URL** 设置的地址一致，否则程序运行会报错。
