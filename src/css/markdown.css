@@ -17,9 +17,15 @@
   }
 
   [data-footnotes] {
-    margin-top: 2.5rem;
-    border-top: var(--ifm-hr-height) solid var(--ifm-hr-background-color);
-    clear: both;
+    &::before {
+      content: '';
+      display: block;
+      clear: both;
+      background-color: var(--ifm-hr-background-color);
+      border: 0;
+      height: var(--ifm-hr-height);
+      margin-top: var(--ifm-hr-margin-vertical);
+    }
 
     --ifm-list-paragraph-margin: 0.5rem;
     --ifm-paragraph-margin-bottom: 0.5rem;
