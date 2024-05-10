@@ -8,7 +8,7 @@ sidebar_position: 30
   
 ### 1.1 案例概述
 
-本案例在案例 1 的基础上重点介绍如何在仿真的过程中**使用 SDK，对数据管理模块进行操作。此外，还展示了如何修改仿真模型中元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。通过本案例，您可以在案例1的基础上，学习到以下功能和方法在实际案例中的使用：
+本案例在案例 1 的基础上重点介绍如何在仿真的过程中**使用 SDK，对数据管理模块进行操作。此外，还展示了如何修改元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。通过本案例，您可以在案例1的基础上，学习到以下功能和方法在实际案例中的使用：
 - [**SetProjectPosition:**](https://sdk-directory.com/api/cloudpss/setToken) 设置仿真项目的地理位置坐标。 
 - [**GetAtmosData:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取指定时间段内的气象数据。 
 - [**GetItemList、AddDataItem、UpdateDataItem、DeleteDataItem:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 对数据管理模块中的设备参数进行增删改查操作。
@@ -119,7 +119,6 @@ A4: 参数项键名的获取方法如下：
 
 
 ### 1.5 完整代码
-附上案例完整代码，并说明使用该案例代码的注意事项
 ```python
 import time
 import os
