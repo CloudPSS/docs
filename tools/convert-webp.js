@@ -12,7 +12,7 @@ import rxjs from 'rxjs';
 
 const LIB_WEBP_VERSION = '1.4.0';
 // 0:small..100:big
-const QUALITY = '75';
+const QUALITY = '80';
 // A4, 300dpi
 const MAX_WIDTH = 2400;
 // 16383 is the maximum height for webp
