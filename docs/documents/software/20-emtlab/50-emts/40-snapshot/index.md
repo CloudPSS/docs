@@ -101,11 +101,11 @@ import TabItem from '@theme/TabItem';
             # 保存断面
             config = model.configs[0]
             job = model.jobs[3]
-            job['args'] ['snapshot_cfg'] = 1
-            job['args'] ['load_snapshot'] = 0
-            job['args'] ['save_snapshot'] = 1
-            job['args'] ['save_snapshot_name'] = 'snapshot_1'
-            job['args'] ['save_snapshot_time'] = 2
+            job['args']['snapshot_cfg'] = 1
+            job['args']['load_snapshot'] = 0
+            job['args']['save_snapshot'] = 1
+            job['args']['save_snapshot_name'] = 'snapshot_1'
+            job['args']['save_snapshot_time'] = 2
             print(job)
 
             snapshot_key = ''
@@ -119,17 +119,17 @@ import TabItem from '@theme/TabItem';
                     time.sleep(0.3)
 
                     if (message['type'] == 'modify'):
-                        if message['data'] ['payload'] ['context'] ['snapshots'] != '':
-                            snapshot_key = list(message['data'] ['payload'] ['context'] ['snapshots'].values()) [0].get('key')
+                        if message['data']['payload']['context']['snapshots'] != '':
+                            snapshot_key = list(message['data']['payload']['context']['snapshots'].values()) [0].get('key')
                     
             print('message end')
             print(snapshot_key) # 代表断面的 hash 值
             
             # 载入断面
-            job['args'] ['save_snapshot'] = 0
-            job['args'] ['load_snapshot'] = 1
-            job['args'] ['load_snapshot_time'] = 2
-            job['args'] ['load_snapshot_name'] = snapshot_key
+            job['args']['save_snapshot'] = 0
+            job['args']['load_snapshot'] = 1
+            job['args']['load_snapshot_time'] = 2
+            job['args']['load_snapshot_name'] = snapshot_key
             print(job)
             runner = model.run(job, config)
             while not runner.status():
