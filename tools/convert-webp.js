@@ -11,6 +11,8 @@ import pb from 'pretty-bytes';
 import rxjs from 'rxjs';
 
 const LIB_WEBP_VERSION = '1.4.0';
+// 0:small..100:big
+const QUALITY = '75';
 // A4, 300dpi
 const MAX_WIDTH = 2400;
 // 16383 is the maximum height for webp
@@ -93,7 +95,7 @@ export default async function (root) {
                 return;
             }
             if (type === 'gif') {
-                await execa(`${bin}/gif2webp`, ['-q', '80', '-m', '6', file, '-o', file]);
+                await execa(`${bin}/gif2webp`, ['-q', QUALITY, '-m', '6', file, '-o', file]);
             } else {
                 let resize;
                 if (size.width && size.height) {
@@ -107,7 +109,7 @@ export default async function (root) {
                 }
                 await execa(`${bin}/cwebp`, [
                     '-q',
-                    '80',
+                    QUALITY,
                     '-m',
                     '6',
                     ...(resize ? ['-resize', String(resize.width), String(resize.height)] : []),
