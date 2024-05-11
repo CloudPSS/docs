@@ -15,8 +15,6 @@ jobs:
           fetch-depth: 0
       - id: Install
         uses: wyvox/action-setup-pnpm@v3
-        with:
-          pnpm-version: 8
       - id: Optimize
         run: pnpm optimize
       - id: Build

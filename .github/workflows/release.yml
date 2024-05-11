@@ -17,8 +17,6 @@ jobs:
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
-        with:
-          pnpm-version: 8
       - name: Build for standalone
         env:
           DOCS_BASE_URL: /kb/
@@ -54,8 +52,6 @@ jobs:
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
-        with:
-          pnpm-version: 8
       - name: Build for kb.cloudpss.net
         env:
           DOCS_BASE_URL: /
@@ -63,6 +59,7 @@ jobs:
         run: |
           pnpm optimize
           pnpm build
+          pnpm gzipper compress --exclude jpeg,jpg,png,gif,ico,mp3,mp4,mkv,zip --brotli --remove-larger ./build
           tar -cJf dist.tar.xz -C ./build .
           ls -l dist.tar.xz
       - name: Upload Release Asset
@@ -73,40 +70,48 @@ jobs:
           prerelease: ${{ contains(github.event.ref, '-') }}
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Deploy
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      - name: Pre-deploy
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ vars.DC_HOST }}
           port: ${{ vars.DC_PORT }}
-          user: ${{ vars.DC_USER }}
+          username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
-          connect_timeout: 600s
-          first_ssh: |
-            rm -f /root/docs/dist.tar.xz
-          scp: |
-            './dist.tar.xz' => /root/docs/
-          last_ssh: |
-            source /root/.profile
+          script: rm -f /root/docs/dist.tar.xz
+      - name: Deploy
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ vars.DC_HOST }}
+          port: ${{ vars.DC_PORT }}
+          username: ${{ vars.DC_USER }}
+          key: ${{ secrets.DC_KEY }}
+          source: ./dist.tar.xz
+          target: /root/docs/
+      - name: Post-deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ vars.DC_HOST }}
+          port: ${{ vars.DC_PORT }}
+          username: ${{ vars.DC_USER }}
+          key: ${{ secrets.DC_KEY }}
+          script: |
             rm -rf /root/docs/${{ steps.get_version.outputs.VERSION }}
             mkdir -p /root/docs/${{ steps.get_version.outputs.VERSION }}
             tar -xJf /root/docs/dist.tar.xz -C /root/docs/${{ steps.get_version.outputs.VERSION }}
-            gzipper c --exclude map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --gzip-level 9 --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
-            gzipper c --exclude map,jpeg,jpg,png,gif,ico,mp3,mp4,mkv --brotli --remove-larger /root/docs/${{ steps.get_version.outputs.VERSION }}
             rm -f /root/docs/latest
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/latest
             rm -f /root/docs/dist.tar.xz
             systemctl reload caddy
             ls -l /root/docs/
       - name: Release
-        uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+        uses: appleboy/ssh-action@v1.0.3
         if: ${{ !contains(steps.get_version.outputs.VERSION, '-') }}
         with:
           host: ${{ vars.DC_HOST }}
           port: ${{ vars.DC_PORT }}
-          user: ${{ vars.DC_USER }}
+          username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
-          connect_timeout: 600s
-          first_ssh: |
+          script: |
             rm -f /root/docs/release
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/release
             systemctl reload caddy

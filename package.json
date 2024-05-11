@@ -7,9 +7,9 @@
     "url": "https://github.com/CloudPSS/docs"
   },
   "engines": {
-    "node": ">=20.10",
-    "pnpm": ">=8.15"
+    "node": ">=20.10"
   },
+  "packageManager": "pnpm@9.1.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -74,15 +74,16 @@
     "@types/download": "^8.0.5",
     "@types/hast": "^3.0.4",
     "@types/mdast": "^4.0.3",
-    "@types/node": "^20.12.10",
-    "@types/react": "^18.3.1",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.3.2",
     "chalk-template": "^1.1.0",
     "download": "^8.0.0",
-    "execa": "^8.0.1",
-    "glob": "^10.3.12",
+    "execa": "^9.0.2",
+    "glob": "^10.3.14",
+    "gzipper": "^7.2.0",
     "husky": "^9.0.11",
     "image-size": "^1.1.1",
-    "postcss-preset-env": "^9.5.11",
+    "postcss-preset-env": "^9.5.12",
     "pretty-bytes": "^6.1.1",
     "rxjs": "^7.8.1",
     "typescript": "~5.4.5"
