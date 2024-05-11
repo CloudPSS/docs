@@ -61,7 +61,7 @@ if __name__ == '__main__':
     for i, max_power in enumerate(maximum_powers):
         for j, dip_angle in enumerate(dip_angles):
             # 更新参数值
-            data_PV[0] ['ratedParam'] ['MaximumPower'] = str(max_power)
+            data_PV[0]['ratedParam']['MaximumPower'] = str(max_power)
             model_pv.args['DipAngle'] = str(dip_angle)
 
             # 执行仿真计算
@@ -75,7 +75,7 @@ if __name__ == '__main__':
             compID = "/PhotovoltaicSys_6"
             labelName = "功率（$\mathrm{kW}$）"
             plot_data = ies_result.getPlotData(compID, labelName)
-            results[i, j] = plot_data['有功功率'] ['y'] [11]  # 假设使用第11个时间点的值
+            results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
 ```
 将获取到的数据进行二次处理，绘制三维曲面图。
 
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     for i, max_power in enumerate(maximum_powers):
         for j, dip_angle in enumerate(dip_angles):
             # 更新参数值
-            data_PV[0] ['ratedParam'] ['MaximumPower'] = str(max_power)
+            data_PV[0]['ratedParam']['MaximumPower'] = str(max_power)
             model_pv.args['DipAngle'] = str(dip_angle)
 
             # 执行仿真计算
@@ -152,7 +152,7 @@ if __name__ == '__main__':
             compID = "/PhotovoltaicSys_6"
             labelName = "功率（$\mathrm{kW}$）"
             plot_data = ies_result.getPlotData(compID, labelName)
-            results[i, j] = plot_data['有功功率'] ['y'] [11]  # 假设使用第11个时间点的值
+            results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
 
     # 绘制二维曲面图
     fig = plt.figure(figsize=(12, 8))

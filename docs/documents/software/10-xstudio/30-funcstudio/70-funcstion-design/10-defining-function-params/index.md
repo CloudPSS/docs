@@ -106,7 +106,7 @@ export default async function* (args,signal,env) {
 </TabItem>
 <TabItem value="table" label="表格">
 
-对于表格这种可能有多个值的参数，直接通过键引用到的是整个表格的数据。比如，表格中第 a 行 第 b 列的数据通过`[a-1] ['b-1']`的形式获取。
+对于表格这种可能有多个值的参数，直接通过键引用到的是整个表格的数据。比如，表格中第 a 行 第 b 列的数据通过`[a-1]['b-1']`的形式获取。
 
 ![表格参数定义](./5.png)
 
@@ -116,14 +116,14 @@ export default async function* (args,signal,env) {
 <Tabs>
 <TabItem value="python" label="本地 Python 内核">
 
-通过`args.键[a-1] ['b-1']`的方式获取表格中第 a 行 第 b 列的数据。
+通过`args.键[a-1]['b-1']`的方式获取表格中第 a 行 第 b 列的数据。
 
 ```py showLineNumbers
 import cloudpss  #导入安装好的CloudPSS-SDK
 if __name__ == '__main__': 
     job = cloudpss.currentJob() #获取函数在当前参数方案下的计算任务实例
-    num = job.args.Table[0] ['0'] #获取表格第 1 行第 1 列的数据
-    text = job.args.Table[1] ['1'] #获取表格第 2 行第 2 列的数据
+    num = job.args.Table[0]['0'] #获取表格第 1 行第 1 列的数据
+    text = job.args.Table[1]['1'] #获取表格第 2 行第 2 列的数据
 ```
 
 ![表格参数值得获取](./6.png)
@@ -147,12 +147,12 @@ text = Table{1,2}.x1; %获取表格第 2 行第 2 列的数据
 </TabItem>
 <TabItem value="js" label="云端 JavaScripts 内核">
 
-通过`args.键[a-1] ['b-1']`的方式获取。
+通过`args.键[a-1]['b-1']`的方式获取。
 
 ```JavaScript showLineNumbers
 export default async function* (args,signal,env) {
-    yield args.Table[0] ['0']
-    yield args.Table[1] ['1']
+    yield args.Table[0]['0']
+    yield args.Table[1]['1']
 } 
 ```
 ![表格参数值得获取](./6-2.png)

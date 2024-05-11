@@ -54,14 +54,14 @@ if __name__ == '__main__':
     endDate = "2021-01-02"
     atmosData = iesProject.dataManageModel.GetAtmosData(startDate, endDate)
 ```
-`GetItemList('光伏')` 用于获取类型为 `"光伏"` 的所有设备数据列表。`AddDataItem('光伏', data_PV[0])` 用于添加一个新的光伏设备数据项,第二个参数为新数据对象。通过修改 `data_PV[0] ['ratedParam'] ['MaximumPower']` 来更新最大功率参数。`UpdateDataItem(data_PV[1] ['id'], data_PV[0])` 用于更新 id 为 `data_PV[1] ['id']` 的数据项,第二个参数为更新后的数据对象。`DeleteDataItem(data_PV[-1] ['id'])` 用于删除最后一个光伏设备数据项。在进行数据项的修改、更新和删除操作时，确保传递的参数正确，特别是数据项的 ID。
+`GetItemList('光伏')` 用于获取类型为 `"光伏"` 的所有设备数据列表。`AddDataItem('光伏', data_PV[0])` 用于添加一个新的光伏设备数据项,第二个参数为新数据对象。通过修改 `data_PV[0]['ratedParam']['MaximumPower']` 来更新最大功率参数。`UpdateDataItem(data_PV[1]['id'], data_PV[0])` 用于更新 id 为 `data_PV[1]['id']` 的数据项,第二个参数为更新后的数据对象。`DeleteDataItem(data_PV[-1]['id'])` 用于删除最后一个光伏设备数据项。在进行数据项的修改、更新和删除操作时，确保传递的参数正确，特别是数据项的 ID。
 ```python
     #数据管理模块中的数据获取、修改、更新及删除
     data_PV = iesProject.dataManageModel.GetItemList('光伏')
     trueAdd = iesProject.dataManageModel.AddDataItem('光伏',data_PV[0])
-    data_PV[0] ['ratedParam'] ['MaximumPower'] = str(790)
-    trueUpdate = iesProject.dataManageModel.UpdateDataItem(data_PV[1] ['id'],data_PV [0])
-    trueDelete = iesProject.dataManageModel.DeleteDataItem(data_PV[-1] ['id'])
+    data_PV[0]['ratedParam']['MaximumPower'] = str(790)
+    trueUpdate = iesProject.dataManageModel.UpdateDataItem(data_PV[1]['id'],data_PV [0])
+    trueDelete = iesProject.dataManageModel.DeleteDataItem(data_PV[-1]['id'])
 ```
 获取与修改拓扑编辑模块信息。`model.getComponentByKey("PhotovoltaicSys_6")` 根据关键字获取特定的光伏组件对象。通过 `model_pv.args['DipAngle'] = str(40)` 修改元件的倾角参数为 40 度。
 ```python
@@ -160,9 +160,9 @@ if __name__ == '__main__':
     #数据管理模块中的数据获取、修改、更新及删除
     data_PV = iesProject.dataManageModel.GetItemList('光伏')
     trueAdd = iesProject.dataManageModel.AddDataItem('光伏',data_PV[0])
-    data_PV[0] ['ratedParam'] ['MaximumPower'] = str(790)
-    trueUpdate = iesProject.dataManageModel.UpdateDataItem(data_PV[1] ['id'],data_PV [0])
-    trueDelete = iesProject.dataManageModel.DeleteDataItem(data_PV[-1] ['id'])
+    data_PV[0]['ratedParam']['MaximumPower'] = str(790)
+    trueUpdate = iesProject.dataManageModel.UpdateDataItem(data_PV[1]['id'],data_PV [0])
+    trueDelete = iesProject.dataManageModel.DeleteDataItem(data_PV[-1]['id'])
     #获取与修改拓扑编辑模块信息
     # 修改参数值
     model = iesProject.model
