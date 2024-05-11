@@ -191,19 +191,19 @@ import TabItem from '@theme/TabItem';
 
 + 输入常量
 
-<!-- ![填入常量](./180-variables-filling-with-constants-in-expression-mode.png) -->
+![在表达式模式下给变量参数输入常量](./在表达式模式下给变量参数输入常量.png)
 
 + 引用全局参数
 
-<!-- ![引用全局参数](./190-internal-parameters-filling-with-global-parameter-in-expression-mode.png) -->
+![在表达式模式下给变量参数引用全局参数](./在表达式模式下给变量参数引用全局参数.png)
 
 + 引用其他变量
 
-<!-- ![引用其他变量](./200-internal-parameters-filling-with-variables-in-expression-mode.png) -->
+![在表达式模式下给变量参数引用其他变量](./在表达式模式下给变量参数引用其他变量.png)
 
 + 输入含全局参数及变量的计算表达式
 
-<!-- ![引用含全局参数及变量的计算表达式](./210-calculated-expressions-for-internal-parameters-referencing-global-parameters-and-variables.png) -->
+![在表达式模式下给变量参数输入含全局参数及变量的计算表达式](./在表达式模式下给变量参数输入含全局参数及变量的计算表达式.png)
 
 
 </TabItem>
