@@ -17,13 +17,15 @@ jobs:
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
-      - name: Build for standalone
+      - id: Optimize
+        run: pnpm optimize
+      - id: Build
         env:
           DOCS_BASE_URL: /kb/
           DOCS_HOME_URL: /
+        run: pnpm build
+      - name: Pack
         run: |
-          pnpm optimize
-          pnpm build
           sed -i "s/__VERSION__/$(echo ${{ steps.get_version.outputs.VERSION }} | cut -c 2- | sed -e 's/_/./g' | sed -e 's/-/~/g')/g" deb/DEBIAN/control
           sed -i "s/__INSTALLED_SIZE__/$(du -sk build | cut -f 1)/g" deb/DEBIAN/control
           cat deb/DEBIAN/control
@@ -52,13 +54,15 @@ jobs:
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
-      - name: Build for kb.cloudpss.net
+      - id: Optimize
+        run: pnpm optimize
+      - id: Build
         env:
           DOCS_BASE_URL: /
           DOCS_HOME_URL: https://cloudpss.net/
+        run: pnpm build
+      - name: Pack
         run: |
-          pnpm optimize
-          pnpm build
           pnpm gzipper compress --exclude jpeg,jpg,png,gif,ico,mp3,mp4,mkv,zip --brotli --remove-larger ./build
           tar -cJf dist.tar.xz -C ./build .
           ls -l dist.tar.xz
