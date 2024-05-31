@@ -29,7 +29,7 @@ jobs:
           cat deb/DEBIAN/control
           mkdir -p deb/usr/share/cloudpss/static/${{ env.DOCS_BASE_URL }}/
           cp -a build/. deb/usr/share/cloudpss/static/${{ env.DOCS_BASE_URL }}/
-          dpkg-deb --build --root-owner-group deb .
+          dpkg-deb --build --root-owner-group -Zxz deb .
           ls -l *.deb
       - name: Upload Release Asset
         uses: ncipollo/release-action@v1
