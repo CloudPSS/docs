@@ -7,7 +7,7 @@ tags:
 
 ---
 
-## class: `DSLab`
+## Class: `DSLab`
 
 - Extends: [Object][Object]
 
