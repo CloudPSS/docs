@@ -75,6 +75,7 @@ tags:
 
 ### `Job.fetch(id)`
 
+- 静态方法
 - `id`: [String][String] 任务的 id
 - Returns: [Job](#class-job) 返回当前任务实例
 
@@ -86,6 +87,7 @@ job = Job.fetch('job/1')
 
 ### `Job.fetchMany(name=None, cursor=[], pageSize=10)`
 
+- 静态方法
 - `name`: [String][String] 查询名称，模糊查询
 - `cursor`: [List][List] 分页游标
 - `pageSize`: [Number][Number] 分页大小
@@ -109,7 +111,7 @@ data = Job.fetchMany()
 """
 
 # 查询下个游标后的数据 
-cursor=data['cursor']
+cursor = data['cursor']
 # highlight-next-line
 data2 = Job.fetchMany(cursor=cursor)
 
@@ -122,6 +124,7 @@ print('获取任务列表', data)
 
 ### `Job.create(revisionHash, job, config, name=None, rid="", policy=None, **kwargs)`
 
+- 静态方法
 - `revisionHash`: [String][String] 项目版本的 hash
 - `job`: [Dict][Dict] 计算方案
 - `config`: [Dict][Dict] 参数方案
@@ -139,6 +142,7 @@ job = Job.create(revisionHash, job, config, name=None, rid="", policy=None, **kw
 
 ### `Job.dump(job, file, format="yaml", compress="gzip")`
 
+- 静态方法
 - `job`: [Job](#class-job) 任务实例
 - `file`: [String][String] 保存文件路径
 - `format`: [String][String] 保存文件格式， 默认为 yaml 格式
@@ -152,7 +156,7 @@ Job.dump(job, file, format="yaml", compress="gzip")
 
 ### `Job.load(file, format="yaml")`
 
-
+- 静态方法
 - `file`: [String][String] 保存文件路径
 - `format`: [String][String] 保存文件格式， 默认为 yaml 格式
 - Returns: [Job](#class-job) 返回一个仿真任务
@@ -165,6 +169,7 @@ Job.load(file, format="yaml")
 
 ### `job.read(receiver=None, **kwargs)`
 
+- 静态方法
 - `receiver`：[JobReceiver][Object] 接收者
 - `kwargs`: [Dict][Dict] 仿真参数
 - Returns: [MessageStreamReceiver][Object] 输出流实例
@@ -177,6 +182,7 @@ Job.read(receiver=None, dev=False, **kwargs)
 
 ### `job.write(sender=None, **kwargs)`
 
+- 静态方法
 - `sender`: [MessageStreamSender][Object] 发送者
 - `kwargs`: [Dict][Dict] 仿真参数
 - Returns: [MessageStreamSender][Object] 输入流实例
@@ -189,6 +195,7 @@ Job.write(sender=None, dev=False, **kwargs)
 
 ### `job.view(viewType)`
 
+- 实例方法
 - `viewType`: [View](../40-views/index.md) 视图类，分为：
     - `EMTView` 电磁暂态结果视图
     - `PowerFlowView` 潮流结果视图，
@@ -200,7 +207,9 @@ Job.write(sender=None, dev=False, **kwargs)
 获取当前运行实例的输出。
 
 ```python showLineNumbers
-view = await job.view(EMTView)
+job = Job.fetch(id)
+# highlight-next-line
+view = job.view(EMTView)
 ```
 
 ### `job.status()`
@@ -213,7 +222,19 @@ view = await job.view(EMTView)
 任务状态（旧版本兼容）。
 
 ```python showLineNumbers
-job.status()
+import os
+import time
+import cloudpss
+
+if __name__ == "__main__":
+    cloudpss.setToken(token)     ## 输入 token
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
+    job = cloudpss.Job.fetch(id)
+    st = time.time()
+    # highlight-next-line
+    while not job.status():
+        time.sleep(0.1)
+    print('计算完成', time.time() - st)    
 ```
 
 ### `job.abort(timeout=3)`
@@ -223,6 +244,8 @@ job.status()
 中断当前运行实例。
 
 ```python showLineNumbers
+job = Job.fetch(id)
+# highlight-next-line
 job.abort(3)
 ```
 
