@@ -33,6 +33,7 @@ tags:
 
 ### `ieslabSimulation.model`
 
+
 - [Model](../10-model/index.md)
 
 算例拓扑信息
@@ -45,7 +46,8 @@ tags:
 
 ### `IESLabSimulation.fetch(id)`
 
-- `id`: 算例id
+- 静态方法
+- `id`: 算例 id
 - Returns: [IESLabSimulation](#class-ieslabsimulation) 返回一个算例
 
 获取算例信息
@@ -56,6 +58,7 @@ IESLabSimulation.fetch(id)
 
 ### `IESLabSimulation.createProjectGroup(group_name, desc=None, createById=None)`
 
+- 静态方法
 - `group_name`: [String][String] 项目组名称
 - `desc`: [String][String] 项目组描述
 - `createById`: [String][String]  父项目组 id  可选参数，如果是从已有项目组导入的项目组，必填此项
@@ -69,6 +72,7 @@ IESLabSimulation.createProjectGroup('test')
 
 ### `IESLabSimulation.createProject(name, project_group, desc=None, createById=None)`
 
+- 静态方法
 - `name`: [String][String] 项目名称
 - `project_group`: [Number][Number] 父项目组 id
 - `desc`: [String][String] 项目描述
@@ -81,15 +85,18 @@ IESLabSimulation.createProjectGroup('test')
 IESLabSimulation.createProject('project', project_group=None, desc=None, createById=None)
 ```
 
-### `ieslabSimulation.run(job=None, name=None)`
+### `ieslabSimulation.run(job, name=None)`
 
-- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案
 - `name`: [String][String] 仿真任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个仿真任务
 
 
 ```python showLineNumbers
-ieslabSimulation.run(job=None, name=None)
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.run(job, name=None)
 ```
 
 ## Class: `IESLabPlan`
@@ -154,6 +161,7 @@ ieslabSimulation.run(job=None, name=None)
 
 ### `IESLabPlan.fetch(id)`
 
+- 静态方法
 - `id`: [String][String] 算例 id
 - Returns: [IESLabPlan](#class-ieslabplan) 返回一个算例
 
@@ -165,6 +173,7 @@ IESLabPlan.fetch(id)
 
 ### `IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)`
 
+- 静态方法
 - `group_name`: [String][String] 项目组名称
 - `desc`: [String][String] 项目组描述
 - `createById`: [Number][Number] 父项目组id  可选参数，如果是从已有项目组导入的项目组，必填此项
@@ -178,6 +187,7 @@ IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)
 
 ### `IESLabPlan.createProject(name, project_group, start_date, end_date, construction_cycle, desc=None, createById=None)`
 
+- 静态方法
 - `name`: [String][String] 项目名称
 - `project_group`: [Number][Number] 项目组 id
 - `start_date`: [Number][Number] 项目开始年限，范围在[1500,3000]之间
@@ -191,11 +201,12 @@ IESLabPlan.createProjectGroup(group_name, desc=None, createById=None)
 创建项目。
 
 ```python showLineNumbers
-ieslabPlan.createProject(name, project_group, start_date, construction_cycle, desc=None, createById=None)
+IESLabPlan.createProject(name, project_group, start_date, construction_cycle, desc=None, createById=None)
 ```
 
 ### `ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)`
 
+- 实例方法
 - `job`: [Dict][Dict] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
@@ -203,11 +214,14 @@ ieslabPlan.createProject(name, project_group, start_date, construction_cycle, de
 运行典型日计算。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
 ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)
 ```
 
 ### ieslabPlan.iesLabEvaluationRun(planId, type=None)
 
+- 实例方法
 - `planId`: [Number][Number] 方案 id，表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - `type`: [String][String] 评估类型，可选值为：**能效评价**、**环保评价**
 - Returns: [Runner][Object] 返回方案评估运行实例
@@ -215,38 +229,50 @@ ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)
 运行方案评估。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
 ieslabPlan.iesLabEvaluationRun(planId, type=None)
 ```
 
 ### `ieslabPlan.iesLabEnergyEvaluationRun(planId)`
 
+- 实例方法
 - `planId`: [Number][Number] 方案 id
 - Returns: [Runner][Object] 返回能效评价运行实例
 
 运行能效评价。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
 ieslabPlan.iesLabEnergyEvaluationRun(planId)
 ```
 
 ### `ieslabPlan.iesLabPlanRun()`
 
+- 实例方法
 - Returns: [Runner][Object] 返回方案优选运行实例
 
 运行方案优选。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
 ieslabPlan.iesLabPlanRun()
 ```
 
 ### `ieslabPlan.iesLabPlanRun()`
 
+- 实例方法
 
 停止并删除方案优选算例。
 
-```python showLineNumbers
+```python showLineNumbers class="red-text"
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
 ieslabPlan.iesLabPlanRun()
 ```
+
 
 ## Class: `DataManageModel`
 
@@ -256,18 +282,28 @@ ieslabPlan.iesLabPlanRun()
 
 ### `datamanageModel.GetDataItem(ID)`
 
+- 实例方法
 - `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
 - Returns: [Dict][Dict] 返回该数据项的信息（源数据的引用）
 
 获取 ID 对应的数据信息。
 
 ```python showLineNumbers
-datamanageModel.GetDataItem(ID)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.GetDataItem(ID)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.GetDataItem(ID)
 ```
 
 ### `datamanageModel.GetItemList(dataType)`
 
-- `dataType`: [Enum][Enum] 数据的种类标识，包含：
+- 实例方法
+- `dataType`: [Enum][Enum] 数据的种类标识，包含： 
   - "光伏": "PhotovoltaicSys"
   - "风机": "WindPowerGenerator"
   - "燃气轮机": "GasTurbine"
@@ -297,11 +333,20 @@ datamanageModel.GetDataItem(ID)
 获取 dataType 类型对应所有数据项的列表。
 
 ```python showLineNumbers
-datamanageModel.GetItemList(dataType)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.GetItemList(dataType)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.GetItemList(dataType)
 ```
 
 ### `datamanageModel.AddDataItem(dataType, data)`
 
+- 实例方法
 - `dataType`: [Enum][Enum] 数据的种类标识，包含：
   - "光伏": "PhotovoltaicSys"
   - "风机": "WindPowerGenerator"
@@ -333,11 +378,20 @@ datamanageModel.GetItemList(dataType)
 向 dataType 类型的数据库中添加内容为 data 的数据项。
 
 ```python showLineNumbers
-datamanageModel.AddDataItem(dataType, data)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.AddDataItem(dataType, data)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.AddDataItem(dataType, data)
 ```
 
 ### `datamanageModel.UpdateDataItem(ID, data)`
 
+- 实例方法
 - ID: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
 - data: [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求
 - Returns: [Boolean][Boolean] 返回 True，更新成功
@@ -345,34 +399,60 @@ datamanageModel.AddDataItem(dataType, data)
 更新数据库 ID 对应数据项。
 
 ```python showLineNumbers
-datamanageModel.UpdateDataItem(ID, data)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.UpdateDataItem(ID, data)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.UpdateDataItem(ID, data)
 ```
 
 ### `datamanageModel.DeleteDataItem(ID)`
 
+- 实例方法
 - `ID`: [String][String] 数据项的标识符，可以在所有类型的数据项中实现唯一标识
 - Returns: [Boolean][Boolean] 删除是否成功标志，如果ID错误，抛出异常
 
 删除 ID 对应的数据。
 
 ```python showLineNumbers
-datamanageModel.DeleteDataItem(ID)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.DeleteDataItem(ID)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.DeleteDataItem(ID)
 ```
 
 ### `datamanageModel.SetProjectPosition(longitude, latitude)`
 
+- 实例方法
 - `longitude`: [Float][Float] 经度，范围为气象数据源的经度范围
 - `latitude`: [Float][Float] 纬度，范围为气象数据源的纬度范围
 
 设置项目的天气数据坐标，加载天气数据。
 
 ```python showLineNumbers
-datamanageModel.SetProjectPosition(longitude, latitude)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.SetProjectPosition(longitude, latitude)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.SetProjectPosition(longitude, latitude)
 ```
 
 ### `datamanageModel.GetAtmosData(startDate, endDate)`
 
-
+- 实例方法
 - `startDate`: [String][String] 开始时间，格式为'YYYY-MM-DD'
 - `endDate`: [String][String] 结束时间，格式为'YYYY-MM-DD'
 - Returns: [List][List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的 key 即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
@@ -380,7 +460,15 @@ datamanageModel.SetProjectPosition(longitude, latitude)
 获取在 startDate 到 endDate 之间的气象数据。
 
 ```python showLineNumbers
-datamanageModel.GetAtmosData(startDate, endDate)
+# IESLabSimulation
+ieslabSimulation = IESLabSimulation.fetch(id)
+# highlight-next-line
+ieslabSimulation.datamanageModel.GetAtmosData(startDate, endDate)
+
+# IESLabPlan
+ieslabPlan = IESLabPlan.fetch(id)
+# highlight-next-line
+ieslabPlan.datamanageModel.GetAtmosData(startDate, endDate)
 ```
 
 ## Class: `IESLabPlanModel`
@@ -403,59 +491,84 @@ datamanageModel.GetAtmosData(startDate, endDate)
 
 ### `ieslabPlanModel.SetOptimizationInfo(optType)`
 
+- 实例方法
 - `optType`: [Enum][Enum] 优化目标类型，经济性优化和环保性优化类型
 
 设置当前算例的优化目标。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.SetOptimizationInfo(optType)
 ```
 
 ### `ieslabPlanModel.GetOptimizationInfo()`
 
+- 实例方法
 - Returns: [Enum][Enum] 返回优化目标
 
 获取当前算例的优化目标设置信息。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.GetOptimizationInfo()
 ```
 
 ### `ieslabPlanModel.run()`
 
+- 实例方法
 - Returns: [Runner][Object] 生成方案优选算例，成功返回运行任务实例，如果算例已经运行过方案优选，再次运行会抛异常
 
 运行方案优选。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.run()
 ```
 
 ###  `ieslabPlanModel.GetRunner()`
 
+- 实例方法
 - Returns: [Runner][Object] 返回运行实例
 
 获得运行实例。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.GetRunner()
 ```
 
 ### `ieslabPlanModel.kill()`
 
+- 实例方法
+
 停止并删除当前运行的优化算例。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.kill()
 ```
 
 ### `ieslabPlanModel.GetLastTaskResult()`
 
+- 实例方法
 - Returns: [Boolean][Boolean] 返回任务运行状态
 
 获取最后一次运行的 taskID 的任务运行状态
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanModel = ieslabPlan.planModel
+# highlight-next-line
 ieslabPlanModel.GetLastTaskResult()
 ```
 
@@ -467,17 +580,22 @@ ieslabPlanModel.GetLastTaskResult()
 
 ### ieslabEvaluationModel.GetFinancialParams(planID)
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [Dict][Dict] 方案对应的财务评价基础参数信息（源数据的引用）
 
 获取 planID 对应的优化方案下财务评估模块的基础信息
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationModel = ieslabPlan.evaluationModel
+# highlight-next-line
 ieslabEvaluationModel.GetFinancialParams(0)
 ```
 
 ### `ieslabEvaluationModel.run(planID, type=None)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - `type`: [String][String] 任务类型：环保评价/能效评价
 - Returns: [Runner][Object] 返回运行任务实例
@@ -485,39 +603,54 @@ ieslabEvaluationModel.GetFinancialParams(0)
 运行方案评估。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationModel = ieslabPlan.evaluationModel
+# highlight-next-line
 ieslabEvaluationModel.run(planID, type=None)
 ```
 
 ### `ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
 - Returns: [Runner][Object] 返回运行任务实例
 
 运行环保评价方案评估。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationModel = ieslabPlan.evaluationModel
+# highlight-next-line
 ieslabEvaluationModel.EnvironmentalEvaluationRun(planID)
 ```
 
 ### `ieslabEvaluationModel.EnergyEvaluationRun(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
 - Returns: [Runner][Object] 返回运行任务实例
 
 运行能效评价方案评估。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationModel = ieslabPlan.evaluationModel
+# highlight-next-line
 ieslabEvaluationModel.EnergyEvaluationRun(planID)
 ```
 
 ### `ieslabEvaluationModel.GetRunner(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的ID，数值位于0~优化方案数量之间
 - Returns: [Runner][Object] 返回运行任务实例
 
 获得运行实例。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationModel = ieslabPlan.evaluationModel
+# highlight-next-line
 ieslabEvaluationModel.GetRunner(planID)
 ```
 
@@ -530,16 +663,21 @@ ieslabEvaluationModel.GetRunner(planID)
 
 ### `IESLabEvaluationResult.status()`
 
+- 实例方法
 - Returns: [Boolean][Boolean] 返回运行状态
   
 获取运行状态。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationResult = ieslabPlan.currentEvaluationResult
+# highlight-next-line
 ieslabEvaluationResult.status()
 ```
 
 ### `IESLabEvaluationResult.GetFinancialResult(resultType, planID)`
 
+- 实例方法
 - `resultType`: [Enum][Enum] 财务评价结果表格的类型：
   - `利润与利润分配`: getEconomyResult
   - `财务计划现金`:  getFinancialPlanCashFlowResult
@@ -558,39 +696,54 @@ ieslabEvaluationResult.status()
 获取 planID 对应的优化方案下 resultType 财务评估结果。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationResult = ieslabPlan.currentEvaluationResult
+# highlight-next-line
 ieslabEvaluationResult.GetFinancialResult(resultType, planID)
 ```
 
 ### `IESLabEvaluationResult.GetOverviewResult(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [List][List] 返回该方案对应的概览结果
   
 获取当前结果类对应的优化方案下的概览结果。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationResult = ieslabPlan.currentEvaluationResult
+# highlight-next-line
 ieslabEvaluationResult.GetOverviewResult(planID)
 ```
 
 ### `IESLabEvaluationResult.GetEnergyEvaluationResult(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [List][List] 返回该方案对应的能效评价结果
   
 获取当前结果类对应的优化方案下的能效评价。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationResult = ieslabPlan.currentEvaluationResult
+# highlight-next-line
 ieslabEvaluationResult.GetEnergyEvaluationResult(planID)
 ```
 
 ### `IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [List][List] 返回该方案对应的环保评价结果
 
 获取当前结果类对应的优化方案下的环保评价。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabEvaluationResult = ieslabPlan.currentEvaluationResult
+# highlight-next-line
 ieslabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
 ```
 
@@ -602,58 +755,79 @@ ieslabEvaluationResult.GetEnvironmentalEvaluationResult(planID)
 
 ### `ieslabPlanResult.status()`
 
+- 实例方法
 - Returns: [Boolean][Object] 返回运行状态
 
 获取运行状态。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.status()
 ```
 
 ### `ieslabPlanResult.GetLogs()`
 
+- 实例方法
 - Returns: [Dict][Dict] 返回日志信息
 
 获取运行日志。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.GetLogs()
 ```
 
 ### `ieslabPlanResult.GetPlanNum()`
 
+- 实例方法
 - Returns: [Number][Number] 返回优化方案的数量
 
 获取当前 result 实例对应的优化方案数量。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.GetPlanNum()
 ```
 
 ### `ieslabPlanResult.GetPlanInfo(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [Dict][Dict] 返回方案的基础信息，包括投资、运行成本、负荷总量等信息
 
 获取 planID 对应的优化方案的基础信息。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.GetPlanInfo(planID)
 ```
 
 ### `ieslabPlanResult.GetPlanConfiguration(planID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - Returns: [Dict][Dict] 返回方案的配置信息，包括每种设备的选型配置、容量配置、成本等相关信息
 
 获取 planID 对应的优化方案的配置信息。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.GetPlanConfiguration(planID)
 ```
 
 ### `ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - `componentID`: [String][String] 元件的标识符
 - `typicalDayName`: [String][String] 典型日的名称
@@ -662,11 +836,15 @@ ieslabPlanResult.GetPlanConfiguration(planID)
 获取 planID 对应的优化方案下componentID对应元件的运行信息。
 
 ```python showLineNumbers
-ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
+ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName)
 ```
 
 ### `ieslabPlanResult.GetComponentTypiDays(planID, componentID)`
 
+- 实例方法
 - `planID`: [Number][Number] 优化方案的 ID，数值位于 0 ~ 优化方案数量之间
 - `componentID`: [String][String] 元件的标识符
 - Returns: [Number][Number] 返回优化方案的数量
@@ -674,16 +852,23 @@ ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
 获取当前 result 实例对应的优化方案数量。
 
 ```python showLineNumbers
-ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
+ieslabPlanResult.GetComponentResult(planID, componentID, typicalDayName)
 ```
 
 ### `ieslabPlanResult.getLastTaskResult()`
 
+- 实例方法
 - Returns: [Dict][Dict] 返回运行结果
 
 获取最后一次运行的 taskID 的运行结果。
 
 ```python showLineNumbers
+ieslabPlan = IESLabPlan.fetch(id)
+ieslabPlanResult = ieslabPlan.currentPlanResult
+# highlight-next-line
 ieslabPlanResult.getLastTaskResult()
 ```
 
