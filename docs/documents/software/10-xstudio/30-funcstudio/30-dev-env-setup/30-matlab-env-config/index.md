@@ -133,6 +133,8 @@ pyversion('C:\py37env1\cloudpss\Scripts\python.exe')
 
     此时可以将虚拟 Python 环境中的 setuptools 版本降低，比如 58.0.0 等低版本即可。
 
+    pip install setuptools==58.0.0  -i https://pypi.tuna.tsinghua.edu.cn/simple 
+
     ![安装依赖成功](./10.png)
 
 
