@@ -302,7 +302,7 @@ iesview.getPlotData('/AbsorptionChiller_4', '压力(MPa)', traceName='all', inde
 获取第 index 个桑基图数据。
 
 ```python showLineNumbers
-iesview.getPlotData(index)
+iesview.getSankey(index)
 ```
 
 ### `iesview.getSankeyNum()`
@@ -356,7 +356,7 @@ ieslabTypicalDayView.GetTypicalDayInfo(0)
 
 - `dayID`: [Number][Number] 典型日 ID，数值位于 0 ~ 典型日数量 之间
 - `dataType`: [String][String] 数据类型，标识总辐射、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
-- Returns: [List][List] 返回 dayID 对应典型日下dataType参数的时序曲线
+- Returns: [List][List] 返回 dayID 对应典型日下 dataType 参数的时序曲线
 
 获取 dayID 对应典型日下 dataType 参数的时序曲线。
 
