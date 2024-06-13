@@ -219,7 +219,7 @@ ieslabPlan = IESLabPlan.fetch(id)
 ieslabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)
 ```
 
-### ieslabPlan.iesLabEvaluationRun(planId, type=None)
+### `ieslabPlan.iesLabEvaluationRun(planId, type=None)`
 
 - 实例方法
 - `planId`: [Number][Number] 方案 id，表示优化方案的 ID，数值位于 0 ~ 优化方案数量之间
