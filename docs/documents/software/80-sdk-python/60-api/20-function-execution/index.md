@@ -76,6 +76,7 @@ tags:
 
 ### `FunctionExecution.current()`
 
+- 静态方法
 - Returns: [FunctionExecution](#class-functionexecution) 返回当前执行的 FunctionExecution 单例
 
 获取当前执行的 FunctionExecution 单例。
@@ -105,6 +106,7 @@ f.exit(0)
 
 ### `functionExecution.plot(traces=[], layout={}, title='', key=None, verb='replace')`
 
+- 实例方法
 - `traces`: [List][List] 图表数据
 - `layout`: [Dict][Dict] 图表布局
 - `title`: [String][String] 图表标题
@@ -123,6 +125,7 @@ f.plot(traces=[], layout={}, title='', key=None, verb='replace')
 
 ### `functionExecution.table(columns=[], title='', key=None, verb='replace')`
 
+- 实例方法
 - `columns`: [List][List] 按列分组的表格内容
 - `title`: [String][String] 表格标题
 - `key`: [String][String] 表格消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
@@ -144,6 +147,7 @@ f.table(columns=[
 
 ### `functionExecution.log(content, level='info', html=False, key=None)`
 
+- 实例方法
 - `content`：[String][String] 日志内容
 - `level`：[String][String] 日志级别：
   - `info`: 运行信息
@@ -165,6 +169,7 @@ f.log("日志测试内容", level='info', html=False, key=None)
 
 ### `functionExecution.container(items=[], layout={'type': 'tabs','position': 'top'}, key=None)`
 
+- 实例方法
 - `items`: [List][List] 分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
 - `position`: [Dict][Dict] 分组布局，如无特殊需求请直接使用 `{@link tabsContainer}` 和 `{@link gridContainer}`
 - `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
@@ -179,6 +184,7 @@ f.container([{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'qu
 
 ### `functionExecution.tabsContainer(items=[], position='top', key=None)`
 
+- 实例方法
 - `items`: [List][List]  分组成员，如 `[{'title': 'tab1', 'placeholder': 'Data loading', 'html': false, 'query': {'type': 'message', 'key': 'item-1'}}]`
 - `position`: [String][String] tab 位置：
   - `top`: 上
@@ -201,6 +207,7 @@ f.tabsContainer([
 
 ### `functionExecution.gridContainer(item=[], grid="'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr", key=None)`
 
+- 实例方法
 - `item`: [List][List] 分组成员，如 `[{title: 'item1', placeholder: 'Data loading', html: false, query: {type: 'message', key: 'item-1'}}]`
 - `grid`: [String][String] grid 布局，如 `'item1 . item2' 1fr 'item1 item3 item4' 1fr / 1fr auto 2fr`，详情参见 [grid布局](https://developer.mozilla.org/en-US/docs/Web/CSS/grid-template)
 - `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器
@@ -221,6 +228,7 @@ f.gridContainer([
 
 ### `functionExecution.progress(value=0, title='', key='progress-1')`
 
+- 实例方法
 - `value`: [Number][Number] 当前进度值，取值范围 0~1
 - `title`: [String][String] 进度标题
 - `key`: [String][String] 消息 key，用于在多个消息中引用同一消息实体，以便进行更新，或将指定 key 的消息放入容器，默认为: `progress-1`
@@ -235,6 +243,7 @@ f.progress(0.1, '测试进度消息', 'progress-1')
 
 ### `functionExecution.on_abort(func, args=[], kwargs={})`
 
+- 实例方法
 - `func`: 响应后的回调函数
 - `args`: [List][List] 回调函数参数
 - `kwargs`: [Dict][Dict] 回调函数参数

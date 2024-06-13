@@ -21,7 +21,7 @@ tags:
 
 ### 选择计算方案
 
-点击**运行**标签页，在计算方案中选择默认的**潮流计算方案1**。
+点击**运行**标签页，在计算方案中选择默认的**潮流计算方案 1**。
 
 ![选择潮流计算方案](image-2.png "选择潮流计算方案")
 
@@ -43,19 +43,19 @@ import time
 
 if __name__ == '__main__':
     
-    # 填写token
+    # 填写 token
     cloudpss.setToken('{token}')
 
     # 设置访问的地址
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
     
-    # 选择算例，获取指定算例rid 的项目
+    # 选择算例，获取指定算例 rid 的项目
     model = cloudpss.Model.fetch('model/CloudPSS/IEEE3')
     
-    # 选择参数方案，若未设置，则默认用model的第一个config（参数方案）
+    # 选择参数方案，若未设置，则默认用 model 的第一个 config（参数方案）
     config = model.configs[0]
 
-    # 选择计算方案，若未设置，则默认用model的第一个job（潮流计算方案）
+    # 选择计算方案，若未设置，则默认用 model 的第一个 job（潮流计算方案）
     job = model.jobs[0]
 
     # 启动计算任务
@@ -80,7 +80,7 @@ if __name__ == '__main__':
 
 ### 选择计算方案
 
-点击**运行**标签页，在计算方案中选择默认的**电磁暂态方案1**。
+点击**运行**标签页，在计算方案中选择默认的**电磁暂态方案 1**。
 
 ![选择电磁暂态计算方案](electromagnetic-transient-calculation-scheme.png "选择电磁暂态计算方案")
 
@@ -101,19 +101,19 @@ import json
 import time
 
 if __name__ == '__main__':
-    # 填写token
+    # 填写 token
     cloudpss.setToken('{token}')
 
     # 设置访问的地址
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
     
-    # 选择算例，获取指定算例rid 的项目
+    # 选择算例，获取指定算例 rid 的项目
     model = cloudpss.Model.fetch('model/CloudPSS/IEEE3')
 
-    # 选择参数方案，若未设置，则默认用model的第一个config（参数方案）
+    # 选择参数方案，若未设置，则默认用 model 的第一个 config（参数方案）
     config = model.configs[0] 
 
-    # 选择计算方案，若未设置，则默认用model的第一个job（潮流计算方案），此处选择 jobs[1]，为电磁暂态仿真任务
+    # 选择计算方案，若未设置，则默认用 model 的第一个 job（潮流计算方案），此处选择 jobs[1]，为电磁暂态仿真任务
     job = model.jobs[1]
 
     # 启动计算任务
