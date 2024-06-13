@@ -21,6 +21,7 @@ tags:
 
 ### `view.modify(data, model)`
 
+- 实例方法
 - `data`: [Dict][Dict] 消息字典
 - `model`: [Model](../10-model/index.md) 算例
 
@@ -32,6 +33,7 @@ view.modify(data, model)
 
 ### `view.getMessagesByKey(key)`
 
+- 实例方法
 - `key`: [String][String] 消息key
 - Returns: [List][List] 对应 key 的数据数组
 
@@ -43,6 +45,7 @@ message = view.getMessagesByKey('log')
 
 ### `view.getMessagesByType(type)`
 
+- 实例方法
 - `type`: [String][String] 消息类型
 - Returns: [List][List] 对应类型的数据数组
 
@@ -54,6 +57,7 @@ view.getMessagesByType('log')
 
 ### `view.getMessage(index)`
 
+- 实例方法
 - `index`: [Number][Number] 数据的位置信息
 - Returns: [Dict][Dict] 获取指定位置的消息数据
 
@@ -65,6 +69,7 @@ view.getMessage(index)
 
 ### `view.getMessages()`
 
+- 实例方法
 - Returns: [List][List] 返回消息数据列表
 
 获取所有消息数据。
@@ -75,6 +80,7 @@ view.getMessages()
 
 ### `view.getLogs()`
 
+- 实例方法
 - Returns: [List][List] 返回当前任务的日志，日志只会返回最新的，如果已经获取过日志，再次获取将不在返回
 
 获取当前任务的日志。
@@ -85,6 +91,7 @@ view.getLogs()
 
 ### `view.getMessageLength()`
 
+- 实例方法
 - Returns: [Number][Number] 返回消息数据的长度
 
 获取消息数据的长度。
@@ -95,6 +102,7 @@ view.getMessageLength()
 
 ### `view.pop(index=-1)`
 
+- 实例方法
 - `index`: [Number][Number] 索引，默认为 -1
 - Returns: [Dict][Dict] 返回消息数据
 
@@ -112,6 +120,7 @@ view.pop(-1)
 
 ### `emtview.getPlots()`
 
+- 实例方法
 - Returns: [Dict][Dict] 返回所有图表的数据
 
 获取所有的曲线分组数据。
@@ -122,6 +131,7 @@ emtview.getPlots()
 
 ### `emtview.getPlot(index)`
 
+- 实例方法
 - `index`: [Number][Number] 图表位置
 - Returns: [Dict][Dict] 返回指定图表的数据
 
@@ -133,6 +143,7 @@ emtview.getPlot(0)
 
 ### `emtview.getPlotChannelNames(index)`
 
+- 实例方法
 - `index`: [Number][Number] 图表位置
 - Returns: [List][List] 返回指定图表的通道名称列表
 
@@ -144,6 +155,7 @@ emtview.getPlotChannelNames(0)
 
 ### `emtview.getPlotChannelData(index, channelName)`
 
+- 实例方法
 - `index`: [Number][Number] 输出通道位置
 - `channelName`: [String][String] 输出通道名称
 - Returns: [Dict][Dict] 返回指定图表指定通道的曲线数据
@@ -156,6 +168,8 @@ emtview.getPlotChannelData(0, '')
 
 ### `emtview.next()`
 
+- 实例方法
+
 调试接口，前进一个时步。
 
 ```python showLineNumbers
@@ -164,6 +178,7 @@ emtview.next()
 
 ### `emtview.goto(step)`
 
+- 实例方法
 - `step`: [Number][Number] 指定时步
 
 调试接口，前进到指定时步。
@@ -174,6 +189,7 @@ emtview.goto(-1)
 
 ### `emtview.writeShm(path, buffer, offset)`
 
+- 实例方法
 - `path`: [String][String] 内存路径
 - `buffer`: [Float][Float] 写入的数据
 - `offset`: [Number][Number] 写入的偏移量
@@ -186,6 +202,8 @@ emtview.writeShm('data', buffer, 0)
 
 ### `emtview.stopSimulation()`
 
+- 实例方法
+
 通过事件链接口停止仿真（未最终确定，后续版本进行修改）。
 
 ```python showLineNumbers
@@ -194,6 +212,7 @@ emtview.stopSimulation()
 
 ### `emtview.saveSnapshot(snapshotNumber, log='保存断面成功')`
 
+- 实例方法
 - `snapshotNumber`: [Number][Number] 断面序号
 - `log` [String][String] 保存断面成功的日志
 
@@ -205,6 +224,7 @@ emtview.saveSnapshot(0, log='保存断面成功')
 
 ### `emtview.loadSnapshot(snapshotNumber, log='加载断面成功')`
 
+- 实例方法
 - `snapshotNumber`: [Number][Number] 断面序号
 - `log` [String][String] 加载断面成功的日志
 
@@ -216,6 +236,7 @@ emtview.loadSnapshot(0, log='加载断面成功')
 
 ### `emtview.control(controlParam, eventTime='-1', eventTimeType='1')`
 
+- 实例方法
 - `controlParam`: [List][List] 控制参数
 - `eventTime`: [Number][Number] 事件时间，默认为 -1
 - `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
@@ -228,6 +249,7 @@ emtview.control(controlParam, eventTime='-1', eventTimeType='1')
 
 ### `emtview.monitor(monitorParam, eventTime='-1', eventTimeType='1')`
 
+- 实例方法
 - `monitorParam`: [List][List] 监视参数
 - `eventTime`: [Number][Number] 事件时间，默认为 -1
 - `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
@@ -246,6 +268,7 @@ emtview.monitor(monitorParam,eventTime='-1',eventTimeType='1')
 
 ### `powerflowview.getBuses()`
 
+- 实例方法
 - Returns: [List][List] 返回所有 buses 数据
 
 获取所有的 buses 数据
@@ -256,6 +279,7 @@ powerflowview.getBuses()
   
 ### `powerflowview.getBranches()`
 
+- 实例方法
 - Returns: [List][List] 返回所有 branches 数据
 
 获取潮流结果 branches 数据
@@ -266,6 +290,7 @@ powerflowview.getBranches(index)
 
 ### `powerflowview.powerFlowModify(model)`
 
+- 实例方法
 - `model`: [Model](../10-model/index.md) 算例文件
 
 潮流数据写入 Model
@@ -282,6 +307,7 @@ powerflowview.powerFlowModify(model)
 
 ### `iesview.getPlotData(compID, labelName, traceName='all', index=-1)`
 
+- 实例方法
 - `compID`: [String][String] 代表元件的标识符
 - `labelName`: [String][String] 代表 plot 曲线的分组标签
 - `traceName`: [String][String] 代表 Plot 曲线对应分组下的图例名称，当为 'all' 时，返回所有图例的数据
@@ -296,17 +322,19 @@ iesview.getPlotData('/AbsorptionChiller_4', '压力(MPa)', traceName='all', inde
 
 ### `iesview.getSankey(index)`
 
+- 实例方法
 - `index`: [Number][Number] 代表第 index 个桑基图数据
 - Returns: [List][List] 返回第 index个桑基图数据
 
 获取第 index 个桑基图数据。
 
 ```python showLineNumbers
-iesview.getPlotData(index)
+iesview.getSankey(index)
 ```
 
 ### `iesview.getSankeyNum()`
 
+- 实例方法
 - Returns: [Number][Number] 返回桑基图数据序列的长度
 
 获取桑基图数据序列的长度。
@@ -323,6 +351,7 @@ IESLab 典型日仿真结果视图，提供了 IESLab 典型日仿真结果的�
 
 ### `ieslabTypicalDayView.GetTypical()`
 
+- 实例方法
 - Returns: [List][List] 返回所有 GetTypical 典型日数据
 
 获取所有的 GetTypical 典型日数据。
@@ -333,6 +362,7 @@ ieslabTypicalDayView.GetTypical()
 
 ###  `ieslabTypicalDayView.GetTypicalDayNum()`
 
+- 实例方法
 - Returns: [Number][Number] 返回当前 result 的典型日数量
 
 获取当前 result 的典型日数量。
@@ -343,6 +373,7 @@ ieslabTypicalDayView.GetTypicalDayNum()
 
 ### `ieslabTypicalDayView.GetTypicalDayInfo(dayID)`
 
+- 实例方法
 - `dayID`: [Number][Number] 典型日 ID，数值位于 0 ~ 典型日数量 之间
 - Returns: [Dict][Dict] 返回 dayID 对应典型日的基础信息，包括典型日所代表的日期范围、典型日的名称等
 
@@ -354,9 +385,10 @@ ieslabTypicalDayView.GetTypicalDayInfo(0)
 
 ### `ieslabTypicalDayView.GetTypicalDayCurve(dayID, dataType)`
 
+- 实例方法
 - `dayID`: [Number][Number] 典型日 ID，数值位于 0 ~ 典型日数量 之间
 - `dataType`: [String][String] 数据类型，标识总辐射、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
-- Returns: [List][List] 返回 dayID 对应典型日下dataType参数的时序曲线
+- Returns: [List][List] 返回 dayID 对应典型日下 dataType 参数的时序曲线
 
 获取 dayID 对应典型日下 dataType 参数的时序曲线。
 
@@ -366,6 +398,7 @@ ieslabTypicalDayView.GetTypicalDayCurve(0, '总辐射')
 
 ###  `ieslabTypicalDayView.GetTypicalMonth()`
 
+- 实例方法
 - Returns: [List][List] 返回所有的 GetTypicalMonth 数据
 
 获取所有的 GetTypicalMonth 数据。
@@ -376,7 +409,7 @@ ieslabTypicalDayView.GetTypicalMonth()
 
 ### `ieslabTypicalDayView.GetTypicalMonthNum(monthID)`
 
-
+- 实例方法
 - `monthID`: [Number][Number] 月份 ID，数值位于 1-12 之间
 - Returns: [List][List] 返回第 monthID 月各类型的典型日数据
 
@@ -388,6 +421,7 @@ ieslabTypicalDayView.GetTypicalMonthData(1)
 
 ###  `ieslabTypicalDayView.GetTypicalMonthCurve(monthID, dataType)`
 
+- 实例方法
 - `monthID`: [Number][Number] 月份 ID，数值位于 1-12 之间
 - `dataType`: [String][String] 数据类型，标识总辐射、环境温度、土壤温度、建筑物高度风速、风机高度风速、电负荷、热负荷、冷负荷的参数类型
 - Returns: [List][List] 返回以 1h 为时间间隔的该参数的典型日内时序曲线
