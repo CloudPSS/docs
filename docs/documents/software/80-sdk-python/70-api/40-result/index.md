@@ -12,36 +12,87 @@ tags:
   
 **CloudPSS** Result 结果处理基类
 
-### `Result.db`
+### `result.result`
 
-- [Result](#class-result)
+- [Dict][Dict]
 
-消息存储库。
+处理后的结果缓存。
 
-### `Result.load(filePath)`
+### `result.modify(data, model)`
 
-- 类方法
-- `filePath`: [String][String] 文件目录
-- Returns: [Result](#class-result) 返回结果实例
-
-加载本地结果文件。
+- 实例方法
+- `data`: [Dict][Dict] 消息字典
+- `model`: [Model](../10-model/index.md) 算例项目
+python
+通过指定消息修改算例文件。
 
 ```python showLineNumbers
-result = Result.load('C:\\Users\\dps-dm\\cloudpss-sdk\\result\\424111.cjob')
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.run()
+# highlight-next-line
+runner.result.modify(data, model)
 ```
 
-### `Result.dump(result, file)`
+### `result.getMessagesByKey(key)`
 
-- 静态方法
-- `result`: [Result](#class-result) 待保存的结果数据
-- `file`: [String][String] 文件目录
-  
-保存结果到本地文件。
+- 实例方法
+- `key`: [String][String] 消息key
+- Returns: [List][List] 对应 key 的数据数组
+
+获取指定 key 的消息数据。
 
 ```python showLineNumbers
-file = 'D:\\data\\result\\test.cjob'
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.run()
 # highlight-next-line
-Result.dump(result, file)
+message = runner.result.getMessagesByKey('log')
+```
+
+### `result.getMessagesByType(type)`
+
+- 实例方法
+- `type`: [String][String] 指定类型
+  - `log`: 日志消息类型
+  - `terminate`: 结束消息类型
+  - `plot`: 图表数据类型
+- Returns: [List][List] 返回指定类型消息的列表
+  
+获取指定类型的消息数据。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.run()
+# highlight-next-line
+message = runner.result.getMessagesByType('log')
+```
+
+### `result.getMessage(index)`
+
+- 实例方法
+- `index`: [Number][Number] 数据的位置信息
+- Returns: [Dict][Dict] 获取指定位置的消息数据
+
+获取指定位置的消息数据。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.run()
+# highlight-next-line
+message = runner.result.getMessagesByType(index)
+```
+
+### `result.getMessages()`
+
+- 实例方法
+- Returns: [List][List] 返回消息数据列表
+
+获取所有消息数据。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.run()
+# highlight-next-line
+message = runner.result.getMessages()
 ```
 
 ### `result.getLogs()`
@@ -58,36 +109,36 @@ runner = model.run()
 logs = runner.result.getLogs()
 ```
 
-### `result.modify(data, model)`
+### `result.getMessageLength()`
 
 - 实例方法
-- `data`: [Dict][Dict] 消息字典
-- `model`: [Model](../10-model/index.md) 算例项目
+- Returns: [Number][Number] 返回消息数据的长度
 
-通过指定消息修改算例文件。
+获取消息数据的长度。
 
 ```python showLineNumbers
 model = cloudpss.Model.fetch('model/Demo/demo')
 runner = model.run()
 # highlight-next-line
-runner.result.modify(data, model)
+length = runner.result.getMessageLength()
 ```
 
-### `result.getMessagesByType(type)`
+
+### `result.pop(index=-1)`
 
 - 实例方法
-- `type`: [String][String] 指定类型
-  - "log": 日志类型
-- Returns: [List][List] 返回指定类型消息的列表
-  
-获取指定类型的消息数据。
+- `index`: [Number][Number] 索引，默认为 -1
+- Returns: [Dict][Dict] 返回消息数据
+
+pop 出缓存中的消息。
 
 ```python showLineNumbers
 model = cloudpss.Model.fetch('model/Demo/demo')
 runner = model.run()
 # highlight-next-line
-message = runner.result.getMessagesByType('log')
+result = runner.result.pop(-1)
 ```
+
 
 ## Class: `EMTResult`
 - Extends: [Result](#class-result)
@@ -157,6 +208,134 @@ emtResult = runner.result
 # highlight-next-line
 result = emtResult.getPlotChannelData(0, '')
 ```
+
+### `result.next()`
+
+- 实例方法
+
+调试接口，前进一个时步。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.next()
+```
+
+### `result.goto(step)`
+
+- 实例方法
+- `step`: [Number][Number] 指定时步
+
+调试接口，前进到指定时步。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.goto(-1)
+```
+
+### `result.writeShm(path, buffer, offset)`
+
+- 实例方法
+- `path`: [String][String] 内存路径
+- `buffer`: [Float][Float] 写入的数据
+- `offset`: [Number][Number] 写入的偏移量
+
+写内存接口（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.writeShm('data', buffer, 0)
+```
+
+### `result.stopSimulation()`
+
+- 实例方法
+
+通过事件链接口停止仿真（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.stopSimulation()
+```
+
+### `result.saveSnapshot(snapshotNumber, log='保存断面成功')`
+
+- 实例方法
+- `snapshotNumber`: [Number][Number] 断面序号
+- `log` [String][String] 保存断面成功的日志
+
+通过事件链接口保存断面（未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.saveSnapshot(0, log='保存断面成功')
+```
+
+### `result.loadSnapshot(snapshotNumber, log='加载断面成功')`
+
+- 实例方法
+- `snapshotNumber`: [Number][Number] 断面序号
+- `log` [String][String] 加载断面成功的日志
+
+通过事件链接口加载断面 （未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.loadSnapshot(0, log='加载断面成功')
+```
+
+### `result.control(controlParam, eventTime='-1', eventTimeType='1')`
+
+- 实例方法
+- `controlParam`: [List][List] 控制参数
+- `eventTime`: [Number][Number] 事件时间，默认为 -1
+- `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
+
+通过事件链接口修改元件数据 （未最终确定，后续版本进行修改）。
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.control(controlParam, eventTime='-1', eventTimeType='1')
+```
+
+
+### `result.monitor(monitorParam, eventTime='-1', eventTimeType='1')`
+
+- 实例方法
+- `monitorParam`: [List][List] 监视参数
+- `eventTime`: [Number][Number] 事件时间，默认为 -1
+- `eventTimeType`: [Number][Number] 事件时间类型，默认为 1
+
+通过事件链接口停止仿真 （未最终确定，后续版本进行修改）
+
+```python showLineNumbers
+model = cloudpss.Model.fetch('model/Demo/demo')
+runner = model.runEMT() # 运行电磁暂态
+emtResult = runner.result
+# highlight-next-line
+emtResult.monitor(monitorParam,eventTime='-1',eventTimeType='1')
+```
+
 
 ## Class: `PowerFlowResult`
 - Extends: [Result](#class-result)
