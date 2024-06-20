@@ -16,7 +16,7 @@ sidebar_position: 30
 ### 1.2 代码解析
 首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例 1 代码解析。
 :::warning
-这里需要注意的是 `cloudpss.IESLabPlan.fetch()` 与前面案例的 `cloudpss.IESLabPlan.fetch()` 类名不同，但功能相同，都是用于获取算例。使用此方法时需要注意。
+这里需要注意的是 `cloudpss.IESLabPlan.fetch()` 与前面案例1、2、3的`cloudpssIESLabSimulation.fetch()` 类名不同，但功能相同，都是用于获取算例。使用此方法时需要注意。
 :::
 ```python
 import os
@@ -66,7 +66,7 @@ if __name__ == '__main__':
 **Q1:请求的数据不存在是什么原因呢？**  
 A1:请仔细检查您的系统中是否包含此数据，例如您的系统中元件没有绑定负荷数据，或者数据管理模块没有创建相应的数据卡，则会出现数据不存在的情况。此外，您还需要仔细核查索引是否超出范围以及请求的曲线类型标识符是否存在。  
 **Q2:如何获取不同类型的曲线数据,比如辐射强度或环境温度?**  
-A2:您可以将 `GetTypicalDayCurve()` 或 `GetTypicalMonthCurve()` 的第二个曲线类型参数更改为其他类型,如'辐射强度'或'环境温度'。可用的曲线类型标识符请查阅 CloudPSS API 文档。  
+A2:您可以将 `GetTypicalDayCurve()` 或 `GetTypicalMonthCurve()` 的第二个曲线类型参数更改为其他类型,如'辐射强度'或'环境温度'。可用的曲线类型标识符请查阅CloudPSS SDK python文档。  
 
 ### 1.5 完整代码
 ```python

@@ -16,7 +16,7 @@ sidebar_position: 30
 ### 1.2 代码解析
 首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例1代码解析。
 :::caution
-在进行评估前，您需要确保方案优选模块存在规划的方案,否则无法进行方案评估，如何进行调用规划请参考案例5。
+在进行评估前，您需要确保方案优选模块存在规划的方案,否则无法进行方案评估，如何调用SDK生成规划方案请参考案例5。
 :::
 ```python
 import os
@@ -33,14 +33,14 @@ if __name__ == '__main__':
     # 规划设计典型场景生成测试——获取指定 simuid 的项目
     iesplanProject = cloudpss.IESLabPlan.fetch('274')
 ```
-这段代码首先通过 `input()` 函数获取用户输入的方案 ID，然后使用 `GetFinancialParams(planID)` 方法获取该方案的财务评估参数信息。注意，**确保输入的方案 ID 是存在的，否则可能无法获取到参数信息**。
+首先通过 `input()` 函数获取用户输入的方案 ID，然后使用 `GetFinancialParams(planID)` 方法获取该方案的财务评估参数信息。注意，**确保输入的方案 ID 是存在的，否则可能无法获取到参数信息**。
 ```python
     # 获取指定方案的财务评估参数信息
     planID = input("请输入要查看的方案ID：")
     evaluation_info = iesplanProject.evaluationModel.GetFinancialParams(planID)
     print("该方案的财务评估参数信息:", evaluation_info) 
 ```      
-这段代码用于启动对指定方案 ID 的评估计算。首先获取方案 ID，然后调用 `iesLabEvaluationRun(planID)` 方法启动评估。使用 `plan_result.GetFinancialResult("利润与利润分配", planID)` 获取指定方案的特定类型 `"利润与利润分配"` 的财务评估表格。
+启动对指定方案 ID 的评估计算。首先获取方案 ID，然后调用 `iesLabEvaluationRun(planID)` 方法启动评估。使用 `plan_result.GetFinancialResult("利润与利润分配", planID)` 获取指定方案的特定类型 `"利润与利润分配"` 的财务评估表格。
 ```python
     # 启动计算，评估指定方案
     planID = input("请输入要进行评估的方案ID：")
