@@ -15,7 +15,7 @@ tags:
 
 ### 用到的 API
 
-[Class: Model](../../../60-api/10-model/index.md)
+[Class: Model](../../../70-api/10-model/index.md)
 
 ### 调用方式
 
