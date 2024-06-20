@@ -15,16 +15,28 @@ tags:
 
 ### 入门
 
-* [快速入门](../40-quick-start/index.md)：提供一个简单的示例，让用户快速了解如何上手使用 **CloudPSS SDK**。
+* [ETMLab](../40-emtlab-sdk/10-quick-start/index.md)：帮助用户快速入门上手使用 **EMTLab SDK**。
+  
+* [IESLab](../50-ieslab-sdk/10-quick-start/index.md)：帮助用户快速入门上手使用 **IESLab SDK**。
+  
+* [DSLab](../60-dslab-sdk/10-quick-start/index.md)：帮助用户快速入门上手使用 **DSLab SDK**。
 
 ### 进阶
 
-* [新能源发电系统阻抗分析/扫频计算](../50-advanced/10-advanced-case1/index.md)：介绍如何使用 **CloudPSS SDK** 进行新能源发电系统阻抗分析/扫频计算。
+* [ETMLab](../40-emtlab-sdk/20-advanced/index.md)：帮助用户掌握 **EMTLab SDK** 进阶用法。
+  
+* [IESLab](../50-ieslab-sdk/20-advanced/index.md)：帮助用户掌握 **IESLab SDK** 进阶用法。
+  
+* [DSLab](../60-dslab-sdk/20-advanced/index.md)：帮助用户掌握 **DSLab SDK** 进阶用法。
 
-* [交流系统 N-1 校验](../50-advanced/20-advanced-case2/index.md)：介绍如何使用 **CloudPSS SDK** 进行交流系统 N-1 校验。
+### 典型案例
 
-* [SimStudio 自动建模](../50-advanced/30-advanced-case3/index.md)：介绍如何使用 **CloudPSS SDK** 进行 **SimStudio** 自动建模。
+* [ETMLab](../40-emtlab-sdk/30-typical-cases/index.md)：提供若干典型案例，帮助用户全面掌握 **EMTLab SDK**。
+  
+* [IESLab](../50-ieslab-sdk/30-typical-cases/index.md)：提供若干典型案例，帮助用户全面掌握 **IESLab SDK**。
+  
+* [DSLab](../60-dslab-sdk/30-typical-cases/index.md)：提供若干典型案例，帮助用户全面掌握 **DSLab SDK**。
 
 ### API
 
-* [API 文档](../60-api/index.md)：详细介绍 **CloudPSS SDK** 的提供的类、方法和变量，方便用户查阅和使用。
+* [API 文档](../70-api/index.md)：详细介绍 **CloudPSS SDK** 的提供的类、方法和变量，方便用户查阅和使用。
