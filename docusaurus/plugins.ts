@@ -3,6 +3,7 @@ import type { PluginConfig } from '@docusaurus/types';
 
 import type * as Search from '@easyops-cn/docusaurus-search-local';
 import type * as Pwa from '@docusaurus/plugin-pwa';
+//import cloudpssModel from './plugins/cloudpss-model';
 
 const plugins: PluginConfig[] = [];
 
@@ -15,6 +16,8 @@ plugins.push(() => {
         },
     };
 });
+
+//plugins.push(cloudpssModel);
 
 plugins.push((context) => {
     return {
