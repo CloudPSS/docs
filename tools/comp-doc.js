@@ -1,4 +1,15 @@
 #!/bin/env node
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable jsdoc/require-param-description */
+/* eslint-disable no-console */
+
+/**
+ * imports
+ * @typedef {import("@cloudpss/resource-types/model").Model & {type: 'model', owner: string, key: string}} Model
+ * @typedef {import("@cloudpss/resource-types/model").ParameterGroup} ParameterGroup
+ * @typedef {import("@cloudpss/resource-types/model").PinDefinition} PinDefinition
+ * @typedef {import("@cloudpss/resource-types/model").ParameterGroup['items'][number]} Parameter
+ */
 
 import fs from 'node:fs/promises';
 import path from 'node:path';
@@ -8,10 +19,10 @@ const hasUnescapedMarkdown = new RegExp(escapeMarkdown.source);
 
 /**
  * 转义 MARKDOWN 字符串
- * @param {string | undefined} s 字符串
+ * @param {{} | undefined} str 字符串
  */
-export function escape(s) {
-    s = String(s ?? '');
+export function escape(str) {
+    const s = String(str ?? '');
     if (s && hasUnescapedMarkdown.test(s)) {
         return s.replace(escapeMarkdown, String.raw`\$&`);
     }
@@ -20,10 +31,10 @@ export function escape(s) {
 
 /**
  * 转义 MARKDOWN 字符串，用合适的 `` ` `` 字符括起来
- * @param {string | undefined} s 字符串
+ * @param {{} | undefined} str 字符串
  */
-export function escapeCode(s) {
-    s = String(s ?? '');
+export function escapeCode(str) {
+    const s = String(str ?? '');
     if (!s) return '` `';
     const backtick = s.indexOf('`');
     if (backtick < 0) return `\`${s}\``;
@@ -43,6 +54,7 @@ export function h(level) {
 
 /**
  * 参数
+ * @param {Parameter} param
  */
 function genParam(param) {
     let type = '';
@@ -50,11 +62,11 @@ function genParam(param) {
     switch (param.type) {
         case 'real':
             type = `实数`;
-            if (param.unit) type += ` [${escape(param.unit)}]`;
+            if (param['unit']) type += ` [${escape(param['unit'])}]`;
             break;
         case 'integer':
             type = `整数`;
-            if (param.unit) type += ` [${escape(param.unit)}]`;
+            if (param['unit']) type += ` [${escape(param['unit'])}]`;
             break;
         case 'logical':
             type = '布尔';
@@ -66,7 +78,7 @@ function genParam(param) {
             type = '多选';
             break;
         case 'pinLike':
-            type = `虚拟引脚（${connectionType(param.connection)}）`;
+            type = `虚拟引脚（${connectionType(/** @type {PinDefinition['connection']} */ (param['connection']))}）`;
             break;
         case 'table':
             type = '表格';
@@ -92,6 +104,9 @@ function genParam(param) {
 }
 /**
  * 参数组
+ * @param {ParameterGroup} params
+ * @param {number} index
+ * @param {number} level
  */
 function genParamGroup(params, index, level) {
     if (!params.items) return '\n';
@@ -101,23 +116,25 @@ ${params.description ?? ''}
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-${params.items.map((p) => genParam(p)).join('\n')}
+${params.items.map((/** @type {any} */ p) => genParam(p)).join('\n')}
 `;
 }
 
 /**
  * 参数列表
+ * @param {ParameterGroup[]} params
+ * @param {number} level
  */
 function genParams(params, level) {
     if (!params || params.length === 0) return '';
-    return `${h(level)} 参数
-
+    return `
 ${params.map((p, i) => genParamGroup(p, i, level + 1)).join('\n')}
 `;
 }
 
 /**
  * 链接类型
+ * @param {PinDefinition['connection']} connection
  */
 function connectionType(connection) {
     switch (connection) {
@@ -143,6 +160,7 @@ function connectionType(connection) {
 
 /**
  * 引脚
+ * @param {PinDefinition} pin
  */
 function genPin(pin) {
     const dim = pin.dim ? `${String(pin.dim?.[0] ?? '')} x ${String(pin.dim[1] ?? '')}` : '';
@@ -152,11 +170,12 @@ function genPin(pin) {
 
 /**
  * 引脚列表
+ * @param {PinDefinition[]} pins
+ * @param {number} level
  */
 function genPins(pins, level) {
     if (!pins || pins.length === 0) return '';
-    return `${h(level)} 引脚
-
+    return `
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
 ${pins.map((p) => genPin(p)).join('\n')}
@@ -165,6 +184,8 @@ ${pins.map((p) => genPin(p)).join('\n')}
 
 /**
  * 生成标题
+ * @param {string | undefined} name
+ * @param {number} level
  */
 function genName(name, level) {
     if (!name) return `${h(level)} &nbsp;`;
@@ -172,6 +193,7 @@ function genName(name, level) {
 }
 /**
  * 生成描述
+ * @param {string} description
  */
 function genDescription(description) {
     if (!description) return '> &nbsp;';
@@ -179,21 +201,11 @@ function genDescription(description) {
 }
 
 /**
- * 生成文档
+ * 获取模型
+ * @param {string} token token
+ * @param {string} owner 所有者
+ * @returns {Promise<Model[]>} 模型列表
  */
-function documentation(resource, options = {}) {
-    const level = options.level ?? 1;
-    const ret = [];
-    if (options.name) ret.push(genName(resource.name, level));
-    if (options.description !== false) ret.push(genDescription(resource.description));
-    if (options.parameters !== false && resource.revision && 'parameters' in resource.revision)
-        ret.push(genParams(resource.revision.parameters, level + 1));
-    if (options.pins !== false && resource.revision && 'pins' in resource.revision)
-        ret.push(genPins(resource.revision.pins, level + 1));
-    if (options.documentation !== false && resource.revision?.documentation) ret.push(resource.revision.documentation);
-    return ret.join('\n\n');
-}
-
 async function fetchModels(token, owner) {
     const response = await fetch(`https://dev.local.ddns.cloudpss.net/graphql`, {
         method: 'POST',
@@ -206,14 +218,16 @@ async function fetchModels(token, owner) {
                 models(input: {owner: "${owner}", limit: 1000000, orderBy: [] }) {
                     items {
                         rid
-                        name
+                        type
                         owner
                         key
+                        name
                         description
                         revision {
                             parameters
                             pins
                             documentation
+                            graphic
                         }
                     }
                 }
@@ -221,33 +235,106 @@ async function fetchModels(token, owner) {
         }),
     });
     if (!response.ok) throw new Error(`HTTP ${response.status} ${await response.text()}`);
-    const payload = await response.json();
+
+    const payload = await /** @type {Promise<{ data: { models: { items: Model[] } } }>} */ (response.json());
     return payload.data.models.items;
 }
 
+/**
+ * 生成文档
+ * @param {Model} resource 资源
+ * @param {string} dir 输出路径
+ */
+async function documentation(resource, dir) {
+    await fs.mkdir(dir, { recursive: true });
+    try {
+        await fs.stat(path.join(dir, 'index.md'));
+    } catch (e) {
+        await fs.writeFile(
+            path.join(dir, 'index.md'),
+            `---
+title: ${JSON.stringify(resource.name ?? '')}
+description: ${JSON.stringify(resource.description ?? '')}
+---
+
+## 元件定义
+
+## 元件说明
+
+${escape(resource.name)}元件参数标签页包括**属性**、**参数**、**引脚**三类参数，下面对每类参数进行详细说明。
+
+### 属性
+
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
+
+### 参数
+
+import Parameters from './_parameters.md'
+
+<Parameters/>
+
+### 引脚
+
+import Pins from './_pins.md'
+
+<Pins/>
+
+## 案例
+
+## 常见问题
+
+`,
+        );
+    }
+    if (resource.revision && 'parameters' in resource.revision) {
+        await fs.writeFile(
+            path.join(dir, '_parameters.md'),
+            `<slot class="model-parameters">
+
+${genParams(resource.revision.parameters, 3)}
+
+</slot>
+`,
+        );
+    }
+    if (resource.revision && 'pins' in resource.revision) {
+        await fs.writeFile(
+            path.join(dir, '_pins.md'),
+            `<slot class="model-pins">
+
+${genPins(resource.revision.pins, 3)}
+
+</slot>
+`,
+        );
+    }
+}
+
+const OWNERS = ['CloudPSS'];
+
+const MODELS = {
+    'model/CloudPSS/_GOV2': 'cases/comp_gov2',
+};
+
+/** main */
 async function main() {
-    if (process.argv.length !== 5) {
-        console.error(`Usage: node ${path.relative(process.cwd(), process.argv[1])} <token> <owner> <output>`);
+    if (process.argv.length !== 3) {
+        console.error(`Usage: node ${path.relative(process.cwd(), process.argv[1])} <token>`);
         process.exitCode = -1;
         return;
     }
     const token = process.argv[2];
-    const owner = process.argv[3];
-    const out = path.resolve(process.argv[4]);
-    const models = await fetchModels(token, owner);
-    for (const model of models) {
-        const docs = documentation(model, { level: 2, name: false, description: false, documentation: false });
-        await fs.mkdir(out, { recursive: true });
-        await fs.writeFile(
-            `${out}/comp${model.key}.md`,
-            [
-                '---',
-                `title: ${model.name || "''"}`,
-                `description: ${JSON.stringify(model.description)}`,
-                '---\n',
-                docs,
-            ].join('\n'),
-        );
+    const out = path.resolve(import.meta.dirname, '../docs');
+    const models = (await Promise.all(OWNERS.map((owner) => fetchModels(token, owner)))).flat();
+    await fs.mkdir(out, { recursive: true });
+    const map = new Map(models.map((model) => [model.rid, model]));
+    for (const [rid, dist] of Object.entries(MODELS)) {
+        const model = map.get(/** @type {Model['rid']} */ (rid));
+        if (!model) {
+            console.error(`Model ${rid} not found`);
+            continue;
+        }
+        await documentation(model, path.join(out, dist));
     }
 }
 

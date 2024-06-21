@@ -11,6 +11,7 @@
 @import url('./markdown');
 @import url('./code');
 @import url('./tabs');
+@import url('./generated');
 
 @import url('./global');
 @import url('./theme');
