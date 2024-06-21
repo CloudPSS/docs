@@ -1,0 +1,12 @@
+.model-pins,
+.model-parameters {
+  table {
+    width: 100%;
+  }
+  th {
+    white-space: nowrap;
+  }
+  th:last-child {
+    width: 50%;
+  }
+}
