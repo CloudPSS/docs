@@ -116,7 +116,7 @@ ${params.description ?? ''}
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-${params.items.map((/** @type {any} */ p) => genParam(p)).join('\n')}
+${params.items.map((p) => genParam(p)).join('\n')}
 `;
 }
 
