@@ -32,7 +32,7 @@ tags:
  $$
  W_{B}^{1} = W_{B}^{0}+ \left( {Q_{B,C}\eta_{B,C} - \frac{Q_{B,D} }{\eta_{B,D} } } \right)\Delta t
  $$
- 式中，$W_{B}^{0}$、 $W_{B}^{1}$分别表示蓄热/释热前后蓄能装置的蓄热罐量（kWh）；Q_{B,C}$、$Q_{B,D}$分别表示蓄能装置的蓄热/释热功率（kW）；$\eta_{B,C}$ 、$\eta_{B,D}$分别表示蓄能装置蓄热/释热效率,$\Delta t$为时间步长。
+ 式中，$W_{B}^{0}$、 $W_{B}^{1}$分别表示蓄热/释热前后蓄能装置的蓄热罐量（kWh）；$Q_{B,C}$、$Q_{B,D}$分别表示蓄能装置的蓄热/释热功率（kW）；$\eta_{B,C}$ 、$\eta_{B,D}$分别表示蓄能装置蓄热/释热效率,$\Delta t$为时间步长。
 
 ![储热罐](./HeatTank.svg )
 
@@ -43,7 +43,7 @@ tags:
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[元件属性配置](/docs/docs/software/xstudio/simstudio/basic/moduleEncapsulation/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
 
 ### 参数
 
