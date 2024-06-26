@@ -70,7 +70,7 @@ $$
 Í_m=I_m\Delta I
 $$
 
-式中， a=0.00025 和 c=-0.0015为 温度补偿系数，b=0.000288 为光强补偿系数。标准太阳光照强度 $S_{ref}$ 为 1000 $\mathrm{W/{m^2}}$，标准电池温度 $T_{ref}$为 25 ℃；$T_{air}$为工况实际环境温度，单位为 ℃；电池温度系数 K=0.03，$S$为太阳光照强度，单位为 $\mathrm{W/{m^2}}$。
+式中， a=0.00025 和 c=-0.0015为 温度补偿系数，b=0.000288 为光强补偿系数。标准太阳光照强度 $S_{ref}$ 为 1000 $\mathrm{W/{m^2}}$，标准电池温度 $T_{ref}$为 25 $^{\circ}$C；$T_{air}$为工况实际环境温度，单位为 $^{\circ}$C；电池温度系数 K=0.03，$S$为太阳光照强度，单位为 $\mathrm{W/{m^2}}$。
 
 1. **光伏系统的效率与损失**
 
@@ -135,9 +135,9 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 | 开路电压Voc | `OpenCircuitVoltage` | V | 开路电压 | 实数 | 在光照条件下，光伏组件输出端口未接负载时的电压值。 |
 | 短路电流Isc | `ShortCircuitCurrent` | A | 短路电流 | 实数 | 在光照条件下，光伏组件两端电压为零时的电流。 |
 | 组件效率STC | `ModuleEfficiencySTC` | % | 组件效率 | 实数 | STC工况下组件效率，范围为0-100，一般在15-23 %区间 |
-| 最大功率温度补偿系数δ | `TemperatureCoefficientsofPmax` | %/℃ | 最大功率温度补偿系数 | 实数 | 最大功率温度补偿系数 |
-| 开路电压温度补偿系数c | `TemperatureCoefficientsofVoc` | %/℃ | 开路电压温度补偿系数 | 实数 | 开路电压温度补偿系数 |
-| 短路电流温度补偿系数α | `TemperatureCoefficientsofIls` | %/℃ | 短路电流温度补偿系数 | 实数 | 短路电流温度补偿系数 |
+| 最大功率温度补偿系数δ | `TemperatureCoefficientsofPmax` | %/$^{\circ}$C | 最大功率温度补偿系数 | 实数 | 最大功率温度补偿系数 |
+| 开路电压温度补偿系数c | `TemperatureCoefficientsofVoc` | %/$^{\circ}$C | 开路电压温度补偿系数 | 实数 | 开路电压温度补偿系数 |
+| 短路电流温度补偿系数α | `TemperatureCoefficientsofIls` | %/$^{\circ}$C | 短路电流温度补偿系数 | 实数 | 短路电流温度补偿系数 |
 | 光伏组件面积 | `SinglePanelArea` | ㎡ | 光伏组件面积 | 实数 | 光伏组件面积 |
 | 功率因数 | `PowerFactor` |  | 功率因数 | 实数 | 功率因数，范围为0-1，一般在0.9-1 |
 
@@ -256,7 +256,7 @@ import TabItem from '@theme/TabItem';
 
 :    2. **太阳能电池工程模型**
 
-        以 NOCT 工况为例验证模型有效性: NOCT 是额定电池工作温度（ Normal Operating Cell Temperature， NOCT），是指当太阳能组件或电池处于开路状态，并在电池表面光强强度为 800 W/，环境温度为 20℃，风速为 1m/s 时所达到的温度，正常组件的 NOCT 都在 45℃ 左右（此时，k=0.03125）。  
+        以 NOCT 工况为例验证模型有效性: NOCT 是额定电池工作温度（ Normal Operating Cell Temperature， NOCT），是指当太阳能组件或电池处于开路状态，并在电池表面光强强度为 800 W/，环境温度为 20$^{\circ}$C，风速为 1m/s 时所达到的温度，正常组件的 NOCT 都在 45$^{\circ}$C 左右（此时，k=0.03125）。  
         收集了晶科、隆基、晶澳等多个太阳能组件的参数，对比 NOCT 工况下的  MPPT  功率，太阳能电池工程模型的结果与厂家实测值的误差约 0-1%， 满足实际精度要求。
 
 光伏系统能否进行排列优化？
