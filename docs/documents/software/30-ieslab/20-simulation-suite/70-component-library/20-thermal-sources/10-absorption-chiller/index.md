@@ -51,10 +51,10 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 | 冷水侧局部压降系数 | `SecondaryLocalPressureDropCoe` | $\mathrm{kPa/(m^3 \cdot s^{-1})^2}$ | 局部压降系数 | 实数 | 局部压降系数 |
 | 功率因数 | `PowerFactor` |  | 功率因数 | 实数 | 功率因数，范围为 0-1，一般在 0.9-1 |
 | 设备工况 | `OperateParam` |  | 设备工况 | 表格 | 设备多挡位变工况运行参数，为表格，分别录入不同挡位的**冷热比**：`CoolHeatRatio`, **制冷功率**：`CoolSupply`,  **电功率**：`PowerConsume` |
-| 热水侧最小供水温度 | `PrimaryMiniOutletTemp` | ℃ | 热水侧最小供水温度 | 实数 | 热水侧最小供水温度，运行约束参数在计算时不生效，无意义 |
-| 最热水侧大供水温度 | `PrimaryMaxOutletTemp` | ℃ | 热水侧最大供水温度 | 实数 | 热水侧最大供水温度，运行约束参数在计算时不生效，无意义 |
-| 冷水侧最小供水温度 | `SecondaryMiniOutletTemp` | ℃ | 冷水侧最小供水温度 | 实数 | 冷水侧最小供水温度，运行约束参数在计算时不生效，无意义 |
-| 冷水侧最大供水温度 | `SecondaryMaxOutletTemp` | ℃ | 冷水侧最大供水温度 | 实数 | 冷水侧最大供水温度，运行约束参数在计算时不生效，无意义 |
+| 热水侧最小供水温度 | `PrimaryMiniOutletTemp` | $^{\circ}$C | 热水侧最小供水温度 | 实数 | 热水侧最小供水温度，运行约束参数在计算时不生效，无意义 |
+| 最热水侧大供水温度 | `PrimaryMaxOutletTemp` | $^{\circ}$C | 热水侧最大供水温度 | 实数 | 热水侧最大供水温度，运行约束参数在计算时不生效，无意义 |
+| 冷水侧最小供水温度 | `SecondaryMiniOutletTemp` | $^{\circ}$C | 冷水侧最小供水温度 | 实数 | 冷水侧最小供水温度，运行约束参数在计算时不生效，无意义 |
+| 冷水侧最大供水温度 | `SecondaryMaxOutletTemp` | $^{\circ}$C | 冷水侧最大供水温度 | 实数 | 冷水侧最大供水温度，运行约束参数在计算时不生效，无意义 |
 
 #### 基础参数
 
