@@ -23,7 +23,7 @@ $$
 $$
 T_{end} = T_{a} + \left( T_{start} - T_{a} \right)e^{- \frac{\lambda l}{cm} } 
 $$
-式中,$T_{start}$代表管道的起点温度，$T_{end}$  代表管道的终点温度($^{\circ}$C)，$c$ 代表流体的定压比热容($\mathrm{J/(kg·$^{\circ}$C}$)，$T_a$ 代表环境温度($^{\circ}$C)。
+式中,$T_{start}$代表管道的起点温度，$T_{end}$  代表管道的终点温度($^{\circ}$C)，$c$ 代表流体的定压比热容($\mathrm{J/(kg·^{\circ}C}$)，$T_a$ 代表环境温度($^{\circ}$C)。
 
 ![管道 =x200](./IES-HD-3Pipe.png )
 
