@@ -13,33 +13,28 @@ tags:
 
 该元件指水平轴三叶片风力发电机组，风力发电机是将风能转换为机械功，机械功带动转子旋转，最终输出交流电的电力设备。风力发电机一般由风轮、发电机、调向器(尾翼)、塔架、限速安全机构和储能装置等构件组成。
 
-
 风机的风速功率模型可用分段非线性的特定形状曲线函数来表示：
 
 **二次函数模型**
- $$
- P=0\qquad(u≤u_ci 或 u≥u_co )
- $$
-
 $$
-P=\frac{u^2}{(u_R^3-u_{ci}^2 )}P_R-\frac{u_{ci}^2}{(u_R^2-u_ci^2 )}P_R\qquad(u_ci≤u≤u_R)
-$$
- 
-$$
-P=P_R\qquad(u_R<u<u_{co} )
+P=\left\{
+\begin{aligned}
+0\qquad(u {\leq} u_{ci} ,  u {\geq} u_{co} ) \\
+\frac{u^2}{(u_R^3-u_{ci}^2 )}P_R-\frac{u_{ci}^2}{(u_R^2-u_ci^2 )}P_R\qquad(u_ci {\leq} u {\leq} u_R) \\
+P_R\qquad(u_R {\lt} u {\lt} u_{co} ) \\
+\end{aligned}
+\right.
 $$
 
 **三次函数模型**
 $$
-P=0\qquad(u≤u_ci 或 u≥u_co )
-$$
-
-$$
-P=\frac{u^3}{(u_R^3-u_{ci}^3 )}P_R-\frac{u_{ci}^3}{(u_R^3-u_ci^3 )}P_R\qquad(u_ci≤u≤u_R)
-$$
- 
-$$
-P=P_R\qquad(u_R<u<u_{co})
+P=\left\{
+\begin{aligned}
+0\qquad(u {\leq} u_{ci} ,  u {\geq} u_{co} ) \\
+\frac{u^3}{(u_R^3-u_{ci}^3 )}P_R-\frac{u_{ci}^3}{(u_R^3-u_ci^3 )}P_R\qquad(u_ci {\leq} u {\leq} u_R) \\
+P_R\qquad(u_R {\lt} u {\lt} u_{co} ) \\
+\end{aligned}
+\right.
 $$
 
 式中，u为风机轮毂高度处的风速；$u_{ci}$为切入风速；$u_{co}$为切出风速；$u_R$为额定风速；$P_R$为额定输出功率
