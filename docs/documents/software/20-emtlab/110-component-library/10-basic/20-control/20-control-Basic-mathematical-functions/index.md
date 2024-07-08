@@ -1,6 +1,6 @@
 ---
-title: 控制元件
-description: 控制元件
+title: 控制-基本数学函数
+description: 控制-基本数学函数
 sidebar_position: 10
 ---
 

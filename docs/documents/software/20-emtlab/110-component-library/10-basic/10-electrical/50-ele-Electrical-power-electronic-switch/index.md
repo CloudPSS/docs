@@ -1,6 +1,6 @@
 ---
-title: 基础无源元件
-description: 基础无源元件
+title: 电力电子开关
+description: 电力电子开关
 sidebar_position: 10
 ---
 

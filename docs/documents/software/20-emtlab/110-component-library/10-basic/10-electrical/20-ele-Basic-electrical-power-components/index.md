@@ -1,6 +1,6 @@
 ---
-title: 基础无源元件
-description: 基础无源元件
+title: 基础电源元件
+description: 基础电源元件
 sidebar_position: 10
 ---
 

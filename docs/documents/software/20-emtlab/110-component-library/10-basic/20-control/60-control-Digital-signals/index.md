@@ -1,6 +1,6 @@
 ---
-title: 控制元件
-description: 控制元件
+title: 控制-数字信号
+description: 控制-数字信号
 sidebar_position: 10
 ---
 

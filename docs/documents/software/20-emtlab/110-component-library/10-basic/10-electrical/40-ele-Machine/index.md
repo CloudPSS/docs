@@ -1,6 +1,6 @@
 ---
-title: 基础无源元件
-description: 基础无源元件
+title: 旋转电机
+description: 旋转电机
 sidebar_position: 10
 ---
 
