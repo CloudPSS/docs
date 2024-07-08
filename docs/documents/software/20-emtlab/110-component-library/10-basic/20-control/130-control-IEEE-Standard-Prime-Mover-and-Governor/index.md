@@ -1,6 +1,6 @@
 ---
-title: 控制元件
-description: 控制元件
+title: IEEE-调速器
+description: IEEE-调速器
 sidebar_position: 10
 ---
 

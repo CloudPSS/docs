@@ -331,32 +331,32 @@ const OWNERS = ['CloudPSS'];
 // eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJDbG91ZFBTUyIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiQ2xvdWRQU1MiXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQ2OTM2NDc4LCJub3RlIjoidHpkMTExIiwiaWF0IjoxNzE1ODMyNDc4fQ.laSVmITluju6kYaciv9NwFkIg2TIPB_xDh9Oje2LqwYhVUj6P9h_-dXuuneK-6ZmB6HyOdjsnCJu9JzRtA-ynQ
 
 const MODELS = {
-    'model/CloudPSS/VariableRLCSeries':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/10-VariableRLCSeries',
     'model/CloudPSS/GND':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/20-GND',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/10-GND',
     'model/CloudPSS/newResistorRouter':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/30-newResistorRouter',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/20-newResistorRouter',
     'model/CloudPSS/newInductorRouter':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/40-newInductorRouter',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/30-newInductorRouter',
     'model/CloudPSS/newCapacitorRouter':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/50-newCapacitorRouter',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/40-newCapacitorRouter',
     'model/CloudPSS/newCapacitorRouterWithInitValue':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/60-newCapacitorRouterWithInitValue',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/50-newCapacitorRouterWithInitValue',
     'model/CloudPSS/_newFaultResistor':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/70-_newFaultResistor',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/60-_newFaultResistor',
     'model/CloudPSS/_newFaultResistor_3p':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/80-_newFaultResistor_3p',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/70-_newFaultResistor_3p',
     'model/CloudPSS/_newTransformer_1p':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/90-_newTransformer_1p',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/80-_newTransformer_1p',
     'model/CloudPSS/_newBreaker_1p':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/100-_newBreaker_1p',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/90-_newBreaker_1p',
     'model/CloudPSS/_newBreaker_3p':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/110-_newBreaker_3p',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/100-_newBreaker_3p',
     'model/CloudPSS/_Arrestor':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/120-_Arrestor',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/110-_Arrestor',
     'model/CloudPSS/_BusConnector':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/130-_BusConnector',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/120-_BusConnector',
+    'model/CloudPSS/VariableRLCSeries':
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/130-VariableRLCSeries',
     'model/CloudPSS/_newDCCurrentSource':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/20-ele-Basic-electrical-power-components/10-_newDCCurrentSource',
     'model/CloudPSS/_newDCVoltageSource':
@@ -459,26 +459,26 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/10-_ChannelDeMerge',
     'model/CloudPSS/_ChannelMerge':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/20-_ChannelMerge',
-    'model/CloudPSS/_EventLog':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/30-_EventLog',
     'model/CloudPSS/_newConstant':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/40-_newConstant',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/30-_newConstant',
     'model/CloudPSS/ConstantMultiDim':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/50-ConstantMultiDim',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/40-ConstantMultiDim',
     'model/CloudPSS/DataExtraction':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/60-DataExtraction',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/50-DataExtraction',
     'model/CloudPSS/_newLoopNodeMultiDim':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/70-_newLoopNodeMultiDim',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/60-_newLoopNodeMultiDim',
     'model/CloudPSS/_newTime':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/80-_newTime',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/70-_newTime',
     'model/CloudPSS/_newDeltaT':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/90-_newDeltaT',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/80-_newDeltaT',
     'model/CloudPSS/ElectricalLable':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/100-ElectricalLable',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/90-ElectricalLable',
     'model/CloudPSS/_Sleep':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/110-_Sleep',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/100-_Sleep',
     'model/CloudPSS/_newLoopNode':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/120-_newLoopNode',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/110-_newLoopNode',
+    'model/CloudPSS/_EventLog':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/10-control-fundamentals/120-_EventLog',
     'model/CloudPSS/_newSum':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/20-control-Basic-mathematical-functions/10-_newSum',
     'model/CloudPSS/_newMultiply':
@@ -505,26 +505,26 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/20-control-Basic-mathematical-functions/120-_newMaxMinOneCycle',
     'model/CloudPSS/_MeanValue':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/20-control-Basic-mathematical-functions/130-_MeanValue',
-    'model/CloudPSS/state-space_model':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/10-state-space_model',
     'model/CloudPSS/_newGain':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/20-_newGain',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/10-_newGain',
     'model/CloudPSS/_newIntegrator':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/30-_newIntegrator',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/20-_newIntegrator',
     'model/CloudPSS/_newDerivative':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/40-_newDerivative',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/30-_newDerivative',
     'model/CloudPSS/_newPICtrl':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/50-_newPICtrl',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/40-_newPICtrl',
     'model/CloudPSS/_newZero':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/60-_newZero',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/50-_newZero',
     'model/CloudPSS/_newRealPole':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/70-_newRealPole',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/60-_newRealPole',
     'model/CloudPSS/_newDiffPole':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/80-_newDiffPole',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/70-_newDiffPole',
     'model/CloudPSS/_newLeadLag':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/90-_newLeadLag',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/80-_newLeadLag',
     'model/CloudPSS/_newComplexPole':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/100-_newComplexPole',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/90-_newComplexPole',
+    'model/CloudPSS/state-space_model':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/30-control-Linear-transfer-functions/100-state-space_model',
     'model/CloudPSS/_newLimiter':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/40-control-Nonlinear-functions/10-_newLimiter',
     'model/CloudPSS/_newDelay':
@@ -545,26 +545,26 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/50-control-Coordinate-transformation/30-_newXYtoDQ',
     'model/CloudPSS/_newPRCoordinate':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/50-control-Coordinate-transformation/40-_newPRCoordinate',
-    'model/CloudPSS/pulsecounter':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/10-pulsecounter',
     'model/CloudPSS/newLogicGate':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/20-newLogicGate',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/10-newLogicGate',
     'model/CloudPSS/newLogicGate1':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/30-newLogicGate1',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/20-newLogicGate1',
     'model/CloudPSS/newLogicGate2':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/40-newLogicGate2',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/30-newLogicGate2',
     'model/CloudPSS/newLogicGate3':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/50-newLogicGate3',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/40-newLogicGate3',
     'model/CloudPSS/_newBinaryDelay':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/60-_newBinaryDelay',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/50-_newBinaryDelay',
     'model/CloudPSS/_newMonoStable':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/70-_newMonoStable',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/60-_newMonoStable',
     'model/CloudPSS/_newFlipFlop':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/80-_newFlipFlop',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/70-_newFlipFlop',
     'model/CloudPSS/_newSelector':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/90-_newSelector',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/80-_newSelector',
     'model/CloudPSS/_newEdgeDetector':
-        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/100-_newEdgeDetector',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/90-_newEdgeDetector',
+    'model/CloudPSS/pulsecounter':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/60-control-Digital-signals/100-pulsecounter',
     'model/CloudPSS/_newComparator':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/70-control-Analog-signals/10-_newComparator',
     'model/CloudPSS/_newHysteresis':
@@ -600,13 +600,13 @@ const MODELS = {
     'model/CloudPSS/RandomGeneratorRouter':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/80-control-Signal-generator/120-RandomGeneratorRouter',
     'model/CloudPSS/_ST5B':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/90-Control-AC-systems/10-_ST5B',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/90-control-AC-systems/10-_ST5B',
     'model/CloudPSS/_GOV2':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/90-Control-AC-systems/20-_GOV2',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/90-control-AC-systems/20-_GOV2',
     'model/CloudPSS/_TUR1':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/90-Control-AC-systems/30-_TUR1',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/90-control-AC-systems/30-_TUR1',
     'model/CloudPSS/_FirePulseGenSST':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/100-Control-DC-systems/10-_FirePulseGenSST',
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/100-control-DC-systems/10-_FirePulseGenSST',
     'model/CloudPSS/_EXST1_PTI':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/110-control-IEEE-Standard-Excitation-System/10-_EXST1_PTI',
     'model/CloudPSS/_PSS1A':
@@ -671,6 +671,8 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/190-control-PSASP-Power-System-Stabilizer/20-_PSASP_PSS_1',
     'model/CloudPSS/_PSASP_PSS_2':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/190-control-PSASP-Power-System-Stabilizer/30-_PSASP_PSS_2',
+    'model/CloudPSS/_PSASP_PSS_5':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/190-control-PSASP-Power-System-Stabilizer/40-_PSASP_PSS_5',
     'model/CloudPSS/_newChannel':
         'documents/software/20-emtlab/110-component-library/10-basic/40-output/10-Output/10-_newChannel',
     'model/CloudPSS/_NewBranchVoltageMeter':
@@ -695,10 +697,7 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/50-module/10-module-Basic/20-_SubSysPort',
     'model/CloudPSS/probeChannel':
         'documents/software/20-emtlab/110-component-library/10-basic/50-module/10-module-Basic/30-probeChannel',
-    'model/CloudPSS/_PSASP_PSS_5':
-        'documents/software/20-emtlab/110-component-library/10-basic/60-others/10-others-Testing-components/10-_PSASP_PSS_5',
 };
-
 /**
  * 运行 `pnpm comp-docs <token>` 生成文档，其中 `<token>` 为 API 访问令牌
  */

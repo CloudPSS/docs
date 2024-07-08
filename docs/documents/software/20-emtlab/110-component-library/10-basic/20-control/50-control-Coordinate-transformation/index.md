@@ -1,6 +1,6 @@
 ---
-title: 控制元件
-description: 控制元件
+title: 控制-坐标变换
+description: 控制-坐标变换
 sidebar_position: 10
 ---
 
