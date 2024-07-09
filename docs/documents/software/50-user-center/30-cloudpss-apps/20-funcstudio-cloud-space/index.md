@@ -80,7 +80,7 @@ tags:
 + 点击 **收藏至XXX** 按钮（例如：测试分组、发布分组、展示分组等），会把当前项目文件加入名为“XXX”的收藏分组（该选项仅在当前用户下存在自定义收藏分组时可用）；
 + 点击 **收藏至新的分组**，弹出自定义名称对话框，输入分组名称，可创建新的收藏列表。
 
-!["收藏项目"](image-5.png "收藏项目")
+![收藏项目](image-5.png "收藏项目")
 
 ![自定义名称](image-6.png "自定义名称")
 
@@ -111,18 +111,32 @@ tags:
 
 ![编辑配置文件](./编辑配置文件.png "编辑配置文件")
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="公网平台配置文件编辑">
+
 对于公网平台用户，配置文件如下图所示，安装时已默认完成配置，用户无需自行更改。
 
 ![公网配置文件](./公网配置文件.png "公网配置文件")
 
-对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP地址** 如下图所示：
-
-![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
+</TabItem>
+<TabItem value="python" label="内网平台配置文件编辑">
 
 对于非公网用户，如：**internal** 用户，需要将配置文件的 **HOME_URL** 配置为 `https://internal.cloudpss.net/`，如下图所示：
 
 ![internal平台配置文件](./internal平台配置文件.png "internal平台配置文件")
 
+</TabItem>
+<TabItem value="java" label="私有云平台配置文件编辑">
+
+对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP地址** 如下图所示：
+
+![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
+
+</TabItem>
+</Tabs>
 
 ## 常见问题
 
