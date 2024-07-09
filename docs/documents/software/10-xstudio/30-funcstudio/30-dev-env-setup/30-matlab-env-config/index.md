@@ -15,7 +15,7 @@ description: Matlab 环境配置
 
 FuncStudio-SDK 包括从执行器中**获取函数输入参数值的接口**以及在执行器中**格式化输出计算结果的接口**。
 
-Matlab-SDK 在Matlab中启动一个 Python解释器，并且在 Python 解释器里调用 Matlab 算法的一种特殊的 FuncStudio-SDK，本质仍然是 Python-SDK，因此在使用执行器接入 Matlab 内核时需要配置 Matlab 的 Python 环境并安装 Matlab-SDK。
+Matlab-SDK 会在Matlab中启动一个 Python解释器，并且在 Python 解释器里调用 Matlab 算法，是的一种特殊的 FuncStudio-SDK，本质仍然是 Python-SDK。因此在使用执行器接入 Matlab 内核时需要配置 Matlab 的 Python 环境并安装 Matlab-SDK。
 
 :::warning
 由于 Matlab-SDK 本质上是用 Python 实现的，因此首先需要保证 Matlab 版本和 Python 版本互相兼容！
@@ -25,7 +25,7 @@ Matlab-SDK 在Matlab中启动一个 Python解释器，并且在 Python 解释器
 
 ![各版本Matlab支持的Python版本](./2.png)
 
-由于 CloudPSS SDK 要求的 Python 版本为 3.7 及其以上，因此 Matlab 版本需要选择 R2019a 及其以上的版本，例如， 支持 **Matlab R2020a 和 Python 3.7** 的组合。
+由于 CloudPSS SDK 要求的 Python 版本为 3.7 及其以上，因此 Matlab 版本需要选择 R2019a 及其以上的版本，例如， **Matlab R2020a 和 Python 3.7** 的组合。
 
 ## 配置流程
 
@@ -50,7 +50,7 @@ pyversion('C:\py37env1\cloudpss\Scripts\python.exe')
 这里将 Matlab 的 Python 环境指定为了新建的虚拟 Python 环境。
 
 :::info
-可以在 Matlab 命令行窗口中输入`pyversion`来验证 Matlab 的当前 Python 环境。
+可以在 Matlab 命令行窗口中输入`pyversion`来查看验证 Matlab 的当前 Python 环境。
 :::
 
 ### 安装 Matlab SDK
