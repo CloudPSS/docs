@@ -16,7 +16,7 @@ tags:
 
 用户首先需注册并登录 **CloudPSS 个人中心**。根据 CloudPSS 平台部署方式的不同，注册及登录方法略有区别，具体如下
 
-+ **CloudPSS公网主站（`www.cloudpss.net`）** 的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
++ [CloudPSS公网主站](https://cloudpss.net/) 的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
 + **CloudPSS Mini、CloudPSS Pro** 等私有部署平台的用户，可参见 [登录 CloudPSS 私有部署平台](../../10-register-and-login/20-cloudpss-private/index.md "登录 CloudPSS 私有部署平台")。
 
 成功登录后，在 **CloudPSS 个人中心** 点击 **FuncStudio** 的图标后，页面将跳转至 **FuncStudio 云空间**。如图所示，该界面包含新建项目、项目管理两部分区域。
@@ -29,7 +29,7 @@ tags:
 
 + **从“模板案例”新建**：在新建项目区域包含了“空白函数”、“Hello,Users(本地执行器)”、“Hello,Users(云端JS执行器)”等多种模型工坊项目模板。点击所选择的模板，进入工作台并自动以该模板为基础新建一个 FuncStudio 项目。
 + **直接进入 FuncStudio 工作台**：点击 **更多内容** 进入 **FuncStudio 工作台** 并自动打开 **新建向导**。用户可进一步基于 **新建向导** 新建 FuncStudio 项目。
-+ **搜索模板新建**：点击**搜索模板**，用户可直接输入关键词查询相关模板，点击查询结果，进入工作台并自动以该模板为基础新建一个 FuncStudio 项目。搜索功能详情参见 [高级搜索功能](../../60-advanced-search/index.md "高级搜索功能") 帮助页。
++ **搜索模板新建**：点击**搜索模板**，用户可直接输入关键词查询相关模板，点击查询结果，进入工作台并以该模板为基础新建一个 FuncStudio 项目。搜索功能详情参见 [高级搜索功能](../../60-advanced-search/index.md "高级搜索功能") 帮助页。
 
 ![新建项目](./新建项目.png "新建项目")
 

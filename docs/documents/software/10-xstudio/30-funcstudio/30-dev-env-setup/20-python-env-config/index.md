@@ -22,7 +22,7 @@ Matlab-SDK 会在Matlab中启动一个 Python解释器，并且在 Python 解释
 
 ## 配置流程
 
-如果用户在本地设备上安装了多个版本的 python，建议使用**虚拟 Python 环境**来管理接入 FuncStudio 的算法内核。创建虚拟 Python 环境是为了让函数项目运行在一个独立的环境中，使得不同环境下的项目互不干扰。虚拟 Python 环境的配置流程如下：
+如果用户在本地设备上安装了多个版本的 python，建议使用**虚拟 Python 环境**来管理接入 FuncStudio 的算法内核。创建虚拟 Python 环境是为了让函数项目运行在一个独立的环境中，使得不同环境下的项目互不干扰。常用的Python虚拟环境管理工具有virtualenv以及Anaconda。接下来，我们以virtualenv为例，展示虚拟 Python 环境的配置流程。
 
 ### 安装 virtualenv
 
@@ -137,7 +137,7 @@ pip install cloudpss
 ```py showLineNumbers
 pip show cloudpss 
 ```
-![查看 SDK](./8.png)
+![查看 SDK](./9.png)
 
 </TabItem>
 </Tabs>
