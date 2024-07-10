@@ -5,6 +5,8 @@ description: "电容"
 
 ## 元件定义
 
+该元件用以建模不带初始电压的单相或三相电容。
+
 ## 元件说明
 
 电容元件参数标签页包括**属性**、**参数**、**引脚**三类参数，下面对每类参数进行详细说明。
@@ -21,11 +23,18 @@ import Parameters from './_parameters.md'
 
 ### 引脚
 
-import Pins from './_pins.md'
+<slot class="model-pins">
 
-<Pins/>
+| 引脚名 | 键名 | 类型 | 维度 | 描述 |
+|:------ |:---- |:----:|:----:|:---- |
+| Pin \+ | `0` | 电气 | 1 x 1 或 3 x 1 |  |
+| Pin \- | `1` | 电气 | 1 x 1 或 3 x 1 |  |
+
+</slot>
 
 ## 案例
+
+电容元件的使用可参考 [RLC 电路的电磁暂态仿真](../../../../../30-quick-start/20-start-from-scratch/index.md)。
 
 ## 常见问题
 
