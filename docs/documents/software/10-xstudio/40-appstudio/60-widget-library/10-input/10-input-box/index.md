@@ -80,7 +80,7 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
-![放置输入框控件](place-input-box-control.png "放置输入框控件")
+![创建输入框控件](create-input-box-control.png "创建输入框控件")
 
 ![创建静态资源](create-static-resource.png "创建静态资源")
 
@@ -109,7 +109,7 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 6. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 
-![放置输入框控件](place-input-box-control.png "放置输入框控件")
+![创建输入框控件](create-input-box-control.png "创建输入框控件")
 
 ![创建函数资源](create-function-resource.png "创建函数资源")
 

@@ -5,7 +5,7 @@ description: 滑块
 
 本节主要介绍 **AppStudio** 控件库里的滑块控件。
 
-![滑块控件](image.png "滑块控件")
+![滑块控件](slider-control.png "滑块控件")
 
 
 ## 属性
@@ -70,8 +70,63 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 <ColorPicker />
 
-## 常见问题
 
+### 典型应用
+
+1. 创建一个滑块控件，在右侧的属性配置区内给滑块命名为 A
+
+2. 创建静态资源 asset1，值设置为 `20`
+   
+3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value + 10`
+
+4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改滑块 A 的值
+
+![创建滑块控件](create-slider-control.png "创建滑块控件")
+
+![创建静态资源](create-static-resource.png "创建静态资源")
+
+![配置滑块属性](configure-slider-attributes.png "配置滑块属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
+### 接入 FuncStudio 函数的典型应用
+
+1. 创建一个滑块，在右侧的属性配置区内给滑块命名为 A
+
+2. 创建函数资源 asset2，选择资源类型为函数
+
+3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
+
+4. 鼠标选中滑块 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value + $asset1.value; $asset2.start()`
+
+5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改滑块 A 的值
+
+![创建滑块控件](create-slider-control.png "创建滑块控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![示例函数详情](example-function-details.png "示例函数详情")
+
+![更改滑块属性](change-slider-attributes.png "更改滑块属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+
+:::tip FuncStudio 函数使用详情
+
+查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
+
+:::
+
+## 常见问题
 
 
 import Fx from '../../60-grid/_expression.md'
