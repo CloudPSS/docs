@@ -76,16 +76,9 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 2. 创建静态资源 asset1，值设置为 `2`
    
-3. 将输入框 A 的值设置为 `1`，输入框 B 的值切换到 fx 表达式模式，设置为 `A.value + $asset1.value`
+3. 将输入框 A 的内容/值属性设置为 `1`，输入框 B 的内容/值属性切换到 fx 表达式模式，设置为 `A.value + $asset1.value`
 
 4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
-
-
-:::tip 
-
-典型应用使用详情，请查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
-
-:::
 
 ![放置输入框控件](place-input-box-control.png "放置输入框控件")
 
@@ -95,6 +88,12 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 ![预览模式](preview-mode.png "预览模式")
 
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
 ### 接入 FuncStudio 函数的典型应用
 
 1. 创建两个输入框，在右侧的属性配置区内给输入框命名为 A 和 B
@@ -103,7 +102,11 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
 
-4. 输入框 A 的事件/更改属性栏输入 `$asset2.args.a =  A.value`；输入框 B 的事件/更改属性栏输入 `$asset2.args.b =  B.value`。实现更改输入框的值对 `FuncStudio` 函数资源的两个参数进行赋值
+4. 鼠标选中输入框 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
+
+5. 将输入框 B 的内容/值属性栏切换到 fx 表达式模式，设置为 `$asset2.args.a`
+
+6. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 
 ![放置输入框控件](place-input-box-control.png "放置输入框控件")
@@ -114,15 +117,17 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 
 ![示例函数详情](example-function-details.png "示例函数详情")
 
-![更改事件属性](change-event-attributes.png "更改事件属性")
+![更改输入框A属性](change-input-box-a-attributes.png "更改输入框A属性")
 
+![事件属性详情对比](event-attribute-details-comparison.png "事件属性详情对比")
 
-:::tip 
+![预览模式](preview-mode-1.png "预览模式")
 
-FuncStudio 函数使用详情，请查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
+:::tip FuncStudio 函数使用详情
+
+查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
 
 :::
-
 
 
 ## 常见问题
