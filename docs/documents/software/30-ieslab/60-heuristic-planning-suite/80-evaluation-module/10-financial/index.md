@@ -1,6 +1,6 @@
 ---
 title: 财务评估
-description: IESLab 启发式规划设计平台-方案评估模块-财务评估
+description: IESLab 仿真规划平台-方案评估模块-财务评估
 sidebar_position: 80
 ---
 

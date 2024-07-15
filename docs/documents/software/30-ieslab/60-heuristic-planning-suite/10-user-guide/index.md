@@ -1,10 +1,10 @@
 ---
 title: 使用指南
-description: IESLab 启发式规划设计平台使用指南
+description: IESLab 仿真规划平台使用指南
 sidebar_position: 10
 ---
 
-循序渐进，带您全面了解熟悉 IESLab 启发式规划设计平台。
+循序渐进，带您全面了解熟悉 IESLab 仿真规划平台。
 
 
 **1. 了解**

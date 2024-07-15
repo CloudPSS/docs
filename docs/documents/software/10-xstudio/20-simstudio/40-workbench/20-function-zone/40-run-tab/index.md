@@ -138,7 +138,7 @@ SimStudio 内置了 CloudPSS 官方提供的潮流计算、电磁暂态仿真、
 + EMTLab - 电磁暂态仿真计算 - 量测及输出系统
 + EMTLab - 潮流计算及初始化 - 潮流结果写回及初始化
 + IESLab - 建模仿真平台 - 仿真模拟模块 - 结果页面
-+ IESLab - 规划设计平台 - 典型场景生成模块 - 结果页面
++ IESLab - 规划优化平台 - 典型场景生成模块 - 结果页面
 + IESlab - SimStudio IES - SimStudio IES 仿真计算 - 结果页面
 
 ### 重命名结果

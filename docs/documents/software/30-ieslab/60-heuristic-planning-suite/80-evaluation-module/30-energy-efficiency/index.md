@@ -1,6 +1,6 @@
 ---
 title: 能效评估
-description: IESLab 启发式规划设计平台-方案评估模块-能效评估
+description: IESLab 仿真规划平台-方案评估模块-能效评估
 sidebar_position: 80
 ---
 
