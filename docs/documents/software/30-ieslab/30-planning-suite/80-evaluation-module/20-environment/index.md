@@ -1,6 +1,6 @@
 ---
 title: 环保评估
-description: IESLab 规划设计平台-方案评估模块-环保评估
+description: IESLab 规划优化平台-方案评估模块-环保评估
 sidebar_position: 80
 ---
 

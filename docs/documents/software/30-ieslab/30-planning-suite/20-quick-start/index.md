@@ -1,14 +1,14 @@
 ---
 title: 快速入门
-description: IESLab 规划设计平台介绍快速入门
+description: IESLab 规划优化平台介绍快速入门
 sidebar_position: 20
 ---
 
-本节以**分布式储能**项目为例，介绍 IESLab 规划设计平台入门案例的规划设计和分析方法。
+本节以**分布式储能**项目为例，介绍 IESLab 规划优化平台入门案例的规划设计和分析方法。
 
 
 ## 规划设计步骤：
- 1.	登录 CloudPSS 平台，进入 CloudPSS IESLab 规划设计平台
+ 1.	登录 CloudPSS 平台，进入 CloudPSS IESLab 规划优化平台
  2.	建立项目并打开
  3.	数据管理模块：录入编辑项目基础参数
  4.	拓扑编辑模块：搭建拓扑，设置约束条件参数
@@ -19,7 +19,7 @@ sidebar_position: 20
 
 ## 新建与打开
 
-用户成功登录后，在 CloudPSS 个人中心点击 **IESLab规划设计** 的图标后，页面跳转至 **IESLab 规划设计平台**，该界面包含新建项目、项目管理等。
+用户成功登录后，在 CloudPSS 个人中心点击 **IESLab规划设计** 的图标后，页面跳转至 **IESLab 规划优化平台**，该界面包含新建项目、项目管理等。
 
 ![个人中心](./center.png "个人中心")
 
