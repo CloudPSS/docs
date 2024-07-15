@@ -64,12 +64,6 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
-
-import ColorPicker from '../../60-grid/_color-picker.md'
-
-<ColorPicker />
-
 ### 典型应用
 
 1. 创建两个输入框，在右侧的属性配置区内给输入框命名为 A 和 B
