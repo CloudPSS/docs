@@ -25,7 +25,7 @@ tags:
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
@@ -44,7 +44,7 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| 系统最小新能源消纳率 | `MinNewEnergyAbsorbRate` | % | 系统最小新能源消纳率 | 实数 | 系统最小新能源消纳率约束，范围为0-100% | 
+| 系统最小新能源消纳率 | `MinNewEnergyAbsorbRate` | % | 系统最小新能源消纳率 | 实数 | 系统最小新能源消纳率约束，范围为 0-100% | 
 | 最大供电功率 | `MaxiumPowerSupply` | kw | 最大供电功率 | 实数 | 外部电网允许的最大供电功率 |
 | 最大发电上网功率 | `MaxiumPowerToGrid` | kw | 最大发电上网功率 | 实数 | 外部电网允许的最大发电上网功率 |
 

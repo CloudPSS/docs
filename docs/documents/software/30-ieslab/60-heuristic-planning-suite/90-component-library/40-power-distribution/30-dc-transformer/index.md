@@ -27,7 +27,7 @@ $$
 $$
 R_{E} = 2n^{2}DR_{T1} + {({D + 0.5})}R_{T2} + {({2D + 1})}R_{D} + R_{L}
 $$
-式中：MD为占空比；$R_E$为直流变压器等效电阻；D为占空比，n为隔离变压器变比，$R_{T1}$为隔离变压器1次侧漏电阻，$R_{T2}$为隔离变压器2次侧漏电阻，$R_D$为二极管导通电阻，$R_L$为隔离变压器2次侧励磁电阻。
+式中：$MD$ 为占空比；$R_E$ 为直流变压器等效电阻；$D$ 为占空比，$n$ 为隔离变压器变比，$R_{T1}$ 为隔离变压器1次侧漏电阻，$R_{T2}$ 为隔离变压器2次侧漏电阻，$R_D$ 为二极管导通电阻，$R_L$ 为隔离变压器 2 次侧励磁电阻。
 
 ![直流变压器](./IES-GD-DCTransformer.svg )
 
@@ -37,7 +37,7 @@ $$
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 
 ### 引脚
