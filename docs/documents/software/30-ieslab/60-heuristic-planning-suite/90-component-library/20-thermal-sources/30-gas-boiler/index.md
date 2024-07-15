@@ -19,7 +19,7 @@ tags:
  $$
 P_r = Q*\eta
  $$  
-式中：$P_r$是额定用电功率(kW)，$\eta$是性能系数，$Q$是额定制热功率(kW)。
+式中：$P_r$ 是额定用电功率（$\mathrm{kW}$），$\eta$ 是性能系数，$Q$ 是额定制热功率（$\mathrm{kW}$）。
 
 ![燃气锅炉](./IES-CH-2GasBoiler.svg )
 

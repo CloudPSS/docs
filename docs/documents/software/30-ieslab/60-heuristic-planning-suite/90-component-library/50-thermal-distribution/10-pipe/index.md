@@ -18,12 +18,12 @@ tags:
  $$
  \frac{\Delta p}{\rho g} = \Delta z + \lambda\frac{L}{D}\frac{m^{2}}{2g\rho^{2}A^{2}}
  $$
-式中, ∆p 代表管道终点与起点间的压差(Pa)，ρ 代表流体在管道内的平均密度(kg/m3)，g 代表重力加速度(m/s2)，∆z 代表管道起末点间的高程差(m)，λ 代表管道摩阻系数，L 代表管道长度(m)，D 代表管道直径(m)，m 代表流体流量(kg/s)，A 代表管道截面积(m2)。 
+式中，$∆p$ 代表管道终点与起点间的压差（$Pa$），ρ 代表流体在管道内的平均密度（$kg/m^3$），$g$ 代表重力加速度（$m/s^2$），$∆z$ 代表管道起末点间的高程差（$m$），$λ$ 代表管道摩阻系数，$L$ 代表管道长度（$m$），$D$ 代表管道直径（$m$），$m$ 代表流体流量（$kg/s$），$A$ 代表管道截面积（$m^2$）。 
 管道温降模型代表了管道在流动过程中的能量损失，可以用下式进行表示：
  $$
-  T_{end} = T_{a} + \left( T_{start} - T_{a} \right)e^{- \frac{\lambda l}{cm} } 
+  T_{end} = T_{a} + \left (T_{start} - T_{a} \right) e^{- \frac{\lambda l}{cm} } 
   $$
- 式中,T1 代表管道的起点温度，T2 代表管道的终点温度($^{\circ}$C)，cp 代表流体的定压比热容(J/(kg·$^{\circ}$C))，Ta 代表环境温度($^{\circ}$C)，K 代表换热系数(W/(m·K))
+ 式中，$T_{start}$ 代表管道的起点温度，$T_{end}$ 代表管道的终点温度（$^{\circ}$C），$cp$ 代表流体的定压比热容（$J/(kg· ^{\circ}C)$），T_a 代表环境温度（$^{\circ}$C），K 代表换热系数（$W/(m·K)$）
 
 ![管道 =x200](./IES-HD-3Pipe.png )
 
@@ -33,7 +33,7 @@ tags:
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 
 ### 引脚
