@@ -331,9 +331,9 @@ m -22.5 -5 h 25
 
 ### 实现标签页配置
 
-在封装模块的过程中，通常需要在实现标签页中完成的**基础工作**主要是**绑定引脚**。
+在封装模块的过程中，需要在实现标签页中完成的**基础工作**主要是**绑定引脚**即可。
 
-但在本案例中，针对前面提到的需求，还需完成以下工作：
+然而在本案例中则针对前面提到的需求，需要分别完成以下工作：
 
 - 通过单机模型倍乘的方法实现自定义光伏并联数量及额定电压功能。
 - 将电流环的PI控制环节参数与参数列表中的对应参数绑定。
@@ -359,7 +359,7 @@ m -22.5 -5 h 25
 
 **(2) 通过单机模型倍乘的方法实现自定义光伏并联数量及额定电压功能**
 
-由于这里采用的是平均化模型，整个光伏系统可以被分为**VSC交流侧的电气部分**、**VSC平均化模型受控源计算**、**VSC直流侧电气部分**、**VSC控制系统**四个部分，如下图所示。
+由于这里采用的是平均化模型，整个光伏系统可以被分为**VSC交流测的电气部分**、**VSC平均化模型受控源计算**、**VSC直流侧电气部分**、**VSC控制系统**四个部分，如下图所示。
 
 import Flowchart1 from './flowchart1.svg'
 
@@ -374,7 +374,7 @@ import Flowchart2 from './flowchart2.svg'
 <Flowchart2 className="themed"/>
 
 可见，图中只将VSC交流测的电气部分进行了倍乘处理，同时将量测的电压电流进行倍乘输送给平均化模型受控源计算以及VSC控制系统模块。处理量测的电压时，应除以接入点额定电压、乘以原模型的单机额定电压，即$$V_{single}=\frac{V_0}{\$V_{pcc}}V_{measure}=\frac{0.35kV}{\$V_{pcc}}V_{measure}$$；
-处理量测的电流时，应除以并联光伏设备台数\$num，即$$I_{single}=\frac{I_{measure}}{\$num}$$。
+处理量测的电流时，应除以并联光伏设备台数**\$num**，即$$I_{single}=\frac{I_{measure}}{\$num}$$。
 
 具体来说，在[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)中，首先将#Ea_avm、#Eb_avm、#Ec_avm、#Va_vsc、#Vb_vsc、#Vc_vsc、#Ia_avm、#Ib_avm、#Ic_avm、#Ia_vsc、#Ib_vsc、#Ic_vsc这些量测信号分别改为#Ea_avm_raw、#Eb_avm_raw、#Ec_avm_raw、#Va_vsc_raw、#Vb_vsc_raw、#Vc_vsc_raw、#Ia_avm_raw、#Ib_avm_raw、#Ic_avm_raw、#Ia_vsc_raw、#Ib_vsc_raw、#Ic_vsc_raw，将三个受控电压源的控制信号Va_ctrl、Vb_ctrl、Vc_ctrl分别改为Va_ctrl_mult、Vb_ctrl_mult、Vc_ctrl_mult。
 

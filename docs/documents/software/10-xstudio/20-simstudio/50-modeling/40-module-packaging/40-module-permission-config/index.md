@@ -9,7 +9,7 @@ description: 配置元件/模块调用权限
 
 ## 简单权限配置
 
-在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)找到```权限```的配置项，如下图所示。
+来到[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)，可以在这里找到```权限```的配置项，如下图所示。
 
 ![简单权限配置](image.png)
 
