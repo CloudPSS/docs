@@ -30,7 +30,9 @@ const config: Config = {
     projectName: 'docs', // Usually your repo name.
 
     onBrokenLinks: 'throw',
+    onBrokenAnchors: 'warn',
     onBrokenMarkdownLinks: 'warn',
+    onDuplicateRoutes: 'warn',
 
     customFields: {
         HOME_URL,
