@@ -25,6 +25,12 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+
+IEEE的EXST1_PTI励磁器控制框图如下所示。
+
+![等效图](./EXST1_PTI_Inner.png)
+
 ## 案例
 
 ## 常见问题

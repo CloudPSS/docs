@@ -25,6 +25,12 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+
+IEEE的PSS1A电力系统稳定器控制框图如下所示。
+
+![等效图](./PSS1A.png)
+
 ## 案例
 
 ## 常见问题
