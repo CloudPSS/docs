@@ -47,7 +47,7 @@ if __name__ == '__main__':
 ```
 :::info
 
-在 2023 年 3.31 号更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加`cloudpss.currentJob()`方法，来代替之前版本的`cloudpss.function.currentJob()`方法获取当前的任务实例，目前这两个接口都可以用。
+在 2023.3.31 更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加`cloudpss.currentJob()`方法，来代替之前版本的`cloudpss.function.currentJob()`方法获取当前的任务实例，目前这两个接口都可以用。
 
 :::
 

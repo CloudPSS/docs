@@ -40,7 +40,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 文字字体 | `style/--spectrum-alias-body-text-font-family` |  | 选择文字字体 | 选择 | 输入框内容文字字体样式，字体类型包括：默认、宋体、黑体、楷体、微软雅黑、Georgia、Palatino Linotype、Times New Roman、Arial、Arial Black、Verdana、Courier New、Trebuchet MS |
 | 文字字号 | `style/--spectrum-textfield-m-text-size` |  | 输入文字字号 | 常量 | 输入文字字号 |
 | 文字颜色 | `style/--spectrum-alias-text-color` |  | 选择文字颜色 | 颜色选择器 | 点击文字颜色，弹出颜色选择器自定义颜色 |
-| 输入框高度 | `style/--spectrum-textfiled-m-height` | `px` | 输入输入框高度 | 常量 | 输入输入框高度 |
+| 高度 | `style/--spectrum-textfiled-m-height` | `px` | 输入高度 | 常量 | 输入控件形状高度 |
 
 
 ### 内容

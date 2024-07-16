@@ -529,7 +529,7 @@ table 方法的定义为: `table(self, columns=[], title='', key=None, verb='rep
 
 每个列数据是一个格式固定的字典，如下所示：
 
-`columns = [c1,c2,c3,...]`，其中：
+`columns = [c1,c2,c3,...]`，其中：`c1={'name':str,'type':'number','data':[]}`
 
 |属性|类型|描述|
 |:--:|:--:|--|

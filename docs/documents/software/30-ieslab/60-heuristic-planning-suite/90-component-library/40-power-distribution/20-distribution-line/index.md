@@ -22,7 +22,7 @@ tags:
 $$
 \frac{Y}{2} = \frac{jB^{*} }{2} = \frac{jb^{*}l}{2}
 $$
- 式中：Z为阻抗，Y为导纳，${r_{1} }^{*}$为单位长度线路电阻，${x_{1} }^{*}$为单位长度线路电抗；$B^*$为单位长度接地电纳。
+ 式中：$Z$ 为阻抗，$Y$ 为导纳，${r_{1} }^{*}$ 为单位长度线路电阻，${x_{1} }^{*}$ 为单位长度线路电抗；$B^*$ 为单位长度接地电纳。
 
 
 ![传输线 =x200](./IES-GD-2Line.png )
@@ -33,7 +33,7 @@ $$
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 
 ### 引脚
@@ -78,4 +78,4 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
     注意，交流元件和直流元件不能直接相连。
 
 为什么结果中，传输线的线损非常大？
-:   可能是线路参数设置有误，一般传输线损失在10 %以内。
+:   可能是线路参数设置有误，一般传输线损失在 10\% 以内。

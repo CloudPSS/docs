@@ -17,7 +17,7 @@ tags:
  $$
  W_{B}^{1} = W_{B}^{0}+ \left( {P_{B,C}\eta_{B,C} - \frac{P_{B,D} }{\eta_{B,D} } } \right)\Delta t
  $$
- 式中，$W_{B}^{0}$、 $W_{B}^{1}$分别表示蓄电/放电前后蓄电装置的储能量（kWh）；$P_{B,C}$、$P_{B,D}$分别表示蓄电装置的蓄电功率（kW）和放电功率（kW）；$\eta_{B,C}$ 、$\eta_{B,D}$分别表示蓄电装置蓄电和放电效率,$\Delta t$为时间步长。
+ 式中，$W_{B}^{0}$、 $W_{B}^{1}$ 分别表示蓄电/放电前后蓄电装置的储能量（$\mathrm{kWh}$）；$P_{B,C}$、$P_{B,D}$ 分别表示蓄电装置的蓄电功率（$\mathrm{kW}$）和放电功率（$\mathrm{kW}$）；$\eta_{B,C}$ 、$\eta_{B,D}$ 分别表示蓄电装置蓄电和放电效率，$\Delta t$ 为时间步长。
 
 
 ![蓄电池](./battery.svg)
@@ -29,7 +29,7 @@ tags:
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
@@ -84,7 +84,7 @@ CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数�
 
 | 引脚名 | 键值 (key)  | 维度 | 描述 |
 | :--- | :--: | :--- | :--- |
-| 电接口 | `DC/AC` | 1×1 | 可以在引脚处输入相同的字符使得元件与其他电元件相连，当基础参数**元件类型**项是**直流元件**时，键值为**DC**；**元件类型**项是**交流元件**时，键值为**AC**。|
+| 电接口 | `DC/AC` | 1×1 | 可以在引脚处输入相同的字符使得元件与其他电元件相连，当基础参数**元件类型**项是**直流元件**时，键值为 **DC**；**元件类型**项是**交流元件**时，键值为 **AC**。|
 
 ## 常见问题
 

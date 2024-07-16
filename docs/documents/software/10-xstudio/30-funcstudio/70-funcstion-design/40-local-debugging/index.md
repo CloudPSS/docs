@@ -59,7 +59,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
 #### 2.调通参数方案获取代码
 
-将当前函数任务实例的 JSON 结构体 print 到 FuncStudio 结果页面中，确保参数键和 JSON 结构体中的参数键一致；
+将当前函数任务实例的 字典 print 到 FuncStudio 结果页面中，确保参数键和 字典中的参数键一致；
 
 将获取的参数方案类型 print 到 FuncStudio 结果页面中，确保参数类型正确，如果不正确，则需要做参数类型转换。
 
