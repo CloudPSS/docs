@@ -30,13 +30,13 @@ $$
 $$
 Y_{2e}=  \frac{1 - k_{*} }{ {k_{*} }^{2}Z_{T} }
 $$
-式中：$k_{*}$为变比标幺值，Z为等值阻抗，Y为等值导纳。
+式中：$k_{*}$ 为变比标幺值，$Z$ 为等值阻抗，$Y$ 为等值导纳。
 
 **变压器非标准变比$k_{\ast}$：**
 $$
 k_{*} = \frac{k}{k_{B}}
 $$
-$k$为变压器的实际变比，$k_B$ 为变压器的标准变比，即变比的基准值；$k_\ast$ 为变比的标幺值，也称非标准变比。一般而言，变压器非标准变比的范围在0.95-1.05之间。
+$k$ 为变压器的实际变比，$k_B$ 为变压器的标准变比，即变比的基准值；$k_\ast$ 为变比的标幺值，也称非标准变比。一般而言，变压器非标准变比的范围在 0.95-1.05 之间。
 
 ![交流变压器 =x300](./IES-GD-1Transformer.png )
 
@@ -46,7 +46,7 @@ $k$为变压器的实际变比，$k_B$ 为变压器的标准变比，即变比�
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见[参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)页面。
+CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 
 ### 引脚

@@ -16,7 +16,7 @@ tags:
 
 用户首先需注册并登录 **CloudPSS 个人中心**。根据 CloudPSS 平台部署方式的不同，注册及登录方法略有区别，具体如下
 
-+ **CloudPSS公网主站（`www.cloudpss.net`）** 的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
++ **CloudPSS公网主站**（www.cloudpss.net）的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
 + **CloudPSS Mini、CloudPSS Pro** 等私有部署平台的用户，可参见 [登录 CloudPSS 私有部署平台](../../10-register-and-login/20-cloudpss-private/index.md "登录 CloudPSS 私有部署平台")。
 
 成功登录后，在 **CloudPSS 个人中心** 点击 **FuncStudio** 的图标后，页面将跳转至 **FuncStudio 云空间**。如图所示，该界面包含新建项目、项目管理两部分区域。
@@ -29,7 +29,7 @@ tags:
 
 + **从“模板案例”新建**：在新建项目区域包含了“空白函数”、“Hello,Users(本地执行器)”、“Hello,Users(云端JS执行器)”等多种模型工坊项目模板。点击所选择的模板，进入工作台并自动以该模板为基础新建一个 FuncStudio 项目。
 + **直接进入 FuncStudio 工作台**：点击 **更多内容** 进入 **FuncStudio 工作台** 并自动打开 **新建向导**。用户可进一步基于 **新建向导** 新建 FuncStudio 项目。
-+ **搜索模板新建**：点击**搜索模板**，用户可直接输入关键词查询相关模板，点击查询结果，进入工作台并自动以该模板为基础新建一个 FuncStudio 项目。搜索功能详情参见 [高级搜索功能](../../60-advanced-search/index.md "高级搜索功能") 帮助页。
++ **搜索模板新建**：点击**搜索模板**，用户可直接输入关键词查询相关模板，点击查询结果，进入工作台并以该模板为基础新建一个 FuncStudio 项目。搜索功能详情参见 [高级搜索功能](../../60-advanced-search/index.md "高级搜索功能") 帮助页。
 
 ![新建项目](./新建项目.png "新建项目")
 
@@ -80,7 +80,7 @@ tags:
 + 点击 **收藏至XXX** 按钮（例如：测试分组、发布分组、展示分组等），会把当前项目文件加入名为“XXX”的收藏分组（该选项仅在当前用户下存在自定义收藏分组时可用）；
 + 点击 **收藏至新的分组**，弹出自定义名称对话框，输入分组名称，可创建新的收藏列表。
 
-!["收藏项目"](image-5.png "收藏项目")
+![收藏项目](image-5.png "收藏项目")
 
 ![自定义名称](image-6.png "自定义名称")
 
@@ -111,18 +111,33 @@ tags:
 
 ![编辑配置文件](./编辑配置文件.png "编辑配置文件")
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs>
+<TabItem value="js" label="公网平台配置文件编辑">
+
 对于公网平台用户，配置文件如下图所示，安装时已默认完成配置，用户无需自行更改。
 
 ![公网配置文件](./公网配置文件.png "公网配置文件")
 
-对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP地址** 如下图所示：
-
-![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
+</TabItem>
+<TabItem value="python" label="内网平台配置文件编辑">
 
 对于非公网用户，如：**internal** 用户，需要将配置文件的 **HOME_URL** 配置为 `https://internal.cloudpss.net/`，如下图所示：
 
 ![internal平台配置文件](./internal平台配置文件.png "internal平台配置文件")
 
+</TabItem>
+<TabItem value="java" label="私有云平台配置文件编辑">
+
+对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP地址** 如下图所示：
+
+![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
+
+</TabItem>
+</Tabs>
 
 ## 常见问题
+
 
