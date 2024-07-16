@@ -100,7 +100,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![创建静态资源](create-static-resource.png "创建静态资源")
 
-![配置选择器属性](configure-slider-attributes.png "配置选择器属性")
+![配置单选框属性](configure-slider-attributes.png "配置单选框属性")
 
 ![预览模式](preview-mode.png "预览模式")
 
@@ -132,11 +132,9 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![示例函数详情](example-function-details.png "示例函数详情")
 
-![更改滑块属性](change-slider-attributes.png "更改滑块属性")
+![更改单选框属性](change-slider-attributes.png "更改单选框属性")
 
 ![预览模式](preview-mode.png "预览模式")
-
-
 
 
 
