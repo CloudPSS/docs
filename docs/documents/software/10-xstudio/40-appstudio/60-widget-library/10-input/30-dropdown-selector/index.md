@@ -115,7 +115,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![示例函数详情](example-function-details.png "示例函数详情")
 
-![更改滑块属性](change-slider-attributes.png "更改滑块属性")
+![更改选择器属性](change-slider-attributes.png "更改选择器属性")
 
 ![预览模式](preview-mode.png "预览模式")
 
