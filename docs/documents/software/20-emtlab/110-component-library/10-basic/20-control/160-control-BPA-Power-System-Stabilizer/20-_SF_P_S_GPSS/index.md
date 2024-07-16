@@ -25,6 +25,11 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+BPA的SF_SP_SS_SG电力系统稳定器控制框图如下所示。
+
+![等效图](./SF_SP_SS_SG.png)
+
 ## 案例
 
 ## 常见问题

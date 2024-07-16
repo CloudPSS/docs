@@ -25,6 +25,12 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+
+BPA的GA伺服器控制框图如下所示。
+
+![等效图](./GA.png)
+
 ## 案例
 
 ## 常见问题
