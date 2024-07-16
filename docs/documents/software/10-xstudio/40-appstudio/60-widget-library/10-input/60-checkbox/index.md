@@ -5,7 +5,7 @@ description: 复选框控件
 
 本节主要介绍 **AppStudio** 控件库里的复选框控件。
 
-![复选框控件](image.png "复选框控件")
+![复选框控件](checkbox-control.png "复选框控件")
 
 ## 属性
 
@@ -70,11 +70,61 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
+### 典型应用
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+1. 创建一个复选框控件，在右侧的属性配置区内给复选框命名为 A
 
-<ColorPicker />
+2. 创建静态资源 asset1，值设置为 `false`
+   
+3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value`
+
+4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改复选框 A 的值
+
+![创建复选框控件](create-checkbox-control.png "创建复选框控件")
+
+![创建静态资源](create-static-resource.png "创建静态资源")
+
+![配置复选框属性](configure-checkbox-attributes.png "配置复选框属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
+
+### 接入 FuncStudio 函数的典型应用
+
+1. 创建一个复选框，在右侧的属性配置区内给复选框命名为 A
+
+2. 创建函数资源 asset2，选择资源类型为函数
+
+3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在一个参数 `a`
+
+4. 鼠标选中复选框 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
+
+5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改复选框 A 的值
+
+![创建复选框控件](create-checkbox-control.png "创建复选框控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![示例函数详情](example-function-details.png "示例函数详情")
+
+![更改复选框属性](change-checkbox-attributes.png "更改复选框属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+
+:::tip FuncStudio 函数使用详情
+
+查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
+
+:::
 
 ## 常见问题
 
