@@ -50,7 +50,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
    
 3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value`
 
-4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改图片 A 的值
+4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下显示图片 A 的内容
 
 ![创建图片控件](create-imgae-control.png "创建图片控件")
 
