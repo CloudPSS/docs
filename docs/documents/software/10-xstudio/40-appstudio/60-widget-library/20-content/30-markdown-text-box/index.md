@@ -5,7 +5,7 @@ description: MarkDown 文本框控件
 
 本节主要介绍 AppStudio 控件库里的 MarkDown 文本框控件。
 
-![MarkDown 文本框控件](image.png "MarkDown 文本框控件")
+![MarkDown 文本框控件](markdown-text-box-control.png "MarkDown 文本框控件")
 
 
 ## 属性
@@ -47,15 +47,31 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+### 典型应用
 
-<ColorPicker />
+1. 创建一个 MarkDown 文本框控件，在右侧的属性配置区内给 MarkDown 文本框命名为 A
 
-### Markdown 文本框控件内容
+2. 创建静态资源 asset1，值设置为 `This is a demo...`
+   
+3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value`
 
-![Markdown 文本框控件内容](image-1.png "Markdown 文本框控件内容")
+4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下显示 MarkDown 文本框 A 的内容
+
+![创建 MarkDown 文本框控件](create-markdown-text-box-control.png "创建 MarkDown 文本框控件")
+
+![创建静态资源](create-static-resource.png "创建静态资源")
+
+![配置 MarkDown 文本框属性](configure-markdown-text-box-control-attributes.png "配置 MarkDown 文本框属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
 
 
 ## 常见问题
