@@ -39,7 +39,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 文字字体 | `style/font-family` |  | 选择文字字体 | 选择 | 文字字体样式，字体类型包括：默认、宋体、黑体、楷体、微软雅黑、Georgia、Palatino Linotype、Times New Roman、Arial、Arial Black、Verdana、Courier New、Trebuchet MS |
-| 文字间距 | `style/letter-spacing` | `px`  | 输入文字间距 | 常量 | 显示文字间距 |
+| 文字间距 | `style/letter-spacing` | px  | 输入文字间距 | 常量 | 显示文字间距 |
 | 文字粗细 | `style/font-weight` |   | 选择文字粗细 | 选择 | 文字粗细：默认、100、200、300、400、500、600、700、800、900、1000 |
 
 ### 内容
@@ -73,7 +73,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
    
 3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value + 10`
 
-4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改滑块 A 的值
+4. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改滑块 A 的值
 
 ![创建滑块控件](create-slider-control.png "创建滑块控件")
 
@@ -95,11 +95,11 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 2. 创建函数资源 asset2，选择资源类型为函数
 
-3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
+3. 配置函数资源 asset2，点击**选择资源**，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
 
-4. 鼠标选中滑块 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value + $asset1.value; $asset2.start()`
+4. 鼠标选中滑块 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset2.args.a = A.value + $asset1.value; $asset2.start()`
 
-5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改滑块 A 的值
+5. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改滑块 A 的值
 
 ![创建滑块控件](create-slider-control.png "创建滑块控件")
 
