@@ -72,7 +72,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
    
 3. 将输入框 A 的内容/值属性设置为 `1`，输入框 B 的内容/值属性切换到 fx 表达式模式，设置为 `A.value + $asset1.value`
 
-4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
+4. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 ![创建输入框控件](create-input-box-control.png "创建输入框控件")
 
@@ -94,13 +94,13 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 2. 创建函数资源 asset2，选择资源类型为函数
 
-3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
+3. 配置函数资源 asset2，点击 `选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
 
-4. 鼠标选中输入框 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
+4. 鼠标选中输入框 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
 
 5. 将输入框 B 的内容/值属性栏切换到 fx 表达式模式，设置为 `$asset2.args.a`
 
-6. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
+6. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 
 ![创建输入框控件](create-input-box-control.png "创建输入框控件")

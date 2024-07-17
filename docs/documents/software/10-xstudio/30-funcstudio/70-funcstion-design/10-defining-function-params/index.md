@@ -19,7 +19,7 @@ description: 定义函数外部接口，并在内核中引用。
 
 XStudio 提供了统一的参数列表配置方法，支持实数、整数、文本、布尔、选择、多选、表格以及虚拟引脚 9 种类型参数的定义。
 
-每种类型参数的定义详见[参数列表定义](../../../20-simstudio/50-modeling/40-module-packaging/10-define-module-param-list/index.md)。
+每种类型参数的定义详见 [参数列表定义](../../../20-simstudio/50-modeling/40-module-packaging/10-define-module-param-list/index.md)。
 
 ### 配置参数方案
 
@@ -45,7 +45,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <TabItem value="python" label="本地 Python 内核">
 
-对于 Python 内核通过`args.键`的接口获取。
+对于 Python 内核通过 `args.键` 的接口获取。
 
 ```py showLineNumbers
 import cloudpss  #导入安装好的CloudPSS-SDK
@@ -58,7 +58,7 @@ if __name__ == '__main__':
 </TabItem>
 <TabItem value="matlab" label="本地 Matlab 内核">
 
-对于 Matlab 内核通过`args.{'键'}`的接口获取。
+对于 Matlab 内核通过 `args.{'键'}` 的接口获取。
 
 ```matlab showLineNumbers
 cloudpss.utils.syncenv; %同步环境变量
@@ -69,9 +69,9 @@ b = job.args{'b'}; %获取键为 b 在当前参数方案下的值
 ```
 
 </TabItem>
-<TabItem value="js" label="云端 JavaScripts 内核">
+<TabItem value="js" label="云端 JavaScript 内核">
 
-对于 JavaScripts 通过`args.键`的方式获取。
+对于 JavaScript 通过 `args.键` 的方式获取。
 
 ```JavaScript showLineNumbers
 export default async function* (args,signal,env) {
@@ -90,23 +90,23 @@ export default async function* (args,signal,env) {
 
 对于布尔、选择和多选等选项类型的参数，直接通过键名引用到的是每个**选项的键**。
 
-布尔类型的参数通过`args.Switch`获取的是选项的键，`1 或者 0`。
+布尔类型的参数通过 `args.Switch` 获取的是选项的键，`1 或者 0`。
 
 ![布尔参数值得获取](./2.png)
 
-选择类型的参数通过`args.Control`获取的是选项的键，`1 或者 2`。
+选择类型的参数通过 `args.Control` 获取的是选项的键，`1 或者 2`。
 
 ![选项参数值得获取](./3.png)
 
-多选类型的参数通过`args.MultiSelect`获取的是选项的键，比如，多选“选项1”、“选项2”、“选项3”
-获取的值就是`['1','2','3']`。
+多选类型的参数通过 `args.MultiSelect` 获取的是选项的键，比如，多选“选项 1”、“选项 2”、“选项 3”
+获取的值就是 `['1','2','3']`。
 
 ![多选参数值得获取](./4.png)
 
 </TabItem>
 <TabItem value="table" label="表格">
 
-对于表格这种可能有多个值的参数，直接通过键引用到的是整个表格的数据。比如，表格中第 a 行 第 b 列的数据通过`[a-1][b-1]`的形式获取。
+对于表格这种可能有多个值的参数，直接通过键引用到的是整个表格的数据。比如，表格中第 a 行 第 b 列的数据通过 `[a-1][b-1]` 的形式获取。
 
 ![表格参数定义](./5.png)
 
@@ -116,7 +116,7 @@ export default async function* (args,signal,env) {
 <Tabs>
 <TabItem value="python" label="本地 Python 内核">
 
-通过`args.键[a-1]['b-1']`的方式获取表格中第 a 行 第 b 列的数据。
+通过 `args.键[a-1]['b-1']` 的方式获取表格中第 a 行 第 b 列的数据。
 
 ```py showLineNumbers
 import cloudpss  #导入安装好的CloudPSS-SDK
@@ -131,7 +131,7 @@ if __name__ == '__main__':
 </TabItem>
 <TabItem value="matlab" label="本地 Matlab 内核">
 
-首先需要将 Pyhton 的 list 类型数据转换为 Matlab 的 cell 类型数据，然后通过`{1,a}.xb-1`的形式获取表格中第 a 行 第 b 列的数据。
+首先需要将 Pyhton 的 list 类型数据转换为 Matlab 的 cell 类型数据，然后通过 `{1,a}.xb-1` 的形式获取表格中第 a 行 第 b 列的数据。
 
 ```matlab showLineNumbers
 cloudpss.utils.syncenv; %同步环境变量
@@ -145,9 +145,9 @@ text = Table{1,2}.x1; %获取表格第 2 行第 2 列的数据
 ![表格参数值得获取](./6-1.png)
 
 </TabItem>
-<TabItem value="js" label="云端 JavaScripts 内核">
+<TabItem value="js" label="云端 JavaScript 内核">
 
-通过`args.键[a-1]['b-1']`的方式获取。
+通过 `args.键[a-1]['b-1']` 的方式获取。
 
 ```JavaScript showLineNumbers
 export default async function* (args,signal,env) {
@@ -177,9 +177,9 @@ export default async function* (args,signal,env) {
 
 :   - 首先，在参数列表中将数组/矩阵/等类型输入参数均定义为字符串类型；
 
-    - 然后，在参数方案中该参数的值内输入数组/矩阵，例如`[1,2,3,4,5,6;6,5,4,3,2,1]`的矩阵；
+    - 然后，在参数方案中该参数的值内输入数组/矩阵，例如 `[1,2,3,4,5,6;6,5,4,3,2,1]` 的矩阵；
 
-    - 最后，在 Matlab 内核中通过`args{'键'}`获取数组或矩阵字符串`'[1,2,3,4,5,6;6,5,4,3,2,1]'`，进一步可在 Matlab 里用使用 eval 方法。例如：`a = eval('[1,2,3,4,5,6;6,5,4,3,2,1]')` 转换成 2*6 的 double 型矩阵数据参与计算。
+    - 最后，在 Matlab 内核中通过 `args{'键'}` 获取数组或矩阵字符串 `'[1,2,3,4,5,6;6,5,4,3,2,1]'`，进一步可在 Matlab 里用使用 eval 方法。例如：`a = eval('[1,2,3,4,5,6;6,5,4,3,2,1]')` 转换成 2*6 的 double 型矩阵数据参与计算。
 
     ![数组/矩阵/类型参数定义及引用 =x500](./8.png)
 
