@@ -19,78 +19,80 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 ## 模块封装流程
 
-本节介绍模块封装的步骤。模块封装流程分为[模块构建](#1模块构建)、 [定义参数列表](#2定义元件模块参数列表)、 [定义引脚列表](#3定义元件模块引脚列表)、 [设计图标](#4设计元件模块图标)、 [配置调用权限](#5配置元件模块调用权限)、 [保存](#6保存)六个步骤。可点击文档中的跳转链接查看更详细的说明。
+本节介绍模块封装的步骤。模块封装流程分为[模块构建](#模块构建)、 [定义参数列表](#定义元件模块参数列表)、 [定义引脚列表](#定义元件模块引脚列表)、 [设计图标](#设计元件模块图标)、 [配置调用权限](#配置元件模块调用权限)、 [保存](#保存)六个步骤。可点击文档中的跳转链接查看更详细的说明。
 
-### 1.模块构建
+### 模块构建
 
 模块封装之前首先需要创建并编辑模块内部拓扑及参数，本节介绍模块的构建方法。
+
+模块内部实现的构建方法包括**拓扑实现**、 **代码实现**、 **S-Function 模型实现**三种。
+
 :::tip
 在仿真计算中调用模块时，实际调用的是本节介绍的模块内部实现。
 :::
-模块内部实现的构建方法包括**拓扑编辑**、 **代码实现**、 **S-Function 模型实现**三种。
 
-    - **拓扑编辑**
-    
-        用户可使用已有的 Simstudio 模型库元件，或其他的封装模型，通过**拓扑编辑**的方式构建模块。
+#### 拓扑实现
 
-      1. **新建空白电力系统元件**
+用户可使用已有的 Simstudio 模型库元件，或其他的封装模型，通过**拓扑实现**的方式构建模块。
 
-          可以在 [Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白电力系统元件**，创建空拓扑实现的模块。
+1. **新建空白电力系统元件**
 
-          ![新建空白电力系统元件](./blank-component.png)
+可以在 [Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白电力系统元件**，创建空拓扑实现的模块。
 
-          进一步，可以在[实现标签页](../../40-workbench/20-function-zone/30-design-tab/index.md)中进行[拓扑编辑](../../40-workbench/20-function-zone/30-design-tab/20-topology-editing/index.md)。
+![新建空白电力系统元件](./blank-component.png)
 
-      2. 从**已有待封装元件**开始
-          
-          有时，用户已经搭建了一个仿真项目，此时想将项目的一部分元件封装为模块。此时可选中待封装的元件，右键选择**创建为模块**，并参考[项目保存相关文档](../../40-workbench/10-toolbar/index.md#另存为)在弹窗中填写对应的资源ID及名称即可。
+进一步，可以在[实现标签页](../../40-workbench/20-function-zone/30-design-tab/index.md)中进行[拓扑编辑](../../40-workbench/20-function-zone/30-design-tab/20-topology-editing/index.md)。
 
-          ![从已有元件待封装元件创建模块](./create-by-exist.png)
+2. 从**已有待封装元件**开始
 
-- **代码实现**
+有时，用户已经搭建了一个仿真项目，此时想将项目的一部分元件封装为模块。此时可选中待封装的元件，右键选择**创建为模块**，并参考[项目保存相关文档](../../40-workbench/10-toolbar/index.md#另存为)在弹窗中填写对应的资源ID及名称即可。
 
-    可以在[Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白Octave元件**，创建Octave实现的模块；或者在弹出框中选择**空白Python元件**，创建Python实现的模块。
+![从已有元件待封装元件创建模块](./create-by-exist.png)
 
-    ![创建Octave实现的模块](./create-octave.png)
+#### 代码实现
 
-    具体的Octave及Python元件的实现方法可参考[自定义Octave元件文档](../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)以及 [自定义Python元件文档](../../../../20-emtlab/50-emts/50-user-defined/20-python-control/index.md)
+可以在[Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白Octave元件**，创建Octave实现的模块；或者在弹出框中选择**空白Python元件**，创建Python实现的模块。
 
-    目前在公网平台 (www.cloudpss.net) 中，暂不支持自定义python元件。
+![创建Octave实现的模块](./create-octave.png)
 
-- **S-Function模型实现**
+具体的Octave及Python元件的实现方法可参考[自定义 Octave 元件文档](../../../../20-emtlab/50-emts/50-user-defined/10-octave-control/index.md)以及 [自定义 Python 元件文档](../../../../20-emtlab/50-emts/50-user-defined/20-python-control/index.md)
+
+目前在公网平台 (www.cloudpss.net) 中，暂不支持自定义python元件。
+
+#### S-Function模型实现
 
     S-Function元件的构建方法请参考[S-Function 控制元件](../../../../20-emtlab/50-emts/50-user-defined/30-s-function-control/index.md)。
 
-### 2.定义元件/模块参数列表
+### 定义元件/模块参数列表
 
-- **参数定义**：用户可根据需求自定义**参数名**、**参数类型**、**参数范围**等，具体步骤详见[定义元件/模块参数列表](./10-define-module-param-list/index.md)。
+用户可根据需求自定义**参数名**、**参数类型**、**参数范围**等，具体步骤详见[定义元件/模块参数列表](./10-define-module-param-list/index.md)。
 
-- **参数引用**：用户可在模块内部引用定义好的参数，详见[参数相关文档](../10-params-variables-pins/index.md#参数)。
+用户可在模块内部引用定义好的参数，详见[参数相关文档](../10-params-variables-pins/index.md#参数)。
 
-- **参数配置**：当**元件/模块**被调用时，用户可在[参数卡](../../40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)自行配置参数的具体数值，如下图所示。
+当**元件/模块**被调用时，用户可在[参数卡](../../40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md)自行配置参数的具体数值，如下图所示。
 
-    ![模块调用时的参数列表](./parameter-config.png)
+![模块调用时的参数列表](./parameter-config.png)
 
-### 3.定义元件/模块引脚列表
+### 定义元件/模块引脚列表
 引脚是模块内外区域交互的接口。本步骤的设置将定义模块内部实现与模块端口之间电气与控制的实际连接关系。
-- **引脚定义**：用户可根据需求自定义**引脚名**、**引脚类型**、**引脚维数**等，具体步骤详见[定义元件/模块引脚列表](./20-define-module-pin-list/index.md)。
+
+用户可根据需求自定义**引脚名**、**引脚类型**、**引脚维数**等，具体步骤详见[定义元件/模块引脚列表](./20-define-module-pin-list/index.md)。
 
 
-### 4.设计元件/模块图标
+### 设计元件/模块图标
 
-此步骤将设计模块在调用时显示的图标， Simstudio 提供可高度定制化的的图标设计接口。
+此步骤将设计模块在调用时显示的图标， Simstudio 提供可高度定制化的的图标设计接口, 详见[设计元件/模块图标](./30-design-module-icon/index.md)；
 
-- **图标设计**：详见[设计元件/模块图标](./30-design-module-icon/index.md)；
+一般情况下，出于规范性和使用便捷性考虑，请依据[SimStudio元件图标设计规范](./30-design-module-icon/70-simstudio-icon-guideline/index.md)进行图标设计。
 
-- **设计规范**： 一般情况下，出于规范性和使用便捷性考虑，请依据[SimStudio元件图标设计规范](./30-design-module-icon/70-simstudio-icon-guideline/index.md)进行图标设计。
-
-### 5.配置元件/模块调用权限
+### 配置元件/模块调用权限
 
 此步骤将配置模块的调用权限。用户可根据需求，允许或拒绝其它用户使用元件、或查看模块内部细节。
-- **调用权限**：模块调用权限的配置详见[配置元件/模块调用权限](./40-module-permission-config/index.md)。
 
-### 6.保存
+模块调用权限的配置详见[配置元件/模块调用权限](./40-module-permission-config/index.md)。
+
+### 保存
 
 此步骤是模块构建的最后一步，用户可将模块保存至云空间中，供其它项目调用。
 
-- 模块保存步骤的详细说明详见[保存](./50-save/index.md)。
+模块保存步骤的详细说明详见[保存](./50-save/index.md)。
