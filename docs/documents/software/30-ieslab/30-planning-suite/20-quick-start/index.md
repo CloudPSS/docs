@@ -122,4 +122,4 @@ sidebar_position: 20
 
 点击下载项目 zip 文件：[分布式储能项目](./distributed-storage.zip)  
 
-项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间-导入与导出](../30-cloud-space/index.md#导入与导出)
+项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间 - 导入与导出](../30-cloud-space/index.md#导入与导出)

@@ -14,7 +14,7 @@
 
 #### f(x) 模式下的颜色选择器
 
-点击 fx 按钮，在输入框内输入颜色字符串，支持 `hex`、`rgb`、`hsl`格式，具体参考 [颜色码表](https://htmlcolorcodes.com/zh/)
+点击 fx 按钮，在输入框内输入颜色字符串，支持 hex、rgb、hsl 格式，具体参考 [颜色码表](https://htmlcolorcodes.com/zh/)
 
 ![f(x) 模式下的透明色](image-2.png "f(x) 模式下的透明色")
 

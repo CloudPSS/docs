@@ -102,4 +102,4 @@ sidebar_position: 20
 
 点击下载项目 zip 文件：[含风光储交直流配网仿真项目](../../20-simulation-suite/80-typical-cases/30-ac-dc-hybrid-distribution-system-with-renewables/ac-dc-hybrid-distribution-system-with-renewables.zip)  
 
-项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间-导入与导出](../30-cloud-space/index.md#导入与导出)
+项目 zip 文件可以通过**云空间**的项目**导入与导出**功能进行上传，可参考[云空间 - 导入与导出](../30-cloud-space/index.md#导入与导出)

@@ -28,7 +28,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| 场景 | `key` |   | 选择场景 | 选择 | 选择场景，默认为 `main`，场景详情参见[场景标签页](../../../40-workbench/20-function-zone/30-scene-tab/index.md) |
+| 场景 | `key` |   | 选择场景 | 选择 | 选择场景，默认为 main，场景详情参见 [场景标签页](../../../40-workbench/20-function-zone/30-scene-tab/index.md) |
 
 ## 案例介绍
 
