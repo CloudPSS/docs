@@ -5,7 +5,7 @@ description: 盒子控件
 
 本节主要介绍 **AppStudio** 控件库里的盒子控件。
 
-![盒子控件](image.png "盒子控件")
+![盒子控件](box-control.png "盒子控件")
 
 
 ## 属性
@@ -52,13 +52,8 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 点击 | `@click` |  | 当点击时触发 | 函数 | 采用点击方式触发函数 |
 
-## 案例介绍
+<!-- ## 案例介绍 -->
 
-### 颜色选择器类型
-
-import ColorPicker from '../../60-grid/_color-picker.md'
-
-<ColorPicker />
 
 ## 常见问题
 

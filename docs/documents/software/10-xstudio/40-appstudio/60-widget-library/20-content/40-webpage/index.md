@@ -5,7 +5,7 @@ description: 网页控件
 
 本节主要介绍 AppStudio 控件库里的网页控件。
 
-![网页控件](image.png "网页控件")
+![网页控件](webpage-control.png "网页控件")
 
 ## 属性
 
@@ -35,21 +35,27 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
-
-import ColorPicker from '../../60-grid/_color-picker.md'
-
-<ColorPicker />
 
 ### 嵌套一个网页
 
-1. 在 URL 中输入 `https://cloudpss.net/` 链接地址，调整一下页面大小，如下图所示
+1. 创建一个网页控件，在右侧的属性配置区内给网页命名为 A
 
-2. 点击预览，或者快捷键 <kbd>Ctrl</kbd> <kbd>P</kbd>
+2. 在 内容/URL 属性栏中输入 `www.cloudpss.net` 链接地址，调整一下页面大小，如下图所示
 
-![嵌套主页](image-1.png "嵌套主页")
+3. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下显示嵌套的网页
 
-![预览效果](image-2.png "预览效果")
+![创建网页控件](create-webpage-control.png "创建网页控件")
+
+![配置网页控件属性](configure-webpage-control-attributes.png "配置网页控件属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
 
 ## 常见问题
 
