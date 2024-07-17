@@ -70,6 +70,14 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![存储模式](storage-model.png "存储模式")
 
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
+
 ### 上传 CSV 文件，接入 FuncStudio 函数调用
 
 1. 创建一个文件选择控件，在右侧的属性配置区内给文件选择命名为 A
@@ -94,11 +102,13 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![预览模式](preview-mode.png "预览模式")
 
-:::tip 典型应用使用详情
 
-查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+:::tip FuncStudio 函数使用详情
+
+查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
 
 :::
+
 
 ## 常见问题
 

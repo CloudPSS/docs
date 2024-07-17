@@ -35,11 +35,6 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
-
-import ColorPicker from '../../60-grid/_color-picker.md'
-
-<ColorPicker />
 
 ### 嵌套一个网页
 
@@ -50,6 +45,13 @@ import ColorPicker from '../../60-grid/_color-picker.md'
 ![嵌套主页](image-1.png "嵌套主页")
 
 ![预览效果](image-2.png "预览效果")
+
+:::tip 典型应用使用详情
+
+查看 [AppStudio 应用工坊快速入门](../../../20-quick-start/10-simple-apps/index.md)
+
+:::
+
 
 ## 常见问题
 
