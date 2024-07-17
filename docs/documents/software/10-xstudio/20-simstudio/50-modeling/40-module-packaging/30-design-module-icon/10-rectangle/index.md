@@ -73,6 +73,6 @@ description: 矩形
     <tr>
         <td>数据</td>
         <td>条件</td>
-        <td>该组件将在什么条件下显示。可以引用[参数列表](../../10-define-module-param-list/index.md)中的参数，例如```mode==1```条件的组件只在参数```mode```值为1时显示。</td>
+        <td>该组件将在什么条件下显示。可以引用[参数列表](../../10-define-module-param-list/index.md)中的参数，例如 ```mode==1``` 条件的组件只在参数 ```mode``` 值为1时显示。</td>
     </tr>
 </table>
