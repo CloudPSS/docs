@@ -64,7 +64,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ### 可选项
 
-从左到右，依次是`撤销(Ctrl + Z)`，`重做(Ctrl + Y)`，`在上方插入行(Ctrl + I)`，`在下方插入行(Ctrl + Alt + I)`，`删除行(Ctrl + D)`，`导入 CSV`，`导出 CSV`
+从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
 
 ![可选项](optional-items.png "可选项")
 

@@ -15,7 +15,7 @@ Configuration
 | Name | `Name` | 文本 | 元件名称 |
 | Rated Frequency | `freq` | 实数 [Hz] | 额定频率 |
 | Rated Voltage \(L\-L, RMS\) | `v` | 实数 [kV] | 额定线电压有效值 |
-| Input Capacity | `s` | 实数 [MVar] | 投入容量（电容为负，电抗为正） |
+| Input Capacity | s | 实数 [MVar] | 投入容量（电容为负，电抗为正） |
 
 #### Configuration\-SFEMT
 

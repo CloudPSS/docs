@@ -51,7 +51,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 选中颜色 | `style/--spectrum-checkbox-m-box-border-color-selected` |  | 方块选中颜色 | 颜色选择器 | 点击选中颜色，弹出颜色选择器自定义方块选中颜色 |
 | 选中按下颜色 | `style/--spectrum-checkbox-m-emphasized-box-border-color-selected-down` |  | 方块选中颜色 | 颜色选择器 | 点击选中按下颜色，弹出颜色选择器自定义方块选中按下颜色 |
 | 选中悬浮颜色 | `style/--spectrum-checkbox-m-emphasized-box-border-color-selected-hover` |  | 方块选中颜色 | 颜色选择器 | 点击选中悬浮颜色，弹出颜色选择器自定义方块选中悬浮颜色 |
-| 方块大小 | `style/--spectrum-checkbox-m-box-size` | `px` | 方块大小 | 常量 | 复选框控件方块大小，需要输入单位 |
+| 方块大小 | `style/--spectrum-checkbox-m-box-size` | px | 方块大小 | 常量 | 复选框控件方块大小，需要输入单位 |
 
 ### 内容
 
