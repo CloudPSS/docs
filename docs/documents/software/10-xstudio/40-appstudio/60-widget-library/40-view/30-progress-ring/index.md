@@ -5,7 +5,7 @@ description: 进度环控件
 
 本节主要介绍 AppStudio 控件库里的进度环控件。
 
-![进度环控件](image.png "进度环控件")
+![进度环控件](progress-ring-conrtol.png "进度环控件")
 
 
 ## 属性
@@ -42,11 +42,8 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
 
-import ColorPicker from '../../60-grid/_color-picker.md'
 
-<ColorPicker />
 
 ## 常见问题
 
