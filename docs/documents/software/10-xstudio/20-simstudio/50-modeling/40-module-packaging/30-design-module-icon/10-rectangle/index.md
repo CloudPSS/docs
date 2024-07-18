@@ -5,7 +5,7 @@ description: 矩形
 
 本文档介绍元件图标绘制中矩形的使用及属性设置。
 
-用户可从图标组件库拖拽或点击```矩形```组件，将其添加至绘图工作区。
+用户可从图标组件库拖拽或点击**矩形组件**，将其添加至绘图工作区。
 
 矩形的可配置项如下表所示：
 
@@ -18,19 +18,19 @@ description: 矩形
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制矩形左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制矩形左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制矩形左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制矩形左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
-        <td>控制矩形的宽度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转矩形。</td>
+        <td>控制矩形的宽度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转矩形。</td>
     </tr>
     <tr>
         <td>高度</td>
-        <td>控制矩形的高度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转矩形。</td>
+        <td>控制矩形的高度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转矩形。</td>
     </tr>
     <tr>
         <td rowspan="6">**排列**</td>
@@ -73,6 +73,6 @@ description: 矩形
     <tr>
         <td>数据</td>
         <td>条件</td>
-        <td>该组件将在什么条件下显示。可以引用[参数列表](../../10-define-module-param-list/index.md)中的参数，例如 ```mode==1``` 条件的组件只在参数 ```mode``` 值为1时显示。</td>
+        <td>该组件将在什么条件下显示。可以引用[参数列表](../../10-define-module-param-list/index.md)中的参数，例如 ```mode==1``` 条件的组件只在参数 ```mode``` 值为 1 时显示。</td>
     </tr>
 </table>

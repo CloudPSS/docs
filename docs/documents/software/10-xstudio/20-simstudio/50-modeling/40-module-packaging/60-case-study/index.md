@@ -21,7 +21,7 @@ import TabItem from '@theme/TabItem';
 
 ### 接口标签页配置
 
-首先，[新建](../../../40-workbench/10-toolbar/index.md#新建)一个```空白电力系统元件(model/CloudPSS/Blank_Component)```。
+首先，[新建](../../../40-workbench/10-toolbar/index.md#新建)一个**空白电力系统元件(model/CloudPSS/Blank_Component)**。
 
 进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，新建名为 **RLC设置** 的参数组，分别按下表建立三个参数：
 
@@ -73,9 +73,9 @@ import TabItem from '@theme/TabItem';
 
 ![参数和引脚列表](image.png)
 
-在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：```X=0, Y=0, 宽度=40, 高度=60```
+在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：X=0, Y=0, 宽度=40, 高度=60
 
-拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
+拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置位置为：X=0, Y=0，设置路径的配置项如下：
 
 ```
 M 20 0
@@ -86,7 +86,7 @@ m -20 20
 h 20
 ```
 
-此外，再拖入一个**路径**组件，该路径组件用来绘制滤波器的图标。设置大小和位置为：```X=0, Y=0```，设置**线条宽度**为 1px，设置路径的配置项如下：
+此外，再拖入一个**路径**组件，该路径组件用来绘制滤波器的图标。设置位置为：X=0, Y=0，设置**线条宽度**为 1px，设置路径的配置项如下：
 
 ```
 M 20 25
@@ -111,11 +111,11 @@ v 3.2 h -6
 
 ![绘图区示意1](image-1.png)
 
-拖入一个**文本**组件，用来放在图中作为滤波器标识。设置大小和位置为：```X=0, Y=5```，设置文本为 ```Filter```。
+拖入一个**文本**组件，用来放在图中作为滤波器标识。设置位置为：X=0, Y=5，设置文本为 Filter。
 
 拖入第二个和第三个**文本**组件，用来作为有功量测 P 和无功功率 Q 引脚的标识。这两个文本组件的参数设置如下表：
 
-设置大小和位置为：```X=20, Y=10```，设置文本为 ```P```，设置其它参数如下表。
+设置位置为：X=20, Y=10，设置文本为 P，设置其它参数如下表。
 
 | 配置项 | P | Q |
 | :--- | :--- | :--- |
@@ -153,7 +153,7 @@ v 3.2 h -6
 
 按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md#虚拟引脚调用)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Vmeasure```, ```Imeasure``` 引脚。
 
-参考[量测相关文档](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#电气量量测方法)，在模型库的```量测```标签下，找到并添加```电压表(model/CloudPSS/_NewVoltageMeter)```元件，设定量测电压信号名为 ```#V```，Dimension参数为 ```Three Phase```；同样在模型库的```量测```标签下，找到并添加```三相功率量测(model/CloudPSS/_newPowerMeter_3p)```元件，设定'Three Phase Voltage'引脚赋值为 ```#V```, 'Three Phase Current'引脚赋值为 ```#Ic```。
+参考[量测相关文档](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#电气量量测方法)，在模型库的**量测**标签下，找到并添加**电压表(model/CloudPSS/_NewVoltageMeter)元件**，设定量测电压信号名为 ```#V```，Dimension参数为 ```Three Phase```；同样在模型库的**量测**标签下，找到并添加**三相功率量测(model/CloudPSS/_newPowerMeter_3p)元件**，设定 **Three Phase Voltage** 引脚赋值为 ```#V```, **Three Phase Current** 引脚赋值为 ```#Ic```。
 
 最后，按下图所示配置各个元件的连接关系：
 
@@ -161,16 +161,16 @@ v 3.2 h -6
 
 ### 总览标签页配置以及保存
 
-在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab//index.md)中配置好模块的名称为“三相交流滤波器封装演示”，并设置```元件标签```为“模块封装演示”。这里的名称和元件标签均可以自行修改，其作用参考 [元件标签相关文档](../50-save/index.md#元件标签)。此外，还可以按需求编写描述以及元件文档。
+在[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab//index.md)中配置好模块的名称为“三相交流滤波器封装演示”，并设置**元件标签**为**模块封装演示**。这里的名称和元件标签均可以自行修改，其作用参考 [元件标签相关文档](../50-save/index.md#元件标签)。此外，还可以按需求编写描述以及元件文档。
 
 进一步，点击[工具栏](../../../40-workbench/10-toolbar/index.md)中的 [保存](../../../40-workbench/10-toolbar/index.md#保存)或
-[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源ID，这里填入与其它元件不同的**唯一标识符**，例如样例中填入```myRLCFilter```。
+[另存为](../../../40-workbench/10-toolbar/index.md#另存为)按钮，在弹出的保存选项配置窗口中配置元件资源 ID，这里填入与其它元件不同的**唯一标识符**，例如样例中填入 ```myRLCFilter```。
 
 总览标签页的设置如下：
 
 ![总览标签页](image-5.png)
 
-点击```保存```按钮，即可保存该模块。此后，就可以在其它项目中，从模型库中[调用](../../50-module-reuse/index.md)这个封装好的模块，如下图所示。
+点击**保存**按钮，即可保存该模块。此后，就可以在其它项目中，从模型库中[调用](../../50-module-reuse/index.md)这个封装好的模块，如下图所示。
 
 ![模块调用](image-6.png)
 
@@ -197,7 +197,7 @@ v 3.2 h -6
 
 ### 总览标签页配置
 
-进入[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)，将```模型类型```改为```元件```，并设置一个```元件标签```。这里将元件标签设置为“模块封装演示”。
+进入[总览标签页](../../../40-workbench/20-function-zone/10-summary-tab/index.md)，将**模型类型**改为**元件**，并设置一个**元件标签**。这里将元件标签设置为**模块封装演示**。
 
 此外，可按需求更改模块名称，本案例中保持不变。
 
@@ -207,13 +207,13 @@ v 3.2 h -6
 
 ### 接口标签页配置
 
-进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)。这里的模板项目已经具有名为```光伏环境条件```的参数组，用于设置光照和温度的变化频率。由于我们需要从引脚直接输入光照和温度系数，因此这里可直接 [删除](../10-define-module-param-list/index.md#删除参数组)该参数组。此外，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，在**控制信息**的参数组下，分别按下表添加三个参数：
+进入[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)。这里的模板项目已经具有名为**光伏环境条件**的参数组，用于设置光照和温度的变化频率。由于我们需要从引脚直接输入光照和温度系数，因此这里可直接 [删除](../10-define-module-param-list/index.md#删除参数组)该参数组。此外，按 [参数列表相关文档](../10-define-module-param-list/index.md)所述的方法，在**控制信息**的参数组下，分别按下表添加三个参数：
 
 | 配置项 | Ki | Ti | Ilim |
 | :--- | :--- | :--- | :--- | 
 | **键** | Ki | Ti | Ilim |
 | **名称** | 电流环比例系数 | 电流环积分时间常数 | 电流环限幅 |
-| **详细描述** | VSC控制中，电流内环PI环节的比例系数 | VSC 控制中，电流内环 PI 环节的积分时间常数 | VSC 控制中，电流内环 PI 环节的限幅 |
+| **详细描述** | VSC 控制中，电流内环 PI 环节的比例系数 | VSC 控制中，电流内环 PI 环节的积分时间常数 | VSC 控制中，电流内环 PI 环节的限幅 |
 | **条件** | true | true | true |
 | **类型** | 实数 | 实数 | 实数 |
 | **输入类型** | 常量 | 常量 | 常量 |
@@ -278,16 +278,16 @@ v 3.2 h -6
 
 下面绘制该模块的图标。
 
-在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：```X=0, Y=0, 宽度=60, 高度=60```
+在[图标绘制工作区](../30-design-module-icon/index.md)中，拖入一个**矩形**，设置大小和位置为：X=0, Y=0, 宽度=60, 高度=60
 
-拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置大小和位置为：```X=0, Y=0```，设置路径的配置项如下：
+拖入一个**路径**组件，该路径用来绘制引脚的标识。参考[路径配置文档](../30-design-module-icon/40-path/index.md)，设置位置为：X=0, Y=0，设置路径的配置项如下：
 
 ```
 M 0 30
 h -20
 ```
 
-拖入第二个**路径**组件，该路径用来绘制光伏的标识图案，设置大小和位置为：```X=0, Y=0```，设置**线条宽度**为 1px，设置路径的配置项如下：
+拖入第二个**路径**组件，该路径用来绘制光伏的标识图案，设置大小和位置为：X=0, Y=0，设置线条宽度为 1px，设置路径的配置项如下：
 
 ```
 M 12 30
@@ -317,7 +317,7 @@ m -22.5 -5 h 25
 
 ![光伏图标（仅线条）](image-10.png)
 
-拖入一个**文本**组件，用来放在图中作为光伏的文字标识。设置大小和位置为：```X=60, Y=30,宽度=60, 高度=30```，设置文本为```PV Station```。
+拖入一个**文本**组件，用来放在图中作为光伏的文字标识。设置大小和位置为：X=60, Y=30,宽度=60, 高度=30，设置文本为 PV Station。
 
 然后，再拖入一个**引脚**组件，参考[绑定引脚相关文档](../30-design-module-icon/index.md#在图标中添加引脚并绑定)所述方法，将引脚图标组件绑定到引脚列表中的 **pcc** 引脚上，并放置在对应的位置。
 
@@ -380,18 +380,18 @@ import Flowchart2 from './flowchart2.svg'
 
 具体来说，在[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)中，首先将 #Ea_avm、#Eb_avm、#Ec_avm、#Va_vsc、#Vb_vsc、#Vc_vsc、#Ia_avm、#Ib_avm、#Ic_avm、#Ia_vsc、#Ib_vsc、#Ic_vsc 这些量测信号分别改为 #Ea_avm_raw、#Eb_avm_raw、#Ec_avm_raw、#Va_vsc_raw、#Vb_vsc_raw、#Vc_vsc_raw、#Ia_avm_raw、#Ib_avm_raw、#Ic_avm_raw、#Ia_vsc_raw、#Ib_vsc_raw、#Ic_vsc_raw，将三个受控电压源的控制信号 Va_ctrl、Vb_ctrl、Vc_ctrl分别改为 Va_ctrl_mult、Vb_ctrl_mult、Vc_ctrl_mult。
 
-然后，从模型库中的```控制-线性传递函数```标签下找到```增益(model/CloudPSS/_newGain)```元件，将 6 个该元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant为 ```0.35/$Vpcc```（原模型的额定电压为 0.35kV），并分别配置引脚为 #Ea_avm_raw → #Ea_avm, #Eb_avm_raw → #Eb_avm, #Ec_avm_raw → #Ec_avm, #Va_vsc_raw → #Va_vsc, #Vb_vsc_raw → #Vb_vsc, #Vc_vsc_raw → #Vc_vsc。
+然后，从模型库中的**控制-线性传递函数**标签下找到**增益(model/CloudPSS/_newGain)**元件，将 6 个该元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant为 **0.35/$Vpcc**（原模型的额定电压为 0.35kV），并分别配置引脚为 #Ea_avm_raw → #Ea_avm, #Eb_avm_raw → #Eb_avm, #Ec_avm_raw → #Ec_avm, #Va_vsc_raw → #Va_vsc, #Vb_vsc_raw → #Vb_vsc, #Vc_vsc_raw → #Vc_vsc。
 
-另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 ```1/$num```，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
+另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 **1/$num**，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
 
 在处理受控电压源的电压信号 Va_ctrl, Vb_ctrl, Vc_ctrl 时，应当乘以乘以接入点额定电压、除以原模型的单机额定电压，即 $$V_{ctrl}=\frac{\$V_{pcc}}{V_0}V_{ctrl-single}$$。
 
 因此，另外将 3 个**增益**元件添加至图纸中。选中这 3 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant 为 
- ```$Vpcc/0.35```，并分别配置引脚为 Va_ctrl_mult → Va_ctrl, Vb_ctrl_mult → Vb_ctrl, Vc_ctrl_mult → Vc_ctrl。
+ **$Vpcc/0.35**，并分别配置引脚为 Va_ctrl_mult → Va_ctrl, Vb_ctrl_mult → Vb_ctrl, Vc_ctrl_mult → Vc_ctrl。
 
 此外，对于电气部分（电感、电阻、电容等），需要进行倍乘处理。即修改电阻和电感为原来的 $$\frac{(\$Vpcc/0.35)^2}{\$num}$$倍，修改电容为原来的 $$\frac{\$num}{(\$Vpcc/0.35)^2}$$倍。
 
-最终，**VSC交流测的电气部分**部分如下图所示（图中为 ```Vpcc=0.7kV, num=10``` 的情形。）：
+最终，**VSC交流测的电气部分**部分如下图所示（图中为 **Vpcc=0.7kV, num=10** 的情形。）：
 
 ![VSC交流测倍乘操作修改结果](image-15.png)
 
@@ -411,9 +411,9 @@ import Flowchart2 from './flowchart2.svg'
 
 在参数列表中，定义了两个虚拟引脚用于输出光伏的有功、无功。对应地，需要在实现标签页中完成这部分逻辑实现。
 
-在模型库的```控制-基础```标签下，找到并添加```多路信号合并(model/CloudPSS/_ChannelMerge)```元件，用于合并三相电压量测信号和三相电流量测信号。
+在模型库的**控制-基础**标签下，找到并添加**多路信号合并(model/CloudPSS/_ChannelMerge)元件**，用于合并三相电压量测信号和三相电流量测信号。
 
-在模型库的```量测```标签下，找到并添加```三相功率量测(model/CloudPSS/_newPowerMeter_3p)```元件。
+在模型库的**量测**标签下，找到并添加**三相功率量测(model/CloudPSS/_newPowerMeter_3p)元件**。
 
 按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md#虚拟引脚调用)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Pmeasure```, ```Qmeasure``` 虚拟引脚。
 
@@ -427,7 +427,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ![保存窗口](image-20.png)
 
-点击```保存```按钮，即可保存该模块。此后，就可以在其它项目中，从模型库中[调用](../../50-module-reuse/index.md)这个封装好的模块，如下图所示。
+点击**保存**按钮，即可保存该模块。此后，就可以在其它项目中，从模型库中[调用](../../50-module-reuse/index.md)这个封装好的模块，如下图所示。
 
 ![光伏模块调用](image-21.png)
 
@@ -451,7 +451,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ![UnitTest参数](image-22.png)
 
-该布尔参数的```选项```可以不进行配置，或者如下图所示进行配置：
+该布尔参数的**选项**可以不进行配置，或者如下图所示进行配置：
 
 ![布尔选项设置](image-23.png)
 
@@ -459,23 +459,23 @@ import Flowchart2 from './flowchart2.svg'
 
 这里构建一个外接电压源的简单测试回路。
 
-进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的```电气-三相交流元件```中找到```三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)```元件，添加到拓扑中，连接在风机的 **pcc** 端口处。使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的```启用```属性改为 ```$UnitTest```，并对应配置该电压源的其它参数，如下图所示。
+进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的**电气-三相交流元件**中找到**三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)**元件，添加到拓扑中，连接在风机的 **pcc** 端口处。使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的**启用**属性改为 **$UnitTest**，并对应配置该电压源的其它参数，如下图所示。
 
 ![单元测试电压源元件设置](image-24.png)
 
-可见，在默认的 ```$UnitTest=0``` 的状态下，该电压源不启用，即正常作为模块调用时，该电压源在仿真计算中被注释掉了。
+可见，在默认的 **$UnitTest=0** 的状态下，该电压源不启用，即正常作为模块调用时，该电压源在仿真计算中被注释掉了。
 
-此外，可以添加一些输出通道，用于输出单元测试的结果。这里输出该电压源的三相交流电流，将电压源的 Monitoring 参数组下的 ```3 Phase Source Current Vector [kA]``` 参数设为```#I_test```；从模型库的```输出```标签下添加```输出通道```元件至图纸，设置维数为 3，设置```启用```属性改为 ```$UnitTest```，并配置好通道名称和引脚名，如下图所示：
+此外，可以添加一些输出通道，用于输出单元测试的结果。这里输出该电压源的三相交流电流，将电压源的 Monitoring 参数组下的 ```3 Phase Source Current Vector [kA]``` 参数设为```#I_test```；从模型库的**输出**标签下添加**输出通道**元件至图纸，设置维数为 3，设置**启用**属性改为 ```$UnitTest```，并配置好通道名称和引脚名，如下图所示：
 
 ![电压源输出电流](image-26.png)
 
 ![输出通道配置](image-25.png)
 
-此外，对于 Gctrl 和 Tctrl 端口，我们也从模型库的```控制-基础```标签下添加```常量输入```元件至图纸，将```启用```属性改为 ```$UnitTest```，分别作为两个控制端口的单元测试输入。对应地，将两个控制信号的模块端口的```启用```属性改为 ```not $UnitTest```，如下图所示：
+此外，对于 Gctrl 和 Tctrl 端口，我们也从模型库的**控制-基础**标签下添加**常量输入**元件至图纸，将**启用**属性改为 **$UnitTest**，分别作为两个控制端口的单元测试输入。对应地，将两个控制信号的模块端口的**启用**属性改为 ```not $UnitTest```，如下图所示：
 
-![Gctrl和Tctrl端口](image-31.png)
+![Gctrl 和Tctrl 端口](image-31.png)
 
-![Gctrl和Tctrl端口的单元测试输入](image-27.png)
+![Gctrl 和Tctrl 端口的单元测试输入](image-27.png)
 
 **(3)在运行标签页中设置参数，运行仿真测试。**
 
@@ -491,7 +491,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ![输出通道配置](image-28.png)
 
-完成配置后，点击```启动任务```按钮或使用快捷键 ```ctrl+R```，可以开始仿真计算，其结果如下：
+完成配置后，点击**启动任务**按钮或使用快捷键 <kbd>ctrl+R</kbd>，可以开始仿真计算，其结果如下：
 
 ![运行测试结果](image-32.png)
 
