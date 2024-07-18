@@ -61,11 +61,11 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ### 跳转链接到 CloudPSS 首页
 
-1. 创建一个超链接控件，在右侧的属性配置区内给按钮命名为 A
+1. 创建一个超链接控件，在右侧的属性配置区内给超链接命名为 A
 
-2. 鼠标选中选择器 A 的内容/链接属性栏，输入 `https://www.cloudpss.net`
+2. 鼠标选中超链接 A 的内容/链接属性栏，输入 `https://www.cloudpss.net`
 
-3. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，点击超链接即可跳转到 **CloudPSS** 首页
+3. 点击工具栏的预览快捷超链接(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，点击超链接即可跳转到 **CloudPSS** 首页
 
 ![创建超链接控件](create-hyperlink-control.png "创建超链接控件")
 
