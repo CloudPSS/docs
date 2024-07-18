@@ -65,4 +65,4 @@ sidebar_position: 10
 :   上传气象数据需要参考平台默认格式进行修改，并检验数据合法性，如时间和数字格式等。
    
 气象数据是否准确？  
-:   平台内置**中国大陆区域** 8760 小时数据由 NASA 的**POWER**(https://power.larc.nasa.gov/) 和**MERRA2** (https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) 等项目提供，NASA地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的**Meteonorm8**气象数据库，约有0—10%的偏差。若用户已计算出准确的发电量，可在拓扑编辑模块的新能源元件（风机和光伏）处，**出力模式**设置为**指定出力曲线**。
+:   平台内置**中国大陆区域** 8760 小时数据由 NASA 的 **POWER**（`https://power.larc.nasa.gov`）和 **MERRA2**（`https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/`）项目提供，NASA地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的 **Meteonorm8** 气象数据库，约有 0-10% 的偏差。若用户已计算出准确的发电量，可在拓扑编辑模块的新能源元件（风机和光伏）处，**出力模式**设置为**指定出力曲线**。

@@ -3,7 +3,7 @@ title: 新建本地函数：Matlab 实现
 description: 新建本地函数：Matlab 实现
 ---
 
-本节以一个简单的入门案例介绍如何将用户在自己本地计算资源上开发和执行的**Matlab**算法内核接入执行器。
+本节以一个简单的入门案例介绍如何将用户在自己本地计算资源上开发和执行的 **Matlab** 算法内核接入执行器。
 
 ### 创建函数项目
 
@@ -15,7 +15,7 @@ description: 新建本地函数：Matlab 实现
 
 在**接口**标签页配置函数的参数列表，即定义函数输入参数。以一个简单**乘法器内核**为例，输入参数可简单抽象为两个参数：**乘数 a 和 b**，现在我们就需要将这两个参数在列表中定义。
 
-具体的，点击**新建参数组**，新建一个名称为**乘法参数组**的参数组；接着点击**新建参数**，在该参数组内添加两个表示**乘数 a**、**乘数 b**的参数，如下图所示。
+具体的，点击**新建参数组**，新建一个名称为**乘法参数组**的参数组；接着点击**新建参数**，在该参数组内添加两个表示**乘数 a**、**乘数 b** 的参数，如下图所示。
 
 ![配置参数](./2.png)
 
@@ -29,7 +29,7 @@ description: 新建本地函数：Matlab 实现
 
 #### 配置 Matlab 环境
 
-首先，需要在本地计算资源中配置 Matlab 环境来安装 CloudPSS-SDK，详见[Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md)。
+首先，需要在本地计算资源中配置 Matlab 环境来安装 CloudPSS-SDK，详见 [Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md)。
 
 #### 给算法程序封装输入输出接口
 
@@ -71,16 +71,16 @@ job.log(c,'info','false','log-1') %利用 SDK 提供的 log 方法向 FuncStudio
 
 能够使用当前启动的 Matlab 实例运行由执行器下发的任务，来消除每次下发任务后需要重新启动 Matlab 的耗时，并具备断点调试功能。
 
-具体的，打开 Matlab ，在命令窗口内运行**matlab.engine.shareEngine**命令，就可以将当前打开的 Matlab 配置为执行脚本文件的实例。
+具体的，打开 Matlab ，在命令窗口内运行 `matlab.engine.shareEngine` 命令，就可以将当前打开的 Matlab 配置为执行脚本文件的实例。
 
-接着可以通过运行**matlab.engine.isEngineShared**命令，来查看当前 Matlab 实例是否已经共享，
+接着可以通过运行 `matlab.engine.isEngineShared` 命令，来查看当前 Matlab 实例是否已经共享，
 
 ![Matlab实例](./4.png)
 
 最后，将打开的 Matlab 的工作目录切换到 product.m 文件所在目录。
 
 :::tip
-- 需要注意的是，在运行 matlab.engine.shareEngine 后，即使我们关闭了当前的 Matlab 实例，也可以在执行器内调用这个matlab实例执行计算内核；
+- 需要注意的是，在运行 `matlab.engine.shareEngine` 后，即使我们关闭了当前的 Matlab 实例，也可以在执行器内调用这个matlab实例执行计算内核；
 
 - 关闭 Matlab 后会增加一段启动 Matlab 的时间，因此实际操作中不建议关闭 Matlab。
 :::
@@ -93,7 +93,7 @@ job.log(c,'info','false','log-1') %利用 SDK 提供的 log 方法向 FuncStudio
 
 ![添加方案](./5.png)
 
-通过修改参数，对函数内核进行调试执行，可以点击`···`号查看更多的调试信息（提示/报错），调试执行只在FuncStudio本地执行器里有，网页版没有。
+通过修改参数，对函数内核进行调试执行，可以点击`···`号查看更多的调试信息（提示/报错），调试执行只在 FuncStudio 本地执行器里有，网页版没有。
 
 ![调试执行](./6.png)
 

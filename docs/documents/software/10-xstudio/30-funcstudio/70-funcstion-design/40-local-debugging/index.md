@@ -33,7 +33,7 @@ description: 函数内核的本地调试
 
 ![本地调试](./2.png)
 
-如果 FuncStudio 结果栏中的报错信息出现中文乱码，影响查看，可以**打开日志文件夹**的`.err`文件查看完整的报错信息。
+如果 FuncStudio 结果栏中的报错信息出现中文乱码，影响查看，可以**打开日志文件夹**的 .err 文件查看完整的报错信息。
 
 ![查看详细报错信息](./3.png)
 
@@ -70,7 +70,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 </TabItem>
 <TabItem value="Matlab" label="Matlab 内核的调试流程">
 
-对于 Matlab 内核，在当前启动的 Matlab 中输入 matlab.engine.shareEngine 共享实例后，即可在 Matlab 工作台中逐步调试内核。
+对于 Matlab 内核，在当前启动的 Matlab 中输入 `matlab.engine.shareEngine` 共享实例后，即可在 Matlab 工作台中逐步调试内核。
 
 ![在 Matlab 中进行逐步调试](./4.png)
 
@@ -104,7 +104,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
       报错原因：Python 环境没有安装 CloudPSS-SDK。
 
-      解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考[Python 环境配置](../../30-dev-env-setup/20-python-env-config/index.md)重新配置 Python 环境。
+      解决方法：检查命令窗口中的 Python 环境是否成功安装了 CloudPSS-SDK，参考 [Python 环境配置](../../30-dev-env-setup/20-python-env-config/index.md) 重新配置 Python 环境。
 
     - matlab 模块不存在
   
@@ -112,7 +112,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
       报错原因：Matlab 环境没有配置成功。
 
-      解决方法：参考[Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md)重新配置 Matlab 的 Python 环境。
+      解决方法：参考 [Matlab 环境配置](../../30-dev-env-setup/30-matlab-env-config/index.md) 重新配置 Matlab 的 Python 环境。
 
     </TabItem>
     <TabItem value="2" label="接口配置报错">
@@ -131,7 +131,7 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
       报错原因：旧版本 SDK 的 `cloudpss.function.currentJob()` 接口没有 log 方法。
 
-      解决方法： 使用 log 方法要用 `cloudpss.currentJob() `接口。
+      解决方法： 使用 log 方法要用 `cloudpss.currentJob()` 接口。
 
     </TabItem>
     <TabItem value="6" label="其他问题">
@@ -150,4 +150,4 @@ Python IDE 里面的调试环境必须和 FuncStudio 中指定的 Python 环境�
 
 调试执行通过，但是 FuncStudio 结果栏中没有任何输出结果该如何排查错误？
 
-:  检查 log、plot、table 等格式化输出方法的调用格式是否正确；如果在 FuncStudio 中没有显示图形的话，检查 plot 方法的traces 参数数据格式是否正确。
+:  检查 log、plot、table 等格式化输出方法的调用格式是否正确；如果在 FuncStudio 中没有显示图形的话，检查 plot 方法的 traces 参数数据格式是否正确。

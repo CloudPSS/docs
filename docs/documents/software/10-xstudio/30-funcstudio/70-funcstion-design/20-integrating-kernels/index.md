@@ -13,7 +13,7 @@ FuncStudio 目前支持以下两种函数内核接入方式：
 
 ## 主要用途
 
-将用户在自己本地计算资源（个人电脑）上开发和执行的自定义算法内核接入 FuncStudio 本地执行器，目前支持 Python 和Matlab 语言编写的算法内核接入。
+将用户在自己本地计算资源（个人电脑）上开发和执行的自定义算法内核接入 FuncStudio 本地执行器，目前支持 Python 和 Matlab 语言编写的算法内核接入。
 
 ## 函数内核的接入流程
 
@@ -38,7 +38,7 @@ import TabItem from '@theme/TabItem';
 import cloudpss
 ```
 
-- 通过`cloudpss.currentJob()`类来获取函数任务实例
+- 通过 `cloudpss.currentJob()` 类来获取函数任务实例
   
 ```py showLineNumbers
 import cloudpss
@@ -47,7 +47,7 @@ if __name__ == '__main__':
 ```
 :::info
 
-在 2023.3.31 更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加`cloudpss.currentJob()`方法，来代替之前版本的`cloudpss.function.currentJob()`方法获取当前的任务实例，目前这两个接口都可以用。
+在 2023.3.31 更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加 `cloudpss.currentJob()` 方法，来代替之前版本的 `cloudpss.function.currentJob()` 方法获取当前的任务实例，目前这两个接口都可以用。
 
 :::
 
@@ -78,7 +78,7 @@ if __name__ == '__main__':
 
 自定义算法内核计算出结果后，添加格式化输出计算结果的代码，将结果发送到 FuncStudio 运行标签页的结果栏中显示。
 
-目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见[函数结果格式化输出](../30-formatting-output/index.md)。
+目前 FuncStudio SDK 提供了 log、plot、table 三种计算结果的格式化输出方法，详见 [函数结果格式化输出](../30-formatting-output/index.md)。
 
 例如：在加法函数中，我们希望输出两个加数相加后的结果 c，可以使用 log 方法。
 
@@ -107,7 +107,7 @@ cloudpss.utils.syncenv; %同步环境变量
 cloudpssMod = py.importlib.import_module('cloudpss'); %加载 CloudPSS-SDK
 ```
 
-- 通过`cloudpss.currentJob()`类来获取函数任务实例；
+- 通过 `cloudpss.currentJob()` 类来获取函数任务实例；
   
 ```matlab showLineNumbers
 cloudpss.utils.syncenv; %同步环境变量
@@ -117,7 +117,7 @@ job = cloudpssMod.currentJob(); %获取函数在当前参数方案下的计算�
 
 :::info
 
-在 2023 年 3.31 号更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加`cloudpss.currentJob()`方法，来代替之前版本的`cloudpss.function.currentJob()`方法获取当前的任务实例，目前这两个接口都可以用。
+在 2023 年 3.31 号更新的 SDK 里面，我们在 CloudPSS 命名空间下新增加 `cloudpss.currentJob()` 方法，来代替之前版本的 `cloudpss.function.currentJob()` 方法获取当前的任务实例，目前这两个接口都可以用。
 
 :::
 

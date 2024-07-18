@@ -16,7 +16,7 @@ tags:
 
 用户首先需注册并登录 **CloudPSS 个人中心**。根据 CloudPSS 平台部署方式的不同，注册及登录方法略有区别，具体如下
 
-+ **CloudPSS公网主站（`www.cloudpss.net`）**的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
++ **CloudPSS 公网主站**（`www.cloudpss.net`）的用户，可参见 [注册并登录 CloudPSS 公网主站](../../10-register-and-login/10-cloudpss-public/index.md "注册并登录 CloudPSS 公网主站")。
 + **CloudPSS Mini、CloudPSS Pro** 等私有部署平台的用户，可参见 [登录 CloudPSS 私有部署平台](../../10-register-and-login/20-cloudpss-private/index.md "登录 CloudPSS 私有部署平台")。
 
 成功登录后，在 **CloudPSS 个人中心** 点击 **FuncStudio** 的图标后，页面将跳转至 **FuncStudio 云空间**。如图所示，该界面包含新建项目、项目管理两部分区域。
@@ -131,7 +131,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="java" label="私有云平台配置文件编辑">
 
-对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP地址** 如下图所示：
+对于 **CloudPSS-Mini** 用户，需要将配置文件的 **HOME_URL** 配置为 **CloudPSS-Mini** 的 **IP 地址** 如下图所示：
 
 ![CloudPSS-Mini配置文件](./CloudPSS-Mini配置文件.png "CloudPSS-Mini配置文件")
 
@@ -139,5 +139,3 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 ## 常见问题
-
-

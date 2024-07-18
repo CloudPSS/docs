@@ -252,7 +252,7 @@ import TabItem from '@theme/TabItem';
 
 :   1. **气象参数**
 
-        平台内置**中国大陆区域** 8760 小时数据由 NASA 的**POWER**(https://power.larc.nasa.gov/) 和**MERRA2** (https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) 等项目提供，NASA地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的 **Meteonorm8** 气象数据库，约有0—10%的偏差。  
+        平台内置**中国大陆区域** 8760 小时数据由 NASA 的 **POWER**（`https://power.larc.nasa.gov`）和 **MERRA2**（`https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/`）项目提供，NASA地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的 **Meteonorm8** 气象数据库，约有 0-10% 的偏差。  
 
 :    2. **太阳能电池工程模型**
 
