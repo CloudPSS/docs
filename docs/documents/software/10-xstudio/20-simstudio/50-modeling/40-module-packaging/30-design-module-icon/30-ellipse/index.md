@@ -5,7 +5,7 @@ description: 椭圆
 
 本文档介绍元件图标绘制中椭圆的使用及属性设置。
 
-用户可从图标组件库拖拽或点击 ```椭圆``` 组件，将其添加至绘图工作区。
+用户可从图标组件库拖拽或点击**椭圆组件**，将其添加至绘图工作区。
 
 椭圆的可配置项如下表所示：
 
@@ -26,11 +26,11 @@ description: 椭圆
     </tr>
     <tr>
         <td>宽度</td>
-        <td>控制椭圆的宽度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转椭圆。</td>
+        <td>控制椭圆的宽度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转椭圆。</td>
     </tr>
     <tr>
         <td>高度</td>
-        <td>控制椭圆的高度。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转椭圆。</td>
+        <td>控制椭圆的高度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转椭圆。</td>
     </tr>
     <tr>
         <td rowspan="6">**排列**</td>
