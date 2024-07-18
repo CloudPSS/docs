@@ -147,7 +147,7 @@ description: 定义元件/模块引脚列表
 
 ![模块端口元件](image-8.png)
 
-例如，在[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)中定义了```myinput```, ```myelec```, ```myoutput```三个引脚，则在```拓扑```中的```模块端口```元件处可以在这三个引脚中选择一个进行绑定，如下图所示。
+例如，在[接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)中定义了 ```myinput```, ```myelec```, ```myoutput``` 三个引脚，则在**拓扑**中的**模块端口**元件处可以在这三个引脚中选择一个进行绑定，如下图所示。
 
 ![端口绑定](image-10.png)
 
