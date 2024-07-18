@@ -25,6 +25,11 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+PSASP的AVR-11-12型励磁系统调节器控制框图如下所示。
+
+![等效图](./PSASP_AVR_11_12.png)
+
 ## 案例
 
 ## 常见问题

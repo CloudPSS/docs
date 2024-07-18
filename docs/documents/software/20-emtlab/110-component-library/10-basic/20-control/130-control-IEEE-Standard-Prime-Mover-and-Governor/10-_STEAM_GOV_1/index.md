@@ -25,6 +25,12 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+
+IEEE的STEAM_GOV1调速器控制框图如下所示。
+
+![等效图](./STEAM_GOV1.png)
+
 ## 案例
 
 ## 常见问题
