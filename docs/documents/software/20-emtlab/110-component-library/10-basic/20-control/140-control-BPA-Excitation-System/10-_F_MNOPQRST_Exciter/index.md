@@ -25,6 +25,11 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+BPA的FM励磁器控制框图如下所示。
+
+![等效图](./FM&FN.png)
+
 ## 案例
 
 ## 常见问题

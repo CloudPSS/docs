@@ -25,6 +25,11 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+### 使用说明
+IEEE的STEAM_TUR1原动机控制框图如下所示。
+
+![等效图](./STEAM_TUR1.png)
+
 ## 案例
 
 ## 常见问题

@@ -25,6 +25,11 @@ import Pins from './_pins.md'
 
 <Pins/>
 
+## 使用说明
+BPA的TV原动机控制框图如下所示。
+
+![等效图](./TV.png)
+
 ## 案例
 
 ## 常见问题
