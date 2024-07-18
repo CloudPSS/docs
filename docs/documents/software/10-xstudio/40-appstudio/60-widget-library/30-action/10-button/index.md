@@ -76,7 +76,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 3. 配置函数资源 asset1，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数
 
-4. 鼠标选中选择器 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset1.start()`
+4. 鼠标选中按钮 A 的事件/点击属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset1.start()`
 
 5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，点击按钮即可运行 `function/Maxwell/demo` 示例函数
 

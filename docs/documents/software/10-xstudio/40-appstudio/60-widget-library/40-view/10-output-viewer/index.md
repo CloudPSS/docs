@@ -5,7 +5,7 @@ description: 运行结果控件
 
 本节主要介绍 AppStudio 控件库里的运行结果控件。
 
-![运行结果控件](image.png "运行结果控件")
+![运行结果控件](output-viewer-control.png "运行结果控件")
 
 
 ## 属性
@@ -37,11 +37,50 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
+### 接入 FuncStudio 函数的典型应用
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+1. 创建一个按钮控件，在右侧的属性配置区内给按钮命名为 A
 
-<ColorPicker />
+2. 创建一个运行结果控件，在右侧的属性配置区内给运行结果命名为 B，调整下运行结果控件的大小
+
+3. 创建函数资源 asset1，选择资源类型为函数
+
+4. 配置函数资源 asset1，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数
+
+5. 鼠标选中选择器 A 的事件/点击属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset1.start()`
+
+6. 鼠标选中选择器 B 的内容/结果 ID 属性栏，切换到 fx 表达式模式输入 `$asset1.job.id`；
+
+7. 鼠标选中选择器 B 的内容/消息 key 属性栏点击新增 `plot-1`；或是在 fx  表达式模式下设置为 `[plot-1]`
+
+8. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，点击操作按钮运行 `function/Maxwell/demo` 示例函数，并显示出运行结果
+
+![创建按钮控件](create-button-control.png "创建按钮控件")
+
+![创建运行结果控件](create-output-viewer-control.png "创建运行结果控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![示例函数详情](example-function-details.png "示例函数详情")
+
+![更改按钮属性](change-button-attributes.png "更改按钮属性")
+
+![配置运行结果 ID 属性](config-output-viewer-control-id.png "配置运行结果 ID 属性")
+
+![配置运行结果消息 key 属性的两种方式](config-output-viewer-control-key.png "配置运行结果消息 key 属性的两种方式")
+
+![预览模式](preview-mode.png "预览模式")
+
+
+
+:::tip FuncStudio 函数使用详情
+
+查看 [FuncStudio 函数工坊使用指南](../../../../30-funcstudio/10-user-guide/index.md)
+
+:::
+
 
 ## 常见问题
 
