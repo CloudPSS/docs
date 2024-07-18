@@ -226,11 +226,11 @@ import TabItem from '@theme/TabItem';
 
 :   1. **气象参数**
 
-        平台内置**中国大陆区域**近 6 年 8760 小时数据由 NASA 的 [**POWER**](https://power.larc.nasa.gov/) 和 [**MERRA2**](https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/) 等项目提供，NASA 地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的 **Meteonorm8** 气象数据库，约有 0—10% 的偏差。  
+        平台内置**中国大陆区域**近 6 年 8760 小时数据由 NASA 的 **POWER**（`https://power.larc.nasa.gov`）和 **MERRA2**（`https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/`）项目提供，NASA地球表面辐照从地球外层的辐照计算得到，受云层及空气质量影响较大，相比于 PVSyst 内置的 **Meteonorm8** 气象数据库，约有 0-10% 的偏差。
 
 :    2. **太阳能电池工程模型**
 
-        以 NOCT 工况为例验证模型有效性: NOCT 是额定电池工作温度（Normal Operating Cell Temperature， NOCT），是指当太阳能组件或电池处于开路状态，并在（电池表面光强强度=800$\mathrm{W/m^2}$，环境温度=20$^{\circ}$C，风速=1m/s）时所达到的温度，正常组件的NOCT都在 $45^{\circ}C$左右（此时，k=0.03125）。  
+        以 NOCT 工况为例验证模型有效性: NOCT 是额定电池工作温度（Normal Operating Cell Temperature， NOCT），是指当太阳能组件或电池处于开路状态，并在（电池表面光强强度=800${W/m^2}$，环境温度=20$^{\circ}C$，风速=1$m/s$）时所达到的温度，正常组件的 NOCT 都在 45$^{\circC}$ 左右（此时，k=0.03125）。  
         收集了晶科、隆基、晶澳等多个太阳能组件的参数，对比 NOCT 工况下的 MPPT 功率，太阳能电池工程模型的结果与厂家实测值的误差约 0-1%， 满足实际精度要求。
 
 光伏系统能否进行排列优化？

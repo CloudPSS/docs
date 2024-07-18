@@ -1,9 +1,9 @@
 ---
-title: MarkDown 文本框
-description: MarkDown 文本框控件
+title: Markdown 文本框
+description: Markdown 文本框控件
 ---
 
-本节主要介绍 AppStudio 控件库里的 MarkDown 文本框控件。
+本节主要介绍 AppStudio 控件库里的 Markdown 文本框控件。
 
 ![MarkDown 文本框控件](markdown-text-box-control.png "MarkDown 文本框控件")
 
