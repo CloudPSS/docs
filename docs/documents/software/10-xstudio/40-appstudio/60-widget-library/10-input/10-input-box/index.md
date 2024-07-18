@@ -40,7 +40,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 文字字体 | `style/--spectrum-alias-body-text-font-family` |  | 选择文字字体 | 选择 | 输入框内容文字字体样式，字体类型包括：默认、宋体、黑体、楷体、微软雅黑、Georgia、Palatino Linotype、Times New Roman、Arial、Arial Black、Verdana、Courier New、Trebuchet MS |
 | 文字字号 | `style/--spectrum-textfield-m-text-size` |  | 输入文字字号 | 常量 | 输入文字字号 |
 | 文字颜色 | `style/--spectrum-alias-text-color` |  | 选择文字颜色 | 颜色选择器 | 点击文字颜色，弹出颜色选择器自定义颜色 |
-| 高度 | `style/--spectrum-textfiled-m-height` | `px` | 输入高度 | 常量 | 输入控件形状高度 |
+| 高度 | `style/--spectrum-textfiled-m-height` | px | 输入高度 | 常量 | 输入控件形状高度 |
 
 
 ### 内容
@@ -72,7 +72,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
    
 3. 将输入框 A 的内容/值属性设置为 `1`，输入框 B 的内容/值属性切换到 fx 表达式模式，设置为 `A.value + $asset1.value`
 
-4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
+4. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 ![创建输入框控件](create-input-box-control.png "创建输入框控件")
 
@@ -94,13 +94,13 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 2. 创建函数资源 asset2，选择资源类型为函数
 
-3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
+3. 配置函数资源 asset2，点击**选择资源**，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在两个参数 `a` 和 `b`
 
-4. 鼠标选中输入框 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
+4. 鼠标选中输入框 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
 
 5. 将输入框 B 的内容/值属性栏切换到 fx 表达式模式，设置为 `$asset2.args.a`
 
-6. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
+6. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改输入框 A 的值，输入框 B 的值自动发生变化
 
 
 ![创建输入框控件](create-input-box-control.png "创建输入框控件")

@@ -51,7 +51,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 选中颜色 | `style/--spectrum-checkbox-m-box-border-color-selected` |  | 方块选中颜色 | 颜色选择器 | 点击选中颜色，弹出颜色选择器自定义方块选中颜色 |
 | 选中按下颜色 | `style/--spectrum-checkbox-m-emphasized-box-border-color-selected-down` |  | 方块选中颜色 | 颜色选择器 | 点击选中按下颜色，弹出颜色选择器自定义方块选中按下颜色 |
 | 选中悬浮颜色 | `style/--spectrum-checkbox-m-emphasized-box-border-color-selected-hover` |  | 方块选中颜色 | 颜色选择器 | 点击选中悬浮颜色，弹出颜色选择器自定义方块选中悬浮颜色 |
-| 方块大小 | `style/--spectrum-checkbox-m-box-size` | `px` | 方块大小 | 常量 | 复选框控件方块大小，需要输入单位 |
+| 方块大小 | `style/--spectrum-checkbox-m-box-size` | px | 方块大小 | 常量 | 复选框控件方块大小，需要输入单位 |
 
 ### 内容
 
@@ -78,7 +78,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
    
 3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value`
 
-4. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改复选框 A 的值
+4. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改复选框 A 的值
 
 ![创建复选框控件](create-checkbox-control.png "创建复选框控件")
 
@@ -101,11 +101,11 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 2. 创建函数资源 asset2，选择资源类型为函数
 
-3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在一个参数 `a`
+3. 配置函数资源 asset2，点击**选择资源**，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在一个参数 `a`
 
-4. 鼠标选中复选框 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
+4. 鼠标选中复选框 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
 
-5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下修改复选框 A 的值
+5. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下修改复选框 A 的值
 
 ![创建复选框控件](create-checkbox-control.png "创建复选框控件")
 

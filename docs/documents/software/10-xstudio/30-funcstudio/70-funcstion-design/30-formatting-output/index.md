@@ -22,9 +22,9 @@ log 方法的定义为：`def log(self, content, level='info', html=False, key=N
 |参数|类型|描述|
 |:--:|:--:|--|
 |`content`|字符串/变量|消息内容|
-|`level`|字符串|消息级别。默认为`info`，可选：`critical`(严重错误), `error`(错误), `warning`(警告), `info`(信息), `verbose`(日志), `debug`(调试)|
-|`html`|字符串|是否为`HTML`格式，默认是`false`,可选`ture`或者`false`|
-|`key`|字符串|消息键(看作是一个标识符)。`key`相同的内容会写入同一条消息，并覆盖掉前面的内容|
+|`level`|字符串|消息级别。默认为 `info`，可选：`critical`（严重错误）、`error`（错误）、`warning`（警告）、`info`（信息）、`verbose`（日志）、`debug`（调试）|
+|`html`|字符串|是否为 HTML 格式，默认是 `false`，可选 `ture` 或者 `false` |
+|`key`|字符串|消息键（看作是一个标识符）。`key` 相同的内容会写入同一条消息，并覆盖掉前面的内容|
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -32,7 +32,7 @@ import TabItem from '@theme/TabItem';
 <Tabs>
 <!-- 大tab分割线---- -->
 <TabItem value="1" label="level 参数用法">
-每条消息前面的**图标**和level参数的设置有关，不同 level 参数的消息如下。
+每条消息前面的**图标**和 `level` 参数的设置有关，不同 `level` 参数的消息如下。
 <Tabs>
 <!-- 小tab分割线---- -->
 <TabItem value="python" label="Python 内核用法示例">
@@ -76,7 +76,7 @@ job.log('调试消息','debug');
 <!-- 大tab分割线---- -->
 <TabItem value="2" label="html 参数用法">
 
-消息支持 html 格式，当内容是 html 标签时，将 html 参数选为 `True`, 会渲染出效果后显示。
+消息支持 html 格式，当内容是 html 标签时，将 `html` 参数选为 `True`，会渲染出效果后显示。
 
 <Tabs>
 <!-- 小tab分割线---- -->
@@ -99,8 +99,8 @@ job.log('<b>消息内容</b>'); % 不识别 html 标签，仅当作字符输出
 job.log('<b>消息内容</b>','info','True') % 识别 html 标签加粗内容字体
 ```
 :::warning
-Matlab 不支持关键字参数，在设置 html 参数的时候，它前面的 level 参数不能省略，顺序也不能变动，否者会报错，
-此时，就可以使用默认值`info`占据 level 参数的固定位置。
+Matlab 不支持关键字参数，在设置 `html` 参数的时候，它前面的 `level` 参数不能省略，顺序也不能变动，否者会报错，
+此时，就可以使用默认值 `info` 占据 `level` 参数的固定位置。
 :::
 
 </TabItem>
@@ -171,15 +171,15 @@ plot 方法的定义为：`def plot(self, traces=[], layout={}, title='', key=No
 |`traces`|数组/列表|图形数据组|
 |`layout`|字典|图形的坐标轴格式|
 |`title`|字符串|图形的标题|
-|`key`|字符串|`key`相同的数据将显示到同一个图形上|
-|`verb`|字符串|数据的发送方式。默认为`replace`，可选 `replace`, `append`,`prepend`,`update`|
+|`key`|字符串|`key` 相同的数据将显示到同一个图形上|
+|`verb`|字符串|数据的发送方式。默认为 `replace`，可选 `replace`、`append`、`prepend`、`update`|
 
 
 <Tabs>
 <!-- 大tab分割线---- -->
 <TabItem value="1" label="traces 参数用法">
 
-`traces`参数用于配置图形的数据，是一个存放图形数据的字典列表，可以包含多个图形数据，每个图形数据是一个格式固定的字典。
+`traces` 参数用于配置图形的数据，是一个存放图形数据的字典列表，可以包含多个图形数据，每个图形数据是一个格式固定的字典。
 
 以绘制**二维曲线图形**为例，trace 参数如下：
 
@@ -188,9 +188,9 @@ plot 方法的定义为：`def plot(self, traces=[], layout={}, title='', key=No
 |参数|类型|描述|
 |:--:|:--:|--|
 |`name`|字符串|曲线名称|
-|`type`|字符串|曲线类型`scatter`|
-|`x`|实数列表|输出的x轴数据|
-|`y`|实数列表|输出的y轴数据|
+|`type`|字符串|曲线类型 `scatter`|
+|`x`|实数列表|输出的 x 轴数据|
+|`y`|实数列表|输出的 y 轴数据|
 
 :::warning
 注意输出的 X 轴和 Y 轴数据必须是可以 JSON 化的实数列表。
@@ -239,7 +239,7 @@ Matlab 中每一个图形数据字典都是一个**元胞数组**。
 
 ####  同一个图形中显示多条曲线
 
-一个二维曲线图形中可以显示多条曲线，只需再参数`traces`的列表内添加其他曲线的数据字典即可，不同曲线的颜色 FuncStudio 会自动区别。
+一个二维曲线图形中可以显示多条曲线，只需再参数 `traces` 的列表内添加其他曲线的数据字典即可，不同曲线的颜色 FuncStudio 会自动区别。
 
 <Tabs>
 <!-- 小tab分割线---- -->
@@ -307,9 +307,9 @@ job.plot({t1,t2,t3})
 
 ####  高级图形输出
 
-FuncStudio 支持绘制`plotly`库提供的多样化图形，例如，`Sankey`桑基图、`Sunburst`旭日图等，具体可以查看[plotly 帮助文档](https://plotly.com/javascript/)。
+FuncStudio 支持绘制 `plotly` 库提供的多样化图形，例如，`Sankey` 桑基图、`Sunburst` 旭日图等，具体可以查看 [plotly 帮助文档](https://plotly.com/javascript/)。
 
-不同的图形样式，其 traces 列表中的字典格式也是不一样的，使用时只需要参照`plotly`里面给定的`data`格式来定义图形数据字典，并写入 `traces` 列表内即可。
+不同的图形样式，其 `traces` 列表中的字典格式也是不一样的，使用时只需要参照 `plotly` 里面给定的 `data` 格式来定义图形数据字典，并写入 `traces` 列表内即可。
 
 <!-- 案例待补充： -->
 
@@ -324,10 +324,10 @@ FuncStudio 支持绘制`plotly`库提供的多样化图形，例如，`Sankey`�
 
 |属性|类型|描述|
 |:--:|:--:|--|
-|`xAxis`|字典|X标轴的设置参数|
-|`yAxis`|字典|y标轴的设置参数|
+|`xAxis`|字典|X 标轴的设置参数|
+|`yAxis`|字典|y 标轴的设置参数|
 
-不同类型的图形，`xAxis` 和 `yAxis`参数的字典格式也不同，以**二维曲线图形**为例，字典格式如下：
+不同类型的图形，`xAxis` 和 `yAxis` 参数的字典格式也不同，以**二维曲线图形**为例，字典格式如下：
 
 `xAxis={'title':str,'type':str,'range':list/str,...}`
 
@@ -336,8 +336,8 @@ FuncStudio 支持绘制`plotly`库提供的多样化图形，例如，`Sankey`�
 |属性|类型|描述|
 |:--:|:--:|--|
 |`title`|字符串|轴标题|
-|`type`|字符串|轴类型,可选`linear`,`log`,`date`|
-|`range`|列表/字符串|坐标轴的显示范围,例如`[下限,上限]`,`auto`|
+|`type`|字符串|轴类型，可选 `linear`、`log`、`date`|
+|`range`|列表/字符串|坐标轴的显示范围,例如 `[下限,上限]`，`auto`|
 
 <Tabs>
 <!-- 小tab分割线---- -->
@@ -414,10 +414,10 @@ Matlab 需要定义一个空的 layout 元胞数组和两个 xaxis、yaxis 的�
 <!-- 大tab分割线---- -->
 <TabItem value="3" label="verb 参数用法">
 
-`verb` 参数用于配置图形数据的发送方式，可选项有`replace`（替换数据）、`append`（向后追加数据）、`prepend`（向后追加数据）和 `update` 更新。使用 verb 参数时，需要注意：
+`verb` 参数用于配置图形数据的发送方式，可选项有 `replace`（替换数据）、`append`（向后追加数据）、`prepend`（向后追加数据）和 `update` 更新。使用 `verb` 参数时，需要注意：
 
 :::tip
-- 相同`key`参数的图形数据组仅会在 FuncStudio 中显示为一张图形，显示方式与每个图形数据的发送方式有关，不同的`verb`生效的前提必须是向同一个`key`参数的图形数据数据。
+- 相同 `key` 参数的图形数据组仅会在 FuncStudio 中显示为一张图形，显示方式与每个图形数据的发送方式有关，不同的 `verb` 生效的前提必须是向同一个 `key` 参数的图形数据数据。
 :::
 
 <Tabs>
@@ -523,9 +523,9 @@ table 方法的定义为: `table(self, columns=[], title='', key=None, verb='rep
 |:--:|:--:|--|
 |`columns`|数组/列表|表格的列数据组|
 |`title`|字符串|表格的标题|
-|`key`|字符串|`key`相同的数据将显示到同一个表格中|
+|`key`|字符串|`key` 相同的数据将显示到同一个表格中|
 
-其中，`columns`用于配置表格的列数据，是一个存放列数据的字典列表，可以包含多个列数据，
+其中，`columns` 用于配置表格的列数据，是一个存放列数据的字典列表，可以包含多个列数据，
 
 每个列数据是一个格式固定的字典，如下所示：
 
@@ -533,8 +533,8 @@ table 方法的定义为: `table(self, columns=[], title='', key=None, verb='rep
 
 |属性|类型|描述|
 |:--:|:--:|--|
-|`name`|`html`标签|列名称|
-|`type`|字符串|`data`类型，可选`text,html,number`|
+|`name`|`html` 标签|列名称|
+|`type`|字符串|`data` 类型，可选 `text`、`html`、`number`|
 |`data`|列表|列数据|
 
 <Tabs>
