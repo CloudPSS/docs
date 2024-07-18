@@ -14,7 +14,7 @@ description: 执行器的安装、配置和管理
 
 ## 执行器安装
 
-用户只需在本地计算资源（个人电脑）上登录 [CloudPSS 公网平台](https://cloudpss.net/)，进入 CloudPSS 的主页，点击 FuncStudio 的图标，将页面跳转至 FuncStudio 个人中心，点击**安装 FuncStudio**的下载链接，下载 FuncStudio 本地执行器的安装包，根据引导逐步完成安装即可。
+用户只需在本地计算资源（个人电脑）上登录 CloudPSS 公网平台（`https://cloudpss.net/`），进入 CloudPSS 的主页，点击 FuncStudio 的图标，将页面跳转至 FuncStudio 个人中心，点击**安装 FuncStudio**的下载链接，下载 FuncStudio 本地执行器的安装包，根据引导逐步完成安装即可。
 
 ![执行器安装](./1.png)
 
@@ -35,7 +35,7 @@ description: 执行器的安装、配置和管理
 点击**编辑配置文件**，会打开执行器的配置文件，用户可以编辑文件里的内容。
 
 
-对于公网平台用户（https://cloudpss.net/<span></span>），配置文件如下图所示，安装时已默认完成配置，用户无需自行更改。
+对于公网平台用户（`https://cloudpss.net/`），配置文件如下图所示，安装时已默认完成配置，用户无需自行更改。
 ![公网配置文件](./4.png)
 
 对于其他平台的用户，需要将 `HOME URL` 修改为当前平台的地址。
@@ -100,14 +100,14 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 <TabItem value="python" label="内网平台执行器地址配置">
 
-对于非公网用户，如：internal 用户，需要将配置文件的 `HOME_URL` 配置为 https://internal.cloudpss.net/<span></span>，如下图所示：
+对于非公网用户，如：internal 用户，需要将配置文件的 `HOME_URL` 配置为 `https://internal.cloudpss.net/`，如下图所示：
 
 ![内网平台](./7-2.png)
 
 </TabItem>
 <TabItem value="java" label="私有云平台执行器地址配置">
 
-对于私有云平台，比如 **CloudPSS-Mini** 设备的用户，需要将配置文件的 `HOME_URL` 配置为 CloudPSS-Mini 的 **IP 地址** 如下图所示：
+对于私有云平台，比如 **CloudPSS-Mini** 设备的用户，需要将配置文件的 `HOME_URL` 配置为 CloudPSS-Mini 的 **IP 地址**，如下图所示：
 
 ![私有云平台](./7-3.png)
 
