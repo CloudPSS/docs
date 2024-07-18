@@ -5,7 +5,7 @@ description: 超链接控件
 
 本节主要介绍 AppStudio 控件库里的超链接控件。
 
-![超链接控件](image.png "超链接控件")
+![超链接控件](hyperlink-control.png "超链接控件")
 
 
 ## 属性
@@ -59,11 +59,19 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
+### 跳转链接到 CloudPSS 首页
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+1. 创建一个超链接控件，在右侧的属性配置区内给按钮命名为 A
 
-<ColorPicker />
+2. 鼠标选中选择器 A 的内容/链接属性栏，输入 `https://www.cloudpss.net`
+
+3. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，点击超链接即可跳转到 **CloudPSS** 首页
+
+![创建超链接控件](create-hyperlink-control.png "创建超链接控件")
+
+![配置超链接属性](change-hyperlink-attributes.png "配置超链接属性")
+
+![预览模式](preview-mode.png "预览模式")
 
 
 ## 常见问题
