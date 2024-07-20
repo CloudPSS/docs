@@ -46,7 +46,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 1. 创建一个图片控件，在右侧的属性配置区内给图片命名为 A
 
-2. 创建静态资源 asset1，值设置为 `/api/storage/PCbOUyNxqtuaQGWgTi4erJNx3pZ1gldSaUoU5sIH6mZN1GirgsBSchdW23dcSw8z#filename=demo.jpg`
+2. 创建静态资源 asset1，值设置为 `https://downloads.cloudpss.net/.static/index/logo/logo-h.svg`
    
 3. 将输入框 A 的内容/值属性切换到 fx 表达式模式，设置为 `$asset1.value`
 

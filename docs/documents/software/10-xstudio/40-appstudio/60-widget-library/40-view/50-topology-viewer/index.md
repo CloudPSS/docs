@@ -5,7 +5,7 @@ description: 拓扑展示控件
 
 本节主要介绍 AppStudio 控件库里的拓扑展示控件。
 
-![拓扑展示控件](image.png "拓扑展示控件")
+![拓扑展示控件](topology-viewer-control.png "拓扑展示控件")
 
 ## 属性
 
@@ -43,15 +43,24 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
+### 接入 SimStudio 仿真的典型应用
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+1. 创建一个拓扑展示控件，在右侧的属性配置区内给拓扑展示命名为 A，调整下拓扑展示控件的大小
 
-<ColorPicker />
+2. 鼠标选中拓扑展示 A 的内容/模型 RID 属性栏，输入 `model/Maxwell/IEEE` 绑定 **3机9节点标准测试系统**仿真算例；调整控件大小位置
 
-### 覆盖样式
+3. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，显示出绑定的算例模型
 
-![覆盖样式](image-1.png "覆盖样式")
+
+![创建拓扑展示控件](create-topology-viewer-control.png "创建拓扑展示控件")
+
+
+![配置拓扑展示属性](config-topology-viewer-control.png "配置拓扑展示属性")
+
+
+![预览模式](preview-mode.png "预览模式")
+
+
 
 ## 常见问题
 
