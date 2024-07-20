@@ -7,7 +7,7 @@ sidebar_position: 20
 本文档介绍自定义 Python 元件的创建和调用方法，并通过 3 个案例介绍自定义 Python 元件的使用方法。阅读该文档，用户需熟悉 Python 的基本语法。该功能仅支持在 EMTLab 平台使用。
 
 ## 功能定义
-该功能支持使用 Python 语言构建自定义电磁暂态仿真元件。公网试用平台暂不支持自定义 Python 元件。
+该功能支持使用 Python 语言构建自定义电磁暂态仿真元件。**公网试用平台暂不支持自定义 Python 元件**。
 
 ## 功能说明
 ### 创建元件
@@ -155,7 +155,10 @@ import TabItem from '@theme/TabItem';
     ![Python 分段函数输出结果](./18.png "Python 分段函数输出结果")
 
 
-**案例 1** 算例文件下载：[model_admin_Python_Test_Case1.zip](./model_admin_Python_Test_Case1.zip "案例 1 算例文件")
+**案例 1** 算例文件下载：[model_admin_Python_Test_Case1.zip](./model_admin_Python_Test_Case1.zip "案例 1 算例文件")。文件密码：cloudpss123
+:::warning
+公网试用平台暂不支持自定义 Python 元件。
+:::
 
 </TabItem>
 
@@ -235,7 +238,10 @@ import TabItem from '@theme/TabItem';
     ![Python 阶梯爬坡信号发生器输出结果](./27.png "Python 阶梯爬坡信号发生器输出结果")
 
 
-**案例 2** 算例文件下载：[model_admin_Python_Test_Case2.zip](./model_admin_Python_Test_Case2.zip "案例 2 算例文件")
+**案例 2** 算例文件下载：[model_admin_Python_Test_Case2.zip](./model_admin_Python_Test_Case2.zip "案例 2 算例文件")。文件密码：cloudpss123
+:::warning
+公网试用平台暂不支持自定义 Python 元件。
+:::
 
 </TabItem>
 
@@ -323,7 +329,10 @@ import TabItem from '@theme/TabItem';
     ![Python 三相瞬时功率计算元件输出结果](./37.png "Python 三相瞬时功率计算元件输出结果")
 
 
-**案例 3** 算例文件下载：[model_admin_Python_Test_Case3.zip](./model_admin_Python_Test_Case3.zip "案例 3 算例文件")
+**案例 3** 算例文件下载：[model_admin_Python_Test_Case3.zip](./model_admin_Python_Test_Case3.zip "案例 3 算例文件")。文件密码：cloudpss123
+:::warning
+公网试用平台暂不支持自定义 Python 元件。
+:::
 
 </TabItem>
 </Tabs>
