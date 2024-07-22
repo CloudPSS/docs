@@ -49,3 +49,15 @@ cases:
 sdk:
   label: SDK 
   description: CloudPSS SDK
+
+cloud-space:
+  label: 云空间 
+  description: CloudPSS 云空间
+
+user-center:
+  label: 个人中心 
+  description: CloudPSS 个人中心
+
+server-manager:
+  label: 运维工具 
+  description: CloudPSS 运维工具
