@@ -30,9 +30,9 @@ const config: Config = {
     projectName: 'docs', // Usually your repo name.
 
     onBrokenLinks: 'throw',
-    onBrokenAnchors: 'warn',
-    onBrokenMarkdownLinks: 'warn',
-    onDuplicateRoutes: 'warn',
+    onBrokenAnchors: 'throw',
+    onBrokenMarkdownLinks: 'throw',
+    onDuplicateRoutes: 'throw',
 
     customFields: {
         HOME_URL,
@@ -87,7 +87,7 @@ const config: Config = {
                     sidebarPath: './docusaurus/sidebars.ts',
                     showLastUpdateTime: true,
                     showLastUpdateAuthor: true,
-                    onInlineTags: 'warn',
+                    onInlineTags: 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
                     ...mdxOptions,
                 },
