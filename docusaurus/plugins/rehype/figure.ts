@@ -87,7 +87,7 @@ export default function rehypeFigure() {
 function getOnlyImages({ children }: Element): [RootContentMap['mdxJsxTextElement'] | Element, string] | undefined {
     const nodes = children.filter((child) => !whitespace(child));
     if (nodes.length !== 1) return undefined;
-    const [node] = nodes;
+    const node = nodes[0]!;
 
     if (node.type === 'mdxJsxTextElement' && node.name === 'img') {
         const alt = getAttribute(node, 'alt');
