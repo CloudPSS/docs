@@ -59,5 +59,13 @@ user-center:
   description: CloudPSS 个人中心
 
 server-manager:
-  label: 运维工具 
+  label: Server Manager 
   description: CloudPSS 运维工具
+
+directory:
+  label: 目录 
+  description: CloudPSS 文档目录
+
+user-agreement:
+  label: 用户协议 
+  description: CloudPSS 文档目录
