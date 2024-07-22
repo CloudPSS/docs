@@ -174,9 +174,21 @@ if __name__ == '__main__':
         time.sleep(0.1)
 ```
 
-电磁暂态仿真任务计算结束后，即可使用`runner.result`方法来获取计算结果，针对电磁暂态仿真内核提供了输出通道暂态波形数据的获取接口。
+也可以在电磁暂态仿真任务计算结束后，即可使用`runner.result`方法来获取计算结果，针对电磁暂态仿真内核提供了输出通道暂态波形数据的获取接口。
 
 ```python title="仿真过程中不断获取仿真结果" showLineNumbers
+    runner = model.runEMT(job,config)
+    # 监听计算任务实例的运行状态
+    while not runner.status():
+        # 获取运行日志
+        logs = runner.result.getLogs()
+        for log in logs:
+            # 打印每一条日志
+            print(log)
+        # 每隔一秒判断一次运行状态
+        time.sleep(1)
+    print('end') # 运行结束后，输出结束标志
+
     plots = runner.result.getPlots() # 获取全部输出通道数据
     print(plots)
     plots_1 = runner.result.getPlot(0) # 获取指定一组示波器分组中所有输出通道的数据
@@ -283,7 +295,7 @@ if __name__ == '__main__':
     job = model.jobs[1]  
     # 在此潮流断面下启动电磁暂态仿真
     runner = model.runEMT(job,config)
-
+    # 仿真过程中输出结果
     while not runner.status():
         for message in runner.result:
             # 只输出仿真曲线
@@ -294,7 +306,18 @@ if __name__ == '__main__':
                 print(message)
         # 每隔0.1秒输出一次
         time.sleep(0.1)
-
+        
+    runner = model.runEMT(job,config)
+    # 仿真结束后输出结果
+    while not runner.status():
+        # 获取运行日志
+        logs = runner.result.getLogs()
+        for log in logs:
+            # 打印每一条日志
+            print(log)
+        # 每隔一秒判断一次运行状态
+        time.sleep(1)
+    print('end') # 运行结束后，输出结束标志
     plots = runner.result.getPlots() # 获取全部输出通道数据
     print(plots)
     plots_1 = runner.result.getPlot(0) # 获取指定一组示波器分组中所有输出通道的数据

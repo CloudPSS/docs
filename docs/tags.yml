@@ -1,0 +1,57 @@
+xstudio:
+  label: XStudio 
+  description: CloudPSS IESLab文档
+
+emtlab:
+  label: EMTLab 
+  description: CloudPSS EMTLab文档
+
+ieslab:
+  label: IESLab 
+  description: CloudPSS IESLab文档
+
+dslab:
+  label: DSLab 
+  description: CloudPSS DSLab文档
+
+introduce:
+  label: 介绍 
+  description: CloudPSS 介绍类文档
+
+user-guide:
+  label: 使用指南 
+  description: CloudPSS 使用指南
+
+quick-start:
+  label: 入门 
+  description: CloudPSS 入门文档
+
+advanced:
+  label: 进阶 
+  description: CloudPSS 进阶文档
+
+function:
+  label: 功能 
+  description: CloudPSS 功能类文档
+
+workbench:
+  label: 工作台 
+  description: CloudPSS 工作台介绍文档
+
+components:
+  label: 元件 
+  description: CloudPSS 元件类文档
+
+cases:
+  label: 案例 
+  description: CloudPSS 案例
+
+
+
+
+
+
+
+sdk:
+  label: SDK 
+  description: CloudPSS SDK
