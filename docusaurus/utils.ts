@@ -1,6 +1,8 @@
 import type { Locale } from './i18n';
 import i18n from './i18n';
 
+export const DEV = process.env['NODE_ENV'] === 'development' || process.env['NODE_ENV'] === 'dev';
+
 export const CURRENT_LOCALE = i18n.locales.includes(process.env['DOCUSAURUS_CURRENT_LOCALE'] as Locale)
     ? (process.env['DOCUSAURUS_CURRENT_LOCALE'] as Locale)
     : i18n.defaultLocale;

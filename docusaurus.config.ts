@@ -6,7 +6,7 @@ import footers from './docusaurus/footers';
 import i18n from './docusaurus/i18n';
 import plugins from './docusaurus/plugins';
 import prism from './docusaurus/prism';
-import { translateConfig, BASE_URL, HOME_URL } from './docusaurus/utils';
+import { translateConfig, BASE_URL, HOME_URL, DEV } from './docusaurus/utils';
 
 const config: Config = {
     title: translateConfig({
@@ -29,10 +29,10 @@ const config: Config = {
     organizationName: 'CloudPSS', // Usually your GitHub org/user name.
     projectName: 'docs', // Usually your repo name.
 
-    onBrokenLinks: 'throw',
-    onBrokenAnchors: 'throw',
-    onBrokenMarkdownLinks: 'throw',
-    onDuplicateRoutes: 'throw',
+    onBrokenLinks: DEV ? 'warn' : 'throw',
+    onBrokenAnchors: DEV ? 'warn' : 'throw',
+    onBrokenMarkdownLinks: DEV ? 'warn' : 'throw',
+    onDuplicateRoutes: DEV ? 'warn' : 'throw',
 
     customFields: {
         HOME_URL,
@@ -87,14 +87,14 @@ const config: Config = {
                     sidebarPath: './docusaurus/sidebars.ts',
                     showLastUpdateTime: true,
                     showLastUpdateAuthor: true,
-                    onInlineTags: 'throw',
+                    onInlineTags: DEV ? 'warn' : 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
                     ...mdxOptions,
                 },
                 blog: {
                     routeBasePath: '/blog',
                     showReadingTime: true,
-                    onInlineTags: 'throw',
+                    onInlineTags: DEV ? 'warn' : 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',
