@@ -1,10 +1,6 @@
 ---
 title: 快速入门
 description: DSLab SDK 快速入门
-
-tags:
-- SDK
-
 ---
 
 :::tip 快速入门
