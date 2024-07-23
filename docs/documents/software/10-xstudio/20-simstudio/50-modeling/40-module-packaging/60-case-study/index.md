@@ -151,9 +151,9 @@ v 3.2 h -6
 
 再按[在模型实现中添加引脚并绑定](../20-define-module-pin-list/index.md#在模型实现中添加引脚并绑定)文档所述内容，添加 3 个模块端口元件到图纸中，分别绑定 ```ele```、```P```、```Q``` 三个引脚。
 
-按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md#虚拟引脚调用)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Vmeasure```, ```Imeasure``` 引脚。
+按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md#引用虚拟引脚)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Vmeasure```, ```Imeasure``` 引脚。
 
-参考[量测相关文档](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#电气量量测方法)，在模型库的**量测**标签下，找到并添加**电压表(model/CloudPSS/_NewVoltageMeter)元件**，设定量测电压信号名为 ```#V```，Dimension参数为 ```Three Phase```；同样在模型库的**量测**标签下，找到并添加**三相功率量测(model/CloudPSS/_newPowerMeter_3p)元件**，设定 **Three Phase Voltage** 引脚赋值为 ```#V```, **Three Phase Current** 引脚赋值为 ```#Ic```。
+参考[量测相关文档](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md)，在模型库的**量测**标签下，找到并添加**电压表(model/CloudPSS/_NewVoltageMeter)元件**，设定量测电压信号名为 ```#V```，Dimension参数为 ```Three Phase```；同样在模型库的**量测**标签下，找到并添加**三相功率量测(model/CloudPSS/_newPowerMeter_3p)元件**，设定 **Three Phase Voltage** 引脚赋值为 ```#V```, **Three Phase Current** 引脚赋值为 ```#Ic```。
 
 最后，按下图所示配置各个元件的连接关系：
 
