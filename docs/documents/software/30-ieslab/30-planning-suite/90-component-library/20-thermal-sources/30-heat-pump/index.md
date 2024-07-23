@@ -5,8 +5,8 @@ description: 该元件用以热泵系统，利用电能驱动制冷制热。
 sidebar_position: 300
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 :::note  
 1.后续高博实现热泵制冷制热功能后，需更新热泵元件图标，更改引脚部分（删除水入口，水出口，更改为热接口，冷接口）。

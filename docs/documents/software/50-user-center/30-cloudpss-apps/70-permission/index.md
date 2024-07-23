@@ -4,7 +4,7 @@ title: 项目权限介绍
 description: CloudPSS 个人中心项目权限介绍文档
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

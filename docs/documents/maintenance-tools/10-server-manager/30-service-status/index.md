@@ -2,7 +2,7 @@
 title: 服务状态
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

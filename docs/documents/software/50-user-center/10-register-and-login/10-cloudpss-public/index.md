@@ -4,7 +4,7 @@ title: 注册并登录 CloudPSS 公网主站
 description: 个人中心注册并登录 CloudPSS 公网主站文档
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

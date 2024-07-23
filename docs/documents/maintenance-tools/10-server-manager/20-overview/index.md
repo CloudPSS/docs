@@ -2,7 +2,7 @@
 title: 状态概览
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

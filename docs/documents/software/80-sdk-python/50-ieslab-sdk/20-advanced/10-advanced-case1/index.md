@@ -3,7 +3,7 @@ title: 项目管理
 description: 使用 IESLab SDK 管理建模仿真和规划优化平台的算例项目
 
 tags:
-- SDK
+- sdk
 
 ---
 

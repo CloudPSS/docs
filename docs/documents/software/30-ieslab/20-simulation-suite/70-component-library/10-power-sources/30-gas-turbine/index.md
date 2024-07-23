@@ -5,8 +5,8 @@ description: 该元件用以建模燃气轮机 CHP 机组，同时发电和发�
 sidebar_position: 300
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

@@ -5,8 +5,8 @@ description: 该元件用以建模热管式太阳能集热器，能够根据气�
 sidebar_position: 500
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

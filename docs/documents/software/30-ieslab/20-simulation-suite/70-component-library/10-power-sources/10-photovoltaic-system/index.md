@@ -4,9 +4,10 @@ description: 该元件用以建模光伏发电系统，能够根据气象数据�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
+
 
 本节首先介绍光伏系统元件的参数配置，然后通过具体案例介绍该元件的使用方法和实现的效果，最后对常见问题进行回答。该元件用于 **IESLab 建模仿真平台**。
 

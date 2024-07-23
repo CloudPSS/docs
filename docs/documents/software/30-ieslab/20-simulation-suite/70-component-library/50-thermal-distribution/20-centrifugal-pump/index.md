@@ -5,8 +5,8 @@ description: 该元件用以建模离心泵，根据离心泵特性曲线和相�
 sidebar_position: 200
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

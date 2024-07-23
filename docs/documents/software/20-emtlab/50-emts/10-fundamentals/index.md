@@ -4,7 +4,7 @@ description: EMTLab 的电磁暂态仿真原理
 sidebar_position: 10
 
 tags: 
-- EMTLab
+- emtlab
 ---
 
 :::warning

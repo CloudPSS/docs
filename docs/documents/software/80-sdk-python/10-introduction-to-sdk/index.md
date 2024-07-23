@@ -3,7 +3,7 @@ title: 简介
 description: CloudPSS SDK 介绍
 
 tags:
-- SDK
+- sdk
 
 ---
 

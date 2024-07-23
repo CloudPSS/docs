@@ -5,8 +5,8 @@ description: 该元件用以建模模块化多电平变流器。
 sidebar_position: 500
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

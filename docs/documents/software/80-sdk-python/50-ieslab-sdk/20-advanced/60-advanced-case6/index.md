@@ -3,7 +3,7 @@ title: 规划典型日生成
 description: 规划典型日生成
 
 tags:
-- SDK
+- sdk
 
 ---
 

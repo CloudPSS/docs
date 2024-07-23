@@ -2,7 +2,7 @@
 title: 容器管理
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

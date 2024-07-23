@@ -4,7 +4,7 @@ description: 介绍 EMTLab 的量测和输出系统
 sidebar_position: 30
 
 tags: 
-- EMTLab
+- emtlab
 ---
 
 :::warning

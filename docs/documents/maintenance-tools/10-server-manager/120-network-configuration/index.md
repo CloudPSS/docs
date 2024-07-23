@@ -2,7 +2,7 @@
 title: 网络配置
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

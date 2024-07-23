@@ -2,7 +2,7 @@
 title: 产品许可证
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

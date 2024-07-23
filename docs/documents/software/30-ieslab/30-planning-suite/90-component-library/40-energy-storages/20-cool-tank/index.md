@@ -5,8 +5,8 @@ description: 该元件用以建模储冷罐（蓄冰空调），通过储水实�
 sidebar_position: 200
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

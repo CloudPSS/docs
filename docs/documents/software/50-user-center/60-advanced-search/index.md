@@ -2,7 +2,7 @@
 title: 高级搜索
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

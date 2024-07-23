@@ -5,8 +5,8 @@ description: 该元件用以建模燃料电池组，同时发电和发热。
 sidebar_position: 400
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

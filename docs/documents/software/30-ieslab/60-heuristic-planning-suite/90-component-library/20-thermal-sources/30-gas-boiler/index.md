@@ -5,8 +5,8 @@ description: 该元件用以建模燃气锅炉，通过燃烧燃料，提供热�
 sidebar_position: 300
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

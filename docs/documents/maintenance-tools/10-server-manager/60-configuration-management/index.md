@@ -2,7 +2,7 @@
 title: 配置管理
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

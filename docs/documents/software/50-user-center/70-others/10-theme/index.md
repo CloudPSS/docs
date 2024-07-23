@@ -2,7 +2,7 @@
 title: 主题切换
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

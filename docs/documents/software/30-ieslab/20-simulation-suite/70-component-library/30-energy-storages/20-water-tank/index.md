@@ -5,8 +5,8 @@ description: 该元件用以建模储水罐，通过储水实现储热。
 sidebar_position: 200
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

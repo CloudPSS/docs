@@ -3,7 +3,7 @@ title: 自动建模
 description: 使用 SDK 脚本自动建模
 
 tags:
-- SDK
+- sdk
 
 ---
 

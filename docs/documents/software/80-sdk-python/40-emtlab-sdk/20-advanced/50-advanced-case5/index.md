@@ -3,7 +3,7 @@ title: 断面存储和断面导入
 description: 用脚本实现 EMTLab 从给定断面开始仿真的功能
 
 tags:
-- SDK
+- sdk
 
 ---
 

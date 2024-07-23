@@ -2,7 +2,7 @@
 title: 子服务器管理
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

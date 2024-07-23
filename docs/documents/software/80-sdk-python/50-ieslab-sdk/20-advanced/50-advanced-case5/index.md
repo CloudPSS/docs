@@ -3,7 +3,7 @@ title: 批量仿真获取结果进行二次处理
 description: 批量仿真获取结果进行二次处理
 
 tags:
-- SDK
+- sdk
 
 ---
 

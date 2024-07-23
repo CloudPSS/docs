@@ -3,7 +3,7 @@ title: 规划设计并获取结果
 description: 规划设计并获取结果
 
 tags:
-- SDK
+- sdk
 
 ---
 

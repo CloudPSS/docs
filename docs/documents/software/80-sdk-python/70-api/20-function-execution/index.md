@@ -3,7 +3,7 @@ title: 执行器类
 description: CloudPSS SDK API 文档执行器类
 
 tags:
-- SDK
+- sdk
 
 ---
 

@@ -3,7 +3,7 @@ title: SimStudio IES SDK 快速入门
 description: SimStudio IES SDK 快速入门
 
 tags:
-- SDK
+- sdk
 
 ---
 
