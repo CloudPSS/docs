@@ -41,7 +41,7 @@ SimStudio 默认提供基于拓扑图的可视化建模方案。用户采用类�
 :::warning 功能可能受限
 **外部导入实现**仅在EMTLab电磁暂态仿真功能下可用。功能帮助参见：
 + EMTLab - 电磁暂态仿真 - [自定义S-function元件](../../../../../20-emtlab/50-emts/50-user-defined/30-s-function-control/index.md)
-+ EMTLab - 电磁暂态仿真 - [自定义C/C++元件](../../../../../20-emtlab/50-emts/50-user-defined/40-cpp-electrical-and-control/index.md)（CloudPSS 原生实现）（暂未开放）
++ EMTLab - 电磁暂态仿真 - 自定义C/C++元件（CloudPSS 原生实现）（暂未开放）
 :::
 
 ![外部导入实现界面](./1-2.png)
