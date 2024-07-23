@@ -197,6 +197,16 @@ if __name__ == '__main__':
     print(plots_1)
     plots_1_1 = runner.result.getPlotChannelData(0,'#wr1:0') # 获取指定一组示波器分组中指定通道的数据
     print(plots_1_1)
+
+    # 使用 plotly 绘制曲线
+    import plotly.graph_objects as go
+    for i in range(len(plots)):
+        fig = go.Figure()
+        channels= runner.result.getPlotChannelNames(i)
+        for val in channels:
+            channel=runner.result.getPlotChannelData(i,val)
+            fig.add_trace(go.Scatter(channel))
+        fig.show()
 ```
 ![输出通道暂态波形数据获取接口](image-4.png)
 
@@ -222,8 +232,11 @@ MVar', 'type': 'number'}, {'data': [0, 0, 100, 0, 0, 125, 90, 0, 0], 'name': '<i
 节点电压数据：{'data': [1, 0.9978193690593117, 0.9878296043857075, 1.0041895577772493, 1, 0.9633408585122871, 0.9763401685292369, 0.9875927780370882, 1], 'name': '<i>V</i><sub>m</sub> / pu', 'type': 'number'}
 ```
 
-获取的电磁暂态仿真结果数据如下所示：
+获取的电磁暂态仿真结果数据如下图所示：
 
+![](image-4.png)
+![](image-5.png)
+![](image-6.png)
 
 ## 调试技巧
 
@@ -321,10 +334,16 @@ if __name__ == '__main__':
         time.sleep(1)
     print('end') # 运行结束后，输出结束标志
     plots = runner.result.getPlots() # 获取全部输出通道数据
-    print(plots)
     plots_1 = runner.result.getPlot(0) # 获取指定一组示波器分组中所有输出通道的数据
-    print(plots_1)
     plots_1_1 = runner.result.getPlotChannelData(0,'#wr1:0') # 获取指定一组示波器分组中指定通道的数据
-    print(plots_1_1)
-
+    
+    # 使用 plotly 绘制曲线
+    import plotly.graph_objects as go
+    for i in range(len(plots)):
+        fig = go.Figure()
+        channels= runner.result.getPlotChannelNames(i)
+        for val in channels:
+            channel=runner.result.getPlotChannelData(i,val)
+            fig.add_trace(go.Scatter(channel))
+        fig.show()
 ```
