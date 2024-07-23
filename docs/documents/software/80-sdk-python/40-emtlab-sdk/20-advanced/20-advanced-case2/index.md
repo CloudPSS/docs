@@ -3,7 +3,7 @@ title: 仿真内核调用及结果获取
 description: 使用 SDK 脚本获取并解析潮流及电磁暂态仿真结果
 
 tags:
-- SDK
+- sdk
 
 ---
 
@@ -74,9 +74,10 @@ if __name__ == '__main__':
     cloudpss.setToken('{token}')  
     # 获取IEEE 3机9节点项目实例
     model =  cloudpss.Model.fetch('model/Maxwell/IEEE')
+    
 ```
 
-修改该项目中三相故障电阻元件的**故障类型**参数，首先，需要获取三相故障电阻元件的 key，元件的 key 的获取方式：
+修改该项目中三相故障电阻元件的**故障类型**参数，首先，需要获取三相故障电阻元件的 key，元件的 key 的获取方式有以下两种：
 
 + 在 SimStuido 工作台打开该算例，选中元件，此时浏览器地址栏 cell 后面就是当前元件的 Key，在每个算例中，元件 Key 是唯一的。
 
@@ -93,7 +94,7 @@ if __name__ == '__main__':
     # 故障类型参数的键为 ft , '7'表示 Phase ABC Fault
     comp_newFaultResistor_3p.args['ft'] = '7'
 ```
-调用 `model.getComponentsByRid(componentRid)` 方法，获取所有传输线元件实例，批量修改单位长度正序电阻参数。首先，需要获取传输线元件的 rid，元件的 rid 的获取方式：
+调用 `model.getComponentsByRid(componentRid)` 方法，获取所有传输线元件实例，批量修改单位长度正序电阻参数。首先，需要获取传输线元件的 rid，元件的 rid 的获取方式为：
 
 + 在 SimStuido 工作台打开该算例，选中元件，点击右上角的元件信息，选择元件 RID 即可复制该类元件的 RID 值。
 
@@ -112,14 +113,15 @@ if __name__ == '__main__':
 例如先启动一个潮流计算任务：
 
 ```python title="启动潮流计算任务" showLineNumbers
-    config = model.configs[0] 
     # 获取计算方案，这里[0]表示第一个计算方案，为默认的潮流计算方案
-    job = model.jobs[0]  
+    config = model.configs[0] 
     # 启动潮流计算任务
+    job = model.jobs[0]  
+    # 使用 model.runPowerFlow 方法启动潮流计算任务
     runner = model.runPowerFlow(job,config)
 ```
 
-启动计算任务后，使用`runner.status()`方法，监听计算任务实例的运行状态，对于潮流计算任务，只有计算完成才能获取计算结果。例如，我们在脚本中可以这样使用status 方法，添加一个循环，判断 status 的值是否为0，若是0则任务还在运行中，可以输出运行日志，如果值是1，说明任务运行结束，跳出循环，输出任务计算结束的标志。
+启动计算任务后，使用`runner.status()`方法，监听计算任务实例的运行状态，对于潮流计算任务，只有计算完成才能获取计算结果。例如，我们在脚本中可以这样使用status 方法，添加一个循环，判断 status 的值是否为 0 ，若是 0 则任务还在运行中，可以输出运行日志，如果值是 1 ，说明任务运行结束，跳出循环，输出任务计算结束的标志。
 
 ```python title="监听计算任务实例的运行状态" showLineNumbers
     import time

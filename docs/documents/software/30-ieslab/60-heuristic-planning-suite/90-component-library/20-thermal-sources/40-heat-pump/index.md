@@ -5,8 +5,8 @@ description: 该元件用以热泵系统，利用电能驱动制冷制热。
 sidebar_position: 400
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

@@ -3,7 +3,7 @@ title: 用户协议
 description: 用户协议 文档
 
 tags: 
-- 用户协议
+- user-agreement
 
 ---
 

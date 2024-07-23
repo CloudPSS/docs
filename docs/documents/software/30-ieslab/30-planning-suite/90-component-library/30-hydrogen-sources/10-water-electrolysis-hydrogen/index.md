@@ -5,8 +5,8 @@ description: 该元件用以建模水电解制氢。
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

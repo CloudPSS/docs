@@ -5,8 +5,8 @@ description: 该元件用以建模储氢罐，能够根据充放氢功率和效�
 sidebar_position: 400
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

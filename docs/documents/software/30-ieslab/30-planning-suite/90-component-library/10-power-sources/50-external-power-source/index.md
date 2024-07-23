@@ -4,8 +4,8 @@ description: 该元件用以建模外部电源，作为综合能源系统中的�
 sidebar_position: 400
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 :::note  

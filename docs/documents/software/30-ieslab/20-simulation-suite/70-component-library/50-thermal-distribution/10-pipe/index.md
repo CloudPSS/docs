@@ -5,8 +5,8 @@ description: 该元件用以建模管道，能够根据水热力方程模拟计�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

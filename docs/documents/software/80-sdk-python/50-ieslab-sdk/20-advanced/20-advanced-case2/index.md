@@ -3,7 +3,7 @@ title: 批量修改元件及设备参数
 description: 利用 IESLab SDK 批量修改元件及设备参数
 
 tags:
-- SDK
+- sdk
 
 ---
 

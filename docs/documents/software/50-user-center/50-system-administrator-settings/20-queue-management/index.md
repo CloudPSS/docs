@@ -1,8 +1,7 @@
 ---
 title: 队列管理
 tags: 
-- 个人中心
-
+- user-center
 ---
 
 :::tip 权限提醒

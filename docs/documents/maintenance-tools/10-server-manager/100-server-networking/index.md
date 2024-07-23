@@ -2,7 +2,7 @@
 title: 服务器组网
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

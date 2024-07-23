@@ -3,7 +3,7 @@ title: CloudPSS SDK (Python)
 description: CloudPSS SDK 文档
 
 tags:
-- SDK
+- sdk
 
 ---
 

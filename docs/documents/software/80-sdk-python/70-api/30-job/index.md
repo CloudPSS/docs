@@ -3,7 +3,7 @@ title: 任务类
 description: CloudPSS SDK API 文档任务类
 
 tags:
-- SDK
+- sdk
 
 ---
 

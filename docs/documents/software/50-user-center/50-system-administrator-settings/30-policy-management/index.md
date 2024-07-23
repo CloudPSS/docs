@@ -2,7 +2,7 @@
 title: 策略管理
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

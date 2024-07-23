@@ -4,8 +4,8 @@ description: 该元件用以建模光伏发电系统，能够根据气象数据�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

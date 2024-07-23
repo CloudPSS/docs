@@ -2,7 +2,7 @@
 title: 登录
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

@@ -60,8 +60,8 @@ tags:
 在脚本中调试上述接口前，需要完成以下三个准备工作：
 
 1. 导入 os 和 CloudPSS 模块
-2. 指定项目所在的平台地址
-3. 申请并设置自己账户的 token
+2. 指定项目所在的平台地址，即用户当前使用的平台网址，例如公网平台为`https://cloudpss.net/`
+3. 申请并设置自己账户的 token, token 的申请和注销详见[SDK Token 管理](../../../../50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)帮助文档
 
 ```python title="准备工作示例代码" showLineNumbers
 import os
@@ -73,10 +73,13 @@ if __name__ == '__main__':
     cloudpss.setToken('{token}')  
 ```
 
-完成上述准备工作后，即可在脚本中调用 Model 类提供的相关接口方法。
+完成上述准备工作后，即可在脚本中调用**Model 类**提供的相关接口方法。
 
-首先，使用`Model.fetch(rid)`静态方法，获取指定 rid 的项目实例`model`；项目 rid 由 `model/用户账号名称/保存模型算例是输入的唯一ID` 构成，
-可以在 SimStudio 云空间或项目当前页面的浏览器地址中查找。然后，调用具体的实例方法获取该项目的详细信息。
+
++ 使用`Model.fetch(rid)`静态方法，获取指定 rid 的项目实例`model`，项目 rid 由**model/用户账号名称/保存模型算例是输入的唯一ID**构成，
+可以在 SimStudio 云空间或项目当前页面的浏览器地址中查找
+
++ 调用具体的实例方法获取该项目的详细信息
 
 ```python title="获取项目详细信息的示例代码" showLineNumbers
     # 使用 Model.fetch(rid) 静态方法，获取指定 rid 的项目实例 model

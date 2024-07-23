@@ -2,7 +2,7 @@
 title: 平台升级
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

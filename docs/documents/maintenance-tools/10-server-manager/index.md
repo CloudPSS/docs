@@ -3,7 +3,7 @@ title: Server Manager
 description: Server Manager 文档
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

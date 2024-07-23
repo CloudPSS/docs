@@ -5,8 +5,8 @@ description: 该元件用以建模直流变压器。
 sidebar_position: 300
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

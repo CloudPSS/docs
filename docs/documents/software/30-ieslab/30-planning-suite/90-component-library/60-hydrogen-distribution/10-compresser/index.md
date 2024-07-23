@@ -5,8 +5,8 @@ description: 该元件用以建模氢气压缩设备。
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

@@ -2,7 +2,7 @@
 title: 系统设置
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

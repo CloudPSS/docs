@@ -2,7 +2,7 @@
 title: 账户安全设置
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

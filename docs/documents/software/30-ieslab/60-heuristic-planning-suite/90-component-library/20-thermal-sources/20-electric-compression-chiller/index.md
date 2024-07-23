@@ -5,8 +5,8 @@ description: 该元件用以建模电压缩制冷机，能够利用电能驱动�
 sidebar_position: 200
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

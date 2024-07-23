@@ -5,8 +5,8 @@ description: 该元件用以建模吸收式制冷机，一次侧工质驱动热�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

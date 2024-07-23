@@ -5,8 +5,8 @@ description: 该元件用以建模蓄电池，能够根据充放电功率和效�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 ## 元件定义

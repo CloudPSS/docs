@@ -4,7 +4,7 @@ description: 电磁暂态仿真计算方案配置
 sidebar_position: 20
 
 tags: 
-- EMTLab
+- emtlab
 ---
 
 :::warning

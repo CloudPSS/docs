@@ -2,7 +2,7 @@
 title: 运维
 
 tags: 
-- Server Manager
+- server-manager
 
 ---
 

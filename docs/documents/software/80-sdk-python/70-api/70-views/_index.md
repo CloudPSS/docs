@@ -3,7 +3,7 @@ title: 视图类
 description: CloudPSS SDK API 文档视图类
 
 tags:
-- SDK
+- sdk
 
 ---
 

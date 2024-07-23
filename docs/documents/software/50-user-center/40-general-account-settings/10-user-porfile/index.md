@@ -2,7 +2,7 @@
 title: 个人信息设置
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

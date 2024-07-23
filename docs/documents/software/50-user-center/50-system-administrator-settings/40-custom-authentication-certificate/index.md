@@ -2,7 +2,7 @@
 title: 自定义认证证书管理
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

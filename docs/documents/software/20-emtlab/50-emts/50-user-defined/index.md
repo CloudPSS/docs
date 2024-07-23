@@ -4,7 +4,7 @@ description: 自定义电磁暂态仿真元件
 sidebar_position: 50
 
 tags: 
-- EMTLab
+- emtlab
 ---
 
 

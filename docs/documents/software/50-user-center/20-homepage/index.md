@@ -3,7 +3,7 @@ title: 个人中心主页
 description: 个人中心主页介绍文档
 
 tags: 
-- 个人中心
+- user-center
 ---
 
 用户登录成功后，页面将跳转至 **CloudPSS 首页**，展示如下图所示。该界面包含了多个部分：**CloudPSS 应用**、**CloudPSS 新闻**、**CloudPSS 典型案例**、**案例搜索以及用户设置**、**系统设置**、**客服系统**等。

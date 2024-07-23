@@ -2,7 +2,7 @@
 title: 一般账户功能
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 

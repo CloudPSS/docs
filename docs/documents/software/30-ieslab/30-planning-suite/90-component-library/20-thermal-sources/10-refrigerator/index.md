@@ -5,8 +5,8 @@ description: 该元件用以建模单工况电压缩制冷机，能够利用电�
 sidebar_position: 100
 
 tags: 
-- 元件
-- IESLab
+- components
+- ieslab
 ---
 
 

@@ -2,7 +2,7 @@
 title: 用户管理
 
 tags: 
-- 个人中心
+- user-center
 
 ---
 
