@@ -3,7 +3,7 @@ title: 项目管理
 description: 使用 EMTLab SDK 管理仿真算例项目
 
 tags:
-- SDK
+- sdk
 
 ---
 
