@@ -415,7 +415,7 @@ import Flowchart2 from './flowchart2.svg'
 
 在模型库的**量测**标签下，找到并添加**三相功率量测(model/CloudPSS/_newPowerMeter_3p)元件**。
 
-按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md#虚拟引脚调用)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Pmeasure```, ```Qmeasure``` 虚拟引脚。
+按[虚拟引脚调用](../10-define-module-param-list/90-virtual-pin/index.md)相关说明，将 2 个虚拟引脚端口添加到图纸中，分别绑定 ```Pmeasure```, ```Qmeasure``` 虚拟引脚。
 
 最后，按下图所示方案配置多路信号合并、三相功率量测和虚拟引脚端口元件的引脚连接关系：
 
