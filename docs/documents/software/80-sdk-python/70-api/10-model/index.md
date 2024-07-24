@@ -642,7 +642,7 @@ revision.getImplements()
 获取拓扑。
 
 ```python showLineNumbers
-ModelTopology.fetch('','emtp',{})
+ModelTopology.fetch('','emtp',{'args': {}})
 ```
 
 ### `ModelTopology.dump(topology, filePath, indent=None)`
@@ -657,8 +657,6 @@ ModelTopology.fetch('','emtp',{})
 ```python showLineNumbers
 ModelTopology.dump(topology, filePath)
 ```
-
-
 
 
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
