@@ -642,7 +642,7 @@ revision.getImplements()
 获取拓扑。
 
 ```python showLineNumbers
-ModelTopology.fetch('','emtp',{})
+ModelTopology.fetch('','emtp',{'args': {}})
 ```
 
 ### `ModelTopology.dump(topology, filePath, indent=None)`
