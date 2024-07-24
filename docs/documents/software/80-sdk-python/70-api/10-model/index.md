@@ -659,8 +659,6 @@ ModelTopology.dump(topology, filePath)
 ```
 
 
-
-
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
 [Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers
 [String]: https://docs.python.org/3.8/tutorial/introduction.html#strings
