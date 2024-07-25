@@ -485,7 +485,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ![参数方案配置](image-29.png)
 
-在[计算方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#计算方案)方面，目前已经存在默认的电磁暂态仿真方案，我们可以 [重新创建](../../../40-workbench/20-function-zone/40-run-tab/index.md#新建计算方案)一个 [电磁暂态仿真方案](../../../../../20-emtlab/50-emts/20-job-config/index.md)，设置结束时间为 10s、积分步长为 0.00005s，在 [配置输出通道](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#信号输出)中配置好刚才配置的**三相电流**量测通道，如下图所示：
+在[计算方案](../../../40-workbench/20-function-zone/40-run-tab/index.md#计算方案)方面，目前已经存在默认的电磁暂态仿真方案，我们可以 [重新创建](../../../40-workbench/20-function-zone/40-run-tab/index.md#新建计算方案)一个 [电磁暂态仿真方案](../../../../../20-emtlab/50-emts/20-job-config/index.md)，设置结束时间为 10s、积分步长为 0.00005s，在 [配置输出通道](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md#配置示波器输出通道)中配置好刚才配置的**三相电流**量测通道，如下图所示：
 
 ![计算方案配置](image-30.png)
 
