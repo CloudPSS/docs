@@ -9,11 +9,11 @@ tags:
 
 ### 1.1 案例概述
 **本案例利用 cloudpss 平台提供的 SDK，展示如何对系统进行仿真计算，并获取系统的仿真结果数据**。通过本案例，您可以学习到以下功能和方法在实际案例中应用：
-- [**cloudpss.setToken(token):**](https://sdk-directory.com/api/cloudpss/setToken) 设置访问云端仿真服务所需的API令牌。 
-- [**cloudpss.IESLabSimulation.fetch(id):**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 根据算例ID获取仿真算例。 
-- [**run():**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 启动仿真计算。
-- [**status():**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 检查仿真计算的状态。
-- [**getPlotData(componentID, labelName):**](https://sdk-directory.com/api/cloudpss/getPlotData) 获取指定元件的绘图数据。
+- **cloudpss.setToken(token):** 设置访问云端仿真服务所需的API令牌。 
+- **cloudpss.IESLabSimulation.fetch(id):**根据算例ID获取仿真算例。 
+- **run():**启动仿真计算。
+- **status():**检查仿真计算的状态。
+- **getPlotData(componentID, labelName):** 获取指定元件的绘图数据。
 
 
 ### 1.2 代码解析
@@ -30,7 +30,7 @@ import cloudpss
 ```python
 if __name__ == '__main__':    
     # 设置API访问令牌和API地址
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    cloudpss.setToken('{token}')
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 ```
 使用 `cloudpss.IESLabSimulation.fetch()` 方法获取指定 ID 为 1888 的算例。确保使用的算例 ID（本例中为 1888）是存在的。如果 ID 不存在，将无法获取算例。
