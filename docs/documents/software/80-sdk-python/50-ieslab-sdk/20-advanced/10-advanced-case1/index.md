@@ -40,7 +40,7 @@ tags:
 以上为IESLab仿真建模平台的项目管理方法，使用的类为IESLabSimulation。IESLab规划优化平台项目管理方法类似，使用的类为IESLabPlan。需注意，IESLab规划优化平台通过IESLabPlan.createProject(name, project_group, start_date, end_date, construction_cycle, desc=None, createById=None)方法创建项目时，需输入construction_cycle（项目建设周期）参数。
    
 ## 案例介绍
-接下来，通过一个完整的案例来展示IESLab SDK的具体使用方法。
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本完成新建项目组/项目，获取创建的算例信息。
 
 ### 代码解析
 首先，进行准备工作，设置网址和token。
