@@ -9,20 +9,40 @@ tags:
 
 ## 功能介绍
 
-设定规划目标、启动规划设计、获取规划结果。
-
-规划设计并获取结果功能是利用 CloudPSS SDK 进行综合能源系统规划设计，并获取详细的仿真结果。这包括获取规划配置、组件运行信息等，为能源系统的优化和决策提供数据支持。
+利用 CloudPSS SDK 进行综合能源系统规划设计，并获取详细的仿真结果。这包括获取规划配置、组件运行信息等，为能源系统的优化和决策提供数据支持。
 
 ## 使用说明
 
 ### 用到的 API
-- [**iesLabPlanRun()：**](https://sdk-directory.com/api/cloudpss/setToken)方法启动规划设计计算过程。
-- [**plan_result.GetPlanNum()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取优化方案的数量。
-- [**plan_result.GetPlanInfo()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的基础信息。
-- [**plan_result.GetPlanConfiguration()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的配置信息。
-- [**plan_result.GetComponentResult()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案中特定组件的运行信息。
+
+
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
+    | `IESLabPlan.iesLabPlanRun() ` |   生成方案优选算例    |
+
+[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `Runner.status() ` |   运行状态   |
+    
+[Class: IESLabPlanResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabPlanResult.GetPlanNum() ` |   获取优化方案的数量   |
+    | `IESLabPlanResult.GetPlanInfo(planID) ` |   获取planID对应的优化方案的基础信息  |
+    | `IESLabPlanResult.GetPlanConfiguration(planID) ` |   获取planID对应的优化方案的配置信息   |
+    | `IESLabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')` |   获取planID对应的优化方案下componentID对应元件的运行信息   |
+
 
 ### 调用方法
++ 通过IESLabPlan.fetch(simulationId)方法获取算例信息，调用IESLabPlan.iesLabPlanRun()方法生成方案优选算例，可通过Runner.status()方法检查运行状态。
++ 通过IESLabPlanResult类的相应方法获取规划方案的数量，并获取优化方案的基础信息，配置信息以及元件运行信息。
+
 
 ## 案例介绍
 该案例主要用于演示如何**通过 `IESLab SDK` 进行综合能源系统的规划设计,获取优化方案并查看各类详细信息**。通过本案例，您可以学习到以下功能和方法在实际案例中的应用：
@@ -44,7 +64,7 @@ import time
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'
@@ -88,7 +108,8 @@ if __name__ == '__main__':
 ```
 
 ## 调试技巧
-获取算例失败，检查算例是否存在，该网址时候有该算例，token时候为该账户下的token。检查组件路径和典型日名称确保组件路径和典型日名称正确无误，避免因路径或名称错误导致无法获取组件运行信息。
++ 获取算例失败，检查算例是否存在，该网址时候有该算例，token时候为该账户下的token。
++ 检查组件路径和典型日名称确保组件路径和典型日名称正确无误，避免因路径或名称错误导致无法获取组件运行信息。
 
 ## 常见问题
 **Q1：获取到的优化方案数量为 `0`，这表示什么？如何解决？**
@@ -108,7 +129,7 @@ import time
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'

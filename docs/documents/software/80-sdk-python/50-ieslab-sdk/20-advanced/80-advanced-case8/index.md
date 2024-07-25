@@ -9,11 +9,37 @@ tags:
 
 ## 功能介绍
 
-## 调用方法
-
-### 使用说明
+## 使用说明
 
 ### 用到的 API
+
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
+    | `IESLabPlan.iesLabEvaluationRun(planId, type=None)` |   运行方案评估    |
+
+[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `Runner.status() ` |   运行状态   |
+    
+[Class: IESLabEvaluationModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabEvaluationModel.GetFinancialParams(planID)` |   获取优化方案下财务评估模块的基础信息   |
+    | `IESLabEvaluationModel.GetFinancialResult(planId, type=None) ` |   获取优化方案下财务评估结果   |
+    | `IESLabEvaluationModel.GetEnvironmentalEvaluationResult(planId, type=None) ` |   获取优化方案下的环保评价   |
+    | `IESLabEvaluationModel.GetEnergyEvaluationResult(planID) ` |   获取当前优化方案下的能效评价   |
+
+
+### 调用方式
++ 通过IESLabPlan.fetch(simulationId)方法获取算例信息，调用IESLabPlan.iesLabEvaluationRun(planId, type=None)方法运行方案评估，可通过Runner.status()检查运行状态。
++ 通过IESLabEvaluationModel类的相应方法获取财务参数和评价结果、优化方案的环保评价和能效评价。
+
 
 ## 案例介绍
 **该案例主要演示了如何通过 IESLabSDK 对规划设计项目进行评估和分析,涵盖了从获取项目信息到查看各类评估报告的完整流程**。如财务评估、环保评估和能效评估等。
@@ -23,6 +49,9 @@ tags:
 - [**plan_result.GetFinancialResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的特定类型财务评估表格。
 - [**plan_result.GetEnvironmentalEvaluationResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的环保评价结果。
 - [**plan_result.GetEnergyEvaluationResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的能效评价结果。
+
+
+ 
 
 ### 代码解析
 首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例1代码解析。
@@ -36,7 +65,7 @@ import time
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'
@@ -102,7 +131,7 @@ if __name__ == '__main__':
 ```
 
 ## 调试技巧
-在进行评估前，确保方案优选模块中存在规划的方案。否则无法进行方案评估。
++ 在进行评估前，确保方案优选模块中存在规划的方案。否则无法进行方案评估。
 
 ## 常见问题
 **Q1:如何确保输入的方案ID是有效的？**  
@@ -116,7 +145,7 @@ import time
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'

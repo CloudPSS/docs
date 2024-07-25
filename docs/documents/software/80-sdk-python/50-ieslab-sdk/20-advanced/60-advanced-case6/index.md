@@ -8,20 +8,33 @@ tags:
 ---
 
 ## 功能介绍
-规划典型日生成功能是综合能源系统规划与设计中的重要模块。通过该功能，用户可以生成并获取综合能源系统在典型日和典型月的电负荷曲线数据，从而为能源系统的优化和调度提供有力支持。以下是该功能的详细介绍：
+规划典型日生成功能是综合能源系统规划与设计中的重要模块。通过该功能，用户可以生成并获取综合能源系统在典型日和典型月的电负荷曲线数据，从而为能源系统的优化和调度提供有力支持。
 
 ## 使用说明
 
 ### 用到的 API
-获取典型日数量
-使用 GetTypicalDayNum() 方法可以获取生成的典型日数量。这有助于用户了解系统在规划过程中识别出的典型日总数。
-通过 GetTypicalDayInfo(index) 方法，用户可以获取指定索引的典型日的详细信息。这包括了该典型日的日期、特征等信息。
-GetTypicalDayCurve(index, '电负荷') 方法允许用户获取指定典型日的电负荷曲线数据。这对于分析能源负荷在典型日的变化规律非常有用。
-使用 GetTypicalMonth() 方法可以获取综合能源系统的典型月信息。这有助于用户了解全年中哪些月份被识别为典型月。
-通过 GetTypicalMonthNum(month) 方法，用户可以获取指定月份的典型日数量。例如，获取12月份的典型日数量。
-GetTypicalMonthCurve(month, '电负荷') 方法允许用户获取指定月份的典型日电负荷曲线数据。这对于分析全年中某个月份的能源负荷变化规律非常有用。
+
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs) ` |   运行典型日计算    |
+    | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
+    
+[Class: IESLabTypicalDayResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabTypicalDayResult.GetTypical ` |   获取所有的典型日数据   |
+    | `IESLabTypicalDayResult.GetTypicalDayNum ` |   获取典型日总数   |
+    | `IESLabTypicalDayResult.GetTypicalDayInfo(dayID) ` |   获取dayID对应典型日的基础信息   |
+    | `IESLabTypicalDayResult.GetTypicalMonthID(monthID) ` |   获取第monthID月各类型的典型日数据   |
+    | `IESLabTypicalDayResult.GetTypicalDayCurve(dayID, dataType)` |   获取dayID对应典型日下dataType参数的时序曲线   |
+
 
 ### 调用方法
++ 通过IESLabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)方法获取算例信息，通过IESLabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs)方法调用典型日生成程序并计算。
++ 通过IESLabTypicalDayResult类的相应方法获取典型日的详细结果数据。
 
 
 ## 案例介绍
@@ -43,7 +56,7 @@ import cloudpss
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'
@@ -85,15 +98,9 @@ if __name__ == '__main__':
 ```
 
 ## 调试技巧
-打印详细的中间结果
-在获取和处理数据时，打印详细的中间结果，帮助定位问题。例如，打印典型日和典型月的详细信息。
-验证数据完整性
-确保获取的数据是完整且合理的。例如，检查曲线数据的长度和内容。
-7. 检查数据类型和范围
-确保请求的数据类型和范围是正确的。例如，检查曲线类型标识符是否存在，索引是否超出范围。
-2. 检查项目获取
-在调用 fetch 方法获取项目时，打印返回的项目对象，确保项目 ID 是正确的，并且您有权限访问该项目。
-
++ 确保API访问令牌设置正确且未过期，同时确认访问的网址设置是否正确。
++ 特别注意参数的顺序和必填项，并确认每个API调用的返回值是否符合预期，查阅 CloudPSS 官方 API 文档，了解各个函数的详细用法和参数说明。
++ 确保 GetTypicalMonthID 和其他月份相关方法的参数正确，并确认月份ID在合理范围内。
 
 ## 常见问题
 
@@ -109,7 +116,7 @@ import cloudpss
 
 if __name__ == '__main__':
     # 申请并设置自己账户的token
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiYWRtaW4iXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQyMTIwODg2LCJub3RlIjoiU0RL5rWL6K-VIiwiaWF0IjoxNzExMDE2ODg2fQ.ntQdnpLMIoDTf6xaZvWXsA_dXDeaCppqKLLqj7UcpjXhVCLBH1xIv74XNtINyqahltFisOTbS9jlVUatdivR1A')  
+    cloudpss.setToken('{token}')  
 
     # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.40/'

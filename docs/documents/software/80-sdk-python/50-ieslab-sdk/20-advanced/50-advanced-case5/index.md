@@ -8,15 +8,50 @@ tags:
 ---
 
 ## 功能介绍
-
+通过 IESLab SDK 批量进行仿真计算，获取仿真结果数据，并对数据进行进一步的分析和处理，以生成有价值的图表和报告。
 ## 使用说明
 
 ### 用到的 API
+[Class: IESLabSimulation](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabSimulation.fetch(simulationId) ` |   获取算例信息    |
+    | `IESLabSimulation.run(job=None, name=None) ` |   调用仿真    |
+    
+[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `Runner.status() ` |   运行状态   |
+
+[Class: IESResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)   
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)  ` |   获取结果数据   |
+
+[Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+    
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
+    | `dataManageModel.GetItemList(dataType)`                |  获取所有数据项的列表  | 
+
+[Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
+    | `Model.getComponentByKey(componentKey: str)`                |  通过key获取对应的元件  |  
+    
 
 ### 调用方式
++ 通过IESLabSimulation.fetch(simulationId)方法获取算例信息，在此基础上通过dataManageModel.GetItemList(dataType)方法和Model.getComponentByKey(componentKey: str)方法获取元件设备参数。
++ 通过IESLabSimulation.run(job=None, name=None)方法调用仿真，Runner.status() 方法检测运行状态，之后使用IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法获取指定元件的仿真结果数据。
+
+
 
 ## 案例介绍
-**本案例旨在演示如何通过系统地的修改参数，获取系统在不同参数配置下的仿真结果并对仿真结果进行二次处理**。通过本案例，您可以学习到以下功能和方法：  
+通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例旨在演示如何通过系统地的修改参数，获取系统在不同参数配置下的仿真结果并对仿真结果进行二次处理**。通过本案例，您可以学习到以下功能和方法：  
 1. 如何获取和修改 CloudPSS 模型中的元件与设备参数，并进行批量仿真计算的完整流程。  
 2. 如何提取仿真结果数据，并使用 Matplotlib 对结果进行二次处理。
 
@@ -36,7 +71,7 @@ from mpl_toolkits.mplot3d import Axes3D  # 导入3D绘图工具
 
 if __name__ == '__main__':
     # 设置API访问令牌和API地址
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    cloudpss.setToken('{token}')
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 
     # 获取模型对象
@@ -108,6 +143,11 @@ if __name__ == '__main__':
 ![结果数据](./result_data.png "结果数据")
 
 ## 调试技巧
+在批量仿真获取结果并进行二次处理时，可能会遇到一些常见的问题。以下是一些调试技巧，帮助你更容易地定位和解决这些问题：
++ 确保API访问令牌设置正确且未过期。同时，确认访问的网址设置是否正确。
++ 验证函数和方法调用，特别注意IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法参数的顺序和必填项。确认每个API调用的返回值是否符合预期。
++ 如果获取结果数据失败，请检查元件的ID是否正确，以及是否存在于IESLab中的元件库中。
+
 
 ## 常见问题
 **Q1:参数范围和步长应该如何设置?**  
@@ -126,7 +166,7 @@ from mpl_toolkits.mplot3d import Axes3D  # 导入3D绘图工具
 
 if __name__ == '__main__':
     # 设置API访问令牌和API地址
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    cloudpss.setToken('{token}')
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 
     # 获取模型对象

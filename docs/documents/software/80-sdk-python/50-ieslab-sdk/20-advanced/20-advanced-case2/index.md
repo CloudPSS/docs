@@ -9,7 +9,7 @@ tags:
 
 ## 功能介绍
 
-利用SDK实现设置项目经纬度位置坐标及获取气象数据的，对设备、负荷及能源信息库进行增删改查。
+在IESLab仿真建模平台利用SDK实现设置项目经纬度位置坐标及获取气象数据的，对设备、负荷及能源信息库进行增删改查。
 
 ## 使用说明
 
@@ -17,74 +17,57 @@ tags:
 - [**SetProjectPosition:**](https://sdk-directory.com/api/cloudpss/setToken) 设置仿真项目的地理位置坐标。 
 - [**GetAtmosData:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取指定时间段内的气象数据。 
 - [**GetItemList、AddDataItem、UpdateDataItem、DeleteDataItem:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 对数据管理模块中的设备参数进行增删改查操作。
-- [**getComponentByKey:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取模型中的特定元件参数。  
+- [**getComponentByKey:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取模型中的特定元件参数。 
 
+[Class: IESLabSimulation](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
++ 静态方法
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabSimulation.fetch(simulationId) ` |   获取算例信息    |
++ 实例方法    
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
+    | `IESLabSimulation.run(job=None, name=None)` |   调用仿真    |
+    
+[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
++ 实例方法
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `Runner.status() ` |   运行状态   |
+
+[Class: IESResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)   
++ 实例方法
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESResult.getPlotData(compID, labelName, traceName='all', index=-1) ` |   获取元件ID为compID的元件，对应标签为labelName、图例名称为traceName的第index项数据  |
+
+[Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
++ 实例方法    
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
+    | `dataManageModel.SetProjectPosition(longitude, latitude)`                |  将项目的经纬度位置坐标设置为(longitude, latitude)  | 
+    | `dataManageModel.GetAtmosData(startDate, endDate) `                |       获取在startDate到endDate之间的气象数据      | 
+    | `dataManageModel.GetItemList(dataType)`                |  获取dataType类型对应所有数据项的列表  | 
+    | `dataManageModel.AddDataItem(dataType, data) `                |       向dataType类型的数据库中添加内容为data的数据项       | 
+    | `dataManageModel.UpdateDataItem(ID: str, data)`                |  更新数据库ID对应数据项data的数据  | 
+    | `dataManageModel.DeleteDataItem(ID: str) `                |       删除ID对应数据项       | 
+
+[Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
+    | `Model.getComponentByKey(componentKey: str)`                |  通过componentKey获取对应的元件  | 
+   
 ### 调用方式
 
-### `datamanageModel.SetProjectPosition(longitude, latitude)`
-
-- 实例方法
-- `longitude`: [Float][Float] 经度，范围为气象数据源的经度范围
-- `latitude`: [Float][Float] 纬度，范围为气象数据源的纬度范围
-
-设置项目的天气数据坐标，加载天气数据。
-
-```python showLineNumbers
-# IESLabSimulation
-ieslabSimulation = IESLabSimulation.fetch(id)
-# highlight-next-line
-ieslabSimulation.datamanageModel.SetProjectPosition(longitude, latitude)
-
-# IESLabPlan
-ieslabPlan = IESLabPlan.fetch(id)
-# highlight-next-line
-ieslabPlan.datamanageModel.SetProjectPosition(longitude, latitude)
-```
-
-### `datamanageModel.GetItemList(dataType)`
-
-获取 dataType 类型对应所有数据项的列表。
-
-```python showLineNumbers
-# IESLabSimulation
-ieslabSimulation = IESLabSimulation.fetch(id)
-# highlight-next-line
-ieslabSimulation.datamanageModel.GetItemList(dataType)
-
-# IESLabPlan
-ieslabPlan = IESLabPlan.fetch(id)
-# highlight-next-line
-ieslabPlan.datamanageModel.GetItemList(dataType)
-```
-
-
-
-### `datamanageModel.GetAtmosData(startDate, endDate)`
-
-- 实例方法
-- `startDate`: [String][String] 开始时间，格式为'YYYY-MM-DD'
-- `endDate`: [String][String] 结束时间，格式为'YYYY-MM-DD'
-- Returns: [List][List] 返回当前项目位置对应时间范围内的气象数据序列，每个元素用字典进行表示，字典的 key 即区分不同的气象数据项（如风速、太阳辐照等）以及标识当前时间点
-
-获取在 startDate 到 endDate 之间的气象数据。
-
-```python showLineNumbers
-# IESLabSimulation
-ieslabSimulation = IESLabSimulation.fetch(id)
-# highlight-next-line
-ieslabSimulation.datamanageModel.GetAtmosData(startDate, endDate)
-
-# IESLabPlan
-ieslabPlan = IESLabPlan.fetch(id)
-# highlight-next-line
-ieslabPlan.datamanageModel.GetAtmosData(startDate, endDate)
-```
-
++ 通过IESLabSimulation.fetch(simulationId)获取算例信息，随后通过IESLabSimulation.run(job=None, name=None)方法调用仿真计算，最后通过IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法获取元件的仿真计算结果数据。
++ 通过dataManageModel.SetProjectPosition(longitude, latitude)方法设置项目经纬度，通过dataManageModel.GetAtmosData(startDate, endDate)方法获取指定时段的气象数据。
++ 通过DataManageModel类的相应方法对数据管理模块的数据项进行增删改查操作。
 
 
 
 ## 案例介绍
-本案例重点介绍如何在仿真的过程中**使用 SDK，对数据管理模块进行操作。此外，还展示了如何修改元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。
+通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本，**对数据管理模块进行操作。此外，还展示了如何修改元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。
 
 ### 代码解析
 首先进行案例准备工作。设置网址与账户 `token`、获取获取算例并进行仿真计算。
@@ -95,7 +78,7 @@ import cloudpss
 
 if __name__ == '__main__':    
     # 设置API访问令牌和API地址
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    cloudpss.setToken('{token}')
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
     
     # 获取模型对象
@@ -177,6 +160,14 @@ Plot data:  defaultdict(<function IESResult.getPlotData.<locals>.<lambda> at 0x0
 ```
 
 ## 调试技巧
+若获取结果数据失败，可采用如下调试流程检查脚本代码：
++ 检查Token设置：确保API访问令牌设置正确且未过期。同时，确认网址设置是否正确。
++ 验证函数和方法调用：特别注意参数的顺序和必填项。确认每个API调用的返回值是否符合预期。
++ 拟获取的元件结果
+若对数据库进行相关操作失败，可采用如下调试流程检查脚本代码：
++ 地理位置坐标设置：确保 dataManageModel.SetProjectPosition 传递的经纬度参数正确，且在合理范围内。
++ 确认日期格式为 "YYYY-MM-DD" 且在合理范围内。
++ 在执行 DataManageModel 类的增删改查方法时，确保数据项的结构、ID等参数正确。
 
 
 
@@ -202,7 +193,7 @@ import cloudpss
 
 if __name__ == '__main__':    
     # 设置API访问令牌和API地址
-    cloudpss.setToken('eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzUyNywidXNlcm5hbWUiOiJsaXUxNTk2MzIiLCJzY29wZXMiOlsibW9kZWw6OTgzNjciLCJmdW5jdGlvbjo5ODM2NyIsImFwcGxpY2F0aW9uOjMyODMxIl0sInJvbGVzIjpbImxpdTE1OTYzMiJdLCJ0eXBlIjoiYXBwbHkiLCJleHAiOjE3NDIxMTIyMTEsIm5vdGUiOiJTREvmoYjkvosiLCJpYXQiOjE3MTEwMDgyMTF9.Bg3MC1ETj-0Pik7YCfH0QQsFJQlNUnengWeywBOa4Rq9YlEYvYrdkRAKKzWnHv40FeUhyNBLoCyGr5kxzKapgw')
+    cloudpss.setToken('{token}')
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
     
     # 获取模型对象
