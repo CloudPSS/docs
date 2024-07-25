@@ -13,32 +13,36 @@ tags:
 
 ### 用到的 API
 [Class: IESLabSimulation](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 静态方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabSimulation.fetch(simulationId) ` |   获取算例信息    |
+
++ 实例方法
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
     | `IESLabSimulation.run(job=None, name=None) ` |   调用仿真    |
     
 [Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `Runner.status() ` |   运行状态   |
 
 [Class: IESResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)   
-
++ 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)  ` |   获取结果数据   |
 
 [Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-    
++ 实例方法    
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
     | `dataManageModel.GetItemList(dataType)`                |  获取所有数据项的列表  | 
 
 [Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
-
++ 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
     | `Model.getComponentByKey(componentKey: str)`                |  通过key获取对应的元件  |  
@@ -51,7 +55,7 @@ tags:
 
 
 ## 案例介绍
-通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例旨在演示如何通过系统地的修改参数，获取系统在不同参数配置下的仿真结果并对仿真结果进行二次处理**。通过本案例，您可以学习到以下功能和方法：  
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例旨在演示如何通过系统地的修改参数，获取系统在不同参数配置下的仿真结果并对仿真结果进行二次处理**。通过本案例，您可以学习到以下功能和方法：  
 1. 如何获取和修改 CloudPSS 模型中的元件与设备参数，并进行批量仿真计算的完整流程。  
 2. 如何提取仿真结果数据，并使用 Matplotlib 对结果进行二次处理。
 

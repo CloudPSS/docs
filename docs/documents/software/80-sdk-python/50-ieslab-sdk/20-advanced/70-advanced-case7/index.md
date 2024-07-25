@@ -17,20 +17,24 @@ tags:
 
 
 [Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 静态方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
+
++ 实例方法    
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
     | `IESLabPlan.iesLabPlanRun() ` |   生成方案优选算例    |
 
 [Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 实例方法 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `Runner.status() ` |   运行状态   |
     
 [Class: IESLabPlanResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 实例方法 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabPlanResult.GetPlanNum() ` |   获取优化方案的数量   |
@@ -45,12 +49,7 @@ tags:
 
 
 ## 案例介绍
-该案例主要用于演示如何**通过 `IESLab SDK` 进行综合能源系统的规划设计,获取优化方案并查看各类详细信息**。通过本案例，您可以学习到以下功能和方法在实际案例中的应用：
-- [**iesLabPlanRun()：**](https://sdk-directory.com/api/cloudpss/setToken)方法启动规划设计计算过程。
-- [**plan_result.GetPlanNum()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取优化方案的数量。
-- [**plan_result.GetPlanInfo()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的基础信息。
-- [**plan_result.GetPlanConfiguration()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案的配置信息。
-- [**plan_result.GetComponentResult()：**](https://sdk-directory.com/api/cloudpss/setToken)方法用于获取指定优化方案中特定组件的运行信息。
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。案例主要用于演示如何**通过 `IESLab SDK` 进行综合能源系统的规划设计,获取优化方案并查看各类详细信息**。
 :::tip
 您也可以在本案例的基础上，比较多个优化方案的结果，将获取的结果进行二次处理。如将每个方案的关键指标如装机容量、投资成本、运行成本等提取出来,汇总到一个表格或数据结构中,然后进行对比分析。
 :::

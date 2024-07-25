@@ -14,10 +14,6 @@ tags:
 ## 使用说明
 
 ### 用到的 API
-- [**SetProjectPosition:**](https://sdk-directory.com/api/cloudpss/setToken) 设置仿真项目的地理位置坐标。 
-- [**GetAtmosData:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取指定时间段内的气象数据。 
-- [**GetItemList、AddDataItem、UpdateDataItem、DeleteDataItem:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 对数据管理模块中的设备参数进行增删改查操作。
-- [**getComponentByKey:**](https://sdk-directory.com/api/cloudpss/IESLabSimulation/fetch) 获取模型中的特定元件参数。 
 
 [Class: IESLabSimulation](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
 + 静态方法
@@ -53,7 +49,7 @@ tags:
     | `dataManageModel.DeleteDataItem(ID: str) `                |       删除ID对应数据项       | 
 
 [Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
-
++ 实例方法 
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
     | `Model.getComponentByKey(componentKey: str)`                |  通过componentKey获取对应的元件  | 
@@ -67,7 +63,7 @@ tags:
 
 
 ## 案例介绍
-通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本，**对数据管理模块进行操作。此外，还展示了如何修改元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本，**对数据管理模块进行操作。此外，还展示了如何修改元件的参数**。这些操作对于在仿真环境中准确模拟综合能源系统的实际工作条件至关重要。
 
 ### 代码解析
 首先进行案例准备工作。设置网址与账户 `token`、获取获取算例并进行仿真计算。

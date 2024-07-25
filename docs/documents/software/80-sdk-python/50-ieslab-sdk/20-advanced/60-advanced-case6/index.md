@@ -15,14 +15,17 @@ tags:
 ### 用到的 API
 
 [Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabPlan.iesLabTypicalDayRun(job=None, name=None, **kwargs) ` |   运行典型日计算    |
++ 静态方法
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: |     
     | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
     
 [Class: IESLabTypicalDayResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
++ 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabTypicalDayResult.GetTypical ` |   获取所有的典型日数据   |
@@ -38,13 +41,7 @@ tags:
 
 
 ## 案例介绍
-**本案例旨在展示如何利用 IESLab 平台典型日生成模块，方便快速生成综合能源系统规划的典型日生成**。您可以通过编写 Python 脚本自动化地获取指定项目的典型日数据，如辐射强度、环境温度、负荷数据等。通过本案例，您可以学习到以下功能和方法在实际案例中的使用：
-- [**cloudpss.IESLabPlan.fetch()：**](https://sdk-directory.com/api/cloudpss/setToken) 获取指定项目的详细信息。
-- [**iesLabTypicalDayRun()：**](https://sdk-directory.com/api/cloudpss/setToken) 执行典型场景生成模块的计算。
-- [**GetTypicalDayCurve()：**](https://sdk-directory.com/api/cloudpss/setToken) 
- 获取指定条件下的典型日曲线。
-- [**GetTypicalMonthCurve()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定条件下的典型月曲线。
-
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例旨在展示如何利用 IESLab 平台典型日生成模块，方便快速生成综合能源系统规划的典型日生成**。您可以通过编写 Python 脚本自动化地获取指定项目的典型日数据，如辐射强度、环境温度、负荷数据等。
 ### 代码解析
 首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例 1 代码解析。
 :::warning

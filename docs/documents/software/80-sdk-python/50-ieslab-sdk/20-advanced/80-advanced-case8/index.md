@@ -42,16 +42,9 @@ tags:
 
 
 ## 案例介绍
-**该案例主要演示了如何通过 IESLabSDK 对规划设计项目进行评估和分析,涵盖了从获取项目信息到查看各类评估报告的完整流程**。如财务评估、环保评估和能效评估等。
-通过本案例，您可以学习到以下的功能和方法在实际案例中的应用：
-- [**iesplanProject.evaluationModel.GetFinancialParams()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的财务评估参数信息。
-- [**iesplanProject.iesLabEvaluationRun()：**](https://sdk-directory.com/api/cloudpss/setToken)方法启动指定方案的评估计算,可指定评估类型如财务评估、环保评价、能效评价等。
-- [**plan_result.GetFinancialResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的特定类型财务评估表格。
-- [**plan_result.GetEnvironmentalEvaluationResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的环保评价结果。
-- [**plan_result.GetEnergyEvaluationResult()：**](https://sdk-directory.com/api/cloudpss/setToken)获取指定方案的能效评价结果。
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例主要演示了如何通过 IESLabSDK 对规划设计项目进行评估和分析,涵盖了从获取项目信息到查看各类评估报告的完整流程**。如财务评估、环保评估和能效评估等。
 
 
- 
 
 ### 代码解析
 首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例1代码解析。
