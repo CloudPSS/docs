@@ -2,6 +2,8 @@
 title: C++ 电气及控制元件
 description: 自定义 C++ 元件
 sidebar_position: 40
+draft: true
+
 ---
 本文档介绍 C++ 元件的构建步骤，并且通过案例详细介绍元件构建方法和调试方法。
 
