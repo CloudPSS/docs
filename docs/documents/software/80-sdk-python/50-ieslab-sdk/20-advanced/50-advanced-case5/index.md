@@ -1,6 +1,6 @@
 ---
-title: 批量仿真获取结果进行二次处理
-description: 批量仿真获取结果进行二次处理
+title: 规划设计并获取结果
+description: 规划设计并获取结果
 
 tags:
 - sdk
@@ -8,217 +8,153 @@ tags:
 ---
 
 ## 功能介绍
-通过 IESLab SDK 批量进行仿真计算，获取仿真结果数据，并对数据进行进一步的分析和处理，以生成有价值的图表和报告。
+
+利用 CloudPSS SDK 进行综合能源系统规划设计，并获取详细的仿真结果。这包括获取规划配置、组件运行信息等，为能源系统的优化和决策提供数据支持。
+
 ## 使用说明
 
 ### 用到的 API
-[Class: IESLabSimulation](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+
+
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
 + 静态方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
-    | `IESLabSimulation.fetch(simulationId) ` |   获取算例信息    |
+    | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
 
-+ 实例方法
-    | 方法     | 功能 | 
-    | ---------------- | :-----------: | 
-    | `IESLabSimulation.run(job=None, name=None) ` |   调用仿真    |
-    
-[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-+ 实例方法
-    | 方法     | 功能 | 
-    | ---------------- | :-----------: | 
-    | `Runner.status() ` |   运行状态   |
-
-[Class: IESResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)   
-+ 实例方法
-    | 方法     | 功能 | 
-    | ---------------- | :-----------: | 
-    | `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)  ` |   获取结果数据   |
-
-[Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
 + 实例方法    
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
-    | `dataManageModel.GetItemList(dataType)`                |  获取所有数据项的列表  | 
+    | `IESLabPlan.iesLabPlanRun() ` |   生成方案优选算例    |
 
-[Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
-+ 实例方法
+[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
++ 实例方法 
     | 方法     | 功能 | 
-    | ---------------- | :-----------: |     
-    | `Model.getComponentByKey(componentKey: str)`                |  通过key获取对应的元件  |  
+    | ---------------- | :-----------: | 
+    | `Runner.status() ` |   运行状态   |
     
+[Class: IESLabPlanResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
++ 实例方法 
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabPlanResult.GetPlanNum() ` |   获取优化方案的数量   |
+    | `IESLabPlanResult.GetPlanInfo(planID) ` |   获取planID对应的优化方案的基础信息  |
+    | `IESLabPlanResult.GetPlanConfiguration(planID) ` |   获取planID对应的优化方案的配置信息   |
+    | `IESLabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')` |   获取planID对应的优化方案下componentID对应元件的运行信息   |
 
-### 调用方式
-+ 通过IESLabSimulation.fetch(simulationId)方法获取算例信息，在此基础上通过dataManageModel.GetItemList(dataType)方法和Model.getComponentByKey(componentKey: str)方法获取元件设备参数。
-+ 通过IESLabSimulation.run(job=None, name=None)方法调用仿真，Runner.status() 方法检测运行状态，之后使用IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法获取指定元件的仿真结果数据。
 
+### 调用方法
++ 通过IESLabPlan.fetch(simulationId)方法获取算例信息，调用IESLabPlan.iesLabPlanRun()方法生成方案优选算例，可通过Runner.status()方法检查运行状态。
++ 通过IESLabPlanResult类的相应方法获取规划方案的数量，并获取优化方案的基础信息，配置信息以及元件运行信息。
 
 
 ## 案例介绍
-接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。**案例旨在演示如何通过系统地的修改参数，获取系统在不同参数配置下的仿真结果并对仿真结果进行二次处理**。通过本案例，您可以学习到以下功能和方法：  
-1. 如何获取和修改 CloudPSS 模型中的元件与设备参数，并进行批量仿真计算的完整流程。  
-2. 如何提取仿真结果数据，并使用 Matplotlib 对结果进行二次处理。
-
+接下来，通过一个完整的案例来展示如何基于上述 API 编写 Python 脚本。案例主要用于演示如何**通过 `IESLab SDK` 进行综合能源系统的规划设计,获取优化方案并查看各类详细信息**。
 :::tip
-您可以在本案例的基础上修改代码用于分析不同参数对系统性能的影响，选择最优的系统设计参数组合等场景。
+您也可以在本案例的基础上，比较多个优化方案的结果，将获取的结果进行二次处理。如将每个方案的关键指标如装机容量、投资成本、运行成本等提取出来,汇总到一个表格或数据结构中,然后进行对比分析。
 :::
 
 ### 代码解析
-导入必要的库，matplotlib.pyplot 和 numpy 用于数据可视化和数值计算。mpl_toolkits.mplot3d 用于绘制 3D 图形；接下来进行算例准备工作，包括设置网址与账户 token、获取获取算例，详细解释参考案例 1 代码解析。获取拟修改的元件与设备信息。详细解释参考案例 2 代码解析。
+首先进行算例准备工作。包括设置网址与账户 token、获取算例，详细解释参考案例 1 的代码解析。
 ```python
-import time
 import os
 import cloudpss
-import matplotlib.pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D  # 导入3D绘图工具
+import time
 
 if __name__ == '__main__':
-    # 设置API访问令牌和API地址
-    cloudpss.setToken('{token}')
+    # 申请并设置自己账户的token
+    cloudpss.setToken('{token}')  
+
+    # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 
-    # 获取模型对象
-    iesProject = cloudpss.IESLabSimulation.fetch(1888)
-
-    # 获取拟修改的元件与设备信息
-    data_PV = iesProject.dataManageModel.GetItemList('光伏')
-    model = iesProject.model
-    model_pv = model.getComponentByKey("PhotovoltaicSys_6")
+    # 规划设计典型场景生成测试——获取指定 simuid 的项目
+    iesplanProject = cloudpss.IESLabPlan.fetch('274')
 ```
-
-使用 `np.arange()` 创建最大功率和倾角的参数范围。注意，确保参数范围和步长设置合理。
+`iesplanProject.iesLabPlanRun()` 启动规划设计计算过程。`runner.result()` 获取计算结果对象。使用 `plan_result.GetPlanNum()` 获取优化方案的数量。
 ```python
-# 假设的参数范围
-    maximum_powers = np.arange(700, 901, 50)  # 从700W到900W，步长为100W
-    dip_angles = np.arange(20, 61, 10)  # 从20度到60度，步长为20度
+    # 启动计算
+    runner = iesplanProject.iesLabPlanRun()
+    last_plan_num = 0
+    while not runner.status():
+        # print('running', flush=True)
+        time.sleep(1)
+        plan_result = runner.result
+        plan_num = plan_result.GetPlanNum()
 ```
-使用 `np.zeros()` 创建一个与参数范围大小相匹配的数组,用于存储结果。使用 `np.meshgrid()` 基于参数范围创建网格,用于后续的参数扫描。
+当发现新的优化方案时。使用 `GetPlanInfo()`、`GetPlanConfiguration()` 和`GetComponentResult()` 分别获取优化方案的**基础信息、配置信息和元件运行信息**。
 ```python
-    # 初始化结果存储
-    results = np.zeros((len(maximum_powers), len(dip_angles)))
-    X, Y = np.meshgrid(dip_angles, maximum_powers)  # 创建参数网格
+        if plan_num > last_plan_num:
+            for plan_id in range(last_plan_num, plan_num):
+                print("优化方案", plan_id + 1)
+                plan_info = plan_result.GetPlanInfo(plan_id)
+                print("基础信息:", plan_info)
+                plan_config = plan_result.GetPlanConfiguration(plan_id)
+                print("配置信息:", plan_config)
+                plan_config = plan_result.GetComponentResult(plan_id, "/component_photovoltaic_2", "1月典型日1")
+                print("运行信息:", plan_config)
+                print("=" * 30)
+            last_plan_num = plan_num
+    print('计算完成')
 ```
-**使用嵌套循环遍历参数网格中的每个参数组合。更新数据管理模块和拓扑编辑模块中的参数值**。
-使用 `iesProject.run()` 执行仿真计算。通过 `ies_result.getPlotData()` 获取指定元件 `"PhotovoltaicSys_6"` 的指定数据 `"功率（$\mathrm{kW}$）")`。从获取的数据中提取特定时间点(本例为第 11 个时间点)的有功功率值,并存储在结果数组中。
-:::note
-这个过程可能会花费一定的时间。确保网络连接稳定并耐心等待。
-:::
-
-```python
-    for i, max_power in enumerate(maximum_powers):
-        for j, dip_angle in enumerate(dip_angles):
-            # 更新参数值
-            data_PV[0]['ratedParam']['MaximumPower'] = str(max_power)
-            model_pv.args['DipAngle'] = str(dip_angle)
-
-            # 执行仿真计算
-            runner = iesProject.run()
-            while not runner.status():
-                print('running', flush=True)
-                time.sleep(3)
-            print('计算完成')
-            ies_result = runner.result
-            # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
-            compID = "/PhotovoltaicSys_6"
-            labelName = "功率（$\mathrm{kW}$）"
-            plot_data = ies_result.getPlotData(compID, labelName)
-            results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
-```
-将获取到的数据进行二次处理，绘制三维曲面图。
-
-```python
-    # 绘制二维曲面图
-    fig = plt.figure(figsize=(12, 8))
-    ax = fig.add_subplot(111, projection='3d')
-    surf = ax.plot_surface(X, Y, results, cmap='viridis')
-
-    ax.set_xlabel('Dip Angle (degrees)')
-    ax.set_ylabel('Max Power (W)')
-    ax.set_zlabel('Active Power (kW)')
-    ax.set_title('Active Power vs. Max Power and Dip Angle')
-    fig.colorbar(surf, shrink=0.5, aspect=5)  # 添加颜色条
-
-    plt.show()
-```  
 
 ### 结果展示
-下图为元件 PhotovoltaicSys_6 有功功率随倾斜角和光伏设备最大功率变化的曲面图。
-![结果数据](./result_data.png "结果数据")
+由于结果过长，在此只展示基础信息。
+```python
+优化方案 1
+基础信息: {'方案名称': '方案1', '综合成本（万元）': 13.901900078655967, '设备投资费用（万元）': 256.0, '设备年维护费用（万元）': 0.0, '年销售收入（万元）': 38.34719707186584, '年运营支出（万元）': 1.1019000786559667, '年CO2排放（吨）': 0.0, '年电负荷（kWh）': 840903.6702350642, '年热负荷（kWh）': 0.0, '年冷负荷（kWh）': 0.0}
+
+```
 
 ## 调试技巧
-在批量仿真获取结果并进行二次处理时，可能会遇到一些常见的问题。以下是一些调试技巧，帮助你更容易地定位和解决这些问题：
-+ 确保API访问令牌设置正确且未过期。同时，确认访问的网址设置是否正确。
-+ 验证函数和方法调用，特别注意IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法参数的顺序和必填项。确认每个API调用的返回值是否符合预期。
-+ 如果获取结果数据失败，请检查元件的ID是否正确，以及是否存在于IESLab中的元件库中。
-
++ 获取算例失败，检查算例是否存在，该网址时候有该算例，token时候为该账户下的token。
++ 检查组件路径和典型日名称确保组件路径和典型日名称正确无误，避免因路径或名称错误导致无法获取组件运行信息。
 
 ## 常见问题
-**Q1:参数范围和步长应该如何设置?**  
-A1:参数范围和步长的设置取决于具体的分析需求。一般来说,范围应该覆盖感兴趣的参数区间,步长不宜过大或过小。过大的步长可能导致结果不够精细,忽略重要的变化趋势;过小的步长会增加计算量,延长仿真时间。需要根据实际情况平衡精度和效率。  
-**Q2: 如果我想要修改其他类型的元件参数，应该怎么做？**  
-A2: **修改其他类型元件参数的方法与修改光伏系统参数类似**。首先，使用 `iesProject.dataManageModel.GetItemList('元件类型')` 获取目标元件的信息，然后根据元件的具体参数使用 `model.getComponentByKey("元件键值")` 获取元件对象，并修改相应的参数。此外，您还可以根据 CloudPSS 的文档来确定正确的参数名称和可接受的参数范围。（插入参考链接）
+**Q1：获取到的优化方案数量为 `0`，这表示什么？如何解决？**
+
+A1： 如果 `plan_result.GetPlanNum()` 返回 `0`，这可能表示没有找到任何优化方案，或者计算过程中存在问题。首先，确认您的输入数据和配置是否正确无误。然后，**检查 CloudPSS 平台是否有任何关于计算失败的日志或错误信息**。
+
+**Q2:`GetComponentResult()` 方法的组件名称和典型日名称怎么获取?**  
+A2:组件名称可以在项目的组件列表中查看获取,详细获取方法在案例3中有介绍，注意名称左边要加上斜杠,如 `/component_photovoltaic_2`。典型日名称可在规划典型日生成模块结果中进行查看。  
+**获取典型日名称**
+![典型日名称](./typical_day_name.png "典型日名称")
 
 ## 完整代码
 ```python
-import time
 import os
 import cloudpss
-import matplotlib.pyplot as plt
-import numpy as np
-from mpl_toolkits.mplot3d import Axes3D  # 导入3D绘图工具
+import time
 
 if __name__ == '__main__':
-    # 设置API访问令牌和API地址
-    cloudpss.setToken('{token}')
+    # 申请并设置自己账户的token
+    cloudpss.setToken('{token}')  
+
+    # 将'https://cloudpss.net/'替换为用户当前使用的平台网址地址
     os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 
-    # 获取模型对象
-    iesProject = cloudpss.IESLabSimulation.fetch(1888)
+    # 规划设计典型场景生成测试——获取指定 simuid 的项目
+    iesplanProject = cloudpss.IESLabPlan.fetch('274')
 
-    # 获取拟修改的元件与设备信息
-    data_PV = iesProject.dataManageModel.GetItemList('光伏')
-    model = iesProject.model
-    model_pv = model.getComponentByKey("PhotovoltaicSys_6")
 
-    # 假设的参数范围
-    maximum_powers = np.arange(700, 901, 50)  # 从700W到900W，步长为100W
-    dip_angles = np.arange(20, 61, 10)  # 从20度到60度，步长为20度
-
-    # 初始化结果存储
-    results = np.zeros((len(maximum_powers), len(dip_angles)))
-
-    X, Y = np.meshgrid(dip_angles, maximum_powers)  # 创建参数网格
-
-    for i, max_power in enumerate(maximum_powers):
-        for j, dip_angle in enumerate(dip_angles):
-            # 更新参数值
-            data_PV[0]['ratedParam']['MaximumPower'] = str(max_power)
-            model_pv.args['DipAngle'] = str(dip_angle)
-
-            # 执行仿真计算
-            runner = iesProject.run()
-            while not runner.status():
-                print('running', flush=True)
-                time.sleep(3)
-            print('计算完成')
-            ies_result = runner.result
-            # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
-            compID = "/PhotovoltaicSys_6"
-            labelName = "功率（$\mathrm{kW}$）"
-            plot_data = ies_result.getPlotData(compID, labelName)
-            results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
-
-    # 绘制二维曲面图
-    fig = plt.figure(figsize=(12, 8))
-    ax = fig.add_subplot(111, projection='3d')
-    surf = ax.plot_surface(X, Y, results, cmap='viridis')
-
-    ax.set_xlabel('Dip Angle (degrees)')
-    ax.set_ylabel('Max Power (W)')
-    ax.set_zlabel('Active Power (kW)')
-    ax.set_title('Active Power vs. Max Power and Dip Angle')
-    fig.colorbar(surf, shrink=0.5, aspect=5)  # 添加颜色条
-
-    plt.show()
-```    
+    # 启动计算
+    runner = iesplanProject.iesLabPlanRun()
+    last_plan_num = 0
+    while not runner.status():
+        # print('running', flush=True)
+        time.sleep(1)
+        plan_result = runner.result
+        plan_num = plan_result.GetPlanNum()
+        if plan_num > last_plan_num:
+            for plan_id in range(last_plan_num, plan_num):
+                print("优化方案", plan_id + 1)
+                plan_info = plan_result.GetPlanInfo(plan_id)
+                print("基础信息:", plan_info)
+                plan_config = plan_result.GetPlanConfiguration(plan_id)
+                print("配置信息:", plan_config)
+                plan_config = plan_result.GetComponentResult(plan_id, "/component_photovoltaic_2", "1月典型日1")
+                print("运行信息:", plan_config)
+                print("=" * 30)
+            last_plan_num = plan_num
+    print('计算完成')
+```

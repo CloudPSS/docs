@@ -53,7 +53,7 @@ if __name__ == '__main__':
     cloudpss.setToken('{token}')  
 
     # 将地址替换为用户当前使用的平台网址地址
-    os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.34/'
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 ```
 在仿真平台中，创建一个新的仿真算例组，名称为 'testGroup'，创建两个新的仿真项目，分别属于 'testGroup' 算例组，其中， 'test2'是在 'test1' 的基础上所创建的仿真项目。
 ```python showLineNumbers
@@ -112,7 +112,7 @@ if __name__ == '__main__':
     cloudpss.setToken('{token}')  
 
     # 将地址替换为用户当前使用的平台网址地址
-    os.environ['CLOUDPSS_API_URL'] = 'http://10.101.10.34/'
+    os.environ['CLOUDPSS_API_URL'] = 'https://cloudpss.net/'
 
     ## 仿真平台操作 ##
     # 创建一个新的仿真算例组，名称为 'testGroup'
