@@ -29,7 +29,7 @@ tags:
  $$  
 式中：$P_r$ 是额定用电功率（$\mathrm{kW}$），$r_{pl}$ 是负载率 PLR（part load ratio），$P$ 是实际工况用电功率（$\mathrm{kW}$）。
 
-![电压缩制冷机 =x300](./IES-CH-5CR.png )
+![电压缩制冷机 =x300](./IES-CH-5CR.svg )
 
 额定工况的典型性能特性曲线如下：
 
