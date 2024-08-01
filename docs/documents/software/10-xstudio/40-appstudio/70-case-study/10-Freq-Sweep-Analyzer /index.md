@@ -9,7 +9,7 @@ description: 扫频分析应用
 
 扫频分析应用，针对 CloudPSS SimStudio 中的算例进行 1-10000Hz 的正序阻抗扫描。该应用主要由三大功能模块组成，分别为**参数配置区**、**运行状态区**以及**结果展示区**，如下图所示。
 
-![应用功能模块](./应用功能模块.png "应用功能模块")
+![应用功能模块](./app-func-module.png "应用功能模块")
 
 扫频分析应用基于 CloudPSS SimStudio、FuncStudio 和 AppStudio 共同开发完成。其中，扫频算例使用 SimStudio 进行创建和管理。扫频内核（部署于 CloudPSS 云端执行器中的 `sweep.py`）基于CloudPSS SDK 批量调用电磁暂态仿真内核，计算出不同频率下的端口阻抗值。最终，借助 AppStudio 构建用户交互页面，实现扫频参数录入、扫频结果展示等功能。本文档主要围绕 **“AppStudio 构建用户交互页面”环节，具体介绍如何搭建应用**。
 
@@ -18,25 +18,25 @@ description: 扫频分析应用
 
 首先登录到 CloudPSS 的主页，点击 AppStudio 图标进入个人中心，点击**新建空白项目**，即创建一个空白项目，并进入 AppStudio 工作台。
 
-![AppStudio工作台](./AppStudio工作台.png "AppStudio工作台")
+![AppStudio工作台](./AppStudio-workbench.png "AppStudio工作台")
 
 
 ## 配置基本信息
 
 点击左上方标签栏**总览**，切换至总览标签页，配置应用名称、权限、描述等基本信息，编写应用文档，如下图所示。
 
-![配置基本信息](./配置基本信息.png "配置基本信息")
+![配置基本信息](./config-basic-info.png "配置基本信息")
 
 
 ## 配置资源
 
 配置使用 FuncStudio 构建的**扫频分析内核**，以供调用：点击左上方标签栏**资源**，切换至资源标签页。然后点击**新建资源**，选择函数**资源类型**，新建资源。将**函数名称**命名为 sweep，然后点击**选择资源**，在弹出框中输入 **sweep_python** 搜索**扫频分析内核**，选择第一个搜索结果，并确定，完成资源配置。
 
-![新建资源](./新建资源.png "新建资源")
+![新建资源](./create-resource.png "新建资源")
 
-![配置资源](./配置资源.png "配置资源")
+![配置资源](./config-resource.png "配置资源")
 
-![资源配置结果](./资源配置结果.png "资源配置结果")
+![资源配置结果](./resource-config-result.png "资源配置结果")
 
 
 ## 设计场景
@@ -44,16 +44,16 @@ description: 扫频分析应用
 ### 场景
 点击左上方标签栏**场景**，切换至场景标签页。在默认 main 场景下，在右侧**属性编辑板块**中，将场景**宽度**设置为 1280，**高度**设置为 720，如下图所示。
 
-![场景控件属性配置](./场景控件属性配置.png "场景控件属性配置")
+![场景控件属性配置](./scene-widget-config.png "场景控件属性配置")
 
 ### 标题
 在左侧 **控件库与场景板块** - **控件** 中，点击 **MarkDown 文本框**控件，中央**场景编辑板块**会出现一个默认的 MarkDown 文本框。在右侧**属性编辑板块** - **属性标签** - **内容** - **值**栏，点击**编辑数据**，在弹出框中输入该应用标题的 Markdown 文本 `# Freq. Sweep Analyzer Suite`。
 
-![标题Markdown文本框编辑](./标题Markdown文本框编辑.png "标题Markdown文本框编辑")
+![标题Markdown文本框编辑](./title-markdown-widget-config.png "标题Markdown文本框编辑")
 
 然后，将**属性编辑板块**状态切换至**布局标签**，设置标题控件**大小和位置**属性，如下图所示。
 
-![标题布局设置](./标题布局设置.png "标题布局设置")
+![标题布局设置](./title-setup.png "标题布局设置")
 
 ### 参数配置区
 
@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
 
 然后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性。
 
-![Project RID 控件搭建](./ProjectRID控件构建.png "Project RID 控件搭建")
+![Project RID 控件搭建](./ProjectRID-widget-setup.png "Project RID 控件搭建")
 
 - **构建打开算例控件**
 
@@ -93,7 +93,7 @@ import TabItem from '@theme/TabItem';
 
 最后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性。
 
-![打开算例控件构建](./打开算例控件构建.png "打开算例控件构建")
+![打开算例控件构建](./open-example-widget-setup.png "打开算例控件构建")
 
 </TabItem>
 <TabItem value="case" label="Start Freq 控件构建">
@@ -102,7 +102,7 @@ import TabItem from '@theme/TabItem';
 
 最后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性。
 
-![Start Freq. 控件构建](./StartFreq控件构建.png "Start Freq. 控件构建")
+![Start Freq. 控件构建](./StartFeq-widget-setup.png "Start Freq. 控件构建")
 
 
 </TabItem>
@@ -119,7 +119,7 @@ import TabItem from '@theme/TabItem';
 
 停止扫频控件的构建方式与开始扫频控件的构建方式相同，不同的是：**禁用**需配置 `not $sweep.running`；**点击**需配置 `$sweep.terminate()`；**X、Y、宽度、高度**分别需配置为220、560、130、50。
 
-![开始扫频控件构建](./开始扫频控件构建.png "开始扫频控件构建")
+![开始扫频控件构建](./start-freq-sweep-widget-setup.png "开始扫频控件构建")
 
 - **构建进度条控件**
 
@@ -127,7 +127,7 @@ import TabItem from '@theme/TabItem';
 
 最后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性，**X、Y、宽度、高度**分别配置为30、630、340、40。
 
-![进度条控件构建](./进度条控件构建.png "进度条控件构建")
+![进度条控件构建](./progress-bar-widget-setup.png "进度条控件构建")
 
 
 ### 结果展示区
@@ -140,7 +140,7 @@ import TabItem from '@theme/TabItem';
 
 最后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性，**X、Y、宽度、高度**分别配置为 400、40、950、340。
 
-![Z扫频结果控件构建](./Z扫频结果控件构建.png "Z 扫频结果控件构建")
+![Z扫频结果控件构建](./Z-sweep-widget-setup.png "Z 扫频结果控件构建")
 
 </TabItem>
 <TabItem value="case" label="配置消息类型方式输出 P 扫频结果曲线">
@@ -149,13 +149,13 @@ import TabItem from '@theme/TabItem';
 
 最后，将**属性编辑板块**状态切换至**布局标签**，配置控件**大小和位置**属性，**X、Y、宽度、高度**分别配置为400、360、950、350。
 
-![P扫频结果控件构建](./P扫频结果控件构建.png "P扫频结果控件构建")
+![P扫频结果控件构建](./P-sweep-widget-setup.png "P扫频结果控件构建")
 
 :::tip
 此控件输出了所有 `plot` 类型的结果，但由于控件尺寸原因，只将 P 的扫频图完全展示出来，如下图所示。用户可滑动鼠标滚轮，查看其它未显示的结果。
 :::
 
-![所有扫频结果](./P扫频结果.png "P扫频结果")
+![所有扫频结果](./P-freq-sweep-result.png "P扫频结果")
 
 </TabItem>
 </Tabs>
@@ -163,4 +163,4 @@ import TabItem from '@theme/TabItem';
 ## 效果展示
 通过以上步骤，用户可构建一个完整的扫频分析应用。构建完成后，用户可点击**预览**按钮，预览和使用应用，如下图所示。用户可点击**保存**、**发布**按钮，对项目进行保存或发布。
 
-![预览效果展示](./预览效果展示.png "预览效果展示")
+![预览效果展示](./preview.png "预览效果展示")
