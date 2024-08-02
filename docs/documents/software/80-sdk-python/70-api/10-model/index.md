@@ -573,9 +573,10 @@ revision = ModelRevision.create(revision)
 运行当前版本。
 
 ```python showLineNumbers
-revision = ModelRevision.create(revision)
+model = cloudpss.Model.fetch('model/Maxwell/IEEE')
+revision = model.revision
 # highlight-next-line
-revision.run()
+revision.run(mode.jobs[0], model.configs[0])
 ```
 
 ### `modelRevision.fetchTopology(implementType, config, maximumDepth)`
@@ -589,13 +590,10 @@ revision.run()
 获取当前版本的拓扑。
 
 ```python showLineNumbers
-revision = ModelRevision.create(revision)
+model = cloudpss.Model.fetch('model/Maxwell/IEEE')
+revision = model.revision
 # highlight-next-line
-topology = revision.fetchTopology()
-# highlight-next-line
-topology = revision.fetchTopology(implementType='powerFlow',config=config) # 获取潮流实现的拓扑数据
-# highlight-next-line
-topology = revision.fetchTopology(maximumDepth=2) # 获取仅展开 2 层的拓扑数据 
+topology = revision.fetchTopology(implementType='powerFlow',config=model.config[0], maximumDepth=2) # 获取潮流实现仅展开 2 层的拓扑数据 
 ```
 
 ### `modelRevision.getImplements()`
@@ -606,7 +604,8 @@ topology = revision.fetchTopology(maximumDepth=2) # 获取仅展开 2 层的拓�
 获取当前版本的实现。
 
 ```python showLineNumbers
-revision = ModelRevision.create(revision)
+model = cloudpss.Model.fetch('model/Maxwell/IEEE')
+revision = model.revision
 # highlight-next-line
 revision.getImplements()
 ```
