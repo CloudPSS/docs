@@ -8,7 +8,7 @@ SimStudio 模型工坊、FuncStudio 函数工坊和 AppStudio 应用工坊之间
 + 在 FuncStudio 中，可利用 CloudPSS SDK 调用 SimStudio 的模型和仿真内核构建更复杂的应用内核
 + 在 AppStudio 中可以直接导入 SimStudio 的模型拓扑图，并直接展示仿真结果
 
-其中利用 CloudPSS SDK 调用 SimStudio 的仿真内核，获取仿真结果详见[EMTLab-SDK帮助文档](../40-xstudio-apps/index.md)。
+其中利用 CloudPSS SDK 调用 SimStudio 的仿真内核，获取仿真结果详见[仿真内核调用及结果获取 SDK](../../../../80-sdk-python/40-emtlab-sdk/20-advanced/20-advanced-case2/index.md)。
 
 本节以一个简单的案例介绍如何在不利用 SDK 构建 FuncStudio 函数的情况下在 AppStudio 里面构建一个实时仿真应用。
 
@@ -124,11 +124,15 @@ SimStudio 模型工坊、FuncStudio 函数工坊和 AppStudio 应用工坊之间
 
 ## 应用预览
 
-进入预览模式，点击开始仿真按钮，该应用会实时显示 bus26 母线电压有效值及曲线的变化，可以点击配置虚拟输入端口，随时控制母线的接地断路器的开断。
+进入预览模式，点击开始仿真按钮，该应用会实时显示 bus26 母线电压有效值及曲线的变化
 
-<!-- ![应用预览](./image-6.png) -->
+![应用预览](./image-19.png)
+
+可以点击配置虚拟输入端口，随时控制母线的接地断路器的开断，1 表示闭合，0 表示断开
+
+![随时控制母线的接地断路器的开断](./image-20.png)
 
 
+实时显示断路器开断过程中 bus26 母线电压有效值及曲线的变化情况
 
-
-
+![应用预览](./image-21.png)
