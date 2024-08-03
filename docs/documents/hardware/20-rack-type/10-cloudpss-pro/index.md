@@ -4,7 +4,7 @@ description: CloudPSS Pro (RT)
 sidebar_position: 10
 ---
 
-![CloudPSS Pro](./pro.png "CloudPSS Pro")  
+![CloudPSS Pro =x300](./pro1.png "CloudPSS Pro") 
 
 CloudPSS Pro 是搭载 CloudPSS 电力系统电磁暂态云仿真平台的高性能软硬件一体仿真机，相较于 CloudPSS Mini，它拥有更强大的计算性能、更大的仿真规模。 
 
