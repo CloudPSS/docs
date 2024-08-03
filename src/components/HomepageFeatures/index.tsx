@@ -16,23 +16,19 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
     {
-        title: 'Easy to Use',
+        title: '文档',
         Svg: undraw_docusaurus_mountain,
-        description: <>Docusaurus was designed from the ground up to be easily installed and used to get your website up and running quickly.</>,
+        description: <>持续更新的 CloudPSS 全套产品完整说明文档。</>,
     },
     {
-        title: 'Focus on What Matters',
+        title: '案例',
         Svg: undraw_docusaurus_tree,
-        description: (
-            <>
-                Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go ahead and move your docs into the <code>docs</code> directory.
-            </>
-        ),
+        description: <>不断分享海量 CloudPSS 官方案例、行业典型案例和学术研究案例。建设中，敬请期待！</>,
     },
     {
-        title: 'Powered by React',
+        title: '教程',
         Svg: undraw_docusaurus_react,
-        description: <>Extend or customize your website layout by reusing React. Docusaurus can be extended while reusing the same header and footer.</>,
+        description: <>免费、开源的仿真教程及课程。Step by Step，上手 CloudPSS。建设中，敬请期待！</>,
     },
 ];
 
