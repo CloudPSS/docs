@@ -21,7 +21,7 @@ function HomepageHeader(): React.JSX.Element {
                 </Heading>
                 <p className="hero__subtitle">{siteConfig.tagline}</p>
                 <div className={styles['buttons']}>
-                    <Link className="button button--secondary button--lg" to="/documents/quick-start/quicke-start/">
+                    <Link className="button button--secondary button--lg" to="/documents/quick-start/quick-start/">
                         10 分钟快速入门 CloudPSS ⏱️
                     </Link>
                 </div>
