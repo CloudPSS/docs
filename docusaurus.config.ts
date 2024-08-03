@@ -13,7 +13,7 @@ const config: Config = {
         'zh-hans': 'CloudPSS 知识库',
     }),
     tagline: translateConfig({
-        'zh-hans': '云仿真 / 云同步 / 云协作',
+        'zh-hans': '构建开源、开放、协作、共享的 CloudPSS 生态',
     }),
 
     favicon: 'icons/favicon.ico',
