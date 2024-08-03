@@ -17,32 +17,24 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
         ],
     },
     {
-        title: 'Community',
+        title: 'CloudPSS',
         items: [
             {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'CloudPSS 官方网站',
+                href: 'https://cloudpss.net',
             },
             {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Bilibili - CloudPSS 官方账号',
+                href: 'https://space.bilibili.com/1724678625',
             },
         ],
     },
     {
-        title: 'More',
+        title: '更多',
         items: [
             {
                 label: '清华大学电机工程与应用电子技术系',
                 href: 'https://www.eea.tsinghua.edu.cn/',
-            },
-            {
-                label: '清华大学能源互联网创新研究院',
-                href: 'http://www.eiri.tsinghua.edu.cn/',
             },
             {
                 label: '清华四川能源互联网研究院',
