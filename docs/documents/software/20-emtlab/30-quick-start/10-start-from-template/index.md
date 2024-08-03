@@ -5,10 +5,12 @@ tags:
 - emtlab
 ---
 
+<!--
 :::warning
 1. 模版案例打开的方法有所变化，现在进入工作台默认打开新建窗口。请调整。(7月底前完成)
 2. 注意按照规范要求调整该文档。(优先级低)
 :::
+-->
 
 本文档介绍基于 EMTLab 模板案例新建电磁暂态仿真模型的功能，并通过 3 个典型模板案例帮助用户快速熟悉 EMTLab 的基本使用方法。
 
@@ -20,15 +22,15 @@ EMTLab 提供新建模板案例的功能，用户可打开一个模板案例并�
 
 ### 从主页新建模板案例
 
-进入 CloudPSS 主页后，在页面下方有 **CloudPSS 典型案例** 功能区，选中对应的案例，点击**打开项目**即可新建一个模板案例。
+注册成功并登录后，页面会自动跳转 CloudPSS 个人中心，在页面下方有 **CloudPSS 典型案例** 功能区，选中对应的案例，点击**打开项目**即可新建一个模板案例。
 
 ![从主页新建模板案例](./create-template-from-home-page.png "从主页新建模板案例")
 
 ### 从工作台新建模板案例
 
-用户也可在主页点击 **SimStudio** 进入 SimStudio 个人中心，再点击**新建电力系统仿真项目**进入 SimStudio 工作台。
+用户也可在 CloudPSS 个人中心点击 **SimStudio** 进入 SimStudio 云空间，再点击**新建电力系统仿真项目**进入 SimStudio 工作台。
 
-![进入 SimStudio 个人中心](./enter-personal-center.png "进入 SimStudio 个人中心")
+![进入 SimStudio 云空间](./enter-personal-center.png "进入 SimStudio 云空间")
 
 ![进入 SimStudio 工作台](./enter-workbench.png "进入 SimStudio 工作台")
 
