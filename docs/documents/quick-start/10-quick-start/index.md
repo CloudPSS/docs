@@ -7,6 +7,8 @@ tags:
 
 ---
 
+跟随本节内容，快速上手 CloudPSS！
+
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />
