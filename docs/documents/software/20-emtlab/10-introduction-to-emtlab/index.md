@@ -3,9 +3,11 @@ title: 软件介绍
 description: EMTLab 软件介绍
 sidebar_position: 10
 ---
+<!--
 :::warning
 我补充了这一节内容，请调整以下内部的加粗内容，查看一下语法错误和数据错误。补充相应图片说明。
 :::
+-->
 
 欢迎使用 **CloudPSS EMTLab 电磁暂态仿真平台**。
 
