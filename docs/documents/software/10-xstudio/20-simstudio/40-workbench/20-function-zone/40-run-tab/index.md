@@ -182,7 +182,9 @@ SimStudio 内置了 CloudPSS 官方提供的潮流计算、电磁暂态仿真、
 XStudio 平台具备快照机制，其中 SimStudio 会将当前计算任务的模型、参数方案、计算方案打包形成**快照**（**snapshot**）。用户可以非常方便地根据历史仿真结果，找到该结果对应的仿真模型拓扑、参数。该功能可帮助用户找回过去可运行成功、但当下不小心修改错误的项目。
 :::
 
-无论是 SimStudio 的模型还是 FuncStudio 的函数，每运行一次，会在结果卡生成一个运行快照。每个运行快照有一个`revision`参数对应，该参数记录了当次计算的拓扑信息和结果信息，revision 除了上述帮助用户找回过去可运行成功、但当下不小心修改错误的项目外，还可以用在sdk、funcstudio 和 appstudio 中直接对指定版本信息的 simstudio 项目进行仿真计算，具体方式参见[AppStudio仿真应用构建案例](../../../../40-appstudio/70-case-study/40-xstudio-apps/index.md)。
+无论是 SimStudio 的模型还是 FuncStudio 的函数，每运行一次，会在结果卡生成一个运行快照。每个运行快照有一个`revision`参数对应，该参数记录了当次计算的拓扑信息和结果信息，revision 除了上述帮助用户找回过去可运行成功、但当下不小心修改错误的项目外，还可以用在sdk、funcstudio 和 appstudio 中直接对指定版本信息的 simstudio 项目进行仿真计算。
+
+<!-- 具体方式参见[AppStudio仿真应用构建案例](../../../../40-appstudio/70-case-study/40-xstudio-apps/index.md)。 -->
 
 ### 在新窗口中打开
 
