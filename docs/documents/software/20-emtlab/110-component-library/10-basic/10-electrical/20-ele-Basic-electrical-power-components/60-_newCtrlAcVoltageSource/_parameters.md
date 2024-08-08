@@ -12,16 +12,16 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Name | `Name` | 文本 | 元件名称 |
-| Is This Source Grounded? | `Grnd` | 选择 | 电压源是否接地？ |
-| No\. of Phases | `Dim` | 选择 | 电压源相数 |
-| Function Type | `Func` | 选择 | 函数类型 |
-| Initial Frequency | `f` | 实数 [Hz] | 初始频率 |
-| Initial Phase | `Ph` | 实数 [Deg] | 初始电压相位 |
+| Source Name | `Name` | 文本 | 元件名称<br>此处输入受控电压源的名称（可缺省） |
+| Is This Source Grounded? | `Grnd` | 选择 | 电压源是否接地？<br> 选择 `Yes` 或 `No` 以使电压源负端接地或不接地 |
+| No\. of Phases | `Dim` | 选择 | 电压源相数 <br> 选择电压源为单相或三相 |
+| Function Type | `Func` | 选择 | 函数类型 <br>选择电压源为正弦表达式或余弦表达式 |
+| Initial Frequency | `f` | 实数 [Hz] | 初始频率 <br>	电压源的初始频率 |
+| Initial Phase | `Ph` | 实数 [Deg] | 初始电压相位<br> 电压源在$t=0$时的相位 |
 | Resistance | `R` | 实数 [Ω] | 内阻 |
-| Start\-up Type | `Init` | 选择 | 启动方式 |
-| Voltage Ramp Up Time | `Tramp` | 实数 [s] | 启动时间 |
-| Voltage Input Time Constant | `Tconstant` | 实数 [s] | 启动时间常数 |
+| Start\-up Type | `Init` | 选择 | 启动方式<br> 选择电压源启动发式为 `Linear Ramp` 或 `Real Pole Ramp` |
+| Voltage Ramp Up Time | `Tramp` | 实数 [s] | 启动时间 <br> 输入斜坡启动时间，仅当**启动方式**项为 `LinearRamp` 时生效 |
+| Voltage Input Time Constant | `Tconstant` | 实数 [s] | 启动时间常数<br> 输入极点时间常数，仅当**启动方式**项为 `RealPoleRamp` 时生效 |
 
 #### Monitoring
 
@@ -29,8 +29,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压 |
-| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电压源输出电流 |
+| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压 <br> 此处输入电压源电压量测信号的标签，如 V |
+| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电压源输出电流<br> 此处输入电压源输出电流量测信号的标签，如 I |
 
 #### Monitoring
 
@@ -38,12 +38,12 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Source Voltage Vector \[kV\] | `V3p` | 虚拟引脚（输出） | 电压源端电压 |
-| 3 Phase Source Current Vector \[kA\] | `I3p` | 虚拟引脚（输出） | 电压源输出电流 |
-| RMS Source Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压源电压均方根值 |
-| RMS Source Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电压源电流均方根值 |
-| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率 |
-| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率 |
+| 3 Phase Source Voltage Vector \[kV\] | `V3p` | 虚拟引脚（输出） | 电压源端电压 <br> 此处输入电压源电压量测信号的标签(3×1维)，如 Vabc。仅当**电压源相数**为 `Three Phase` 时有效 |
+| 3 Phase Source Current Vector \[kA\] | `I3p` | 虚拟引脚（输出） | 电压源输出电流 <br> 此处输入电压源电流量测信号的标签(3×1维)，如 Iabc。仅当**电压源相数**为 `Three Phase` 时有效 |
+| RMS Source Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压源电压均方根值<br> 此处输入电压源电压有效值量测信号的标签(3×1维)，如 Vrms。仅当**电压源相数**为 `Three Phase` 时有效 |
+| RMS Source Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电压源电流均方根值<br> 此处输入电压源电流有效值量测信号的标签(3×1维)，如 Irms。仅当**电压源相数**为 `Three Phase` 时有效 |
+| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率<br> 此处输入电压源有功功率量测信号的标签(1×1维)，如 P。仅当**电压源相数**为 `Three Phase` 时有效 |
+| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率<br> 此处输入电压源无功功率量测信号的标签(1×1维)，如 Q。仅当**电压源相数**为 `Three Phase` 时有效 |
 
 
 </slot>

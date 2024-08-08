@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Initial Value | `V0` | 实数 | 初始值 |
-| Final Value | `V1` | 实数 | 终值 |
-| Step Time | `Time` | 实数 [s] | 阶跃时间 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入阶跃发生器的名称（可缺省） |
+| Initial Value | `V0` | 实数 | 初始值<br>信号输出的初始值 |
+| Final Value | `V1` | 实数 | 终值<br>阶跃发生后，信号的输出值 |
+| Step Time | `Time` | 实数 [s] | 阶跃时间<br>阶跃发生的时间 |
 
 
 </slot>

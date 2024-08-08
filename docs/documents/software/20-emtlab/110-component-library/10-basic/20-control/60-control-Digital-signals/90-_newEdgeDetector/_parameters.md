@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Output for Positive Transition | `P` | 实数 | 上升沿输出值 |
-| Output for No Transition | `NT` | 实数 | 无变化输出值 |
-| Output for Negative Transition | `N` | 实数 | 下降沿输出值 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入边缘检测器的名称（可缺省） |
+| Output for Positive Transition | `P` | 实数 | 上升沿输出值<br>当检测到输入上升沿的输出值 |
+| Output for No Transition | `NT` | 实数 | 无变化输出值<br>当检测到输入无变化时的输出值 |
+| Output for Negative Transition | `N` | 实数 | 下降沿输出值<br>当检测到输入下降沿的输出值 |
 
 
 </slot>

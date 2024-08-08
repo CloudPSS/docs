@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Mag | `0` | 输入 | 1 x 1 |  |
-| Freq | `1` | 输入 | 1 x 1 |  |
-| Phase | `2` | 输入 | 1 x 1 |  |
-| Output | `3` | 输出 | 1 x 1 |  |
+| Mag | `0` | 输入 | 1 x 1 | 幅值输入端口 |
+| Freq | `1` | 输入 | 1 x 1 | 频率输入端口 |
+| Phase | `2` | 输入 | 1 x 1 | 相位输入端口 |
+| Output | `3` | 输出 | 1 x 1 | 输出端口 |
 
 </slot>

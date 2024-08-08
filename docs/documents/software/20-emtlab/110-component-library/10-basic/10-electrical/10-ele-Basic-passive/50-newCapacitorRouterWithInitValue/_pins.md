@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | Dim*2+1 x 1 |  |
-| Pin \- | `1` | 电气 | Dim*2+1 x 1 |  |
+| Pin \+ | `0` | 电气 | Dim*2+1 x 1 | 电容正端（参考方向） |
+| Pin \- | `1` | 电气 | Dim*2+1 x 1 | 电容负端（参考方向） |
 
 </slot>

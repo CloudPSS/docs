@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称 <br>此处输入避雷器的名称（可缺省） |
 | Arrestor Voltage Rating | `Vnom` | 实数 [kV] | 额定电压 |
 | Arrestor Parallel Coefficient | `Iscale` | 实数 | 并联系数 |
 | I\-V Characteristic | `Select` | 选择 | 选择避雷器I-V曲线给定方式 |

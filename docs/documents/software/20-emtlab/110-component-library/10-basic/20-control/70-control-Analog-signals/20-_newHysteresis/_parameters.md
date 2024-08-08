@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Logic 1 Input Level | `HL` | 实数 | 当输入大于设定值时，输出为1 |
-| Logic 0 Input Level | `LL` | 实数 | 当输入小于设定值时，输出为0 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入滞环比较器的名称（可缺省） |
+| Logic 1 Input Level | `HL` | 实数 | 当输入大于设定值时，输出为1<br>滞环带的上限，需保证上限大于下限 |
+| Logic 0 Input Level | `LL` | 实数 | 当输入小于设定值时，输出为0<br>滞环带的下限，需保证上限大于下限 |
 | Invert Output? | `Inv` | 选择 | 输出是否取反？ |
 
 

@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称<br> 此处输入三相断路器的名称（可缺省） |
 | Breaker OPEN Resistance | `Open` | 实数 [Ω] | 断路器断开电阻 |
 | Breaker Close Resistance | `Close` | 实数 [Ω] | 断路器闭合电阻 |
 | Breaker Open Type | `bot` | 选择 | 断路器断开方式 |
@@ -26,10 +26,10 @@ Breaker Control
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Single Phase Operation | `ctrlType` | 选择 | 是否独立控制每相断路器 |
-| 3 Phase Control Signal Name | `ctrlsignal` | 虚拟引脚（输入） | 三相断路器控制信号 |
-| Phase A Control Signal Name | `ctrlsignal_A` | 虚拟引脚（输入） | A相断路器控制信号 |
-| Phase B Control Signal Name | `ctrlsignal_B` | 虚拟引脚（输入） | B相断路器控制信号 |
-| Phase C Control Signal Name | `ctrlsignal_C` | 虚拟引脚（输入） | C相断路器控制信号 |
+| 3 Phase Control Signal Name | `ctrlsignal` | 虚拟引脚（输入） | 三相断路器控制信号 <br> 输入三相断路器控制信号名，比如 breakerCtrl |
+| Phase A Control Signal Name | `ctrlsignal_A` | 虚拟引脚（输入） | A相断路器控制信号 <br> 输入 A 相断路器控制信号名，比如 ctrlsignal_A |
+| Phase B Control Signal Name | `ctrlsignal_B` | 虚拟引脚（输入） | B相断路器控制信号 <br> 输入 B 相断路器控制信号名，比如 ctrlsignal_B |
+| Phase C Control Signal Name | `ctrlsignal_C` | 虚拟引脚（输入） | C相断路器控制信号 <br> 输入 C 相断路器控制信号名，比如 ctrlsignal_C |
 | Initial Breaker Status \(3 Phase\) | `Init` | 选择 | 断路器三相初始状态 |
 | Initial Breaker Status \(Phase A\) | `Init_A` | 选择 | 断路器A相初始状态 |
 | Initial Breaker Status \(Phase B\) | `Init_B` | 选择 | 断路器B相初始状态 |
@@ -41,9 +41,9 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Breaker Current \[kA\] | `I` | 虚拟引脚（输出） | 断路器三相电流 |
-| 3 Phase Breaker Voltage \[kV\] | `V` | 虚拟引脚（输出） | 断路器三相电压 |
-| 3 Phase Breaker Status | `Status` | 虚拟引脚（输出） | 断路器三相状态 |
+| 3 Phase Breaker Current \[kA\] | `I` | 虚拟引脚（输出） | 断路器三相电流 <br> 此处输入断路器三相电流量测信号的标签，如 I，其维数为 3*1 |
+| 3 Phase Breaker Voltage \[kV\] | `V` | 虚拟引脚（输出） | 断路器三相电压 <br>此处输入断路器三相电压量测信号的标签，如 V，其维数为 3*1 |
+| 3 Phase Breaker Status | `Status` | 虚拟引脚（输出） | 断路器三相状态 <br> 此处输入断路器开关状态信号的标签，如 S，其维数为 3*1 |
 | RMS Current \[kA\] | `Irmsname` | 虚拟引脚（输出） | 电流均方根值 |
 | RMS Voltage \[kV\] | `Vrmsname` | 虚拟引脚（输出） | 电压均方根值 |
 | Active Power \[MW\] | `Pname` | 虚拟引脚（输出） | 有功功率 |

@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Function Type | `Type` | 选择 | 函数类型 |
-| Angle Type | `Mode` | 选择 | 角度表示类型 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入三角函数的名称（可缺省） |
+| Function Type | `Type` | 选择 | 函数类型<br>选择六种函数类型之一 |
+| Angle Type | `Mode` | 选择 | 角度表示类型<br>选择以弧度制还是角度制表示 |
 
 
 </slot>
