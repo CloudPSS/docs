@@ -27,10 +27,13 @@ import Pins from './_pins.md'
 
 <Pins/>
 
-## 元件说明
-三相故障电阻的等效电路如下图所示，在故障开始时刻前，电阻Rf等于初始电阻，故障期间根据设置的故障类型改变Rf值
+### 使用说明
+三相故障电阻的等效电路如下图所示，在故障开始时刻前，电阻阻值均等于 `Initial Resistance`。故障期间根据设置的故障类型改变对应的电阻阻值为 `Fault Resistance`。
+
+![三相故障电阻等效电路图 =x350](./_newFaultResistor_3p.png)
 
 ## 案例
+三相故障电阻的使用可参考 [3 机 9 节点标准测试系统](../../../../../30-quick-start/10-start-from-template/index.md#典型模板案例)。
 
 ## 常见问题
 
