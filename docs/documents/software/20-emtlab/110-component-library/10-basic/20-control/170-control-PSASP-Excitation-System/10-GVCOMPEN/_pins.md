@@ -14,6 +14,6 @@ All changes will be overwritten by regeneration.
 | IT | `3` | 输入 | 1 x 1 |  |
 | P | `4` | 输入 | 1 x 1 | P |
 | Q | `5` | 输入 | 1 x 1 | Q |
-| Vc | `6` | 输出 | 1 x 1 |  |
+| Vc | `6` | 输出 | 1 x 1 | 补偿电压输出 |
 
 </slot>

@@ -697,6 +697,61 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/50-module/10-module-Basic/20-_SubSysPort',
     'model/CloudPSS/probeChannel':
         'documents/software/20-emtlab/110-component-library/10-basic/50-module/10-module-Basic/30-probeChannel',
+
+    'model/CloudPSS/WGSource': 'documents/software/20-emtlab/110-component-library/20-renewable-energy/10-wgsource',
+    'model/CloudPSS/WGSource_external_ctrl':
+        'documents/software/20-emtlab/110-component-library/20-renewable-energy/20-wgsource-external-ctrl',
+    'model/CloudPSS/DFIG_WindFarm_Equivalent_Model':
+        'documents/software/20-emtlab/110-component-library/20-renewable-energy/30-dfig-windfarm-equivalent-model',
+    'model/CloudPSS/DFIG_external_ctrl':
+        'documents/software/20-emtlab/110-component-library/20-renewable-energy/40-dfig-external-ctrl',
+    'model/CloudPSS/PVStation': 'documents/software/20-emtlab/110-component-library/20-renewable-energy/50-pvstation',
+    'model/CloudPSS/PVStation_external_ctrl':
+        'documents/software/20-emtlab/110-component-library/20-renewable-energy/60-pvstation-external-ctrl',
+
+    'model/CloudPSS/DCLine': 'documents/software/20-emtlab/110-component-library/30-dc/10-ele-DC-systems/10-DCLine',
+    'model/CloudPSS/DCLine_sp':
+        'documents/software/20-emtlab/110-component-library/30-dc/10-ele-DC-systems/20-DCLine_sp',
+    'model/CloudPSS/HLFNBC': 'documents/software/20-emtlab/110-component-library/30-dc/10-ele-DC-systems/30-HLFNBC',
+    'model/CloudPSS/HLFZCL': 'documents/software/20-emtlab/110-component-library/30-dc/10-ele-DC-systems/40-HLFZCL',
+    'model/CloudPSS/_newPLO':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/10-_newPLO',
+    'model/CloudPSS/_FirePulseGenNLM2Ref':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/20-_FirePulseGenNLM2Ref',
+    'model/CloudPSS/ACfilter1':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/30-ACfilter1',
+    'model/CloudPSS/DCfilter1':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/40-DCfilter1',
+    'model/CloudPSS/DLKZ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/50-DLKZ',
+    'model/CloudPSS/DYKZ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/60-DYKZ',
+    'model/CloudPSS/GKZ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/70-GKZ',
+    'model/CloudPSS/HCDVKZQ':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/80-HCDVKZQ',
+    'model/CloudPSS/HLFNBC_24_H':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/90-HLFNBC_24_H',
+    'model/CloudPSS/HLFZLC_24':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/100-HLFZLC_24',
+    'model/CloudPSS/HXSBYC':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/110-HXSBYC',
+    'model/CloudPSS/VDCOL': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/120-VDCOL',
+    'model/CloudPSS/XHJKZ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/130-XHJKZ',
+    'model/CloudPSS/ZKHJ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/140-ZKHJ',
+    'model/CloudPSS/_SpaceVectorPWM':
+        'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/150-_SpaceVectorPWM',
+    'model/CloudPSS/ZXCFJ': 'documents/software/20-emtlab/110-component-library/30-dc/20-control-DC-systems/160-ZXCFJ',
+
+    'model/CloudPSS/CoHIL_Half_Line':
+        'documents/software/20-emtlab/110-component-library/40-co-simulation/10-coHIL-half-line',
+    'model/CloudPSS/_SFPAPI': 'documents/software/20-emtlab/110-component-library/40-co-simulation/20-sfpapi',
+
+    'model/CloudPSS/_AuroraAI': 'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/10-_AuroraAI',
+    'model/CloudPSS/_AuroraAO': 'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/20-_AuroraAO',
+    'model/CloudPSS/_AuroraDI': 'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/30-_AuroraDI',
+    'model/CloudPSS/_AuroraDO': 'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/40-_AuroraDO',
+    'model/CloudPSS/_VirtualInput':
+        'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/50-_VirtualInput',
+    'model/CloudPSS/_VirtualOutput':
+        'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/60-_VirtualOutput',
 };
 /**
  * 运行 `pnpm comp-docs <token>` 生成文档，其中 `<token>` 为 API 访问令牌

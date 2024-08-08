@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Name | `Name` | 文本 | 电压源名称 |
-| Is This Source Grounded? | `Grnd` | 选择 | 电压源一端是否接地？ |
+| Source Name | `Name` | 文本 | 电压源名称<br>此处输入受控电压源的名称（可缺省） |
+| Is This Source Grounded? | `Grnd` | 选择 | 电压源一端是否接地？？<br> 选择 `Yes` 或 `No` 以使电压源负端接地或不接地 |
 | Resistance | `R` | 实数 [Ω] | 电压源内阻值 |
 
 #### Monitoring
@@ -22,8 +22,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压 |
-| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电压源电流 |
+| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压 <br> 此处输入电压源电压量测信号的标签，如 V |
+| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电压源电流<br> 此处输入电压源输出电流量测信号的标签，如 I |
 
 
 </slot>

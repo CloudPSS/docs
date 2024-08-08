@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入浪涌发生器的名称（可缺省） |
 | Start Time of Up Slope | `T1` | 实数 [s] | 上升沿开始时刻T1 |
 | End Time of Up Slope | `T2` | 实数 [s] | 上升沿结束时刻T2(>T1) |
 | Start Time of Down Slope | `T3` | 实数 [s] | 下降沿开始时刻T3(>T2) |

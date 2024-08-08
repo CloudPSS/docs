@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| A | `0` | 输入 | 1 x 1 |  |
-| B | `1` | 输入 | 1 x 1 |  |
-| Output \(O\) | `2` | 输出 | 1 x 1 |  |
-| Inverse Output \(O̅\) | `3` | 输出 | 1 x 1 |  |
+| A | `0` | 输入 | 1 x 1 | 输入端口 A |
+| B | `1` | 输入 | 1 x 1 | 输入端口 B |
+| Output \(O\) | `2` | 输出 | 1 x 1 | 输出端口 1 |
+| Inverse Output \(O̅\) | `3` | 输出 | 1 x 1 | 输出端口 2，输出逻辑为输出端口 1 相反 |
 
 </slot>

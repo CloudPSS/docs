@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Function Type | `Func` | 选择 | 函数类型 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入可调正弦波发生器的名称（可缺省） |
+| Function Type | `Func` | 选择 | 函数类型<br>选择正弦表达式为 `Sine` 或 `Cosine` |
 
 
 </slot>

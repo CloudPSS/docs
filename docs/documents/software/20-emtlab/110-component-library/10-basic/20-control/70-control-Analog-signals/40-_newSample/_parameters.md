@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Sampling Type Control | `Control` | 选择 | 采样速率控制 |
-| Sampling Rate | `Rate` | 实数 [Hz] | 采样速率 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入采样元件的名称（可缺省） |
+| Sampling Type Control | `Control` | 选择 | 采样速率控制<br>选择采样的方式为内部或外部脉冲 |
+| Sampling Rate | `Rate` | 实数 [Hz] | 采样速率<br>采样的速率，仅当采样速率控制选择为内部时有效 |
 
 
 </slot>

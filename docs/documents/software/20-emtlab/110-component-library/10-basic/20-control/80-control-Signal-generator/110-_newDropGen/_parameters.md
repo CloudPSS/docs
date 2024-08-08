@@ -12,11 +12,11 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入陷落发生器的名称（可缺省） |
 | Drop Time | `T1` | 实数 [s] | 陷落时刻T1 |
 | Recover Time | `T2` | 实数 [s] | 恢复时刻T2(>T1) |
 | Initial Value | `INIT` | 实数 | 初始值 |
-| Drop Value | `Drop` | 实数 | 陷落值 |
+| Drop Value | `Drop` | 实数 | 陷落值<br>信号在陷落时段的输出值 |
 
 
 </slot>

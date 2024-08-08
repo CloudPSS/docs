@@ -12,16 +12,16 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Name | `Name` | 文本 | 元件名称 |
-| Is This Source Grounded? | `Grnd` | 选择 | 电流源一端是否接地？ |
-| Phase Number | `Type` | 选择 | 相数 |
+| Source Name | `Name` | 文本 | 元件名称<br> 此处输入谐波电流源的名称（可缺省） |
+| Is This Source Grounded? | `Grnd` | 选择 | 电流源一端是否接地？<br> 选择 `Yes` 或 `No` 以使电流源负端接地或不接地 |
+| Phase Number | `Type` | 选择 | 相数<br> 选择电流源为单相或三相 |
 | Harmonic Current Magnitude \(RMS\) | `Im` | 实数 [kA] | 谐波电流幅值 |
-| Harmonic Function Type | `Func` | 选择 | 谐波电流函数类型 |
+| Harmonic Function Type | `Func` | 选择 | 谐波电流函数类型<br> 选择谐波电流为正弦表达式或余弦表达式 |
 | Harmonic Current Frequency | `Freq` | 实数 [Hz] | 谐波电流频率 |
-| Initial Phase Angle | `InitPhase` | 实数 [Deg] | 初始电流相位 |
-| Start\-up Type | `Init` | 选择 | 启动方式 |
-| Current Ramp Up Time | `Tr` | 实数 [s] | 启动时间 |
-| Current Time Constant | `Tconstant` | 实数 [s] | 启动时间常数 |
+| Initial Phase Angle | `InitPhase` | 实数 [Deg] | 初始电流相位<br> 电流源在$t=0$时的相位 |
+| Start\-up Type | `Init` | 选择 | 启动方式<br> 选择电流源启动发式为 `Linear Ramp` 或 `Real Pole Ramp` |
+| Current Ramp Up Time | `Tr` | 实数 [s] | 启动时间 <br> 输入斜坡启动时间，仅当**启动方式**项为 `LinearRamp` 时生效 |
+| Current Time Constant | `Tconstant` | 实数 [s] | 启动时间常数<br> 输入极点时间常数，仅当**启动方式**项为 `RealPoleRamp` 时生效 |
 | Injecting Delay | `DelayTime` | 实数 [s] | 谐波电流注入延迟时间 |
 
 #### Monitoring
@@ -30,8 +30,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电流源端电压 |
-| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电流源输出电流 |
+| Source Voltage \[kV\] | `V` | 虚拟引脚（输出） | 电流源端电压 <br> 此处输入电流源电压量测信号的标签，如 V |
+| Source Current \[kA\] | `I` | 虚拟引脚（输出） | 电流源输出电流<br> 此处输入电流源输出电流量测信号的标签，如 I |
 
 
 </slot>

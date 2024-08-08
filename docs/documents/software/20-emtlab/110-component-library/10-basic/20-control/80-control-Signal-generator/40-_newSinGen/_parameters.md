@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Frequency | `F` | 实数 [Hz] | 信号频率 |
-| Magnitude | `Mag` | 实数 | 幅值 |
-| Initial Phase | `Phase` | 实数 [Deg] | 初始相位 |
-| Function Type | `Type` | 选择 | 函数类型 |
-| Offset | `Offset` | 实数 | 偏移量 |
+| Name | `Name` | 文本 | 元件名称<br>此处输入正弦发生器的名称（可缺省） |
+| Frequency | `F` | 实数 [Hz] | 信号频率<br>输出正弦波的频率 |
+| Magnitude | `Mag` | 实数 | 幅值<br>输出正弦波的幅值 |
+| Initial Phase | `Phase` | 实数 [Deg] | 初始相位<br>输出正弦波的初始相位 |
+| Function Type | `Type` | 选择 | 函数类型<br>选择正弦表达式为 `Sine` 或 `Cosine` |
+| Offset | `Offset` | 实数 | 偏移量<br>输出正弦波的在纵轴上的偏移量 |
 | Dimension | `Dim` | 选择 | 单相或三相输出 |
 
 
