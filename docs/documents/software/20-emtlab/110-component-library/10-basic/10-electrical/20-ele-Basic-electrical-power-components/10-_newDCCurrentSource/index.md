@@ -4,6 +4,7 @@ description: "直流电流源"
 ---
 
 ## 元件定义
+该元件用以建模直流电流源。
 
 ## 元件说明
 
@@ -24,6 +25,9 @@ import Parameters from './_parameters.md'
 import Pins from './_pins.md'
 
 <Pins/>
+
+### 使用说明
+CloudPSS 中的电流源为理想电流源模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
 
 ## 案例
 
