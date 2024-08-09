@@ -4,6 +4,12 @@ description: ""
 ---
 
 ## 元件定义
+该元件用于产生随机数据，可选择 4 种随机数产生方式。
+- Uniform Int Distribution: 整数均匀分布
+- Uniform Real Distribution: 实数均匀分布
+- Weibull Distribution: 威布尔分布
+- Normal Distribution: 正态分布
+- Binomial Distribution: 二项式分布
 
 ## 元件说明
 

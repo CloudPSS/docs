@@ -4,6 +4,11 @@ description: ""
 ---
 
 ## 元件定义
+该元件用以产生浪涌信号。
+
+$$
+f\left(t\right)=\begin{cases}0,t<T_1\\\frac{P_k}{T_2-T_1}\left(t-T_1\right),T_1\leqslant t<T_2\\P_k,T_2\leqslant t<T_3\\\frac{P_k}{T_4-T_3}\left(T_4-t\right),T_3\leqslant t<T_4\\0,T_4\leqslant t\end{cases}
+$$
 
 ## 元件说明
 

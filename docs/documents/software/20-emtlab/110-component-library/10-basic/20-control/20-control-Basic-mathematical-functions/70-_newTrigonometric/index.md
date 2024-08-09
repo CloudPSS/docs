@@ -4,6 +4,7 @@ description: "三角函数"
 ---
 
 ## 元件定义
+该元件实现三角函数运算，函数种类可配置为Sin、Cos、Tan、ArcSin、ArcCos、ArcTan六种。
 
 ## 元件说明
 
@@ -24,6 +25,10 @@ import Parameters from './_parameters.md'
 import Pins from './_pins.md'
 
 <Pins/>
+
+### 使用说明
+- Tan 函数在 ( n + 0.5)π 处无意义。
+- ArcSin 和 ArcCos 函数的输入值需在 -1.0 到 1.0 之间。
 
 ## 案例
 
