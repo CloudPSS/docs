@@ -28,6 +28,7 @@ import Pins from './_pins.md'
 <Pins/>
 
 ## 案例
+三相断路器元件建模为一个可变电阻，在三相断路器断开时，电阻阻值为 `Breaker OPEN Resistance`；在三相断路器闭合时，电阻阻值为 `Breaker Close Resistance`。三相断路器的控制通过在 `Breaker Control Signal Name` 输入断路器控制信号名，其控制逻辑为：低电平信号（0）为断开 `Open`，高电平信号（1）为闭合 `Close`。控制信号可使用**控制 - 信号发生器**元件产生。
 
 ## 常见问题
 
