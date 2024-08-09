@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 名称<br>此处输入爬坡函数发生器的名称（可缺省） |
+| Name | `Name` | 文本 | 名称<br/>此处输入爬坡函数发生器的名称（可缺省） |
 | Initial Value | `InitVal` | 实数 | 初始值 |
 | End Value | `EndVal` | 实数 | 最终值 |
 | Inital Time | `InitTime` | 实数 [s] | 起始时间 |

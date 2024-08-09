@@ -13,7 +13,7 @@ Configuration
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Generating Frequency | `Freq` | 实数 [Hz] | 随机数生成频率 |
-| Random Function Type | `type` | 选择 | 随机数函数种类<br> 选择随机数函数种类为“统一整数分布”，“统一实数分布”，“威布尔分布”，“正态分布”以及“二项式分布” |
+| Random Function Type | `type` | 选择 | 随机数函数种类<br/> 选择随机数函数种类为“统一整数分布”，“统一实数分布”，“威布尔分布”，“正态分布”以及“二项式分布” |
 | Enable Random Seed? | `Seed` | 选择 | 是否启用随机种子? |
 
 #### Function Parameters

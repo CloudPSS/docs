@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 <br>此处输入元件名称（可缺省） |
-| Type | `Type` | 选择 | 类型 <br> 选择元件类型为 R / L / C |
+| Name | `Name` | 文本 | 元件名称 <br/>此处输入元件名称（可缺省） |
+| Type | `Type` | 选择 | 类型 <br/> 选择元件类型为 R / L / C |
 
 #### Resistance Setting
 
@@ -22,7 +22,7 @@ Resistance Setting
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Initial Resistance | `R_init` | 实数 [Ω] | 电阻初值 |
-| Variable Resistance | `R_var` | 虚拟引脚（输入） | 可变电阻值 <br> 输入可变电阻信号名，比如 Rvar |
+| Variable Resistance | `R_var` | 虚拟引脚（输入） | 可变电阻值 <br/> 输入可变电阻信号名，比如 Rvar |
 
 #### Inductance Setting
 
@@ -31,8 +31,8 @@ Inductance Setting
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Initial Inductance | `L_init` | 实数 [H] | 电感初值 |
-| Variable Inductance | `L_var` | 虚拟引脚（输入） | 可变电感值<br> 输入可变电感信号名，比如 Lvar |
-| Enable dL/dt effects | `dLeff` | 选择 | Enable dL/dt effects <br> 是否考虑 $dL/dt$ 的影响，考虑时 $d\Psi=d(Li)$ |
+| Variable Inductance | `L_var` | 虚拟引脚（输入） | 可变电感值<br/> 输入可变电感信号名，比如 Lvar |
+| Enable dL/dt effects | `dLeff` | 选择 | Enable dL/dt effects <br/> 是否考虑 $dL/dt$ 的影响，考虑时 $d\Psi=d(Li)$ |
 
 #### Capacitance Setting
 
@@ -41,8 +41,8 @@ Capacitance Setting
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Initial Capacitance | `C_init` | 实数 [μF] | 电容初值 |
-| Variable Capacitance | `C_var` | 虚拟引脚（输入） | 可变电容值<br> 输入可变电容信号名，比如 Cvar |
-| Enable dC/dt effects | `dCeff` | 选择 | Enable dC/dt effects <br> 是否考虑 $dC/dt$ 的影响，考虑时 $dq=d(Cu)$ |
+| Variable Capacitance | `C_var` | 虚拟引脚（输入） | 可变电容值<br/> 输入可变电容信号名，比如 Cvar |
+| Enable dC/dt effects | `dCeff` | 选择 | Enable dC/dt effects <br/> 是否考虑 $dC/dt$ 的影响，考虑时 $dq=d(Cu)$ |
 
 #### Monitoring
 
@@ -50,8 +50,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Branch Current \[kA\] | `I` | 虚拟引脚（输出） | 支路电流 <br>  此处输入支路电流量测信号的标签，比如 I |
-| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 支路电压<br>  此处输入支路电压量测信号的标签，比如 V |
+| Branch Current \[kA\] | `I` | 虚拟引脚（输出） | 支路电流 <br/>  此处输入支路电流量测信号的标签，比如 I |
+| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 支路电压<br/>  此处输入支路电压量测信号的标签，比如 V |
 
 
 </slot>
