@@ -1,9 +1,11 @@
 ---
 title: "模拟量输入"
-description: "用于模拟量输入，最多8路。"
+description: "用于模拟量输入，最多 8 路。"
 ---
 
 ## 元件定义
+
+该元件为模拟量输入，可将 [CloudPSS I/O Signal Hub](../../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 模拟量输入接口的信号传入仿真模型。
 
 ## 元件说明
 
@@ -24,6 +26,11 @@ import Parameters from './_parameters.md'
 import Pins from './_pins.md'
 
 <Pins/>
+
+### 使用方法
+
+参数中的通道序号对应 Signal Hub 的模拟量输入接口，最多 8 路。使用时引脚可以连接到其他元件的控制输入引脚或虚拟输入引脚。
+
 
 ## 案例
 
