@@ -1,9 +1,11 @@
 ---
 title: "联合仿真半传输线"
-description: ""
+description: "基于贝格隆长传输线模型解耦原理，用于联合仿真。"
 ---
 
 ## 元件定义
+
+该元件为联合仿真半传输线，基于贝格隆长传输线模型解耦原理，可补偿联合仿真通信延迟。
 
 ## 元件说明
 
@@ -24,6 +26,8 @@ import Parameters from './_parameters.md'
 import Pins from './_pins.md'
 
 <Pins/>
+
+
 
 ## 案例
 
