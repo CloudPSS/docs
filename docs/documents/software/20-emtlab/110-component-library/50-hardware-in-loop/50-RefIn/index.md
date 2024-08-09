@@ -1,11 +1,11 @@
 ---
-title: "数字量输出"
-description: "用于数字量输出，最多 96 路。"
+title: "调制波输入"
+description: "用于 PWM 调制波输入，最多 8 路。"
 ---
 
 ## 元件定义
 
-该元件为数字量输出，可将仿真模型中的数据从 [CloudPSS I/O Signal Hub](../../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 数字量输出接口送出。
+该元件为调制波输入，可将 [CloudPSS I/O Signal Hub](../../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 的 PWM 输入接口的信号解调为调制波后传入仿真模型。
 
 ## 元件说明
 
@@ -29,7 +29,7 @@ import Pins from './_pins.md'
 
 ### 使用方法
 
-设置 Signal Hub 的数字量通道方向为**输出**，参数中的组别与通道序号对应 Signal Hub 的数字量接口，最多 96 路。使用时引脚可以连接到其他元件的控制输出引脚或虚拟输出引脚。
+设置 Signal Hub 的数字量通道 Ch 49-56 方向为**输入**，并启用 **PWM In**，参数中的通道序号对应 Signal Hub 的 PWM 输入接口，最多 8 路。使用时引脚可以连接到其他元件的控制输入引脚或虚拟输入引脚。
 
 ## 案例
 
