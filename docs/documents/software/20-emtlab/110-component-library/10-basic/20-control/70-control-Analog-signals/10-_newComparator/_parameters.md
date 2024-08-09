@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br>此处输入比较器的名称（可缺省） |
-| Expression | `Expression` | 选择 | 比较表达式<br>选择比较器的比较逻辑 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入比较器的名称（可缺省） |
+| Expression | `Expression` | 选择 | 比较表达式<br/>选择比较器的比较逻辑 |
 | If True Output Value | `True` | 实数 | 为真时的输出值 |
 | If False Output Value | `False` | 实数 | 为假时的输出值 |
 

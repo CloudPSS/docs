@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br> 此处输入取整元件的名称（可缺省） |
-| Param Description | `type` | 选择 | 取整方法<br>选择取整方法为`Floor`、`Round` 或 `Ceil` |
+| Name | `Name` | 文本 | 元件名称<br/> 此处输入取整元件的名称（可缺省） |
+| Param Description | `type` | 选择 | 取整方法<br/>选择取整方法为`Floor`、`Round` 或 `Ceil` |
 
 
 </slot>

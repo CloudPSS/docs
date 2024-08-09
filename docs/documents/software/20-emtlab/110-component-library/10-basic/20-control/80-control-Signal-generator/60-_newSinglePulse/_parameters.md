@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br>此处输入单脉冲发生器的名称（可缺省） |
-| Height of Pulse | `Height` | 实数 | 脉冲峰值<br>脉冲信号的最大值 |
-| Start Time of Pulse | `Time` | 实数 [s] | 脉冲起始时间<br>脉冲信号产生的时间 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入单脉冲发生器的名称（可缺省） |
+| Height of Pulse | `Height` | 实数 | 脉冲峰值<br/>脉冲信号的最大值 |
+| Start Time of Pulse | `Time` | 实数 [s] | 脉冲起始时间<br/>脉冲信号产生的时间 |
 
 
 </slot>

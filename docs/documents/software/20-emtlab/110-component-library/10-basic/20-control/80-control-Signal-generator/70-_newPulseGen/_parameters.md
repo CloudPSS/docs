@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br>此处输入脉冲发生器的名称（可缺省） |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入脉冲发生器的名称（可缺省） |
 | Frequency | `F` | 实数 [Hz] | 脉冲信号频率 |
 | Height of Pulse | `Height` | 实数 | 脉冲峰值 |
 | Time of First Pulse | `T0` | 实数 [s] | 第一个脉冲的发生时间 |

@@ -12,11 +12,11 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br>此处输入三角波发生器的名称（可缺省） |
-| Frequency | `F` | 实数 [Hz] | 信号频率<br>输出三角波信号的频率 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三角波发生器的名称（可缺省） |
+| Frequency | `F` | 实数 [Hz] | 信号频率<br/>输出三角波信号的频率 |
 | Max Output Level | `Max` | 实数 | 信号最大值 |
 | Min Output Level | `Min` | 实数 | 信号最小值 |
-| Duty Ratio | `Duty` | 实数 | 占空比<br>三角波上升时间与周期时间的比值 |
+| Duty Ratio | `Duty` | 实数 | 占空比<br/>三角波上升时间与周期时间的比值 |
 | Initial Phase | `Phase` | 实数 [Deg] | 初始相位 |
 
 

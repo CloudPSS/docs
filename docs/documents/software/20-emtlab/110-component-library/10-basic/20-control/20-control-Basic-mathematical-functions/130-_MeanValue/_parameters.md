@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br>此处输入平均值函数的名称（可缺省） |
-| Time Interval of the Moving Window | `T0` | 实数 [s] | 滑动窗口时间间隔<br>滑动窗口时间间隔 |
-| Initial Output Value | `V0` | 实数 | 初始值<br>函数在第一个时间窗口的初始输出值 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入平均值函数的名称（可缺省） |
+| Time Interval of the Moving Window | `T0` | 实数 [s] | 滑动窗口时间间隔<br/>滑动窗口时间间隔 |
+| Initial Output Value | `V0` | 实数 | 初始值<br/>函数在第一个时间窗口的初始输出值 |
 
 
 </slot>

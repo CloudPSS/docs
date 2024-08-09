@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称<br> 此处输入最大/最小值的名称（可缺省） |
-| Function | `Type` | 选择 | 函数类型<br>选择该函数为最大值或最小值 |
+| Name | `Name` | 文本 | 元件名称<br/> 此处输入最大/最小值的名称（可缺省） |
+| Function | `Type` | 选择 | 函数类型<br/>选择该函数为最大值或最小值 |
 | Input A Enabled? | `A` | 选择 | A端口是否可用？ |
 | Input B Enabled? | `B` | 选择 | B端口是否可用？ |
 | Input C Enabled? | `C` | 选择 | C端口是否可用？ |

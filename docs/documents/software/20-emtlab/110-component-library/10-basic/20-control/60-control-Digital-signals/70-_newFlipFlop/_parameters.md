@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Flip\-Flop Type: | `Type` | 选择 | 触发器种类<br>选择触发器的种类为 `JK`、`RS`、`D`、`T` 类 |
-| Initial State of Output Q | `QInit` | 选择 | Q初始状态<br> 选择触发器的初始状态为 `Low` 或 `High` |
-| Active Clock Trigger Edge | `Clock` | 选择 | 触发沿选择<br> 选择触发器的触发沿为 `Positive`、`Negative` 或 `Level ` |
+| Flip\-Flop Type: | `Type` | 选择 | 触发器种类<br/>选择触发器的种类为 `JK`、`RS`、`D`、`T` 类 |
+| Initial State of Output Q | `QInit` | 选择 | Q初始状态<br/> 选择触发器的初始状态为 `Low` 或 `High` |
+| Active Clock Trigger Edge | `Clock` | 选择 | 触发沿选择<br/> 选择触发器的触发沿为 `Positive`、`Negative` 或 `Level ` |
 | 模式选择（仅RS触发器） | `err_mode` | 选择 | S=1且R=1的情况，Q值选择 |
 
 
