@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[98081],{98081:function(e,t,n){var d;n.r(t),window.addEventListener("beforeprint",(function(){null!=d||(d=document.documentElement.dataset.theme),document.documentElement.dataset.theme="light"})),window.addEventListener("afterprint",(function(){d&&(document.documentElement.dataset.theme=d,d=void 0)}))}}]);
