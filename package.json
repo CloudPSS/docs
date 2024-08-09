@@ -9,7 +9,7 @@
   "engines": {
     "node": ">=20.10"
   },
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.7.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
@@ -28,7 +28,7 @@
     "comp-docs": "node ./tools/comp-docs.js",
     "prepare": "husky && git config --local include.path ../.gitconfig || echo Failed to initialize husky",
     "format": "prettier --cache --cache-strategy content --write .",
-    "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content --ext .js,.ts,.jsx,.tsx ."
+    "lint": "eslint --cache --cache-location node_modules/.cache/eslint/ --cache-strategy content"
   },
   "prettier": "@cloudpss/prettier-config",
   "commitlint": {
@@ -64,20 +64,20 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@cloudpss/commitlint-config": "^2.1.3",
-    "@cloudpss/eslint-config": "^2.1.3",
-    "@cloudpss/http-client": "^0.5.36",
-    "@cloudpss/lint-staged-config": "^2.1.3",
-    "@cloudpss/prettier-config": "^2.1.3",
-    "@cloudpss/resource-types": "^0.5.36",
-    "@cloudpss/tsconfig": "^2.1.3",
+    "@cloudpss/commitlint-config": "^3.0.6",
+    "@cloudpss/eslint-config": "^3.0.6",
+    "@cloudpss/http-client": "^0.5.37",
+    "@cloudpss/lint-staged-config": "^3.0.6",
+    "@cloudpss/prettier-config": "^3.0.6",
+    "@cloudpss/resource-types": "^0.5.37",
+    "@cloudpss/tsconfig": "^3.0.6",
     "@docusaurus/module-type-aliases": "3.4.0",
     "@docusaurus/tsconfig": "3.4.0",
     "@docusaurus/types": "3.4.0",
     "@types/download": "^8.0.5",
     "@types/hast": "^3.0.4",
     "@types/mdast": "^4.0.4",
-    "@types/node": "^20.14.13",
+    "@types/node": "^22.1.0",
     "@types/react": "^18.3.3",
     "chalk-template": "^1.1.0",
     "download": "^8.0.0",
@@ -86,7 +86,7 @@
     "gzipper": "^8.1.0",
     "husky": "^9.1.4",
     "image-size": "^1.1.1",
-    "postcss-preset-env": "^9.6.0",
+    "postcss-preset-env": "^10.0.0",
     "pretty-bytes": "^6.1.1",
     "rxjs": "^7.8.1",
     "typescript": "~5.5.4"
