@@ -4,6 +4,7 @@ description: "Hydro Turbine"
 ---
 
 ## 元件定义
+该元件用于模拟 IEEE Tur-1 型水力涡轮机。
 
 ## 元件说明
 

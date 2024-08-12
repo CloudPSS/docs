@@ -4,6 +4,7 @@ description: "Hydro Governor"
 ---
 
 ## 元件定义
+该元件用于模拟 IEEE GOV-2 型水力调速器。
 
 ## 元件说明
 
