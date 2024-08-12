@@ -4,6 +4,7 @@ description: "ST5B"
 ---
 
 ## 元件定义
+该元件用以模拟标准 IEEE ST5B 型励磁器。
 
 ## 元件说明
 
