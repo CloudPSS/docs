@@ -14,7 +14,7 @@ sidebar_position: 20
    
 5. 手机或者电脑连接 CloudPSS Mini 的无线网络，默认无线网络的名称为 CloudPSS Mini，默认无密码
 
-6. 打开浏览器地址栏输入 http://cloudpss.private（或者 http://10.42.0.1）进入 CloudPSS Mini 主页
+6. 打开浏览器地址栏输入 [http://cloudpss.private](http://cloudpss.private)（或者 [http://10.42.0.1](http://10.42.0.1)）进入 CloudPSS Mini 主页
    
 7. 管理员用户名 admin@admin.com 密码 cloudpssadmin123
     
