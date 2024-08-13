@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Real Constant Value | `Value` | 实数 | 常数 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入常量输入元件的名称（可缺省） |
+| Real Constant Value | `Value` | 实数 | 常数<br/>输出常数的数值 |
 
 
 </slot>

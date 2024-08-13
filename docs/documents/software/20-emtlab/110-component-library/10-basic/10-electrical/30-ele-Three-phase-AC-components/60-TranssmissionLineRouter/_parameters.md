@@ -12,15 +12,15 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Steady\-state Frequency | `Freq` | 实数 [Hz] | 额定频率 |
-| Length of Line | `Length` | 实数 [km] | 线路长度 |
-| Parameter Format | `ParamFormat` | 选择 | 参数输入方式 |
-| 0 Seq\. Data | `Zero` | 选择 | 零序参数输入方法 |
-| Has the Data Been Corrected for Long Line Effects? | `LongLineCorrection` | 选择 | 填入的线路参数是否已进行过长导线修正? |
-| Model Type | `ModelType` | 选择 | 传输线模型种类 |
-| Set This Line as a Network Partition Line? | `Decoupled` | 选择 | 是否将此线路设置为分网线路？ |
-| Set This Line as a Multi\-machine Network Partition Line? | `Decoupled_Multimachine` | 选择 | 是否将此线路设置为多机分网线路？ |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三相传输线的名称（可缺省） |
+| Steady\-state Frequency | `Freq` | 实数 [Hz] | 额定频率<br/>输入额定频率 |
+| Length of Line | `Length` | 实数 [km] | 线路长度<br/>输入线路长度$l$ |
+| Parameter Format | `ParamFormat` | 选择 | 参数输入方式<br/>选择参数输入方式，标幺值和有名值两种 |
+| 0 Seq\. Data | `Zero` | 选择 | 零序参数输入方法<br/>选择是否输入零序参数，若选择否，则零序参数与正序参数相同 |
+| Has the Data Been Corrected for Long Line Effects? | `LongLineCorrection` | 选择 | 填入的线路参数是否已进行过长导线修正?<br/>选择Yes或No，表示所填参数是否进行过长导线修正 |
+| Model Type | `ModelType` | 选择 | 传输线模型种类<br/>选择传输线模型种类：Bergeron Line Model（贝格隆分布参数模型）或Lumped π-Model（π型集总参数模型） |
+| Set This Line as a Network Partition Line? | `Decoupled` | 选择 | 是否将此线路设置为分网线路？<br/>选择Yes或No，表示所填参数是否将此线路设置为分网线路 |
+| Set This Line as a Multi\-machine Network Partition Line? | `Decoupled_Multimachine` | 选择 | 是否将此线路设置为多机分网线路？<br/>选择Yes或No，表示所填参数是否将此线路设置为多机分网线路 |
 
 #### Configuration\-SFEMT
 
@@ -36,14 +36,14 @@ R, X, B (p.u.)
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Rated Voltage \(L\-L, RMS\) | `Vbase` | 实数 [kV] | 额定电压 |
-| Rated Power Capacity | `Sbase` | 实数 [MVA] | 额定容量 |
-| \+/\- Seq\. Resistance | `R1pu` | 实数 [p\.u\./km] | 单位长度正序电阻 |
-| \+/\- Seq\. Inductive Reactance | `X1pu` | 实数 [p\.u\./km] | 单位长度正序电抗 |
-| \+/\- Seq\. Capacitive Susceptance | `B1pu` | 实数 [p\.u\./km] | 单位长度正序电纳 |
-| 0 Seq\. Resistance | `R0pu` | 实数 [p\.u\./km] | 单位长度零序电阻 |
-| 0 Seq\. Inductive Reactance | `X0pu` | 实数 [p\.u\./km] | 单位长度零序电抗 |
-| 0 Seq\. Capacitive Susceptance | `B0pu` | 实数 [p\.u\./km] | 单位长度零序电纳 |
+| Rated Voltage \(L\-L, RMS\) | `Vbase` | 实数 [kV] | 额定电压<br/>输入额定电压（电压基值） |
+| Rated Power Capacity | `Sbase` | 实数 [MVA] | 额定容量<br/>输入额定容量（容量基值） |
+| \+/\- Seq\. Resistance | `R1pu` | 实数 [p\.u\./km] | 单位长度正序电阻<br/>输入单位长度正序电阻标幺值$R_1$ |
+| \+/\- Seq\. Inductive Reactance | `X1pu` | 实数 [p\.u\./km] | 单位长度正序电抗<br/>输入单位长度正序电抗标幺值$X_1$ |
+| \+/\- Seq\. Capacitive Susceptance | `B1pu` | 实数 [p\.u\./km] | 单位长度正序电纳<br/>输入单位长度正序电纳标幺值$B_1$ |
+| 0 Seq\. Resistance | `R0pu` | 实数 [p\.u\./km] | 单位长度零序电阻<br/>输入单位长度零序电阻标幺值$R_0$ ​，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Inductive Reactance | `X0pu` | 实数 [p\.u\./km] | 单位长度零序电抗<br/>输入单位长度零序电抗标幺值 $X_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Capacitive Susceptance | `B0pu` | 实数 [p\.u\./km] | 单位长度零序电纳<br/>输入单位长度零序电纳标幺值$B_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
 
 #### R, Xl, Xc \(Ω\)
 
@@ -51,12 +51,12 @@ R, Xl, Xc (Ω)
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \+/\- Seq\. Resistance | `R1` | 实数 [Ω/km] | 单位长度正序电阻 |
-| \+/\- Seq\. Inductive Reactance | `Xl1` | 实数 [Ω/km] | 单位长度正序感抗 |
-| \+/\- Seq\. Capacitive Reactance | `Xc1` | 实数 [MΩ\*km] | 单位长度正序容抗 |
-| 0 Seq\. Resistance | `R0` | 实数 [Ω/km] | 单位长度零序电阻 |
-| 0 Seq\. Inductive Reactance | `Xl0` | 实数 [Ω/km] | 单位长度零序感抗 |
-| 0 Seq\. Capacitive Reactance | `Xc0` | 实数 [MΩ\*km] | 单位长度零序容抗 |
+| \+/\- Seq\. Resistance | `R1` | 实数 [Ω/km] | 单位长度正序电阻<br/>输入单位长度正序电阻有名值$R_1$ |
+| \+/\- Seq\. Inductive Reactance | `Xl1` | 实数 [Ω/km] | 单位长度正序感抗<br/>输入单位长度正序串联电抗有名值$X_{l1}$ |
+| \+/\- Seq\. Capacitive Reactance | `Xc1` | 实数 [MΩ\*km] | 单位长度正序容抗<br/>输入单位长度正序并联容抗有名值$X_{c1}$ |
+| 0 Seq\. Resistance | `R0` | 实数 [Ω/km] | 单位长度零序电阻<br/>输入单位长度零序电阻有名值 $R_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Inductive Reactance | `Xl0` | 实数 [Ω/km] | 单位长度零序感抗<br/>输入单位长度零序串联电抗有名值$X_{l0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Capacitive Reactance | `Xc0` | 实数 [MΩ\*km] | 单位长度零序容抗<br/>输入单位长度零序并联容抗有名值$X_{c0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
 
 #### Auxiliary Parameters
 
@@ -72,16 +72,16 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Current Vector \(Sending Terminal\) \[kA\] | `Is` | 虚拟引脚（输出） | 送端电流向量 |
-| 3 Phase Current Vector \(Receiving Terminal\) \[kA\] | `Ir` | 虚拟引脚（输出） | 受端电流向量 |
-| RMS Current \(Sending Terminal\) \[kA\] | `Isrms` | 虚拟引脚（输出） | 送端电流均方根值 |
-| RMS Current \(Receiving Terminal\) \[kA\] | `Irrms` | 虚拟引脚（输出） | 受端电流均方根值 |
-| Active Power \(Sending Terminal\) \[MW\] | `Ps` | 虚拟引脚（输出） | 送端有功功率 |
-| Reactive Power \(Sending Terminal\) \[MVar\] | `Qs` | 虚拟引脚（输出） | 送端无功功率 |
-| Active Power \(Receiving Terminal\) \[MW\] | `Pr` | 虚拟引脚（输出） | 受端有功功率 |
-| Reactive Power \(Receiving Terminal\) \[MVar\] | `Qr` | 虚拟引脚（输出） | 受端无功功率 |
-| Active Power Losses \[MW\] | `Ploss` | 虚拟引脚（输出） | 有功功率线路损耗 |
-| Reactive Power Losses \[MVar\] | `Qloss` | 虚拟引脚（输出） | 无功功率线路损耗 |
+| 3 Phase Current Vector \(Sending Terminal\) \[kA\] | `Is` | 虚拟引脚（输出） | 送端电流向量<br/>此处输入传输线送端电流量测信号的标签（3×1维），如 Isabc |
+| 3 Phase Current Vector \(Receiving Terminal\) \[kA\] | `Ir` | 虚拟引脚（输出） | 受端电流向量<br/>此处输入传输线受端电流量测信号的标签（3×1维），如 Irabc |
+| RMS Current \(Sending Terminal\) \[kA\] | `Isrms` | 虚拟引脚（输出） | 送端电流均方根值<br/>此处输入传输线送端电流有效值量测信号的标签（1×1维），如 Isrms |
+| RMS Current \(Receiving Terminal\) \[kA\] | `Irrms` | 虚拟引脚（输出） | 受端电流均方根值<br/>此处输入传输线受端电流有效值量测信号的标签（1×1维），如 Irrms |
+| Active Power \(Sending Terminal\) \[MW\] | `Ps` | 虚拟引脚（输出） | 送端有功功率<br/>此处输入传输线送端有功功率量测信号的标签（1×1维），如 Ps |
+| Reactive Power \(Sending Terminal\) \[MVar\] | `Qs` | 虚拟引脚（输出） | 送端无功功率<br/>此处输入传输线送端无功功率量测信号的标签（1×1维），如 Qs |
+| Active Power \(Receiving Terminal\) \[MW\] | `Pr` | 虚拟引脚（输出） | 受端有功功率<br/>此处输入传输线受端有功功率量测信号的标签（1×1维），如 Pr |
+| Reactive Power \(Receiving Terminal\) \[MVar\] | `Qr` | 虚拟引脚（输出） | 受端无功功率<br/>此处输入传输线受端无功功率量测信号的标签（1×1维），如 Qr |
+| Active Power Losses \[MW\] | `Ploss` | 虚拟引脚（输出） | 有功功率线路损耗<br/>此处输入传输线有功功率损耗量测信号的标签（1×1维），如 Ploss |
+| Reactive Power Losses \[MVar\] | `Qloss` | 虚拟引脚（输出） | 无功功率线路损耗<br/>此处输入传输线无功功率损耗量测信号的标签（1×1维），如 Qloss |
 
 
 </slot>

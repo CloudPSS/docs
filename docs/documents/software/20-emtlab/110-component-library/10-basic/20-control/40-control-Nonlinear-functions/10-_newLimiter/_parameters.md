@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Limit Type | `Limtype` | 选择 | 限幅种类 |
-| Upper Limit | `UL` | 实数 | 限幅器上限 |
-| Lower Limit | `LL` | 实数 | 限幅器下限 |
-| Upper Limit Signal | `DUL` | 虚拟引脚（输入） | 限幅器上限（以@开头的信号名） |
-| Lower Limit Signal | `DLL` | 虚拟引脚（输入） | 限幅器下限（以@开头的信号名） |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入限幅器的名称（可缺省） |
+| Limit Type | `Limtype` | 选择 | 限幅种类<br/>选择限幅器的种类，可配置为“Fixed Limits”或“Dynamic Limits” |
+| Upper Limit | `UL` | 实数 | 限幅器上限<br/>元件输出上限，仅当“限幅器种类”配置为“Fixed Limits”时有效 |
+| Lower Limit | `LL` | 实数 | 限幅器下限<br/>元件输出下限，仅当“限幅器种类”配置为“Fixed Limits”时有效 |
+| Upper Limit Signal | `DUL` | 虚拟引脚（输入） | 限幅器上限（以@开头的信号名）<br/>元件输出上限，仅当“限幅器种类”配置为“Dynamic Limits”时有效 |
+| Lower Limit Signal | `DLL` | 虚拟引脚（输入） | 限幅器下限（以@开头的信号名）<br/>元件输出下限，仅当“限幅器种类”配置为“Dynamic Limits”时有效 |
 
 
 </slot>

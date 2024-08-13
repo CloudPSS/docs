@@ -10,6 +10,6 @@ All changes will be overwritten by regeneration.
 |:------ |:---- |:----:|:----:|:---- |
 | Input | `0` | 输入 | 1 x 1 | 输入端口 |
 | Pulse | `1` | 输入 | 1 x 1 | 外部脉冲输入端口，仅当采样速率控制选择为 `External Pulse` 时有效 |
-| Output | `2` | 输出 | 1 x 1 | External Pulse |
+| Output | `2` | 输出 | 1 x 1 | 输出端口 |
 
 </slot>

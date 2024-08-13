@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source Name | `Name` | 文本 | 电压源名称<br/>此处输入受控电压源的名称（可缺省） |
-| Is This Source Grounded? | `Grnd` | 选择 | 电压源一端是否接地？？<br/> 选择 `Yes` 或 `No` 以使电压源负端接地或不接地 |
+| Source Name | `Name` | 文本 | 电压源名称 <br/> 此处输入受控电压源的名称（可缺省） |
+| Is This Source Grounded? | `Grnd` | 选择 | 电压源一端是否接地？<br/> 选择 `Yes` 或 `No` 以使电压源负端接地或不接地 |
 | Resistance | `R` | 实数 [Ω] | 电压源内阻值 |
 
 #### Monitoring

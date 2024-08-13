@@ -12,16 +12,16 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Enable Snubber Circuit? | `Snubber` | 选择 | 有无缓冲电路 |
-| ON Resistance | `Ron` | 实数 [Ω] | 导通电阻 |
-| OFF Resistance | `Roff` | 实数 [Ω] | 关断电阻 |
-| Forward Voltage Drop | `Vfd` | 实数 [kV] | 正向导通压降 |
-| Forward Breakover Voltage | `Vfb` | 实数 [kV] | 正向击穿电压 |
-| Reverse Withstand Voltage | `Vrw` | 实数 [kV] | 反向耐受电压 |
-| Minimum Extinction Time | `Tme` | 实数 [s] | 导通延迟时间 |
-| Snubber Resistance | `Rs` | 实数 [Ω] | 缓冲电路电阻 |
-| Snubber Capacitance | `Cs` | 实数 [μF] | 缓冲电路电容 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入二极管的名称（可缺省） |
+| Enable Snubber Circuit? | `Snubber` | 选择 | 有无缓冲电路<br/>选择“Yes”或“No”以启用或禁用二极管并联的缓冲电路 |
+| ON Resistance | `Ron` | 实数 [Ω] | 导通电阻<br/>二极管导通时的等效电阻 |
+| OFF Resistance | `Roff` | 实数 [Ω] | 关断电阻<br/>二极管关断时的等效电阻 |
+| Forward Voltage Drop | `Vfd` | 实数 [kV] | 正向导通压降<br/>二极管导通时的等效压降 |
+| Forward Breakover Voltage | `Vfb` | 实数 [kV] | 正向击穿电压<br/>二极管正向击穿电压，当正向超过这个数值时，二极管将被正向击穿 |
+| Reverse Withstand Voltage | `Vrw` | 实数 [kV] | 反向耐受电压<br/>二极管反向耐受电压，当反向超过这个数值时，二极管将被反向击穿 |
+| Minimum Extinction Time | `Tme` | 实数 [s] | 导通延迟时间<br/>二极管导通延迟时间，即从接受到导通信号到电气导通的时间间隔 |
+| Snubber Resistance | `Rs` | 实数 [Ω] | 缓冲电路电阻<br/>二极管并联RC缓冲电路的电阻，仅当“有无缓冲电路”选择"Yes"时有效 |
+| Snubber Capacitance | `Cs` | 实数 [μF] | 缓冲电路电容<br/>二极管并联RC缓冲电路的电容，仅当“有无缓冲电路”选择"Yes"时有效 |
 
 #### Monitoring
 
@@ -29,9 +29,9 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Current \(Snubber Excluded\) \[kA\] | `I` | 虚拟引脚（输出） | 二极管支路电流（不含缓冲电路） |
-| Total Current \[kA\] | `Itotal` | 虚拟引脚（输出） | 二极管总电流 |
-| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 支路电压 |
+| Current \(Snubber Excluded\) \[kA\] | `I` | 虚拟引脚（输出） | 二极管支路电流（不含缓冲电路）<br/>此处输入不含缓冲电路的支路电流信号量测信号的标签，如 Is1 |
+| Total Current \[kA\] | `Itotal` | 虚拟引脚（输出） | 二极管总电流<br/>此处输入流过二极管及缓冲电路的总电流信号量测信号的标签，如 Is2 |
+| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 支路电压<br/>此处输入支路电压量测信号的标签，如 Vd |
 
 
 </slot>

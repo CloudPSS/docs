@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Channel Name | `Name` | 文本 | 波形名称 |
-| Dim\. of Input Signal | `Dim` | 整数 | 通道数量 |
+| Channel Name | `Name` | 文本 | 波形名称<br/>此处输入输出通道的名称，该名称将在仿真结果弹出框的图例中显示，不填则由系统默认名称 |
+| Dim\. of Input Signal | `Dim` | 整数 | 通道数量<br/>连接该输出通道的输入信号的维数 |
 
 
 </slot>

@@ -12,14 +12,14 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Line ID | `LineID` | 文本 | 相同的ID代表同一根传输线，用于Bergeron模型分网并行计算 |
-| Steady\-state Frequency | `Freq` | 实数 [Hz] | 额定频率 |
-| Length of Line | `Length` | 实数 [km] | 线路长度 |
-| Parameter Format | `ParamFormat` | 选择 | 参数输入方式 |
-| 0 Seq\. Data | `Zero` | 选择 | 零序参数输入方法 |
-| Has the Data Been Corrected for Long Line Effects? | `LongLineCorrection` | 选择 | 填入的线路参数是否已进行过长导线修正? |
-| Model Type | `ModelType` | 选择 | 传输线模型种类 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三相长传输线[解耦]的名称（可缺省） |
+| Line ID | `LineID` | 文本 | 传输线ID<br/>相同的ID代表同一根传输线，用于Bergeron模型分网并行计算 |
+| Steady\-state Frequency | `Freq` | 实数 [Hz] | 额定频率<br/>输入额定频率 |
+| Length of Line | `Length` | 实数 [km] | 线路长度<br/>输入线路长度$l$ |
+| Parameter Format | `ParamFormat` | 选择 | 参数输入方式<br/>选择参数输入方式，标幺值和有名值两种 |
+| 0 Seq\. Data | `Zero` | 选择 | 零序参数输入方法<br/>选择是否输入零序参数，若选择否，则零序参数与正序参数相同 |
+| Has the Data Been Corrected for Long Line Effects? | `LongLineCorrection` | 选择 | 填入的线路参数是否已进行过长导线修正?<br/>选择Yes或No，表示所填参数是否进行过长导线修正 |
+| Model Type | `ModelType` | 选择 | 传输线模型种类<br/>选择传输线模型种类：Bergeron Line Model（贝格隆分布参数模型）或Lumped π-Model（π型集总参数模型） |
 
 #### R, X, B \(p\.u\.\)
 
@@ -27,14 +27,14 @@ R, X, B (p.u.)
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Rated Voltage \(L\-L, RMS\) | `Vbase` | 实数 [kV] | 额定电压 |
-| Rated Power Capacity | `Sbase` | 实数 [MVA] | 额定容量 |
-| \+/\- Seq\. Resistance | `R1pu` | 实数 [p\.u\./km] | 单位长度正序电阻 |
-| \+/\- Seq\. Inductive Reactance | `X1pu` | 实数 [p\.u\./km] | 单位长度正序电抗 |
-| \+/\- Seq\. Capacitive Susceptance | `B1pu` | 实数 [p\.u\./km] | 单位长度正序电纳 |
-| 0 Seq\. Resistance | `R0pu` | 实数 [p\.u\./km] | 单位长度零序电阻 |
-| 0 Seq\. Inductive Reactance | `X0pu` | 实数 [p\.u\./km] | 单位长度零序电抗 |
-| 0 Seq\. Capacitive Susceptance | `B0pu` | 实数 [p\.u\./km] | 单位长度零序电纳 |
+| Rated Voltage \(L\-L, RMS\) | `Vbase` | 实数 [kV] | 额定电压<br/>输入额定电压（电压基值） |
+| Rated Power Capacity | `Sbase` | 实数 [MVA] | 额定容量<br/>输入额定容量（容量基值） |
+| \+/\- Seq\. Resistance | `R1pu` | 实数 [p\.u\./km] | 单位长度正序电阻<br/>输入单位长度正序电阻标幺值$R_1$ |
+| \+/\- Seq\. Inductive Reactance | `X1pu` | 实数 [p\.u\./km] | 单位长度正序电抗<br/>输入单位长度正序电抗标幺值$X_1$ |
+| \+/\- Seq\. Capacitive Susceptance | `B1pu` | 实数 [p\.u\./km] | 单位长度正序电纳<br/>输入单位长度正序电纳标幺值$B_1$ |
+| 0 Seq\. Resistance | `R0pu` | 实数 [p\.u\./km] | 单位长度零序电阻<br/>输入单位长度零序电阻标幺值$R_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Inductive Reactance | `X0pu` | 实数 [p\.u\./km] | 单位长度零序电抗<br/>输入单位长度零序电抗标幺值$X_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Capacitive Susceptance | `B0pu` | 实数 [p\.u\./km] | 单位长度零序电纳<br/>输入单位长度零序电纳标幺值$B_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
 
 #### R, Xl, Xc \(Ω\)
 
@@ -42,12 +42,12 @@ R, Xl, Xc (Ω)
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \+/\- Seq\. Resistance | `R1` | 实数 [Ω/km] | 单位长度正序电阻 |
-| \+/\- Seq\. Inductive Reactance | `Xl1` | 实数 [Ω/km] | 单位长度正序感抗 |
-| \+/\- Seq\. Capacitive Reactance | `Xc1` | 实数 [MΩ\*km] | 单位长度正序容抗 |
-| 0 Seq\. Resistance | `R0` | 实数 [Ω/km] | 单位长度零序电阻 |
-| 0 Seq\. Inductive Reactance | `Xl0` | 实数 [Ω/km] | 单位长度零序感抗 |
-| 0 Seq\. Capacitive Reactance | `Xc0` | 实数 [MΩ\*km] | 单位长度零序容抗 |
+| \+/\- Seq\. Resistance | `R1` | 实数 [Ω/km] | 单位长度正序电阻<br/>输入单位长度正序电阻有名值$R_1$ |
+| \+/\- Seq\. Inductive Reactance | `Xl1` | 实数 [Ω/km] | 单位长度正序感抗<br/>输入单位长度正序串联电抗有名值$X_{l1}$ |
+| \+/\- Seq\. Capacitive Reactance | `Xc1` | 实数 [MΩ\*km] | 单位长度正序容抗<br/>输入单位长度正序并联容抗有名值$X_{c1}$ |
+| 0 Seq\. Resistance | `R0` | 实数 [Ω/km] | 单位长度零序电阻<br/>输入单位长度零序电阻有名值 $R_0$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Inductive Reactance | `Xl0` | 实数 [Ω/km] | 单位长度零序感抗<br/>输入单位长度零序串联电抗有名值$X_{l0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
+| 0 Seq\. Capacitive Reactance | `Xc0` | 实数 [MΩ\*km] | 单位长度零序容抗<br/>输入单位长度零序并联容抗有名值$X_{c0}$，仅当选择“Enter 0 Seq. Data”（输入零序参数）时有效 |
 
 #### Monitoring
 
@@ -55,11 +55,11 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Voltage Vector \(Terminal\) \[kV\] | `Vs` | 虚拟引脚（输出） | 本侧端口电压向量 |
-| 3 Phase Current Vector \(Terminal\) \[kA\] | `Is` | 虚拟引脚（输出） | 本侧端口电流向量（流向对侧方向为正） |
-| RMS Current \(Terminal\) \[kA\] | `Isrms` | 虚拟引脚（输出） | 本侧端口电流均方根值 |
-| Active Power \(Terminal\) \[MW\] | `Ps` | 虚拟引脚（输出） | 本侧端口有功功率（流入端口为正） |
-| Reactive Power \(Terminal\) \[MVar\] | `Qs` | 虚拟引脚（输出） | 本侧端口无功功率（流入端口的感性无功为正） |
+| 3 Phase Voltage Vector \(Terminal\) \[kV\] | `Vs` | 虚拟引脚（输出） | 本侧端口电压向量<br/>此处输入传输线本侧端口电压量测信号的标签（3×1维），如 Vabc |
+| 3 Phase Current Vector \(Terminal\) \[kA\] | `Is` | 虚拟引脚（输出） | 本侧端口电流向量（流向对侧方向为正）<br/>此处输入传输线本侧端口电流量测信号的标签（3×1维），如 Iabc |
+| RMS Current \(Terminal\) \[kA\] | `Isrms` | 虚拟引脚（输出） | 本侧端口电流均方根值<br/>此处输入传输线本侧端口电流有效值量测信号的标签（1×1维），如 Irms |
+| Active Power \(Terminal\) \[MW\] | `Ps` | 虚拟引脚（输出） | 本侧端口有功功率（流入端口为正）<br/>此处输入传输线本侧端口有功功率量测信号的标签（1×1维），如 P |
+| Reactive Power \(Terminal\) \[MVar\] | `Qs` | 虚拟引脚（输出） | 本侧端口无功功率（流入端口的感性无功为正）<br/>此处输入传输线本侧端口无功功率量测信号的标签（1×1维），如 Q |
 
 
 </slot>

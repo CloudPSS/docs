@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Input in | `IPUnit` | 选择 | 输入类型 |
-| Output in | `OPUnit` | 选择 | 输出类型 |
-| Output Range | `Range` | 选择 | 输出范围 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入角度转换器的名称（可缺省） |
+| Input in | `IPUnit` | 选择 | 输入类型<br/>选择输入为弧度制还是角度制 |
+| Output in | `OPUnit` | 选择 | 输出类型<br/>选择输出为弧度制还是角度制 |
+| Output Range | `Range` | 选择 | 输出范围<br/>选择输出范围为0到2π或-π到π |
 
 
 </slot>

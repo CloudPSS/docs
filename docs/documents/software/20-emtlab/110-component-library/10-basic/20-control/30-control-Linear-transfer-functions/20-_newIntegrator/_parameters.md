@@ -12,11 +12,11 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Time Constant | `T` | 实数 [s] | 时间常数 |
-| Initial Output Value | `Yo` | 实数 | 初始输出值 |
-| Limit Output? | `Lim` | 选择 | 是否限制输出 |
-| Resettable? | `Reset` | 选择 | 积分器是否可重置？ |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入积分器的名称（可缺省） |
+| Time Constant | `T` | 实数 [s] | 时间常数<br/>积分器的时间常数 |
+| Initial Output Value | `Yo` | 实数 | 初始输出值<br/>积分器的初始输出值 |
+| Limit Output? | `Lim` | 选择 | 是否限制输出<br/>选择是否限制该环节的输出，可配置为 `Fixed Limits` 或 `Dynamic Limits` |
+| Resettable? | `Reset` | 选择 | 积分器是否可重置？<br/>选择积分器是否可重置 |
 
 #### Fixed Limits
 
@@ -24,8 +24,8 @@ Fixed Limits
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Maximum Limit | `Max` | 实数 | 输出上限 |
-| Minimum Limit | `Min` | 实数 | 输出下限 |
+| Maximum Limit | `Max` | 实数 | 输出上限<br/>元件输出上限，仅当 `限制输出` 配置为 `Fixed Limits` 时有效 |
+| Minimum Limit | `Min` | 实数 | 输出下限<br/>元件输出下限，仅当 `限制输出` 配置为 `Fixed Limits` 时有效 |
 
 #### Dynamic Limits
 
@@ -33,8 +33,8 @@ Dynamic Limits
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Maximum Limit | `DMax` | 虚拟引脚（输入） | 输出上限（以@开头的信号名） |
-| Minimum Limit | `DMin` | 虚拟引脚（输入） | 输出下限（以@开头的信号名） |
+| Maximum Limit | `DMax` | 虚拟引脚（输入） | 输出上限（以@开头的信号名）<br/>元件输出上限，仅当 `限制输出` 配置为 `Dynamic Limits` 时有效 |
+| Minimum Limit | `DMin` | 虚拟引脚（输入） | 输出下限（以@开头的信号名）<br/>元件输出下限，仅当 `限制输出` 配置为 `Dynamic Limits` 时有效 |
 
 
 </slot>

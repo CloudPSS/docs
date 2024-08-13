@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Maximum Increase Rate | `Max` | 实数 [1/s] | 上升斜率最大值 |
-| Maximum Decrease Rate | `Min` | 实数 [1/s] | 下降斜率最大值 |
-| Initial Value | `Init` | 实数 | 零时刻初始值 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入速度限幅器的名称（可缺省） |
+| Maximum Increase Rate | `Max` | 实数 [1/s] | 上升斜率最大值<br/>上升斜率最大值限制 |
+| Maximum Decrease Rate | `Min` | 实数 [1/s] | 下降斜率最大值<br/>下降斜率最大值限制 |
+| Initial Value | `Init` | 实数 | 零时刻初始值<br/>零时刻初始值设定 |
 
 
 </slot>

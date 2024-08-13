@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 名称 |
-| Trigger Selection | `mode` | 选择 | 触发方式选择 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入事件日志的名称（可缺省） |
+| Trigger Selection | `mode` | 选择 | 触发方式选择<br/>选择触发方式为上升沿触发或下降沿触发 |
 | Initial State | `init` | 实数 | 初始状态 |
 | Log Content | `content` | 文本 | 日志内容 |
 

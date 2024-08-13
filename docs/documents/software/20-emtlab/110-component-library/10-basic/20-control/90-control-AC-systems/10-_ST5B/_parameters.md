@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \[Rc\] Load Compensating Resistance | `Rc` | 实数 [pu] |  |
-| \[Xc\] Load Compensating Reactance | `Xc` | 实数 [pu] |  |
-| \[Tr\] Transducer Time Constant | `TR` | 实数 [s] |  |
+| \[Rc\] Load Compensating Resistance | `Rc` | 实数 [pu] | 负载补偿电阻 |
+| \[Xc\] Load Compensating Reactance | `Xc` | 实数 [pu] | 负载补偿电抗 |
+| \[Tr\] Transducer Time Constant | `TR` | 实数 [s] | 传感器时间常数 |
 
 #### St5B Forward Lead\-Lag Parameters
 
@@ -22,12 +22,12 @@ St5B Forward Lead-Lag Parameters
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \[TC1\] 1st Lead Time Constant | `Tc1` | 实数 [s] |  |
-| \[TB1\] 1st Lag Time Constant | `Tb1` | 实数 [s] |  |
-| \[TC2\] 2nd Lead Time Constant | `Tc2` | 实数 [s] |  |
-| \[TB2\] 2nd Lag Time Constant | `Tb2` | 实数 [s] |  |
-| \[KR\] Regulator Gain | `KR` | 实数 [pu] |  |
-| \[T1\] Regulator Time Constant | `T1` | 实数 [s] |  |
+| \[TC1\] 1st Lead Time Constant | `Tc1` | 实数 [s] | 第一个超前滞后环节超前时间常数 |
+| \[TB1\] 1st Lag Time Constant | `Tb1` | 实数 [s] | 第一个超前滞后环节滞后时间常数 |
+| \[TC2\] 2nd Lead Time Constant | `Tc2` | 实数 [s] | 第二个超前滞后环节超前时间常数 |
+| \[TB2\] 2nd Lag Time Constant | `Tb2` | 实数 [s] | 第二个超前滞后环节滞后时间常数 |
+| \[KR\] Regulator Gain | `KR` | 实数 [pu] | 调节器增益 |
+| \[T1\] Regulator Time Constant | `T1` | 实数 [s] | 调节器时间常数 |
 
 #### St5B Field Circuit Constants
 
@@ -35,9 +35,9 @@ St5B Field Circuit Constants
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \[VRMAX\] Maximum Field Voltage | `VRMAX` | 实数 [pu] |  |
-| \[VRMIN\] Minimum Field Voltage | `VRMIN` | 实数 [pu] |  |
-| \[KC\] Field Current Commutating Impednace | `Kc` | 实数 [pu] |  |
+| \[VRMAX\] Maximum Field Voltage | `VRMAX` | 实数 [pu] | 最大励磁电压 |
+| \[VRMIN\] Minimum Field Voltage | `VRMIN` | 实数 [pu] | 最小励磁电压 |
+| \[KC\] Field Current Commutating Impednace | `Kc` | 实数 [pu] | 励磁电流换向阻抗 |
 
 
 </slot>

@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Rated Frequency | `freq` | 实数 [Hz] | 额定频率 |
-| Rated Voltage \(L\-L, RMS\) | `v` | 实数 [kV] | 额定线电压有效值 |
-| Input Capacity | `s` | 实数 [MVar] | 投入容量（电容为负，电抗为正） |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入并联电容/电抗器的名称（可缺省） |
+| Rated Frequency | `freq` | 实数 [Hz] | 额定频率<br/>并联电容/电抗器的额定频率 |
+| Rated Voltage \(L\-L, RMS\) | `v` | 实数 [kV] | 额定线电压有效值<br/>并联电容/电抗器的额定线电压有效值 |
+| Input Capacity | `s` | 实数 [MVar] | 投入容量<br/>并联电容/电抗器的投入容量（电容为负，电抗为正） |
 
 #### Configuration\-SFEMT
 
@@ -31,10 +31,10 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 三相电流 |
-| RMS Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电流均方根值 |
-| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率 |
-| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率 |
+| 3 Phase Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 三相电流<br/>此处输入并联电容/电抗器三相电流量测信号的标签（3×1维），如 Iabc |
+| RMS Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电流均方根值<br/>此处输入并联电容/电抗器电流有效值量测信号的标签（1×1维），如 Irms |
+| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率<br/>此处输入并联电容/电抗器有功功率量测信号的标签（1×1维），如 P |
+| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率<br/>此处输入并联电容/电抗器无功功率量测信号的标签（1×1维），如 Q |
 
 
 </slot>

@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 <br/> 此处输入单相断路器的名称（可缺省） |
+| Name | `Name` | 文本 | 元件名称  <br/>  此处输入单相断路器的名称（可缺省） |
 | Breaker OPEN Resistance | `Open` | 实数 [Ω] | 断路器断开电阻 |
 | Breaker Close Resistance | `Close` | 实数 [Ω] | 断路器闭合电阻 |
 | Breaker Open Type | `bot` | 选择 | 断路器断开方式 |
@@ -24,7 +24,7 @@ Breaker Control
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Breaker Control Signal Name | `ctrlsignal` | 虚拟引脚（输入） | 断路器控制信号 <br/> 输入断路器控制信号名，比如 breakerCtrl |
+| Breaker Control Signal Name | `ctrlsignal` | 虚拟引脚（输入） | 断路器控制信号  <br/>  输入断路器控制信号名，比如 breakerCtrl |
 | Initial Breaker Status | `Init` | 选择 | 断路器初始状态 |
 
 #### Monitoring
@@ -33,9 +33,9 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Breaker Current \[kA\] | `I` | 虚拟引脚（输出） | 断路器支路电流 <br/> 此处输入断路器支路电流量测信号的标签，如 I |
-| Breaker Voltage \[kV\] | `V` | 虚拟引脚（输出） | 断路器支路电压 <br/> 此处输入断路器支路电压量测信号的标签，如 V |
-| Breaker Status | `Status` | 虚拟引脚（输出） | 断路器状态 <br/> 此处输入断路器开关状态信号的标签，如 S |
+| Breaker Current \[kA\] | `I` | 虚拟引脚（输出） | 断路器支路电流  <br/>  此处输入断路器支路电流量测信号的标签，如 I |
+| Breaker Voltage \[kV\] | `V` | 虚拟引脚（输出） | 断路器支路电压  <br/>  此处输入断路器支路电压量测信号的标签，如 V |
+| Breaker Status | `Status` | 虚拟引脚（输出） | 断路器状态  <br/>  此处输入断路器开关状态信号的标签，如 S |
 
 
 </slot>
