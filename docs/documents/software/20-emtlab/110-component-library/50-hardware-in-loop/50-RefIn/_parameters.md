@@ -12,9 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 |  |
-| Channel ID | `channel_id` | 整数 | 通道序号 |
-| Line ID | `line_id` | 整数 | 比特位 |
+| Name | `Name` | 文本 | 通道名称 |
+| Channel ID | `channel_id` | 整数 | 调制波输入通道序号：<br/>0 为第 1 路，1 为第 2 路，以此类推，可填入 0-7。<br/>通道序号与端子台引脚对应如下：<br/>Channel 0 对应 TX49<br/>Channel 1 对应 TX50 <br/> Channel 2 对应 TX51 <br/> Channel 3 对应 TX52 <br/> Channel 4 对应 TX53 <br/> Channel 5 对应 TX54 <br/> Channel 6 对应 TX55 <br/> Channel 7 对应 TX56 |
+| Carrier Type | `carrier_type` | 选择 | 载波幅值范围，可选择 [-1,1] 或 [0,1] |
+| Zero Adjustment Offset | `ZA_offset` | 实数 | 调零偏置 |
 
 
 </slot>

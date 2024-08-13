@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Digital Output | `0` | 输入 | 1 x 1 | Digital Output |
+| Reference Input | `0` | 输出 | 1 x 1 | 调制波输入 |
 
 </slot>
