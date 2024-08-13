@@ -4,6 +4,7 @@ description: ""
 ---
 
 ## 元件定义
+该元件用以产生爬坡信号，爬坡信号在 `Inital Time` 前保持为 `Initial Value`； 在 `Inital Time` 后按照固定的 `Delta Time` 和 `Delta Step` 产生阶梯信号，信号幅值达到 `End Value` 后保持不变。
 
 ## 元件说明
 
