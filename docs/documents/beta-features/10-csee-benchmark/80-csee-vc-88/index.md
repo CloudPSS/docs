@@ -1,6 +1,7 @@
 ---
 title: CSEE-VC-88
 description: CSEE-VC-88
+draft: true
 ---
 该算例对应中国电机工程学会 Github 发布算例中的 CSEE-VC-88 算例。
 

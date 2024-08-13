@@ -1,6 +1,7 @@
 ---
 title: CSEE-LF-90
 description: CSEE-LF-90
+draft: true
 ---
 该算例对应中国电机工程学会 Github 发布算例中的 CSEE-LF-90 算例。
 
