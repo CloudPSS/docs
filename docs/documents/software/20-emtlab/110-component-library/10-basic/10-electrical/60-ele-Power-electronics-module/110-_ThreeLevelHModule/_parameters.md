@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三电平H桥模块的名称 |
 | IGBT On Resistance | `RIon` | 实数 [Ω] | IGBT导通电阻 |
 | IGBT Off Resistance | `RIoff` | 实数 [Ω] | IGBT关断电阻 |
 | Diode On Resistance | `RDon` | 实数 [Ω] | 二极管导通电阻 |
@@ -28,10 +28,10 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Switch Voltage Vector \[kV\] | `VT` | 虚拟引脚（输出） | 开关(S1~S6)电压向量(6*1) |
-| Switch Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 开关(S1~S6)总电流向量(6*1) |
-| IGBT Current Vector \[kA\] | `It` | 虚拟引脚（输出） | IGBT(T1~T4)电流向量(4*1) |
-| Diode Current Vector \[kA\] | `Id` | 虚拟引脚（输出） | 二极管(D1~D4)电流向量(4*1) |
+| Switch Voltage Vector \[kV\] | `VT` | 虚拟引脚（输出） | 开关(S1-S6)电压向量<br/>此处输入开关(S1-S6)的电压向量量测信号的标签（6x1维），如 Vt |
+| Switch Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 开关(S1-S6)总电流向量<br/>此处输入开关(S1-S6)总电流向量量测信号的标签（6x1维），如 Itotal |
+| IGBT Current Vector \[kA\] | `It` | 虚拟引脚（输出） | IGBT(T1-T4)电流向量<br/>此处输入IGBT(T1-T4)电流向量量测信号的标签（4x1维），如 It |
+| Diode Current Vector \[kA\] | `Id` | 虚拟引脚（输出） | 二极管(D1-D4)电流向量<br/>此处输入二极管(D1-D4)电流向量量测信号的标签（4x1维），如 Id |
 
 
 </slot>
