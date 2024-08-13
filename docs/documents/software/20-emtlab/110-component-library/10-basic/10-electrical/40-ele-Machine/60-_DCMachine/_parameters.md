@@ -12,13 +12,13 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Rated Armature Voltage | `UaB` | 实数 [kV] | 额定电枢电压 |
-| Rated Armature Current | `IaB` | 实数 [kA] | 额定电枢电流 |
-| Rated Field Current | `IfB` | 实数 [kA] | 额定励磁电流 |
-| Speed at which Magetizing data is specified | `wrm` | 实数 [p\.u\.] | 确定电磁感应关系曲线时的转速 |
-| Magnetizing Data | `MagnetizingDataType` | 选择 | 电磁感应曲线形式 |
-| Armature Reaction | `ArmatureReactionType` | 选择 | 电枢响应类型选择 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入直流电机名称，可缺省 |
+| Rated Armature Voltage | `UaB` | 实数 [kV] | 额定电枢电压<br/>直流电机额定电枢电压 |
+| Rated Armature Current | `IaB` | 实数 [kA] | 额定电枢电流<br/>直流电机额定电枢电流 |
+| Rated Field Current | `IfB` | 实数 [kA] | 额定励磁电流<br/>直流电机额定励磁电流 |
+| Speed at which Magetizing data is specified | `wrm` | 实数 [p\.u\.] | 确定电磁感应关系曲线时的转速<br/>在确定电磁感应关系曲线时采用的转速，一般填写默认值1即可 |
+| Magnetizing Data | `MagnetizingDataType` | 选择 | 电磁感应曲线形式<br/>目前只可选择指数曲线形式。 |
+| Armature Reaction | `ArmatureReactionType` | 选择 | 电枢响应类型选择<br/>目前只可选择忽略电枢响应。 |
 
 #### Winding Parameters
 
@@ -37,8 +37,8 @@ Magnetizing Curve - Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Saturated Noload Voltage | `Vs` | 实数 [p\.u\.] | 饱和空载电压 |
-| Saturation Constant | `Cs` | 实数 [p\.u\.] | 电磁感应曲线常数 |
+| Saturated Noload Voltage | `Vs` | 实数 [p\.u\.] | 饱和空载电压<br/>为电磁感应曲线的比例系数常数。 |
+| Saturation Constant | `Cs` | 实数 [p\.u\.] | 电磁感应曲线常数<br/>为电磁感应曲线的指数系数常数。 |
 
 #### Rotor Equation
 
@@ -46,8 +46,8 @@ Rotor Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Control Type | `Control` | 选择 | 选择控制类型 |
-| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数 |
+| Control Type | `Control` | 选择 | 选择控制类型<br/>选择Speed Control（转速控制）或Torque Control（转矩控制）模式 |
+| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数<br/>此处应填写惯性时间常数 $T_J=2H$，其中$H$为惯性常数（北美和欧洲参数形式） |
 | Damping Constant | `Dm` | 实数 [s] | 机械阻尼时间常数 |
 
 #### Monitoring
@@ -56,12 +56,12 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Rotor Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转速量测信号 |
-| Armature EMF \[kV\] | `Ea_o` | 虚拟引脚（输出） | 电枢电动势测量信号 |
-| Armature Voltage \[kV\] | `Va_o` | 虚拟引脚（输出） | 电枢电压测量信号 |
-| Armature Current \[kA\] | `Ia_o` | 虚拟引脚（输出） | 电枢电流测量信号 |
-| Field Current \[kA\] | `If_o` | 虚拟引脚（输出） | 励磁电流测量信号 |
-| Electromagnetic Power\[MW\] | `Pe_o` | 虚拟引脚（输出） | 电磁功率测量信号 |
+| Rotor Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转速量测信号<br/>此处输入转速量测信号量测信号的标签，如 w |
+| Armature EMF \[kV\] | `Ea_o` | 虚拟引脚（输出） | 电枢电动势测量信号<br/>此处输入电枢电动势测量信号的标签，如 Ea |
+| Armature Voltage \[kV\] | `Va_o` | 虚拟引脚（输出） | 电枢电压测量信号<br/>此处输入电枢电压测量信号的标签，如 Va |
+| Armature Current \[kA\] | `Ia_o` | 虚拟引脚（输出） | 电枢电流测量信号<br/>此处输入电枢电流测量信号的标签，如 Ia |
+| Field Current \[kA\] | `If_o` | 虚拟引脚（输出） | 励磁电流测量信号<br/>此处输入励磁电流测量信号的标签，如 Irms |
+| Electromagnetic Power\[MW\] | `Pe_o` | 虚拟引脚（输出） | 电磁功率测量信号<br/>此处输入电磁功率测量信号的标签，如 Pe |
 
 
 </slot>

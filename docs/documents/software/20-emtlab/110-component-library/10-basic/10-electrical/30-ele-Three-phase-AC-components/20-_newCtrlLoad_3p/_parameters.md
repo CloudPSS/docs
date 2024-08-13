@@ -12,16 +12,16 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Rated Voltage \(L\-L, RMS\) | `v` | 实数 [kV] | 线电压有效值 |
-| Rated Frequency | `f` | 实数 [Hz] | 额定频率 |
-| Initial Active Power \(3 Phase\) | `P0` | 实数 [MW] | 初始有功功率 |
-| Initial Reactive Power \(3 Phase\) | `Q0` | 实数 [MVar] | 初始无功功率，感性负荷为正 |
-| Voltage Index for P | `NP` | 实数 | 有功功率-电压指数 |
-| Voltage Index for Q | `NQ` | 实数 | 无功功率-电压指数 |
-| Freq Index for P | `KPF` | 实数 | 有功功率-频率系数 |
-| Freq Index for Q | `KQF` | 实数 | 无功功率-频率系数 |
-| Initial Voltage | `Vi` | 实数 [p\.u\.] | 初始电压幅值，由潮流计算决定 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三相可控静态负载的名称（可缺省） |
+| Rated Voltage \(L\-L, RMS\) | `v` | 实数 [kV] | 线电压有效值<br/>标称负载线电压有效值$V_{N}$ |
+| Rated Frequency | `f` | 实数 [Hz] | 额定频率<br/>额定频率$f_{N}$ |
+| Initial Active Power \(3 Phase\) | `P0` | 实数 [MW] | 初始有功功率<br/>额定有功功率$P_{N}$ |
+| Initial Reactive Power \(3 Phase\) | `Q0` | 实数 [MVar] | 初始无功功率，感性负荷为正<br/>额定无功功率$Q_{N}$ |
+| Voltage Index for P | `NP` | 实数 | 有功功率-电压指数<br/>有功功率-电压指数$NP$ |
+| Voltage Index for Q | `NQ` | 实数 | 无功功率-电压指数<br/>无功功率-电压指数$NQ$ |
+| Freq Index for P | `KPF` | 实数 | 有功功率-频率系数<br/>有功功率-频率系数$K_{PF}$ |
+| Freq Index for Q | `KQF` | 实数 | 无功功率-频率系数<br/>无功功率-频率系数$K_{QF}$ |
+| Initial Voltage | `Vi` | 实数 [p\.u\.] | 初始电压幅值，由潮流计算决定<br/>初始电压幅值，可以由潮流程序修改，与其相连的母线电压一致。 |
 
 #### Monitoring
 
@@ -29,11 +29,11 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Current Vector \[kA\] | `Iname` | 虚拟引脚（输出） | 三相电流 |
-| RMS Current \[kA\] | `Irmsname` | 虚拟引脚（输出） | 电流均方根值 |
-| RMS Voltage \[kV\] | `Vrmsname` | 虚拟引脚（输出） | 电压均方根值 |
-| Active Power \[MW\] | `Pname` | 虚拟引脚（输出） | 有功功率 |
-| Reactive Power \[MVar\] | `Qname` | 虚拟引脚（输出） | 无功功率 |
+| 3 Phase Current Vector \[kA\] | `Iname` | 虚拟引脚（输出） | 三相电流<br/>此处输入三相可控静态负载电流量测信号的标签（3×1维），如 Iabc |
+| RMS Current \[kA\] | `Irmsname` | 虚拟引脚（输出） | 电流均方根值<br/>此处输入三相可控静态负载电流有效值量测信号的标签（1×1维），如 Irms |
+| RMS Voltage \[kV\] | `Vrmsname` | 虚拟引脚（输出） | 电压均方根值<br/>此处输入三相可控静态负载电压有效值量测信号的标签（1×1维），如 Vrms |
+| Active Power \[MW\] | `Pname` | 虚拟引脚（输出） | 有功功率<br/>此处输入三相可控静态负载有功功率量测信号的标签（1×1维），如 P |
+| Reactive Power \[MVar\] | `Qname` | 虚拟引脚（输出） | 无功功率<br/>此处输入三相可控静态负载无功功率量测信号的标签（1×1维），如 Q |
 
 
 </slot>

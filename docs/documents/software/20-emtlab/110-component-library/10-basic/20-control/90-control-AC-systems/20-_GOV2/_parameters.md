@@ -12,11 +12,11 @@ Common
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| \(Rp\) Permanent Droop | `RP` | 实数 [pu] |  |
-| \(Gmax\) Maximum Gate Position | `Gmax` | 实数 [pu] |  |
-| \(Gmin\) Minimum Gate Position | `Gmin` | 实数 [pu] |  |
-| \(MXGTOR\) Max\. Gate Opening Rate | `MXGTOR` | 实数 [pu/s] |  |
-| \(MXGTCR\) Max\. Gate closing Rate | `MXGTCR` | 实数 [pu/s] |  |
+| \(Rp\) Permanent Droop | `RP` | 实数 [pu] | 永久下垂补偿系数 |
+| \(Gmax\) Maximum Gate Position | `Gmax` | 实数 [pu] | 最大阀门位置 |
+| \(Gmin\) Minimum Gate Position | `Gmin` | 实数 [pu] | 最小阀门位置 |
+| \(MXGTOR\) Max\. Gate Opening Rate | `MXGTOR` | 实数 [pu/s] | 阀门在单位时间内的最大开启速率 |
+| \(MXGTCR\) Max\. Gate closing Rate | `MXGTCR` | 实数 [pu/s] | 阀门在单位时间内的最大闭合速率 |
 
 #### Gov2:  Electro\-Hydraulic \(Pid\) Governor
 
@@ -24,12 +24,12 @@ Gov2:  Electro-Hydraulic (Pid) Governor
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Proportional Gain \( Kp\)  | `kp` | 实数 [pu] |  |
-| Integral Gain \( Ki \) | `ki` | 实数 [pu] |  |
-| Derivative Gain \( Kd \) | `kd` | 实数 [pu] |  |
-| Pilot Servomotor Time Constant \(TA\) | `TA` | 实数 [s] |  |
-| Gate Servo Time Constant \(TC\) | `TC` | 实数 [s] |  |
-| Gate Servomotor Time Constant \(TD\) | `TD` | 实数 [s] |  |
+| Proportional Gain \( Kp\)  | `kp` | 实数 [pu] | 比例增益 |
+| Integral Gain \( Ki \) | `ki` | 实数 [pu] | 积分增益 |
+| Derivative Gain \( Kd \) | `kd` | 实数 [pu] | 微分增益 |
+| Pilot Servomotor Time Constant \(TA\) | `TA` | 实数 [s] | 先导伺服电机时间常数 |
+| Gate Servo Time Constant \(TC\) | `TC` | 实数 [s] | 阀门伺服时间常数 |
+| Gate Servomotor Time Constant \(TD\) | `TD` | 实数 [s] | 阀门伺服电机时间常数 |
 
 
 </slot>

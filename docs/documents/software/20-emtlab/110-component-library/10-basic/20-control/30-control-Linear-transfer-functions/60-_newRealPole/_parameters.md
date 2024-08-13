@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Gain | `Gain` | 实数 | 增益 |
-| Time Constant | `Tc` | 实数 [s] | 时间常数 |
-| Initialization Type | `InitType` | 选择 | 初始化方法 |
-| Initial Value | `Init` | 实数 | 初始值 |
-| Limit Output? | `Lim` | 选择 | 是否限制输出 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入一阶惯性环节的名称（可缺省） |
+| Gain\<br/\>一阶惯性环节的增益 | `Gain` | 实数 | 增益 |
+| Time Constant | `Tc` | 实数 [s] | 时间常数<br/>一阶惯性环节的超前时间常数 |
+| Initialization Type | `InitType` | 选择 | 初始化方法<br/>选择该环节的初始化方法为 `稳态` 的 `任意值` |
+| Initial Value | `Init` | 实数 | 初始值<br/>一阶惯性环节的初始值 |
+| Limit Output? | `Lim` | 选择 | 是否限制输出<br/>选择是否限制该环节的输出，可配置为 `Fixed Limits` 或 `Dynamic Limits` |
 
 #### Fixed Limits
 
@@ -25,8 +25,8 @@ Fixed Limits
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Maximum Limit | `Max` | 实数 | 输出上限 |
-| Minimum Limit | `Min` | 实数 | 输出下限 |
+| Maximum Limit | `Max` | 实数 | 输出上限<br/>元件输出上限，仅当“限制输出”配置为“Fixed Limits”时有效 |
+| Minimum Limit | `Min` | 实数 | 输出下限<br/>元件输出下限，仅当“限制输出”配置为“Fixed Limits”时有效 |
 
 #### Dynamic Limits
 
@@ -34,8 +34,8 @@ Dynamic Limits
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Maximum Limit | `DMax` | 虚拟引脚（输入） | 输出上限（以@开头的信号名） |
-| Minimum Limit | `DMin` | 虚拟引脚（输入） | 输出下限（以@开头的信号名） |
+| Maximum Limit | `DMax` | 虚拟引脚（输入） | 输出上限（以@开头的信号名）<br/>元件输出上限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
+| Minimum Limit | `DMin` | 虚拟引脚（输入） | 输出下限（以@开头的信号名）<br/>元件输出下限，仅当“限制输出”配置为“Dynamic Limits”时有效 |
 
 
 </slot>

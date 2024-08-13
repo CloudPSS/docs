@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 <br/> 此处输入故障电阻的名称（可缺省） |
+| Name | `Name` | 文本 | 元件名称  <br/>  此处输入故障电阻的名称（可缺省） |
 | Initial Resistance | `Init` | 实数 [Ω] | 初始电阻 |
 | Fault Start Time | `fs` | 实数 [s] | 故障开始时刻 |
 | Fault End Time | `fe` | 实数 [s] | 故障结束时刻 |
 | Fault Resistance | `chg` | 实数 [Ω] | 故障期间电阻 |
-| Fault Clear Type | `fct` | 选择 | 故障清除时刻 <br/> 选择故障清除时刻为过零时刻或任意时刻 |
+| Fault Clear Type | `fct` | 选择 | 故障清除时刻  <br/>  选择故障清除时刻为过零时刻或任意时刻 |
 
 #### Monitoring
 
@@ -25,8 +25,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Branch Current \[kA\] | `I` | 虚拟引脚（输出） | 故障电阻电流 <br/>  此处输入故障电阻电流量测信号的标签，比如Ia |
-| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 故障电阻电压 <br/> 此处输入故障电阻电压量测信号的标签，比如Va |
+| Branch Current \[kA\] | `I` | 虚拟引脚（输出） | 故障电阻电流  <br/>   此处输入故障电阻电流量测信号的标签，比如Ia |
+| Branch Voltage \[kV\] | `V` | 虚拟引脚（输出） | 故障电阻电压  <br/>  此处输入故障电阻电压量测信号的标签，比如Va |
 
 
 </slot>

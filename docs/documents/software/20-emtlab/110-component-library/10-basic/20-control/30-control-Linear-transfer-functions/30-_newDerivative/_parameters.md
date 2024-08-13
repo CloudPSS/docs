@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Time Constant | `T` | 实数 [s] | 时间常数 |
-| Initialization Type | `InitType` | 选择 | 初始化方法 |
-| Initial Value | `Init` | 实数 | 初始值 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入微分器的名称（可缺省） |
+| Time Constant | `T` | 实数 [s] | 时间常数<br/>微分环节的时间常数 |
+| Initialization Type | `InitType` | 选择 | 初始化方法<br/>选择微分环节的初始化方法为**稳态**或**任意值** |
+| Initial Value | `Init` | 实数 | 初始值<br/>微分环节的初始值 |
 
 
 </slot>

@@ -12,7 +12,7 @@ All changes will be overwritten by regeneration.
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 名称 |
+| Name | `Name` | 文本 | 名称<br/>此处输入多路信号分离元件的名称（可缺省） |
 | Input Name | `InName` | 文本 | 输入名称 |
 | Input Dim X | `InDimX` | 整数 | 输入 X 维数 |
 | Input Dim Y | `InDimY` | 整数 | 输入 Y 维数 |

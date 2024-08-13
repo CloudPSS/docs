@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Direction of Transformation | `Direction` | 选择 | 变换方向 |
-| Rotating Frame Alignment | `Alignment` | 选择 | 旋转轴对齐 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入Park变换器的名称（可缺省） |
+| Direction of Transformation | `Direction` | 选择 | 变换方向<br/>选择变换的方向为Park变换或逆Park变换 |
+| Rotating Frame Alignment | `Alignment` | 选择 | 旋转轴对齐<br/>选择坐标变换的d轴与A相对齐或滞后90度 |
 
 
 </slot>

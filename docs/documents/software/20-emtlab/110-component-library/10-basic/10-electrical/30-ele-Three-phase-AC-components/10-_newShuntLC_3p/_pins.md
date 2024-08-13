@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 3 x 1 |  |
+| Pin \+ | `0` | 电气 | 3 x 1 | 并联电容/电抗器的接线端口 |
 
 </slot>

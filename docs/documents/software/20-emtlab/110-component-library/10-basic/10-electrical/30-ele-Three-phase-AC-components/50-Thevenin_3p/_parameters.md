@@ -12,13 +12,13 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Is Star Point Grounded? | `Grnd` | 选择 | 电压源中性点是否接地？ |
-| Rated Voltage \(L\-L, RMS\) | `Vm` | 实数 [kV] | 额定线电压有效值 |
-| Function Type | `Func` | 选择 | 函数类型 |
-| Frequency | `f` | 实数 [Hz] | 基准频率 |
-| Start\-up Type | `Init` | 选择 | 启动方式 |
-| 阻抗输入方式 | `InputType` | 选择 | 选择直接输入阻抗参数，或是输入短路电流。 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入三相戴维南等值电压源的名称（可缺省） |
+| Is Star Point Grounded? | `Grnd` | 选择 | 电压源中性点是否接地？<br/>选择“Yes”或“No”以使电压源负端接地或不接地 |
+| Rated Voltage \(L\-L, RMS\) | `Vm` | 实数 [kV] | 额定线电压有效值<br/>电压源额定线电压有效值 |
+| Function Type | `Func` | 选择 | 函数类型<br/>选择电压源为正弦表达式或余弦表达式 |
+| Frequency | `f` | 实数 [Hz] | 基准频率<br/>电压源额定频率 |
+| Start\-up Type | `Init` | 选择 | 启动方式<br/>选择电压源启动发式为“Linear Ramp”或“Real Pole Ramp” |
+| 阻抗输入方式 | `InputType` | 选择 | 选择阻抗输入方式<br/>选择直接输入阻抗参数，或是输入短路电流。 |
 
 #### 电阻和电抗参数
 
@@ -26,7 +26,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 输入负、零序参数 | `Input02RX` | 选择 | 是否输入负序和零序参数。不输入时，负序、零序参数与正序一致 |
+| 输入负、零序参数 | `Input02RX` | 选择 | 选择是否输入负序和零序参数<br/>不输入时，负序、零序参数与正序一致 |
 | 正序等值电阻 | `R1` | 实数 [Ω] | 正序等值电阻 |
 | 正序等值电抗 | `X1` | 实数 [Ω] | 正序等值电抗 |
 | 零序等值电阻 | `R0` | 实数 [Ω] | 零序等值电阻 |
@@ -40,7 +40,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 输入负、零序参数 | `Input02Z` | 选择 | 是否输入负序和零序参数。不输入时，零序、负序参数与正序一致 |
+| 输入负、零序参数 | `Input02Z` | 选择 | 选择是否输入负序和零序参数<br/>不输入时，零序、负序参数与正序一致 |
 | 正序等值阻抗幅值 | `Z1` | 实数 [Ω] | 正序等值阻抗幅值 |
 | 正序等值阻抗相角 | `phi1` | 实数 [°] | 正序等值阻抗相角 |
 | 零序等值阻抗幅值 | `Z0` | 实数 [Ω] | 零序等值阻抗幅值 |
@@ -71,11 +71,11 @@ Initial Condition
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Ramping Time | `RampingTime` | 实数 [s] | 爬坡时间 |
-| Initial Voltage Magnitude | `V_mag` | 实数 [p\.u\.] | 初始相电压标幺值 |
-| Initial Voltage Phase | `V_ph` | 实数 [Deg] | 初始相电压相位 |
-| Initial Active Power | `AP` | 实数 [MW] | 初始有功功率 |
-| Initial Reactive Power | `RP` | 实数 [MVar] | 初始无功功率 |
+| Ramping Time | `RampingTime` | 实数 [s] | 爬坡时间<br/>输入斜坡启动时间，仅当“启动方式"项为“Linear Ramp”时生效 |
+| Initial Voltage Magnitude | `V_mag` | 实数 [p\.u\.] | 初始相电压标幺值<br/>电压源在t=0时的相电压标幺值 |
+| Initial Voltage Phase | `V_ph` | 实数 [Deg] | 初始相电压相位<br/>电压源在t=0时的相电压相位 |
+| Initial Active Power | `AP` | 实数 [MW] | 初始有功功率<br/>电压源在t=0时的有功功率 |
+| Initial Reactive Power | `RP` | 实数 [MVar] | 初始无功功率<br/>电压源在t=0时的无功功率 |
 
 #### Power Flow Data
 
@@ -83,15 +83,15 @@ Power Flow Data
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Bus Type | `BusType` | 选择 | 节点类型 |
-| Injected Active Power | `pf_P` | 实数 [MW] | 节点注入有功功率 |
-| Injected Reactive Power | `pf_Q` | 实数 [MVar] | 节点注入无功功率 |
-| Bus Voltage Magnitude | `pf_V` | 实数 [p\.u\.] | 母线电压幅值 |
-| Bus Voltage Angle | `pf_Theta` | 实数 [Deg] | 母线电压相位 |
-| Lower Voltage Limit | `pf_Vmin` | 实数 [p\.u\.] | 母线电压下限 |
-| Upper Voltage Limit | `pf_Vmax` | 实数 [p\.u\.] | 母线电压上限 |
-| Lower Reactive Power Limit | `pf_Qmin` | 实数 [MVar] | 无功功率下限 |
-| Upper Reactive Power Limit | `pf_Qmax` | 实数 [MVar] | 无功功率上限 |
+| Bus Type | `BusType` | 选择 | 节点类型<br/>用于潮流计算功能，指定电源所在母线的节点类型 |
+| Injected Active Power | `pf_P` | 实数 [MW] | 节点注入有功功率<br/>用于潮流计算功能，对 PV、PQ 节点有效 |
+| Injected Reactive Power | `pf_Q` | 实数 [MVar] | 节点注入无功功率<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Bus Voltage Magnitude | `pf_V` | 实数 [p\.u\.] | 母线电压幅值<br/>用于潮流计算功能，对 PV、平衡节点有效 |
+| Bus Voltage Angle | `pf_Theta` | 实数 [Deg] | 母线电压相位<br/>用于潮流计算功能，对平衡节点有效 |
+| Lower Voltage Limit | `pf_Vmin` | 实数 [p\.u\.] | 母线电压下限<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Upper Voltage Limit | `pf_Vmax` | 实数 [p\.u\.] | 母线电压上限<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Lower Reactive Power Limit | `pf_Qmin` | 实数 [MVar] | 无功功率下限<br/>用于潮流计算功能，对 PV、平衡节点有效 |
+| Upper Reactive Power Limit | `pf_Qmax` | 实数 [MVar] | 无功功率上限<br/>用于潮流计算功能，对 PV、平衡节点有效 |
 
 #### Monitoring
 
@@ -99,12 +99,12 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Source Voltage Vector \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压 |
-| 3 Phase Source Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 电压源输出电流 |
-| RMS Source Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压源电压均方根值 |
-| RMS Source Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电压源电流均方根值 |
-| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率 |
-| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率 |
+| 3 Phase Source Voltage Vector \[kV\] | `V` | 虚拟引脚（输出） | 电压源端电压<br/>此处输入电压源电压量测信号的标签（3×1维），如 Vabc |
+| 3 Phase Source Current Vector \[kA\] | `I` | 虚拟引脚（输出） | 电压源输出电流<br/>此处输入电压源输出电流量测信号的标签（3×1维），如 Iabc |
+| RMS Source Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压源电压均方根值<br/>此处输入电压源电压均方根值量测信号的标签（1×1维），如 Vrms |
+| RMS Source Current \[kA\] | `Irms` | 虚拟引脚（输出） | 电压源电流均方根值<br/>此处输入电压源电流均方根值量测信号的标签（1×1维），如 Irms |
+| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 有功功率<br/>此处输入电压源有功功率量测信号的标签（1×1维），如 P |
+| Reactive Power \[MVar\] | `Q` | 虚拟引脚（输出） | 无功功率<br/>此处输入电压源无功功率量测信号的标签（1×1维），如 Q |
 
 
 </slot>
