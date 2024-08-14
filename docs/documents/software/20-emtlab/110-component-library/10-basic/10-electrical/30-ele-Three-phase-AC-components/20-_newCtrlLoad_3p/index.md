@@ -5,6 +5,11 @@ description: ""
 
 ## 元件定义
 
+该元件用以建模指数型三相可控静态负载（单线图），其基本表达式如下。 
+<center>
+$P=P_N\left(\frac V{V_N}\right)^{NP}(1+K_{PF}\Delta f)\\Q=Q_N\left(\frac V{V_N}\right)^{NQ}(1+K_{QF}\Delta f)$
+</center>
+
 ## 元件说明
 
 
