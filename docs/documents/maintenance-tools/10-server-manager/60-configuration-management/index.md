@@ -30,44 +30,5 @@ tags:
 
 ![检索配置项](./检索配置项.png "检索配置项")
 
-## cli工具使用指南
-
-**Server Manager 配置管理**在服务器上允许以命令行的形式进行配置管理，一共有以下几个命令：
-
-+ **cloudpss-config list**：  输出当前存储的配置值，未设置的值显示为 null
-
-+ **cloudpss-config get [key]**： 输出计算后的配置输入值
-
-+ **cloudpss-config set [key] = [value]**： 设置配置值
-
-+ **cloudpss-config unset [key]**：  取消设置，恢复默认值
-
-+ **cloudpss-config configure [filename]**：  应用配置文件
-
-+ **cloudpss-config help [command]**： 显示命令帮助
-
-### 查看配置项
-
-进入服务器设备的 **shell** 界面，以 **disable_hidden** 为例，输入命令如下：
-
-```shell
-cloudpss-config get disable_hidden
-```
-
-### 修改配置项
-
-进入服务器设备的 **shell** 界面，以 **disable_hidden** 为例，输入命令如下：
-
-```shell
-cloudpss-config set disable_hidden = true
-```
-
-### 恢复配置项
-
-进入服务器设备的 **shell** 界面，以 **disable_hidden** 为例，输入命令如下：
-
-```shell
-cloudpss-config unset disable_hidden
-```
 
 
