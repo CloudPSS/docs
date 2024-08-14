@@ -64,10 +64,11 @@ jobs:
           DOCS_BASE_URL: /
           DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
+      - name: Precompress
+        run: pnpm gzipper compress --exclude jpeg,jpg,png,gif,ico,mp3,mp4,mkv,zip --brotli --remove-larger ./build
       - name: Pack
         run: |
-          pnpm gzipper compress --exclude jpeg,jpg,png,gif,ico,mp3,mp4,mkv,zip --brotli --remove-larger ./build
-          tar -cJf dist.tar.xz -C ./build .
+          XZ_OPT=-e9 tar -cJf dist.tar.xz -C ./build .
           ls -l dist.tar.xz
       - name: Upload Release Asset
         uses: ncipollo/release-action@v1
