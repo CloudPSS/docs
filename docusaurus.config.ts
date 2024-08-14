@@ -95,6 +95,7 @@ const config: Config = {
                     routeBasePath: '/blog',
                     showReadingTime: true,
                     onInlineTags: DEV ? 'warn' : 'throw',
+                    onInlineAuthors: DEV ? 'warn' : 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',
