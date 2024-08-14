@@ -36,11 +36,11 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
                 type: 'docSidebar',
                 sidebarId: 'maintenancetools',
             },
-            {
-                label: '测试功能',
-                type: 'docSidebar',
-                sidebarId: 'betafeatures',
-            },
+            // {
+            //     label: '测试功能',
+            //     type: 'docSidebar',
+            //     sidebarId: 'betafeatures',
+            // },
             {
                 label: '已归档内容',
                 type: 'docSidebar',

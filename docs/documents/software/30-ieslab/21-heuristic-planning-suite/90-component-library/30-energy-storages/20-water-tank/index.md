@@ -31,9 +31,9 @@ $$
 $$
 T_{new} = \frac{\left( {{\rho AH_{tank}T}_{old} + m_{in}T_{in}\mathrm{\Delta}t - m_{out}T_{old}\mathrm{\Delta}t} \right)}{\rho AH_{tank} + m_{in}\mathrm{\Delta}t - m_{out}\mathrm{\Delta}t}
 $$
-式中，$T_{old}$，$T_{new}$ 为水罐混合前后的温度，$H_{tank}$ 为水罐水位高度
+式中，$T_{old}$，$T_{new}$ 为水罐混合前后的温度，$H_{tank}$ 为水罐水位高度。
 
-![储水罐](./IES-Charger-WaterTank.svg )
+![储水罐](./IES-Charger-WaterTank.svg)
 
 ### 引脚
 

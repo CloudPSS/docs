@@ -317,7 +317,7 @@ m -22.5 -5 h 25
 
 ![光伏图标（仅线条）](image-10.png)
 
-拖入一个**文本**组件，用来放在图中作为光伏的文字标识。设置大小和位置为：X=60, Y=30,宽度=60, 高度=30，设置文本为 PV Station。
+拖入一个**文本**组件，用来放在图中作为光伏的文字标识。设置大小和位置为：X=60，Y=30，宽度=60，高度=30，设置文本为 PV Station。
 
 然后，再拖入一个**引脚**组件，参考[绑定引脚相关文档](../30-design-module-icon/index.md#在图标中添加引脚并绑定)所述方法，将引脚图标组件绑定到引脚列表中的 **pcc** 引脚上，并放置在对应的位置。
 
@@ -376,20 +376,20 @@ import Flowchart2 from './flowchart2.svg'
 <Flowchart2 className="themed"/>
 
 可见，图中只将 VSC 交流测的电气部分进行了倍乘处理，同时将量测的电压电流进行倍乘输送给平均化模型受控源计算以及 VSC 控制系统模块。处理量测的电压时，应除以接入点额定电压、乘以原模型的单机额定电压，即 $$V_{single}=\frac{V_0}{\$V_{pcc}}V_{measure}=\frac{0.35kV}{\$V_{pcc}}V_{measure}$$；
-处理量测的电流时，应除以并联光伏设备台数 **\$num**，即 $$I_{single}=\frac{I_{measure}}{\$num}$$。
+处理量测的电流时，应除以并联光伏设备台数 `$num`，即 $$I_{single}=\frac{I_{measure}}{\$num}$$。
 
 具体来说，在[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)中，首先将 #Ea_avm、#Eb_avm、#Ec_avm、#Va_vsc、#Vb_vsc、#Vc_vsc、#Ia_avm、#Ib_avm、#Ic_avm、#Ia_vsc、#Ib_vsc、#Ic_vsc 这些量测信号分别改为 #Ea_avm_raw、#Eb_avm_raw、#Ec_avm_raw、#Va_vsc_raw、#Vb_vsc_raw、#Vc_vsc_raw、#Ia_avm_raw、#Ib_avm_raw、#Ic_avm_raw、#Ia_vsc_raw、#Ib_vsc_raw、#Ic_vsc_raw，将三个受控电压源的控制信号 Va_ctrl、Vb_ctrl、Vc_ctrl分别改为 Va_ctrl_mult、Vb_ctrl_mult、Vc_ctrl_mult。
 
-然后，从模型库中的**控制-线性传递函数**标签下找到**增益(model/CloudPSS/_newGain)**元件，将 6 个该元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant为 **0.35/$Vpcc**（原模型的额定电压为 0.35kV），并分别配置引脚为 #Ea_avm_raw → #Ea_avm, #Eb_avm_raw → #Eb_avm, #Ec_avm_raw → #Ec_avm, #Va_vsc_raw → #Va_vsc, #Vb_vsc_raw → #Vb_vsc, #Vc_vsc_raw → #Vc_vsc。
+然后，从模型库中的**控制-线性传递函数**标签下找到**增益(model/CloudPSS/_newGain)**元件，将 6 个该元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant为 `0.35/$Vpcc`（原模型的额定电压为 0.35kV），并分别配置引脚为 #Ea_avm_raw → #Ea_avm, #Eb_avm_raw → #Eb_avm, #Ec_avm_raw → #Ec_avm, #Va_vsc_raw → #Va_vsc, #Vb_vsc_raw → #Vb_vsc, #Vc_vsc_raw → #Vc_vsc。
 
-另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 **1/$num**，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
+另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 `1/$num`，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
 
 在处理受控电压源的电压信号 Va_ctrl, Vb_ctrl, Vc_ctrl 时，应当乘以乘以接入点额定电压、除以原模型的单机额定电压，即 $$V_{ctrl}=\frac{\$V_{pcc}}{V_0}V_{ctrl-single}$$。
 
 因此，另外将 3 个**增益**元件添加至图纸中。选中这 3 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant 为 
- **$Vpcc/0.35**，并分别配置引脚为 Va_ctrl_mult → Va_ctrl, Vb_ctrl_mult → Vb_ctrl, Vc_ctrl_mult → Vc_ctrl。
+ `$Vpcc/0.35`，并分别配置引脚为 Va_ctrl_mult → Va_ctrl, Vb_ctrl_mult → Vb_ctrl, Vc_ctrl_mult → Vc_ctrl。
 
-此外，对于电气部分（电感、电阻、电容等），需要进行倍乘处理。即修改电阻和电感为原来的 $$\frac{(\$Vpcc/0.35)^2}{\$num}$$倍，修改电容为原来的 $$\frac{\$num}{(\$Vpcc/0.35)^2}$$倍。
+此外，对于电气部分（电感、电阻、电容等），需要进行倍乘处理。即修改电阻和电感为原来的 $$\frac{(\$Vpcc/0.35)^2}{\$num}$$ 倍，修改电容为原来的 $$\frac{\$num}{(\$Vpcc/0.35)^2}$$ 倍。
 
 最终，**VSC交流测的电气部分**部分如下图所示（图中为 **Vpcc=0.7kV, num=10** 的情形。）：
 
@@ -459,11 +459,11 @@ import Flowchart2 from './flowchart2.svg'
 
 这里构建一个外接电压源的简单测试回路。
 
-进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的**电气-三相交流元件**中找到**三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)**元件，添加到拓扑中，连接在风机的 **pcc** 端口处。使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的**启用**属性改为 **$UnitTest**，并对应配置该电压源的其它参数，如下图所示。
+进入[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)，从模型库的**电气-三相交流元件**中找到**三相交流电压源(model/CloudPSS/_newACVoltageSource_3p)**元件，添加到拓扑中，连接在风机的 **pcc** 端口处。使用 [“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)将该电压源的**启用**属性改为 `$UnitTest`，并对应配置该电压源的其它参数，如下图所示。
 
 ![单元测试电压源元件设置](image-24.png)
 
-可见，在默认的 **$UnitTest=0** 的状态下，该电压源不启用，即正常作为模块调用时，该电压源在仿真计算中被注释掉了。
+可见，在默认的 `$UnitTest=0` 的状态下，该电压源不启用，即正常作为模块调用时，该电压源在仿真计算中被注释掉了。
 
 此外，可以添加一些输出通道，用于输出单元测试的结果。这里输出该电压源的三相交流电流，将电压源的 Monitoring 参数组下的 ```3 Phase Source Current Vector [kA]``` 参数设为```#I_test```；从模型库的**输出**标签下添加**输出通道**元件至图纸，设置维数为 3，设置**启用**属性改为 ```$UnitTest```，并配置好通道名称和引脚名，如下图所示：
 
@@ -471,7 +471,7 @@ import Flowchart2 from './flowchart2.svg'
 
 ![输出通道配置](image-25.png)
 
-此外，对于 Gctrl 和 Tctrl 端口，我们也从模型库的**控制-基础**标签下添加**常量输入**元件至图纸，将**启用**属性改为 **$UnitTest**，分别作为两个控制端口的单元测试输入。对应地，将两个控制信号的模块端口的**启用**属性改为 ```not $UnitTest```，如下图所示：
+此外，对于 Gctrl 和 Tctrl 端口，我们也从模型库的**控制-基础**标签下添加**常量输入**元件至图纸，将**启用**属性改为 `$UnitTest`，分别作为两个控制端口的单元测试输入。对应地，将两个控制信号的模块端口的**启用**属性改为 ```not $UnitTest```，如下图所示：
 
 ![Gctrl 和Tctrl 端口](image-31.png)
 
@@ -494,9 +494,6 @@ import Flowchart2 from './flowchart2.svg'
 完成配置后，点击**启动任务**按钮或使用快捷键 <kbd>ctrl+R</kbd>，可以开始仿真计算，其结果如下：
 
 ![运行测试结果](image-32.png)
-
-
-
 
 
 </TabItem>

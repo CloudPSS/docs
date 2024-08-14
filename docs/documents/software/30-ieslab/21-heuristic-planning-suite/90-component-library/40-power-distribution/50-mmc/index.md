@@ -15,16 +15,16 @@ tags:
 
 模块化多电平变流器，实现交直流转换，其原理示意图如下：
 
-![MMC](./IES-GD-3MMC.png )
+![MMC](./IES-GD-3MMC.png)
 $$
 P_{c} = P_{dc} + P_{loss}
 $$
 $$
 P_{loss} = a_{c}I_{c}^{2} + b_{c}I_{p} + c_{c}
 $$
-式中：$P_c$ 为 MMC 功率，$P_{dc}$ 为 MMC 直流侧有功功率，$P_{loss}$ 为 MMC 转换损失功率。$I_c$ 为 MMC 电流，$a_c、b_c、c_c$ 为 MMC 系数，可以通过实际工况参数曲线拟合得到。
+式中：$P_c$ 为 MMC 功率，$P_{dc}$ 为 MMC 直流侧有功功率，$P_{loss}$ 为 MMC 转换损失功率。$I_c$ 为 MMC 电流，$a_c$、$b_c$、$c_c$ 为 MMC 系数，可以通过实际工况参数曲线拟合得到。
 
-![MMC](./IES-GD-3MMC.svg )
+![MMC](./IES-GD-3MMC.svg)
 
 ## 元件说明
 

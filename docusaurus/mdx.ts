@@ -17,7 +17,7 @@ export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
         keywords: ['summary'],
     },
     remarkPlugins: [remarkJoinCjkLines, remarkIns, remarkMath, remarkExtendedTable, remarkDefinitionList],
-    rehypePlugins: [rehypeUrl, rehypeKatex, rehypeFigure],
+    rehypePlugins: [rehypeUrl, [rehypeKatex, { strict: 'warn' }], rehypeFigure],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
 };
