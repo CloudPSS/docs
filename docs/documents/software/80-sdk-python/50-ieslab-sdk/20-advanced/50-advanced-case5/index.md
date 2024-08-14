@@ -16,7 +16,7 @@ tags:
 ### 用到的 API
 
 
-[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabplan) 
 + 静态方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
@@ -27,25 +27,25 @@ tags:
     | ---------------- | :-----------: |     
     | `IESLabPlan.iesLabPlanRun() ` |   生成方案优选算例    |
 
-[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: Job](../../../70-api/30-job/index.md#class-job)
 + 实例方法 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
-    | `Runner.status() ` |   运行状态   |
+    | `Job.status() ` |   运行状态   |
     
-[Class: IESLabPlanResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: IESLabPlanResult](../../../70-api/50-ieslab/index.md#class-ieslabplanresult) 
 + 实例方法 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabPlanResult.GetPlanNum() ` |   获取优化方案的数量   |
-    | `IESLabPlanResult.GetPlanInfo(planID) ` |   获取planID对应的优化方案的基础信息  |
-    | `IESLabPlanResult.GetPlanConfiguration(planID) ` |   获取planID对应的优化方案的配置信息   |
-    | `IESLabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')` |   获取planID对应的优化方案下componentID对应元件的运行信息   |
+    | `IESLabPlanResult.GetPlanInfo(planID) ` |   获取 `planID` 对应的优化方案的基础信息  |
+    | `IESLabPlanResult.GetPlanConfiguration(planID) ` |   获取 `planID` 对应的优化方案的配置信息   |
+    | `IESLabPlanResult.GetComponentResult(planID, componentID, typicalDayName='')` |   获取 `planID` 对应的优化方案下 `componentID` 对应元件的运行信息   |
 
 
 ### 调用方法
-+ 通过IESLabPlan.fetch(simulationId)方法获取算例信息，调用IESLabPlan.iesLabPlanRun()方法生成方案优选算例，可通过Runner.status()方法检查运行状态。
-+ 通过IESLabPlanResult类的相应方法获取规划方案的数量，并获取优化方案的基础信息，配置信息以及元件运行信息。
++ 通过 `IESLabPlan.fetch(simulationId)` 方法获取算例信息，调用 `IESLabPlan.iesLabPlanRun()` 方法生成方案优选算例，可通过 `Runner.status()` 方法检查运行状态。
++ 通过 `IESLabPlanResult` 类的相应方法获取规划方案的数量，并获取优化方案的基础信息，配置信息以及元件运行信息。
 
 
 ## 案例介绍
@@ -55,8 +55,8 @@ tags:
 :::
 
 ### 代码解析
-首先进行算例准备工作。包括设置网址与账户 token、获取算例，详细解释参考案例 1 的代码解析。
-```python
+首先进行算例准备工作。包括设置网址与账户 `token`、获取算例。
+```python showLineNumbers
 import os
 import cloudpss
 import time
@@ -72,7 +72,7 @@ if __name__ == '__main__':
     iesplanProject = cloudpss.IESLabPlan.fetch('274')
 ```
 `iesplanProject.iesLabPlanRun()` 启动规划设计计算过程。`runner.result()` 获取计算结果对象。使用 `plan_result.GetPlanNum()` 获取优化方案的数量。
-```python
+```python showLineNumbers
     # 启动计算
     runner = iesplanProject.iesLabPlanRun()
     last_plan_num = 0
@@ -83,7 +83,7 @@ if __name__ == '__main__':
         plan_num = plan_result.GetPlanNum()
 ```
 当发现新的优化方案时。使用 `GetPlanInfo()`、`GetPlanConfiguration()` 和`GetComponentResult()` 分别获取优化方案的**基础信息、配置信息和元件运行信息**。
-```python
+```python showLineNumbers
         if plan_num > last_plan_num:
             for plan_id in range(last_plan_num, plan_num):
                 print("优化方案", plan_id + 1)
@@ -100,15 +100,15 @@ if __name__ == '__main__':
 
 ### 结果展示
 由于结果过长，在此只展示基础信息。
-```python
+```python showLineNumbers
 优化方案 1
 基础信息: {'方案名称': '方案1', '综合成本（万元）': 13.901900078655967, '设备投资费用（万元）': 256.0, '设备年维护费用（万元）': 0.0, '年销售收入（万元）': 38.34719707186584, '年运营支出（万元）': 1.1019000786559667, '年CO2排放（吨）': 0.0, '年电负荷（kWh）': 840903.6702350642, '年热负荷（kWh）': 0.0, '年冷负荷（kWh）': 0.0}
 
 ```
 
 ## 调试技巧
-+ 获取算例失败，检查算例是否存在，该网址时候有该算例，token时候为该账户下的token。
-+ 检查组件路径和典型日名称确保组件路径和典型日名称正确无误，避免因路径或名称错误导致无法获取组件运行信息。
++ 获取算例失败，检查算例是否存在，该网址是否有该算例，`token` 是否为该账户下的 `token`。
++ 检查组件路径和典型日名称，确保组件路径和典型日名称正确无误，避免因路径或名称错误导致无法获取组件运行信息。
 
 ## 常见问题
 **Q1：获取到的优化方案数量为 `0`，这表示什么？如何解决？**
@@ -116,12 +116,12 @@ if __name__ == '__main__':
 A1： 如果 `plan_result.GetPlanNum()` 返回 `0`，这可能表示没有找到任何优化方案，或者计算过程中存在问题。首先，确认您的输入数据和配置是否正确无误。然后，**检查 CloudPSS 平台是否有任何关于计算失败的日志或错误信息**。
 
 **Q2:`GetComponentResult()` 方法的组件名称和典型日名称怎么获取?**  
-A2:组件名称可以在项目的组件列表中查看获取,详细获取方法在案例3中有介绍，注意名称左边要加上斜杠,如 `/component_photovoltaic_2`。典型日名称可在规划典型日生成模块结果中进行查看。  
+A2:组件名称可以在项目的组件列表中查看获取,注意名称左边要加上斜杠,如 `/component_photovoltaic_2`。典型日名称可在规划典型日生成模块结果中进行查看。  
 **获取典型日名称**
 ![典型日名称](./typical_day_name.png "典型日名称")
 
 ## 完整代码
-```python
+```python showLineNumbers
 import os
 import cloudpss
 import time

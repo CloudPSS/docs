@@ -7,37 +7,33 @@ tags:
 
 ---
 
-:::tip 快速入门
-本例通过打开 SimStudio IES 三联供案例，修改参数，执行能量流计算，获取结果。帮助用户快速使用 **SimStudio IES SDK** 。
-:::
-
-:::info
+:::info 快速入门
 **本例以通过 Python 脚本获取SimStudio 平台三联供算例计算结果为例，帮助用户快速入门综合能源 CloudPSS SDK 的使用。**
 :::
 
 ## 算例创建和使用
 
-首先，在 CloudPSS Simstudio 中打开[三联供算例](https://cloudpss.net/model/CloudPSS/CHPCase)，该算例也可以通过模板算例进行创建。
+首先，在 CloudPSS Simstudio 中打开 [三联供算例](https://cloudpss.net/model/CloudPSS/CHPCase)，该算例也可以通过模板算例进行创建。
 
 ![三联供算例](./1.svg "三联供算例")
 
-点击`运行`标签页，在计算方案中选择默认的**综合能源系统仿真模拟方案1**。
+点击**运行**标签页，在计算方案中选择默认的**综合能源系统仿真模拟方案1**。
 
 ![选择综合能源系统仿真模拟方案](./2.jpg "选择综合能源系统仿真模拟方案")
 
-点击`启动任务`运行仿真，在`结果`页面会生成综合能源仿真计算结果。
+点击**启动任务**运行仿真，在**结果**页面会生成综合能源仿真计算结果。
 
 ![综合能源仿真计算结果1](./3-1.png "综合能源仿真计算结果1")
 ![综合能源仿真计算结果2](./3-2.jpg "综合能源仿真计算结果2")
 
 :::tip
-若要批量处理综合能源的计算结果，比如将所有负荷的用能量相加来计算分时总负荷，常规的方法是在计算结果列表中找到所有的负荷元件，然后手动提取他们的负荷数据再进行相加，但由于通常综合能源系统中元件数量众多，对应的结果图表数量也非常可观，这样处理的效率十分低下。借助CloudPSS SDK，利用Python脚本获取结果数据，然后进行批量处理，可快速完成上述功能。
+若要批量处理综合能源的计算结果，比如将所有负荷的用能量相加来计算分时总负荷，常规的方法是在计算结果列表中找到所有的负荷元件，然后手动提取他们的负荷数据再进行相加，但通常综合能源系统中元件数量众多，对应的结果图表数量也较多，这样处理的效率十分低下。借助 CloudPSS SDK，利用 Python 脚本获取结果数据，然后进行批量处理，可快速完成上述功能。
 :::
 
 ## 示例代码
 
-配置好 **Python** 开发环境，这里主要用到了第三方绘图库`Dash`和`JupyterDash`，用户可以使用`pip install dash`和`pip install jupyter-dash`指令进行安装。接下来执行以下脚本：
-```python
+配置好 Python 开发环境，这里主要用到了第三方绘图库 `Dash` 和 `JupyterDash`，用户可以使用 `pip install dash` 和 `pip install jupyter-dash` 指令进行安装。接下来执行以下脚本：
+```python showLineNumbers
 import time
 import cloudpss
 import os
@@ -126,20 +122,20 @@ if __name__ == '__main__':
     except Exception as e:
         print('error', e)
 ```
-上述代码运行后，将在python终端输出如下图的结果曲线。
+上述代码运行后，将在 python 终端输出如下图的结果曲线。
 ![SDK代码运行结果1](./4-1.png "SDK代码运行结果1")
 ![SDK代码运行结果2](./4-2.png "SDK代码运行结果2")
 
 ## 获取结果
 
-综合能源仿真计算结果均保存在 `runner.result` 中。用户可查看 result 类的接口说明文档获取更多帮助。
-```python
+综合能源仿真计算结果均保存在 `runner.result` 中。用户可查看 `result` 类的 [接口说明文档](../../../70-api/40-result/index.md) 获取更多帮助。
+```python showLineNumbers
 print(runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 'Thermal Load'))
 print(runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 'Thermal Load', 0))
 ```
-通过上述两条语句可分别获得元件`component_ies_heat_cold_load_8`整个仿真周期内的负荷时序结果和首个时刻的负荷结果。返回结果以字典对象的格式进行存储，如下：
+通过上述两条语句可分别获得元件 `component_ies_heat_cold_load_8` 整个仿真周期内的负荷时序结果和首个时刻的负荷结果。返回结果以字典对象的格式进行存储，如下：
 
-```python
+```python showLineNumbers
  {
    'Thermal Load': {
      'x': ['2021-01-01 01:00:00'], 
@@ -148,9 +144,9 @@ print(runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 
   }
 ```
 
-如果想整个取出目标key的数值结果，可直接访问该key下的`y`成员。例如：
-```python
+如果想整个取出目标 key 的数值结果，可直接访问该 key 下的 `y` 成员。例如：
+```python showLineNumbers
 loadValue = runner.result.getPlotData('/component_ies_heat_cold_load_8', 'Power(kW)', 'Thermal Load')['Thermal Load']['y']
 print(loadValue)
 ```
-此时输出的数值即为此算例的 **component_ies_heat_cold_load_8** 采暖制冷负荷（冷库负荷）的时序结果。
+此时输出的数值即为此算例的 `component_ies_heat_cold_load_8` 采暖制冷负荷（冷库负荷）的时序结果。
