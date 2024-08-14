@@ -13,32 +13,34 @@ tags:
 
 ### 用到的 API
 
-[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: IESLabPlan](../../../70-api/50-ieslab/index.md#class-ieslabplan) 
 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabPlan.fetch(simulationId) ` |   获取算例信息    |
     | `IESLabPlan.iesLabEvaluationRun(planId, type=None)` |   运行方案评估    |
 
-[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
-
-    | 方法     | 功能 | 
-    | ---------------- | :-----------: | 
-    | `Runner.status() ` |   运行状态   |
     
-[Class: IESLabEvaluationModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: IESLabEvaluationModel](../../../70-api/50-ieslab/index.md#class-ieslabevaluationmodel) 
 
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESLabEvaluationModel.GetFinancialParams(planID)` |   获取优化方案下财务评估模块的基础信息   |
-    | `IESLabEvaluationModel.GetFinancialResult(planId, type=None) ` |   获取优化方案下财务评估结果   |
-    | `IESLabEvaluationModel.GetEnvironmentalEvaluationResult(planId, type=None) ` |   获取优化方案下的环保评价   |
-    | `IESLabEvaluationModel.GetEnergyEvaluationResult(planID) ` |   获取当前优化方案下的能效评价   |
+    | `IESLabEvaluationModel.run(planID, type=None) ` |   启动方案评估运算  |
+
+[Class: IESLabEvaluationResult](../../../70-api/50-ieslab/index.md#class-ieslabevaluationresult) 
+
+    | 方法     | 功能 | 
+    | ---------------- | :-----------: | 
+    | `IESLabEvaluationResult.status()` |   获取方案评估运行状态   |
+    | `IESLabEvaluationResult.GetFinancialResult(resultType, planID) ` |   获取优化方案下财务评估结果   |
+    | `IESLabEvaluationResult.GetEnvironmentalEvaluationResult(planId) ` |   获取优化方案下的环保评价   |
+    | `IESLabEvaluationResult.GetEnergyEvaluationResult(planID) ` |   获取当前优化方案下的能效评价   |
 
 
 ### 调用方式
-+ 通过IESLabPlan.fetch(simulationId)方法获取算例信息，调用IESLabPlan.iesLabEvaluationRun(planId, type=None)方法运行方案评估，可通过Runner.status()检查运行状态。
-+ 通过IESLabEvaluationModel类的相应方法获取财务参数和评价结果、优化方案的环保评价和能效评价。
++ 通过 `IESLabPlan.fetch(simulationId)` 方法获取算例信息，调用 `IESLabEvaluationModel.run(planID, type=None)` 方法运行方案评估，可通过 `IESLabEvaluationResult.status()` 检查运行状态。
++ 通过 `IESLabEvaluationModel` 类的相应方法获取财务参数和评价结果、优化方案的环保评价和能效评价。
 
 
 ## 案例介绍
@@ -47,11 +49,11 @@ tags:
 
 
 ### 代码解析
-首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例，详细解释参考案例1代码解析。
+首先进行算例准备工作。包括设置网址与账户 `token`、获取获取算例。
 :::caution
-在进行评估前，您需要确保方案优选模块存在规划的方案,否则无法进行方案评估，如何调用SDK生成规划方案请参考案例5。
+在进行评估前，您需要确保方案优选模块存在规划的方案,否则无法进行方案评估。
 :::
-```python
+```python showLineNumbers
 import os
 import cloudpss
 import time
@@ -67,14 +69,14 @@ if __name__ == '__main__':
     iesplanProject = cloudpss.IESLabPlan.fetch('274')
 ```
 首先通过 `input()` 函数获取用户输入的方案 ID，然后使用 `GetFinancialParams(planID)` 方法获取该方案的财务评估参数信息。注意，**确保输入的方案 ID 是存在的，否则可能无法获取到参数信息**。
-```python
+```python showLineNumbers
     # 获取指定方案的财务评估参数信息
     planID = input("请输入要查看的方案ID：")
     evaluation_info = iesplanProject.evaluationModel.GetFinancialParams(planID)
     print("该方案的财务评估参数信息:", evaluation_info) 
 ```      
 启动对指定方案 ID 的评估计算。首先获取方案 ID，然后调用 `iesLabEvaluationRun(planID)` 方法启动评估。使用 `plan_result.GetFinancialResult("利润与利润分配", planID)` 获取指定方案的特定类型 `"利润与利润分配"` 的财务评估表格。
-```python
+```python showLineNumbers
     # 启动计算，评估指定方案
     planID = input("请输入要进行评估的方案ID：")
     runner = iesplanProject.iesLabEvaluationRun(planID)
@@ -90,7 +92,7 @@ if __name__ == '__main__':
 ```    
 使用 `iesplanProject.iesLabEvaluationRun(planID, '环保评价')` 启动对指定方案的环保评价计算。评估计算完成后，通过 `runner.result` 获取评估结果对象。使用 `plan_result.GetEnvironmentalEvaluationResult(planID)` 获取指定方案的环保评价结果。
 
-```python
+```python showLineNumbers
     planID = input("请输入要进行评估的方案ID：")
     runner = iesplanProject.iesLabEvaluationRun(planID, '环保评价')
     while not runner.status():
@@ -103,7 +105,7 @@ if __name__ == '__main__':
     print("该方案的环保评价:", env_result)    
 ```
 使用 `iesplanProject.iesLabEvaluationRun(planID, '能效评价')` 启动对指定方案的能效评价计算。评估计算完成后，通过 `runner.result` 获取评估结果对象。使用 `plan_result.GetEnergyEvaluationResult(planID)` 获取指定方案的能效评价结果。
-```python
+```python showLineNumbers
     planID = input("请输入要进行评估的方案ID：")
     runner = iesplanProject.iesLabEvaluationRun(planID, '能效评价')
     while not runner.status():
@@ -118,20 +120,20 @@ if __name__ == '__main__':
 
 ### 结果展示
 由于结果过长，在此只展示该方案的财务评估参数信息。
-```python
+```python showLineNumbers
 请输入要查看的方案ID：1
 该方案的财务评估参数信息: {'assetformation': [{'id': 34, 'fixedAssetsRatio': '95', 'residualRrate': '5', 'depreciationPeriod': '15', 'reimbursementPeriod': '5', 'simu': 274, 'planId': 1}], 'productioncost': [{'id': 24, 'capacity': '4', 'annualSalary': '8', 'welfareFactor': '0', 'insuranceRate': '0.25', 'materialsExpenses': '5.0', 'otherExpenses': '1.0', 'simu': 274, 'planId': 1}], 'workingcapitalandfinancialexpenses': [{'id': 23, 'workingCapitalLoanRatio': '70', 'interestRateAndWorkingCapital': '4', 'annualARCirculationTimes': '12', 'annualStockCirculationTimes': '12', 'annualCashCirculationTimes': '12', 'annualAPCirculationTimes': '12', 'simu': 274, 'planId': 1}], 'projectcalculation': [{'id': 27, 'electricityVATRate': '18', 'steamSaleVATRate': '12', 'hotColdVATRate': '12', 'fuelBoughtVATRate': '10', 'materialBoughtVATRate': '17', 'legalAccumulationFundRate': '10', 'aleatoricAccumulationFundRate': '0', 'educationFeePlus': '5', 'localEducationPlus': '2', 'cityMaintenanceConstructionTaxTate': '5', 'corporateIncomeTaxRate': '25', 'basicDiscountRate': '8', 'simu': 274, 'planId': 1}]}
 ```
 
 ## 调试技巧
-+ 在进行评估前，确保方案优选模块中存在规划的方案。否则无法进行方案评估。
++ 在进行评估前，确保方案优选模块中存在规划的方案，否则无法进行方案评估。
 
 ## 常见问题
 **Q1:如何确保输入的方案ID是有效的？**  
 A1:在进行评估之前，检查方案优选模块是否存在方案，以确保您输入的方案 ID 在平台上是存在的。输入无效的方案 ID 将导致评估失败。
 
 ## 完整代码
-```python
+```python showLineNumbers
 import os
 import cloudpss
 import time

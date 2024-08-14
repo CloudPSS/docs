@@ -23,25 +23,25 @@ tags:
     | ---------------- | :-----------: | 
     | `IESLabSimulation.run(job=None, name=None) ` |   调用仿真    |
     
-[Class: Runner](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: Job](../../../70-api/30-job/index.md#class-job)
 + 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
-    | `Runner.status() ` |   运行状态   |
+    | `Job.status() ` |   运行状态   |
 
-[Class: IESResult](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)   
+[Class: IESResult](../../../70-api/40-result/index.md#class-iesresult)   
 + 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
     | `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)  ` |   获取结果数据   |
 
-[Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-ieslabsimulation) 
+[Class: DataManageModel](../../../70-api/50-ieslab/index.md#class-datamanagemodel)  
 + 实例方法    
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
     | `dataManageModel.GetItemList(dataType)`                |  获取所有数据项的列表  | 
 
-[Class: Model](../../../70-api/50-ieslab/index.md#class-ieslabsimulation)
+[Class: Model](../../../70-api/10-model/index.md#class-model)
 + 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: |     
@@ -49,8 +49,8 @@ tags:
     
 
 ### 调用方式
-+ 通过IESLabSimulation.fetch(simulationId)方法获取算例信息，在此基础上通过dataManageModel.GetItemList(dataType)方法和Model.getComponentByKey(componentKey: str)方法获取元件设备参数。
-+ 通过IESLabSimulation.run(job=None, name=None)方法调用仿真，Runner.status() 方法检测运行状态，之后使用IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法获取指定元件的仿真结果数据。
++ 通过 `IESLabSimulation.fetch(simulationId)` 方法获取算例信息，在此基础上通过 `dataManageModel.GetItemList(dataType)` 方法和 `Model.getComponentByKey(componentKey: str)` 方法获取元件设备参数。
++ 通过 `IESLabSimulation.run(job=None, name=None)` 方法调用仿真，`Runner.status()` 方法检测运行状态，之后使用 `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)` 方法获取指定元件的仿真结果数据。
 
 
 
@@ -60,12 +60,12 @@ tags:
 2. 如何提取仿真结果数据，并使用 Matplotlib 对结果进行二次处理。
 
 :::tip
-您可以在本案例的基础上修改代码用于分析不同参数对系统性能的影响，选择最优的系统设计参数组合等场景。
+您可以在本案例的基础上修改代码用于分析不同参数对系统性能的影响、选择最优的系统设计参数组合等场景。
 :::
 
 ### 代码解析
-导入必要的库，matplotlib.pyplot 和 numpy 用于数据可视化和数值计算。mpl_toolkits.mplot3d 用于绘制 3D 图形；接下来进行算例准备工作，包括设置网址与账户 token、获取获取算例，详细解释参考案例 1 代码解析。获取拟修改的元件与设备信息。详细解释参考案例 2 代码解析。
-```python
+导入必要的库，`matplotlib.pyplot` 和 `numpy` 用于数据可视化和数值计算。`mpl_toolkits.mplot3d` 用于绘制 3D 图形；接下来进行算例准备工作，包括设置网址与账户 `token`、获取获取算例。
+```python showLineNumbers
 import time
 import os
 import cloudpss
@@ -88,24 +88,24 @@ if __name__ == '__main__':
 ```
 
 使用 `np.arange()` 创建最大功率和倾角的参数范围。注意，确保参数范围和步长设置合理。
-```python
+```python showLineNumbers
 # 假设的参数范围
     maximum_powers = np.arange(700, 901, 50)  # 从700W到900W，步长为100W
     dip_angles = np.arange(20, 61, 10)  # 从20度到60度，步长为20度
 ```
 使用 `np.zeros()` 创建一个与参数范围大小相匹配的数组,用于存储结果。使用 `np.meshgrid()` 基于参数范围创建网格,用于后续的参数扫描。
-```python
+```python showLineNumbers
     # 初始化结果存储
     results = np.zeros((len(maximum_powers), len(dip_angles)))
     X, Y = np.meshgrid(dip_angles, maximum_powers)  # 创建参数网格
 ```
 **使用嵌套循环遍历参数网格中的每个参数组合。更新数据管理模块和拓扑编辑模块中的参数值**。
-使用 `iesProject.run()` 执行仿真计算。通过 `ies_result.getPlotData()` 获取指定元件 `"PhotovoltaicSys_6"` 的指定数据 `"功率（$\mathrm{kW}$）")`。从获取的数据中提取特定时间点(本例为第 11 个时间点)的有功功率值,并存储在结果数组中。
+使用 `iesProject.run()` 执行仿真计算。通过 `ies_result.getPlotData()` 获取指定元件 `"PhotovoltaicSys_6"` 的指定数据 `"功率（kW）"`。从获取的数据中提取特定时间点(本例为第 11 个时间点)的有功功率值,并存储在结果数组中。
 :::note
 这个过程可能会花费一定的时间。确保网络连接稳定并耐心等待。
 :::
 
-```python
+```python showLineNumbers
     for i, max_power in enumerate(maximum_powers):
         for j, dip_angle in enumerate(dip_angles):
             # 更新参数值
@@ -127,7 +127,7 @@ if __name__ == '__main__':
 ```
 将获取到的数据进行二次处理，绘制三维曲面图。
 
-```python
+```python showLineNumbers
     # 绘制二维曲面图
     fig = plt.figure(figsize=(12, 8))
     ax = fig.add_subplot(111, projection='3d')
@@ -143,24 +143,24 @@ if __name__ == '__main__':
 ```  
 
 ### 结果展示
-下图为元件 PhotovoltaicSys_6 有功功率随倾斜角和光伏设备最大功率变化的曲面图。
+下图为元件 `PhotovoltaicSys_6` 有功功率随倾斜角和光伏设备最大功率变化的曲面图。
 ![结果数据](./result_data.png "结果数据")
 
 ## 调试技巧
 在批量仿真获取结果并进行二次处理时，可能会遇到一些常见的问题。以下是一些调试技巧，帮助你更容易地定位和解决这些问题：
-+ 确保API访问令牌设置正确且未过期。同时，确认访问的网址设置是否正确。
-+ 验证函数和方法调用，特别注意IESResult.getPlotData(compID, labelName, traceName='all', index=-1)方法参数的顺序和必填项。确认每个API调用的返回值是否符合预期。
-+ 如果获取结果数据失败，请检查元件的ID是否正确，以及是否存在于IESLab中的元件库中。
++ 确保 API 访问令牌设置正确且未过期。同时，确认访问的网址设置是否正确。
++ 验证函数和方法调用，特别注意 `IESResult.getPlotData(compID, labelName, traceName='all', index=-1)` 方法参数的顺序和必填项。确认每个 API 调用的返回值是否符合预期。
++ 如果获取结果数据失败，请检查元件的 ID 是否正确，以及元件是否存在于 IESLab 中的元件库中。
 
 
 ## 常见问题
 **Q1:参数范围和步长应该如何设置?**  
 A1:参数范围和步长的设置取决于具体的分析需求。一般来说,范围应该覆盖感兴趣的参数区间,步长不宜过大或过小。过大的步长可能导致结果不够精细,忽略重要的变化趋势;过小的步长会增加计算量,延长仿真时间。需要根据实际情况平衡精度和效率。  
 **Q2: 如果我想要修改其他类型的元件参数，应该怎么做？**  
-A2: **修改其他类型元件参数的方法与修改光伏系统参数类似**。首先，使用 `iesProject.dataManageModel.GetItemList('元件类型')` 获取目标元件的信息，然后根据元件的具体参数使用 `model.getComponentByKey("元件键值")` 获取元件对象，并修改相应的参数。此外，您还可以根据 CloudPSS 的文档来确定正确的参数名称和可接受的参数范围。（插入参考链接）
+A2: **修改其他类型元件参数的方法与修改光伏系统参数类似**。首先，使用 `iesProject.dataManageModel.GetItemList('元件类型')` 获取目标元件的信息，然后根据元件的具体参数使用 `model.getComponentByKey("元件键值")` 获取元件对象，并修改相应的参数。您可以根据 [CloudPSS API文档](../../../70-api/50-ieslab/index.md#datamanagemodelgetitemlistdatatype) 来确定正确的参数名称和可接受的参数范围。
 
 ## 完整代码
-```python
+```python showLineNumbers
 import time
 import os
 import cloudpss
