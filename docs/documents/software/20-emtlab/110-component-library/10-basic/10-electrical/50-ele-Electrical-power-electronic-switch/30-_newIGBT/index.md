@@ -5,6 +5,8 @@ description: "IGBT"
 
 ## 元件定义
 
+该元件用以建模IGBT。
+
 ## 元件说明
 
 
