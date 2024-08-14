@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 母线名称 |
-| Rated Frequency | `Freq` | 实数 [Hz] | 额定频率 |
-| Ramping Time | `RampingTime` | 实数 [s] | 斜坡启动时间(仅初始化用) |
-| Voltage Angle | `Theta` | 实数 [Deg] | 母线电压相位 |
-| Voltage Magnitude \(L\-L, RMS\) | `V` | 实数 [p\.u\.] | 母线电压幅值 |
-| Base Voltage \(L\-L, RMS\) | `VBase` | 实数 [kV] | 母线电压基值 |
+| Name | `Name` | 文本 | 母线名称<br/>此处输入三相交流母线的名称（可缺省） |
+| Rated Frequency | `Freq` | 实数 [Hz] | 额定频率<br/>母线的额定频率，用于交流系统快速启动，可缺省 |
+| Ramping Time | `RampingTime` | 实数 [s] | 斜坡启动时间(仅初始化用)<br/>母线电压以斜坡函数方式爬升的时间，用于交流系统快速启动，可缺省 |
+| Voltage Angle | `Theta` | 实数 [Deg] | 母线电压相位<br/>母线电压相位（A相相电压），用于交流系统快速启动，可缺省 |
+| Voltage Magnitude \(L\-L, RMS\) | `V` | 实数 [p\.u\.] | 母线电压幅值<br/>母线线电压的幅值，用于交流系统快速启动，可缺省 |
+| Base Voltage \(L\-L, RMS\) | `VBase` | 实数 [kV] | 母线电压基值<br/>母线的电压基准值，用于交流系统快速启动，可缺省 |
 
 #### Monitoring
 
@@ -25,8 +25,8 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Voltage Vector \[kV\] | `Vabc` | 虚拟引脚（输出） | 三相电压 |
-| RMS Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压均方根值 |
+| 3 Phase Voltage Vector \[kV\] | `Vabc` | 虚拟引脚（输出） | 三相电压<br/>此处输母线三相相电压量测信号的标（3×1维），如 Vabc |
+| RMS Voltage \[kV\] | `Vrms` | 虚拟引脚（输出） | 电压均方根值<br/>此处输母线电压均方根值量测信号的标签（1×1维），如 Vrms |
 
 
 </slot>

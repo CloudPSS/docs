@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Direction of Transformation | `Direction` | 选择 | 变换方向 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入Clark变换器的名称（可缺省） |
+| Direction of Transformation | `Direction` | 选择 | 变换方向<br/>选择变换的方向为Clark变换或逆Clark变换 |
 
 
 </slot>

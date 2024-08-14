@@ -12,11 +12,11 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Gain | `G` | 实数 | 增益 |
-| Damping Ratio | `z` | 实数 | 阻尼比 |
-| Characteristic Frequency | `Fo` | 实数 [Hz] | 特征频率 |
-| Function code | `Type` | 选择 | 函数类型 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入二阶传递函数的名称（可缺省） |
+| Gain | `G` | 实数 | 增益<br/>二阶传递函数的增益 |
+| Damping Ratio | `z` | 实数 | 阻尼比<br/>二阶传递函数的阻尼比 |
+| Characteristic Frequency | `Fo` | 实数 [Hz] | 特征频率<br/>二阶传递函数的特征频率 |
+| Function code | `Type` | 选择 | 函数类型<br/>选择二阶传递函数类型 |
 
 #### Limit
 
@@ -24,12 +24,12 @@ Limit
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Limit Output? | `Limit` | 选择 | 是否限制输出 |
-| Limit Output Speed? | `LimitS` | 选择 | 是否限制输出速度 |
-| Output Up Limit | `Up` | 实数 | 输出上限 |
-| Output Down Limit | `Do` | 实数 | 输出下限 |
-| Output Speed Up Limit | `Ups` | 实数 | 输出速度上限 |
-| Output Speed Down Limit | `Dos` | 实数 | 输出速度下限 |
+| Limit Output? | `Limit` | 选择 | 是否限制输出<br/>选择是否限制二阶传递函数的输出 |
+| Limit Output Speed? | `LimitS` | 选择 | 是否限制输出速度<br/>选择是否限制二阶传递函数的输出速度 |
+| Output Up Limit | `Up` | 实数 | 输出上限<br/>二阶传递函数的输出上限，仅当`是否限制输出`项为`Yes`时有效 |
+| Output Down Limit | `Do` | 实数 | 输出下限<br/>二阶传递函数的输出下限，仅当`是否限制输出`项为`Yes`时有效 |
+| Output Speed Up Limit | `Ups` | 实数 | 输出速度上限<br/>二阶传递函数的输出速度上限，仅当`是否限制输出速度`项为`Yes`时有效 |
+| Output Speed Down Limit | `Dos` | 实数 | 输出速度下限<br/>二阶传递函数的输出速度下限，仅当`是否限制输出速度`项为`Yes`时有效 |
 
 
 </slot>

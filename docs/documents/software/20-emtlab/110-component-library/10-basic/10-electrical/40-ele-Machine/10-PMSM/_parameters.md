@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Rated Power | `Smva` | 实数 [MVA] | 额定容量 |
-| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值 |
-| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率 |
-| Is Stator Neutral Grounded? | `Neut` | 选择 | 定子中性点是否接地？ |
-| Parameter Format | `ParamType` | 选择 | 参数输入类型 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入永磁同步发电机名称，可缺省 |
+| Rated Power | `Smva` | 实数 [MVA] | 额定容量<br/>永磁同步发电机额定容量 |
+| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值<br/>永磁同步发电机额定线电压有效值 |
+| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率<br/>永磁同步发电机额定频率 |
+| Is Stator Neutral Grounded? | `Neut` | 选择 | 定子中性点是否接地？<br/>选择yes代表中性点直接接地，选择no将引出中性点引脚。 |
+| Parameter Format | `ParamType` | 选择 | 参数输入类型<br/>可选择有名值输入模式或标幺值输入模式。 |
 
 #### Actual Value Data
 
@@ -29,7 +29,7 @@ Actual Value Data
 | Stator Leakage Reactance | `Xlr` | 实数 [Ω] | 定子绕组漏电抗 |
 | Stator D\-axis Reactance | `Xsd` | 实数 [Ω] | 定子d轴电抗 |
 | Stator Q\-axis Reactance | `Xsq` | 实数 [Ω] | 定子q轴电抗 |
-| Consider Damper Winding？ | `Sd` | 选择 | 是否考虑阻尼绕组 |
+| Consider Damper Winding？ | `Sd` | 选择 | 是否考虑阻尼绕组<br/>选择yes或no以启用或禁用阻尼绕组。 |
 | D\-axis Damper Winding Resistance | `Rdd` | 实数 [Ω] | d轴阻尼绕组电阻 |
 | D\-axis Damper Winding Reactance | `Xdd` | 实数 [Ω] | d轴阻尼绕组电抗 |
 | Q\-axis Damper Winding Resistance | `Rqd` | 实数 [Ω] | q轴阻尼绕组电阻 |
@@ -46,7 +46,7 @@ Per-unit Value Data
 | Stator Leakage Reactance | `Xlrpu` | 实数 [p\.u\.] | 定子绕组漏电抗 |
 | Stator D\-axis Reactance | `Xsdpu` | 实数 [p\.u\.] | 定子d轴电抗 |
 | Stator Q\-axis Reactance | `Xsqpu` | 实数 [p\.u\.] | 定子q轴电抗 |
-| Consider Damper Winding？ | `Sdpu` | 选择 | 是否考虑阻尼绕组 |
+| Consider Damper Winding？ | `Sdpu` | 选择 | 是否考虑阻尼绕组<br/>选择yes或no以启用或禁用阻尼绕组。 |
 | D\-axis Damper Winding Resistance | `Rddpu` | 实数 [Ω] | d轴阻尼绕组电阻 |
 | D\-axis Damper Winding Reactance | `Xddpu` | 实数 [Ω] | d轴阻尼绕组电抗 |
 | Q\-axis Damper Winding Resistance | `Rqdpu` | 实数 [Ω] | q轴阻尼绕组电阻 |
@@ -59,8 +59,8 @@ Rotor Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Inertia Constant | `Tj` | 实数 [s] | 惯性时间常数 |
-| Mechanical Damping | `Dm` | 实数 [p\.u\.] | 机械阻尼 |
+| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数<br/>此处应填写惯性时间常数 $T_J=2H$，其中$H$为惯性常数（北美和欧洲参数形式） |
+| Mechanical Damping | `Dm` | 实数 [p\.u\.] | 机械阻尼时间常数 |
 
 #### Monitoring
 
@@ -68,15 +68,15 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Stator Current \[kA\] | `Is` | 虚拟引脚（输出） | 定子端三相线电流 |
-| RMS Stator Current \[p\.u\.\] | `Isrms` | 虚拟引脚（输出） | 定子端三相线电流有效值 |
-| RMS Stator Voltage \[p\.u\.\] | `Vsrms` | 虚拟引脚（输出） | 定子端三相电压有效值 |
-| Mechanical Speed \[p\.u\.\] | `wr` | 虚拟引脚（输出） | 转子机械转速 |
-| Rotor Position \[Rad\] | `theta` | 虚拟引脚（输出） | 转子角位置 |
-| Electrical Torque \[p\.u\.\] | `Te` | 虚拟引脚（输出） | 电磁转矩 |
-| Mechanical Torque \[p\.u\.\] | `Tm` | 虚拟引脚（输出） | 机械转矩 |
-| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 定子侧有功功率 |
-| Reactive Power \[MW\] | `Q` | 虚拟引脚（输出） | 定子侧无功功率 |
+| 3 Phase Stator Current \[kA\] | `Is` | 虚拟引脚（输出） | 定子端三相线电流<br/>此处输入定子端三相线电流瞬时值量测信号的标签，如 Is |
+| RMS Stator Current \[p\.u\.\] | `Isrms` | 虚拟引脚（输出） | 定子端三相线电流有效值<br/>此处输入定子端三相电流有效值量测信号量测信号的标签，如 Irms |
+| RMS Stator Voltage \[p\.u\.\] | `Vsrms` | 虚拟引脚（输出） | 定子端三相电压有效值<br/>此处输入定子端三相电压有效值量测信号的标签，如 Vrms |
+| Mechanical Speed \[p\.u\.\] | `wr` | 虚拟引脚（输出） | 转子机械转速<br/>此处输入转子机械转速量测信号的标签，如 w |
+| Rotor Position \[Rad\] | `theta` | 虚拟引脚（输出） | 转子角位置<br/>此处输入转子角位置量测信号的标签，如 Theta |
+| Electrical Torque \[p\.u\.\] | `Te` | 虚拟引脚（输出） | 电磁转矩<br/>此处输入电磁转矩量测信号的标签，如 Te |
+| Mechanical Torque \[p\.u\.\] | `Tm` | 虚拟引脚（输出） | 机械转矩<br/>此处输入机械转矩量测信号的标签，如 Tm |
+| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 定子侧有功功率<br/>此处输入定子端输出有功功率信号量测信号的标签，如 Pmsr |
+| Reactive Power \[MW\] | `Q` | 虚拟引脚（输出） | 定子侧无功功率<br/>此处输入定子端输出无功功率信号量测信号的标签，如 Qmsr |
 
 
 </slot>

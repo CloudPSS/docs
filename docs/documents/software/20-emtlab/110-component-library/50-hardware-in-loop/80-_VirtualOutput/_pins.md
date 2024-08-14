@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Output Port | `0` | 输入 | 1 x 1 | Output Port |
+| Output Port | `0` | 输入 | 1 x 1 | 虚拟输出 |
 
 </slot>

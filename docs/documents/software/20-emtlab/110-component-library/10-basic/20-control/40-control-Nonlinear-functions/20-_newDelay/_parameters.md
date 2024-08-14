@@ -12,10 +12,10 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Delay Time | `Td` | 实数 [s] | 延迟时间 |
-| Max Sample Points | `Sp` | 整数 | 最大采样点数 |
-| Initial Output Value | `init_value` | 实数 | 初始值 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入延时环节的名称（可缺省） |
+| Delay Time | `Td` | 实数 [s] | 延迟时间<br/>输出信号相比于输入信号的延迟时间 |
+| Max Sample Points | `Sp` | 整数 | 最大采样点数<br/>延迟时间内的最大采样点数 |
+| Initial Output Value | `init_value` | 实数 | 初始值<br/>延迟模块的初始输出值 |
 
 
 </slot>

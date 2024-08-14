@@ -12,12 +12,12 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Thyristor Direction | `UP` | 选择 | 晶闸管方向 |
-| Enable Snubber Circuit? | `SNUB` | 选择 | 是否考虑缓冲电路 |
-| Transformer Phase Config | `KV` | 选择 | 换向变压器相移 |
-| Firing Order Angle Type | `AlphaAngleType` | 选择 | 触发角类型 |
-| Unblock Time | `Tblock` | 实数 [s] | 在该时刻前当前元件处于闭锁状态 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入六脉动晶闸管桥的名称 |
+| Thyristor Direction | `UP` | 选择 | 晶闸管方向<br/>选择晶闸管方向为上或下 |
+| Enable Snubber Circuit? | `SNUB` | 选择 | 是否考虑缓冲电路<br/>选择“Yes”或“No”以启用或禁用晶闸管并联的缓冲电路 |
+| Transformer Phase Config | `KV` | 选择 | 换向变压器相移<br/>选择换向变压器的相移 |
+| Firing Order Angle Type | `AlphaAngleType` | 选择 | 触发角类型<br/>选择换向角的单位为弧度制或角度制 |
+| Unblock Time | `Tblock` | 实数 [s] | 在该时刻前当前元件处于闭锁状态<br/>闭锁时间 |
 
 #### Phase Locked Oscillator
 
@@ -25,10 +25,10 @@ Phase Locked Oscillator
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Rated Frequency | `FR` | 实数 [Hz] | 额定频率 |
-| PLO Proportional Gain | `GP` | 实数 | 锁相振荡器比例增益 |
-| PLO Integral Gain | `GI` | 实数 | 锁相振荡器积分增益 |
-| PLO Reference Voltage | `KP` | 选择 |  |
+| Rated Frequency | `FR` | 实数 [Hz] | 额定频率<br/>所在电气系统的额定频率 |
+| PLO Proportional Gain | `GP` | 实数 | 锁相振荡器比例增益<br/>锁相振荡器的比例增益 |
+| PLO Integral Gain | `GI` | 实数 | 锁相振荡器积分增益<br/>锁相振荡器的积分增益 |
+| PLO Reference Voltage | `KP` | 选择 | 锁相参考电压类型<br/>选择锁相振荡器的参考电压是否去掉零序分量 |
 
 #### Valve Data
 
@@ -36,14 +36,14 @@ Valve Data
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Thyristor ON  Resistance | `RON` | 实数 [Ω] |  |
-| Thyristor OFF Resistance | `ROFF` | 实数 [Ω] |  |
-| Forward Voltage Drop | `EFVD` | 实数 [kV] |  |
-| Forward Breakover Voltage | `EBO` | 实数 [kV] |  |
-| Reverse Withstand Voltage | `RWV` | 实数 [kV] |  |
-| Protected Against Forward Breakover | `PFB` | 选择 |  |
-| Snubber Resistance | `RD` | 实数 [Ω] |  |
-| Snubber Capacitance | `CD` | 实数 [uF] |  |
+| Thyristor ON  Resistance | `RON` | 实数 [Ω] | 导通等效电阻<br/>晶闸管导通时的等效电阻 |
+| Thyristor OFF Resistance | `ROFF` | 实数 [Ω] | 关断等效电阻<br/>晶闸管关断时的等效电阻 |
+| Forward Voltage Drop | `EFVD` | 实数 [kV] | 等效压降<br/>晶闸管导通时的等效压降 |
+| Forward Breakover Voltage | `EBO` | 实数 [kV] | 正向击穿电压<br/>晶闸管正向击穿电压，当正向超过这个数值时，二极管将被正向击穿 |
+| Reverse Withstand Voltage | `RWV` | 实数 [kV] | 反向耐受电压<br/>晶闸管反向耐受电压，当反向超过这个数值时，二极管将被反向击穿 |
+| Protected Against Forward Breakover | `PFB` | 选择 | 击穿保护电压<br/>晶闸管的击穿保护电压，大于该值时闭锁 |
+| Snubber Resistance | `RD` | 实数 [Ω] | 缓冲电路电阻<br/>晶闸管并联RC缓冲电路的电阻，仅当“有无缓冲电路”选择"Yes"时有效 |
+| Snubber Capacitance | `CD` | 实数 [uF] | 缓冲电路电容<br/>晶闸管并联RC缓冲电路的电容，仅当“有无缓冲电路”选择"Yes"时有效 |
 
 #### Monitoring
 
@@ -51,10 +51,10 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Thyristor Voltage Vector \[kV\] | `VVolt` | 虚拟引脚（输出） | 晶闸管电压向量 |
-| Thyristor Current Vector \[kA\] | `VCurr` | 虚拟引脚（输出） | 晶闸管电流向量 |
-| Measured Alpha Angle \[Rad\] | `AM` | 虚拟引脚（输出） | 触发角量测 |
-| Measured Gamma Angle \[Rad\] | `GM` | 虚拟引脚（输出） | 熄弧角量测 |
+| Thyristor Voltage Vector \[kV\] | `VVolt` | 虚拟引脚（输出） | 晶闸管电压向量<br/>此处输入晶闸管电压向量信号量测信号的标签（6x1维），如 Vd |
+| Thyristor Current Vector \[kA\] | `VCurr` | 虚拟引脚（输出） | 晶闸管电流向量<br/>此处输入晶闸管电流向量信号量测信号的标签（6x1维），如 Id |
+| Measured Alpha Angle \[Rad\] | `AM` | 虚拟引脚（输出） | 触发角量测<br/>此处输入晶闸触发角信号量测信号的标签（1x1维），如 Alpha |
+| Measured Gamma Angle \[Rad\] | `GM` | 虚拟引脚（输出） | 熄弧角量测<br/>此处输入晶闸熄弧角信号量测信号的标签（1x1维），如 Gamma |
 
 
 </slot>

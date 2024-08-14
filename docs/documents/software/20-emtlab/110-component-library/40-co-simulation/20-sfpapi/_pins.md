@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Send | `0` | 输入 | 64 x 1 |  |
-| Receive | `1` | 输出 | 64 x 1 |  |
+| Send | `0` | 输入 | 64 x 1 | 从SFP发送，64路通道 |
+| Receive | `1` | 输出 | 64 x 1 | 从SFP接收，64路通道 |
 
 </slot>
