@@ -8,8 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 1 x 1 |  |
-| Pin \- | `1` | 电气 | 1 x 1 |  |
-| Gate | `2` | 输入 | 2*N x 1 |  |
+| X \- Axis | `x` | 输入 | Dim x 1 | X - Axis |
+| Y \- Axis | `y` | 输入 | Dim x 1 | Y - Axis |
 
 </slot>

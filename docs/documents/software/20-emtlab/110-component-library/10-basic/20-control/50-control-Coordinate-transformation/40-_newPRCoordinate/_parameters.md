@@ -12,9 +12,9 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Direction of Transformation | `Direction` | 选择 | 变换方向 |
-| Angle Specified in | `Unit` | 选择 | 角度单位类型 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输极-直坐标变换器的名称（可缺省） |
+| Direction of Transformation | `Direction` | 选择 | 变换方向<br/>选择变换的方向为极-直变换或直-极变换 |
+| Angle Specified in | `Unit` | 选择 | 角度单位类型<br/>选择转换的角度单位 |
 
 
 </slot>

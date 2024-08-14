@@ -12,16 +12,16 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| \[N\_g\_s\] No\. of Stator Groups | `N_g_s` | 整数 | 定子绕组组数 |
-| \[N\_gph\_s\] No\. of Phases Per Stator Group | `N_gph_s` | 整数 | 定子绕组每组相数 |
-| \[N\_g\_r\] No\. of Rotor Groups | `N_g_r` | 整数 | 转子绕组组数 |
-| \[N\_gph\_r\] No\. of Phases Per Rotor Group | `N_gph_r` | 整数 | 转子绕组每组相数 |
-| Rated Power | `Smva` | 实数 [MVA] | 额定容量 |
-| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值 |
-| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率 |
-| Model Type | `Model` | 选择 | 选择电机模型种类 |
-| Parameter Format | `PUType` | 选择 | 参数输入类型 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入多相异步电机名称，可缺省 |
+| \[N\_g\_s\] No\. of Stator Groups | `N_g_s` | 整数 | 定子绕组组数<br/>此处填入定子绕组组数，例如三相异步电机填入1 |
+| \[N\_gph\_s\] No\. of Phases Per Stator Group | `N_gph_s` | 整数 | 定子绕组每组相数<br/>此处填入定子绕组定子绕组每组相数，例如三相异步电机填入3 |
+| \[N\_g\_r\] No\. of Rotor Groups | `N_g_r` | 整数 | 转子绕组组数<br/>此处填入转子绕组组数 |
+| \[N\_gph\_r\] No\. of Phases Per Rotor Group | `N_gph_r` | 整数 | 转子绕组每组相数<br/>此处填入转子绕组每组相数 |
+| Rated Power | `Smva` | 实数 [MVA] | 额定容量<br/>此处填入电机额定容量 |
+| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值<br/>此处填入电机额定线电压有效值 |
+| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率<br/>此处填入电机额定频率 |
+| Model Type | `Model` | 选择 | 选择电机模型种类<br/>目前只可选择Phase Domain(PD)模型。 |
+| Parameter Format | `PUType` | 选择 | 参数输入类型<br/>可选择有名值输入模式或标幺值输入模式。 |
 | Stator terminal type | `TerminalType` | 选择 | 定子端口类型，选择每个绕组的端口数。选择Single时绕组另一端经接地电阻短路接地。 |
 
 #### Actual Value Data
@@ -58,7 +58,7 @@ Rotor Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Inertia Constant | `Tj` | 实数 [s] | 惯性时间常数 |
+| Inertia Constant | `Tj` | 实数 [s] | 惯性时间常数<br/>此处应填写惯性时间常数 $T_J=2H$，其中$H$为惯性常数（北美和欧洲参数形式） |
 | Mechanical Damping | `Dm` | 实数 [p\.u\.] | 机械阻尼 |
 
 #### Monitoring
@@ -67,15 +67,15 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Stator Current \[kA\] | `IT_inst` | 虚拟引脚（输出） | 定子端线电流瞬时值 |
-| RMS Stator Current \[p\.u\.\] | `IT_o` | 虚拟引脚（输出） | 定子端线电流有效值 |
-| RMS Stator Voltage \[p\.u\.\] | `VT_o` | 虚拟引脚（输出） | 定子端电压有效值 |
-| Mechanical Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转子机械转速 |
-| Rotor Position \[Rad\] | `theta_o` | 虚拟引脚（输出） | 转子角位置 |
-| Electrical Torque \[p\.u\.\] | `Te_o` | 虚拟引脚（输出） | 电磁转矩 |
-| Mechanical Torque \[p\.u\.\] | `Tm_o` | 虚拟引脚（输出） | 机械转矩 |
-| Active Power \[MW\] | `PT_o` | 虚拟引脚（输出） | 定子侧有功功率 |
-| Reactive Power \[MVar\] | `QT_o` | 虚拟引脚（输出） | 定子侧无功功率 |
+| Stator Current \[kA\] | `IT_inst` | 虚拟引脚（输出） | 定子端线电流瞬时值<br/>此处输入定子端线电流瞬时值量测信号的标签 |
+| RMS Stator Current \[p\.u\.\] | `IT_o` | 虚拟引脚（输出） | 定子端线电流有效值<br/>此处输入定子端电流有效值量测信号量测信号的标签 |
+| RMS Stator Voltage \[p\.u\.\] | `VT_o` | 虚拟引脚（输出） | 定子端电压有效值<br/>此处输入定子端三相电压有效值量测信号的标签 |
+| Mechanical Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转子机械转速<br/>此处输入转子机械转速量测信号的标签 |
+| Rotor Position \[Rad\] | `theta_o` | 虚拟引脚（输出） | 转子角位置<br/>此处输入转子角位置量测信号的标签 |
+| Electrical Torque \[p\.u\.\] | `Te_o` | 虚拟引脚（输出） | 电磁转矩<br/>此处输入电磁转矩量测信号的标签 |
+| Mechanical Torque \[p\.u\.\] | `Tm_o` | 虚拟引脚（输出） | 机械转矩<br/>此处输入机械转矩量测信号的标签 |
+| Active Power \[MW\] | `PT_o` | 虚拟引脚（输出） | 定子侧有功功率<br/>此处输入定子端输出有功功率信号量测信号的标签 |
+| Reactive Power \[MVar\] | `QT_o` | 虚拟引脚（输出） | 定子侧无功功率<br/>此处输入定子端输出无功功率信号量测信号的标签 |
 
 
 </slot>

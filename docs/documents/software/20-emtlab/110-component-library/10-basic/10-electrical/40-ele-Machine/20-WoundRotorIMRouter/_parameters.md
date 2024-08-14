@@ -12,15 +12,15 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Rated Power | `Smva` | 实数 [MVA] | 额定容量 |
-| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值 |
-| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率 |
-| Stator / Rotor Turns Ratio | `TurnRatio` | 实数 | 定/转子绕组匝数比（变比） |
-| Is Stator Neutral Grounded? | `Neut` | 选择 | 定子中性点是否接地？ |
-| Model Type | `Model` | 选择 | 选择转子端口种类 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入绕线式感应电机名称，可缺省 |
+| Rated Power | `Smva` | 实数 [MVA] | 额定容量<br/>绕线式感应电机额定容量 |
+| Rated Stator Voltage \(L\-L, RMS\) | `V` | 实数 [kV] | 额定线电压有效值<br/>绕线式感应电机额定线电压有效值 |
+| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率<br/>绕线式感应电机额定频率 |
+| Stator / Rotor Turns Ratio | `TurnRatio` | 实数 | 定/转子绕组匝数比（变比）<br/>绕线式感应电机定/转子绕组匝数比（变比） |
+| Is Stator Neutral Grounded? | `Neut` | 选择 | 定子中性点是否接地？<br/>选择yes代表中性点直接接地，选择no将引出中性点引脚。 |
+| Model Type | `Model` | 选择 | 选择转子端口种类<br/>选择转子端口为电气端口或控制端口。 |
 | Constant Conductance Matrix | `ConstGMat` | 布尔 | 是否选用恒等效导纳矩阵的模型。仅在选用电气转子引脚模型时可选。 |
-| Parameter Format | `ParamType` | 选择 | 参数输入类型 |
+| Parameter Format | `ParamType` | 选择 | 参数输入类型<br/>可选择有名值输入模式或标幺值输入模式。 |
 
 #### Actual Value Data
 
@@ -52,8 +52,8 @@ Rotor Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Inertia Constant | `Tj` | 实数 [s] | 惯性时间常数 |
-| Mechanical Damping | `Dm` | 实数 [p\.u\.] | 机械阻尼 |
+| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数<br/>此处应填写惯性时间常数 $T_J=2H$，其中$H$为惯性常数（北美和欧洲参数形式） |
+| Mechanical Damping | `Dm` | 实数 [p\.u\.] | 机械阻尼时间常数 |
 | Initial Rotor Speed | `InitW` | 实数 [p\.u\.] | 电机初始转速 |
 
 #### Monitoring
@@ -62,15 +62,15 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| 3 Phase Stator Current \[kA\] | `Is` | 虚拟引脚（输出） | 定子端三相线电流 |
-| RMS Stator Current \[p\.u\.\] | `Isrms` | 虚拟引脚（输出） | 定子端三相线电流有效值 |
-| RMS Stator Voltage \[p\.u\.\] | `Vsrms` | 虚拟引脚（输出） | 定子端三相电压有效值 |
-| Mechanical Speed \[p\.u\.\] | `wr` | 虚拟引脚（输出） | 转子机械转速 |
-| Rotor Position \[Rad\] | `theta` | 虚拟引脚（输出） | 转子角位置 |
-| Electrical Torque \[p\.u\.\] | `Te` | 虚拟引脚（输出） | 电磁转矩 |
-| Mechanical Torque \[p\.u\.\] | `Tm` | 虚拟引脚（输出） | 机械转矩 |
-| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 定子侧有功功率 |
-| Reactive Power \[MW\] | `Q` | 虚拟引脚（输出） | 定子侧无功功率 |
+| 3 Phase Stator Current \[kA\] | `Is` | 虚拟引脚（输出） | 定子端三相线电流<br/>此处输入定子端三相线电流瞬时值量测信号的标签，如 Is |
+| RMS Stator Current \[p\.u\.\] | `Isrms` | 虚拟引脚（输出） | 定子端三相线电流有效值<br/>此处输入定子端三相电流有效值量测信号量测信号的标签，如 Irms |
+| RMS Stator Voltage \[p\.u\.\] | `Vsrms` | 虚拟引脚（输出） | 定子端三相电压有效值<br/>此处输入定子端三相电压有效值量测信号的标签，如 Vrms |
+| Mechanical Speed \[p\.u\.\] | `wr` | 虚拟引脚（输出） | 转子机械转速<br/>此处输入转子机械转速量测信号的标签，如 w |
+| Rotor Position \[Rad\] | `theta` | 虚拟引脚（输出） | 转子角位置<br/>此处输入转子角位置量测信号的标签，如 Theta |
+| Electrical Torque \[p\.u\.\] | `Te` | 虚拟引脚（输出） | 电磁转矩<br/>此处输入电磁转矩量测信号的标签，如 Te |
+| Mechanical Torque \[p\.u\.\] | `Tm` | 虚拟引脚（输出） | 机械转矩<br/>此处输入机械转矩量测信号的标签，如 Tm |
+| Active Power \[MW\] | `P` | 虚拟引脚（输出） | 定子侧有功功率<br/>此处输入定子端输出有功功率信号量测信号的标签，如 Pmsr |
+| Reactive Power \[MW\] | `Q` | 虚拟引脚（输出） | 定子侧无功功率<br/>此处输入定子端输出无功功率信号量测信号的标签，如 Qmsr |
 
 
 </slot>

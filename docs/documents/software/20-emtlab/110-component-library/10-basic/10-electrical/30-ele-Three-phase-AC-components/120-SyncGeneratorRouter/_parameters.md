@@ -12,14 +12,14 @@ All changes will be overwritten by regeneration.
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
-| Poles | `P` | 整数 | 极数（不是极对数） |
-| Rated Power | `Smva` | 实数 [MVA] | 额定容量 |
-| Rated Voltage \(L\-G, RMS\) | `V` | 实数 [kV] | 额定相电压有效值 |
-| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率 |
-| Neutral Resistance | `R0` | 实数 [p\.u\.] | 中性点电阻 |
-| Parameter Format | `ParamType` | 选择 | 参数输入方式 |
-| Model Type | `ModelType` | 选择 | 选择电机模型 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入同步电机名称，可缺省 |
+| Poles | `P` | 整数 | 极数（不是极对数）<br/>电机级数，为极对数的两倍 |
+| Rated Power | `Smva` | 实数 [MVA] | 额定容量<br/>电机额定容量，也是电机标幺值系统的基准容量 |
+| Rated Voltage \(L\-G, RMS\) | `V` | 实数 [kV] | 额定相电压有效值<br/>电机额定相电压有效值 |
+| Base Operation Frequency | `freq` | 实数 [Hz] | 额定频率<br/>电机额定电频率，非转子转动频率 |
+| Neutral Resistance | `R0` | 实数 [p\.u\.] | 中性点电阻<br/>电机定子侧中性点的接地电阻，基值同定子绕组参数的基值 |
+| Parameter Format | `ParamType` | 选择 | 参数输入方式<br/>可选择Equivalent Circuit Data（等效电路参数）和Experimental Data（试验参数）两种参数输入方法 |
+| Model Type | `ModelType` | 选择 | 选择电机模型<br/>可选择PD(Constant Conductance) 和VBR-dq0 两种电机模型 |
 
 #### Configuration\-SFEMT
 
@@ -73,8 +73,8 @@ Rotor Equation
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Control Type | `Control` | 选择 | 选择控制类型 |
-| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数 |
+| Control Type | `Control` | 选择 | 选择控制类型<br/>选择Speed Control（转速控制）或Torque Control（转矩控制）模式 |
+| Inertia Constant | `Tj` | 实数 [s] | 发电机转子惯性时间常数<br/>此处应填写惯性时间常数 $T_J=2H$，其中$H$为惯性常数（北美和欧洲参数形式） |
 | Damping Constant | `Dm` | 实数 [s] | 机械阻尼时间常数 |
 
 #### Initial Condition
@@ -83,15 +83,15 @@ Initial Condition
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Startup Type | `StartupType` | 选择 |  |
-| Ramping Time | `RampingTime` | 实数 [s] | 爬坡时间 |
-| Initial Voltage Magnitude | `V_mag` | 实数 [p\.u\.] | 初始相电压标幺值 |
-| Initial Voltage Phase | `V_ph` | 实数 [Deg] | 初始相电压相位 |
-| Initial Active Power | `AP` | 实数 [MW] | 初始有功功率 |
-| Initial Reactive Power | `RP` | 实数 [MVar] | 初始无功功率 |
-| Initial Source Resistance | `source_resistance` | 实数 [Ω] | S2M启动方式下的初始等效电压源内阻 |
-| Source to Machine Transition Signal | `s2m` | 虚拟引脚（输入） | 电压源-电机切换信号 |
-| Rotor Unlocking Signal | `l2n` | 虚拟引脚（输入） | 转子方程解锁信号 |
+| Startup Type | `StartupType` | 选择 | 初始化类型<br/>选择发电机初始化类型，分为from Zero-state（平启动），from Steady-state（稳态启动）和Source to Machine（电压源转电机）三种方式 |
+| Ramping Time | `RampingTime` | 实数 [s] | 爬坡时间<br/>Source to Machine启动方式下，需指定电压爬升时间 |
+| Initial Voltage Magnitude | `V_mag` | 实数 [p\.u\.] | 初始相电压标幺值<br/>来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
+| Initial Voltage Phase | `V_ph` | 实数 [Deg] | 初始相电压相位<br/>来自潮流计算结果，选择from Steady-state模式和Source to Machine模式时需指定 |
+| Initial Active Power | `AP` | 实数 [MW] | 初始有功功率<br/>来自潮流计算结果，选择from Steady-state模式时需指定 |
+| Initial Reactive Power | `RP` | 实数 [MVar] | 初始无功功率<br/>来自潮流计算结果，选择from Steady-state模式时需指定 |
+| Initial Source Resistance | `source_resistance` | 实数 [Ω] | 初始等效电压源内阻<br/>S2M启动方式下的初始等效电压源内阻，选择Source to Machine模式时需指定 |
+| Source to Machine Transition Signal | `s2m` | 虚拟引脚（输入） | 电压源-电机切换信号<br/>电压源向电机切换的触发信号名称，填写以@符号开头的字符串名，如@S2M。选择Source to Machine模式时需指定 |
+| Rotor Unlocking Signal | `l2n` | 虚拟引脚（输入） | 转子方程解锁信号<br/>控制转子运动方程解锁的信号名，填写以@符号开头的字符串名，如@L2N。若此处为空，则电机转子始终处于转速锁定状态 |
 
 #### Power Flow Data
 
@@ -99,15 +99,15 @@ Power Flow Data
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Bus Type | `BusType` | 选择 | 节点类型 |
-| Injected Active Power | `pf_P` | 实数 [MW] | 节点注入有功功率 |
-| Injected Reactive Power | `pf_Q` | 实数 [MVar] | 节点注入无功功率 |
-| Bus Voltage Magnitude | `pf_V` | 实数 [p\.u\.] | 母线电压幅值 |
-| Bus Voltage Angle | `pf_Theta` | 实数 [Deg] | 母线电压相位 |
-| Lower Voltage Limit | `pf_Vmin` | 实数 [p\.u\.] | 母线电压下限 |
-| Upper Voltage Limit | `pf_Vmax` | 实数 [p\.u\.] | 母线电压上限 |
-| Lower Reactive Power Limit | `pf_Qmin` | 实数 [MVar] | 无功功率下限 |
-| Upper Reactive Power Limit | `pf_Qmax` | 实数 [MVar] | 无功功率上限 |
+| Bus Type | `BusType` | 选择 | 节点类型<br/>用于潮流计算功能，指定电源所在母线的节点类型 |
+| Injected Active Power | `pf_P` | 实数 [MW] | 节点注入有功功率<br/>用于潮流计算功能，对 PV、PQ 节点有效 |
+| Injected Reactive Power | `pf_Q` | 实数 [MVar] | 节点注入无功功率<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Bus Voltage Magnitude | `pf_V` | 实数 [p\.u\.] | 母线电压幅值<br/>用于潮流计算功能，对 PV、平衡节点有效 |
+| Bus Voltage Angle | `pf_Theta` | 实数 [Deg] | 母线电压相位<br/>用于潮流计算功能，对平衡节点有效 |
+| Lower Voltage Limit | `pf_Vmin` | 实数 [p\.u\.] | 母线电压下限<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Upper Voltage Limit | `pf_Vmax` | 实数 [p\.u\.] | 母线电压上限<br/>用于潮流计算功能，对 PQ 节点有效 |
+| Lower Reactive Power Limit | `pf_Qmin` | 实数 [MVar] | 无功功率下限<br/>用于潮流计算功能，对 PV、平衡节点有效 |
+| Upper Reactive Power Limit | `pf_Qmax` | 实数 [MVar] | 无功功率上限<br/>用于潮流计算功能，对 PV、平衡节点有效 |
 
 #### Monitoring
 
@@ -115,19 +115,19 @@ Monitoring
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Source to Machine Signal | `s2m_o` | 虚拟引脚（输出） | 电压源-电机切换信号 |
-| Rotor Unlocking Signal | `l2n_o` | 虚拟引脚（输出） | 转子方程解锁信号 |
-| Initial Open\-Circuit Voltage \(Ef\) \[p\.u\.\] | `Ef0_o` | 虚拟引脚（输出） | 稳态开路电势Ef0量测信号 |
-| Initial Mechanical Torque \[p\.u\.\] | `Tm0_o` | 虚拟引脚（输出） | 稳态机械转矩Tm0量测信号 |
-| Rotor Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转速量测信号 |
-| Rotor Angle \[Rad\] | `theta_o` | 虚拟引脚（输出） | 转子角量测信号 |
-| Load Angle \(Q\-axis Leads Va\)\[Rad\] | `loadangle_o` | 虚拟引脚（输出） | Q轴与端电压相量夹角 |
-| Load Angle \(Q\-axis Leads ωₛ\*t\)\[Rad\] | `loadangle_so` | 虚拟引脚（输出） | Q轴与同步旋转坐标系夹角 |
-| Terminal RMS Voltage \[p\.u\.\] | `VT_o` | 虚拟引脚（输出） | 定子端电压有效值量测信号 |
-| Terminal RMS Current \[p\.u\.\] | `IT_o` | 虚拟引脚（输出） | 定子端电流有效值量测信号 |
-| Terminal Active Power \[MW\] | `PT_o` | 虚拟引脚（输出） | 定子端输出有功功率信号 |
-| Terminal Reactive Power \[MVar\] | `QT_o` | 虚拟引脚（输出） | 定子端输出无功功率信号 |
-| Terminal 3 Phase Current Vector \[kA\] | `IT_inst` | 虚拟引脚（输出） | 定子端三相电流 |
+| Source to Machine Signal | `s2m_o` | 虚拟引脚（输出） | 电压源-电机切换信号<br/>此处输入电压源-电机切换信号量测信号的标签，如 S2M |
+| Rotor Unlocking Signal | `l2n_o` | 虚拟引脚（输出） | 转子方程解锁信号<br/>此处输入转子方程解锁信号量测信号的标签，如 L2N |
+| Initial Open\-Circuit Voltage \(Ef\) \[p\.u\.\] | `Ef0_o` | 虚拟引脚（输出） | 稳态开路电势Ef0量测信号<br/>此处输入稳态开路电势Ef0量测信号的标签，如 Ef0 |
+| Initial Mechanical Torque \[p\.u\.\] | `Tm0_o` | 虚拟引脚（输出） | 稳态机械转矩Tm0量测信号<br/>此处输入稳态机械转矩Tm0量测信号的标签，如 Tm0 |
+| Rotor Speed \[p\.u\.\] | `wr_o` | 虚拟引脚（输出） | 转速量测信号<br/>此处输入转速量测信号的标签，如 w |
+| Rotor Angle \[Rad\] | `theta_o` | 虚拟引脚（输出） | 转子角量测信号<br/>此处输入转子角量测信号的标签，如 Theta |
+| Load Angle \(Q\-axis Leads Va\)\[Rad\] | `loadangle_o` | 虚拟引脚（输出） | Q轴与端电压相量夹角<br/>此处输入Q轴与端电压相量夹角量测信号的标签，如 LA |
+| Load Angle \(Q\-axis Leads ωₛ\*t\)\[Rad\] | `loadangle_so` | 虚拟引脚（输出） | Q轴与同步旋转坐标系夹角<br/>此处输入Q轴与同步旋转坐标系夹角量测信号的标签，如 LA1 |
+| Terminal RMS Voltage \[p\.u\.\] | `VT_o` | 虚拟引脚（输出） | 定子端电压有效值量测信号<br/>此处输入定子端电压有效值量测信号的标签，如 Vrms |
+| Terminal RMS Current \[p\.u\.\] | `IT_o` | 虚拟引脚（输出） | 定子端电流有效值量测信号<br/>此处输入定子端电流有效值量测信号的标签，如 Irms |
+| Terminal Active Power \[MW\] | `PT_o` | 虚拟引脚（输出） | 定子端输出有功功率信号<br/>此处输入定子端输出有功功率信号量测信号的标签，如 Pmsr |
+| Terminal Reactive Power \[MVar\] | `QT_o` | 虚拟引脚（输出） | 定子端输出无功功率信号<br/>此处输入定子端输出无功功率信号量测信号的标签，如 Qmsr |
+| Terminal 3 Phase Current Vector \[kA\] | `IT_inst` | 虚拟引脚（输出） | 定子端三相电流<br/>此处输入定子端三相电流量测信号的标签，如 Iabc |
 
 
 </slot>

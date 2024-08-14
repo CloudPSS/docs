@@ -12,7 +12,7 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | 元件名称 |
+| Name | `Name` | 文本 | 元件名称<br/>此处输入分段线性函数的名称（可缺省） |
 | First Input Threshold | `x1` | 实数 | (x1,y1)点横坐标 |
 | First Threshold Output | `y1` | 实数 | (x1,y1)点纵坐标 |
 | Second Input Threshold | `x2` | 实数 | (x2,y2)点横坐标 |

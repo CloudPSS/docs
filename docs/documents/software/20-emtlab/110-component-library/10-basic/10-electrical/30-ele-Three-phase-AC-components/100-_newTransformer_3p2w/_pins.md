@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \#1 | `0` | 电气 | 3 x 1 |  |
-| Pin \#2 | `1` | 电气 | 3 x 1 |  |
-| Tap | `2` | 输入 | 1 x 1 |  |
-| Tap | `3` | 输入 | 1 x 1 |  |
-| Primary Neutral Point | `4` | 电气 |  |  |
-| Secondary Neutral Point | `5` | 电气 |  |  |
+| Pin \#1 | `0` | 电气 | 3 x 1 | 变压器绕组1接线端 |
+| Pin \#2 | `1` | 电气 | 3 x 1 | 变压器绕组2接线端 |
+| Tap | `2` | 输入 | 1 x 1 | 变压器绕组1的分接头，输入变比控制信号 |
+| Tap | `3` | 输入 | 1 x 1 | 变压器绕组2的分接头，输入变比控制信号 |
+| Primary Neutral Point | `4` | 电气 |  | 一次侧中性点接线端（绕组1的连接类型为星形时有效） |
+| Secondary Neutral Point | `5` | 电气 |  | 二次侧中性点接线端（绕组2的连接类型为星形时有效） |
 
 </slot>

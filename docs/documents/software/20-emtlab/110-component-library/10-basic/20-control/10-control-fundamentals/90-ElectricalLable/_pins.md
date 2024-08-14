@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| NC | `0` | 输入 | 0 x 0 |  |
+| NC | `0` | 输入 | 0 x 0 | 接线端口，任意维数 |
 
 </slot>

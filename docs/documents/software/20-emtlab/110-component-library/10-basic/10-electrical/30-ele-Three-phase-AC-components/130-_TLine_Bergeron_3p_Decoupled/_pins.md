@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Electrical Pin | `0` | 电气 | 3 x 1 |  |
-| 3\-Phase Voltage \(Other Side\) | `1` | 输入 | 3 x 1 |  |
-| 3\-Phase Current \(Other Side\) | `2` | 输入 | 3 x 1 |  |
+| Electrical Pin | `0` | 电气 | 3 x 1 | 电气连接端口 |
+| 3\-Phase Voltage \(Other Side\) | `1` | 输入 | 3 x 1 | 另一端电压量测值 |
+| 3\-Phase Current \(Other Side\) | `2` | 输入 | 3 x 1 | 另一端电流量测值 |
 
 </slot>

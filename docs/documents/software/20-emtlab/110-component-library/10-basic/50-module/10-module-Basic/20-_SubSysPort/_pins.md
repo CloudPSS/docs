@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Port | `input` | 输出 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' |  |
-| Port | `output` | 输入 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' |  |
-| Port | `electrical` | 电气 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' |  |
+| Port | `input` | 输出 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' | 输入引脚 |
+| Port | `output` | 输入 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' | 输出引脚 |
+| Port | `electrical` | 电气 | finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[1]:'' x finder(p, index, array) = equalText(p.key, Key);p = $$.revision.pins.find(finder);p!=undefined?p.dim[2]:'' | 电气引脚 |
 
 </slot>

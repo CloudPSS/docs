@@ -12,16 +12,16 @@ All changes will be overwritten by regeneration.
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Time Step Size | `deltaT` | 实数 [s] | 仿真步长 |
-| Length of Transmission Line | `len` | 实数 [km] | Length of transmission line |
+| Time Step Size | `deltaT` | 实数 [s] | 仿真步长，需与对侧数据发送间隔一致。 |
+| Length of Transmission Line | `len` | 实数 [km] | 传输线长度，需与对侧半传输线长度设置一致。 |
 | System Frequency | `Freq` | 实数 [Hz] | 系统频率 |
 | Communication Delay Time Coefficient | `k` | 实数 | 接收到对侧信息的通信延迟系数 |
-| Rp | `Rp` | 实数 [p\.u\.] | Rp |
-| Xlp | `Xlp` | 实数 [p\.u\.] | Xlp |
-| Xcp | `Xcp` | 实数 [p\.u\.] | Xcp |
-| Rz | `Rz` | 实数 [p\.u\.] | Rz |
-| Xlz | `Xlz` | 实数 [p\.u\.] | Xlz |
-| Xcz | `Xcz` | 实数 [p\.u\.] | Xcz |
+| Rp | `Rp` | 实数 [p\.u\.] | 单位长度正序电阻 |
+| Xlp | `Xlp` | 实数 [p\.u\.] | 单位长度正序电抗 |
+| Xcp | `Xcp` | 实数 [p\.u\.] | 单位长度正序电纳 |
+| Rz | `Rz` | 实数 [p\.u\.] | 单位长度零序电阻 |
+| Xlz | `Xlz` | 实数 [p\.u\.] | 单位长度零序电抗 |
+| Xcz | `Xcz` | 实数 [p\.u\.] | 单位长度零序电纳 |
 
 
 </slot>

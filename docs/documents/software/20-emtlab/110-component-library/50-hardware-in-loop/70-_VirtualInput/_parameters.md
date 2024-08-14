@@ -12,8 +12,8 @@ Configuration
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Port Name | `portName` | 文本 | 输入端口名称 |
-| Initial Input Value | `initial_value` | 实数 | 初始值 |
+| Port Name | `portName` | 文本 | 输入端口名称：<br/>在实时仿真中，将在虚拟输入通道配置页面显示，不可重复。 |
+| Initial Input Value | `initial_value` | 实数 | 虚拟输入端口的初始值 |
 
 
 </slot>
