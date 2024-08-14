@@ -135,9 +135,9 @@ private:
 
 #endif
 ```
-代码的具体含义可参阅 [EMTLab Core SDK](../../../130-emtlab-sdk/emtlab-core-sdk/index.md) 帮助文档，本处不在赘述。
+代码的具体含义可参阅 [EMTLab Core SDK](../../../130-emtlab-sdk/index.md) 帮助文档，本处不在赘述。
 
-2. `.cpp` 文件编写  
+1. `.cpp` 文件编写  
 在 `EMTLab Core SDK` 所在文件夹下新建 `_Inductance_demo.cpp` 文件，在该文件中添加如下代码：
 
 ```C ++
