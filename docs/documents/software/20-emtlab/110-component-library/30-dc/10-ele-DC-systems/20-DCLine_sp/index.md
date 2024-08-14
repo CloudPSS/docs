@@ -7,11 +7,11 @@ description: "单极双12脉动的LCC-HVDC高压直流输电系统，主要由�
 
 ## 元件说明
 
-DCLine\_sp元件参数标签页包括**属性**、**参数**、**引脚**三类参数，下面对每类参数进行详细说明。
+
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
