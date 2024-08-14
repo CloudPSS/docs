@@ -11,6 +11,10 @@ jobs:
   build-standalone:
     runs-on: ubuntu-latest
 
+    env:
+      DOCS_BASE_URL: /kb/
+      DOCS_HOME_URL: /
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -23,9 +27,6 @@ jobs:
       - id: Optimize
         run: pnpm optimize
       - id: Build
-        env:
-          DOCS_BASE_URL: /kb/
-          DOCS_HOME_URL: /
         run: pnpm build
       - name: Pack
         run: |
@@ -48,6 +49,10 @@ jobs:
   build-public:
     runs-on: ubuntu-latest
 
+    env:
+      DOCS_BASE_URL: /
+      DOCS_HOME_URL: https://cloudpss.net/
+
     steps:
       - uses: actions/checkout@v4
         with:
@@ -60,9 +65,6 @@ jobs:
       - id: Optimize
         run: pnpm optimize
       - id: Build
-        env:
-          DOCS_BASE_URL: /
-          DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
       - name: Precompress
         run: pnpm gzipper compress --exclude jpeg,jpg,png,gif,ico,mp3,mp4,mkv,zip --brotli --remove-larger ./build
