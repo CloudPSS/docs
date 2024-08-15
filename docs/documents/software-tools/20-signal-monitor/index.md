@@ -55,7 +55,6 @@ sidebar_position: 20
 
 ![录波数据保存](./1-6.png "录波数据保存")   
 
-
 ### 数据下发
 在**数据下发**功能区，会列出任务模型中的所有**虚拟输入端口**信号，并显示它们的当前值。
 
@@ -80,7 +79,6 @@ sidebar_position: 20
 
     - Chart or Table：选择数据类型是曲线或者表格。  
     - Display Number：数据在 Signal Monitor 中显示的序号。  
-
 
 - 虚拟输入端口
 
@@ -121,7 +119,6 @@ import TabItem from '@theme/TabItem';
     ![添加虚拟输出端口 =x400](./2-5.png "添加虚拟输出端口")  
 
     ![添加虚拟输入端口 =x390](./2-6.png "添加虚拟输入端口")  
-
 
 - 实时仿真方案设置  
     

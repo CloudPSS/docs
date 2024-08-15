@@ -29,8 +29,6 @@ $$
 
 ## 元件说明
 
-
-
 ### 属性
 
 CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。

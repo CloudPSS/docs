@@ -7,7 +7,6 @@ CloudPSS-RT 提供**桌面型**和**机柜型**两类仿真器规格，覆盖不
 
 桌面型仿真器主要面向教学、实验及移动便携应用场景。设备轻便、可随身便携，即插即用，支持堆叠，适合小型实验室、现场实验等场景使用。
 
-
 import DocCardList from '@theme/DocCardList';
 
 <DocCardList />

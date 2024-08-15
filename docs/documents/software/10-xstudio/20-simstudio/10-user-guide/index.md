@@ -15,12 +15,11 @@ description: SimStudio 模型工坊使用指南
 
 * [SimStudio 工作台](../40-workbench/index.md) 用于构建仿真模型项目
 
-* [SimStudio 建模功能](../50-modeling/index.md) 帮助用户掌握 SimStudio 提供的[参数变量及引脚体系](../50-modeling/10-params-variables-pins/index.md)、[元件表](../50-modeling/20-component-table/index.md)、[参数方案配置](../50-modeling/30-param-config/index.md)、[模块封装](../50-modeling/40-module-packaging/index.md)和[模块嵌套](../50-modeling/50-module-reuse/index.md)等强大的建模功能，方便用户构建、管理和维护大规模复杂系统模型项目
+* [SimStudio 建模功能](../50-modeling/index.md) 帮助用户掌握 SimStudio 提供的 [参数变量及引脚体系](../50-modeling/10-params-variables-pins/index.md)、[元件表](../50-modeling/20-component-table/index.md)、[参数方案配置](../50-modeling/30-param-config/index.md)、[模块封装](../50-modeling/40-module-packaging/index.md) 和 [模块嵌套](../50-modeling/50-module-reuse/index.md) 等强大的建模功能，方便用户构建、管理和维护大规模复杂系统模型项目
 
 **3. 实践**
 
 * [SimStudio 案例](../60-case-study/index.md) 帮助用户了解使用 SimStudio 模型工坊所构建的典型项目案例
-
 
 **4. 平台使用建议**
 
@@ -31,4 +30,4 @@ description: SimStudio 模型工坊使用指南
 
 欢迎扫码关注 CloudPSS 微信公众号：
 
-![CloudPSS =x300](./logo.png )
+![CloudPSS =x300](./logo.png)
