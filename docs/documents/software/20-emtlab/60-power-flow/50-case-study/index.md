@@ -102,7 +102,7 @@ IEEE 39 节点标准系统，是美国新英格兰地区的一个电力网络。
 ![功率不平衡量计算结果 =x400](./result-1.png)
 
 :::tip 功率不平衡量计算适用场景
-功率不平衡量计算主要针对于 PSASP 或 BPA 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/10-conversion-tools/20-psasp-to-cloudpss/index.md)），由于原算例已有潮流数据，可根据功率不平衡量计算的结果表格检查潮流是否收敛。对于计算收敛的潮流解，`Buses` 表格的 $P_{res}$，$Q_{res}$ 均为接近 0 的值。（若潮流不收敛。排查方法可见 [潮流不收敛该如何排查](../10-fundamentals/index.md#常见问题-qa)）。
+功率不平衡量计算主要针对于 PSASP 或 BPA 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/10-conversion-tools/20-psasp-to-cloudpss/index.md)），由于原算例已有潮流数据，可根据功率不平衡量计算的结果表格检查潮流是否收敛。对于计算收敛的潮流解，`Buses` 表格的 $P_{res}$，$Q_{res}$ 均为接近 0 的值。（若潮流不收敛。排查方法可见 [潮流不收敛该如何排查](../10-fundamentals/index.md#常见问题)）。
 :::
 
 </TabItem>
