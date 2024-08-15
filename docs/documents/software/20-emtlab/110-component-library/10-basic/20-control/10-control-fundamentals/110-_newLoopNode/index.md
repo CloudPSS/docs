@@ -31,7 +31,7 @@ import Pins from './_pins.md'
 
 通常，当搭建好一个含有反馈环的系统后（如图），点击开始仿真，系统信息会报多个**警告**。
 
-![带环系统](./带环系统.png)
+![带环系统](./loop_system.png)
 
 **`[warning]`** There are loop nodes in system!You can use Component 'LoopNode' to specify the loop nodes and the initial value, or the program will choose random loop nodes.  
 **`[warning]`** Node 1 in component 限幅器-1 will be chosen as loop node with initial value 0.  
@@ -41,7 +41,7 @@ import Pins from './_pins.md'
 
 但自动的解环算法往往不是最优的。因此，建议用户采用本元件进行解环。例如，对上图所示的控制环，可在输出位置加入一步延时，即可解开反馈环。还可为解环后反馈路径设定一个初值，以降低解环带来的误差。
 
-![带环系统解环](./带环系统解环.jpg)
+![带环系统解环](./loop-opening.jpg)
 
 ## 案例
 
