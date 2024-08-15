@@ -18,7 +18,10 @@ const MAX_WIDTH = 2400;
 // 16383 is the maximum height for webp
 const MAX_HEIGHT = 16383;
 
-/** 获取 libwebp 下载地址 */
+/**
+ * 获取 libwebp 下载地址
+ * @returns {string}
+ */
 function getLibWebpUrl() {
     const BASE_URL = 'https://storage.googleapis.com/downloads.webmproject.org/releases/webp/';
     if (os.platform() === 'win32') {
@@ -69,8 +72,9 @@ async function prepareLibWebp() {
 /**
  * 压缩图片
  * @param {string | string[] | undefined} root 查找需要压缩的图片的路径
+ * @returns {Promise<void>}
  */
-export default async function (root) {
+export default async function convert(root) {
     // 检查 libwebp，打印版本
     const bin = await prepareLibWebp();
     await execa(`${bin}/webpinfo`, ['-version'], { stdio: 'inherit' });
@@ -150,7 +154,7 @@ export default async function (root) {
         const f = await glob(`${findRoot}/**/*.{png,jpg,jpeg,gif}`);
         files.push(...f);
     }
-    await rxjs.lastValueFrom(rxjs.from(files).pipe(rxjs.mergeMap((file) => compress(file), parallelism)), {
+    await rxjs.lastValueFrom(rxjs.from(files).pipe(rxjs.mergeMap(async (file) => compress(file), parallelism)), {
         defaultValue: undefined,
     });
 
