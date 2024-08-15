@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import path from 'node:path';
 import { readFile, writeFile } from 'node:fs/promises';
 import { globIterate } from 'glob';
 import t from 'chalk-template';
@@ -51,9 +52,12 @@ function formatLine(line) {
         }
     });
     // 标点
+    line = line.replace(/\.\.\./g, '…');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\.($|\s*)/g, '$1。');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]),\s*/g, '$1，');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]);\s*/g, '$1；');
+    // MD 图片 特殊处理
+    line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])!\[\s*/g, '$1 ![');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])!\s*/g, '$1！');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF]):\s*/g, '$1：');
     line = line.replace(/([\u4E00-\u9FA5\u3040-\u30FF])\?\s*/g, '$1？');
@@ -78,19 +82,16 @@ function formatLine(line) {
 }
 /**
  * 格式化文件
- * @param {string} path path of file
- * @returns {Promise<boolean>} done
+ * @param {string} data data of file
+ * @returns {string}
  */
-async function formatFile(path) {
-    const data = await readFile(path, 'utf8');
+function formatFile(data) {
     const formatted = data
         .replace(/^(.*)(\r?\n)\2+$/gm, '$1$2')
         .split('\n')
         .map((line) => formatLine(line))
         .join('\n');
-    if (data === formatted) return false;
-    await writeFile(path, formatted, 'utf8');
-    return true;
+    return formatted;
 }
 
 let pattern = process.argv.slice(2);
@@ -100,8 +101,15 @@ if (!pattern.length) {
 pattern = pattern.map((p) => p.replace(/\\/g, '/'));
 
 for await (const file of globIterate(pattern)) {
-    process.stdout.write(t`Formatting {underline ${file}} `);
-    if (await formatFile(file)) {
+    process.stdout.write(t`Formatting {underline ${path.relative(process.cwd(), file)}} `);
+    const data = await readFile(file, 'utf8');
+    if (data.includes('DO NOT EDIT')) {
+        console.log(t`{yellow Skipped}`);
+        continue;
+    }
+    const formatted = formatFile(data);
+    if (data !== formatted) {
+        await writeFile(file, formatted, 'utf8');
         console.log(t`{green Done}`);
     } else {
         console.log(t`{gray Unchanged}`);

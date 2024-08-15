@@ -18,19 +18,19 @@ description: 椭圆
     <tr>
         <td rowspan="4">**大小和位置**</td>
         <td>X</td>
-        <td>控制椭圆左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制椭圆左上角的定位点在绘图区中的横坐标，向**右**为正方向。一般填写 5 的倍数，详见 [规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>Y</td>
-        <td>控制椭圆左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写5的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。</td>
+        <td>控制椭圆左上角的定位点在绘图区中的纵坐标，向**下**为正方向。一般填写 5 的倍数，详见 [规范](../70-simstudio-icon-guideline/index.md)。</td>
     </tr>
     <tr>
         <td>宽度</td>
-        <td>控制椭圆的宽度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转椭圆。</td>
+        <td>控制椭圆的宽度。一般填写 5 的倍数，详见 [规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于水平翻转椭圆。</td>
     </tr>
     <tr>
         <td>高度</td>
-        <td>控制椭圆的高度。一般填写 5 的倍数，详见[规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转椭圆。</td>
+        <td>控制椭圆的高度。一般填写 5 的倍数，详见 [规范](../70-simstudio-icon-guideline/index.md)。当填写负数时，相当于垂直翻转椭圆。</td>
     </tr>
     <tr>
         <td rowspan="6">**排列**</td>
@@ -60,7 +60,7 @@ description: 椭圆
     <tr>
         <td rowspan="3">**样式**</td>
         <td>线条颜色</td>
-        <td>点击选色按钮![选色图标](image-15.png)可以弹出调色板，用于选择椭圆线条的颜色和透明度。</td>
+        <td>点击选色按钮 ![选色图标](image-15.png) 可以弹出调色板，用于选择椭圆线条的颜色和透明度。</td>
     </tr>
     <tr>
         <td>线条宽度</td>
@@ -68,11 +68,11 @@ description: 椭圆
     </tr>
     <tr>
         <td>填充颜色</td>
-        <td>点击选色按钮![选色图标](image-15.png)可以弹出调色板，用于选择填充颜色和透明度，默认为白色。</td>
+        <td>点击选色按钮 ![选色图标](image-15.png) 可以弹出调色板，用于选择填充颜色和透明度，默认为白色。</td>
     </tr>
     <tr>
         <td>数据</td>
         <td>条件</td>
-        <td>该组件将在什么条件下显示。可以引用[参数列表](../../10-define-module-param-list/index.md)中的参数，例如 ```mode==1``` 条件的组件只在参数 ```mode``` 值为 1 时显示。</td>
+        <td>该组件将在什么条件下显示。可以引用 [参数列表](../../10-define-module-param-list/index.md) 中的参数，例如 ```mode==1``` 条件的组件只在参数 ```mode``` 值为 1 时显示。</td>
     </tr>
 </table>
