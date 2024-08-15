@@ -13,3 +13,10 @@
 .medium-zoom-image--opened {
   z-index: calc(var(--ifm-z-index-fixed) - 1);
 }
+
+@supports (backdrop-filter: blur(12px)) and (color: color(from var(--ifm-background-surface-color) srgb r g b / 0.6)) {
+  .medium-zoom-overlay {
+    backdrop-filter: blur(20px);
+    --background: color(from var(--ifm-background-surface-color) srgb r g b / 0.7);
+  }
+}

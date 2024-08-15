@@ -19,6 +19,17 @@
   min-height: calc(var(--titlebar-area-y) + var(--titlebar-area-height));
 }
 
+@supports (backdrop-filter: blur(12px)) and (color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.6)) {
+  .navbar {
+    backdrop-filter: blur(12px);
+    background-color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.6);
+  }
+}
+
+.navbar-sidebar {
+  height: 100dvh;
+}
+
 .navbar-sidebar__brand {
   --ifm-navbar-full-width: var(--ifm-navbar-sidebar-width);
 }

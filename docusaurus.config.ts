@@ -145,6 +145,10 @@ const config: Config = {
         prism,
         zoom: {
             selector: '.markdown figure > img, .markdown .docusaurus-mermaid-container > svg',
+            background: {
+                light: 'var(--background)',
+                dark: 'var(--background)',
+            },
             config: {
                 container: '.medium-zoom-container',
             },
