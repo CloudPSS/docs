@@ -179,7 +179,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-## 常见问题 Q&A
+## 常见问题
 假如有两个相似的算例，并且量测的信号相同，如何快速配置示波器输出通道。
 
 :

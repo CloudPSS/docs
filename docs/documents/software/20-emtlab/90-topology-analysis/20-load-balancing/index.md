@@ -29,7 +29,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 常见问题 Q&A
+## 常见问题
 为什么负载均衡配置后，仿真的效率没有变化？
 :
 
