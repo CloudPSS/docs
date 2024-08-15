@@ -5,9 +5,9 @@ description: "Half Bridge Sub-module"
 
 ## 元件定义
 
+该元件用于建模 MMC（模块化多电平变流器）中的半桥子模块。
+
 ## 元件说明
-
-
 
 ### 属性
 
@@ -28,4 +28,3 @@ import Pins from './_pins.md'
 ## 案例
 
 ## 常见问题
-

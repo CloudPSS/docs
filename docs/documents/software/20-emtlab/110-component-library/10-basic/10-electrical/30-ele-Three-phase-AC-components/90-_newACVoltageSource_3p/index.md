@@ -5,6 +5,8 @@ description: ""
 
 ## 元件定义
 
+该元件用以建模三相交流电压源（单线图）。
+
 ## 元件说明
 
 
@@ -24,6 +26,10 @@ import Parameters from './_parameters.md'
 import Pins from './_pins.md'
 
 <Pins/>
+
+### 使用说明
+若电压源的内阻为 0，CloudPSS 会自动选择为理想电压源模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
+
 
 ## 案例
 
