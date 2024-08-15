@@ -3,9 +3,13 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-import undraw_docusaurus_mountain from '@site/static/img/undraw_docusaurus_mountain.svg';
-import undraw_docusaurus_tree from '@site/static/img/undraw_docusaurus_tree.svg';
-import undraw_docusaurus_react from '@site/static/img/undraw_docusaurus_react.svg';
+// import undraw_docusaurus_mountain from '@site/static/img/undraw_docusaurus_mountain.svg';
+// import undraw_docusaurus_tree from '@site/static/img/undraw_docusaurus_tree.svg';
+// import undraw_docusaurus_react from '@site/static/img/undraw_docusaurus_react.svg';
+
+import documents from '@site/static/img/documents.svg';
+import cases from '@site/static/img/cases.svg';
+import tutorials from '@site/static/img/tutorials.svg';
 
 /** 列表项 */
 type FeatureItem = {
@@ -17,17 +21,17 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
     {
         title: '文档',
-        Svg: undraw_docusaurus_mountain,
+        Svg: documents,
         description: <>持续更新的 CloudPSS 全套产品完整说明文档。</>,
     },
     {
         title: '案例',
-        Svg: undraw_docusaurus_tree,
+        Svg: cases,
         description: <>不断分享海量 CloudPSS 官方案例、行业典型案例和学术研究案例。建设中，敬请期待！</>,
     },
     {
         title: '教程',
-        Svg: undraw_docusaurus_react,
+        Svg: tutorials,
         description: <>免费、开源的仿真教程及课程。Step by Step，上手 CloudPSS。建设中，敬请期待！</>,
     },
 ];
