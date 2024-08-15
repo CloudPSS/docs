@@ -40,21 +40,18 @@
   --ifm-navbar-padding-horizontal: var(--ifm-navbar-padding-right);
 }
 
-.navbar__item,
-.navbar__toggle,
-.navbar__brand,
-.navbar__search-input,
-.navbar-sidebar,
-input,
-button,
-a,
-.dropdown * {
-  app-region: no-drag;
-}
-
-.main-wrapper,
-.footer {
-  app-region: no-drag;
+.navbar {
+  .navbar__item,
+  .navbar__toggle,
+  .navbar__brand,
+  .navbar__search-input,
+  .navbar-sidebar,
+  input,
+  button,
+  a,
+  .dropdown * {
+    app-region: no-drag;
+  }
 }
 
 .navbar__logo {
