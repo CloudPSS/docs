@@ -14,9 +14,9 @@
   z-index: calc(var(--ifm-z-index-fixed) - 1);
 }
 
-@supports (backdrop-filter: blur(12px)) and (color: color(from var(--ifm-background-surface-color) srgb r g b / 0.6)) {
+@supports (backdrop-filter: blur(32px)) and (color: color(from var(--ifm-background-surface-color) srgb r g b / 0.75)) {
   .medium-zoom-overlay {
-    backdrop-filter: blur(20px);
-    --background: color(from var(--ifm-background-surface-color) srgb r g b / 0.7);
+    backdrop-filter: blur(32px);
+    --background: color(from var(--ifm-background-surface-color) srgb r g b / 0.75);
   }
 }
