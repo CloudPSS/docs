@@ -121,7 +121,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-## 常见问题 Q&A
+## 常见问题
 为什么在分网后，线路的模型没有发生改变？
 :
     可能是线路的传输时间不满足$\tau_1\geq\Delta t, \tau_0\geq\Delta t$，导致拓扑分析程序判定传输线无法设定为分网Bergeron模型。可以检查以下两个方面：

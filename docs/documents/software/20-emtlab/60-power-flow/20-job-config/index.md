@@ -302,7 +302,7 @@ import TabItem from '@theme/TabItem';
 
 
 
-## 常见问题 Q&A
+## 常见问题
 怎么导出 EMTLab 的潮流计算的结果
 
 :

@@ -30,7 +30,7 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-## 常见问题 Q&A
+## 常见问题
 自动聚合母线后，为什么产生了若干引脚悬空的报错？
 :
 

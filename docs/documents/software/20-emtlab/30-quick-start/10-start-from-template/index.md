@@ -260,4 +260,4 @@ import TabItem from '@theme/TabItem';
 </Tabs>
 
 
-## 常见问题 Q&A
+## 常见问题

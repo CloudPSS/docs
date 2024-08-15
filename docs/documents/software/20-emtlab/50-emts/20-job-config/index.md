@@ -111,7 +111,7 @@ import TabItem from '@theme/TabItem';
 </TabItem>
 </Tabs>
 
-## 常见问题 Q&A
+## 常见问题
 
 电磁暂态仿真的积分步长设置为多少较为合理？
 :
