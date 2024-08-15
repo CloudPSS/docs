@@ -19,14 +19,16 @@
   min-height: calc(var(--titlebar-area-y) + var(--titlebar-area-height));
 }
 
-@supports (backdrop-filter: blur(12px)) and (color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.6)) {
+@supports (backdrop-filter: blur(20px)) and (color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.75)) {
   .navbar {
-    backdrop-filter: blur(12px);
-    background-color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.6);
+    backdrop-filter: blur(20px);
+    background-color: color(from var(--ifm-navbar-background-color) srgb r g b / 0.75);
   }
 }
 
+.navbar-sidebar__backdrop,
 .navbar-sidebar {
+  height: 100vh;
   height: 100dvh;
 }
 
