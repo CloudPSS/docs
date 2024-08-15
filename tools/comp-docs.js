@@ -1,6 +1,5 @@
 #!/bin/env node
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable jsdoc/require-param-description */
 /* eslint-disable no-console */
 
 /**
@@ -19,7 +18,8 @@ const hasUnescapedMarkdown = new RegExp(escapeMarkdown.source);
 
 /**
  * 转义 MARKDOWN 字符串
- * @param {{} | undefined} str 字符串
+ * @param {unknown} str 字符串
+ * @returns {string} 转义后的字符串
  */
 export function escape(str) {
     const s = String(str ?? '');
@@ -31,7 +31,8 @@ export function escape(str) {
 
 /**
  * 转义 MARKDOWN 字符串，用合适的 `` ` `` 字符括起来
- * @param {{} | undefined} str 字符串
+ * @param {unknown} str 字符串
+ * @returns {string} 转义后的字符串
  */
 export function escapeCode(str) {
     const s = String(str ?? '');
@@ -47,6 +48,7 @@ export function escapeCode(str) {
 /**
  * 生成标题
  * @param {number} level 标题等级
+ * @returns {string} 标题 # 字符串
  */
 export function h(level) {
     return '#'.repeat(level);
@@ -55,6 +57,7 @@ export function h(level) {
 /**
  * 参数
  * @param {Parameter} param
+ * @returns {string} 参数字符串
  */
 function genParam(param) {
     let type = '';
@@ -107,6 +110,7 @@ function genParam(param) {
  * @param {ParameterGroup} params
  * @param {number} index
  * @param {number} level
+ * @returns {string} 参数组字符串
  */
 function genParamGroup(params, index, level) {
     if (!params.items) return '\n';
@@ -124,6 +128,7 @@ ${params.items.map((p) => genParam(p)).join('\n')}
  * 参数列表
  * @param {ParameterGroup[]} params
  * @param {number} level
+ * @returns {string} 参数列表字符串
  */
 function genParams(params, level) {
     if (!params || params.length === 0) return '';
@@ -135,6 +140,7 @@ ${params.map((p, i) => genParamGroup(p, i, level + 1)).join('\n')}
 /**
  * 链接类型
  * @param {PinDefinition['connection']} connection
+ * @returns {string} 链接类型字符串
  */
 function connectionType(connection) {
     switch (connection) {
@@ -161,6 +167,7 @@ function connectionType(connection) {
 /**
  * 引脚
  * @param {PinDefinition} pin
+ * @returns {string} 引脚字符串
  */
 function genPin(pin) {
     const dim = pin.dim ? `${String(pin.dim?.[0] ?? '')} x ${String(pin.dim[1] ?? '')}` : '';
@@ -172,6 +179,7 @@ function genPin(pin) {
  * 引脚列表
  * @param {PinDefinition[]} pins
  * @param {number} level
+ * @returns {string} 引脚列表字符串
  */
 function genPins(pins, level) {
     if (!pins || pins.length === 0) return '';
@@ -186,6 +194,7 @@ ${pins.map((p) => genPin(p)).join('\n')}
  * 生成标题
  * @param {string | undefined} name
  * @param {number} level
+ * @returns {string} 标题字符串
  */
 function genName(name, level) {
     if (!name) return `${h(level)} &nbsp;`;
@@ -194,6 +203,7 @@ function genName(name, level) {
 /**
  * 生成描述
  * @param {string} description
+ * @returns {string} 描述字符串
  */
 function genDescription(description) {
     if (!description) return '> &nbsp;';
@@ -244,6 +254,7 @@ async function fetchModels(token, owner) {
  * 生成文档
  * @param {Model} resource 资源
  * @param {string} dir 输出路径
+ * @returns {Promise<void>}
  */
 async function documentation(resource, dir) {
     await fs.mkdir(dir, { recursive: true });
@@ -764,7 +775,7 @@ async function main() {
     }
     const token = process.argv[2];
     const out = path.resolve(import.meta.dirname, '../docs');
-    const models = (await Promise.all(OWNERS.map((owner) => fetchModels(token, owner)))).flat();
+    const models = (await Promise.all(OWNERS.map(async (owner) => fetchModels(token, owner)))).flat();
     await fs.mkdir(out, { recursive: true });
     const map = new Map(models.map((model) => [model.rid, model]));
     for (const [rid, dist] of Object.entries(MODELS)) {
