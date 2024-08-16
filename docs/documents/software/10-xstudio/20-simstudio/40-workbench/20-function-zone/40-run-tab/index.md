@@ -20,9 +20,9 @@ tags:
 SimStudio 作为 CloudPSS 多个仿真软件的建模工作台，内嵌了潮流计算、电磁暂态仿真、综合能源系统仿真模拟等多类仿真内核。因此，**SimStudio 运行标签页**也提供多种仿真方案的配置方法。
 
 本文档仅介绍基础共性功能，针对不同计算方案的配置，参见：
-+ 电磁暂态仿真 帮助页
-+ 潮流计算 帮助页
-+ 综合能源系统仿真模拟 帮助页
++ [电磁暂态仿真](../../../../../20-emtlab/50-emts/20-job-config/index.md)帮助页
++ [潮流计算](../../../../../20-emtlab/60-power-flow/20-job-config/index.md)帮助页
++ [综合能源系统仿真模拟](../../../../../30-ieslab/40-lite-energy-flow-kernel/30-energy-flow/20-job-config/index.md)帮助页
 
 ## 方案
 
@@ -95,9 +95,9 @@ SimStudio 内置了 CloudPSS 官方提供的潮流计算、电磁暂态仿真、
 #### 计算方案配置卡
 
 在计算方案栏选择一个计算方案（如：电磁暂态计算方案），会切换显示当前计算方案下的**计算方案配置卡**。在**计算方案配置卡**处可配置当前计算方案下仿真算法的运行参数，如仿真步长、开始/结束时间等。不同计算方案的配置方法，参见：
-+ 电磁暂态仿真 帮助页
-+ 潮流计算 帮助页
-+ 综合能源系统仿真模拟 帮助页
++ [电磁暂态仿真](../../../../../20-emtlab/50-emts/20-job-config/index.md)帮助页
++ [潮流计算](../../../../../20-emtlab/60-power-flow/20-job-config/index.md)帮助页
++ [综合能源系统仿真模拟](../../../../../30-ieslab/40-lite-energy-flow-kernel/30-energy-flow/20-job-config/index.md)帮助页
 
 #### 重命名计算方案
 
@@ -140,11 +140,11 @@ SimStudio 内置了 CloudPSS 官方提供的潮流计算、电磁暂态仿真、
 **结果管理栏**以列表的形式存储用户的每一次计算任务的结果，并显示每个任务的执行状态。用户可在**结果管理栏**选择不同计算任务，在右侧**结果展示区**浏览仿真结果。
 
 不同仿真类型的计算任务产生的经计算结果格式也不同。当仿真出现不收敛等错误情况时，仿真信息会给出相应的提示。针对计算结果的格式和解读参见：
-+ EMTLab - 电磁暂态仿真计算 - 量测及输出系统
-+ EMTLab - 潮流计算及初始化 - 潮流结果写回及初始化
-+ IESLab - 建模仿真平台 - 仿真模拟模块 - 结果页面
-+ IESLab - 规划优化平台 - 典型场景生成模块 - 结果页面
-+ IESlab - SimStudio IES - SimStudio IES 仿真计算 - 结果页面
++ [EMTLab - 电磁暂态仿真计算 - 量测及输出系统](../../../../../20-emtlab/50-emts/30-meters-and-outputs/index.md)
++ [EMTLab - 潮流计算及初始化 - 潮流结果写回及初始化](../../../../../20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md)
++ [IESLab - 建模仿真平台 - 仿真模拟模块 - 结果页面](../../../../../30-ieslab/20-simulation-suite/60-simulation-module/30-results-tab/index.md)
++ [IESLab - 规划优化平台 - 典型场景生成模块 - 结果页面](../../../../../30-ieslab/30-planning-suite/60-typical-scenario-module/30-result-tab/index.md)
++ [IESlab - SimStudio IES - SimStudio IES 仿真计算 - 结果页面](../../../../../30-ieslab/40-lite-energy-flow-kernel/30-energy-flow/30-results-tab/index.md)
 
 ### 重命名结果
 
