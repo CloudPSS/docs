@@ -1,6 +1,10 @@
 ---
 title: 参数、变量及引脚
 description: 参数、变量及引
+tags:
+- xstudio
+- simstudio
+- function
 ---
 
 <!-- :::warning

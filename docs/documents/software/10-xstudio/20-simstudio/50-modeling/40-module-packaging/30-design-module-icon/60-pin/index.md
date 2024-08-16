@@ -1,6 +1,10 @@
 ---
 title: 引脚
 description: 引脚
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中引脚的使用及属性设置。

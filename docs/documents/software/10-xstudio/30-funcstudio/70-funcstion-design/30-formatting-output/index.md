@@ -1,6 +1,10 @@
 ---
 title: 函数结果格式化输出
 description: 函数结果格式化输出
+tags:
+- xstudio
+- funcstudio
+- function
 ---
 
 本节介绍 FuncStudio 函数内核计算结果的格式化输出功能。

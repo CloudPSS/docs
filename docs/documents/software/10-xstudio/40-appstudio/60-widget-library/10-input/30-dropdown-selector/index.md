@@ -1,6 +1,10 @@
 ---
 title: 选择器
 description: 选择器控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的选择器控件。

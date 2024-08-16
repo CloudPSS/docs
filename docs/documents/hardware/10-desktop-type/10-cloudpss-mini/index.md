@@ -2,6 +2,9 @@
 title: CloudPSS Mini (RT)
 description: CloudPSS Mini (RT)
 sidebar_position: 10
+tags:
+- hardware
+- directory
 ---
 
 ![CloudPSS Mini =x350](./mini.png "CloudPSS Mini")  

@@ -1,6 +1,10 @@
 ---
 title: 运行结果
 description: 运行结果控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的运行结果控件。

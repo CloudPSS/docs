@@ -1,6 +1,11 @@
 ---
 title: 新建本地函数：Python 实现
 description: 新建本地函数：Python 实现
+tags:
+- xstudio
+- funcstudio
+- quick-start
+- cases
 ---
 
 本节以一个**简单的入门案例**介绍如何将用户在自己本地计算资源上开发和执行的**Python 算法内核**接入执行器。

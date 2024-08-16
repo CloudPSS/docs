@@ -4,6 +4,8 @@ description: 使用 SDK 脚本获取并解析潮流及电磁暂态仿真结果
 
 tags:
 - sdk
+- emtlab
+- advanced
 
 ---
 
@@ -178,7 +180,8 @@ if __name__ == '__main__':
 
 也可以在电磁暂态仿真任务计算结束后，即可使用`runner.result`方法来获取计算结果，针对电磁暂态仿真内核提供了输出通道暂态波形数据的获取接口。
 
-```python title="仿真过程中不断获取仿真结果" showLineNumbers
+```python title="仿真任务计算结束后获取仿真结果" showLineNumbers
+    # 再启动一次电磁暂态仿真任务
     runner = model.runEMT(job,config)
     # 监听计算任务实例的运行状态
     while not runner.status():
@@ -321,9 +324,10 @@ if __name__ == '__main__':
                 print(message)
         # 每隔0.1秒输出一次
         time.sleep(0.1)
-        
+    
+    # 再启动一次电磁暂态仿真任务
     runner = model.runEMT(job,config)
-    # 仿真结束后输出结果
+    # 等仿真结束后输出结果
     while not runner.status():
         # 获取运行日志
         logs = runner.result.getLogs()

@@ -1,6 +1,11 @@
 ---
 title: 配置元件/模块调用权限
 description: 配置元件/模块调用权限
+tags:
+- xstudio
+- simstudio
+- function
+- advanced
 ---
 
 本文档介绍元件/模块的调用权限配置，用来管理其它用户对于本模块的使用权限。

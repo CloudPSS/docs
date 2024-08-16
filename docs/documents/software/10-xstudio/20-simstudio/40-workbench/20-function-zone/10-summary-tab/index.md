@@ -1,6 +1,11 @@
 ---
 title: 总览标签页
 description: 总览标签页
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 
 本文档介绍 **SimStudio 工作台** - **总览标签页** 的各项功能，包括项目基本信息、模型类型、元件标签和简单权限的配置方法。

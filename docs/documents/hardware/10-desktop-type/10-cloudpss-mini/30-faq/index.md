@@ -2,6 +2,9 @@
 title: 常见问题
 description: 常见问题
 sidebar_position: 30
+tags:
+- hardware
+- introduce
 ---
 
 若不方便使用 Wi-Fi 链接怎么办？

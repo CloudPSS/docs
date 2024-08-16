@@ -2,6 +2,9 @@
 title: CloudPSS Pro (RT)
 description: CloudPSS Pro (RT)
 sidebar_position: 10
+tags:
+- hardware
+- directory
 ---
 
 ![CloudPSS Pro =x300](./pro1.png "CloudPSS Pro") 

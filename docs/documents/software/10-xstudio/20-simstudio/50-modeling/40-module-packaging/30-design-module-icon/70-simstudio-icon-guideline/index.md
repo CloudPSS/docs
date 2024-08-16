@@ -1,6 +1,10 @@
 ---
 title: SimStudio 元件图标设计规范
 description: SimStudio 元件图标设计规范
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 ## 图标检查

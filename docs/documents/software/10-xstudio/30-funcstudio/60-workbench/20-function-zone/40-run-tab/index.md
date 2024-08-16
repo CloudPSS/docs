@@ -1,6 +1,11 @@
 ---
 title: 运行标签页
 description: 运行标签页
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本节功能区第四个运行标签页的使用方法。

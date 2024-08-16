@@ -4,6 +4,8 @@ description: SimStudio IES SDK 快速入门
 
 tags:
 - sdk
+- ieslab
+- quick-start
 
 ---
 

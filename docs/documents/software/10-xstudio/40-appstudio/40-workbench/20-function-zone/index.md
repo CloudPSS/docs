@@ -1,6 +1,11 @@
 ---
 title: 功能区
 description: 功能区
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 在**AppStudio 工作台** - **功能区**中，可通过左侧的**标签栏**切换显示的标签页类别，包括**总览**、**资源**、**场景**三个标签页。

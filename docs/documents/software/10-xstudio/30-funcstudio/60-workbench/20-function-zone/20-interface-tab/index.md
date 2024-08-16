@@ -1,6 +1,11 @@
 ---
 title: 接口标签页
 description: 接口标签页
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本节首先介绍功能区第二个接口标签页的功能，然后通过 1 个案例说明接口标签页的使用方法。

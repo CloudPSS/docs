@@ -4,6 +4,8 @@ description: 用脚本实现 EMTLab 从给定断面开始仿真的功能
 
 tags:
 - sdk
+- emtlab
+- advanced
 
 ---
 

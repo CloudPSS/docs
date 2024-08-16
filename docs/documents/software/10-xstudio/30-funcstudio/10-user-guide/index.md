@@ -1,6 +1,10 @@
 ---
 title: 使用指南
 description: FuncStudio 函数工坊使用指南
+tags:
+- xstudio
+- funcstudio
+- user-guide
 ---
 
 循序渐进，全面了解熟悉 FuncStudio 函数工坊。

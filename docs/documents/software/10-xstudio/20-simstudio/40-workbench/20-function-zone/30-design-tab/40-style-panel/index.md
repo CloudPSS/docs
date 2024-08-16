@@ -1,6 +1,11 @@
 ---
 title: 格式卡
 description: 格式卡
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 <!-- :::warning 修改建议 
 1. 不要滥用代码框，对于平台中存在的按钮、选项，使用加粗即可。（已修改）

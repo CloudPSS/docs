@@ -2,6 +2,9 @@
 title: 规格参数
 description: 规格参数
 sidebar_position: 10
+tags:
+- hardware
+- introduce
 ---
 
 |  产品型号  |>|机柜型 CloudPSS Pro|>|机柜型 CloudPSS Pro RT|

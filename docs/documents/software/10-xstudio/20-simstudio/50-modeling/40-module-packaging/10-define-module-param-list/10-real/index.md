@@ -1,6 +1,10 @@
 ---
 title: 实数
 description: 实数
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 ## 参数定义

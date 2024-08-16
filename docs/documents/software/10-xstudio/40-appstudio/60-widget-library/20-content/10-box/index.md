@@ -1,6 +1,10 @@
 ---
 title: 盒子
 description: 盒子控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的盒子控件。

@@ -2,6 +2,11 @@
 title: TABLE & CHART 类
 description: TABLE & CHART 类
 # unlisted: true
+tags:
+- xstudio
+- appstudio
+- widgets
+- directory
 ---
 
 :::tip 用户提示

@@ -1,6 +1,10 @@
 ---
 title: 应用预览
 description: 应用预览
+tags:
+- xstudio
+- appstudio
+- function
 ---
 
 本节介绍 AppStudio 的应用预览功能。

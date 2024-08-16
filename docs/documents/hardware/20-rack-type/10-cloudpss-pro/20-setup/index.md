@@ -2,6 +2,9 @@
 title: 安装调试
 description: 安装调试
 sidebar_position: 20
+tags:
+- hardware
+- introduce
 ---
 
 1. 将网线插入 LAN 网口

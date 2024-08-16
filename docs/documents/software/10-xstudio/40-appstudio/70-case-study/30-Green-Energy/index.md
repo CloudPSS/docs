@@ -1,6 +1,11 @@
 ---
 title: 绿电分析系统
 description: 绿电分析系统
+tags:
+- xstudio
+- appstudio
+- cases
+- advanced
 ---
 
 本文档主要介绍如何使用 AppStudio 构建 [绿电分析系统](https://cloudpss.net/application/CloudPSSDemo/GreenEnergy#/summary) 典型案例。本文档将会基于应用搭建流程，重点选择 AppStudio 的重要功能及其应用细节进行详细介绍。较为基础的功能以及案例中的控件的参数等信息，请通过访问以上案例链接进行查看。

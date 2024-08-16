@@ -1,6 +1,9 @@
 ---
 title: 软件介绍
 description: XStudio 软件介绍
+tags:
+- xstudio
+- introduce
 ---
 
 欢迎使用**CloudPSS XStudio 平台**。

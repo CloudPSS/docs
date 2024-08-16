@@ -1,6 +1,10 @@
 ---
 title: 布尔
 description: 布尔
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 ## 参数定义

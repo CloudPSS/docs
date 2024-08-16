@@ -1,6 +1,11 @@
 ---
 title: 场景
 description: 场景
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 ## 页面功能

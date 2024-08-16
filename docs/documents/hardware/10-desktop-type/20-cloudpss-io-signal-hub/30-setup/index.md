@@ -2,6 +2,9 @@
 title: 安装调试
 description: 安装调试
 sidebar_position: 30
+tags:
+- hardware
+- introduce
 ---
 
 ### 前面板接口

@@ -1,6 +1,10 @@
 ---
 title: 应用发布
 description: 应用发布
+tags:
+- xstudio
+- appstudio
+- function
 ---
 
 本节介绍 AppStudio 的应用发布功能。

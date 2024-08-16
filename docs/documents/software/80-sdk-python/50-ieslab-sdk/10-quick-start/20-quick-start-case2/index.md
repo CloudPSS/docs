@@ -4,7 +4,8 @@ description: IESLab SDK 快速入门
 
 tags:
 - sdk
-
+- ieslab
+- quick-start
 ---
 
 ### 1.1 案例概述

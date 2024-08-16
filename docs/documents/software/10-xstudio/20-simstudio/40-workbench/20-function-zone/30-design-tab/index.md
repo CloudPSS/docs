@@ -1,6 +1,11 @@
 ---
 title: 实现标签页
 description: 实现标签页
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 
 本节介绍 **SimStudio 工作台** - **实现标签页** 的布局、实现种类，并重点介绍**拓扑编辑**功能。

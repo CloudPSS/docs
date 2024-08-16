@@ -1,6 +1,10 @@
 ---
 title: 拓扑展示
 description: 拓扑展示控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的拓扑展示控件。

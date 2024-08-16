@@ -1,6 +1,11 @@
 ---
 title: 接入 FuncStudio 函数的简单应用
 description: 构建一个接入 FuncStudio 函数的简单应用
+tags:
+- xstudio
+- appstudio
+- quick-start
+- cases
 ---
 
 

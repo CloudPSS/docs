@@ -1,6 +1,10 @@
 ---
 title: 进度环
 description: 进度环控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的进度环控件。

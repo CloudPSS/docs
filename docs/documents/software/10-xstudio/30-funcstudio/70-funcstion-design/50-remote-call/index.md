@@ -1,6 +1,10 @@
 ---
 title: 函数的远程调用
 description: 函数内核的远程调用
+tags:
+- xstudio
+- funcstudio
+- function
 ---
 
 本节首先介绍 FuncStudio 本地接入函数的远程调用功能，然后通过 1 个案例展示远程调用功能的使用方法。

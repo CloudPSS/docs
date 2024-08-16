@@ -4,7 +4,8 @@ description: 使用 SDK 脚本自动建模
 
 tags:
 - sdk
-
+- emtlab
+- advanced
 ---
 
 ## 功能介绍

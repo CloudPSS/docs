@@ -2,6 +2,9 @@
 title: 机柜型
 description: 机柜型
 sidebar_position: 20
+tags:
+- hardware
+- directory
 ---
 CloudPSS-RT 提供**桌面型**和**机柜型**两类仿真器规格，覆盖不同用户使用需求。
 

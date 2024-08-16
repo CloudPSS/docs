@@ -1,6 +1,11 @@
 ---
 title: 新建本地函数：Matlab 实现
 description: 新建本地函数：Matlab 实现
+tags:
+- xstudio
+- funcstudio
+- quick-start
+- cases
 ---
 
 本节以一个简单的入门案例介绍如何将用户在自己本地计算资源上开发和执行的 **Matlab** 算法内核接入执行器。

@@ -4,6 +4,8 @@ description: 使用 IESLab SDK 管理建模仿真和规划优化平台的算例�
 
 tags:
 - sdk
+- ieslab
+- advanced
 
 ---
 

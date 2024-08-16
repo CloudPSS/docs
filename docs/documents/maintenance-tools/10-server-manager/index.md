@@ -1,10 +1,9 @@
 ---
 title: Server Manager 
 description: Server Manager 文档
-
 tags: 
 - server-manager
-
+- directory
 ---
 
 :::tip 权限提醒

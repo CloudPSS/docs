@@ -1,6 +1,10 @@
 ---
 title: Matlab 环境配置
 description: Matlab 环境配置
+tags:
+- xstudio
+- funcstudio
+- introduce
 ---
 
 本节介绍在本地计算资源中配置 Matlab 环境的方法。

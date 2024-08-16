@@ -1,6 +1,11 @@
 ---
 title: 实现标签页
 description: 实现标签页
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本节介绍功能区第三个实现标签页的使用方法。

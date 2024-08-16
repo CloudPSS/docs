@@ -1,6 +1,11 @@
 ---
 title: 场景标签页
 description: 场景标签页
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 本节介绍功能区第三个实现标签页的使用方法。

@@ -1,6 +1,10 @@
 ---
 title: 虚拟引脚
 description: 虚拟引脚
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 虚拟引脚是最为特殊的参数类别，它虽然在参数列表中进行定义，但在设计逻辑上更贴近于[引脚](../../20-define-module-pin-list/index.md)的概念。

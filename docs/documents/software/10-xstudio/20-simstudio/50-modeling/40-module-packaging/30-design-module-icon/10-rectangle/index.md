@@ -1,6 +1,10 @@
 ---
 title: 矩形
 description: 矩形
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中矩形的使用及属性设置。

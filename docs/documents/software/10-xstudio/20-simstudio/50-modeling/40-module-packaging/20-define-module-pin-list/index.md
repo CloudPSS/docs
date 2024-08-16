@@ -1,6 +1,11 @@
 ---
 title: 定义元件/模块引脚列表
 description: 定义元件/模块引脚列表
+tags:
+- xstudio
+- simstudio
+- function
+- advanced
 ---
 
 此文档主要介绍元件/模块的引脚定义方法。

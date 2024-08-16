@@ -1,6 +1,10 @@
 ---
 title: 使用指南
 description: SimStudio 模型工坊使用指南
+tags:
+- xstudio
+- simstudio
+- user-guide
 ---
 
 循序渐进，全面了解熟悉 SimStudio 模型工坊。

@@ -1,6 +1,10 @@
 ---
 title: 函数的本地调试
 description: 函数内核的本地调试
+tags:
+- xstudio
+- funcstudio
+- function
 ---
 
 本节首先介绍 FuncStudio 函数的本地调试功能，然后通过 2 个案例介绍本地调试功能的使用方法。

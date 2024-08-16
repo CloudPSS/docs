@@ -1,6 +1,11 @@
 ---
 title: 场景嵌套
 description: 场景嵌套
+tags:
+- xstudio
+- appstudio
+- function
+- advanced
 ---
 
 本节首先介绍 AppStudio 的场景嵌套功能，然后通过 1 个案例介绍场景嵌套功能的使用方法。

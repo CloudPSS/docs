@@ -2,6 +2,9 @@
 title: 规格参数
 description: 规格参数
 sidebar_position: 10
+tags:
+- hardware
+- introduce
 ---
 
 |    产品型号     |   桌面型 CloudPSS Mini  |   桌面型 CloudPSS Mini RT  |

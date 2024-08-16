@@ -1,6 +1,12 @@
 ---
 title: 综合能源系统建模仿真快速入门
 description: SimStudio 综合能源系统仿真快速入门
+tags:
+- xstudio
+- simstudio
+- ieslab
+- quick-start
+- cases
 ---
 
 本文档以**交直流混连项目**为例，基于 SimStudio 的综综合能源系统的轻量级能量流计算内核，通过模板案例新建综合能源系统项目，帮助用户快速熟悉 SimStudio 综合能源仿真发基本使用方法。

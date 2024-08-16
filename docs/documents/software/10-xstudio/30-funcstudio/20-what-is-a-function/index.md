@@ -1,6 +1,10 @@
 ---
 title: 什么是函数?
 description: 函数定义
+tags:
+- xstudio
+- funcstudio
+- introduce
 ---
 
 FuncStudio 函数工坊的核心功能是在 CloudPSS 云服务框架中集成**第三方计算内核**和**用户自定义算法内核**，扩展 CloudPSS 平台的功能边界，方便用户构建各类数字孪生计算后台。

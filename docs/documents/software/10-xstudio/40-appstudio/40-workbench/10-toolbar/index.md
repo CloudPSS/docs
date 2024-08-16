@@ -1,6 +1,11 @@
 ---
 title: 工具栏
 description: 工具栏
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 AppStudio 工作台和 FuncStudio、SimStudio 的布局基本类似，也分为四个个区域：上方的工具栏、左侧的标签栏、中间的功能区、以及下方的状态栏。其中标签栏用于切换功能区显示的标签页，包括总览、资源、场景三个标签页，本节主要介绍工具栏的功能。

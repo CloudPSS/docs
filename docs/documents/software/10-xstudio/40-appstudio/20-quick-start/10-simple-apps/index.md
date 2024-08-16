@@ -1,6 +1,11 @@
 --- 
 title: 简单应用
 description: 构建一个简单应用
+tags:
+- xstudio
+- appstudio
+- quick-start
+- cases
 ---
 
 本节主要介绍不添加 FuncStudio 的资源函数来在 AppStudio 里面构建一个简单的加法应用场景。

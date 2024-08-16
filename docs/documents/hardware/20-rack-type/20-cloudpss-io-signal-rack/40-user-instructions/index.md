@@ -2,6 +2,9 @@
 title: 使用说明
 description: 使用说明
 sidebar_position: 40
+tags:
+- hardware
+- introduce
 ---
 
 ### 硬件连接<span id = "硬件连接"></span>
