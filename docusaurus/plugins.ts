@@ -18,7 +18,7 @@ const plugins: PluginConfig[] = [
         return {
             name: 'docusaurus-plugin-split-config',
             getPathsToWatch() {
-                return [`${path.resolve(context.siteDir)}/docusaurus/**/*.{ts,js}`];
+                return [`${path.resolve(context.siteDir, 'docusaurus')}/**/*.{ts,js}`];
             },
         };
     },

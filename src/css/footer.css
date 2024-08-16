@@ -5,10 +5,26 @@
 }
 
 .footer__copyright-sep {
+  display: inline-block;
+  width: 1em;
+
   @media (max-width: 996px) {
     display: none;
   }
+}
 
-  display: inline-block;
-  width: 1em;
+.footer__beian-link {
+  font-size: 0;
+  &::before {
+    font-size: 1rem;
+  }
+  :root[data-hostname$='.cloudpss.com.cn'] &::before {
+    content: '蜀 ICP 备 2021015330 号 - 1';
+  }
+  :root[data-hostname$='.cloudpss.cn'] &::before {
+    content: '蜀 ICP 备 2021015330 号 - 2';
+  }
+  :root[data-hostname$='.cloudpss.net'] &::before {
+    content: '蜀 ICP 备 2021015330 号 - 3';
+  }
 }
