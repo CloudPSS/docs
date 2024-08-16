@@ -77,6 +77,12 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         label: '关于',
         to: '/about',
     },
+    {
+        href: 'https://github.com/CloudPSS/docs',
+        position: 'right',
+        className: 'navbar__github-link',
+        title: 'GitHub',
+    },
 ];
 
 if (i18n.locales.length > 1) {

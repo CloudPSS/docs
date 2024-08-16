@@ -1,5 +1,4 @@
 import type { ThemeConfig } from '@docusaurus/preset-classic';
-import { HOME_URL } from './utils';
 
 /**
  * 配置底栏链接
@@ -8,11 +7,15 @@ import { HOME_URL } from './utils';
  */
 const links: NonNullable<ThemeConfig['footer']>['links'] = [
     {
-        title: 'Docs',
+        title: '知识库',
         items: [
             {
+                label: '快速入门',
+                to: '/documents/quick-start/quick-start/',
+            },
+            {
                 label: '编写指南',
-                to: '/meta/',
+                to: '/meta/edit-help/',
             },
         ],
     },
@@ -44,19 +47,9 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
     },
 ];
 
-const beian = {
-    'cloudpss.com.cn': '蜀 ICP 备 2021015330 号 - 1',
-    'cloudpss.cn': '蜀 ICP 备 2021015330 号 - 2',
-    'cloudpss.net': '蜀 ICP 备 2021015330 号 - 3',
-};
-
-const currentBeian = Object.entries(beian).find(([domain]) => HOME_URL.includes(domain))?.[1];
-
 const copyright = [
     `<a href="https://cloudpss.net/" class=footer__link-item target=_blank ><span style="word-spacing: -0.3ch">Copyright © 2015-${new Date().getFullYear()}</span> CloudPSS</a>`,
-    currentBeian
-        ? `<a href="https://beian.miit.gov.cn/" class=footer__link-item target=_blank style="word-spacing: -0.3ch">${currentBeian}</a>`
-        : undefined,
+    `<a href="https://beian.miit.gov.cn/" class="footer__link-item footer__beian-link" target=_blank style="word-spacing: -0.3ch">蜀 ICP 备 2021015330 号 - 3</a>`,
 ]
     .filter(Boolean)
     .join('<span class=footer__copyright-sep></span>');
