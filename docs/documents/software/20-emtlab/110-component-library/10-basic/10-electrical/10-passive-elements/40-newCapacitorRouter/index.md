@@ -1,6 +1,9 @@
 ---
 title: "电容"
 description: "电容"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

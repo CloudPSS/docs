@@ -1,6 +1,9 @@
 ---
 title: "光伏电池单元"
 description: "光伏电池单元"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

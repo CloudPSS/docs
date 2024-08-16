@@ -1,6 +1,9 @@
 ---
 title: "平均值函数"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

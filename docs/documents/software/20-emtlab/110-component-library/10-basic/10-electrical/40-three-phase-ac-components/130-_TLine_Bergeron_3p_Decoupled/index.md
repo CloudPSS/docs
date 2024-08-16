@@ -1,6 +1,9 @@
 ---
 title: "三相长传输线[解耦]"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

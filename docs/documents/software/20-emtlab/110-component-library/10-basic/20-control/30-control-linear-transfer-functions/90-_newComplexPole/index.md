@@ -1,6 +1,9 @@
 ---
 title: "二阶传递函数"
 description: "二阶传递函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

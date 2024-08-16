@@ -2,6 +2,9 @@
 title: 气象数据库
 description: IESLab 规划优化平台-数据管理模块-气象数据库
 sidebar_position: 10
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍气象数据库的功能和使用方法，并对使用过程中遇到的常见问题进行解答。

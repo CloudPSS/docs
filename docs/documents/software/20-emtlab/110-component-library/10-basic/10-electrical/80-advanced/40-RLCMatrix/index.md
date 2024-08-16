@@ -1,6 +1,9 @@
 ---
 title: "RLC矩阵"
 description: "任意维RLC矩阵，可自定义支路。"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -1,6 +1,9 @@
 ---
 title: "超前滞后校正"
 description: "超前滞后校正"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

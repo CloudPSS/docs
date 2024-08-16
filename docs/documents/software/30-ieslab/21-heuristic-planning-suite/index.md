@@ -1,7 +1,10 @@
 ---
 title: 仿真规划平台
 description: IESLab 仿真规划平台
-
+tags:
+- ieslab
+- introduce
+- directory
 ---
 
 :::tip

@@ -1,6 +1,9 @@
 ---
 title: "三相故障电阻"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

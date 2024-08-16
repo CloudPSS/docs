@@ -2,6 +2,10 @@
 title: 硬件在环仿真
 description: 硬件在环仿真
 sidebar_position: 10
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 本文档主要介绍 CloudPSS EMTLab 在电磁暂态实时仿真中半实物硬件在环的应用方法及案例。

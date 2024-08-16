@@ -2,6 +2,9 @@
 title: 结果查看
 description: IESLab 仿真规划平台-方案优选模块-结果查看
 sidebar_position: 70
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 IESLab 仿真规划平台启动优化计算和查看优化结果的方法，包括方案列表查看、日志信息查看、设备选型配置信息查看、典型运行方式查看等。

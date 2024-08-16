@@ -1,6 +1,9 @@
 ---
 title: "乘法器"
 description: "乘法器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,10 @@
 title: 建模仿真平台
 description: IESLab 建模仿真平台
 sidebar_position: 20
+tags:
+- ieslab
+- introduce
+- directory
 ---
 
 ## 平台介绍

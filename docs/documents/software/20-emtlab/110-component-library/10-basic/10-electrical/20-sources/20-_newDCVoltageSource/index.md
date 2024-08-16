@@ -1,6 +1,9 @@
 ---
 title: "直流电压源"
 description: "直流电压源"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

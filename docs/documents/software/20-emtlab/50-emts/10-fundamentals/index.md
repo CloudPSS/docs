@@ -2,8 +2,9 @@
 title: 电磁暂态仿真基本原理
 description: EMTLab 的电磁暂态仿真原理
 
-tags: 
+tags:
 - emtlab
+- introduce
 ---
 <!--
 :::warning

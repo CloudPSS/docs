@@ -1,6 +1,9 @@
 ---
 title: "三角函数"
 description: "三角函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

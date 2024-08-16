@@ -1,6 +1,9 @@
 ---
 title: "比较器"
 description: "比较器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

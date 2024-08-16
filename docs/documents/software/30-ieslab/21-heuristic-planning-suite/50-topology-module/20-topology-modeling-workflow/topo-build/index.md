@@ -2,6 +2,9 @@
 title: 拓扑建模
 description: 元件拖拽连接搭建拓扑方法
 sidebar_position: 1
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍综合能源系统元件的拖拽连接搭建拓扑方法，并通过常见问题答疑帮助您快速熟悉。

@@ -1,6 +1,9 @@
 ---
 title: "晶闸管"
 description: "晶闸管"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

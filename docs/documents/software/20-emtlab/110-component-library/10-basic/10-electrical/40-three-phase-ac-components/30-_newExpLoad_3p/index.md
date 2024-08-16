@@ -1,6 +1,9 @@
 ---
 title: "静态负载"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

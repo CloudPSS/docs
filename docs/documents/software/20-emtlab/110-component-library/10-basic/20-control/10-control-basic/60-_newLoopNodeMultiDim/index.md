@@ -1,6 +1,9 @@
 ---
 title: "多维代数解环点"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

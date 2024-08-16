@@ -1,6 +1,9 @@
 ---
 title: "三相可控静态负载"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

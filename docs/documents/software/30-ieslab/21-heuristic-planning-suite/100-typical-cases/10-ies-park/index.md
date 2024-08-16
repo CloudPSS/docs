@@ -2,6 +2,9 @@
 title: 综合能源系统园区展示项目
 description: 综合能源系统园区展示项目搭建及分析示例
 sidebar_position: 10
+tags:
+- ieslab
+- cases
 ---
 
 本文主要介绍了综合能源系统园区规划优化展示项目的项目背景、项目搭建设置、结果分析方法。

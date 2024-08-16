@@ -2,6 +2,9 @@
 title: 软件介绍
 description: IESLab 软件介绍
 sidebar_position: 10
+tags:
+- ieslab
+- introduce
 ---
 
 欢迎使用 CloudPSS IESLab，综合能源系统数字孪生应用平台！

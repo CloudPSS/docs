@@ -1,6 +1,9 @@
 ---
 title: "电感"
 description: "电感"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,9 @@
 title: 图纸
 description: 图纸
 sidebar_position: 10
+tags:
+- ieslab
+- workbench
 ---
 
 ## 页面功能

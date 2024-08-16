@@ -1,6 +1,9 @@
 ---
 title: "综合负荷模型"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

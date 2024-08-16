@@ -2,6 +2,9 @@
 title: 计算方案配置
 description: IESLab 建模仿真平台-仿真模拟模块-计算方案配置
 sidebar_position: 60
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 IESLab 建模仿真平台进行综合能源仿真计算时需要设置的计算全局参数，包括时序仿真周期、时间步长以及相关运行参数设置等。

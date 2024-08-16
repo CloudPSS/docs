@@ -1,6 +1,9 @@
 ---
 title: "多相异步电机"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

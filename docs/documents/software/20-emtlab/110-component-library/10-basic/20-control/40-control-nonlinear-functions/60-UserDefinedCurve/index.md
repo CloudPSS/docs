@@ -1,6 +1,9 @@
 ---
 title: "自定义曲线"
 description: "本元件利用分段线性函数实现了自定义曲线的功能。支持线性插值及Lagrange插值方法。"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

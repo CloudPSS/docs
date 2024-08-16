@@ -2,6 +2,9 @@
 title: 计算方案配置
 description: 典型场景生成模块-计算方案配置
 sidebar_position: 20
+tags:
+- ieslab
+- function
 ---
 
 典型场景生成模块提供了多种生成综合能源场景的方法，为综合能源系统的规划设计和运行优化提供了必需的场景数据。

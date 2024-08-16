@@ -1,6 +1,9 @@
 ---
 title: "增益"
 description: "增益"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

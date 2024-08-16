@@ -1,6 +1,9 @@
 ---
 title: "延时环节"
 description: "延时环节"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

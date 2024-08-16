@@ -2,6 +2,9 @@
 title: 典型案例
 description: IESLab 规划优化平台典型案例
 sidebar_position: 100
+tags:
+- ieslab
+- cases
 ---
 
 

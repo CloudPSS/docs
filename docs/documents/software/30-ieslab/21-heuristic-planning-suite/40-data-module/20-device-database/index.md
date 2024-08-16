@@ -2,6 +2,9 @@
 title: 设备信息库
 description: IESLab 仿真规划平台-数据管理模块-设备信息库
 sidebar_position: 20
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍设备信息库的设备参数录入、编辑、导入及导出等功能使用方法，并通过常见问题答疑快速熟悉设备信息库的基本使用方法。

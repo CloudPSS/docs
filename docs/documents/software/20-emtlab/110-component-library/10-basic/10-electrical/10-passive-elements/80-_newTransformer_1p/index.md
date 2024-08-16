@@ -1,6 +1,9 @@
 ---
 title: "单相变压器"
 description: "单相变压器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

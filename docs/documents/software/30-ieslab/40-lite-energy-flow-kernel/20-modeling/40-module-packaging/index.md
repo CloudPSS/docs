@@ -1,6 +1,9 @@
 ---
 title: 模块封装
 description: 模块封装
+tags:
+- ieslab
+- function
 ---
 
 

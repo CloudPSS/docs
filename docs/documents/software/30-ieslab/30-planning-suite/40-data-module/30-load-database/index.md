@@ -2,6 +2,9 @@
 title: 负荷信息库
 description: IESLab 规划优化平台-数据管理模块-负荷信息库
 sidebar_position: 30
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍负荷信息库的负荷模型、参数录入、编辑、导入及导出等功能使用方法，并通过常见问题答疑快速熟悉负荷信息库的基本使用方法。

@@ -1,6 +1,9 @@
 ---
 title: "可变串联RLC"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

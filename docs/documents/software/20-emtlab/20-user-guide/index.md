@@ -2,6 +2,9 @@
 title: 使用指南
 description: CloudPSS EMTLab 文档使用指南
 sidebar_position: 20
+tags:
+- emtlab
+- user-guide
 ---
 
 循序渐进，全面了解熟悉 EMTLab 工作台。

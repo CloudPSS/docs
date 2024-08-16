@@ -1,6 +1,9 @@
 ---
 title: "事件日志"
 description: "事件日志"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -1,6 +1,9 @@
 ---
 title: "无刷直流电机"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

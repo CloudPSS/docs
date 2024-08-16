@@ -1,6 +1,9 @@
 ---
 title: "速度限幅器"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

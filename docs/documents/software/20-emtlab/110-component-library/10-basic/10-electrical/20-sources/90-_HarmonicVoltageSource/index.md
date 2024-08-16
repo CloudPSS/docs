@@ -1,6 +1,9 @@
 ---
 title: "谐波电压源"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

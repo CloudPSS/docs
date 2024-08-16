@@ -2,6 +2,10 @@
 title: 自动聚合母线
 description: 自动聚合母线
 sidebar_position: 10
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 ## 敬请期待！

@@ -2,6 +2,9 @@
 title: 基本原理
 description: 轻量级能量流计算内核的基本原理介绍
 sidebar_position: 40
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 SimStudio IES 综合能源系统仿真计算的基本原理，包括稳态仿真的定义、基础状态参数的构成、基础仿真模型的构成以及仿真模型求解算法的执行流程。

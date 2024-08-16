@@ -2,6 +2,9 @@
 title: 结果页面
 description: IESLab 建模仿真平台-仿真模拟模块-结果页面
 sidebar_position: 60
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 IESLab 建模仿真平台进行综合能源仿真计算时查看计算结果的方法，包括统计性指标表格、元件时序运行结果等。

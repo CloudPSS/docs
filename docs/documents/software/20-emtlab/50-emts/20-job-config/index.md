@@ -2,8 +2,9 @@
 title: 计算方案配置
 description: 电磁暂态仿真计算方案配置
 
-tags: 
+tags:
 - emtlab
+- function
 ---
 <!--
 :::warning

@@ -1,6 +1,9 @@
 ---
 title: "多路信号分离"
 description: "集线器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

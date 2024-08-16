@@ -1,6 +1,9 @@
 ---
 title: "多维常量输入"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

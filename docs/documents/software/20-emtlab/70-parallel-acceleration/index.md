@@ -2,6 +2,11 @@
 title: 电磁暂态仿真并行加速
 description: 电磁暂态仿真并行加速
 sidebar_position: 70
+tags:
+- emtlab
+- function
+- advanced
+- directory
 ---
 
 

@@ -2,6 +2,10 @@
 title: 规划优化平台
 description: IESLab 规划优化平台
 sidebar_position: 30
+tags:
+- ieslab
+- introduce
+- directory
 ---
 
 ## 平台介绍

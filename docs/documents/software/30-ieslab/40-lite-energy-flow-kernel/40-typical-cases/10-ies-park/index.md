@@ -1,6 +1,9 @@
 ---
 title: 园区型综合能源系统
 description: 园区型综合能源系统碳排放流仿真分析
+tags:
+- ieslab
+- cases
 ---
 
 本节以**园区型综合能源系统项目**为例，介绍 SimStudio IES 综合能源系统项目的建模仿真和碳排放流分析方法。

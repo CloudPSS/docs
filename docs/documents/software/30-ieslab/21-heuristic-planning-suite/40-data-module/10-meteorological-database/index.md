@@ -2,6 +2,9 @@
 title: 气象数据库
 description: IESLab 仿真规划平台-数据管理模块-气象数据库
 sidebar_position: 10
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍气象数据库的**地点**和**气象数据**两个子模块功能，并通过常见问题答疑快速熟悉气象数据库的基本使用方法。

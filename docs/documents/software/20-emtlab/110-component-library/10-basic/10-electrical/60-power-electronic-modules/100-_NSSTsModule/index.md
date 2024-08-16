@@ -1,6 +1,9 @@
 ---
 title: "多模块 SST"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

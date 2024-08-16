@@ -1,6 +1,9 @@
 ---
 title: "加法器/减法器"
 description: "加法器/减法器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

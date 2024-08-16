@@ -2,6 +2,10 @@
 title: 并行计算高级参数设置
 description: EMTLab 提供的并行计算高级参数设置功能。
 sidebar_position: 20
+tags:
+- emtlab
+- function
+- advanced
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

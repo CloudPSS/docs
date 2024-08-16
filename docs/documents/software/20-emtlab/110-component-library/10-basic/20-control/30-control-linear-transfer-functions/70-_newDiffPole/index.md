@@ -1,6 +1,9 @@
 ---
 title: "微分极点"
 description: "微分极点"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

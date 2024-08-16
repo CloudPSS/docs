@@ -1,6 +1,9 @@
 ---
 title: "同步发电机"
 description: "同步发电机"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

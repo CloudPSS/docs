@@ -2,6 +2,9 @@
 title: 云空间
 description: IESLab 仿真规划平台云空间
 sidebar_position: 30
+tags:
+- ieslab
+- cloud-space
 ---
 
 本节主要介绍 IESLab 仿真规划平台云空间的**项目组织方式**，**新建和打开项目**的方法。

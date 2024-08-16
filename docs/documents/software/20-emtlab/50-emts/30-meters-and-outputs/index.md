@@ -2,8 +2,9 @@
 title: 量测和输出系统
 description: 介绍 EMTLab 的量测和输出系统
 
-tags: 
+tags:
 - emtlab
+- function
 ---
 <!--
 :::warning

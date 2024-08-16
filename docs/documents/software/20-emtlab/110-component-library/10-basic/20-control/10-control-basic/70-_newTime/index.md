@@ -1,6 +1,9 @@
 ---
 title: "时间输入"
 description: "时间输入"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -3,8 +3,9 @@ title: 断面参数设置
 description: 电磁暂态仿真的断面参数设置
 sidebar_position: 40
 
-tags: 
+tags:
 - emtlab
+- function
 ---
 <!--
 :::warning

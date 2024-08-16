@@ -2,6 +2,10 @@
 title: 联合实时仿真
 description: 联合实时仿真
 sidebar_position: 30
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 本文档主要介绍 CloudPSS EMTLab 在电磁暂态实时仿真中联合实时仿真的应用方法及案例。

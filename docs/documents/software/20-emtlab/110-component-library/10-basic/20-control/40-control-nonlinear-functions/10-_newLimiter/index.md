@@ -1,6 +1,9 @@
 ---
 title: "限幅器"
 description: "限幅器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义
