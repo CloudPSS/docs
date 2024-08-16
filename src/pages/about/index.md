@@ -20,5 +20,9 @@ CloudPSS 生态是指基于 CloudPSS 产品及相关科研、服务团队所构�
 
 CloudPSS 知识库是 CloudPSS 团队发起的开源项目，负责维护 CloudPSS 产品帮助文档、典型案例应用及教学教程等免费、公开资料。欢迎大家加入我们，共同完善和丰富 CloudPSS 知识库。
 
+<center>
+
 [![](https://i.creativecommons.org/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)  
 CloudPSS 知识库采用 [知识共享署名-非商业性使用 4.0 国际许可协议](https://creativecommons.org/licenses/by-nc/4.0/) 进行许可。
+
+</center>

@@ -1,10 +1,10 @@
 # CloudPSS 知识库
 
-本项目为 CloudPSS 知识库系统及文档内容。
+构建开源、开放、协作、共享的 CloudPSS 生态。
 
-Main 分支预览地址：<https://cloudpss.github.io/docs/>  
-最新标签版本地址：<https://latest.kb.cloudpss.net/>  
-文档地址：<https://kb.cloudpss.net/>
+[![GitHub Release](https://img.shields.io/github/v/release/cloudpss/docs?style=flat-square&sort=semver)](https://kb.cloudpss.net/)
+[![GitHub Release](https://img.shields.io/github/v/release/cloudpss/docs?style=flat-square&sort=semver&include_prereleases)](https://latest.kb.cloudpss.net/)
+[![GitHub commits since latest release](https://img.shields.io/github/commits-since/cloudpss/docs/latest?style=flat-square&sort=semver&include_prereleases)](https://cloudpss.github.io/docs/)
 
 ## 编辑指南
 
