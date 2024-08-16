@@ -19,7 +19,7 @@ tags: [update-notes]
 6. 修复了 Merge 等动态引脚元件在使用表达式作为参数时出错的问题。
 
 ## FuncStudio 更新至 v3.3.1 版本
-
+<!-- truncate -->
 1. 修复了执行器的安全漏洞。
 
 ## AppStudio 更新至 v3.3.1 版本
