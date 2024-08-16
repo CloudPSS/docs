@@ -1,6 +1,10 @@
 ---
 title: 输入框
 description: 输入框控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的输入框控件。

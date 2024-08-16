@@ -1,6 +1,11 @@
 ---
 title: 扫频分析应用
 description: 扫频分析应用
+tags:
+- xstudio
+- appstudio
+- cases
+- advanced
 ---
 
 本文档主要介绍如何使用 AppStudio 构建 [扫频分析应用](https://cloudpss.net/application/CloudPSSDemo/Freq_Sweep_Analyzer#/summary) 典型案例。

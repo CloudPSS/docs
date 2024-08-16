@@ -1,6 +1,11 @@
 ---
 title: 场景编辑
 description: 场景编辑
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 ### 功能定义

@@ -1,6 +1,10 @@
 ---
 title: 开发环境配置
 description: 开发环境配置
+tags:
+- xstudio
+- funcstudio
+- directory
 ---
 
 对于用户在自己本地计算资源（个人电脑）上开发和执行的自定义算法内核，在使用 FuncStudio 将内核集成到 CloudPSS 云服务框架之前，需要做如下的本地环境配置工作：

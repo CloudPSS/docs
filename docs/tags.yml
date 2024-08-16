@@ -42,6 +42,10 @@ components:
   label: 元件 
   description: CloudPSS 元件类文档
 
+widgets:
+  label: 控件 
+  description: CloudPSS 控件类文档
+
 cases:
   label: 案例 
   description: CloudPSS 案例
@@ -69,3 +73,23 @@ directory:
 user-agreement:
   label: 用户协议 
   description: CloudPSS 文档目录
+
+hardware:
+  label: 硬件产品
+  description: CloudPSS 硬件产品
+
+software-tools:
+  label: 软件工具
+  description: CloudPSS 软件工具
+
+simstudio:
+    label: SimStudio
+    description: CloudPSS SimStudio
+
+funcstudio:
+    label: FuncStudio
+    description: CloudPSS FuncStudio
+
+appstudio:
+    label: AppStudio
+    description: CloudPSS AppStudio

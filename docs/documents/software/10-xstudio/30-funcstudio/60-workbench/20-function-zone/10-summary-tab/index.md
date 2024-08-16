@@ -1,6 +1,11 @@
 ---
 title: 总览标签页
 description: 总览标签页
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本文档介绍 **FuncStudio 工作台** - **总览标签页** 的各项功能，包括项目基本信息和简单权限的配置方法。

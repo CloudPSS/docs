@@ -4,7 +4,9 @@ description: 自动聚合母线
 sidebar_position: 10
 ---
 
+## 敬请期待！
 
+<!-- 
 
 ## 功能定义
 
@@ -35,4 +37,4 @@ import TabItem from '@theme/TabItem';
 :
 
 为什么自动聚合母线功能没有起到效果？
-:
+: -->

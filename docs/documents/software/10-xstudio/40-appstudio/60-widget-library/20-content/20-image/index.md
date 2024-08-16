@@ -1,6 +1,10 @@
 ---
 title: 图片
 description: 图片控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的图片控件。

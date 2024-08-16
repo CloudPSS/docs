@@ -1,6 +1,10 @@
 ---
 title: 文本
 description: 文本
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中文本的使用及属性设置。

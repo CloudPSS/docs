@@ -1,6 +1,10 @@
 ---
 title: 元件表
 description: 元件表
+tags:
+- xstudio
+- simstudio
+- function
 ---
 
 本文档介绍使用 **元件表** 快速批量配置模型内部参数和引脚的方法。

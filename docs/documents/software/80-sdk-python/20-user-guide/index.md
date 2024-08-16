@@ -4,7 +4,7 @@ description: CloudPSS SDK 使用指南
 
 tags:
 - sdk
-
+- user-guide
 ---
 
 循序渐进，带领用户全面了解 **CloudPSS SDK** 

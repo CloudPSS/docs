@@ -1,6 +1,11 @@
 ---
 title: 参数卡
 description: 参数卡
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 
 <!-- :::warning 修改建议 

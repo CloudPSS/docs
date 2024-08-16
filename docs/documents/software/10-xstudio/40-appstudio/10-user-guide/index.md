@@ -1,6 +1,10 @@
 ---
 title: 使用指南
 description: AppStudio 应用工坊使用指南
+tags:
+- xstudio
+- appstudio
+- user-guide
 ---
 
 循序渐进，全面了解熟悉 AppStudio 应用工坊。

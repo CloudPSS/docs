@@ -3,7 +3,7 @@ title: 高级搜索
 
 tags: 
 - user-center
-
+- directory
 ---
 
 本节文档介绍 **CloudPSS 高级搜索**功能，通过多个使用案例帮助用户熟悉**高级搜索**的使用方法。

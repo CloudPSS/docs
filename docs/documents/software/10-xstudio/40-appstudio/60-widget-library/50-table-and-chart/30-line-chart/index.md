@@ -1,6 +1,10 @@
 ---
 title: 折线图
 description: 折线图控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的折线图控件。

@@ -4,6 +4,8 @@ description: 规划典型日生成
 
 tags:
 - sdk
+- ieslab
+- advanced
 
 ---
 

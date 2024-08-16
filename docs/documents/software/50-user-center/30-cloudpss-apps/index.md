@@ -4,7 +4,7 @@ description: CloudPSS 应用介绍
 
 tags: 
 - user-center
-
+- directory
 ---
 
 import DocCardList from '@theme/DocCardList';

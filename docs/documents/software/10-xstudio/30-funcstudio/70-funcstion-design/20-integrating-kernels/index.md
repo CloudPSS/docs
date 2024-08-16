@@ -1,6 +1,10 @@
 ---
 title: 函数内核接入
 description: 本地计算内核的接入
+tags:
+- xstudio
+- funcstudio
+- function
 ---
 
 FuncStudio 目前支持以下两种函数内核接入方式：

@@ -1,6 +1,10 @@
 ---
 title: 资源、控件与场景
 description: 资源、控件与场景体系
+tags:
+- xstudio
+- appstudio
+- function
 ---
 
 本文档为 AppStudio 资源及控件体系的介绍文档，用户可阅读该文档学习资源及控件之间的区别和联系，利用资源及控件体系灵活、快速地构建应用。

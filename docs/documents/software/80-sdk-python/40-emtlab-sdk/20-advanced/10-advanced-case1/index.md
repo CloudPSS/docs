@@ -4,6 +4,8 @@ description: 使用 EMTLab SDK 管理仿真算例项目
 
 tags:
 - sdk
+- emtlab
+- advanced
 
 ---
 

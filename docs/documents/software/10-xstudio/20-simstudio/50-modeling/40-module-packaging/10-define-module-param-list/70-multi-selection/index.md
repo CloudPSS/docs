@@ -1,6 +1,10 @@
 ---
 title: 多选
 description: 多选
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 ## 参数定义

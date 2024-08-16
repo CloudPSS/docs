@@ -1,6 +1,10 @@
 ---
 title: 路径
 description: 路径
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中路径的使用及属性设置。

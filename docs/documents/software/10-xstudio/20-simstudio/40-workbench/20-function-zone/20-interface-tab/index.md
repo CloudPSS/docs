@@ -1,6 +1,11 @@
 ---
 title: 接口标签页
 description: 接口标签页
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 
 本文档介绍 **SimStudio 工作台** - **接口标签页** 的页面布局和功能概要。本页功能为进阶功能，在阅读前，请先熟悉 CloudPSS SimStudio 的 [参数、变量及引脚](../../../50-modeling/10-params-variables-pins/index.md)。 

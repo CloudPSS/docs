@@ -1,6 +1,11 @@
 ---
 title: 资源标签页
 description: 资源标签页
+tags:
+- xstudio
+- appstudio
+- workbench
+- introduce
 ---
 
 本节介绍 AppStudio 工作台功能区第二个资源标签页的功能。

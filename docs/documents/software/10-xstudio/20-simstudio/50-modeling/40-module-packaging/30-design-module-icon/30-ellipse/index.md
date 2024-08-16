@@ -1,6 +1,10 @@
 ---
 title: 椭圆
 description: 椭圆
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中椭圆的使用及属性设置。

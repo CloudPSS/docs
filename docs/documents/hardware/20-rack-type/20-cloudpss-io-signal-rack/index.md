@@ -2,6 +2,9 @@
 title: CloudPSS I/O Signal Rack
 description: CloudPSS I/O Signal Rack
 sidebar_position: 20
+tags:
+- hardware
+- directory
 ---
 ![CloudPSS 数模信号枢纽（CloudPSS I/O Signal Rack） =x300](./rack.png "CloudPSS 数模信号枢纽（CloudPSS I/O Signal Rack）")  
   

@@ -1,6 +1,11 @@
 ---
 title: 工具栏
 description: 工具栏
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本文档主要介绍 **FuncStudio 工作台** - **工具栏** 的各项功能。

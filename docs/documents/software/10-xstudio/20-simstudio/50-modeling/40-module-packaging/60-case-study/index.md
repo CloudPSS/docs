@@ -1,6 +1,11 @@
 ---
 title: 案例
 description: 案例
+tags:
+- xstudio
+- simstudio
+- cases
+- advanced
 ---
 
 import Tabs from '@theme/Tabs';

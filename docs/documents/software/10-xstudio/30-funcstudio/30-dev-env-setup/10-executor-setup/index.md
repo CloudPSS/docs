@@ -1,6 +1,10 @@
 ---
 title: FuncStudio 执行器的安装和配置
 description: 执行器的安装、配置和管理
+tags:
+- xstudio
+- funcstudio
+- introduce
 ---
 本节介绍 FuncStudio 本地执行器的安装、配置和管理方法。
 

@@ -3,8 +3,9 @@ title: 快速入门
 description: EMTLab SDK 快速入门
 
 tags:
-- emtlab
 - sdk
+- emtlab
+- quick-start
 
 ---
 

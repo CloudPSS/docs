@@ -1,6 +1,10 @@
 ---
 title: 滑块
 description: 滑块
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的滑块控件。

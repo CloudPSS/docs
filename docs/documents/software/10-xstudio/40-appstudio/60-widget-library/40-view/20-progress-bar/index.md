@@ -1,6 +1,10 @@
 ---
 title: 进度条
 description: 进度条控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的进度条控件。

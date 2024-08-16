@@ -2,6 +2,9 @@
 title: CloudPSS I/O Signal Hub
 description: CloudPSS I/O Signal Hub
 sidebar_position: 20
+tags:
+- hardware
+- directory
 ---
 
 ![CloudPSS 数模信号枢纽（CloudPSS I/O Signal Hub） =x300](./signal-hub.png "CloudPSS 数模信号枢纽（CloudPSS I/O Signal Hub）")   

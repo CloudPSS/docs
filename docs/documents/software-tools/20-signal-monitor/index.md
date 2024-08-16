@@ -2,6 +2,9 @@
 title: CloudPSS Signal Monitor
 description: CloudPSS Signal Monitor 文档
 sidebar_position: 20
+tags:
+- software-tools
+- function
 ---
 
 本文档介绍实时数据查看器 CloudPSS Signal Monitor 的功能，并通过一个案例介绍它的使用方法。本工具需配合 CloudPSS-RT 实时仿真器使用，用于在实时仿真过程中监控数据和下发指令。

@@ -1,6 +1,11 @@
 ---
 title: 功能区
 description: 功能区
+tags:
+- xstudio
+- simstudio
+- workbench
+- directory
 ---
 
 在 **SimStudio 工作台** - **功能区**中，可通过左侧的**标签栏**切换显示的标签页类别，包括**总览**、**接口**、**实现**、**运行**四个标签页。

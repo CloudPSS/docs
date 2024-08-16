@@ -2,6 +2,9 @@
 title:  PSASP-CloudPSS 算例转换工具
 description:  PSASP-CloudPSS 算例转换工具使用说明
 sidebar_position: 20
+tags:
+- software-tools
+- function
 ---
 
 本文档介绍 **PSASP→CloudPSS** 算例自动转换工具的功能特色与使用流程，并以 PSASP 标准测试系统算例进行演示。

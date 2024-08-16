@@ -1,6 +1,11 @@
 ---
 title: 图纸
 description: 图纸
+tags:
+- xstudio
+- simstudio
+- workbench
+- introduce
 ---
 
 <!-- :::danger 批注

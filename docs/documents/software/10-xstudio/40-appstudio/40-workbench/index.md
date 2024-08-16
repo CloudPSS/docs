@@ -1,6 +1,11 @@
 ---
 title: AppStudio 工作台
 description: AppStudio 工作台
+tags:
+- xstudio
+- appstudio
+- workbench
+- directory
 ---
 
 **AppStudio 工作台** 分为**工具栏**（上方）、**功能区**（中间）、**状态栏**（下方）三个区域。

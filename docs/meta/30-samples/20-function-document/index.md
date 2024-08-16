@@ -4,6 +4,7 @@ description: 该功能支持使用 Octave、MATLAB 语言构建自定义电磁�
 sidebar_position: 100
 
 tags: 
+- function
 - emtlab
 ---
 本节首先介绍 Octave 元件的**参数配置**和**不同的调用方法**，然后通过 3 个案例介绍自定义 Octave 元件的使用方法，阅读该文档，用户需熟悉 Matlab/Octave 语言的基本语法。该功能仅支持在 EMTLab 平台使用。

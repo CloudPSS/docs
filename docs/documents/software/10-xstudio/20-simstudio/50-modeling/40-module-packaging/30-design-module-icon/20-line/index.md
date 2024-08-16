@@ -1,6 +1,10 @@
 ---
 title: 直线
 description: 直线
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 本文档介绍元件图标绘制中直线的使用及属性设置。

@@ -1,6 +1,11 @@
 --- 
 title: 构建实时仿真应用
 description: 构建实时仿真应用
+tags:
+- xstudio
+- appstudio
+- cases
+- advanced
 ---
 
 SimStudio 模型工坊、FuncStudio 函数工坊和 AppStudio 应用工坊之间可以实现灵活的协同交互，例如：

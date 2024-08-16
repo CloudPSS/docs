@@ -1,6 +1,11 @@
 ---
 title: FuncStudio 工作台
 description: FuncStudio 工作台
+tags:
+- xstudio
+- funcstudio
+- workbench
+- directory
 ---
 
 **FuncStudio 工作台** 分为**工具栏**（上方）、**功能区**（中间）、**状态栏**（下方）三个区域。

@@ -1,6 +1,10 @@
 ---
 title: 超链接
 description: 超链接控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的超链接控件。

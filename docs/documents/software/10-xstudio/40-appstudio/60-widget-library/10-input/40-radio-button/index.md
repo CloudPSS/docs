@@ -1,6 +1,10 @@
 ---
 title: 单选框
 description: 单选框控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 **AppStudio** 控件库里的单选框控件。

@@ -1,6 +1,10 @@
 ---
 title: 表格
 description: 表格控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的表格控件。

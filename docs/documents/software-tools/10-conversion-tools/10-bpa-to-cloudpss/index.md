@@ -2,6 +2,9 @@
 title: BPA-CloudPSS 算例转换工具
 description: BPA-CloudPSS 算例转换工具使用说明
 sidebar_position: 10
+tags:
+- software-tools
+- function
 ---
 
 本文档介绍 BPA-CloudPSS 算例自动转换工具的功能特色与使用流程，并以 BPA 标准测试系统算例进行演示。

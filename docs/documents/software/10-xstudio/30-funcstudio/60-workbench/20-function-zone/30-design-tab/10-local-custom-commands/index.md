@@ -1,6 +1,11 @@
 ---
 title: 本地：自定义命令
 description: 本地：自定义命令
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 

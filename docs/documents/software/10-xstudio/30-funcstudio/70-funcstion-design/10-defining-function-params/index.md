@@ -1,6 +1,10 @@
 ---
 title: 函数参数定义及引用
 description: 定义函数外部接口，并在内核中引用。
+tags:
+- xstudio
+- funcstudio
+- function
 ---
 
 本节介绍 FuncStudio 函数参数的定义及引用功能。

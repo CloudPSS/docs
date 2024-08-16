@@ -1,6 +1,11 @@
 ---
 title: 状态栏
 description: 状态栏
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本节主要介绍 FuncStudio 工作台下方的状态栏功能。

@@ -1,6 +1,10 @@
 ---
 title: 自定义图表
 description: 自定义图表控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的自定义图表控件。

@@ -2,6 +2,11 @@
 title: 云端：JavaScript 模块
 description: 云端：JavaScript 模块
 sidebar_position: 20
+tags:
+- xstudio
+- funcstudio
+- workbench
+- introduce
 ---
 
 本节主要介绍如何在云端JavaScript 模块实现函数。

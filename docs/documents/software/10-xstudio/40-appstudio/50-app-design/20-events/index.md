@@ -1,6 +1,10 @@
 ---
 title: 事件
 description: 事件
+tags:
+- xstudio
+- appstudio
+- function
 ---
 
 本节介绍 AppStudio 的事件触发机制。

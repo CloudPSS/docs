@@ -1,6 +1,11 @@
 ---
 title: 模块封装
 description: 模块封装
+tags:
+- xstudio
+- simstudio
+- function
+- advanced
 ---
 
 本节首先介绍 SimStudio 的模块封装功能，然后通过 X 个案例介绍模块封装的使用方法。该功能仅支持在 SimStudio 平台使用。
@@ -33,11 +38,11 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 #### 拓扑实现
 
-用户可使用已有的 Simstudio 模型库元件，或其他的封装模型，通过**拓扑实现**的方式构建模块。
+用户可使用已有的 SimStudio 模型库元件，或其他的封装模型，通过**拓扑实现**的方式构建模块。
 
 1. **新建空白电力系统元件**
 
-可以在 [Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白电力系统元件**，创建空拓扑实现的模块。
+可以在 [SimStudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白电力系统元件**，创建空拓扑实现的模块。
 
 ![新建空白电力系统元件](./blank-component.png)
 
@@ -51,7 +56,7 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 #### 代码实现
 
-可以在[Simstudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白Octave元件**，创建Octave实现的模块；或者在弹出框中选择**空白Python元件**，创建Python实现的模块。
+可以在[SimStudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**空白Octave元件**，创建Octave实现的模块；或者在弹出框中选择**空白Python元件**，创建Python实现的模块。
 
 ![创建Octave实现的模块](./create-octave.png)
 
@@ -81,7 +86,7 @@ CloudPSS支持模块化封装建模功能，可将若干复杂元件封装为一
 
 ### 设计元件/模块图标
 
-此步骤将设计模块在调用时显示的图标， Simstudio 提供可高度定制化的的图标设计接口, 详见[设计元件/模块图标](./30-design-module-icon/index.md)；
+此步骤将设计模块在调用时显示的图标， SimStudio 提供可高度定制化的的图标设计接口, 详见[设计元件/模块图标](./30-design-module-icon/index.md)；
 
 一般情况下，出于规范性和使用便捷性考虑，请依据[SimStudio元件图标设计规范](./30-design-module-icon/70-simstudio-icon-guideline/index.md)进行图标设计。
 

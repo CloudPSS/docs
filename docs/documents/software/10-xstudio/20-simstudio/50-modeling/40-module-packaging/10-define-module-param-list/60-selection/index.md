@@ -1,6 +1,10 @@
 ---
 title: 选择
 description: 选择
+tags:
+- xstudio
+- simstudio
+- introduce
 ---
 
 ## 参数定义

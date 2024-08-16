@@ -1,6 +1,10 @@
 ---
 title: 饼图
 description: 饼图控件
+tags:
+- xstudio
+- appstudio
+- widgets
 ---
 
 本节主要介绍 AppStudio 控件库里的饼图控件。
