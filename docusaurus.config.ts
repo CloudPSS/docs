@@ -96,6 +96,7 @@ const config: Config = {
                     showReadingTime: true,
                     onInlineTags: DEV ? 'warn' : 'throw',
                     onInlineAuthors: DEV ? 'warn' : 'throw',
+                    onUntruncatedBlogPosts: DEV ? 'warn' : 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',

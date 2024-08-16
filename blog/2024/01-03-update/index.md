@@ -18,7 +18,7 @@ tags: [update-notes]
    3. 优化了打开对话框性能
    4. 优化了结果页面性能
 
-2. SimStudio 更新
+2. SimStudio 更新<!-- truncate -->
    1. SimStudio 元件库浮层添加元件 RID 展示功能，方便用户区分重名元件
    
       ![元件库浮层新增 RID 展示](./元件库浮层新增RID展示.png)
