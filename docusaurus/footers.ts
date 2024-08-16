@@ -17,6 +17,14 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
                 label: '编写指南',
                 to: '/meta/edit-help/',
             },
+            {
+                label: 'CloudPSS 旧文档',
+                href: 'https://v5_3_29.kb.cloudpss.net/',
+            },
+            {
+                label: 'CloudPSS 4 文档',
+                href: 'https://legacy.kb.cloudpss.net/',
+            },
         ],
     },
     {
@@ -27,7 +35,7 @@ const links: NonNullable<ThemeConfig['footer']>['links'] = [
                 href: 'https://cloudpss.net',
             },
             {
-                label: 'Bilibili - CloudPSS 官方账号',
+                label: 'bilibili - CloudPSS 官方账号',
                 href: 'https://space.bilibili.com/1724678625',
             },
         ],
