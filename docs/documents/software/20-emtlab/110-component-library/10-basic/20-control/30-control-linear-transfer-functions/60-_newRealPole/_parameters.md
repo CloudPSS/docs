@@ -13,7 +13,7 @@ Configuration
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | Name | `Name` | 文本 | 元件名称<br/>此处输入一阶惯性环节的名称（可缺省） |
-| Gain\<br/\>一阶惯性环节的增益 | `Gain` | 实数 | 增益 |
+| Gain | `Gain` | 实数 | 增益<br/>一阶惯性环节的增益 |
 | Time Constant | `Tc` | 实数 [s] | 时间常数<br/>一阶惯性环节的超前时间常数 |
 | Initialization Type | `InitType` | 选择 | 初始化方法<br/>选择该环节的初始化方法为 `稳态` 的 `任意值` |
 | Initial Value | `Init` | 实数 | 初始值<br/>一阶惯性环节的初始值 |
