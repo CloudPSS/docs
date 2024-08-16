@@ -397,7 +397,9 @@ const MODELS = {
     'model/CloudPSS/Thevenin_3p':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/50-Thevenin_3p',
     'model/CloudPSS/TranssmissionLineRouter':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/60-TranssmissionLineRouter',
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/60-TransmissionLine',
+    'model/CloudPSS/TransmissionLine':
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/60-TransmissionLine',
     'model/CloudPSS/_TLine_Bergeron_3p_SinglePort':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/70-_TLine_Bergeron_3p_SinglePort',
     'model/CloudPSS/_newBus_3p':
