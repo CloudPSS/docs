@@ -342,8 +342,6 @@ const OWNERS = ['CloudPSS'];
 // eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJDbG91ZFBTUyIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiQ2xvdWRQU1MiXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQ2OTM2NDc4LCJub3RlIjoidHpkMTExIiwiaWF0IjoxNzE1ODMyNDc4fQ.laSVmITluju6kYaciv9NwFkIg2TIPB_xDh9Oje2LqwYhVUj6P9h_-dXuuneK-6ZmB6HyOdjsnCJu9JzRtA-ynQ
 
 const MODELS = {
-    'model/CloudPSS/GND':
-        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/10-GND',
     'model/CloudPSS/newResistorRouter':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-ele-Basic-passive/20-newResistorRouter',
     'model/CloudPSS/newInductorRouter':
