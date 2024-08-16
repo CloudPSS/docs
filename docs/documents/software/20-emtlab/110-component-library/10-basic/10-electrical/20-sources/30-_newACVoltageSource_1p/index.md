@@ -1,6 +1,9 @@
 ---
 title: "单相交流电压源"
 description: "交流电压源"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

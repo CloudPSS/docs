@@ -1,6 +1,9 @@
 ---
 title: "十二相同步发电机"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

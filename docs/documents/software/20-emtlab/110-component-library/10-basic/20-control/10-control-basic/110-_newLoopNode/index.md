@@ -1,6 +1,9 @@
 ---
 title: "代数环解环点"
 description: "代数环解环点"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

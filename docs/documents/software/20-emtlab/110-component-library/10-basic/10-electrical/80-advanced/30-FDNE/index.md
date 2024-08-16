@@ -1,6 +1,9 @@
 ---
 title: "频率等效网络"
 description: "FDNE"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

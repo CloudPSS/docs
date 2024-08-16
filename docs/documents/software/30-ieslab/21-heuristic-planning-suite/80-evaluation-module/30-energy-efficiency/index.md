@@ -2,6 +2,9 @@
 title: 能效评估
 description: IESLab 仿真规划平台-方案评估模块-能效评估
 sidebar_position: 80
+tags:
+- ieslab
+- function
 ---
 
 本节介绍了如何基于优化生成的方案结果查看**能效评估**得到的统计结果。阅读本文档，用户可以对利用本平台进行能效评估的步骤和过程有更加清晰的了解。

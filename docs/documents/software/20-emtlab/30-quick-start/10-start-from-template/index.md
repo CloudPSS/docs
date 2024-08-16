@@ -1,8 +1,10 @@
 ---
 title: 从模板案例创建
 description: 打开个人中心，新建模板案例
-tags: 
+tags:
 - emtlab
+- quick-start
+- cases
 ---
 
 <!--

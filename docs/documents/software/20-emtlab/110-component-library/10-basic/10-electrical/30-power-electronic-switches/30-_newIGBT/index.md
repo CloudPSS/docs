@@ -1,6 +1,9 @@
 ---
 title: "IGBT"
 description: "IGBT"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

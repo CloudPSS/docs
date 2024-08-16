@@ -1,6 +1,9 @@
 ---
 title: "常量输入"
 description: "常量输入"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

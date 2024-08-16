@@ -1,6 +1,9 @@
 ---
 title: "受控交流电压源(VP)"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

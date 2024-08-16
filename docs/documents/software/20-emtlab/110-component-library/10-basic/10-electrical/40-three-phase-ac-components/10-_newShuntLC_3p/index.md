@@ -1,6 +1,9 @@
 ---
 title: "并联电容/电抗器"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -1,6 +1,9 @@
 ---
 title: "仿真等待延时"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

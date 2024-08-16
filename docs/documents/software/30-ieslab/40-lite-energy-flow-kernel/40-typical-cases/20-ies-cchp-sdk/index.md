@@ -2,6 +2,9 @@
 title:  三联供系统
 description: 利用 SDK 分析三联供系统示例
 sidebar_position: 20
+tags:
+- ieslab
+- cases
 ---
 
 :::info

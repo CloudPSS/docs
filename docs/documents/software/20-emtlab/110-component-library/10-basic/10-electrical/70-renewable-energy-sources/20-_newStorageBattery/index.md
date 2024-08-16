@@ -1,6 +1,9 @@
 ---
 title: "蓄电池"
 description: "蓄电池等效模型，可用于铅酸蓄电池（Lead-Acid）、锂离子电池（Li-Ion）、镍镉电池（NiCd）和镍金属氢化物（NiMH）电池的模拟。"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

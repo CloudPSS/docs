@@ -1,6 +1,9 @@
 ---
 title: "状态空间模型"
 description: "**State-space model:**\n\n$dx/dt = Ax +Bu$  \n$y = Cx +Du$"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

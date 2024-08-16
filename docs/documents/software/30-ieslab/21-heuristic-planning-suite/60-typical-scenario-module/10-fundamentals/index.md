@@ -2,6 +2,9 @@
 title: 典型场景生成基本原理
 description: 典型场景生成基本原理
 sidebar_position: 10
+tags:
+- ieslab
+- function
 ---
 
 本文主要介绍了场景生成的意义和聚类算法。

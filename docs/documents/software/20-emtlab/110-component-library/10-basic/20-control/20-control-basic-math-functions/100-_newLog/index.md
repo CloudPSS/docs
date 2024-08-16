@@ -1,6 +1,9 @@
 ---
 title: "对数函数"
 description: "对数函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

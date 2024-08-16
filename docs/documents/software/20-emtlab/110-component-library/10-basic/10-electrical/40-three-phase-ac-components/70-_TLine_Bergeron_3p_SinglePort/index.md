@@ -1,6 +1,9 @@
 ---
 title: "三相传输线[单端]"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

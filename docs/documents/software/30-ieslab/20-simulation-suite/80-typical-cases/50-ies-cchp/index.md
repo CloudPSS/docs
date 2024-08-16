@@ -2,6 +2,9 @@
 title: 冷热电三联供系统
 description: 冷热电三联供系统项目的搭建及仿真分析示例
 sidebar_position: 50
+tags:
+- ieslab
+- cases
 ---
 
 本文主要介绍了冷热电三联供综合能源系统项目的项目背景、搭建方法和结果分析。

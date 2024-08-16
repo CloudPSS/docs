@@ -2,6 +2,9 @@
 title: 潮流结果写回及初始化
 description: 潮流结果写回及初始化
 sidebar_position: 30
+tags:
+- emtlab
+- function
 ---
 本文档介绍 EMTLab 的潮流结果写回及初始化的详细内容，以及从给定潮流断面直接启动需配置的参数。
 

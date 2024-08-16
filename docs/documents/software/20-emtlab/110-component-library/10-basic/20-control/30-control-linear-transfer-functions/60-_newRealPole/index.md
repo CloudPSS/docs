@@ -1,6 +1,9 @@
 ---
 title: "一阶惯性环节"
 description: "一阶惯性环节"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

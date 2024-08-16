@@ -2,6 +2,10 @@
 title: 负载均衡配置
 description: 负载均衡配置
 sidebar_position: 20
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 ## 敬请期待！

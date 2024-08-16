@@ -1,6 +1,9 @@
 ---
 title: "二极管"
 description: "二极管"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

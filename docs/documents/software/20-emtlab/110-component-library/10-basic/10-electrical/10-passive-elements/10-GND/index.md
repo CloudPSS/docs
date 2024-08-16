@@ -1,6 +1,9 @@
 ---
 title: "接地点"
 description: "接地点"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,9 @@
 title: 轻量级能量流计算内核
 description: SimStudio IES 轻量级能量流计算内核
 sidebar_position: 40
+tags:
+- ieslab
+- function
 ---
 
 

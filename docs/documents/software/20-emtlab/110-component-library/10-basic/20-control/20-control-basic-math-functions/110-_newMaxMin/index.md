@@ -1,6 +1,9 @@
 ---
 title: "最大/最小值"
 description: "最大/最小值"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

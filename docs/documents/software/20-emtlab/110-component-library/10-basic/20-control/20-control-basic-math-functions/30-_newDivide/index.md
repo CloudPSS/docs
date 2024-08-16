@@ -1,6 +1,9 @@
 ---
 title: "除法器"
 description: "除法器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

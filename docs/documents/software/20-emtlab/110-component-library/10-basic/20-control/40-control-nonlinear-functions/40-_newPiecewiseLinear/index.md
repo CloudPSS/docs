@@ -1,6 +1,9 @@
 ---
 title: "分段线性函数"
 description: "分段线性函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

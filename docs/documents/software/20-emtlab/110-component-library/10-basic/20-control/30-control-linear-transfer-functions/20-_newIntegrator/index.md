@@ -1,6 +1,9 @@
 ---
 title: "积分器"
 description: "积分器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

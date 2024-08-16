@@ -2,6 +2,9 @@
 title: 计算方案配置
 description: 计算方案配置
 sidebar_position: 20
+tags:
+- emtlab
+- function
 ---
 本文档介绍进行潮流计算的基本要求，以及潮流计算方案的参数配置。
 

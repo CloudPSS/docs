@@ -1,6 +1,9 @@
 ---
 title: "幂函数"
 description: "幂函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

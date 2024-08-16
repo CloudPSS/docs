@@ -1,6 +1,9 @@
 ---
 title: "零点"
 description: "微分器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

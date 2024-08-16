@@ -1,6 +1,9 @@
 ---
 title: "仿真步长输入"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,10 @@
 title: 自定义潮流元件
 description: 自定义潮流元件
 sidebar_position: 40
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 本文档介绍自定义潮流元件的实现方法，并用 EMTLab 的官方元件为案例，详细介绍自定义潮流元件的构建过程。

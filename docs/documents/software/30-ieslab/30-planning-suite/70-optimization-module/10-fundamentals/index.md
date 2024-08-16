@@ -2,6 +2,9 @@
 title: 基本原理
 description: 方案优选基本原理介绍
 sidebar_position: 70
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 IESLab 平台综合能源系统规划优化的基本原理，包括优化模型的构成和优化算法的数学原理。

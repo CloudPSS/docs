@@ -2,6 +2,9 @@
 title: 使用指南
 description: IESLab 规划优化平台使用指南
 sidebar_position: 10
+tags:
+- ieslab
+- user-guide
 ---
 
 循序渐进，带您全面了解熟悉 IESLab 规划优化平台。

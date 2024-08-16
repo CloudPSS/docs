@@ -2,6 +2,9 @@
 title: 参数设置
 description: 参数设置方法
 sidebar_position: 20
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍了拓扑编辑模块绑定数据管理模块参数的方法，并通过常见问题答疑快速熟悉方法。

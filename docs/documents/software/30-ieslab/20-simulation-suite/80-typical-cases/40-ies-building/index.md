@@ -2,6 +2,9 @@
 title: 楼宇型综合能源系统
 description: 楼宇型综合能源系统项目的搭建及仿真分析示例
 sidebar_position: 40
+tags:
+- ieslab
+- cases
 ---
 
 本文主要介绍了综合能源系展示项目项目的项目背景、搭建方法和结果分析。

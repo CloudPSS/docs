@@ -2,7 +2,11 @@
 title: 潮流计算基本原理
 description: 潮流计算基本原理
 sidebar_position: 10
+tags:
+- emtlab
+- introduce
 ---
+
 本文档介绍潮流计算的基本概念和 EMTLab 实现潮流计算的基本原理。
 
 ## 功能定义

@@ -2,6 +2,10 @@
 title: 电磁暂态仿真计算
 description: 电磁暂态仿真计算
 sidebar_position: 50
+tags:
+- emtlab
+- function
+- directory
 ---
 
 本节介绍 CloudPSS EMTLab 的电磁暂态仿真的原理和核心功能，包括电磁暂态仿真基本原理、计算方案配置、量测和输出系统、断面参数设置、自定义元件 5 部分。

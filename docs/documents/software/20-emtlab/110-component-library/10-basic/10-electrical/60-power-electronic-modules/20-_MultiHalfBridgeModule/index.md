@@ -1,6 +1,9 @@
 ---
 title: "半桥子模块"
 description: "Half Bridge Sub-module"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

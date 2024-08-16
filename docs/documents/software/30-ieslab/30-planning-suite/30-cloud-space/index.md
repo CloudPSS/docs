@@ -2,6 +2,9 @@
 title: 云空间
 description: IESLab 规划优化平台云空间
 sidebar_position: 30
+tags:
+- ieslab
+- quick-start
 ---
 
 本节主要介绍 IESLab 规划优化平台云空间的**项目组织方式**，**新建和打开项目**的方法。

@@ -1,6 +1,9 @@
 ---
 title: "三相双绕组变压器"
 description: "三相双绕组变压器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,9 @@
 title: 快速入门
 description: IESLab 仿真规划平台介绍快速入门
 sidebar_position: 20
+tags:
+- ieslab
+- quick-start
 ---
 
 本节以**分布式储能**项目为例，介绍 IESLab 仿真规划平台入门案例的规划设计和分析方法。

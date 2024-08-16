@@ -2,6 +2,9 @@
 title: 集中式供热的综合能源系统
 description: 集中式供热的综合能源系统项目搭建及仿真分析示例
 sidebar_position: 20
+tags:
+- ieslab
+- cases
 ---
 
 本文主要介绍了分布式供热综合能源系统项目的项目背景、搭建方法和结果分析。

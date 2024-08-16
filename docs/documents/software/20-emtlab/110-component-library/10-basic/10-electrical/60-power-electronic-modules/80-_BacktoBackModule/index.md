@@ -1,6 +1,9 @@
 ---
 title: "背靠背 H 桥模块"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

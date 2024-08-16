@@ -1,6 +1,9 @@
 ---
 title: "绕线式感应电机"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

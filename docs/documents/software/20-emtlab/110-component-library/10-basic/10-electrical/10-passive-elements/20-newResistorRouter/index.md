@@ -1,6 +1,9 @@
 ---
 title: "电阻"
 description: "电阻"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

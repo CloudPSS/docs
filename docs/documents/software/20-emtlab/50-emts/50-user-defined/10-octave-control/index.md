@@ -2,6 +2,10 @@
 title: Matlab / Octave 控制元件
 description: 自定义 Octave 元件
 sidebar_position: 10
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 本文档介绍自定义 Octave 元件的创建和调用方法，并通过 3 个案例介绍自定义 Octave 元件的使用方法。阅读该文档，用户需熟悉 MATLAB/Octave 语言的基本语法。该功能仅支持在 EMTLab 平台使用。

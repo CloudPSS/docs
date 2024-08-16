@@ -1,6 +1,9 @@
 ---
 title: "六脉动晶闸管桥"
 description: ""
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

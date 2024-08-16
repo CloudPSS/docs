@@ -1,6 +1,9 @@
 ---
 title: "周期最大/小值"
 description: "周期最大/小值"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

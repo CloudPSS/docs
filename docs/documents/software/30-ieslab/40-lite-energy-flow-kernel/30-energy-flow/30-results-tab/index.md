@@ -2,6 +2,9 @@
 title: 结果页面
 description: SimStudio IES -结果页面
 sidebar_position: 60
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 SimStudio IES 进行综合能源仿真计算时查看计算结果的方法，包括元件时序运行结果、碳流桑基图等。

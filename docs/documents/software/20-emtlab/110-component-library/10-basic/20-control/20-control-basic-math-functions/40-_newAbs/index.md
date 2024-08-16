@@ -1,6 +1,9 @@
 ---
 title: "绝对值函数"
 description: "绝对值函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

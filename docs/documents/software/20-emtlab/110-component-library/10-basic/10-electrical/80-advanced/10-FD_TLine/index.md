@@ -1,6 +1,9 @@
 ---
 title: "频率相关架空线"
 description: "FD_TLine"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

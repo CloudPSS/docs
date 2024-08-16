@@ -1,6 +1,9 @@
 ---
 title: "PI控制器"
 description: "PI控制器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

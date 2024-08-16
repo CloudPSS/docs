@@ -1,6 +1,9 @@
 ---
 title: "指数函数"
 description: "指数函数"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

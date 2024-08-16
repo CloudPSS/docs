@@ -2,6 +2,9 @@
 title: 数据管理模块
 description: IESLab 仿真规划平台-数据管理模块
 sidebar_position: 40
+tags:
+- ieslab
+- function
 ---
 
 :::tip

@@ -1,6 +1,9 @@
 ---
 title: "受控电压源"
 description: "受控电压源"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

@@ -2,6 +2,10 @@
 title: S-Function 控制元件
 description: 自定义 S-Function 元件
 sidebar_position: 30
+tags:
+- emtlab
+- function
+- advanced
 ---
 
 本文档主要介绍自定义 S-Function 元件的创建和实现方法。为实现该功能，用户需提前准备封装好的二进制模型 `.so` 文件。本文档也将从白盒模型封装和黑盒模型封装两种实现方式介绍生成 `.so` 的具体步骤，并通过一个白盒模型实现的案例介绍 S-Function 元件的构建、调试方法。

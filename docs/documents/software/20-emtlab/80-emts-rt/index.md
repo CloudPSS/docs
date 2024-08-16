@@ -1,8 +1,10 @@
 ---
 title: 电磁暂态实时仿真
 description: 电磁暂态实时仿真
-tags: 
+tags:
 - emtlab
+- function
+- advanced
 ---
 
 本文档主要介绍电磁暂态实时仿真的原理和应用场景。为满足电磁暂态实时仿真对平台计算性能的要求，该功能需搭配硬件产品 [CloudPSS Mini (RT)](../../../hardware/10-desktop-type/10-cloudpss-mini/index.md) 或 [CloudPSS Pro (RT)](../../../hardware/20-rack-type/10-cloudpss-pro/index.md) 使用，公网平台暂不支持电磁暂态实时仿真。

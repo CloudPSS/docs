@@ -1,6 +1,9 @@
 ---
 title: "多相分线器"
 description: "集线器"
+tags:
+- emtlab
+- components
 ---
 
 ## 元件定义

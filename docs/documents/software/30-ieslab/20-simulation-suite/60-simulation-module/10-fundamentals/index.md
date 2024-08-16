@@ -2,6 +2,9 @@
 title: 综合能源仿真基本原理
 description: IESLab 建模仿真平台-仿真模拟模块-综合能源仿真基本原理
 sidebar_position: 60
+tags:
+- ieslab
+- function
 ---
 
 本节主要介绍 IESLab 平台综合能源系统仿真计算的基本原理，包括稳态仿真的定义、基础状态参数的构成、基础仿真模型的构成以及仿真模型求解算法的执行流程。
