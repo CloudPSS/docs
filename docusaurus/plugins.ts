@@ -35,6 +35,7 @@ const plugins: PluginConfig[] = [
     [
         '@docusaurus/plugin-pwa',
         {
+            offlineModeActivationStrategies: ['queryString'],
             pwaHead: [
                 {
                     tagName: 'link',
