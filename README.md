@@ -8,8 +8,8 @@
 
 ## 编辑指南
 
-编辑时，请参考 <https://kb.cloudpss.net/meta> 内容进行编写。
+编辑时，请参考 [编写指南](https://kb.cloudpss.net/meta/edit-help/) 内容进行编写。
 
 ## 内网操作指南
 
-参考文档《CloudPSS 文档系统内部编辑指南》
+参考文档《CloudPSS 文档系统内部编辑指南》。
