@@ -32,7 +32,7 @@ tags:
 
 #### 分网功能原理
 
-基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../70-parallel-acceleration/10-fundamentals/index.md)。
+<!-- 基于Bergeron传输线接口的分网并行的原理请参考[并行仿真基本原理](../70-parallel-acceleration/10-fundamentals/index.md)。 -->
 
 值得注意的是，Bergeron传输线模型要求，波在传输线上的传输时间应**大于或等于仿真步长**，即：
 
