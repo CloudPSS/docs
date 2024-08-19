@@ -381,13 +381,13 @@ import Flowchart2 from './flowchart2.svg'
 <Flowchart2 className="themed"/>
 
 可见，图中只将 VSC 交流测的电气部分进行了倍乘处理，同时将量测的电压电流进行倍乘输送给平均化模型受控源计算以及 VSC 控制系统模块。处理量测的电压时，应除以接入点额定电压、乘以原模型的单机额定电压，即 $$V_{single}=\frac{V_0}{\$V_{pcc}}V_{measure}=\frac{0.35kV}{\$V_{pcc}}V_{measure}$$；
-处理量测的电流时，应除以并联光伏设备台数 `$num`，即 $$I_{single}=\frac{I_{measure}}{\$num}$$。
+处理量测的电流时，应除以并联光伏设备台数 `$num`，再除以电压的倍乘系数，即 $$I_{single}=\frac{I_{measure}}{\$num} \frac{\$V_{pcc}}{0.35kV}$$。
 
 具体来说，在[实现标签页](../../../40-workbench/20-function-zone/30-design-tab/index.md)中，首先将 #Ea_avm、#Eb_avm、#Ec_avm、#Va_vsc、#Vb_vsc、#Vc_vsc、#Ia_avm、#Ib_avm、#Ic_avm、#Ia_vsc、#Ib_vsc、#Ic_vsc 这些量测信号分别改为 #Ea_avm_raw、#Eb_avm_raw、#Ec_avm_raw、#Va_vsc_raw、#Vb_vsc_raw、#Vc_vsc_raw、#Ia_avm_raw、#Ib_avm_raw、#Ic_avm_raw、#Ia_vsc_raw、#Ib_vsc_raw、#Ic_vsc_raw，将三个受控电压源的控制信号 Va_ctrl、Vb_ctrl、Vc_ctrl分别改为 Va_ctrl_mult、Vb_ctrl_mult、Vc_ctrl_mult。
 
 然后，从模型库中的**控制-线性传递函数**标签下找到**增益(model/CloudPSS/_newGain)**元件，将 6 个该元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数 Gain Constant为 `0.35/$Vpcc`（原模型的额定电压为 0.35kV），并分别配置引脚为 #Ea_avm_raw → #Ea_avm, #Eb_avm_raw → #Eb_avm, #Ec_avm_raw → #Ec_avm, #Va_vsc_raw → #Va_vsc, #Vb_vsc_raw → #Vb_vsc, #Vc_vsc_raw → #Vc_vsc。
 
-另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 `1/$num`，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
+另外将 6 个**增益**元件添加至图纸中。选中这 6 个**增益**元件，使用[“表达式”模式](../../10-params-variables-pins/index.md#表达式模式)统一设置增益参数Gain Constant为 `$Vpcc/0.35*1/$num`，并分别配置引脚为 #Ia_avm_raw → #Ia_avm, #Ib_avm_raw → #Ib_avm, #Ic_avm_raw → #Ic_avm, #Ia_vsc_raw → #Ia_vsc, #Ib_vsc_raw → #Ib_vsc, #Ic_vsc_raw → #Ic_vsc。
 
 在处理受控电压源的电压信号 Va_ctrl, Vb_ctrl, Vc_ctrl 时，应当乘以乘以接入点额定电压、除以原模型的单机额定电压，即 $$V_{ctrl}=\frac{\$V_{pcc}}{V_0}V_{ctrl-single}$$。
 
