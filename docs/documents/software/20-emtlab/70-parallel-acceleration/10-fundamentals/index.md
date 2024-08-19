@@ -2,6 +2,7 @@
 title: 并行仿真基本原理
 description: EMTLab 的并行仿真加速技术基本原理
 sidebar_position: 10
+draft: true
 tags:
 - emtlab
 - function
