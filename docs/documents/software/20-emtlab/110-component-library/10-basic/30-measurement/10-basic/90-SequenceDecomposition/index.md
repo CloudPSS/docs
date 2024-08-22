@@ -25,7 +25,12 @@ import Pins from './_pins.md'
 
 <Pins/>
 
-## 案例
+### 使用说明
+**序分量分解**元件常与[傅里叶变换](../70-_newFFT/index.md)元件配合使用，用于将三相相量分解为正、负、零序分量。
 
+
+
+## 案例
+![序分量分解元件使用案例](./_sequencesecomposition.png)
 ## 常见问题
 
