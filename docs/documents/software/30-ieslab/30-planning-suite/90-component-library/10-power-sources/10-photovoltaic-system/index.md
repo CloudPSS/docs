@@ -139,7 +139,7 @@ CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数�
 | 最大功率温度补偿系数δ | `TemperatureCoefficientsofPmax` | %/&deg; C | 最大功率温度补偿系数 | 实数 | 最大功率温度补偿系数 |
 | 开路电压温度补偿系数c | `TemperatureCoefficientsofVoc` | %/&deg; C | 开路电压温度补偿系数 | 实数 | 开路电压温度补偿系数 |
 | 短路电流温度补偿系数α | `TemperatureCoefficientsofIls` | %/&deg; C | 短路电流温度补偿系数 | 实数 | 短路电流温度补偿系数 |
-| 光伏组件面积 | `SinglePanelArea` | ㎡ | 光伏组件面积 | 实数 | 光伏组件面积 |
+| 光伏组件面积 | `SinglePanelArea` | m<sup>2</sup> | 光伏组件面积 | 实数 | 光伏组件面积 |
 | 功率因数 | `PowerFactor` |  | 功率因数 | 实数 | 功率因数，范围为0-1，一般在0.9-1 |
 | 采购成本 | `PurchaseCost` | 万元/台 | 采购成本 | 实数 | 采购成本 |
 | 固定运维成本 | `FixedOMCost` | 万元/年 | 固定运维成本 | 实数 | 设备固定运维成本 |
