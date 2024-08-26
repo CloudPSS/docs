@@ -44,7 +44,7 @@ import TabItem from '@theme/TabItem'
 
 ### 新建算例
 
-可以在[SimStudio 工作台](../../40-workbench/index.md)页面中，点击[新建](../../40-workbench/10-toolbar/index.md#新建)按钮，在弹出框中选择**继电保护系统**，创建**110kV变电站一、二次系统**。
+可以在**SimStudio 工作台**页面中，点击**新建**按钮，在弹出框中选择**继电保护系统**，创建**110kV变电站一、二次系统**。
 
 ![新建110kV变电站一、二次系统](./_create.png)
 
