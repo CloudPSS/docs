@@ -1,10 +1,6 @@
 ---
 title: 110kV变电站一、二次系统
 description: 110kV变电站一、二次系统
-sidebar_position: 120
-tags:
-- emtlab
-- case
 ---
 
 import Tabs from '@theme/Tabs'
