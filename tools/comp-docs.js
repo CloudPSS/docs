@@ -272,11 +272,11 @@ description: ${JSON.stringify(resource.description ?? '')}
 
 ## 元件说明
 
-${escape(resource.name)}元件参数标签页包括**属性**、**参数**、**引脚**三类参数，下面对每类参数进行详细说明。
+
 
 ### 属性
 
-CloudPSS 提供了一套统一的元件属性功能，关于元件属性参数的配置，详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
@@ -416,6 +416,10 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/130-_TLine_Bergeron_3p_Decoupled',
     'model/CloudPSS/SyntheticLoad':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/140-SyntheticLoad',
+    'model/CloudPSS/FaultSet':
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/150-FaultSet',
+    'model/CloudPSS/GroundingTransformer':
+        'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/160-GroundingTransformer',
     'model/CloudPSS/PMSM':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/50-rotating-machines/10-PMSM',
     'model/CloudPSS/WoundRotorIMRouter':
@@ -704,6 +708,11 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/30-DistanceProtection',
     'model/CloudPSS/DifferentialProtection':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/40-DifferentialProtection',
+    'model/CloudPSS/OverVoltageProtection':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/45-OverVoltageProtection',
+    'model/CloudPSS/LowVoltageProtection':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/46-LowVoltageProtection',
+
     'model/CloudPSS/ZeroSequenceOverVoltageProtection':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/50-ZeroSequenceOverVoltageProtection',
     'model/CloudPSS/CompoundVoltageOverCurrentProtection':
@@ -712,6 +721,8 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/70-BUSDifferentialProtection',
     'model/CloudPSS/BZT_10kV':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/80-BZT_10kV',
+    'model/CloudPSS/Reclose':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/210-protection-modules/90-Reclose',
 
     'model/CloudPSS/_newChannel':
         'documents/software/20-emtlab/110-component-library/10-basic/40-output/10-output/10-_newChannel',
