@@ -149,3 +149,7 @@ export default async function convert(root) {
         throw new AggregateError(errors, `Failed to convert ${errors.length} images`);
     }
 }
+
+if (process.argv[1] === import.meta.filename) {
+    await convert(process.argv.slice(2));
+}

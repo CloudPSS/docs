@@ -78,3 +78,7 @@ export default async function convert(root) {
         throw new AggregateError(errors, `Failed to optimize ${errors.length} zip files`);
     }
 }
+
+if (process.argv[1] === import.meta.filename) {
+    await convert(process.argv.slice(2));
+}
