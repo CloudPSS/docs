@@ -61,9 +61,12 @@ SimStudio v4.3 之前的版本，**虚拟输出引脚**的信号标签必须是�
 
 ![输出通道参数 =x400](./output-channel.png)
 
+
+
 如果用户需要量测多维信号中某一维的信号，比如三相电压中的 A 相电压，则可利用**多路信号分离**元件进行信号分离。同理，如果要将多路信号合并为多维信号进行量测，则可利用**多路信号合并**元件进行信号合并。更多信号分离与信号合并相关内容可查看 [多路信号分离](../../110-component-library/10-basic/20-control/10-control-basic/10-_ChannelDeMerge/index.md) 和  [多路信号合并](../../110-component-library/10-basic/20-control/10-control-basic/20-_ChannelMerge/index.md) 帮助文档。
 
 ![信号分离与信号合并 =x150](./signal-finishing.png)
+
 
 
 ### 配置示波器输出通道
@@ -137,6 +140,13 @@ EMTLab 提供了四种示波器窗口类型，用户可选择每个示波器的�
 如需保存示波器窗口内的信号数据，可点击**下载图表为 CSV 格式**，导出的 CSV 数据格式如下，第一列为图表的 x 轴，即仿真时间，第二列为图表的 y 轴，即该仿真时间点的信号值。
 
 ![CSV格式](./csv-format.png)
+
+:::info 输出通道及其配置相关说明
+
+SimStudio v4.3 之后,新增了**X-Y输出通道**，支持用户自定义X轴、Y轴数据，详情见
+[X-Y输出通道](docs/documents/software/20-emtlab/110-component-library/10-basic/40-output/10-output/20-XYChannel/index.md)。
+
+:::
 
 ## 案例
 import Tabs from '@theme/Tabs';
