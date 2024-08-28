@@ -1,4 +1,5 @@
 import os from 'node:os';
+import path from 'node:path';
 import rxjs from 'rxjs';
 import { glob } from 'glob';
 
@@ -21,7 +22,7 @@ export async function getFiles(root, exts) {
         if (!r) continue;
         const formatted = r.replaceAll('\\', '/');
         if (extsWithDot.some((e) => formatted.endsWith(e))) {
-            files.push(formatted);
+            files.push(path.relative(process.cwd(), formatted));
         }
         const findRoot = formatted.replace(/\/$/, '');
         const f = await glob(`${findRoot}/**/${globSuffix}`);
