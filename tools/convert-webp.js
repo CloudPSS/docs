@@ -4,11 +4,10 @@ import fs from 'node:fs/promises';
 import { execa } from 'execa';
 import download from 'download';
 import path from 'node:path/posix';
-import { glob } from 'glob';
 import { imageSize } from 'image-size';
 import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
-import rxjs from 'rxjs';
+import { getFiles, runParallel } from './helpers.js';
 
 const LIB_WEBP_VERSION = '1.4.0';
 // 0:small..100:big
@@ -71,7 +70,7 @@ async function prepareLibWebp() {
 
 /**
  * 压缩图片
- * @param {string | string[] | undefined} root 查找需要压缩的图片的路径
+ * @param {string | string[]} root 查找需要压缩的图片的路径
  * @returns {Promise<void>}
  */
 export default async function convert(root) {
@@ -140,23 +139,8 @@ export default async function convert(root) {
         console.log(chalk`{green [CONV]} {underline ${file}} \t ${pb(o.size)} -> ${pb(c.size)} \t (${ratio}%)`);
     };
 
-    const parallelism = typeof os.availableParallelism == 'function' ? os.availableParallelism() : 4;
-
-    if (!root) {
-        root = ['dist'];
-    } else if (!Array.isArray(root)) {
-        root = [root];
-    }
-    const files = [];
-    for (const r of root) {
-        if (!r) continue;
-        const findRoot = r.replaceAll('\\', '/').replace(/\/$/, '');
-        const f = await glob(`${findRoot}/**/*.{png,jpg,jpeg,gif}`);
-        files.push(...f);
-    }
-    await rxjs.lastValueFrom(rxjs.from(files).pipe(rxjs.mergeMap(async (file) => compress(file), parallelism)), {
-        defaultValue: undefined,
-    });
+    const files = await getFiles(root, ['png', 'jpg', 'jpeg', 'gif']);
+    await runParallel(files, compress);
 
     const ratio = ((converted / original) * 100).toFixed();
     console.log(`Converted ${count} images, ${pb(original)} -> ${pb(converted)} (${ratio}%)`);

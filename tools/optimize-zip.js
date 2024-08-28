@@ -5,14 +5,13 @@ import os from 'node:os';
 import path from 'node:path';
 import { createWriteStream } from 'node:fs';
 import fs from 'node:fs/promises';
-import { glob } from 'glob';
 import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
-import rxjs from 'rxjs';
+import { getFiles, runParallel } from './helpers.js';
 
 /**
  * 压缩 ZIP 文件
- * @param {string | string[] | undefined} root 查找需要压缩的图片的路径
+ * @param {string | string[]} root 查找需要压缩的 ZIP 的路径
  * @returns {Promise<void>}
  */
 export default async function convert(root) {
@@ -69,23 +68,8 @@ export default async function convert(root) {
         await fs.rm(newFile);
     };
 
-    const parallelism = typeof os.availableParallelism == 'function' ? os.availableParallelism() : 4;
-
-    if (!root) {
-        root = ['dist'];
-    } else if (!Array.isArray(root)) {
-        root = [root];
-    }
-    const files = [];
-    for (const r of root) {
-        if (!r) continue;
-        const findRoot = r.replaceAll('\\', '/').replace(/\/$/, '');
-        const f = await glob(`${findRoot}/**/*.zip`);
-        files.push(...f);
-    }
-    await rxjs.lastValueFrom(rxjs.from(files).pipe(rxjs.mergeMap(async (file) => compress(file), parallelism)), {
-        defaultValue: undefined,
-    });
+    const files = await getFiles(root, ['zip']);
+    await runParallel(files, compress);
 
     const ratio = ((converted / original) * 100).toFixed();
     console.log(`Optimized ${count} zip files, ${pb(original)} -> ${pb(converted)} (${ratio}%)`);
