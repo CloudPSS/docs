@@ -261,7 +261,7 @@ ieslabPlan = IESLabPlan.fetch(id)
 ieslabPlan.iesLabPlanRun()
 ```
 
-### `ieslabPlan.iesLabPlanRun()`
+### `ieslabPlan.iesLabPlanKill()`
 
 - 实例方法
 
@@ -270,7 +270,7 @@ ieslabPlan.iesLabPlanRun()
 ```python showLineNumbers class="red-text"
 ieslabPlan = IESLabPlan.fetch(id)
 # highlight-next-line
-ieslabPlan.iesLabPlanRun()
+ieslabPlan.iesLabPlanKill()
 ```
 
 
