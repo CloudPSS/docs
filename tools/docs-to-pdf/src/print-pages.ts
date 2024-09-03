@@ -1,10 +1,9 @@
 import path from 'node:path';
 import { HOST } from './constants.ts';
-import { printPage } from './print-page.ts';
-import { exit } from './puppetter.ts';
+import { done, printPage } from './print-page.ts';
 
 /** 表示页面范围，包含开始和结束页 */
-export type Range = [string, string];
+export type Range = [string, string?];
 
 /** 格式化页面范围的链接 */
 function formatRangeLink(link: string): string {
@@ -32,15 +31,16 @@ export interface PrintedDocument {
 async function printRange(range: Range, dist: string): Promise<PrintedDocument[]> {
     const result = [];
     const from = formatRangeLink(range[0]);
-    const to = formatRangeLink(range[1]);
+    const to = range[1] ? formatRangeLink(range[1]) : undefined;
     let url: string | undefined = HOST + from;
     while (url) {
-        const file = path.join(dist, url.slice(`${HOST}/`.length).replace(/\/?$/, '.pdf'));
-        process.stdout.write(`Printing ${url} -> ${path.relative(process.cwd(), file)} ...`);
+        const pathname = url.slice(HOST.length);
+        const file = path.join(dist, pathname.slice(1).replace(/\/?$/, '.pdf'));
+        process.stdout.write(`Printing ${pathname} ...`);
         const pageInfo = await printPage(url, file);
         result.push({ ...pageInfo, url, file });
         process.stdout.write('\b\b\bDone\n');
-        if (url === HOST + to) break;
+        if (to && url === HOST + to) break;
         url = pageInfo.next;
     }
     return result;
@@ -53,6 +53,6 @@ export async function printPages(ranges: readonly Range[], dist: string): Promis
     for (const range of ranges) {
         result.push(...(await printRange(range, dist)));
     }
-    await exit();
+    await done();
     return result;
 }
