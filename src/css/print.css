@@ -4,12 +4,24 @@
     --doc-sidebar-hidden-width: 0px !important;
   }
 
+  main > div.container {
+    padding: 0 !important;
+  }
+
+  section.row {
+    page-break-inside: auto;
+  }
+
   a {
     --ifm-link-decoration: underline;
 
     &.card {
       --ifm-link-decoration: none;
       page-break-inside: avoid;
+    }
+
+    .theme-doc-footer-tags-row & {
+      --ifm-link-decoration: none;
     }
   }
 
@@ -36,5 +48,9 @@
 
   .theme-back-to-top-button {
     display: none !important;
+  }
+
+  a[href$='#__docusaurus_skipToContent_fallback'] {
+    display: none;
   }
 }

@@ -1,0 +1,12 @@
+{
+  "extends": "@cloudpss/tsconfig",
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "target": "ES2023",
+    "module": "NodeNext",
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src"]
+}

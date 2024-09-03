@@ -1,0 +1,12 @@
+{
+  "name": "docs-to-pdf",
+  "type": "module",
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "node --experimental-strip-types ."
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1",
+    "puppeteer": "^23.2.1"
+  }
+}

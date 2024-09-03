@@ -2,6 +2,7 @@
 
 # Production
 /build
+dist/
 /*.deb
 /*.log
 /deb/usr/share/cloudpss/static/
