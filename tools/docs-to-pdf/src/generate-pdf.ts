@@ -7,10 +7,10 @@ import {
     PDFName,
     PDFNull,
     PDFNumber,
-    type PDFString,
+    PDFString,
+    StandardFonts,
     type PDFPage,
     type PDFRef,
-    StandardFonts,
 } from 'pdf-lib';
 import { HOST } from './constants.ts';
 import type { PrintedDocument } from './print-pages.ts';
@@ -155,8 +155,8 @@ export class PdfGenerator {
         for (const page of this.pdf.getPages()) {
             const annotations = page.node.Annots();
             if (!annotations) continue;
-            for (const ref of annotations.asArray()) {
-                const annotation = this.pdf.context.lookup(ref, PDFDict);
+            for (let index = 0; index < annotations.size(); index++) {
+                const annotation = annotations.lookupMaybe(index, PDFDict);
                 if (
                     !annotation ||
                     (annotation.get(PDFName.of('Subtype')) as PDFName | undefined)?.asString() !== '/Link'
@@ -166,7 +166,10 @@ export class PdfGenerator {
                 if (!a) continue;
                 const uri = a.get(PDFName.of('URI')) as PDFString | undefined;
                 if (!uri) continue;
-                const linkRef = toDocumentRef(new URL(uri.asString()));
+                const uriString = uri.asString();
+                if (!uriString.startsWith(HOST)) continue;
+                a.set(PDFName.of('URI'), PDFString.of(uriString.replace(HOST, 'https://kb.cloudpss.net')));
+                const linkRef = toDocumentRef(new URL(uriString));
                 const node = this.outline.get(linkRef);
                 if (!node) continue;
                 annotation.set(PDFName.of('Dest'), node.pageDist.clone());
