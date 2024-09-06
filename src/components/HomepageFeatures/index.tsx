@@ -3,10 +3,6 @@ import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 
-// import undraw_docusaurus_mountain from '@site/static/img/undraw_docusaurus_mountain.svg';
-// import undraw_docusaurus_tree from '@site/static/img/undraw_docusaurus_tree.svg';
-// import undraw_docusaurus_react from '@site/static/img/undraw_docusaurus_react.svg';
-
 import documents from '@site/static/img/documents.svg';
 import cases from '@site/static/img/cases.svg';
 import tutorials from '@site/static/img/tutorials.svg';
