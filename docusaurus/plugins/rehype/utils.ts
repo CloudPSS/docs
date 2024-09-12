@@ -4,7 +4,7 @@ import type { RootContentMap } from 'hast';
 export type MdxJsxElementHast = RootContentMap['mdxJsxTextElement'] | RootContentMap['mdxJsxFlowElement'];
 
 /** 获取属性 */
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function getAttribute(node: MdxJsxElementHast, name: string) {
     for (const attr of node.attributes) {
         if (attr.type === 'mdxJsxAttribute' && attr.name === name) {
@@ -15,7 +15,7 @@ export function getAttribute(node: MdxJsxElementHast, name: string) {
 }
 
 /** 获取属性 */
-// eslint-disable-next-line @typescript-eslint/explicit-function-return-type, @typescript-eslint/explicit-module-boundary-types
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function getOrInitAttribute(node: MdxJsxElementHast, name: string, value: string) {
     let attr = getAttribute(node, name);
     if (!attr) {

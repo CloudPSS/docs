@@ -65,13 +65,13 @@
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
-    "@cloudpss/commitlint-config": "^3.0.8",
-    "@cloudpss/eslint-config": "^3.0.8",
-    "@cloudpss/http-client": "^0.5.40",
-    "@cloudpss/lint-staged-config": "^3.0.8",
-    "@cloudpss/prettier-config": "^3.0.8",
-    "@cloudpss/resource-types": "^0.5.40",
-    "@cloudpss/tsconfig": "^3.0.8",
+    "@cloudpss/commitlint-config": "^3.0.14",
+    "@cloudpss/eslint-config": "^3.0.14",
+    "@cloudpss/http-client": "^0.5.41",
+    "@cloudpss/lint-staged-config": "^3.0.14",
+    "@cloudpss/prettier-config": "^3.0.14",
+    "@cloudpss/resource-types": "^0.5.41",
+    "@cloudpss/tsconfig": "^3.0.14",
     "@docusaurus/module-type-aliases": "3.5.2",
     "@docusaurus/tsconfig": "3.5.2",
     "@docusaurus/types": "3.5.2",
@@ -85,12 +85,12 @@
     "execa": "^9.3.1",
     "glob": "^11.0.0",
     "gzipper": "^8.1.0",
-    "husky": "^9.1.5",
+    "husky": "^9.1.6",
     "image-size": "^1.1.1",
     "jszip": "^3.10.1",
-    "postcss-preset-env": "^10.0.2",
+    "postcss-preset-env": "^10.0.3",
     "pretty-bytes": "^6.1.1",
     "rxjs": "^7.8.1",
-    "typescript": "~5.5.4"
+    "typescript": "~5.6.2"
   }
 }
