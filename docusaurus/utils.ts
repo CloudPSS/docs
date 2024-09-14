@@ -24,8 +24,8 @@ if (!baseUrl.endsWith('/')) baseUrl += '/';
 /**
  * Read the environment variable `DOCS_BASE_URL` and set the `BASE_URL` accordingly
  *
- * Set the /<baseUrl>/ pathname under which your site is served
- * For GitHub pages deployment, it is often '/<projectName>/'
+ * Set the `/<baseUrl>/` pathname under which your site is served
+ * For GitHub pages deployment, it is often `'/<projectName>/'`
  */
 export const BASE_URL = baseUrl;
 
