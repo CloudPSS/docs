@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[27252],{88897:function(a){a.exports=JSON.parse('{"authors":[{"name":"Song Yankan","imageURL":"https://gravatar.loli.net/avatar/bed3c179b1f4b7932a1642ecf5e78db790aa86b25ad06ac3689315cfc326a8bf?size=256","key":"songyankan","page":null,"count":8}]}')}}]);

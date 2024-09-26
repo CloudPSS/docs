@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[2326],{16066:function(s){s.exports=JSON.parse('{"tags":[{"label":"\u66f4\u65b0\u65e5\u5fd7","permalink":"/docs/blog/tags/update-notes","description":"CloudPSS \u66f4\u65b0\u65e5\u5fd7","count":8}]}')}}]);
