@@ -2,6 +2,7 @@
 title: 基本原理
 description: IESLab 建模仿真平台-仿真模拟模块-综合能源仿真基本原理
 sidebar_position: 10
+draft: true
 tags:
 - ieslab
 - function

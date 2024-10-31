@@ -1,7 +1,7 @@
 ---
 title: 保护设备信息库
 description: DSLab 源网荷储协同仿真规划平台-数据管理模块-保护设备信息库
-sidebar_position: 60
+sidebar_position: 70
 tags:
 - dslab
 - function
@@ -22,5 +22,3 @@ tags:
 
 ![熔断器信息录入](./device-new.png "熔断器信息录入")
 
-
-## 常见问题

@@ -88,7 +88,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="py" label="案例1">
+<TabItem value="py" label="分时阶梯电价">
 
 以典型项目的**分时阶梯电价**为例，说明相关用法。
 

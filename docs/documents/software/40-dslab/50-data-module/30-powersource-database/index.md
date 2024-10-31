@@ -54,7 +54,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="js" label="案例1">
+<TabItem value="js" label="光伏">
 
 以使用典型曲线建立**光伏**为例，说明电源信息库的用法。
 
@@ -66,7 +66,7 @@ import TabItem from '@theme/TabItem';
 
 </TabItem>
 
-<TabItem value="c" label="案例2">
+<TabItem value="c" label="风机">
 
 以自定义出力曲线方式建立**风机**为例，说明电源信息库的用法。
 

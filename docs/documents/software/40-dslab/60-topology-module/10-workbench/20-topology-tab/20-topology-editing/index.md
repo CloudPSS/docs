@@ -3,7 +3,7 @@ title: 拓扑编辑
 description: 拓扑编辑
 sidebar_position: 20
 tags:
-- ieslab
+- dslab
 - workbench
 ---
 
@@ -61,7 +61,7 @@ tags:
 
 #### 放大/缩小
 
-放大或缩小图纸的视图比例。也可以按住`<kbd>Ctrl</kbd>`键，利用鼠标滚轮来缩放视图。同时也可以用按住`<kbd>Ctrl</kbd>`键+鼠标右键，拖动鼠标来平移视图。
+放大或缩小图纸的视图比例。也可以按住 <kbd>Ctrl</kbd> 键，利用鼠标滚轮来缩放视图。同时也可以用按住 <kbd>Ctrl</kbd> 键+鼠标右键，拖动鼠标来平移视图。
 
 #### 全选
 
