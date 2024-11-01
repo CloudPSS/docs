@@ -4,6 +4,9 @@ description: DSLab 文档
 sidebar_position: 40
 tags:
 - dslab
+- directory
 ---
 
-## 敬请期待！
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
