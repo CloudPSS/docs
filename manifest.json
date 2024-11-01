@@ -1,0 +1,23 @@
+{
+  "name": "CloudPSS 知识库",
+  "short_name": "CloudPSS 知识库",
+  "description": "CloudPSS 知识库 - 文档/案例/教程",
+  "theme_color": "#242526",
+  "background_color": "#242526",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "fullscreen"],
+  "scope": "./",
+  "start_url": "./",
+  "icons": [
+    {
+      "src": "./icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
