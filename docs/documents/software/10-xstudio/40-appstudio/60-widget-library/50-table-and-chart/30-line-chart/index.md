@@ -9,7 +9,7 @@ tags:
 
 本节主要介绍 AppStudio 控件库里的折线图控件。
 
-![折线图控件](image.png "折线图控件")
+![折线图控件](line-chart-control.png "折线图控件")
 
 ## 属性
 

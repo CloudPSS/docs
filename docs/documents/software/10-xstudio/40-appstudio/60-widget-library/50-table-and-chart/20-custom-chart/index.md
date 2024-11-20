@@ -9,8 +9,7 @@ tags:
 
 本节主要介绍 AppStudio 控件库里的自定义图表控件。
 
-![自定义图表控件](image.png "自定义图表控件")
-
+![自定义图表控件](custom-chart-control.png "自定义图表控件")
 
 ## 属性
 
@@ -50,6 +49,35 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 数据 | `dataJsonString` |  | 表格数据 | 表格 | 点击 `编辑数据`，弹出控件值内容表格（JSON 格式） |
 
 ## 案例介绍
+
+### 列定义
+
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
+
+下方显示的是自定义图表控件列定义:
+
+- 模式：lines、markers、text、lines+markers、text+markers、text+lines、text+lines+markers；默认为 line+markers 
+- 类型：bar、barpolar、box、choropleth、cone、contour、contourcarpet、contourgl、densitymapbox、funnel、funnelarea、heatmap、heatmapgl、histogram、histogram2d、histogram2dcontour、image、indicator、isosurface、mesh3d、ohlc、parcats、parcoords、pie、pointcloud、sankey、scatter、scatter3d、scattercarpet、scattergeo、scattergl、scattermapbox、scatterpolar、scatterpolargl、scatterternary、splom、streamtube、sunburst、surface、table、treemap、violin、volume、waterfall；默认为 scatter
+- 名称：默认为 col1
+- 文字位置： 默认为 top center
+- marker 大小：默认为 12
+- x 坐标：data a、data b、data c、data d、data e
+- y 坐标：data a、data b、data c、data d、data e
+
+![列定义](table-items.png "列定义")
+
+
+### 数据集
+
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
+
+下方显示的是自定义图表控件数据集:
+
+- 名称
+- 数据：表格嵌套数据
+
+![数据集](table-data.png "数据集")
+
 
 ## 常见问题
 
