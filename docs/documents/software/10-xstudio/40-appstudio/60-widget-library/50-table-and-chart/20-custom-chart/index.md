@@ -58,11 +58,11 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 - 模式：lines、markers、text、lines+markers、text+markers、text+lines、text+lines+markers；默认为 line+markers 
 - 类型：bar、barpolar、box、choropleth、cone、contour、contourcarpet、contourgl、densitymapbox、funnel、funnelarea、heatmap、heatmapgl、histogram、histogram2d、histogram2dcontour、image、indicator、isosurface、mesh3d、ohlc、parcats、parcoords、pie、pointcloud、sankey、scatter、scatter3d、scattercarpet、scattergeo、scattergl、scattermapbox、scatterpolar、scatterpolargl、scatterternary、splom、streamtube、sunburst、surface、table、treemap、violin、volume、waterfall；默认为 scatter
-- 名称：默认为 col1
+- 名称
 - 文字位置： 默认为 top center
 - marker 大小：默认为 12
-- x 坐标：data a、data b、data c、data d、data e
-- y 坐标：data a、data b、data c、data d、data e
+- x 坐标
+- y 坐标
 
 ![列定义](table-items.png "列定义")
 
