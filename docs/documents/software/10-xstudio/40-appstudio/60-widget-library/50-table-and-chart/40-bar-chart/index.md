@@ -55,7 +55,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
 
-下方显示的是折线图控件列定义:
+下方显示的是柱状图控件列定义:
 
 - 名称
 - 文字位置：默认为 top center
@@ -69,7 +69,7 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
 
-下方显示的是折线图控件数据集:
+下方显示的是柱状图控件数据集:
 
 - 名称
 - 数据：表格嵌套数据
