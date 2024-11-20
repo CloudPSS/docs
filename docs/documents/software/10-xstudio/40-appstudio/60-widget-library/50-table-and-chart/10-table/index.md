@@ -9,7 +9,7 @@ tags:
 
 本节主要介绍 AppStudio 控件库里的表格控件。
 
-![表格控件](image.png "表格控件")
+![表格控件](table-control.png "表格控件")
 
 ## 属性
 
@@ -75,14 +75,47 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ## 案例介绍
 
-### 颜色选择器类型
+### 列定义
 
-import ColorPicker from '../../60-grid/_color-picker.md'
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
 
-<ColorPicker />
+下方显示的是表格控件列定义:
+- 列名称
+- 列宽度
+- 是否可编辑：是或否
+- 数据类型：字符串、数字、布尔值
+
+![列定义](table-items.png "列定义")
+
+### 表格值
+
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
+
+下方显示的是表格控件值:
+
+![表格值](table-values.png "表格值")
+
+### 典型应用
+
+1. 创建两个表格，在右侧的属性配置区内给输入框命名为 A 和 B
+
+2. 鼠标选中表格 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `B.value = A.value`
+
+3. 将输入框 B 的内容/值属性栏切换到 fx 表达式模式，设置为 `A.value`
+
+4. 鼠标选中表格 A 的内容/值属性栏，点击修改表格 A 的默认数据
+
+5. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下观察表格 B 的值自动发生变化
+
+![创建表格控件](create-table-control.png "创建表格控件")
+
+![配置表格控件属性](configure-table-attributes.png "配置表格控件属性")
+
+![预览模式](preview-mode.png "预览模式")
+
+
 
 ## 常见问题
-
 
 
 import Fx from '../../60-grid/_expression.md'
