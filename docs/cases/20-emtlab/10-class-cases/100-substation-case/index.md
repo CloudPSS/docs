@@ -1,6 +1,10 @@
 ---
 title: 110kV变电站一、二次系统
 description: 110kV变电站一、二次系统
+tags:
+- emtlab
+- simstudio
+- cases
 ---
 
 import Tabs from '@theme/Tabs'
