@@ -47,7 +47,7 @@ const NEXT_SELECTOR = 'a.pagination-nav__link.pagination-nav__link--next';
 /** 打印页面到指定位置 */
 export async function printPage(url: string, dist: string): Promise<{ title: string; prev?: string; next?: string }> {
     const page = await getPage();
-    await page.goto(url, { waitUntil: 'networkidle0', timeout: 0 });
+    await page.goto(url, { waitUntil: 'load', timeout: 0 });
     const result = await page.evaluate(
         ({ INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR }) => {
             for (const img of document.querySelectorAll('img')) {
@@ -68,7 +68,7 @@ export async function printPage(url: string, dist: string): Promise<{ title: str
         },
         { INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR },
     );
-    await page.waitForNetworkIdle({ idleTime: 100 });
+    await page.waitForNetworkIdle({ timeout: 0, idleTime: 500, concurrency: 0 });
     await fs.mkdir(path.dirname(dist), { recursive: true });
     await page.pdf({
         path: dist,
