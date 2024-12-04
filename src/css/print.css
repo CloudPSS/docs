@@ -50,7 +50,7 @@
     display: none !important;
   }
 
-  a[href$='#__docusaurus_skipToContent_fallback'] {
-    display: none;
+  a[class^='skipToContent'] {
+    display: none !important;
   }
 }
