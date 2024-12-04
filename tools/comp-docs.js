@@ -22,6 +22,7 @@ const hasUnescapedMarkdown = new RegExp(escapeMarkdown.source);
  * @returns {string} 转义后的字符串
  */
 export function escape(str) {
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     const s = String(str ?? '');
     if (s && hasUnescapedMarkdown.test(s)) {
         return s.replace(escapeMarkdown, String.raw`\$&`);
@@ -35,6 +36,7 @@ export function escape(str) {
  * @returns {string} 转义后的字符串
  */
 export function escapeCode(str) {
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     const s = String(str ?? '');
     if (!s) return '` `';
     const backtick = s.indexOf('`');
@@ -52,6 +54,31 @@ export function escapeCode(str) {
  */
 export function h(level) {
     return '#'.repeat(level);
+}
+
+/**
+ * 生成维数
+ * @param {string[]} [dim] 维数
+ * @returns {string} 维数字符串
+ */
+export function dim(dim) {
+    if (!dim?.length) {
+        return ``;
+    }
+    if (dim.every((d) => Number(d) === 0)) {
+        return `{<samp style="font-style: italic">ANY</samp>}`;
+    }
+    const dimHtml = dim.map((d) => {
+        const num = Number(d);
+        if (Number.isSafeInteger(num) && num >= 0) {
+            return `<samp>${num}</samp>`;
+        }
+        if (d.length > 20 || d.includes('\n')) {
+            return `<code title="${d.replace(/["'\n<>&]/g, (c) => `&#${c.codePointAt(0)};`)}">...</code>`;
+        }
+        return escapeCode(d);
+    });
+    return dimHtml.join('×');
 }
 
 /**
@@ -170,9 +197,8 @@ function connectionType(connection) {
  * @returns {string} 引脚字符串
  */
 function genPin(pin) {
-    const dim = pin.dim ? `${String(pin.dim?.[0] ?? '')} x ${String(pin.dim[1] ?? '')}` : '';
     const name = pin.name ? pin.name : pin.key;
-    return `| ${escape(name)} | ${escapeCode(pin.key)} | ${connectionType(pin.connection)} | ${dim} | ${pin.description ?? ''} |`;
+    return `| ${escape(name)} | ${escapeCode(pin.key)} | ${connectionType(pin.connection)} | ${dim(pin.dim)} | ${pin.description ?? ''} |`;
 }
 
 /**
