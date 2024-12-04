@@ -12,7 +12,7 @@ import {
     type PDFPage,
     type PDFRef,
 } from 'pdf-lib';
-import { HOST } from './constants.ts';
+import { HOST, HOST_REPLACE } from './config.ts';
 import type { PrintedDocument } from './print-pages.ts';
 
 /** 以 URL 表示的文档引用，固定添加末尾的 `/` */
@@ -168,7 +168,7 @@ export class PdfGenerator {
                 if (!uri) continue;
                 const uriString = uri.asString();
                 if (!uriString.startsWith(HOST)) continue;
-                a.set(PDFName.of('URI'), PDFString.of(uriString.replace(HOST, 'https://kb.cloudpss.net')));
+                a.set(PDFName.of('URI'), PDFString.of(uriString.replace(HOST, HOST_REPLACE)));
                 const linkRef = toDocumentRef(new URL(uriString));
                 const node = this.outline.get(linkRef);
                 if (!node) continue;

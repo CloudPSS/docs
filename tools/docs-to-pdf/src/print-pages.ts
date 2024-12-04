@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { HOST } from './constants.ts';
+import { HOST } from './config.ts';
 import { done, printPage } from './print-page.ts';
 
 /** 表示页面范围，包含开始和结束页 */

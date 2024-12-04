@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { type Browser, launch, type Page } from 'puppeteer';
-import { HOST } from './constants.ts';
+import { HOST } from './config.ts';
 
 let _browser: Browser | null = null;
 let _page: Page;
@@ -14,7 +14,7 @@ export async function getPage(): Promise<Page> {
         await _page.evaluate(
             ({ THEME_KEY }) => {
                 localStorage.setItem(THEME_KEY, 'light');
-                window.dispatchEvent(new StorageEvent('storage', { key: THEME_KEY }));
+                globalThis.dispatchEvent(new StorageEvent('storage', { key: THEME_KEY }));
             },
             { THEME_KEY },
         );
