@@ -26,8 +26,8 @@ Equivalent Circuit Parameters
 |:------ |:---- |:-----------:|:---- |
 | Rated Open\-Circuit Voltage | `Uocr` | 实数 [V] | 额定开路电压 |
 | Rated Short\-Circuit Current | `Iscr` | 实数 [A] | 额定短路电流 |
-| Voltage at Maximum Power Point | `Umr` | 实数 [V] | 最大功率点 |
-| Current at Maximum Power Point | `Imr` | 实数 [A] | 串联电阻 |
+| Voltage at Maximum Power Point | `Umr` | 实数 [V] | 最大功率点电压 |
+| Current at Maximum Power Point | `Imr` | 实数 [A] | 最大功率点电流 |
 | Compensation Parameter α | `alpha` | 实数 [1/℃] | 补偿系数α |
 | Compensation Parameter β | `beta` | 实数 | 补偿系数β |
 | Compensation Parameter γ | `gamma` | 实数 [1/℃] | 补偿系数γ |

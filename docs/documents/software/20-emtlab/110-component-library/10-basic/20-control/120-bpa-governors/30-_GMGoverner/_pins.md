@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| ωref | `0` | 输入 | 1 x 1 | 转速参考值 |
-| ω | `1` | 输入 | 1 x 1 | 转速 |
-| Yref\(Pref\) | `2` | 输入 | 1 x 1 | 开度参考值 |
-| Y\(Pe\) | `3` | 输入 | 1 x 1 | 调门开度 |
-| L2N | `4` | 输入 | 1 x 1 |  |
-| Ypid | `5` | 输出 | 1 x 1 | 调门开度 |
+| ωref | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速参考值 |
+| ω | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速 |
+| Yref\(Pref\) | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 开度参考值 |
+| Y\(Pe\) | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 调门开度 |
+| L2N | `4` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Ypid | `5` | 输出 | <samp>1</samp> × <samp>1</samp> | 调门开度 |
 
 </slot>

@@ -8,10 +8,10 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| AC | `AC` | 电气 | 3 x 1 | 交流端口 |
-| Iin | `Iin` | 输入 | 3 x 1 | 对侧电流 |
-| Vin | `Vin` | 输入 | 3 x 1 | 对侧电压 |
-| Iout | `Iout` | 输出 | 3 x 1 | 本侧电流 |
-| Vout | `Vout` | 输出 | 3 x 1 | 本侧电压 |
+| AC | `AC` | 电气 | <samp>3</samp> × <samp>1</samp> | 交流端口 |
+| Iin | `Iin` | 输入 | <samp>3</samp> × <samp>1</samp> | 对侧电流 |
+| Vin | `Vin` | 输入 | <samp>3</samp> × <samp>1</samp> | 对侧电压 |
+| Iout | `Iout` | 输出 | <samp>3</samp> × <samp>1</samp> | 本侧电流 |
+| Vout | `Vout` | 输出 | <samp>3</samp> × <samp>1</samp> | 本侧电压 |
 
 </slot>

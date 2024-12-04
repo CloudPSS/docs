@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| In | `0` | 输入 | 1 x 1 | 输入 |
-| ENAB | `1` | 输入 | 1 x 1 | 使能信号 |
-| Vs | `2` | 输出 | 1 x 1 | 电力系统稳定器输出 |
+| In | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入 |
+| ENAB | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| Vs | `2` | 输出 | <samp>1</samp> × <samp>1</samp> | 电力系统稳定器输出 |
 
 </slot>

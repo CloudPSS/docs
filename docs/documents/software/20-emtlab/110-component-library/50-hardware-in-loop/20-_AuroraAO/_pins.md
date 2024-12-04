@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Analog Output | `0` | 输入 | 1 x 1 | 模拟量输出 |
+| Analog Output | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 模拟量输出 |
 
 </slot>

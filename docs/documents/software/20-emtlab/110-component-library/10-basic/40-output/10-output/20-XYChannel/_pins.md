@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| X \- Axis | `x` | 输入 | Dim x 1 | X - Axis |
-| Y \- Axis | `y` | 输入 | Dim x 1 | Y - Axis |
+| X \- Axis | `x` | 输入 | `Dim` × <samp>1</samp> | X - Axis |
+| Y \- Axis | `y` | 输入 | `Dim` × <samp>1</samp> | Y - Axis |
 
 </slot>

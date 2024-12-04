@@ -8,12 +8,12 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Armature \+ | `0` | 电气 | 1 x 1 | 电枢绕组+端 |
-| Armature \- | `1` | 电气 | 1 x 1 | 电枢绕组-端 |
-| Field \+ | `2` | 电气 | 1 x 1 | 励磁绕组+端 |
-| Field \- | `3` | 电气 | 1 x 1 | 励磁绕组-端 |
-| ω | `4` | 输入 | 1 x 1 | 电机转速输入引脚，转速控制模式 |
-| Tm | `5` | 输入 | 1 x 1 | 机械转矩信号输入引脚，转矩控制模式 |
-| Te | `6` | 输出 | 1 x 1 | 电磁转矩信号输出引脚 |
+| Armature \+ | `0` | 电气 | <samp>1</samp> × <samp>1</samp> | 电枢绕组+端 |
+| Armature \- | `1` | 电气 | <samp>1</samp> × <samp>1</samp> | 电枢绕组-端 |
+| Field \+ | `2` | 电气 | <samp>1</samp> × <samp>1</samp> | 励磁绕组+端 |
+| Field \- | `3` | 电气 | <samp>1</samp> × <samp>1</samp> | 励磁绕组-端 |
+| ω | `4` | 输入 | <samp>1</samp> × <samp>1</samp> | 电机转速输入引脚，转速控制模式 |
+| Tm | `5` | 输入 | <samp>1</samp> × <samp>1</samp> | 机械转矩信号输入引脚，转矩控制模式 |
+| Te | `6` | 输出 | <samp>1</samp> × <samp>1</samp> | 电磁转矩信号输出引脚 |
 
 </slot>

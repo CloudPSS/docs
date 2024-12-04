@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 1 x 1 | IGBT的集电极 |
-| Pin \- | `1` | 电气 | 1 x 1 | IGBT的发射极 |
-| Gate | `2` | 输入 | 1 x 1 | IGBT的门极，输入导通/关断控制信号 |
+| Pin \+ | `0` | 电气 | <samp>1</samp> × <samp>1</samp> | IGBT的集电极 |
+| Pin \- | `1` | 电气 | <samp>1</samp> × <samp>1</samp> | IGBT的发射极 |
+| Gate | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | IGBT的门极，输入导通/关断控制信号 |
 
 </slot>

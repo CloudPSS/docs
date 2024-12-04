@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Input | `Input` | 输入 | dim_u x 1 | Input |
-| Output | `Output` | 输出 | dim_y x 1 | Output |
+| Input | `Input` | 输入 | `dim_u` × <samp>1</samp> | Input |
+| Output | `Output` | 输出 | `dim_y` × <samp>1</samp> | Output |
 
 </slot>

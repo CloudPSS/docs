@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| R | `R` | 输入 | 1 x 1 | 输入阻抗实部 |
-| X | `X` | 输入 | 1 x 1 | 输入阻抗虚部 |
-| Trip | `Trip` | 输出 | 1 x 1 | 动作信号 |
+| R | `R` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入阻抗实部 |
+| X | `X` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入阻抗虚部 |
+| Trip | `Trip` | 输出 | <samp>1</samp> × <samp>1</samp> | 动作信号 |
 
 </slot>

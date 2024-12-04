@@ -8,10 +8,10 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| AC | `AC` | 电气 | 3 x 1 | AC |
-| UP | `UP` | 电气 | 1 x 1 | UP |
-| DOWN | `DOWN` | 电气 | 1 x 1 | DOWN |
-| KB | `KB` | 输入 | 1 x 1 | KB |
-| ALPHA | `ALPHA` | 输入 | 1 x 1 | ALPHA |
+| AC | `AC` | 电气 | <samp>3</samp> × <samp>1</samp> | AC |
+| UP | `UP` | 电气 | <samp>1</samp> × <samp>1</samp> | UP |
+| DOWN | `DOWN` | 电气 | <samp>1</samp> × <samp>1</samp> | DOWN |
+| KB | `KB` | 输入 | <samp>1</samp> × <samp>1</samp> | KB |
+| ALPHA | `ALPHA` | 输入 | <samp>1</samp> × <samp>1</samp> | ALPHA |
 
 </slot>

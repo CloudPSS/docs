@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Input | `0` | 输入 | 1 x 1 | 输入端口 |
-| Pulse | `1` | 输入 | 1 x 1 | 外部脉冲输入端口，仅当采样速率控制选择为 `External Pulse` 时有效 |
-| Output | `2` | 输出 | 1 x 1 | 输出端口 |
+| Input | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口 |
+| Pulse | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 外部脉冲输入端口，仅当采样速率控制选择为 `External Pulse` 时有效 |
+| Output | `2` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 |
 
 </slot>

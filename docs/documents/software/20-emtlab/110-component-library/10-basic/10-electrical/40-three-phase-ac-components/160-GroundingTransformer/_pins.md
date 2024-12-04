@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| PIn \#1 | `Pin0` | 电气 | 3 x  |  |
-| Pin \#2 | `Pin1` | 电气 | 1 x  |  |
+| PIn \#1 | `Pin0` | 电气 | <samp>3</samp> |  |
+| Pin \#2 | `Pin1` | 电气 | <samp>1</samp> |  |
 
 </slot>

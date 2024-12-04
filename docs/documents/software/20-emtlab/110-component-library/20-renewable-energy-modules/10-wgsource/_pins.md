@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| AC | `0` | 电气 | 3 x 1 | AC |
-| P\[MW\] | `1` | 输入 | 1 x 1 | 单机有功功率控制（MW） |
-| Q\[MVar\] | `2` | 输入 | 1 x 1 | 单机无功功率控制（MVar） |
-| Po | `3` | 输出 | 1 x 1 | P Output |
-| Qo | `4` | 输出 | 1 x 1 | Q Output |
-| LVRT\_Flag | `5` | 输出 | 1 x 1 | LVRT_Flag |
+| AC | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | AC |
+| P\[MW\] | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 单机有功功率控制（MW） |
+| Q\[MVar\] | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 单机无功功率控制（MVar） |
+| Po | `3` | 输出 | <samp>1</samp> × <samp>1</samp> | P Output |
+| Qo | `4` | 输出 | <samp>1</samp> × <samp>1</samp> | Q Output |
+| LVRT\_Flag | `5` | 输出 | <samp>1</samp> × <samp>1</samp> | LVRT_Flag |
 
 </slot>

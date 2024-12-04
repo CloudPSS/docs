@@ -8,12 +8,12 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| State | `State` | 输入 | 1 x 1 | 断路器状态 |
-| I1 | `I1` | 输入 | 3 x 1 | 流入母线的电流1(三相) |
-| I2 | `I2` | 输入 | 3 x 1 | 流入母线的电流2(三相) |
-| I3 | `I3` | 输入 | 3 x 1 | 流入母线的电流3(三相) |
-| I4 | `I4` | 输入 | 3 x 1 | 流入母线的电流4(三相) |
-| I5 | `I5` | 输入 | 3 x 1 | 流入母线的电流5(三相) |
-| Trip | `Trip` | 输出 | 1 x 1 | 输出信号 |
+| State | `State` | 输入 | <samp>1</samp> × <samp>1</samp> | 断路器状态 |
+| I1 | `I1` | 输入 | <samp>3</samp> × <samp>1</samp> | 流入母线的电流1(三相) |
+| I2 | `I2` | 输入 | <samp>3</samp> × <samp>1</samp> | 流入母线的电流2(三相) |
+| I3 | `I3` | 输入 | <samp>3</samp> × <samp>1</samp> | 流入母线的电流3(三相) |
+| I4 | `I4` | 输入 | <samp>3</samp> × <samp>1</samp> | 流入母线的电流4(三相) |
+| I5 | `I5` | 输入 | <samp>3</samp> × <samp>1</samp> | 流入母线的电流5(三相) |
+| Trip | `Trip` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出信号 |
 
 </slot>

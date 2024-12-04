@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| DC | `DC` | 电气 | 1 x 1 | DC |
+| DC | `DC` | 电气 | <samp>1</samp> × <samp>1</samp> | DC |
 
 </slot>

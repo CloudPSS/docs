@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Output | `0` | 输出 | 1 x 1 | 输出端口，仅当单相输出时有效 |
-| Output A | `1` | 输出 | 1 x 1 | 输出端口 A，仅当三相输出时有效 |
-| Output B | `2` | 输出 | 1 x 1 | 输出端口 B，仅当三相输出时有效 |
-| Output C | `3` | 输出 | 1 x 1 | 输出端口 C，仅当三相输出时有效 |
+| Output | `0` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口，仅当单相输出时有效 |
+| Output A | `1` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 A，仅当三相输出时有效 |
+| Output B | `2` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 B，仅当三相输出时有效 |
+| Output C | `3` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 C，仅当三相输出时有效 |
 
 </slot>

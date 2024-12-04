@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Input | `Input` | 输入 | InputDim x 1 | 输入数据队列 |
-| Index | `Index` | 输入 | 1 x 1 | 指定数据在队列中的索引 |
-| Output | `Output` | 输出 | 1 x 1 | 指定数据输出 |
+| Input | `Input` | 输入 | `InputDim` × <samp>1</samp> | 输入数据队列 |
+| Index | `Index` | 输入 | <samp>1</samp> × <samp>1</samp> | 指定数据在队列中的索引 |
+| Output | `Output` | 输出 | <samp>1</samp> × <samp>1</samp> | 指定数据输出 |
 
 </slot>

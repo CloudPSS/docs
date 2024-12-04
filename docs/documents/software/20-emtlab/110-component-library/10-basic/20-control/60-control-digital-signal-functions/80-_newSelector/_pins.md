@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| A | `0` | 输入 | 1 x 1 | 输入端口 A |
-| B | `1` | 输入 | 1 x 1 | 输入端口 B |
-| Ctrl | `2` | 输入 | 1 x 1 | 控制输入端 |
-| Output | `3` | 输出 | 1 x 1 | 输出端 |
+| A | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口 A |
+| B | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口 B |
+| Ctrl | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 控制输入端 |
+| Output | `3` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端 |
 
 </slot>

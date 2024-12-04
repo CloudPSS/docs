@@ -8,10 +8,10 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Duty | `0` | 输入 | N x 1 |  |
-| Duty | `1` | 输入 | 1 x 1 |  |
-| Uref | `2` | 输入 | N x 1 |  |
-| Uref | `3` | 输入 | 1 x 1 |  |
-| Gate | `4` | 输出 | 12*N x 1 |  |
+| Duty | `0` | 输入 | `N` × <samp>1</samp> |  |
+| Duty | `1` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Uref | `2` | 输入 | `N` × <samp>1</samp> |  |
+| Uref | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Gate | `4` | 输出 | `12*N` × <samp>1</samp> |  |
 
 </slot>

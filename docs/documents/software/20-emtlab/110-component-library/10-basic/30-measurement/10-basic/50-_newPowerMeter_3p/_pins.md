@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| 3 Phase Voltage \[kV\] | `0` | 输入 | 3 x 1 |  |
-| 3 Phase Current \[kA\] | `1` | 输入 | 3 x 1 |  |
-| Active Power \[MW\] | `2` | 输出 | 1 x 1 |  |
-| Reactive Power \[MVar\] | `3` | 输出 | 1 x 1 |  |
+| 3 Phase Voltage \[kV\] | `0` | 输入 | <samp>3</samp> × <samp>1</samp> |  |
+| 3 Phase Current \[kA\] | `1` | 输入 | <samp>3</samp> × <samp>1</samp> |  |
+| Active Power \[MW\] | `2` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Reactive Power \[MVar\] | `3` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

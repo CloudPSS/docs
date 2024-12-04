@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| N | `0` | 输入 | 1 x 1 | 输入端口N |
-| D | `1` | 输入 | 1 x 1 | 输入端口D |
-| Output | `2` | 输出 | 1 x 1 | 输出端口 |
+| N | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口N |
+| D | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口D |
+| Output | `2` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 |
 
 </slot>

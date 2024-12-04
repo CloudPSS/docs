@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Input | `0` | 输入 | 1 x 1 | 输入端口 |
-| Output | `1` | 输出 | 1 x 1 | 输出端口 |
-| Reset Trigger | `2` | 输入 | 1 x 1 | 重置触发输入端口，高电平触发，仅当 `Resettable` 项为 `Yes` 时该端口有效 |
-| Reset Value | `3` | 输入 | 1 x 1 | 重置后元件输出值的输入端口，高电平触发，仅当 `Resettable` 项为 `Yes` 时该端口有效 |
+| Input | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 输入端口 |
+| Output | `1` | 输出 | <samp>1</samp> × <samp>1</samp> | 输出端口 |
+| Reset Trigger | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 重置触发输入端口，高电平触发，仅当 `Resettable` 项为 `Yes` 时该端口有效 |
+| Reset Value | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 重置后元件输出值的输入端口，高电平触发，仅当 `Resettable` 项为 `Yes` 时该端口有效 |
 
 </slot>

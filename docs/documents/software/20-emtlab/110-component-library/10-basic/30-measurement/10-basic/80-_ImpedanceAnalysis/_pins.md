@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Voltage \[kV\] | `0` | 输入 | Type x 1 |  |
-| Current \[kA\] | `1` | 输入 | Type x 1 |  |
+| Voltage \[kV\] | `0` | 输入 | `Type` × <samp>1</samp> |  |
+| Current \[kA\] | `1` | 输入 | `Type` × <samp>1</samp> |  |
 
 </slot>

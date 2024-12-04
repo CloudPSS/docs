@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \- | `0` | 电气 | 1 x 1 |  |
-| Pin \+ | `1` | 电气 | 1 x 1 |  |
-| T | `2` | 输入 | 1 x 1 |  |
-| G | `3` | 输入 | 1 x 1 |  |
+| Pin \- | `0` | 电气 | <samp>1</samp> × <samp>1</samp> |  |
+| Pin \+ | `1` | 电气 | <samp>1</samp> × <samp>1</samp> |  |
+| T | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| G | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

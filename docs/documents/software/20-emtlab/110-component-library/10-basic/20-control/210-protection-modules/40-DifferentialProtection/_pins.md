@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| State | `State` | 输入 | 1 x 1 | 断路器状态 |
-| Im | `Im` | 输入 | 3 x 1 | m端三相测量电流(母线到线路为正方向) |
-| In | `In` | 输入 | 3 x 1 | n端三相测量电流(母线到线路为正方向) |
-| Trip | `Trip` | 输出 | 1 x 1 | 动作信号 |
+| State | `State` | 输入 | <samp>1</samp> × <samp>1</samp> | 断路器状态 |
+| Im | `Im` | 输入 | <samp>3</samp> × <samp>1</samp> | m端三相测量电流(母线到线路为正方向) |
+| In | `In` | 输入 | <samp>3</samp> × <samp>1</samp> | n端三相测量电流(母线到线路为正方向) |
+| Trip | `Trip` | 输出 | <samp>1</samp> × <samp>1</samp> | 动作信号 |
 
 </slot>

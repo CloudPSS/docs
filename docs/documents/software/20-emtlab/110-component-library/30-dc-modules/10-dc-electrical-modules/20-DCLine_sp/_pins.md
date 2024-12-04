@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| REC | `0` | 电气 | 3 x 1 | 整流侧交流端口 |
-| INV | `1` | 电气 | 3 x 1 | 逆变侧交流端口 |
-| INV2 | `2` | 电气 | 3 x 1 | 逆变侧交流端口（低端） |
+| REC | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | 整流侧交流端口 |
+| INV | `1` | 电气 | <samp>3</samp> × <samp>1</samp> | 逆变侧交流端口 |
+| INV2 | `2` | 电气 | <samp>3</samp> × <samp>1</samp> | 逆变侧交流端口（低端） |
 
 </slot>

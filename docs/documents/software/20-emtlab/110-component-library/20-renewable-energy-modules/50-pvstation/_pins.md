@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| AC | `0` | 电气 | 3 x 1 | AC |
-| Po | `1` | 输出 | 1 x 1 | Po |
-| Qo | `2` | 输出 | 1 x 1 | Qo |
+| AC | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | AC |
+| Po | `1` | 输出 | <samp>1</samp> × <samp>1</samp> | Po |
+| Qo | `2` | 输出 | <samp>1</samp> × <samp>1</samp> | Qo |
 
 </slot>

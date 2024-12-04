@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Digital Input | `0` | 输出 | 1 x 1 | 数字量输入 |
+| Digital Input | `0` | 输出 | <samp>1</samp> × <samp>1</samp> | 数字量输入 |
 
 </slot>

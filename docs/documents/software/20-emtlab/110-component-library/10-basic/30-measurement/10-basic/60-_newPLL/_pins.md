@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Va | `0` | 输入 | 1 x 1 |  |
-| Vb | `1` | 输入 | 1 x 1 |  |
-| Vc | `2` | 输入 | 1 x 1 |  |
-| Theta | `3` | 输出 | 1 x 1 |  |
+| Va | `0` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Vb | `1` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Vc | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta | `3` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

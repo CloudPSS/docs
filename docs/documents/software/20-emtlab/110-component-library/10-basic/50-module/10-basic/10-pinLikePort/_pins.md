@@ -8,32 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Port | `input` | 输出 | flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[0]:'' x flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[1]:'' | 输入引脚 |
-| Port | `output` | 输入 | flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[0]:'' x flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[1]:'' | 输出引脚 |
-| Port | `electrical` | 电气 | flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[0]:'' x flatMapper(p, index, array) = p.items ;
- finder(p, index, array) = equalText(p.key, Key);
-param = $$.revision.parameters.flatMap(flatMapper);
-p = param.find(finder);
-p == undefined ?p.dim[1]:'' | 电气引脚 |
+| Port | `input` | 输出 | <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[0]:&#39;&#39;">...</code> × <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[1]:&#39;&#39;">...</code> | 输入引脚 |
+| Port | `output` | 输入 | <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[0]:&#39;&#39;">...</code> × <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[1]:&#39;&#39;">...</code> | 输出引脚 |
+| Port | `electrical` | 电气 | <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[0]:&#39;&#39;">...</code> × <code title="flatMapper(p, index, array) = p.items ;&#10; finder(p, index, array) = equalText(p.key, Key);&#10;param = $$.revision.parameters.flatMap(flatMapper);&#10;p = param.find(finder);&#10;p == undefined ?p.dim[1]:&#39;&#39;">...</code> | 电气引脚 |
 
 </slot>

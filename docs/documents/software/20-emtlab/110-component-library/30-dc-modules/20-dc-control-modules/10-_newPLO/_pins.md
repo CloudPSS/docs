@@ -8,14 +8,14 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Va | `0` | 输入 | 1 x 1 |  |
-| Vb | `1` | 输入 | 1 x 1 |  |
-| Vc | `2` | 输入 | 1 x 1 |  |
-| Theta 1 | `3` | 输出 | 1 x 1 |  |
-| Theta 2 | `4` | 输出 | 1 x 1 |  |
-| Theta 3 | `5` | 输出 | 1 x 1 |  |
-| Theta 4 | `6` | 输出 | 1 x 1 |  |
-| Theta 5 | `7` | 输出 | 1 x 1 |  |
-| Theta 6 | `8` | 输出 | 1 x 1 |  |
+| Va | `0` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Vb | `1` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Vc | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 1 | `3` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 2 | `4` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 3 | `5` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 4 | `6` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 5 | `7` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Theta 6 | `8` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

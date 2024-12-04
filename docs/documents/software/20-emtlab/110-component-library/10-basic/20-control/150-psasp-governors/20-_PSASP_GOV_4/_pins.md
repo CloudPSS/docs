@@ -8,12 +8,12 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pref | `0` | 输入 | 1 x 1 | 电磁功率参考值 |
-| PE | `1` | 输入 | 1 x 1 | 电磁功率 |
-| ωref | `2` | 输入 | 1 x 1 | 转速参考值 |
-| ω | `3` | 输入 | 1 x 1 | 转速 |
-| L2N | `4` | 输入 | 1 x 1 | 使能信号 |
-| F | `5` | 输入 | 1 x 1 | 燃料指令 |
-| Pm | `6` | 输出 | 1 x 1 | 机械功率 |
+| Pref | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 电磁功率参考值 |
+| PE | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 电磁功率 |
+| ωref | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速参考值 |
+| ω | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速 |
+| L2N | `4` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| F | `5` | 输入 | <samp>1</samp> × <samp>1</samp> | 燃料指令 |
+| Pm | `6` | 输出 | <samp>1</samp> × <samp>1</samp> | 机械功率 |
 
 </slot>

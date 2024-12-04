@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| pin0 | `0` | 电气 | branches x 1 | 引出的电气引脚，维数为节点数量 |
-| pin1 | `1` | 电气 | branches x 1 | 引出的电气引脚，维数为节点数量 |
+| pin0 | `0` | 电气 | `branches` × <samp>1</samp> | 引出的电气引脚，维数为节点数量 |
+| pin1 | `1` | 电气 | `branches` × <samp>1</samp> | 引出的电气引脚，维数为节点数量 |
 
 </slot>

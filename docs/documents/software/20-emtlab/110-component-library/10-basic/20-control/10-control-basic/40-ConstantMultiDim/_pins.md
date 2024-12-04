@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Output | `Output` | 输出 | dim x 1 | 输出端口 |
+| Output | `Output` | 输出 | `dim` × <samp>1</samp> | 输出端口 |
 
 </slot>

@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| State | `State` | 输入 | 1 x 1 | 断路器状态 |
-| Vabc | `Vabc` | 输入 | 3 x 1 | 三相电压 |
-| Iabc | `Iabc` | 输入 | 3 x 1 | 三相电流 |
-| Trip | `Trip` | 输出 | 1 x 1 | 触发信号 |
+| State | `State` | 输入 | <samp>1</samp> × <samp>1</samp> | 断路器状态 |
+| Vabc | `Vabc` | 输入 | <samp>3</samp> × <samp>1</samp> | 三相电压 |
+| Iabc | `Iabc` | 输入 | <samp>3</samp> × <samp>1</samp> | 三相电流 |
+| Trip | `Trip` | 输出 | <samp>1</samp> × <samp>1</samp> | 触发信号 |
 
 </slot>

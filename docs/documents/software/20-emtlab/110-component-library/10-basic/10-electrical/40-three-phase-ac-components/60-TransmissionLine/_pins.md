@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Sending \(i\) Pin | `0` | 电气 | 3 x 1 | 送端连接端口 |
-| Receiving \(j\) Pin | `1` | 电气 | 3 x 1 | 受端连接端口 |
+| Sending \(i\) Pin | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | 送端连接端口 |
+| Receiving \(j\) Pin | `1` | 电气 | <samp>3</samp> × <samp>1</samp> | 受端连接端口 |
 
 </slot>

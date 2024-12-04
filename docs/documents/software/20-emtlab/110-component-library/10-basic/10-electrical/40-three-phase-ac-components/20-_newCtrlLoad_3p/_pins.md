@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 3 x 1 | 三相可控静态负载接线端 |
-| Active Power Ctrl \[MW\] | `1` | 输入 | 1 x 1 | 有功功率控制信号 [MW]<br/>三相可控静态负载有功功率控制信号输入端口 |
-| Reactive Power Ctrl \[MVar\] | `2` | 输入 | 1 x 1 | 无功功率控制信号 [MVar]<br/>三相可控静态负载无功功率控制信号输入端口 |
+| Pin \+ | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | 三相可控静态负载接线端 |
+| Active Power Ctrl \[MW\] | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 有功功率控制信号 [MW]<br/>三相可控静态负载有功功率控制信号输入端口 |
+| Reactive Power Ctrl \[MVar\] | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 无功功率控制信号 [MVar]<br/>三相可控静态负载无功功率控制信号输入端口 |
 
 </slot>

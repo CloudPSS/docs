@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| ω0 | `0` | 输入 | 1 x 1 | 转速初始值 |
-| ω | `1` | 输入 | 1 x 1 | 转速 |
-| PG0 | `2` | 输入 | 1 x 1 | 发电机有功功率初始值 |
-| PG | `3` | 输入 | 1 x 1 | 发电机有功功率 |
-| ENAB | `4` | 输入 | 1 x 1 | 使能信号 |
-| Vs | `5` | 输出 | 1 x 1 | 电力系统稳定器输出 |
+| ω0 | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速初始值 |
+| ω | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速 |
+| PG0 | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 发电机有功功率初始值 |
+| PG | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 发电机有功功率 |
+| ENAB | `4` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| Vs | `5` | 输出 | <samp>1</samp> × <samp>1</samp> | 电力系统稳定器输出 |
 
 </slot>

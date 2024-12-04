@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Ports | `0` | 电气 | Nc x 1 | 电气端口向量 |
-| GND | `1` | 电气 | 1 x 1 | 接地点 |
+| Ports | `0` | 电气 | `Nc` × <samp>1</samp> | 电气端口向量 |
+| GND | `1` | 电气 | <samp>1</samp> × <samp>1</samp> | 接地点 |
 
 </slot>

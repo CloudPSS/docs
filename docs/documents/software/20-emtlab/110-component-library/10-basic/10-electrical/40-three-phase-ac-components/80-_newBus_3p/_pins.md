@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 3 x 1 | 母线接线端口，可以作为多个三相元件的连接点 |
+| Pin \+ | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | 母线接线端口，可以作为多个三相元件的连接点 |
 
 </slot>

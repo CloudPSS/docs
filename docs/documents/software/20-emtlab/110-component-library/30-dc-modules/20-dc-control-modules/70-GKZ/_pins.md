@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Ud | `Ud` | 输入 | 1 x 1 | Ud |
-| URC\_ON | `URC_ON` | 输出 | 1 x 1 | URC_ON |
+| Ud | `Ud` | 输入 | <samp>1</samp> × <samp>1</samp> | Ud |
+| URC\_ON | `URC_ON` | 输出 | <samp>1</samp> × <samp>1</samp> | URC_ON |
 
 </slot>

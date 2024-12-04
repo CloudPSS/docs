@@ -8,13 +8,13 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Vcp | `0` | 输入 | N x 1 |  |
-| Vcn | `1` | 输入 | N x 1 |  |
-| Vpref | `2` | 输入 | 1 x 1 |  |
-| Vnref | `3` | 输入 | 1 x 1 |  |
-| Ip | `4` | 输入 | 1 x 1 |  |
-| In | `5` | 输入 | 1 x 1 |  |
-| Gp | `6` | 输出 | 2*N x 1 |  |
-| Gn | `7` | 输出 | 2*N x 1 |  |
+| Vcp | `0` | 输入 | `N` × <samp>1</samp> |  |
+| Vcn | `1` | 输入 | `N` × <samp>1</samp> |  |
+| Vpref | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Vnref | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Ip | `4` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| In | `5` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Gp | `6` | 输出 | `2*N` × <samp>1</samp> |  |
+| Gn | `7` | 输出 | `2*N` × <samp>1</samp> |  |
 
 </slot>

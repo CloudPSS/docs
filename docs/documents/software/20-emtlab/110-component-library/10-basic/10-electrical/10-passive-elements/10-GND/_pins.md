@@ -8,6 +8,6 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| GND | `0` | 电气 | 0 x 0 | 接地端 |
+| GND | `0` | 电气 | <samp style={{fontStyle: 'italic'}}>ANY</samp> | 接地端 |
 
 </slot>

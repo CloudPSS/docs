@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Stator Port | `0` | 电气 | (1+TerminalType)*N_g_s*N_gph_s x 1 |  |
-| Input Speed | `1` | 输入 | 1 x 1 |  |
-| Control Switch Signal | `2` | 输入 | 1 x 1 |  |
-| Input Torque | `3` | 输入 | 1 x 1 |  |
+| Stator Port | `0` | 电气 | <code title="(1+TerminalType)*N_g_s*N_gph_s">...</code> × <samp>1</samp> |  |
+| Input Speed | `1` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Control Switch Signal | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Input Torque | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

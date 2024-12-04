@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Id | `Id` | 输入 | 1 x 1 | Id |
-| Iolim | `Iolim` | 输入 | 1 x 1 | Iolim |
-| Uac | `Uac` | 输入 | 1 x 1 | Uac |
-| Amax | `Amax` | 输出 | 1 x 1 | Amax |
+| Id | `Id` | 输入 | <samp>1</samp> × <samp>1</samp> | Id |
+| Iolim | `Iolim` | 输入 | <samp>1</samp> × <samp>1</samp> | Iolim |
+| Uac | `Uac` | 输入 | <samp>1</samp> × <samp>1</samp> | Uac |
+| Amax | `Amax` | 输出 | <samp>1</samp> × <samp>1</samp> | Amax |
 
 </slot>

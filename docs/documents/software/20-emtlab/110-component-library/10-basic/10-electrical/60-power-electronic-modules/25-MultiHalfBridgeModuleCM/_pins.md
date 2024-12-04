@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin\+ | `0` | 电气 | 1 x 1 | 子模块的接线正端，也即IGBT(A)的s发射极 |
-| Pin\- | `1` | 电气 | 1 x 1 | 子模块的接线负端，也即IGBT(B)的s发射极 |
-| Gate | `2` | 输入 | 2*N x 1 | 开关信号输入端，其维数为模块数的2倍 |
+| Pin\+ | `0` | 电气 | <samp>1</samp> × <samp>1</samp> | 子模块的接线正端，也即IGBT(A)的s发射极 |
+| Pin\- | `1` | 电气 | <samp>1</samp> × <samp>1</samp> | 子模块的接线负端，也即IGBT(B)的s发射极 |
+| Gate | `2` | 输入 | `2*N` × <samp>1</samp> | 开关信号输入端，其维数为模块数的2倍 |
 
 </slot>

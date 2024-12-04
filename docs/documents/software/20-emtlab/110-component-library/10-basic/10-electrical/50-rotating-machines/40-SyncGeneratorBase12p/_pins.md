@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Stator Port | `0` | 电气 | 12 x 1 |  |
-| ω | `1` | 输入 | 1 x 1 |  |
-| Tm | `2` | 输入 | 1 x 1 |  |
-| Te | `3` | 输出 | 1 x 1 |  |
-| Ef | `4` | 输入 | 1 x 1 |  |
-| If | `5` | 输出 | 1 x 1 |  |
+| Stator Port | `0` | 电气 | <samp>12</samp> × <samp>1</samp> |  |
+| ω | `1` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Tm | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| Te | `3` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
+| Ef | `4` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| If | `5` | 输出 | <samp>1</samp> × <samp>1</samp> |  |
 
 </slot>

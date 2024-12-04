@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| State | `state` | 输入 | 1 x 1 | 断路器状态 |
-| Trip | `trigger` | 输出 | 1 x 1 | 断路器A相触发信号 |
+| State | `state` | 输入 | <samp>1</samp> × <samp>1</samp> | 断路器状态 |
+| Trip | `trigger` | 输出 | <samp>1</samp> × <samp>1</samp> | 断路器A相触发信号 |
 
 </slot>

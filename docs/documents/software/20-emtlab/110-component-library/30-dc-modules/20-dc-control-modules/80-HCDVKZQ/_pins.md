@@ -8,11 +8,11 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Ud | `Ud` | 输入 | 1 x 1 | Ud |
-| Id | `Id` | 输入 | 1 x 1 | Id |
-| Uac | `Uac` | 输入 | 3 x 1 | Uac |
-| Pref | `Pref` | 输入 | 1 x 1 | Pref |
-| Iref | `Iref` | 输入 | 1 x 1 | Iref |
-| Alpha | `Alpha` | 输出 | 1 x 1 | Alpha |
+| Ud | `Ud` | 输入 | <samp>1</samp> × <samp>1</samp> | Ud |
+| Id | `Id` | 输入 | <samp>1</samp> × <samp>1</samp> | Id |
+| Uac | `Uac` | 输入 | <samp>3</samp> × <samp>1</samp> | Uac |
+| Pref | `Pref` | 输入 | <samp>1</samp> × <samp>1</samp> | Pref |
+| Iref | `Iref` | 输入 | <samp>1</samp> × <samp>1</samp> | Iref |
+| Alpha | `Alpha` | 输出 | <samp>1</samp> × <samp>1</samp> | Alpha |
 
 </slot>

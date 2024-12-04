@@ -8,8 +8,8 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Ud | `Ud` | 输入 | 1 x 1 | Ud |
-| Io | `Io` | 输入 | 1 x 1 | Io |
-| Iolim | `Iolim` | 输出 | 1 x 1 | Iolim |
+| Ud | `Ud` | 输入 | <samp>1</samp> × <samp>1</samp> | Ud |
+| Io | `Io` | 输入 | <samp>1</samp> × <samp>1</samp> | Io |
+| Iolim | `Iolim` | 输出 | <samp>1</samp> × <samp>1</samp> | Iolim |
 
 </slot>

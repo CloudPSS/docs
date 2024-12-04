@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pref | `0` | 输入 | 1 x 1 | 电磁功率参考值 |
-| Pin | `1` | 输入 | 1 x 1 | 功率偏差信号 |
-| ENAB | `2` | 输入 | 1 x 1 | 使能信号 |
-| Vs | `3` | 输出 | 1 x 1 | 电力系统稳定器输出 |
+| Pref | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 电磁功率参考值 |
+| Pin | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 功率偏差信号 |
+| ENAB | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| Vs | `3` | 输出 | <samp>1</samp> × <samp>1</samp> | 电力系统稳定器输出 |
 
 </slot>

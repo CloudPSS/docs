@@ -8,12 +8,12 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Wref | `0` | 输入 | 1 x 1 | 转速参考值 |
-| Pref | `1` | 输入 | 1 x 1 | 功率参考值 |
-| z | `2` | 输入 | 1 x 1 | 阀门位置 |
-| w | `3` | 输入 | 1 x 1 | 转速 |
-| L2N | `4` | 输入 | 1 x 1 | 使能信号 |
-| Pm | `5` | 输出 | 1 x 1 | 机械功率 |
-| zi | `6` | 输出 | 1 x 1 | 初始阀门位置 |
+| Wref | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速参考值 |
+| Pref | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 功率参考值 |
+| z | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 阀门位置 |
+| w | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速 |
+| L2N | `4` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| Pm | `5` | 输出 | <samp>1</samp> × <samp>1</samp> | 机械功率 |
+| zi | `6` | 输出 | <samp>1</samp> × <samp>1</samp> | 初始阀门位置 |
 
 </slot>

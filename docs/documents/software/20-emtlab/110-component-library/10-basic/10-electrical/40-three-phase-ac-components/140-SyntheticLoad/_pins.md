@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Stator Port | `0` | 电气 | 3 x 1 | 定子端引脚（单线图） |
-| Input Speed | `1` | 输入 | 1 x 1 | 转速信号输入引脚，转速控制模式 |
-| Control Switch Signal | `2` | 输入 | 1 x 1 | 切换控制模式，0为转速控制，1为转矩控制 |
-| Input Torque | `3` | 输入 | 1 x 1 | 转矩信号输入引脚，转矩控制模式 |
+| Stator Port | `0` | 电气 | <samp>3</samp> × <samp>1</samp> | 定子端引脚（单线图） |
+| Input Speed | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 转速信号输入引脚，转速控制模式 |
+| Control Switch Signal | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 切换控制模式，0为转速控制，1为转矩控制 |
+| Input Torque | `3` | 输入 | <samp>1</samp> × <samp>1</samp> | 转矩信号输入引脚，转矩控制模式 |
 
 </slot>

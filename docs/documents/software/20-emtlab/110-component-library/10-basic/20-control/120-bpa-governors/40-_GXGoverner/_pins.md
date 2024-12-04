@@ -8,9 +8,9 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| F | `0` | 输入 | 1 x 1 | 燃料指令 |
-| S | `1` | 输入 | 1 x 1 | 汽机进汽量 |
-| L2N | `2` | 输入 | 1 x 1 | 使能信号 |
-| Ppressure | `3` | 输出 | 1 x 1 | 主汽压力 |
+| F | `0` | 输入 | <samp>1</samp> × <samp>1</samp> | 燃料指令 |
+| S | `1` | 输入 | <samp>1</samp> × <samp>1</samp> | 汽机进汽量 |
+| L2N | `2` | 输入 | <samp>1</samp> × <samp>1</samp> | 使能信号 |
+| Ppressure | `3` | 输出 | <samp>1</samp> × <samp>1</samp> | 主汽压力 |
 
 </slot>

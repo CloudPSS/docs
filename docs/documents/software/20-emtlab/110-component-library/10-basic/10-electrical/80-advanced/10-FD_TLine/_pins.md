@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| T1 | `0` | 电气 | Ncon x 1 | 所有的1侧导体电气端口向量 |
-| T2 | `1` | 电气 | Ncon x 1 | 所有的2侧导体电气端口向量 |
+| T1 | `0` | 电气 | `Ncon` × <samp>1</samp> | 所有的1侧导体电气端口向量 |
+| T2 | `1` | 电气 | `Ncon` × <samp>1</samp> | 所有的2侧导体电气端口向量 |
 
 </slot>

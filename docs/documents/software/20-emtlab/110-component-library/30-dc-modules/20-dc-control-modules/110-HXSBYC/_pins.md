@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Uac | `Uac` | 输入 | 1 x 1 | Uac |
-| Δα | `Δα` | 输出 | 1 x 1 | Δα |
+| Uac | `Uac` | 输入 | <samp>1</samp> × <samp>1</samp> | Uac |
+| Δα | `Δα` | 输出 | <samp>1</samp> × <samp>1</samp> | Δα |
 
 </slot>

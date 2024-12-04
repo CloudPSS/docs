@@ -8,12 +8,12 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| V\_3 | `0` | 输入 | 3 x 1 | 三相电压向量瞬时值[kV] |
-| I\_3 | `1` | 输入 | 3 x 1 | 三相电流向量瞬时值[kA] |
-| VT | `2` | 输入 | 1 x 1 |  |
-| IT | `3` | 输入 | 1 x 1 |  |
-| P | `4` | 输入 | 1 x 1 | P |
-| Q | `5` | 输入 | 1 x 1 | Q |
-| Vc | `6` | 输出 | 1 x 1 | 补偿电压输出 |
+| V\_3 | `0` | 输入 | <samp>3</samp> × <samp>1</samp> | 三相电压向量瞬时值[kV] |
+| I\_3 | `1` | 输入 | <samp>3</samp> × <samp>1</samp> | 三相电流向量瞬时值[kA] |
+| VT | `2` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| IT | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
+| P | `4` | 输入 | <samp>1</samp> × <samp>1</samp> | P |
+| Q | `5` | 输入 | <samp>1</samp> × <samp>1</samp> | Q |
+| Vc | `6` | 输出 | <samp>1</samp> × <samp>1</samp> | 补偿电压输出 |
 
 </slot>

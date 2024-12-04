@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Uac | `Uac` | 输入 | 1 x 1 | Uac |
-| αraml | `αraml` | 输出 | 1 x 1 | αraml |
+| Uac | `Uac` | 输入 | <samp>1</samp> × <samp>1</samp> | Uac |
+| αraml | `αraml` | 输出 | <samp>1</samp> × <samp>1</samp> | αraml |
 
 </slot>

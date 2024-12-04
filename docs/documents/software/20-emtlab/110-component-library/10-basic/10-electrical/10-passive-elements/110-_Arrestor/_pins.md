@@ -8,7 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Pin \+ | `0` | 电气 | 1 x 1 | 避雷器接线端口的正端 |
-| Pin \- | `1` | 电气 | 1 x 1 | 避雷器接线端口的负端 |
+| Pin \+ | `0` | 电气 | <samp>1</samp> × <samp>1</samp> | 避雷器接线端口的正端 |
+| Pin \- | `1` | 电气 | <samp>1</samp> × <samp>1</samp> | 避雷器接线端口的负端 |
 
 </slot>
