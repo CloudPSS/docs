@@ -66,7 +66,7 @@ export function dim(dim) {
         return ``;
     }
     if (dim.every((d) => Number(d) === 0)) {
-        return `<samp style="font-style: italic">ANY</samp>`;
+        return `<samp style={{fontStyle: 'italic'}}>ANY</samp>`;
     }
     const dimHtml = dim.map((d) => {
         const num = Number(d);
@@ -78,7 +78,7 @@ export function dim(dim) {
         }
         return escapeCode(d);
     });
-    return dimHtml.join('×');
+    return dimHtml.join(' × ');
 }
 
 /**
