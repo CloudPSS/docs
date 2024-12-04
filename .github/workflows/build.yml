@@ -17,36 +17,45 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - id: Versioning
+      - name: Versioning
         run: |
           VERSION=$(git describe --tags --abbrev=8 --always)
           VERSION=${VERSION#v}
           echo "Version: $VERSION"
           jq --arg version "$VERSION" '.version = $version' package.json > tmp.$$.json && mv tmp.$$.json package.json
-      - id: Install
+      - name: Install dependencies
         uses: wyvox/action-setup-pnpm@v3
-      - id: Optimize
+      - name: Optimize assets
         run: pnpm optimize
-      - id: Build
+      - name: Build docs
         env:
           DOCS_BASE_URL: /${{ github.event.repository.name }}/
           DOCS_HOME_URL: https://cloudpss.net/
         run: pnpm build
-      - id: Upload
+      - name: Upload build artifact
         if: (!cancelled())
         uses: actions/upload-artifact@v4
         with:
           name: build
           path: build
-      - id: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: (!cancelled() && github.event_name == 'push')
+
+  deploy:
+    needs: build
+    if: (!cancelled() && github.event_name == 'push')
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: gh-pages
-          publish_dir: build
-          force_orphan: true
-          enable_jekyll: false
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
-          commit_message: ${{ github.event.head_commit.message }}
+          artifact_name: build
