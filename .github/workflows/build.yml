@@ -16,7 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 1
+          fetch-depth: 0
           fetch-tags: true
       - id: Install
         uses: wyvox/action-setup-pnpm@v3
