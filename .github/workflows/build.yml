@@ -31,13 +31,15 @@ jobs:
         env:
           DOCS_BASE_URL: /${{ github.event.repository.name }}/
           DOCS_HOME_URL: https://cloudpss.net/
-        run: pnpm build
-      - name: Upload build artifact
+        run: |
+          pnpm build
+          touch build/.nojekyll
+      - name: Upload static files as artifact
+        id: deployment
         if: (!cancelled())
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: build
-          path: build
+          path: build/
 
   deploy:
     needs: build
@@ -57,5 +59,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          artifact_name: build
