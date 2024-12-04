@@ -35,7 +35,7 @@ const plugins: PluginConfig[] = [
     [
         '@docusaurus/plugin-pwa',
         {
-            offlineModeActivationStrategies: ['queryString'],
+            offlineModeActivationStrategies: ['queryString', 'standalone'],
             pwaHead: [
                 {
                     tagName: 'link',
@@ -54,11 +54,6 @@ const plugins: PluginConfig[] = [
                     content: '#242526',
                 },
                 {
-                    tagName: 'meta',
-                    name: 'application-name',
-                    content: 'CloudPSS 知识库',
-                },
-                {
                     tagName: 'link',
                     rel: 'apple-touch-icon',
                     sizes: '180x180',
@@ -66,12 +61,12 @@ const plugins: PluginConfig[] = [
                 },
                 {
                     tagName: 'meta',
-                    name: 'apple-mobile-web-app-title',
-                    content: 'CloudPSS 知识库',
+                    name: 'apple-mobile-web-app-capable',
+                    content: 'yes',
                 },
                 {
                     tagName: 'meta',
-                    name: 'apple-mobile-web-app-capable',
+                    name: 'mobile-web-app-capable',
                     content: 'yes',
                 },
                 {
