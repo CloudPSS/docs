@@ -18,16 +18,16 @@ jobs:
         with:
           fetch-depth: 0
           fetch-tags: true
+      - id: Versioning
+        run: |
+          VERSION=$(git describe --tags --abbrev=8 --always)
+          VERSION=${VERSION#v}
+          echo "Version: $VERSION"
+          jq --arg version "$VERSION" '.version = $version' package.json > tmp.$$.json && mv tmp.$$.json package.json
       - id: Install
         uses: wyvox/action-setup-pnpm@v3
       - id: Optimize
         run: pnpm optimize
-      - id: Versioning
-        run: |
-          VERSION=$(git describe --tags --abbrev=8)
-          VERSION=${VERSION#v}
-          echo "Version: $VERSION"
-          jq --arg version "$VERSION" '.version = $version' package.json > tmp.$$.json && mv tmp.$$.json package.json
       - id: Build
         env:
           DOCS_BASE_URL: /${{ github.event.repository.name }}/
