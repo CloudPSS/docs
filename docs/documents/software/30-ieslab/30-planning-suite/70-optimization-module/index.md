@@ -1,6 +1,6 @@
 ---
-title: 方案优选模块
-description: IESLab 规划优化平台-方案优选模块
+title: 方案计算模块
+description: IESLab 规划优化平台-方案计算模块
 sidebar_position: 70
 tags:
 - ieslab

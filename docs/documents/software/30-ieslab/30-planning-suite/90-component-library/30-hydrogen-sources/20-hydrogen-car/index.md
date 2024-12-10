@@ -15,9 +15,8 @@ tags:
 
 外部氢源有(化石燃料)**制氢源**和**运氢槽车**,其产氢率可调
 
-![制氢源](./hydrogenSource.svg )
+![制氢源](./HydrogenSource.svg )
 
-![运氢槽车](./hydrogenCar.svg )
 
 ## 元件说明
 
