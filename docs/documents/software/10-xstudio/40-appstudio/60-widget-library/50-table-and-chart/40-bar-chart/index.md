@@ -41,13 +41,14 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 鼠标拖曳效果 | `layoutConfig/dragmodemode` |  | 控件鼠标拖曳效果 | 选择 | 表格鼠标拖曳效果：放大、移动、框选、套索、画封闭路径、画开放路径、画线段、画矩形、画圆；默认为 放大 |
 | 鼠标悬浮距离 | `layoutConfig/hoverdistance` |  | 控件鼠标悬浮距离 | 常量 | 表格鼠标悬浮距离，默认为 20 |
 | 是否隐藏工具栏 | `layoutConfig/displayModeBar` |  | 控件是否隐藏工具栏开关 | 开关 | 表格是否隐藏工具栏开关，默认为 关 |
-
+| 横坐标数据类型 | `layoutConfig/xaxis/type` |  | 控件横坐标数据类型 | 选择 | 自定义图表横坐标数据类型：-、liner、log、date、category、multicategory，默认为 - |
 
 ### 内容
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| 数据 | `dataJsonString` |  | 表格数据 | 表格 | 点击 `编辑数据`，弹出控件值内容表格（JSON 格式） |
+| 列定义 | `column` |  | 列定义 | 表格 | 点击 `编辑数据`，弹出控件列定义内容表格 |
+| 数据集 | `dataSet` |  | 数据集 | 表格 | 点击 `编辑数据`，弹出控件数据集内容表格 |
 
 ## 案例介绍
 
