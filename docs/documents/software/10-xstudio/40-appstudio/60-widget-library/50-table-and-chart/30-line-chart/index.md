@@ -49,8 +49,6 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 列定义 | `column` |  | 列定义 | 表格 | 点击 `编辑数据`，弹出控件列定义内容表格 |
 | 数据集 | `dataSet` |  | 数据集 | 表格 | 点击 `编辑数据`，弹出控件数据集内容表格 |
 
-## 案例介绍
-
 ### 列定义
 
 上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
@@ -75,6 +73,42 @@ import CommonStyle from '../../60-grid/_common-style.md'
 - 数据：表格嵌套数据
 
 ![数据集](table-data.png "数据集")
+
+## 案例介绍
+
+
+### 接入 FuncStudio 函数的典型应用
+
+1. 创建一个按钮控件，在右侧的属性配置区内给按钮命名为 A，创建一个折线图控件，在右侧的属性配置区内给折线图命名为 B
+
+2. 创建函数资源 asset1，选择资源类型为函数
+
+3. 配置函数资源 asset1，点击**选择资源**，绑定 `rid` 为 `function/admin/demo` 的示例函数
+
+4. 鼠标选中按钮控件 A 的事件/点击属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.start()`
+
+5. 鼠标选中折线图控件 B 的内容/列定义属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableColumn`
+
+6. 鼠标选中折线图控件 B 的内容/数据集属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableDataSet`
+
+7. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下点击按钮 A，等待 `function/admin/demo` 的示例函数运行结束，折线图控件 B 显示运行结果
+
+
+![创建折线图控件](create-line-chart-control.png "创建折线图控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![更改按钮属性](change-button-a-attributes.png "更改按钮属性")
+
+![更改折线图列定义](change-line-chart-column.png "更改折线图列定义")
+
+![更改折线图数据集](change-line-chart-dataset.png "更改折线图数据集")
+
+![预览模式](preview-mode.png "预览模式")
+
+
 
 ## 常见问题
 
