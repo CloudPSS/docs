@@ -75,9 +75,6 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 切换 | `@change` |  | 当输入结束时触发 | 函数 | 采用更新方式触发函数，当输入结束时触发 |
 
-
-## 案例介绍
-
 ### 列定义
 
 上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
@@ -98,9 +95,12 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![表格值](table-values.png "表格值")
 
+
+## 案例介绍
+
 ### 典型应用
 
-1. 创建两个表格，在右侧的属性配置区内给输入框命名为 A 和 B
+1. 创建两个表格，在右侧的属性配置区内给控件命名为 A 和 B
 
 2. 鼠标选中表格 A 的事件/更改属性栏，按下 <kbd>Ctrl</kbd> 输入 `B.value = A.value`
 
@@ -116,7 +116,35 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ![预览模式](preview-mode.png "预览模式")
 
+### 接入 FuncStudio 函数的典型应用
 
+1. 创建一个按钮控件，在右侧的属性配置区内给按钮命名为 A，创建一个表格控件，在右侧的属性配置区内给表格命名为 B
+
+2. 创建函数资源 asset1，选择资源类型为函数
+
+3. 配置函数资源 asset1，点击**选择资源**，绑定 `rid` 为 `function/admin/demo` 的示例函数
+
+4. 鼠标选中按钮控件 A 的事件/点击属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.start()`
+
+5. 鼠标选中表格控件 B 的内容/列定义属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableHead`
+
+6. 鼠标选中表格控件 B 的内容/值属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableValue`
+
+7. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下点击按钮 A，等待 `function/admin/demo` 的示例函数运行结束，表格控件 B 显示运行结果
+
+![创建表格控件](create-table-control-2.png "创建表格控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![更改按钮属性](change-button-a-attributes.png "更改按钮属性")
+
+![更改表格列定义](change-table-head.png "更改表格列定义")
+
+![更改表格值](change-table-value.png "更改表格值")
+
+![预览模式](preview-mode-2.png "预览模式")
 
 ## 常见问题
 
