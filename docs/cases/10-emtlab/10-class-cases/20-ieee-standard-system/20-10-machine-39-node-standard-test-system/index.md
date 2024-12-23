@@ -11,7 +11,7 @@ tags:
 IEEE 39节点标准系统，是美国新英格兰地区的一个电力网络。该系统包括10台发电机，39个母线，12台变压器。所有电机均采用了励磁、调速以及电力系统稳定器PSS进行调控。
 作为测试，在实例算例中，于bus-16母线处添加了时长0.1s的三项接地短路故障，用户可根据需要自行修改、删除或添加。
 
-系统可以选择两种启动方式：S2M启动方式与稳态潮流断面启动方式。详见[潮流断面启动](../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)
+系统可以选择两种启动方式：S2M启动方式与稳态潮流断面启动方式。详见[潮流断面启动](../../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)
 
 
 该算例可用于传统暂态稳定分析，励磁、调速控制器设计，系统调频等特性分析等。
@@ -215,7 +215,7 @@ CloudPSS上的IEEE39节点标准系统中，对电机采用了子系统功能进
 
 ## 仿真
 
-CloudPSS的电磁暂态仿真中电气系统的启动可以大体分为两种：`从零启动`以及`从潮流断面直接启动`。具体可以参考[潮流断面启动](../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)
+CloudPSS的电磁暂态仿真中电气系统的启动可以大体分为两种：`从零启动`以及`从潮流断面直接启动`。具体可以参考[潮流断面启动](../../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)
 
 作为演示，这里选择从零启动（即S2M启动）方式，在`运行`标签页下配置`电磁暂态仿真方案`。在仿真方案配置页面，可配置输出窗口，这里选择输出所有10台发电机的功角、转速、端电压标幺值、端电流标幺值，以及37号母线所连电机的三相瞬时电流曲线。
 
