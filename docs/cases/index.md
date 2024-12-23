@@ -11,12 +11,6 @@ import DocCardList from '@theme/DocCardList';
 <DocCardList items={[
   {
     type: "category",
-    label: "XStudio",
-    description: "数字孪生基础支撑平台",
-    href: "/cases/xstudio/",
-  },
-  {
-    type: "category",
     label: "EMTLab",
     description: "完全自主研发的全功能电磁暂态仿真器",
     href: "/cases/emtlab/",
@@ -32,5 +26,11 @@ import DocCardList from '@theme/DocCardList';
     label: "DSLab",
     description: "针对源网荷储一体化系统的数字孪生应用平台",
     href: "/cases/dslab/",
+  },
+  {
+    type: "category",
+    label: "XStudio",
+    description: "数字孪生基础支撑平台",
+    href: "/cases/xstudio/",
   },
 ]} />
