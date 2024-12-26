@@ -1,9 +1,6 @@
 ---
-title: "安控-监控器"
-description: "安控-监控器"
-tags:
-- emtlab
-- components
+title: "监视模块"
+description: ""
 ---
 
 ## 元件定义
