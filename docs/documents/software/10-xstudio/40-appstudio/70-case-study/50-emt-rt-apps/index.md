@@ -1,6 +1,6 @@
 --- 
-title: 构建实时仿真应用
-description: 构建实时仿真应用
+title: 实时仿真应用
+description: 实时仿真应用
 tags:
 - xstudio
 - appstudio
