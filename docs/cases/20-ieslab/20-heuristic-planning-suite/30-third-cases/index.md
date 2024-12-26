@@ -1,9 +1,9 @@
 ---
 title: 第三方案例
-description: XStudio 第三方案例
+description: IESLab 第三方案例
 
 tags:
-- xstudio
+- ieslab
 - cases
 - directory
 
