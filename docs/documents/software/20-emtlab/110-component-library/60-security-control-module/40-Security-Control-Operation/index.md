@@ -1,9 +1,6 @@
 ---
-title: "安控-判断器"
-description: "安控-判断器"
-tags:
-- emtlab
-- components
+title: "操作模块"
+description: ""
 ---
 
 ## 元件定义

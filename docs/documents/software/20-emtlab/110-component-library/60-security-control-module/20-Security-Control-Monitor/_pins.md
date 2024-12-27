@@ -8,8 +8,7 @@ All changes will be overwritten by regeneration.
 
 | 引脚名 | 键名 | 类型 | 维度 | 描述 |
 |:------ |:---- |:----:|:----:|:---- |
-| Mon | `Mon` | 输入 | Dim_var x 1 | Mon |
-| Enab | `Enab` | 输入 | 1 x  | Enab |
-| Out | `Out` | 输出 | equalText(Opp_var,'code')?Dim_out:1 x 1 | Out |
+| Var | `Var` | 输入 | `Dim_var` × <samp>1</samp> | Var |
+| 监控信号向量输出 | `Monitor` | 输出 | `Dim_var` × <samp>1</samp> | 监控信号向量输出，可以接到`判断模块(model/CloudPSS/Security-Control-Judge)`的输入端口`Mon`。 |
 
 </slot>
