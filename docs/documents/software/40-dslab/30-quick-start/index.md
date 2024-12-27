@@ -75,7 +75,7 @@ tags:
 
 ### 电源信息库
 
-模板算例已经预置了光伏设备及参数信息，用户也可以根据需要自行添加新的电源设备。关于电源信息库的编辑方法可以参考 [电源信息库](../50-data-module/30-powersource-database/index.md)。
+模板算例已经预置了光伏设备及参数信息，用户也可以根据需要自行添加新的电源设备。关于电源信息库的编辑方法可以参考 [电源信息库](../50-data-module/30-power-source-database/index.md)。
 
 ![电源](./powersource.png "电源")
 
