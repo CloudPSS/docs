@@ -131,6 +131,21 @@ dslab = DSLab.fetch(simulationId)
 dslab.runIESEnergyStoragePlan(job=None, name=None)
 ```
 
+### `dslab.runIESShortCurrent(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行短路电流计算方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runIESShortCurrent(job=None, name=None)
+```
+
 ## Class: `DataManageModel`
 
 - Extends: [Object][Object]
@@ -211,6 +226,28 @@ dslab = DSLab.fetch(simulationId)
 # highlight-next-line
 dslab.datamanageModel.DeleteDataItem(id, kind)
 ```
+
+### `datamanageModel.UpdateItemExtra(self, kind, data)`
+
+- 实例方法
+- `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
+- `data`: [Dict][Dict] 添加的数据内容，其数据结构应满足对应数据项的结构要求，例如: `{'id': '', 'data': {}, 'extra': []}`
+- Returns: [List][List] 返回该种类下所有数据项的列表
+
+更新 kind 对应的负荷曲线等数据
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# 更新曲线数据
+data = {
+    'id': '',
+    'data': {},
+    'extra': []
+}
+# highlight-next-line
+project.dataManageModel.UpdateItemExtra(kind, data)
+```
+
 
 ### `datamanageModel.GetAtmosData(locationId, date)`
 

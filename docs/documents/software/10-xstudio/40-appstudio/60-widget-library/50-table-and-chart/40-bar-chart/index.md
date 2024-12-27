@@ -9,7 +9,7 @@ tags:
 
 本节主要介绍 AppStudio 控件库里的柱状图控件。
 
-![柱状图控件](image.png "柱状图控件")
+![柱状图控件](bar-chart-control.png "柱状图控件")
 
 
 ## 属性
@@ -41,15 +41,73 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | 鼠标拖曳效果 | `layoutConfig/dragmodemode` |  | 控件鼠标拖曳效果 | 选择 | 表格鼠标拖曳效果：放大、移动、框选、套索、画封闭路径、画开放路径、画线段、画矩形、画圆；默认为 放大 |
 | 鼠标悬浮距离 | `layoutConfig/hoverdistance` |  | 控件鼠标悬浮距离 | 常量 | 表格鼠标悬浮距离，默认为 20 |
 | 是否隐藏工具栏 | `layoutConfig/displayModeBar` |  | 控件是否隐藏工具栏开关 | 开关 | 表格是否隐藏工具栏开关，默认为 关 |
-
+| 横坐标数据类型 | `layoutConfig/xaxis/type` |  | 控件横坐标数据类型 | 选择 | 自定义图表横坐标数据类型：-、liner、log、date、category、multicategory，默认为 - |
 
 ### 内容
 
 | 参数名 | 键值 (key) | 单位 | 备注 | 类型 | 描述 |
 | :--- | :--- | :--- | :--: | :--- | :--- |
-| 数据 | `dataJsonString` |  | 表格数据 | 表格 | 点击 `编辑数据`，弹出控件值内容表格（JSON 格式） |
+| 列定义 | `column` |  | 列定义 | 表格 | 点击 `编辑数据`，弹出控件列定义内容表格 |
+| 数据集 | `dataSet` |  | 数据集 | 表格 | 点击 `编辑数据`，弹出控件数据集内容表格 |
+
+
+### 列定义
+
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
+
+下方显示的是柱状图控件列定义:
+
+- 名称
+- 文字位置：默认为 top center
+- marker 大小：默认为 12
+- x 坐标
+- y 坐标
+
+![列定义](table-items.png "列定义")
+
+### 数据集
+
+上方从左到右，依次是撤销（`Ctrl` `Z`），重做（`Ctrl` `Y`），在上方插入行（`Ctrl` `I`），在下方插入行（`Ctrl` `Alt` `I`），删除行（`Ctrl` `D`），导入 CSV，导出 CSV
+
+下方显示的是柱状图控件数据集:
+
+- 名称
+- 数据：表格嵌套数据
+
+![数据集](table-data.png "数据集")
 
 ## 案例介绍
+
+### 接入 FuncStudio 函数的典型应用
+
+1. 创建一个按钮控件，在右侧的属性配置区内给按钮命名为 A，创建一个柱状图控件，在右侧的属性配置区内给柱状图命名为 B
+
+2. 创建函数资源 asset1，选择资源类型为函数
+
+3. 配置函数资源 asset1，点击**选择资源**，绑定 `rid` 为 `function/admin/demo` 的示例函数
+
+4. 鼠标选中按钮控件 A 的事件/点击属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.start()`
+
+5. 鼠标选中柱状图控件 B 的内容/列定义属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableColumn`
+
+6. 鼠标选中柱状图控件 B 的内容/数据集属性栏，按下 <kbd>Ctrl</kbd> 输入 `$asset1.value.tableDataSet`
+
+7. 点击工具栏的预览快捷按钮（或者 <kbd>Ctrl</kbd> <kbd>P</kbd>），进入预览模式，在预览模式下点击按钮 A，等待 `function/admin/demo` 的示例函数运行结束，柱状图控件 B 显示运行结果
+
+![创建柱状图控件](create-bar-chart-control.png "创建柱状图控件")
+
+![创建函数资源](create-function-resource.png "创建函数资源")
+
+![绑定示例函数](bind-example-function.png "绑定示例函数")
+
+![更改按钮属性](change-button-a-attributes.png "更改按钮属性")
+
+![更改柱状图列定义](change-bar-chart-column.png "更改柱状图列定义")
+
+![更改柱状图数据集](change-bar-chart-dataset.png "更改柱状图数据集")
+
+![预览模式](preview-mode.png "预览模式")
+
 
 ## 常见问题
 

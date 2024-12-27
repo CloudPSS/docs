@@ -375,6 +375,22 @@ model = Model.fetch("model/Demo/demo") # 获取指定 rid 的项目
 component = model.getComponentsByRid('rid')
 ```
 
+### `model.fetchTopology(implementType, config, maximumDepth)`
+
+- 实例方法
+- `implementType`: [String][String]；拓扑实现类型，默认为`emtp`
+- `config`: [Dict][Dict]；拓扑实现配置
+- `maximumDepth`: [Number][Number]；拓扑最大递归深度，用于自定义项目中使用 diagram 实现元件展开情况
+- Returns: [ModelTopology](#class-modeltopology)；返回一个拓扑实例
+
+获取当前版本的拓扑。
+
+```python showLineNumbers
+model = Model.fetch('model/Maxwell/IEEE')
+# highlight-next-line
+topology = model.fetchTopology()
+```
+
 ### `model.run(job=None, config=None, name=None, policy=None, stop_on_entry=None, **kwargs)`
 
 - 实例方法
