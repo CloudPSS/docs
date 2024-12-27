@@ -26,7 +26,7 @@ All changes will be overwritten by regeneration.
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
 | 对信号预处理 | `PreOpp` | 布尔 | 对信号预处理 |
-| 预处理系数 | `PreOppVec` | 表格 | 预处理系数，x'=ax+b。可以支持$$.revision.implements.diagram.cells['myid'].args.myarg的格式调用其它元件的参数。 |
+| 预处理系数 | `PreOppVec` | 表格 | 预处理系数，x'=ax+b。式中x为预处理前的输入通道，x'为预处理后的输出。用户可以填写每一维通道的系数a,b。 |
 
 
 </slot>

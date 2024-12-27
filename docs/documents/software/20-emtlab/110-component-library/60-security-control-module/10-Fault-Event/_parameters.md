@@ -12,7 +12,7 @@ All changes will be overwritten by regeneration.
 
 | 参数名 | 键名 | 类型 [单位] | 描述 |
 |:------ |:---- |:-----------:|:---- |
-| Name | `Name` | 文本 | Name |
+| 模块名称 | `Name` | 文本 | 故障事件名称 |
 | 故障类型 | `faultType` | 选择 | 故障类型 |
 | 元件列表 | `componentList` | 表格 | 故障元件列表，以元件的 ID 为主，当 ID 查询不到时查询 Label。 |
 | 故障起始时间 | `faultStartTime` | 实数 [s] | 故障起始时间 |
