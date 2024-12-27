@@ -1,5 +1,5 @@
 ---
-title: IESLab综合能源仿真规划平台
+title: IESLab 综合能源仿真规划平台
 description: IESLab 案例
 
 tags:

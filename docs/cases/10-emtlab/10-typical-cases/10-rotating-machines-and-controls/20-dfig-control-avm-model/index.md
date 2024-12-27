@@ -1,6 +1,6 @@
 ---
-title: 双馈电机双PMW平均化控制
-description: EMTLab 双馈电机双PMW平均化控制案例
+title: 双馈电机双 PWM 平均化控制
+description: EMTLab 双馈电机双 PWM 平均化控制案例
 
 tags:
 - emtlab
