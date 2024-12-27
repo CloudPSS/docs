@@ -16,7 +16,7 @@ tags:
 
 在 [元件/模块封装](../index.md) 的过程中，打开 [接口标签页](../../../40-workbench/20-function-zone/20-interface-tab/index.md)，右侧则为图标绘制工作区，包含**图标组件库**、**图标绘制区**、**显示设置与属性编辑区**，如下图所示。
 
-![alt text](image.png)
+![图标绘制工作区](image.png)
 
 用户可以从**图标组件库**中点击或拖拽需要添加的组件，添加到**图标绘制区**中。可供添加的组件包括 [矩形](./10-rectangle/index.md)、 [直线](./20-line/index.md)、 [椭圆](./30-ellipse/index.md)、 [路径](./40-path/index.md)、 [文本](./50-text/index.md)、 [引脚](./60-pin/index.md) 共六种。
 
