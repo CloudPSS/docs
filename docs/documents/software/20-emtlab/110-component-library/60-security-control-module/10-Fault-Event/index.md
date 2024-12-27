@@ -379,5 +379,3 @@ import TabItem from '@theme/TabItem';
 ![仿真结果](./cut-component-result.png)
 
 ## 常见问题
-
-

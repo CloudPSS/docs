@@ -1,6 +1,6 @@
 ---
-title: 安控模块库
-description: 安控模块库
+title: 安全稳定控制系统
+description: 安全稳定控制系统
 ---
 
 import DocCardList from '@theme/DocCardList';
