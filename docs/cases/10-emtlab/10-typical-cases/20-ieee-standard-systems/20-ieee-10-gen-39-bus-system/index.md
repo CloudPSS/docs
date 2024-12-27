@@ -1,5 +1,5 @@
 ---
-title: 10 机 39节点标准测试系统
+title: 10 机 39 节点标准测试系统
 description: 10 机 39 节点标准测试系统案例
 tags:
 - emtlab
