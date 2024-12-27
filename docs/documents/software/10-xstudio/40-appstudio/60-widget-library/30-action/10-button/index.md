@@ -112,6 +112,8 @@ import TabItem from '@theme/TabItem';
 
 <TabItem value="case2" label="实时仿真输入输出">
 
+按钮控件提供**向导**功能，会将向导中设置的方案按照特定的表达式**自动写入**按钮控件的属性输入框中，帮助用户快速实现实时仿真的**开始/停止、停止/恢复、开始/停止录波**等操作。
+
 1. 在资源标签页内添加需要进行实时仿真的 SimStudio 模型资源，具体的模型资源添加方法参见[资源标签页](../../../40-workbench/20-function-zone/20-asset-tab/index.md)。
 
 2. 可通过元件向导进行**运行按钮**参数的设置：
@@ -138,7 +140,7 @@ import TabItem from '@theme/TabItem';
 | 停止录波 | 点击后实时仿真任务停止录波 | 禁用：`not $model.running or not $model.emtp.recording` 事件→点击：`$model.emtp.stopRecording()` |
 | 开始/停止录波 | 首次点击后实时仿真任务开始录波，按钮文本从“录波”变为“停止”；再次点击后实时仿真任务录波结束，按钮文本从“停止”变为“录波” | 文本：`$model.running ? ($model.emtp.recording ? "停止录波" : "开始录波") : "录波"` 禁用：`not $model.running` 事件→点击：`$model.emtp.recording ? $model.emtp.stopRecording() : $model.emtp.startRecording()`|
 
-- 点击向导界面的确定按钮后，会将向导中设置的方案按照特定的表达式写入输入控件的属性输入框中。
+- 点击向导界面的确定按钮后，会将向导中设置的方案按照特定的表达式写入按钮控件的属性中。
 
 ![属性输入框 =x400](./param-list.png)
 
