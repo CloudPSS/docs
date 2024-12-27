@@ -1,5 +1,5 @@
 ---
-title: 2024.8.23 更新（2024周年更新）日志
+title: 2024.8.23 更新日志（2024周年更新）
 authors: [songyankan]
 tags: [update-notes]
 ---
