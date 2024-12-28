@@ -99,6 +99,7 @@ const config: Config = {
                     onInlineAuthors: DEV ? 'warn' : 'throw',
                     onUntruncatedBlogPosts: DEV ? 'warn' : 'throw',
                     editUrl: 'https://github.com/CloudPSS/docs/blob/main/',
+                    blogSidebarCount: 'ALL',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',
                     blogSidebarTitle: '最近文章',
