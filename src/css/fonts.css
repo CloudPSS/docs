@@ -1,11 +1,14 @@
-:lang(zh) {
+:lang(zh),
+:lang(cmn) {
   --ifm-font-family-base: 'Sarasa UI SC', 'Source Han Sans SC', 'Noto Sans SC', 'Source Han Sans', 'Roboto', 'Ubuntu',
     'BlinkMacSystemFont', 'Cantarell', 'Noto Sans', 'Segoe UI', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
   --ifm-font-family-monospace: 'Sarasa Mono SC', monospace, var(--ifm-font-family-base);
 }
 
-:lang(zh-hant) {
+:lang(zh-hant),
+:lang(cmn-hant),
+:lang(zh-cmn-hant) {
   --ifm-font-family-base: 'Sarasa UI TC', 'Source Han Sans TC', 'Noto Sans TC', 'Source Han Sans', 'Roboto', 'Ubuntu',
     'BlinkMacSystemFont', 'Cantarell', 'Noto Sans', 'Segoe UI', 'Helvetica', 'Arial', sans-serif, 'Apple Color Emoji',
     'Segoe UI Emoji', 'Segoe UI Symbol';
