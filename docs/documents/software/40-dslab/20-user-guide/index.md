@@ -35,7 +35,7 @@ tags:
 
 * [无功优化模块](../140-reactive-power-optimization-module/index.md) 可以配置电压电流约束条件，对系统无功进行优化
 
-* [静态分析模块](../150-static-security-analysis-module /index.md) 可以根据给定的电网结构参数和发电机负荷等元件的运行条件及给定的切除方案，确定切除某些元件是否危及系统的安全。
+* [静态分析模块](../150-static-security-analysis-module/index.md) 可以根据给定的电网结构参数和发电机负荷等元件的运行条件及给定的切除方案，确定切除某些元件是否危及系统的安全。
 
 **5. 平台使用建议**
 
