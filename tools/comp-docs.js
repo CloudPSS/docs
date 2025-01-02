@@ -22,7 +22,6 @@ const hasUnescapedMarkdown = new RegExp(escapeMarkdown.source);
  * @returns {string} 转义后的字符串
  */
 export function escape(str) {
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     const s = String(str ?? '');
     if (s && hasUnescapedMarkdown.test(s)) {
         return s.replace(escapeMarkdown, String.raw`\$&`);
@@ -36,7 +35,6 @@ export function escape(str) {
  * @returns {string} 转义后的字符串
  */
 export function escapeCode(str) {
-    // eslint-disable-next-line @typescript-eslint/no-base-to-string
     const s = String(str ?? '');
     if (!s) return '` `';
     const backtick = s.indexOf('`');
