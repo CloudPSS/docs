@@ -2,8 +2,8 @@
 title: 基本原理
 description: DSLab 源网荷储协同仿真平台-负荷预测模块-负荷预测基本原理
 sidebar_position: 10
-draft: true
 
+tags:
 - dslab
 - function
 ---
