@@ -48,7 +48,7 @@
     "docusaurus-plugin-image-zoom": "^2.0.0",
     "hast-util-whitespace": "^3.0.0",
     "hastscript": "^9.0.0",
-    "katex": "^0.16.20",
+    "katex": "^0.16.21",
     "prism-react-renderer": "^2.4.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
