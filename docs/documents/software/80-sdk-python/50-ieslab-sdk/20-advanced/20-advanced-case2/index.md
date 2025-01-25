@@ -133,7 +133,7 @@ if __name__ == '__main__':
 
     # 示例：使用 getPlotData 方法
     compID = "/PhotovoltaicSys_6"
-    labelName = "功率（$\mathrm{kW}$）"
+    labelName = "功率(kW)"
     plot_data = ies_result.getPlotData(compID, labelName)
     print("Plot data: ", plot_data) 
 ```
@@ -207,7 +207,7 @@ if __name__ == '__main__':
 
     # 示例：使用 getPlotData 方法
     compID = "/PhotovoltaicSys_6"
-    labelName = "功率（$\mathrm{kW}$）"
+    labelName = "功率(kW)"
     plot_data = ies_result.getPlotData(compID, labelName)
     print("Plot data: ", plot_data)
     
@@ -243,7 +243,7 @@ if __name__ == '__main__':
 
     # 示例：使用 getPlotData 方法
     compID = "/PhotovoltaicSys_6"
-    labelName = "功率（$\mathrm{kW}$）"
+    labelName = "功率(kW)"
     plot_data = ies_result.getPlotData(compID, labelName)
     print("Plot data: ", plot_data)  
 ```

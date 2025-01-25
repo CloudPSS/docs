@@ -122,7 +122,7 @@ if __name__ == '__main__':
             ies_result = runner.result
             # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
             compID = "/PhotovoltaicSys_6"
-            labelName = "功率（$\mathrm{kW}$）"
+            labelName = "功率(kW)"
             plot_data = ies_result.getPlotData(compID, labelName)
             results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
 ```
@@ -206,7 +206,7 @@ if __name__ == '__main__':
             ies_result = runner.result
             # 获取并存储有功功率数据（这里假设使用第11个时间点的有功功率作为结果）
             compID = "/PhotovoltaicSys_6"
-            labelName = "功率（$\mathrm{kW}$）"
+            labelName = "功率(kW)"
             plot_data = ies_result.getPlotData(compID, labelName)
             results[i, j] = plot_data['有功功率']['y'][11]  # 假设使用第11个时间点的值
 
