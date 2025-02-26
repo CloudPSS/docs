@@ -4,7 +4,7 @@ import fs from 'node:fs/promises';
 import { execa } from 'execa';
 import download from 'download';
 import path from 'node:path/posix';
-import { imageSize } from 'image-size';
+import { imageSizeFromFile } from 'image-size/fromFile';
 import chalk from 'chalk-template';
 import pb from 'pretty-bytes';
 import { getFiles, runParallel } from './helpers.js';
@@ -91,7 +91,7 @@ export default async function convert(root) {
     const compress = async (file) => {
         const o = await fs.stat(file);
         try {
-            const size = imageSize(file);
+            const size = await imageSizeFromFile(file);
             const type = size.type ?? path.extname(file).slice(1);
             if (type === 'webp') {
                 console.log(chalk`{yellow [SKIP]} {underline ${file}} \t Already webp`);
