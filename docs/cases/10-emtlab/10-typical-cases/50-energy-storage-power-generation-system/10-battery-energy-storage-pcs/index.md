@@ -1,5 +1,5 @@
 ---
-title: 电池储能 PCS (快速详细、开关函数、平均化)
+title: 电池储能 PCS
 description: 电池储能 PCS (快速详细、开关函数、平均化)
 tags:
 - emtlab

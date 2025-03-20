@@ -1,6 +1,6 @@
 ---
-title: 直驱风机(快速详细、开关函数、平均化)
-description: 直驱风机(快速详细、开关函数、平均化)
+title: 双馈风机风电场模块
+description: 双馈风机风电场模块(快速详细、开关函数、平均化)
 
 tags:
 - emtlab

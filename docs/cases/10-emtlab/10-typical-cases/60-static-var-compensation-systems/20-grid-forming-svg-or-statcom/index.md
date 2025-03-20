@@ -1,5 +1,5 @@
 ---
-title: 构网型 SVG/STATCOM (快速详细、开关函数、平均化)
+title: 构网型 SVG/STATCOM
 description: 构网型 SVG/STATCOM (快速详细、开关函数、平均化)
 
 tags:

@@ -1,5 +1,5 @@
 ---
-title: 光伏发电单元(快速详细、开关函数、平均化)
+title: 光伏发电单元
 description: 光伏发电单元(快速详细、开关函数、平均化)
 tags:
 - emtlab

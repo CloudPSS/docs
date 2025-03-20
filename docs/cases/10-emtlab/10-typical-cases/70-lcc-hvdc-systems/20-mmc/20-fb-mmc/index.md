@@ -1,5 +1,5 @@
 ---
-title: 全桥型 FB-MMC (真双极、伪双极)
+title: 全桥型 FB-MMC
 description: 全桥型 FB-MMC (真双极、伪双极)
 
 tags:

@@ -1,5 +1,5 @@
 ---
-title: Buck 电路及其控制(详细模型、快速详细、开关函数、平均化)
+title: Buck 电路及其控制
 description: Buck 电路及其控制(详细模型、快速详细、开关函数、平均化)
 
 tags:

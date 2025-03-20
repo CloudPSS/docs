@@ -1,5 +1,5 @@
 ---
-title: 光伏电站(平均化、单机倍乘)
+title: 光伏电站
 description: 光伏电站(平均化、单机倍乘)
 
 tags:

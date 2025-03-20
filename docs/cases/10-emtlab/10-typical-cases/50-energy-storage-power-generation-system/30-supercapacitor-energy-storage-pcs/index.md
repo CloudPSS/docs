@@ -1,5 +1,5 @@
 ---
-title: 超级电容储能 PCS (快速详细、开关函数、平均化)
+title: 超级电容储能 PCS
 description: 超级电容储能 PCS (快速详细、开关函数、平均化)
 
 tags:
