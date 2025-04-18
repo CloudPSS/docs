@@ -92,14 +92,5 @@
     "pretty-bytes": "^6.1.1",
     "rxjs": "^7.8.2",
     "typescript": "~5.8.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@cloudpss/zstd"
-    ],
-    "ignoredBuiltDependencies": [
-      "core-js",
-      "core-js-pure"
-    ]
   }
 }
