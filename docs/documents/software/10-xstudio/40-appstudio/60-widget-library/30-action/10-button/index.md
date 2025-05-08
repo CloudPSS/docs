@@ -71,6 +71,38 @@ import CommonStyle from '../../60-grid/_common-style.md'
 | :--- | :--- | :--- | :--: | :--- | :--- |
 | 点击 | `@click` |  | 当点击时触发 | 函数 | 采用点击方式触发函数 |
 
+
+## 向导
+
+AppStudio 为按钮控件配置了向导功能，选中按钮控件，在右侧参数配置区上方点击**向导**图标进入向导界面。
+
+![按钮向导界面 =400x](./button-guide.png)
+
+用于引导用户快速配置控件属性，与实时仿真任务的开始/停止、停止/恢复、开始/停止录波等监控功能灵活绑定，系统会将向导中设置的方案按照特定的表达式**自动写入**按钮控件的属性框中，支持快速构建自定义实时态监控应用。支持如下属性的配置：
+
+| 属性配置 | 类型 | 功能描述 |
+| :--- | :--- | :--- |
+| 按钮类型 | 选择 | 选择按钮功能类型 |
+| 绑定资源 | 选择 | 选择资源标签页内添加的模型资源 |
+| 参数方案 | 选择 | 选择模型资源的参数方案 |
+| 计算方案 | 选择 | 选择模型资源的计算方案 |
+
+
+支持如下的功能类型：
+
+| 功能类型 | 描述 | 对应的表达式 |
+| :---: | :---: | :--- | 
+| 开始 | 点击后函数资源/实时仿真任务开始执行 | 禁用：`$model.running` 事件→点击：`$model.start(-1)` | 
+| 停止 | 点击后函数资源/实时仿真任务结束执行 | 禁用：`not $model.running` 事件→点击：`$model.terminate()` |
+| 开始/停止 | 首次点击后函数资源/实时仿真任务开始执行，按钮文本从“开始”变为“停止”；再次点击后函数资源/实时仿真任务结束执行，按钮文本从“停止”变为“开始”， | 文本：`$model.running ? '停止' : '开始'` 事件→点击：`$model.running ? $model.terminate() : $model.start(-1)`|
+| 暂停 | 点击后实时仿真任务暂停执行 | 禁用：`not $model.running or not is($model.value.rt_state, "Object") or not $model.value.rt_state.monitoring` 事件→点击：`$model.send({"type": "monitoring", "state": false})` | 
+| 恢复 | 点击后实时仿真任务恢复执行 | 禁用：`not $model.running or not is($model.value.rt_state, "Object") or $model.value.rt_state.monitoring` 事件→点击：`$model.send({"type": "monitoring", "state": true})` |
+| 暂停/恢复 | 首次点击后实时仿真任务暂停执行，按钮文本从“暂停”变为“恢复”；再次点击后实时仿真任务恢复执行，按钮文本从“恢复”变为“暂停”， | 文本：`$model.running and is($model.value.rt_state, "Object") ? ($model.value.rt_state.monitoring ? "暂停" : "恢复") : "暂停"` 禁用：`not $model.running or not is($model.value.rt_state, "Object")` 事件→点击：`$model.send({"type": "monitoring", "state": not $model.value.rt_state.monitoring})`|
+| 开始录波 | 点击后实时仿真任务开始录波 | 禁用：`not $model.running or $model.emtp.recording` 事件→点击：`$model.emtp.startRecording()` | 
+| 停止录波 | 点击后实时仿真任务停止录波 | 禁用：`not $model.running or not $model.emtp.recording` 事件→点击：`$model.emtp.stopRecording()` |
+| 开始/停止录波 | 首次点击后实时仿真任务开始录波，按钮文本从“录波”变为“停止”；再次点击后实时仿真任务录波结束，按钮文本从“停止”变为“录波” | 文本：`$model.running ? ($model.emtp.recording ? "停止录波" : "开始录波") : "录波"` 禁用：`not $model.running` 事件→点击：`$model.emtp.recording ? $model.emtp.stopRecording() : $model.emtp.startRecording()`|
+
+
 ## 案例介绍
 
 import Tabs from '@theme/Tabs';
@@ -120,29 +152,19 @@ import TabItem from '@theme/TabItem';
    
 - 可选中按钮元件，在右侧参数配置区上方点击向导图标进入向导界面。
 
-![向导界面 =x400](./guide.png)
+<!-- ![向导界面 =x400](./guide.png) -->
 
 - 点击**绑定资源**选择器，选项中会自动加载出所有函数资源和模型资源，选择需要进行实时仿真的 SimStudio 模型资源，并选择该模型的参数方案和计算方案；
 
-![绑定资源 =x400](./binding-resources.png)
+<!-- ![绑定资源 =x400](./binding-resources.png) -->
 
-- 选中模型资源后，可以选择按钮的类型，支持如下的类型：
-
-| 类型 | 描述 | 对应的表达式 |
-| :---: | :---: | :--- | 
-| 开始 | 点击后函数资源/实时仿真任务开始执行 | 禁用：`$model.running` 事件→点击：`$model.start(-1)` | 
-| 停止 | 点击后函数资源/实时仿真任务结束执行 | 禁用：`not $model.running` 事件→点击：`$model.terminate()` |
-| 开始/停止 | 首次点击后函数资源/实时仿真任务开始执行，按钮文本从“开始”变为“停止”；再次点击后函数资源/实时仿真任务结束执行，按钮文本从“停止”变为“开始”， | 文本：`$model.running ? '停止' : '开始'` 事件→点击：`$model.running ? $model.terminate() : $model.start(-1)`|
-| 暂停 | 点击后实时仿真任务暂停执行 | 禁用：`not $model.running or not is($model.value.rt_state, "Object") or not $model.value.rt_state.monitoring` 事件→点击：`$model.send({"type": "monitoring", "state": false})` | 
-| 恢复 | 点击后实时仿真任务恢复执行 | 禁用：`not $model.running or not is($model.value.rt_state, "Object") or $model.value.rt_state.monitoring` 事件→点击：`$model.send({"type": "monitoring", "state": true})` |
-| 暂停/恢复 | 首次点击后实时仿真任务暂停执行，按钮文本从“暂停”变为“恢复”；再次点击后实时仿真任务恢复执行，按钮文本从“恢复”变为“暂停”， | 文本：`$model.running and is($model.value.rt_state, "Object") ? ($model.value.rt_state.monitoring ? "暂停" : "恢复") : "暂停"` 禁用：`not $model.running or not is($model.value.rt_state, "Object")` 事件→点击：`$model.send({"type": "monitoring", "state": not $model.value.rt_state.monitoring})`|
-| 开始录波 | 点击后实时仿真任务开始录波 | 禁用：`not $model.running or $model.emtp.recording` 事件→点击：`$model.emtp.startRecording()` | 
-| 停止录波 | 点击后实时仿真任务停止录波 | 禁用：`not $model.running or not $model.emtp.recording` 事件→点击：`$model.emtp.stopRecording()` |
-| 开始/停止录波 | 首次点击后实时仿真任务开始录波，按钮文本从“录波”变为“停止”；再次点击后实时仿真任务录波结束，按钮文本从“停止”变为“录波” | 文本：`$model.running ? ($model.emtp.recording ? "停止录波" : "开始录波") : "录波"` 禁用：`not $model.running` 事件→点击：`$model.emtp.recording ? $model.emtp.stopRecording() : $model.emtp.startRecording()`|
+- 选中模型资源后，选择按钮的功能类型;
+  
+- 选择模型资源的参数和计算方案;
 
 - 点击向导界面的确定按钮后，会将向导中设置的方案按照特定的表达式写入按钮控件的属性中。
 
-![属性输入框 =x400](./param-list.png)
+![按钮属性配置 =x400](./button-setting.png)
 
 具体的操作流程参见[实时仿真案例](../../../70-case-study/50-emt-rt-apps/index.md)。
 
