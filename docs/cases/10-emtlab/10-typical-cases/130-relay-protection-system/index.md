@@ -1,6 +1,6 @@
 ---
 title: 继电保护系统
-description: 继电保护系统案例
+description: 继电保护系统
 
 tags:
 - emtlab

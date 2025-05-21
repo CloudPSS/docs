@@ -1,6 +1,6 @@
 ---
 title: 直流微电网
-description: 直流微电网系统模板案例
+description: 直流微电网
 tags:
 - emtlab
 - cases

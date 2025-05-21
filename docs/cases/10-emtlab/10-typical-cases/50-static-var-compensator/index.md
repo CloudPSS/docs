@@ -1,6 +1,6 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: 静止无功补偿装置
+description: 静止无功补偿装置
 
 tags:
 - emtlab

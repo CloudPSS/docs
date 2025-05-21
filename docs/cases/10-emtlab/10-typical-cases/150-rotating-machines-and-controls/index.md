@@ -1,6 +1,6 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: 旋转电机及其控制
+description: 旋转电机及其控制
 
 tags:
 - emtlab

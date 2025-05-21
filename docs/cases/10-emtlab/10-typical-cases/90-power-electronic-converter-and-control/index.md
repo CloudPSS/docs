@@ -1,6 +1,6 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: 电力电子变换器及其控制
+description: 电力电子变换器及其控制
 
 tags:
 - emtlab

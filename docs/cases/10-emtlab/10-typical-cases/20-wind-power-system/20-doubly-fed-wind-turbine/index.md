@@ -1,11 +1,10 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: 双馈风机
+description: 双馈风机(快速详细、开关函数、平均化)
 
 tags:
 - emtlab
 - cases
-- directory
 
 ---
 

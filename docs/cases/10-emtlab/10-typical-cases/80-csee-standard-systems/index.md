@@ -1,6 +1,6 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: CSEE 标准系统
+description: CSEE 标准系统
 
 tags:
 - emtlab

@@ -1,6 +1,6 @@
 ---
-title: 微电网系统
-description: 微电网系统
+title: WSCC/IEEE 标准系统
+description: WSCC/IEEE 标准系统
 
 tags:
 - emtlab
