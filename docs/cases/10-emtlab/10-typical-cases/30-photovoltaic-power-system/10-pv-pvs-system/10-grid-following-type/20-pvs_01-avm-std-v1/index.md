@@ -1,16 +1,11 @@
 ---
 title: 光伏发电01型-平均化-标准模型
 description: 光伏发电01型-平均化-标准模型
-
 tags:
 - emtlab
 - cases
-
 ---
 
-<!-- import DocCardList from '@theme/DocCardList';
-
-<DocCardList /> -->
 
 ## 案例介绍
 
