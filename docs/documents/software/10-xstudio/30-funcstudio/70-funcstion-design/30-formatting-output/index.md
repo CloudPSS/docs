@@ -324,18 +324,18 @@ FuncStudio 支持绘制 `plotly` 库提供的多样化图形，例如，`Sankey`
 
 `layout` 参数用于配置图形的坐标轴格式，定义如下：
 
-`layout={'xAxis':dict,'yAxis':dict}`
+`layout={'xaxis':dict,'yaxis':dict}`
 
 |属性|类型|描述|
 |:--:|:--:|--|
-|`xAxis`|字典|X 标轴的设置参数|
-|`yAxis`|字典|y 标轴的设置参数|
+|`xaxis`|字典|X 标轴的设置参数|
+|`yaxis`|字典|y 标轴的设置参数|
 
-不同类型的图形，`xAxis` 和 `yAxis` 参数的字典格式也不同，以**二维曲线图形**为例，字典格式如下：
+不同类型的图形，`xaxis` 和 `yaxis` 参数的字典格式也不同，以**二维曲线图形**为例，字典格式如下：
 
-`xAxis={'title':str,'type':str,'range':list/str,...}`
+`xaxis={'title':str,'type':str,'range':list/str,...}`
 
-`yAxis={'title':str,'type':str,'range':list/str,...}`
+`yaxis={'title':str,'type':str,'range':list/str,...}`
 
 |属性|类型|描述|
 |:--:|:--:|--|
@@ -359,12 +359,12 @@ if __name__ == '__main__':
     }
     # 设置散点图的坐标轴样式
     layout = {
-        'xAxis':{
+        'xaxis':{
         'title':'曲线', 
         'type':'log', # 对数坐标
         'range':[0,4] # 对数坐标时表示指数范围
         },
-        'yAxis':{
+        'yaxis':{
         'title':'幅值',
         'type':'linear', # 线性坐标
         'range':'auto' # 显示范围自适应

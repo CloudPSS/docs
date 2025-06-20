@@ -7,7 +7,7 @@ tags:
 - cases
 ---
 
-import Summary from '../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/100-typical-cases/20-8760h/index.md';
+import Summary from '../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/100-typical-cases/20-hours-8760/index.md';
 
 
 <Summary />

@@ -153,7 +153,7 @@ pip show cloudpss
 :   出现安装超时的问题，可以通过切换其他源重新安装来解决。例如可以输入如下命令，使用清华源来安装。
 
     ```py showLineNumbers
-    pip install cloudpss  -i https://pypi.tuna.tsinghua.edu.cn/simple 
+    pip install cloudpss -i https://pypi.tuna.tsinghua.edu.cn/simple 
     ```
 
 如何在 **Anaconda/Pycharm** 中新建虚拟环境并安装 CloudPSS SDK？
