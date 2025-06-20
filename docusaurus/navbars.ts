@@ -53,7 +53,7 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         position: 'left',
         label: '案例',
         type: 'docSidebar',
-        sidebarId: 'cases',
+        sidebarId: 'cases_old',
     },
     {
         position: 'left',
