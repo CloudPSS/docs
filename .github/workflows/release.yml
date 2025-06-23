@@ -125,4 +125,4 @@ jobs:
             rm -f /root/docs/release
             ln -s /root/docs/${{ steps.get_version.outputs.VERSION }} /root/docs/release
             systemctl reload caddy
-            ls -l
+            ls -l /root/docs/
