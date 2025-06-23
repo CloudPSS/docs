@@ -4,3 +4,11 @@ ignoredBuiltDependencies:
 
 onlyBuiltDependencies:
   - '@cloudpss/zstd'
+
+publicHoistPattern:
+  - '*eslint*'
+  - '*prettier*'
+  - '*commitlint*'
+  - lint-staged
+
+shellEmulator: true
