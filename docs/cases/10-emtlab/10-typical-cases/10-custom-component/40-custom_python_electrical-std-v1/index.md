@@ -1,6 +1,6 @@
 ---
-title: 简单 Python 控制元件
-description: 简单 Python 控制元件
+title: 自定义 Python 电气元件
+description: 自定义 Python 电气元件
 
 tags:
 - emtlab
