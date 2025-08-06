@@ -24,7 +24,7 @@ const hasUnescapedMarkdown = new RegExp(escapeMarkdown.source);
 export function escape(str) {
     const s = String(str ?? '');
     if (s && hasUnescapedMarkdown.test(s)) {
-        return s.replace(escapeMarkdown, String.raw`\$&`);
+        return s.replaceAll(escapeMarkdown, String.raw`\$&`);
     }
     return s;
 }
@@ -72,7 +72,7 @@ export function dim(dim) {
             return `<samp>${num}</samp>`;
         }
         if (d.length > 20 || d.includes('\n')) {
-            return `<code title="${d.replace(/["'\n<>&]/g, (c) => `&#${c.codePointAt(0)};`)}">...</code>`;
+            return `<code title="${d.replaceAll(/["'\n<>&]/g, (c) => `&#${c.codePointAt(0)};`)}">...</code>`;
         }
         return escapeCode(d);
     });
@@ -231,7 +231,7 @@ function genName(name, level) {
  */
 function genDescription(description) {
     if (!description) return '> &nbsp;';
-    return description.replace(/(^|\n)/g, `\n> `);
+    return description.replaceAll(/(^|\n)/g, `\n> `);
 }
 
 /**
