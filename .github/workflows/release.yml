@@ -16,7 +16,7 @@ jobs:
       DOCS_HOME_URL: /
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Get the version
@@ -54,7 +54,7 @@ jobs:
       DOCS_HOME_URL: https://cloudpss.net/
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Get the version
