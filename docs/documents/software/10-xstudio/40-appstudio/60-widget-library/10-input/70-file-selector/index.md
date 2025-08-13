@@ -85,28 +85,62 @@ import CommonStyle from '../../60-grid/_common-style.md'
 
 ### 上传 CSV 文件，接入 FuncStudio 函数调用
 
-1. 创建一个文件选择控件，在右侧的属性配置区内给文件选择命名为 A
+1. 创建一个文件选择控件，在右侧的属性配置区内给文件选择命名为 csv
+   
+![创建文件选择控件](image.png)
 
-2. 创建函数资源 asset2，选择资源类型为函数
+1. 创建函数资源，选择资源类型为函数，配置函数资源名称为 f，点击`选择资源`，绑定一个解析 base64编码的 python 内核函数，该函数存在一个参数 `csv`用于接收文件的值
 
-3. 配置函数资源 asset2，点击`选择资源`，绑定 `rid` 为 `function/Maxwell/demo` 的示例函数，示例函数存在一个参数 `a`
+![创建函数资源](image-1.png)
 
-4. 鼠标选中文件选择 A 的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$asset2.args.a = A.value; $asset2.start()`
 
-5. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下上传文件
+该 python 内核的功能是解析 csv文件的 base64编码和后利用 plot 方法绘制曲线，完整代码如下所示：
 
-![创建文件选择控件](create-file-selector-control.png "创建文件选择控件")
+```py showLineNumbers
+import cloudpss
+import base64
+import pandas as pd
+from io import StringIO
 
-![创建函数资源](create-function-resource.png "创建函数资源")
+if __name__ == "__main__":
+    job = cloudpss.currentJob()
+    # 原始 base64 字符串（含 data URI 前缀）
+    csv = job.args.csv
+    job.log(csv, key='log-1')
+    # 去除 data URI 前缀
+    base64_str = csv.split(",")[1]
+    # 解码为原始 CSV 字符串
+    decoded_bytes = base64.b64decode(base64_str)
+    csv_text = decoded_bytes.decode("utf-8")
+    # 使用 StringIO 转为文件对象
+    csv_buffer = StringIO(csv_text)
+    # 读取为 DataFrame
+    df = pd.read_csv(csv_buffer, header=None)
+    col0 = df.iloc[:, 0]  # 第一列
+    col1 = df.iloc[:, 1]  # 第二列
+    t = {
+        "name":"时序曲线",
+        "type":"scatter",
+        "x": col0.tolist(),
+        "y": col1.tolist()
+    }
+    job.plot([t], title='时序曲线', key='plot-1')
+```
 
-![绑定示例函数](bind-example-function.png "绑定示例函数")
 
-![示例函数详情](example-function-details.png "示例函数详情")
+1. 创建一个按钮，用于启动选择资源 f，鼠标选中按钮控件的事件/更改属性栏，按下<kbd> Ctrl </kbd> 输入 `$f.args.csv = fromJson(csv.value);$f.start()`表达式
+   
+![添加按钮控件](image-3.png)
 
-![更改文件选择属性](change-file-selector-attributes.png "更改文件选择属性")
+1. 创建两个运行结果框分别用于显示 csv 文件的 base64 编码和解析后利用 plot 方法绘制的曲线
+   
+![添加运行结果控件（显示文件的原始 base64 编码）](image-4.png)
 
-![预览模式](preview-mode.png "预览模式")
+![添加运行结果控件（文件解析后的图形）](image-5.png)
 
+1. 点击工具栏的预览快捷按钮(或者 <kbd>Ctrl</kbd> + <kbd>P</kbd> )，进入预览模式，在预览模式下上传文件
+
+![预览模式](image-6.png)
 
 :::tip FuncStudio 函数使用详情
 
