@@ -1,5 +1,4 @@
 #!/bin/env node
-/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-console */
 
 /**
@@ -220,7 +219,7 @@ ${pins.map((p) => genPin(p)).join('\n')}
  * @param {number} level
  * @returns {string} 标题字符串
  */
-function genName(name, level) {
+function _genName(name, level) {
     if (!name) return `${h(level)} &nbsp;`;
     return `${h(level)} ${escape(name)}`;
 }
@@ -229,7 +228,7 @@ function genName(name, level) {
  * @param {string} description
  * @returns {string} 描述字符串
  */
-function genDescription(description) {
+function _genDescription(description) {
     if (!description) return '> &nbsp;';
     return description.replaceAll(/(^|\n)/g, `\n> `);
 }
@@ -270,7 +269,13 @@ async function fetchModels(token, owner) {
     });
     if (!response.ok) throw new Error(`HTTP ${response.status} ${await response.text()}`);
 
-    const payload = await /** @type {Promise<{ data: { models: { items: Model[] } } }>} */ (response.json());
+    const payload =
+        await /** @type {Promise<{ data: { models: { items: Model[] } }, errors: { message: string }[] }>} */ (
+            response.json()
+        );
+    if (payload.errors) {
+        throw new Error(`GraphQL Error: ${payload.errors.map((e) => e.message).join(', ')}`);
+    }
     return payload.data.models.items;
 }
 
@@ -362,9 +367,6 @@ const OWNERS = ['CloudPSS'];
 /**
  * 在此处配置需要生成文档的模型及其输出路径
  */
-
-// eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwidXNlcm5hbWUiOiJDbG91ZFBTUyIsInNjb3BlcyI6WyJtb2RlbDo5ODM2NyIsImZ1bmN0aW9uOjk4MzY3IiwiYXBwbGljYXRpb246MzI4MzEiXSwicm9sZXMiOlsiQ2xvdWRQU1MiXSwidHlwZSI6ImFwcGx5IiwiZXhwIjoxNzQ2OTM2NDc4LCJub3RlIjoidHpkMTExIiwiaWF0IjoxNzE1ODMyNDc4fQ.laSVmITluju6kYaciv9NwFkIg2TIPB_xDh9Oje2LqwYhVUj6P9h_-dXuuneK-6ZmB6HyOdjsnCJu9JzRtA-ynQ
-
 const MODELS = {
     'model/CloudPSS/GND':
         'documents/software/20-emtlab/110-component-library/10-basic/10-electrical/10-passive-elements/10-GND',
