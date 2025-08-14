@@ -9,8 +9,4 @@ tags:
 
 ---
 
----
-
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />
+## 建设中，敬请期待！
