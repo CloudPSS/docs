@@ -1,6 +1,6 @@
 ---
-title: 直驱风机风电场模块
-description: 直驱风机风电场模块(平均化、单机倍乘)
+title: 直驱风机标准封装模型
+description: 直驱风机标准封装模型(平均化、单机倍乘)
 
 tags:
 - emtlab

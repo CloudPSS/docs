@@ -362,7 +362,7 @@ const URL = 'http://cloudpss-calculate.local.ddns.cloudpss.net/graphql';
 /**
  * 在此处配置需要加载的模型
  */
-const OWNERS = ['CloudPSS'];
+const OWNERS = ['CloudPSS', 'open-cloudpss'];
 
 /**
  * 在此处配置需要生成文档的模型及其输出路径
@@ -854,6 +854,28 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/70-_VirtualInput',
     'model/CloudPSS/_VirtualOutput':
         'documents/software/20-emtlab/110-component-library/50-hardware-in-loop/80-_VirtualOutput',
+    'model/open-cloudpss/WTG_PMSG_01-avm-std-v1b2':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/10-wtg_pmsg/10-wtg_pmsg_01/20-wtg_pmsg_01-avm-std-v1',
+    'model/open-cloudpss/WTG_PMSG_01-fdm-std-v2a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/10-wtg_pmsg/10-wtg_pmsg_01/30-wtg_pmsg_01-fdm-std-v2',
+    'model/open-cloudpss/WTG_PMSG_01-avm-std-v2a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/10-wtg_pmsg/10-wtg_pmsg_01/40-wtg_pmsg_01-avm-std-v2',
+    'model/open-cloudpss/WTG_DFIG_01-fdm-std-v1b2':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/20-wtg_dfig/10-wtg_dfig_01/10-wtg_dfig_01-fdm-std-v1',
+    'model/open-cloudpss/WTG_DFIG_01-avm-std-v1b2':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/20-wtg_dfig/10-wtg_dfig_01/20-wtg_dfig_01-avm-std-v1',
+    'model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/30-wtg_pmsg_f/10-wtg_pmsg_01-avm-stdm-v2',
+    'model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/40-wtg_dfig_f/10-wtg_dfig_01-avm-stdm-v1',
+    'model/open-cloudpss/VRT_SD-stdm-v1a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/70-voltage-ride-though-model/10-vrt_sd-stdm-v1',
+    'model/open-cloudpss/VRT_Ctrl-stdm-v1a1':
+        'cases/10-emtlab/10-typical-cases/20-wind-power-system/70-voltage-ride-though-model/20-vrt_ctrl-stdm-v1',
+    'model/open-cloudpss/PVS_01-fdm-std-v1a1':
+        'cases/10-emtlab/10-typical-cases/30-photovoltaic-power-system/10-pvs/10-pvs_01/10-pvs_01-fdm-std-v1',
+    'model/open-cloudpss/PVS_01-avm-std-v1a1':
+        'cases/10-emtlab/10-typical-cases/30-photovoltaic-power-system/10-pvs/10-pvs_01/20-pvs_01-avm-std-v1',
 };
 /**
  * 运行 `pnpm comp-docs <token>` 生成文档，其中 `<token>` 为 API 访问令牌
