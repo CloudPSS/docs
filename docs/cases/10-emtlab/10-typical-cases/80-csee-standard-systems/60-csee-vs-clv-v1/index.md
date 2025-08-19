@@ -1,6 +1,6 @@
 ---
-title: 低频
-description: 低频
+title: CSEE 标准算例-持续低电压问题
+description: CSEE 标准算例-持续低电压问题
 
 tags:
 - emtlab

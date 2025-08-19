@@ -1,6 +1,6 @@
 ---
-title: 暂时工频过电压
-description: 暂时工频过电压
+title: CSEE 标准算例-功角失稳
+description: CSEE 标准算例-功角失稳
 
 tags:
 - emtlab
