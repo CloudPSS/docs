@@ -1,6 +1,6 @@
 ---
-title: 稳态工频过电压
-description: 稳态工频过电压
+title: CSEE 标准算例-功角振荡
+description: CSEE 标准算例-功角振荡
 
 tags:
 - emtlab

@@ -1,6 +1,6 @@
 ---
-title: 宽频振荡
-description: 宽频振荡
+title: CSEE 标准算例-电压崩溃问题
+description: CSEE 标准算例-电压崩溃问题
 
 tags:
 - emtlab

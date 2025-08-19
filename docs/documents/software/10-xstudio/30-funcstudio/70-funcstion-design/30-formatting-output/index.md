@@ -185,7 +185,7 @@ plot 方法的定义为：`def plot(self, traces=[], layout={}, title='', key=No
 
 `traces` 参数用于配置图形的数据，是一个存放图形数据的字典列表，可以包含多个图形数据，每个图形数据是一个格式固定的字典。
 
-以绘制**二维曲线图形**为例，trace 参数如下：
+以绘制**二维曲线图形**为例，trace 部分参数如下：
 
 `trace = [t1,t2,...]`，其中：`t1={'name':str,'type':'scatter','x':float [],'y':float []}`
 
@@ -314,6 +314,30 @@ job.plot({t1,t2,t3})
 FuncStudio 支持绘制 `plotly` 库提供的多样化图形，例如，`Sankey` 桑基图、`Sunburst` 旭日图等，具体可以查看 [plotly 帮助文档](https://plotly.com/javascript/)。
 
 不同的图形样式，其 `traces` 列表中的字典格式也是不一样的，使用时只需要参照 `plotly` 里面给定的 `data` 格式来定义图形数据字典，并写入 `traces` 列表内即可。
+
+例如，对于`type : "scatter"`的散点图，可以在`traces`的`data`参数里面添加`mode`和`line`参数，自定义线型，具体可以查看 [plotly 中 scatter 图的帮助文档](https://plotly.com/javascript/reference/scatter/)。
+
+
+```py showLineNumbers
+import cloudpss  
+if __name__ == '__main__': 
+    job = cloudpss.currentJob() 
+    t1 = {
+        "name": "虚线", 
+        "mode": "lines+markers", #线+点模式
+        "type": "scatter",
+        "line": {
+            "dash":"dash",  # 关键参数，控制线型，dash表示虚线
+            "color":"blue", # 控制颜色
+            "width": 2 # 控制宽度
+        },
+        "x": [1, 2, 3, 4],
+        "y": [10, 15, 13, 17]
+    }
+    job.plot([t1])
+```
+
+![虚线散点图](scatter1.png)
 
 <!-- 案例待补充： -->
 
