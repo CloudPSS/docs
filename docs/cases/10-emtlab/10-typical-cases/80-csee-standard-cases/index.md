@@ -1,6 +1,6 @@
 ---
-title: CSEE 标准算例-稳态工频过电压
-description: CSEE 标准算例-稳态工频过电压
+title: CSEE 标准算例
+description: CSEE 标准算例
 
 tags:
 - emtlab
