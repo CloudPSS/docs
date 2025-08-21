@@ -126,7 +126,7 @@ CloudPSS 上该算例的系统拓扑如下。
 针对 CloudPSS 和 BPA 的仿真结果差异，需说明的是：由于新能源机组（直驱风机、双馈风机、光伏电站）的建模方式不同，以及电磁暂态仿真（CloudPSS）与机电暂态仿真（BPA）在计算原理上的本质差异，标准算例的仿真结果存在合理偏差。
 
 ## 算例地址
-点击打开算例地址：[**CSEE-FS**](https://cloudpss.net/model/open-cloudpss/CSEE-FS-v1b1)
+点击打开算例地址：[**CSEE 标准算例-高/低频问题**](https://cloudpss.net/model/open-cloudpss/CSEE-FS-v1b1)
 
 
 [^CSEE-FS]:H. Sun, B. Zhao, S. Xu, T. Lan, Z. Li and P. Wu, "Test Models for Stability/Security Studies of AC-DC Hybrid Power Systems With High Penetration of Renewables," IEEE Transactions on Power Systems, vol. 40, no. 1, pp. 957-969, Jan. 2025
