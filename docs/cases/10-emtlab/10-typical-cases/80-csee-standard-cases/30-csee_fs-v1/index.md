@@ -127,6 +127,7 @@ CloudPSS 上该算例的系统拓扑如下。
 
 ## 算例地址
 点击打开算例地址：[**CSEE 标准算例-高/低频问题**](https://cloudpss.net/model/open-cloudpss/CSEE-FS-v1b1)
+原始算例下载链接：[**中国电机工程学会新型电力系统标准算例**](https://www.csee.org.cn//portal/qtxx/20240921/33256.html)
 
 
 [^CSEE-FS]:H. Sun, B. Zhao, S. Xu, T. Lan, Z. Li and P. Wu, "Test Models for Stability/Security Studies of AC-DC Hybrid Power Systems With High Penetration of Renewables," IEEE Transactions on Power Systems, vol. 40, no. 1, pp. 957-969, Jan. 2025
