@@ -127,7 +127,8 @@ CloudPSS 上该算例的系统拓扑如下。
 
 ## 算例地址
 点击打开算例地址：[**CSEE-VC-电压崩溃**](https://cloudpss.net/model/open-cloudpss/CSEE_VS_VC-v1b1)  
-原始算例下载链接：[**中国电机工程学会新型电力系统标准算例**](https://www.csee.org.cn//portal/qtxx/20240921/33256.html)
+原始算例下载链接：[**中国电机工程学会新型电力系统标准算例**](https://www.csee.org.cn//portal/qtxx/20240921/33256.html)  
+参考文献下载：[**点击下载**](./新型电力系统标准算例(三)：电压稳定CSEE-VS.pdf)
 
 [^CSEE-VC]: 赵兵，徐式蕴，兰天楷，等。新型电力系统标准算例（三）：电压稳定 CSEE-VS[J]. 中国电机工程学报，2024,44(21):8353-8364.DOI:10.13334/j.0258-8013.pcsee.230536.
 
