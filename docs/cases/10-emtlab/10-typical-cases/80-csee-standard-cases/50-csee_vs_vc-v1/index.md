@@ -109,7 +109,7 @@ CloudPSS 上该算例的系统拓扑如下。
 
 ### 新能源与直流模型说明
 
-系统包含新能源场站 3 个，±500kV 直流输电线路一回。在新能源场站中，共包含倍乘等值的直驱风电集群 4 个，倍乘等值的双馈风电集群 2 个，等值光伏集群 3 个。 其中直驱风电集群采用 [直驱风机 01 型-标准封装模型](../../../20-wind-power-system/10-wtg_pmsg/10-wtg_pmsg_01/30-wtg_pmsg_01-avm-std-v1/index.md)，双馈风电集群采用 [双馈风机 01 型-标准封装模型](../../../20-wind-power-system/20-wtg_dfig/10-wtg_dfig_01/30-wtg_dfig_01-avm-std-v1/index.md)，光伏集群采用 [光伏发电 01 型-标准封装模型](../../30-photovoltaic-power-system/10-pvs/10-pvs_01/30-pvs_01-avm-std-v1/index.md)，直流输电线路采用 [LCC 直流模型](../../../../../../documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/10-DCLine/index.md) 。
+系统包含新能源场站 3 个，±500kV 直流输电线路一回。在新能源场站中，共包含倍乘等值的直驱风电集群 4 个，倍乘等值的双馈风电集群 2 个，等值光伏集群 3 个。 其中直驱风电集群采用 [直驱风机01型-标准封装模型](../../20-wind-power-system/30-wtg_pmsg_f/10-wtg_pmsg_01-avm-stdm-v2/index.md)，双馈风电集群采用 [双馈风机01型-标准封装模型](../../20-wind-power-system/40-wtg_dfig_f/10-wtg_dfig_01-avm-stdm-v1/index.md)，光伏集群采用 [光伏发电01型-标准封装模型](../../30-photovoltaic-power-system/30-pvs_f/10-pvs_01-avm-stdm-v1/index.md)，直流输电线路采用 [LCC 直流模型](../../../../../documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/10-DCLine/index.md) 。
 
 需要进行说明的是，在当前版本（2025年08月26日）的 CSEE-FS 标准算例中，新能源模型的直流侧电容参数过大（直驱风机的直流侧电容为 10E8 F，光伏电站的直流侧电容为 10E8 mF），在算例转换和对比时已将该参数分别修改为0.015 F 和 3.9 mF。
 
