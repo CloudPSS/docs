@@ -86,7 +86,7 @@ CloudPSS 上该算例的系统拓扑如下图所示。
 
 **新能源与直流模型说明**
 
-系统中共有 8 组直驱风机机组，6 组光伏机组，1 回直流。算例中的直驱风机风场采用 [直驱风机01型-标准封装模型](../../20-wind-power-system/30-wtg_pmsg_f/10-wtg_pmsg_01-avm-stdm-v2/index.md)，双馈风机风场采用 [双馈风机01型-标准封装模型](../../20-wind-power-system/40-wtg_dfig_f/10-wtg_dfig_01-avm-stdm-v1/index.md)，光伏机组采用 [光伏发电01型-标准封装模型](../../30-photovoltaic-power-system/30-pvs_f/10-pvs_01-avm-stdm-v1/index.md)，每一回直流由 2 个 [LCC直流（单极）](../../../../../documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/20-DCLine_sp/index.md) 模型构成。
+系统中共有 8 组直驱风机机组，6 组光伏机组，1 回直流。算例中的直驱风机风场采用 [直驱风机01型-标准封装模型](../../../10-typical-cases/20-wind-power-system/30-wtg_pmsg_f/10-wtg_pmsg_01-avm-stdm-v2/index.md)，双馈风机风场采用 [双馈风机01型-标准封装模型](../../../10-typical-cases/20-wind-power-system/40-wtg_dfig_f/10-wtg_dfig_01-avm-stdm-v1/index.md)，光伏机组采用 [光伏发电01型-标准封装模型](../../../10-typical-cases/30-photovoltaic-power-system/30-pvs_f/10-pvs_01-avm-stdm-v1/index.md)，每一回直流由 2 个 [LCC直流（单极）](../../../../../documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/20-DCLine_sp/index.md) 模型构成。
 
 需要进行说明的是，在当前版本（2025年08月26日）的 CSEE-PFO 标准算例中，新能源模型的直流侧电容参数过大（直驱风机的直流侧电容为 10E8 F，光伏电站的直流侧电容为 10E8 mF），在算例转换和对比时已将该参数分别修改为 0.15 F 和 0.0039 F。
 
