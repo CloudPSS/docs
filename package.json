@@ -44,6 +44,7 @@
     "@docusaurus/theme-mermaid": "^3.8.1",
     "@easyops-cn/docusaurus-search-local": "^0.52.1",
     "@mdx-js/react": "^3.1.0",
+    "@private/chat": "^0.0.8",
     "clsx": "^2.1.1",
     "docusaurus-plugin-image-zoom": "^3.0.1",
     "hast-util-whitespace": "^3.0.0",
