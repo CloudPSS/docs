@@ -31,6 +31,9 @@ importers:
       '@mdx-js/react':
         specifier: ^3.1.0
         version: 3.1.0(@types/react@19.1.10)(react@19.1.1)
+      '@private/chat':
+        specifier: ^0.0.9
+        version: 0.0.9
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -946,6 +949,11 @@ packages:
   '@babel/runtime@7.28.2':
     resolution:
       { integrity: sha512-KHp2IflsnGywDjBWDkR9iEqiWSpc8GIi0lgTT3mOElT0PP1tG26P4tmFI2YvAdzgq9RGyoHZQEIEdZy6Ec5xCA== }
+    engines: { node: '>=6.9.0' }
+
+  '@babel/runtime@7.28.3':
+    resolution:
+      { integrity: sha512-9uIQ10o0WGdpP6GDhXcdOJPJuDgFtIDtN/9+ArJQ2NAfAmiuhTQdzkaTGR33v43GYS2UrSA0eX2pPPHoFVvpxA== }
     engines: { node: '>=6.9.0' }
 
   '@babel/template@7.27.2':
@@ -2037,6 +2045,13 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution:
       { integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww== }
+
+  '@private/chat@0.0.9':
+    resolution:
+      {
+        integrity: sha512-LIRgosxG/506Uwbj42pRph5yM7k5Wu3DUHPvyiQce7gmNqim9e5V5BfIunCoLL0omFmHegeqrV6aow1ueAWAMw==,
+        tarball: https://packages.aliyun.com/60c179fc44816b8ed233a8bb/npm/npm-registry/@private/chat/-/@private/chat-0.0.9.tgz,
+      }
 
   '@rollup/plugin-babel@5.3.1':
     resolution:
@@ -10400,6 +10415,8 @@ snapshots:
 
   '@babel/runtime@7.28.2': {}
 
+  '@babel/runtime@7.28.3': {}
+
   '@babel/template@7.27.2':
     dependencies:
       '@babel/code-frame': 7.27.1
@@ -12141,6 +12158,8 @@ snapshots:
 
   '@polka/url@1.0.0-next.29': {}
 
+  '@private/chat@0.0.9': {}
+
   '@rollup/plugin-babel@5.3.1(@babel/core@7.28.0)(rollup@2.79.2)':
     dependencies:
       '@babel/core': 7.28.0
@@ -12211,7 +12230,7 @@ snapshots:
 
   '@slorber/react-helmet-async@1.3.0(react-dom@19.1.1(react@19.1.1))(react@19.1.1)':
     dependencies:
-      '@babel/runtime': 7.28.2
+      '@babel/runtime': 7.28.3
       invariant: 2.2.4
       prop-types: 15.8.1
       react: 19.1.1
