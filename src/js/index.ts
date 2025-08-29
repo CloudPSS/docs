@@ -5,4 +5,5 @@ if (ExecutionEnvironment.canUseDOM) {
     void import('./print-handlers');
     void import('./print-version');
     void import('./inject-meta');
+    void import('@private/chat');
 }
