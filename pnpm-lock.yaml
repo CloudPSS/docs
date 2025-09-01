@@ -31,9 +31,6 @@ importers:
       '@mdx-js/react':
         specifier: ^3.1.0
         version: 3.1.0(@types/react@19.1.10)(react@19.1.1)
-      '@private/chat':
-        specifier: ^0.0.9
-        version: 0.0.9
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
@@ -2045,13 +2042,6 @@ packages:
   '@polka/url@1.0.0-next.29':
     resolution:
       { integrity: sha512-wwQAWhWSuHaag8c4q/KN/vCoeOJYshAIvMQwD4GpSb3OiZklFfvAgmj0VCBBImRpuF/aFgIRzllXlVX93Jevww== }
-
-  '@private/chat@0.0.9':
-    resolution:
-      {
-        integrity: sha512-LIRgosxG/506Uwbj42pRph5yM7k5Wu3DUHPvyiQce7gmNqim9e5V5BfIunCoLL0omFmHegeqrV6aow1ueAWAMw==,
-        tarball: https://packages.aliyun.com/60c179fc44816b8ed233a8bb/npm/npm-registry/@private/chat/-/@private/chat-0.0.9.tgz,
-      }
 
   '@rollup/plugin-babel@5.3.1':
     resolution:
@@ -12157,8 +12147,6 @@ snapshots:
       config-chain: 1.1.13
 
   '@polka/url@1.0.0-next.29': {}
-
-  '@private/chat@0.0.9': {}
 
   '@rollup/plugin-babel@5.3.1(@babel/core@7.28.0)(rollup@2.79.2)':
     dependencies:

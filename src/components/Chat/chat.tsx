@@ -1,6 +1,6 @@
 import { useHistory } from '@docusaurus/router';
 import React, { useRef, useEffect } from 'react';
-import type { Chat } from '@private/chat';
+import type { Chat } from '../../js/chat';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import IconChat from './icon.svg';
 
