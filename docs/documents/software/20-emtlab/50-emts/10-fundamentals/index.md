@@ -41,7 +41,7 @@ $$
 机电暂态仿真中，由于更关注电机的机械能和电磁能之间的作用，因此将电力网络中的传输线、变压器等元件建模为代数方程，忽略电力网络中的电磁暂态，重点将发电机、电动机建模为微分方程。最终，完整的系统模型是微分-代数方程组：
 
 $$
-\left\{\begin{aligned} & \frac{\mathrm{d} \boldsymbol{x}}{\mathrm{d} t}=f(\boldsymbol{x}, \boldsymbol{y}) \\ &(\boldsymbol{x}, \boldsymbol{y})=0 \end{aligned}\right.
+\left\{\begin{aligned} & \frac{\mathrm{d} \boldsymbol{x}}{\mathrm{d} t}=f(\boldsymbol{x}, \boldsymbol{y}) \\ &g(\boldsymbol{x}, \boldsymbol{y})=0 \end{aligned}\right.
 $$  
 
 电磁暂态仿真和机电暂态仿真的对比如下表所示：
