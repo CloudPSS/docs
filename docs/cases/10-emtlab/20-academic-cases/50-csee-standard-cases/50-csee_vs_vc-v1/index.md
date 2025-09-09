@@ -126,7 +126,7 @@ CloudPSS 上该算例的系统拓扑如下。
 针对 CloudPSS 和 BPA 的仿真结果差异，需说明的是：由于新能源机组（直驱风机、双馈风机、光伏电站）的建模方式不同，以及电磁暂态仿真（CloudPSS）与机电暂态仿真（BPA）在计算原理上的本质差异，标准算例的仿真结果存在合理偏差。
 
 ## 算例地址
-点击打开算例地址：[**CSEE-VC-电压崩溃**](https://cloudpss.net/model/open-cloudpss/CSEE_FS-v1b1)  
+点击打开算例地址：[**CSEE-VC-电压崩溃**](https://cloudpss.net/model/open-cloudpss/CSEE_VS_VC-v1b1)  
 原始算例下载链接：[**中国电机工程学会新型电力系统标准算例**](https://www.csee.org.cn//portal/qtxx/20240921/33256.html)  
 
 <!-- 参考文献下载：[**点击下载**](./新型电力系统标准算例(三)：电压稳定CSEE-VS.pdf) -->
