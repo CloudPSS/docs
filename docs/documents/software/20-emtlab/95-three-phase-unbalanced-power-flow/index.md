@@ -1,6 +1,6 @@
 ---
-title: 三相不对称潮流计算
-description: 三相不对称潮流计算
+title: 三相不平衡潮流计算
+description: 三相不平衡潮流计算
 sidebar_position: 95
 tags:
 - emtlab
