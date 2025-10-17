@@ -317,3 +317,26 @@ import TabItem from '@theme/TabItem';
 
 :
     潮流计算方案的参数设置没有必选的选项，但为了潮流结果更好的收敛，建议开启初值设置和约束设置的所有选项。
+
+有哪些常见的潮流仿真报错信息
+
+:
+  - 缺少 PV 节点或平衡节点，报错码为： `Buses xxx, and xxx are isolated, with neither a slack bus nor a PV bus found in this area.`
+  - 母线间短路，报错码为：`xxx is a short circuit. Try eliminating it.`
+  - 元件连接了非母线节点，报错码为：`Pin Pin - of xxx is connected to a non-bus node.`
+
+如果潮流不收敛该如何排查
+
+:
+   - 首先根据潮流仿真报错信息检查相应的元件；
+   - 如果是 PSASP 转换的算例（[PSASP-CloudPSS 算例转换工具](../../../../software-tools/10-conversion-tools/20-psasp-to-cloudpss/index.md)），并且 PSASP 原算例中含有 Y-D 变压器，可能会出现由于相角问题导致的潮流计算问题，可用以下任意一种方法进行处理：
+     - 在计算方案的调试参数中填入 `PF_SKIP_PRE_OFFSET=1`；
+     - 在 PSASP-CloudPSS 算例转换时，勾选**变压器强制 Y(G) 接**选项；
+     - 在**实现标签页**中点击**元件表**，将三相双绕组变压器和三相三绕组变压器的 `Winding#1 Type` 和 `Winding#2 Type` 均设为 0。
+
+     ![PSASP-CloudPSS 算例转换工具设置 =x400](./psasp2cloudpss.jpg) 
+
+     ![元件表设置 =x300](./component-setting.png)
+
+   - 如果是 BPA 或 PSASP 转换的算例，并且原算例中已有潮流数据，那么可以使用潮流计算方案中的 [功率不平衡量计算](../50-case-study/index.md)，通过功率不平衡量计算得到的表格进行检查，具体检查方法与下点说明的检查方法相同。
+   - 通过潮流计算结果表格进行检查（[潮流数据说明](../30-initializing-from-power-flow-results/index.md#潮流数据说明)）：`Buses` 表格的 $P_{res}$ 参数按正序或负序排序，如有大于 10 或小于 -10 的参数，检查连接该母线的同步发电机、三相交流电压源、静态负载、变压器等元件的容量、电压等参数是否设置合理，`Branches` 表格的 $P_{loss}$ 参数按正序或负序排序，如有大于 50 或小于 -50 的参数，检查该元件的容量是否设置的太小。
