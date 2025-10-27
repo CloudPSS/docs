@@ -30,21 +30,19 @@ import Pins from './_pins.md'
 
 ### 使用说明
 
-该元件用以在出现控制环（代数环）的仿真算例中，通过加入一步延时的方法解开环，以使仿真能继续进行。 
+该元件用于存在控制环（代数环）的仿真中，通过引入一步延时来解环，使仿真能够继续运行。 
 
-通常，当搭建好一个含有反馈环的系统后（如图），点击开始仿真，系统信息会报多个**警告**。
+通常，搭建含反馈环的系统后（如下图），点击开始仿真，系统会报出多个**警告**。
 
 ![带环系统](./loop_system.png)
 
-**`[warning]`** There are loop nodes in system!You can use Component 'LoopNode' to specify the loop nodes and the initial value, or the program will choose random loop nodes.  
-**`[warning]`** Node 1 in component 限幅器-1 will be chosen as loop node with initial value 0.  
-**`[warning]`** Node 2 in component 加法器/减法器-1 will be chosen as loop node with initial value 0.
+![警告日志](./warning_log.png)
 
-此时，CloudPSS 通过内置的延时解环算法，在**限幅器-1** 元件和**加法器/减法器-1** 元件处各加入了一个延时，此时系统的反馈环被打开，从而可以正常仿真。
+CloudPSS 会通过内置的延时解环算法，在**增益1**、**限幅器1**和**增益2**处各插入一个延时，从而打开反馈环路，使仿真正常进行。
 
-但自动的解环算法往往不是最优的。因此，建议用户采用本元件进行解环。例如，对上图所示的控制环，可在输出位置加入一步延时，即可解开反馈环。还可为解环后反馈路径设定一个初值，以降低解环带来的误差。
+但自动解环算法可能并非最优解，因此建议用户手动添加**代数环解环点**进行解环。例如，对图示控制环，可在**加法器/减法器**的 F 端口添加**代数环解环点**。用户还可为解环后的反馈路径设置初始值，以减少解环引入的误差。
 
-![带环系统解环](./loop-opening.jpg)
+![带环系统解环](./loop-opening.png)
 
 ## 案例
 
