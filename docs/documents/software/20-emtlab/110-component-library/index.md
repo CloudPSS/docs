@@ -1,6 +1,6 @@
 ---
-title: EMTLab元件库
-description: EMTLab元件库
+title: EMTLab 元件库
+description: EMTLab 元件库
 sidebar_position: 110
 tags:
 - emtlab
