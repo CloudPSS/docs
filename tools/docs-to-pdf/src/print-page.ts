@@ -8,7 +8,7 @@ let _page: Page;
 /** 浏览器 */
 export async function getPage(): Promise<Page> {
     if (!_browser) {
-        _browser = await launch();
+        _browser = await launch({ headless: 'shell' });
         _page = await _browser.newPage();
         await _page.goto(HOST, { waitUntil: 'domcontentloaded', timeout: 0 });
         await _page.evaluate(
