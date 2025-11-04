@@ -30,6 +30,6 @@ import Pins from './_pins.md'
 <Pins/>
 
 ## 案例
-
+谐波电压源使用方法与 [谐波电流源](../80-_HarmonicCurrentSource/index.md#案例) 相似。
 ## 常见问题
 

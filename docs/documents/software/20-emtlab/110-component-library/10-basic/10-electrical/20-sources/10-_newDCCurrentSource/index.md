@@ -32,6 +32,8 @@ import Pins from './_pins.md'
 ### 使用说明
 CloudPSS 中的电流源为理想电流源模型，其内阻为无穷大。但理想电流源不能串联或成星型连接（违背基尔霍夫节点电流定律）。
 
+    ![非法连接 =x350](./invalid-connection.png)
+
 ## 案例
 
 ## 常见问题

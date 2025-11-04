@@ -32,6 +32,7 @@ import Pins from './_pins.md'
 ### 使用说明
 若电压源的内阻为 0，CloudPSS 会自动选择为理想电压源模型。但多个理想电压源不能并联或成环状连接（违背基尔霍夫回路电压定律）。
 
+    ![非法连接 =x200](./invalid-connection.png)
 ## 案例
 
 ## 常见问题
