@@ -6,7 +6,7 @@ import t from 'chalk-template';
 
 const FENCE_BEGIN = `ldopjybxlpjidtvhvjgguwqulpxufqnligzo`;
 const FENCE_END = `gemiuphdrawprrubzfizoeippnjtouodcpxh`;
-const FENCE_RE = new RegExp(`${FENCE_BEGIN}(\\d+)${FENCE_END}`, 'g');
+const FENCE_RE = new RegExp(String.raw`${FENCE_BEGIN}(\d+)${FENCE_END}`, 'g');
 
 /**
  * 格式化行
@@ -105,14 +105,14 @@ pattern = pattern.map((p) => p.replaceAll('\\', '/'));
 
 for await (const file of globIterate(pattern)) {
     process.stdout.write(t`Formatting {underline ${path.relative(process.cwd(), file)}} `);
-    const data = await readFile(file, 'utf8');
+    const data = await readFile(file, 'utf-8');
     if (data.includes('DO NOT EDIT')) {
         console.log(t`{yellow Skipped}`);
         continue;
     }
     const formatted = formatFile(data);
     if (data !== formatted) {
-        await writeFile(file, formatted, 'utf8');
+        await writeFile(file, formatted, 'utf-8');
         console.log(t`{green Done}`);
     } else {
         console.log(t`{gray Unchanged}`);

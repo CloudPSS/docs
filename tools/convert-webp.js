@@ -78,7 +78,10 @@ export default async function convert(root) {
     const bin = await prepareLibWebp();
     await execa(`${bin}/webpinfo`, ['-version'], { stdio: 'inherit' });
 
-    /** 转换中的错误 @type {Error[]} */
+    /**
+     * 转换中的错误
+     * @type {Error[]}
+     */
     const errors = [];
     let count = 0;
     let original = 0;

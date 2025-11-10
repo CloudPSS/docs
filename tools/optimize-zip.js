@@ -15,7 +15,10 @@ import { getFiles, runParallel } from './helpers.js';
  * @returns {Promise<void>}
  */
 export default async function convert(root) {
-    /** 转换中的错误 @type {Error[]} */
+    /**
+     * 转换中的错误
+     * @type {Error[]}
+     */
     const errors = [];
     let count = 0;
     let original = 0;

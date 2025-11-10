@@ -81,7 +81,7 @@ jobs:
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Pre-deploy
-        uses: appleboy/ssh-action@v1.2.2
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ vars.DC_HOST }}
           port: ${{ vars.DC_PORT }}
@@ -89,7 +89,7 @@ jobs:
           key: ${{ secrets.DC_KEY }}
           script: rm -f /root/docs/dist.tar.xz
       - name: Deploy
-        uses: appleboy/scp-action@v1.0.0
+        uses: appleboy/scp-action@v1
         with:
           host: ${{ vars.DC_HOST }}
           port: ${{ vars.DC_PORT }}
@@ -98,7 +98,7 @@ jobs:
           source: ./dist.tar.xz
           target: /root/docs/
       - name: Post-deploy
-        uses: appleboy/ssh-action@v1.2.2
+        uses: appleboy/ssh-action@v1
         with:
           host: ${{ vars.DC_HOST }}
           port: ${{ vars.DC_PORT }}
@@ -114,7 +114,7 @@ jobs:
             systemctl reload caddy
             ls -l /root/docs/
       - name: Release
-        uses: appleboy/ssh-action@v1.2.2
+        uses: appleboy/ssh-action@v1
         if: ${{ !contains(steps.get_version.outputs.VERSION, '-') }}
         with:
           host: ${{ vars.DC_HOST }}
