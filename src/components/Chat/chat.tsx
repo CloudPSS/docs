@@ -67,6 +67,7 @@ const ChatComponent = (): React.JSX.Element => {
     const ChatButton = () => (
         <button
             onClick={handleButtonClick}
+            className="cwe-chat-button"
             style={{
                 width: '56px',
                 height: '56px',
