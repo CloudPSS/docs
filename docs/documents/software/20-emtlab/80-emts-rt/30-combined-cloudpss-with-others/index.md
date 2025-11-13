@@ -12,7 +12,7 @@ tags:
 
 ## 功能定义
 
-CloudPSS EMTLab 可凭借高性能实时仿真器 [CloudPSS Mini (RT)](../../../../hardware/10-desktop-type/10-cloudpss-mini/index.md) 或 [CloudPSS Pro (RT)](../../../../hardware/20-rack-type/10-cloudpss-pro/index.md) ，以及数模转换枢纽 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md)，实现联合实时仿真的应用。
+CloudPSS EMTLab 可凭借高性能实时仿真器 [CloudPSS MiniRT](../../../../hardware/10-desktop-type/10-cloudpss-mini/index.md) 或 [CloudPSS ProRT](../../../../hardware/20-rack-type/10-cloudpss-pro/index.md) ，以及数模转换枢纽 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md)，实现联合实时仿真的应用。
 
 ## 功能说明
 ### 硬件平台
@@ -21,7 +21,7 @@ CloudPSS EMTLab 可凭借高性能实时仿真器 [CloudPSS Mini (RT)](../../../
 
 ![CloudPSS-RT 联合实时仿真应用](./1.png "CloudPSS-RT 联合实时仿真应用")
 
-CloudPSS-RT 可配置 1 - 3 块 FPGA 通信/计算卡，每块 FPGA 通信/计算卡具备 2 - 4 个 SFP 光纤接口。CloudPSS-RT 通过 SFP 接口与 Signal Hub 连接后，将具备 8 路模拟量输入和 32 路模拟量输出，并具备 96 路可控数字量输入/输出，其中含 8 路 PWM 输入和 16 路 PWM 输出，支持 1k - 100kHz 的 PWM 调制与解调。
+CloudPSS-RT 可配置 1 - 3 块 FPGA 通信/计算卡，每块 FPGA 通信/计算卡具备 2 - 4 个 SFP 光纤接口。CloudPSS-RT 通过 SFP 接口与 Signal Hub 连接后，将具备 8 路模拟量输入和 32 路模拟量输出，并具备 96 路可控数字量输入/输出，其中含 12 路 PWM 输入和 16 路 PWM 输出，支持 1k - 100kHz 的 PWM 调制与解调。
 
 通过上述数据交互接口，可实现与其它仿真平台的联合实时仿真。
 
@@ -87,7 +87,7 @@ EMTLab 提供了一套**实时仿真工具库**，包含了联合实时仿真的
 
 - **模拟量接口元件**
 
-    与 I/O Signal Hub 交互数据，实现**模拟量输出**、**模拟量输入**功能。一台 CloudPSS I/O Signal Hub 支持最多 32 路模拟量输出通道和 8 路模拟量输入通道，模拟量输出信号的幅值范围为 ±10V，模拟量输入信号的幅值范围为 ±5V，具体使用方法可参考硬件产品 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 文档。
+    与 I/O Signal Hub 交互数据，实现**模拟量输出**、**模拟量输入**功能。一台 CloudPSS I/O Signal Hub 支持最多 32 路模拟量输出通道和 8 路模拟量输入通道，模拟量输出信号的幅值范围为 ±10V，模拟量输入信号的幅值范围为 ±10V，具体使用方法可参考硬件产品 [CloudPSS I/O Signal Hub](../../../../hardware/10-desktop-type/20-cloudpss-io-signal-hub/index.md) 文档。
 
     ![模拟量输出与输入元件](./7.png "模拟量输出与输入元件")
     
@@ -100,7 +100,7 @@ EMTLab 提供了一套**实时仿真工具库**，包含了联合实时仿真的
 
     在 96 路通道的数字量接口中，有 16 路可设置为 PWM 输出接口，通过**调制波输出**元件将基波信号传输至 CloudPSS I/O Signal Hub，Signal Hub 根据用户设置的载波参数将基波调制为 1k - 100kHz 的 PWM 信号，并从对应的数字量接口输出。
     
-    并且，还有 8 路可设置为 PWM 输入接口，CloudPSS I/O Signal Hub 将以 10MHz 的频率采样和接收 PWM 信号，并将其解调还原为基波，通过**调制波输入**元件将基波信号传输至模型中，支持解调的 PWM 频率范围为 1k - 100kHz。
+    并且，还有 12 路可设置为 PWM 输入接口，CloudPSS I/O Signal Hub 将以 10MHz 的频率采样和接收 PWM 信号，并将其解调还原为基波，通过**调制波输入**元件将基波信号传输至模型中，支持解调的 PWM 频率范围为 1k - 100kHz。
 
     ![调制波输出与输入元件](./9.png "调制波输出与输入元件")
     
@@ -118,18 +118,21 @@ import TabItem from '@theme/TabItem';
 - **案例介绍**
 
     该案例搭建了基于 CloudPSS-RT 与 RT-LAB 仿真器的储能并网联合实时仿真测试平台，被测设备为储能 PCS 控制器，完成了储能控制器在小步长硬件在环仿真的同时，在大规模区域电网中的并网、故障测试。
+    
+    ![储能并网的联合实时仿真测试平台 =x500](./case1_platform.png "储能并网的联合实时仿真测试平台")
+
 
 - **平台结构**
     
-    平台结构如下图所示。
+     在 CloudPSS-RT 中搭建大规模区域电网模型，基于长传输线解耦的原理将区域电网与储能并网系统解耦，通过 SFP 光纤接口与 RT-LAB 实现数据交互。RT-LAB 同时与储能 PCS 控制器进行小步长的模拟量、数字量交互，实现了储能 PCS 控制器在大规模区域电网中的并网和故障仿真测试。平台结构示意图如下所示。
 
-    ![储能并网的联合实时仿真测试平台 =x145](./10.png "储能并网的联合实时仿真测试平台")
-
-    在 CloudPSS-RT 中搭建大规模区域电网模型，基于长传输线解耦的原理将区域电网与储能并网系统解耦，通过 SFP 光纤接口与 RT-LAB 实现数据交互。RT-LAB 同时与储能 PCS 控制器进行小步长的模拟量、数字量交互，实现了储能 PCS 控制器在大规模区域电网中的并网和故障仿真测试。
+    ![联合实时仿真平台结构示意图](./case1_framework.png "联合实时仿真平台结构示意图")   
   
 - **系统规模**
     
-    区域电网模型采用 10 机 39 节点标准测试算例模型，电磁暂态实时仿真步长 20us，系统模型含 180 个电气节点，737 个控制节点。
+    区域电网模型基于 IEEE 10 机 39 节点标准测试算例构建，包含长传输线解耦接口模型和联合仿真数据交互模型，如下图所示。系统模型共含 192 个电气节点，928 个控制节点，基于 CPU 的电磁暂态实时仿真步长 20us。
+
+    ![区域电网模型](./case1_model.png "区域电网模型")   
 
 </TabItem>
 
@@ -137,49 +140,29 @@ import TabItem from '@theme/TabItem';
 
 - **案例介绍**
 
-    该案例搭建了基于 CloudPSS-RT 与 RTDS 仿真器的直流系统联合实时仿真测试平台，分别在 CloudPSS-RT 中完成了直流控制系统的硬件在环测试，以及直流电气拓扑的快速原型控制验证。
+    该案例搭建了基于 CloudPSS-RT 与 RTDS 仿真器的直流系统联合实时仿真测试平台，分别在 CloudPSS-RT 中构建了直流系统的电气拓扑，在 RTDS 中构建了直流的控制系统。
+
+    ![直流系统联合实时仿真测试平台](./case2_platform.png "直流系统联合实时仿真测试平台")
 
 - **平台结构**
     
-    平台结构如下图所示。
+    在 CloudPSS-RT 中根据真实直流工程参数搭建两端 LCC 直流的电气拓扑模型，在 RTDS 中构建直流的控制系统模型。通过 CloudPSS I/O Signal Hub 将直流控制系统所需的电压、电流瞬时值经模拟量输出通道输出，并采集直流控制系统发出的触发角信号对换流阀进行控制，实现直流系统的联合实时仿真测试。
 
-    ![直流系统联合实时仿真测试平台 =x145](./11.png "直流系统联合实时仿真测试平台")
-
-    基于本案例搭建的联合实时仿真测试平台，进行了两个方案的测试和验证：
-
-    - 1. 在 CloudPSS-RT 中根据真实直流工程参数搭建两端 LCC 直流的电气拓扑模型，在 RTDS 中构建直流的控制系统模型，RTDS 与 CloudPSS I/O Signal Hub 通过模拟量进行数据交互。CloudPSS-RT 作为电气系统完成了直流控制系统的硬件在环测试。
-
-    - 2. 在 CloudPSS-RT 中搭建直流的控制系统模型，在 RTDS 中构建直流的电气拓扑模型，RTDS 与 CloudPSS I/O Signal Hub 通过模拟量进行数据交互。CloudPSS-RT 作为控制系统完成了直流电气模型的快速原型控制验证。
-
-    通过以上两个方案验证了 CloudPSS-RT 与 RTDS 联调的可行性，以及直流控制策略的正确性。
-
+    ![联合实时仿真平台结构示意图 =x400](./case2_framework.png "联合实时仿真平台结构示意图")   
+   
   
 - **系统规模**
     
-    电磁暂态实时仿真步长 50us，LCC 直流系统模型包含控制系统在内，含 462 个电气节点，1168 个控制节点。
+    直流系统电气拓扑模型如图所示，共含 462 个电气节点，基于 CPU 的电磁暂态实时仿真步长 50us。
+
+    ![直流系统电气拓扑模型](./case2_model.png "直流系统电气拓扑模型")   
+
+    将联合仿真结果与 RTDS 仿真结果进行对比，对比结果如下：
+
+    ![联合仿真结果与 RTDS 结果对比](./case2_result.png "联合仿真结果与 RTDS 结果对比")   
+
 
 </TabItem>
-
-<TabItem value="case3" label="与 FPGA 电力电子仿真器联合实时仿真">
-
-- **案例介绍**
-
-   该案例搭建了基于 CloudPSS-RT 与 FPGA 电力电子仿真器的联合实时仿真测试平台，完成了两电平并网逆变器的并网仿真测试。
-
-- **平台结构**
-    
-    平台结构如下图所示。
-
-    ![两电平并网逆变器的联合实时仿真测试平台 =x145](./12.png "两电平并网逆变器的联合实时仿真测试平台")
-
-    在 CloudPSS-RT 中构建两电平并网逆变器的控制模型，在 FPGA 仿真器中构建两电平并网逆变器的电气拓扑，通过 CloudPSS I/O Signal Hub 采集 FPGA 仿真器的电压、电流数据，进行并网控制后，将控制调制波输出至 FPGA 仿真器，完成两电平并网逆变器的快速原型控制测试。
-  
-- **系统规模**
-    
-    电磁暂态实时仿真步长 50us，逆变器控制系统模型含 59 个控制节点。
-
-</TabItem>
-
 </Tabs>
 
 
