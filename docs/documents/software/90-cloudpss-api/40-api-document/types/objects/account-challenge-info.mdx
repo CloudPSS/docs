@@ -1,0 +1,91 @@
+---
+id: account-challenge-info
+title: AccountChallengeInfo
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+账户验证质询信息
+
+
+```graphql
+type AccountChallengeInfo {
+  password: Boolean!
+  phone: String
+  email: String
+  totp: Boolean!
+  wechat: Boolean!
+  webauthn: Boolean!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>password</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](../../types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+是否启用密码验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+绑定的电话号码
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+绑定的邮箱地址
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>totp</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](../../types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+是否启用动态令牌验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>wechat</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](../../types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+是否启用微信验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeInfo.<b>webauthn</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Boolean!</b></code>](../../types/scalars/boolean.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+是否启用 WebAuthn 验证
+
+
+
+
+
+
+### Member Of
+
+[`AccountUser`](../../types/objects/account-user.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

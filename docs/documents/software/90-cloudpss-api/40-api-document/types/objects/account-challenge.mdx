@@ -1,0 +1,76 @@
+---
+id: account-challenge
+title: AccountChallenge
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+账户验证质询
+
+
+```graphql
+type AccountChallenge {
+  id: ID!
+  user: AccountUser
+  groups: [AccountChallengeGroup!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallenge.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](../../types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+质询ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallenge.<b>user</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountUser</b></code>](../../types/objects/account-user.mdx) <Badge class="badge badge--secondary " text="object"/> 
+用户信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallenge.<b>groups</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[AccountChallengeGroup!]!</b></code>](../../types/objects/account-challenge-group.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+质询组列表
+
+
+
+
+
+
+### Returned By
+
+[`accountChallenge`](../../operations/queries/account-challenge.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`createAccountChallenge`](../../operations/mutations/create-account-challenge.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

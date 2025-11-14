@@ -1,0 +1,91 @@
+---
+id: job-policies-input
+title: JobPoliciesInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+队列分页查询输入
+
+
+```graphql
+input JobPoliciesInput {
+  orderBy: [String!]!
+  cursor: [String!]
+  limit: Int
+  user: FindCondition
+  function: FindCondition
+  queue: FindCondition
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>orderBy</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+排序项，字符串数组
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>cursor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+光标位置，第一次查询可以为空，字符串数组
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>limit</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+查询的最大数量
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>user</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+根据用户查询策略
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>function</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+根据函数策略
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPoliciesInput.<b>queue</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+根据队列过滤
+
+
+
+
+
+
+### Member Of
+
+[`jobPolicies`](../../operations/queries/job-policies.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>

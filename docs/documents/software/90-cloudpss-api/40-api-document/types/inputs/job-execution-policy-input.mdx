@@ -1,0 +1,76 @@
+---
+id: job-execution-policy-input
+title: JobExecutionPolicyInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+创建任务时的策略输入
+
+
+```graphql
+input JobExecutionPolicyInput {
+  queue: Int!
+  tres: JobTresInput!
+  priority: Float!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JobExecutionPolicyInput.<b>queue</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+队列 ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobExecutionPolicyInput.<b>tres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobTresInput!</b></code>](../../types/inputs/job-tres-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/> 
+任务资源
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobExecutionPolicyInput.<b>priority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+任务优先级
+
+
+
+
+
+
+### Member Of
+
+[`CreateJobInput`](../../types/inputs/create-job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

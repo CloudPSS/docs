@@ -1,0 +1,58 @@
+---
+id: id
+title: ID
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID.
+
+
+```graphql
+scalar ID
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`AbortJobInput`](../../types/inputs/abort-job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AccountChallenge`](../../types/objects/account-challenge.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AccountChallengeAnswerInput`](../../types/inputs/account-challenge-answer-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AccountChallengeItem`](../../types/objects/account-challenge-item.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateAccountTokenInput`](../../types/inputs/create-account-token-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobMachineInput`](../../types/inputs/create-job-machine-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Job`](../../types/objects/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobInput`](../../types/inputs/job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobLocalMachine`](../../types/objects/job-local-machine.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobMachine`](../../types/objects/job-machine.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`UpdateAccountChallengeInput`](../../types/inputs/update-account-challenge-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobMachineInput`](../../types/inputs/update-job-machine-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobMachinesInput`](../../types/inputs/update-job-machines-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

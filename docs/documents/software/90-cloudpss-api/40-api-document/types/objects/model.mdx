@@ -1,0 +1,159 @@
+---
+id: model
+title: Model
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+一个 Model 实例 
+
+
+```graphql
+type Model {
+  rid: ResourceId!
+  type: String!
+  owner: String!
+  key: String!
+  name: String!
+  updatedAt: DateTime!
+  description: String
+  permissions: ResourcePermissions!
+  tags: [String!]!
+  keywords: [String!]!
+  createdAt: DateTime
+  context: JSON
+  configs: JSON
+  jobs: JSON
+  revision: ModelRevision
+  pages: [Page!]
+  access(
+    user: String
+  ): Access
+  storage: [HashValue!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>rid</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourceId!</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源类型
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>owner</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源所有者
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>key</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源键名
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>updatedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime!</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>description</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+资源描述
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>permissions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourcePermissions!</b></code>](../../types/objects/resource-permissions.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+资源权限配置
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>tags</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源标签列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>keywords</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源关键词列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+创建时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>context</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+Model 的上下文信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>configs</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+Model 的配置信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>jobs</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+Model 的任务信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>revision</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ModelRevision</b></code>](../../types/objects/model-revision.mdx) <Badge class="badge badge--secondary " text="object"/> 
+Model 的当前版本数据
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>pages</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[Page!]</b></code>](../../types/objects/page.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="object"/> 
+Model 的发布页面列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>access</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Access</b></code>](../../types/objects/access.mdx) <Badge class="badge badge--secondary " text="object"/> 
+
+##### [<code style={{ fontWeight: 'normal' }}>Model.access.<b>user</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Model.<b>storage</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[HashValue!]!</b></code>](../../types/scalars/hash-value.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+Model 额外数据存储
+
+
+
+
+
+
+### Returned By
+
+[`createModel`](../../operations/mutations/create-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`model`](../../operations/queries/model.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`updateModel`](../../operations/mutations/update-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+
+### Member Of
+
+[`Models`](../../types/objects/models.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

@@ -1,0 +1,147 @@
+---
+id: account-user
+title: AccountUser
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+个人用户账户类型
+
+
+```graphql
+type AccountUser implements Account {
+  name: String!
+  displayName: String!
+  type: AccountType!
+  expiredAt: DateTime
+  suspendedAt: DateTime
+  secure_digest: String
+  cid: String
+  email: String
+  phone: String
+  bio: String
+  company: String
+  challenges: AccountChallengeInfo
+  challengesUpdateTime: userChallengeUpdateTime
+  ownerOf: [Account!]
+  moderatorOf: [Account!]
+  memberOf: [Account!]
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+账户名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>displayName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+账户显示名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountType!</b></code>](../../types/enums/account-type.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+账户类型
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>expiredAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户过期时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>suspendedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户冻结时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>secure&#x005F;digest</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+安全摘要
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>cid</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户 CID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户邮箱
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户电话
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>bio</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户个人简介
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>company</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户所属公司
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>challenges</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountChallengeInfo</b></code>](../../types/objects/account-challenge-info.mdx) <Badge class="badge badge--secondary " text="object"/> 
+获取用户验证质询注册信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>challengesUpdateTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>userChallengeUpdateTime</b></code>](../../types/objects/user-challenge-update-time.mdx) <Badge class="badge badge--secondary " text="object"/> 
+获取用户验证质询更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>ownerOf</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[Account!]</b></code>](../../types/interfaces/account.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="interface"/> 
+获取用户作为拥有者的组织列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>moderatorOf</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[Account!]</b></code>](../../types/interfaces/account.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="interface"/> 
+获取用户作为管理员的组织列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountUser.<b>memberOf</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[Account!]</b></code>](../../types/interfaces/account.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="interface"/> 
+获取用户作为成员的组织列表
+
+
+### Interfaces
+
+#### [<code style={{ fontWeight: 'normal' }}><b>Account</b></code>](../../types/interfaces/account.mdx) <Badge class="badge badge--secondary " text="interface"/> 
+账户接口
+
+
+
+
+
+
+### Member Of
+
+[`AccountChallenge`](../../types/objects/account-challenge.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AccountOrganization`](../../types/objects/account-organization.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AccountToken`](../../types/objects/account-token.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

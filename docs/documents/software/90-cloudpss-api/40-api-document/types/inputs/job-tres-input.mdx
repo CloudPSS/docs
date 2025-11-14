@@ -1,0 +1,76 @@
+---
+id: job-tres-input
+title: JobTresInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+创建任务时的服务器信息
+
+
+```graphql
+input JobTresInput {
+  cpu: Int!
+  ecpu: Float!
+  mem: Float!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JobTresInput.<b>cpu</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+cpu
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobTresInput.<b>ecpu</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+等效cpu
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobTresInput.<b>mem</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+分配的内存 [MB]
+
+
+
+
+
+
+### Member Of
+
+[`CreateJobMachineInput`](../../types/inputs/create-job-machine-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobPolicyInput`](../../types/inputs/create-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobExecutionPolicyInput`](../../types/inputs/job-execution-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobMachineInput`](../../types/inputs/update-job-machine-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobPolicyInput`](../../types/inputs/update-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

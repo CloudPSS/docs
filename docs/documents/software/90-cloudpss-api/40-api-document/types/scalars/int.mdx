@@ -1,0 +1,58 @@
+---
+id: int
+title: Int
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1.
+
+
+```graphql
+scalar Int
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`AccountChallengeGroup`](../../types/objects/account-challenge-group.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Accounts`](../../types/objects/accounts.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AccountsInput`](../../types/inputs/accounts-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AccountTokenStub`](../../types/objects/account-token-stub.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ApplicationRevision`](../../types/objects/application-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Applications`](../../types/objects/applications.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ApplicationsInput`](../../types/inputs/applications-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AuditLog`](../../types/objects/audit-log.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AuditLogs`](../../types/objects/audit-logs.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AuditLogsInput`](../../types/inputs/audit-logs-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AuthKeyStub`](../../types/objects/auth-key-stub.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateApplicationRevisionInput`](../../types/inputs/create-application-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateFunctionRevisionInput`](../../types/inputs/create-function-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobPolicyInput`](../../types/inputs/create-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateModelRevisionInput`](../../types/inputs/create-model-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyAccountTokenStubInput`](../../types/inputs/destroy-account-token-stub-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyAuthKeyStubInput`](../../types/inputs/destroy-auth-key-stub-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyJobPolicyInput`](../../types/inputs/destroy-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyJobQueueInput`](../../types/inputs/destroy-job-queue-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`FunctionRevision`](../../types/objects/function-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Functions`](../../types/objects/functions.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`FunctionsInput`](../../types/inputs/functions-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Job`](../../types/objects/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobExecutionPolicyInput`](../../types/inputs/job-execution-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobPolicies`](../../types/objects/job-policies.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobPoliciesInput`](../../types/inputs/job-policies-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobPolicy`](../../types/objects/job-policy.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobPolicyInput`](../../types/inputs/job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobQueue`](../../types/objects/job-queue.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobQueueInput`](../../types/inputs/job-queue-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobQueues`](../../types/objects/job-queues.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobQueuesInput`](../../types/inputs/job-queues-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Jobs`](../../types/objects/jobs.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobsInput`](../../types/inputs/jobs-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobTres`](../../types/objects/job-tres.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobTresInput`](../../types/inputs/job-tres-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ModelRevision`](../../types/objects/model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Models`](../../types/objects/models.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelsInput`](../../types/inputs/models-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ModelTopologyInput`](../../types/inputs/model-topology-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Resources`](../../types/objects/resources.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ResourcesInput`](../../types/inputs/resources-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ResourceTags`](../../types/objects/resource-tags.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ResourceTagsInput`](../../types/inputs/resource-tags-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobPolicyInput`](../../types/inputs/update-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobQueueInput`](../../types/inputs/update-job-queue-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

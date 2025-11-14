@@ -1,0 +1,96 @@
+---
+id: create-application-revision-input
+title: CreateApplicationRevisionInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+No description
+
+
+```graphql
+input CreateApplicationRevisionInput {
+  author: String!
+  message: String!
+  version: Int!
+  documentation: String!
+  assets: [JSON!]!
+  scenes: [JSON!]!
+  parent: HashValue
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>author</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+作者
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>message</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+提交消息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>version</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+数据结构的版本
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>documentation</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+文档信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>assets</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[JSON!]!</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+Application revision 外部资源
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>scenes</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[JSON!]!</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+Application revision 图面设计
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateApplicationRevisionInput.<b>parent</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>HashValue</b></code>](../../types/scalars/hash-value.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+父级hash
+
+
+
+
+
+
+### Member Of
+
+[`createApplicationRevision`](../../operations/mutations/create-application-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

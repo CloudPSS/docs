@@ -1,0 +1,129 @@
+---
+id: model-revision
+title: ModelRevision
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+ModelRevision
+
+
+```graphql
+type ModelRevision {
+  hash: HashValue
+  author: String!
+  createdAt: Float!
+  message: String!
+  version: Int!
+  documentation: String!
+  graphic: JSON!
+  implements: JSON
+  parameters: JSON!
+  pins: JSON!
+  parent: ModelRevision
+  implement(
+    type: String!
+  ): JSON
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>hash</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>HashValue</b></code>](../../types/scalars/hash-value.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+hash
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>author</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+作者
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>createdAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+创建时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>message</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+提交消息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>version</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+数据结构的版本
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>documentation</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+文档信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>graphic</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON!</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+图形信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>implements</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+所有实现数据
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>parameters</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON!</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+参数信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>pins</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON!</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+引脚信息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>parent</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ModelRevision</b></code>](../../types/objects/model-revision.mdx) <Badge class="badge badge--secondary " text="object"/> 
+revision 的前置版本数据
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ModelRevision.<b>implement</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSON</b></code>](../../types/scalars/json.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+model revision 的某种实现
+##### [<code style={{ fontWeight: 'normal' }}>ModelRevision.implement.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+
+
+
+
+
+
+
+### Returned By
+
+[`createModelRevision`](../../operations/mutations/create-model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`modelRevision`](../../operations/queries/model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>
+
+### Member Of
+
+[`Model`](../../types/objects/model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelRevision`](../../types/objects/model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

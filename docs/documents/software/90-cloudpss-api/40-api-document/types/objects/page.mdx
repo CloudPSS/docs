@@ -1,0 +1,90 @@
+---
+id: page
+title: Page
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+页面信息
+
+
+```graphql
+type Page {
+  pageId: String!
+  resource: ResourceId!
+  key: String!
+  path: String!
+  mode: String!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Page.<b>pageId</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+页面ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Page.<b>resource</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourceId!</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+所属资源ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Page.<b>key</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+页面键名
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Page.<b>path</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+页面路径
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Page.<b>mode</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+页面模式
+
+
+
+
+
+
+### Returned By
+
+[`page`](../../operations/queries/page.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`publishPage`](../../operations/mutations/publish-page.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+
+### Member Of
+
+[`Application`](../../types/objects/application.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Function`](../../types/objects/function.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Model`](../../types/objects/model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

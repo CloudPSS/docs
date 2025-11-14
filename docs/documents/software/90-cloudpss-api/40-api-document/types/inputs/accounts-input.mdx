@@ -1,0 +1,91 @@
+---
+id: accounts-input
+title: AccountsInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+账户查询输入
+
+
+```graphql
+input AccountsInput {
+  orderBy: [String!]!
+  cursor: [String!]
+  name: FindCondition
+  displayName: FindCondition
+  type: FindCondition
+  limit: Int
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>orderBy</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+排序字段
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>cursor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+游标，用于分页查询
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+按名称筛选条件
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>displayName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+按显示名称筛选条件
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+按账户类型筛选条件
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountsInput.<b>limit</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+查询结果数量限制
+
+
+
+
+
+
+### Member Of
+
+[`accounts`](../../operations/queries/accounts.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>

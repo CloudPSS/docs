@@ -1,0 +1,76 @@
+---
+id: update-job-machine-input
+title: UpdateJobMachineInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+创建队列输入
+
+
+```graphql
+input UpdateJobMachineInput {
+  id: ID
+  name: String
+  tres: JobTresInput
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobMachineInput.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID</b></code>](../../types/scalars/id.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+服务器id
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobMachineInput.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+服务器名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobMachineInput.<b>tres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobTresInput</b></code>](../../types/inputs/job-tres-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+任务CPU消息
+
+
+
+
+
+
+### Member Of
+
+[`UpdateJobMachinesInput`](../../types/inputs/update-job-machines-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

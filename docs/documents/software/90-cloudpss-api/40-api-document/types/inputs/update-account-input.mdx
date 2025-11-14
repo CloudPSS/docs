@@ -1,0 +1,116 @@
+---
+id: update-account-input
+title: UpdateAccountInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+更新账户输入
+
+
+```graphql
+input UpdateAccountInput {
+  name: String
+  displayName: String
+  email: String
+  phone: String
+  bio: String
+  company: String
+  description: String
+  owner: String
+  moderators: UpdateAccountMembersInput
+  members: UpdateAccountMembersInput
+  type: AccountType
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>displayName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户显示名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户邮箱
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户电话
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>bio</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户个人简介
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>company</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户所属公司
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>description</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+组织描述
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>owner</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+转移组织所有权，仅对 ORGANIZATION 类型的 Account 有效
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>moderators</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UpdateAccountMembersInput</b></code>](../../types/inputs/update-account-members-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+管理员列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>members</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UpdateAccountMembersInput</b></code>](../../types/inputs/update-account-members-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+成员列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateAccountInput.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountType</b></code>](../../types/enums/account-type.mdx) <Badge class="badge badge--secondary " text="enum"/> 
+SUPERUSER 可更改其他用户的类型，仅限 ADMINISTER/USER 切换
+
+
+
+
+
+
+### Member Of
+
+[`updateAccount`](../../operations/mutations/update-account.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

@@ -1,0 +1,140 @@
+---
+id: job
+title: Job
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+任务
+
+
+```graphql
+type Job {
+  id: ID!
+  args: JSONObject!
+  createTime: Timestamp!
+  startTime: Timestamp
+  endTime: Timestamp
+  status: JobStatus!
+  context: [ResourceId!]!
+  user: String!
+  priority: Float!
+  policy: JobPolicySnapshot
+  machine: JobMachine
+  input: ID!
+  output: ID!
+  debug: JSONObject
+  position: Int
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](../../types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+任务 ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>args</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSONObject!</b></code>](../../types/scalars/jsonobject.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+执行参数
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>createTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+创建时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>startTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+开始时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>endTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+结束时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>status</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobStatus!</b></code>](../../types/enums/job-status.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+执行状态
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>context</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ResourceId!]!</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+上下文资源列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>user</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+执行用户
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>priority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+执行时的优先级
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>policy</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobPolicySnapshot</b></code>](../../types/objects/job-policy-snapshot.mdx) <Badge class="badge badge--secondary " text="object"/> 
+执行策略
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>machine</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobMachine</b></code>](../../types/objects/job-machine.mdx) <Badge class="badge badge--secondary " text="object"/> 
+执行服务器
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>input</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](../../types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+输入流的 Token，未正常启动或没有输入流的任务使用空白流填充
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>output</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ID!</b></code>](../../types/scalars/id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+输出流的 ID，未正常启动的任务使用空白流填充
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>debug</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSONObject</b></code>](../../types/scalars/jsonobject.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+调试参数，非空时启用调试模式
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Job.<b>position</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+队列信息
+
+
+
+
+
+
+### Returned By
+
+[`abortJob`](../../operations/mutations/abort-job.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`createJob`](../../operations/mutations/create-job.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`job`](../../operations/queries/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>
+
+### Member Of
+
+[`Jobs`](../../types/objects/jobs.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

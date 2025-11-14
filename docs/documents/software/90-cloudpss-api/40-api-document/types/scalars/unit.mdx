@@ -1,0 +1,58 @@
+---
+id: unit
+title: Unit
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+表示空数据
+
+
+```graphql
+scalar Unit
+```
+
+
+
+
+
+
+
+
+### Returned By
+
+[`destroyAccountOrganization`](../../operations/mutations/destroy-account-organization.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`destroyAccountToken`](../../operations/mutations/destroy-account-token.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`destroyAccountTokenStub`](../../operations/mutations/destroy-account-token-stub.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`destroyApplication`](../../operations/mutations/destroy-application.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`destroyFunction`](../../operations/mutations/destroy-function.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`destroyModel`](../../operations/mutations/destroy-model.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`unpublishPage`](../../operations/mutations/unpublish-page.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/><Bullet />[`updateAccountChallenge`](../../operations/mutations/update-account-challenge.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
