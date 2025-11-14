@@ -99,11 +99,11 @@ const ChatComponent = (): React.JSX.Element => {
     );
     const chatStyle = {
         '--cwe-chat-float-bottom': '1rem',
-        ' --cwe-chat-float-right': '1rem',
+        '--cwe-chat-float-right': '1rem',
         '--cwe-chat-float-width': 'min(480px, calc(100vw - 8px * 2))',
         '--cwe-chat-float-height': 'min(720px, calc(100vh - 32px * 2.5))',
         '--cwe-chat-stick-width': 'min(480px, calc(100vw - 48px))',
-        'z-index': '201',
+        zIndex: '201',
     };
 
     return (

@@ -6,10 +6,13 @@ import remarkMath from 'remark-math';
 import remarkIns from 'remark-ins';
 import { remarkExtendedTable, extendedTableHandlers } from 'remark-extended-table';
 import remarkJoinCjkLines from 'remark-join-cjk-lines';
+import remarkReporting from './plugins/remark/reporting';
 import rehypeKatex from 'rehype-katex';
+import type { Options as KatexOptions } from 'rehype-katex';
 import rehypeFigure from './plugins/rehype/figure';
 import rehypeUrl from './plugins/rehype/url';
 import type { MarkdownConfig } from '@docusaurus/types';
+import { DEV } from './utils';
 
 export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
     admonitions: {
@@ -17,10 +20,23 @@ export const mdxOptions: Partial<BlogOptions & PagesOptions & DocsOptions> = {
         keywords: ['summary'],
     },
     remarkPlugins: [remarkJoinCjkLines, remarkIns, remarkMath, remarkExtendedTable, remarkDefinitionList],
-    rehypePlugins: [rehypeUrl, [rehypeKatex, { strict: 'warn' }], rehypeFigure],
+    rehypePlugins: [
+        rehypeUrl,
+        [
+            rehypeKatex,
+            {
+                strict: true,
+            } satisfies KatexOptions,
+        ],
+        rehypeFigure,
+    ],
     beforeDefaultRemarkPlugins: [],
     beforeDefaultRehypePlugins: [],
 };
+
+if (!DEV) {
+    mdxOptions.remarkPlugins!.push(remarkReporting);
+}
 
 export const remarkRehypeOptions: MarkdownConfig['remarkRehypeOptions'] = {
     handlers: {
