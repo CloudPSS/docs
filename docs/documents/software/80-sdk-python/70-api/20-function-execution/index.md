@@ -264,6 +264,21 @@ f = FunctionExecution.current()
 f.on_abort(exitCallback, args=(1, 2), kwargs={"c": 3, "d": {'e': 4}})
 ```
 
+### `functionExecution.on_input(func)`
+
+- 实例方法
+- `func`: 响应后的回调函数
+
+监听input事件。
+
+```python showLineNumbers
+def handle_input(data):
+    print("收到输入：", data)
+
+f = FunctionExecution.current()
+# highlight-next-line
+f.on_abort(handle_input)
+```
 
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
 [Number]: https://docs.python.org/3.8/tutorial/introduction.html#numbers

@@ -254,7 +254,7 @@ config = model.getModelConfig('config 1')
 - `canvas`: [String][String]；元件所在图纸数据，默认为 None
 - `position`: [Dict][Dict]；元件位置信息，默认为 None
 - `size`: [Dict][Dict]；元件大小信息，默认为 None
-- Returns: [Component][Object]，返回一个元件类
+- Returns: [Component](#class-component)，返回一个元件实例
 
 添加元件（创建一个新的元件并添加到拓扑中）。
 
@@ -351,7 +351,7 @@ components = model.getAllComponents()
 
 - 实例方法
 - `key`: [String][String]；元件 key
-- Returns: [Component][Object]；返回指定 key 的元件实例
+- Returns: [Component](#class-component)；返回指定 key 的元件实例
 
 获取指定key的元件。
 
@@ -365,7 +365,7 @@ component = model.getComponentByKey('component_new_resistor_router_1')
 
 - 实例方法
 - `rid`: [String][String]；元件 rid
-- Returns: [Component][Object]；返回指定 rid 的元件实例
+- Returns: [Component](#class-component)；返回指定 rid 的元件实例
 
 获取指定 rid 的所有元件。
 
@@ -609,7 +609,7 @@ revision.run(mode.jobs[0], model.configs[0])
 model = cloudpss.Model.fetch('model/Maxwell/IEEE')
 revision = model.revision
 # highlight-next-line
-topology = revision.fetchTopology(implementType='powerFlow',config=model.config[0], maximumDepth=2) # 获取潮流实现仅展开 2 层的拓扑数据 
+topology = revision.fetchTopology(implementType='powerFlow',config=model.configs[0], maximumDepth=2) # 获取潮流实现仅展开 2 层的拓扑数据 
 ```
 
 ### `modelRevision.getImplements()`
@@ -672,6 +672,14 @@ ModelTopology.fetch('','emtp',{'args': {}})
 ```python showLineNumbers
 ModelTopology.dump(topology, filePath)
 ```
+
+## Class: `Component`
+
+- Extends: [Object][Object]
+
+算例元件类，元件对象由 [Model](#class-model) 类创建并管理，不能直接实例化
+
+
 
 
 [Object]: https://docs.python.org/3.8/tutorial/classes.html#class-objects
