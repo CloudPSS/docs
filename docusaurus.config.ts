@@ -32,7 +32,6 @@ const config: Config = {
 
     onBrokenLinks: DEV ? 'warn' : 'throw',
     onBrokenAnchors: DEV ? 'warn' : 'throw',
-    onBrokenMarkdownLinks: DEV ? 'warn' : 'throw',
     onDuplicateRoutes: DEV ? 'warn' : 'throw',
 
     customFields: {
@@ -43,6 +42,10 @@ const config: Config = {
 
     markdown: {
         mermaid: true,
+        hooks: {
+            onBrokenMarkdownLinks: DEV ? 'warn' : 'throw',
+            onBrokenMarkdownImages: DEV ? 'warn' : 'throw',
+        },
         remarkRehypeOptions: {
             ...remarkRehypeOptions,
             clobberPrefix: '',
