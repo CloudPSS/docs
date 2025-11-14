@@ -68,7 +68,7 @@ AppStudio 工作台和 FuncStudio、SimStudio 的布局基本类似，也分为�
 
 :::
 
-关于**高级权限**配置详见[高级权限配置](../../../../50-user-center/30-cloudpss-apps/70-permission/index.md)。
+关于**高级权限**配置详见[高级权限配置](../../../../50-user-center/30-cloudpss-apps/80-permission/index.md)。
 
 ### 撤销/重
 

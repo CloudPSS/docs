@@ -1,0 +1,91 @@
+---
+id: account-challenge-type
+title: AccountChallengeType
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+账户验证质询类型枚举
+
+
+```graphql
+enum AccountChallengeType {
+  PASSWORD
+  EMAIL
+  SMS
+  TOTP
+  WECHAT
+  WEBAUTHN
+}
+```
+
+
+
+
+### Values
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>PASSWORD</b></code>](#)  
+密码验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>EMAIL</b></code>](#)  
+邮箱验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>SMS</b></code>](#)  
+短信验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>TOTP</b></code>](#)  
+动态令牌验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>WECHAT</b></code>](#)  
+微信验证
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeType.<b>WEBAUTHN</b></code>](#)  
+WebAuthn 验证
+
+
+
+
+
+
+### Member Of
+
+[`AccountChallengeItem`](../../types/objects/account-challenge-item.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateAccountChallengeInput`](../../types/inputs/create-account-challenge-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

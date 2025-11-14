@@ -28,7 +28,7 @@ tags:
 :::tip Token 申请提示
 token 时效：1 天/ 3 天/ 30 天/ 60 天/ 90 天/ 180 天/ 360 天
 
-token 权限： model(**SimStudio** 操作权限)、function(**FuncStudio** 操作权限)、application(**AppStudio** 操作权限)，权限列表详情查看[项目权限介绍](../../30-cloudpss-apps/70-permission/index.md)
+token 权限： model(**SimStudio** 操作权限)、function(**FuncStudio** 操作权限)、application(**AppStudio** 操作权限)，权限列表详情查看[项目权限介绍](../../30-cloudpss-apps/80-permission/index.md)
 :::
 
 

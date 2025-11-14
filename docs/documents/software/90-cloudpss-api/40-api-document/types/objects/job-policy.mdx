@@ -1,0 +1,125 @@
+---
+id: job-policy
+title: JobPolicy
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+策略实例
+
+
+```graphql
+type JobPolicy {
+  id: Int!
+  name: String!
+  users: [String!]
+  functions: [ResourceId!]
+  tres: [JobTres!]!
+  minPriority: Float!
+  maxPriority: Float!
+  maxDuration: Float!
+  createTime: Timestamp
+  updateTime: Timestamp
+  visibility: JobPolicyVisibility!
+  queue: JobQueue
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>users</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略用户组
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>functions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ResourceId!]</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略参数
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>tres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[JobTres!]!</b></code>](../../types/objects/job-tres.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+策略配置
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>minPriority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+最小优先级
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>maxPriority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+最大优先级
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>maxDuration</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float!</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+最大运行时间 [s]
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>createTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+创建时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>updateTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>visibility</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobPolicyVisibility!</b></code>](../../types/enums/job-policy-visibility.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+可见性
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobPolicy.<b>queue</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobQueue</b></code>](../../types/objects/job-queue.mdx) <Badge class="badge badge--secondary " text="object"/> 
+队列信息
+
+
+
+
+
+
+### Returned By
+
+[`jobPolicy`](../../operations/queries/job-policy.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>
+
+### Member Of
+
+[`JobPolicies`](../../types/objects/job-policies.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

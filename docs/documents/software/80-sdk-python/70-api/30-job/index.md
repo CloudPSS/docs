@@ -170,9 +170,9 @@ Job.load(file, format="yaml")
 ### `job.read(receiver=None, **kwargs)`
 
 - 静态方法
-- `receiver`：[JobReceiver][Object] 接收者
+- `receiver`：[MessageStreamReceiver](#class-messagestreamreceiver) 接收者
 - `kwargs`: [Dict][Dict] 仿真参数
-- Returns: [MessageStreamReceiver][Object] 输出流实例
+- Returns: [MessageStreamReceiver](#class-messagestreamreceiver) 输入流实例
 
 接收当前运行实例的输出。
 
@@ -183,9 +183,9 @@ Job.read(receiver=None, dev=False, **kwargs)
 ### `job.write(sender=None, **kwargs)`
 
 - 静态方法
-- `sender`: [MessageStreamSender][Object] 发送者
+- `sender`: [MessageStreamSender](#class-messagestreamsender) 发送者
 - `kwargs`: [Dict][Dict] 仿真参数
-- Returns: [MessageStreamSender][Object] 输入流实例
+- Returns: [MessageStreamSender](#class-messagestreamsender) 输出流实例
 
 发送为当前运行实例输入。
 
@@ -248,6 +248,20 @@ job = Job.fetch(id)
 # highlight-next-line
 job.abort(3)
 ```
+
+## Class: `MessageStreamSender`
+
+- Extends: [Object][Object]
+  
+**CloudPSS** 消息流数据输出类，实例对象由 [Job](#class-job) 类创建并管理，不能直接实例化
+
+
+
+## Class: `MessageStreamReceiver`
+
+- Extends: [Object][Object]
+  
+**CloudPSS** 消息流数据输入类，实例对象由 [Job](#class-job) 类创建并管理，不能直接实例化
 
 
 

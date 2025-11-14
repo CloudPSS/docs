@@ -1,0 +1,91 @@
+---
+id: create-account-user-input
+title: CreateAccountUserInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+创建账户用户输入
+
+
+```graphql
+input CreateAccountUserInput {
+  displayName: String!
+  company: String
+  phone: String
+  email: String
+  bio: String
+  challenges: [CreateAccountChallengeInput!]!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>displayName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+用户显示名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>company</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户所属公司
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户联系电话
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户电子邮箱
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>bio</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+用户个人简介
+
+
+#### [<code style={{ fontWeight: 'normal' }}>CreateAccountUserInput.<b>challenges</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[CreateAccountChallengeInput!]!</b></code>](../../types/inputs/create-account-challenge-input.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="input"/> 
+账户验证质询列表
+
+
+
+
+
+
+### Member Of
+
+[`AccountChallengeInput`](../../types/inputs/account-challenge-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

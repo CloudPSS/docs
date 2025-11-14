@@ -1,0 +1,126 @@
+---
+id: account-organization
+title: AccountOrganization
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+组织账户类型
+
+
+```graphql
+type AccountOrganization implements Account {
+  name: String!
+  displayName: String!
+  type: AccountType!
+  expiredAt: DateTime
+  suspendedAt: DateTime
+  email: String
+  phone: String
+  description: String
+  moderators: [AccountUser!]
+  members: [AccountUser!]
+  owner: AccountOrganization
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+账户名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>displayName</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+账户显示名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountType!</b></code>](../../types/enums/account-type.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="enum"/> 
+账户类型
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>expiredAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户过期时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>suspendedAt</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+账户冻结时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+组织邮箱
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+组织联系电话
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>description</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+组织描述
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>moderators</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[AccountUser!]</b></code>](../../types/objects/account-user.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="object"/> 
+获取组织管理员列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>members</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[AccountUser!]</b></code>](../../types/objects/account-user.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="object"/> 
+获取组织成员列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountOrganization.<b>owner</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountOrganization</b></code>](../../types/objects/account-organization.mdx) <Badge class="badge badge--secondary " text="object"/> 
+获取组织所有者信息
+
+
+### Interfaces
+
+#### [<code style={{ fontWeight: 'normal' }}><b>Account</b></code>](../../types/interfaces/account.mdx) <Badge class="badge badge--secondary " text="interface"/> 
+账户接口
+
+
+
+
+
+
+### Returned By
+
+[`createAccountOrganization`](../../operations/mutations/create-account-organization.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
+
+### Member Of
+
+[`AccountOrganization`](../../types/objects/account-organization.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

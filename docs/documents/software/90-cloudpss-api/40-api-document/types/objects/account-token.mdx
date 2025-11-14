@@ -1,0 +1,91 @@
+---
+id: account-token
+title: AccountToken
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+账户令牌信息
+
+
+```graphql
+type AccountToken {
+  token: JsonWebToken!
+  scopes: [String!]!
+  roles: [String!]!
+  expirationTime: DateTime!
+  publicKey: String!
+  user: AccountUser!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>token</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JsonWebToken!</b></code>](../../types/scalars/json-web-token.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+访问令牌
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>scopes</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+令牌权限范围
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>roles</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+用户角色列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>expirationTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime!</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+令牌过期时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>publicKey</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+公钥
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountToken.<b>user</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>AccountUser!</b></code>](../../types/objects/account-user.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+用户信息
+
+
+
+
+
+
+### Returned By
+
+[`accountToken`](../../operations/queries/account-token.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/><Bullet />[`createAccountToken`](../../operations/mutations/create-account-token.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

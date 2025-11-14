@@ -1,0 +1,66 @@
+---
+id: destroy-account-token-input
+title: DestroyAccountTokenInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+销毁账户令牌输入
+
+
+```graphql
+input DestroyAccountTokenInput {
+  token: JsonWebToken
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>DestroyAccountTokenInput.<b>token</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JsonWebToken</b></code>](../../types/scalars/json-web-token.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+令牌
+
+
+
+
+
+
+### Member Of
+
+[`destroyAccountToken`](../../operations/mutations/destroy-account-token.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>

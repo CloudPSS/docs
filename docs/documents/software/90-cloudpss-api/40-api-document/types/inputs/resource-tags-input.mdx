@@ -1,0 +1,91 @@
+---
+id: resource-tags-input
+title: ResourceTagsInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+查询资源标签输入
+
+
+```graphql
+input ResourceTagsInput {
+  orderBy: [String!]!
+  cursor: [String!]
+  tag: FindCondition
+  type: FindCondition
+  owner: FindCondition
+  limit: Int
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>orderBy</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+排序字段
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>cursor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+分页游标
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>tag</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+标签
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>type</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+资源类型
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>owner</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>FindCondition</b></code>](../../types/scalars/find-condition.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+资源所有者
+
+
+#### [<code style={{ fontWeight: 'normal' }}>ResourceTagsInput.<b>limit</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+每页数量限制
+
+
+
+
+
+
+### Member Of
+
+[`resourceTags`](../../operations/queries/resource-tags.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>

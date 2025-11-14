@@ -32,4 +32,4 @@ tags:
 
 ![高级权限设置](image-1.png)
 
-高级权限设置中的各配置项说明详见[应用权限介绍](../../../../../50-user-center/30-cloudpss-apps/70-permission/index.md)。
+高级权限设置中的各配置项说明详见[应用权限介绍](../../../../../50-user-center/30-cloudpss-apps/80-permission/index.md)。

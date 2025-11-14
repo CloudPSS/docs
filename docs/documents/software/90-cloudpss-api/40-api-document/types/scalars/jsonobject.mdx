@@ -1,0 +1,58 @@
+---
+id: jsonobject
+title: JSONObject
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+
+```graphql
+scalar JSONObject
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`AccountChallengeAnswerInput`](../../types/inputs/account-challenge-answer-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AccountChallengeItem`](../../types/objects/account-challenge-item.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AccountTokenStub`](../../types/objects/account-token-stub.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`AuditLog`](../../types/objects/audit-log.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateAccountChallengeInput`](../../types/inputs/create-account-challenge-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobInput`](../../types/inputs/create-job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobQueueInput`](../../types/inputs/create-job-queue-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Job`](../../types/objects/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobQueue`](../../types/objects/job-queue.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`OAuthInput`](../../types/inputs/oauth-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobQueueInput`](../../types/inputs/update-job-queue-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

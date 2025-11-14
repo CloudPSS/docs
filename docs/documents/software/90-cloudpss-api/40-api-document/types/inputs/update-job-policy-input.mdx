@@ -1,0 +1,102 @@
+---
+id: update-job-policy-input
+title: UpdateJobPolicyInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+更新策略输入
+
+
+```graphql
+input UpdateJobPolicyInput {
+  name: String
+  users: [String!]
+  functions: [ResourceId!]
+  minPriority: Float
+  maxPriority: Float
+  maxDuration: Float
+  visibility: JobPolicyVisibility
+  tres: [JobTresInput!]
+  queue: Int
+  id: Int!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+策略名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>users</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略用户组
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>functions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[ResourceId!]</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略参数
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>minPriority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+最小优先级
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>maxPriority</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+最大优先级
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>maxDuration</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+最大运行时间 [s]
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>visibility</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JobPolicyVisibility</b></code>](../../types/enums/job-policy-visibility.mdx) <Badge class="badge badge--secondary " text="enum"/> 
+可见性
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>tres</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[JobTresInput!]</b></code>](../../types/inputs/job-tres-input.mdx) <Badge class="badge badge--secondary " text="list"/> <Badge class="badge badge--secondary " text="input"/> 
+任务CPU消息
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>queue</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+队列id
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateJobPolicyInput.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+策略ID

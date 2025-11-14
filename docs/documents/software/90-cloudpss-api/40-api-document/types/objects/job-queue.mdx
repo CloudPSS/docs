@@ -1,0 +1,96 @@
+---
+id: job-queue
+title: JobQueue
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+查询任务队列
+
+
+```graphql
+type JobQueue {
+  id: Int!
+  name: String!
+  scheduler: JSONObject!
+  machines: [JobMachine!]!
+  createTime: Timestamp!
+  updateTime: Timestamp
+  load: Float
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>id</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+队列id
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+队列名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>scheduler</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>JSONObject!</b></code>](../../types/scalars/jsonobject.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+队列参数
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>machines</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[JobMachine!]!</b></code>](../../types/objects/job-machine.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+队列下的机器列表
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>createTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp!</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+创建时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>updateTime</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Timestamp</b></code>](../../types/scalars/timestamp.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>JobQueue.<b>load</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Float</b></code>](../../types/scalars/float.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+队列信息
+
+
+
+
+
+
+### Member Of
+
+[`JobPolicy`](../../types/objects/job-policy.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobQueues`](../../types/objects/job-queues.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

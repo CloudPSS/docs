@@ -1,0 +1,58 @@
+---
+id: resource-id
+title: ResourceId
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+type/owner/key 形式的资源 ID
+
+
+```graphql
+scalar ResourceId
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`Application`](../../types/objects/application.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ApplicationInput`](../../types/inputs/application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`AuditLog`](../../types/objects/audit-log.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateApplicationInput`](../../types/inputs/create-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateFunctionInput`](../../types/inputs/create-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobInput`](../../types/inputs/create-job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobPolicyInput`](../../types/inputs/create-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateModelInput`](../../types/inputs/create-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyApplicationInput`](../../types/inputs/destroy-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyFunctionInput`](../../types/inputs/destroy-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`DestroyModelInput`](../../types/inputs/destroy-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Function`](../../types/objects/function.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`FunctionInput`](../../types/inputs/function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Job`](../../types/objects/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobPolicy`](../../types/objects/job-policy.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Model`](../../types/objects/model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelInput`](../../types/inputs/model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ModelTopologyInput`](../../types/inputs/model-topology-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Page`](../../types/objects/page.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`PageInput`](../../types/inputs/page-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`PublishPageInput`](../../types/inputs/publish-page-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Resource`](../../types/objects/resource.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ResourceInput`](../../types/inputs/resource-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UnpublishPageInput`](../../types/inputs/unpublish-page-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateApplicationInput`](../../types/inputs/update-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateFunctionInput`](../../types/inputs/update-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateJobPolicyInput`](../../types/inputs/update-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateModelInput`](../../types/inputs/update-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateResourceInput`](../../types/inputs/update-resource-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

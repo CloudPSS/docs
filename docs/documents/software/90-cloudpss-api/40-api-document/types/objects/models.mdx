@@ -1,0 +1,81 @@
+---
+id: models
+title: Models
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+查询多个 Model 实例 
+
+
+```graphql
+type Models {
+  items: [Model!]!
+  cursor: [String!]!
+  count: Int!
+  total: Int!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>Models.<b>items</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[Model!]!</b></code>](../../types/objects/model.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="object"/> 
+Model 分组
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Models.<b>cursor</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>[String!]!</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+当次查询原始最后一个元素的光标位置
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Models.<b>count</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+当前查询的数量
+
+
+#### [<code style={{ fontWeight: 'normal' }}>Models.<b>total</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>Int!</b></code>](../../types/scalars/int.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+包含当前在内的剩余数量
+
+
+
+
+
+
+### Returned By
+
+[`models`](../../operations/queries/models.mdx)  <Badge class="badge badge--secondary badge--relation" text="query"/>

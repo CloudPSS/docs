@@ -1,0 +1,58 @@
+---
+id: json
+title: JSON
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+
+
+```graphql
+scalar JSON
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`Application`](../../types/objects/application.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ApplicationRevision`](../../types/objects/application-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`CreateApplicationInput`](../../types/inputs/create-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateApplicationRevisionInput`](../../types/inputs/create-application-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateFunctionInput`](../../types/inputs/create-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateFunctionRevisionInput`](../../types/inputs/create-function-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateModelInput`](../../types/inputs/create-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateModelRevisionInput`](../../types/inputs/create-model-revision-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`Function`](../../types/objects/function.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`FunctionRevision`](../../types/objects/function-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Model`](../../types/objects/model.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelRevision`](../../types/objects/model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelTopology`](../../types/objects/model-topology.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ModelTopologyInput`](../../types/inputs/model-topology-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateApplicationInput`](../../types/inputs/update-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateFunctionInput`](../../types/inputs/update-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateModelInput`](../../types/inputs/update-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

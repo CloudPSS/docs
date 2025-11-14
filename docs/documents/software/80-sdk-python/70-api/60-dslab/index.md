@@ -31,7 +31,7 @@ description: CloudPSS SDK API 文档 DSLab 类
 
 - 静态方法
 - `simulationId`: [String][String] 数据项的算例 id
-- Returns: [DSLab][Object] 返回 DSLab 实例
+- Returns: [DSLab](#class-dslab) 返回 DSLab 实例
 
 获取算例信息。
 
@@ -76,7 +76,7 @@ DSLab.createProject(name, gid, description=None, initialTerm=None, build=None, o
 - 实例方法
 - `job`: [String][String] 调用仿真时使用的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job][Object] 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 调用仿真。
 
@@ -91,7 +91,7 @@ dslab.run(job, name=None)
 - 实例方法
 - `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job][Object] 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行负荷预测方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
@@ -106,7 +106,7 @@ dslab.runIESLoadPrediction(job=None, name=None)
 - 实例方法
 - `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job][Object] 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行时序潮流方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
@@ -121,7 +121,7 @@ dslab.runIESPowerFlow(job=None, name=None)
 - 实例方法
 - `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job][Object] 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行储能规划方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
@@ -136,7 +136,7 @@ dslab.runIESEnergyStoragePlan(job=None, name=None)
 - 实例方法
 - `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
-- Returns: [Job][Object] 返回一个运行实例
+- Returns: [Job](../30-job/index.md) 返回一个运行实例
 
 运行短路电流计算方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
@@ -146,13 +146,13 @@ dslab = DSLab.fetch(simulationId)
 dslab.runIESShortCurrent(job=None, name=None)
 ```
 
-## Class: `DataManageModel`
+## Class: `dataManageModel`
 
 - Extends: [Object][Object]
 
 **CloudPSS** DSLab 数据管理模块类
 
-### `datamanageModel.GetItemList(kind)`
+### `dataManageModel.GetItemList(kind)`
 
 - 实例方法
 - `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
@@ -163,7 +163,7 @@ dslab.runIESShortCurrent(job=None, name=None)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.GetItemList(kind)
+dslab.dataManageModel.GetItemList(kind)
 ```
 
 ### `GetItemExtra(kind, uuid)`
@@ -178,10 +178,10 @@ dslab.datamanageModel.GetItemList(kind)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.GetItemExtra(kind, uuid)
+dslab.dataManageModel.GetItemExtra(kind, uuid)
 ```
 
-### `datamanageModel.AddDataItem(kind, data, extra=None)`
+### `dataManageModel.AddDataItem(kind, data, extra=None)`
 
 - 实例方法
 - `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
@@ -194,10 +194,10 @@ dslab.datamanageModel.GetItemExtra(kind, uuid)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.AddDataItem(dataType, data)
+dslab.dataManageModel.AddDataItem(dataType, data)
 ```
 
-### `datamanageModel.UpdateDataItem(kind, data)`
+### `dataManageModel.UpdateDataItem(kind, data)`
 
 - 实例方法
 - `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
@@ -209,10 +209,10 @@ dslab.datamanageModel.AddDataItem(dataType, data)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.UpdateDataItem(kind, data)
+dslab.dataManageModel.UpdateDataItem(kind, data)
 ```
 
-### `datamanageModel.DeleteDataItem(id, kind)`
+### `dataManageModel.DeleteDataItem(id, kind)`
 
 - 实例方法
 - `id`: [Number][Number] 数据的 id
@@ -224,10 +224,10 @@ dslab.datamanageModel.UpdateDataItem(kind, data)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.DeleteDataItem(id, kind)
+dslab.dataManageModel.DeleteDataItem(id, kind)
 ```
 
-### `datamanageModel.UpdateItemExtra(self, kind, data)`
+### `dataManageModel.UpdateItemExtra(self, kind, data)`
 
 - 实例方法
 - `kind`: [String][String] 数据的种类标识，包含：光伏、光伏曲线、风机、风机曲线、燃气、燃气曲线、水电、水电曲线、火电、火电曲线、生物质发电、生物质发电曲线、垃圾电厂、垃圾电厂曲线、传输线、变压器、开关、负荷分类、负荷用户、储能设备、储能运行策略、上网电价、输配电价、常数电价、阶梯电价、分时电价、分时阶梯电价
@@ -249,7 +249,7 @@ project.dataManageModel.UpdateItemExtra(kind, data)
 ```
 
 
-### `datamanageModel.GetAtmosData(locationId, date)`
+### `dataManageModel.GetAtmosData(locationId, date)`
 
 - 实例方法
 - `locationId`: [String][String] 定位点 id
@@ -261,10 +261,10 @@ project.dataManageModel.UpdateItemExtra(kind, data)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.GetAtmosData(locationId, date)
+dslab.dataManageModel.GetAtmosData(locationId, date)
 ```
 
-### `datamanageModel.LocationGet()`
+### `dataManageModel.LocationGet()`
 
 - 实例方法
 - Returns: [List][List] 返回气象定位点数据，包含id，经度坐标，纬度坐标，定位点名称
@@ -274,10 +274,10 @@ dslab.datamanageModel.GetAtmosData(locationId, date)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.LocationGet()
+dslab.dataManageModel.LocationGet()
 ```
 
-### `datamanageModel.LocationCreate(name=None, longitude=None, latitude=None)`
+### `dataManageModel.LocationCreate(name=None, longitude=None, latitude=None)`
 
 - 实例方法
 - `name`: [String][String] 定位点名称，可选
@@ -289,10 +289,10 @@ dslab.datamanageModel.LocationGet()
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.LocationCreate(name=None, longitude=None, latitude=None)
+dslab.dataManageModel.LocationCreate(name=None, longitude=None, latitude=None)
 ```
 
-### `datamanageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)`
+### `dataManageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)`
 
 - 实例方法
 - `id`: [String][String] 定位点id
@@ -305,10 +305,10 @@ dslab.datamanageModel.LocationCreate(name=None, longitude=None, latitude=None)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)
+dslab.dataManageModel.LocationUpdate(id, name=None, longitude=None, latitude=None)
 ```
 
-### `datamanageModel.LocationDelete(id)`
+### `dataManageModel.LocationDelete(id)`
 
 - 实例方法
 - `id`: [String][String] 定位点id
@@ -318,10 +318,10 @@ dslab.datamanageModel.LocationUpdate(id, name=None, longitude=None, latitude=Non
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.LocationDelete(id)
+dslab.dataManageModel.LocationDelete(id)
 ```
 
-### `datamanageModel.LoadWeather()`
+### `dataManageModel.LoadWeather()`
 
 - 实例方法
 
@@ -330,7 +330,7 @@ dslab.datamanageModel.LocationDelete(id)
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
-dslab.datamanageModel.LoadWeather()
+dslab.dataManageModel.LoadWeather()
 ```
 
 ## Class: `DSLabFinancialAnalysisModel`

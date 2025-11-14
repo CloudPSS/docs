@@ -93,3 +93,7 @@ funcstudio:
 appstudio:
     label: AppStudio
     description: CloudPSS AppStudio
+  
+API:
+    label: API
+    description: CloudPSS API

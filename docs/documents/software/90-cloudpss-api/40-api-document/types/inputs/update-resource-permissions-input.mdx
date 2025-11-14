@@ -1,0 +1,76 @@
+---
+id: update-resource-permissions-input
+title: UpdateResourcePermissionsInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+更新资源权限输入
+
+
+```graphql
+input UpdateResourcePermissionsInput {
+  moderator: ResourcePermission!
+  member: ResourcePermission!
+  everyone: ResourcePermission!
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourcePermissionsInput.<b>moderator</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourcePermission!</b></code>](../../types/scalars/resource-permission.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+管理员权限
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourcePermissionsInput.<b>member</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourcePermission!</b></code>](../../types/scalars/resource-permission.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+成员权限
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourcePermissionsInput.<b>everyone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourcePermission!</b></code>](../../types/scalars/resource-permission.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+所有人权限
+
+
+
+
+
+
+### Member Of
+
+[`CreateApplicationInput`](../../types/inputs/create-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateFunctionInput`](../../types/inputs/create-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateModelInput`](../../types/inputs/create-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateApplicationInput`](../../types/inputs/update-application-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateFunctionInput`](../../types/inputs/update-function-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateModelInput`](../../types/inputs/update-model-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`UpdateResourceInput`](../../types/inputs/update-resource-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

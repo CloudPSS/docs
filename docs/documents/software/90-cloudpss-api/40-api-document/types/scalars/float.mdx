@@ -1,0 +1,58 @@
+---
+id: float
+title: Float
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE&#x005F;floating&#x005F;point).
+
+
+```graphql
+scalar Float
+```
+
+
+
+
+
+
+
+
+### Member Of
+
+[`AbortJobInput`](../../types/inputs/abort-job-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ApplicationRevision`](../../types/objects/application-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`ApplyTokenInput`](../../types/inputs/apply-token-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`CreateJobPolicyInput`](../../types/inputs/create-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`FunctionRevision`](../../types/objects/function-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`Job`](../../types/objects/job.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobExecutionPolicyInput`](../../types/inputs/job-execution-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`JobPolicy`](../../types/objects/job-policy.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobPolicySnapshot`](../../types/objects/job-policy-snapshot.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobQueue`](../../types/objects/job-queue.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobTres`](../../types/objects/job-tres.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`JobTresInput`](../../types/inputs/job-tres-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/><Bullet />[`ModelRevision`](../../types/objects/model-revision.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/><Bullet />[`UpdateJobPolicyInput`](../../types/inputs/update-job-policy-input.mdx)  <Badge class="badge badge--secondary badge--relation" text="input"/>

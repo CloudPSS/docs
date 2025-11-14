@@ -1,0 +1,91 @@
+---
+id: update-resource-input
+title: UpdateResourceInput
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+更新资源输入
+
+
+```graphql
+input UpdateResourceInput {
+  rid: ResourceId!
+  name: String
+  description: String
+  tags: UpdateResourceTagsOrKeywordsInput
+  keywords: UpdateResourceTagsOrKeywordsInput
+  permissions: UpdateResourcePermissionsInput
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>rid</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>ResourceId!</b></code>](../../types/scalars/resource-id.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+资源ID
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>name</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+资源名称
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>description</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>String</b></code>](../../types/scalars/string.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+资源描述
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>tags</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UpdateResourceTagsOrKeywordsInput</b></code>](../../types/inputs/update-resource-tags-or-keywords-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+资源标签
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>keywords</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UpdateResourceTagsOrKeywordsInput</b></code>](../../types/inputs/update-resource-tags-or-keywords-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+资源关键词
+
+
+#### [<code style={{ fontWeight: 'normal' }}>UpdateResourceInput.<b>permissions</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>UpdateResourcePermissionsInput</b></code>](../../types/inputs/update-resource-permissions-input.mdx) <Badge class="badge badge--secondary " text="input"/> 
+资源权限
+
+
+
+
+
+
+### Member Of
+
+[`updateResource`](../../operations/mutations/update-resource.mdx)  <Badge class="badge badge--secondary badge--relation" text="mutation"/>
