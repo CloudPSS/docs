@@ -1,14 +1,14 @@
 ---
 title: 简介
-description: CloudPSS API 介绍
+description: CloudPSS GraphQL API 介绍
 
 tags:
-- API
+- graphql
 - introduce
 ---
 
 
-**CloudPSS XStudio** 提供了一套功能完善的 GraphQL API，可供开发者在程序中实现对用户账户、计算资源、仿真任务等核心功能的管理与集成。
+**CloudPSS XStudio** 提供了一套功能完善的 GraphQL GraphQL API，可供开发者在程序中实现对用户账户、计算资源、仿真任务等核心功能的管理与集成。
 通过这些 API，用户可以方便地将 CloudPSS 的计算与仿真能力嵌入到自己的业务系统中，实现自动化、定制化的电力系统建模与分析流程
 
 CloudPSS XStudio GraphQL API 提供了强大而灵活的接口，支持：

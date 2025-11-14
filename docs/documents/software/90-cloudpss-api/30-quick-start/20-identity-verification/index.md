@@ -1,9 +1,9 @@
 ---
 title: 身份验证
-description: CloudPSS API 快速入门身份验证
+description: CloudPSS GraphQL API 快速入门身份验证
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

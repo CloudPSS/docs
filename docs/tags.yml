@@ -97,3 +97,7 @@ appstudio:
 API:
     label: API
     description: CloudPSS API
+  
+graphql: 
+    label: graphql
+    description: CloudPSS GraphQL API

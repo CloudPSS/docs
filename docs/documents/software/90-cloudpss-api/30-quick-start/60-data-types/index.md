@@ -1,9 +1,9 @@
 ---
 title: 数据类型
-description: CloudPSS API 快速入门数据类型
+description: CloudPSS GraphQL API 快速入门数据类型
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

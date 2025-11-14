@@ -1,9 +1,9 @@
 ---
 title: 核心概念
-description: CloudPSS API 快速入门核心概念
+description: CloudPSS GraphQL API 快速入门核心概念
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

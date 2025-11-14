@@ -1,9 +1,9 @@
 ---
 title: 快速入门
-description: CloudPSS API 快速入门指南
+description: CloudPSS GraphQL API 快速入门指南
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 
