@@ -45,4 +45,10 @@ import DocCardList from '@theme/DocCardList';
     description: "基于 CloudPSS-API 封装的模型及软件开发套件",
     href: "/documents/software/sdk-python/",
   },
+  {
+    type: "category",
+    label: "CloudPSS GraphQL API",
+    description: "用于第三方开发者对CloudPSS的二次开发",
+    href: "/documents/software/sdk-python/",
+  }
 ]} />
