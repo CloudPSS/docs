@@ -1,9 +1,9 @@
 ---
 title: 开发示例
-description: CloudPSS API 快速入门开发示例（NodeJS）
+description: CloudPSS GraphQL API 快速入门开发示例（NodeJS）
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

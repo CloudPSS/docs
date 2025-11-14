@@ -1,9 +1,9 @@
 ---
 title: API
-description: CloudPSS API 文档
+description: CloudPSS GraphQL API 文档
 
 tags:
-- API
+- graphql
 ---
 
 import DocCardList from '@theme/DocCardList';

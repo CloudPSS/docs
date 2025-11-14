@@ -1,13 +1,13 @@
 ---
 title: 使用指南
-description: CloudPSS API 使用指南
+description: CloudPSS GraphQL API 使用指南
 
 tags:
-- API
+- graphql
 - user-guide
 ---
 
-循序渐进，带您全面了解熟悉 CloudPSS API。
+循序渐进，带您全面了解熟悉 CloudPSS GraphQL API。
 
 
 ### 入门

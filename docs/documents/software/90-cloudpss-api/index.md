@@ -3,7 +3,7 @@ title: CloudPSS GraphQL API
 description: CloudPSS GraphQL API 文档
 
 tags:
-- API
+- graphql
 - directory
 ---
 

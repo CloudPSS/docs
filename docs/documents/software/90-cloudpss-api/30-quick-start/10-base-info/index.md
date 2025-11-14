@@ -1,9 +1,9 @@
 ---
 title: 基本信息
-description: CloudPSS API 快速入门基本信息
+description: CloudPSS GraphQL API 快速入门基本信息
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

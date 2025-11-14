@@ -1,0 +1,96 @@
+---
+id: account-challenge-update-time
+title: AccountChallengeUpdateTime
+---
+
+
+
+
+export const Bullet = () => <><span style={{ fontWeight: 'normal', fontSize: '.5em', color: 'var(--ifm-color-secondary-darkest)' }}>&nbsp;●&nbsp;</span></>
+
+export const SpecifiedBy = (props) => <>Specification<a className="link" style={{ fontSize:'1.5em', paddingLeft:'4px' }} target="_blank" href={props.url} title={'Specified by ' + props.url}>⎘</a></>
+
+export const Badge = (props) => <><span className={props.class}>{props.text}</span></>
+
+import { useState } from 'react';
+
+export const Details = ({ dataOpen, dataClose, children, startOpen = false }) => {
+  const [open, setOpen] = useState(startOpen);
+  return (
+    <details {...(open ? { open: true } : {})} className="details" style={{ border:'none', boxShadow:'none', background:'var(--ifm-background-color)' }}>
+      <summary
+        onClick={(e) => {
+          e.preventDefault();
+          setOpen((open) => !open);
+        }}
+        style={{ listStyle:'none' }}
+      >
+      {open ? dataOpen : dataClose}
+      </summary>
+      {open && children}
+    </details>
+  );
+};
+
+
+
+
+
+
+
+
+用户验证质询更新时间
+
+
+```graphql
+type AccountChallengeUpdateTime {
+  challenge: DateTime!
+  password: DateTime
+  email: DateTime
+  phone: DateTime
+  totp: DateTime
+  wechat: DateTime
+  webauthn: DateTime
+}
+```
+
+
+
+
+### Fields
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>challenge</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime!</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary badge--non_null" text="non-null"/> <Badge class="badge badge--secondary " text="scalar"/> 
+质询更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>password</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+密码更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>email</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+邮箱更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>phone</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+电话更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>totp</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+动态令牌更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>wechat</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+微信验证更新时间
+
+
+#### [<code style={{ fontWeight: 'normal' }}>AccountChallengeUpdateTime.<b>webauthn</b></code>](#)<Bullet />[<code style={{ fontWeight: 'normal' }}><b>DateTime</b></code>](../../types/scalars/date-time.mdx) <Badge class="badge badge--secondary " text="scalar"/> 
+WebAuthn 验证更新时间
+
+
+
+
+
+
+### Member Of
+
+[`AccountUser`](../../types/objects/account-user.mdx)  <Badge class="badge badge--secondary badge--relation" text="object"/>

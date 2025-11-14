@@ -1,9 +1,9 @@
 ---
 title: 变更操作 (Mutation)
-description: CloudPSS API 快速入门变更操作
+description: CloudPSS GraphQL API 快速入门变更操作
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 

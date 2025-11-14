@@ -1,9 +1,9 @@
 ---
-title: 查询操作 (Query)
-description: CloudPSS API 快速入门查询操作
+title: 查询操作（Query）
+description: CloudPSS GraphQL API 快速入门查询操作
 
 tags:
-- API
+- graphql
 - quick-start
 ---
 
