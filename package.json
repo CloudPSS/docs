@@ -83,7 +83,7 @@
     "chalk-template": "^1.1.2",
     "download": "^8.0.0",
     "execa": "^9.6.0",
-    "glob": "^11.0.3",
+    "glob": "^11.1.0",
     "gzipper": "^8.2.1",
     "husky": "^9.1.7",
     "image-size": "^2.0.2",
