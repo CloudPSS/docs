@@ -7,9 +7,9 @@ tags:
 - quick-start
 ---
 
-## 系统信息查询
+## 系统查询
 
-### 系统信息查询
+### 系统信息
 ```graphql showLineNumbers
 query SystemInfo {
   systemInfo {
@@ -18,9 +18,9 @@ query SystemInfo {
 }
 ```
 
-## 用户管理查询
+## 账户查询
 
-### 查询账户信息
+### 账户信息
 ```graphql showLineNumbers
 query GetAccount($input: AccountInput!) {
   account(input: $input) {
@@ -117,7 +117,7 @@ query GetAccount($input: AccountInput!) {
 }
 ```
 
-### 查询账户列表
+### 账户列表
 ```graphql showLineNumbers
 query GetAccounts($input: AccountsInput!) {
   accounts(input: $input) {
@@ -219,7 +219,7 @@ query GetAccounts($input: AccountsInput!) {
 }
 ```
 
-### 查询账户令牌信息
+### 账户令牌信息
 ```graphql showLineNumbers
 query GetAccountToken($input: AccountTokenInput!) {
   accountToken(input: $input) {
@@ -283,7 +283,7 @@ query GetAccountToken($input: AccountTokenInput!) {
 }
 ```
 
-### 查询账户验证质询
+### 账户验证质询
 ```graphql showLineNumbers
 query GetAccountChallenge($input: AccountChallengeInput!) {
   accountChallenge(input: $input) {
@@ -358,8 +358,8 @@ query GetAccountChallenge($input: AccountChallengeInput!) {
 }
 ```
 
-### 查询账户令牌存根列表
-```
+### 账户令牌存根列表
+```graphql showLineNumbers
 query GetAccountTokenStubs {
   accountTokenStubs {
     id
@@ -370,9 +370,9 @@ query GetAccountTokenStubs {
 ```
 
 
-## 资源管理查询
+## 资源查询
 
-### 查询资源列表
+### 资源列表
 ```graphql showLineNumbers
 query GetResources($input: ResourcesInput!) {
   resources(input: $input) {
@@ -405,7 +405,7 @@ query GetResources($input: ResourcesInput!) {
 ```
 
 
-### 查询指定资源
+### 指定资源
 ```graphql showLineNumbers
 query GetResouce($input: ResourceInput!) {
   resource(input: $input) {
@@ -431,7 +431,7 @@ query GetResouce($input: ResourceInput!) {
 }
 ```
 
-### 查询资源标签列表
+### 资源标签列表
 ```graphql showLineNumbers
 query GetResouceTags($input: ResourceTagsInput!) {
   resourceTags(input: $input) {
@@ -443,7 +443,7 @@ query GetResouceTags($input: ResourceTagsInput!) {
 }
 ```
 
-### 查询模型资源
+### 模型资源
 ```graphql showLineNumbers
 query GetModel($input: ModelInput!, $type: String!) {
   model(input: $input) {
@@ -498,7 +498,7 @@ query GetModel($input: ModelInput!, $type: String!) {
 }
 ```
 
-### 查询模型资源列表
+### 模型资源列表
 ```graphql showLineNumbers
 query GetModels($input: ModelsInput!) {
   models(input: $input) {
@@ -526,7 +526,7 @@ query GetModels($input: ModelsInput!) {
 }
 ```
 
-### 查询模型资源拓扑
+### 模型资源拓扑
 ```graphql showLineNumbers
 query GetModelTopology($input: ModelTopologyInput!) {
   modelTopology(input: $input) {
@@ -537,7 +537,7 @@ query GetModelTopology($input: ModelTopologyInput!) {
 }
 ```
 
-### 查询模型资源哈希
+### 模型资源哈希
 ```graphql showLineNumbers
 query GetModelRevision($input: ModelRevisionInput! $type: String!) {
   modelRevision(input: $input) {
@@ -559,7 +559,7 @@ query GetModelRevision($input: ModelRevisionInput! $type: String!) {
 }
 ```
 
-### 查询模型资源发布页面
+### 模型资源发布
 ```graphql showLineNumbers
 query GetPage($input: PageInput!) {
   page(input: $input) {
@@ -572,7 +572,7 @@ query GetPage($input: PageInput!) {
 }
 ```
 
-### 查询应用程序资源
+### 应用程序资源
 ```graphql showLineNumbers
 query GetApplication($input: ApplicationInput!) {
   application(input: $input) {
@@ -622,7 +622,7 @@ query GetApplication($input: ApplicationInput!) {
 }
 ```
 
-### 查询应用程序资源列表
+### 应用程序资源列表
 ```graphql showLineNumbers
 query GetApplications($input: ApplicationsInput!) {
   applications(input: $input) {
@@ -677,7 +677,7 @@ query GetApplications($input: ApplicationsInput!) {
 }
 ```
 
-### 查询应用程序资源哈希
+### 应用程序资源哈希
 ```graphql showLineNumbers
 query GetApplicationRevision($input: ApplicationRevisionInput!) {
   applicationRevision(input: $input) {
@@ -697,7 +697,7 @@ query GetApplicationRevision($input: ApplicationRevisionInput!) {
 }
 ```
 
-### 查询函数资源
+### 函数资源
 ```graphql showLineNumbers
 query GetFunction($input: FunctionInput!) {
   function(input: $input) {
@@ -754,7 +754,7 @@ query GetFunction($input: FunctionInput!) {
 }
 ```
 
-### 查询函数资源列表
+### 函数资源列表
 ```graphql showLineNumbers
 query GetFunctions($input: FunctionsInput!) {
   functions(input: $input) {
@@ -811,7 +811,7 @@ query GetFunctions($input: FunctionsInput!) {
 }
 ```
 
-### 查询函数资源哈希
+### 函数资源哈希
 ```graphql showLineNumbers
 query GetFunctionRevision($input: FunctionRevisionInput!) {
   functionRevision(input: $input) {
@@ -832,9 +832,9 @@ query GetFunctionRevision($input: FunctionRevisionInput!) {
 }
 ```
 
-## 任务管理查询
+## 任务查询
 
-### 查询任务
+### 任务信息
 ```graphql showLineNumbers
 query GetJob($input: JobInput!) {
   job(input: $input) {
@@ -865,7 +865,7 @@ query GetJob($input: JobInput!) {
 }
 ```
 
-### 查询任务列表
+### 任务列表
 ```graphql showLineNumbers
 query GetJobs($input: JobsInput!) {
   jobs(input: $input) {
@@ -901,7 +901,7 @@ query GetJobs($input: JobsInput!) {
 }
 ```
 
-### 查询任务策略
+### 任务策略
 ```graphql showLineNumbers
 query GetJobPolicy($input: JobPolicyInput!) {
   jobPolicy(input: $input) {
@@ -986,7 +986,7 @@ query GetJobPolicy($input: JobPolicyInput!) {
 }
 ```
 
-### 查询任务策略列表
+### 任务策略列表
 ```graphql showLineNumbers
 query GetJobPolicies($input: JobPoliciesInput!) {
   jobPolicies(input: $input) {
@@ -1079,7 +1079,7 @@ query GetJobPolicies($input: JobPoliciesInput!) {
 
 ## 日志查询
 
-### 查询日志信息
+### 日志信息
 ```graphql showLineNumbers
 query GetAuditLogs($input: AuditLogsInput!) {
     auditLogs(input: $input) {
@@ -1102,7 +1102,7 @@ query GetAuditLogs($input: AuditLogsInput!) {
 }
 ```
 
-### 查询日志操作
+### 日志操作
 ```graphql showLineNumbers
 query GetLogAction {
   auditLogActions {

@@ -1,5 +1,5 @@
 ---
-title: CloudPSS SDK (Python)
+title: SDK (Python)
 description: CloudPSS SDK 文档
 
 tags:
