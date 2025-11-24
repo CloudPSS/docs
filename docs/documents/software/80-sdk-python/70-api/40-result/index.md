@@ -1,6 +1,6 @@
 ---
 title: 结果类
-description: CloudPSS SDK API 文档结果类
+description: CloudPSS Python SDK API 文档结果类
 
 tags:
 - sdk

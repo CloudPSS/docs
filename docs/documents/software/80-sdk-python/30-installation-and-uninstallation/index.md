@@ -1,6 +1,6 @@
 ---
 title: 安装与卸载
-description: CloudPSS SDK 安装与卸载文档
+description: CloudPSS Python SDK 安装与卸载文档
 
 tags:
 - sdk

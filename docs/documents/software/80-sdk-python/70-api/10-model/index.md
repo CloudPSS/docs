@@ -1,6 +1,6 @@
 ---
 title: 模型类
-description: CloudPSS SDK API 文档模型类
+description: CloudPSS Python SDK API 文档模型类
 
 tags:
 - sdk
