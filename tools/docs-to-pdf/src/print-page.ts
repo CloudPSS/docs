@@ -31,7 +31,7 @@ export async function done(): Promise<void> {
 }
 
 const INJECT_CSS = /* css */ `
-${await fs.readFile(path.resolve(import.meta.dirname, '../../../src/css/print.css'), 'utf-8')}
+${await fs.readFile(path.resolve(import.meta.dirname, '../../../src/css/print.css'), 'utf8')}
 .theme-doc-footer {
     display: none;
 }

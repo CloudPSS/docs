@@ -7,6 +7,6 @@
   },
   "devDependencies": {
     "pdf-lib": "^1.17.1",
-    "puppeteer": "^24.27.0"
+    "puppeteer": "^24.31.0"
   }
 }

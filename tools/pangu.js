@@ -105,14 +105,14 @@ pattern = pattern.map((p) => p.replaceAll('\\', '/'));
 
 for await (const file of globIterate(pattern)) {
     process.stdout.write(t`Formatting {underline ${path.relative(process.cwd(), file)}} `);
-    const data = await readFile(file, 'utf-8');
+    const data = await readFile(file, 'utf8');
     if (data.includes('DO NOT EDIT')) {
         console.log(t`{yellow Skipped}`);
         continue;
     }
     const formatted = formatFile(data);
     if (data !== formatted) {
-        await writeFile(file, formatted, 'utf-8');
+        await writeFile(file, formatted, 'utf8');
         console.log(t`{green Done}`);
     } else {
         console.log(t`{gray Unchanged}`);
