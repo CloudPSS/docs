@@ -353,6 +353,6 @@ CloudPSS 与 Matpower 支路潮流计算中有功功率与无功功率的结果�
 IEEE118 节点标准测试系统在 CloudPSS 平台上潮流计算收敛，并且经过对比，CloudPSS 的潮流结果与 Matpower 的潮流结果高度一致，验证了 IEEE118 节点标准系统算例的正确性。
 
 ## 模型地址
-点击打开模型地址：[**IEEE 标准算例-118 节点**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/cxbaby/IEEE118-v1a1-1127)  
+点击打开模型地址：[**IEEE 标准算例-118 节点**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/cxbaby/IEEE118-v1a1-1201)  
 
 [^1]: [IEEE 118 Bus Test Case](ieee118cdf.txt)(http://labs.ece.uw.edu/pstca/pf118/pg_tca118bus.htm)  
