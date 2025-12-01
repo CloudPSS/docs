@@ -1,6 +1,6 @@
 ---
 title: 4 机 2 区域
-description: 4 机 2 区域标准测试系统
+description: 4 机 2 区域标准测试系统案例
 
 tags:
 - emtlab
@@ -9,7 +9,7 @@ tags:
 ---
 
 ## 描述
-IEEE 4机2区域标准测试系统，是用于研究电网小扰动稳定的一个经典测试系统。该系统包括11条母线，4台发电机和2个区域，这2个区域之间用弱联络线连接。所有发电机均采用了励磁系统进行调控，部分工况下配置了电力系统稳定器PSS。作为测试，在本算例中，于区域1与区域2之间的联络线中点（Bus 8）添加了时长0.1s的三相接地短路故障，用户可根据需要自行修改、删除或添加其他类型的故障与扰动。
+4机2区域标准测试系统，是用于研究电网小扰动稳定的一个经典测试系统。该系统包括11条母线，4台发电机和2个区域，这2个区域之间用弱联络线连接。所有发电机均采用了励磁系统进行调控，部分工况下配置了电力系统稳定器PSS。作为测试，在本算例中，于区域1与区域2之间的联络线中点（Bus 8）添加了时长0.1s的三相接地短路故障，用户可根据需要自行修改、删除或添加其他类型的故障与扰动。
 
 该算例可用于系统动态稳定性研究、功率交换研究、振荡阻尼研究等。
 
@@ -17,21 +17,21 @@ IEEE 4机2区域标准测试系统，是用于研究电网小扰动稳定的一�
 
 ### 模型拓扑
 
-IEEE4m2a算例拓扑图如下，其中G3节点为松弛节点。除松弛节点外，各电机相连的母线（1-4）电压等级均为20kV，剩下所有母线电压均为230kV.
+4机2区域算例拓扑图如下，其中G3节点为松弛节点。除松弛节点外，各电机相连的母线（1-4）电压等级均为20kV，剩下所有母线电压均为230kV.
 
-![IEEE4m2a算例拓扑图](./topo_4m2a.png "拓扑图")
+![4m2a算例拓扑图](./topo_4m2a.png "拓扑图")
 
 CloudPSS上该算例采用单线图构建，其拓扑如下。
 
-![IEEE4m2a算例仿真图](./topo_4m2a_cloudpss.png "仿真图")
+![4m2a算例仿真图](./topo_4m2a_cloudpss.png "仿真图")
 
 ### 模型参数
 
-所有母线参数、传输线参数、变压器参数、负荷参数、电机参数均来源于文献[^IEEE_4m2a]。
+所有母线参数、传输线参数、变压器参数、负荷参数、电机参数均来源于文献[^1]。
 
-#### 母线参数与潮流解算
+#### 母线参数与潮流计算
 
-母线参数与潮流解算数据如下表所示:
+母线参数与潮流计算数据如下表所示:
 
 | Bus Number | Bus Name | Base kV | Bus type | Voltage(pu) | Angle(deg) |
 | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -305,34 +305,35 @@ CloudPSS平台中对应参数如下（在CloudPSS平台下，为达到最佳阻�
 | 3  | 0.1  | 10  | 10 | 0  | 0  | 0.08  | 0.015  | 0.08  | 0.015  | 0.05  | -0.05  |
 | 4  | 0.1  | 10  | 10 | 0  | 0  | 0.08  | 0.015  | 0.08  | 0.015  | 0.05  | -0.05  |
 
-#### 仿真
+## 仿真
 
 模型搭建完成后，在CloudPSS平台逐步开展无AVR、无TGR、有TGR、无TGR有PSS四种场景下的仿真测试，在5s时于BUS8处添加一个持续0.1s的三相短路接地故障，观察各个场景下的仿真结果。
 
 无AVR的场景下，运行结果如下图所示：
 
-![IEEE4m2a 无AVR运行结果图](./WithoutAVR_4m2a.png "无AVR运行结果图")
+![4m2a 无AVR运行结果图](./WithoutAVR_4m2a.png "无AVR运行结果图")
 
 无TGR的场景下，运行结果如下图所示：
 
-![IEEE4m2a 无TGR运行结果图](./WithoutTGR_4m2a.png "无TGR运行结果图")
+![4m2a 无TGR运行结果图](./WithoutTGR_4m2a.png "无TGR运行结果图")
 
 有TGR的场景下，运行结果如下图所示：
 
-![IEEE4m2a 有TGR运行结果图](./WithTGR_4m2a.png "有TGR运行结果图")
+![4m2a 有TGR运行结果图](./WithTGR_4m2a.png "有TGR运行结果图")
 
 无TGR有PSS的场景下，运行结果如下图所示：
 
-![IEEE4m2a 无TGR有PSS运行结果图](./WithoutTGR_WithPSS_4m2a.png "无TGR有PSS运行结果图")
+![4m2a 无TGR有PSS运行结果图](./WithoutTGR_WithPSS_4m2a.png "无TGR有PSS运行结果图")
 
 通过上述仿真结果，可以发现无AVR到无TGR，振荡从缓慢衰减到剧烈发散，直观证明AVR的负阻尼效应；从无TGR到有TGR，展示了传统的“暂态增益衰减”补偿方法的局限性，甚至可能恶化稳定性；从有TGR到无TGR有PSS，突出展现了PSS的决定性作用，具备有效抑制低频振荡、恢复系统稳定性的能力。
 
 
 ## 算例地址
-点击打开算例地址：[**IEEE标准算例-4机2区域**](https://cloudpss-calculate.local.ddns.cloudpss.net/model/Hs0807/IEEE_4m2a_0930)
+点击打开算例地址：[**4机2区域标准测试系统**](https://cloudpss-calculate.local.ddns.cloudpss.net/model/Hs0807/IEEE_4m2a_0930)  
 
+## 参考文献
 
-[^IEEE_4m2a]:Leonardo Lima. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. Report on the 2-area,4-generator system, Version 5 - June 07, 2014
+[^1]: [Leonardo Lima. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. Report on the 2-area,4-generator system, Version 5 - June 07, 2014](<IEEE PES Task Force on Benchmark Systems for Stability Controls.pdf>)
 
 <!-- import DocCardList from '@theme/DocCardList';
 

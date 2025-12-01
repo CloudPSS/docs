@@ -1,6 +1,6 @@
 ---
-title: 14 节点
-description: 14 节点标准测试系统案例
+title: 5 机 14 节点
+description: 5 机 14 节点标准测试系统案例
 
 tags:
 - emtlab
@@ -11,7 +11,7 @@ tags:
 
 IEEE 14节点标准系统，基于1962年2月美国电力系统简单近似而来，是电力系统分析中广泛应用的典型测试系统。该系统包含14个母线、5台发电机和11个负荷。
 
-本测试案例基于IEEE 14节点标准系统参数搭建，系统参数来源详见[labs.ece.uw.edu](https://labs.ece.uw.edu/pstca/)。模型中发电机的暂态参数采用元件默认值，启动采用S2M模式，在仿真第1s时解锁。
+本测试案例基于IEEE 14节点标准系统参数搭建，系统参数来源详见[^1]。模型中发电机的暂态参数采用元件默认值，启动采用S2M模式，在仿真第1s时解锁。
 
 作为测试，在本案例中，于母线9处设置了三相短路故障，故障在仿真第5s时发生，持续0.1s后消失。用户可根据需要自行修改、删除或添加故障设置。
 
@@ -33,7 +33,7 @@ IEEE14节点标准系统的拓扑如下，其中母线1～母线5的电压等级
 
 ### 模型参数
 
-模型中线路参数、变压器参数、负荷参数，和发电机的稳态参数均参考自[labs.ece.uw.edu](https://labs.ece.uw.edu/pstca/)。
+模型中线路参数、变压器参数、负荷参数，和发电机的稳态参数均参考自[^1]。
 - 由于原始数据中无暂态参数，模型中发电机的暂态参数均采用元件默认值。用户可根据仿真需求酌情修改电机参数。
 
 #### 母线数据
@@ -223,10 +223,11 @@ Bus13 | Bus14 | P(MW) | 5.64  | 5.64  | 5.64  | 0.00
 
 ## 算例地址
 
-点击打开算例地址：[**IEEE标准算例-14节点**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/cuikangsheng/IEEE14)
+点击打开算例地址：[**5机14节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/cuikangsheng/IEEE14)
 
+## 参考文献
 
-[1][**IEEE 14 Bus Power Flow Test Case**](./case14B.txt)(https://labs.ece.uw.edu/pstca/pf14/pg_tca14bus.htm)
+[^1]: [**IEEE 14 Bus Power Flow Test Case**](./case14B.txt)(https://labs.ece.uw.edu/pstca/pf14/pg_tca14bus.htm)
 
 
 ---

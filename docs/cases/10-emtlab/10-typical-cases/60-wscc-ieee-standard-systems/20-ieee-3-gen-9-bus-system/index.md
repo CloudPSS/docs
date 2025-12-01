@@ -116,7 +116,7 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 ![7号母线电压运⾏结果图-1](./results-v-1.png "7号母线电压运⾏结果图（局部放大）")
 
 ## 算例地址
-点击打开算例地址：[WSCC标准算例-3机9节点](https://cloudpss.net/model/CloudPSS/IEEE3)
+点击打开算例地址：[**3机9节点标准测试系统**](https://cloudpss.net/model/CloudPSS/IEEE3)
 
 ## 参考文献
 
