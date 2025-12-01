@@ -194,7 +194,9 @@ CloudPSS与BPA支路潮流计算中有功功率与无功功率的结果及误差
 
 IEEE30节点标准测试系统在CloudPSS平台上潮流计算收敛，并且经过对比，CloudPSS的潮流结果与BPA的潮流结果高度一致，验证了IEEE30节点标准系统算例的正确性。
 
-## 模型地址
-点击打开模型地址：[**IEEE标准算例30节点**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/gaoqunneng/IEEE30-v1a1-1120)  
+## 算例地址
+点击打开算例地址：[**IEEE标准算例30节点**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/gaoqunneng/IEEE30-v1a1-1120)  
 
-[^1]: [IEEE 30 Bus Test Case](ieee30cdf.txt)(http://labs.ece.uw.edu/pstca/pf30/pg_tca30bus.htm)  
+## 参考文献
+
+[^1]: [**IEEE 30 Bus Test Case**](ieee30cdf.txt)(http://labs.ece.uw.edu/pstca/pf30/pg_tca30bus.htm)  
