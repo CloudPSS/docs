@@ -1,6 +1,6 @@
 ---
-title: 300 节点
-description: 300 节点标准测试系统案例
+title: 300 节点测试系统
+description: 300 节点测试系统
 
 tags:
 - emtlab

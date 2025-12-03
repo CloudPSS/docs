@@ -1,6 +1,6 @@
 ---
-title: 4 机 2 区域
-description: 4 机 2 区域标准测试系统案例
+title: 4 机 2 区域测试系统
+description: 4 机 2 区域测试系统
 
 tags:
 - emtlab
