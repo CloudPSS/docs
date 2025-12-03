@@ -111,7 +111,7 @@ CloudPSS的电磁暂态仿真中电气系统的启动可以大体分为两种：
 由上述仿真结果可以看到，在系统发生0.1s三相接地短路故障后，所有电机功角、转速及端电压均能快速恢复至稳态，表明系统具备良好的暂态稳定性，验证了所建IEEE10机39节点标准测试系统案例的正确性。
 
 ## 算例地址
-点击打开算例地址：[**10机39节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/gaoqunneng/IEEE39-v1a20251121)  
+点击打开算例地址：[**10机39节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/IEEE_39_BUS-v1a1)  
 
 ## 参考文献
 
