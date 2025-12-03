@@ -20,6 +20,7 @@ export function translateConfig<T>(value: LocalizedConfig<T>): T {
 
 let baseUrl = process.env['DOCS_BASE_URL'] || '';
 if (!baseUrl.endsWith('/')) baseUrl += '/';
+if (!baseUrl.startsWith('/')) baseUrl = '/' + baseUrl;
 
 /**
  * Read the environment variable `DOCS_BASE_URL` and set the `BASE_URL` accordingly
@@ -27,7 +28,7 @@ if (!baseUrl.endsWith('/')) baseUrl += '/';
  * Set the `/<baseUrl>/` pathname under which your site is served
  * For GitHub pages deployment, it is often `'/<projectName>/'`
  */
-export const BASE_URL = baseUrl;
+export const BASE_URL = baseUrl as `` | `/${string}/`;
 
 let homeUrl = process.env['DOCS_HOME_URL'] || 'https://cloudpss.net';
 if (!homeUrl.endsWith('/')) homeUrl += '/';
@@ -35,4 +36,4 @@ if (!homeUrl.endsWith('/')) homeUrl += '/';
 /**
  * Read the environment variable `DOCS_HOME_URL` and set the `HOME_URL` accordingly
  */
-export const HOME_URL = homeUrl;
+export const HOME_URL = homeUrl as `${string}/`;
