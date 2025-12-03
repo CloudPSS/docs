@@ -209,11 +209,14 @@ Bus13 | Bus14 | P(MW) | 5.64  | 5.64  | 5.64  | 0.00
 
 采用本测试案例进行故障暂态仿真，故障点设置于母线9处，故障类型为三相短路，发生时刻为仿真第5s时，持续0.1s后消失。
 
-对各母线电压和各线路功率进行观测，得到故障期间及故障前后系统中电压、有功、无功的分布波形如以下三图所示。
+对各母线电压和各线路功率进行观测，得到故障期间及故障前后系统中电压、有功、无功的分布波形如以下三图所示。  
 
-![IEEE14节点系统故障仿真电压分布波形图](./IEEE14_3.png "电压分布波形图")
-![IEEE14节点系统故障仿真有功分布波形图](./IEEE14_4.png "有功分布波形图")
-![IEEE14节点系统故障仿真无功分布波形图](./IEEE14_5.png "无功分布波形图")
+![IEEE14节点系统故障仿真电压分布波形图](./IEEE14_3.png "电压分布波形图")  
+
+![IEEE14节点系统故障仿真有功分布波形图](./IEEE14_4.png "有功分布波形图")  
+
+![IEEE14节点系统故障仿真无功分布波形图](./IEEE14_5.png "无功分布波形图")  
+
 
 以故障近区的Bu4母线为例，观测其在故障过程中的瞬时电压波形如下图所示。
 
@@ -223,15 +226,8 @@ Bus13 | Bus14 | P(MW) | 5.64  | 5.64  | 5.64  | 0.00
 
 ## 算例地址
 
-点击打开算例地址：[**5机14节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/cuikangsheng/IEEE14)
+点击打开算例地址：[**5机14节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/IEEE_14_BUS-v1a1)
 
 ## 参考文献
 
 [^1]: [**IEEE 14 Bus Power Flow Test Case**](./case14B.txt)(https://labs.ece.uw.edu/pstca/pf14/pg_tca14bus.htm)
-
-
----
-
-<!-- import DocCardList from '@theme/DocCardList';
-
-<DocCardList /> -->

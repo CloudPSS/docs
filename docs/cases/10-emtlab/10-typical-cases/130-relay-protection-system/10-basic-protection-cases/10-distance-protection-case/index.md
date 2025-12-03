@@ -57,11 +57,11 @@ import TabItem from '@theme/TabItem'
 
 ## 算例入门指南
 
-### 新建算例
+### 算例地址
 
-可以在**SimStudio 工作台**页面中，点击**新建**按钮，在弹出框中选择**继电保护系统**，创建**电力系统距离保护基础案例**。
+点击打开模型地址：[**电力系统距离保护基础案例**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/Distance_Protection-v1a1)  
 
-![新建电力系统距离保护基础案例](./_case.png)
+![电力系统距离保护基础案例](./_case.png)
 
 
 ### 运行
@@ -73,17 +73,16 @@ import TabItem from '@theme/TabItem'
 
 用户可在**故障设置**模块中通过设置交流传输线故障，故障线路选择为Line1或者Line2，仿真距离保护动作特性。距离保护相关日志记录、动作信号、量测信息如下图所示。
 
+- 日志记录  
 
-- 日志记录
+![日志记录](./_log1.png)  
 
-![日志记录](./_log1.png)
+- 动作信号  
 
-- 动作信号
-
-![动作信号](./_trip1.png)
+![动作信号](./_trip1.png)  
 
 
-- 测量阻抗与整定边界
+- 测量阻抗与整定边界  
 ![测量阻抗与整定边界](./_zm.png)
 
 

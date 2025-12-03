@@ -42,9 +42,9 @@ import TabItem from '@theme/TabItem'
 
 ## 算例入门指南
 
-### 新建算例
+### 算例地址
 
-可以在**SimStudio 工作台**页面中，点击**新建**按钮，在弹出框中选择**继电保护系统**，创建**电力系统复压过流保护基础案例**。
+点击打开模型地址：[**电力系统复压过流保护基础案例**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/Compound_Voltage_Over_Current_Protection-v1a1)  
 
 ![电力系统复压过流保护基础案例](./_case.png)
 
