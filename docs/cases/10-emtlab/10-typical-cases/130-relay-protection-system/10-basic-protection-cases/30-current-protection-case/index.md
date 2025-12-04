@@ -58,7 +58,7 @@ import TabItem from '@theme/TabItem'
 
 ### 算例地址
 
-点击打开模型地址：[**电力系统三段式电流保护基础案例**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/Current_Protection-v1a1)  
+点击打开模型地址：[**电力系统三段式电流保护基础案例**](cloudpss:/model/open-cloudpss/Current_Protection-v1b1)  
 
 ![电力系统三段式电流保护基础案例](./_case.png)
 

@@ -46,7 +46,7 @@ import TabItem from '@theme/TabItem'
 
 ### 算例地址
 
-点击打开模型地址：[**电力系统重合闸基础案**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/Reclose-v1a1)  
+点击打开模型地址：[**电力系统重合闸基础案**](cloudpss:/model/open-cloudpss/Reclose-v1b1)  
 
 ![电力系统重合闸基础案例](./_case.png)
 
