@@ -24,6 +24,12 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 
 ![WSCC 三机九节点仿真图](./wscc-3m9b-cloudpss.png "WSCC 三机九节点仿真图")
 
+CloudPSS上的3机9节点系统中，每台电机包含励磁器、调速器、原动机、电力系统稳定器四种控制器模型。
++ 励磁器采用IEEE标准的EXST1_PTI型励磁调节器，详见：[EXST1_PTI](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI/index.md)  
++ 调速器采用IEEE标准的STEAM_GOV_1型调速器，详见：[STEAM_GOV_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/10-_STEAM_GOV_1/index.md)  
++ 原动机采用IEEE标准的STEAM_TUR_1型原动机，详见：[STEAM_TUR_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/20-_STEAM_TUR_1/index.md)  
++ 电力系统稳定器采用IEEE标准的PSS1A电力系统稳定器，详见：[PSS1A](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/10-_PSS1A/index.md)
+
 
 ### 模型参数
 
@@ -93,16 +99,42 @@ CloudPSS上该算例采用单线图构建，其拓扑如下。
 | q轴次暂态时间常数 Tqo'' (s) | 0.069 | 0.069 | 0.069 |
 | 转动惯量时间常数 Tj (s) | 5 | 5 | 5 |
 
-发电机采用 IEEE 标准 EXST1 型励磁器和 PSS1A 型电力系统稳定器。
+
+#### 励磁器参数
+励磁器采用[EXST1_PTI](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI/index.md)模型，配置参数如下：
+
+| 母线 | Rc | Xc | TR | TC | TB | KF | TF | KA | TA | VRMAX | VRMIN | KC | VIMAX | VIMIN |
+|-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-------|-------|-----|-------|-------|
+| 1     | 0   | 0   | 0.01 | 1   | 10  | 0   | 1   | 200 | 0.015 | 5     | -5   | 0   | 0.1   | -0.1  |
+| 2     | 0   | 0   | 0.01 | 1   | 10  | 0   | 1   | 200 | 0.015 | 5     | -5   | 0   | 0.1   | -0.1  |
+| 3     | 0   | 0   | 0.01 | 1   | 10  | 0   | 1   | 200 | 0.015 | 5     | -5   | 0   | 0.1   | -0.1  |
 
 #### 电力系统稳定器参数
-电力系统稳定器采用标准模型，配置参数如下：
+电力系统稳定器采用[PSS1A](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/10-_PSS1A/index.md)模型，配置参数如下：
 
 | 母线 | T6 | Ks | T5 | A1 | A2 | T1 | T2 | T3 | T4 | VSTMAX | VSTMIN |
 |-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|---------|---------|
 | 1     | 0   | 2   | 10  | 0   | 0   | 1   | 0.2 | 1   | 0.1 | 0.2     | -0.2    |
 | 2     | 0   | 2   | 10  | 0   | 0   | 1   | 0.2 | 1   | 0.1 | 0.2     | -0.2    |
 | 3     | 0   | 2   | 10  | 0   | 0   | 1   | 0.2 | 1   | 0.1 | 0.2     | -0.2    |
+
+#### 调速器参数
+调速器采用[STEAM_GOV_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/10-_STEAM_GOV_1/index.md)模型，配置参数如下：
+
+| 母线 | DB | Kg | TSR | TSM | P_up | P_down | Cmax | Cmin |
+|-------|-----|-----|-----|-----|-------|--------|------|------|
+| 1     | 0   | 6   | 0   | 0.075 | 0.6786 | -1     | 0.9  | 0    |
+| 2     | 0   | 6   | 0   | 0.075 | 0.6786 | -1     | 0.9  | 0    |
+| 3     | 0   | 6   | 0   | 0.075 | 0.6786 | -1     | 0.9  | 0    |
+
+#### 原动机参数
+原动机采用[STEAM_TUR_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/20-_STEAM_TUR_1/index.md)模型，配置参数如下：
+
+| 母线 | K1 | K3 | K5 | K7 | K2 | K4 | K6 | K8 | T4 | T5 | T6 | T7 |
+|-------|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|-----|
+| 1     | 0.2 | 0.4 | 0.4 | 0   | 0   | 0   | 0   | 0   | 0.3 | 10  | 0.6 | 0   |
+| 2     | 0.2 | 0.4 | 0.4 | 0   | 0   | 0   | 0   | 0   | 0.3 | 10  | 0.6 | 0   |
+| 3     | 0.2 | 0.4 | 0.4 | 0   | 0   | 0   | 0   | 0   | 0.3 | 10  | 0.6 | 0   |
 
 ## 仿真
 模型搭建完成后，在CloudPSS平台开展电磁暂态仿真测试。在5s时于母线8处添加一个持续0.1s的A相短路接地故障，观察仿真结果。
