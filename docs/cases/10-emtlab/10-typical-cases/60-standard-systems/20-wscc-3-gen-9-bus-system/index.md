@@ -9,26 +9,26 @@ tags:
 ---
 
 ## 描述
-CloudPSS 3机9节点系统是在西部系统协调委员会（Western System Coordinating Council, WSCC）提出的3机9节点经典系统[^1][^2]基础上修改构建的测试系统，由9条母线、3台发电机、3台双绕组变压器、6条线路和3个负荷组成。所有发电机均采用了励磁系统、电力系统稳定器PSS、调速器、原动机进行调控。作为测试，在本算例中，于8号母线（Bus8）添加了时长0.1s的三相接地短路故障，用户可根据需要自行修改、删除或添加其他类型的故障与扰动。
+CloudPSS 3 机 9 节点系统是在西部系统协调委员会（Western System Coordinating Council, WSCC）提出的 3 机 9 节点经典系统[^1][^2]基础上修改构建的测试系统，由 9 条母线、3 台发电机、3 台双绕组变压器、6 条线路和 3 个负荷组成。所有发电机均采用了励磁系统、电力系统稳定器 PSS、调速器、原动机进行调控。作为测试，在本算例中，于 8 号母线（Bus8）添加了时长 0.1s 的三相接地短路故障，用户可根据需要自行修改、删除或添加其他类型的故障与扰动。
 
 该算例可用于系统动态稳定性研究、功率交换研究、振荡阻尼研究等。
 
 ## 模型介绍
 
 ### 模型拓扑
-WSCC三机九节点算例拓扑图如下，其中B1节点为松弛节点。各电机相连的母线（1-3）电压等级分别为16.5kV、18kV、13.8kV，剩下所有母线电压均为525kV。
+WSCC 三机九节点算例拓扑图如下，其中 B1 节点为松弛节点。各电机相连的母线（1-3）电压等级分别为16.5kV、18kV、13.8kV，剩下所有母线电压均为 525kV。
 
 ![WSCC 三机九节点算例拓扑图](./wscc-3m9b-topology.png "WSCC 三机九节点算例拓扑图")
 
-CloudPSS上该算例采用单线图构建，其拓扑如下。  
+CloudPSS 上该算例采用单线图构建，其拓扑如下。  
 
 ![WSCC 三机九节点仿真图](./wscc-3m9b-cloudpss.png "WSCC 三机九节点仿真图")
 
-CloudPSS上的3机9节点系统中，每台电机包含励磁器、调速器、原动机、电力系统稳定器四种控制器模型。
-+ 励磁器采用IEEE标准的EXST1_PTI型励磁调节器，详见：[EXST1_PTI](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI/index.md)  
-+ 调速器采用IEEE标准的STEAM_GOV_1型调速器，详见：[STEAM_GOV_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/10-_STEAM_GOV_1/index.md)  
-+ 原动机采用IEEE标准的STEAM_TUR_1型原动机，详见：[STEAM_TUR_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/20-_STEAM_TUR_1/index.md)  
-+ 电力系统稳定器采用IEEE标准的PSS1A电力系统稳定器，详见：[PSS1A](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/10-_PSS1A/index.md)
+CloudPSS 上的 3 机 9 节点系统中，每台电机包含励磁器、调速器、原动机、电力系统稳定器四种控制器模型。
++ 励磁器采用 IEEE 标准的 EXST1_PTI 型励磁调节器，详见：[EXST1_PTI](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI/index.md)  
++ 调速器采用 IEEE 标准的 STEAM_GOV_1 型调速器，详见：[STEAM_GOV_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/10-_STEAM_GOV_1/index.md)  
++ 原动机采用 IEEE 标准的 STEAM_TUR_1 型原动机，详见：[STEAM_TUR_1](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/20-_STEAM_TUR_1/index.md)  
++ 电力系统稳定器采用 IEEE 标准的 PSS1A 电力系统稳定器，详见：[PSS1A](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/10-_PSS1A/index.md)
 
 
 ### 模型参数
@@ -78,7 +78,7 @@ CloudPSS上的3机9节点系统中，每台电机包含励磁器、调速器、�
 | 6     | 90            | 30             |
 | 8     | 100           | 35             |
 
-在CloudPSS平台中进行暂态模型参数的设置，涉及到的模型动态参数包括发电机参数、励磁系统参数、电力系统稳定器参数。
+在 CloudPSS 平台中进行暂态模型参数的设置，涉及到的模型动态参数包括发电机参数、励磁系统参数、电力系统稳定器参数。
 
 #### 发电机参数
 发电机参数如下：
@@ -137,7 +137,7 @@ CloudPSS上的3机9节点系统中，每台电机包含励磁器、调速器、�
 | 3     | 0.2 | 0.4 | 0.4 | 0   | 0   | 0   | 0   | 0   | 0.3 | 10  | 0.6 | 0   |
 
 ## 仿真
-模型搭建完成后，在CloudPSS平台开展电磁暂态仿真测试。在5s时于母线8处添加一个持续0.1s的A相短路接地故障，观察仿真结果。
+模型搭建完成后，在 CloudPSS 平台开展电磁暂态仿真测试。在 5s 时于母线 8 处添加一个持续 0.1s 的 A 相短路接地故障，观察仿真结果。
 
 三台电机转速运行结果如下图所示：  
 
@@ -156,7 +156,7 @@ CloudPSS上的3机9节点系统中，每台电机包含励磁器、调速器、�
 ![7号母线电压运行结果图-1](./results-v-1.png "7号母线电压运行结果图（局部放大）")
 
 ## 算例地址
-点击打开算例地址：[**3机9节点标准测试系统**](http://cloudpss-calculate.local.ddns.cloudpss.net/model/open-cloudpss/WSCC_9_BUS-v1a1)
+点击打开算例地址：[**3机9节点测试系统**](cloudpss:/model/open-cloudpss/WSCC_9_BUS-v1b1)
 
 ## 参考文献
 
