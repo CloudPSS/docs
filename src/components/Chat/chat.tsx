@@ -24,16 +24,11 @@ const ChatComponent = (): React.JSX.Element => {
         siteConfig: { customFields },
     } = useDocusaurusContext();
     const [isChatEnabled, setIsChatEnabled] = useState<boolean | null>(null);
-
+    const homeUrl = (customFields?.['HOME_URL'] as string) ?? '/';
     useEffect(() => {
         const checkChatEnabled = async () => {
-            if (customFields?.['HOME_URL'] !== 'https://cloudpss.net/') {
-                setIsChatEnabled(false);
-                return;
-            }
-
             try {
-                const response = await fetch(`${customFields['HOME_URL']}api/chat/enabled`);
+                const response = await fetch(`${homeUrl}api/chat/enabled`);
                 if (response.status === 404) {
                     setIsChatEnabled(false);
                 } else {
@@ -47,9 +42,9 @@ const ChatComponent = (): React.JSX.Element => {
         };
 
         void checkChatEnabled();
-    }, [customFields]);
+    }, [homeUrl]);
 
-    const baseUrl = `${customFields!['HOME_URL'] as string}chat`;
+    const baseUrl = `${homeUrl}chat`;
     const chatRef = useRef<Chat>(null);
 
     useEffect(() => {
