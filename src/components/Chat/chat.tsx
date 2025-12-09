@@ -1,5 +1,5 @@
 import { useHistory } from '@docusaurus/router';
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import type { Chat } from '../../js/chat';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import IconChat from './icon.svg';
@@ -23,12 +23,28 @@ const ChatComponent = (): React.JSX.Element => {
     const {
         siteConfig: { customFields },
     } = useDocusaurusContext();
+    const [isChatEnabled, setIsChatEnabled] = useState<boolean | null>(null);
+    const homeUrl = (customFields?.['HOME_URL'] as string) ?? '/';
+    useEffect(() => {
+        const checkChatEnabled = async () => {
+            try {
+                const response = await fetch(`${homeUrl}api/chat/enabled`);
+                if (response.status === 404) {
+                    setIsChatEnabled(false);
+                } else {
+                    setIsChatEnabled(true);
+                }
+            } catch (error) {
+                // eslint-disable-next-line no-console
+                console.error('Failed to check chat enabled status:', error);
+                setIsChatEnabled(false);
+            }
+        };
 
-    if (customFields?.['HOME_URL'] !== 'https://cloudpss.net/') {
-        return <></>;
-    }
+        void checkChatEnabled();
+    }, [homeUrl]);
 
-    const baseUrl = `${customFields['HOME_URL']}chat`;
+    const baseUrl = `${homeUrl}chat`;
     const chatRef = useRef<Chat>(null);
 
     useEffect(() => {
@@ -105,7 +121,13 @@ const ChatComponent = (): React.JSX.Element => {
         '--cwe-chat-stick-width': 'min(480px, calc(100vw - 48px))',
         zIndex: '201',
     };
+    if (isChatEnabled === null) {
+        return <></>;
+    }
 
+    if (!isChatEnabled) {
+        return <></>;
+    }
     return (
         <>
             <cwe-chat ref={chatRef} src={baseUrl} style={chatStyle} />
