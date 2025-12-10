@@ -658,6 +658,8 @@ const MODELS = {
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI',
     'model/CloudPSS/_PSS1A':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/10-_PSS1A',
+    'model/CloudPSS/IEEEST':
+        'documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/20-_IEEEST',
     'model/CloudPSS/_STEAM_GOV_1':
         'documents/software/20-emtlab/110-component-library/10-basic/20-control/180-ieee-standard-governors/10-_STEAM_GOV_1',
     'model/CloudPSS/_STEAM_TUR_1':
