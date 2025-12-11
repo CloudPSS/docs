@@ -288,7 +288,7 @@ CloudPSS 与 PSS/E 的支路潮流结果误差如下表所示。
 
 #### 电力系统稳定器参数
 
-本案例中电力系统稳定器模型采用 IEEE 标准的 IEEEST 型稳定器，模型、参数均与文献[^1]保持一致，参数如下:
+本案例中电力系统稳定器模型采用 IEEE 标准的 [IEEEST](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/190-ieee-standard-pss/20-_IEEEST/index.md) 型稳定器，模型、参数均与文献[^1]保持一致，参数如下:
 
 | UnitNo. | A1 | A2 | A3 | A4 | A5 | A6 | T1 | T2 | T3 | T4 | T5 | T6 | Ks | Lsmax | Lsmin | Vcu | Vcl |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -299,7 +299,7 @@ CloudPSS 与 PSS/E 的支路潮流结果误差如下表所示。
 
 #### 励磁系统参数
 
-原案例中采用的是 IEEE 标准的 ESST1A 励磁系统，在本案例中采用的是 IEEE 标准的 EXST1_PTI励磁系统，采用文献[^1]中提供的励磁系统原始参数，经验证，两个励磁系统结果一致，参数可复用，参数如下:
+原案例中采用的是 IEEE 标准的 ESST1A 励磁系统，在本案例中采用的是 IEEE 标准的 [EXST1_PTI](../../../../../documents/software/20-emtlab/110-component-library/10-basic/20-control/170-ieee-standard-excitors/10-_EXST1_PTI/index.md) 励磁系统，采用文献[^1]中提供的励磁系统原始参数，经验证，两个励磁系统结果一致，参数可复用，参数如下:
 | UnitNo. | Rc | Xc | TR | TC | TB | KF | TF | KA | TA | VRMAX | VRMIN | KC | VIMAX | VIMIN |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | 1  | 0  | 0  | 0.01 | 1  | 1  | 0  | 1  | 200  | 0  | 4  | -4  | 0  | 99  | -99  |
