@@ -44,7 +44,7 @@ CloudPSS上的IEEE39节点测试系统中，对电机采用了图纸功能进行
 
 #### 发电机参数
 
-本案例中[同步发电机](../../../../../documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/120-SyncGeneratorRouter/index.md)模型参数输入方式选用`Experimental Data`（试验参数），与文献[^1]中提供的发电机原始标幺值参数保持一致。  
+本案例中[同步发电机](../../../../../documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/120-SyncGeneratorRouter/index.md)模型参数输入方式选用**Experimental Data（试验参数）**，与文献[^1]中提供的发电机原始标幺值参数保持一致。  
 
 #### 线路参数
 
@@ -79,11 +79,11 @@ CloudPSS上的IEEE39节点测试系统中，对电机采用了图纸功能进行
 
 ## 仿真
 
-CloudPSS的电磁暂态仿真中电气系统的启动可以大体分为两种：`斜坡启动`以及`从潮流断面直接启动`。具体可以参考[潮流断面启动](../../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)
+CloudPSS的电磁暂态仿真中电气系统的启动方法分为两种：**斜坡启动** 以及 **从潮流断面直接启动**。具体可以参考[潮流断面启动](../../../../../documents/software/20-emtlab/60-power-flow/30-initializing-from-power-flow-results/index.md#潮流断面启动)。本算例采用 **斜坡启动** 方式。
 
-作为演示，这里选择从零启动（即S2M启动）方式，在`运行`标签页下配置`电磁暂态仿真方案`。在仿真方案配置页面，可配置输出窗口，这里选择输出所有10台发电机的功角、转速、端电压标幺值、端电流标幺值，以及37号母线所连电机的三相瞬时电流曲线。
+在电磁暂态仿真计算方案配置页面，可配置输出窗口，选择输出所有10台发电机的功角、转速、端电压标幺值、端电流标幺值，以及37号母线所连电机的三相瞬时电流曲线。
 
-点击`启动任务`或按下[[ctrl]]+[[R]]开始仿真。
+点击**启动任务**或按下<kbd>Ctrl</kbd>+<kbd>R</kbd>开始仿真。
 
 下面展示某次仿真的运行结果，注意在2s-2.1s间，16号母线处发生了三相接地短路故障。
 
