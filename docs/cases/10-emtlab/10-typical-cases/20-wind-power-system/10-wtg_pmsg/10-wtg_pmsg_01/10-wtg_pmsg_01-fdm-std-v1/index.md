@@ -93,7 +93,7 @@ tags:
 
 
 ## 模型地址
-点击打开模型地址：[**直驱风机01型-快速详细模型-标准模型-v1**](https://cloudpss.net/model/open-cloudpss/WTG_PMSG_01-fdm-std-v1b2)  
+点击打开模型地址：[**直驱风机01型-快速详细模型-标准模型-v1**](cloudpss:/model/open-cloudpss/WTG_PMSG_01-fdm-std-v1b2)  
 
 
 ## 附录

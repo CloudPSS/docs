@@ -115,7 +115,7 @@ CloudPSS 上该算例的系统拓扑如下。
 
 ## 算例地址
 
-点击打开算例地址：[**CSEE-RAS**](https://cloudpss.net/model/open-cloudpss/CSEE_RAS_Aperiodic-v1b1)
+点击打开算例地址：[**CSEE-RAS**](cloudpss:/model/open-cloudpss/CSEE_RAS_Aperiodic-v1b1)
 
 
 [^CSEE-RAS]:徐式蕴,李宗翰,赵兵,等.新型电力系统标准算例(一)：功角稳定CSEE-RAS[J].中国电机工程学报,2024,44(15):5973-5985.DOI:10.13334/j.0258-8013.pcsee.230534.

@@ -95,7 +95,7 @@ tags:
 
 ## 模型地址
 
-点击打开模型地址：[**光伏发电01型-平均模型-标准模型-v1**](https://cloudpss.net/model/open-cloudpss/PVS_01-avm-std-v1b1)  
+点击打开模型地址：[**光伏发电01型-平均模型-标准模型-v1**](cloudpss:/model/open-cloudpss/PVS_01-avm-std-v1b2)  
 
 ## 附录
 

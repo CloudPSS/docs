@@ -109,7 +109,7 @@ CloudPSS 上该算例的系统拓扑如下图所示。
 由于新能源机组（直驱风机、双馈风机、光伏电站）的建模差异，以及电磁暂态仿真（CloudPSS）与机电暂态仿真（BPA）在算法层面的本质区别，标准算例的仿真结果存在合理偏差。
 
 ## 算例地址
-点击打开算例地址：[**CSEE标准算例-稳态工频过电压**](https://cloudpss.net/model/open-cloudpss/CSEE_PFO_Continuous-v1b1)  
+点击打开算例地址：[**CSEE标准算例-稳态工频过电压**](cloudpss:/model/open-cloudpss/CSEE_PFO_Continuous-v1b1)  
 原始算例下载链接：[**中国电机工程学会新型电力系统标准算例**](https://www.csee.org.cn//portal/qtxx/20240921/33256.html)
 
 [^CSEE-PFO]:H. Sun, B. Zhao, S. Xu, T. Lan, Z. Li and P. Wu, "Test Models for Stability/Security Studies of AC-DC Hybrid Power Systems With High Penetration of Renewables," IEEE Transactions on Power Systems, vol. 40, no. 1, pp. 957-969, Jan. 2025
