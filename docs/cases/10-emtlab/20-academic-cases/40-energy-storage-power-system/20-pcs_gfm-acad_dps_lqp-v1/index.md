@@ -173,7 +173,7 @@ $$
 ![机端功率](./pcs_gfm_acad-dps-lqp-power.png "机端功率")
 
 ## 模型地址
-点击打开模型地址：[**构网型储能变流器-平均模型**](https://cloudpss.net/model/open-cloudpss/PCS_GFM-acad_DPS_lqp-v1b1)  
+点击打开模型地址：[**构网型储能变流器-平均模型**](cloudpss:/model/open-cloudpss/PCS_GFM-acad_DPS_lqp-v1b3)  
 
 
 ## 附录
