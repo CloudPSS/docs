@@ -96,8 +96,8 @@ importers:
         specifier: ^3.0.36
         version: 3.0.36(jiti@2.6.1)(typescript@5.9.3)
       '@cloudpss/http-client':
-        specifier: ^0.6.17
-        version: 0.6.17
+        specifier: ^0.6.18
+        version: 0.6.18
       '@cloudpss/lint-staged-config':
         specifier: ^3.0.36
         version: 3.0.36(jiti@2.6.1)
@@ -105,8 +105,8 @@ importers:
         specifier: ^3.0.36
         version: 3.0.36
       '@cloudpss/resource-types':
-        specifier: ^0.6.17
-        version: 0.6.17(@cloudpss/http-client@0.6.17)
+        specifier: ^0.6.18
+        version: 0.6.18(@cloudpss/http-client@0.6.18)
       '@cloudpss/tsconfig':
         specifier: ^3.0.36
         version: 3.0.36(typescript@5.9.3)
@@ -965,40 +965,40 @@ packages:
     resolution:
       { integrity: sha512-MKlTSWQVKihU+UmSKI6l5JZVDFrZ+BjcGjERQZUd3yBtMTC3b+JnjmzWTg5fvruH7H+ZdsI1TByubNj5VwM4iQ== }
 
-  '@cloudpss/env@0.6.17':
+  '@cloudpss/env@0.6.18':
     resolution:
-      { integrity: sha512-OGJgkt5xoKbUg6gQeSSY/uMkKP/8wpvc5Sl9U2Molo3ex0pXxTJqMQIPhUOVM8TBDrdd9wuJW1PQqaqkD9NCbw== }
+      { integrity: sha512-lfjBktcyNAfbgv1PU1b5T89YagsmjuCsPnFcKz6m8Hkx6yvU2wTJzu50pXItOUDvZvjTY4V3H1pqUz5iji665g== }
 
   '@cloudpss/eslint-config@3.0.36':
     resolution:
       { integrity: sha512-gDUb8mIyg03k82Q70rHmo30bix3pDS0xMWauf2fwZ92+NCzS4P2AS7UnQlxeNichRjKpvCS0tONifPBbmd6b0A== }
 
-  '@cloudpss/expression@0.6.17':
+  '@cloudpss/expression@0.6.18':
     resolution:
-      { integrity: sha512-AckODeWhZcihVKY26Ba1CXDJTP4gaLEhyQ9sd/kn+ERPpZ4xqMsApFrjpa0+7VEjfwlswRC3f97pFY9YhilTtA== }
+      { integrity: sha512-k6fZ2dh2GMOVSQz6Ni8h0B0ql/eH99MIIn+aY1Oe4TgwTdi1/x1l8bz7hVplkFQIqk+mBGM/oE1srgn2mk7KaA== }
 
-  '@cloudpss/fetch@0.6.17':
+  '@cloudpss/fetch@0.6.18':
     resolution:
-      { integrity: sha512-PHGfkWirxwVK7L2y38T7OF3jsu9X0vKueK7iDVDjvG2gs5I/rTVFevoESiXI2cw5ZYmZCvxunKguIQPvS80Usg== }
+      { integrity: sha512-ZfSDTsFuwh2kRn9KooqNqFsZDKRZRQRpjMg/lo+b3qFmtz17mYXInamoFrGKWJcXUVvG8lNbVtxPklRmdiZIsg== }
     engines: { node: '>= 20' }
 
-  '@cloudpss/http-client@0.6.17':
+  '@cloudpss/http-client@0.6.18':
     resolution:
-      { integrity: sha512-Xvg3Mh8qZV1srwGfujFXYdHhYZyzIXP0Xex7ygZRugo/OnkGF8D5rdmrZDNmYy95QKvCeOw0cwUM4BoX52WdMA== }
+      { integrity: sha512-cHtlvP3bGoR0Zvxt6/97vGn6bLpYkRuAl9tLNcrT5Oy8Ej3es5pbIKsRmMkYfOmjJ5fqwNV44xm9z3wp23okKg== }
 
-  '@cloudpss/id@0.6.17':
+  '@cloudpss/id@0.6.18':
     resolution:
-      { integrity: sha512-ZdCC6UEJjPE4S0cBgkC0LpQ4sroe22zY4JHjlSlax551DxFfHYB2WYz264sAZ4mG72CxogsjqP2n7UGHtUtRxQ== }
+      { integrity: sha512-uoM5AR237RPNTXQ+jvJZv04cvy7iaPUig/CZ6kaChRFbEv8suhQiVQ+sTq0IIPS8zR7MYu/WEZrw2Xu7KgQa6Q== }
 
   '@cloudpss/lint-staged-config@3.0.36':
     resolution:
       { integrity: sha512-/z2Wh8onnycDGBmxyHzUCbeeAmd4F/j66WW0EwlGJ+zGEC2hLcCUJsPh81/5QTKgQ0ldbRTNSODnj6zjJM6XSw== }
 
-  '@cloudpss/object-storage@0.6.17':
+  '@cloudpss/object-storage@0.6.18':
     resolution:
-      { integrity: sha512-4KEgFrC2QHaAqXHZi03epn9oV/o+wkzAhC0mNJdihEdcvwd6qcOTk0bk6LmJ3Y7LOg/JDVf0h1Hoalipy627aA== }
+      { integrity: sha512-/ZwZGGATprRNyXRH3MTxejnZXkZRlM5ojyD6WI9EIr7gaJA45iIECSmZa/Iy6LHUXLfzeRpzU/7NHjS1/PJ3ww== }
     peerDependencies:
-      '@cloudpss/http-client': ~0.6.17
+      '@cloudpss/http-client': ~0.6.18
     peerDependenciesMeta:
       '@cloudpss/http-client':
         optional: true
@@ -1007,9 +1007,9 @@ packages:
     resolution:
       { integrity: sha512-hLSF7xe/vi42AlgEd5luOqvJ3pNdvtOJXmncua2JwOQrnGZpQKVTQq9ZIZN1vt2JVKZcdstICE0Xu90umDMQIg== }
 
-  '@cloudpss/resource-types@0.6.17':
+  '@cloudpss/resource-types@0.6.18':
     resolution:
-      { integrity: sha512-mkdeC7T8Qb7739zLOHvWwprGMDzvH072bJD4O+QOKrYFvh6jGGilrWiiluEnFf6i0wBGksbRSiuh8XizryOwJA== }
+      { integrity: sha512-3UsVVjkwsPnDzdt/p4wob2VqnG71Ty1ip2IgADPPS/FWbA6yafT5B+C89idppnSraJtbCIfKTe7xAspDEaIRJg== }
 
   '@cloudpss/tsconfig@3.0.36':
     resolution:
@@ -1017,9 +1017,9 @@ packages:
     peerDependencies:
       typescript: '>=5'
 
-  '@cloudpss/ubjson@0.6.17':
+  '@cloudpss/ubjson@0.6.18':
     resolution:
-      { integrity: sha512-e1WZKrKmkobQ06tvuNEOaw2FPDsVZcwiMGEURQjzojW1DtERM2ujw3fBIqI2N/UYL9emkzwdqJBsZVjsB3UdmQ== }
+      { integrity: sha512-a2godRm+BcP76EXbDHbfz7VApZz6XOtWA0gVTAGSlrRw3mgolbms3lMe1xTfNv0PjmdShmETtuKg2Geh+gI6BQ== }
 
   '@cloudpss/web-components@0.8.0':
     resolution:
@@ -11352,7 +11352,7 @@ snapshots:
       - '@types/node'
       - typescript
 
-  '@cloudpss/env@0.6.17': {}
+  '@cloudpss/env@0.6.18': {}
 
   '@cloudpss/eslint-config@3.0.36(jiti@2.6.1)(typescript@5.9.3)':
     dependencies:
@@ -11369,7 +11369,7 @@ snapshots:
       - supports-color
       - typescript
 
-  '@cloudpss/expression@0.6.17':
+  '@cloudpss/expression@0.6.18':
     dependencies:
       '@mirascript/mirascript': 0.1.40
       klona: 2.0.6
@@ -11377,18 +11377,18 @@ snapshots:
       mathjs: 15.1.0
       type-fest: 5.4.1
 
-  '@cloudpss/fetch@0.6.17': {}
+  '@cloudpss/fetch@0.6.18': {}
 
-  '@cloudpss/http-client@0.6.17':
+  '@cloudpss/http-client@0.6.18':
     dependencies:
-      '@cloudpss/env': 0.6.17
-      '@cloudpss/fetch': 0.6.17
-      '@cloudpss/ubjson': 0.6.17
+      '@cloudpss/env': 0.6.18
+      '@cloudpss/fetch': 0.6.18
+      '@cloudpss/ubjson': 0.6.18
       '@cloudpss/zstd': 0.3.23
       rxjs: 7.8.2
       type-fest: 5.4.1
 
-  '@cloudpss/id@0.6.17': {}
+  '@cloudpss/id@0.6.18': {}
 
   '@cloudpss/lint-staged-config@3.0.36(jiti@2.6.1)':
     dependencies:
@@ -11399,23 +11399,23 @@ snapshots:
       - jiti
       - supports-color
 
-  '@cloudpss/object-storage@0.6.17(@cloudpss/http-client@0.6.17)':
+  '@cloudpss/object-storage@0.6.18(@cloudpss/http-client@0.6.18)':
     dependencies:
-      '@cloudpss/env': 0.6.17
+      '@cloudpss/env': 0.6.18
       type-fest: 5.4.1
     optionalDependencies:
-      '@cloudpss/http-client': 0.6.17
+      '@cloudpss/http-client': 0.6.18
 
   '@cloudpss/prettier-config@3.0.36':
     dependencies:
       prettier: 3.8.1
 
-  '@cloudpss/resource-types@0.6.17(@cloudpss/http-client@0.6.17)':
+  '@cloudpss/resource-types@0.6.18(@cloudpss/http-client@0.6.18)':
     dependencies:
-      '@cloudpss/env': 0.6.17
-      '@cloudpss/expression': 0.6.17
-      '@cloudpss/id': 0.6.17
-      '@cloudpss/object-storage': 0.6.17(@cloudpss/http-client@0.6.17)
+      '@cloudpss/env': 0.6.18
+      '@cloudpss/expression': 0.6.18
+      '@cloudpss/id': 0.6.18
+      '@cloudpss/object-storage': 0.6.18(@cloudpss/http-client@0.6.18)
       type-fest: 5.4.1
     transitivePeerDependencies:
       - '@cloudpss/http-client'
@@ -11424,7 +11424,7 @@ snapshots:
     dependencies:
       typescript: 5.9.3
 
-  '@cloudpss/ubjson@0.6.17':
+  '@cloudpss/ubjson@0.6.18':
     dependencies:
       rxjs: 7.8.2
 

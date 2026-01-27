@@ -67,10 +67,10 @@
   "devDependencies": {
     "@cloudpss/commitlint-config": "^3.0.36",
     "@cloudpss/eslint-config": "^3.0.36",
-    "@cloudpss/http-client": "^0.6.17",
+    "@cloudpss/http-client": "^0.6.18",
     "@cloudpss/lint-staged-config": "^3.0.36",
     "@cloudpss/prettier-config": "^3.0.36",
-    "@cloudpss/resource-types": "^0.6.17",
+    "@cloudpss/resource-types": "^0.6.18",
     "@cloudpss/tsconfig": "^3.0.36",
     "@docusaurus/module-type-aliases": "3.9.2",
     "@docusaurus/tsconfig": "3.9.2",
