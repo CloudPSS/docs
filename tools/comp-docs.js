@@ -3,10 +3,7 @@
 
 /**
  * 配置项及说明见 {@link main}
- * @typedef {import('@cloudpss/resource-types/model').Model & {type: 'model', owner: string, key: string}} Model
- * @typedef {import('@cloudpss/resource-types/model').ParameterGroup} ParameterGroup
- * @typedef {import('@cloudpss/resource-types/model').PinDefinition} PinDefinition
- * @typedef {import('@cloudpss/resource-types/model').ParameterGroup['items'][number]} Parameter
+ * @import {ParameterGroup, PinDefinition, Parameter, Model, PinConnectionType} from '@cloudpss/resource-types/model'
  */
 
 import fs from 'node:fs/promises';
@@ -55,7 +52,7 @@ export function h(level) {
 
 /**
  * 生成维数
- * @param {string[]} [dim] 维数
+ * @param {PinDefinition['dim']} dim 维数
  * @returns {string} 维数字符串
  */
 export function dim(dim) {
@@ -70,10 +67,11 @@ export function dim(dim) {
         if (Number.isSafeInteger(num) && num >= 0) {
             return `<samp>${num}</samp>`;
         }
-        if (d.length > 20 || d.includes('\n')) {
-            return `<code title="${d.replaceAll(/["'\n<>&]/g, (c) => `&#${c.codePointAt(0)};`)}">...</code>`;
+        const exp = String(d);
+        if (exp.length > 20 || exp.includes('\n')) {
+            return `<code title="${exp.replaceAll(/["'\n<>&]/g, (c) => `&#${c.codePointAt(0)};`)}">...</code>`;
         }
-        return escapeCode(d);
+        return escapeCode(exp);
     });
     return dimHtml.join(' × ');
 }
@@ -89,11 +87,11 @@ function genParam(param) {
     switch (param.type) {
         case 'real':
             type = `实数`;
-            if (param['unit']) type += ` [${escape(param['unit'])}]`;
+            if (param.unit) type += ` [${escape(param.unit)}]`;
             break;
         case 'integer':
             type = `整数`;
-            if (param['unit']) type += ` [${escape(param['unit'])}]`;
+            if (param.unit) type += ` [${escape(param.unit)}]`;
             break;
         case 'logical':
             type = '布尔';
@@ -105,7 +103,7 @@ function genParam(param) {
             type = '多选';
             break;
         case 'pinLike':
-            type = `虚拟引脚（${connectionType(/** @type {PinDefinition['connection']} */ (param['connection']))}）`;
+            type = `虚拟引脚（${connectionType(param.connection)}）`;
             break;
         case 'table':
             type = '表格';
@@ -118,6 +116,10 @@ function genParam(param) {
             break;
         case 'code':
             type = '代码';
+            break;
+        case 'grouped':
+        case 'record':
+            type = '参数组';
             break;
         default: {
             // param.type satisfies undefined;
@@ -163,7 +165,7 @@ ${params.map((p, i) => genParamGroup(p, i, level + 1)).join('\n')}
 
 /**
  * 链接类型
- * @param {PinDefinition['connection']} connection
+ * @param {PinConnectionType} connection
  * @returns {string} 链接类型字符串
  */
 function connectionType(connection) {
@@ -180,8 +182,19 @@ function connectionType(connection) {
             return '直流';
         case 'hydrogen':
             return '氢气';
+        case 'ice':
+            return '冰';
+        case 'nitrogen':
+            return '氮气';
+        case 'ammonia':
+            return '氨气';
+        case 'coldWater':
+            return '冷水';
+        case 'hotWater':
+            return '热水';
         case 'water':
             return '水';
+        case '':
         default:
             // connection satisfies '' | undefined;
             return String(connection ?? '');
