@@ -80,7 +80,7 @@ tags:
 
 ## 模型地址
 
-点击打开模型地址：[**直驱风机01型-标准封装模型-v2**](cloudpss:/model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2b4)  
+点击打开模型地址：[**直驱风机01型-标准封装模型-v2**](cloudpss:/model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2b5)  
 
 
 ## 附录

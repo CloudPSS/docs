@@ -87,7 +87,7 @@ tags:
 
 ## 模型地址
 
-点击打开模型地址：[**双馈风机01型-标准封装模型-v1**](cloudpss:/model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1b4)  
+点击打开模型地址：[**双馈风机01型-标准封装模型-v1**](cloudpss:/model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1b5)  
 
 
 ## 附录
