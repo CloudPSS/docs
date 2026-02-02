@@ -1,5 +1,5 @@
 ---
-title: CloudPSS GraphQL API
+title: GraphQL API
 description: CloudPSS GraphQL API 文档
 
 tags:
