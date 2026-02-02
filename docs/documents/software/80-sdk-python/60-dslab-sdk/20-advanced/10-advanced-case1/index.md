@@ -5,7 +5,7 @@ description: 使用 DSLab SDK 数据管理模块
 tags:
 - sdk
 - dslab
-- data-management
+- advanced
 ---
 
 ## 概述

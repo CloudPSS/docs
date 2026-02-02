@@ -5,7 +5,7 @@ description: 使用 DSLab SDK 进行负荷预测，获取结果
 tags:
 - sdk
 - dslab
-- load-prediction
+- advanced
 ---
 
 ## 概述

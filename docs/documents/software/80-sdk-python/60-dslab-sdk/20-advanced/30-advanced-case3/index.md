@@ -5,7 +5,7 @@ description: 使用 DSLab SDK 进行时序潮流计算，获取结果
 tags:
 - sdk
 - dslab
-- powerflow
+- advanced
 ---
 
 ## 概述
