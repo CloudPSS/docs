@@ -10,7 +10,7 @@ description: 使用 DSLab SDK 进行韧性评估与提升计算，获取结果
 
 ### 用到的 API
 
-[Class: DSLab](../../../70-api/60-dslab/index.md#class-DSLab) 
+[Class: DSLab](../../../70-api/60-dslab/index.md#class-dslab) 
 + 实例方法
     | 方法     | 功能 | 
     | ---------------- | :-----------: | 
