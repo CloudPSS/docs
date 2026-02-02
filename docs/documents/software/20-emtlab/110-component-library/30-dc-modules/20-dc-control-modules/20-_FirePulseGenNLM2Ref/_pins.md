@@ -14,7 +14,7 @@ All changes will be overwritten by regeneration.
 | Vnref | `3` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
 | Ip | `4` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
 | In | `5` | 输入 | <samp>1</samp> × <samp>1</samp> |  |
-| Gp | `6` | 输出 | `2*N` × <samp>1</samp> |  |
-| Gn | `7` | 输出 | `2*N` × <samp>1</samp> |  |
+| Gp | `6` | 输出 | `2 * N` × <samp>1</samp> |  |
+| Gn | `7` | 输出 | `2 * N` × <samp>1</samp> |  |
 
 </slot>

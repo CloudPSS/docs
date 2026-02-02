@@ -5,6 +5,10 @@ description: ""
 
 ## 元件定义
 
+该元件用于模拟最近电平逼近，适用于不含充电阶段的MMC调制仿真。
+
+如需对MMC的充电均压阶段进行模拟，推荐使用[**半桥型NLM元件**](docs/documents/software/20-emtlab/110-component-library/30-dc-modules/20-dc-control-modules/170-_HBFirePulseGenNLM2Ref/index.md)
+
 ## 元件说明
 
 
