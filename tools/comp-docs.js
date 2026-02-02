@@ -891,6 +891,39 @@ const MODELS = {
         'cases/10-emtlab/10-typical-cases/30-photovoltaic-power-system/10-pvs/10-pvs_01/10-pvs_01-fdm-std-v1',
     'model/open-cloudpss/PVS_01-avm-std-v1a1':
         'cases/10-emtlab/10-typical-cases/30-photovoltaic-power-system/10-pvs/10-pvs_01/20-pvs_01-avm-std-v1',
+
+    'model/CloudPSS/HBFirePulseGenNLM2Ref':
+        'documents/software/20-emtlab/110-component-library/30-dc-modules/20-dc-control-modules/170-_HBFirePulseGenNLM2Ref',
+    //'model/CloudPSS/LCCACField':
+    //    'documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/50-LCCACField',
+    //'model/CloudPSS/DCTransmissionLine':
+    //    'documents/software/20-emtlab/110-component-library/30-dc-modules/10-dc-electrical-modules/60-DCTransmissionLine',
+    'model/open-cloudpss/MMC-fdm-stdm-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/40-MMC-fdm-stdm-v1',
+    //'model/open-cloudpss/LCC-fdm-stdm-v1':
+    //    'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/10-lcc/60-LCC-fdm-stdm-v1',
+    'model/open-cloudpss/HVDC_LCC_SP-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/10-lcc/70-HVDC_LCC_SP-fdm-std-v1',
+    'model/open-cloudpss/HVDC_LCC_BP-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/10-lcc/80-HVDC_LCC_BP-fdm-std-v1',
+    'model/open-cloudpss/HVDC_LCC_HI-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/10-lcc/90-HVDC_LCC_HI-fdm-std-v1',
+    'model/open-cloudpss/HVDC_LCC_MT-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/10-lcc/100-HVDC_LCC_MT-fdm-std-v1',
+    'model/open-cloudpss/HVDC_MMC_SP-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/50-HVDC_MMC_SP-fdm-std-v1',
+    'model/open-cloudpss/HVDC_MMC_BP-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/60-HVDC_MMC_BP-fdm-std-v1',
+    'model/open-cloudpss/HVDC_MMC_HI-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/70-HVDC_MMC_HI-fdm-std-v1',
+    'model/open-cloudpss/HVDC_MMC_MT-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/80-HVDC_MMC_MT-fdm-std-v1',
+    'model/open-cloudpss/HVDC_MMC_WF-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/20-mmc/90-HVDC_MMC_WF-fdm-std-v1',
+    'model/open-cloudpss/HVDC_Hybrid_HI-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/30-hybrid/20-HVDC_Hybrid_HI-fdm-std-v1',
+    'model/open-cloudpss/HVDC_Hybrid_MT-fdm-std-v1':
+        'cases/10-emtlab/10-typical-cases/100-dc-transmission-system/30-hybrid/30-HVDC_Hybrid_MT-fdm-std-v1',
 };
 /**
  * 运行 `pnpm comp-docs <token>` 生成文档，其中 `<token>` 为 API 访问令牌
