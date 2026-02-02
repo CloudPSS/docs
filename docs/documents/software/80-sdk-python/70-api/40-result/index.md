@@ -386,6 +386,72 @@ powerflowResult = runner.result
 result = powerflowResult.powerFlowModify(model)
 ```
 
+
+## Class: `DSLabReliabilityResult`
+- Extends: [Result](#class-result)
+  
+**CloudPSS** 供电可靠性计算结果处理类，提供快速获取系统和负荷可靠性指标的接口函数。该类只供供电可靠性计算时使用。
+
+### `dslabReliabilityResult.getIndexTableByName(name)`
+
+- 实例方法
+- `name`: [String][String] 数据类型，标识负荷可靠性指标、系统可靠性指标的参数类型
+- Returns: [Dict][Dict] 返回指定类型的可靠性指标字典
+
+获取名称为name的可靠性指标数据。
+
+```python showLineNumbers
+dsProject =  cloudpss.DSLab.fetch(simuId)
+jobConfig = dsProject.model.jobs[0]
+job = dsProject.runDSReliability(job=jobConfig)
+job.result.waitFor()
+reliabilityResult = job._resultView(DSLabReliabilityResult)
+# highlight-next-line
+result = reliabilityResult.getIndexTableByName('负荷可靠性指标')
+```
+
+### `dslabReliabilityResult.getLoadIndicesByID(id)`
+
+- 实例方法
+- `id`: [String][String] 数据类型，标识负荷 id 的参数类型
+- Returns: [Dict][Dict] 返回指 id 的负荷可靠性指标字典
+
+获取指定负荷 id 的可靠性指标数据。
+
+```python showLineNumbers
+dsProject =  cloudpss.DSLab.fetch(simuId)
+jobConfig = dsProject.model.jobs[0]
+job = dsProject.runDSReliability(job=jobConfig)
+job.result.waitFor()
+reliabilityResult = job._resultView(DSLabReliabilityResult)
+# highlight-next-line
+result = reliabilityResult.getLoadIndicesByID('component_load_1')
+```
+
+## Class: `DSLabResilienceResult`
+- Extends: [Result](#class-result)
+  
+**CloudPSS** 韧性评估与提升计算结果处理类，提供快速获取指定结果表格的接口函数。该类只供韧性评估与提升计算时使用。
+
+### `dslabResilienceResult.getTableByName(name)`
+
+- 实例方法
+- `name`: [String][String] 数据类型，标识系统时序故障概率等参数类型
+- Returns: [Dict][Dict] 以字典形式返回指定表格内容
+
+获取名称为name的可靠性指标数据。
+
+```python showLineNumbers
+dsProject =  cloudpss.DSLab.fetch(simuId)
+jobConfig = dsProject.model.jobs[0]
+job = dsProject.runDSResilience(job=jobConfig)
+job.result.waitFor()
+resilienceResult = job._resultView(DSLabResilienceResult)
+# highlight-next-line
+result = resilienceResult.getTableByName('系统时序故障概率')
+```
+
+
 ## Class: `IESResult`
 - Extends: [Result](#class-result)
   

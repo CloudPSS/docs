@@ -93,7 +93,7 @@ dslab.run(job, name=None)
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
 
-运行负荷预测方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+运行负荷预测内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
@@ -108,12 +108,42 @@ dslab.runIESLoadPrediction(job=None, name=None)
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
 
-运行时序潮流方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+运行时序潮流内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
 dslab.runIESPowerFlow(job=None, name=None)
+```
+
+### `dslab.runDSEMTP(job=None, name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行电磁暂态仿真内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSEMTP(job=None, name=None)
+```
+
+### `dslab.runDSEMTP(job=None, name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行电磁暂态仿真内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSEMTP(job=None, name=None)
 ```
 
 ### `dslab.runIESEnergyStoragePlan(job=None, name=None, **kwargs)`
@@ -123,12 +153,42 @@ dslab.runIESPowerFlow(job=None, name=None)
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
 
-运行储能规划方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+运行储能规划内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
 dslab.runIESEnergyStoragePlan(job=None, name=None)
+```
+
+### `dslab.dsLabFinancialRun(job=None, name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行技术经济分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.dsLabFinancialRun(job=None, name=None)
+```
+
+### `dslab.dsLabFinancialRun(job=None, name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行技术经济分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.dsLabFinancialRun(job=None, name=None)
 ```
 
 ### `dslab.runIESShortCurrent(self,job=None,name=None, **kwargs)`
@@ -138,12 +198,162 @@ dslab.runIESEnergyStoragePlan(job=None, name=None)
 - `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
 - Returns: [Job](../30-job/index.md) 返回一个运行实例
 
-运行短路电流计算方案内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+运行短路电流计算内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
 
 ```python showLineNumbers
 dslab = DSLab.fetch(simulationId)
 # highlight-next-line
 dslab.runIESShortCurrent(job=None, name=None)
+```
+
+### `dslab.runDSReliability(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行供电可靠性计算内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSReliability(job=None, name=None)
+```
+
+### `dslab.runDSReactivePowerOptimize(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行无功优化内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSReactivePowerOptimize(job=None, name=None)
+```
+
+### `dslab.runDSStaticSecurity(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行静态安全性分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSStaticSecurity(job=None, name=None)
+```
+
+### `dslab.runDSResilience(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行韧性评估与提升内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSResilience(job=None, name=None)
+```
+
+### `dslab.runDSHarmonic(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行谐波分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSHarmonic(job=None, name=None)
+```
+
+### `dslab.runDSReliability(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行供电可靠性计算内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSReliability(job=None, name=None)
+```
+
+### `dslab.runDSReactivePowerOptimize(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行无功优化内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSReactivePowerOptimize(job=None, name=None)
+```
+
+### `dslab.runDSStaticSecurity(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行静态安全性分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSStaticSecurity(job=None, name=None)
+```
+
+### `dslab.runDSResilience(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行韧性评估与提升内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSResilience(job=None, name=None)
+```
+
+### `dslab.runDSHarmonic(self,job=None,name=None, **kwargs)`
+
+- 实例方法
+- `job`: [String][String] 调用仿真时使用的计算方案，不指定将使用算例保存时选中的计算方案
+- `name`: [String][String] 任务名称，为空时使用项目的参数方案名称和计算方案名称
+- Returns: [Job][Object] 返回一个运行实例
+
+运行谐波分析内核，如果当前 model 没有创建 Job 时报错，默认使用第一个计算方案，进行仿真。
+
+```python showLineNumbers
+dslab = DSLab.fetch(simulationId)
+# highlight-next-line
+dslab.runDSHarmonic(job=None, name=None)
 ```
 
 ## Class: `dataManageModel`
