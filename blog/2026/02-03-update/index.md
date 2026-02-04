@@ -42,6 +42,8 @@ tags: [update-notes]
 
 ![OpenCloudPSS =x300](OpenCloudPSS1.png)
 
+<!-- truncate -->
+
 ## 知识库更新
 
 1. EMTLab 平台文档更新
