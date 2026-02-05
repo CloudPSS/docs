@@ -30,7 +30,7 @@ import Pins from './_pins.md'
 
 ### 使用说明
 
-配置 Configuration/Input Is in、Output Is in 选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
+配置 Input in、Output in 选择输入角度信号从角度制转化到弧度制，或者从弧度制转换到角度制。
 
 配置 Output Range 选择输出范围为 0 到 2π(360°) 或-π(-180°) 到π(180°)。
 
