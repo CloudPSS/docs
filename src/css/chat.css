@@ -1,6 +1,6 @@
 @media print {
   cwe-chat,
-  button.cwe-chat-button[style*='position: fixed'] {
+  button.cwe-chat-button {
     display: none !important;
   }
 }

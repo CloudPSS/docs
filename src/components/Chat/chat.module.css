@@ -1,0 +1,33 @@
+.button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--cloudpss-bg-color, #155eef);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: fixed;
+  bottom: 1.2rem;
+  right: 1.2rem;
+  z-index: 200;
+
+  transform: scale(1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.view {
+  --cwe-chat-float-bottom: 1rem;
+  --cwe-chat-float-right: 1rem;
+  --cwe-chat-float-width: min(480px, calc(100vw - 8px * 2));
+  --cwe-chat-float-height: min(720px, calc(100vh - 32px * 2.5));
+  --cwe-chat-stick-width: min(480px, calc(100vw - 48px));
+  z-index: 201;
+}
