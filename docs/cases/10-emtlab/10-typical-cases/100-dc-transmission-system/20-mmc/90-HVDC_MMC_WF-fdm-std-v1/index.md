@@ -28,7 +28,7 @@ tags:
 
 ### 模型地址
 
-点击打开模型地址：[**海风孤岛送电柔直输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_MMC_WF-fdm-std-v1b1)
+点击打开模型地址：[**海风孤岛送电柔直输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_MMC_WF-fdm-std-v1b2)
 
 ## 模型仿真测试
 
