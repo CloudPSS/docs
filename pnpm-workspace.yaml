@@ -4,6 +4,7 @@ ignoredBuiltDependencies:
 
 onlyBuiltDependencies:
   - '@cloudpss/zstd'
+  - '@swc/core'
 
 publicHoistPattern:
   - '*eslint*'

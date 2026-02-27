@@ -13,10 +13,7 @@
 .theme-code-block-highlighted-line,
 .theme-code-block-error-line,
 .theme-code-block-warning-line {
-  display: block;
   position: relative;
-  margin: 0 calc(-1 * var(--ifm-pre-padding));
-  padding: 0 var(--ifm-pre-padding);
 }
 
 .theme-code-block {

@@ -11,10 +11,9 @@
 > 0.5% in CN
 > 0.5%
 
-Chrome >= 49
-Firefox >= 52
+Chrome >= 107
+Firefox >= 115
 Firefox ESR
-not IE < 11
 last 2 Edge major versions
 last 2 Safari major versions
 last 2 iOS major versions
