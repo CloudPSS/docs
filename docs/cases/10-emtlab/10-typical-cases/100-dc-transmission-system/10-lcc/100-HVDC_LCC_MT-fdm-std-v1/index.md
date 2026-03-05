@@ -31,7 +31,7 @@ tags:
 
 ### 模型地址
 
-点击打开模型地址：[**多端常规直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_LCC_MT-fdm-std-v1b1)
+点击打开模型地址：[**多端常规直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_LCC_MT-fdm-std-v1b2)
 
 ## 模型仿真测试
 

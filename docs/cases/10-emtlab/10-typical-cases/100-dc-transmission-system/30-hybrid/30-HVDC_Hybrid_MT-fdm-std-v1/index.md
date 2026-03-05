@@ -31,7 +31,7 @@ tags:
 
 ### 模型地址
 
-点击打开模型地址：[**混合多端直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_Hybrid_MT-fdm-std-v1b2)
+点击打开模型地址：[**混合多端直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_Hybrid_MT-fdm-std-v1b3)
 
 ## 模型仿真测试
 
