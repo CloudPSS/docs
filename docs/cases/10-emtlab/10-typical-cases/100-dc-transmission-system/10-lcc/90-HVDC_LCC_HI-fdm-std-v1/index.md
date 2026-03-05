@@ -30,7 +30,7 @@ tags:
 
 ### 模型地址
 
-点击打开模型地址：[**特高压分层常规直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_LCC_HI-fdm-std-v1b1)
+点击打开模型地址：[**特高压分层常规直流输电系统-v1**](cloudpss:/model/open-cloudpss/HVDC_LCC_HI-fdm-std-v1b2)
 
 ## 模型仿真测试
 

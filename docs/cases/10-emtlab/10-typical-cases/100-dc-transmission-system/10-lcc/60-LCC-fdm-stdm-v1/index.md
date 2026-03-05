@@ -37,7 +37,7 @@ tags:
   
 ### 模型地址
 
-点击打开模型地址：[**LCC-标准封装模型-v1**](cloudpss:/model/open-cloudpss/LCC-fdm-stdm-v1b1)
+点击打开模型地址：[**LCC-标准封装模型-v1**](cloudpss:/model/open-cloudpss/LCC-fdm-stdm-v1b2)
 
 ## 元件说明
 
