@@ -892,6 +892,13 @@ const MODELS = {
     'model/open-cloudpss/PVS_01-avm-std-v1a1':
         'cases/10-emtlab/10-typical-cases/30-photovoltaic-power-system/10-pvs/10-pvs_01/20-pvs_01-avm-std-v1',
 
+        'model/open-cloudpss/PCS_BAT_01-avm-std-v1b1':
+        'cases/10-emtlab/10-typical-cases/40-energy-storage-power-system/10-pcs_bat/10-pcs_bat_01/30-pcs_bat_01-avm-std-v1',    
+        'model/open-cloudpss/PCS_BAT_01-fdm-std-v1b1':
+        'cases/10-emtlab/10-typical-cases/40-energy-storage-power-system/10-pcs_bat/10-pcs_bat_01/10-pcs_bat_01-fdm-std-v1',
+         'model/open-cloudpss/PCS_BAT_01-avm-stdm-v1b1':
+        'cases/10-emtlab/10-typical-cases/40-energy-storage-power-system/40-pcs-f/10-pcs_bat_01-avm-stdm-v1',       
+
     'model/CloudPSS/HBFirePulseGenNLM2Ref':
         'documents/software/20-emtlab/110-component-library/30-dc-modules/20-dc-control-modules/170-_HBFirePulseGenNLM2Ref',
     //'model/CloudPSS/LCCACField':
