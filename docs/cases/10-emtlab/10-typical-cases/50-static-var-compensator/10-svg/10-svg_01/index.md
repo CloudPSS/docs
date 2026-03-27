@@ -7,7 +7,6 @@ tags:
 - cases
 
 ---
+import DocCardList from '@theme/DocCardList';
 
-<!-- import DocCardList from '@theme/DocCardList';
-
-<DocCardList /> -->
+<DocCardList />
