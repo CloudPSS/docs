@@ -44,8 +44,8 @@ importers:
         specifier: ^9.0.1
         version: 9.0.1
       katex:
-        specifier: ^0.16.38
-        version: 0.16.38
+        specifier: ^0.16.43
+        version: 0.16.43
       prism-react-renderer:
         specifier: ^2.4.1
         version: 2.4.1(react@19.2.4)
@@ -77,8 +77,8 @@ importers:
         specifier: ^1.2.3
         version: 1.2.3(unified@11.0.5)
       remark-join-cjk-lines:
-        specifier: ^1.0.14
-        version: 1.0.14
+        specifier: ^1.0.15
+        version: 1.0.15
       remark-math:
         specifier: ^6.0.0
         version: 6.0.0
@@ -96,8 +96,8 @@ importers:
         specifier: ^3.0.36
         version: 3.0.36(jiti@2.6.1)(typescript@5.9.3)
       '@cloudpss/http-client':
-        specifier: ^0.6.25
-        version: 0.6.25
+        specifier: ^0.6.26
+        version: 0.6.26
       '@cloudpss/lint-staged-config':
         specifier: ^3.0.36
         version: 3.0.36(jiti@2.6.1)
@@ -105,8 +105,8 @@ importers:
         specifier: ^3.0.36
         version: 3.0.36
       '@cloudpss/resource-types':
-        specifier: ^0.6.25
-        version: 0.6.25(@cloudpss/http-client@0.6.25)
+        specifier: ^0.6.26
+        version: 0.6.26(@cloudpss/http-client@0.6.26)
       '@cloudpss/tsconfig':
         specifier: ^3.0.36
         version: 3.0.36(typescript@5.9.3)
@@ -985,40 +985,40 @@ packages:
     resolution:
       { integrity: sha512-MKlTSWQVKihU+UmSKI6l5JZVDFrZ+BjcGjERQZUd3yBtMTC3b+JnjmzWTg5fvruH7H+ZdsI1TByubNj5VwM4iQ== }
 
-  '@cloudpss/env@0.6.25':
+  '@cloudpss/env@0.6.26':
     resolution:
-      { integrity: sha512-U7QVy3QbPtYdjPpFoukOAtykURSA3O4ExaxlDYafzqYpoTL4LNulp2GnJluBeMLd+YE6SLiFTPak0ZQNen/MJQ== }
+      { integrity: sha512-ltXSMGv1nwzSe+WcDrgA6u2VvtUdc38oTsLNP3Jix/QC25kxwjyX65L/058fCq7GP/OCdUwBCMMFHLfdY19++A== }
 
   '@cloudpss/eslint-config@3.0.36':
     resolution:
       { integrity: sha512-gDUb8mIyg03k82Q70rHmo30bix3pDS0xMWauf2fwZ92+NCzS4P2AS7UnQlxeNichRjKpvCS0tONifPBbmd6b0A== }
 
-  '@cloudpss/expression@0.6.25':
+  '@cloudpss/expression@0.6.26':
     resolution:
-      { integrity: sha512-We+2oaLI9R7UTb0BfekoNQH6gEx8V/ynjG/4W1NKdiPEFeGv70u9WLk97TBCrZrkRNmHxf/5521OywnTKNdNQg== }
+      { integrity: sha512-hWJWpIlcWJKC0tT76bTClT4aWn5qJKJOnGRF+x230FM3iPnr4NeOuZpBNHXHN7CNnIN6HBQRA1Q5peBHPQL+8g== }
 
-  '@cloudpss/fetch@0.6.25':
+  '@cloudpss/fetch@0.6.26':
     resolution:
-      { integrity: sha512-ExU7rRXsPC2Tv0cNetWkba61YA3ATNwufCgrGEPrEyhjnYxUCEsT9vUrk2J4sIIwR+AlB46UyTWKSn3npMraVQ== }
+      { integrity: sha512-+5mOkV9/WZF/eQ/0LhObEQ9HkZWeiMmFDJSaoIrxgPO44maCZ25QWUUPY+sWUxYm9xBibTqD/y7wEDOIMjAcvg== }
     engines: { node: '>= 20' }
 
-  '@cloudpss/http-client@0.6.25':
+  '@cloudpss/http-client@0.6.26':
     resolution:
-      { integrity: sha512-IjI6cLlBohsqqOJQuyz4/CAd/ShTBOzl2HO25gGEPSj0crlkNEKDnsvQIBLBnLQLIIsUWSogoaAq43n1ar6rMQ== }
+      { integrity: sha512-SjUKqvU8HTscqqWjwBGLRcczKQyrpRoKtonTLz9EzcAR+wzutYqMU1zWJyO8zOU2cKTLyFRd5EcHU6wPg4k4ow== }
 
-  '@cloudpss/id@0.6.25':
+  '@cloudpss/id@0.6.26':
     resolution:
-      { integrity: sha512-2evw7YpscMOHP27r1gMgWPWk6RSdqzCa22WlPX/qfA+YecOg5uTCMKirbMRds0Xgnn4PM62pK8GF1S5U2aJqhA== }
+      { integrity: sha512-BWp7A9a9d7AB9h7BIXu0HfbVz3SKd/4pxO6U+1t4RxP00DcG/Ny5AIGmk0eUo/DZmFEdd5IP8JhWHzEYyhHFTA== }
 
   '@cloudpss/lint-staged-config@3.0.36':
     resolution:
       { integrity: sha512-/z2Wh8onnycDGBmxyHzUCbeeAmd4F/j66WW0EwlGJ+zGEC2hLcCUJsPh81/5QTKgQ0ldbRTNSODnj6zjJM6XSw== }
 
-  '@cloudpss/object-storage@0.6.25':
+  '@cloudpss/object-storage@0.6.26':
     resolution:
-      { integrity: sha512-LRJHycq17REZaiaAzWmm+Yc8GJirNgO9Erox35fshzJxyvihNo/Q7sZBPv4jSGng0szVEUsfEzLo9NIL1uqp5w== }
+      { integrity: sha512-pcbYCcSQXgWVXKlfaWBczB4bUwDAaCoGhmgVieUeHp7VWWTdjWD19/mYVNeJ6sUhPl8SB1j7tiFqNT6ZDG5JRQ== }
     peerDependencies:
-      '@cloudpss/http-client': ~0.6.25
+      '@cloudpss/http-client': ~0.6.26
     peerDependenciesMeta:
       '@cloudpss/http-client':
         optional: true
@@ -1027,9 +1027,9 @@ packages:
     resolution:
       { integrity: sha512-hLSF7xe/vi42AlgEd5luOqvJ3pNdvtOJXmncua2JwOQrnGZpQKVTQq9ZIZN1vt2JVKZcdstICE0Xu90umDMQIg== }
 
-  '@cloudpss/resource-types@0.6.25':
+  '@cloudpss/resource-types@0.6.26':
     resolution:
-      { integrity: sha512-JaYORlUHdc1V0INGRv/uUfSkHuTJByeldlfBuRThC75SLqOW1R0YcprceNGw9tjMAbt2tX4+BpnIX7ERy8vwyQ== }
+      { integrity: sha512-i80cUzpCswe5RfcTiMYxP40o0y4WGmPg9DP0tvd6sLGdXyCOgAMYAlC0vCSe0Vs6tfORwDjNOexrwDnw3gywJg== }
 
   '@cloudpss/tsconfig@3.0.36':
     resolution:
@@ -1037,9 +1037,9 @@ packages:
     peerDependencies:
       typescript: '>=5'
 
-  '@cloudpss/ubjson@0.6.25':
+  '@cloudpss/ubjson@0.6.26':
     resolution:
-      { integrity: sha512-d7WEKHv2KxCPVaas/E/YkPb8W06Poj9llf1YMLUY8JBslOqmONMXfcRLAXrStlUoM1ehi3gZKJ6rSuMF27Ib5A== }
+      { integrity: sha512-JA8NIzBk6VQ7IYXS6nL/pClD4yBBZegKw9G+MOw6id3o28N/n8gC7+ZqjiV20vYb0bJOCwNk+tuGvYzl5tuMiw== }
 
   '@cloudpss/web-components@0.8.0':
     resolution:
@@ -7138,9 +7138,9 @@ packages:
     resolution:
       { integrity: sha512-xXDvecyTpGLrqFrvkrUSoxxfJI5AH7U8zxxtVclpsUtMCq4JQ290LY8AW5c7Ggnr/Y/oK+bQMbqK2qmtk3pN4g== }
 
-  katex@0.16.38:
+  katex@0.16.43:
     resolution:
-      { integrity: sha512-cjHooZUmIAUmDsHBN+1n8LaZdpmbj03LtYeYPyuYB7OuloiaeaV6N4LcfjcnHVzGWjVQmKrxxTrpDcmSzEZQwQ== }
+      { integrity: sha512-K7NL5JtGrFEglipOAjY4UYA69CnTuNmjArxeXF6+bw7h2OGySUPv6QWRjfb1gmutJ4Mw/qLeBqiROOEDULp4nA== }
     hasBin: true
 
   keyv@3.0.0:
@@ -8153,9 +8153,9 @@ packages:
     resolution:
       { integrity: sha512-fgAN3jGAh+RoxUGZHTSOLJIqUc2wmoBwGR4tbpNAKmmovFoWq0OdRkb0VkldReO2a2iBT/OEulG9XSUc10r3zg== }
 
-  node-addon-api@8.6.0:
+  node-addon-api@8.7.0:
     resolution:
-      { integrity: sha512-gBVjCaqDlRUk0EwoPNKzIr9KkS9041G/q31IBShPs1Xz6UTA+EXdZADbzqAJQrpDRq71CIMnOP5VMut3SL0z5Q== }
+      { integrity: sha512-9MdFxmkKaOYVTV+XVRG8ArDwwQ77XIgIPyKASB1k3JPq3M8fGQQQE3YpMOrKm6g//Ktx8ivZr8xo1Qmtqub+GA== }
     engines: { node: ^18 || ^20 || >= 21 }
 
   node-emoji@2.2.0:
@@ -9583,9 +9583,9 @@ packages:
     peerDependencies:
       unified: ^11
 
-  remark-join-cjk-lines@1.0.14:
+  remark-join-cjk-lines@1.0.15:
     resolution:
-      { integrity: sha512-qyqgYsiND9hQTMp6bfoCv+gNYJYQ/S4e8MqSkxKBU6/jEf28vmu+BOjT+B0wCXswMN5pT5ugyoh9DYfE2Mijnw== }
+      { integrity: sha512-sw4PftVzd0zluvxrhwkwuA9nf9atWCa2FjENq6jhhtX3fMhuPmCg5Xgowr5nvi1KfJpoykwy7sBaO5RgckQIqQ== }
     engines: { node: '>=16.0.0' }
 
   remark-math@6.0.0:
@@ -10493,9 +10493,9 @@ packages:
       { integrity: sha512-RAH822pAdBgcNMAfWnCBU3CFZcfZ/i1eZjwFU/dsLKumyuuP3niueg2UAukXYF0E2AAoc82ZSSf9J0WQBinzHA== }
     engines: { node: '>=12.20' }
 
-  type-fest@5.4.4:
+  type-fest@5.5.0:
     resolution:
-      { integrity: sha512-JnTrzGu+zPV3aXIUhnyWJj4z/wigMsdYajGLIYakqyOW1nPllzXEJee0QQbHj+CTIQtXGlAjuK0UY+2xTyjVAw== }
+      { integrity: sha512-PlBfpQwiUvGViBNX84Yxwjsdhd1TUlXr6zjX7eoirtCPIr08NAmxwa+fcYBTeRQxHo9YC9wwF3m9i700sHma8g== }
     engines: { node: '>=20' }
 
   type-is@1.6.18:
@@ -12095,7 +12095,7 @@ snapshots:
       - conventional-commits-parser
       - typescript
 
-  '@cloudpss/env@0.6.25': {}
+  '@cloudpss/env@0.6.26': {}
 
   '@cloudpss/eslint-config@3.0.36(jiti@2.6.1)(typescript@5.9.3)':
     dependencies:
@@ -12112,26 +12112,26 @@ snapshots:
       - supports-color
       - typescript
 
-  '@cloudpss/expression@0.6.25':
+  '@cloudpss/expression@0.6.26':
     dependencies:
       '@mirascript/mirascript': 0.1.57
       klona: 2.0.6
       lru-cache: 11.2.7
       mathjs: 15.1.1
-      type-fest: 5.4.4
+      type-fest: 5.5.0
 
-  '@cloudpss/fetch@0.6.25': {}
+  '@cloudpss/fetch@0.6.26': {}
 
-  '@cloudpss/http-client@0.6.25':
+  '@cloudpss/http-client@0.6.26':
     dependencies:
-      '@cloudpss/env': 0.6.25
-      '@cloudpss/fetch': 0.6.25
-      '@cloudpss/ubjson': 0.6.25
+      '@cloudpss/env': 0.6.26
+      '@cloudpss/fetch': 0.6.26
+      '@cloudpss/ubjson': 0.6.26
       '@cloudpss/zstd': 0.3.23
       rxjs: 7.8.2
-      type-fest: 5.4.4
+      type-fest: 5.5.0
 
-  '@cloudpss/id@0.6.25': {}
+  '@cloudpss/id@0.6.26': {}
 
   '@cloudpss/lint-staged-config@3.0.36(jiti@2.6.1)':
     dependencies:
@@ -12142,24 +12142,24 @@ snapshots:
       - jiti
       - supports-color
 
-  '@cloudpss/object-storage@0.6.25(@cloudpss/http-client@0.6.25)':
+  '@cloudpss/object-storage@0.6.26(@cloudpss/http-client@0.6.26)':
     dependencies:
-      '@cloudpss/env': 0.6.25
-      type-fest: 5.4.4
+      '@cloudpss/env': 0.6.26
+      type-fest: 5.5.0
     optionalDependencies:
-      '@cloudpss/http-client': 0.6.25
+      '@cloudpss/http-client': 0.6.26
 
   '@cloudpss/prettier-config@3.0.36':
     dependencies:
       prettier: 3.8.1
 
-  '@cloudpss/resource-types@0.6.25(@cloudpss/http-client@0.6.25)':
+  '@cloudpss/resource-types@0.6.26(@cloudpss/http-client@0.6.26)':
     dependencies:
-      '@cloudpss/env': 0.6.25
-      '@cloudpss/expression': 0.6.25
-      '@cloudpss/id': 0.6.25
-      '@cloudpss/object-storage': 0.6.25(@cloudpss/http-client@0.6.25)
-      type-fest: 5.4.4
+      '@cloudpss/env': 0.6.26
+      '@cloudpss/expression': 0.6.26
+      '@cloudpss/id': 0.6.26
+      '@cloudpss/object-storage': 0.6.26(@cloudpss/http-client@0.6.26)
+      type-fest: 5.5.0
     transitivePeerDependencies:
       - '@cloudpss/http-client'
 
@@ -12167,7 +12167,7 @@ snapshots:
     dependencies:
       typescript: 5.9.3
 
-  '@cloudpss/ubjson@0.6.25':
+  '@cloudpss/ubjson@0.6.26':
     dependencies:
       rxjs: 7.8.2
 
@@ -12178,7 +12178,7 @@ snapshots:
       chart.js: 4.5.1
       htmlparser2: 9.1.0
       incremental-dom: 0.7.0
-      katex: 0.16.38
+      katex: 0.16.43
       lit: 3.3.2
       markdown-it: 13.0.2
       markdown-it-abbr: 1.0.4
@@ -12208,7 +12208,7 @@ snapshots:
   '@cloudpss/zstd@0.3.23':
     dependencies:
       '@cloudpss/worker': 0.1.11
-      node-addon-api: 8.6.0
+      node-addon-api: 8.7.0
       node-gyp-build: 4.8.4
 
   '@colors/colors@1.5.0':
@@ -18389,7 +18389,7 @@ snapshots:
       readable-stream: 2.3.8
       setimmediate: 1.0.5
 
-  katex@0.16.38:
+  katex@0.16.43:
     dependencies:
       commander: 8.3.0
 
@@ -19007,7 +19007,7 @@ snapshots:
       dayjs: 1.11.20
       dompurify: 3.3.3
       elkjs: 0.9.3
-      katex: 0.16.38
+      katex: 0.16.43
       khroma: 2.1.0
       lodash-es: 4.17.23
       mdast-util-from-markdown: 1.3.1
@@ -19034,7 +19034,7 @@ snapshots:
       dagre-d3-es: 7.0.14
       dayjs: 1.11.20
       dompurify: 3.3.3
-      katex: 0.16.38
+      katex: 0.16.43
       khroma: 2.1.0
       lodash-es: 4.17.23
       marked: 16.4.2
@@ -19190,7 +19190,7 @@ snapshots:
     dependencies:
       '@types/katex': 0.16.8
       devlop: 1.1.0
-      katex: 0.16.38
+      katex: 0.16.43
       micromark-factory-space: 2.0.1
       micromark-util-character: 2.1.1
       micromark-util-symbol: 2.0.1
@@ -19593,7 +19593,7 @@ snapshots:
       lower-case: 2.0.2
       tslib: 2.8.1
 
-  node-addon-api@8.6.0: {}
+  node-addon-api@8.7.0: {}
 
   node-emoji@2.2.0:
     dependencies:
@@ -20904,7 +20904,7 @@ snapshots:
       '@types/katex': 0.16.8
       hast-util-from-html-isomorphic: 2.0.0
       hast-util-to-text: 4.0.2
-      katex: 0.16.38
+      katex: 0.16.43
       unist-util-visit-parents: 6.0.2
       vfile: 6.0.3
 
@@ -21007,7 +21007,7 @@ snapshots:
       unist-util-find-between-all: 1.1.6
       unist-util-visit: 5.1.0
 
-  remark-join-cjk-lines@1.0.14:
+  remark-join-cjk-lines@1.0.15:
     dependencies:
       unist-util-visit: 2.0.3
 
@@ -21781,7 +21781,7 @@ snapshots:
 
   type-fest@2.19.0: {}
 
-  type-fest@5.4.4:
+  type-fest@5.5.0:
     dependencies:
       tagged-tag: 1.0.0
 
