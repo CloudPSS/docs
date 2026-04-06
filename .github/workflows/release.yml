@@ -23,7 +23,7 @@ jobs:
         id: get_version
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
-        uses: wyvox/action-setup-pnpm@v3
+        uses: wyvox/action-setup-pnpm@v4
       - id: Optimize
         run: pnpm optimize
       - id: Build
@@ -61,7 +61,7 @@ jobs:
         id: get_version
         run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
-        uses: wyvox/action-setup-pnpm@v3
+        uses: wyvox/action-setup-pnpm@v4
       - id: Optimize
         run: pnpm optimize
       - id: Build
