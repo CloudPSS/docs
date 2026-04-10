@@ -12,10 +12,10 @@ tags:
 - 1 在本地计算资源中安装 FuncStudio 本地执行器，详见[FuncStudio 执行器的安装和配置](./10-executor-setup/index.md)。
 
 - 2 在本地计算资源中配置 Python 环境，详见[Python 环境配置](./20-python-env-config/index.md)。
-  
+
 - 3 如果要接入 Matlab 语言编写的算法内核，还需要在本地计算资源中配置 Matlab 环境，详见[Matlab 环境配置](./30-matlab-env-config/index.md)。
 
 
 import DocCardList from '@theme/DocCardList';
 
-<DocCardList />;
+<DocCardList />
