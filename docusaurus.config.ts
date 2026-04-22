@@ -105,7 +105,7 @@ const config: Config = {
                     blogSidebarCount: 'ALL',
                     blogTitle: '博客',
                     blogDescription: 'CloudPSS 博客',
-                    blogSidebarTitle: '最近文章',
+                    blogSidebarTitle: '所有文章',
                     ...mdxOptions,
                 },
                 pages: {
