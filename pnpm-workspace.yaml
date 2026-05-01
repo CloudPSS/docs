@@ -1,3 +1,7 @@
+packages:
+  - .
+  - tools/docs-to-pdf
+
 ignoredBuiltDependencies:
   - core-js
   - core-js-pure
@@ -5,6 +9,7 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@cloudpss/zstd'
   - '@swc/core'
+  - puppeteer
 
 publicHoistPattern:
   - '*eslint*'
