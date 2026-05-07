@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { HOST } from './config.ts';
-import { done, printPage } from './print-page.ts';
+import { done, initPage, printPage } from './print-page.ts';
 
 /** 表示页面范围，包含开始和结束页 */
 export type Range = [string, string?];
@@ -48,6 +48,7 @@ async function printRange(range: Range, dist: string): Promise<PrintedDocument[]
 
 /** 打印多个页面范围 */
 export async function printPages(ranges: readonly Range[], dist: string): Promise<PrintedDocument[]> {
+    await initPage();
     dist = path.resolve(dist);
     const result = [];
     for (const range of ranges) {

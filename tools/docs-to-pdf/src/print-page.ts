@@ -1,14 +1,58 @@
 import fs from 'node:fs/promises';
+import os from 'node:os';
 import path from 'node:path';
-import { type Browser, launch, type Page } from 'puppeteer';
+import { type Browser, type Page, launch } from 'puppeteer-core';
+import {
+    install,
+    uninstall,
+    Browser as BrowserType,
+    resolveBuildId,
+    BrowserTag,
+    type InstalledBrowser,
+    type InstallOptions,
+    type UninstallOptions,
+    detectBrowserPlatform,
+} from '@puppeteer/browsers';
 import { HOST } from './config.ts';
 
 let _browser: Browser | null = null;
 let _page: Page;
+
+/** 下载浏览器 */
+async function downloadBrowser(): Promise<InstalledBrowser> {
+    const plat = detectBrowserPlatform();
+    if (!plat) {
+        throw new Error(`Unsupported platform: ${process.platform} ${process.arch}`);
+    }
+    const id = await resolveBuildId(BrowserType.CHROMEHEADLESSSHELL, plat, BrowserTag.STABLE);
+    const opt: InstallOptions & { unpack: true } & UninstallOptions = {
+        cacheDir: path.join(os.homedir(), '.cache/puppeteer'),
+        browser: BrowserType.CHROMEHEADLESSSHELL,
+        buildId: id,
+        unpack: true,
+        downloadProgressCallback: 'default',
+        baseUrl: 'https://npmmirror.com/mirrors/chrome-for-testing/',
+    };
+    try {
+        return await install(opt);
+    } catch (err) {
+        await uninstall(opt);
+        return await install(opt);
+    }
+}
+
 /** 浏览器 */
-export async function getPage(): Promise<Page> {
+export async function initPage(): Promise<Page> {
     if (!_browser) {
-        _browser = await launch({ headless: 'shell' });
+        // eslint-disable-next-line no-console
+        console.log(`Initializing browser`);
+        const browser = await downloadBrowser();
+        // eslint-disable-next-line no-console
+        console.log(`Using browser: ${browser.executablePath}`);
+        _browser = await launch({
+            headless: 'shell',
+            executablePath: browser.executablePath,
+        });
         _page = await _browser.newPage();
         await _page.goto(HOST, { waitUntil: 'domcontentloaded', timeout: 0 });
         await _page.evaluate(
@@ -46,7 +90,7 @@ const NEXT_SELECTOR = 'a.pagination-nav__link.pagination-nav__link--next';
 
 /** 打印页面到指定位置 */
 export async function printPage(url: string, dist: string): Promise<{ title: string; prev?: string; next?: string }> {
-    const page = await getPage();
+    const page = await initPage();
     await page.goto(url, { waitUntil: 'load', timeout: 0 });
     const result = await page.evaluate(
         ({ INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR }) => {

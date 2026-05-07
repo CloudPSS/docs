@@ -9,7 +9,6 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@cloudpss/zstd'
   - '@swc/core'
-  - puppeteer
 
 publicHoistPattern:
   - '*eslint*'
