@@ -138,7 +138,13 @@ import TabItem from '@theme/TabItem';
 
 ### “表达式”模式 
 
-点击待编辑参数、变量或引脚的赋值输入框右侧，显示 **$$f_x$$** 时，当前为 **“表达式”模式** 输入框。“表达式”模式下，输入框内可填入**常量**、**全局参数**、**变量**或包含这些元素的**计算表达式**，支持 [**Math.js 表达式语法**](https://mathjs.org/)。**“表达式”模式下**输入栏的边框会变成黄色。
+点击待编辑参数、变量或引脚的赋值输入框右侧，显示 **$$f_x$$** 时，当前为 **“表达式”模式** 输入框。“表达式”模式下，输入框内可填入**常量**、**全局参数**、**变量**或包含这些元素的**计算表达式**，支持 [**MiraScript 语法**](https://mira.cloudpss.net/cheatsheet/) 。**“表达式”模式下**输入栏的边框会变成黄色。
+
+:::info
+SimStudio v5 之前的版本，表达式采用 [**Math.js 表达式语法**](https://mathjs.org/)。v5 及之后的版本采用 CloudPSS 自研的 [**MiraScript 表达式语法**](https://mira.cloudpss.net/)，语法对照速查表参见 [**MiraScript 速查表**](https://mira.cloudpss.net/cheatsheet/#mirascript-vs-mathjs) 。
+
+用户使用前，请先点击 SimStudio 左侧标签栏最下方的 **设置** 按钮，点击 **关于** 选项查看当前的版本号，并参考对应版本的语法标准。
+:::
 
 全局参数和变量的引用格式为 **`$` + 参数或变量的键(`key`)**，例如`$R`、`$Vm`、`$var`等。
 
