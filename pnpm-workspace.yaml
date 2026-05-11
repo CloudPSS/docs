@@ -1,10 +1,7 @@
-ignoredBuiltDependencies:
-  - core-js
-  - core-js-pure
-
-onlyBuiltDependencies:
-  - '@cloudpss/zstd'
-  - '@swc/core'
+allowBuilds:
+  '@cloudpss/zstd': true
+  core-js: false
+  core-js-pure: false
 
 publicHoistPattern:
   - '*eslint*'
