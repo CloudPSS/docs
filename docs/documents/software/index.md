@@ -48,7 +48,7 @@ import DocCardList from '@theme/DocCardList';
   {
     type: "category",
     label: "CloudPSS GraphQL API",
-    description: "用于第三方开发者对CloudPSS的二次开发",
-    href: "/documents/software/sdk-python/",
+    description: "用于第三方开发者对 CloudPSS 的二次开发",
+    href: "/documents/software/cloudpss-api/",
   }
 ]} />
