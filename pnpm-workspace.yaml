@@ -1,5 +1,5 @@
 configDependencies:
-  '@cloudpss/pnpm-plugin-config': ~4.0.4
+  '@cloudpss/pnpm-plugin-config': ~4.0.5
 
 allowBuilds:
   '@cloudpss/zstd': true
