@@ -14,6 +14,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -31,6 +35,10 @@
       "zh-hant": true
     }
   },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.tabSize": 4
+  },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -38,11 +46,18 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 4
   },
-  "cSpell.words": ["katex", "prismjs", "scrollbar", "sidenav"],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
+  "[vue]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 4
+  },
   "editor.tabSize": 2,
   "explorer.sortOrder": "mixed",
   "files.eol": "\n",
   "github-actions.remote-name": "mirror",
   "npm.packageManager": "pnpm",
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "js/ts.tsdk.path": "./node_modules/typescript/lib"
 }
