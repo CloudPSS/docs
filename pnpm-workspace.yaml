@@ -1,12 +1,7 @@
+configDependencies:
+  '@cloudpss/pnpm-plugin-config': ~4.0.4
+
 allowBuilds:
   '@cloudpss/zstd': true
   core-js: false
   core-js-pure: false
-
-publicHoistPattern:
-  - '*eslint*'
-  - '*prettier*'
-  - '*commitlint*'
-  - lint-staged
-
-shellEmulator: true
