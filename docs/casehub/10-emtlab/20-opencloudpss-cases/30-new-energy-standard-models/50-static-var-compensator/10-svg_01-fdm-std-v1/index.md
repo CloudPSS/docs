@@ -7,6 +7,6 @@ tags:
 - cases
 ---
 
-import Wind from '../../../../../cases/10-emtlab/10-typical-cases/50-static-var-compensator/10-svg/10-svg_01/10-svg_01-fdm-std-v1/index.md';
+import Wind from '../../../../../../cases/10-emtlab/10-typical-cases/50-static-var-compensator/10-svg/10-svg_01/10-svg_01-fdm-std-v1/index.md';
 
 <Wind />
