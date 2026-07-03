@@ -2,7 +2,7 @@
 title: 直流电机驱动
 description: 直流电机PI转速闭环控制案例
 tags:
-- emtlab
+
 - cases
 ---
 
