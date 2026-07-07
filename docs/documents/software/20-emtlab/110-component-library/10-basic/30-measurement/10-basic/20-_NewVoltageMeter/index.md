@@ -18,7 +18,7 @@ description: "本元件为 **CloudPSS** 平台下的单引脚接地型电压采�
 电压表以系统参考地为基准，通过单引脚接入待测节点，采集该节点的对地电位数据。由于元件内阻无穷大，接入后不会对原电路的电位分布产生任何影响，适配直流、交流信号采集，为后续仿真分析提供基础数据。
 
 ### 属性
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/30-measurement/10-basic/20-_NewVoltageMeter/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 import Parameters from './_parameters.md'
@@ -40,9 +40,9 @@ import Pins from './_pins.md'
     3.  运行仿真，采集各相电流数据，用于后续三相不平衡度分析。
 2. 下图为单相串联RLC支路仿真案例的电路拓扑：
 
-![单相串联RLC支路拓扑图](./rlc-case3-topology.png "单相串联RLC支路电路")
+![单相串联RLC支路拓扑图](./rlc-U-topology.png "单相串联RLC支路电路")
 
 运行仿真后，得到单相支路电压波形如下：
 
-![单相串联RLC支路电压波形](./rlc-case3-voltage.png "单相支路电压波形")
+![单相串联RLC支路电压波形](./rlc-UM-voltage.png "单相支路电压波形")
 

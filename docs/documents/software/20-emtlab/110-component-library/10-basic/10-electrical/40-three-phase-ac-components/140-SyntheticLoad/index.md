@@ -118,7 +118,7 @@ $$
 - $P$,$Q$ 为静态负荷支路按电压和频率修正后的实际有功、无功功率；$P_{IM},Q_{IM}$为感应电动机定子侧吸收的有功、无功功率
 
 ### 属性
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/140-SyntheticLoad/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 

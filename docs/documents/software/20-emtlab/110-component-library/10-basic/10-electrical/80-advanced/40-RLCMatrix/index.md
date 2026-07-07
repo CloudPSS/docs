@@ -31,6 +31,7 @@ $$
 $$
 \mathbf{Z} = \mathbf{R} + j\omega \mathbf{L} + \frac{1}{j\omega} \mathbf{C}^{-1}
 $$
+其中，$\mathbf{R}$ 为电阻矩阵，$\mathbf{L}$ 为电感矩阵，$\mathbf{C}$ 为电容矩阵，$\omega$ 为系统角频率。
 
 ### 输入类型详解
 
@@ -58,7 +59,7 @@ $$
 
 ### 属性
 
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/10-electrical/80-advanced/40-RLCMatrix/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
@@ -157,10 +158,6 @@ import Pins from './_pins.md'
 **为什么矩阵编辑器提示维度不匹配？**
 
 : 电阻、电感、电容矩阵的行数和列数必须与 `Branches` 参数设置的支路数量一致。例如，当 `Branches=3` 时，矩阵必须是 3×3 的方阵。
-
-**如何模拟耦合支路？**
-
-: 在矩阵中输入非对角线元素即可模拟支路间的耦合。例如，2条耦合支路的电阻矩阵为 `[[10, 2], [2, 10]]`，表示两条支路的自电阻为10 Ω，互电阻为2 Ω。
 
 **有名值和标幺值如何切换？**
 

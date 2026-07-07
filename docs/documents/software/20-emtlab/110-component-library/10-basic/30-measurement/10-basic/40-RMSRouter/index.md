@@ -19,47 +19,37 @@ RMS量测是理想无源信号运算元件，接收电压、电流类瞬时值�
 
 元件通过信号引脚接收上游测量元件传输的时变瞬时值信号，按照对应算法完成有效值运算，同时提供两种量测模式适配不同仿真场景：
 
-#### 1. Analog（模拟式）模式
+### 1. Analog（模拟式）模式
 
-采用快速近似检测算法，根据输入信号相数不同采用不同的计算方式，再经一阶惯性环节滤波输出有效值结果。
+Analog 模式采用快速近似有效值算法。该模式不进行完整周期采样，而是先根据输入信号形式构造瞬时幅值估计量，再通过一阶惯性环节滤波输出有效值近似结果。
 
-##### （1）三相信号输入
+#### 三相信号输入
 
-每一时刻对三相瞬时值分别取最大值与最小值做差，得到近似幅值信号，再经过一阶惯性环节滤波后输出：
+三相信号输入时，每一仿真时刻分别取三相信号瞬时值中的最大值和最小值，并以二者差值构造原始幅值估计量：
 
-$$
-X_{raw}(t) = \max\left(x_a(t), x_b(t), x_c(t)\right) - \min\left(x_a(t), x_b(t), x_c(t)\right)
-$$
+$X_{raw}(t) = \max\left(x_a(t), x_b(t), x_c(t)\right) - \min\left(x_a(t), x_b(t), x_c(t)\right)$
 
-一阶惯性滤波方程：
+再通过比例系数 $k$ 将 max-min 差值换算为有效值估计量，并经一阶惯性环节滤波输出：
 
-$$
-\tau \frac{dX_{\text{RMS}}}{dt} + X_{\text{RMS}} = k \cdot X_{raw}(t)
-$$
+$\tau \frac{dX_{RMS}}{dt} + X_{RMS} = k X_{raw}(t)$
 
-其中：
-- $\tau$ 为**滤波时间常数**（参数表中 `Smoothing Time Constant`），控制滤波效果与响应速度：$\tau$ 越大，输出越平滑，响应越慢；$\tau$ 越小，响应越快，波动越明显；
-- $k$ 为比例换算系数，将 max-min 幅值换算为有效值；
-- 该算法计算速度快、延迟小，适用于需要快速响应的控制与保护场景。
+其中，$\tau$ 为滤波时间常数，$k$ 为 max-min 差值到有效值的比例换算系数。对于平衡三相正弦信号，可按相量幅值关系近似取：
 
-##### （2）单相信号输入
+$X_{RMS} \approx \frac{X_{raw}}{\sqrt{6}}$
 
-取瞬时值的绝对值，再经过一阶惯性环节滤波后输出有效值：
+#### 单相信号输入
 
-$$
-X_{raw}(t) = |x(t)|
-$$
+单相信号输入时，先取瞬时值绝对值：
 
-一阶惯性滤波方程：
+$X_{raw}(t) = |x(t)|$
 
-$$
-\tau \frac{dX_{\text{RMS}}}{dt} + X_{\text{RMS}} = k \cdot X_{raw}(t)
-$$
+再通过一阶惯性环节滤波输出有效值近似结果：
 
-其中：
-- $\tau$ 为**滤波时间常数**，含义与三相模式一致；
-- $k$ 为绝对值平均值到有效值的比例换算系数；
-- 单相正弦稳态下，绝对值平均值为 $2X_m/\pi$，有效值为 $X_m/\sqrt{2}$，换算系数 $k = \pi/(2\sqrt{2}) \approx 1.11$。
+$\tau \frac{dX_{RMS}}{dt} + X_{RMS} = k X_{raw}(t)$
+
+对于单相正弦信号，绝对值平均量与有效值之间的换算系数可取：
+
+$k = \frac{\pi}{2\sqrt{2}} \approx 1.11$
 
 #### 2. Digital（数字式）模式
 
@@ -84,7 +74,7 @@ $$
 
 ### 属性
 
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/30-measurement/10-basic/40-RMSRouter/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 

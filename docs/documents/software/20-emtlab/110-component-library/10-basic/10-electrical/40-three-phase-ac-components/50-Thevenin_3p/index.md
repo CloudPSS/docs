@@ -95,7 +95,7 @@ $$
 
 空载时端口电流为零，端口电压等于电源内部电动势；带载时端口电压随电流增大而降低，符合实际电网的戴维南等效特性。
 ### 属性
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/50-Thevenin_3p/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 import Parameters from './_parameters.md'
@@ -125,9 +125,6 @@ import Pins from './_pins.md'
 
 **负序，零序参数必须单独设置吗？**
 : 不是。默认关闭负零序输入时，负序，零序阻抗与正序一致；仅在需要模拟不对称故障，三相不平衡场景时，才需要单独配置负序，零序参数。
-
-**标幺值换算时基准容量必须取100MVA吗？**
-: 不是。基准容量需与你的系统标幺值基准保持一致，工程中常用100MVA，10MVA等，只要代入对应数值计算即可，保证标幺值与有名值基准统一。
 
 **Linear Ramp启动方式有什么作用？**
 : 线性斜坡启动模式下，电压幅值从0线性上升至额定值，可模拟电源软启动过程，避免直接合闸产生的励磁涌流，暂态冲击，适合稳态仿真场景。

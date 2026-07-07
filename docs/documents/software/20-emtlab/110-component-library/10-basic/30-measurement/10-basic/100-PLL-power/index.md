@@ -123,6 +123,22 @@ $$
     - 含有谐波的畸变电网功率测量：优先选用本元件，可准确提取基波功率；
     - 电能质量分析、高精度闭环控制：优先选用本元件，测量精度高；
     - 理想电网、快速暂态功率分析：可选用瞬时功率量测元件，响应速度更快。
+    - 
+### 属性
+
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
+
+### 参数
+
+import Parameters from './_parameters.md'
+
+<Parameters/>
+
+### 引脚
+
+import Pins from './_pins.md'
+
+<Pins/>
 
 ## 案例
 

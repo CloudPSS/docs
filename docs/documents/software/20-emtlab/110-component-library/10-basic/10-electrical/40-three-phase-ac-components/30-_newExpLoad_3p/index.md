@@ -10,16 +10,26 @@ description: "本元件为 **CloudPSS** 平台下的一次电气元件，用于�
 ![静态负载](./static-load.png "静态负载")
 
 ## 元件定义
-该元件用以建模指数型三相静态负载（单线图），其基本表达式如下：
 
-$$
-P = P_N \left( \frac{V}{V_N} \right)^{NP} \left( 1 + K_{PF}\Delta f \right)
-$$
-$$
-Q = Q_N \left( \frac{V}{V_N} \right)^{NQ} \left( 1 + K_{QF}\Delta f \right)
-$$
+静态负荷采用扩展 ZIP 形式，令：
 
-通过配置电压指数与频率指数，可灵活模拟恒功率，恒电流，恒阻抗等多种静态负荷模型，适用于各类电磁暂态仿真场景。
+$k_V = \frac{V}{V_N}$
+
+有功功率按下式计算：
+
+$P = P_N \left[A_P k_V^{N_P} + B_P k_V + C_P\right]\left(1 + K_{PF}\Delta f\right)$
+
+无功功率按下式计算：
+
+$Q = Q_N \left[A_Q k_V^{N_Q} + B_Q k_V + C_Q\right]\left(1 + K_{QF}\Delta f\right)$
+
+其中：
+
+$C_P = 1 - A_P - B_P$
+
+$C_Q = 1 - A_Q - B_Q$
+
+$N_P$ 为有功功率电压指数，对应参数 `NP`；$N_Q$ 为无功功率电压指数，对应参数 `NQ`。$A_P$、$B_P$、$C_P$ 分别表示有功侧指数项、一次电压项和常数项系数；$A_Q$、$B_Q$、$C_Q$ 分别表示无功侧指数项、一次电压项和常数项系数。
 
 ## 元件说明
 
@@ -45,7 +55,7 @@ $$
     - 应用场景：电阻炉，白炽灯等纯阻性负荷
 
 ### 属性
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/30-_newExpLoad_3p/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
@@ -74,9 +84,3 @@ import Pins from './_pins.md'
 
 **如何切换恒功率/恒电流/恒阻抗负荷？**
 : 修改 `Voltage Index for P` 和 `Voltage Index for Q` 即可：设为 0 为恒功率，设为 1 为恒电流，设为 2 为恒阻抗。
-
-**电压指数可以设置为非整数吗？**
-: 可以。实际工程中部分非线性负荷的电压指数介于 1~2 之间，可根据实测特性设置非整数值，实现更精准的负荷建模。
-
-**潮流计算会考虑负荷的电压指数特性吗？**
-: 潮流计算过程中暂不考虑静态负载的功率电压特性，仅按额定功率计算；电磁暂态仿真会完整执行指数模型。

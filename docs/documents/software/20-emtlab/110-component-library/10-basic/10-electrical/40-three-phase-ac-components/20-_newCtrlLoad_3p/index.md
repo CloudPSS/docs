@@ -38,15 +38,11 @@ $$
 
 :::warning
 
-与普通静态负载固定功率不同，**本元件支持通过外部信号输入标幺值功率指令**，运行规则如下：
-
-- 控制端口输入的是**标幺值功率信号**，不是有名值，也不是直接修改内部额定功率参数；
-
-
-
+与普通静态负载固定功率不同，**本元件支持通过外部信号输入功率指令**。
 :::
+
 ### 属性
-**CloudPSS** 元件包含统一的**属性**选项，其配置方法详见 [参数卡](/docs/documents/software/20-emtlab/110-component-library/10-basic/10-electrical/40-three-phase-ac-components/20-_newCtrlLoad_3p/_parameters.md) 页面。
+CloudPSS 元件包含统一的**属性**选项，其配置方法详见 [参数卡](docs/documents/software/10-xstudio/20-simstudio/40-workbench/20-function-zone/30-design-tab/30-param-panel/index.md) 页面。
 
 ### 参数
 
