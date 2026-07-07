@@ -13,9 +13,9 @@ AI Agent
    ↓ (MCP Tool Call)
 MCP Server
    ↓ (RPC / Context Binding)
-SimStudio / CloudPSS Backend
+SimStudio Client 
    ↓
-仿真计算 / 模型系统
+模型搭建 / 拓扑编辑 / 仿真计算
 ```
 
 ## 功能说明
@@ -36,64 +36,14 @@ SimStudio / CloudPSS Backend
 | 环境 | 描述 | MCP 接入地址 |
 | --- | --- | --- |
 | **公网平台** | **CloudPSS** 公网： `https://cloudpss.net` | `https://cloudpss.net/api/mcp` |
-| **私有部署** | 部署在私有服务器上，IP 地址例如： `http://10.101.10.45` | `http://10.101.10.45/api/mcp` |
+| **私有部署** | 部署在私有服务器上，IP 地址例如： `http://10.42.0.1` | `http://10.42.0.1/api/mcp` |
 
 :::tip
 下文中所有示例均使用公网平台地址 `https://cloudpss.net/api/mcp`，请根据实际环境替换为对应地址。
 :::
 
 
-### 身份认证
-
-**CloudPSS MCP** 服务支持通过身份认证流程完成登录授权。如果当前智能体不支持该认证流程，可使用 [SDK Token](../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md) 方式进行认证。
-
-1. 申请 **CloudPSS SDK Token**
-
-- 登录 **CloudPSS** 用户中心。
-- 进入 **设置** → **SDK Token 管理**。
-- 申请并获取 Token。
-
-:::info
-如何申请 SDK Token，详情参考 [SDK Token 管理](../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)页面
-:::
-
-2. 在请求头中携带 Token
-
-在调用 MCP 接口时，于 HTTP 请求头中添加 `authorization` 字段，格式如下：
-
-```http
-authorization: Bearer <你的 SDK Token>
-```
-
-示例：
-
-```http
-GET /api/mcp HTTP/1.1
-Host: cloudpss.net
-authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
-```
-:::warning
-Token 具有访问权限，请妥善保管，避免泄露。
-:::
-
-### 接入后工作流程
-
-MCP 配置成功后，打开 **SimStudio** 界面，点击右下角聊天图标，完成客户端 RPC 在 MCP 服务器上的连接。在聊天界面，可以复制当前连接的 connection ID。
-
-![复制当前连接的 ID](copy-id.png)
-
-**CloudPSS MCP** 连接管理工具：
-- **`list_connections`** — 列出当前可用的 RPC 客户端连接。
-- **`use_connection`** — 切换到指定的连接 ID，后续操作均在该连接对应的 **CloudPSS** 项目上下文中执行。
-
-**工作流：**
-
-1. 如需确认可用连接，调用 `list_connections`。
-2. 使用 `use_connection` 切换到目标连接（如果当前连接已正确则跳过）。
-3. 后续所有 **CloudPSS** 操作直接调用对应工具。
-
-
-## 案例
+## 接入流程
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -103,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 **添加 MCP 服务器**
 
-1. 在 Claude 命令行中执行以下命令：
+ 在 Claude 命令行中执行以下命令：
 
 ```bash
 claude mcp add-json cloudpss-mcp '{ "type": "http", "url": "https://cloudpss.net/api/mcp" }'
@@ -144,7 +94,101 @@ opencode mcp auth cloudpss-mcp
 
 </TabItem>
 
+<TabItem value="case3" label="Codex 中接入 MCP 服务器">
+
+**配置 MCP 服务器**
+
+配置文件默认位于：
+
+```bash
+~/.codex/config.toml
+```
+
+也可以在项目目录下创建（以限制 MCP 配置仅作用于当前项目）：
+```bash
+.codex/config.toml
+```
+
+在配置文件中添加 CloudPSS MCP 服务：
+
+```bash
+[mcp_servers.cloudpss-mcp]
+url = "https://cloudpss.net/api/mcp"
+enabled = true
+bearer_token_env_var = "CLOUDPSS_TOKEN"
+```
+
+**使用命令添加 MCP 服务器**
+
+可以通过 Codex CLI 命令完成配置：
+```bash
+codex mcp add cloudpss-mcp \
+  --url https://cloudpss.net/api/mcp
+```
+查看当前已配置的 MCP 服务
+```bash
+codex mcp list
+```
+查看指定 MCP 服务配置：
+
+```bash
+codex mcp get cloudpss-mcp
+```
+
+</TabItem>
+
+<TabItem value="case4" label="不支持 OpenAuth 接入">
+
+**CloudPSS MCP** 服务支持通过身份认证流程完成登录授权。如果当前智能体不支持该认证流程，可使用 [SDK Token](../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md) 方式进行认证。
+
+1. 申请 **CloudPSS SDK Token**
+
+- 登录 **CloudPSS** 用户中心。
+- 进入 **设置** → **SDK Token 管理**。
+- 申请并获取 Token。
+
+:::info
+如何申请 SDK Token，详情参考 [SDK Token 管理](../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md)页面
+:::
+ 
+2. 在请求头中携带 Token
+
+在调用 MCP 接口时，于 HTTP 请求头中添加 `authorization` 字段，格式如下：
+
+```http
+authorization: Bearer <你的 SDK Token>
+```
+
+示例：
+
+```http
+GET /api/mcp HTTP/1.1
+Host: cloudpss.net
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+:::warning
+Token 具有访问权限，请妥善保管，避免泄露。
+:::
+
+</TabItem>
+
 </Tabs>
+
+## 工作流程
+
+MCP 配置成功后，打开 **SimStudio** 界面，点击右下角聊天图标，完成客户端 RPC 在 MCP 服务器上的连接。在聊天界面，可以复制当前连接的 connection ID。
+
+![复制当前连接的 ID](copy-id.png)
+
+**CloudPSS MCP** 连接管理工具：
+- **`list_connections`** — 列出当前可用的 RPC 客户端连接。
+- **`use_connection`** — 切换到指定的连接 ID，后续操作均在该连接对应的 **CloudPSS** 项目上下文中执行。
+
+**工作流：**
+
+1. 如需确认可用连接，调用 `list_connections`。
+2. 使用 `use_connection` 切换到目标连接（如果当前连接已正确则跳过）。
+3. 后续所有 **CloudPSS** 操作直接调用对应工具。
 
 ##  常见问题
 
@@ -156,9 +200,24 @@ opencode mcp auth cloudpss-mcp
 
 :   请参考本文档[身份认证](#身份认证)，使用 **SDK Token** 方式手动在请求头中完成认证。
 
+Codex 中的 bearer_token_env_var 参数是什么？
+:   Codex 中的 bearer_token_env_var 参数不是 Token 内容，而是对应的环境变量名称。如何设置系统环境变量如下
+    1. Windows PowerShell：
+    ```bash title="临时配置"
+    $env:CLOUDPSS_TOKEN="xxxx"
+    ```
+    ```bash title="永久配置"
+    setx CLOUDPSS_TOKEN "xxxx"
+    ```
+    2. Linux/macOS：
+    ```bash
+    export CLOUDPSS_TOKEN="xxxx"
+    ```
+
 
 ## 相关链接
 
-- [OpenCode 配置](https://opencode.ai/config.json)
+- [OpenCode 配置](https://opencode.ai/docs/zh-cn/mcp-servers/)
 - [Claude MCP 接入](https://code.claude.com/docs/zh-CN/mcp)
+- [Codex 配置](https://mintlify.wiki/openai/codex/configuration/mcp-servers)
 
