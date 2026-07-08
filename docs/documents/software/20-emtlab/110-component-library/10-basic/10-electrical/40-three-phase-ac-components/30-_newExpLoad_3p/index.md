@@ -3,7 +3,7 @@ title: "静态负载"
 description: "该元件用以建模指数型三相静态负载（单线图），其基本表达式如下。"
 tags:
 - emtlab
-- component
+- components
 ---
 
 # 静态负载
