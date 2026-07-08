@@ -90,7 +90,7 @@ jobs:
 
     environment:
       name: website
-      url: https://kb.cloudpss.net/
+      url: https://${{ steps.get_version.outputs.VERSION }}.kb.cloudpss.net/
 
     steps:
       - name: Download Release Artifact
