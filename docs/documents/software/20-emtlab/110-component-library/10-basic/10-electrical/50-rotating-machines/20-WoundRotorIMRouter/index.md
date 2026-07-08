@@ -184,6 +184,8 @@ ConstGMat为电机仿真数值模式切换参数，控制电导矩阵的更新�
 ### 2. （定导纳矩阵）算例
 [**双馈风机01型-平均模型-标准模型-v1**](cloudpss:/model/open-cloudpss/WTG_DFIG_01-avm-std-v1b3)  
 
+### 3. （外部控制端口）算例
+[**双馈电机双 PWM 平均化控制**](https://cloudpss.net/model/zzx18193725965/DFIG_AVM)  
 
 ## 常见问题
 
