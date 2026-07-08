@@ -57,9 +57,6 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-      - name: Get the version
-        id: get_version
-        run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Install
         uses: wyvox/action-setup-pnpm@v3
       - id: Optimize
@@ -80,11 +77,32 @@ jobs:
           prerelease: ${{ contains(github.event.ref, '-') }}
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Release Artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: public-docs
+          path: dist.tar.xz
+          compression-level: 0
+
+  deploy-public:
+    runs-on: ubuntu-latest
+    environment:
+      name: website
+      url: https://kb.cloudpss.net/
+
+    steps:
+      - name: Download Release Artifact
+        uses: actions/download-artifact@v8
+        with:
+          name: public-docs
+      - name: Get the version
+        id: get_version
+        run: echo VERSION=$(echo $GITHUB_REF | cut -d / -f 3 | sed -e 's/\./_/g') >> $GITHUB_OUTPUT
       - name: Pre-deploy
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ vars.DC_HOST }}
-          port: ${{ vars.DC_PORT }}
+          port: ${{ secrets.DC_PORT }}
           username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           script: rm -f /root/docs/dist.tar.xz
@@ -92,7 +110,7 @@ jobs:
         uses: appleboy/scp-action@v1
         with:
           host: ${{ vars.DC_HOST }}
-          port: ${{ vars.DC_PORT }}
+          port: ${{ secrets.DC_PORT }}
           username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           source: ./dist.tar.xz
@@ -101,7 +119,7 @@ jobs:
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ vars.DC_HOST }}
-          port: ${{ vars.DC_PORT }}
+          port: ${{ secrets.DC_PORT }}
           username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           script: |
@@ -118,7 +136,7 @@ jobs:
         if: ${{ !contains(steps.get_version.outputs.VERSION, '-') }}
         with:
           host: ${{ vars.DC_HOST }}
-          port: ${{ vars.DC_PORT }}
+          port: ${{ secrets.DC_PORT }}
           username: ${{ vars.DC_USER }}
           key: ${{ secrets.DC_KEY }}
           script: |
