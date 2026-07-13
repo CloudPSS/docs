@@ -53,7 +53,7 @@ import TabItem from '@theme/TabItem';
 
 **添加 MCP 服务器**
 
- 在 Claude 命令行中执行以下命令：
+  在 Claude 命令行中执行以下命令：
 
 ```bash
 claude mcp add-json cloudpss-mcp '{ "type": "http", "url": "https://cloudpss.net/api/mcp" }'
@@ -61,7 +61,7 @@ claude mcp add-json cloudpss-mcp '{ "type": "http", "url": "https://cloudpss.net
 
 **查看与认证**
 
-进入 Claude 控制台，使用 `/mcp` 命令查看已添加的 MCP 服务器。选择 `cloudpss-mcp` 服务器，点击 `authenticate` 选项完成认证。
+  进入 Claude 控制台，使用 `/mcp` 命令查看已添加的 MCP 服务器。选择 `cloudpss-mcp` 服务器，点击 `authenticate` 选项完成认证。
 
 </TabItem>
 
@@ -69,9 +69,9 @@ claude mcp add-json cloudpss-mcp '{ "type": "http", "url": "https://cloudpss.net
 
 **配置文件**
 
-在 OpenCode 配置文件的 `mcp` 字段下定义 MCP 服务器。为每个 MCP 指定一个唯一名称，后续可在提示词中通过该名称引用。
+  在 OpenCode 配置文件（opencode.json/opencode.jsonc）的 `mcp` 字段下定义 MCP 服务器。为每个 MCP 指定一个唯一名称，后续可在提示词中通过该名称引用。
 
-```json title="opencode.json"
+```json
 {
   "$schema": "https://opencode.ai/config.json",
   "mcp": {
@@ -86,11 +86,17 @@ claude mcp add-json cloudpss-mcp '{ "type": "http", "url": "https://cloudpss.net
 
 **触发认证**
 
-如果服务器需要身份验证，OpenCode 会在首次使用时提示进行认证。也可以使用以下命令手动触发：
+  如果服务器需要身份验证，OpenCode 会在首次使用时提示进行认证。也可以使用以下命令手动触发：
 
 ```bash
 opencode mcp auth cloudpss-mcp
 ```
+
+![OpenCode 认证](opencode-authorization.png)
+
+  进入授权页面，点击**授权并继续**
+
+![授权并继续](cloudpss-mcp-authorization.png)
 
 </TabItem>
 
@@ -109,34 +115,66 @@ opencode mcp auth cloudpss-mcp
 .codex/config.toml
 ```
 
-在配置文件中添加 CloudPSS MCP 服务：
+在 Codex 配置文件中添加 **CloudPSS MCP** 服务：
 
 ```bash
 [mcp_servers.cloudpss-mcp]
 url = "https://cloudpss.net/api/mcp"
-enabled = true
 ```
 
-**使用命令添加 MCP 服务器**
+**OAuth 认证**
 
-可以通过 Codex CLI 命令完成配置：
-```bash
-codex mcp add cloudpss-mcp \
-  --url https://cloudpss.net/api/mcp
-```
-查看当前已配置的 MCP 服务
-```bash
-codex mcp list
-```
-查看指定 MCP 服务配置：
+**CloudPSS MCP**服务器支持 OAuth 认证。在 Codex 命令行中执行以下命令完成登录授权
 
 ```bash
-codex mcp get cloudpss-mcp
+codex mcp login cloudpss-mcp
 ```
+
+![Codex 认证](codex-authorization.png)
+
+
+
+进入授权页面，点击**授权并继续**
+
+![授权并继续](cloudpss-mcp-authorization.png)
 
 </TabItem>
 
-<TabItem value="case4" label="不支持 OpenAuth 接入">
+<TabItem value="case4" label="WorkBuddy 中接入 MCP 服务">
+
+1. 点击**专家·技能·连接器**
+2. 点击**连接器**
+3. 点击**自定义连接器**
+
+![打开自定义连接器](workbuddy-mcp-open.png)
+
+配置 **CloudPSS MCP** 服务器：
+
+```json
+{
+  "mcpServers": {
+    "cloudpss-mcp": {
+      "type": "remote",
+      "url": "https://cloudpss.net/api/mcp",
+      "enabled": true
+    }
+  }
+}
+```
+
+![配置 CloudPSS MCP](workbuddy-mcp-conifg.png)
+
+首次配置需要认证：
+
+![WorkBuddy 认证](workbuddy-authorization.png)
+
+进入授权页面，点击**授权并继续**
+
+![授权并继续](cloudpss-mcp-authorization.png)
+
+</TabItem>
+
+<TabItem value="case5" label="不支持 OpenAuth 接入">
 
 **CloudPSS MCP** 服务支持通过身份认证流程完成登录授权。如果当前智能体不支持该认证流程，可使用 [SDK Token](../../software/50-user-center/40-general-account-settings/30-sdk-token-managemment/index.md) 方式进行认证。
 
@@ -171,6 +209,7 @@ Token 具有访问权限，请妥善保管，避免泄露。
 
 </TabItem>
 
+
 </Tabs>
 
 ## 工作流程
@@ -204,4 +243,4 @@ MCP 配置成功后，打开 **SimStudio** 界面，鼠标单击右下角按钮�
 - [OpenCode 配置](https://opencode.ai/docs/zh-cn/mcp-servers/)
 - [Claude 配置](https://code.claude.com/docs/zh-CN/mcp)
 - [Codex 配置](https://mintlify.wiki/openai/codex/configuration/mcp-servers)
-
+- [WorkBuddy 配置](https://www.codebuddy.cn/docs/ide/User-guide/MCP)
