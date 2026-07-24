@@ -351,6 +351,6 @@ CloudPSS 与 PSS/E 的支路潮流结果误差如下表所示。
 
 [^1]: [Leonardo Lima. IEEE PES Task Force on Benchmark Systems for Stability Controls[R]. Report on the 2-area,4-generator system, Version 5 - June 07, 2014](<IEEE PES Task Force on Benchmark Systems for Stability Controls.pdf>)
 
-<!-- import DocCardList from '@theme/DocCardList';
+<!-- import DocExpandList from '@site/src/components/DocExpandList';
 
-<DocCardList /> -->
+<DocExpandList /> -->

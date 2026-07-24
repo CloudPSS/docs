@@ -1,15 +1,218 @@
 .doc-expand-list {
-  position: absolute;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  height: calc(100% - 64px - 276px);
-  padding: 0 12rem;
-  overflow-y: auto;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 1.5rem 0 3rem;
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
   box-sizing: border-box;
-  z-index: 2;
-  background-color: var(--ifm-color-content-inverse);
-  padding-bottom: 1.5rem;
+  background-color: transparent;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  gap: 2rem;
+  min-width: 480px;
+}
+
+.content-body {
+  flex: 1;
+  min-width: 480px;
+  overflow-x: hidden;
+}
+
+.anchor-nav {
+  width: 220px;
+  position: sticky;
+  top: calc(var(--ifm-navbar-height, 64px) + 5.5rem);
+  align-self: flex-start;
+  max-height: calc(100vh - var(--ifm-navbar-height, 64px) - 2rem);
+  overflow-y: auto;
+  background-color: var(--ifm-code-background);
+  border: none;
+  padding: 0.75rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.2s ease;
+  z-index: 10;
+}
+
+html[data-theme='dark'] .anchor-nav {
+  background-color: rgb(50 50 52);
+}
+
+.anchor-nav:hover {
+  scrollbar-color: var(--ifm-color-emphasis-300) transparent;
+}
+
+.anchor-nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.anchor-nav::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 3px;
+}
+
+.anchor-nav:hover::-webkit-scrollbar-thumb {
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 4rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  transform: translateX(calc(110px + 1rem));
+}
+
+.no-anchor .nav-tabs {
+  transform: none;
+}
+
+.nav-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 2.25rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+  border-radius: 2rem;
+}
+
+.nav-tab:hover:not(:disabled) {
+  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.nav-tab.active {
+  border-color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.nav-tab.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-tab-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.anchor-title {
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0 0.75rem 0.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  color: var(--ifm-color-emphasis-800);
+}
+
+.toc-link {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  padding-left: calc(0.75rem - 2px);
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 1px solid var(--ifm-toc-border-color);
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.toc-link:hover {
+  color: var(--ifm-color-primary-darker);
+}
+
+.toc-link.active {
+  color: var(--ifm-color-primary);
+  background-color: transparent;
+  border-left-color: var(--ifm-color-emphasis-300);
+}
+
+.anchor-group {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+  padding: 0.35rem 0.75rem 0.15rem;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.anchor-group:hover {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.anchor-group.active {
+  color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+}
+
+.anchor-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  color: var(--ifm-font-color-base);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-left: 3px solid transparent;
+  line-height: 1.4;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.anchor-item:hover {
+  color: var(--ifm-color-primary-darker);
+  background-color: var(--ifm-color-emphasis-100);
+}
+
+.anchor-item.active {
+  color: var(--ifm-color-primary);
+  background-color: var(--ifm-color-primary-lightest);
+  border-left: 3px solid var(--ifm-color-primary);
 }
 
 .controls {
@@ -268,12 +471,35 @@
 
 /* 区域标题 */
 .section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--ifm-color-emphasis-800);
   margin-bottom: 1.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+}
+
+.section-title-text {
+  flex-shrink: 0;
+}
+
+.section-divider {
+  flex: 1;
+  height: 1px;
+  min-width: 2rem;
+  background-color: var(--ifm-color-emphasis-300);
+}
+
+.section-count {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--ifm-color-emphasis-600);
+  background-color: var(--ifm-color-emphasis-100);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
 }
 
 /* 层级区域 */
@@ -291,10 +517,17 @@
 /* 文档卡片网格 */
 .doc-card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, 400px);
+  justify-content: left;
+  gap: 2.5rem;
   margin-top: 1rem;
-  padding: 0 clamp(1rem, 5vw, 3rem);
+  overflow-x: hidden;
+  padding: 2rem;
+}
+
+/* 每个卡片固定 400x280，不随分辨率变化 */
+.doc-card-grid > div {
+  width: 400px;
 }
 
 /* 文档卡片 */
@@ -415,7 +648,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
   gap: 1rem;
-  padding: 0 clamp(0.5rem, 3vw, 2rem);
+  overflow-x: hidden;
 }
 
 .doc-card-group .doc-card {
@@ -435,7 +668,7 @@
   }
 
   .doc-expand-list {
-    padding: 0 4rem;
+    padding: 1rem;
   }
 
   .controls {
@@ -447,11 +680,6 @@
     align-items: flex-start;
   }
 
-  .doc-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 0;
-  }
-
   .doc-card-group-items {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
@@ -460,7 +688,7 @@
 
 @media screen and (max-width: 480px) {
   .doc-expand-list {
-    padding: 0 2rem;
+    padding: 0.75rem;
   }
 
   .controls {
@@ -470,11 +698,6 @@
 
   .doc-card-cover {
     height: 100px;
-  }
-
-  .doc-card-grid {
-    grid-template-columns: 1fr;
-    padding: 0;
   }
 
   .doc-card-group-items {
@@ -488,29 +711,17 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1599px) {
-  .doc-card-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .doc-card-group-items {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media screen and (min-width: 1600px) {
-  .doc-card-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
   .doc-card-group-items {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1199px) {
-  .doc-card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   .doc-card-group-items {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -518,7 +729,7 @@
 
 @media screen and (max-width: 480px) {
   .doc-expand-list {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 
   .search-input {
@@ -563,7 +774,7 @@
 
 @media (max-width: 480px) {
   .doc-expand-list {
-    padding: 0.5rem;
+    padding: 0.75rem;
   }
 
   .controls {
@@ -581,13 +792,20 @@
   }
 }
 
-/* 移动端特殊处理 - 每行只放置一个卡片 */
-@media screen and (max-width: 967px) {
+/* 移动端特殊处理 - 小屏幕隐藏侧边目录 */
+@media screen and (max-width: 996px) {
   .doc-expand-list {
-    height: calc(100% - 64px - 100px);
+    width: 100%;
+    padding: 1rem;
+    gap: 0;
   }
-  .doc-card-grid {
-    grid-template-columns: 1fr;
+
+  .main-content {
+    margin-right: 0;
+  }
+
+  .anchor-nav {
+    display: none;
   }
 
   .doc-card-group-items {

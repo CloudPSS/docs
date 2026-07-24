@@ -1,0 +1,210 @@
+.minimal-card-link {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.minimal-card {
+  position: relative;
+  background: var(--ifm-background-color);
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  height: 280px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+}
+
+.minimal-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+html[data-theme='dark'] .minimal-card {
+  border-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+html[data-theme='dark'] .minimal-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65);
+}
+
+.minimal-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  transition: background 0.3s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.minimal-card:hover::after {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme='dark'] .minimal-card:hover::after {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.cover-wrapper {
+  width: 100%;
+  height: calc(100% - 80px);
+  overflow: hidden;
+  position: relative;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    filter 0.3s ease;
+}
+
+html[data-theme='dark'] .cover.dark-invert {
+  filter: invert(0.9) hue-rotate(180deg);
+}
+
+.minimal-card:hover .cover {
+  transform: scale(1.05);
+  filter: brightness(0.9) blur(4px);
+}
+
+html[data-theme='dark'] .minimal-card:hover .cover.dark-invert {
+  filter: brightness(0.9) blur(4px) invert(1) hue-rotate(180deg);
+}
+
+.arrow-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  transform: scale(0) rotate(-45deg);
+  transition: all 0.3s ease;
+}
+
+.minimal-card:hover .arrow-wrapper {
+  transform: scale(1) rotate(0deg);
+}
+
+.arrow-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--ifm-color-primary);
+  color: var(--ifm-color-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arrow-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 8px;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.05), transparent);
+}
+
+html[data-theme='dark'] .content {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ifm-font-color-base);
+  margin-bottom: 8px;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.minimal-card:hover .title {
+  transform: translateY(0);
+}
+
+.description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ifm-color-emphasis-700);
+  transform: translateY(20px);
+  opacity: 0;
+  transition: all 0.3s ease 0.1s;
+  /* text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4); */
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+html[data-theme='dark'] .description {
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.minimal-card:hover .description {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+  .description {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .arrow-wrapper {
+    top: 12px;
+    right: 12px;
+  }
+
+  .arrow-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .arrow-button svg {
+    width: 15px;
+    height: 15px;
+  }
+}

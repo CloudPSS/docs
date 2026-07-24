@@ -8,9 +8,9 @@ tags:
 
 ---
 
-<!-- import DocCardList from '@theme/DocCardList';
+<!-- import DocExpandList from '@site/src/components/DocExpandList';
 
-<DocCardList /> -->
+<DocExpandList /> -->
 
 ## 案例介绍
 频率稳定 CSEE-FS 算例是由中国电机工程学会发布的新型电力系统标准算例[^CSEE-FS], CSEE-FS 算例以 500kV 交流和 ±500kV 直流为主网架，三相交流母线数为 99，交流线路数为 31，直流线路数为 3。针对传统频率稳定问题，构建了新能源装机及出力占比均在 50% 以上的高频、低频场景，可用于分析故障强度、新能源出力及控制策略等对频率偏差最大值及其出现时间、稳态频率偏差的影响。

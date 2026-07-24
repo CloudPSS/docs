@@ -53,6 +53,9 @@ importers:
       '@docusaurus/core':
         specifier: 3.9.2
         version: 3.9.2(@mdx-js/react@3.1.1)(debug@4.4.3)(react-dom@19.2.6)(react@19.2.6)(typescript@5.9.3)
+      '@docusaurus/plugin-content-docs':
+        specifier: 3.9.2
+        version: 3.9.2(@mdx-js/react@3.1.1)(debug@4.4.3)(react-dom@19.2.6)(react@19.2.6)(typescript@5.9.3)
       '@docusaurus/plugin-pwa':
         specifier: 3.9.2
         version: 3.9.2(@docusaurus/plugin-content-docs@3.9.2)(@mdx-js/react@3.1.1)(react-dom@19.2.6)(react@19.2.6)(typescript@5.9.3)
@@ -14364,7 +14367,7 @@ snapshots:
   '@types/react-router@5.1.20':
     dependencies:
       '@types/history': 4.7.11
-      '@types/react': 19.2.9
+      '@types/react': 19.2.15
 
   '@types/react@19.2.15':
     dependencies:

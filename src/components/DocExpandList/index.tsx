@@ -1,130 +1,198 @@
-import React, { useState, useMemo, useEffect } from 'react';
-import { useCurrentSidebarSiblings, useDocById } from '@docusaurus/plugin-content-docs/client';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
+import clsx from 'clsx';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { useCurrentSidebarSiblings, useDocById, useDocsSidebar, useDocsVersion } from '@docusaurus/plugin-content-docs/client';
 import styles from './styles.module.css';
-import type { PropSidebarItem, PropSidebarItemCategory } from '@docusaurus/plugin-content-docs';
-import Link from '@docusaurus/Link';
+import type { PropSidebarItem, PropSidebarItemLink } from '@docusaurus/plugin-content-docs';
 import coverImageUrl from './cover.webp';
 import { TEMPLATE_PIC_DICT } from './template-record';
-/** 提取当前层级的标签（仅直接子类别） */
-function extractCurrentLevelTags(items: PropSidebarItem[]): Array<{ label: string; index: number }> {
-    const tags: Array<{ label: string; index: number }> = [];
+import MinimalCard from '../MinimalCard';
+import emtLabIcon from './assets/icons/emt-lab.svg?url';
+import dsLabIcon from './assets/icons/dslab.svg?url';
+import iesIcon from './assets/icons/ies.svg?url';
+import appStudioIcon from './assets/icons/appstudio.svg?url';
+import allIcon from './assets/icons/all.svg?url';
 
-    for (const item of items) {
-        if (item.type === 'category') {
-            // 只添加当前层级的直接子类别，不包含子层级的标签
-            tags.push({ label: item.label, index: items.indexOf(item) });
-        }
-    }
-
-    return tags;
+/**
+ * 导航栏项
+ * @param value 导航栏项值
+ * @param label 导航栏项显示文本
+ * @param disabled 是否禁用
+ * @param icon 导航栏项图标
+ */
+interface NavItem {
+    /**
+     * 导航栏项值
+     */
+    value: string;
+    /**
+     * 导航栏项显示文本
+     */
+    label: string;
+    /**
+     * 是否禁用
+     */
+    disabled?: boolean;
+    /**
+     * 导航栏项图标
+     */
+    icon?: string;
 }
 
-/** 获取最底层的文档项 */
-function getBottomLevelItems(items: PropSidebarItem[], breadcrumbPath: string[] = []): Array<PropSidebarItem & { breadcrumbPath: string[] }> {
-    const bottomItems: Array<PropSidebarItem & { breadcrumbPath: string[] }> = [];
-    const selfId = 'cases-old/index';
+const navs: NavItem[] = [
+    {
+        value: '*',
+        label: '所有',
+        icon: allIcon,
+    },
+    {
+        value: 'emtlab',
+        label: 'EMTLab',
+        icon: emtLabIcon,
+    },
+    {
+        value: 'ieslab',
+        label: 'IESLab',
+        icon: iesIcon,
+    },
+    {
+        value: 'dslab',
+        label: 'DSLab',
+        icon: dsLabIcon,
+    },
+    {
+        value: 'xstudio',
+        label: 'XStudio',
+        icon: appStudioIcon,
+    },
+];
+
+/** 归组后的单个卡片项，附带全局锚点索引 */
+type GroupItem = PropSidebarItemLink & { breadcrumbPath: string[]; anchorIndex: number };
+
+/** 按 breadcrumbPath 归组后的卡片分组 */
+interface CardGroup {
+    /** 分组唯一键（breadcrumbPath 拼接而成） */
+    key: string;
+    /** 该分组对应的面包屑路径 */
+    breadcrumbPath: string[];
+    /** 该分组下的卡片项 */
+    items: GroupItem[];
+}
+
+/** 右侧目录树节点 */
+interface TocTreeNode {
+    /** 节点显示文本 */
+    label: string;
+    /** 对应分组 section 的锚点 id */
+    id?: string;
+    /** 子节点 */
+    children: TocTreeNode[];
+}
+
+/** 查找目录树中第一个带有锚点 id 的后代节点 */
+function findFirstDescendantId(node: TocTreeNode): string | undefined {
+    for (const child of node.children) {
+        if (child.id) return child.id;
+        const id = findFirstDescendantId(child);
+        if (id) return id;
+    }
+    return undefined;
+}
+
+/** 根据 docId 生成面包屑 docId 路径（逐级前缀并补回 /index） */
+function getBreadcrumbDocIds(docId: string): string[] {
+    const prefix = docId.replace(/\/index$/, '');
+    const segments = prefix.split('/').filter(Boolean);
+    const r = segments.map((_, index) => `${segments.slice(0, index + 1).join('/')}/index`);
+    r.pop();
+    r.shift();
+
+    if (r.some((item) => item.includes('opencloudpss-cases')) && r.length > 3) {
+        r.pop();
+    }
+    return r;
+}
+
+/** 获取最底层的文档项，breadcrumbDocIds 由每个叶子项的 docId 派生，不再由顶层传入 */
+function getBottomLevelItems(items: PropSidebarItem[]): Array<PropSidebarItem & { breadcrumbDocIds: string[] }> {
+    const bottomItems: Array<PropSidebarItem & { breadcrumbDocIds: string[] }> = [];
+    const selfIds = ['cases-old/index', 'cases/index', 'casehub/index'];
 
     /**
-     * 递归遍历侧边栏项，找到所有包含最底层文档的类别
+     * 递归遍历文档项，获取最底层的文档项
      */
-    function traverse(items: PropSidebarItem[], breadcrumbPath: string[] = []): void {
+    function traverse(items: PropSidebarItem[]): void {
         for (const item of items) {
             if (item.type === 'category') {
                 if (item.items && item.items.length > 0) {
-                    // 检查子项是否都是链接类型（最底层）
                     const hasOnlyLinks = item.items.every((subItem) => subItem.type === 'link');
                     if (hasOnlyLinks) {
-                        // 这是一个包含最底层文档的类别
-                        bottomItems.push(...item.items.map((subItem) => ({ ...subItem, breadcrumbPath: [...breadcrumbPath, item.label] })));
+                        bottomItems.push(
+                            ...item.items.map((subItem) => ({
+                                ...subItem,
+                                breadcrumbDocIds: (subItem as PropSidebarItemLink).docId ? getBreadcrumbDocIds((subItem as PropSidebarItemLink).docId!) : [],
+                            })),
+                        );
                     } else {
-                        // 继续向下遍历
-                        traverse(item.items, [...breadcrumbPath, item.label]);
+                        traverse(item.items);
                     }
                 }
-            } else if (item.type === 'link' && item.docId !== selfId) {
-                bottomItems.push({ ...item, breadcrumbPath: [...breadcrumbPath] });
+            } else if (item.type === 'link' && !selfIds.includes(item.docId!)) {
+                bottomItems.push({ ...item, breadcrumbDocIds: item.docId ? getBreadcrumbDocIds(item.docId) : [] });
             }
         }
     }
-    traverse(items, breadcrumbPath);
+    traverse(items);
     return bottomItems;
 }
 
-/** 获取项目完整路径 */
-function getItemPath(items: PropSidebarItem[], path: string[]): PropSidebarItem[] {
-    if (path.length === 0) return items;
-
-    let currentItems = items;
-
-    // 遍历路径中的每一层
-    for (const pathItem of path) {
-        let found = false;
-
-        for (const item of currentItems) {
-            if (item.type === 'category' && item.label === pathItem) {
-                currentItems = item.items || [];
-                found = true;
-                break;
+/** 批量解析一组 docId 对应的 title（复用 useDocsVersion，与逐个 useDocById 等价） */
+function useBreadcrumbTitleMap(docIds: string[]): Map<string, string> {
+    const version = useDocsVersion();
+    return useMemo(() => {
+        const map = new Map<string, string>();
+        for (const id of docIds) {
+            const doc = version.docs[id];
+            if (doc) {
+                map.set(id, doc.title);
             }
         }
-
-        if (!found) {
-            return [];
-        }
-    }
-
-    return currentItems;
+        return map;
+    }, [version, docIds]);
 }
 
 /** 文档卡片组件 */
-function DocCardListItem({ item, breadcrumbPath = [] }: { item: PropSidebarItem; breadcrumbPath?: string[] }): React.JSX.Element {
+function DocCardListItem({ item, id }: { item: PropSidebarItem; id?: string }): React.JSX.Element {
     if (item.type === 'link') {
-        // 获取文档路径信息
         const doc = useDocById(item.docId);
         const itemCoverImage = TEMPLATE_PIC_DICT[item.label] ?? coverImageUrl;
 
         return (
-            <div className={styles['doc-card']}>
-                <Link to={item.href || '#'} className={styles['doc-card-link']}>
-                    <div className={styles['doc-card-cover']}>
-                        <img
-                            src={itemCoverImage}
-                            alt={item.label}
-                            className={styles['doc-card-cover-img']}
-                            onError={(e) => {
-                                // 如果封面图片加载失败，使用默认图标
-                                e.currentTarget.style.display = 'none';
-                            }}
-                        />
-                    </div>
-                    <div className={styles['doc-card-header']}>
-                        <h3 className={styles['doc-card-title']}>📄️ {item.label}</h3>
-                    </div>
-                    <div className={styles['doc-card-body']}>
-                        <div className={styles['doc-card-description']}>{doc?.description}</div>
-                        {breadcrumbPath.length > 0 && (
-                            <div className={styles['doc-card-breadcrumb']}>
-                                <span className={styles['breadcrumb-label']}>所属：</span>
-                                <span className={styles['breadcrumb-path']}>{breadcrumbPath.join(' > ')}</span>
-                            </div>
-                        )}
-                    </div>
-                </Link>
+            <div id={id}>
+                <MinimalCard
+                    title={item.label}
+                    description={doc?.description}
+                    coverUrl={itemCoverImage}
+                    href={item.href || '#'}
+                    coverAlt={item.label}
+                    isDarkInvert={itemCoverImage !== coverImageUrl}
+                    hideOnError
+                />
             </div>
         );
     }
 
     if (item.type === 'category' && item.items?.every((subItem) => subItem.type === 'link')) {
-        // 最底层类别，显示为卡片组
         return (
-            <div className={styles['doc-card-group']}>
+            <div className={styles['doc-card-group']} id={id}>
                 <div className={styles['doc-card-group-header']}>
                     <h3 className={styles['doc-card-group-title']}>{item.label}</h3>
                     {item.description && <p className={styles['doc-card-group-description']}>{item.description}</p>}
                 </div>
                 <div className={styles['doc-card-group-items']}>
                     {item.items.map((subItem, index) => (
-                        <DocCardListItem key={index} item={subItem} breadcrumbPath={[...breadcrumbPath, item.label]} />
+                        <DocCardListItem key={index} item={subItem} />
                     ))}
                 </div>
             </div>
@@ -134,278 +202,279 @@ function DocCardListItem({ item, breadcrumbPath = [] }: { item: PropSidebarItem;
     return <></>;
 }
 
-/** 标签过滤组件 */
-function TagFilter({
-    tags,
-    selectedTag,
-    onTagSelect,
-    showAllButton = true,
-}: {
-    tags: Array<{ label: string; index: number }>;
-    selectedTag: string;
-    onTagSelect: (tag?: { label: string; index: number }) => void;
-    showAllButton?: boolean;
-}) {
-    return (
-        <div className={styles['tag-filter']}>
-            <span className={styles['filter-label']}>按类别过滤：</span>
-            {showAllButton && (
-                <button className={`${styles['tag-button']} ${!selectedTag ? styles['active'] : ''}`} onClick={() => onTagSelect(undefined)}>
-                    全部
-                </button>
-            )}
-            {tags.map((tag) => (
-                <button
-                    key={tag.index}
-                    className={`${styles['tag-button']} ${selectedTag === tag.index.toString() ? styles['active'] : ''}`}
-                    onClick={() => onTagSelect(tag)}
-                >
-                    {tag.label}
-                </button>
-            ))}
-        </div>
-    );
-}
-
-/** 搜索框组件 */
-function SearchBox({ searchTerm, onSearchChange }: { searchTerm: string; onSearchChange: (term: string) => void }) {
-    return (
-        <div className={styles['search-container']}>
-            <input
-                type="text"
-                placeholder="搜索案例..."
-                value={searchTerm}
-                onChange={(e) => onSearchChange(e.target.value)}
-                className={styles['search-input']}
-            />
-            {searchTerm && (
-                <button className={styles['clear-button']} onClick={() => onSearchChange('')}>
-                    ×
-                </button>
-            )}
-        </div>
-    );
-}
-
-/** 过滤侧边栏扁平项 */
-function filterSidebarFlatItems(
-    sidebar: PropSidebarItem[],
-    selectedPathIndex: number[],
-    searchTerm: string,
-): Array<PropSidebarItem & { breadcrumbPath: string[] }> {
-    let currentItems = sidebar;
-    const breadcrumbPath: string[] = [];
-    // 遍历路径中的每一层
-    for (const index of selectedPathIndex) {
-        if (index >= 0 && index < currentItems.length) {
-            const t = currentItems[index] as PropSidebarItemCategory;
-            currentItems = t.items || [];
-            if (t.label) {
-                breadcrumbPath.push(t.label);
-            }
-        } else {
-            return [];
-        }
-    }
-    const bottomLevelItems = getBottomLevelItems(currentItems, breadcrumbPath);
-    return bottomLevelItems.filter((item) => item.type === 'link' && item.label.includes(searchTerm));
-}
-
 /** 主组件 */
 export default function DocExpandList(): React.JSX.Element {
     const sidebar = useCurrentSidebarSiblings();
-    const [searchTerm, setSearchTerm] = useState('');
-    const [selectedTag, setSelectedTag] = useState('');
-    const [currentLevel, setCurrentLevel] = useState(0);
-    const [selectedPath, setSelectedPath] = useState<string[]>([]);
-    const [selectedPathIndex, setSelectedPathIndex] = useState<number[]>([]);
+    const docsSidebar = useDocsSidebar();
+    const isFallback = sidebar === docsSidebar?.items;
+    const history = useHistory();
+    const location = useLocation();
 
-    // 获取当前层级的显示项
-    const currentLevelItems = useMemo(() => {
-        if (currentLevel === 0) {
-            // 第零层：显示所有顶级项
-            return sidebar;
-        } else {
-            // 其他层：基于选中的路径获取子项
-            return getItemPath(sidebar, selectedPath);
+    /** 当前激活的顶部导航 */
+    const activeNav = useMemo(() => {
+        const { pathname } = location;
+        if (pathname === '/casehub/' || pathname === '/casehub') {
+            return '*';
         }
-    }, [sidebar, currentLevel, selectedPath]);
+        const matched = navs.find((nav) => nav.value !== '*' && pathname.startsWith(`/casehub/${nav.value}/`));
+        return matched?.value ?? '*';
+    }, [location]);
 
-    // 获取下一层级的相关标签
-    const getNextLevelTags = (currentItems: PropSidebarItem[], targetTag: string): Array<{ label: string; index: number }> => {
-        const tags: Array<{ label: string; index: number }> = [];
+    const isEmptySubSection = isFallback && activeNav !== '*';
 
-        // 在当前项中找到匹配的类别
-        for (const item of currentItems) {
-            if (item.type === 'category' && item.label === targetTag && item.items) {
-                // 找到匹配的类别，提取其子类别的标签
-                for (const subItem of item.items) {
-                    if (subItem.type === 'category') {
-                        tags.push({ label: subItem.label, index: item.items.indexOf(subItem) });
-                    }
-                }
-            }
-        }
+    const featuresRef = useRef<HTMLElement>(null);
 
-        return tags;
-    };
-
-    // 获取当前层级的标签（基于当前层级项）
-    const currentLevelTags = useMemo(() => {
-        if (currentLevel === 0) {
-            // 第零层：只显示直接子类别的标签
-            return extractCurrentLevelTags(currentLevelItems);
-        } else if (selectedTag && currentLevel === 1) {
-            // 第一层：显示与选中标签相关的下一层级标签
-            const parentItems = sidebar; // 第零层的所有项
-            return getNextLevelTags(parentItems, selectedTag);
-        } else {
-            // 其他层：显示当前层级项中的类别标签
-            return extractCurrentLevelTags(currentLevelItems);
-        }
-    }, [currentLevelItems, currentLevel, selectedTag, sidebar]);
-
-    // 过滤后的最底层项
     const filteredBottomItems = useMemo(() => {
-        return filterSidebarFlatItems(sidebar, selectedPathIndex, searchTerm);
-    }, [sidebar, selectedPathIndex, searchTerm]);
+        return getBottomLevelItems(sidebar).filter(
+            (item): item is PropSidebarItemLink & { breadcrumbDocIds: string[] } => item.type === 'link' && item.breadcrumbDocIds.length > 0,
+        );
+    }, [sidebar]);
 
-    // 处理标签选择
-    const handleTagSelect = (tag?: { label: string; index: number }) => {
-        if (!tag) {
-            // 取消选择，返回上一层
-            setSelectedTag('');
-            if (currentLevel > 0) {
-                setCurrentLevel(currentLevel - 1);
-                setSelectedPath(selectedPath.slice(0, -1));
-                setSelectedPathIndex(selectedPathIndex.slice(0, -1));
+    const allBreadcrumbDocIds = useMemo(() => {
+        return Array.from(new Set(filteredBottomItems.flatMap((item) => item.breadcrumbDocIds)));
+    }, [filteredBottomItems]);
+
+    const titleMap = useBreadcrumbTitleMap(allBreadcrumbDocIds);
+
+    const [activeAnchor, setActiveAnchor] = useState<string>('');
+
+    /** 按 breadcrumbPath（title 数组）归组，保持原始顺序，并保留全局锚点索引 */
+    const groupedItems = useMemo(() => {
+        const groups: CardGroup[] = [];
+        const groupMap = new Map<string, CardGroup>();
+        for (const [index, item] of filteredBottomItems.entries()) {
+            const breadcrumbPath = item.breadcrumbDocIds.map((docId) => titleMap.get(docId) ?? docId);
+            const key = breadcrumbPath.join(' / ');
+            let group = groupMap.get(key);
+            if (!group) {
+                group = { key, breadcrumbPath, items: [] };
+                groupMap.set(key, group);
+                groups.push(group);
             }
-        } else {
-            // 选择新标签，进入下一层
-            setSelectedTag(tag.label);
-            setCurrentLevel(currentLevel + 1);
-            setSelectedPath([...selectedPath, tag.label]);
-            setSelectedPathIndex([...selectedPathIndex, tag.index]);
+            group.items.push({ ...item, breadcrumbPath, anchorIndex: index });
         }
+        return groups;
+    }, [filteredBottomItems, titleMap]);
+
+    /** 根据 breadcrumbPath 构建右侧目录树，相同路径合并 */
+    const tocTree = useMemo((): TocTreeNode[] => {
+        const root: TocTreeNode[] = [];
+        for (const [groupIndex, group] of groupedItems.entries()) {
+            let current = root;
+            for (const [segmentIndex, segment] of group.breadcrumbPath.entries()) {
+                let node = current.find((n) => n.label === segment);
+                if (!node) {
+                    const isLast = segmentIndex === group.breadcrumbPath.length - 1;
+                    node = { label: segment, id: isLast ? `group-anchor-${groupIndex}` : undefined, children: [] };
+                    current.push(node);
+                }
+                current = node.children;
+            }
+        }
+        return root;
+    }, [groupedItems]);
+
+    // console.log(groupedItems);
+
+    /** 点击目录滚动到对应锚点 */
+    const scrollToAnchor = (id: string) => {
+        const element = document.querySelector(`#${CSS.escape(id)}`);
+        if (!element) return;
+        const navHeight = 80;
+        const top = element.getBoundingClientRect().top + window.scrollY - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
     };
 
-    // 重置过滤
-    const resetFilter = () => {
-        setSelectedTag('');
-        setCurrentLevel(0);
-        setSelectedPath([]);
-        setSelectedPathIndex([]);
-    };
+    /** 递归渲染目录树 */
+    function renderTocTree(nodes: TocTreeNode[], depth = 0): React.ReactNode {
+        return nodes.map((node, index) => (
+            <React.Fragment key={`${depth}-${index}`}>
+                <button
+                    type="button"
+                    className={`${styles['toc-link']} ${node.id && activeAnchor === node.id ? styles['active'] : ''}`}
+                    style={{ paddingLeft: `calc(${0.75 + depth * 0.75}rem - 2px)` }}
+                    onClick={() => {
+                        if (node.id) {
+                            scrollToAnchor(node.id);
+                        } else {
+                            const firstDescendantId = findFirstDescendantId(node);
+                            if (firstDescendantId) scrollToAnchor(firstDescendantId);
+                        }
+                    }}
+                    title={node.label}
+                >
+                    {node.label}
+                </button>
+                {node.children.length > 0 && renderTocTree(node.children, depth + 1)}
+            </React.Fragment>
+        ));
+    }
 
     useEffect(() => {
-        // 挂载时执行 …
+        if (tocTree.length === 0) return;
+
+        const sectionIds: string[] = [];
+        /** 递归收集所有分组 section 的锚点 id */
+        function collectSectionIds(nodes: TocTreeNode[]): void {
+            for (const node of nodes) {
+                if (node.id) {
+                    sectionIds.push(node.id);
+                }
+                collectSectionIds(node.children);
+            }
+        }
+        collectSectionIds(tocTree);
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visible: string[] = entries
+                    .filter((entry) => entry.isIntersecting)
+                    .map((entry) => entry.target.getAttribute('id'))
+                    .filter(Boolean) as string[];
+                if (visible.length > 0) {
+                    setActiveAnchor(visible[0]!);
+                }
+            },
+            { rootMargin: '-10% 0px -75% 0px', threshold: 0 },
+        );
+
+        for (const id of sectionIds) {
+            const el = document.querySelector(`#${CSS.escape(id)}`);
+            if (el) observer.observe(el);
+        }
+
+        return () => observer.disconnect();
+    }, [tocTree]);
+
+    useEffect(() => {
         const sidebarElement = document.querySelector('.theme-doc-sidebar-container');
         if (sidebarElement) {
-            //隐藏侧边栏
-            (sidebarElement as HTMLElement).style.setProperty('visibility', 'hidden');
+            (sidebarElement as HTMLElement).style.setProperty('display', 'none');
         }
         const breadcrumbsContainer = document.querySelector('.theme-doc-breadcrumbs');
         if (breadcrumbsContainer) {
-            //隐藏面包屑
-            (breadcrumbsContainer as HTMLElement).style.setProperty('visibility', 'hidden');
+            (breadcrumbsContainer as HTMLElement).style.setProperty('display', 'none');
         }
         const docFooter = document.querySelector('.theme-doc-footer');
         if (docFooter) {
-            //隐藏文档底部
             (docFooter as HTMLElement).style.setProperty('visibility', 'hidden');
         }
         const paginationNav = document.querySelector('.pagination-nav');
         if (paginationNav) {
-            //隐藏分页导航
             (paginationNav as HTMLElement).style.setProperty('visibility', 'hidden');
         }
         const header = document.querySelector('.theme-doc-markdown header');
         if (header) {
-            //隐藏文档头部
-            (header as HTMLElement).style.setProperty('visibility', 'hidden');
+            (header as HTMLElement).style.setProperty('display', 'none');
         }
 
+        // 为 docMainContainer main 元素添加 position: relative
+        const mainContainer = document.querySelector('main');
+        if (mainContainer && Array.from(mainContainer.classList).some((c) => c.startsWith('docMainContainer'))) {
+            mainContainer.style.setProperty('position', 'relative');
+            mainContainer.style.setProperty('max-width', '100%');
+            mainContainer.style.setProperty('overflow-x', 'clip');
+        }
+
+        // 解除上层 container 限制，让组件铺满 main wrapper
+        const container = mainContainer?.querySelector('.container') as HTMLElement | null;
+        const row = container?.querySelector('.row') as HTMLElement | null;
+        const cols = row?.querySelectorAll('.col');
+        const contentCol = cols?.[0] as HTMLElement | undefined;
+        const tocCol = row?.querySelector('.col--3') as HTMLElement | null;
+
+        container?.style.setProperty('max-width', 'none', 'important');
+        container?.style.setProperty('padding', '0', 'important');
+        container?.style.setProperty('background-color', 'var(--ifm-code-background)');
+        row?.style.setProperty('margin', '0', 'important');
+        contentCol?.style.setProperty('max-width', '100%', 'important');
+        contentCol?.style.setProperty('flex', '0 0 100%', 'important');
+        contentCol?.style.setProperty('padding', '0', 'important');
+        tocCol?.style.setProperty('display', 'none', 'important');
+
         return () => {
-            // 卸载时执行 —— 就是“注销前回调”
             if (sidebarElement) {
-                // 显示侧边栏
-                (sidebarElement as HTMLElement).style.setProperty('visibility', '');
+                (sidebarElement as HTMLElement).style.removeProperty('display');
             }
-            // 显示面包屑
             if (breadcrumbsContainer) {
-                (breadcrumbsContainer as HTMLElement).style.setProperty('visibility', '');
+                (breadcrumbsContainer as HTMLElement).style.removeProperty('display');
             }
-            // 显示文档底部
             if (docFooter) {
                 (docFooter as HTMLElement).style.setProperty('visibility', '');
             }
-            // 显示分页导航
             if (paginationNav) {
                 (paginationNav as HTMLElement).style.setProperty('visibility', '');
             }
-            // 显示文档头部
             if (header) {
                 (header as HTMLElement).style.setProperty('visibility', '');
             }
+            if (mainContainer && Array.from(mainContainer.classList).some((c) => c.startsWith('docMainContainer'))) {
+                mainContainer.style.removeProperty('position');
+                mainContainer.style.removeProperty('max-width');
+                mainContainer.style.removeProperty('overflow-x');
+            }
+            container?.style.removeProperty('max-width');
+            container?.style.removeProperty('padding');
+            container?.style.removeProperty('background-color');
+            row?.style.removeProperty('margin');
+            contentCol?.style.removeProperty('max-width');
+            contentCol?.style.removeProperty('flex');
+            contentCol?.style.removeProperty('padding');
+            tocCol?.style.removeProperty('display');
         };
     }, []);
 
     return (
-        <div className={styles['doc-expand-list']}>
-            <div className={styles['controls']}>
-                <SearchBox searchTerm={searchTerm} onSearchChange={setSearchTerm} />
-
-                {/* 显示当前路径 */}
-                <div className={styles['breadcrumb']}>
-                    <button onClick={resetFilter} className={styles['breadcrumb-home']}>
-                        全部
-                    </button>
-                    {selectedPath.length > 0 && (
-                        <>
-                            {selectedPath.map((path, index) => (
-                                <React.Fragment key={index}>
-                                    <span className={styles['breadcrumb-separator']}> &gt; </span>
-                                    <button
-                                        onClick={() => {
-                                            setCurrentLevel(index + 1);
-                                            setSelectedPath(selectedPath.slice(0, index + 1));
-                                            setSelectedTag(path);
-                                            setSelectedPathIndex(selectedPathIndex.slice(0, index + 1));
-                                        }}
-                                        className={styles['breadcrumb-item']}
-                                    >
-                                        {path}
-                                    </button>
-                                </React.Fragment>
+        <div className={clsx(styles['doc-expand-list'], (isEmptySubSection || tocTree.length === 0) && styles['no-anchor'])}>
+            <div className={styles['main-content']}>
+                <div className={styles['content-body']}>
+                    <nav className={styles['nav-tabs']}>
+                        {navs
+                            .filter((nav) => !nav.disabled)
+                            .map((nav) => (
+                                <button
+                                    key={nav.value}
+                                    type="button"
+                                    className={`${styles['nav-tab']} ${activeNav === nav.value ? styles['active'] : ''} ${nav.disabled ? styles['disabled'] : ''}`}
+                                    disabled={nav.disabled}
+                                    onClick={() => {
+                                        if (nav.disabled) return;
+                                        const path = nav.value === '*' ? '/casehub/' : `/casehub/${nav.value}/`;
+                                        history.push(path);
+                                    }}
+                                >
+                                    {nav.icon && <img src={nav.icon} alt="" className={styles['nav-tab-icon']} />}
+                                    <span>{nav.label}</span>
+                                </button>
                             ))}
-                            <button onClick={() => handleTagSelect()} className={styles['breadcrumb-clear']}>
-                                ✕
-                            </button>
-                        </>
-                    )}
+                    </nav>
+                    <section ref={featuresRef} className={styles['features']}>
+                        {isEmptySubSection || filteredBottomItems.length === 0 ? (
+                            <div className={styles['no-results']}>建设中，敬请期待</div>
+                        ) : (
+                            groupedItems.map((group, groupIndex) => (
+                                <div key={group.key} id={`group-anchor-${groupIndex}`} className={styles['hierarchy-section']}>
+                                    <h2 className={styles['section-title']}>
+                                        <span className={styles['section-title-text']}>{group.breadcrumbPath.join(' - ')}</span>
+                                        <span className={styles['section-divider']} />
+                                        <span className={styles['section-count']}>{group.items.length}</span>
+                                    </h2>
+                                    <div className={styles['doc-card-grid']}>
+                                        {group.items.map((item) => (
+                                            <DocCardListItem key={item.anchorIndex} item={item} id={`anchor-${item.anchorIndex}`} />
+                                        ))}
+                                    </div>
+                                </div>
+                            ))
+                        )}
+                    </section>
                 </div>
-
-                {currentLevelTags.length > 0 && (
-                    <TagFilter tags={currentLevelTags} selectedTag={selectedTag} onTagSelect={handleTagSelect} showAllButton={currentLevel === 0} />
+                {!isEmptySubSection && tocTree.length > 0 && (
+                    <aside className={styles['anchor-nav']}>
+                        <nav>{renderTocTree(tocTree)}</nav>
+                    </aside>
                 )}
             </div>
-
-            <section className={styles['features']}>
-                {filteredBottomItems.length === 0 ? (
-                    <div className={styles['no-results']}>没有找到匹配的文档</div>
-                ) : (
-                    <>
-                        {/* 显示所有匹配的文档卡片 */}
-                        {filteredBottomItems.length > 0 && (
-                            <div className={styles['doc-card-grid']}>
-                                {filteredBottomItems.map((item, index) => (
-                                    <DocCardListItem key={index} item={item} breadcrumbPath={item.breadcrumbPath} />
-                                ))}
-                            </div>
-                        )}
-                    </>
-                )}
-            </section>
         </div>
     );
 }

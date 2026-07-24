@@ -19,11 +19,11 @@ const TEMPLATE_NAME_RID = {
     '3 机 9 节点标准测试系统': 'model/CloudPSS/IEEE3',
     '10 机 39 节点标准测试系统': 'model/CloudPSS/IEEE39',
     单相背靠背变流器: 'model/CloudPSS/B2BModule',
-    '三相 H 桥变流器': 'model/CloudPSS/HBridgeModule',
+    '三相 H 桥变流器': 'model/CloudPSS/3HM',
     '双向 DC/DC 变流器': 'model/CloudPSS/HalfBridgeModule',
     '单相 H 桥变流器': 'model/CloudPSS/HBridgeModule',
-    '单相 H 桥变流器 (带变压器)': 'model/CloudPSS/HTModule',
-    '单相 H 桥变流器 (带电感)': 'model/CloudPSS/HLModule',
+    '单相 H 桥变流器(带变压器)': 'model/CloudPSS/HTModule',
+    '单相 H 桥变流器(带电感)': 'model/CloudPSS/HLM',
     多模块固态变压器: 'model/CloudPSS/NSSTs',
     中点钳位三电平半桥变流器: 'model/CloudPSS/NPCmodule',
     '储能详细化 / 平均化模型对比': 'model/CloudPSS/Bat_Averaged_Detailed',
@@ -43,7 +43,7 @@ const TEMPLATE_NAME_RID = {
     园区综合能源系统: 'model/CloudPSS/DemoCase',
     交直流混联系统: 'model/CloudPSS/ACDCHybridCase',
     '110kV变电站一、二次系统': 'model/CloudPSS/SubstationCase',
-    '10 机 39 节点标准系统安控策略案例': 'model/CloudPSS/ieee39-sc-demo',
+    '10 机 39 节点标准系统安控策略案例': 'model/CloudPSS/ieee39-ssc-demo',
     '单极（伪双极）端对端常直输电系统': 'model/open-cloudpss/HVDC_LCC_SP-fdm-std-v1b2',
     双极端对端常直输电系统: 'model/open-cloudpss/HVDC_LCC_BP-fdm-std-v1b2',
     特高压分层常规直流输电系统: 'model/open-cloudpss/HVDC_LCC_HI-fdm-std-v1b2',
@@ -57,12 +57,12 @@ const TEMPLATE_NAME_RID = {
     混合多端直流输电系统: 'model/open-cloudpss/HVDC_Hybrid_MT-fdm-std-v1b3',
     'MMC-标准封装模型': 'model/open-cloudpss/MMC-fdm-stdm-v1b2',
     'LCC-标准封装模型': 'model/open-cloudpss/LCC-fdm-stdm-v1b2',
-    '4机2区域测试系统': 'model/open-cloudpss/KUNDUR_TWO_AREA-v1b1',
-    '3机9节点测试系统': 'model/open-cloudpss/WSCC_9_BUS-v1b1',
-    '5机14节点测试系统': 'model/open-cloudpss/IEEE_14_BUS-v1b1',
-    '30节点测试系统': 'model/open-cloudpss/IEEE_30_BUS-v1b1',
-    '10机39节点测试系统': 'model/open-cloudpss/IEEE_39_BUS-v1b1',
-    '118节点测试系统': 'model/open-cloudpss/IEEE_118_BUS-v1b1',
+    '4 机 2 区域测试系统': 'model/open-cloudpss/KUNDUR_TWO_AREA-v1b1',
+    '3 机 9 节点测试系统': 'model/open-cloudpss/WSCC_9_BUS-v1b1',
+    '5 机 14 节点测试系统': 'model/open-cloudpss/IEEE_14_BUS-v1b1',
+    '30 节点测试系统': 'model/open-cloudpss/IEEE_30_BUS-v1b1',
+    '10 机 39 节点测试系统': 'model/open-cloudpss/IEEE_39_BUS-v1b1',
+    '118 节点测试系统': 'model/open-cloudpss/IEEE_118_BUS-v1b1',
     电力系统距离保护基础案例: 'model/open-cloudpss/Distance_Protection-v1b1',
     电力系统线路纵联差动保护基础案例: 'model/open-cloudpss/Pilot_Protection-v1b1',
     电力系统三段式电流保护基础案例: 'model/open-cloudpss/Current_Protection-v1b1',
@@ -70,29 +70,46 @@ const TEMPLATE_NAME_RID = {
     电力系统零序电压保护基础案例: 'model/open-cloudpss/Zero_Voltage_Protection-v1b1',
     电力系统复压过流保护基础案例: 'model/open-cloudpss/Compound_Voltage_Over_Current_Protection-v1b1',
     电力系统重合闸基础案例: 'model/open-cloudpss/Reclose-v1b1',
-    'CSEE标准算例-功角失稳': 'model/open-cloudpss/CSEE_RAS_Aperiodic-v1b1',
-    'CSEE标准算例-功角振荡': 'model/open-cloudpss/CSEE_RAS_Periodic-v1b1',
-    'CSEE标准算例-高/低频问题': 'model/open-cloudpss/CSEE_FS-v1b1',
-    'CSEE标准算例-电压崩溃问题': 'model/open-cloudpss/CSEE_VS_VC-v1b1',
-    'CSEE标准算例-持续低电压问题': 'model/open-cloudpss/CSEE_VS_CLV-v1b1',
-    'CSEE标准算例-暂时工频过电压': 'model/open-cloudpss/CSEE_PFO_Temporary-v1b1',
-    'CSEE标准算例-稳态工频过电压': 'model/open-cloudpss/CSEE_PFO_Continuous-v1b1',
-    '直驱风机01型-快速详细模型-标准模型': 'model/open-cloudpss/WTG_PMSG_01-fdm-std-v1b2',
-    '直驱风机01型-平均模型-标准模型': 'model/open-cloudpss/WTG_PMSG_01-avm-std-v1b2',
-    '直驱风机01型-快速详细模型-标准模型v2': 'model/open-cloudpss/WTG_PMSG_01-fdm-std-v2b2',
-    '直驱风机01型-平均模型-标准模型v2': 'model/open-cloudpss/WTG_PMSG_01-avm-std-v2b2',
-    '直驱风机01型-标准封装模型': 'model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2b5',
-    '双馈风机01型-快速详细模型-标准模型': 'model/open-cloudpss/WTG_DFIG_01-fdm-std-v1b3',
-    '双馈风机01型-平均模型-标准模型': 'model/open-cloudpss/WTG_DFIG_01-avm-std-v1b3',
-    '双馈风机01型-标准封装模型': 'model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1b5',
-    '光伏发电01型-快速详细模型-标准模型': 'model/open-cloudpss/PVS_01-fdm-std-v1b2',
-    '光伏发电01型-平均模型-标准模型': 'model/open-cloudpss/PVS_01-avm-std-v1b2',
-    '光伏发电01型-标准封装模型': 'model/open-cloudpss/PVS_01-avm-stdm-v1b5',
+    'CSEE 标准算例-功角失稳': 'model/open-cloudpss/CSEE_RAS_Aperiodic-v1b1',
+    'CSEE 标准算例-功角振荡': 'model/open-cloudpss/CSEE_RAS_Periodic-v1b1',
+    'CSEE 标准算例-高/低频问题': 'model/open-cloudpss/CSEE_FS-v1b1',
+    'CSEE 标准算例-电压崩溃问题': 'model/open-cloudpss/CSEE_VS_VC-v1b1',
+    'CSEE 标准算例-持续低电压问题': 'model/open-cloudpss/CSEE_VS_CLV-v1b1',
+    'CSEE 标准算例-暂时工频过电压': 'model/open-cloudpss/CSEE_PFO_Temporary-v1b1',
+    'CSEE 标准算例-稳态工频过电压': 'model/open-cloudpss/CSEE_PFO_Continuous-v1b1',
+    '直驱风机 01 型-快速详细模型-标准模型': 'model/open-cloudpss/WTG_PMSG_01-fdm-std-v1b2',
+    '直驱风机 01 型-平均模型-标准模型': 'model/open-cloudpss/WTG_PMSG_01-avm-std-v1b2',
+    '直驱风机 01 型-快速详细模型-标准模型-v2': 'model/open-cloudpss/WTG_PMSG_01-fdm-std-v2b2',
+    '直驱风机 01 型-平均模型-标准模型-v2': 'model/open-cloudpss/WTG_PMSG_01-avm-std-v2b2',
+    '直驱风机 01 型-标准封装模型': 'model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2b5',
+    '直驱风机 01 型-标准封装模型-v2': 'model/open-cloudpss/WTG_PMSG_01-avm-stdm-v2b5',
+    '双馈风机 01 型-快速详细模型-标准模型': 'model/open-cloudpss/WTG_DFIG_01-fdm-std-v1b3',
+    '双馈风机 01 型-快速详细模型-标准模型-v1': 'model/open-cloudpss/WTG_DFIG_01-fdm-std-v1b3',
+    '双馈风机 01 型-平均模型-标准模型': 'model/open-cloudpss/WTG_DFIG_01-avm-std-v1b3',
+    '双馈风机 01 型-平均模型-标准模型-v1': 'model/open-cloudpss/WTG_DFIG_01-avm-std-v1b3',
+    '双馈风机 01 型-标准封装模型': 'model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1b5',
+    '双馈风机 01 型-标准封装模型-v1': 'model/open-cloudpss/WTG_DFIG_01-avm-stdm-v1b5',
+    '光伏发电 01 型-快速详细模型-标准模型': 'model/open-cloudpss/PVS_01-fdm-std-v1b2',
+    '光伏发电 01 型-快速详细模型-标准模型-v1': 'model/open-cloudpss/PVS_01-fdm-std-v1b2',
+    '光伏发电 01 型-平均模型-标准模型': 'model/open-cloudpss/PVS_01-avm-std-v1b2',
+    '光伏发电 01 型-平均模型-标准模型-v1': 'model/open-cloudpss/PVS_01-avm-std-v1b2',
+    '光伏发电 01 型-标准封装模型': 'model/open-cloudpss/PVS_01-avm-stdm-v1b5',
+    '光伏发电 01 型-标准封装模型-v1': 'model/open-cloudpss/PVS_01-avm-stdm-v1b5',
     电压穿越状态判断模型: 'model/open-cloudpss/VRT_SD-stdm-v1b1',
     电压穿越控制模型: 'model/open-cloudpss/VRT_Ctrl-stdm-v1b1',
+    高压直流输电系统: 'model/CloudPSS/HVDC800',
+    模块化多电平变流器及其控制系统: 'model/CloudPSS/MMC_Benchmark',
+    '储能详细化/平均化模型对比': 'model/CloudPSS/Bat_Averaged_Detailed',
+    '光伏详细化/平均化模型对比': 'model/CloudPSS/PV_Averaged_Detailed',
+    '电池储能 01 型-快速详细模型-标准模型-v1': 'model/open-cloudpss/PCS_BAT_01-fdm-std-v1b1',
+    '电池储能 01 型-平均模型-标准模型-v1': 'model/open-cloudpss/PCS_BAT_01-avm-std-v1b1',
+    '电池储能 01 型-标准封装模型-v1': 'model/open-cloudpss/PCS_BAT_01-avm-stdm-v1b1',
+    'SVG 01 型-快速详细模型-标准模型-v1': 'model/open-cloudpss/SVG_01-fdm-std-v1b1',
+    'SVG 01 型-平均模型-标准模型-v1': 'model/open-cloudpss/SVG_01-avm-std-v1b1',
+    'SVG 01 型-标准封装模型-v1': 'model/open-cloudpss/SVG_01-avm-stdm-v1b1',
 };
 const host = `http://10.101.10.46`;
-const token = `eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJicm93c2VyIl0sInR5cGUiOiJicm93c2VyIiwiZXhwIjoxNzc4Mzk1MjQ5LCJpYXQiOjE3NzU3MTY4NDl9.ZE0G7qiPwNwmRPwc2nHEEE8OhtlWQQqxw1KpBJNBCZDZT3encMw9OMjXmaOwt2JTKoUXlDp5Y_CCVC2k6L7e0w`;
+const token = `eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwidXNlcm5hbWUiOiJhZG1pbiIsInNjb3BlcyI6WyJicm93c2VyIl0sInR5cGUiOiJicm93c2VyIiwiZXhwIjoxNzgzOTMyNTc2LCJpYXQiOjE3ODEyNTQxNzZ9.BLNeNo_kzFIOVbjTF5pHAJW9U5cDzFGD9xPX3s_SRqsZ0JUa4sRNeMbk_warlvhVOMMbDW8Txe0eN5pcr6Nmew`;
 
 const fetchTemplatePic = async () => {
     const response = await fetch(`${host}/graphql`, {
@@ -165,6 +182,9 @@ async function main() {
     await convert(assetsDir);
 
     for (const record of records) {
+        if (record.ext.toLowerCase() === 'svg') {
+            continue;
+        }
         const oldPath = path.join(assetsDir, record.filename);
         const newFilename = `${record.rid.replaceAll('/', '_').toUpperCase()}.webp`;
         const newPath = path.join(assetsDir, newFilename);
@@ -174,15 +194,16 @@ async function main() {
 
     const webpImports = records
         .map((r) => {
-            const ridFilename = r.rid.replaceAll('/', '_').toUpperCase();
-            return `import ${ridFilename} from './assets/${ridFilename}.webp';`;
+            const varName = r.rid.replaceAll('/', '_').replaceAll('-', '_').toUpperCase();
+            const suffix = r.ext.toLowerCase() === 'svg' ? '?url' : '';
+            return `import ${varName} from './assets/${r.filename}${suffix}';`;
         })
         .join('\n');
 
     const dictEntries = records
         .map((r) => {
-            const ridFilename = r.rid.replaceAll('/', '_').toUpperCase();
-            return `    '${r.name}': ${ridFilename}`;
+            const varName = r.rid.replaceAll('/', '_').replaceAll('-', '_').toUpperCase();
+            return `    '${r.name}': ${varName}`;
         })
         .join(',\n');
 

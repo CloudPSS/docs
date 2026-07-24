@@ -164,6 +164,6 @@ CloudPSS 上的 3 机 9 节点系统中，每台电机包含励磁器、调速�
 [^2]: 9-Bus System (WSCC Test Case), https://www.al-roomi.org/power-flow/9-bus-system
 
 
-<!-- import DocCardList from '@theme/DocCardList';
+<!-- import DocExpandList from '@site/src/components/DocExpandList';
 
-<DocCardList /> -->
+<DocExpandList /> -->
