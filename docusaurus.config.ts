@@ -80,7 +80,38 @@ const config: Config = {
 
     themes: ['@docusaurus/theme-mermaid'],
 
-    plugins,
+    plugins: [
+        ...plugins,
+        () => ({
+            name: 'svg-url-loader',
+            configureWebpack(config) {
+                const patchSvgRules = (rules: unknown[]) => {
+                    for (const rule of rules) {
+                        if (typeof rule !== 'object' || rule == null) continue;
+                        const r = rule as Record<string, unknown>;
+                        if (Array.isArray(r['oneOf'])) {
+                            patchSvgRules(r['oneOf']);
+                        }
+                        if (r['test'] instanceof RegExp && (r['test'] as RegExp).test('.svg')) {
+                            r['resourceQuery'] = { not: [/url/] };
+                        }
+                    }
+                };
+                patchSvgRules(config.module?.rules ?? []);
+                return {
+                    module: {
+                        rules: [
+                            {
+                                test: /\.svg$/,
+                                resourceQuery: /url/,
+                                type: 'asset/resource',
+                            },
+                        ],
+                    },
+                };
+            },
+        }),
+    ],
 
     presets: [
         [

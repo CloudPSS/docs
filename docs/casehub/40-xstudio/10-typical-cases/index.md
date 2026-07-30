@@ -8,3 +8,7 @@ tags:
 - directory
 
 ---
+
+import DocExpandList from '@site/src/components/DocExpandList';
+
+<DocExpandList />

@@ -8,9 +8,9 @@ tags:
 
 ---
 
-<!-- import DocCardList from '@theme/DocCardList';
+<!-- import DocExpandList from '@site/src/components/DocExpandList';
 
-<DocCardList /> -->
+<DocExpandList /> -->
 
 ## 案例介绍
  CSEE-RAS 功角振荡算例是由中国电机工程学会发布的新型电力系统标准算例[^CSEE-RAS], CSEE-RAS 功角振荡算例以 500kV 交流和 ±500kV 直流为主网架，总三相交流母线数为 59，交流线路数为 26，直流线路数为 1。
