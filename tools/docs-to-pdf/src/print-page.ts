@@ -50,7 +50,7 @@ export async function initPage(): Promise<Page> {
         // eslint-disable-next-line no-console
         console.log(`Using browser: ${browser.executablePath}`);
         _browser = await launch({
-            headless: 'shell',
+            headless: true,
             executablePath: browser.executablePath,
         });
         _page = await _browser.newPage();
@@ -58,6 +58,7 @@ export async function initPage(): Promise<Page> {
         await _page.evaluate(
             ({ THEME_KEY }) => {
                 localStorage.setItem(THEME_KEY, 'light');
+                localStorage.setItem('DISABLE_CHAT', '1');
                 globalThis.dispatchEvent(new StorageEvent('storage', { key: THEME_KEY }));
             },
             { THEME_KEY },
@@ -68,10 +69,12 @@ export async function initPage(): Promise<Page> {
 
 /** 退出浏览器 */
 export async function done(): Promise<void> {
-    if (_browser) {
-        await _browser.close();
-        _browser = null;
+    if (!_browser) {
+        return;
     }
+
+    await _browser.close();
+    _browser = null;
 }
 
 const INJECT_CSS = /* css */ `
@@ -112,7 +115,11 @@ export async function printPage(url: string, dist: string): Promise<{ title: str
         },
         { INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR },
     );
-    await page.waitForNetworkIdle({ timeout: 0, idleTime: 500, concurrency: 0 });
+    try {
+        await page.waitForNetworkIdle({ timeout: 5000, idleTime: 500, concurrency: 0 });
+    } catch (err) {
+        //
+    }
     await fs.mkdir(path.dirname(dist), { recursive: true });
     await page.pdf({
         path: dist,

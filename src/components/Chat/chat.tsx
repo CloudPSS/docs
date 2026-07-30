@@ -24,6 +24,10 @@ const ChatComponent = (): React.JSX.Element => {
     const homeUrl = (customFields?.['HOME_URL'] as string) ?? '/';
     useEffect(() => {
         const checkChatEnabled = async () => {
+            if (localStorage.getItem('DISABLE_CHAT')) {
+                setIsChatEnabled(false);
+                return;
+            }
             try {
                 const response = await fetch(`${homeUrl}api/chat/enabled`);
                 if (response.status === 404) {
