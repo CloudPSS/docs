@@ -12,6 +12,6 @@ tags:
 
 ---
 
-import DocCardList from '@theme/DocCardList';
+import DocExpandList from '@site/src/components/DocExpandList';
 
-<DocCardList />
+<DocExpandList />
