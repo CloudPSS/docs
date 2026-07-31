@@ -18,16 +18,19 @@ import { HOST } from './config.ts';
 let _browser: Browser | null = null;
 let _page: Page;
 
+const DEBUG_PUPPETEER = false;
+
 /** 下载浏览器 */
 async function downloadBrowser(): Promise<InstalledBrowser> {
     const plat = detectBrowserPlatform();
     if (!plat) {
         throw new Error(`Unsupported platform: ${process.platform} ${process.arch}`);
     }
-    const id = await resolveBuildId(BrowserType.CHROMEHEADLESSSHELL, plat, BrowserTag.STABLE);
+    const type = DEBUG_PUPPETEER ? BrowserType.CHROME : BrowserType.CHROMEHEADLESSSHELL;
+    const id = await resolveBuildId(type, plat, BrowserTag.STABLE);
     const opt: InstallOptions & { unpack: true } & UninstallOptions = {
         cacheDir: path.join(os.homedir(), '.cache/puppeteer'),
-        browser: BrowserType.CHROMEHEADLESSSHELL,
+        browser: type,
         buildId: id,
         unpack: true,
         downloadProgressCallback: 'default',
@@ -50,10 +53,16 @@ export async function initPage(): Promise<Page> {
         // eslint-disable-next-line no-console
         console.log(`Using browser: ${browser.executablePath}`);
         _browser = await launch({
-            headless: true,
+            headless: !DEBUG_PUPPETEER,
             executablePath: browser.executablePath,
         });
-        _page = await _browser.newPage();
+        const pages = await _browser.pages();
+        if (pages.length > 0) {
+            _page = pages[0];
+        } else {
+            _page = await _browser.newPage();
+        }
+        await _page.setViewport({ width: 1200, height: 8000, deviceScaleFactor: 1 });
         await _page.goto(HOST, { waitUntil: 'domcontentloaded', timeout: 0 });
         await _page.evaluate(
             ({ THEME_KEY }) => {
@@ -115,11 +124,7 @@ export async function printPage(url: string, dist: string): Promise<{ title: str
         },
         { INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR },
     );
-    try {
-        await page.waitForNetworkIdle({ timeout: 5000, idleTime: 500, concurrency: 0 });
-    } catch (err) {
-        //
-    }
+    await page.waitForNetworkIdle({ timeout: 0, idleTime: 5000, concurrency: 0 });
     await fs.mkdir(path.dirname(dist), { recursive: true });
     await page.pdf({
         path: dist,
