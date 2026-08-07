@@ -15,17 +15,11 @@ export const HOST_REPLACE = 'https://kb.cloudpss.net';
  */
 export const RANGES: Range[] = [
     [
-        'https://kb.cloudpss.net/documents/software/xstudio/',
-        'https://kb.cloudpss.net/documents/software/emtlab/emtlab-sdk/',
+        'https://kb.cloudpss.net/documents/software/emtlab/',
+        'https://kb.cloudpss.net/documents/software/emtlab/component-library/security-control-module/Security-Control-Operation/',
     ],
     [
-        'https://kb.cloudpss.net/documents/software/user-center/',
-        'https://kb.cloudpss.net/documents/software/sdk-python/api/dslab/',
-    ],
-    ['https://kb.cloudpss.net/documents/hardware/desktop-type/'],
-    ['https://kb.cloudpss.net/documents/maintenance-tools/server-manager/'],
-    [
-        'https://kb.cloudpss.net/documents/software-tools/conversion-tools/',
-        'https://kb.cloudpss.net/documents/software-tools/signal-monitor/',
+        'https://kb.cloudpss.net/casehub/emtlab/opencloudpss-cases/',
+        'https://kb.cloudpss.net/casehub/emtlab/opencloudpss-cases/basic-protection-cases/reclose-case/',
     ],
 ];

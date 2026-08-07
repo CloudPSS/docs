@@ -200,13 +200,22 @@ export class PdfGenerator {
         this.createOutlineRoot();
 
         // Add pages
+        const pendingSkippedDocuments: PrintedDocument[] = [];
         for (const document of this.documents) {
-            const pdf = await PDFDocument.load(await fs.readFile(document.file));
-            for (const [i, p] of (await this.pdf.copyPages(pdf, pdf.getPageIndices())).entries()) {
-                const page = this.pdf.addPage(p);
-                if (i === 0) {
-                    this.createOutlineNode(document, page);
+            if (document.file) {
+                const pdf = await PDFDocument.load(await fs.readFile(document.file));
+                for (const [i, p] of (await this.pdf.copyPages(pdf, pdf.getPageIndices())).entries()) {
+                    const page = this.pdf.addPage(p);
+                    if (i === 0) {
+                        const skipped = pendingSkippedDocuments.splice(0);
+                        for (const skippedDocument of skipped) {
+                            this.createOutlineNode(skippedDocument, page);
+                        }
+                        this.createOutlineNode(document, page);
+                    }
                 }
+            } else {
+                pendingSkippedDocuments.push(document);
             }
         }
 

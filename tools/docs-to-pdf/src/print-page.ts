@@ -101,7 +101,10 @@ const PREV_SELECTOR = 'a.pagination-nav__link.pagination-nav__link--prev';
 const NEXT_SELECTOR = 'a.pagination-nav__link.pagination-nav__link--next';
 
 /** 打印页面到指定位置 */
-export async function printPage(url: string, dist: string): Promise<{ title: string; prev?: string; next?: string }> {
+export async function printPage(
+    url: string,
+    dist: string,
+): Promise<{ title: string; skip?: string; prev?: string; next?: string }> {
     const page = await initPage();
     await page.goto(url, { waitUntil: 'load', timeout: 0 });
     const result = await page.evaluate(
@@ -124,7 +127,18 @@ export async function printPage(url: string, dist: string): Promise<{ title: str
         },
         { INJECT_CSS, HEADER_SELECTOR, PREV_SELECTOR, NEXT_SELECTOR },
     );
-    await page.waitForNetworkIdle({ timeout: 0, idleTime: 5000, concurrency: 0 });
+    await page.waitForNetworkIdle({ timeout: 0, idleTime: 100, concurrency: 0 });
+    const skip = await page.evaluate(() => {
+        let skip: string | undefined;
+        if (document.querySelector<HTMLElement>('.theme-doc-breadcrumbs')?.style.display === 'none') {
+            skip = 'casehub_nav';
+        }
+        return skip;
+    });
+    if (skip) {
+        return { ...result, skip };
+    }
+    await page.waitForNetworkIdle({ timeout: 0, idleTime: 1000, concurrency: 0 });
     await fs.mkdir(path.dirname(dist), { recursive: true });
     await page.pdf({
         path: dist,

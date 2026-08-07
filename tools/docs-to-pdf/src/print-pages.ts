@@ -19,8 +19,10 @@ export interface PrintedDocument {
     title: string;
     /** URL */
     url: string;
+    /** 跳过原因 */
+    skip?: string;
     /** PDF 文件路径 */
-    file: string;
+    file?: string;
     /** 上一页 URL */
     prev?: string;
     /** 下一页 URL */
@@ -38,8 +40,13 @@ async function printRange(range: Range, dist: string): Promise<PrintedDocument[]
         const file = path.join(dist, pathname.slice(1).replace(/\/?$/, '.pdf'));
         process.stdout.write(`Printing ${pathname} ...`);
         const pageInfo = await printPage(url, file);
-        result.push({ ...pageInfo, url, file });
-        process.stdout.write('\b\b\bDone\n');
+        if (pageInfo.skip) {
+            result.push({ ...pageInfo, url });
+            process.stdout.write(`\b\b\bSkip (${pageInfo.skip})\n`);
+        } else {
+            result.push({ ...pageInfo, url, file });
+            process.stdout.write('\b\b\bDone\n');
+        }
         if (to && url === HOST + to) break;
         url = pageInfo.next;
     }
