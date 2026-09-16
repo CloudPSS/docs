@@ -53,11 +53,7 @@ const navbars: NonNullable<ThemeConfig['navbar']>['items'] = [
         position: 'left',
         label: '案例',
         type: 'docSidebar',
-<<<<<<< HEAD
-        sidebarId: 'casehub',
-=======
         sidebarId: 'cases',
->>>>>>> 839080f31 (docs: 撰写 CIGRE Benchmark 单极双 12 脉动案例文档)
     },
     {
         position: 'left',
