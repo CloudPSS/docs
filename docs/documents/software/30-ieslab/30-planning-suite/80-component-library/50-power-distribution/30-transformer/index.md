@@ -19,7 +19,7 @@ $$
 
 式中，$P_{in}$、$P_{out}$ 分别为原边与副边有功功率（kW），$\eta_T$ 为变压器效率，$P_{rated}$ 为额定传输功率。
 
-![交流变压器](./transformer.svg)
+![变压器](./transformer.svg)
 
 ## 元件说明
 
