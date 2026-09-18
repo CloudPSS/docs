@@ -65,7 +65,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="js" label="案例1">
+<TabItem value="case1" label="案例1">
 
 以电源设备的**光伏系统**为例，说明设备信息库的用法。
 
@@ -88,7 +88,8 @@ import TabItem from '@theme/TabItem';
 3. 保存
 
 </TabItem>
-<TabItem value="py" label="案例2">
+
+<TabItem value="case2" label="案例2">
 
 以**光伏系统**为例，说明从典型库导入设备的方法。
 
@@ -97,6 +98,9 @@ import TabItem from '@theme/TabItem';
    参数编辑区域右下角选择**从典型库导入**，在弹出框中选择**厂家和型号**，检查参数无误后点击**确定**，覆盖当前设备参数。
    ![从典型库导入](./typical.png)
 3. 保存
+
+</TabItem>
+</Tabs>
 
 ## 项目文件下载
 
