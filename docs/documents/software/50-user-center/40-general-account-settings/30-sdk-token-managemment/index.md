@@ -9,6 +9,7 @@ tags:
 
 ![sdk-token管理页面](./sdk-token.png "sdk-token管理页面")
 
+
 ## 新建 token 
 
 按照以下步骤执行操作：
@@ -23,7 +24,9 @@ tags:
 
 ![新建token](./新建token.png "新建token")
 
+
 ![密码验证](./密码验证.png "密码验证")
+
 
 :::tip Token 申请提示
 token 时效：1 天/ 3 天/ 30 天/ 60 天/ 90 天/ 180 天/ 360 天

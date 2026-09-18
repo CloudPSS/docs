@@ -32,7 +32,7 @@ tags:
 + **通过模板创建**：点击**通过模板创建**，进入 **FuncStudio** 模板页面选择模板，点击进入**FuncStudio 工作台**。
 + **上传文件**：点击**上传文件**，选择待上传的项目文件，文件支持 **zip** 和 **cfnc** 格式，详情参看[项目导入](#项目导入)。
 
-![funcstudio 模板](funcstudio-template.png "funcstudio 模板")
+![FuncStudio 模板](funcstudio-template.png "FuncStudio 模板")
 
 
 ### 项目中心
@@ -103,6 +103,7 @@ tags:
 项目列表中选中某项目，左键点击可快速查看该项目文档，或者点击 **更多选项 - 查看文档**按钮，弹出查看该项目的文档内容。
 
 ![查看文档](view-document.png "查看文档")
+
 
 ### 项目导出
 
