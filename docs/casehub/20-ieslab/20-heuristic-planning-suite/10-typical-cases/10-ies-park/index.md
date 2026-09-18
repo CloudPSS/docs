@@ -7,8 +7,8 @@ tags:
 - cases
 ---
 
-import Summary from '../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/100-typical-cases/10-ies-park/index.md';
+import Summary from '../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/80-typical-cases/10-ies-park/index.md';
 
-<!-- [](../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/100-typical-cases/10-ies-park/index.md) -->
+<!-- [](../../../../../documents/software/30-ieslab/21-heuristic-planning-suite/80-typical-cases/10-ies-park/index.md) -->
 
 <Summary />

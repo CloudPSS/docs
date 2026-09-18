@@ -7,6 +7,6 @@ tags:
 - cases
 ---
 
-import Summary from '../../../../../documents/software/30-ieslab/30-planning-suite/100-typical-cases/10-ies-park/index.md';
+import Summary from '../../../../../documents/software/30-ieslab/30-planning-suite/80-typical-cases/10-ies-park/index.md';
 
 <Summary />

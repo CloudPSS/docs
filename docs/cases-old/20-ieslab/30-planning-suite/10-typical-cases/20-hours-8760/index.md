@@ -7,7 +7,7 @@ tags:
 - cases
 ---
 
-import Summary from '../../../../../documents/software/30-ieslab/30-planning-suite/100-typical-cases/20-hours-8760/index.md';
+import Summary from '../../../../../documents/software/30-ieslab/30-planning-suite/80-typical-cases/20-hours-8760/index.md';
 
 <!-- []() -->
 
