@@ -105,7 +105,7 @@ import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
 <Tabs>
-<TabItem value="js" label="案例1">
+<TabItem value="case1" label="案例1">
 
 以电源设备的**光伏系统**为例，说明设备信息库的用法。
 
@@ -129,7 +129,8 @@ import TabItem from '@theme/TabItem';
 3. 保存
 
 </TabItem>
-<TabItem value="py" label="案例2">
+
+<TabItem value="case2" label="案例2">
 
 以**传输线**为例，说明从典型库导入设备的方法。
 
