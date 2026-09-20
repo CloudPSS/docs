@@ -39,7 +39,7 @@ SimStudio Client
 | **私有部署** | 部署在私有服务器上，IP 地址例如： `http://10.42.0.1` | `http://10.42.0.1/api/mcp` |
 
 :::tip
-下文中所有示例均使用公网平台地址 `https://cloudpss.net/api/mcp`，请根据实际环境替换为对应地址。
+下文中所有示例均使用公网平台地址 `https://cloudpss.net/api/mcp`，请根据实际环境替换为对应地址。私有部署无 https 服务，需使用**不支持 OpenAuth 接入**方法
 :::
 
 

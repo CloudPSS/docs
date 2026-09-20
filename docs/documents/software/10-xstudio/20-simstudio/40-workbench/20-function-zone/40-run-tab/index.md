@@ -82,7 +82,7 @@ SimStudio 作为 CloudPSS 多个仿真软件的建模工作台，内嵌了潮流
 
 点击可下载上述案例：[双端模块化多电平变流器模板](./model_CloudPSS_MMC_Benchmark.zip)。
 
-您可将此项目上传至 SimStudio，结合案例实际学习如何使用参数方案。算例上传方法参见 [上传算例压缩包](../../../30-cloud-space/index.md#项目管理) 帮助页。
+您可将此项目上传至 SimStudio，结合案例实际学习如何使用参数方案。算例上传方法参见 [上传算例压缩包](../../../30-cloud-space/index.md#项目中心) 帮助页。
 
 :::
 

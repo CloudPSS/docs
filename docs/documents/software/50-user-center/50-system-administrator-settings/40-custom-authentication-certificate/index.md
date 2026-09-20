@@ -14,31 +14,29 @@ tags:
 
 ![自定义认证证书管理](customized-authentication-certificate-management.png "自定义认证证书管理")
 
+
 ## 使用指南
 
-点击**如何使用**查看使用指南。如下图所示：
+点击**如何使用**查看使用指南：
 
-1. **生成自定义token**
+### 功能概述 
 
-```ts showLineNumbers
-//私钥
-const privateKey = 申请的私钥;
-const sign = 申请的签名;
-//需要签名数据，要求该username唯一
-const r = {
-    sign: sign,
-    username: 'custom-name',
-}
-//签名
-import jwt from 'jsonwebtoken';
-const token = jwt.sign(r, privateKey, { algorithm: 'ES256', allowInvalidAsymmetricKeyTypes: true });
-```
+本功能允许开发者通过自定义证书，在指定签名（Sign）下生成特殊用户。 
 
-2. **跳转链接**
+- 用户标识规则 ：生成用户的唯一 ID 格式为  **用户名**~**证书签名**。 
 
-构建 **ip 地址 + 签名 + 自定义 token** 的页面链接跳转，例如：`http://10.101.10.45/jwt/签名/自定义token`
+- 核心流程 ：开发者在本地使用私钥签发一个  客户端 JWT ，随后通过该 JWT 换取系统正式的  接入 Token ，从而实现身份委派。 
 
-![使用指南](how-to-use.png "使用指南")
+
+### 操作步骤 
+1. 构造 Payload ：准备包含  sign（证书签名）、 username（自定义用户名）及  exp（过期时间）的载体。 
+
+2. 本地签名 ：使用标准的 JWT 库（如  jsonwebtoken）及私钥，采用  ES256  算法签出原始 Token。 
+
+3. 获取接入 Token ：通过 GraphQL 接口  _userToken 换取正式 Token，用于 SDK 初始化或 Runner-API 的 HTTP 请求。 
+
+4. 免密登录（iframe） ：使用特定格式的 URL 拼接，可直接获取该用户的登录状态，适用于 Web 嵌入场景。 
+
 
 ## 功能介绍
 
