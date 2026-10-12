@@ -34,7 +34,7 @@ tags:
 
 > **优化设计哲学**：优化程序是一台"算得又快又准的计算器"，但**问题的抽象、数据的真实性、参数的取舍、结果的判定与责任，始终属于使用者**。本文档全篇的技术内容，都服务于这一句话。
 
-### 1.1 先建模，后算法 阿克夫《运筹学的未来已成过去》的反思
+### 1.1 先建模，后算法
 
 1979 年，系统规划与运筹学大师 **Russell L. Ackoff（阿克夫）** 在《运筹学学会学报》（*Journal of the Operational Research Society*, JORS）**卷 30 第 2 期（pp. 93–104）** 发表 **《运筹学的未来已成过去》（The Future of Operational Research is Past）**，并在同年发表续篇 **《复活运筹学的未来》（Resurrecting the Future of Operational Research）**。他一针见血地指出：运筹学（OR）的核心价值不在 "求解" 而在 "建模"。
 
@@ -342,7 +342,7 @@ $$
 其中投资等效年金的计算公式为：
 
 $$
-C_{inv} = \sum\limits_{i=1}^{M} \frac{r(1+r)^{T_i}}{r(1+r)^{T_i} - 1}\,\phi_i
+C_{inv} = \sum\limits_{i=1}^{M} \frac{r(1+r)^{T_i}}{(1+r)^{T_i} - 1}\,\phi_i
 $$
 
 | 符号                                  | 含义                                |

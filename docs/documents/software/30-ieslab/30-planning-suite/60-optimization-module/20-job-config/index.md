@@ -1,7 +1,7 @@
 ---
 title: 计算方案配置
 description: IESLab 规划优化平台-方案优化模块-计算方案配置
-sidebar_position: 80
+sidebar_position: 20
 tags:
 - ieslab
 - function
@@ -27,6 +27,8 @@ tags:
 计算方案参数分为**项目设置**、**优化设置**、**财务参数**三组。下表逐一说明每个参数的作用、默认值与设置建议。财务参数（投资组成、资金来源、资产形式、生产成本、流动资金及财务费用、税率及附加）与各财务报表的计算关系详见本文档[第三部分](#三-报表计算原理)、[第四部分](#四-财务参数说明)。
 
 ### 1.1 项目设置参数
+
+![计算方案](./settings.png "GMM 聚类算法流程")
 
 | 参数                       | 默认值         | 作用说明                                                                                                   | 设置建议                                                         |
 | :------------------------- | :------------- | :--------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------- |
@@ -80,7 +82,7 @@ tags:
 | `selfuse_ratio`          | 新能源占用电比 | 下限 | 0.3          | 新能源被本系统用电负荷消纳的比例，**分母为总用电负荷**；绿电直连"绿电占比"指标 |
 | `min_generation_selfuse` | 新能源自消纳率 | 下限 | 0.6          | 新能源发电中被自用消纳的比例，**分母为新能源总发电量**                         |
 | `curtailment_ratio`      | 新能源弃电率   | 上限 | 0.05         | 新能源弃电量占理论发电量的比例上限                                                   |
-| `total_battery`          | 储能总装机     | 上限 | 10000（kW）  | 全部储能设备装机之和的上限（硬约束）                                                 |
+| `total_battery`          | 储能总装机     | 上限 | 10000（kW）  | **蓄电池**装机之和的上限（硬约束；储热/蓄冷/蓄冰/储氢不计入）                  |
 | `total_renewable`        | 新能源总装机   | 下限 | 50000（kW）  | 光伏+风机装机之和的下限（硬约束）                                                    |
 
 > **上下界一律填实数**：模板约束涵盖比率类、装机类等多种参数类型，量纲不统一，无法按"百分比"统一约定——**比率类填 0~1 的实数比例**（`0.6` 表示 60%、`0.05` 表示 5%），**装机类填实数容量/功率**（如 `10000`，单位 kW）。
@@ -106,54 +108,92 @@ tags:
 ### 2.2 自定义 DSL 语法
 
 当预设模板无法覆盖工程约束时，可用自定义 DSL（领域专用语言）直接书写约束表达式。您只需写"约束的数学式 + 上下限"，内核自动编译为优化模型约束参与求解。
+表达式由两部分组成：**物理量**（如 `electric_output` 实际出力）决定"能表达什么"，**选择器**（`@` 后写计入哪些组件）决定"计入谁"，两者各管各的。
 
 #### 2.2.1 快速示例
 
 ```
 光伏总装机不超过 20 MW：
-    sum(capacity * unit) @ 光伏    上限: 20000
+    sum(capacity * unit) @photovoltaic    上限: 20000
 
-风电弃电量不超过 1000 kWh（单时段）：
-    sum(electric_curtailment) @ 风电    上限: 1000
+风机弃电量不超过 1000 kWh：
+    sum(electric_curtailment) @wind_turbine    上限: 1000
+
+光伏与风机合计装机不低于 50 MW：
+    sum(capacity * unit) @(photovoltaic + wind_turbine)    下限: 50000
 ```
 
 写法要点：**约束体表达式 + 上限/下限 + 是否软约束**。软约束开关（界面"软约束"列）**对模板约束与自定义约束同样生效**：选"否"即建成**硬约束**（必须严格满足，不满足则求解失败）；选"是"引入松弛变量并把违反量计入惩罚（付出代价但保证有解）。条目未给该开关时，模板约束按模板默认（比率类默认软）。
 
 #### 2.2.2 语法元素
 
-| 元素           | 写法              | 说明                                              | 示例                             |
-| :------------- | :---------------- | :------------------------------------------------ | :------------------------------- |
-| 数值           | `100` / `0.1` | 常量                                              | `0.15`                         |
-| 物理量（role） | 标识符            | 跨设备聚合的物理量，见[2.3](#23-物理量词汇表-role) | `electric_output`              |
-| 求和           | `sum(expr)`     | 对匹配设备求和                                    | `sum(capacity * unit)`         |
-| 相除           | `div(a, b)`     | 比率表达式，分母含变量时**自动线性化**      | `div(Σcurtailment, Σoutput)` |
-| 作用域         | `expr @ 范围`   | 限定物理量归属的设备类别                          | `capacity @ 光伏`              |
-| 算术运算       | `+ - * / ( )`   | 四则运算                                          | `(a + b) * c`                  |
-| 隐式乘法       | 相邻标识符        | `capacity unit` 等价 `capacity * unit`        | —                               |
+| 元素             | 写法                | 说明                                              | 示例                             |
+| :--------------- | :------------------ | :------------------------------------------------ | :------------------------------- |
+| 数值             | `100` / `0.1`   | 常量                                              | `0.15`                         |
+| 物理量（role）   | 标识符              | 跨设备聚合的物理量，见[2.3](#23-物理量词汇表-role) | `electric_output`              |
+| 求和             | `sum(expr)`       | 对匹配设备求和                                    | `sum(capacity * unit)`         |
+| 相除             | `div(a, b)`       | 比率表达式，分母含变量时**自动线性化**      | `div(Σcurtailment, Σoutput)` |
+| 选择器（作用域） | `expr @ 组件标识` | 限定这个物理量在**哪些组件**上取值          | `capacity @photovoltaic`       |
+| 算术运算         | `+ - * / ( )`     | 四则运算                                          | `(a + b) * c`                  |
+| 隐式乘法         | 相邻标识符          | `capacity unit` 等价 `capacity * unit`        | —                               |
 
-**优先级**：`* / @` 高于 `+ -`，同级左结合。`@` 作用于其左侧整个表达式：`capacity * unit @ 光伏` 即 `(capacity * unit) @ 光伏`。
+**优先级**：`*` `/` `@` 高于 `+` `-`，同级左结合。`@` 作用于其左侧整个表达式：`capacity * unit @photovoltaic` 即 `(capacity * unit) @photovoltaic`。
 
-#### 2.2.3 作用域（@ 范围）
+读法上可把 `@` 当作英文 of——`unit @ storage-battery` 读作「蓄电池的台数」。
 
-| 写法类型                   | 示例                                         | 说明                                   |
-| :------------------------- | :------------------------------------------- | :------------------------------------- |
-| **语义别名**（推荐） | `@ renewable` / `@ storage` / `@ grid` | 新能源（光伏+风机）/ 储能类 / 外部电源 |
-| 英文类型键                 | `@ photovoltaic`、`@ wind_turbine`       | 与元件库注册键一致                     |
+#### 2.2.3 选择器（@ 组件标识）
 
-> 每个物理量都应携带自己的作用域；不带作用域的裸物理量在自定义约束中会被拦截报错。
+**选择器就是元件 rid 的最后一段**，与您在平台页面上看到的元件地址尾部一致——
+例如光伏 `model/IESLabOpt/photovoltaic` → `@photovoltaic`，外部电源 → `@power-source`，
+自定义塔式光热元件 `model/admin/csp` → `@csp`。不需要记类名，也不需要记中文名。
+
+| 常用组件         | 选择器                     | 常用组件               | 选择器                    |
+| :--------------- | :------------------------- | :--------------------- | :------------------------ |
+| 光伏             | `photovoltaic`           | 蓄电池                 | `storage-battery`       |
+| 风机             | `wind_turbine`           | 储热罐                 | `Heat-storage-tank`     |
+| 外部电源（电网） | `power-source`           | 储冷罐                 | `cool-storage-tanker`   |
+| 电负荷           | `electric-load`          | 蓄冰槽                 | `Cool-storage-tank`     |
+| 柔性电负荷       | `shedding-electric-load` | 储氢罐                 | `hydrogen-storage-tank` |
+| 太阳能集热器     | `SolarCollector`         | 自定义元件（塔式光热） | `csp`                   |
+
+写法要点：
+
+- **多类合并用 `+`**：`@(photovoltaic + wind_turbine)`。单个标识符的括号可省，多个必须带括号；
+- **大小写与连字符/下划线都不敏感**：`power-source`、`power_source`、`POWER-SOURCE`、
+  `powersource` 指同一个选择器；若某个写法可能落到不同组件，系统报错并列出候选，不会替您挑；
+- **写错或本算例没建该类设备**：保存时即报错，并把当前工程**能用的选择器清单**一并列出，照着改；
+- 每个物理量都要带自己的选择器；不带选择器的裸物理量在自定义约束中会被拦截报错。
+
+**旧写法已停用**（2026-10-07 起保存即报错并给出改法）：
+
+| 以前写法                            | 现在请写成                                                                                                               |
+| :---------------------------------- | :----------------------------------------------------------------------------------------------------------------------- |
+| `@ renewable`                     | `@(photovoltaic + wind_turbine)`                                                                                       |
+| `@ grid`                          | `@power-source`                                                                                                        |
+| `@ storage`                       | 按需枚举，如`@(storage-battery + Heat-storage-tank + cool-storage-tanker + Cool-storage-tank + hydrogen-storage-tank)` |
+| `@ 光伏`、`@ 外部电源` 等中文名 | `@photovoltaic`、`@power-source`                                                                                     |
+
+规则变更的理由：过去「储能」「新能源」这类笼统口径由系统内部一份名单决定，新增一类设备
+就会被自动算进去，用户看不出来也很难核对。现在必须写清楚计入谁——**宁可多写两个名字，也不要
+让引擎替项目猜业务口径**。
 
 #### 2.2.4 常用约束示例速查
 
-| 工程需求               | DSL 表达式                                                                                | 界限     |
-| :--------------------- | :---------------------------------------------------------------------------------------- | :------- |
-| 光伏总装机不超过 20 MW | `sum(capacity * unit) @ photovoltaic`                                                   | ≤ 20000 |
-| 风电弃电量受控         | `sum(electric_curtailment) @ wind_turbine`                                              | ≤ 限值  |
-| 新能源台数不少于 5 台  | `sum(unit) @ renewable`                                                                 | ≥ 5     |
-| 储能总装机上限         | `sum(capacity * unit) @ storage`                                                        | ≤ 限值  |
-| 购电量受合同约束       | `sum(electric_input) @ grid`                                                            | ≤ 限值  |
-| 自消纳率（占发电量比） | `div(Σ(output - input @ grid), Σ(output + curtailment)) @ renewable`                  | ≥ 限值  |
-| 占用电比（占总负荷比） | `div(Σ(output - input @ grid) @ renewable, Σ(electric_input) @ electric_load)`        | ≥ 限值  |
-| 弃电率                 | `div(Σ(electric_curtailment), Σ(electric_output + electric_curtailment)) @ renewable` | ≤ 限值  |
+下表的比率式与引擎内置模板逐字一致，可直接抄用：
+
+| 工程需求               | DSL 表达式                                                                                                                                                                   | 界限     |
+| :--------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- |
+| 光伏总装机不超过 20 MW | `sum(capacity * unit) @photovoltaic`                                                                                                                                       | ≤ 20000 |
+| 风机弃电量受控         | `sum(electric_curtailment) @wind_turbine`                                                                                                                                  | ≤ 限值  |
+| 新能源台数不少于 5 台  | `sum(unit) @(photovoltaic + wind_turbine)`                                                                                                                                 | ≥ 5     |
+| 蓄电池总装机上限       | `sum(capacity * unit) @storage-battery`                                                                                                                                    | ≤ 限值  |
+| 购电量受合同约束       | `sum(electric_input) @power-source`                                                                                                                                        | ≤ 限值  |
+| 自消纳率（占发电量比） | `div(sum(electric_output @ (photovoltaic + wind_turbine) - electric_input @ (power-source)), sum(electric_output + electric_curtailment) @ (photovoltaic + wind_turbine))` | ≥ 限值  |
+| 占用电比（占总负荷比） | `div(sum(electric_output @ (photovoltaic + wind_turbine) - electric_input @ (power-source)), sum(electric_input) @electric-load)`                                          | ≥ 限值  |
+| 弃电率                 | `div(sum(electric_curtailment) @ (photovoltaic + wind_turbine), sum(electric_output + electric_curtailment) @ (photovoltaic + wind_turbine))`                              | ≤ 限值  |
+
+> 比率一律写成 `div(分子, 分母)`：分母含变量时系统会自动线性化，直接写 `/` 可能求不出解。
+> 完整语法（求和、分组、软约束、文法与错误对照）见内核文档《自定义约束 DSL 语法》。
 
 > 提示：自定义 DSL 更多用于装机规模、购电量等**模板未覆盖**的约束。
 
@@ -163,10 +203,10 @@ tags:
 
 #### 非流量物理量（规划类）
 
-| role         | 含义     | 典型用法                                      |
-| :----------- | :------- | :-------------------------------------------- |
-| `unit`     | 设备台数 | `sum(unit) @ renewable` 新能源总台数        |
-| `capacity` | 单机容量 | `sum(capacity * unit) @ storage` 储能总装机 |
+| role         | 含义     | 典型用法                                                  |
+| :----------- | :------- | :-------------------------------------------------------- |
+| `unit`     | 设备台数 | `sum(unit) @(photovoltaic + wind_turbine)` 新能源总台数 |
+| `capacity` | 单机容量 | `sum(capacity * unit) @storage-battery` 蓄电池总装机    |
 
 #### 流量物理量（8 类载体 × 3 种方向 = 24 个）
 
