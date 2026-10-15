@@ -5,13 +5,13 @@ sidebar_position: 10
 ---
 ## 功能定义
 
-本文教你**在平台上自定义一个能源设备模型**——不改任何内核代码，只用**元件定义表**（集合 / 参数 / 变量 / 约束 / 目标 / 成本 / 统计）填表，再在约束与目标的 `body` 里写**表达式 DSL**，即可把一台新设备（如平台现有组件改进、塔式光热、新型热泵）接入规划与运行优化。
+本文教你**在平台上自定义一个能源设备的优化模型**——不需要修改任何平台代码，只需填写**元件定义表**（集合 / 参数 / 变量 / 约束 / 目标 / 统计），并在约束与目标中书写**表达式**，即可把一台新设备（如平台现有组件的改进型、塔式光热、新型热泵）接入规划与运行优化。
 
-三条要点：
+三个要点：
 
-- 通用表达：通过通用数学式（`sum(...) in 域`、`<=`、`Etes[pd-1]`）定义元件优化模型，与优化工具和求解器无关。
-- **表格 + 表达式两种输入**：结构（有哪些参数、变量、约束）用表格声明；数学关系（约束体、目标式）用 DSL 表达式书写。
-- **以 CSP 塔式光热贯穿示例**：第二章讲语法，第三章用真实 CSP 模型（镜场→吸热器→熔盐储热→汽轮机→电）走一遍"从填表到出模型"的完整过程。
+- **通用表达**：用通用数学式（`sum(...) in 域`、`mean(效率列)`、`Etes[pd-1]`）描述设备模型，不绑定任何一家优化语言的语法，与具体求解器无关。
+- **表格 + 表达式两种输入**：结构（有哪些参数、变量、约束）用表格声明；数学关系（约束式、目标式）用表达式书写。
+- **以塔式光热（CSP）贯穿示例**：第二章讲表达式语法，第三章用真实 CSP 模型（镜场→吸热器→熔盐储热→汽轮机→电）完整走一遍"从填表到出模型"的过程。
 
 ![CSP](./csp.png "塔式光热（CSP）系统示意")
 
@@ -19,271 +19,325 @@ sidebar_position: 10
 
 ## 一 自定义元件模型的构成
 
-一个元件由下面七部分声明，按顺序填表即可。平台自解析通道下，**集合规模由设备表行数决定**（写几行型号就是几个型号），你只需描述"一类设备长什么样"。
+一个元件模型由下面七部分组成，按顺序填表即可。**每种设备型号对应设备表中的一行**：填几行型号，平台就按几个型号建模，你只需描述"这一类设备长什么样"。
 
-| 部分                | 平台表格                                    | 作用                                            |
-| ------------------- | ------------------------------------------- | ----------------------------------------------- |
-| 标识与接入          | 元件基本信息                                | 组件类型、能量类型、端口（接交流母线 / 热网…） |
-| 集合`sets`        | 集合表 / 设备表                             | 元件内部的索引维度（时段、型号集）              |
-| 参数`params`      | 参数表（ParamTable）                        | 已知数据：单价、效率、系数、曲线、规划界        |
-| 变量`vars`        | 变量表（VarTable）                          | 决策量：投资台数、逐时功率、存量                |
-| 约束`constraints` | 约束表（ConstraintTable）                   | 物理与耦合关系（DSL 表达式）                    |
-| 目标`objectives`  | 目标表                                      | 成本项（默认最小化）                            |
-| 成本 / 统计         | 成本表 / 统计表（StatsTable·SpecialTable） | 报表口径与结果展示                              |
+| 部分                           | 平台表格                | 作用                                   |
+| :--- | :--- | :--- |
+| 标识与接入                     | 元件基本信息            | 组件 rid、能量类型、接入端口           |
+| 集合 IndexTable                | 集合表                  | 模型的索引维度（时段、设备型号等）     |
+| 参数 ParamTable                | 参数表 + 各设备表列     | 已知数据：曲线、系数、单价、容量上下限 |
+| 变量 VarTable                  | 变量表                  | 决策量：投资台数、逐时功率、储热存量等 |
+| 约束 ConstraintTable           | 约束表                  | 物理与耦合关系（表达式）               |
+| 目标 ObjectiveTable            | 目标表                  | 成本项（默认最小化）                   |
+| 统计 SpecialTable / StatsTable | 指标统计表 / 结果统计表 | 结果指标公式与展示分组                 |
 
 ### 1.1 标识与接入
 
-| 字段                | 含义                           | CSP 取值           |
-| ------------------- | ------------------------------ | ------------------ |
-| `component_type`  | 元件类型代号（英文，全局唯一） | `csp_tower`      |
-| `comp_type_label` | 页面显示名                     | 塔式光热           |
-| `energy_type`     | 能量类型（词表内值）           | `electric_ac`    |
-| `hub_role`        | 在能源集线器中的角色           | `source`（电源） |
-| `pin_type`        | 接入端口类型                   | `ac`（交流母线） |
+| 字段        | 含义           | CSP 取值 |
+| :--- | :--- | :--- |
+| rid         | 元件唯一标识符 | csp      |
+| energy_type | 能量类型       | electric |
+| pin_type    | 接入端口类型   | ac/dc    |
 
-### 1.2 集合 `sets`（索引域）
+### 1.2 集合 IndexTable
 
-集合是"在哪几样东西上建模"的维度。除全局的 `PERIOD`（时段）/`MONTH`/`DAY` 外，元件自声明设备集合。每个集合给 `name` / `definition`（区间记号，如 `0..0`，通用写法非厂商语法）/ `index_var`（该维的索引变量名）。
+集合回答"模型建在哪些维度上"。除平台全局的**时段**（PERIOD）、月（MONTH）、日（DAY）外，元件可以自声明设备集合。集合表每行三列：**集合名、索引简称、含义中文说明**。
 
-```json
-{"name": "FIELD",         "definition": "0..0", "index_var": "fd"}   // 镜场型号
-{"name": "TURBINEPOWER",  "definition": "0..0", "index_var": "tp"}   // 汽轮机型号
-{"name": "THERMALSTORAGE","definition": "0..0", "index_var": "ts"}   // 储热型号
-```
+| 集合           | 简称 | 含义         |
+| :--- | :--- | :--- |
+| FIELD          | fd   | 定日镜场型号 |
+| TURBINEPOWER   | td   | 汽轮机型号   |
+| THERMALSTORAGE | ts   | 储热型号     |
+| PERIOD         | pd   | 逐时运行时段 |
 
-> 自解析通道下 `definition` 只是缺省规模，**真实型号数=对应设备表的行数**：多填几行就是多型号，无需改定义。
+> 实际型号数量以对应设备表的行数为准：多填几行就是多型号，定义无需改动。
 
-### 1.3 参数 `params`（ParamTable）
+### 1.3 参数
 
-参数是"已知数"。每行列：`name` / `indices`（索引哪些集合，空=标量）/ `default` / `unit` / `role`，以及两个语义声明列 **`kind`**、**`scope`** 与可选的 **`source`**（数据来源配方）。
+参数是"已知数"。平台提供**三条声明通道**，参数的值从哪条通道来，在填表前先分清楚：
 
-**`kind` 语义分类（取代"靠参数名猜语义"）**：
+**通道① 元件级参数表 ParamTable**——每行声明：参数名 / 索引（留空为标量）/ 默认值 / 单位 / **类别 kind**。适合与时序曲线、一般标量。塔式光热只在此声明了一行：逐时法向直射辐照 `dnipd`（索引 pd，单位 W/m²，类别 curve）。
 
-| kind               | 含义                            | 必填约束                                           |
-| ------------------ | ------------------------------- | -------------------------------------------------- |
-| `price_invest`   | 投资单价                        | **必须填 `unit`**（元 / 万元口径唯一出处） |
-| `price_om`       | 运维单价（年固定 / 按电量变动） | 必须填`unit`                                     |
-| `efficiency`     | 效率、系数                      | —                                                 |
-| `planning_bound` | 规划界（`Min*`/`Max*`）     | **必须是标量**（`indices` 为空）           |
-| `curve`          | 时序曲线（按 PERIOD 索引）      | —                                                 |
-| `state`          | 状态量（SOC 系数、初值）        | —                                                 |
-| `general`        | 一般参数（缺省）                | —                                                 |
+**通道② 设备表列（设备级参数）**——**定义 + 赋值一体**：列名即参数名，一行一个型号。单台容量、逐型号效率、充放能力系数、采购与运维单价都放这里。增删型号行时声明零改动，向量赋值自动跟随。
 
-> 单价缺 `unit` 会在声明期被拦截——历史上"元 / 万元混用"造成过报表差 1 万倍的事故。
+**通道③ 隐式标量通道**——在元件参数面板里直接录入的数值标量（如规划上下限、SOC 系数、设计日照强度），无需在参数表中声明，即可在表达式与条件中按名字引用。
 
-**`scope` 作用域（取代"参数名以 `_sys` 结尾即表示列均值"的命名魔法）**：
+**kind 类别**（通道①的语义分类，平台据此做统一校验）：
 
-| scope         | 含义                                                                                                                          |
-| ------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `per_model` | 逐型号（设备表某一列，按型号索引）— 缺省                                                                                     |
-| `system`    | 系统级等效值（由逐型号列聚合而来），须给`source` 配方；`aggregate` 目前仅 `mean`（逐型号算术平均，分母=设备表实际行数） |
+| kind           | 含义                            | 填写要求                                       |
+| :--- | :--- | :--- |
+| price_invest   | 投资单价                        | 必须填单位（元或万元），金额口径以所填单位为准 |
+| price_om       | 运维单价（年固定 / 按电量变动） | 必须填单位                                     |
+| efficiency     | 效率、系数                      | —                                             |
+| planning_bound | 容量上下限（Min、Max 开头）     | 必须是标量（不索引任何集合）                   |
+| curve          | 时序曲线（按时段索引）          | —                                             |
+| state          | 状态系数（如储热初值比例）      | —                                             |
+| general        | 一般参数（缺省）                | —                                             |
 
-**`source` 数据来源配方**（平台常见四类）：
+> 通道②的设备表单价列走平台统一的金额口径约定（采购成本元/台·m²·kWh、固定运维元/年、可变运维元/kWh），无需再填 kind 与单位；**口径必须唯一，否则报表会差 1 万倍**。
 
-| source.type                               | 用途                                               | 例                                       |
-| ----------------------------------------- | -------------------------------------------------- | ---------------------------------------- |
-| `device_col_mean`                       | 由某设备表列聚合出系统级等效标量                   | `etapb_sys ← TurbineTable.etapb 均值` |
-| `dni_from_dirhi`                        | 由水平直接辐射 + 天顶角换算逐时法向直射            | `dnipd`（`DNI>0` 时用设计常数）      |
-| `day_length` / `annuity` / `pscale` | 引擎注入：每典型日时段数、资本回收系数、典型日缩放 | `pdinday` / `crf` / `pscale`       |
+**系统级平均用 mean 算子**：效率与可变运维单价放在设备表列（逐型号），表达式中直接写 `mean(etapb)` 即取全部型号的算术平均——**设备表增删型号行后平均值自动跟随，公式无需修改**。不要再声明 `scope=system` 的 `_sys` 参数行（旧机制仅为存量元件保留）。
 
-CSP 里"效率与可变运维单价"就写成设备表列（`per_model`），模型式引用其 `system`+`mean` 等效值（`etapb_sys`、`etach_sys`、`VariableOMCost_sys`）——**平台增删型号行，均值自动跟随**，不用手改公式。
+**平台注入参数**：`kydt`（各时段代表小时数，全年合计约 8760）、`crf`（投资年化系数）、`pscale`（典型日缩放系数）、`pdinday`（每日时段数）由框架自动注入，**不要**在参数表中重复声明。
 
-### 1.4 变量 `vars`（VarTable）
+### 1.4 变量 VarTable
 
-每行：`name` / `indices` / `domain`（`real`/`integer`/`binary`）/ `lower_bound` / `upper_bound` / `role`。
+每行声明：变量名 / 索引 / **类型 domain**（real 实数、integer 整数）/ **角色 role** / 中文标签 / 单位 / 下限 / 上限。
 
-- **投资决策 = 逐型号数量**（integer）：CSP 的 `Kfield[fd]`、`Kturb[tp]`、`Ktes[ts]`，`role=investment`，结果回填到"配置"；单台容量放设备表列（`Ahelio`/`Punit`/`Eunit`），**总量在约束里写 `Σ(单台容量×数量)`，不设派生总量参数**。
-- **运行变量 = 系统级逐时**（`indices=["PERIOD"]`，real，下限 0）：CSP 的充/放/弃热 `Qch/Qdis/Qcurt`、汽轮机进热 `Qpb`、储热存量 `Etes`、理想发电 `Pgen`、弃电 `Pcut`。
-- `role` 标注变量物理含义供内核派生与报表识别：`electric_output`、`heat_input`、`state_of_charge`、`electric_curtailment`、`heat_curtailment`、`operational` 等。
+- **投资决策 = 各型号台数**（integer，角色 investment）：如镜场份数 Kfield、汽轮机台数 Kturb、储热份数 Ktes，求解结果回填到设备配置。单台容量放在设备表列中，**总容量在约束里写"单台容量 × 台数再求和"，不设总容量参数**。
+- **运行变量 = 系统级逐时量**（索引为时段 pd，real，下限 0）：如充热功率、放热功率、发电功率、储热存量。
+- **角色 role** 标记变量的物理含义，平台据此**自动完成节点功率平衡与结果统计**，通常无需手写平衡方程。CSP 用到的角色：
 
-### 1.5 约束 `constraints`（ConstraintTable）
+| role                 | 含义     | 对应变量          |
+| :--- | :--- | :--- |
+| investment           | 投资     | Kfield Kturb Ktes |
+| heat_input           | 充热     | Qch               |
+| operational          | 运行     | Qpb Qdis          |
+| heat_curtailment     | 弃热     | Qcurt             |
+| state_of_charge      | 储能存量 | Etes              |
+| electric_output      | 发电     | Pgen              |
+| electric_curtailment | 弃电     | Pcut              |
 
-每行：`name` / `indices` / `body`（DSL 表达式，含比较符）/ `condition`（可选，仅部分索引成立）/ `role`。界可用 `body` 内比较符 `<= >= ==`，或用 `lower_bound`/`upper_bound` 两列（二者取一，比较符优先）。**平台表格无 `indices` 列时，约束索引由声明推断**（见 2.3）。
+### 1.5 约束 ConstraintTable
 
-### 1.6 目标 `objectives`
+每行声明：约束名 / 中文标签 label / 条件 condition / 表达式 body / 角色 role（coupling 结构耦合、operational 运行）。约束的界既可写在表达式内（比较符 `<=` `>=` `==`），也可用下限 / 上限两列（二者取一，表达式优先）。无条件生效的约束条件列填 `true`。
 
-每行 `name` / `role` / `body`（表达式，默认最小化）。CSP 四类：投资 `invest`、固定运维 `fixed_om`、可变运维 `var_om`、弃电弃热惩罚 `penalty_curtail`。
+**约束是逐时的还是总量的，不需要单独指定**：表达式中出现逐时量（如逐时功率）即为逐时约束（每个时刻都要成立）；全是标量即为总量约束（整体成立一次）。
 
-### 1.7 节点平衡 / 成本 / 统计
+### 1.6 目标 ObjectiveTable
 
-- **节点平衡**：元件向所接端口净注入的功率。CSP 净上网 = `Pgen - Pcut`（理想发电毛值扣弃电）。自解析通道由 `role` 自动派生，也可显式声明 `node_balance_terms`。
-- **成本表**：`K 变量 × 单台容量参数 × 单价参数`，与目标里的投资项**同源**，多型号不同单价也逐台恒等；`price_unit` 词头允许"元"或"万元"，内核按声明单点折算，**表达式内不写 `/10000`**。
-- **统计表（StatsTable/SpecialTable）**：声明结果展示分组与 8760 曲线口径（哪个量进能量平衡图、正负贡献）。
+每行声明：目标名 / 中文标签 / 角色（investment 投资类、operational 运行类）/ 表达式 body / 优化方向 sense（minimize）。塔式光热共四类成本：投资 invest、固定运维 fixed_om、可变运维 var_om、弃电弃热惩罚 penalty_curtail。
+
+### 1.7 派生统计与结果统计
+
+- **派生统计 SpecialTable**：声明结果指标的计算公式（formula）与单位，如年发电小时数、年弃电率、投资成本、年固定运维。公式语法与约束表达式一致，直接写聚合式即可。
+- **节点平衡**：元件向所接端口净输出的功率，决定它如何参与整个系统的能量平衡。塔式光热的净上网功率 = 理想发电 − 弃电，由发电 / 弃电两个角色的变量自动生成。
+- **结果统计 StatsTable**：声明哪些量进入结果展示与能量平衡图，每行指定：变量 var / 中文标签 / 展示类型 kind（curve 逐时曲线、config 配置量）/ 能量类型 energy / 分组 group / 单位 / 方向 direction（如 supply 正贡献、abs 按绝对值展示）。
 
 ---
 
 ## 二 表达式 DSL 语法
 
-表达式出现在约束 `body`、目标 `body`、变量上下界与节点平衡四处，语法相同。
+表达式出现在约束、目标、变量上下限与派生统计四处，语法完全相同。表达式中引用的每个名字都必须已在参数表、设备表列或变量表中声明（平台注入的基础参数 kydt、crf、pscale、pdinday 可直接引用）。
 
 ### 2.1 一条表达式的完整形态
 
 ```text
 Qch + Qpb + Qcurt == sum(dnipd * FieldRho * FieldEtarec / 1000 * Ahelio * Kfield) in field
-Etes == Etes[pd - 1] + etach_sys * Qch - Qdis / etadis_sys
+Etes == Etes[pd - 1] + mean(etach) * Qch - Qdis / mean(etadis)
 ```
 
-### 2.2 求和与作用域 `sum(...) in 域`
+第一行：每个时刻，镜场集热按"充热、直通发电、弃热"三路分配；第二行：储热当前存量 = 上一时刻存量 + 充热 − 放热。
 
-- 域写在括号**外**，读作"在……上求和"，是**后缀**，只绑紧邻的那个 `sum(...)`：`sum(a) in field * crf` ≡ `(sum(a) in field) * crf`。
-- **`in <域>` 可选**，两种聚合语义由是否写域决定：| 写法                | 聚合什么                                                 | 用在哪                                                 |
-  | ------------------- | -------------------------------------------------------- | ------------------------------------------------------ |
-  | `sum(X) in field` | 只聚`field` 这一维，其余索引（如时段）留给外层逐时约束 | 逐时约束：每时刻成立、按型号求和                       |
-  | `sum(X)`          | 聚`X` 内所有符号声明索引的**并集**               | 标量约束与目标：`sum(Ahelio*Kfield) >= MinFieldArea` |
-- **多域＝嵌套**：`sum(sum(Qch) in field) in period`（先按型号、再按时间）。不提供 `in (period, field)` 并列写法（避免索引顺序歧义）。
-- **域怎么匹配**：先精确、再归一化（大小写与 `-` `_` 空格不计）、归一化后多义则报错并列候选。故 `field`/`FIELD`/`Field` 等价，**页面上看到什么集合名就写什么**。可用域 = 全局 `PERIOD/MONTH/DAY` + 本元件 `sets` 声明的集合。
+### 2.2 求和与作用域
 
-### 2.3 下标可省 与 声明驱动
+求和写作 `sum(表达式) in 域`，域写在括号外，读作"在……上求和"。它只修饰紧邻的那个 `sum`：`sum(a) in field * crf` 等价于 `(sum(a) in field) * crf`。
 
-裸名按**声明索引**自动注入索引变量，一般不用手写 `[pd]`：
+| 写法                | 聚合什么                                    | 用在哪                             |
+| :--- | :--- | :--- |
+| `sum(X) in field` | 只在 field 维度求和，其余维度（如时段）保留 | 逐时约束：每个时刻成立，按型号求和 |
+| `sum(X)`          | 对表达式中所有索引维度求和                  | 总量约束与目标：如总容量、全年电量 |
+
+- **多维求和用括号并列**：`sum((Pgen - Pcut) * kydt) in (td, pd)` 表示先按型号、再按时段；重复域会报错（会被嵌套聚合两次，数值放大）。嵌套写法 `sum(sum(X) in td) in pd` 依然合法，两者等价。
+- **域可写简称**：`in td` 等价于 `in TURBINEPOWER`、`in pd` 等价于 `in PERIOD`。
+- **域名匹配宽松**：大小写与连字符、下划线、空格不计，`field`、`FIELD`、`Field` 等价，照页面上看到的集合名写即可。可用域 = 全局时段 / 月 / 日 + 本元件声明的集合。
+
+### 2.3 mean 集合平均算子
+
+`mean(表达式)[ in 域]` —— 对设备表全部型号取**算术平均**：
 
 ```text
-Qch + Qpb              # 约束 indices=["PERIOD"] → 自动 Qch[pd]
-Ahelio * Kfield        # 在 in field 域内 → 自动 Ahelio[fd]*Kfield[fd]
-kydt                   # 全局参数按 PERIOD → kydt[pd]
+mean(etapb)                # 汽轮机效率按设备表全部型号平均
+mean(etach)                # 储热充热效率均值
+mean(VariableOMCost)       # 可变运维单价均值
 ```
 
-**唯一要显式写下标的是时间递推偏移**：`Etes[pd - 1]`（上一时段）。方括号是通用数学记号、不是厂商语法。
+- 语义 = 聚合后除以集合规模，集合规模就是**设备表行数**——增删型号行自动跟随；
+- 参数与变量都可作操作数，不引入非线性；
+- 域规则与 sum 一致，可省略（按声明索引自动确定）；只能用于**设备集合**，不能对时段做 mean；
+- 它取代了旧的 `scope=system` + `<列>_sys` 声明写法——均值是表达式内的即时运算，不是声明出来的独立参数。
 
-连带效应：平台表格没有 `indices` 列时，**约束索引由声明推断**——
-`引用符号的声明索引 − 被 in<域> 绑定的部分 ⇒ 约束索引`。所以改了集合名要同步改声明与域，否则可能报错或索引判错。
+### 2.4 下标可省
 
-### 2.4 运算符与函数
-
-| 类别       | 写法                                                             | 说明                                                                        |
-| ---------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| 四则       | `+ - * /`、一元 `-x`                                         | `*` `/` 优先于 `+` `-`                                              |
-| 比较       | `<=` `>=` `==`                                             | **不支持** `<` `>`（MILP 无严格不等式，直接报错）；不支持链式比较 |
-| 索引算术   | `Etes[pd - 1]`                                                 | 仅`名字±数字` 单层                                                       |
-| 函数       | `max(a,b)` `min(a,b)` `abs(x)` `cos(x)` `sin(x)`       | 解析支持，但**优化工具可能不支持**（见"使用限制"）                    |
-| 数值       | `100` `0.5`                                                  | **不支持科学计数法**（`1e6` 写 `1000000`）                        |
-| 内核保留字 | `sum max min abs cos sin in mod and or not div pd m d kydt` 等 | 不得用作符号名                                                              |
-
-> 幂运算（`x^2`）、`%`（表达式内）、中文标识符都**不支持**并会带位置报错——历史事故是 `x^2` 被静默读成 `x*2`。
-
-### 2.5 条件索引 `condition`
-
-让约束只在部分索引上成立，取值为受限表达式：
+符号的下标一般不需要手写，平台按声明自动补齐：
 
 ```text
-"pd >= 1"                          # 递推段
-"pd == 0"                          # 初始段
-"(pd % pdinday) == (pdinday - 1)"  # 每个典型日最后一时段
-"MaxPowerRate > 0"                 # 规划界留空(=0)即无界，填正值才生效
+Qch + Qpb              # 逐时约束中自动按当前时段取值
+Ahelio * Kfield        # 在 in field 域内自动按当前型号取值
+kydt                   # 全局参数按时段自动取值
 ```
 
-- 取余用 `%`、整除用 `//`（旧 AMPL 关键字 `mod`/`div` 已废弃，命中报错并提示替代）；
-- 支持 `and` 连接子句，**不支持 `or`**；
-- 条件里引用的元件参数/变量会自动加组件 id 后缀。
+唯一需要显式写下标的是**时间递推**：`Etes[pd - 1]` 表示上一时段的存量。
 
-### 2.6 常见错误与排查
+### 2.5 运算符与函数
 
-| 现象 / 报错                              | 原因                                           | 处理                                  |
-| ---------------------------------------- | ---------------------------------------------- | ------------------------------------- |
-| 「未登记的域 'x'；可用域：[…]」         | 域拼错或集合未声明                             | 照可用域清单写；确认`sets` 有该集合 |
-| 「域 'x' 归一化后多义」                  | 去分隔符撞多个集合                             | 写**精确**集合名                |
-| 「引用符号时当前上下文未量化其索引变量」 | 声明索引 /`in<域>` / 约束 `indices` 不一致 | 三者对齐                              |
-| 「名称未在变量或参数中声明」             | 引用了未声明符号                               | 去参数表/变量表补声明                 |
-| 结果像"元件没生效"、定容恒 0             | 规划界小于单台容量（K 取整台数→0）            | 放宽界或增补小容量型号行              |
+| 类别     | 写法                                               | 说明                                                   |
+| :--- | :--- | :--- |
+| 四则运算 | `+ - * /`、负号 `-x`                           | 先乘除后加减                                           |
+| 聚合     | `sum(...)`、`mean(...)`                        | 配合`in 域` 使用                                     |
+| 比较     | `<=` `>=` `==`                               | 不支持严格不等号`<` `>`（优化模型没有严格不等式）  |
+| 时间偏移 | `Etes[pd - 1]`                                   | 仅支持"变量名 ± 数字"                                 |
+| 函数     | `max(a,b)` `min(a,b)` `abs(x)`               | 只能作用于参数与常数，不能作用于变量                   |
+| 数值     | `100` `0.5`                                    | 不支持科学计数法，一百万要写`1000000` 不能写 `1e6` |
+| 关键字   | `sum` `mean` `max` `min` `abs` `in` 等 | 不能用作参数或变量名                                   |
+
+> 不支持幂运算 `^`、百分号与中文符号名。
+
+### 2.6 条件索引
+
+条件让约束只在部分时段生效，写在约束的 condition 列：
+
+```text
+"pd >= 1"                          # 从第二个时段起（递推段）
+"pd == 0"                          # 第一个时段（初始段）
+"(pd % pdinday) == (pdinday - 1)"  # 每个典型日的最后一个时段
+"MaxPowerRate > 0"                 # 容量上限填了正值才生效（留空即不限制）
+```
+
+- 取余写 `%`，整除写 `//`（不要写 `mod` / `div` 关键字）；
+- 多个条件用 `and` 连接，不支持 `or`；
+- 条件中的参数、变量直接写名字即可。
+
+### 2.7 常见错误与排查
+
+| 现象或提示            | 原因                                     | 处理                                   |
+| :--- | :--- | :--- |
+| 提示"未登记的域"      | 域名拼错，或该集合未声明                 | 按提示的可用域清单核对；确认集合已声明 |
+| 提示"归一化后多义"    | 两个集合去掉分隔符后重名                 | 写精确的集合名                         |
+| 提示"索引变量未量化"  | 符号的索引、求和域、约束类型不一致       | 三者保持一致                           |
+| 提示"名称未声明"      | 引用了未声明的参数或变量                 | 在参数表、设备表列或参数面板中补充     |
+| mean 报"集合规模未知" | 对时段等全局域做 mean                    | mean 仅支持设备集合（规模=设备表行数） |
+| 结果中配置恒为 0      | 容量上下限小于单台容量（台数取整后为 0） | 放宽上下限，或增补小容量型号           |
 
 ---
 
-## 三 CSP 塔式光热实例走查
+## 三 CSP 塔式光热实例
 
-**物理链路**：镜场集热 → 吸热器 → 熔盐储热（充/放）→ 汽轮机（热→电）→ 电上网。CSP = **镜场 / 汽轮机 / 储热三个独立子系统**的组合，各一张设备表；纯发电（热是内部量，不对外供热网）。
+**系统组成**：定日镜场集热 → 吸热器 → 熔盐储热（充 / 放）→ 汽轮机发电 → 上网。塔式光热 = **镜场、汽轮机、储热**三个子系统的组合，各对应一张设备表；热是内部量，只对外发电。
 
-### 3.1 集合与三系统设备表
+### 3.1 集合与设备表
 
-```text
-FIELD / TURBINEPOWER / THERMALSTORAGE   三个 index_var：fd / tp / ts
-```
+四个索引集合见 1.2 节表格。三张设备表一行一个型号：
 
-每个系统一张设备表，行=型号，行内含"单台容量"列（镜场 `Ahelio` m²、汽轮机 `Punit` kW、储热 `Eunit` kWh_th）与效率/单价列。
+| 设备表       | 集合                 | 列（即设备级参数）                                                                                                                                                                 |
+| :--- | :--- | :--- |
+| FieldTable   | FIELD（fd）          | Ahelio 单份采光面积 m²、FieldRho 光学效率、FieldEtarec 吸热器效率、FieldPurchaseCost 采购单价、FieldFixedOMCost 固定运维单价                                                      |
+| TurbineTable | TURBINEPOWER（td）   | Punit 单台额定功率 kW、etapb 热-电效率、PowerPurchaseCost、PowerFixedOMCost、VariableOMCost 可变运维 元/kWh                                                                        |
+| StorageTable | THERMALSTORAGE（ts） | Eunit 单台容量 kWh、etach / etadis 充放热效率、StorageChCapCoef / StorageDischCapCoef 充放能力系数、StoragePurchaseCost、StorageFixedOMCost、tcold / thot 冷热罐设计温度（记录用） |
 
-### 3.2 参数（要点）
+每行还带型号名称 name、中文说明 label 与索引声明（如 `FIELD:fd`）。模板默认按 1MW 档配置（100MW 档改 Punit / Eunit 即可），采购单价按 元/m²、元/kW、元/kWh 录入。
 
-| 参数                                                                                | kind / scope / source                                                | 说明                                                                          |
-| ----------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `etapb_sys` `etach_sys` `etadis_sys` `VariableOMCost_sys`                   | efficiency/price_om ·**system + mean** · `device_col_mean` | 逐型号效率/单价的系统级算术平均，随设备表行数自动跟随                         |
-| `MinFieldArea/MaxFieldArea/MinPowerRate/MaxPowerRate/MinStorageCap/MaxStorageCap` | **planning_bound**（标量，默认 0）                             | 容量口径总量界；留空(=0)即无界，靠约束`condition` 控制生效                  |
-| `dnipd`                                                                           | **curve** · `dni_from_dirhi`                                | 逐时法向直射辐照（`DNI>0` 用设计常数、仅日照窗口内取值；`=0` 走气象换算） |
-| `pdinday` `crf` `pscale`                                                      | `day_length`/`annuity`/`pscale`                                | 引擎注入                                                                      |
-| `Kfield/Kturb/Ktes` 用到的 `Ahelio/Punit/Eunit`、`FieldPurchaseCost/…`       | per_model（设备表列）                                                | 逐型号容量与单价（元录入，内核折算万元）                                      |
+### 3.2 参数
+
+| 参数                                                                            | 通道         | 说明                                                                                       |
+| :--- | :--- | :--- |
+| dnipd                                                                           | 参数表 curve | 逐时法向直射辐照：设计日照强度大于 0 时取设计值（仅日照时段内），为 0 时由平台气象数据换算 |
+| MinFieldArea MaxFieldArea MinPowerRate MaxPowerRate MinStorageCap MaxStorageCap | 隐式标量     | 三个子系统的总容量界；留空（=0）表示不限制                                                 |
+| socini soclow socup                                                             | 隐式标量     | 储热初值比例、SOC 上下限比例                                                               |
+| DNI DayStart DayEnd                                                             | 隐式标量     | 设计日照强度与日照起止小时，用于生成 dnipd 曲线                                            |
+| pdinday crf pscale kydt                                                         | 平台注入     | 每日时段数、投资年化系数、典型日缩放系数、时段代表小时数，无需用户填写                     |
+
+效率与单价（各设备表列）为逐型号量，表达式中用 `mean(列名)` 取系统级平均——增删型号行自动跟随，公式无需修改，也不再声明 `_sys` 参数。
 
 ### 3.3 变量（10 个）
 
-| 变量                          | 索引         | 类型 / role                 | 含义                                 |
-| ----------------------------- | ------------ | --------------------------- | ------------------------------------ |
-| `Kfield` `Kturb` `Ktes` | 各自设备集合 | integer / investment        | 各系统**型号份数**（定容决策） |
-| `Qch`                       | PERIOD       | real / heat_input           | 充热功率                             |
-| `Qpb` `Qdis`              | PERIOD       | real / operational          | 汽轮机进热 / 储热放热功率            |
-| `Qcurt`                     | PERIOD       | real / heat_curtailment     | 弃热功率                             |
-| `Etes`                      | PERIOD       | real / state_of_charge      | 储热存量                             |
-| `Pgen`                      | PERIOD       | real / electric_output      | 理想发电功率（毛值）                 |
-| `Pcut`                      | PERIOD       | real / electric_curtailment | 弃电功率                             |
+| 变量              | 索引         | 类型 / 角色                 | 含义                                |
+| :--- | :--- | :--- | :--- |
+| Kfield Kturb Ktes | fd / td / ts | integer / investment        | 各子系统的型号台数（定容决策）      |
+| Qch               | pd           | real / heat_input           | 储热充热功率                        |
+| Qpb Qdis          | pd           | real / operational          | 镜场直通汽轮机热功率 / 储热放热功率 |
+| Qcurt             | pd           | real / heat_curtailment     | 弃热功率                            |
+| Etes              | pd           | real / state_of_charge      | 储热存量                            |
+| Pgen              | pd           | real / electric_output      | 理想发电功率（毛值）                |
+| Pcut              | pd           | real / electric_curtailment | 弃电功率                            |
 
-净上网 = `Pgen − Pcut`（在节点平衡里表达；无上网约束时 `Pcut` 最优为 0 属预期）。
+净上网功率 = 理想发电 − 弃电，平台据此自动生成节点平衡。无上网功率限制时，弃电的最优解恒为 0（弃电只增加惩罚、不带来收益），属预期行为。
 
-### 3.4 约束逐类（17 条，全部单边）
+### 3.4 约束（17 条，全部单边）
 
-**(a) 能量耦合（等式/上限）**
+**(a) 能量转换（4 条，角色 coupling）**
 
 ```text
-field_alloc        Qch + Qpb + Qcurt == sum(dnipd*FieldRho*FieldEtarec/1000*Ahelio*Kfield) in field
-turbine_heat_cap   Qpb + Qdis <= sum(Punit*Kturb) in turbinepower / etapb_sys
-power_convert      Pgen == etapb_sys * (Qpb + Qdis)
+field_alloc        Qch + Qpb + Qcurt == sum(dnipd * FieldRho * FieldEtarec / 1000 * Ahelio * Kfield) in field
+turbine_heat_cap   Qpb + Qdis <= sum(Punit * Kturb) in turbinepower / mean(etapb)
+power_convert      Pgen == mean(etapb) * (Qpb + Qdis)
 pc_cap             Pcut <= Pgen
 ```
 
-**(b) 储热 SOC 三件套（初值 / 递推 / 日末恢复）+ SOC 界 + 充放上限**——演示"下标可省 + `Etes[pd-1]` + `condition`"：
+说明：镜场集热三路分配（充热 / 直通 / 弃热）；进热不超过汽轮机额定电功率折算的热耗（÷ 热-电效率）；发电功率等于效率乘进热；弃电不超过发电。
+
+**(b) 储热运行（7 条）**——展示时间递推与条件索引的用法：
 
 ```text
-tes_balance_init   条件 pd == 0 :  Etes == socini*sum(Eunit*Ktes) in thermalstorage + etach_sys*Qch - Qdis/etadis_sys
-tes_balance        条件 pd >= 1 :  Etes == Etes[pd-1] + etach_sys*Qch - Qdis/etadis_sys
-tes_eod_restore    条件 (pd % pdinday) == (pdinday-1) :  Etes == socini*sum(Eunit*Ktes) in thermalstorage
-tes_soc_low/up     Etes >= soclow*sum(Eunit*Ktes) in thermalstorage   /   Etes <= socup*…
-tes_charge_cap     Qch  <= sum(StorageChCapCoef*Eunit*Ktes) in thermalstorage
-tes_discharge_cap  Qdis <= sum(StorageDischCapCoef*Eunit*Ktes) in thermalstorage
+tes_balance_init   条件 pd == 0（角色 operational）：
+    Etes == socini * sum(Eunit * Ktes) in thermalstorage + mean(etach) * Qch - Qdis / mean(etadis)
+tes_balance        条件 pd >= 1（角色 operational）：
+    Etes == Etes[pd-1] + mean(etach) * Qch - Qdis / mean(etadis)
+tes_eod_restore    条件 (pd % pdinday) == (pdinday - 1)（角色 operational）：
+    Etes == socini * sum(Eunit * Ktes) in thermalstorage
+tes_soc_low        Etes >= soclow * sum(Eunit * Ktes) in thermalstorage
+tes_soc_up         Etes <= socup * sum(Eunit * Ktes) in thermalstorage
+tes_charge_cap     Qch  <= sum(StorageChCapCoef * Eunit * Ktes) in thermalstorage
+tes_discharge_cap  Qdis <= sum(StorageDischCapCoef * Eunit * Ktes) in thermalstorage
 ```
 
-**(c) 三系统总量界（规划参数，`condition` 防"空值=0 钉死容量"）**
+说明：初始时刻存量由初值系数 socini 决定；其后逐时递推；每个典型日结束时存量恢复初值（日循环）；存量按总容量的比例限幅（soclow ~ socup）；充放功率受储热自身的充放能力系数限制——充热能力约束同时关闭了"零容量储热罐倾泻全部集热"的物理漏洞。
+
+**(c) 容量上下限（6 条）**——上下限留空（=0）即该约束不生效：
 
 ```text
-field_area_low/up     sum(Ahelio*Kfield) in field  >= MinFieldArea / <= MaxFieldArea   条件 Min*/Max* > 0
-turbine_cap_low/up    sum(Punit*Kturb) in turbinepower …                                条件 Min*/Max* > 0
-storage_cap_low/up    sum(Eunit*Ktes) in thermalstorage …                               条件 Min*/Max* > 0
+field_area_low/up     sum(Ahelio * Kfield) in field        >= MinFieldArea  / <= MaxFieldArea     条件 Min*/Max* > 0
+turbine_cap_low/up    sum(Punit * Kturb) in turbinepower   >= MinPowerRate  / <= MaxPowerRate     条件 Min*/Max* > 0
+storage_cap_low/up    sum(Eunit * Ktes) in thermalstorage  >= MinStorageCap / <= MaxStorageCap    条件 Min*/Max* > 0
 ```
 
-### 3.5 目标（4 条，最小化）
+### 3.5 目标（4 条，sense 均为 minimize）
 
 ```text
-invest       ( sum(Ahelio*Kfield*FieldPurchaseCost) in field
-             + sum(Punit*Kturb*PowerPurchaseCost) in turbinepower
-             + sum(Eunit*Ktes*StoragePurchaseCost) in thermalstorage ) * crf * pscale
-fixed_om     同上结构，单价换 FixedOMCost
-var_om       sum((Pgen - Pcut) * kydt) in period * VariableOMCost_sys
-penalty_curtail  PenaltyRen * ( sum(Qcurt*kydt) in period + sum(Pcut*kydt) in period )
+invest           ( sum(Ahelio * Kfield * FieldPurchaseCost) in field
+                 + sum(Punit * Kturb * PowerPurchaseCost) in turbinepower
+                 + sum(Eunit * Ktes * StoragePurchaseCost) in thermalstorage ) * crf * pscale / 10000
+fixed_om         同上结构，单价换为固定运维单价，/ 10000
+var_om           sum((Pgen - Pcut) * kydt) in period * mean(VariableOMCost) / 10000
+penalty_curtail  PenaltyRen * ( sum(Qcurt * kydt) in period + sum(Pcut * kydt) in period )
 ```
 
-要点：投资乘 `crf × pscale`（资本回收 × 典型日缩放）；按电量计的钱乘 `kydt`（`Σ_pd kydt ≈ 8760` → 年 kWh）；单价元录入、内核单点折算万元 ⟹ **表达式内不写 `/10000`**。
+三条口径说明：
+
+- **投资**乘 crf（年化系数）与 pscale（典型日缩放），把一次性投资折算到优化周期；固定运维为年度值，不折算；投资与固定运维均为一次性总量式（标量约束口径，`sum` 无域即聚合全部索引）；
+- **按电量计的费用**（可变运维、弃电弃热惩罚）乘 kydt（各时段的代表小时数，全年合计约 8760），得到年电量口径；
+- **单价按元录入**，投资 / 固定运维 / 可变运维三项在目标式中除以 10000 统一折算为**万元**；惩罚单价 PenaltyRen 由平台注入、口径已与万元制一致，惩罚项不再折算。同一个金额口径务必全模型唯一，否则报表会差 1 万倍。
+
+### 3.6 派生统计与结果展示
+
+**派生统计 SpecialTable**（结果指标公式）：
+
+| 指标         | 公式                                                                       | 单位    |
+| :--- | :--- | :--- |
+| 年发电小时数 | `sum(Pgen*kydt) / max(sum(Punit*Kturb), 极小正数)`（分母加保护避免除零） | h       |
+| 年弃电率     | `100 * sum(Pcut*kydt) / max(sum(Pgen*kydt), 极小正数)`                   | %       |
+| 投资成本     | 三子系统`单台容量×台数×采购单价` 求和后 / 10000                        | 万元    |
+| 年固定运维   | 三子系统固定运维求和后 / 10000                                             | 万元/年 |
+
+**结果统计 StatsTable**：逐时曲线按分组展示——电功率组（发电 Pgen、弃电 Pcut，单位 kW）、热功率组（直通 Qpb、充热 Qch、放热 Qdis、弃热 Qcurt，单位 kWth）、储热量组（存量 Etes，单位 kWh）；配置量（Kfield / Kturb / Ktes 台数）作为 config 项展示。发电取 supply（正贡献）方向进入能量平衡图。
 
 ---
 
 ## 四 典型场景配置指南
 
-- **纯发电 CSP（默认）**：如上，热仅内部量，净上网 `Pgen−Pcut` 进交流母线。
-- **需抑制弃电/弃热**：保留 `penalty_curtail`（乘 `PenaltyRen`），系统会自动在风光/储热充裕时段减少弃电弃热。
-- **扩缩容量 / 多型号**：在对应设备表加行（新增型号）即可——效率/可变运维的 `system`+`mean` 等效参数**分母自动跟随行数**，模型式无需改动；投资 `K*` 为整数台数，单台容量列决定每档规模。
-- **给定装机、只做运行**：把对应 `K*` 上界=下界钉死（或经两阶段定容后固定），模型退化为纯运行优化。
+- **纯发电（默认）**：如上配置，热仅内部量，净上网功率接入交流母线。
+- **抑制弃电弃热**：保留弃电弃热惩罚项（乘惩罚单价 PenaltyRen），系统会自动在富余时段减少弃电弃热。
+- **多型号 / 扩缩容**：在设备表中增加或删减型号行即可——mean 均值自动跟随行数，公式无需修改；台数为整数，单台容量列决定每一档的规模。
+- **给定装机只做运行**：把相应台数变量的下限与上限设为同一数值（固定配置），模型即退化为给定装机下的运行优化。
 
 ## 使用限制
 
-- 生产为 **MILP（线性）**。`max/min/abs` 只能作用在**参数/常量**上（构造期求值）；含变量的非线性（变量乘除、变量作分母、含变量的极值）会被内核拒绝，需先线性化。
-- 不支持严格不等式 `< >`、科学计数法、幂 `^`、中文标识符。
-- 元件内部 DSL 与跨设备**系统约束 DSL** 是两套语言（前者 `in 域`、后者 `@rid`），不要混用。
+- 模型为**线性混合整数规划**。`max / min / abs` 只能作用于参数与常数；含变量的非线性关系（变量相乘、变量作分母等）不被支持，需要先做线性化。
+- 不支持严格不等号 `<` `>`、科学计数法、幂运算 `^`、中文变量名。
+- 元件内部的表达式 DSL 与跨设备的**系统约束 DSL** 是两套语言（主要是作用域的不同，前者用 `in 域`表示组件内部域、后者用 `@组件`表示跨组件的域），不要混用。
 
 ## 常见问题
 
-- **参数填了不生效**：`planning_bound` 界小于单台容量会让整数台数 `K=0`（有「配置自相矛盾」告警）；`Max*` 留空即无界（`condition` 未成立），非报错。
-- **报表金额差 1 万倍**：单价 `kind=price_*` 必须填 `unit`（元/万元），内核按声明折算，勿在公式里再 `/10000`。
-- **改完模型结果没变**：确认约束 `indices` 由声明推断正确（改了集合名要同步 `in 域` 与声明）。
+- **参数填了不生效**：容量上限小于单台容量时，整数台数只能为 0（平台会给出"配置自相矛盾"提示）；上下限留空即不限制，不是错误。
+- **报表金额差 1 万倍**：单价按元录入时，目标式中除以 10000 折算万元；若按万元录入则不再除。全模型金额口径必须唯一。
+- **修改后结果没变**：检查表达式中的求和域与集合声明是否一致（改了集合名要同步修改声明与求和域）；设备表增删行后 mean 均值自动跟随，无需改公式。
